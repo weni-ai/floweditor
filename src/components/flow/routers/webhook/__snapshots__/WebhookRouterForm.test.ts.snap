@@ -134,6 +134,15 @@ exports[`WebhookRouterForm should render 1`] = `
           },
         ]
       }
+      styles={
+        Object {
+          "control": [Function],
+          "input": [Function],
+          "multiValue": [Function],
+          "placeholder": [Function],
+          "singleValue": [Function],
+        }
+      }
     />
   </div>
   <div
@@ -264,7 +273,7 @@ Object {
     \\"uuid\\", run.flow.uuid, 
     \\"name\\", run.flow.name
   ),
-  \\"results\\", results
+  \\"results\\", foreach_value(results, extract_object, \\"value\\", \\"category\\")
 )))",
   },
   "resultName": Object {

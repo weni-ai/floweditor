@@ -1,7 +1,9 @@
+import * as headerUtils from 'http-headers-validation';
 import { Asset } from 'store/flowContext';
 import { FormEntry, ValidationFailure } from 'store/nodeEditor';
+import { SelectOption } from 'components/form/select/SelectElement';
 
-export type FormInput = string | string[] | number | Asset | Asset[];
+export type FormInput = string | string[] | number | Asset | Asset[] | SelectOption;
 export type ValidatorFunc = (
   name: string,
   input: FormInput
@@ -212,10 +214,39 @@ export const shouldRequireIf = (required: boolean): ValidatorFunc => (
   return { failures: [], value: input };
 };
 
+export const HeaderName: ValidatorFunc = (name: string, input: FormInput) => {
+  if (typeof input === 'string') {
+    if (input.trim().length > 0 && !headerUtils.validateHeaderName(input)) {
+      return { failures: [{ message: 'Invalid header name' }], value: input };
+    }
+  }
+  return { failures: [], value: input };
+};
+
+export const IsValidIntent = (classifier: Asset): ValidatorFunc => (
+  name: string,
+  input: FormInput
+) => {
+  if (typeof input === 'object') {
+    const option = input as SelectOption;
+
+    if (option && classifier && classifier.content) {
+      const exists = !!classifier.content.intents.find((intent: string) => intent === option.value);
+      if (!exists) {
+        return {
+          value: input,
+          failures: [{ message: `${option.value} is not a valid intent for ${classifier.name}` }]
+        };
+      }
+    }
+    return { failures: [], value: input };
+  }
+  return { failures: [], value: input };
+};
+
 export const MaxOfTenItems = fromMaxItems(10);
 export const StartIsNonNumeric = fromRegex(/^(?!\d)/, "can't start with a number");
 export const ValidURL = fromRegex(REGEX_URL, 'is not a valid URL');
-export const HeaderName = fromRegex(/^[\w-]+$/, 'is invalid');
 export const Numeric = fromRegex(/^([-+]?((\.\d+)|(\d+)(\.\d+)?)$)/, 'must be a number');
 export const Alphanumeric = fromRegex(/^[a-z\d\-_\s]+$/i, 'can only have letters and numbers');
 export const NumOrExp = fromRegex(/^@.*$|^([-+]?((\.\d+)|(\d+)(\.\d+)?)$)/, 'must be a number');

@@ -29,9 +29,11 @@ export interface Endpoints {
   activity: string;
   labels: string;
   channels: string;
+  classifiers: string;
   environment: string;
   languages: string;
   templates: string;
+  completion: string;
   functions: string;
   simulateStart: string;
   simulateResume: string;
@@ -45,11 +47,17 @@ export interface FlowEditorConfig {
   flowType: FlowTypes;
   showTemplates?: boolean;
   showDownload?: boolean;
+  mutable?: boolean;
   debug?: boolean;
   path?: string;
   headers?: any;
   onLoad?: () => void;
   onActivityClicked?: (uuid: string) => void;
+
+  // whether to force a save on load
+  forceSaveOnLoad?: boolean;
+
+  filters?: string[];
 }
 
 export interface LocalizationMap {
@@ -300,8 +308,19 @@ export interface Headers {
   [name: string]: string;
 }
 
+export interface Classifier {
+  uuid: string;
+  name: string;
+}
+
 export interface TransferAirtime extends Action {
   amounts: { [name: string]: number };
+  result_name: string;
+}
+
+export interface CallClassifier extends Action {
+  classifier: Classifier;
+  input: string;
   result_name: string;
 }
 
@@ -324,6 +343,8 @@ export interface StartFlow extends Action {
 
 export interface StartSession extends RecipientsAction {
   flow: Flow;
+  create_contact?: boolean;
+  contact_query?: string;
 }
 
 export interface UIMetaData {
@@ -375,6 +396,7 @@ export type AnyAction =
   | SendMsg
   | SetPreferredChannel
   | SendEmail
+  | CallClassifier
   | CallWebhook
   | StartFlow
   | StartSession;

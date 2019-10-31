@@ -4,7 +4,13 @@ import { getSwitchRouter } from 'components/flow/routers/helpers';
 import { Revision } from 'components/revisions/RevisionExplorer';
 import { FlowTypes, Type, Types } from 'config/interfaces';
 import { getTypeConfig } from 'config/typeConfigs';
-import { createAssetStore, getFlowDefinition, saveRevision } from 'external';
+import {
+  createAssetStore,
+  getCompletionSchema,
+  getFlowDefinition,
+  saveRevision,
+  getFunctions
+} from 'external';
 import isEqual from 'fast-deep-equal';
 import {
   Action,
@@ -54,7 +60,8 @@ import {
   updateUserAddingAction
 } from 'store/nodeEditor';
 import AppState from 'store/state';
-import { createUUID, NODE_SPACING, timeEnd, timeStart } from 'utils';
+import { createUUID, hasString, NODE_SPACING, timeEnd, timeStart } from 'utils';
+import { AxiosError } from 'axios';
 
 // TODO: Remove use of Function
 // tslint:disable:ban-types
@@ -85,7 +92,8 @@ export type UpdateDimensions = (uuid: string, dimensions: Dimensions) => Thunk<v
 export type FetchFlow = (
   endpoints: Endpoints,
   uuid: string,
-  onLoad: () => void
+  onLoad: () => void,
+  forceSave: boolean
 ) => Thunk<Promise<void>>;
 
 export type LoadFlowDefinition = (
@@ -198,7 +206,7 @@ export const createDirty = (
         );
         postingRevision = false;
       },
-      (error: any) => {
+      (error: AxiosError) => {
         const errorMessage = error.response.data as ErrorMessage;
 
         const body =
@@ -311,10 +319,12 @@ export const loadFlowDefinition = (
  * @param endpoints where our assets live
  * @param uuid the uuid for the flow to fetch
  */
-export const fetchFlow = (endpoints: Endpoints, uuid: string, onLoad: () => void) => async (
-  dispatch: DispatchWithState,
-  getState: GetState
-) => {
+export const fetchFlow = (
+  endpoints: Endpoints,
+  uuid: string,
+  onLoad: () => void,
+  forceSave = false
+) => async (dispatch: DispatchWithState, getState: GetState) => {
   // mark us as underway
   dispatch(mergeEditorState({ fetchingFlow: true }));
 
@@ -332,12 +342,27 @@ export const fetchFlow = (endpoints: Endpoints, uuid: string, onLoad: () => void
     fetchFlowActivity(endpoints.activity, dispatch, getState, uuid);
   };
 
-  const definition = await getFlowDefinition(assetStore.revisions);
+  const completionSchema = await getCompletionSchema(endpoints.completion);
+  const functions = await getFunctions(endpoints.functions);
 
-  dispatch(loadFlowDefinition(definition, assetStore, onLoad));
-  dispatch(mergeEditorState({ currentRevision: definition.revision }));
+  getFlowDefinition(assetStore.revisions)
+    .then((definition: FlowDefinition) => {
+      dispatch(loadFlowDefinition(definition, assetStore, onLoad));
+      dispatch(
+        mergeEditorState({ currentRevision: definition.revision, completionSchema, functions })
+      );
 
-  markDirty = createDirty(assetStore.revisions.endpoint, dispatch, getState);
+      markDirty = createDirty(assetStore.revisions.endpoint, dispatch, getState);
+      if (forceSave) {
+        markDirty(0);
+      }
+    })
+    .catch(error => {
+      // not much we can do without our flow definition
+      // log it to the console, this should really only happen if
+      // misconfigured or the endpoint is unavailable
+      console.error(error);
+    });
 };
 
 export const addAsset: AddAsset = (assetType: string, asset: Asset) => (
@@ -831,8 +856,7 @@ export const onConnectionDrag = (event: ConnectionEvent, flowType: FlowTypes) =>
   let resultCount = names.length + 1;
   let key = `result_${resultCount}`;
 
-  const hasResult = names.find((name: string) => name === key);
-  while (hasResult) {
+  while (hasString(names, key)) {
     resultCount++;
     key = `result_${resultCount}`;
   }
@@ -871,6 +895,7 @@ export const onUpdateRouter = (renderNode: RenderNode) => (
   if (originalNode) {
     const previousPosition = originalNode.ui.position;
     renderNode.ui.position = previousPosition;
+    renderNode.inboundConnections = originalNode.inboundConnections;
   }
 
   if (originalNode.ghost) {

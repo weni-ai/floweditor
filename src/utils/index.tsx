@@ -156,10 +156,10 @@ export const getSelectClassForEntry = (entry: FormEntry): string => {
 
 export const getSelectClass = (errors: number): string => {
   if (errors === 0) {
-    return 'select-base';
+    return 'react-select select-base';
   }
   // We use a global selector here for react-select
-  return 'select-base select-invalid';
+  return 'react-select select-base select-invalid';
 };
 
 export const reorderList = (list: any[], startIndex: number, endIndex: number): any[] => {
@@ -395,3 +395,13 @@ export const range = (start: number, end: number) =>
 
 export const pluralize = (count: number, noun: string, suffix: string = 's'): string =>
   `${noun}${count !== 1 ? suffix : ''}`;
+
+export const hasString = (names: string[], key: string): boolean =>
+  !!names.find((item: string) => item === key);
+
+export const scalarArrayEquals = (a: any[], b: any[]) =>
+  a.every((value, index) => value === b[index]);
+
+export const getURNPath = (urn: string) => {
+  return urn.split(':')[1];
+};
