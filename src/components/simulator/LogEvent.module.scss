@@ -41,6 +41,7 @@
 
   .msg_text {
     background: #2095fe;
+    min-height: 16px;
   }
 
   &.image_attachment {
@@ -69,7 +70,6 @@
 }
 
 .email {
-  word-break: break-all;
   text-decoration: underline;
   cursor: pointer;
   &:hover {
