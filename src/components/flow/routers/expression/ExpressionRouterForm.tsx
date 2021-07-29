@@ -1,7 +1,7 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
-import { hasErrors } from 'components/flow/actions/helpers';
+import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import CaseList, { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import { nodeToState, stateToNode } from 'components/flow/routers/expression/helpers';
@@ -44,7 +44,10 @@ export default class ExpressionRouterForm extends React.Component<
   }
 
   private handleUpdateResultName(value: string): void {
-    const resultName = validate('Result Name', value, [Alphanumeric, StartIsNonNumeric]);
+    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), value, [
+      Alphanumeric,
+      StartIsNonNumeric
+    ]);
     this.setState({
       resultName,
       valid: this.state.valid && !hasErrors(resultName)
@@ -52,7 +55,9 @@ export default class ExpressionRouterForm extends React.Component<
   }
 
   private handleOperandUpdated(value: string): void {
-    this.setState({ operand: validate('Operand', value, [Required]) });
+    this.setState({
+      operand: validate(i18n.t('forms.operand', 'Operand'), value, [Required])
+    });
   }
 
   private handleCasesUpdated(cases: CaseProps[]): void {
@@ -84,7 +89,7 @@ export default class ExpressionRouterForm extends React.Component<
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <p>If the expression...</p>
         <TextInputElement
-          name="Operand"
+          name={i18n.t('forms.operand', 'Operand')}
           showLabel={false}
           autocomplete={true}
           onChange={this.handleOperandUpdated}
@@ -96,6 +101,7 @@ export default class ExpressionRouterForm extends React.Component<
           onCasesUpdated={this.handleCasesUpdated}
         />
         {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {renderIssues(this.props)}
       </Dialog>
     );
   }

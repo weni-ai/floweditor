@@ -1,20 +1,19 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet, Tab } from 'components/dialog/Dialog';
-import { hasErrors } from 'components/flow/actions/helpers';
+import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import HeaderElement, { Header } from 'components/flow/routers/webhook/header/HeaderElement';
 import {
-  GET_METHOD,
   METHOD_OPTIONS,
   MethodOption,
   Methods,
   nodeToState,
-  stateToNode
+  stateToNode,
+  getDefaultBody
 } from 'components/flow/routers/webhook/helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import SelectElement from 'components/form/select/SelectElement';
 import TextInputElement from 'components/form/textinput/TextInputElement';
-import { DEFAULT_BODY } from 'components/nodeeditor/constants';
 import TypeList from 'components/nodeeditor/TypeList';
 import * as React from 'react';
 import { FormEntry, FormState, mergeForm, StringEntry, ValidationFailure } from 'store/nodeEditor';
@@ -30,7 +29,6 @@ import {
 import { createUUID } from 'utils';
 
 import styles from './WebhookRouterForm.module.scss';
-import { large } from 'utils/reactselect';
 import { Trans } from 'react-i18next';
 import i18n from 'config/i18n';
 
@@ -46,7 +44,7 @@ export interface WebhookRouterFormState extends FormState {
   headers: HeaderEntry[];
   method: MethodEntry;
   url: StringEntry;
-  postBody: StringEntry;
+  body: StringEntry;
   resultName: StringEntry;
 }
 
@@ -66,7 +64,7 @@ export default class WebhookRouterForm extends React.Component<
     keys: {
       method?: MethodOption;
       url?: string;
-      postBody?: string;
+      body?: string;
       header?: Header;
       removeHeader?: Header;
       validationFailures?: ValidationFailure[];
@@ -77,32 +75,60 @@ export default class WebhookRouterForm extends React.Component<
     const updates: Partial<WebhookRouterFormState> = {};
 
     let ensureEmptyHeader = false;
+    let toRemove: any[] = [];
 
     if (keys.hasOwnProperty('method')) {
       updates.method = { value: keys.method };
 
-      if (keys.method.value !== GET_METHOD.value) {
-        if (!this.state.postBody.value) {
-          updates.postBody = { value: DEFAULT_BODY };
+      const oldMethod = this.state.method.value.value;
+      const newMethod = keys.method.value;
+
+      if (oldMethod !== newMethod) {
+        const existingContentTypeHeader = this.state.headers.find(
+          (header: HeaderEntry) => header.value.name.toLowerCase() === 'content-type'
+        );
+
+        // whenever our method changes, update the default body
+        updates.body = { value: getDefaultBody(newMethod) };
+
+        // switching from a GET, add a content-type
+        if (oldMethod === Methods.GET && newMethod !== Methods.GET) {
+          if (!existingContentTypeHeader) {
+            let uuid = createUUID();
+            // if we have an empty header, use that one
+            const lastHeader =
+              this.state.headers.length > 0
+                ? this.state.headers[this.state.headers.length - 1]
+                : null;
+            if (lastHeader && !lastHeader.value.name) {
+              uuid = lastHeader.value.uuid;
+            }
+            keys.header = { uuid, name: 'Content-Type', value: 'application/json' };
+          }
+        } else if (oldMethod !== Methods.GET && newMethod === Methods.GET) {
+          // remove content type if switching to a GET
+          if (existingContentTypeHeader) {
+            toRemove = [{ headers: [{ value: existingContentTypeHeader.value }] }];
+          }
         }
-      } else {
-        updates.postBody = { value: null };
       }
     }
 
     if (keys.hasOwnProperty('url')) {
-      updates.url = validate('URL', keys.url, [
+      updates.url = validate(i18n.t('forms.url', 'URL'), keys.url, [
         shouldRequireIf(submitting),
         validateIf(ValidURL, keys.url.indexOf('@') === -1)
       ]);
     }
 
     if (keys.hasOwnProperty('resultName')) {
-      updates.resultName = validate('Result Name', keys.resultName, [shouldRequireIf(submitting)]);
+      updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
+        shouldRequireIf(submitting)
+      ]);
     }
 
-    if (keys.hasOwnProperty('postBody')) {
-      updates.postBody = { value: keys.postBody };
+    if (keys.hasOwnProperty('body')) {
+      updates.body = { value: keys.body };
     }
 
     if (keys.hasOwnProperty('header')) {
@@ -110,7 +136,6 @@ export default class WebhookRouterForm extends React.Component<
       ensureEmptyHeader = true;
     }
 
-    let toRemove: any[] = [];
     if (keys.hasOwnProperty('removeHeader')) {
       toRemove = [{ headers: [{ value: keys.removeHeader }] }];
       ensureEmptyHeader = true;
@@ -139,7 +164,11 @@ export default class WebhookRouterForm extends React.Component<
   }
 
   private handleUpdateResultName(value: string): void {
-    const resultName = validate('Result Name', value, [Required, Alphanumeric, StartIsNonNumeric]);
+    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), value, [
+      Required,
+      Alphanumeric,
+      StartIsNonNumeric
+    ]);
     this.setState({
       resultName,
       valid: this.state.valid && !hasErrors(resultName)
@@ -172,8 +201,8 @@ export default class WebhookRouterForm extends React.Component<
     });
   }
 
-  private handlePostBodyUpdate(postBody: string): boolean {
-    return this.handleUpdate({ postBody });
+  private handleBodyUpdate(body: string): boolean {
+    return this.handleUpdate({ body });
   }
 
   private handleSave(): void {
@@ -219,12 +248,12 @@ export default class WebhookRouterForm extends React.Component<
 
     const tabs: Tab[] = [];
     tabs.push({
-      name: 'HTTP Headers',
+      name: i18n.t('forms.http_headers', 'HTTP Headers'),
       hasErrors: !!this.state.headers.find((header: HeaderEntry) => hasErrors(header)),
       body: (
         <>
           <p className={styles.info}>
-            <Trans i18nKey="forms.call_webhook.header_summary">
+            <Trans i18nKey="forms.webhook_header_summary">
               Add any additional headers below that you would like to send along with your request.
             </Trans>
           </p>
@@ -235,50 +264,41 @@ export default class WebhookRouterForm extends React.Component<
     });
 
     const method = this.state.method.value.value;
-    const name = this.state.method.value.label + ' ' + i18n.t('body', 'Body');
-    if (method === Methods.POST || method === Methods.PUT) {
-      tabs.push({
-        name,
-        body: (
-          <div key="post_body" className={styles.body_form}>
-            <h4>{name}</h4>
-            <p>
+    const name = this.state.method.value.name + ' ' + i18n.t('body', 'Body');
+    tabs.push({
+      name,
+      body: (
+        <div key="post_body" className={styles.body_form}>
+          <h4>{name}</h4>
+          <p>
+            <Trans
+              i18nKey="forms.webhook_body_summary"
+              values={{ method: this.state.method.value.name }}
+            >
+              Modify the body of the [[method]] request that will be sent to your webhook.
+            </Trans>
+          </p>
+          <TextInputElement
+            __className={styles.req_body}
+            name={name}
+            showLabel={false}
+            entry={this.state.body}
+            onChange={this.handleBodyUpdate}
+            helpText={
               <Trans
-                i18nKey="forms.call_webhook.body_summary"
-                values={{ method: this.state.method.value.label }}
+                i18nKey="forms.webhook_body_summary"
+                values={{ method: this.state.method.value.name }}
               >
                 Modify the body of the [[method]] request that will be sent to your webhook.
               </Trans>
-            </p>
-            <TextInputElement
-              __className={styles.req_body}
-              name={name}
-              showLabel={false}
-              entry={this.state.postBody}
-              onChange={this.handlePostBodyUpdate}
-              helpText={
-                <Trans
-                  i18nKey="forms.call_webhook.body_summary"
-                  values={{ method: this.state.method.value.label }}
-                >
-                  Modify the body of the [[method]] request that will be sent to your webhook.
-                </Trans>
-              }
-              onFieldFailures={(persistantFailures: ValidationFailure[]) => {
-                const postBody = { ...this.state.postBody, persistantFailures };
-                this.setState({
-                  postBody,
-                  valid: this.state.valid && !hasErrors(postBody)
-                });
-              }}
-              autocomplete={true}
-              textarea={true}
-            />
-          </div>
-        ),
-        checked: this.state.postBody.value !== DEFAULT_BODY
-      });
-    }
+            }
+            autocomplete={true}
+            textarea={true}
+          />
+        </div>
+      ),
+      checked: this.state.body.value !== getDefaultBody(method)
+    });
 
     return (
       <Dialog
@@ -288,34 +308,29 @@ export default class WebhookRouterForm extends React.Component<
         tabs={tabs}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <div className={styles.method}>
-          <SelectElement
-            styles={large as any}
-            name="MethodMap"
-            entry={this.state.method}
-            onChange={this.handleMethodUpdate}
-            options={METHOD_OPTIONS}
-          />
-        </div>
-        <div className={styles.url}>
-          <TextInputElement
-            name="URL"
-            placeholder={i18n.t('forms.call_webhook.url_placeholder', 'Enter a URL')}
-            entry={this.state.url}
-            onChange={this.handleUrlUpdate}
-            onFieldFailures={(persistantFailures: ValidationFailure[]) => {
-              const url = { ...this.state.url, persistantFailures };
-              this.setState({
-                url,
-                valid: this.state.valid && !hasErrors(url)
-              });
-            }}
-            autocomplete={true}
-          />
+        <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+          <div className={styles.method}>
+            <SelectElement
+              key="method_select"
+              name={i18n.t('forms.method', 'Method')}
+              entry={this.state.method}
+              onChange={this.handleMethodUpdate}
+              options={METHOD_OPTIONS}
+            />
+          </div>
+          <div className={styles.url}>
+            <TextInputElement
+              name={i18n.t('forms.url', 'URL')}
+              placeholder={i18n.t('forms.enter_a_url', 'Enter a URL')}
+              entry={this.state.url}
+              onChange={this.handleUrlUpdate}
+              autocomplete={true}
+            />
+          </div>
         </div>
         <div className={styles.instructions}>
           <p>
-            <Trans i18nKey="forms.call_webhook.help">
+            <Trans i18nKey="forms.webhook_help">
               If your server responds with JSON, each property will be added to the Flow.
             </Trans>
           </p>
@@ -323,13 +338,14 @@ export default class WebhookRouterForm extends React.Component<
             {'{ "product": "Solar Charging Kit", "stock level": 32 }'}
           </pre>
           <p>
-            <Trans i18nKey="forms.call_webhook.example">
+            <Trans i18nKey="forms.webhook_example">
               This response would add <span className={styles.example}>@webhook.product</span> and{' '}
               <span className={styles.example}>@webhook["stock level"]</span> for use in the flow.
             </Trans>
           </p>
         </div>
         {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {renderIssues(this.props)}
       </Dialog>
     );
   }

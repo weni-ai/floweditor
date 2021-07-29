@@ -1,16 +1,17 @@
 import UpdateContactComp from 'components/flow/actions/updatecontact/UpdateContact';
-import { SetContactProperty } from 'flowTypes';
+import { SetContactProperty, AnyAction, SetContactField } from 'flowTypes';
 import { composeComponentTestUtils } from 'testUtils';
 import {
   createSetContactChannelAction,
   createSetContactFieldAction,
   createSetContactLanguageAction,
-  createSetContactNameAction
+  createSetContactNameAction,
+  createSetContactStatusAction
 } from 'testUtils/assetCreators';
 
 describe(UpdateContactComp.name, () => {
-  const baseProps: SetContactProperty = createSetContactNameAction();
-  const { setup } = composeComponentTestUtils(UpdateContactComp, baseProps);
+  const setNameAction = createSetContactNameAction();
+  const { setup } = composeComponentTestUtils(UpdateContactComp, setNameAction);
 
   describe('render', () => {
     it('should render set name', () => {
@@ -37,9 +38,16 @@ describe(UpdateContactComp.name, () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render set status', () => {
+      const { wrapper } = setup(true, {
+        $set: createSetContactStatusAction()
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+
     it('should render clearing the value', () => {
       const setFieldAction = createSetContactFieldAction();
-      setFieldAction.value = null;
+      (setFieldAction as SetContactField).value = null;
 
       const { wrapper } = setup(true, { $set: setFieldAction });
       expect(wrapper).toMatchSnapshot();

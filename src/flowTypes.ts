@@ -1,5 +1,8 @@
 import { Methods } from 'components/flow/routers/webhook/helpers';
-import { FlowTypes, Operators, Types } from 'config/interfaces';
+import { FlowTypes, Operators, Types, ContactStatus } from 'config/interfaces';
+
+// we don't concern ourselves with patch versions
+export const SPEC_VERSION = '13.1';
 
 export interface Languages {
   [iso: string]: string;
@@ -31,11 +34,10 @@ export interface Endpoints {
   labels: string;
   channels: string;
   classifiers: string;
+  ticketers: string;
   environment: string;
   languages: string;
   templates: string;
-  completion: string;
-  functions: string;
   simulateStart: string;
   simulateResume: string;
   editor: string;
@@ -54,6 +56,10 @@ export interface FlowEditorConfig {
   headers?: any;
   onLoad?: () => void;
   onActivityClicked?: (uuid: string) => void;
+  onChangeLanguage?: (code: string, name: string) => void;
+
+  // help links
+  help: { [key: string]: string };
 
   // whether to force a save on load
   forceSaveOnLoad?: boolean;
@@ -67,6 +73,62 @@ export interface LocalizationMap {
   };
 }
 
+export interface Result {
+  key: string;
+  name: string;
+  categories: string[];
+  node_uuids: string[];
+}
+
+export enum DependencyType {
+  channel = 'channel',
+  classifier = 'classifier',
+  contact = 'contact',
+  field = 'field',
+  flow = 'flow',
+  group = 'group',
+  label = 'label',
+  template = 'template'
+}
+
+export interface Dependency {
+  uuid?: string;
+  key?: string;
+  name: string;
+  type: DependencyType;
+  missing?: boolean;
+  nodes: { [uuid: string]: string[] };
+}
+
+export interface FlowMetadata {
+  dependencies: Dependency[];
+  waiting_exit_uuids: string[];
+  results: Result[];
+  parent_refs: string[];
+}
+
+export enum FlowIssueType {
+  MISSING_DEPENDENCY = 'missing_dependency',
+  LEGACY_EXTRA = 'legacy_extra',
+  INVALID_REGEX = 'invalid_regex'
+}
+
+export interface FlowIssue {
+  type: FlowIssueType;
+  node_uuid: string;
+  action_uuid: string;
+  description: string;
+  dependency?: Dependency;
+  language?: string;
+  regex?: string;
+}
+
+export interface FlowDetails {
+  definition: FlowDefinition;
+  issues: FlowIssue[];
+  metadata: FlowMetadata;
+}
+
 export interface FlowDefinition {
   localization: LocalizationMap;
   language: string;
@@ -74,6 +136,7 @@ export interface FlowDefinition {
   nodes: FlowNode[];
   uuid: string;
   revision: number;
+  spec_version: string;
   _ui: UIMetaData;
 }
 
@@ -139,7 +202,8 @@ export interface SwitchRouter extends Router {
 }
 
 export enum WaitTypes {
-  msg = 'msg'
+  msg = 'msg',
+  dial = 'dial'
 }
 
 export enum HintTypes {
@@ -164,11 +228,13 @@ export interface Wait {
   type: WaitTypes;
   timeout?: Timeout;
   hint?: Hint;
+  phone?: string;
 }
 
 export interface Group {
-  uuid: string;
-  name: string;
+  uuid?: string;
+  name?: string;
+  name_match?: string;
 }
 
 export interface Contact {
@@ -192,6 +258,7 @@ export interface Field {
 export interface Label {
   uuid: string;
   name: string;
+  name_match?: string;
 }
 
 export interface Flow {
@@ -224,7 +291,16 @@ export interface SetContactChannel extends Action {
   channel: Channel;
 }
 
-export type SetContactProperty = SetContactName | SetContactLanguage | SetContactChannel;
+export interface SetContactStatus extends Action {
+  type: Types.set_contact_status;
+  status: ContactStatus;
+}
+
+export type SetContactProperty =
+  | SetContactName
+  | SetContactLanguage
+  | SetContactChannel
+  | SetContactStatus;
 
 export type SetContactAttribute = SetContactField | SetContactProperty;
 
@@ -255,6 +331,7 @@ export interface MsgTemplate {
 }
 
 export interface MsgTemplating {
+  uuid: string;
   template: MsgTemplate;
   variables: string[];
 }
@@ -315,6 +392,11 @@ export interface Classifier {
   name: string;
 }
 
+export interface Ticketer {
+  uuid: string;
+  name: string;
+}
+
 export interface TransferAirtime extends Action {
   amounts: { [name: string]: number };
   result_name: string;
@@ -339,6 +421,13 @@ export interface CallWebhook extends Action {
   headers?: Headers;
 }
 
+export interface OpenTicket extends Action {
+  ticketer: Ticketer;
+  subject: string;
+  body: string;
+  result_name: string;
+}
+
 export interface StartFlow extends Action {
   flow: Flow;
 }
@@ -352,6 +441,7 @@ export interface StartSession extends RecipientsAction {
 export interface UIMetaData {
   nodes: { [key: string]: UINode };
   languages: { [iso: string]: string }[];
+  translation_filters?: { categories: boolean; rules: boolean };
 }
 
 export interface FlowPosition {
@@ -410,6 +500,7 @@ export enum ContactProperties {
   Org = 'org',
   Name = 'name',
   Language = 'language',
+  Status = 'status',
   Timezone = 'timezone',
   Channel = 'channel',
   Email = 'email',
@@ -454,4 +545,18 @@ export enum WebhookExitNames {
 export enum TransferAirtimeExitNames {
   Success = 'Success',
   Failure = 'Failed'
+}
+
+export enum DialCategoryNames {
+  Answered = 'Answered',
+  NoAnswer = 'No Answer',
+  Busy = 'Busy',
+  Failure = 'Failed'
+}
+
+export enum DialStatus {
+  answered = 'answered',
+  noAnswer = 'no_answer',
+  busy = 'busy',
+  failure = 'failed'
 }

@@ -20,7 +20,6 @@ const baseProps: NodeProps = {
 
   results: {},
   activeCount: 0,
-  containerOffset: { top: 0, left: 0 },
   translating: false,
   simulating: false,
   debug: null,
@@ -36,7 +35,8 @@ const baseProps: NodeProps = {
   onAddToNode: jest.fn(),
   onOpenNodeEditor: jest.fn(),
   removeNode: jest.fn(),
-  mergeEditorState: jest.fn()
+  mergeEditorState: jest.fn(),
+  issues: []
 };
 
 describe(NodeComp.name, () => {

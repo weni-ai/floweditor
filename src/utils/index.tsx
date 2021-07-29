@@ -9,7 +9,7 @@ import {
 import { Query } from 'immutability-helper';
 import * as React from 'react';
 import Localization, { LocalizedObject } from 'services/Localization';
-import { Asset } from 'store/flowContext';
+import { Asset, Assets } from 'store/flowContext';
 import { FormEntry } from 'store/nodeEditor';
 import { v4 as generateUUID } from 'uuid';
 import variables from 'variables.module.scss';
@@ -17,7 +17,7 @@ import variables from 'variables.module.scss';
 export const V4_UUID = /^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i;
 const LABEL_CHARS = /^[a-zA-Z0-9-][a-zA-Z0-9- ]*$/;
 const MAX_LABEL_LENGTH = 36;
-const SNAKED_CHARS = /\s+(?=\S)/g;
+const SNAKED_CHARS = /\s|-+(?=\S)/g;
 
 export const MAX_REFLOW_ATTEMPTS = 100;
 export const ACTIVITY_INTERVAL = 5000;
@@ -245,7 +245,13 @@ export const dump = (thing: any) => console.log(JSON.stringify(thing, null, 4));
 /**
  * Apply emphasis style
  */
-export const emphasize = (text: string) => <span className="emph">{text}</span>;
+export const emphasize = (text: string) => <span className="emphasize">{text}</span>;
+export const ellipsize = (text: string, max: number = 250) => {
+  if (text.length > max) {
+    return text.substr(0, max) + '...';
+  }
+  return text;
+};
 
 /**
  * Does property exist in our ContactProperties enum?
@@ -295,6 +301,9 @@ export const timeStart = (name: string) =>
 /* istanbul ignore next */
 export const timeEnd = (name: string) =>
   process.env.NODE_ENV === 'development' && console.timeEnd(name);
+
+export const log = (...message: any[]) =>
+  process.env.NODE_ENV === 'development' && console.log(...message);
 
 export const capitalize = (str: string) =>
   str.replace(/(?:^|\s)\S/g, captured => captured.toUpperCase());
@@ -366,6 +375,12 @@ export const downloadJSON = (obj: any, name: string): void => {
   downloadAnchorNode.remove();
 };
 
+export const fetchAsset = (asset: Asset) => (assets: Assets, id: string): Promise<Asset> => {
+  return new Promise<Asset>((resolve, reject) => {
+    resolve(asset);
+  });
+};
+
 export let createUUID = (): string => {
   return generateUUID();
 };
@@ -404,4 +419,68 @@ export const scalarArrayEquals = (a: any[], b: any[]) =>
 
 export const getURNPath = (urn: string) => {
   return urn.split(':')[1];
+};
+
+export const copyToClipboard = (text: string) => {
+  navigator.clipboard.writeText(text);
+};
+
+export const throttle = (func: any, timeout: any) => {
+  let ready: boolean = true;
+
+  return (...args: any) => {
+    if (!ready) {
+      return;
+    }
+
+    ready = false;
+    func(...args);
+    setTimeout(() => {
+      ready = true;
+    }, timeout);
+  };
+};
+
+export const traceUpdate = (component: any, prevProps: any, prevState?: any) => {
+  const messages: string[] = [];
+  Object.entries(component.props).forEach(
+    ([key, val]) => prevProps[key] !== val && messages.push(`Prop: '${key}' changed`)
+  );
+  if (prevState && component.state) {
+    Object.entries(component.state).forEach(
+      ([key, val]) => prevState[key] !== val && messages.push(`State: '${key}' changed`)
+    );
+  }
+
+  if (messages.length > 0) {
+    log('****  ' + component._reactInternalFiber.type.name + ' changed');
+    messages.forEach((message: string) => {
+      log(message);
+    });
+  }
+};
+
+export const debounce = (fn: any, quiet: number, closure: any = null) => {
+  if (fn.timeout) {
+    window.clearTimeout(fn.timeout);
+  }
+  fn.timeout = window.setTimeout(closure || fn, quiet);
+};
+
+export const onNextRender = (fn: any) => {
+  window.setTimeout(fn, 0);
+};
+
+export const desnake = (text: string): string => {
+  if (!text) {
+    return text;
+  }
+  return text
+    .split('_')
+    .join(' ')
+    .toLowerCase();
+};
+
+export const bool = (prop: boolean) => {
+  return prop ? 'true' : null;
 };

@@ -1,5 +1,5 @@
 import { Exit, FlowNode } from 'flowTypes';
-import { GRID_SIZE } from 'utils';
+import { GRID_SIZE, timeStart, timeEnd, debounce } from 'utils';
 
 // TODO: Remove use of Function
 // tslint:disable:ban-types
@@ -27,12 +27,14 @@ export interface PendingConnections {
 }
 
 export const REPAINT_DURATION = 600;
+
 export const TARGET_DEFAULTS = {
-  anchor: ['Continuous', { shape: 'Dot', faces: ['top', 'left', 'right'] }],
+  anchor: ['Continuous', { shape: 'Rectangle', faces: ['top', 'left', 'right'] }],
   endpoint: [
-    'Dot',
+    'Rectangle',
     {
-      radius: 13,
+      width: 23,
+      height: 23,
       cssClass: 'plumb-endpoint',
       hoverClass: 'plumb-endpoint-hover'
     }
@@ -90,11 +92,13 @@ export default class Plumber {
 
   private animateInterval: any = null;
 
+  private onLoadFunction: () => void = null;
+
   constructor() {
     this.jsPlumb = importDefaults({
       DragOptions: { cursor: 'pointer', zIndex: 1000 },
       DropOptions: { tolerance: 'touch', hoverClass: 'plumb-hover' },
-      Endpoint: 'Blank',
+      Endpoint: 'Rectangle',
       EndpointStyle: { strokeStyle: 'transparent' },
       PaintStyle: { strokeWidth: 3.5 },
       ConnectionsDetachable: true,
@@ -109,8 +113,7 @@ export default class Plumber {
             cssClass: 'jtk-arrow'
           }
         ]
-      ],
-      Container: 'editor-container'
+      ]
     });
 
     this.debug = this.debug.bind(this);
@@ -123,20 +126,19 @@ export default class Plumber {
     this.removeFromDragSelection = this.removeFromDragSelection.bind(this);
     this.cancelDurationRepaint = this.cancelDurationRepaint.bind(this);
     this.remove = this.remove.bind(this);
-    this.repaintForDuration = this.repaintForDuration.bind(this);
-    this.repaintFor = this.repaintFor.bind(this);
     this.handlePendingConnections = this.handlePendingConnections.bind(this);
     this.checkForPendingConnections = this.checkForPendingConnections.bind(this);
     this.connect = this.connect.bind(this);
     this.bind = this.bind.bind(this);
     this.repaint = this.repaint.bind(this);
     this.recalculate = this.recalculate.bind(this);
-    this.recalculateUUIDs = this.recalculateUUIDs.bind(this);
     this.reset = this.reset.bind(this);
     this.updateClass = this.updateClass.bind(this);
+    this.rerouteAnchors = this.rerouteAnchors.bind(this);
+  }
 
-    // if our browser resizes, make sure to repaint accordingly
-    window.onresize = () => this.jsPlumb.repaintEverything();
+  public setContainer(containerId: string) {
+    this.jsPlumb.setContainer(containerId);
   }
 
   public debug(): any {
@@ -197,38 +199,15 @@ export default class Plumber {
     }
   }
 
-  public repaintForDuration(duration: number = REPAINT_DURATION): void {
-    this.cancelDurationRepaint();
-    const pause = 10;
-    const newDuration = duration / pause;
-
-    let cycles = 0;
-    this.animateInterval = window.setInterval(() => {
-      // TODO: optimize this to paint as little as possible
-      // this.revalidate(uuid);
-      this.jsPlumb.repaintEverything();
-
-      if (cycles++ > newDuration) {
-        window.clearInterval(this.animateInterval);
-      }
-    }, pause);
-  }
-
-  public repaintFor(millis: number): void {
-    window.setInterval(() => {
-      this.jsPlumb.repaintEverything();
-    }, 1);
-  }
-
   private handlePendingConnections(): void {
     const targets: { [id: string]: boolean } = {};
 
-    this.jsPlumb.batch(() => {
-      const batch = Object.keys(this.pendingConnections).length;
-      if (batch > 1) {
-        console.log('batching ' + batch + ' connections');
-      }
+    const batch = Object.keys(this.pendingConnections).length;
+    if (batch > 1) {
+      timeStart('Batched ' + batch + ' connections');
+    }
 
+    this.jsPlumb.batch(() => {
       for (const key in this.pendingConnections) {
         if (this.pendingConnections.hasOwnProperty(key)) {
           const connection = this.pendingConnections[key];
@@ -260,27 +239,15 @@ export default class Plumber {
 
             // now make our new connection
             if (target != null) {
-              // don't allow manual detachments if our connection is styled
-              if (className) {
-                this.jsPlumb.connect({
-                  source,
-                  target,
-                  anchors,
-                  fireEvent: false,
-                  cssClass: className,
-                  detachable: false,
-                  connector
-                });
-              } else {
-                this.jsPlumb.connect({
-                  source,
-                  target,
-                  anchors,
-                  fireEvent: false,
-                  cssClass: className,
-                  connector
-                });
-              }
+              this.jsPlumb.connect({
+                source,
+                target,
+                anchors,
+                fireEvent: false,
+                cssClass: className,
+                detachable: !className,
+                connector
+              });
             }
           }
 
@@ -291,13 +258,25 @@ export default class Plumber {
           delete this.pendingConnections[key];
         }
       }
-    });
+    }, false);
 
-    // revalidate the targets that we updated
-    for (const target in targets) {
-      if (targets.hasOwnProperty('target')) {
-        this.recalculate(target);
+    if (batch > 1) {
+      timeEnd('Batched ' + batch + ' connections');
+    }
+
+    // fire our callback for who is embedding us
+    if (this.onLoadFunction) {
+      this.onLoadFunction();
+      this.onLoadFunction = null;
+    }
+  }
+
+  public triggerLoaded(onLoad: () => void): void {
+    if (onLoad) {
+      if (Object.keys(this.pendingConnections).length === 0) {
+        onLoad();
       }
+      this.onLoadFunction = onLoad;
     }
   }
 
@@ -351,34 +330,44 @@ export default class Plumber {
     }
   }
 
-  public recalculateUUIDs(uuids: string[]): void {
-    this.jsPlumb.batch(() => {
-      uuids.forEach((uuid: string) => {
-        const connections = this.jsPlumb
-          .getConnections({ target: uuid })
-          .concat(this.jsPlumb.getConnections({ source: uuid }));
-        for (const c of connections) {
-          c.endpoints[1].setAnchor(getAnchor(c.endpoints[0].element, c.endpoints[1].element));
-        }
-        this.jsPlumb.revalidate(uuid);
-      });
+  /**
+   *
+   * Reroutes the connections for actively moving nodes. We try to direct
+   * connections as much as possible.
+   * @param elements the targets and sources that ar moving around
+   */
+  public rerouteAnchors(elements: Element[]): void {
+    elements.forEach((ele: Element) => {
+      const uuid = ele.id;
+      const connections = this.jsPlumb
+        .getConnections({ target: uuid })
+        .concat(this.jsPlumb.getConnections({ source: uuid }));
+      for (const c of connections) {
+        c.endpoints[1].setAnchor(getAnchor(c.endpoints[0].element, c.endpoints[1].element));
+      }
     });
   }
 
-  public recalculate(uuid?: string): void {
-    // window.setTimeout(() => {
-    this.jsPlumb.revalidate(uuid);
-    /*if (uuid) {
-            this.jsPlumb.recalculateOffsets(uuid);
-        } else {
-            this.jsPlumb.recalculateOffsets();
-        }
-        this.jsPlumb.repaint(uuid);*/
-    // }, 0);
+  public revalidate(elements: Element[]): void {
+    this.jsPlumb.revalidate(elements);
+
+    // reroute our anchors but only after we stop moving for a bit
+    debounce(this.rerouteAnchors, 200, () => {
+      this.rerouteAnchors(elements);
+    });
+  }
+
+  public recalculate(uuid: string): void {
+    window.setTimeout(() => {
+      this.jsPlumb.revalidate(uuid);
+    }, 100);
   }
 
   public reset(): void {
-    // console.log("resetting plumbing");
     this.jsPlumb.reset();
+  }
+
+  public getPlumb(): any {
+    return this.jsPlumb;
   }
 }

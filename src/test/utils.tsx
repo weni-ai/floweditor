@@ -1,15 +1,16 @@
 // test-utils.js
 import { render, fireEvent } from '@testing-library/react';
 import ConfigProvider from 'config';
-import { FlowDefinition, FlowNode } from 'flowTypes';
+import { FlowDefinition, FlowNode, SPEC_VERSION } from 'flowTypes';
 import React from 'react';
 import { Provider } from 'react-redux';
 import createStore from 'store/createStore';
-import { AssetType } from 'store/flowContext';
+import { AssetType, RenderNode } from 'store/flowContext';
 import { initialState } from 'store/state';
 import { createUUID } from 'utils';
 
 import config from './config';
+import { RouterFormProps } from 'components/flow/props';
 
 export const TEST_NODE: FlowNode = {
   uuid: createUUID(),
@@ -19,6 +20,7 @@ export const TEST_NODE: FlowNode = {
 
 export const TEST_DEFINITION: FlowDefinition = {
   uuid: createUUID(),
+  spec_version: SPEC_VERSION,
   language: 'eng',
   name: 'Favorites',
   nodes: [TEST_NODE],
@@ -34,7 +36,8 @@ export const EMPTY_TEST_ASSETS = {
   labels: { items: {}, type: AssetType.Label },
   results: { items: {}, type: AssetType.Result },
   flows: { items: {}, type: AssetType.Flow },
-  recipients: { items: {}, type: AssetType.Contact || AssetType.Group || AssetType.URN }
+  recipients: { items: {}, type: AssetType.Contact || AssetType.Group || AssetType.URN },
+  ticketers: { items: {}, type: AssetType.Ticketer }
 };
 
 const initial = initialState;
@@ -58,12 +61,24 @@ export const fireChangeText = (ele: any, value: string): void => {
   fireEvent.change(ele, { currentTarget: { value }, target: { value } });
 };
 
+export const fireTembaSelect = (ele: HTMLElement, value: any) => {
+  (ele as any).values = Array.isArray(value) ? value : [{ value }];
+  var evt = document.createEvent('HTMLEvents');
+  evt.initEvent('change', false, true);
+  ele.dispatchEvent(evt);
+};
+
 export const mock = <T extends {}, K extends keyof T>(object: T, property: K, value: T[K]) => {
   Object.defineProperty(object, property, { get: () => value });
 };
 
 export const getCallParams = (mockCall: any) => {
   return mockCall.mock.calls[0];
+};
+
+export const getUpdatedNode = (props: RouterFormProps): RenderNode => {
+  const calls = (props.updateRouter as any).mock.calls;
+  return calls[calls.length - 1][0];
 };
 
 // re-export everything

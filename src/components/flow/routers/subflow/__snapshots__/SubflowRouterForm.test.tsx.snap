@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubflowRouterForm should create result actions for parameters 1`] = `
+Array [
+  Object {
+    "inboundConnections": Object {},
+    "node": Object {
+      "actions": Array [
+        Object {
+          "name": "max",
+          "type": "set_run_result",
+          "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+          "value": "100",
+        },
+        Object {
+          "name": "min",
+          "type": "set_run_result",
+          "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+          "value": "1",
+        },
+        Object {
+          "flow": Object {
+            "name": "My Subflow Flow",
+            "uuid": "my-subflow",
+          },
+          "type": "enter_flow",
+          "uuid": "d4a3a01c-1dee-4324-b107-4ac7a21d836f",
+        },
+      ],
+      "exits": Array [
+        Object {
+          "destination_uuid": null,
+          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+        },
+        Object {
+          "destination_uuid": null,
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+      "router": Object {
+        "cases": Array [
+          Object {
+            "arguments": Array [
+              "C",
+            ],
+            "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "type": "has_run_status",
+            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          },
+          Object {
+            "arguments": Array [
+              "E",
+            ],
+            "category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "type": "has_run_status",
+            "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+          },
+        ],
+        "categories": Array [
+          Object {
+            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            "name": "Complete",
+            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+          },
+          Object {
+            "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            "name": "Expired",
+            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+          },
+        ],
+        "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+        "operand": "@child.run.status",
+        "type": "switch",
+      },
+      "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+    },
+    "ui": Object {
+      "config": Object {},
+      "position": null,
+      "type": "split_by_subflow",
+    },
+  },
+]
+`;
+
+exports[`SubflowRouterForm should init parameter tab 1`] = `
+<body>
+  <div>
+    <div
+      class="dialog"
+    >
+      <div
+        class="tabs"
+      >
+        <div
+          class="tab "
+        >
+          Parameters
+           
+        </div>
+      </div>
+      <div
+        class="header enter_flow"
+      >
+        <div
+          class="title_container"
+        >
+          <div
+            class="title"
+          >
+            Enter a Flow
+          </div>
+          <div
+            class="subtitle"
+          />
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class=" type_list"
+        >
+          <p>
+            When a contact arrives at this point in your flow...
+          </p>
+          <div>
+            <div
+              class="normal "
+            >
+              <temba-select
+                data-testid="temba_select_type"
+                errors="[]"
+                expressions=""
+                name="type"
+                namekey="description"
+                searchable="true"
+                valuekey="type"
+                values="[{\\"type\\":\\"enter_flow\\",\\"name\\":\\"Enter a Flow\\",\\"description\\":\\"Enter another flow\\",\\"localizeableKeys\\":[\\"exits\\"],\\"aliases\\":[\\"split_by_subflow\\"]}]"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ele"
+        >
+          <div
+            class="normal "
+          >
+            <temba-select
+              cachekey="0"
+              data-testid="temba_select_flow"
+              errors="[]"
+              expressions=""
+              name="Flow"
+              namekey="name"
+              placeholder="Select the flow to start"
+              searchable="true"
+              valuekey="uuid"
+              values="[{\\"name\\":\\"My Subflow Flow\\",\\"uuid\\":\\"my-subflow\\",\\"parent_refs\\":[\\"max\\",\\"min\\"]}]"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div
+          class="buttons"
+        >
+          <div
+            class="right_buttons"
+          >
+            <div
+              class="btn secondary  "
+              style="margin-left: 0px; margin-top: 0px;"
+            >
+              Cancel
+            </div>
+            <div
+              class="btn primary  "
+              style="margin-left: 10px; margin-top: 0px;"
+            >
+              Ok
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SubflowRouterForm should render 1`] = `
+<body>
+  <div>
+    <div
+      class="dialog"
+    >
+      <div
+        class="header enter_flow"
+      >
+        <div
+          class="title_container"
+        >
+          <div
+            class="title"
+          >
+            Enter a Flow
+          </div>
+          <div
+            class="subtitle"
+          />
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class=" type_list"
+        >
+          <p>
+            When a contact arrives at this point in your flow...
+          </p>
+          <div>
+            <div
+              class="normal "
+            >
+              <temba-select
+                data-testid="temba_select_type"
+                errors="[]"
+                expressions=""
+                name="type"
+                namekey="description"
+                searchable="true"
+                valuekey="type"
+                values="[{\\"type\\":\\"enter_flow\\",\\"name\\":\\"Enter a Flow\\",\\"description\\":\\"Enter another flow\\",\\"localizeableKeys\\":[\\"exits\\"],\\"aliases\\":[\\"split_by_subflow\\"]}]"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ele"
+        >
+          <div
+            class="normal "
+          >
+            <temba-select
+              cachekey="0"
+              data-testid="temba_select_flow"
+              errors="[]"
+              expressions=""
+              name="Flow"
+              namekey="name"
+              placeholder="Select the flow to start"
+              searchable="true"
+              valuekey="uuid"
+              values="[{\\"name\\":\\"Colors\\",\\"uuid\\":\\"b1f332f3-bdd3-4891-aec5-1843a712dbf1\\"}]"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div
+          class="buttons"
+        >
+          <div
+            class="right_buttons"
+          >
+            <div
+              class="btn secondary  "
+              style="margin-left: 0px; margin-top: 0px;"
+            >
+              Cancel
+            </div>
+            <div
+              class="btn primary  "
+              style="margin-left: 10px; margin-top: 0px;"
+            >
+              Ok
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

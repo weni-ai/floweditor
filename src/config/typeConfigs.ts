@@ -29,6 +29,7 @@ import TransferAirtimeComp from 'components/flow/actions/transferairtime/Transfe
 import UpdateContactComp from 'components/flow/actions/updatecontact/UpdateContact';
 import UpdateContactForm from 'components/flow/actions/updatecontact/UpdateContactForm';
 import AirtimeRouterForm from 'components/flow/routers/airtime/AirtimeRouterForm';
+import DialRouterForm from 'components/flow/routers/dial/DialRouterForm';
 import DigitsRouterForm from 'components/flow/routers/digits/DigitsRouterForm';
 import ExpressionRouterForm from 'components/flow/routers/expression/ExpressionRouterForm';
 import FieldRouterForm from 'components/flow/routers/field/FieldRouterForm';
@@ -43,21 +44,25 @@ import SubflowRouterForm from 'components/flow/routers/subflow/SubflowRouterForm
 import WaitRouterForm from 'components/flow/routers/wait/WaitRouterForm';
 import WebhookRouterForm from 'components/flow/routers/webhook/WebhookRouterForm';
 import {
+  FeatureFilter,
   FlowTypes,
-  HIDDEN,
-  ONLINE,
-  SURVEY,
-  TEXT_TYPES,
   Type,
   Types,
-  VOICE,
-  FeatureFilter
+  VISIBILITY_HIDDEN,
+  VISIBILITY_ONLINE,
+  VISIBILITY_SURVEYOR,
+  VISIBILITY_VOICE,
+  VISIBILITY_INTERACTIVE,
+  VISIBILITY_MESSAGING_INTERACTIVE
 } from 'config/interfaces';
-import { HintTypes, RouterTypes, FlowEditorConfig } from 'flowTypes';
+import { HintTypes, RouterTypes, FlowEditorConfig, SendMsg } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import CallClassifierComp from 'components/flow/actions/callclassifier/CallClassifier';
 import ClassifyRouterForm from 'components/flow/routers/classify/ClassifyRouterForm';
 import i18n from 'config/i18n';
+import SchemeRouterForm from 'components/flow/routers/scheme/SchemeRouterForm';
+import TicketRouterForm from 'components/flow/routers/ticket/TicketRouterForm';
+import OpenTicketComp from 'components/flow/actions/openticket/OpenTicket';
 
 const dedupeTypeConfigs = (typeConfigs: Type[]) => {
   const map: any = {};
@@ -79,22 +84,83 @@ export type GetTypeConfig = (type: string) => Type;
 export interface Scheme {
   scheme: string;
   name: string;
+  path: string;
+  excludeFromSplit?: boolean;
 }
 
 export const SCHEMES: Scheme[] = [
-  { scheme: 'ext', name: i18n.t('schemes.external', 'External ID') },
-  { scheme: 'facebook', name: i18n.t('schemes.facebook', 'Facebook ID') },
-  { scheme: 'fcm', name: i18n.t('schemes.firebase', 'Firebase ID') },
-  { scheme: 'jiochat', name: i18n.t('schemes.jiochat', 'Jiochat ID') },
-  { scheme: 'line', name: i18n.t('schemes.line', 'Line ID') },
-  { scheme: 'mailto', name: i18n.t('schemes.email', 'Email Address') },
-  { scheme: 'tel', name: i18n.t('schemes.phone', 'Phone Number') },
-  { scheme: 'telegram', name: i18n.t('schemes.telegram', 'Telegram ID') },
-  { scheme: 'twitterid', name: i18n.t('schemes.twitterid', 'Twitter ID') },
-  { scheme: 'twitter', name: i18n.t('schemes.twitter', 'Twitter Handle') },
-  { scheme: 'wechat', name: i18n.t('schemes.wechat', 'Wechat ID') },
-  { scheme: 'whatsapp', name: i18n.t('schemes.whatsapp', 'Whatsapp Number') },
-  { scheme: 'viber', name: i18n.t('schemes.viber', 'Viber ID') }
+  {
+    scheme: 'tel',
+    name: i18n.t('schemes.phone.name', 'SMS'),
+    path: i18n.t('schemes.phone.path', 'Phone Number')
+  },
+  {
+    scheme: 'whatsapp',
+    name: i18n.t('schemes.whatsapp.name', 'WhatsApp'),
+    path: i18n.t('schemes.whatsapp.path', 'WhatsApp Number')
+  },
+  {
+    scheme: 'facebook',
+    name: i18n.t('schemes.facebook.path', 'Facebook'),
+    path: i18n.t('schemes.facebook.path', 'Facebook ID')
+  },
+  {
+    scheme: 'twitterid',
+    name: i18n.t('schemes.twitterid.name', 'Twitter'),
+    path: i18n.t('schemes.twitterid.path', 'Twitter ID')
+  },
+  {
+    scheme: 'telegram',
+    name: i18n.t('schemes.telegram.name', 'Telegram'),
+    path: i18n.t('schemes.telegram.path', 'Telegram ID')
+  },
+  {
+    scheme: 'viber',
+    name: i18n.t('schemes.viber.name', 'Viber'),
+    path: i18n.t('schemes.viber.path', 'Viber ID')
+  },
+  {
+    scheme: 'line',
+    name: i18n.t('schemes.line.name', 'Line'),
+    path: i18n.t('schemes.line.path', 'Line ID')
+  },
+  {
+    scheme: 'wechat',
+    name: i18n.t('schemes.wechat.name', 'Wechat'),
+    path: i18n.t('schemes.wechat.path', 'Wechat ID')
+  },
+  {
+    scheme: 'fcm',
+    name: i18n.t('schemes.firebase.name', 'Firebase'),
+    path: i18n.t('schemes.firebase.path', 'Firebase ID')
+  },
+  {
+    scheme: 'jiochat',
+    name: i18n.t('schemes.jiojach.name', 'Jiochat'),
+    path: i18n.t('schemes.jiochat.path', 'Jiochat ID')
+  },
+  {
+    scheme: 'freshchat',
+    name: i18n.t('schemes.freschat.name', 'Freshchat'),
+    path: i18n.t('schemes.freshchat.path', 'Freshchat ID')
+  },
+  {
+    scheme: 'mailto',
+    name: i18n.t('schemes.email.name', 'Email'),
+    path: i18n.t('schemes.email.path', 'Email Address'),
+    excludeFromSplit: true
+  },
+  {
+    scheme: 'twitter',
+    name: i18n.t('schemes.twitter.name', 'Twitter'),
+    path: i18n.t('schemes.twitter.path', 'Twitter Handle'),
+    excludeFromSplit: true
+  },
+  {
+    scheme: 'ext',
+    name: i18n.t('schemes.external.name', 'External'),
+    path: i18n.t('schemes.external.path', 'External ID')
+  }
 ];
 
 export const typeConfigList: Type[] = [
@@ -103,7 +169,7 @@ export const typeConfigList: Type[] = [
     name: 'Missing',
     description: ' ** Unsupported ** ',
     component: MissingComp,
-    visibility: HIDDEN
+    visibility: VISIBILITY_HIDDEN
   },
   {
     type: Types.say_msg,
@@ -113,7 +179,7 @@ export const typeConfigList: Type[] = [
     localization: MsgLocalizationForm,
     localizeableKeys: ['text', 'audio_url'],
     component: SayMsgComp,
-    visibility: VOICE
+    visibility: VISIBILITY_VOICE
   },
 
   {
@@ -123,7 +189,7 @@ export const typeConfigList: Type[] = [
     form: MenuRouterForm,
     localization: RouterLocalizationForm,
     localizeableKeys: ['exits'],
-    visibility: VOICE
+    visibility: VISIBILITY_VOICE
   },
   {
     type: Types.wait_for_digits,
@@ -132,7 +198,7 @@ export const typeConfigList: Type[] = [
     form: DigitsRouterForm,
     localization: RouterLocalizationForm,
     localizeableKeys: ['exits', 'cases'],
-    visibility: VOICE
+    visibility: VISIBILITY_VOICE
   },
 
   {
@@ -142,7 +208,18 @@ export const typeConfigList: Type[] = [
     form: WaitRouterForm,
     localization: RouterLocalizationForm,
     localizeableKeys: ['exits'],
-    visibility: [FlowTypes.SURVEY, FlowTypes.VOICE]
+    visibility: [FlowTypes.MESSAGING_OFFLINE, FlowTypes.VOICE]
+  },
+
+  {
+    type: Types.wait_for_dial,
+    name: i18n.t('actions.wait_for_dial.name', 'Wait for Forwarded Call'),
+    description: i18n.t(
+      'actions.wait_for_dial.description',
+      'Wait for forwarded call to someone else'
+    ),
+    form: DialRouterForm,
+    visibility: VISIBILITY_VOICE
   },
 
   {
@@ -151,8 +228,13 @@ export const typeConfigList: Type[] = [
     description: i18n.t('actions.send_msg.description', 'Send the contact a message'),
     form: SendMsgForm,
     localization: MsgLocalizationForm,
-    localizeableKeys: ['text', 'quick_replies'],
-    component: SendMsgComp
+    localizeableKeys: ['text', 'quick_replies', 'templating.variables'],
+    component: SendMsgComp,
+    massageForDisplay: (action: SendMsg) => {
+      // quick replies are optional in the definition, make sure we have
+      // at least an empty array so the localization has a proper cue
+      action.quick_replies = action.quick_replies || [];
+    }
   },
   {
     type: Types.wait_for_response,
@@ -160,9 +242,9 @@ export const typeConfigList: Type[] = [
     description: i18n.t('actions.wait_for_response.description', 'Wait for the contact to respond'),
     form: ResponseRouterForm,
     localization: RouterLocalizationForm,
-    localizeableKeys: ['exits', 'cases'],
+    localizeableKeys: ['categories', 'cases'],
     aliases: [RouterTypes.switch],
-    visibility: TEXT_TYPES
+    visibility: VISIBILITY_MESSAGING_INTERACTIVE
   },
 
   {
@@ -179,7 +261,8 @@ export const typeConfigList: Type[] = [
     name: i18n.t('actions.add_input.name', 'Add Labels'),
     description: i18n.t('actions.add_input.description', 'Label the incoming message'),
     form: AddLabelsForm,
-    component: AddLabelsComp
+    component: AddLabelsComp,
+    visibility: VISIBILITY_INTERACTIVE
   },
   {
     type: Types.add_contact_urn,
@@ -207,7 +290,12 @@ export const typeConfigList: Type[] = [
   },
   {
     type: Types.set_contact_field,
-    aliases: [Types.set_contact_name, Types.set_contact_language, Types.set_contact_channel],
+    aliases: [
+      Types.set_contact_name,
+      Types.set_contact_language,
+      Types.set_contact_channel,
+      Types.set_contact_status
+    ],
     name: i18n.t('actions.set_contact_field.name', 'Update Contact'),
     description: i18n.t('actions.set_contact_field.description', 'Update the contact'),
     form: UpdateContactForm,
@@ -221,7 +309,7 @@ export const typeConfigList: Type[] = [
     localization: KeyLocalizationForm,
     localizeableKeys: ['subject', 'body'],
     component: SendEmailComp,
-    visibility: ONLINE
+    visibility: VISIBILITY_ONLINE
   },
   {
     type: Types.set_run_result,
@@ -237,7 +325,7 @@ export const typeConfigList: Type[] = [
     description: i18n.t('actions.play_audio.description', 'Play a contact recording'),
     form: PlayAudioForm,
     component: PlayAudioComp,
-    visibility: VOICE
+    visibility: VISIBILITY_VOICE
   },
 
   {
@@ -249,7 +337,7 @@ export const typeConfigList: Type[] = [
     localizeableKeys: ['exits'],
     component: CallWebhookComp,
     aliases: [Types.split_by_webhook],
-    visibility: ONLINE
+    visibility: VISIBILITY_ONLINE
   },
   {
     type: Types.call_resthook,
@@ -261,7 +349,7 @@ export const typeConfigList: Type[] = [
     component: CallResthookComp,
     aliases: [Types.split_by_resthook],
     filter: FeatureFilter.HAS_RESTHOOK,
-    visibility: ONLINE
+    visibility: VISIBILITY_ONLINE
   },
   {
     type: Types.enter_flow,
@@ -281,7 +369,19 @@ export const typeConfigList: Type[] = [
     localizeableKeys: ['exits'],
     form: StartSessionForm,
     component: StartSessionComp,
-    visibility: ONLINE
+    visibility: VISIBILITY_ONLINE
+  },
+  {
+    type: Types.open_ticket,
+    name: i18n.t('actions.open_ticket.name', 'Open Ticket'),
+    description: i18n.t('actions.open_ticket.description', 'Open a ticket with a human agent'),
+    form: TicketRouterForm,
+    localization: RouterLocalizationForm,
+    localizeableKeys: ['exits'],
+    component: OpenTicketComp,
+    aliases: [Types.split_by_ticket],
+    visibility: VISIBILITY_ONLINE,
+    filter: FeatureFilter.HAS_TICKETER
   },
   {
     type: Types.transfer_airtime,
@@ -292,7 +392,7 @@ export const typeConfigList: Type[] = [
     localizeableKeys: ['exits'],
     component: TransferAirtimeComp,
     aliases: [Types.split_by_airtime],
-    visibility: ONLINE,
+    visibility: VISIBILITY_ONLINE,
     filter: FeatureFilter.HAS_AIRTIME
   },
 
@@ -305,7 +405,7 @@ export const typeConfigList: Type[] = [
     form: WaitRouterForm,
     localization: RouterLocalizationForm,
     localizeableKeys: ['exits'],
-    visibility: SURVEY
+    visibility: VISIBILITY_SURVEYOR
   },
   {
     type: Types.wait_for_video,
@@ -314,7 +414,7 @@ export const typeConfigList: Type[] = [
     form: WaitRouterForm,
     localization: RouterLocalizationForm,
     localizeableKeys: ['exits'],
-    visibility: SURVEY
+    visibility: VISIBILITY_SURVEYOR
   },
   {
     type: Types.wait_for_location,
@@ -326,7 +426,7 @@ export const typeConfigList: Type[] = [
     form: WaitRouterForm,
     localization: RouterLocalizationForm,
     localizeableKeys: ['exits'],
-    visibility: SURVEY
+    visibility: VISIBILITY_SURVEYOR
   },
   {
     type: Types.split_by_intent,
@@ -337,7 +437,7 @@ export const typeConfigList: Type[] = [
     localizeableKeys: ['exits'],
     component: CallClassifierComp,
     aliases: [Types.call_classifier],
-    visibility: ONLINE,
+    visibility: VISIBILITY_ONLINE,
     filter: FeatureFilter.HAS_CLASSIFIER
   },
   {
@@ -380,8 +480,15 @@ export const typeConfigList: Type[] = [
     localization: RouterLocalizationForm,
     localizeableKeys: ['exits'],
     form: GroupsRouterForm
+  },
+  {
+    type: Types.split_by_scheme,
+    name: i18n.t('actions.split_by_scheme.name', 'Split by URN Type'),
+    description: i18n.t('actions.split_by_scheme.description', 'Split by URN type'),
+    localization: RouterLocalizationForm,
+    localizeableKeys: ['exits'],
+    form: SchemeRouterForm
   }
-
   // {type: 'random', name: 'Random Split', description: 'Split them up randomly', form: RandomRouterForm}
 ];
 

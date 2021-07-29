@@ -1,16 +1,10 @@
 import { determineTypeConfig } from 'components/flow/helpers';
 import { getResultName } from 'components/flow/node/helpers';
 import { getSwitchRouter } from 'components/flow/routers/helpers';
-import { Revision } from 'components/revisions/RevisionExplorer';
+import { SaveResult } from 'components/revisions/RevisionExplorer';
 import { FlowTypes, Type, Types } from 'config/interfaces';
 import { getTypeConfig } from 'config/typeConfigs';
-import {
-  createAssetStore,
-  getCompletionSchema,
-  getFlowDefinition,
-  saveRevision,
-  getFunctions
-} from 'external';
+import { createAssetStore, getFlowDetails, saveRevision } from 'external';
 import isEqual from 'fast-deep-equal';
 import {
   Action,
@@ -24,7 +18,8 @@ import {
   SendMsg,
   SetContactField,
   SetRunResult,
-  StickyNote
+  StickyNote,
+  FlowDetails
 } from 'flowTypes';
 import mutate from 'immutability-helper';
 import { Dispatch } from 'redux';
@@ -39,7 +34,9 @@ import {
   updateBaseLanguage,
   updateContactFields,
   updateDefinition,
-  updateNodes
+  updateNodes,
+  updateMetadata,
+  updateIssues
 } from 'store/flowContext';
 import {
   createEmptyNode,
@@ -50,7 +47,8 @@ import {
   getLocalizations,
   getNode,
   guessNodeType,
-  mergeAssetMaps
+  mergeAssetMaps,
+  createFlowIssueMap
 } from 'store/helpers';
 import * as mutators from 'store/mutators';
 import {
@@ -60,8 +58,10 @@ import {
   updateUserAddingAction
 } from 'store/nodeEditor';
 import AppState from 'store/state';
-import { createUUID, hasString, NODE_SPACING, timeEnd, timeStart } from 'utils';
+import { createUUID, hasString, NODE_SPACING, timeEnd, timeStart, ACTIVITY_INTERVAL } from 'utils';
 import { AxiosError } from 'axios';
+import i18n from 'config/i18n';
+import { TembaStore } from 'temba-components';
 
 // TODO: Remove use of Function
 // tslint:disable:ban-types
@@ -76,6 +76,11 @@ export type AsyncThunk = Thunk<Promise<void>>;
 export type OnAddToNode = (node: FlowNode) => Thunk<void>;
 
 export type HandleTypeConfigChange = (typeConfig: Type) => Thunk<void>;
+
+export type UpdateTranslationFilters = (translationFilters: {
+  categories: boolean;
+  rules: boolean;
+}) => Thunk<void>;
 
 export type OnOpenNodeEditor = (settings: NodeEditorSettings) => Thunk<void>;
 
@@ -92,15 +97,10 @@ export type UpdateDimensions = (uuid: string, dimensions: Dimensions) => Thunk<v
 export type FetchFlow = (
   endpoints: Endpoints,
   uuid: string,
-  onLoad: () => void,
   forceSave: boolean
 ) => Thunk<Promise<void>>;
 
-export type LoadFlowDefinition = (
-  definition: FlowDefinition,
-  assetStore: AssetStore,
-  onLoad?: () => void
-) => Thunk<void>;
+export type LoadFlowDefinition = (details: FlowDetails, assetStore: AssetStore) => Thunk<void>;
 
 export type CreateNewRevision = () => Thunk<void>;
 
@@ -157,23 +157,58 @@ export interface ErrorMessage {
 }
 
 export type LocalizationUpdates = Array<{ uuid: string; translations?: any }>;
-const QUIET_SAVE = 2000;
+const QUIET_SAVE = 1000;
+const SAVE_ALERT_MILLIS = 1000 * 60;
 
 let markDirty: (quiet?: number) => void = () => {};
-let lastDirtyAttempt: any = null;
+let lastDirtyAttemptTimeout: any = null;
 let postingRevision = false;
+
+let lastDirtyMillis: number = 0;
+let lastSuccessfulMillis: number = 0;
+
+const NETWORK_ERROR = i18n.t(
+  'errors.network',
+  'Hmm, we ran into a problem trying to save your changes. It could just be that your internet connection is not working well at the moment. Please wait a minute or so and try again.'
+);
+
+const SERVER_ERROR = i18n.t(
+  'errors.server',
+  'Hmm, we ran into a problem trying to save your changes. If this problem persists, take note of the change you are trying to make and contact support.'
+);
+
+export const createSaveMonitor = (dispatch: DispatchWithState) => {
+  window.setInterval(() => {
+    if (
+      lastSuccessfulMillis < lastDirtyMillis &&
+      new Date().getTime() - lastDirtyMillis > SAVE_ALERT_MILLIS
+    ) {
+      dispatch(
+        mergeEditorState({
+          modalMessage: {
+            title: "Uh oh, we couldn't save your changes",
+            body: NETWORK_ERROR
+          },
+          saving: false
+        })
+      );
+    }
+  }, 5000);
+};
 
 export const createDirty = (
   revisionsEndpoint: string,
   dispatch: DispatchWithState,
   getState: GetState
 ) => (quiet: number = QUIET_SAVE) => {
-  if (lastDirtyAttempt) {
-    window.clearTimeout(lastDirtyAttempt);
+  lastDirtyMillis = new Date().getTime();
+
+  if (lastDirtyAttemptTimeout) {
+    window.clearTimeout(lastDirtyAttemptTimeout);
   }
 
   const {
-    flowContext: { definition, nodes, assetStore },
+    flowContext: { definition, nodes, assetStore, issues },
     editorState: { currentRevision }
   } = getState();
 
@@ -184,40 +219,49 @@ export const createDirty = (
   newDefinition.revision = currentRevision;
 
   if (postingRevision) {
-    lastDirtyAttempt = window.setTimeout(() => {
+    lastDirtyAttemptTimeout = window.setTimeout(() => {
       markDirty();
     }, QUIET_SAVE);
     return;
   }
 
-  lastDirtyAttempt = window.setTimeout(() => {
+  lastDirtyAttemptTimeout = window.setTimeout(() => {
     postingRevision = true;
     saveRevision(revisionsEndpoint, newDefinition).then(
-      (revision: Revision) => {
+      (result: SaveResult) => {
+        const revision = result.revision;
         definition.revision = revision.revision;
         dispatch(updateDefinition(definition));
+        dispatch(updateIssues(createFlowIssueMap(issues, result.issues)));
+
+        if (result.metadata) {
+          dispatch(updateMetadata(result.metadata));
+        }
 
         const updatedAssets = mutators.addRevision(assetStore, revision);
         dispatch(updateAssets(updatedAssets));
         dispatch(
           mergeEditorState({
             currentRevision: revision.revision,
-            saving: false
+            saving: false,
+            activityInterval: ACTIVITY_INTERVAL
           })
         );
+
+        lastSuccessfulMillis = new Date().getTime();
         postingRevision = false;
       },
       (error: AxiosError) => {
-        const errorMessage = error.response.data as ErrorMessage;
+        let body = NETWORK_ERROR;
 
-        const body =
-          (errorMessage && errorMessage.description) ||
-          'Hmm, we ran into a problem trying to save your changes. ' +
-            'It could just be that your internet connection is not working ' +
-            'well at the moment. Perhaps wait a minute or so and try again. It may also ' +
-            "be that we encountered a problem we didn't anticipate. " +
-            "If your connection is good and you still can't save your " +
-            'changes, please contact support so we can help you out.';
+        if (error.response && error.response.status === 500) {
+          body = SERVER_ERROR;
+        }
+
+        if (error.response && error.response.data && error.response.data.description) {
+          body = error.response.data.description;
+        }
+
         dispatch(
           mergeEditorState({
             modalMessage: {
@@ -248,13 +292,16 @@ export const createNewRevision = () => (dispatch: DispatchWithState, getState: G
   markDirty(0);
 };
 
-export const loadFlowDefinition = (
-  definition: FlowDefinition,
-  assetStore: AssetStore,
-  onLoad: () => void
-) => (dispatch: DispatchWithState, getState: GetState): void => {
+export const loadFlowDefinition = (details: FlowDetails, assetStore: AssetStore) => (
+  dispatch: DispatchWithState,
+  getState: GetState
+): void => {
   // first see if we need our asset store initialized
+
+  const definition = details.definition;
+
   const {
+    flowContext: { issues },
     editorState: { fetchingFlow }
   } = getState();
 
@@ -299,7 +346,14 @@ export const loadFlowDefinition = (
     mergeAssetMaps(assetStore.languages.items, { base: DEFAULT_LANGUAGE });
   }
 
+  if (details.issues) {
+    dispatch(updateIssues(createFlowIssueMap(issues, details.issues)));
+  } else {
+    dispatch(updateIssues({}));
+  }
+
   dispatch(updateBaseLanguage(language));
+  dispatch(updateMetadata(details.metadata));
 
   // store our flow definition without any nodes
   dispatch(updateDefinition(mutators.pruneDefinition(definition)));
@@ -309,9 +363,9 @@ export const loadFlowDefinition = (
   dispatch(updateAssets(assetStore));
   dispatch(mergeEditorState({ language, fetchingFlow: false }));
 
-  // fire our callback for who is embedding us
-  if (onLoad) {
-    onLoad();
+  const store: TembaStore = document.querySelector('temba-store');
+  if (store) {
+    store.setKeyedAssets('results', Object.keys(assetStore.results.items));
   }
 };
 
@@ -320,12 +374,10 @@ export const loadFlowDefinition = (
  * @param endpoints where our assets live
  * @param uuid the uuid for the flow to fetch
  */
-export const fetchFlow = (
-  endpoints: Endpoints,
-  uuid: string,
-  onLoad: () => void,
-  forceSave = false
-) => async (dispatch: DispatchWithState, getState: GetState) => {
+export const fetchFlow = (endpoints: Endpoints, uuid: string, forceSave = false) => async (
+  dispatch: DispatchWithState,
+  getState: GetState
+) => {
   // mark us as underway
   dispatch(mergeEditorState({ fetchingFlow: true }));
 
@@ -343,20 +395,26 @@ export const fetchFlow = (
     fetchFlowActivity(endpoints.activity, dispatch, getState, uuid);
   };
 
-  const completionSchema = await getCompletionSchema(endpoints.completion);
-  const functions = await getFunctions(endpoints.functions);
+  getFlowDetails(assetStore.revisions)
+    .then((response: any) => {
+      // backwards compatibitly for during deployment
+      const details: FlowDetails = response.definition
+        ? response
+        : { definition: response as FlowDefinition, metadata: { issues: [] } };
 
-  getFlowDefinition(assetStore.revisions)
-    .then((definition: FlowDefinition) => {
-      dispatch(loadFlowDefinition(definition, assetStore, onLoad));
+      dispatch(loadFlowDefinition(details, assetStore));
       dispatch(
-        mergeEditorState({ currentRevision: definition.revision, completionSchema, functions })
+        mergeEditorState({
+          currentRevision: details.definition.revision
+        })
       );
 
       markDirty = createDirty(assetStore.revisions.endpoint, dispatch, getState);
       if (forceSave) {
         markDirty(0);
       }
+
+      createSaveMonitor(dispatch);
     })
     .catch(error => {
       // not much we can do without our flow definition
@@ -377,6 +435,12 @@ export const addAsset: AddAsset = (assetType: string, asset: Asset) => (
   const updated = mutate(assetStore, {
     [assetType]: { items: { $merge: { [asset.id]: asset } } }
   });
+
+  // update our temba store if we have one
+  const store: TembaStore = document.querySelector('temba-store');
+  if (store) {
+    store.setKeyedAssets(assetType, Object.keys(updated[assetType]));
+  }
 
   dispatch(updateAssets(updated));
 };
@@ -706,7 +770,7 @@ export const onUpdateAction = (
     dispatch(updateContactFields({ ...contactFields, [field.key]: field.name }));
   }
 
-  markDirty();
+  markDirty(0);
 
   timeEnd('onUpdateAction');
 
@@ -971,7 +1035,7 @@ export const onUpdateRouter = (renderNode: RenderNode) => (
 
   dispatch(updateNodes(updated));
 
-  markDirty();
+  markDirty(0);
   return updated;
 };
 
@@ -1023,4 +1087,17 @@ export const onOpenNodeEditor = (settings: NodeEditorSettings) => (
   dispatch(handleTypeConfigChange(typeConfig));
   dispatch(updateNodeEditorSettings(settings));
   dispatch(mergeEditorState(EMPTY_DRAG_STATE));
+};
+
+export const updateTranslationFilters = (translationFilters: {
+  categories: boolean;
+  rules: boolean;
+}) => (dispatch: DispatchWithState, getState: GetState): void => {
+  const {
+    flowContext: { definition }
+  } = getState();
+
+  definition._ui.translation_filters = translationFilters;
+  dispatch(updateDefinition(definition));
+  markDirty();
 };

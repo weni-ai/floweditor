@@ -1,6 +1,6 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
-import { hasErrors } from 'components/flow/actions/helpers';
+import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import CurrencyElement, {
   AirtimeTransfer
@@ -15,6 +15,7 @@ import { Alphanumeric, Required, StartIsNonNumeric, validate } from 'store/valid
 
 import styles from './AirtimeRouterForm.module.scss';
 import { nodeToState, stateToNode } from './helpers';
+import i18n from 'config/i18n';
 
 export interface AirtimeTransferEntry extends FormEntry {
   value: AirtimeTransfer;
@@ -74,7 +75,11 @@ export default class AirtimeRouterForm extends React.PureComponent<
   }
 
   private handleUpdateResultName(result: string): void {
-    const resultName = validate('Result Name', result, [Required, Alphanumeric, StartIsNonNumeric]);
+    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), result, [
+      Required,
+      Alphanumeric,
+      StartIsNonNumeric
+    ]);
     this.setState({
       resultName,
       valid: this.state.valid && !hasErrors(resultName)
@@ -156,6 +161,7 @@ export default class AirtimeRouterForm extends React.PureComponent<
         <div className={styles.result_name}>
           {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
         </div>
+        {renderIssues(this.props)}
       </Dialog>
     );
   }

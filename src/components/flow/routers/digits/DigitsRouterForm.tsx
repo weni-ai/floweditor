@@ -1,6 +1,6 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
-import { hasErrors } from 'components/flow/actions/helpers';
+import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import CaseList, { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import { createResultNameInput } from 'components/flow/routers/widgets';
@@ -12,6 +12,8 @@ import { Alphanumeric, StartIsNonNumeric, validate } from 'store/validators';
 import styles from './DigitsRouterForm.module.scss';
 import { nodeToState, stateToNode } from './helpers';
 import i18n from 'config/i18n';
+import { Operator, Operators } from 'config/interfaces';
+import { operatorConfigList } from 'config/operatorConfigs';
 
 export interface DigitsRouterFormState extends FormState {
   cases: CaseProps[];
@@ -32,8 +34,18 @@ export default class DigitsRouterForm extends React.Component<
     });
   }
 
+  private getOperators(): Operator[] {
+    return operatorConfigList.filter(
+      operator =>
+        operator.type === Operators.has_beginning || operator.type.indexOf('has_number') === 0
+    );
+  }
+
   private handleUpdateResultName(value: string): void {
-    const resultName = validate('Result Name', value, [Alphanumeric, StartIsNonNumeric]);
+    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), value, [
+      Alphanumeric,
+      StartIsNonNumeric
+    ]);
     this.setState({
       resultName,
       valid: this.state.valid && !hasErrors(resultName)
@@ -63,7 +75,7 @@ export default class DigitsRouterForm extends React.Component<
 
   public renderEdit(): JSX.Element {
     const typeConfig = this.props.typeConfig;
-
+    const operators = this.getOperators();
     return (
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
@@ -72,8 +84,10 @@ export default class DigitsRouterForm extends React.Component<
           data-spec="cases"
           cases={this.state.cases}
           onCasesUpdated={this.handleCasesUpdated}
+          operators={operators}
         />
         {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {renderIssues(this.props)}
       </Dialog>
     );
   }

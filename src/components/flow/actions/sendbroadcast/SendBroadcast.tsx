@@ -11,7 +11,7 @@ export const PLACEHOLDER = i18n.t(
   'Send a message to the contact'
 );
 
-const MAX_TO_SHOW = 3;
+const MAX_TO_SHOW = 5;
 
 const SendBroadcastComp: React.SFC<BroadcastMsg> = (
   action: BroadcastMsg,
@@ -21,7 +21,7 @@ const SendBroadcastComp: React.SFC<BroadcastMsg> = (
   if (action.text) {
     return (
       <div className={styles.node}>
-        <div className={styles.to}>
+        <div className={styles.to} key={action.uuid + '_broadcast_recipients'}>
           {renderAssetList(assets, MAX_TO_SHOW, context.config.endpoints)}
         </div>
         <div className={styles.message}>

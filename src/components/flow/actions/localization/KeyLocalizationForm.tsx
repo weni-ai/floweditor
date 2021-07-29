@@ -7,8 +7,9 @@ import { LocalizationFormProps } from 'components/flow/props';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import { fakePropType } from 'config/ConfigProvider';
 import * as React from 'react';
-import { FormState, StringEntry, ValidationFailure } from 'store/nodeEditor';
+import { FormState, StringEntry } from 'store/nodeEditor';
 import i18n from 'config/i18n';
+import { renderIssues } from '../helpers';
 
 export interface KeyLocalizationFormState extends FormState {
   keyValues: { [key: string]: StringEntry };
@@ -76,6 +77,8 @@ export default class KeyLocalizationForm extends React.Component<
 
     let base: JSX.Element;
 
+    const translation = i18n.t('forms.translation', 'Translation');
+
     typeConfig.localizeableKeys.forEach((key: string) => {
       const name = key[0].toUpperCase() + key.slice(1);
 
@@ -91,15 +94,7 @@ export default class KeyLocalizationForm extends React.Component<
             showLabel={false}
             onChange={this.handleKeyUpdate}
             entry={this.state.keyValues[key]}
-            placeholder={`${this.props.language.name} Translation`}
-            onFieldFailures={(persistantFailures: ValidationFailure[]) => {
-              const keyValues = this.state.keyValues;
-              keyValues[key] = { ...this.state.keyValues[key], persistantFailures };
-              this.setState({
-                keyValues,
-                valid: this.state.valid
-              });
-            }}
+            placeholder={`${this.props.language.name} ${translation}`}
             autocomplete={true}
             focus={true}
             textarea={true}
@@ -110,8 +105,9 @@ export default class KeyLocalizationForm extends React.Component<
       if (!base) {
         base = form;
       } else {
+        const translation = i18n.t('forms.translation', 'Translation');
         tabs.push({
-          name: name + ' ' + i18n.t('translation', 'Translation'),
+          name: name + ' ' + translation,
           body: form,
           checked: !!this.state.keyValues[key].value
         });
@@ -126,6 +122,7 @@ export default class KeyLocalizationForm extends React.Component<
         tabs={tabs}
       >
         {base}
+        {renderIssues(this.props)}
       </Dialog>
     );
   }

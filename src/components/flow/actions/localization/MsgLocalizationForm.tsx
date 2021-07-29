@@ -1,32 +1,33 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet, Tab } from 'components/dialog/Dialog';
 import styles from 'components/flow/actions/action/Action.module.scss';
-import { hasErrors } from 'components/flow/actions/helpers';
 import { determineTypeConfig } from 'components/flow/helpers';
 import { LocalizationFormProps } from 'components/flow/props';
 import MultiChoiceInput from 'components/form/multichoice/MultiChoice';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import UploadButton from 'components/uploadbutton/UploadButton';
 import { fakePropType } from 'config/ConfigProvider';
-import { SendMsg } from 'flowTypes';
+import { SendMsg, MsgTemplating } from 'flowTypes';
 import * as React from 'react';
-import {
-  FormState,
-  mergeForm,
-  StringArrayEntry,
-  StringEntry,
-  ValidationFailure
-} from 'store/nodeEditor';
+import mutate from 'immutability-helper';
+import { FormState, mergeForm, StringArrayEntry, StringEntry } from 'store/nodeEditor';
 import { MaxOfTenItems, validate } from 'store/validators';
 
 import { initializeLocalizedForm } from './helpers';
 import i18n from 'config/i18n';
 import { Trans } from 'react-i18next';
+import { range } from 'utils';
+import { renderIssues } from '../helpers';
+import { Attachment, renderAttachments } from '../sendmsg/attachments';
+import { AxiosResponse } from 'axios';
 
 export interface MsgLocalizationFormState extends FormState {
   message: StringEntry;
   quickReplies: StringArrayEntry;
   audio: StringEntry;
+  templateVariables: StringEntry[];
+  templating: MsgTemplating;
+  attachments: Attachment[];
 }
 
 export default class MsgLocalizationForm extends React.Component<
@@ -66,11 +67,15 @@ export default class MsgLocalizationForm extends React.Component<
     const updates: Partial<MsgLocalizationFormState> = {};
 
     if (keys.hasOwnProperty('text')) {
-      updates.message = validate('Message', keys.text!, []);
+      updates.message = validate(i18n.t('forms.message', 'Message'), keys.text!, []);
     }
 
     if (keys.hasOwnProperty('quickReplies')) {
-      updates.quickReplies = validate('Quick Replies', keys.quickReplies!, [MaxOfTenItems]);
+      updates.quickReplies = validate(
+        i18n.t('forms.quick_replies', 'Quick Replies'),
+        keys.quickReplies!,
+        [MaxOfTenItems]
+      );
     }
 
     if (keys.hasOwnProperty('audio')) {
@@ -84,7 +89,7 @@ export default class MsgLocalizationForm extends React.Component<
   }
 
   private handleSave(): void {
-    const { message: text, quickReplies, audio } = this.state;
+    const { message: text, quickReplies, audio, templateVariables, attachments } = this.state;
 
     // make sure we are valid for saving, only quick replies can be invalid
     const typeConfig = determineTypeConfig(this.props.nodeSettings);
@@ -99,6 +104,10 @@ export default class MsgLocalizationForm extends React.Component<
         translations.text = text.value;
       }
 
+      translations.attachments = attachments
+        .filter((attachment: Attachment) => attachment.url.trim().length > 0)
+        .map((attachment: Attachment) => `${attachment.type}:${attachment.url}`);
+
       if (quickReplies.value && quickReplies.value.length > 0) {
         translations.quick_replies = quickReplies.value;
       }
@@ -107,12 +116,25 @@ export default class MsgLocalizationForm extends React.Component<
         translations.audio_url = audio.value;
       }
 
-      this.props.updateLocalizations(this.props.language.id, [
+      const localizations = [
         {
           uuid: this.props.nodeSettings.originalAction!.uuid,
           translations
         }
-      ]);
+      ];
+
+      // if we have template variables, they show up on their own key
+      const hasTemplateVariables = templateVariables.find(
+        (entry: StringEntry) => entry.value.length > 0
+      );
+      if (hasTemplateVariables) {
+        localizations.push({
+          uuid: this.state.templating.uuid,
+          translations: { variables: templateVariables.map((entry: StringEntry) => entry.value) }
+        });
+      }
+
+      this.props.updateLocalizations(this.props.language.id, localizations);
 
       // notify our modal we are done
       this.props.onClose(false);
@@ -129,67 +151,133 @@ export default class MsgLocalizationForm extends React.Component<
     };
   }
 
-  private handleAddQuickReply(newQuickReply: string): boolean {
-    const newReplies = [...this.state.quickReplies.value];
-    if (newReplies.length >= 10) {
-      return false;
-    }
+  private handleQuickReplyChanged(quickReplies: string[]): void {
+    this.handleUpdate({ quickReplies });
+  }
 
-    // we don't allow two quick replies with the same name
-    const isNew = !newReplies.find(
-      (reply: string) => reply.toLowerCase() === newQuickReply.toLowerCase()
-    );
+  private handleTemplateVariableChanged(updatedText: string, num: number): void {
+    const entry = validate(`Variable ${num + 1}`, updatedText, []);
 
-    if (isNew) {
-      newReplies.push(newQuickReply);
-      this.setState({
-        quickReplies: { value: newReplies }
+    const templateVariables = mutate(this.state.templateVariables, {
+      $merge: { [num]: entry }
+    }) as StringEntry[];
+
+    this.setState({ templateVariables });
+  }
+
+  private handleAttachmentUploaded(response: AxiosResponse) {
+    const attachments: any = mutate(this.state.attachments, {
+      $push: [{ type: response.data.type, url: response.data.url, uploaded: true }]
+    });
+    this.setState({ attachments });
+  }
+
+  private handleAttachmentChanged(index: number, type: string, url: string) {
+    let attachments: any = this.state.attachments;
+    if (index === -1) {
+      attachments = mutate(attachments, {
+        $push: [{ type, url }]
       });
-      return true;
+    } else {
+      attachments = mutate(attachments, {
+        [index]: {
+          $set: { type, url }
+        }
+      });
     }
 
-    return false;
+    this.setState({ attachments });
   }
 
-  private handleRemoveQuickReply(toRemove: string): void {
-    this.setState({
-      quickReplies: {
-        value: this.state.quickReplies.value.filter((reply: string) => reply !== toRemove)
-      }
+  private handleAttachmentRemoved(index: number) {
+    const attachments: any = mutate(this.state.attachments, {
+      $splice: [[index, 1]]
     });
-  }
-
-  public handleQuickReplyFieldFailures(persistantFailures: ValidationFailure[]): void {
-    const quickReplies = { ...this.state.quickReplies, persistantFailures };
-    this.setState({
-      quickReplies,
-      valid: this.state.valid && !hasErrors(quickReplies)
-    });
+    this.setState({ attachments });
   }
 
   public render(): JSX.Element {
     const typeConfig = determineTypeConfig(this.props.nodeSettings);
     const tabs: Tab[] = [];
 
+    if (
+      this.state.templating &&
+      typeConfig.localizeableKeys!.indexOf('templating.variables') > -1
+    ) {
+      const hasLocalizedValue = !!this.state.templateVariables.find(
+        (entry: StringEntry) => entry.value.length > 0
+      );
+
+      const variable = i18n.t('forms.variable', 'Variable');
+
+      tabs.push({
+        name: 'WhatsApp',
+        body: (
+          <>
+            <p>
+              {i18n.t(
+                'forms.whatsapp_warning',
+                'Sending messages over a WhatsApp channel requires that a template be used if you have not received a message from a contact in the last 24 hours. Setting a template to use over WhatsApp is especially important for the first message in your flow.'
+              )}
+            </p>
+            {this.state.templating && this.state.templating.variables.length > 0 ? (
+              <>
+                {range(0, this.state.templating.variables.length).map((num: number) => {
+                  const entry = this.state.templateVariables[num] || { value: '' };
+                  return (
+                    <div className={styles.variable} key={'tr_arg_' + num}>
+                      <TextInputElement
+                        name={`${i18n.t('forms.variable', 'Variable')} ${num + 1}`}
+                        showLabel={false}
+                        placeholder={`${this.props.language.name} ${variable} ${num + 1}`}
+                        onChange={(updatedText: string) => {
+                          this.handleTemplateVariableChanged(updatedText, num);
+                        }}
+                        entry={entry}
+                        autocomplete={true}
+                      />
+                    </div>
+                  );
+                })}
+              </>
+            ) : null}
+          </>
+        ),
+        checked: hasLocalizedValue
+      });
+    }
+
     if (typeConfig.localizeableKeys!.indexOf('quick_replies') > -1) {
       tabs.push({
-        name: 'Quick Replies',
+        name: i18n.t('forms.attachments', 'Attachments'),
+        body: renderAttachments(
+          this.context.config.endpoints.attachments,
+          this.state.attachments,
+          this.handleAttachmentUploaded,
+          this.handleAttachmentChanged,
+          this.handleAttachmentRemoved
+        ),
+        checked: this.state.attachments.length > 0
+      });
+    }
+
+    if (typeConfig.localizeableKeys!.indexOf('quick_replies') > -1) {
+      tabs.push({
+        name: i18n.t('forms.quick_replies', 'Quick Replies'),
         body: (
           <>
             <MultiChoiceInput
-              name="Quick Reply"
+              name={i18n.t('forms.quick_reply', 'Quick Reply')}
               helpText={
                 <Trans
-                  i18nKey="forms.send_msg.localized_quick_replies"
+                  i18nKey="forms.localized_quick_replies"
                   values={{ language: this.props.language.name }}
                 >
                   Add a new [[language]] Quick Reply and press enter.
                 </Trans>
               }
               items={this.state.quickReplies}
-              onRemoved={this.handleRemoveQuickReply}
-              onItemAdded={this.handleAddQuickReply}
-              onFieldErrors={this.handleQuickReplyFieldFailures}
+              onChange={this.handleQuickReplyChanged}
             />
           </>
         ),
@@ -211,6 +299,8 @@ export default class MsgLocalizationForm extends React.Component<
       );
     }
 
+    const translation = i18n.t('forms.translation', 'Translation');
+
     return (
       <Dialog
         title={typeConfig.name}
@@ -225,24 +315,18 @@ export default class MsgLocalizationForm extends React.Component<
         </div>
 
         <TextInputElement
-          name="Message"
+          name={i18n.t('forms.message', 'Message')}
           showLabel={false}
           onChange={this.handleMessageUpdate}
           entry={this.state.message}
-          placeholder={`${this.props.language.name} Translation`}
-          onFieldFailures={(persistantFailures: ValidationFailure[]) => {
-            const text = { ...this.state.message, persistantFailures };
-            this.setState({
-              message: text,
-              valid: this.state.valid && !hasErrors(text)
-            });
-          }}
+          placeholder={`${this.props.language.name} ${translation}`}
           autocomplete={true}
           focus={true}
           textarea={true}
         />
 
         {audioButton}
+        {renderIssues(this.props)}
       </Dialog>
     );
   }

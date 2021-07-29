@@ -1,13 +1,17 @@
-import { languageToAsset } from 'components/flow/actions/updatecontact/helpers';
 import { determineTypeConfig } from 'components/flow/helpers';
 import { ActionFormProps, LocalizationFormProps, RouterFormProps } from 'components/flow/props';
 import { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import { DefaultExitNames } from 'components/flow/routers/constants';
 import { ResolvedRoutes, resolveRoutes } from 'components/flow/routers/helpers';
 import { Methods } from 'components/flow/routers/webhook/helpers';
-import { DEFAULT_OPERAND, GROUPS_OPERAND } from 'components/nodeeditor/constants';
-import { Operators, Types } from 'config/interfaces';
-import { getTypeConfig } from 'config/typeConfigs';
+import {
+  DEFAULT_OPERAND,
+  DIAL_OPERAND,
+  GROUPS_OPERAND,
+  SCHEMES_OPERAND
+} from 'components/nodeeditor/constants';
+import { Operators, Types, ContactStatus } from 'config/interfaces';
+import { getTypeConfig, Scheme } from 'config/typeConfigs';
 import {
   AnyAction,
   BroadcastMsg,
@@ -23,6 +27,7 @@ import {
   FlowNode,
   Group,
   Label,
+  OpenTicket,
   PlayAudio,
   RemoveFromGroups,
   Router,
@@ -33,6 +38,7 @@ import {
   SetContactChannel,
   SetContactField,
   SetContactLanguage,
+  SetContactStatus,
   SetContactProperty,
   SetRunResult,
   StartFlow,
@@ -45,7 +51,8 @@ import {
   Wait,
   WaitTypes,
   WebhookExitNames,
-  HintTypes
+  HintTypes,
+  CallClassifier
 } from 'flowTypes';
 import Localization from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
@@ -57,14 +64,6 @@ import * as utils from 'utils';
 const { results: groupsResults } = require('test/assets/groups.json');
 const languagesResults = require('test/assets/languages.json');
 mock(utils, 'createUUID', utils.seededUUIDs());
-/**
- * Create a select control option
- */
-export const createSelectOption = ({ label }: { label: string }) => ({
-  label: utils.capitalize(label.trim()),
-  labelKey: 'name',
-  valueKey: 'id'
-});
 
 export const createSayMsgAction = ({
   uuid = utils.createUUID(),
@@ -305,6 +304,18 @@ export const createSetContactLanguageAction = ({
   type: Types.set_contact_language
 });
 
+export const createSetContactStatusAction = ({
+  uuid = utils.createUUID(),
+  status = ContactStatus.BLOCKED
+}: {
+  uuid?: string;
+  status?: ContactStatus;
+} = {}): SetContactStatus => ({
+  uuid,
+  status,
+  type: Types.set_contact_status
+});
+
 export const createSetContactChannelAction = ({
   uuid = utils.createUUID(),
   channelName = 'Twilio Channel'
@@ -339,7 +350,7 @@ export const createSetRunResultAction = ({
 });
 
 export const createWebhookNode = (
-  action: CallWebhook | CallResthook | TransferAirtime,
+  action: CallWebhook | CallResthook | OpenTicket | TransferAirtime | CallClassifier,
   useCategoryTest: boolean
 ) => {
   const { categories, exits } = createCategories([
@@ -387,6 +398,21 @@ export const createWebhookRouterNode = (): FlowNode => {
   return createWebhookNode(action, false);
 };
 
+export const createOpenTicketNode = (subject: string, body: string): FlowNode => {
+  const action: OpenTicket = {
+    uuid: utils.createUUID(),
+    type: Types.open_ticket,
+    ticketer: {
+      name: 'Email (bob@acme.com)',
+      uuid: '1165a73a-2ee0-4891-895e-768645194862'
+    },
+    subject: subject,
+    body: body,
+    result_name: 'Result'
+  };
+  return createWebhookNode(action, true);
+};
+
 export const getLocalizationFormProps = (
   action: AnyAction,
   lang?: Asset,
@@ -397,6 +423,8 @@ export const getLocalizationFormProps = (
     language,
     onClose: jest.fn(),
     updateLocalizations: jest.fn(),
+    issues: [],
+    helpArticles: {},
     nodeSettings: {
       originalNode: createRenderNode({
         actions: [action],
@@ -424,11 +452,12 @@ export const getActionFormProps = (action: AnyAction): ActionFormProps => ({
     flows: { items: {}, type: AssetType.Flow },
     recipients: { items: {}, type: AssetType.Contact || AssetType.Group || AssetType.URN }
   },
-  completionSchema: { root: [], types: [] },
+  helpArticles: {},
   addAsset: jest.fn(),
   updateAction: jest.fn(),
   onClose: jest.fn(),
   onTypeChange: jest.fn(),
+  issues: [],
   typeConfig: getTypeConfig(action.type),
   nodeSettings: {
     originalNode: createRenderNode({
@@ -446,9 +475,11 @@ export const getActionFormProps = (action: AnyAction): ActionFormProps => ({
 });
 
 export const getRouterFormProps = (renderNode: RenderNode): RouterFormProps => ({
+  helpArticles: {},
   updateRouter: jest.fn(),
   onClose: jest.fn(),
   onTypeChange: jest.fn(),
+  issues: [],
   typeConfig: determineTypeConfig({ originalNode: renderNode }),
   assetStore: EMPTY_TEST_ASSETS,
   nodeSettings: {
@@ -493,7 +524,10 @@ export const createRouter = (result_name?: string): Router => ({
   ...(result_name ? { result_name } : {})
 });
 
-export const createMatchCase = (match: string): CaseProps => {
+export const createMatchCase = (
+  match: string,
+  operator: Operators = Operators.has_any_word
+): CaseProps => {
   return {
     uuid: utils.createUUID(),
     categoryName: match,
@@ -501,7 +535,7 @@ export const createMatchCase = (match: string): CaseProps => {
     kase: {
       uuid: utils.createUUID(),
       arguments: [match.toLowerCase()],
-      type: Operators.has_any_word,
+      type: operator,
       category_uuid: null
     }
   };
@@ -523,10 +557,14 @@ export const createCases = (categories: string[]): CaseProps[] => {
   return cases;
 };
 
-export const createRoutes = (categories: string[], hasTimeout: boolean = false): ResolvedRoutes => {
+export const createRoutes = (
+  categories: string[],
+  operator: Operators = Operators.has_any_word,
+  hasTimeout: boolean = false
+): ResolvedRoutes => {
   const cases: CaseProps[] = [];
   categories.forEach((category: string) => {
-    cases.push(createMatchCase(category));
+    cases.push(createMatchCase(category, operator));
   });
 
   return resolveRoutes(cases, hasTimeout, null);
@@ -539,8 +577,14 @@ export const createWaitRouter = (hintType: HintTypes, resultName: string = 'Resu
   return originalNode;
 };
 
-export const createMatchRouter = (matches: string[], hasTimeout: boolean = false): RenderNode => {
-  const { exits, categories, cases, timeoutCategory } = createRoutes(matches, hasTimeout);
+export const createMatchRouter = (
+  matches: string[],
+  operand: string = DEFAULT_OPERAND,
+  operator: Operators = Operators.has_any_word,
+  resultName: string = '',
+  hasTimeout: boolean = false
+): RenderNode => {
+  const { exits, categories, cases, timeoutCategory } = createRoutes(matches, operator, hasTimeout);
 
   const wait: Wait = hasTimeout
     ? {
@@ -554,17 +598,60 @@ export const createMatchRouter = (matches: string[], hasTimeout: boolean = false
     exits,
     router: {
       type: RouterTypes.switch,
-      operand: DEFAULT_OPERAND,
+      operand: operand,
       categories,
       cases,
       wait,
-      default_category_uuid: categories[categories.length - 1].uuid
+      default_category_uuid: categories[categories.length - 1].uuid,
+      result_name: resultName
     } as SwitchRouter,
     ui: {
       type: Types.wait_for_response,
       position: { left: 0, top: 0 }
     }
   });
+};
+
+export const createSchemeRouter = (schemes: Scheme[]): RenderNode => {
+  const matchRouter = createMatchRouter(
+    schemes.map((scheme: Scheme) => scheme.scheme),
+    SCHEMES_OPERAND,
+    Operators.has_only_phrase
+  );
+
+  const router = matchRouter.node.router as SwitchRouter;
+
+  // update generated router to be consistent with scheme routers
+  delete router['wait'];
+  router.cases.forEach((kase: Case) => {
+    const category = router.categories.find(
+      (category: Category) => category.uuid === kase.category_uuid
+    );
+    category.name = schemes.find((scheme: Scheme) => scheme.scheme === kase.arguments[0]).name;
+  });
+
+  matchRouter.ui.type = Types.split_by_scheme;
+
+  return matchRouter;
+};
+
+export const createDialRouter = (phone: string, resultName: string): RenderNode => {
+  const matchRouter = createMatchRouter(
+    ['Answered', 'No Answer', 'Busy', 'Failed'],
+    DIAL_OPERAND,
+    Operators.has_only_text,
+    resultName,
+    true
+  );
+
+  const router = matchRouter.node.router as SwitchRouter;
+
+  // switch our wait to match a dial router
+  router.wait = { type: WaitTypes.dial, phone: phone };
+
+  matchRouter.ui.type = Types.wait_for_dial;
+
+  return matchRouter;
 };
 
 export const createSwitchRouter = ({
@@ -709,6 +796,22 @@ export const createSubflowNode = (
   });
 };
 
+export const createClassifyRouter = (): RenderNode => {
+  const action: CallClassifier = {
+    uuid: utils.createUUID(),
+    type: Types.call_classifier,
+    result_name: 'Result',
+    classifier: { uuid: 'purrington', name: 'Purrington' },
+    input: '@input'
+  };
+
+  return {
+    node: createWebhookNode(action, true),
+    ui: { position: { left: 0, top: 0 }, type: Types.split_by_intent },
+    inboundConnections: {}
+  };
+};
+
 export const createAirtimeTransferNode = (transferAirtimeAction: TransferAirtime): RenderNode => {
   return {
     node: createWebhookNode(transferAirtimeAction, true),
@@ -804,17 +907,17 @@ export const Spanish = { name: 'Spanish', id: 'spa', type: AssetType.Language };
 
 export const SubscribersGroup = {
   name: 'Subscriber',
-  id: '68223118-109f-442a-aed3-7bb3e1eab687',
-  type: AssetType.Group
+  uuid: '68223118-109f-442a-aed3-7bb3e1eab687'
 };
 
 export const ColorFlowAsset = {
   name: 'Favorite Color',
-  uuid: '9a93ede6-078f-44c9-ad0a-133793be5d56'
+  uuid: '9a93ede6-078f-44c9-ad0a-133793be5d56',
+  parent_refs: ['colors']
 };
 
 export const ResthookAsset = {
-  id: 'new-resthook',
+  resthook: 'new-resthook',
   name: 'new-resthook',
   type: AssetType.Resthook
 };
@@ -826,6 +929,6 @@ export const FeedbackLabel = {
 };
 
 export const languages: Assets = {
-  items: assetListToMap(languagesResults.results.map((language: any) => languageToAsset(language))),
+  items: assetListToMap(languagesResults.results.map((language: any) => language)),
   type: AssetType.Language
 };

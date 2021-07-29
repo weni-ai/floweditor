@@ -8,9 +8,8 @@ import { AssetType } from 'store/flowContext';
 export const removeAllSpecId = 'remove_from_all';
 export const contentSpecId = 'content';
 export const removeAllText = 'Remove from all groups';
-export const ellipsesText = '...';
 
-export const MAX_TO_SHOW = 3;
+export const MAX_TO_SHOW = 5;
 export const getRemoveAllMarkup = (
   key = removeAllSpecId,
   specId = removeAllSpecId,
@@ -32,7 +31,18 @@ export const getContentMarkup = (
   } else {
     return renderAssetList(
       groups.map(group => {
-        return { id: group.uuid, name: group.name, type: AssetType.Group };
+        if (group.name_match) {
+          return {
+            id: group.name_match,
+            name: group.name_match,
+            type: AssetType.NameMatch
+          };
+        }
+        return {
+          id: group.uuid,
+          name: group.name,
+          type: AssetType.Group
+        };
       }),
       MAX_TO_SHOW,
       endpoints!
@@ -48,7 +58,7 @@ export const getChangeGroupsMarkup = (
   specId = contentSpecId
 ) => <div data-spec={specId}>{getContentMarkup(action, endpoints)}</div>;
 
-const ChangeGroupsComp: React.SFC<ChangeGroups> = (props, context: any): JSX.Element => {
+const ChangeGroupsComp: React.SFC<ChangeGroups> = (props: any, context: any): JSX.Element => {
   return getChangeGroupsMarkup(props, context.config.endpoints);
 };
 

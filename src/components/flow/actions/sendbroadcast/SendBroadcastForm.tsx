@@ -1,6 +1,5 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
-import { hasErrors } from 'components/flow/actions/helpers';
 import { initializeForm, stateToAction } from 'components/flow/actions/sendbroadcast/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
@@ -9,15 +8,10 @@ import TypeList from 'components/nodeeditor/TypeList';
 import { fakePropType } from 'config/ConfigProvider';
 import * as React from 'react';
 import { Asset } from 'store/flowContext';
-import {
-  AssetArrayEntry,
-  FormState,
-  mergeForm,
-  StringEntry,
-  ValidationFailure
-} from 'store/nodeEditor';
+import { AssetArrayEntry, FormState, mergeForm, StringEntry } from 'store/nodeEditor';
 import { shouldRequireIf, validate } from 'store/validators';
 import i18n from 'config/i18n';
+import { renderIssues } from '../helpers';
 
 export interface SendBroadcastFormState extends FormState {
   message: StringEntry;
@@ -54,11 +48,15 @@ export default class SendBroadcastForm extends React.Component<
     const updates: Partial<SendBroadcastFormState> = {};
 
     if (keys.hasOwnProperty('recipients')) {
-      updates.recipients = validate('Recipients', keys.recipients!, [shouldRequireIf(submitting)]);
+      updates.recipients = validate(i18n.t('forms.recipients', 'Recipients'), keys.recipients!, [
+        shouldRequireIf(submitting)
+      ]);
     }
 
     if (keys.hasOwnProperty('text')) {
-      updates.message = validate('Message', keys.text!, [shouldRequireIf(submitting)]);
+      updates.message = validate(i18n.t('forms.message', 'Message'), keys.text!, [
+        shouldRequireIf(submitting)
+      ]);
     }
 
     const updated = mergeForm(this.state, updates);
@@ -100,32 +98,27 @@ export default class SendBroadcastForm extends React.Component<
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <AssetSelector
-          name="Recipients"
+          name={i18n.t('forms.recipients', 'Recipients')}
+          placeholder={i18n.t('forms.select_contacts', 'Select Contacts')}
           assets={this.props.assetStore.recipients}
           entry={this.state.recipients}
-          completion={{ assetStore: this.props.assetStore, schema: this.props.completionSchema }}
           searchable={true}
           multi={true}
+          expressions={true}
           onChange={this.handleRecipientsChanged}
         />
         <p />
         <TextInputElement
-          name="Message"
+          name={i18n.t('forms.message', 'Message')}
           showLabel={false}
           count={Count.SMS}
           onChange={this.handleMessageUpdate}
           entry={this.state.message}
-          onFieldFailures={(persistantFailures: ValidationFailure[]) => {
-            const message = { ...this.state.message, persistantFailures };
-            this.setState({
-              message,
-              valid: this.state.valid && !hasErrors(message)
-            });
-          }}
           autocomplete={true}
           focus={true}
           textarea={true}
         />
+        {renderIssues(this.props)}
       </Dialog>
     );
   }

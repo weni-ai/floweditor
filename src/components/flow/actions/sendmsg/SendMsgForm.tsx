@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/explicit-member-accessibility */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { react as bindCallbacks } from 'auto-bind';
-import axios from 'axios';
+import { AxiosResponse } from 'axios';
 import Dialog, { ButtonSet, Tab } from 'components/dialog/Dialog';
-import { hasErrors } from 'components/flow/actions/helpers';
+import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import {
   initializeForm as stateToForm,
   stateToAction,
@@ -15,27 +15,24 @@ import { hasUseableTranslation } from 'components/form/assetselector/helpers';
 import CheckboxElement from 'components/form/checkbox/CheckboxElement';
 import MultiChoiceInput from 'components/form/multichoice/MultiChoice';
 import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
-import TextInputElement, { Count } from 'components/form/textinput/TextInputElement';
+import TextInputElement from 'components/form/textinput/TextInputElement';
 import TypeList from 'components/nodeeditor/TypeList';
-import Pill from 'components/pill/Pill';
 import { fakePropType } from 'config/ConfigProvider';
-import { fetchAsset, getCookie } from 'external';
-import { Template, TemplateOptions, TemplateTranslation } from 'flowTypes';
+import { fetchAsset } from 'external';
+import { Template, TemplateTranslation } from 'flowTypes';
 import mutate from 'immutability-helper';
 import * as React from 'react';
 import { Asset } from 'store/flowContext';
 import {
-  AssetEntry,
   FormState,
   mergeForm,
   StringArrayEntry,
   StringEntry,
-  ValidationFailure,
-  SelectOptionEntry
+  SelectOptionEntry,
+  FormEntry
 } from 'store/nodeEditor';
 import { MaxOfTenItems, Required, shouldRequireIf, validate } from 'store/validators';
-import { createUUID, range } from 'utils';
-import { small, large } from 'utils/reactselect';
+import { range } from 'utils';
 
 import styles from './SendMsgForm.module.scss';
 import { hasFeature } from 'config/typeConfigs';
@@ -43,26 +40,7 @@ import { FeatureFilter } from 'config/interfaces';
 
 import i18n from 'config/i18n';
 import { Trans } from 'react-i18next';
-
-const MAX_ATTACHMENTS = 3;
-
-const TYPE_OPTIONS: SelectOption[] = [
-  { value: 'image', label: 'Image URL' },
-  { value: 'audio', label: 'Audio URL' },
-  { value: 'video', label: 'Video URL' }
-];
-
-const NEW_TYPE_OPTIONS = TYPE_OPTIONS.concat([{ value: 'upload', label: 'Upload Attachment' }]);
-
-const getAttachmentTypeOption = (type: string): SelectOption => {
-  return TYPE_OPTIONS.find((option: SelectOption) => option.value === type);
-};
-
-export interface Attachment {
-  type: string;
-  url: string;
-  uploaded?: boolean;
-}
+import { Attachment, renderAttachments } from './attachments';
 
 export interface SendMsgFormState extends FormState {
   message: StringEntry;
@@ -70,7 +48,7 @@ export interface SendMsgFormState extends FormState {
   quickReplyEntry: StringEntry;
   sendAll: boolean;
   attachments: Attachment[];
-  template: AssetEntry;
+  template: FormEntry;
   topic: SelectOptionEntry;
   templateVariables: StringEntry[];
   templateTranslation?: TemplateTranslation;
@@ -88,10 +66,10 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
 
     // intialize our templates if we have them
     if (this.state.template.value !== null) {
-      fetchAsset(this.props.assetStore.templates, this.state.template.value.id).then(
+      fetchAsset(this.props.assetStore.templates, this.state.template.value.uuid).then(
         (asset: Asset) => {
           if (asset !== null) {
-            this.handleTemplateChanged([asset]);
+            this.handleTemplateChanged([{ ...this.state.template.value, ...asset.content }]);
           }
         }
       );
@@ -112,7 +90,9 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
   ): boolean {
     const updates: Partial<SendMsgFormState> = {};
     if (keys.hasOwnProperty('text')) {
-      updates.message = validate('Message', keys.text, [shouldRequireIf(submitting)]);
+      updates.message = validate(i18n.t('forms.message', 'Message'), keys.text, [
+        shouldRequireIf(submitting)
+      ]);
     }
 
     if (keys.hasOwnProperty('sendAll')) {
@@ -120,13 +100,21 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     }
 
     if (keys.hasOwnProperty('quickReplies')) {
-      updates.quickReplies = validate('Quick Replies', keys.quickReplies, [MaxOfTenItems]);
+      updates.quickReplies = validate(
+        i18n.t('forms.quick_replies', 'Quick Replies'),
+        keys.quickReplies,
+        [MaxOfTenItems]
+      );
     }
 
     const updated = mergeForm(this.state, updates) as SendMsgFormState;
 
     this.setState(updated);
     return updated.valid;
+  }
+
+  public handleMessageInput(event: React.KeyboardEvent) {
+    return this.handleUpdate({ text: (event.target as any).value }, false);
   }
 
   public handleMessageUpdate(message: string, name: string, submitting = false): boolean {
@@ -142,6 +130,11 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
   }
 
   private handleSave(): void {
+    // don't continue if our message already has errors
+    if (hasErrors(this.state.message)) {
+      return;
+    }
+
     // make sure we validate untouched text fields and contact fields
     let valid = this.handleMessageUpdate(this.state.message.value, null, true);
 
@@ -166,27 +159,6 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     }
   }
 
-  public handleFieldFailures(persistantFailures: ValidationFailure[]): void {
-    const message = { ...this.state.message, persistantFailures };
-    this.setState({ message, valid: this.state.valid && !hasErrors(message) });
-  }
-
-  public handleQuickReplyFieldFailures(persistantFailures: ValidationFailure[]): void {
-    const quickReplies = { ...this.state.quickReplies, persistantFailures };
-    this.setState({
-      quickReplies,
-      valid: this.state.valid && !hasErrors(quickReplies)
-    });
-  }
-
-  public handleAttachmentRemoved(index: number): void {
-    // we found a match, merge us in
-    const updated: any = mutate(this.state.attachments, {
-      $splice: [[index, 1]]
-    });
-    this.setState({ attachments: updated });
-  }
-
   private getButtons(): ButtonSet {
     return {
       primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
@@ -197,177 +169,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     };
   }
 
-  private renderUpload(index: number, attachment: Attachment): JSX.Element {
-    return (
-      <div
-        className={styles.url_attachment}
-        key={index > -1 ? 'url_attachment_' + index : createUUID()}
-      >
-        <div className={styles.type_choice}>
-          <SelectElement
-            name="Type"
-            styles={small as any}
-            entry={{
-              value: { label: attachment.type }
-            }}
-            options={TYPE_OPTIONS}
-          />
-        </div>
-        <div className={styles.url}>
-          <span className={styles.upload}>
-            <Pill
-              icon="fe-download"
-              text=" Download"
-              large={true}
-              onClick={() => {
-                window.open(attachment.url, '_blank');
-              }}
-            />
-            <div className={styles.remove_upload}>
-              <Pill
-                icon="fe-x"
-                text=" Remove"
-                large={true}
-                onClick={() => {
-                  this.handleAttachmentRemoved(index);
-                }}
-              />
-            </div>
-          </span>
-        </div>
-      </div>
-    );
-  }
-
-  private handleUploadFile(files: FileList): void {
-    let attachments: any = this.state.attachments;
-
-    // if we have a csrf in our cookie, pass it along as a header
-    const csrf = getCookie('csrftoken');
-    const headers = csrf ? { 'X-CSRFToken': csrf } : {};
-
-    const data = new FormData();
-    data.append('file', files[0]);
-    axios
-      .post(this.context.config.endpoints.attachments, data, { headers })
-      .then(response => {
-        attachments = mutate(attachments, {
-          $push: [{ type: response.data.type, url: response.data.url, uploaded: true }]
-        });
-        this.setState({ attachments });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
-
-  private renderAttachment(index: number, attachment: Attachment): JSX.Element {
-    let attachments: any = this.state.attachments;
-    return (
-      <div
-        className={styles.url_attachment}
-        key={index > -1 ? 'url_attachment_' + index : createUUID()}
-      >
-        <div className={styles.type_choice}>
-          <SelectElement
-            styles={small as any}
-            name="Type Options"
-            placeholder="Add Attachment"
-            entry={{
-              value: index > -1 ? getAttachmentTypeOption(attachment.type) : null
-            }}
-            onChange={(option: any) => {
-              if (option.value === 'upload') {
-                window.setTimeout(() => {
-                  this.filePicker.click();
-                }, 200);
-              } else {
-                if (index === -1) {
-                  attachments = mutate(attachments, {
-                    $push: [{ type: option.value, url: '' }]
-                  });
-                } else {
-                  attachments = mutate(attachments, {
-                    [index]: {
-                      $set: { type: option.value, url: attachment.url }
-                    }
-                  });
-                }
-                this.setState({ attachments });
-              }
-            }}
-            options={index > -1 ? TYPE_OPTIONS : NEW_TYPE_OPTIONS}
-          />
-        </div>
-        {index > -1 ? (
-          <>
-            <div className={styles.url}>
-              <TextInputElement
-                placeholder="URL"
-                name="url"
-                onChange={(value: string) => {
-                  attachments = mutate(attachments, {
-                    [index]: { $set: { type: attachment.type, url: value } }
-                  });
-                  this.setState({ attachments });
-                }}
-                entry={{ value: attachment.url }}
-                autocomplete={true}
-              />
-            </div>
-            <div className={styles.remove}>
-              <Pill
-                icon="fe-x"
-                text=" Remove"
-                large={true}
-                onClick={() => {
-                  this.handleAttachmentRemoved(index);
-                }}
-              />
-            </div>
-          </>
-        ) : null}
-      </div>
-    );
-  }
-
-  private renderAttachments(): JSX.Element {
-    const attachments = this.state.attachments.map((attachment, index: number) =>
-      attachment.uploaded
-        ? this.renderUpload(index, attachment)
-        : this.renderAttachment(index, attachment)
-    );
-
-    const emptyOption =
-      this.state.attachments.length < MAX_ATTACHMENTS
-        ? this.renderAttachment(-1, { url: '', type: '' })
-        : null;
-    return (
-      <>
-        <p>
-          {i18n.t(
-            'forms.send_msg.summary',
-            'Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.',
-            { count: MAX_ATTACHMENTS }
-          )}
-        </p>
-        {attachments}
-        {emptyOption}
-        <input
-          style={{
-            display: 'none'
-          }}
-          ref={ele => {
-            this.filePicker = ele;
-          }}
-          type="file"
-          onChange={e => this.handleUploadFile(e.target.files)}
-        />
-      </>
-    );
-  }
-
-  private handleTemplateChanged(selected: Asset[]): void {
+  private handleTemplateChanged(selected: any[]): void {
     const template = selected ? selected[0] : null;
 
     if (!template) {
@@ -377,12 +179,11 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
         templateVariables: []
       });
     } else {
-      const templateOptions = template.content as TemplateOptions;
-      const templateTranslation = templateOptions.translations[0];
+      const templateTranslation = template.translations[0];
 
       const templateVariables =
         this.state.templateVariables.length === 0 ||
-        (this.state.template.value && this.state.template.value.id !== template.id)
+        (this.state.template.value && this.state.template.value.uuid !== template.uuid)
           ? range(0, templateTranslation.variable_count).map(() => {
               return {
                 value: ''
@@ -398,17 +199,6 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     }
   }
 
-  private handleTemplateFieldFailures(persistantFailures: ValidationFailure[], num: number): void {
-    const templateVariables = mutate(this.state.templateVariables, {
-      [num]: { $merge: { persistantFailures } }
-    }) as StringEntry[];
-
-    this.setState({
-      templateVariables,
-      valid: this.state.valid && !hasErrors(templateVariables[num])
-    });
-  }
-
   private handleTemplateVariableChanged(updatedText: string, num: number): void {
     const entry = validate(`Variable ${num + 1}`, updatedText, [Required]);
     const templateVariables = mutate(this.state.templateVariables, {
@@ -417,8 +207,8 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     this.setState({ templateVariables });
   }
 
-  private handleShouldExcludeTemplate(asset: Asset): boolean {
-    return !hasUseableTranslation(asset.content as Template);
+  private handleShouldExcludeTemplate(template: any): boolean {
+    return !hasUseableTranslation(template as Template);
   }
 
   private renderTopicConfig(): JSX.Element {
@@ -426,18 +216,18 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
       <>
         <p>
           {i18n.t(
-            'forms.send_msg.facebook.warning',
+            'forms.send_msg_facebook_warning',
             'Sending bulk messages over a Facebook channel requires that a topic be specified if the user has not sent a message in the last 24 hours. Setting a topic to use over Facebook is especially important for the first message in your flow.'
           )}
         </p>
         <SelectElement
-          styles={large as any}
-          name="MethodMap"
+          key={'fb_method_select'}
+          name={i18n.t('forms.method', 'Method')}
           entry={this.state.topic}
           onChange={this.handleTopicUpdate}
           options={TOPIC_OPTIONS}
           placeholder={i18n.t(
-            'forms.send_message.facebook.topic_placeholder',
+            'forms.send_msg_facebook_topic_placeholder',
             'Select a topic to use over Facebook'
           )}
           clearable={true}
@@ -455,12 +245,12 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
       <>
         <p>
           {i18n.t(
-            'forms.send_msg.whatsapp_warning',
+            'forms.whatsapp_warning',
             'Sending messages over a WhatsApp channel requires that a template be used if you have not received a message from a contact in the last 24 hours. Setting a template to use over WhatsApp is especially important for the first message in your flow.'
           )}
         </p>
         <AssetSelector
-          name="Template"
+          name={i18n.t('forms.template', 'template')}
           noOptionsMessage="No templates found"
           assets={this.props.assetStore.templates}
           entry={this.state.template}
@@ -476,17 +266,14 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
               return (
                 <div className={styles.variable} key={'tr_arg_' + num}>
                   <TextInputElement
-                    name={`Variable ${num + 1}`}
+                    name={`${i18n.t('forms.variable', 'Variable')} ${num + 1}`}
                     showLabel={false}
-                    placeholder={`Variable ${num + 1}`}
+                    placeholder={`${i18n.t('forms.variable', 'Variable')} ${num + 1}`}
                     onChange={(updatedText: string) => {
                       this.handleTemplateVariableChanged(updatedText, num);
                     }}
                     entry={this.state.templateVariables[num]}
                     autocomplete={true}
-                    onFieldFailures={(failures: ValidationFailure[]) => {
-                      this.handleTemplateFieldFailures(failures, num);
-                    }}
                   />
                 </div>
               );
@@ -497,67 +284,59 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     );
   }
 
-  private handleAddQuickReply(newQuickReply: string): boolean {
-    const newReplies = [...this.state.quickReplies.value];
-    if (newReplies.length >= 10) {
-      return false;
-    }
-
-    // we don't allow two quick replies with the same name
-    const isNew = !newReplies.find(
-      (reply: string) => reply.toLowerCase() === newQuickReply.toLowerCase()
-    );
-
-    if (isNew) {
-      newReplies.push(newQuickReply);
-      this.setState({
-        quickReplies: { value: newReplies }
-      });
-      return true;
-    }
-
-    return false;
-  }
-
-  private handleRemoveQuickReply(toRemove: string): void {
-    this.setState({
-      quickReplies: {
-        value: this.state.quickReplies.value.filter((reply: string) => reply !== toRemove)
-      }
+  private handleAttachmentUploaded(response: AxiosResponse) {
+    const attachments: any = mutate(this.state.attachments, {
+      $push: [{ type: response.data.type, url: response.data.url, uploaded: true }]
     });
+    this.setState({ attachments });
   }
 
-  private handleQuickReplyEntry(quickReplyEntry: StringEntry): void {
-    this.setState({ quickReplyEntry });
+  private handleAttachmentChanged(index: number, type: string, url: string) {
+    let attachments: any = this.state.attachments;
+    if (index === -1) {
+      attachments = mutate(attachments, {
+        $push: [{ type, url }]
+      });
+    } else {
+      attachments = mutate(attachments, {
+        [index]: {
+          $set: { type, url }
+        }
+      });
+    }
+
+    this.setState({ attachments });
+  }
+
+  private handleAttachmentRemoved(index: number) {
+    const attachments: any = mutate(this.state.attachments, {
+      $splice: [[index, 1]]
+    });
+    this.setState({ attachments });
   }
 
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
 
     const quickReplies: Tab = {
-      name: 'Quick Replies',
+      name: i18n.t('forms.quick_replies', 'Quick Replies'),
       body: (
         <>
           <p>
             {i18n.t(
-              'forms.send_msg.quick_replies',
+              'forms.quick_replies_summary',
               'Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for "Yes" and one for "No".'
             )}
           </p>
 
           <MultiChoiceInput
-            name="Quick Reply"
+            name={i18n.t('forms.quick_reply', 'quick_reply')}
             helpText={
-              <Trans i18nKey="forms.send_msg.add_quick_reply">
-                Add a new Quick Reply and press enter.
-              </Trans>
+              <Trans i18nKey="forms.add_quick_reply">Add a new Quick Reply and press enter.</Trans>
             }
             items={this.state.quickReplies}
             entry={this.state.quickReplyEntry}
-            onRemoved={this.handleRemoveQuickReply}
-            onItemAdded={this.handleAddQuickReply}
-            onEntryChanged={this.handleQuickReplyEntry}
-            onFieldErrors={this.handleQuickReplyFieldFailures}
+            onChange={this.handleQuickRepliesUpdate}
           />
         </>
       ),
@@ -566,21 +345,27 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     };
 
     const attachments: Tab = {
-      name: 'Attachments',
-      body: this.renderAttachments(),
+      name: i18n.t('forms.attachments', 'Attachments'),
+      body: renderAttachments(
+        this.context.config.endpoints.attachments,
+        this.state.attachments,
+        this.handleAttachmentUploaded,
+        this.handleAttachmentChanged,
+        this.handleAttachmentRemoved
+      ),
       checked: this.state.attachments.length > 0
     };
 
     const advanced: Tab = {
-      name: 'Advanced',
+      name: i18n.t('forms.advanced', 'Advanced'),
       body: (
         <CheckboxElement
-          name="All Destinations"
-          title="All Destinations"
+          name={i18n.t('forms.all_destinations', 'All Destinations')}
+          title={i18n.t('forms.all_destinations', 'All Destinations')}
           labelClassName={styles.checkbox}
           checked={this.state.sendAll}
           description={i18n.t(
-            'forms.send_msg.all_destinations',
+            'forms.all_destinations_description',
             "Send a message to all destinations known for this contact. If you aren't sure what this means, leave it unchecked."
           )}
           onChange={this.handleSendAllUpdate}
@@ -619,16 +404,17 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <TextInputElement
-          name="Message"
+          name={i18n.t('forms.message', 'Message')}
           showLabel={false}
-          count={Count.SMS}
+          counter=".sms-counter"
           onChange={this.handleMessageUpdate}
           entry={this.state.message}
           autocomplete={true}
           focus={true}
           textarea={true}
-          onFieldFailures={this.handleFieldFailures}
         />
+        <temba-charcount class="sms-counter"></temba-charcount>
+        {renderIssues(this.props)}
       </Dialog>
     );
   }

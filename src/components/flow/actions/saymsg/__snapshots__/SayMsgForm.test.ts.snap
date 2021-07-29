@@ -28,14 +28,16 @@ exports[`SayMsgForm render should render 1`] = `
         "localizeableKeys": Array [
           "text",
           "quick_replies",
+          "templating.variables",
         ],
+        "massageForDisplay": [Function],
         "name": "Send Message",
         "type": "send_msg",
       }
     }
     onChange={[MockFunction]}
   />
-  <Connect(TextInputElement)
+  <TextInputElement
     autocomplete={true}
     entry={
       Object {
@@ -45,7 +47,6 @@ exports[`SayMsgForm render should render 1`] = `
     focus={true}
     name="Message"
     onChange={[Function]}
-    onFieldFailures={[Function]}
     showLabel={false}
     textarea={true}
   />

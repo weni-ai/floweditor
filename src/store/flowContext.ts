@@ -1,18 +1,26 @@
-import { FlowDefinition, FlowNode, UINode } from 'flowTypes';
-import { combineReducers } from 'redux';
+import { FlowDefinition, FlowNode, UINode, FlowMetadata, FlowIssue } from 'flowTypes';
+import { combineReducers, Action } from 'redux';
 import ActionTypes, {
   UpdateAssetsAction,
   UpdateBaseLanguageAction,
   UpdateContactFieldsAction,
   UpdateDefinitionAction,
-  UpdateDependenciesAction,
-  UpdateNodesAction
+  UpdateNodesAction,
+  UpdateMetadataAction,
+  UpdateIssuesAction
 } from 'store/actionTypes';
 import Constants from 'store/constants';
+import { Type } from 'config/interfaces';
+import { TembaStore } from 'temba-components';
+import i18n from 'config/i18n';
 
 // tslint:disable:no-shadowed-variable
 export interface RenderNodeMap {
   [uuid: string]: RenderNode;
+}
+
+export interface FlowIssueMap {
+  [uuid: string]: FlowIssue[];
 }
 
 export interface RenderNode {
@@ -20,6 +28,12 @@ export interface RenderNode {
   node: FlowNode;
   inboundConnections: { [nodeUUID: string]: string };
   ghost?: boolean;
+}
+
+export interface RenderAction {
+  action: Action;
+  config: Type;
+  index?: number;
 }
 
 export interface FunctionExample {
@@ -55,12 +69,14 @@ export enum AssetType {
   Group = 'group',
   Label = 'label',
   Language = 'language',
+  NameMatch = 'name_match',
   Remove = 'remove',
   Resthook = 'resthook',
   Result = 'result',
   Revision = 'revision',
   Scheme = 'scheme',
   Template = 'template',
+  Ticketer = 'ticketer',
   URN = 'urn'
 }
 
@@ -82,7 +98,7 @@ export interface Asset {
 
 export const REMOVE_VALUE_ASSET = {
   id: AssetType.Remove,
-  name: 'Remove Value',
+  name: i18n.t('forms.remove_value', 'Remove Value'),
   type: AssetType.Remove
 };
 
@@ -117,21 +133,28 @@ export interface Assets {
 }
 
 export interface FlowContext {
-  dependencies: FlowDefinition[];
+  metadata: FlowMetadata;
   baseLanguage: Asset;
   contactFields: ContactFields;
   definition: FlowDefinition;
   nodes: { [uuid: string]: RenderNode };
+  issues: FlowIssueMap;
   assetStore: AssetStore;
 }
 
 // Initial state
 export const initialState: FlowContext = {
   definition: null,
-  dependencies: null,
   baseLanguage: null,
+  metadata: {
+    dependencies: [],
+    results: [],
+    waiting_exit_uuids: [],
+    parent_refs: []
+  },
   contactFields: {},
   nodes: {},
+  issues: {},
   assetStore: {}
 };
 
@@ -150,12 +173,21 @@ export const updateNodes = (nodes: RenderNodeMap): UpdateNodesAction => ({
   }
 });
 
-export const updateDependencies = (dependencies: FlowDefinition[]): UpdateDependenciesAction => ({
-  type: Constants.UPDATE_DEPENDENCIES,
+export const updateIssues = (issues: FlowIssueMap): UpdateIssuesAction => ({
+  type: Constants.UPDATE_ISSUES,
   payload: {
-    dependencies
+    issues
   }
 });
+
+export const updateMetadata = (metadata: FlowMetadata): UpdateMetadataAction => {
+  return {
+    type: Constants.UPDATE_METADATA,
+    payload: {
+      metadata
+    }
+  };
+};
 
 export const updateBaseLanguage = (baseLanguage: Asset): UpdateBaseLanguageAction => ({
   type: Constants.UPDATE_BASE_LANGUAGE,
@@ -171,12 +203,19 @@ export const updateContactFields = (contactFields: ContactFields): UpdateContact
   }
 });
 
-export const updateAssets = (assets: AssetStore): UpdateAssetsAction => ({
-  type: Constants.UPDATE_ASSET_MAP,
-  payload: {
-    assets
+export const updateAssets = (assets: AssetStore): UpdateAssetsAction => {
+  const store: TembaStore = document.querySelector('temba-store');
+  if (store) {
+    store.setKeyedAssets('results', Object.keys(assets['results'].items));
   }
-});
+
+  return {
+    type: Constants.UPDATE_ASSET_MAP,
+    payload: {
+      assets
+    }
+  };
+};
 
 // Reducers
 export const definition = (
@@ -200,13 +239,19 @@ export const nodes = (state: {} = initialState.nodes, action: ActionTypes) => {
   }
 };
 
-export const dependencies = (
-  state: FlowDefinition[] = initialState.dependencies,
-  action: ActionTypes
-) => {
+export const issues = (state: {} = initialState.issues, action: ActionTypes) => {
   switch (action.type) {
-    case Constants.UPDATE_DEPENDENCIES:
-      return action.payload.dependencies;
+    case Constants.UPDATE_ISSUES:
+      return action.payload.issues;
+    default:
+      return state;
+  }
+};
+
+export const metadata = (state: FlowMetadata = initialState.metadata, action: ActionTypes) => {
+  switch (action.type) {
+    case Constants.UPDATE_METADATA:
+      return action.payload.metadata;
     default:
       return state;
   }
@@ -246,7 +291,8 @@ export const contactFields = (
 export default combineReducers({
   definition,
   nodes,
-  dependencies,
+  issues,
+  metadata,
   assetStore,
   baseLanguage,
   contactFields

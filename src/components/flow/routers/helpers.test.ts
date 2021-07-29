@@ -1,7 +1,34 @@
-import { getSwitchRouter, resolveRoutes } from 'components/flow/routers/helpers';
+import { getSwitchRouter, resolveRoutes, createCaseProps } from 'components/flow/routers/helpers';
 import { createCases, createMatchRouter, createRoutes } from 'testUtils/assetCreators';
+import { createUUID } from 'utils';
+import { Operators } from 'config/interfaces';
+import { DEFAULT_OPERAND } from 'components/nodeeditor/constants';
 
 describe('routers', () => {
+  it('doesnt modify in memory cases', () => {
+    const cases = [
+      {
+        uuid: createUUID(),
+        arguments: ['@(datetime_add(today(), -30, "D"))'],
+        type: Operators.has_date_lt,
+        category_uuid: createUUID()
+      }
+    ];
+
+    const renderNode = createMatchRouter([]);
+    renderNode.ui.config = {
+      cases: { [cases[0].uuid]: { arguments: ['-30'] } }
+    };
+
+    const caseProps = createCaseProps(cases, renderNode);
+
+    // case prop should be updated to numeric argument
+    expect(caseProps[0].kase.arguments).toEqual(['-30']);
+
+    // but the original should still be our datetime function
+    expect(cases[0].arguments).toEqual(['@(datetime_add(today(), -30, "D"))']);
+  });
+
   describe('system categories', () => {
     it('creates all responses category', () => {
       const { categories } = resolveRoutes(createCases([]), false, null);
@@ -51,7 +78,13 @@ describe('routers', () => {
     });
 
     it('reuses timeout category', () => {
-      const renderNode = createMatchRouter(['Red', 'Green', 'Blue'], true);
+      const renderNode = createMatchRouter(
+        ['Red', 'Green', 'Blue'],
+        DEFAULT_OPERAND,
+        Operators.has_any_word,
+        '',
+        true
+      );
       const originalCategories = renderNode.node.router.categories;
       expect(originalCategories[originalCategories.length - 1].name).toBe('No Response');
 
@@ -113,6 +146,25 @@ describe('routers', () => {
 
       // and reused exits
       expect(routes.exits[0].uuid).toEqual(exits[0].uuid);
+    });
+
+    it('allows splitting like-named routes back out', () => {
+      // create a node with like-named routes
+      const originalNode = createMatchRouter(['Red', 'Green', 'Green']);
+
+      // Red, Green, Other
+      expect(originalNode.node.exits.length).toBe(3);
+
+      // edit that node, but change one of the green case categories to something new
+      const cases = createCaseProps(getSwitchRouter(originalNode.node).cases, originalNode);
+      cases[2].categoryName = 'New Name';
+      const routes = resolveRoutes(cases, false, originalNode.node);
+
+      // Red, Green, New Name, Other
+      expect(routes.exits.length).toBe(4);
+
+      // and exits should always be unique
+      expect(routes.exits).toBeUnique();
     });
   });
 });

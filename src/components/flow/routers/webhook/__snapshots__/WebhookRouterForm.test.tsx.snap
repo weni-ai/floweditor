@@ -23,7 +23,7 @@ exports[`WebhookRouterForm should render 1`] = `
             className="info"
           >
             <Trans
-              i18nKey="forms.call_webhook.header_summary"
+              i18nKey="forms.webhook_header_summary"
             >
               Add any additional headers below that you would like to send along with your request.
             </Trans>
@@ -33,7 +33,7 @@ exports[`WebhookRouterForm should render 1`] = `
               entry={
                 Object {
                   "value": Object {
-                    "name": "Content-Type",
+                    "name": "Accept",
                     "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
                     "value": "application/json",
                   },
@@ -65,6 +65,54 @@ exports[`WebhookRouterForm should render 1`] = `
         "hasErrors": false,
         "name": "HTTP Headers",
       },
+      Object {
+        "body": <div
+          className="body_form"
+        >
+          <h4>
+            GET Body
+          </h4>
+          <p>
+            <Trans
+              i18nKey="forms.webhook_body_summary"
+              values={
+                Object {
+                  "method": "GET",
+                }
+              }
+            >
+              Modify the body of the [[method]] request that will be sent to your webhook.
+            </Trans>
+          </p>
+          <TextInputElement
+            __className="req_body"
+            autocomplete={true}
+            entry={
+              Object {
+                "value": "",
+              }
+            }
+            helpText={
+              <Trans
+                i18nKey="forms.webhook_body_summary"
+                values={
+                  Object {
+                    "method": "GET",
+                  }
+                }
+              >
+                Modify the body of the [[method]] request that will be sent to your webhook.
+              </Trans>
+            }
+            name="GET Body"
+            onChange={[Function]}
+            showLabel={false}
+            textarea={true}
+          />
+        </div>,
+        "checked": false,
+        "name": "GET Body",
+      },
     ]
   }
   title="Call Webhook"
@@ -86,7 +134,8 @@ exports[`WebhookRouterForm should render 1`] = `
         "name": "Call Webhook",
         "type": "call_webhook",
         "visibility": Array [
-          "message",
+          "messaging",
+          "messaging_background",
           "voice",
         ],
       }
@@ -94,68 +143,80 @@ exports[`WebhookRouterForm should render 1`] = `
     onChange={[MockFunction]}
   />
   <div
-    className="method"
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "display": "flex",
+      }
+    }
   >
-    <SelectElement
-      entry={
-        Object {
-          "value": Object {
-            "label": "GET",
-            "value": "GET",
-          },
-        }
-      }
-      name="MethodMap"
-      onChange={[Function]}
-      options={
-        Array [
+    <div
+      className="method"
+    >
+      <SelectElement
+        entry={
           Object {
-            "label": "GET",
-            "value": "GET",
-          },
-          Object {
-            "label": "POST",
-            "value": "POST",
-          },
-          Object {
-            "label": "PUT",
-            "value": "PUT",
-          },
-        ]
-      }
-      styles={
-        Object {
-          "control": [Function],
-          "input": [Function],
-          "multiValue": [Function],
-          "placeholder": [Function],
-          "singleValue": [Function],
+            "value": Object {
+              "name": "GET",
+              "value": "GET",
+            },
+          }
         }
-      }
-    />
-  </div>
-  <div
-    className="url"
-  >
-    <Connect(TextInputElement)
-      autocomplete={true}
-      entry={
-        Object {
-          "value": "",
+        key="method_select"
+        name="Method"
+        onChange={[Function]}
+        options={
+          Array [
+            Object {
+              "name": "GET",
+              "value": "GET",
+            },
+            Object {
+              "name": "POST",
+              "value": "POST",
+            },
+            Object {
+              "name": "PUT",
+              "value": "PUT",
+            },
+            Object {
+              "name": "DELETE",
+              "value": "DELETE",
+            },
+            Object {
+              "name": "HEAD",
+              "value": "HEAD",
+            },
+            Object {
+              "name": "PATCH",
+              "value": "PATCH",
+            },
+          ]
         }
-      }
-      name="URL"
-      onChange={[Function]}
-      onFieldFailures={[Function]}
-      placeholder="Enter a URL"
-    />
+      />
+    </div>
+    <div
+      className="url"
+    >
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          Object {
+            "value": "",
+          }
+        }
+        name="URL"
+        onChange={[Function]}
+        placeholder="Enter a URL"
+      />
+    </div>
   </div>
   <div
     className="instructions"
   >
     <p>
       <Trans
-        i18nKey="forms.call_webhook.help"
+        i18nKey="forms.webhook_help"
       >
         If your server responds with JSON, each property will be added to the Flow.
       </Trans>
@@ -167,7 +228,7 @@ exports[`WebhookRouterForm should render 1`] = `
     </pre>
     <p>
       <Trans
-        i18nKey="forms.call_webhook.example"
+        i18nKey="forms.webhook_example"
       >
         This response would add 
         <span
@@ -214,18 +275,21 @@ exports[`WebhookRouterForm should render 1`] = `
 
 exports[`WebhookRouterForm updates should repopulate post body 1`] = `
 Object {
+  "body": Object {
+    "value": "",
+  },
   "headers": Array [
     Object {
       "value": Object {
-        "name": "Content-Type",
-        "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+        "name": "Accept",
+        "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
         "value": "application/json",
       },
     },
     Object {
       "value": Object {
         "name": "",
-        "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
+        "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
         "value": "",
       },
     },
@@ -234,9 +298,6 @@ Object {
     "value": Object {
       "value": "GET",
     },
-  },
-  "postBody": Object {
-    "value": null,
   },
   "resultName": Object {
     "value": "Result",
@@ -251,26 +312,7 @@ Object {
 
 exports[`WebhookRouterForm updates should repopulate post body 2`] = `
 Object {
-  "headers": Array [
-    Object {
-      "value": Object {
-        "name": "Content-Type",
-        "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
-        "value": "application/json",
-      },
-    },
-    Object {
-      "value": Object {
-        "name": "",
-        "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
-        "value": "",
-      },
-    },
-  ],
-  "method": Object {
-    "value": "POST",
-  },
-  "postBody": Object {
+  "body": Object {
     "value": "@(json(object(
   \\"contact\\", object(
     \\"uuid\\", contact.uuid, 
@@ -283,6 +325,34 @@ Object {
   ),
   \\"results\\", foreach_value(results, extract_object, \\"value\\", \\"category\\")
 )))",
+  },
+  "headers": Array [
+    Object {
+      "value": Object {
+        "name": "Accept",
+        "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
+        "value": "application/json",
+      },
+    },
+    Object {
+      "validationFailures": undefined,
+      "value": Object {
+        "name": "Content-Type",
+        "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
+        "value": "application/json",
+      },
+    },
+    Object {
+      "validationFailures": undefined,
+      "value": Object {
+        "name": "",
+        "uuid": "00dd2423-0a34-4ee2-b97d-839fb2d593ef",
+        "value": "",
+      },
+    },
+  ],
+  "method": Object {
+    "value": "POST",
   },
   "resultName": Object {
     "value": "Result",
@@ -313,6 +383,12 @@ exports[`WebhookRouterForm updates should save changes 1`] = `
             class="tab_icon fe-check"
           />
         </div>
+        <div
+          class="tab "
+        >
+          GET Body
+           
+        </div>
       </div>
       <div
         class="header call_webhook"
@@ -340,182 +416,61 @@ exports[`WebhookRouterForm updates should save changes 1`] = `
             When a contact arrives at this point in your flow...
           </p>
           <div>
-            <select
-              data-testid="select"
+            <div
+              class="normal "
             >
-              <option
-                value="send_msg"
-              >
-                Send the contact a message
-              </option>
-              <option
-                value="wait_for_response"
-              >
-                Wait for the contact to respond
-              </option>
-              <option
-                value="send_broadcast"
-              >
-                Send somebody else a message
-              </option>
-              <option
-                value="add_input_labels"
-              >
-                Label the incoming message
-              </option>
-              <option
-                value="add_contact_urn"
-              >
-                Add a URN for the contact
-              </option>
-              <option
-                value="add_contact_groups"
-              >
-                Add the contact to a group
-              </option>
-              <option
-                value="remove_contact_groups"
-              >
-                Remove the contact from a group
-              </option>
-              <option
-                value="set_contact_field"
-              >
-                Update the contact
-              </option>
-              <option
-                value="send_email"
-              >
-                Send an email
-              </option>
-              <option
-                value="set_run_result"
-              >
-                Save a result for this flow
-              </option>
-              <option
-                value="call_webhook"
-              >
-                Call a webhook
-              </option>
-              <option
-                value="call_resthook"
-              >
-                Call Zapier
-              </option>
-              <option
-                value="enter_flow"
-              >
-                Enter another flow
-              </option>
-              <option
-                value="start_session"
-              >
-                Start somebody else in a flow
-              </option>
-              <option
-                value="transfer_airtime"
-              >
-                Send the contact airtime
-              </option>
-              <option
-                value="split_by_intent"
-              >
-                Split by intent
-              </option>
-              <option
-                value="split_by_expression"
-              >
-                Split by a custom expression
-              </option>
-              <option
-                value="split_by_contact_field"
-              >
-                Split by a contact field
-              </option>
-              <option
-                value="split_by_run_result"
-              >
-                Split by a result in the flow
-              </option>
-              <option
-                value="split_by_random"
-              >
-                Split by random chance
-              </option>
-              <option
-                value="split_by_groups"
-              >
-                Split by group membership
-              </option>
-            </select>
+              <temba-select
+                data-testid="temba_select_type"
+                errors="[]"
+                expressions=""
+                name="type"
+                namekey="description"
+                searchable="true"
+                valuekey="type"
+                values="[{\\"type\\":\\"call_webhook\\",\\"name\\":\\"Call Webhook\\",\\"description\\":\\"Call a webhook\\",\\"localizeableKeys\\":[\\"exits\\"],\\"aliases\\":[\\"split_by_webhook\\"],\\"visibility\\":[\\"messaging\\",\\"messaging_background\\",\\"voice\\"]}]"
+              />
+            </div>
           </div>
         </div>
         <div
-          class="method"
+          style="display: flex; align-items: flex-end;"
         >
           <div
-            class="ele"
-          >
-            <select
-              data-testid="select"
-            >
-              <option
-                value="GET"
-              >
-                GET
-              </option>
-              <option
-                value="POST"
-              >
-                POST
-              </option>
-              <option
-                value="PUT"
-              >
-                PUT
-              </option>
-            </select>
-          </div>
-        </div>
-        <div
-          class="url"
-        >
-          <div
-            class="ele"
+            class="method"
           >
             <div
-              class="wrapper"
+              class="ele"
             >
-              <input
-                class="textinput"
-                data-spec="input"
-                data-testid="input"
-                maxlength="-1"
-                name="URL"
-                placeholder="Enter a URL"
-                type="text"
-                value=""
-              />
               <div
-                class="completion_container hidden"
-                data-spec="completion-options"
-                style="top: 0px; left: 0px;"
+                class="normal "
               >
-                <div
-                  class="options_wrapper"
-                >
-                  <ul
-                    class="option_list"
-                    data-spec="completion-list"
-                  />
-                  <div
-                    class="help"
-                    data-spec="completion-help"
-                  >
-                    Tab to complete, enter to select
-                  </div>
-                </div>
+                <temba-select
+                  data-testid="temba_select_method"
+                  errors="[]"
+                  expressions=""
+                  name="Method"
+                  namekey="name"
+                  valuekey="value"
+                  values="[{\\"value\\":\\"GET\\",\\"name\\":\\"GET\\"}]"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="url"
+          >
+            <div
+              class="ele"
+            >
+              <div
+                class="wrapper normal"
+              >
+                <input
+                  data-testid="URL"
+                  name="URL"
+                  placeholder="Enter a URL"
+                  value=""
+                />
               </div>
             </div>
           </div>
@@ -559,37 +514,13 @@ exports[`WebhookRouterForm updates should save changes 1`] = `
               Result Name
             </div>
             <div
-              class="wrapper"
+              class="wrapper normal"
             >
               <input
-                class="textinput"
-                data-spec="input"
-                data-testid="input"
-                maxlength="64"
+                data-testid="Result Name"
                 name="Result Name"
-                type="text"
                 value="Result"
               />
-              <div
-                class="completion_container hidden"
-                data-spec="completion-options"
-                style="top: 0px; left: 0px;"
-              >
-                <div
-                  class="options_wrapper"
-                >
-                  <ul
-                    class="option_list"
-                    data-spec="completion-list"
-                  />
-                  <div
-                    class="help"
-                    data-spec="completion-help"
-                  >
-                    Tab to complete, enter to select
-                  </div>
-                </div>
-              </div>
             </div>
             <div
               class="help_text"
@@ -638,6 +569,7 @@ Array [
         Object {
           "body": "Updated post body",
           "headers": Object {
+            "Accept": "application/json",
             "Content-Type": "application/json",
           },
           "method": "POST",

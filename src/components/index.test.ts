@@ -13,14 +13,20 @@ const baseProps: FlowEditorStoreProps = {
   translating: false,
   fetchingFlow: false,
   definition: null,
-  dependencies: null,
   loadFlowDefinition: jest.fn(),
   createNewRevision: jest.fn(),
   fetchFlow: jest.fn(),
   mergeEditorState: jest.fn(),
   modalMessage: null,
   saving: false,
-  nodes: null
+  nodes: null,
+  baseLanguage: null,
+  onOpenNodeEditor: jest.fn(),
+  handleLanguageChange: jest.fn(),
+  scrollToAction: null,
+  scrollToNode: null,
+  popped: null,
+  issues: {}
 };
 
 const { setup, spyOn } = composeComponentTestUtils(FlowEditor, baseProps);
@@ -36,7 +42,7 @@ describe('Root', () => {
 
       expect(editorContainer.hasClass('translating')).toBeFalsy();
       expect(editor.hasClass('editor')).toBeTruthy();
-      expect(wrapper.find('Connect(LanguageSelector)').exists()).toBeTruthy();
+      expect(wrapper.find('Connect(LanguageSelector)').exists()).toBeFalsy();
       expect(wrapper).toMatchSnapshot();
     });
 

@@ -16,7 +16,14 @@ import AppState from 'store/state';
 import { DisconnectExit, disconnectExit, DispatchWithState } from 'store/thunks';
 import { createClickHandler, getLocalization, renderIf } from 'utils';
 
+import * as moment from 'moment';
 import styles from './Exit.module.scss';
+import { Portal } from 'components/Portal';
+import i18n from 'config/i18n';
+
+export interface RenderCategory extends Category {
+  missing: boolean;
+}
 
 export interface ExitPassedProps {
   exit: Exit;
@@ -54,7 +61,6 @@ export interface ExitState {
 }
 
 const cx: any = classNames.bind(styles);
-
 export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
   private timeout: number;
   private hideDragHelper: number;
@@ -101,10 +107,7 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
   }
 
   public componentDidUpdate(prevProps: ExitProps): void {
-    if (
-      !this.props.exit.destination_uuid ||
-      this.props.exit.destination_uuid !== prevProps.exit.destination_uuid
-    ) {
+    if (this.props.exit.destination_uuid !== prevProps.exit.destination_uuid) {
       this.connect();
       if (this.state.confirmDelete) {
         this.setState({ confirmDelete: false });
@@ -220,10 +223,10 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
 
   private getSegmentCount(): JSX.Element {
     // Only exits with a destination have activity
-    if (this.props.exit.destination_uuid) {
-      const key = `count:${this.props.exit.uuid}:${this.props.exit.destination_uuid}`;
+    if (this.props.segmentCount > 0) {
+      const key = `${this.props.exit.uuid}-label`;
       return (
-        <div style={{ position: 'relative' }}>
+        <div style={{ position: 'absolute', bottom: '-25px' }}>
           <Counter
             key={key}
             count={this.props.segmentCount}
@@ -233,11 +236,9 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
             onMouseEnter={this.handleShowRecentMessages}
             onMouseLeave={this.handleHideRecentMessages}
           />
-          {this.getRecentMessages()}
         </div>
       );
     }
-    return null;
   }
 
   public getName(): { name: string; localized?: boolean } {
@@ -262,8 +263,13 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
 
       return { name, localized };
     } else {
+      const names: string[] = [];
+      this.props.categories.forEach((cat: Category) => {
+        names.push(cat.name);
+      });
+
       return {
-        name: this.props.categories.map((category: Category) => category.name).join(', ')
+        name: names.join(', ')
       };
     }
   }
@@ -275,27 +281,41 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
 
       const recentStyles = [styles.recent_messages];
 
-      let title = 'Recent Messages';
+      let title = i18n.t('recent_messages.header', 'Recent Messages');
       if (!hasRecents && !this.state.fetchingRecentMessages) {
-        title = 'No Recent Messages';
+        title = i18n.t('recent_messages.header_empty', 'No Recent Messages');
         recentStyles.push(styles.no_recents);
       }
 
+      const canvas = document.getElementById('canvas-container');
+      let left = 0;
+      let top = 0;
+
+      if (canvas) {
+        const canvasBounds = canvas.getBoundingClientRect();
+        const canvasOffset = canvasBounds.top + window.scrollY;
+        const rect = this.ele.getBoundingClientRect();
+        left = rect.left + window.scrollX + 5;
+        top = rect.top + window.scrollY - canvasOffset + 30;
+      }
+
       return (
-        <div className={recentStyles.join(' ')}>
-          <div className={styles.title}>{title}</div>
-          {recentMessages.map((recentMessage: RecentMessage, idx: number) => (
-            <div key={'recent_' + idx} className={styles.message}>
-              <div className={styles.text}>{recentMessage.text}</div>
-              <div className={styles.sent}>{recentMessage.sent.toLocaleString()}</div>
-            </div>
-          ))}
-          {this.state.recentMessages === null ? (
-            <div className={styles.loading}>
-              <Loading size={10} units={6} color="#999999" />
-            </div>
-          ) : null}
-        </div>
+        <Portal id="activity_recent_messages">
+          <div className={recentStyles.join(' ')} style={{ position: 'absolute', left, top }}>
+            <div className={styles.title}>{title}</div>
+            {recentMessages.map((recentMessage: RecentMessage, idx: number) => (
+              <div key={'recent_' + idx} className={styles.message}>
+                <div className={styles.text}>{recentMessage.text}</div>
+                <div className={styles.sent}>{moment.utc(recentMessage.sent).fromNow()}</div>
+              </div>
+            ))}
+            {this.state.recentMessages === null ? (
+              <div className={styles.loading}>
+                <Loading size={10} units={6} color="#999999" />
+              </div>
+            ) : null}
+          </div>
+        </Portal>
       );
     }
     return null;
@@ -324,7 +344,9 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
       [styles.missing_localization]: name && this.props.translating && !localized,
       [styles.confirm_delete]: confirmDelete
     });
+
     const activity = this.getSegmentCount();
+    const recents = this.getRecentMessages();
 
     const events = this.context.config.mutable
       ? createClickHandler(
@@ -348,6 +370,7 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
           {confirm}
         </div>
         {activity}
+        {recents}
         {renderIf(this.state.showDragHelper)(<DragHelper />)}
       </div>
     );
@@ -369,8 +392,8 @@ const mapStateToProps = (
   if (key in (activity.recentMessages || {})) {
     recentMessages = activity.recentMessages[key];
   }
-
   const segmentCount = activity.segments[getExitActivityKey(props.exit)] || 0;
+
   return {
     dragging: dragActive,
     segmentCount,

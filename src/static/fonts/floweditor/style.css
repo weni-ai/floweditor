@@ -1,17 +1,18 @@
 @font-face {
   font-family: 'floweditor';
-  src: url('fonts/floweditor.ttf?xovjds') format('truetype'),
-    url('fonts/floweditor.woff?xovjds') format('woff'),
-    url('fonts/floweditor.svg?xovjds#floweditor') format('svg');
+  src: url('fonts/floweditor.ttf?8ceiuj') format('truetype'),
+    url('fonts/floweditor.woff?8ceiuj') format('woff'),
+    url('fonts/floweditor.svg?8ceiuj#floweditor') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 
 [class^='fe-'],
 [class*=' fe-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'floweditor' !important;
-  speak: none;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -23,32 +24,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fe-stop:before {
-  content: '\e907';
-}
-.fe-play_arrow:before {
-  content: '\e906';
-}
-.fe-pause:before {
-  content: '\e905';
+.fe-document-file-pdf:before {
+  content: '\e90b';
 }
 .fe-battery1:before {
   content: '\e902';
 }
-.fe-whatsapp:before {
-  content: '\e903';
+.fe-language:before {
+  content: '\e90a';
 }
-.fe-battery:before {
-  content: '\e900';
+.fe-notification:before {
+  content: '\e908';
 }
-.fe-connection1:before {
-  content: '\e97c';
+.fe-warning:before {
+  content: '\e909';
 }
-.fe-battery-4:before {
-  content: '\ee56';
+.fe-eye:before {
+  content: '\e6a5';
 }
-.fe-add:before {
-  content: '\e901';
+.fe-eye-crossed:before {
+  content: '\e6a6';
 }
 .fe-home:before {
   content: '\e601';
@@ -409,4 +404,31 @@
 }
 .fe-ellipsis:before {
   content: '\e9e9';
+}
+.fe-stop:before {
+  content: '\e907';
+}
+.fe-play_arrow:before {
+  content: '\e906';
+}
+.fe-pause:before {
+  content: '\e905';
+}
+.fe-facebook:before {
+  content: '\e904';
+}
+.fe-connection1:before {
+  content: '\e97c';
+}
+.fe-battery-4:before {
+  content: '\ee56';
+}
+.fe-add:before {
+  content: '\e901';
+}
+.fe-whatsapp:before {
+  content: '\e903';
+}
+.fe-battery:before {
+  content: '\e900';
 }

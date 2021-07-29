@@ -29,7 +29,7 @@ exports[`SendMsgForm render should render 1`] = `
               }
             }
             formClearable={true}
-            name="Template"
+            name="template"
             noOptionsMessage="No templates found"
             onChange={[Function]}
             searchable={true}
@@ -53,7 +53,7 @@ exports[`SendMsgForm render should render 1`] = `
             }
             helpText={
               <Trans
-                i18nKey="forms.send_msg.add_quick_reply"
+                i18nKey="forms.add_quick_reply"
               >
                 Add a new Quick Reply and press enter.
               </Trans>
@@ -64,10 +64,7 @@ exports[`SendMsgForm render should render 1`] = `
               }
             }
             name="Quick Reply"
-            onEntryChanged={[Function]}
-            onFieldErrors={[Function]}
-            onItemAdded={[Function]}
-            onRemoved={[Function]}
+            onChange={[Function]}
           />
         </React.Fragment>,
         "checked": false,
@@ -77,7 +74,7 @@ exports[`SendMsgForm render should render 1`] = `
       Object {
         "body": <React.Fragment>
           <p>
-            Add up to 3 attachments to each message. Each attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.
+            Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.
           </p>
           <div
             className="url_attachment"
@@ -96,35 +93,29 @@ exports[`SendMsgForm render should render 1`] = `
                 options={
                   Array [
                     Object {
-                      "label": "Image URL",
+                      "name": "Image URL",
                       "value": "image",
                     },
                     Object {
-                      "label": "Audio URL",
+                      "name": "Audio URL",
                       "value": "audio",
                     },
                     Object {
-                      "label": "Video URL",
+                      "name": "Video URL",
                       "value": "video",
                     },
                     Object {
-                      "label": "Upload Attachment",
+                      "name": "PDF Document URL",
+                      "value": "application",
+                    },
+                    Object {
+                      "name": "Upload Attachment",
                       "value": "upload",
                     },
                   ]
                 }
                 placeholder="Add Attachment"
-                styles={
-                  Object {
-                    "control": [Function],
-                    "indicatorsContainer": [Function],
-                    "input": [Function],
-                    "menuList": [Function],
-                    "option": [Function],
-                    "singleValue": [Function],
-                    "valueContainer": [Function],
-                  }
-                }
+                style="small"
               />
             </div>
           </div>
@@ -168,16 +159,18 @@ exports[`SendMsgForm render should render 1`] = `
         "localizeableKeys": Array [
           "text",
           "quick_replies",
+          "templating.variables",
         ],
+        "massageForDisplay": [Function],
         "name": "Send Message",
         "type": "send_msg",
       }
     }
     onChange={[MockFunction]}
   />
-  <Connect(TextInputElement)
+  <TextInputElement
     autocomplete={true}
-    count="SMS"
+    counter=".sms-counter"
     entry={
       Object {
         "value": "Hey!",
@@ -186,9 +179,11 @@ exports[`SendMsgForm render should render 1`] = `
     focus={true}
     name="Message"
     onChange={[Function]}
-    onFieldFailures={[Function]}
     showLabel={false}
     textarea={true}
+  />
+  <temba-charcount
+    class="sms-counter"
   />
 </Dialog>
 `;

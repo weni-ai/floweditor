@@ -1,13 +1,13 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
-import { hasErrors } from 'components/flow/actions/helpers';
+import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import * as React from 'react';
 import { Asset, AssetType } from 'store/flowContext';
-import { AssetEntry, FormState, mergeForm, StringEntry, ValidationFailure } from 'store/nodeEditor';
+import { AssetEntry, FormState, mergeForm, StringEntry } from 'store/nodeEditor';
 import { Alphanumeric, shouldRequireIf, StartIsNonNumeric, validate } from 'store/validators';
 import { snakify } from 'utils';
 
@@ -15,6 +15,7 @@ import { initializeForm, stateToAction } from './helpers';
 import styles from './SetRunResultForm.module.scss';
 import i18n from 'config/i18n';
 import { Trans } from 'react-i18next';
+import { SelectOption } from 'components/form/select/SelectElement';
 
 export interface SetRunResultFormState extends FormState {
   name: AssetEntry;
@@ -26,6 +27,8 @@ export default class SetRunResultForm extends React.PureComponent<
   ActionFormProps,
   SetRunResultFormState
 > {
+  options: SelectOption[] = [];
+
   constructor(props: ActionFormProps) {
     super(props);
 
@@ -36,8 +39,19 @@ export default class SetRunResultForm extends React.PureComponent<
     });
   }
 
+  public componentDidMount(): void {
+    const items = this.props.assetStore.results.items;
+    this.options = Object.keys(items).map((key: string) => {
+      return { name: items[key].name, value: key };
+    });
+  }
+
   private handleNameUpdate(selected: Asset[]): void {
-    this.handleUpdate({ name: selected[0] });
+    if (selected) {
+      this.handleUpdate({ name: selected[0] });
+    } else {
+      this.handleUpdate({ name: null });
+    }
   }
 
   public handleValueUpdate(value: string): boolean {
@@ -55,7 +69,7 @@ export default class SetRunResultForm extends React.PureComponent<
     const updates: Partial<SetRunResultFormState> = {};
 
     if (keys.hasOwnProperty('name')) {
-      updates.name = validate('Name', keys.name, [
+      updates.name = validate(i18n.t('forms.name', 'Name'), keys.name, [
         shouldRequireIf(submitting),
         Alphanumeric,
         StartIsNonNumeric
@@ -63,11 +77,11 @@ export default class SetRunResultForm extends React.PureComponent<
     }
 
     if (keys.hasOwnProperty('value')) {
-      updates.value = validate('Value', keys.value, []);
+      updates.value = validate(i18n.t('forms.value', 'Value'), keys.value, []);
     }
 
     if (keys.hasOwnProperty('category')) {
-      updates.category = validate('Category', keys.category, []);
+      updates.category = validate(i18n.t('forms.category', 'Category'), keys.category, []);
     }
 
     const updated = mergeForm(this.state, updates);
@@ -117,15 +131,18 @@ export default class SetRunResultForm extends React.PureComponent<
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <div className={styles.form}>
           <AssetSelector
-            name="Result"
+            name={i18n.t('forms.result', 'Result')}
             assets={this.props.assetStore.results}
             entry={this.state.name}
             searchable={true}
-            createPrefix={i18n.t('forms.set_run_result.create_prefix', 'New: ')}
+            createPrefix={i18n.t('forms.create_prefix', 'New: ')}
             onChange={this.handleNameUpdate}
             createAssetFromInput={this.handleCreateAssetFromInput}
             formClearable={true}
             showLabel={true}
+            valueKey="value"
+            nameKey="name"
+            additionalOptions={this.options}
             helpText={
               <Trans
                 i18nKey="forms.result_name_help"
@@ -138,31 +155,31 @@ export default class SetRunResultForm extends React.PureComponent<
 
           <TextInputElement
             __className={styles.value}
-            name="Value"
+            name={i18n.t('forms.value', 'Value')}
             showLabel={true}
             onChange={this.handleValueUpdate}
             entry={this.state.value}
-            onFieldFailures={(persistantFailures: ValidationFailure[]) => {
-              const value = { ...this.state.value, persistantFailures };
-              this.setState({
-                value,
-                valid: this.state.valid && !hasErrors(value)
-              });
-            }}
             autocomplete={true}
-            helpText="The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))"
+            helpText={i18n.t(
+              'forms.result_value_help',
+              'The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))'
+            )}
           />
           <TextInputElement
             __className={styles.category}
-            name="Category"
+            name={i18n.t('forms.category', 'Category')}
             placeholder="Optional"
             showLabel={true}
             onChange={this.handleCategoryUpdate}
             entry={this.state.category}
             autocomplete={false}
-            helpText="An optional category for your result. For age, the value might be 17, but the category might be 'Young Adult'"
+            helpText={i18n.t(
+              'forms.result_category_help',
+              "An optional category for your result. For age, the value might be 17, but the category might be 'Young Adult'"
+            )}
           />
         </div>
+        {renderIssues(this.props)}
       </Dialog>
     );
   }

@@ -5,9 +5,10 @@ export const config: FlowEditorConfig = {
   flow: 'a4f64f1b-85bc-477e-b706-de313a022979',
   localStorage: true,
   showDownload: true,
-  flowType: FlowTypes.MESSAGE,
+  flowType: FlowTypes.MESSAGING,
   mutable: true,
-  filters: ['whatsapp', 'airtime', 'resthook', 'classifier'],
+  filters: ['whatsapp', 'airtime', 'resthook', 'classifier', 'ticketer'],
+  help: {},
   endpoints: {
     resthooks: '/assets/resthooks.json',
     flows: '/assets/flows.json',
@@ -21,8 +22,7 @@ export const config: FlowEditorConfig = {
     environment: '/assets/environment.json',
     revisions: '/assets/revisions.json',
     classifiers: '/assets/classifiers.json',
-    completion: '/assets/completion.json',
-    functions: '/assets/functions.json',
+    ticketers: '/assets/ticketers.json',
     attachments: '/assets/attachments.json',
     recents: '/assets/recents.json',
     templates: '/assets/templates.json',
@@ -30,7 +30,8 @@ export const config: FlowEditorConfig = {
     activity: '',
     simulateStart: '',
     simulateResume: ''
-  }
+  },
+  onChangeLanguage: (code: string, name: string) => {}
 };
 
 export default config;

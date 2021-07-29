@@ -1,8 +1,16 @@
 export enum FlowTypes {
-  MESSAGE = 'message',
+  MESSAGING = 'messaging',
+  MESSAGING_BACKGROUND = 'messaging_background',
+  MESSAGING_OFFLINE = 'messaging_offline',
   VOICE = 'voice',
-  SURVEY = 'message_offline',
   NONE = '-'
+}
+
+export enum ContactStatus {
+  ACTIVE = 'active',
+  BLOCKED = 'blocked',
+  STOPPED = 'stopped',
+  ARCHIVED = 'archived'
 }
 
 export enum Types {
@@ -15,10 +23,12 @@ export enum Types {
   set_contact_field = 'set_contact_field',
   set_contact_name = 'set_contact_name',
   set_contact_language = 'set_contact_language',
+  set_contact_status = 'set_contact_status',
   set_run_result = 'set_run_result',
   call_classifier = 'call_classifier',
   call_resthook = 'call_resthook',
   call_webhook = 'call_webhook',
+  open_ticket = 'open_ticket',
   send_msg = 'send_msg',
   send_email = 'send_email',
   send_broadcast = 'send_broadcast',
@@ -34,10 +44,13 @@ export enum Types {
   split_by_intent = 'split_by_intent',
   split_by_random = 'split_by_random',
   split_by_resthook = 'split_by_resthook',
+  split_by_ticket = 'split_by_ticket',
+  split_by_scheme = 'split_by_scheme',
   split_by_subflow = 'split_by_subflow',
   split_by_webhook = 'split_by_webhook',
   wait_for_response = 'wait_for_response',
   wait_for_menu = 'wait_for_menu',
+  wait_for_dial = 'wait_for_dial',
   wait_for_digits = 'wait_for_digits',
   wait_for_audio = 'wait_for_audio',
   wait_for_video = 'wait_for_video',
@@ -88,12 +101,20 @@ export enum FeatureFilter {
   HAS_WHATSAPP = 'whatsapp',
   HAS_AIRTIME = 'airtime',
   HAS_CLASSIFIER = 'classifier',
+  HAS_TICKETER = 'ticketer',
   HAS_FACEBOOK = 'facebook'
 }
 
 export interface FlowTypeVisibility {
   visibility?: FlowTypes[];
   filter?: FeatureFilter;
+}
+
+export enum PopTabType {
+  SIMULATOR = 'Simulator',
+  REVISION_HISTORY = 'Revision History',
+  ISSUES_TAB = 'Issues Tab',
+  TRANSLATOR_TAB = 'Translator Tab'
 }
 
 export interface Type extends FlowTypeVisibility {
@@ -105,6 +126,9 @@ export interface Type extends FlowTypeVisibility {
   aliases?: string[];
   localization?: React.ComponentClass<any>;
   localizeableKeys?: string[];
+
+  // opportunity to massage our object for display
+  massageForDisplay?: (obj: any) => void;
 }
 
 export interface Operator extends FlowTypeVisibility {
@@ -118,8 +142,22 @@ export interface OperatorMap {
   [propName: string]: Operator;
 }
 
-export const HIDDEN = [FlowTypes.NONE];
-export const VOICE = [FlowTypes.VOICE];
-export const SURVEY = [FlowTypes.SURVEY];
-export const TEXT_TYPES = [FlowTypes.MESSAGE, FlowTypes.SURVEY];
-export const ONLINE = [FlowTypes.MESSAGE, FlowTypes.VOICE];
+export const VISIBILITY_MESSAGING = [
+  FlowTypes.MESSAGING,
+  FlowTypes.MESSAGING_BACKGROUND,
+  FlowTypes.MESSAGING_OFFLINE
+];
+export const VISIBILITY_MESSAGING_INTERACTIVE = [FlowTypes.MESSAGING, FlowTypes.MESSAGING_OFFLINE];
+export const VISIBILITY_VOICE = [FlowTypes.VOICE];
+export const VISIBILITY_ONLINE = [
+  FlowTypes.MESSAGING,
+  FlowTypes.MESSAGING_BACKGROUND,
+  FlowTypes.VOICE
+];
+export const VISIBILITY_INTERACTIVE = [
+  FlowTypes.MESSAGING,
+  FlowTypes.MESSAGING_OFFLINE,
+  FlowTypes.VOICE
+];
+export const VISIBILITY_SURVEYOR = [FlowTypes.MESSAGING_OFFLINE];
+export const VISIBILITY_HIDDEN = [FlowTypes.NONE];

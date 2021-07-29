@@ -1,7 +1,14 @@
 import { DefaultExitNames } from 'components/flow/routers/constants';
 import { FlowTypes, Operators, Types } from 'config/interfaces';
 import { getTypeConfig } from 'config/typeConfigs';
-import { AnyAction, FlowDefinition, RouterTypes, SendMsg, SwitchRouter } from 'flowTypes';
+import {
+  AnyAction,
+  FlowDefinition,
+  RouterTypes,
+  SendMsg,
+  SwitchRouter,
+  FlowDetails
+} from 'flowTypes';
 import mutate from 'immutability-helper';
 import Constants from 'store/constants';
 import { AssetStore, AssetType, RenderNode, RenderNodeMap } from 'store/flowContext';
@@ -102,8 +109,11 @@ describe('Flow Manipulation', () => {
     });
 
     it('should gracefully handle missing ui', () => {
-      const missingUI = { ...boring, _ui: undefined as any };
-      store.dispatch(loadFlowDefinition(missingUI, emptyAssetStore, () => {}));
+      const missingUI: FlowDetails = {
+        definition: { ...boring, _ui: undefined as any },
+        metadata: null
+      };
+      store.dispatch(loadFlowDefinition(missingUI, emptyAssetStore));
       const action = getActionFromStore(store, Constants.UPDATE_NODES);
 
       // should have some default ui in our render nodes
@@ -187,7 +197,7 @@ describe('Flow Manipulation', () => {
             source: null,
             sourceId: 'node0:node0_exit0'
           },
-          FlowTypes.MESSAGE
+          FlowTypes.MESSAGING
         )
       );
       expect(store.getActions()).toMatchSnapshot();

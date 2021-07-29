@@ -15,7 +15,8 @@ import {
   TransferAirtime,
   UIConfig,
   WebhookExitNames,
-  CallClassifier
+  CallClassifier,
+  OpenTicket
 } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { createUUID, snakify } from 'utils';
@@ -76,7 +77,10 @@ export const getCategories = (renderNode: RenderNode): Category[] => {
 
 export const createCaseProps = (cases: Case[], renderNode: RenderNode): CaseProps[] => {
   const categories: Category[] = getCategories(renderNode);
-  return cases.map((kase: Case) => {
+
+  // make sure we don't mutate the in memory version of our cases
+  const newCases = JSON.parse(JSON.stringify(cases));
+  return newCases.map((kase: Case) => {
     const matchingCategory = categories.find(
       (category: Category) => category.uuid === kase.category_uuid
     );
@@ -161,6 +165,11 @@ export const categorizeCases = (
             }
           }
         }
+      }
+
+      // don't pull over an old category more than once
+      if (category && categories.find((cat: Category) => cat.uuid === category.uuid)) {
+        category = null;
       }
 
       // we found an old category, bring it and its exit over
@@ -322,7 +331,7 @@ export const resolveRoutes = (
 };
 
 export const createWebhookBasedNode = (
-  action: CallWebhook | CallResthook | TransferAirtime,
+  action: CallWebhook | CallResthook | OpenTicket | TransferAirtime,
   originalNode: RenderNode,
   useCategoryTest: boolean
 ): RenderNode => {
@@ -392,6 +401,8 @@ export const createWebhookBasedNode = (
   let splitType = Types.split_by_webhook;
   if (action.type === Types.call_resthook) {
     splitType = Types.split_by_resthook;
+  } else if (action.type === Types.open_ticket) {
+    splitType = Types.split_by_ticket;
   } else if (action.type === Types.transfer_airtime) {
     splitType = Types.split_by_airtime;
   }

@@ -2,41 +2,43 @@
 
 exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 1`] = `
 Object {
-  "id": "23ff7152-b588-43e4-90de-fda77aeaf7c0",
   "name": "Customers",
-  "type": "group",
+  "uuid": "23ff7152-b588-43e4-90de-fda77aeaf7c0",
 }
 `;
 
 exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 2`] = `
 Object {
-  "id": "2429d573-80d7-47f8-879f-f2ba442a1bfd",
   "name": "Unsatisfied Customers",
-  "type": "group",
+  "uuid": "2429d573-80d7-47f8-879f-f2ba442a1bfd",
 }
 `;
 
 exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 3`] = `
 Object {
-  "id": "cdbf9e01-aaa7-4381-8259-ee042447bcac",
   "name": "Early Adopters",
-  "type": "group",
+  "uuid": "cdbf9e01-aaa7-4381-8259-ee042447bcac",
 }
 `;
 
 exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 4`] = `
 Object {
-  "id": "afaba971-8943-4dd8-860b-3561ed4f1fe1",
   "name": "Testers",
-  "type": "group",
+  "uuid": "afaba971-8943-4dd8-860b-3561ed4f1fe1",
 }
 `;
 
 exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 5`] = `
 Object {
-  "id": "33b28bac-b588-43e4-90de-fda77aeaf7c0",
   "name": "Subscribers",
-  "type": "group",
+  "uuid": "33b28bac-b588-43e4-90de-fda77aeaf7c0",
+}
+`;
+
+exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 6`] = `
+Object {
+  "name": "Champions",
+  "uuid": "e0cccbcf-49be-4eef-88a7-ce2150a6d902",
 }
 `;
 
@@ -81,29 +83,28 @@ exports[`GroupsRouterForm render should render 1`] = `
       Object {
         "value": Array [
           Object {
-            "id": "23ff7152-b588-43e4-90de-fda77aeaf7c0",
             "name": "Customers",
-            "type": "group",
+            "uuid": "23ff7152-b588-43e4-90de-fda77aeaf7c0",
           },
           Object {
-            "id": "2429d573-80d7-47f8-879f-f2ba442a1bfd",
             "name": "Unsatisfied Customers",
-            "type": "group",
+            "uuid": "2429d573-80d7-47f8-879f-f2ba442a1bfd",
           },
           Object {
-            "id": "cdbf9e01-aaa7-4381-8259-ee042447bcac",
             "name": "Early Adopters",
-            "type": "group",
+            "uuid": "cdbf9e01-aaa7-4381-8259-ee042447bcac",
           },
           Object {
-            "id": "afaba971-8943-4dd8-860b-3561ed4f1fe1",
             "name": "Testers",
-            "type": "group",
+            "uuid": "afaba971-8943-4dd8-860b-3561ed4f1fe1",
           },
           Object {
-            "id": "33b28bac-b588-43e4-90de-fda77aeaf7c0",
             "name": "Subscribers",
-            "type": "group",
+            "uuid": "33b28bac-b588-43e4-90de-fda77aeaf7c0",
+          },
+          Object {
+            "name": "Champions",
+            "uuid": "e0cccbcf-49be-4eef-88a7-ce2150a6d902",
           },
         ],
       }
@@ -145,9 +146,8 @@ Object {
     "validationFailures": Array [],
     "value": Array [
       Object {
-        "id": "68223118-109f-442a-aed3-7bb3e1eab687",
         "name": "Subscriber",
-        "type": "group",
+        "uuid": "68223118-109f-442a-aed3-7bb3e1eab687",
       },
     ],
   },
@@ -170,7 +170,7 @@ Array [
         },
         Object {
           "destination_uuid": null,
-          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
         },
       ],
       "router": Object {
@@ -192,12 +192,12 @@ Array [
             "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
           },
           Object {
-            "exit_uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+            "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
             "name": "Other",
-            "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+            "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
           },
         ],
-        "default_category_uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+        "default_category_uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
         "operand": "@contact.groups",
         "result_name": "My Group Result",
         "type": "switch",
