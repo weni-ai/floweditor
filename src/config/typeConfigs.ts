@@ -160,6 +160,21 @@ export const SCHEMES: Scheme[] = [
     scheme: 'ext',
     name: i18n.t('schemes.external.name', 'External'),
     path: i18n.t('schemes.external.path', 'External ID')
+  },
+  {
+    scheme: 'instagram',
+    name: i18n.t('schemes.instagram.name', 'Instagram'),
+    path: i18n.t('schemes.instagram.path', 'Instagram ID')
+  },
+  {
+    scheme: 'slack',
+    name: i18n.t('schemes.slack.name', 'Slack'),
+    path: i18n.t('schemes.slack.path', 'Slack ID')
+  },
+  {
+    scheme: 'teams',
+    name: i18n.t('schemes.teams.name', 'Teams'),
+    path: i18n.t('schemes.teams.path', 'Teams ID')
   }
 ];
 

@@ -134,6 +134,21 @@ exports[`FieldRouterForm initializes 1`] = `
               "name": "External ID",
               "type": "scheme",
             },
+            Object {
+              "id": "instagram",
+              "name": "Instagram ID",
+              "type": "scheme",
+            },
+            Object {
+              "id": "slack",
+              "name": "Slack ID",
+              "type": "scheme",
+            },
+            Object {
+              "id": "teams",
+              "name": "Teams ID",
+              "type": "scheme",
+            },
           ]
         }
         assets={
@@ -340,6 +355,21 @@ exports[`FieldRouterForm should render 1`] = `
             Object {
               "id": "ext",
               "name": "External ID",
+              "type": "scheme",
+            },
+            Object {
+              "id": "instagram",
+              "name": "Instagram ID",
+              "type": "scheme",
+            },
+            Object {
+              "id": "slack",
+              "name": "Slack ID",
+              "type": "scheme",
+            },
+            Object {
+              "id": "teams",
+              "name": "Teams ID",
               "type": "scheme",
             },
           ]
