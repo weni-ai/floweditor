@@ -32,7 +32,8 @@ export const config: FlowEditorConfig = {
     editor: '/flow/editor',
     activity: '',
     simulateStart: '',
-    simulateResume: ''
+    simulateResume: '',
+    ticketer_queues: ''
   },
   onChangeLanguage: (code: string, name: string) => {}
 };

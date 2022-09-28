@@ -282,11 +282,6 @@ Array [
     ],
     "name": "Open Ticket",
     "type": "open_ticket",
-    "visibility": Array [
-      "messaging",
-      "messaging_background",
-      "voice",
-    ],
   },
   Object {
     "aliases": Array [
@@ -560,11 +555,6 @@ Object {
     ],
     "name": "Open Ticket",
     "type": "open_ticket",
-    "visibility": Array [
-      "messaging",
-      "messaging_background",
-      "voice",
-    ],
   },
   "play_audio": Object {
     "component": [Function],
@@ -880,11 +870,6 @@ Object {
     ],
     "name": "Open Ticket",
     "type": "open_ticket",
-    "visibility": Array [
-      "messaging",
-      "messaging_background",
-      "voice",
-    ],
   },
   "split_by_webhook": Object {
     "aliases": Array [

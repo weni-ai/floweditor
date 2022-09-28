@@ -13,6 +13,13 @@ const channels = {
       address: '+18005234545',
       schemes: ['whatsapp'],
       roles: ['send', 'receive']
+    },
+    {
+      uuid: '03ea943c-4949-4c3e-a2e5-ac36ccfaae26',
+      name: 'Telegram1',
+      address: 'https://localhost:1234',
+      schemes: ['telegram'],
+      roles: ['send', 'receive']
     }
   ]
 };

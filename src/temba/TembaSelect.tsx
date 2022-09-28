@@ -157,9 +157,15 @@ export default class TembaSelect extends React.Component<TembaSelectProps, Temba
 
       if (!this.props.assets && !this.props.tags && !this.props.endpoint) {
         resolved = values.map((op: any) => {
-          const result = (this.props.options || []).find(
-            (option: any) => this.getValue(option) === this.getValue(op)
-          );
+          const result = (this.props.options || []).find((option: any) => {
+            let value1 = this.getValue(option);
+            let value2 = this.getValue(op);
+            if (value1 && value2) {
+              return value1 === value2;
+            } else {
+              return option === op;
+            }
+          });
           if (!result && this.props.createPrefix) {
             return op;
           }

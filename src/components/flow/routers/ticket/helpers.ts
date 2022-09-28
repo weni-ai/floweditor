@@ -29,6 +29,8 @@ export const nodeToState = (
   let resultName = { value: 'Result' };
   let assignee: FormEntry = { value: null };
   let topic: FormEntry = { value: null };
+  let queues: any[] = [];
+  let topics: any[] = [];
 
   if (getType(settings.originalNode) === Types.split_by_ticket) {
     const action = getOriginalAction(settings) as OpenTicket;
@@ -38,6 +40,8 @@ export const nodeToState = (
     topic = { value: action.topic };
     assignee = { value: action.assignee };
     resultName = { value: action.result_name };
+    queues = [];
+    topics = [];
   }
 
   const state: TicketRouterFormState = {
@@ -47,6 +51,8 @@ export const nodeToState = (
     subject,
     body,
     resultName,
+    queues,
+    topics,
     valid: true
   };
 

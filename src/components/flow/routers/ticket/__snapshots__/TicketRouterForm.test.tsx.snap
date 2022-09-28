@@ -43,7 +43,7 @@ exports[`TicketRouterForm render should render 1`] = `
                 namekey="description"
                 searchable="true"
                 valuekey="type"
-                values="[{\\"type\\":\\"open_ticket\\",\\"name\\":\\"Open Ticket\\",\\"description\\":\\"Open a ticket with a human agent\\",\\"localizeableKeys\\":[\\"exits\\"],\\"aliases\\":[\\"split_by_ticket\\"],\\"visibility\\":[\\"messaging\\",\\"messaging_background\\",\\"voice\\"],\\"filter\\":\\"ticketer\\"}]"
+                values="[{\\"type\\":\\"open_ticket\\",\\"name\\":\\"Open Ticket\\",\\"description\\":\\"Open a ticket with a human agent\\",\\"localizeableKeys\\":[\\"exits\\"],\\"aliases\\":[\\"split_by_ticket\\"],\\"filter\\":\\"ticketer\\"}]"
               />
             </div>
           </div>
@@ -60,7 +60,6 @@ exports[`TicketRouterForm render should render 1`] = `
             >
               <temba-select
                 data-testid="temba_select_topic"
-                endpoint="/assets/topics.json"
                 errors="[]"
                 expressions=""
                 name="Topic"
@@ -211,7 +210,7 @@ exports[`TicketRouterForm updates should save changes 1`] = `
                 namekey="description"
                 searchable="true"
                 valuekey="type"
-                values="[{\\"type\\":\\"open_ticket\\",\\"name\\":\\"Open Ticket\\",\\"description\\":\\"Open a ticket with a human agent\\",\\"localizeableKeys\\":[\\"exits\\"],\\"aliases\\":[\\"split_by_ticket\\"],\\"visibility\\":[\\"messaging\\",\\"messaging_background\\",\\"voice\\"],\\"filter\\":\\"ticketer\\"}]"
+                values="[{\\"type\\":\\"open_ticket\\",\\"name\\":\\"Open Ticket\\",\\"description\\":\\"Open a ticket with a human agent\\",\\"localizeableKeys\\":[\\"exits\\"],\\"aliases\\":[\\"split_by_ticket\\"],\\"filter\\":\\"ticketer\\"}]"
               />
             </div>
           </div>
@@ -228,7 +227,6 @@ exports[`TicketRouterForm updates should save changes 1`] = `
             >
               <temba-select
                 data-testid="temba_select_topic"
-                endpoint="/assets/topics.json"
                 errors="[]"
                 expressions=""
                 name="Topic"
