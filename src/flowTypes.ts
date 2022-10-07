@@ -43,6 +43,7 @@ export interface Endpoints {
   simulateStart: string;
   simulateResume: string;
   editor: string;
+  ticketer_queues: string;
 }
 
 export interface FlowEditorConfig {

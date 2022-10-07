@@ -22,6 +22,7 @@ Array [
     "simulateResume": "",
     "simulateStart": "",
     "templates": "/assets/templates.json",
+    "ticketer_queues": "",
     "ticketers": "/assets/ticketers.json",
     "topics": "/assets/topics.json",
     "users": "/assets/users.json",

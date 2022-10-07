@@ -22,6 +22,7 @@ import TextInputElement from 'components/form/textinput/TextInputElement';
 import TembaSelect from 'temba/TembaSelect';
 import { fakePropType } from 'config/ConfigProvider';
 import { Topic, User } from 'flowTypes';
+import axios from 'axios';
 
 export interface TicketRouterFormState extends FormState {
   assignee: FormEntry;
@@ -30,6 +31,8 @@ export interface TicketRouterFormState extends FormState {
   subject: StringEntry;
   body: StringEntry;
   resultName: StringEntry;
+  queues: any[];
+  topics: any[];
 }
 
 export default class TicketRouterForm extends React.Component<
@@ -48,6 +51,13 @@ export default class TicketRouterForm extends React.Component<
     const ticketer = ticketers.length === 1 ? ticketers[0] : null;
     this.state = nodeToState(this.props.nodeSettings, ticketer);
 
+    if (this.state.ticketer.value) {
+      try {
+        let stateTicketer = props.assetStore.ticketers.items[this.state.ticketer.value.uuid];
+        this.handleTopicsOptionsUpdateByTicketerType(stateTicketer, false);
+      } catch (e) {}
+    }
+
     bindCallbacks(this, {
       include: [/^handle/]
     });
@@ -60,6 +70,8 @@ export default class TicketRouterForm extends React.Component<
       subject?: string;
       body?: string;
       resultName?: string;
+      queues?: any[];
+      topics?: any[];
     },
     submitting = false
   ): boolean {
@@ -99,6 +111,14 @@ export default class TicketRouterForm extends React.Component<
       ]);
     }
 
+    if (keys.hasOwnProperty('queues')) {
+      updates.queues = keys.queues;
+    }
+
+    if (keys.hasOwnProperty('topics')) {
+      updates.topics = keys.topics;
+    }
+
     const updated = mergeForm(this.state, updates);
 
     // update our form
@@ -108,6 +128,75 @@ export default class TicketRouterForm extends React.Component<
 
   private handleTicketerUpdate(selected: Asset[]): void {
     this.handleUpdate({ ticketer: selected[0] });
+    this.handleTopicsOptionsUpdateByTicketerType(selected[0], true);
+  }
+
+  private handleQueuesUpdate(ticketer: Asset): void {
+    const isWenichatsType =
+      ticketer && ticketer.hasOwnProperty('type') && (ticketer['type'] as string) === 'wenichats';
+    if (isWenichatsType) {
+      let ticketerQueuesEndpoint =
+        this.context.config.endpoints.ticketer_queues +
+        `?ticketer_uuid=${this.state.ticketer.value.uuid}`;
+      axios(ticketerQueuesEndpoint).then(response => {
+        const topics = response.data;
+        let toUpdateTopic = topics.length > 0 ? topics[0] : {};
+        if (this.state.topic.value) {
+          toUpdateTopic = topics.find((to: any) => to === this.state.topic.value);
+        }
+        const toUpdate = { queues: topics, topic: toUpdateTopic as Topic };
+        this.handleUpdate(toUpdate);
+      });
+    }
+  }
+
+  private handleTopicsOptionsUpdateByTicketerType(ticketer: any, hasContext: boolean): void {
+    const isWenichatsType =
+      ticketer && ticketer.hasOwnProperty('type') && (ticketer['type'] as string) === 'wenichats';
+
+    let ticketerQueuesEndpoint = hasContext
+      ? this.context.config.endpoints.ticketer_queues
+      : this.props.assetStore.ticketers.endpoint.replace('ticketers', 'ticketer_queues');
+
+    const url = isWenichatsType
+      ? ticketerQueuesEndpoint + `?ticketer_uuid=${ticketer.uuid}`
+      : hasContext
+      ? this.context.config.endpoints.topics
+      : this.props.assetStore.ticketers.endpoint.replace('ticketers', 'topics');
+
+    axios(url).then(response => {
+      const topics = isWenichatsType ? response.data : response.data.results;
+
+      let toUpdateTopic = topics.length > 0 ? topics[0] : {};
+      if (this.state.topic.value) {
+        toUpdateTopic = topics.find((to: any) => to.uuid === this.state.topic.value.uuid);
+      }
+      const toUpdate = isWenichatsType
+        ? { queues: topics, topic: toUpdateTopic as Topic }
+        : { topics: topics, topic: toUpdateTopic as Topic };
+      this.handleUpdate(toUpdate);
+    });
+  }
+
+  private handleQueuesUpdateWithoutContext(ticketer: any): void {
+    const isWenichatsType =
+      ticketer && ticketer.hasOwnProperty('type') && (ticketer['type'] as string) === 'wenichats';
+    if (isWenichatsType) {
+      let ticketerQueuesEndpoint = this.props.assetStore.ticketers.endpoint.replace(
+        'ticketers',
+        'ticketer_queues'
+      );
+      ticketerQueuesEndpoint += `?ticketer_uuid=${ticketer.uuid}`;
+      axios(ticketerQueuesEndpoint).then(response => {
+        const topics = response.data;
+        let toUpdateTopic = topics.length > 0 ? topics[0] : {};
+        if (this.state.topic.value) {
+          toUpdateTopic = topics.find((to: any) => to.uuid === this.state.topic.value.uuid);
+        }
+        const toUpdate = { queues: topics, topic: toUpdateTopic as Topic };
+        this.handleUpdate(toUpdate);
+      });
+    }
   }
 
   private handleAssigneeUpdate(assignee: User): void {
@@ -173,6 +262,16 @@ export default class TicketRouterForm extends React.Component<
     const showTicketers =
       Object.keys(this.props.assetStore.ticketers.items).length > 1 || this.props.issues.length > 0;
 
+    let currentTicketer = null;
+    if (Object.keys(this.props.assetStore.ticketers.items).length > 0) {
+      try {
+        let currentTicketerUUID = this.state.ticketer.value.uuid;
+        currentTicketer = this.props.assetStore.ticketers.items[currentTicketerUUID];
+      } catch (e) {}
+    }
+
+    const isWenichatsType = currentTicketer && (currentTicketer.type as string) === 'wenichats';
+
     return (
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
@@ -199,11 +298,11 @@ export default class TicketRouterForm extends React.Component<
             <TembaSelect
               key="select_topic"
               name={i18n.t('forms.topic', 'Topic')}
-              endpoint={this.context.config.endpoints.topics}
+              options={isWenichatsType ? this.state.queues : this.state.topics}
               onChange={this.handleTopicUpdate}
               value={this.state.topic.value}
               createPrefix={i18n.t('forms.topic_prefix', 'Create Topic: ')}
-              searchable={true}
+              searchable={!isWenichatsType}
             />
           </div>
 
