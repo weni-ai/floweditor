@@ -1,3 +1,7 @@
+1.1.1-floweditor-1.15.2
+----------
+* Fix get ticketer uuid when coming from assetStore
+
 1.1.0-floweditor-1.15.2
 ----------
 * Add wenichats ticketer integration
