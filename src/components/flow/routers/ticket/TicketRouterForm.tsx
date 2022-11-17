@@ -159,7 +159,7 @@ export default class TicketRouterForm extends React.Component<
       : this.props.assetStore.ticketers.endpoint.replace('ticketers', 'ticketer_queues');
 
     const url = isWenichatsType
-      ? ticketerQueuesEndpoint + `?ticketer_uuid=${ticketer.uuid}`
+      ? ticketerQueuesEndpoint + `?ticketer_uuid=${ticketer.uuid || ticketer.id}`
       : hasContext
       ? this.context.config.endpoints.topics
       : this.props.assetStore.ticketers.endpoint.replace('ticketers', 'topics');
