@@ -5,6 +5,7 @@ import {
   Action,
   CallResthook,
   CallWebhook,
+  CallExternalService,
   Case,
   Category,
   Exit,
@@ -331,7 +332,7 @@ export const resolveRoutes = (
 };
 
 export const createWebhookBasedNode = (
-  action: CallWebhook | CallResthook | OpenTicket | TransferAirtime,
+  action: CallWebhook | CallResthook | OpenTicket | TransferAirtime | CallExternalService,
   originalNode: RenderNode,
   useCategoryTest: boolean
 ): RenderNode => {

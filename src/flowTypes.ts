@@ -410,6 +410,11 @@ export interface Classifier {
   name: string;
 }
 
+export interface ExternalService {
+  uuid: string;
+  name: string;
+}
+
 export interface Ticketer {
   uuid: string;
   name: string;
@@ -437,6 +442,13 @@ export interface CallWebhook extends Action {
   result_name: string;
   body?: string;
   headers?: Headers;
+}
+
+export interface CallExternalService extends Action {
+  external_service: ExternalService;
+  call: string;
+  body: string;
+  result_name: string;
 }
 
 export interface OpenTicket extends Action {
