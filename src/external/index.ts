@@ -342,22 +342,34 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
         id: 'id',
         items: currencies,
         prefetched: true
+      },
+      externalServices: {
+        endpoint: getURL(endpoints.external_services),
+        type: AssetType.ExternalService,
+        items: {}
       }
     };
 
     // prefetch some of our assets
     const fetches: any[] = [];
-    ['languages', 'fields', 'groups', 'labels', 'globals', 'classifiers', 'ticketers'].forEach(
-      (storeId: string) => {
-        const store = assetStore[storeId];
-        fetches.push(
-          getAssets(store.endpoint, store.type, store.id || 'uuid').then((assets: Asset[]) => {
-            store.items = assetListToMap(assets);
-            store.prefetched = true;
-          })
-        );
-      }
-    );
+    [
+      'languages',
+      'fields',
+      'groups',
+      'labels',
+      'globals',
+      'classifiers',
+      'ticketers',
+      'externalServices'
+    ].forEach((storeId: string) => {
+      const store = assetStore[storeId];
+      fetches.push(
+        getAssets(store.endpoint, store.type, store.id || 'uuid').then((assets: Asset[]) => {
+          store.items = assetListToMap(assets);
+          store.prefetched = true;
+        })
+      );
+    });
 
     // wait for our prefetches to finish
     Promise.all(fetches).then((results: any) => {

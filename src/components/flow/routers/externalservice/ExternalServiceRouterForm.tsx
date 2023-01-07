@@ -18,21 +18,23 @@ import * as React from 'react';
 import { fakePropType } from 'config/ConfigProvider';
 import i18n from 'config/i18n';
 import TextInputElement from 'components/form/textinput/TextInputElement';
+import TembaSelect from 'temba/TembaSelect';
 import TypeList from 'components/nodeeditor/TypeList';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 
 export interface ExternalServiceRouterFormState extends FormState {
   externalService: FormEntry;
-  call: FormEntry;
+  call: StringEntry;
   body: StringEntry;
   resultName: StringEntry;
+  calls: any[];
 }
 
 export default class ExternalServiceRouterForm extends React.Component<
   RouterFormProps,
   ExternalServiceRouterFormState
 > {
-  public static ContextTypes = {
+  public static contextTypes = {
     config: fakePropType
   };
 
@@ -49,9 +51,10 @@ export default class ExternalServiceRouterForm extends React.Component<
   private handleUpdate(
     keys: {
       externalService?: Asset;
-      call?: Asset;
+      call?: string;
       body?: string;
       resultName?: string;
+      calls?: any[];
     },
     submitting = false
   ): boolean {
@@ -66,9 +69,7 @@ export default class ExternalServiceRouterForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('call')) {
-      updates.call = validate(i18n.t('forms.call', 'Call'), keys.call, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.call = validate(i18n.t('forms.call', 'Call'), keys.call, []);
     }
 
     if (keys.hasOwnProperty('body')) {
@@ -93,8 +94,19 @@ export default class ExternalServiceRouterForm extends React.Component<
     this.handleUpdate({ externalService: selected[0] });
   }
 
+  private handleCallUpdate(call: string): void {
+    this.handleUpdate({ call: call });
+  }
+
   private handleBodyUpdate(body: string): boolean {
     return this.handleUpdate({ body });
+  }
+
+  private handleCallsListByExternalService(externalService: any, hasContext: boolean): void {
+    const calls = externalService.content.calls;
+    let toUpdateCall = calls.length > 0 ? calls[0] : '';
+    const toUpdate = { calls: calls, call: toUpdateCall };
+    this.handleUpdate(toUpdate);
   }
 
   private handleResultNameUpdate(value: string): void {
@@ -140,7 +152,7 @@ export default class ExternalServiceRouterForm extends React.Component<
     const typeConfig = this.props.typeConfig;
 
     const showExternalServices =
-      Object.keys(this.props.assetStore.externalServices.items).length > 1 ||
+      Object.keys(this.props.assetStore.externalServices.items).length > 0 ||
       this.props.issues.length > 0;
 
     return (
@@ -163,6 +175,20 @@ export default class ExternalServiceRouterForm extends React.Component<
         ) : (
           ''
         )}
+        <div>
+          <p>
+            <span>External service call</span>
+          </p>
+          <TembaSelect
+            key="select_external_service_call"
+            name={i18n.t('forms.external_service_call', 'External Service Call')}
+            placeholder="Select the call from external service to do"
+            options={this.state.calls}
+            onChange={this.handleCallUpdate}
+            value={this.state.call}
+            searchable={false}
+          />
+        </div>
         <div className={styles.body}>
           <TextInputElement
             name={i18n.t('forms.body', 'Body')}

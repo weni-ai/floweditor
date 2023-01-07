@@ -12,7 +12,7 @@ export const getOriginalAction = (settings: NodeEditorSettings): CallExternalSer
     settings.originalAction ||
     (settings.originalNode.node.actions.length > 0 && settings.originalNode.node.actions[0]);
 
-  if (action.type === Types.open_ticket) {
+  if (action.type === Types.call_external_service) {
     return action as CallExternalService;
   }
 };
@@ -24,9 +24,10 @@ export const nodeToState = (
   let externalService: FormEntry = initialExternalService
     ? { value: { uuid: initialExternalService.id, name: initialExternalService.name } }
     : { value: null };
-  let call = { value: '' };
   let body = { value: '' };
   let resultName = { value: 'Result' };
+  let calls: any[] = initialExternalService.content.calls;
+  let call = { value: calls[0] };
 
   if (getType(settings.originalNode) === Types.split_by_external_service) {
     const action = getOriginalAction(settings) as CallExternalService;
@@ -41,6 +42,7 @@ export const nodeToState = (
     call,
     body,
     resultName,
+    calls,
     valid: true
   };
 

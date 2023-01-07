@@ -44,6 +44,7 @@ export interface Endpoints {
   simulateResume: string;
   editor: string;
   ticketer_queues: string;
+  external_services: string;
 }
 
 export interface FlowEditorConfig {
