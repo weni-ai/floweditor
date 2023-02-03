@@ -1,3 +1,7 @@
+1.1.2-floweditor-1.15.2
+----------
+* Fix: Case removal and reorder on expression and field routers
+
 1.1.1-floweditor-1.15.2
 ----------
 * Fix get ticketer uuid when coming from assetStore
