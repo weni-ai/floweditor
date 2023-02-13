@@ -145,6 +145,30 @@ export interface OperatorMap {
   [propName: string]: Operator;
 }
 
+export interface ParamFilter {
+  name: string;
+  type: string;
+  verboseName: string;
+  maxLength?: number;
+}
+
+export interface ServiceCallParam {
+  type: string;
+  verboseName: string;
+  filters: ParamFilter[];
+}
+
+export interface ServiceCall {
+  value: string;
+  name: string;
+  verboseName: string;
+  params: ServiceCallParam[];
+}
+
+export interface ServiceCallMap {
+  [serviceName: string]: ServiceCall[];
+}
+
 export const VISIBILITY_MESSAGING = [
   FlowTypes.MESSAGING,
   FlowTypes.MESSAGING_BACKGROUND,

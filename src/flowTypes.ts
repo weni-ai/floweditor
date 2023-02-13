@@ -1,5 +1,5 @@
 import { Methods } from 'components/flow/routers/webhook/helpers';
-import { FlowTypes, Operators, Types, ContactStatus } from 'config/interfaces';
+import { FlowTypes, Operators, Types, ContactStatus, ServiceCall } from 'config/interfaces';
 
 // we don't concern ourselves with patch versions
 export const SPEC_VERSION = '13.1';
@@ -414,6 +414,7 @@ export interface Classifier {
 export interface ExternalService {
   uuid: string;
   name: string;
+  type: string;
 }
 
 export interface Ticketer {
@@ -447,8 +448,8 @@ export interface CallWebhook extends Action {
 
 export interface CallExternalService extends Action {
   external_service: ExternalService;
-  call: string;
-  body: string;
+  call: ServiceCall;
+  params: any[];
   result_name: string;
 }
 
