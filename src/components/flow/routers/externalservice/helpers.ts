@@ -1,11 +1,12 @@
 import { createWebhookBasedNode } from 'components/flow/routers/helpers';
-import { Types } from 'config/interfaces';
+import { ServiceCall, Types } from 'config/interfaces';
 import { getType } from 'config/typeConfigs';
 import { CallExternalService } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, FormEntry } from 'store/nodeEditor';
 import { createUUID } from 'utils';
 import { ExternalServiceRouterFormState } from 'components/flow/routers/externalservice/ExternalServiceRouterForm';
+import { ServicesCalls } from './constants';
 
 export const getOriginalAction = (settings: NodeEditorSettings): CallExternalService => {
   const action =
@@ -21,28 +22,41 @@ export const nodeToState = (
   settings: NodeEditorSettings,
   initialExternalService: any
 ): ExternalServiceRouterFormState => {
-  let externalService: FormEntry = initialExternalService
-    ? { value: { uuid: initialExternalService.id, name: initialExternalService.name } }
-    : { value: null };
-  let body = { value: '' };
   let resultName = { value: 'Result' };
-  let calls: any[] = initialExternalService.content.calls;
-  let call = { value: calls[0] };
 
-  if (getType(settings.originalNode) === Types.split_by_external_service) {
+  let externalService: FormEntry = null;
+  let initialCalls: ServiceCall[] = [];
+  let initialCall: FormEntry = null;
+  let initialParams: any[] = [];
+
+  if (settings.originalNode && getType(settings.originalNode) === Types.split_by_external_service) {
     const action = getOriginalAction(settings) as CallExternalService;
+
     externalService = { value: action.external_service };
-    call = { value: action.call };
-    body = { value: action.body };
+    initialCalls = ServicesCalls[externalService.value.type] || [];
+    initialCall = { value: action.call };
+    initialParams = action.params;
     resultName = { value: action.result_name };
+  } else {
+    externalService = initialExternalService
+      ? {
+          value: {
+            uuid: initialExternalService.id,
+            name: initialExternalService.name,
+            type: initialExternalService.type
+          }
+        }
+      : { value: null };
+    initialCalls = externalService.value ? ServicesCalls[externalService.value.type] : [];
+    initialCall = { value: initialCalls[0] };
   }
 
   const state: ExternalServiceRouterFormState = {
     externalService,
-    call,
-    body,
+    call: initialCall,
     resultName,
-    calls,
+    calls: { value: initialCalls },
+    params: { value: initialParams },
     valid: true
   };
 
@@ -64,10 +78,11 @@ export const stateToNode = (
     type: Types.call_external_service,
     external_service: {
       uuid: state.externalService.value.uuid,
-      name: state.externalService.value.name
+      name: state.externalService.value.name,
+      type: state.externalService.value.type
     },
     call: state.call.value,
-    body: state.body.value,
+    params: state.params.value,
     result_name: state.resultName.value
   };
 

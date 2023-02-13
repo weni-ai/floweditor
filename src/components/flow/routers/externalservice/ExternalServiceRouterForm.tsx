@@ -13,31 +13,27 @@ import {
 } from 'store/validators';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
 import { Asset } from 'store/flowContext';
-import styles from './ExternalServiceRouterForm.module.scss';
 import * as React from 'react';
-import { fakePropType } from 'config/ConfigProvider';
 import i18n from 'config/i18n';
-import TextInputElement from 'components/form/textinput/TextInputElement';
 import TembaSelect from 'temba/TembaSelect';
 import TypeList from 'components/nodeeditor/TypeList';
 import { createResultNameInput } from 'components/flow/routers/widgets';
+import ParamList from 'components/flow/routers/paramlist/ParamList';
+import { ServiceCall } from 'config/interfaces';
+import { ServicesCalls } from './constants';
 
 export interface ExternalServiceRouterFormState extends FormState {
   externalService: FormEntry;
-  call: StringEntry;
-  body: StringEntry;
+  call: FormEntry;
   resultName: StringEntry;
-  calls: any[];
+  calls: FormEntry;
+  params: FormEntry;
 }
 
 export default class ExternalServiceRouterForm extends React.Component<
   RouterFormProps,
   ExternalServiceRouterFormState
 > {
-  public static contextTypes = {
-    config: fakePropType
-  };
-
   constructor(props: RouterFormProps) {
     super(props);
     const externalServices = Object.values(this.props.assetStore.externalServices.items);
@@ -51,10 +47,10 @@ export default class ExternalServiceRouterForm extends React.Component<
   private handleUpdate(
     keys: {
       externalService?: Asset;
-      call?: string;
-      body?: string;
+      call?: ServiceCall;
       resultName?: string;
       calls?: any[];
+      params?: any[];
     },
     submitting = false
   ): boolean {
@@ -69,17 +65,26 @@ export default class ExternalServiceRouterForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('call')) {
-      updates.call = validate(i18n.t('forms.call', 'Call'), keys.call, []);
-    }
-
-    if (keys.hasOwnProperty('body')) {
-      updates.body = validate(i18n.t('forms.body', 'Body'), keys.body, [
+      updates.call = validate(i18n.t('forms.call', 'Call'), keys.call, [
         shouldRequireIf(submitting)
       ]);
     }
 
     if (keys.hasOwnProperty('resultName')) {
       updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
+        shouldRequireIf(submitting)
+      ]);
+    }
+
+    if (keys.hasOwnProperty('calls')) {
+      updates.calls = validate(i18n.t('forms.calls', 'Calls'), keys.calls, [
+        shouldRequireIf(submitting)
+      ]);
+    }
+
+    // TODO: Improve paramter validation to check each field
+    if (keys.hasOwnProperty('params')) {
+      updates.params = validate(i18n.t('forms.params', 'Params'), keys.params, [
         shouldRequireIf(submitting)
       ]);
     }
@@ -91,22 +96,16 @@ export default class ExternalServiceRouterForm extends React.Component<
   }
 
   private handleExternalServiceUpdate(selected: Asset[]): void {
-    this.handleUpdate({ externalService: selected[0] });
+    const newService = selected[0];
+    this.handleUpdate({ externalService: newService, calls: ServicesCalls[newService.type] || [] });
   }
 
-  private handleCallUpdate(call: string): void {
-    this.handleUpdate({ call: call });
+  private handleCallUpdate(call: ServiceCall): void {
+    this.handleUpdate({ call });
   }
 
-  private handleBodyUpdate(body: string): boolean {
-    return this.handleUpdate({ body });
-  }
-
-  private handleCallsListByExternalService(externalService: any, hasContext: boolean): void {
-    const calls = externalService.content.calls;
-    let toUpdateCall = calls.length > 0 ? calls[0] : '';
-    const toUpdate = { calls: calls, call: toUpdateCall };
-    this.handleUpdate(toUpdate);
+  private handleParamsUpdated(params: any[]): void {
+    this.handleUpdate({ params });
   }
 
   private handleResultNameUpdate(value: string): void {
@@ -122,11 +121,14 @@ export default class ExternalServiceRouterForm extends React.Component<
   }
 
   private handleSave(): void {
+    // remove the last param as it is an empty one
+    this.state.params.value.pop();
+
     const valid = this.handleUpdate(
       {
         externalService: this.state.externalService.value,
         call: this.state.call.value,
-        body: this.state.body.value,
+        params: this.state.params.value,
         resultName: this.state.resultName.value
       },
       true
@@ -161,7 +163,7 @@ export default class ExternalServiceRouterForm extends React.Component<
         {showExternalServices ? (
           <div>
             <p>
-              <span>Call External Service via... </span>
+              <span>Integration with... </span>
             </p>
             <AssetSelector
               key="select_external_service"
@@ -177,28 +179,28 @@ export default class ExternalServiceRouterForm extends React.Component<
         )}
         <div>
           <p>
-            <span>External service call</span>
+            <span>Action</span>
           </p>
           <TembaSelect
             key="select_external_service_call"
             name={i18n.t('forms.external_service_call', 'External Service Call')}
             placeholder="Select the call from external service to do"
-            options={this.state.calls}
+            options={this.state.calls.value}
+            nameKey="verboseName"
             onChange={this.handleCallUpdate}
-            value={this.state.call}
+            value={this.state.call.value}
             searchable={false}
           />
         </div>
-        <div className={styles.body}>
-          <TextInputElement
-            name={i18n.t('forms.body', 'Body')}
-            placeholder={i18n.t('forms.enter_a_body', 'Enter a body')}
-            entry={this.state.body}
-            onChange={this.handleBodyUpdate}
-            autocomplete={true}
-            textarea={true}
+        {this.state.call.value ? (
+          <ParamList
+            availableParams={this.state.call.value.params}
+            params={this.state.params.value}
+            onParamsUpdated={this.handleParamsUpdated}
           />
-        </div>
+        ) : (
+          <></>
+        )}
         {createResultNameInput(this.state.resultName, this.handleResultNameUpdate)}
         {renderIssues(this.props)}
       </Dialog>
