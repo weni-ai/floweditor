@@ -105,7 +105,8 @@ export enum FeatureFilter {
   HAS_CLASSIFIER = 'classifier',
   HAS_TICKETER = 'ticketer',
   HAS_FACEBOOK = 'facebook',
-  HAS_LOCATIONS = 'locations'
+  HAS_LOCATIONS = 'locations',
+  HAS_EXTERNAL_SERVICE = 'external_service'
 }
 
 export interface FlowTypeVisibility {

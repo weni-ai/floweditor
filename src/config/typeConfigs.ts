@@ -420,7 +420,7 @@ export const typeConfigList: Type[] = [
     localizeableKeys: ['exists'],
     component: CallExternalServiceComp,
     aliases: [Types.split_by_external_service],
-    filter: FeatureFilter.HAS_TICKETER
+    filter: FeatureFilter.HAS_EXTERNAL_SERVICE
   },
 
   /** Routers */
