@@ -1,0 +1,583 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ParamList render should render list of params 1`] = `
+<body>
+  <div>
+    <div
+      class="param_list_container "
+      tabindex="0"
+    >
+      <div
+        class="param_list"
+      >
+        <div
+          class="param param_list_param"
+        >
+          <div
+            class="ele group"
+          >
+            <div
+              class="param"
+              data-draggable="true"
+            >
+              <span
+                class="fe-chevrons-expand dnd_icon"
+                data-draggable="true"
+              />
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param"
+                    namekey="verboseName"
+                    placeholder="param"
+                    valuekey="name"
+                    values="[{\\"uuid\\":\\"b1f332f3-bdd3-4891-aec5-1843a712dbf1\\",\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}],\\"filter\\":{\\"value\\":{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"}},\\"data\\":{\\"value\\":\\"data 1\\"},\\"valid\\":true,\\"availableParams\\":[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]},{\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato \\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}]},{\\"type\\":\\"telefone_email\\",\\"verboseName\\":\\"Telefone e Email\\",\\"filters\\":[{\\"name\\":\\"cDDDCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do celular 1\\"},{\\"name\\":\\"cNumCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 1\\"},{\\"name\\":\\"cDDDCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Celular 2\\"},{\\"name\\":\\"cNumCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 2\\"},{\\"name\\":\\"cDDDTel\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Telefone\\"},{\\"name\\":\\"cNumTel\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Telefone\\"},{\\"name\\":\\"cDDDFax\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Fax\\"},{\\"name\\":\\"cNumFax\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Fax\\"},{\\"name\\":\\"cEmail\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"E-mail do contato\\"},{\\"name\\":\\"cWebsite\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"}]},{\\"type\\":\\"cObs\\",\\"verboseName\\":\\"Observações\\",\\"filters\\":[]}]}]"
+                  />
+                </div>
+              </div>
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param_filter"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param Filter"
+                    namekey="verboseName"
+                    placeholder="filter"
+                    valuekey="name"
+                    values="[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"}]"
+                  />
+                </div>
+              </div>
+              <div
+                class="data"
+              >
+                <div
+                  class="ele"
+                >
+                  <div
+                    class="wrapper small"
+                  >
+                    <input
+                      data-testid="Service Call Param Data"
+                      name="Service Call Param Data"
+                      value="data 1"
+                    />
+                  </div>
+                </div>
+              </div>
+              <span
+                class="fe-x remove_icon"
+                data-testid="remove-param-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="param param_list_param"
+        >
+          <div
+            class="ele group"
+          >
+            <div
+              class="param"
+              data-draggable="true"
+            >
+              <span
+                class="fe-chevrons-expand dnd_icon"
+                data-draggable="true"
+              />
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param"
+                    namekey="verboseName"
+                    placeholder="param"
+                    valuekey="name"
+                    values="[{\\"uuid\\":\\"061fc171-8b79-4636-b892-bd0ea5aa9b42\\",\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato \\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}],\\"filter\\":{\\"value\\":{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato \\"}},\\"data\\":{\\"value\\":\\"data 2\\"},\\"valid\\":true,\\"availableParams\\":[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]},{\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato \\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}]},{\\"type\\":\\"telefone_email\\",\\"verboseName\\":\\"Telefone e Email\\",\\"filters\\":[{\\"name\\":\\"cDDDCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do celular 1\\"},{\\"name\\":\\"cNumCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 1\\"},{\\"name\\":\\"cDDDCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Celular 2\\"},{\\"name\\":\\"cNumCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 2\\"},{\\"name\\":\\"cDDDTel\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Telefone\\"},{\\"name\\":\\"cNumTel\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Telefone\\"},{\\"name\\":\\"cDDDFax\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Fax\\"},{\\"name\\":\\"cNumFax\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Fax\\"},{\\"name\\":\\"cEmail\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"E-mail do contato\\"},{\\"name\\":\\"cWebsite\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"}]},{\\"type\\":\\"cObs\\",\\"verboseName\\":\\"Observações\\",\\"filters\\":[]}]}]"
+                  />
+                </div>
+              </div>
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param_filter"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param Filter"
+                    namekey="verboseName"
+                    placeholder="filter"
+                    valuekey="name"
+                    values="[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato \\"}]"
+                  />
+                </div>
+              </div>
+              <div
+                class="data"
+              >
+                <div
+                  class="ele"
+                >
+                  <div
+                    class="wrapper small"
+                  >
+                    <input
+                      data-testid="Service Call Param Data"
+                      name="Service Call Param Data"
+                      value="data 2"
+                    />
+                  </div>
+                </div>
+              </div>
+              <span
+                class="fe-x remove_icon"
+                data-testid="remove-param-061fc171-8b79-4636-b892-bd0ea5aa9b42"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="param param_list_param"
+        >
+          <div
+            class="ele group"
+          >
+            <div
+              class="param"
+              data-draggable="true"
+            >
+              <span
+                class="fe-chevrons-expand dnd_icon"
+                data-draggable="true"
+              />
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param"
+                    namekey="verboseName"
+                    placeholder="param"
+                    valuekey="name"
+                    values="[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]}]"
+                  />
+                </div>
+              </div>
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param_filter"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param Filter"
+                    namekey="verboseName"
+                    placeholder="filter"
+                    valuekey="name"
+                    values="[]"
+                  />
+                </div>
+              </div>
+              <div
+                class="data"
+              >
+                <div
+                  class="ele"
+                >
+                  <div
+                    class="wrapper small"
+                  >
+                    <input
+                      data-testid="Service Call Param Data"
+                      name="Service Call Param Data"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <span
+                class="fe-x remove_icon"
+                data-testid="remove-param-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ParamList render should render list with an empty param 1`] = `
+<body>
+  <div>
+    <div
+      class="param_list_container "
+      tabindex="0"
+    >
+      <div
+        class="param_list"
+      >
+        <div
+          class="param param_list_param"
+        >
+          <div
+            class="ele group"
+          >
+            <div
+              class="param"
+              data-draggable="true"
+            >
+              <span
+                class="fe-chevrons-expand dnd_icon"
+                data-draggable="true"
+              />
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param"
+                    namekey="verboseName"
+                    placeholder="param"
+                    valuekey="name"
+                    values="[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]}]"
+                  />
+                </div>
+              </div>
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param_filter"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param Filter"
+                    namekey="verboseName"
+                    placeholder="filter"
+                    valuekey="name"
+                    values="[]"
+                  />
+                </div>
+              </div>
+              <div
+                class="data"
+              >
+                <div
+                  class="ele"
+                >
+                  <div
+                    class="wrapper small"
+                  >
+                    <input
+                      data-testid="Service Call Param Data"
+                      name="Service Call Param Data"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <span
+                class="fe-x remove_icon"
+                data-testid="remove-param-1dce2b34-9aab-4e20-81c4-3f0408dcb671"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ParamList updates should remove param and ensure empty param exists 1`] = `
+<body>
+  <div>
+    <div
+      class="param_list_container "
+      tabindex="0"
+    >
+      <div
+        class="param_list"
+      >
+        <div
+          class="param param_list_param"
+        >
+          <div
+            class="ele group"
+          >
+            <div
+              class="param"
+              data-draggable="true"
+            >
+              <span
+                class="fe-chevrons-expand dnd_icon"
+                data-draggable="true"
+              />
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param"
+                    namekey="verboseName"
+                    placeholder="param"
+                    valuekey="name"
+                    values="[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]}]"
+                  />
+                </div>
+              </div>
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param_filter"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param Filter"
+                    namekey="verboseName"
+                    placeholder="filter"
+                    valuekey="name"
+                    values="[]"
+                  />
+                </div>
+              </div>
+              <div
+                class="data"
+              >
+                <div
+                  class="ele"
+                >
+                  <div
+                    class="wrapper small"
+                  >
+                    <input
+                      data-testid="Service Call Param Data"
+                      name="Service Call Param Data"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <span
+                class="fe-x remove_icon"
+                data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ParamList updates should update params and call the callback 1`] = `
+<body>
+  <div>
+    <div
+      class="param_list_container "
+      tabindex="0"
+    >
+      <div
+        class="param_list"
+      >
+        <div
+          class="param param_list_param"
+        >
+          <div
+            class="ele group"
+          >
+            <div
+              class="param"
+              data-draggable="true"
+            >
+              <span
+                class="fe-chevrons-expand dnd_icon"
+                data-draggable="true"
+              />
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param"
+                    namekey="verboseName"
+                    placeholder="param"
+                    valuekey="name"
+                    values="[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]}]"
+                  />
+                </div>
+              </div>
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param_filter"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param Filter"
+                    namekey="verboseName"
+                    placeholder="filter"
+                    valuekey="name"
+                    values="[]"
+                  />
+                </div>
+              </div>
+              <div
+                class="data"
+              >
+                <div
+                  class="ele"
+                >
+                  <div
+                    class="wrapper small"
+                  >
+                    <input
+                      data-testid="Service Call Param Data"
+                      name="Service Call Param Data"
+                      value="data 1"
+                    />
+                  </div>
+                </div>
+              </div>
+              <span
+                class="fe-x remove_icon"
+                data-testid="remove-param-1e47a1e1-3c67-4df5-adf1-da542c789adb"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="param param_list_param"
+        >
+          <div
+            class="ele group"
+          >
+            <div
+              class="param"
+              data-draggable="true"
+            >
+              <span
+                class="fe-chevrons-expand dnd_icon"
+                data-draggable="true"
+              />
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param"
+                    namekey="verboseName"
+                    placeholder="param"
+                    valuekey="name"
+                    values="[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]}]"
+                  />
+                </div>
+              </div>
+              <div
+                class="choice"
+              >
+                <div
+                  class="small "
+                >
+                  <temba-select
+                    data-testid="temba_select_service_call_param_filter"
+                    errors="[]"
+                    expressions=""
+                    name="Service Call Param Filter"
+                    namekey="verboseName"
+                    placeholder="filter"
+                    valuekey="name"
+                    values="[]"
+                  />
+                </div>
+              </div>
+              <div
+                class="data"
+              >
+                <div
+                  class="ele"
+                >
+                  <div
+                    class="wrapper small"
+                  >
+                    <input
+                      data-testid="Service Call Param Data"
+                      name="Service Call Param Data"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <span
+                class="fe-x remove_icon"
+                data-testid="remove-param-132de855-4042-4dc1-a18f-cc2e6a8f790a"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
