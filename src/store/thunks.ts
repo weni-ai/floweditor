@@ -298,7 +298,7 @@ export const loadFlowDefinition = (details: FlowDetails, assetStore: AssetStore)
 ): void => {
   // first see if we need our asset store initialized
 
-  const definition = JSON.parse(String(details.definition))['definition'];
+  const definition = details.definition;
 
   const {
     flowContext: { issues },
