@@ -78,6 +78,12 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
     };
   }
 
+  componentDidUpdate(): void {
+    if (!this.hasEmptyParam(this.state.currentParams)) {
+      this.handleUpdate({ paramProps: this.createEmptyParam() });
+    }
+  }
+
   private hasEmptyParam(params: ParamProps[]): boolean {
     return (
       params.find((paramProps: ParamProps) => paramProps.data.value.trim().length === 0) != null
@@ -91,11 +97,8 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
   private handleUpdate(keys: { paramProps?: ParamProps; removeParam?: any }) {
     const updates: Partial<ParamListState> = {};
 
-    let ensureEmptyParam = false;
-
     if (keys.hasOwnProperty('paramProps')) {
       updates.currentParams = [keys.paramProps];
-      ensureEmptyParam = true;
       if (!keys.paramProps.valid) {
         // TODO: refactor this to be a form entry
         // mock our case to have validation failures, this is so the case list sees
@@ -108,27 +111,16 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
     let toRemove: any[] = [];
     if (keys.hasOwnProperty('removeParam')) {
       toRemove = [{ currentParams: [keys.removeParam] }];
-      ensureEmptyParam = true;
     }
 
     // update our form
-    this.setState(
-      (prevState: ParamListState) => {
-        const updated = mergeForm(prevState, updates, toRemove) as ParamListState;
+    this.setState((prevState: ParamListState) => {
+      const updated = mergeForm(prevState, updates, toRemove) as ParamListState;
 
-        // notify our listener
-        this.props.onParamsUpdated(updated.currentParams);
-        return updated;
-      },
-      () => {
-        // if we no longer have an empty case, add one
-        if (ensureEmptyParam) {
-          if (!this.hasEmptyParam(this.state.currentParams)) {
-            this.handleUpdate({ paramProps: this.createEmptyParam() });
-          }
-        }
-      }
-    );
+      // notify our listener
+      this.props.onParamsUpdated(updated.currentParams);
+      return updated;
+    });
   }
 
   private handleRemoveParam(uuid: string) {
