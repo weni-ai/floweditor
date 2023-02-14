@@ -7,13 +7,14 @@ export const initializeForm = (props: ParamElementProps): ParamElementState => {
   const currentParam = props.initialParam.type ? props.initialParam : props.availableParams[0];
 
   const initialData = props.initialParam.data.value || '';
-  let initialFilter = props.initialParam.filter.value || null;
+  const initialFilter = props.initialParam.filter.value || null;
+  const paramFilters = currentParam ? currentParam.filters : [];
 
   return {
     errors: [],
     currentParam,
+    paramFilters,
     currentFilter: initialFilter,
-    paramFilters: currentParam.filters,
     data: { value: initialData },
     valid: true
   };
