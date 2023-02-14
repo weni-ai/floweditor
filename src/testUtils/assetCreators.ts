@@ -1,6 +1,7 @@
 import { determineTypeConfig } from 'components/flow/helpers';
 import { ActionFormProps, LocalizationFormProps, RouterFormProps } from 'components/flow/props';
 import { CaseProps } from 'components/flow/routers/caselist/CaseList';
+import { ServicesCalls } from 'components/flow/routers/externalservice/constants';
 import { DefaultExitNames } from 'components/flow/routers/constants';
 import { ResolvedRoutes, resolveRoutes } from 'components/flow/routers/helpers';
 import { Methods } from 'components/flow/routers/webhook/helpers';
@@ -52,7 +53,8 @@ import {
   WaitTypes,
   WebhookExitNames,
   HintTypes,
-  CallClassifier
+  CallClassifier,
+  CallExternalService
 } from 'flowTypes';
 import Localization from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
@@ -350,7 +352,13 @@ export const createSetRunResultAction = ({
 });
 
 export const createWebhookNode = (
-  action: CallWebhook | CallResthook | OpenTicket | TransferAirtime | CallClassifier,
+  action:
+    | CallWebhook
+    | CallResthook
+    | OpenTicket
+    | TransferAirtime
+    | CallClassifier
+    | CallExternalService,
   useCategoryTest: boolean
 ) => {
   const { categories, exits } = createCategories([
@@ -408,6 +416,23 @@ export const createOpenTicketNode = (subject: string, body: string): FlowNode =>
     },
     subject: subject,
     body: body,
+    result_name: 'Result'
+  };
+  return createWebhookNode(action, true);
+};
+
+export const createCallExternalServiceNode = (type: string): FlowNode => {
+  const call = ServicesCalls[type][0];
+  const action: CallExternalService = {
+    uuid: utils.createUUID(),
+    type: Types.call_external_service,
+    external_service: {
+      uuid: '4b154b06-5ecd-43d9-afca-39738e6859d7',
+      name: `${type} dummy project`,
+      type
+    },
+    call,
+    params: [],
     result_name: 'Result'
   };
   return createWebhookNode(action, true);

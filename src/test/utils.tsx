@@ -37,7 +37,8 @@ export const EMPTY_TEST_ASSETS = {
   results: { items: {}, type: AssetType.Result },
   flows: { items: {}, type: AssetType.Flow },
   recipients: { items: {}, type: AssetType.Contact || AssetType.Group || AssetType.URN },
-  ticketers: { items: {}, type: AssetType.Ticketer }
+  ticketers: { items: {}, type: AssetType.Ticketer },
+  externalServices: { items: {}, type: AssetType.ExternalService }
 };
 
 const initial = initialState;
