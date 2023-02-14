@@ -101,7 +101,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
           <span className={`fe-chevrons-expand ${styles.dnd_icon}`} data-draggable={true} />
           <div className={styles.choice}>
             <TembaSelect
-              name={i18n.t('forms.param', 'param')}
+              name={i18n.t('forms.service_call_param', 'Service Call Param')}
               placeholder={i18n.t('forms.param', 'param')}
               style={TembaSelectStyle.small}
               options={this.props.availableParams}
@@ -113,7 +113,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
           </div>
           <div className={styles.choice}>
             <TembaSelect
-              name={i18n.t('forms.filter', 'filter')}
+              name={i18n.t('forms.service_call_param_filter', 'Service Call Param Filter')}
               placeholder={i18n.t('forms.filter', 'filter')}
               style={TembaSelectStyle.small}
               options={this.state.paramFilters}
@@ -121,12 +121,16 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
               valueKey="name"
               onChange={this.handleFilterChange}
               value={this.state.currentFilter}
-              disabled={this.state.currentParam.filters.length === 0 ? true : null}
+              disabled={
+                this.state.currentParam && this.state.currentParam.filters.length === 0
+                  ? true
+                  : null
+              }
             />
           </div>
           <div className={styles.data}>
             <TextInputElement
-              name={i18n.t('forms.exit_name', 'Exit Name')}
+              name={i18n.t('forms.service_call_param_data', 'Service Call Param Data')}
               style={TextInputStyle.small}
               onChange={this.handleDataChange}
               entry={this.state.data}
