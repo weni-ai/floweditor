@@ -204,6 +204,10 @@ export const resultToAsset = (result: any, type: AssetType, id: string): Asset =
     assetType = result.type;
   }
 
+  if (type === AssetType.ExternalService) {
+    assetType = result.external_service_type;
+  }
+
   const asset: Asset = {
     name: result.name || result.text || result.label || result[idKey],
     id: result[idKey],
