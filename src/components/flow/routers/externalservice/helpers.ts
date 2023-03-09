@@ -31,9 +31,8 @@ export const nodeToState = (
 
   if (settings.originalNode && getType(settings.originalNode) === Types.split_by_external_service) {
     const action = getOriginalAction(settings) as CallExternalService;
-
     externalService = { value: action.external_service };
-    initialCalls = ServicesCalls[externalService.value.type] || [];
+    initialCalls = ServicesCalls[externalService.value.external_service_type] || [];
     initialCall = { value: action.call };
     initialParams = action.params;
     resultName = { value: action.result_name };
@@ -47,7 +46,9 @@ export const nodeToState = (
           }
         }
       : { value: null };
-    initialCalls = externalService.value ? ServicesCalls[externalService.value.type] : [];
+    initialCalls = externalService.value
+      ? ServicesCalls[externalService.value.external_service_type]
+      : [];
     initialCall = { value: initialCalls[0] };
   }
 
@@ -79,7 +80,7 @@ export const stateToNode = (
     external_service: {
       uuid: state.externalService.value.uuid,
       name: state.externalService.value.name,
-      type: state.externalService.value.type
+      external_service_type: state.externalService.value.external_service_type
     },
     call: state.call.value,
     params: state.params.value,

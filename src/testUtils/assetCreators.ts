@@ -429,7 +429,7 @@ export const createCallExternalServiceNode = (type: string): FlowNode => {
     external_service: {
       uuid: '4b154b06-5ecd-43d9-afca-39738e6859d7',
       name: `${type} dummy project`,
-      type
+      external_service_type: type
     },
     call,
     params: [],

@@ -414,7 +414,7 @@ export interface Classifier {
 export interface ExternalService {
   uuid: string;
   name: string;
-  type: string;
+  external_service_type: string;
 }
 
 export interface Ticketer {

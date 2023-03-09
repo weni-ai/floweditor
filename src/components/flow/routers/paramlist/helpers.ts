@@ -8,7 +8,7 @@ export const createEmptyParam = (): ParamProps => {
     type: '',
     verboseName: '',
     filters: [],
-    filter: { value: '' },
+    filter: { value: null },
     data: { value: '' },
     valid: true
   };
