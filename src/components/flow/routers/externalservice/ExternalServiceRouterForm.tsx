@@ -15,6 +15,7 @@ import AssetSelector from 'components/form/assetselector/AssetSelector';
 import { Asset } from 'store/flowContext';
 import * as React from 'react';
 import i18n from 'config/i18n';
+import { createUUID } from 'utils';
 import TembaSelect from 'temba/TembaSelect';
 import TypeList from 'components/nodeeditor/TypeList';
 import { createResultNameInput } from 'components/flow/routers/widgets';
@@ -82,26 +83,60 @@ export default class ExternalServiceRouterForm extends React.Component<
       ]);
     }
 
-    // TODO: Improve paramter validation to check each field
+    let hasInvalidParam = false;
     if (keys.hasOwnProperty('params')) {
-      updates.params = validate(i18n.t('forms.params', 'Params'), keys.params, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.params = validate(i18n.t('forms.params', 'Params'), keys.params, []);
+
+      updates.params.value = updates.params.value.map((param: any) => {
+        let valid = true;
+        if (!param.valid || param.data.value.trim().length === 0) {
+          valid = false;
+          hasInvalidParam = true;
+        }
+
+        return { ...param, valid };
+      });
     }
 
     const updated = mergeForm(this.state, updates);
+
+    if (hasInvalidParam) {
+      updated.valid = false;
+    }
 
     this.setState(updated);
     return updated.valid;
   }
 
   private handleExternalServiceUpdate(selected: Asset[]): void {
-    const newService = selected[0];
-    this.handleUpdate({ externalService: newService, calls: ServicesCalls[newService.type] || [] });
+    const newService = selected[0] as any;
+
+    this.handleUpdate({
+      externalService: newService,
+      calls: ServicesCalls[newService.external_service_type || newService.type] || []
+    });
   }
 
   private handleCallUpdate(call: ServiceCall): void {
-    this.handleUpdate({ call });
+    let requiredParams: any[] = [];
+
+    call.params.forEach(param => {
+      const data = { value: '' };
+      if (param.required) {
+        requiredParams.push({ ...param, data, uuid: createUUID() });
+        return;
+      }
+
+      if (!param.filters) return;
+
+      param.filters.forEach(filter => {
+        if (filter.required) {
+          requiredParams.push({ ...param, filter: { value: filter }, data, uuid: createUUID() });
+        }
+      });
+    });
+
+    this.handleUpdate({ call, params: requiredParams });
   }
 
   private handleParamsUpdated(params: any[]): void {
@@ -121,8 +156,19 @@ export default class ExternalServiceRouterForm extends React.Component<
   }
 
   private handleSave(): void {
-    // remove the last param as it is an empty one
-    this.state.params.value.pop();
+    // remove the last param if they are not required as it is an empty one
+    const lastParam = this.state.params.value.at(-1);
+    if (lastParam) {
+      const hasFilters = lastParam.required || lastParam.filters;
+      const hasSelectedFilter =
+        typeof lastParam.filter.value === 'object' && lastParam.filter.value;
+      const hasRequiredFilter =
+        lastParam.required || (lastParam.filter.value && lastParam.filter.value.required);
+
+      if (!hasFilters || !hasSelectedFilter || !hasRequiredFilter) {
+        this.state.params.value.pop();
+      }
+    }
 
     const valid = this.handleUpdate(
       {
@@ -194,6 +240,7 @@ export default class ExternalServiceRouterForm extends React.Component<
         </div>
         {this.state.call.value ? (
           <ParamList
+            key={this.state.call.value.name}
             availableParams={this.state.call.value.params}
             params={this.state.params.value}
             onParamsUpdated={this.handleParamsUpdated}

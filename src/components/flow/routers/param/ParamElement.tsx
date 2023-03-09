@@ -38,11 +38,21 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     this.state = initializeForm(props);
   }
 
+  public componentDidMount() {
+    const updates = validateParam({
+      currentParam: this.state.currentParam,
+      currentFilter: this.state.currentFilter,
+      paramFilters: this.state.paramFilters,
+      data: this.state.data
+    });
+    this.setState(updates as ParamElementState, () => this.handleChange());
+  }
+
   private handleParamChange(newParam: ServiceCallParam): void {
     const updates = validateParam({
       currentParam: newParam,
       currentFilter: newParam.filters && newParam.filters.length >= 1 ? newParam.filters[0] : null,
-      paramFilters: newParam.filters,
+      paramFilters: newParam.filters.filter(f => !f.required),
       data: this.state.data
     });
     this.setState(updates as ParamElementState, () => this.handleChange());
@@ -77,6 +87,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
       uuid: this.props.initialParam.uuid,
       type: this.state.currentParam.type,
       verboseName: this.state.currentParam.verboseName,
+      required: this.state.currentParam.required,
       filters: this.state.currentParam.filters,
       filter: { value: this.state.currentFilter },
       data: this.state.data,
@@ -90,6 +101,16 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
   }
 
   public render(): JSX.Element {
+    const disableParam = this.state.currentParam && this.state.currentParam.required ? true : null;
+    const disableFilter =
+      this.state.currentFilter && this.state.currentFilter.required ? true : null;
+    const canArrange = !disableParam && !disableFilter;
+
+    const showFilter =
+      this.state.currentParam &&
+      this.state.currentParam.filters &&
+      this.state.currentParam.filters.length;
+
     return (
       <FormElement
         data-spec="param-form"
@@ -97,8 +118,12 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
         __className={styles.group}
         kaseError={this.state.errors.length > 0}
       >
-        <div className={`${styles.param}`} data-draggable={true}>
-          <span className={`fe-chevrons-expand ${styles.dnd_icon}`} data-draggable={true} />
+        <div className={`${styles.param}`} data-draggable={canArrange}>
+          {canArrange ? (
+            <span className={`fe-chevrons-expand ${styles.dnd_icon}`} data-draggable={canArrange} />
+          ) : (
+            <div className={styles.order_filler}></div>
+          )}
           <div className={styles.choice}>
             <TembaSelect
               name={i18n.t('forms.service_call_param', 'Service Call Param')}
@@ -107,41 +132,45 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
               options={this.props.availableParams}
               nameKey="verboseName"
               valueKey="name"
+              disabled={disableParam || disableFilter}
               onChange={this.handleParamChange}
               value={this.state.currentParam}
             />
           </div>
-          <div className={styles.choice}>
-            <TembaSelect
-              name={i18n.t('forms.service_call_param_filter', 'Service Call Param Filter')}
-              placeholder={i18n.t('forms.filter', 'filter')}
-              style={TembaSelectStyle.small}
-              options={this.state.paramFilters}
-              nameKey="verboseName"
-              valueKey="name"
-              onChange={this.handleFilterChange}
-              value={this.state.currentFilter}
-              disabled={
-                this.state.currentParam && this.state.currentParam.filters.length === 0
-                  ? true
-                  : null
-              }
-            />
-          </div>
+          {showFilter ? (
+            <div className={styles.choice}>
+              <TembaSelect
+                name={i18n.t('forms.service_call_param_filter', 'Service Call Param Filter')}
+                placeholder={i18n.t('forms.filter', 'filter')}
+                style={TembaSelectStyle.small}
+                options={this.state.paramFilters}
+                nameKey="verboseName"
+                valueKey="name"
+                onChange={this.handleFilterChange}
+                value={this.state.currentFilter}
+                disabled={disableFilter}
+              />
+            </div>
+          ) : (
+            <></>
+          )}
           <div className={styles.data}>
             <TextInputElement
               name={i18n.t('forms.service_call_param_data', 'Service Call Param Data')}
               style={TextInputStyle.small}
               onChange={this.handleDataChange}
               entry={this.state.data}
-              maxLength={36}
             />
           </div>
-          <span
-            data-testid={'remove-param-' + this.props.initialParam.uuid}
-            className={`fe-x ${styles.remove_icon}`}
-            onClick={this.handleRemoveClicked}
-          />
+          {!disableParam && !disableFilter ? (
+            <span
+              data-testid={'remove-param-' + this.props.initialParam.uuid}
+              className={`fe-x ${styles.remove_icon}`}
+              onClick={this.handleRemoveClicked}
+            />
+          ) : (
+            <div className={styles.remove_filler}></div>
+          )}
         </div>
       </FormElement>
     );

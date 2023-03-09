@@ -47,8 +47,15 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
           <SortableItem
             key={`item-${index}`}
             index={index}
-            value={{ item: { ...value, availableParams: this.props.availableParams }, list: this }}
-            disabled={index === this.state.currentParams.length - 1}
+            value={{
+              item: { ...value, availableParams: this.props.availableParams },
+              list: this
+            }}
+            disabled={
+              index === this.state.currentParams.length - 1 ||
+              (value.required ||
+                (value.filter && value.filter.value && value.filter.value.required))
+            }
             shouldCancelStart={(e: any) => {
               console.log(e);
               return true;

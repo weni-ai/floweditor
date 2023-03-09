@@ -151,12 +151,16 @@ export interface ParamFilter {
   type: string;
   verboseName: string;
   maxLength?: number;
+  required?: boolean;
 }
 
 export interface ServiceCallParam {
   type: string;
+  paramType?: string;
+  maxLength?: number;
   verboseName: string;
-  filters: ParamFilter[];
+  required?: boolean;
+  filters?: ParamFilter[];
 }
 
 export interface ServiceCall {

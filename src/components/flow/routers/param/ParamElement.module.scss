@@ -38,6 +38,7 @@ input:focus {
 
   .choice {
     width: 160px;
+    flex: 1;
   }
 
   .single_operand {
@@ -132,6 +133,14 @@ input:focus {
   margin-left: 2px;
   font-size: 9px;
   z-index: 3000;
+}
+
+.remove_filler {
+  width: 11px;
+}
+
+.order_filler {
+  width: 16px;
 }
 
 .empty {
