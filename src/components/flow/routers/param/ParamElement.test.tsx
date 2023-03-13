@@ -2,9 +2,9 @@ import ParamElement, { ParamElementProps } from 'components/flow/routers/param/P
 import * as React from 'react';
 import { fireEvent, render, fireTembaSelect, fireChangeText } from 'test/utils';
 import { createUUID } from 'utils';
-import { ServicesCalls } from '../externalservice/constants';
 
-const availableParams = ServicesCalls['omie'][0].params;
+const serviceCalls = require('test/assets/external_services_calls.json');
+const availableParams = serviceCalls[0].params;
 
 const paramUUID = createUUID();
 
@@ -57,9 +57,9 @@ describe(ParamElement.name, () => {
 
       fireTembaSelect(getByTestId('temba_select_service_call_param_filter'), [
         {
-          name: 'cCodInt',
-          type: 'text',
-          verboseName: 'Código de Integração'
+          name: 'nCodConta',
+          type: 'integer',
+          verboseName: 'Código da Conta'
         }
       ]);
       expect(baseElement).toMatchSnapshot();

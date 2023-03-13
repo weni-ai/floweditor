@@ -66,91 +66,8 @@ exports[`ExternalServiceRouterForm render should render 1`] = `
               namekey="verboseName"
               placeholder="Select the call from external service to do"
               valuekey="value"
-              values="[{\\"name\\":\\"createContact\\",\\"value\\":\\"createContact\\",\\"verboseName\\":\\"Inserir contato no CRM\\",\\"params\\":[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]},{\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato \\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}]},{\\"type\\":\\"telefone_email\\",\\"verboseName\\":\\"Telefone e Email\\",\\"filters\\":[{\\"name\\":\\"cDDDCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do celular 1\\"},{\\"name\\":\\"cNumCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 1\\"},{\\"name\\":\\"cDDDCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Celular 2\\"},{\\"name\\":\\"cNumCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 2\\"},{\\"name\\":\\"cDDDTel\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Telefone\\"},{\\"name\\":\\"cNumTel\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Telefone\\"},{\\"name\\":\\"cDDDFax\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Fax\\"},{\\"name\\":\\"cNumFax\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Fax\\"},{\\"name\\":\\"cEmail\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"E-mail do contato\\"},{\\"name\\":\\"cWebsite\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"}]},{\\"type\\":\\"cObs\\",\\"verboseName\\":\\"Observações\\",\\"filters\\":[]}]}]"
+              values="[]"
             />
-          </div>
-        </div>
-        <div
-          class="param_list_container "
-          tabindex="0"
-        >
-          <div
-            class="param_list"
-          >
-            <div
-              class="param param_list_param"
-            >
-              <div
-                class="ele group"
-              >
-                <div
-                  class="param"
-                  data-draggable="true"
-                >
-                  <span
-                    class="fe-chevrons-expand dnd_icon"
-                    data-draggable="true"
-                  />
-                  <div
-                    class="choice"
-                  >
-                    <div
-                      class="small "
-                    >
-                      <temba-select
-                        data-testid="temba_select_service_call_param"
-                        errors="[]"
-                        expressions=""
-                        name="Service Call Param"
-                        namekey="verboseName"
-                        placeholder="param"
-                        valuekey="name"
-                        values="[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]}]"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="choice"
-                  >
-                    <div
-                      class="small "
-                    >
-                      <temba-select
-                        data-testid="temba_select_service_call_param_filter"
-                        errors="[]"
-                        expressions=""
-                        name="Service Call Param Filter"
-                        namekey="verboseName"
-                        placeholder="filter"
-                        valuekey="name"
-                        values="[]"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="data"
-                  >
-                    <div
-                      class="ele"
-                    >
-                      <div
-                        class="wrapper small"
-                      >
-                        <input
-                          data-testid="Service Call Param Data"
-                          name="Service Call Param Data"
-                          value=""
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <span
-                    class="fe-x remove_icon"
-                    data-testid="remove-param-2dc85899-0577-4f1b-a620-f12094e34b5e"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <div
@@ -259,7 +176,32 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
             </div>
           </div>
         </div>
-        
+        <div>
+          <p>
+            <span>
+              Integration with... 
+            </span>
+          </p>
+          <div
+            class="ele"
+          >
+            <div
+              class="normal "
+            >
+              <temba-select
+                cachekey="0"
+                data-testid="temba_select_external_service"
+                errors="[]"
+                expressions=""
+                name="External Service"
+                namekey="name"
+                placeholder="Select the external service to use"
+                valuekey="uuid"
+                values="[{\\"uuid\\":\\"4b154b06-5ecd-43d9-afca-39738e6859d7\\",\\"name\\":\\"omie dummy project\\",\\"external_service_type\\":\\"omie\\"}]"
+              />
+            </div>
+          </div>
+        </div>
         <div>
           <p>
             <span>
@@ -277,91 +219,8 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
               namekey="verboseName"
               placeholder="Select the call from external service to do"
               valuekey="value"
-              values="[{\\"name\\":\\"createContact\\",\\"value\\":\\"createContact\\",\\"verboseName\\":\\"Inserir contato no CRM\\",\\"params\\":[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]},{\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato \\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}]},{\\"type\\":\\"telefone_email\\",\\"verboseName\\":\\"Telefone e Email\\",\\"filters\\":[{\\"name\\":\\"cDDDCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do celular 1\\"},{\\"name\\":\\"cNumCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 1\\"},{\\"name\\":\\"cDDDCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Celular 2\\"},{\\"name\\":\\"cNumCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 2\\"},{\\"name\\":\\"cDDDTel\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Telefone\\"},{\\"name\\":\\"cNumTel\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Telefone\\"},{\\"name\\":\\"cDDDFax\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Fax\\"},{\\"name\\":\\"cNumFax\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Fax\\"},{\\"name\\":\\"cEmail\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"E-mail do contato\\"},{\\"name\\":\\"cWebsite\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"}]},{\\"type\\":\\"cObs\\",\\"verboseName\\":\\"Observações\\",\\"filters\\":[]}]}]"
+              values="[]"
             />
-          </div>
-        </div>
-        <div
-          class="param_list_container "
-          tabindex="0"
-        >
-          <div
-            class="param_list"
-          >
-            <div
-              class="param param_list_param"
-            >
-              <div
-                class="ele group"
-              >
-                <div
-                  class="param"
-                  data-draggable="true"
-                >
-                  <span
-                    class="fe-chevrons-expand dnd_icon"
-                    data-draggable="true"
-                  />
-                  <div
-                    class="choice"
-                  >
-                    <div
-                      class="small "
-                    >
-                      <temba-select
-                        data-testid="temba_select_service_call_param"
-                        errors="[]"
-                        expressions=""
-                        name="Service Call Param"
-                        namekey="verboseName"
-                        placeholder="param"
-                        valuekey="name"
-                        values="[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\"},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]}]"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="choice"
-                  >
-                    <div
-                      class="small "
-                    >
-                      <temba-select
-                        data-testid="temba_select_service_call_param_filter"
-                        errors="[]"
-                        expressions=""
-                        name="Service Call Param Filter"
-                        namekey="verboseName"
-                        placeholder="filter"
-                        valuekey="name"
-                        values="[]"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="data"
-                  >
-                    <div
-                      class="ele"
-                    >
-                      <div
-                        class="wrapper small"
-                      >
-                        <input
-                          data-testid="Service Call Param Data"
-                          name="Service Call Param Data"
-                          value=""
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <span
-                    class="fe-x remove_icon"
-                    data-testid="remove-param-2dc85899-0577-4f1b-a620-f12094e34b5e"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <div
@@ -430,7 +289,7 @@ Array [
       "actions": Array [
         Object {
           "call": Object {
-            "name": "createContact",
+            "name": "IncluirContato",
             "params": Array [
               Object {
                 "filters": Array [
@@ -441,11 +300,13 @@ Array [
                   },
                   Object {
                     "name": "cCodInt",
+                    "required": true,
                     "type": "text",
                     "verboseName": "Código de Integração",
                   },
                   Object {
                     "name": "cNome",
+                    "required": true,
                     "type": "string",
                     "verboseName": "Nome do contato",
                   },
@@ -484,7 +345,7 @@ Array [
                     "maxLength": 60,
                     "name": "cEndereco",
                     "type": "string",
-                    "verboseName": "Endereço do contato ",
+                    "verboseName": "Endereço do contato",
                   },
                   Object {
                     "maxLength": 200,
@@ -598,21 +459,27 @@ Array [
                 "verboseName": "Observações",
               },
             ],
-            "value": "createContact",
-            "verboseName": "Inserir contato no CRM",
+            "value": "IncluirContato",
+            "verboseName": "Inserir Contato",
           },
           "external_service": Object {
+            "external_service_type": "omie",
             "name": "omie dummy project",
-            "type": "omie",
             "uuid": "4b154b06-5ecd-43d9-afca-39738e6859d7",
           },
           "params": Array [
             Object {
               "data": Object {
+                "validationFailures": Array [],
                 "value": "data 1",
               },
               "filter": Object {
-                "value": null,
+                "value": Object {
+                  "name": "cCodInt",
+                  "required": true,
+                  "type": "text",
+                  "verboseName": "Código de Integração",
+                },
               },
               "filters": Array [
                 Object {
@@ -622,11 +489,13 @@ Array [
                 },
                 Object {
                   "name": "cCodInt",
+                  "required": true,
                   "type": "text",
                   "verboseName": "Código de Integração",
                 },
                 Object {
                   "name": "cNome",
+                  "required": true,
                   "type": "string",
                   "verboseName": "Nome do contato",
                 },
@@ -656,6 +525,70 @@ Array [
                   "verboseName": "Código da Conta",
                 },
               ],
+              "required": undefined,
+              "type": "identificacao",
+              "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+              "valid": true,
+              "verboseName": "Identificação",
+            },
+            Object {
+              "data": Object {
+                "validationFailures": Array [],
+                "value": "data 2",
+              },
+              "filter": Object {
+                "value": Object {
+                  "name": "cNome",
+                  "required": true,
+                  "type": "string",
+                  "verboseName": "Nome do contato",
+                },
+              },
+              "filters": Array [
+                Object {
+                  "name": "nCod",
+                  "type": "integer",
+                  "verboseName": "Código do Contato",
+                },
+                Object {
+                  "name": "cCodInt",
+                  "required": true,
+                  "type": "text",
+                  "verboseName": "Código de Integração",
+                },
+                Object {
+                  "name": "cNome",
+                  "required": true,
+                  "type": "string",
+                  "verboseName": "Nome do contato",
+                },
+                Object {
+                  "name": "cSobrenome",
+                  "type": "string",
+                  "verboseName": "Sobrenome do contato",
+                },
+                Object {
+                  "name": "cCargo",
+                  "type": "string",
+                  "verboseName": "Cargo",
+                },
+                Object {
+                  "name": "dDtNasc",
+                  "type": "string",
+                  "verboseName": "Data de Nascimento",
+                },
+                Object {
+                  "name": "nCodVend",
+                  "type": "integer",
+                  "verboseName": "Código do Vendedor",
+                },
+                Object {
+                  "name": "nCodConta",
+                  "type": "integer",
+                  "verboseName": "Código da Conta",
+                },
+              ],
+              "required": undefined,
               "type": "identificacao",
               "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
               "valid": true,

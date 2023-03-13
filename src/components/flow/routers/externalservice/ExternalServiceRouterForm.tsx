@@ -21,7 +21,9 @@ import TypeList from 'components/nodeeditor/TypeList';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import ParamList from 'components/flow/routers/paramlist/ParamList';
 import { ServiceCall } from 'config/interfaces';
-import { ServicesCalls } from './constants';
+import { ExternalService } from '../../../../flowTypes';
+import { fakePropType } from '../../../../config/ConfigProvider';
+import axios from 'axios';
 
 export interface ExternalServiceRouterFormState extends FormState {
   externalService: FormEntry;
@@ -35,6 +37,10 @@ export default class ExternalServiceRouterForm extends React.Component<
   RouterFormProps,
   ExternalServiceRouterFormState
 > {
+  public static contextTypes = {
+    config: fakePropType
+  };
+
   constructor(props: RouterFormProps) {
     super(props);
     const externalServices = Object.values(this.props.assetStore.externalServices.items);
@@ -45,6 +51,12 @@ export default class ExternalServiceRouterForm extends React.Component<
       include: [/^handle/]
     });
   }
+
+  async componentDidMount() {
+    const calls = await this.getServiceCalls(this.state.externalService.value);
+    this.handleUpdate({ calls });
+  }
+
   private handleUpdate(
     keys: {
       externalService?: Asset;
@@ -108,13 +120,11 @@ export default class ExternalServiceRouterForm extends React.Component<
     return updated.valid;
   }
 
-  private handleExternalServiceUpdate(selected: Asset[]): void {
-    const newService = selected[0] as any;
+  private async handleExternalServiceUpdate(selected: any[]) {
+    const newService = selected[0];
+    const newServiceCalls = await this.getServiceCalls(newService);
 
-    this.handleUpdate({
-      externalService: newService,
-      calls: ServicesCalls[newService.external_service_type || newService.type] || []
-    });
+    this.handleUpdate({ externalService: newService, calls: newServiceCalls });
   }
 
   private handleCallUpdate(call: ServiceCall): void {
@@ -157,18 +167,20 @@ export default class ExternalServiceRouterForm extends React.Component<
 
   private handleSave(): void {
     // remove the last param if they are not required as it is an empty one
-    const lastParam = this.state.params.value.at(-1);
-    if (lastParam) {
-      const hasFilters = lastParam.required || lastParam.filters;
-      const hasSelectedFilter =
-        typeof lastParam.filter.value === 'object' && lastParam.filter.value;
-      const hasRequiredFilter =
-        lastParam.required || (lastParam.filter.value && lastParam.filter.value.required);
+    try {
+      const lastParam = this.state.params.value.length > 0 && this.state.params.value.slice(-1)[0];
+      if (lastParam) {
+        const hasFilters = lastParam.required || lastParam.filters;
+        const hasSelectedFilter =
+          typeof lastParam.filter.value === 'object' && lastParam.filter.value;
+        const isRequired =
+          lastParam.required || (lastParam.filter.value && lastParam.filter.value.required);
 
-      if (!hasFilters || !hasSelectedFilter || !hasRequiredFilter) {
-        this.state.params.value.pop();
+        if (!hasFilters || !hasSelectedFilter || !isRequired) {
+          this.state.params.value.pop();
+        }
       }
-    }
+    } catch (e) {}
 
     const valid = this.handleUpdate(
       {
@@ -196,12 +208,33 @@ export default class ExternalServiceRouterForm extends React.Component<
     };
   }
 
+  private async getServiceCalls(service: ExternalService) {
+    if (!service) return;
+
+    const url =
+      this.context.config.endpoints.external_services_calls ||
+      `${this.context.config.endpoints.external_services_calls_base}/${service.external_service_type}/actions`;
+
+    try {
+      const response = await axios.get(url);
+      const calls = response.data;
+
+      return calls;
+    } catch (e) {}
+
+    return [];
+  }
+
   private renderEdit(): JSX.Element {
     const typeConfig = this.props.typeConfig;
 
     const showExternalServices =
       Object.keys(this.props.assetStore.externalServices.items).length > 0 ||
       this.props.issues.length > 0;
+
+    const showCallSelection = !!this.state.externalService.value;
+
+    const showParamList = this.state.call ? !!this.state.call.value : false;
 
     return (
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
@@ -223,22 +256,26 @@ export default class ExternalServiceRouterForm extends React.Component<
         ) : (
           ''
         )}
-        <div>
-          <p>
-            <span>Action</span>
-          </p>
-          <TembaSelect
-            key="select_external_service_call"
-            name={i18n.t('forms.external_service_call', 'External Service Call')}
-            placeholder="Select the call from external service to do"
-            options={this.state.calls.value}
-            nameKey="verboseName"
-            onChange={this.handleCallUpdate}
-            value={this.state.call.value}
-            searchable={false}
-          />
-        </div>
-        {this.state.call.value ? (
+        {showCallSelection ? (
+          <div>
+            <p>
+              <span>Action</span>
+            </p>
+            <TembaSelect
+              key="select_external_service_call"
+              name={i18n.t('forms.external_service_call', 'External Service Call')}
+              placeholder="Select the call from external service to do"
+              options={this.state.calls.value}
+              nameKey="verboseName"
+              onChange={this.handleCallUpdate}
+              value={this.state.call ? this.state.call.value : null}
+              searchable={false}
+            />
+          </div>
+        ) : (
+          <></>
+        )}
+        {showParamList ? (
           <ParamList
             key={this.state.call.value.name}
             availableParams={this.state.call.value.params}

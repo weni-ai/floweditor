@@ -52,7 +52,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     const updates = validateParam({
       currentParam: newParam,
       currentFilter: newParam.filters && newParam.filters.length >= 1 ? newParam.filters[0] : null,
-      paramFilters: newParam.filters.filter(f => !f.required),
+      paramFilters: newParam.filters && newParam.filters.filter(f => !f.required),
       data: this.state.data
     });
     this.setState(updates as ParamElementState, () => this.handleChange());
