@@ -1,7 +1,6 @@
 import { determineTypeConfig } from 'components/flow/helpers';
 import { ActionFormProps, LocalizationFormProps, RouterFormProps } from 'components/flow/props';
 import { CaseProps } from 'components/flow/routers/caselist/CaseList';
-import { ServicesCalls } from 'components/flow/routers/externalservice/constants';
 import { DefaultExitNames } from 'components/flow/routers/constants';
 import { ResolvedRoutes, resolveRoutes } from 'components/flow/routers/helpers';
 import { Methods } from 'components/flow/routers/webhook/helpers';
@@ -422,7 +421,6 @@ export const createOpenTicketNode = (subject: string, body: string): FlowNode =>
 };
 
 export const createCallExternalServiceNode = (type: string): FlowNode => {
-  const call = ServicesCalls[type][0];
   const action: CallExternalService = {
     uuid: utils.createUUID(),
     type: Types.call_external_service,
@@ -431,7 +429,7 @@ export const createCallExternalServiceNode = (type: string): FlowNode => {
       name: `${type} dummy project`,
       external_service_type: type
     },
-    call,
+    call: null,
     params: [],
     result_name: 'Result'
   };

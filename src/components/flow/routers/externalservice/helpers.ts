@@ -6,7 +6,6 @@ import { RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, FormEntry } from 'store/nodeEditor';
 import { createUUID } from 'utils';
 import { ExternalServiceRouterFormState } from 'components/flow/routers/externalservice/ExternalServiceRouterForm';
-import { ServicesCalls } from './constants';
 
 export const getOriginalAction = (settings: NodeEditorSettings): CallExternalService => {
   const action =
@@ -32,7 +31,6 @@ export const nodeToState = (
   if (settings.originalNode && getType(settings.originalNode) === Types.split_by_external_service) {
     const action = getOriginalAction(settings) as CallExternalService;
     externalService = { value: action.external_service };
-    initialCalls = ServicesCalls[externalService.value.external_service_type] || [];
     initialCall = { value: action.call };
     initialParams = action.params;
     resultName = { value: action.result_name };
@@ -46,10 +44,6 @@ export const nodeToState = (
           }
         }
       : { value: null };
-    initialCalls = externalService.value
-      ? ServicesCalls[externalService.value.external_service_type]
-      : [];
-    initialCall = { value: initialCalls[0] };
   }
 
   const state: ExternalServiceRouterFormState = {
