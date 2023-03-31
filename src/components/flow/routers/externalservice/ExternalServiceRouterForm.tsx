@@ -211,9 +211,11 @@ export default class ExternalServiceRouterForm extends React.Component<
   private async getServiceCalls(service: ExternalService) {
     if (!service) return;
 
+    const serviceType = service.external_service_type || service.type;
+
     const url =
       this.context.config.endpoints.external_services_calls ||
-      `${this.context.config.endpoints.external_services_calls_base}/${service.external_service_type}/actions`;
+      `${this.context.config.endpoints.external_services_calls_base}/${serviceType}/actions`;
 
     try {
       const response = await axios.get(url);

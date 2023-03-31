@@ -417,6 +417,7 @@ export interface ExternalService {
   uuid: string;
   name: string;
   external_service_type: string;
+  type?: string;
 }
 
 export interface Ticketer {
