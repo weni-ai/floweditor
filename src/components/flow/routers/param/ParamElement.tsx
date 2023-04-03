@@ -160,6 +160,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
               style={TextInputStyle.small}
               onChange={this.handleDataChange}
               entry={this.state.data}
+              autocomplete={true}
             />
           </div>
           {!disableParam && !disableFilter ? (
