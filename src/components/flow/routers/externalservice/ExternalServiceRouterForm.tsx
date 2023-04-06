@@ -206,13 +206,13 @@ export default class ExternalServiceRouterForm extends React.Component<
     const allParams = this.state.call.value.params;
     const inputParams = this.state.params.value;
 
-    const paramsWithCleanFilters = allParams.map(param => {
+    const paramsWithCleanFilters = allParams.map((param: any) => {
       if ((param.filters && !param.filters.length) || !param.filters) {
         return param;
       }
 
-      const newFilters = param.filters.filter(filter => {
-        const hasFilter = inputParams.find(inputParam => {
+      const newFilters = param.filters.filter((filter: any) => {
+        const hasFilter = inputParams.find((inputParam: any) => {
           if (inputParam.filter.value) {
             return inputParam.filter.value.name === filter.name;
           }
@@ -226,10 +226,10 @@ export default class ExternalServiceRouterForm extends React.Component<
       return { ...param, filters: newFilters };
     });
 
-    const filteredParams = paramsWithCleanFilters.filter(param => {
+    const filteredParams = paramsWithCleanFilters.filter((param: any) => {
       // simple param, just check if it has been used
       if ((param.filters && !param.filters.length) || !param.filters) {
-        const usedParam = inputParams.find(inputParam => inputParam.type === param.type);
+        const usedParam = inputParams.find((inputParam: any) => inputParam.type === param.type);
         return !usedParam;
       } else if (param.filters && param.filters.length) {
         return true;
