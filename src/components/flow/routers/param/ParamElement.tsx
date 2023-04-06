@@ -23,7 +23,6 @@ export interface ParamElementState extends FormState {
   errors: string[];
   currentParam: ServiceCallParam;
   currentFilter: ParamFilter;
-  paramFilters: ParamFilter[];
   data: StringEntry;
 }
 
@@ -42,7 +41,6 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     const updates = validateParam({
       currentParam: this.state.currentParam,
       currentFilter: this.state.currentFilter,
-      paramFilters: this.state.paramFilters,
       data: this.state.data
     });
     this.setState(updates as ParamElementState, () => this.handleChange());
@@ -52,7 +50,6 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     const updates = validateParam({
       currentParam: newParam,
       currentFilter: newParam.filters && newParam.filters.length >= 1 ? newParam.filters[0] : null,
-      paramFilters: newParam.filters && newParam.filters.filter(f => !f.required),
       data: this.state.data
     });
     this.setState(updates as ParamElementState, () => this.handleChange());
@@ -62,7 +59,6 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     const updates = validateParam({
       currentParam: this.state.currentParam,
       currentFilter: newFilter,
-      paramFilters: this.state.paramFilters,
       data: this.state.data
     });
     this.setState(updates as ParamElementState, () => this.handleChange());
@@ -72,7 +68,6 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     const updates = validateParam({
       currentParam: this.state.currentParam,
       currentFilter: this.state.currentFilter,
-      paramFilters: this.state.paramFilters,
       data: { value: newData }
     });
     this.setState(updates as ParamElementState, () => this.handleChange());
@@ -111,6 +106,11 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
       this.state.currentParam.filters &&
       this.state.currentParam.filters.length;
 
+    const rawParam = this.props.availableParams.find(
+      param => param.type === this.state.currentParam.type
+    );
+    const paramFilters = rawParam ? rawParam.filters : [];
+
     return (
       <FormElement
         data-spec="param-form"
@@ -143,7 +143,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
                 name={i18n.t('forms.service_call_param_filter', 'Service Call Param Filter')}
                 placeholder={i18n.t('forms.filter', 'filter')}
                 style={TembaSelectStyle.small}
-                options={this.state.paramFilters}
+                options={paramFilters}
                 nameKey="verboseName"
                 valueKey="name"
                 onChange={this.handleFilterChange}

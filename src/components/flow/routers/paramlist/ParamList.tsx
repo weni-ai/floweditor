@@ -86,7 +86,7 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
   }
 
   componentDidUpdate(): void {
-    if (!this.hasEmptyParam(this.state.currentParams)) {
+    if (!this.hasEmptyParam(this.state.currentParams) && this.hasAvailableParam()) {
       this.handleUpdate({ paramProps: this.createEmptyParam() });
     }
   }
@@ -95,6 +95,10 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
     return (
       params.find((paramProps: ParamProps) => paramProps.data.value.trim().length === 0) != null
     );
+  }
+
+  private hasAvailableParam() {
+    return this.props.availableParams.length > 0;
   }
 
   private createEmptyParam(): ParamProps {

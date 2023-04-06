@@ -10,12 +10,10 @@ export const initializeForm = (props: ParamElementProps): ParamElementState => {
 
   const initialData = props.initialParam.data.value || '';
   const initialFilter = props.initialParam.filter ? props.initialParam.filter.value : null;
-  const paramFilters = currentParam.filters ? currentParam.filters.filter(f => !f.required) : [];
 
   return {
     errors: [],
     currentParam,
-    paramFilters,
     currentFilter: initialFilter,
     data: { value: initialData },
     valid: true
@@ -25,7 +23,6 @@ export const initializeForm = (props: ParamElementProps): ParamElementState => {
 export const validateParam = (keys: {
   currentParam: ServiceCallParam;
   currentFilter: ParamFilter;
-  paramFilters: ParamFilter[];
   data: StringEntry;
 }) => {
   const updates: Partial<ParamElementState> = {};
@@ -37,7 +34,6 @@ export const validateParam = (keys: {
 
   updates.currentParam = keys.currentParam;
   updates.currentFilter = keys.currentFilter;
-  updates.paramFilters = keys.paramFilters;
 
   updates.data = validate(i18n.t('forms.parameter', 'Parameter'), keys.data.value, validators);
 

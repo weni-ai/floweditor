@@ -20,7 +20,7 @@ import TembaSelect from 'temba/TembaSelect';
 import TypeList from 'components/nodeeditor/TypeList';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import ParamList from 'components/flow/routers/paramlist/ParamList';
-import { ServiceCall } from 'config/interfaces';
+import { ServiceCall, ServiceCallParam } from 'config/interfaces';
 import { ExternalService } from '../../../../flowTypes';
 import { fakePropType } from '../../../../config/ConfigProvider';
 import axios from 'axios';
@@ -198,6 +198,49 @@ export default class ExternalServiceRouterForm extends React.Component<
     }
   }
 
+  private availableParams(): ServiceCallParam[] {
+    if (!this.state.call || !this.state.params) {
+      return [];
+    }
+
+    const allParams = this.state.call.value.params;
+    const inputParams = this.state.params.value;
+
+    const paramsWithCleanFilters = allParams.map(param => {
+      if ((param.filters && !param.filters.length) || !param.filters) {
+        return param;
+      }
+
+      const newFilters = param.filters.filter(filter => {
+        const hasFilter = inputParams.find(inputParam => {
+          if (inputParam.filter.value) {
+            return inputParam.filter.value.name === filter.name;
+          }
+
+          return false;
+        });
+
+        return !hasFilter;
+      });
+
+      return { ...param, filters: newFilters };
+    });
+
+    const filteredParams = paramsWithCleanFilters.filter(param => {
+      // simple param, just check if it has been used
+      if ((param.filters && !param.filters.length) || !param.filters) {
+        const usedParam = inputParams.find(inputParam => inputParam.type === param.type);
+        return !usedParam;
+      } else if (param.filters && param.filters.length) {
+        return true;
+      }
+
+      return false;
+    });
+
+    return filteredParams as ServiceCallParam[];
+  }
+
   private getButtons(): ButtonSet {
     return {
       primary: { name: i18n.t('buttons.ok', 'ok'), onClick: this.handleSave },
@@ -237,6 +280,8 @@ export default class ExternalServiceRouterForm extends React.Component<
     const showCallSelection = !!this.state.externalService.value;
 
     const showParamList = this.state.call ? !!this.state.call.value : false;
+
+    const availableParams = this.availableParams();
 
     return (
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
@@ -280,7 +325,7 @@ export default class ExternalServiceRouterForm extends React.Component<
         {showParamList ? (
           <ParamList
             key={this.state.call.value.name}
-            availableParams={this.state.call.value.params}
+            availableParams={availableParams}
             params={this.state.params.value}
             onParamsUpdated={this.handleParamsUpdated}
           />
