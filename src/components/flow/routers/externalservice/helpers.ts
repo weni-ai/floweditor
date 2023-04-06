@@ -74,7 +74,8 @@ export const stateToNode = (
     external_service: {
       uuid: state.externalService.value.uuid,
       name: state.externalService.value.name,
-      external_service_type: state.externalService.value.external_service_type
+      external_service_type:
+        state.externalService.value.external_service_type || state.externalService.value.type
     },
     call: state.call.value,
     params: state.params.value,
