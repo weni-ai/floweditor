@@ -203,7 +203,7 @@ export default class ExternalServiceRouterForm extends React.Component<
       return [];
     }
 
-    const allParams = this.state.call.value.params;
+    const allParams = this.state.call.value ? this.state.call.value.params : [];
     const inputParams = this.state.params.value;
 
     const paramsWithCleanFilters = allParams.map((param: any) => {
