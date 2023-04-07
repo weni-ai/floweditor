@@ -7,7 +7,6 @@ import { render, fireEvent, fireChangeText, fireTembaSelect } from 'test/utils';
 import { act } from '@testing-library/react';
 
 const externalServiceAsset = require('test/assets/external_services.json');
-const externalServiceSample = externalServiceAsset.results[0];
 
 // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
 const externalServiceForm = getRouterFormProps({
@@ -17,16 +16,21 @@ const externalServiceForm = getRouterFormProps({
 
 describe(ExternalServiceRouterForm.name, () => {
   describe('render', () => {
-    it('should render', () => {
-      const { baseElement } = render(<ExternalServiceRouterForm {...externalServiceForm} />);
-      expect(baseElement).toMatchSnapshot();
+    it('should render', async () => {
+      let rendered: any;
+      await act(async () => {
+        rendered = render(<ExternalServiceRouterForm {...externalServiceForm} />);
+        return undefined;
+      });
+      expect(rendered.baseElement).toMatchSnapshot();
     });
   });
 
   describe('updates', () => {
     it('should save changes', async () => {
       externalServiceForm.assetStore.externalServices.items = {
-        [externalServiceSample.uuid]: externalServiceSample
+        [externalServiceAsset.results[0].uuid]: externalServiceAsset.results[0],
+        [externalServiceAsset.results[1].uuid]: externalServiceAsset.results[1]
       };
       let rendered: any;
 
@@ -44,13 +48,21 @@ describe(ExternalServiceRouterForm.name, () => {
       fireEvent.click(okButton);
       expect(externalServiceForm.updateRouter).not.toBeCalled();
 
-      fireTembaSelect(rendered.getByTestId('temba_select_external_service_call'), [
-        {
-          name: 'IncluirContato',
-          value: 'IncluirContato',
-          verboseName: 'Inserir Contato'
-        }
-      ]);
+      await act(async () => {
+        fireTembaSelect(rendered.getByTestId('temba_select_external_service'), [
+          externalServiceAsset.results[1]
+        ]);
+      });
+
+      await act(async () => {
+        fireTembaSelect(rendered.getByTestId('temba_select_external_service_call'), [
+          {
+            name: 'IncluirContato',
+            value: 'IncluirContato',
+            verboseName: 'Inserir Contato'
+          }
+        ]);
+      });
 
       fireChangeText(resultName, 'My External Service Result');
 
