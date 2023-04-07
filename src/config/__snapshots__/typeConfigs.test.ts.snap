@@ -304,6 +304,21 @@ Array [
     ],
   },
   Object {
+    "aliases": Array [
+      "split_by_external_service",
+    ],
+    "component": [Function],
+    "description": "Call a external service",
+    "filter": "external_service",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "exists",
+    ],
+    "name": "Call External Service",
+    "type": "call_external_service",
+  },
+  Object {
     "description": "Wait for an image",
     "form": [Function],
     "localization": [Function],
@@ -478,6 +493,21 @@ Object {
       "messaging_background",
       "voice",
     ],
+  },
+  "call_external_service": Object {
+    "aliases": Array [
+      "split_by_external_service",
+    ],
+    "component": [Function],
+    "description": "Call a external service",
+    "filter": "external_service",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "exists",
+    ],
+    "name": "Call External Service",
+    "type": "call_external_service",
   },
   "call_resthook": Object {
     "aliases": Array [
@@ -743,6 +773,21 @@ Object {
     ],
     "name": "Split by Expression",
     "type": "split_by_expression",
+  },
+  "split_by_external_service": Object {
+    "aliases": Array [
+      "split_by_external_service",
+    ],
+    "component": [Function],
+    "description": "Call a external service",
+    "filter": "external_service",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "exists",
+    ],
+    "name": "Call External Service",
+    "type": "call_external_service",
   },
   "split_by_groups": Object {
     "description": "Split by group membership",

@@ -1,5 +1,5 @@
 import { Methods } from 'components/flow/routers/webhook/helpers';
-import { FlowTypes, Operators, Types, ContactStatus } from 'config/interfaces';
+import { FlowTypes, Operators, Types, ContactStatus, ServiceCall } from 'config/interfaces';
 
 // we don't concern ourselves with patch versions
 export const SPEC_VERSION = '13.1';
@@ -44,6 +44,9 @@ export interface Endpoints {
   simulateResume: string;
   editor: string;
   ticketer_queues: string;
+  external_services: string;
+  external_services_calls: string;
+  external_services_calls_base: string;
 }
 
 export interface FlowEditorConfig {
@@ -410,6 +413,13 @@ export interface Classifier {
   name: string;
 }
 
+export interface ExternalService {
+  uuid: string;
+  name: string;
+  external_service_type: string;
+  type?: string;
+}
+
 export interface Ticketer {
   uuid: string;
   name: string;
@@ -437,6 +447,13 @@ export interface CallWebhook extends Action {
   result_name: string;
   body?: string;
   headers?: Headers;
+}
+
+export interface CallExternalService extends Action {
+  external_service: ExternalService;
+  call: ServiceCall;
+  params: any[];
+  result_name: string;
 }
 
 export interface OpenTicket extends Action {

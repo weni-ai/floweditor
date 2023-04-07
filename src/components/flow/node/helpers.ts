@@ -10,7 +10,8 @@ import {
   TransferAirtime,
   Action,
   AnyAction,
-  FlowIssue
+  FlowIssue,
+  CallExternalService
 } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { getType } from 'config/typeConfigs';
@@ -51,9 +52,14 @@ export const getResultName = (node: FlowNode) => {
       action.type === Types.call_webhook ||
       action.type === Types.call_resthook ||
       action.type === Types.open_ticket ||
-      action.type === Types.transfer_airtime
+      action.type === Types.transfer_airtime ||
+      action.type === Types.call_external_service
     ) {
-      const resultAction = action as CallWebhook | CallResthook | TransferAirtime;
+      const resultAction = action as
+        | CallWebhook
+        | CallResthook
+        | TransferAirtime
+        | CallExternalService;
       return resultAction.result_name;
     }
   }

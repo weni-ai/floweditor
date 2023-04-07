@@ -26,6 +26,7 @@ export enum Types {
   set_contact_status = 'set_contact_status',
   set_run_result = 'set_run_result',
   call_classifier = 'call_classifier',
+  call_external_service = 'call_external_service',
   call_resthook = 'call_resthook',
   call_webhook = 'call_webhook',
   open_ticket = 'open_ticket',
@@ -48,6 +49,7 @@ export enum Types {
   split_by_scheme = 'split_by_scheme',
   split_by_subflow = 'split_by_subflow',
   split_by_webhook = 'split_by_webhook',
+  split_by_external_service = 'split_by_external_service',
   wait_for_response = 'wait_for_response',
   wait_for_menu = 'wait_for_menu',
   wait_for_dial = 'wait_for_dial',
@@ -103,7 +105,8 @@ export enum FeatureFilter {
   HAS_CLASSIFIER = 'classifier',
   HAS_TICKETER = 'ticketer',
   HAS_FACEBOOK = 'facebook',
-  HAS_LOCATIONS = 'locations'
+  HAS_LOCATIONS = 'locations',
+  HAS_EXTERNAL_SERVICE = 'external_service'
 }
 
 export interface FlowTypeVisibility {
@@ -141,6 +144,34 @@ export interface Operator extends FlowTypeVisibility {
 
 export interface OperatorMap {
   [propName: string]: Operator;
+}
+
+export interface ParamFilter {
+  name: string;
+  type: string;
+  verboseName: string;
+  maxLength?: number;
+  required?: boolean;
+}
+
+export interface ServiceCallParam {
+  type: string;
+  paramType?: string;
+  maxLength?: number;
+  verboseName: string;
+  required?: boolean;
+  filters?: ParamFilter[];
+}
+
+export interface ServiceCall {
+  value: string;
+  name: string;
+  verboseName: string;
+  params: ServiceCallParam[];
+}
+
+export interface ServiceCallMap {
+  [serviceName: string]: ServiceCall[];
 }
 
 export const VISIBILITY_MESSAGING = [

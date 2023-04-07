@@ -52,7 +52,8 @@ import {
   WaitTypes,
   WebhookExitNames,
   HintTypes,
-  CallClassifier
+  CallClassifier,
+  CallExternalService
 } from 'flowTypes';
 import Localization from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
@@ -350,7 +351,13 @@ export const createSetRunResultAction = ({
 });
 
 export const createWebhookNode = (
-  action: CallWebhook | CallResthook | OpenTicket | TransferAirtime | CallClassifier,
+  action:
+    | CallWebhook
+    | CallResthook
+    | OpenTicket
+    | TransferAirtime
+    | CallClassifier
+    | CallExternalService,
   useCategoryTest: boolean
 ) => {
   const { categories, exits } = createCategories([
@@ -408,6 +415,22 @@ export const createOpenTicketNode = (subject: string, body: string): FlowNode =>
     },
     subject: subject,
     body: body,
+    result_name: 'Result'
+  };
+  return createWebhookNode(action, true);
+};
+
+export const createCallExternalServiceNode = (type: string): FlowNode => {
+  const action: CallExternalService = {
+    uuid: utils.createUUID(),
+    type: Types.call_external_service,
+    external_service: {
+      uuid: '4b154b06-5ecd-43d9-afca-39738e6859d7',
+      name: `${type} dummy project`,
+      external_service_type: type
+    },
+    call: null,
+    params: [],
     result_name: 'Result'
   };
   return createWebhookNode(action, true);

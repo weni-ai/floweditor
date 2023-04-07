@@ -63,6 +63,8 @@ import i18n from 'config/i18n';
 import SchemeRouterForm from 'components/flow/routers/scheme/SchemeRouterForm';
 import TicketRouterForm from 'components/flow/routers/ticket/TicketRouterForm';
 import OpenTicketComp from 'components/flow/actions/openticket/OpenTicket';
+import ExternalServiceRouterForm from 'components/flow/routers/externalservice/ExternalServiceRouterForm';
+import CallExternalServiceComp from 'components/flow/actions/callexternalservice/CallExternalService';
 
 const dedupeTypeConfigs = (typeConfigs: Type[]) => {
   const map: any = {};
@@ -408,6 +410,17 @@ export const typeConfigList: Type[] = [
     aliases: [Types.split_by_airtime],
     visibility: VISIBILITY_ONLINE,
     filter: FeatureFilter.HAS_AIRTIME
+  },
+  {
+    type: Types.call_external_service,
+    name: i18n.t('actions.external_service.name', 'Call External Service'),
+    description: i18n.t('actions.external_service.description', 'Call a external service'),
+    form: ExternalServiceRouterForm,
+    localization: RouterLocalizationForm,
+    localizeableKeys: ['exists'],
+    component: CallExternalServiceComp,
+    aliases: [Types.split_by_external_service],
+    filter: FeatureFilter.HAS_EXTERNAL_SERVICE
   },
 
   /** Routers */

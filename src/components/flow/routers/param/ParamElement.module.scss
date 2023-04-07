@@ -1,0 +1,153 @@
+@import 'variables.module.scss';
+
+$spacing: 10px;
+
+.group {
+  padding-bottom: 0 !important;
+  margin-bottom: 0px;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.divider {
+  padding-left: $spacing;
+  padding-right: $spacing;
+  vertical-align: sub;
+  font-size: 13px;
+  line-height: 13px;
+  margin-top: 4px;
+}
+
+.select-container {
+  border: 1px solid red;
+}
+
+.param {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  user-select: none;
+  margin-bottom: 5px;
+
+  .form_group {
+    margin: 0;
+  }
+
+  .choice {
+    width: 160px;
+    flex: 1;
+  }
+
+  .single_operand {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-left: $spacing;
+
+    width: 184px;
+
+    input {
+      width: 170px;
+    }
+  }
+
+  .multi_operand {
+    display: inline-flex;
+    align-items: center;
+    margin-left: $spacing;
+    width: 184px;
+
+    input[name='intent'] {
+      width: 105px;
+    }
+
+    input[name='confidence'] {
+      padding: 10px 6px !important;
+    }
+  }
+
+  .categorize_as {
+    font-size: 13px;
+    line-height: 13px;
+    position: relative;
+    width: 95px;
+    text-align: center;
+    margin: 0px $spacing - 2;
+    margin-top: 4px;
+  }
+
+  .data {
+    position: relative;
+    flex: 1;
+  }
+
+  &:hover {
+    .remove_icon {
+      opacity: 1;
+    }
+
+    .dnd_icon {
+      opacity: 1;
+    }
+  }
+
+  input {
+    padding: 6px 7px;
+    height: 29px !important;
+    margin-bottom: -4px;
+    font-size: 13px !important;
+  }
+
+  .relative_date {
+    display: inline-block;
+    width: 50px;
+
+    input {
+      width: 50px;
+    }
+  }
+}
+
+.dnd_icon {
+  color: #aaa;
+  font-weight: bold;
+  padding-top: 9px;
+  padding-right: 2px;
+  padding-left: 5px;
+  float: left;
+  opacity: 0;
+  font-size: 9px;
+  line-height: 9px;
+}
+
+.remove_icon {
+  color: #aaa;
+  padding-top: 8px;
+  float: right;
+  opacity: 0;
+  line-height: 12px;
+  cursor: pointer;
+  margin-left: 2px;
+  font-size: 9px;
+  z-index: 3000;
+}
+
+.remove_filler {
+  width: 11px;
+}
+
+.order_filler {
+  width: 16px;
+}
+
+.empty {
+  display: inline-block;
+  width: 15px;
+}
+
+[data-draggable='true'] {
+  cursor: pointer;
+}
