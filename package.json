@@ -1,12 +1,12 @@
 {
-  "name": "@nyaruka/flow-editor",
+  "name": "@weni/flow-editor",
   "license": "AGPL-3.0",
-  "repository": "git://github.com/nyaruka/floweditor.git",
-  "version": "1.15.2",
-  "description": "'Standalone flow editing tool designed for use within the RapidPro suite of messaging tools but can be adopted for use outside of that ecosystem.'",
+  "repository": "git://github.com/weni-ai/floweditor.git",
+  "version": "1.2.0",
+  "description": "Standalone flow editing tool designed for use within the RapidPro suite of messaging tools but can be adopted for use outside of that ecosystem.",
   "browser": "umd/flow-editor.min.js",
   "unpkg": "umd/flow-editor.min.js",
-  "author": "Nyaruka <code@nyaruka.com>",
+  "author": "Weni <support@weni.ai>",
   "homepage": "./",
   "files": [
     "build"
@@ -27,7 +27,7 @@
     "postversion": "git push --tags && git push origin main",
     "version": "yarn run build && auto-changelog -p && git add CHANGELOG.md",
     "scan": "./node_modules/i18next-scanner/bin/cli.js",
-    "dev": "yarn build && cp -Rf build/* ../rapidpro/node_modules/@nyaruka/flow-editor/build/",
+    "dev": "yarn build && cp -Rf build/* ../rapidpro/node_modules/@weni/flow-editor/build/",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom-fourteen",
