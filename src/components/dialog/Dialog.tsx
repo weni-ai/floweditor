@@ -3,8 +3,14 @@ import Button, { ButtonProps, ButtonTypes } from 'components/button/Button';
 import shared from 'components/shared.module.scss';
 import * as React from 'react';
 import { renderIf } from 'utils';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicTab } from '@weni/unnnic-system';
 
 import styles from './Dialog.module.scss';
+
+import i18n from 'config/i18n';
 
 export enum HeaderStyle {
   NORMAL = 'normal',
@@ -46,6 +52,8 @@ export interface DialogProps {
 export interface DialogState {
   activeTab: number;
 }
+
+const UnnnicTab = applyVueInReact(unnnicTab);
 
 /**
  * A component that has a front and back and can flip back and forth between them
@@ -188,23 +196,6 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
 
     return (
       <div className={activeClasses.join(' ')}>
-        {(this.props.tabs || []).length > 0 ? (
-          <div className={styles.tabs}>
-            {(this.props.tabs || []).map((tab: Tab, index: number) => (
-              <div
-                key={'tab_' + tab.name}
-                className={styles.tab + ' ' + (index === this.state.activeTab ? styles.active : '')}
-                onClick={(evt: React.MouseEvent<HTMLDivElement>) => {
-                  evt.stopPropagation();
-                  this.setState({ activeTab: index });
-                }}
-              >
-                {tab.name} {tab.icon ? <span className={styles.tab_icon + ' ' + tab.icon} /> : null}
-                {tab.checked ? <span className={styles.tab_icon + ' fe-check'} /> : null}
-              </div>
-            ))}
-          </div>
-        ) : null}
         <div
           onClick={() => {
             this.setState({ activeTab: -1 });
@@ -221,6 +212,31 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
           </div>
         </div>
         <div className={this.props.noPadding ? '' : styles.content}>
+          {(this.props.tabs || []).length > 0 ? (
+            <UnnnicTab
+              initialTab={String(this.state.activeTab + 1)}
+              tabs={[
+                '0',
+                ...(this.props.tabs || []).map((tab: Tab, index: number) => String(index + 1))
+              ]}
+              $slots={(this.props.tabs || []).reduce(
+                (tabs, currentTab: Tab, index: number) => ({
+                  ...tabs,
+                  [`tab-head-${index + 1}`]: currentTab.name
+                }),
+                {
+                  'tab-head-0': i18n.t('forms.general', 'General')
+                }
+              )}
+              $model={{
+                value: String(this.state.activeTab + 1),
+                setter: (index: string) => {
+                  this.setState({ activeTab: Number(index) - 1 });
+                }
+              }}
+            />
+          ) : null}
+
           {this.state.activeTab > -1
             ? this.props.tabs![this.state.activeTab].body
             : this.props.children}
