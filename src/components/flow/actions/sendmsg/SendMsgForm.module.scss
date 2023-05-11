@@ -1,7 +1,8 @@
 @import 'variables.module.scss';
+@import '@weni/unnnic-system/dist/scss/unnnic.scss';
 
-.checkbox {
-  margin-top: 20px;
+.title {
+  margin-bottom: $unnnic-spacing-stack-sm;
 }
 
 .quick_reply_summary {
