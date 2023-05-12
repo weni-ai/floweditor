@@ -8,6 +8,9 @@ import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
 import { unnnicTab } from '@weni/unnnic-system';
 
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+
 import styles from './Dialog.module.scss';
 
 import i18n from 'config/i18n';
@@ -54,6 +57,7 @@ export interface DialogState {
 }
 
 const UnnnicTab = applyVueInReact(unnnicTab);
+const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 /**
  * A component that has a front and back and can flip back and forth between them
@@ -214,6 +218,7 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
         <div className={this.props.noPadding ? '' : styles.content}>
           {(this.props.tabs || []).length > 0 ? (
             <UnnnicTab
+              size="sm"
               initialTab={String(this.state.activeTab + 1)}
               tabs={[
                 '0',
@@ -222,7 +227,20 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
               $slots={(this.props.tabs || []).reduce(
                 (tabs, currentTab: Tab, index: number) => ({
                   ...tabs,
-                  [`tab-head-${index + 1}`]: currentTab.name
+                  [`tab-head-${index + 1}`]: (
+                    <>
+                      {currentTab.name}
+                      {currentTab.checked ? (
+                        <UnnnicIcon
+                          icon="check-2"
+                          size="sm"
+                          scheme={
+                            this.state.activeTab + 1 === index ? 'neutral-clean' : 'neutral-darkest'
+                          }
+                        />
+                      ) : null}
+                    </>
+                  )
                 }),
                 {
                   'tab-head-0': i18n.t('forms.general', 'General')
