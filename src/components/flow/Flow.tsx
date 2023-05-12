@@ -1,5 +1,5 @@
 import { react as bindCallbacks } from 'auto-bind';
-import Button from 'components/button/Button';
+import Button, { ButtonTypes } from 'components/button/Button';
 import { Canvas } from 'components/canvas/Canvas';
 import { CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
 import Node from 'components/flow/node/Node';
@@ -364,6 +364,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
         </Trans>
 
         <Button
+          type={ButtonTypes.secondary}
           name={i18n.t('buttons.create_message', 'Create Message')}
           onClick={() => {
             const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
