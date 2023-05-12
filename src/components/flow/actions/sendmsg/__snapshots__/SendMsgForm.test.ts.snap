@@ -133,14 +133,21 @@ exports[`SendMsgForm render should render 1`] = `
         "name": "Attachments",
       },
       Object {
-        "body": <CheckboxElement
-          checked={false}
-          description="Send a message to all destinations known for this contact. If you aren't sure what this means, leave it unchecked."
-          labelClassName="checkbox"
-          name="All Destinations"
-          onChange={[Function]}
-          title="All Destinations"
-        />,
+        "body": <React.Fragment>
+          <div
+            className="u font secondary body-md color-neutral-cloudy title"
+          >
+            Send a message to all destinations known for this contact.
+          </div>
+          <SwitchElement
+            checked={false}
+            description="If you aren't sure what this means, leave it unchecked."
+            name="Send a message to all destinations"
+            onChange={[Function]}
+            size="small"
+            title="Send a message to all destinations"
+          />
+        </React.Fragment>,
         "checked": false,
         "name": "Advanced",
       },

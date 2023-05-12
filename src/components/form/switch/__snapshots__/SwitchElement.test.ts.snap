@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwitchElement should render a switch element with description: unchecked 1`] = `
+<Fragment>
+  <ForwardRef
+    data-spec="switch"
+    on={
+      Object {
+        "input": [Function],
+      }
+    }
+    textRight="Switch"
+    value={false}
+  />
+  <div
+    className="u font secondary body-sm color-neutral-cloudy description"
+    data-spec="description"
+  >
+    All Destinations
+  </div>
+</Fragment>
+`;

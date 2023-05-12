@@ -12,7 +12,7 @@ import {
 import { ActionFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
 import { hasUseableTranslation } from 'components/form/assetselector/helpers';
-import CheckboxElement from 'components/form/checkbox/CheckboxElement';
+import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
 import MultiChoiceInput from 'components/form/multichoice/MultiChoice';
 import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
 import TextInputElement from 'components/form/textinput/TextInputElement';
@@ -359,17 +359,26 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     const advanced: Tab = {
       name: i18n.t('forms.advanced', 'Advanced'),
       body: (
-        <CheckboxElement
-          name={i18n.t('forms.all_destinations', 'All Destinations')}
-          title={i18n.t('forms.all_destinations', 'All Destinations')}
-          labelClassName={styles.checkbox}
-          checked={this.state.sendAll}
-          description={i18n.t(
-            'forms.all_destinations_description',
-            "Send a message to all destinations known for this contact. If you aren't sure what this means, leave it unchecked."
-          )}
-          onChange={this.handleSendAllUpdate}
-        />
+        <>
+          <div className={`u font secondary body-md color-neutral-cloudy ${styles.title}`}>
+            {i18n.t(
+              'forms.all_destinations_title',
+              'Send a message to all destinations known for this contact.'
+            )}
+          </div>
+
+          <SwitchElement
+            name={i18n.t('forms.all_destinations', 'Send a message to all destinations')}
+            title={i18n.t('forms.all_destinations', 'Send a message to all destinations')}
+            checked={this.state.sendAll}
+            description={i18n.t(
+              'forms.all_destinations_description',
+              "If you aren't sure what this means, leave it unchecked."
+            )}
+            onChange={this.handleSendAllUpdate}
+            size={SwitchSizes.small}
+          />
+        </>
       ),
       checked: this.state.sendAll
     };
