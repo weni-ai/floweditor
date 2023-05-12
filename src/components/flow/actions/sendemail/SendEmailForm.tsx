@@ -132,7 +132,7 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
           <TextInputElement
             __className={styles.message}
             name={i18n.t('forms.message', 'Message')}
-            showLabel={false}
+            showLabel={true}
             onChange={this.handleBodyChanged}
             entry={this.state.body}
             autocomplete={true}

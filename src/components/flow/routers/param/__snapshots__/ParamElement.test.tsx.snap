@@ -54,16 +54,20 @@ exports[`ParamElement render should render param 1`] = `
           class="data"
         >
           <div
-            class="ele"
+            data-use-vue-component-wrap=""
+            style="all: unset;"
           >
             <div
-              class="wrapper small"
+              class="unnnic-text-area sm normal"
+              data-passed-props="[object Object]"
+              data-v-a95e6368=""
             >
-              <input
-                data-testid="Service Call Param Data"
-                name="Service Call Param Data"
-                value=""
+              <!---->
+              <textarea
+                data-v-a95e6368=""
               />
+              <!---->
+              <!---->
             </div>
           </div>
         </div>
@@ -208,16 +212,20 @@ exports[`ParamElement update handles filter change 1`] = `
           class="data"
         >
           <div
-            class="ele"
+            data-use-vue-component-wrap=""
+            style="all: unset;"
           >
             <div
-              class="wrapper small"
+              class="unnnic-text-area sm normal"
+              data-passed-props="[object Object]"
+              data-v-a95e6368=""
             >
-              <input
-                data-testid="Service Call Param Data"
-                name="Service Call Param Data"
-                value=""
+              <!---->
+              <textarea
+                data-v-a95e6368=""
               />
+              <!---->
+              <!---->
             </div>
           </div>
         </div>
@@ -362,16 +370,20 @@ exports[`ParamElement update handles param change 1`] = `
           class="data"
         >
           <div
-            class="ele"
+            data-use-vue-component-wrap=""
+            style="all: unset;"
           >
             <div
-              class="wrapper small"
+              class="unnnic-text-area sm normal"
+              data-passed-props="[object Object]"
+              data-v-a95e6368=""
             >
-              <input
-                data-testid="Service Call Param Data"
-                name="Service Call Param Data"
-                value=""
+              <!---->
+              <textarea
+                data-v-a95e6368=""
               />
+              <!---->
+              <!---->
             </div>
           </div>
         </div>

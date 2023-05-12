@@ -45,17 +45,20 @@ exports[`CaseList render should render empty list 1`] = `
                 class="single_operand"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="arguments"
-                      name="arguments"
-                      placeholder=""
-                      value=""
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
                     />
+                    <!---->
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -69,16 +72,26 @@ exports[`CaseList render should render empty list 1`] = `
                 class="category"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="Exit Name"
-                      name="Exit Name"
-                      value=""
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
+                      maxlength="36"
                     />
+                    <div
+                      class="helper"
+                      data-v-a95e6368=""
+                    >
+                       0/36 
+                    </div>
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -140,17 +153,20 @@ exports[`CaseList render should render list of cases 1`] = `
                 class="single_operand"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="arguments"
-                      name="arguments"
-                      placeholder=""
-                      value="Red, r"
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
                     />
+                    <!---->
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -164,16 +180,26 @@ exports[`CaseList render should render list of cases 1`] = `
                 class="category"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="Exit Name"
-                      name="Exit Name"
-                      value="Red"
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
+                      maxlength="36"
                     />
+                    <div
+                      class="helper"
+                      data-v-a95e6368=""
+                    >
+                       3/36 
+                    </div>
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -219,17 +245,20 @@ exports[`CaseList render should render list of cases 1`] = `
                 class="single_operand"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="arguments"
-                      name="arguments"
-                      placeholder=""
-                      value="Green, g"
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
                     />
+                    <!---->
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -243,16 +272,26 @@ exports[`CaseList render should render list of cases 1`] = `
                 class="category"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="Exit Name"
-                      name="Exit Name"
-                      value="Green"
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
+                      maxlength="36"
                     />
+                    <div
+                      class="helper"
+                      data-v-a95e6368=""
+                    >
+                       5/36 
+                    </div>
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -298,17 +337,20 @@ exports[`CaseList render should render list of cases 1`] = `
                 class="single_operand"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="arguments"
-                      name="arguments"
-                      placeholder=""
-                      value=""
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
                     />
+                    <!---->
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -322,16 +364,26 @@ exports[`CaseList render should render list of cases 1`] = `
                 class="category"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="Exit Name"
-                      name="Exit Name"
-                      value=""
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
+                      maxlength="36"
                     />
+                    <div
+                      class="helper"
+                      data-v-a95e6368=""
+                    >
+                       0/36 
+                    </div>
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -567,17 +619,20 @@ exports[`CaseList updates should remove cases 1`] = `
                 class="single_operand"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="arguments"
-                      name="arguments"
-                      placeholder=""
-                      value="Green, g"
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
                     />
+                    <!---->
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -591,16 +646,26 @@ exports[`CaseList updates should remove cases 1`] = `
                 class="category"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="Exit Name"
-                      name="Exit Name"
-                      value="Green"
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
+                      maxlength="36"
                     />
+                    <div
+                      class="helper"
+                      data-v-a95e6368=""
+                    >
+                       5/36 
+                    </div>
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -646,17 +711,20 @@ exports[`CaseList updates should remove cases 1`] = `
                 class="single_operand"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="arguments"
-                      name="arguments"
-                      placeholder=""
-                      value=""
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
                     />
+                    <!---->
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -670,16 +738,26 @@ exports[`CaseList updates should remove cases 1`] = `
                 class="category"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="Exit Name"
-                      name="Exit Name"
-                      value=""
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
+                      maxlength="36"
                     />
+                    <div
+                      class="helper"
+                      data-v-a95e6368=""
+                    >
+                       0/36 
+                    </div>
+                    <!---->
                   </div>
                 </div>
               </div>
