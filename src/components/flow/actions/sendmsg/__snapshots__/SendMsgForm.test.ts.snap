@@ -177,9 +177,10 @@ exports[`SendMsgForm render should render 1`] = `
       }
     }
     focus={true}
+    maxLength={150}
     name="Message"
     onChange={[Function]}
-    showLabel={false}
+    showLabel={true}
     textarea={true}
   />
   <temba-charcount

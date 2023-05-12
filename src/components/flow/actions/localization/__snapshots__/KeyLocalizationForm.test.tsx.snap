@@ -62,17 +62,20 @@ exports[`KeyLocalizationForm removes translations 1`] = `
             </div>
           </div>
           <div
-            class="ele"
+            data-use-vue-component-wrap=""
+            style="all: unset;"
           >
             <div
-              class="wrapper normal"
+              class="unnnic-text-area sm normal"
+              data-passed-props="[object Object]"
+              data-v-a95e6368=""
             >
-              <input
-                data-testid="Subject"
-                name="Subject"
-                placeholder="Spanish Translation"
-                value="hola"
+              <!---->
+              <textarea
+                data-v-a95e6368=""
               />
+              <!---->
+              <!---->
             </div>
           </div>
         </div>
@@ -165,17 +168,20 @@ exports[`KeyLocalizationForm renders send email 1`] = `
             </div>
           </div>
           <div
-            class="ele"
+            data-use-vue-component-wrap=""
+            style="all: unset;"
           >
             <div
-              class="wrapper normal"
+              class="unnnic-text-area sm normal"
+              data-passed-props="[object Object]"
+              data-v-a95e6368=""
             >
-              <input
-                data-testid="Subject"
-                name="Subject"
-                placeholder="English Translation"
-                value=""
+              <!---->
+              <textarea
+                data-v-a95e6368=""
               />
+              <!---->
+              <!---->
             </div>
           </div>
         </div>

@@ -81,17 +81,20 @@ exports[`AddURNForm renders 1`] = `
             class="path"
           >
             <div
-              class="ele"
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
               <div
-                class="wrapper normal"
+                class="unnnic-text-area sm normal"
+                data-passed-props="[object Object]"
+                data-v-a95e6368=""
               >
-                <input
-                  data-testid="URN"
-                  name="URN"
-                  placeholder="Enter the URN value"
-                  value="+12065551212"
+                <!---->
+                <textarea
+                  data-v-a95e6368=""
                 />
+                <!---->
+                <!---->
               </div>
             </div>
           </div>

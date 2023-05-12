@@ -74,29 +74,34 @@ exports[`ExternalServiceRouterForm render should render 1`] = `
           class="optional_text_input"
         >
           <div
-            class="ele"
+            data-use-vue-component-wrap=""
+            style="all: unset;"
           >
             <div
-              class="label"
+              class="unnnic-text-area sm normal"
+              data-passed-props="[object Object]"
+              data-v-a95e6368=""
             >
-              Result Name
-            </div>
-            <div
-              class="wrapper normal"
-            >
-              <input
-                data-testid="Result Name"
-                name="Result Name"
-                value="Result"
+              <div
+                class="label"
+                data-v-a95e6368=""
+              >
+                Result Name
+              </div>
+              <textarea
+                data-v-a95e6368=""
+                maxlength="64"
               />
-            </div>
-            <div
-              class="help_text"
-            >
-              By naming the result, you can reference it later using @results.result
-               
+              <div
+                class="helper"
+                data-v-a95e6368=""
+              >
+                 6/64 
+              </div>
+              <!---->
             </div>
           </div>
+          By naming the result, you can reference it later using @results.result
         </div>
       </div>
       <div
@@ -227,29 +232,34 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
           class="optional_text_input"
         >
           <div
-            class="ele"
+            data-use-vue-component-wrap=""
+            style="all: unset;"
           >
             <div
-              class="label"
+              class="unnnic-text-area sm normal"
+              data-passed-props="[object Object]"
+              data-v-a95e6368=""
             >
-              Result Name
-            </div>
-            <div
-              class="wrapper normal"
-            >
-              <input
-                data-testid="Result Name"
-                name="Result Name"
-                value="Result"
+              <div
+                class="label"
+                data-v-a95e6368=""
+              >
+                Result Name
+              </div>
+              <textarea
+                data-v-a95e6368=""
+                maxlength="64"
               />
-            </div>
-            <div
-              class="help_text"
-            >
-              By naming the result, you can reference it later using @results.result
-               
+              <div
+                class="helper"
+                data-v-a95e6368=""
+              >
+                 6/64 
+              </div>
+              <!---->
             </div>
           </div>
+          By naming the result, you can reference it later using @results.result
         </div>
       </div>
       <div

@@ -52,46 +52,54 @@ exports[`DialRouterForm should render 1`] = `
           Enter the phone number to dial
         </p>
         <div
-          class="ele"
+          data-use-vue-component-wrap=""
+          style="all: unset;"
         >
           <div
-            class="wrapper normal"
+            class="unnnic-text-area sm normal"
+            data-passed-props="[object Object]"
+            data-v-a95e6368=""
           >
-            <input
-              data-testid="phone"
-              name="phone"
-              placeholder="Phone Number"
-              value="0979123456"
+            <!---->
+            <textarea
+              data-v-a95e6368=""
             />
+            <!---->
+            <!---->
           </div>
         </div>
         <div
           class="optional_text_input"
         >
           <div
-            class="ele"
+            data-use-vue-component-wrap=""
+            style="all: unset;"
           >
             <div
-              class="label"
+              class="unnnic-text-area sm normal"
+              data-passed-props="[object Object]"
+              data-v-a95e6368=""
             >
-              Result Name
-            </div>
-            <div
-              class="wrapper normal"
-            >
-              <input
-                data-testid="Result Name"
-                name="Result Name"
-                value="Dial Result"
+              <div
+                class="label"
+                data-v-a95e6368=""
+              >
+                Result Name
+              </div>
+              <textarea
+                data-v-a95e6368=""
+                maxlength="64"
               />
-            </div>
-            <div
-              class="help_text"
-            >
-              By naming the result, you can reference it later using @results.dial_result
-               
+              <div
+                class="helper"
+                data-v-a95e6368=""
+              >
+                 11/64 
+              </div>
+              <!---->
             </div>
           </div>
+          By naming the result, you can reference it later using @results.dial_result
         </div>
       </div>
       <div

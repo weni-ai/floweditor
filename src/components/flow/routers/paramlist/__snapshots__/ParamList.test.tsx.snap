@@ -64,16 +64,20 @@ exports[`ParamList render should render list of params 1`] = `
                 class="data"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="Service Call Param Data"
-                      name="Service Call Param Data"
-                      value="data 1"
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
                     />
+                    <!---->
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -138,16 +142,20 @@ exports[`ParamList render should render list of params 1`] = `
                 class="data"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="Service Call Param Data"
-                      name="Service Call Param Data"
-                      value="data 2"
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
                     />
+                    <!---->
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -212,16 +220,20 @@ exports[`ParamList render should render list of params 1`] = `
                 class="data"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="Service Call Param Data"
-                      name="Service Call Param Data"
-                      value=""
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
                     />
+                    <!---->
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -302,16 +314,20 @@ exports[`ParamList render should render list with an empty param 1`] = `
                 class="data"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="Service Call Param Data"
-                      name="Service Call Param Data"
-                      value=""
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
                     />
+                    <!---->
+                    <!---->
                   </div>
                 </div>
               </div>
@@ -392,16 +408,20 @@ exports[`ParamList updates should remove param and ensure empty param exists 1`]
                 class="data"
               >
                 <div
-                  class="ele"
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
                   <div
-                    class="wrapper small"
+                    class="unnnic-text-area sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-a95e6368=""
                   >
-                    <input
-                      data-testid="Service Call Param Data"
-                      name="Service Call Param Data"
-                      value=""
+                    <!---->
+                    <textarea
+                      data-v-a95e6368=""
                     />
+                    <!---->
+                    <!---->
                   </div>
                 </div>
               </div>

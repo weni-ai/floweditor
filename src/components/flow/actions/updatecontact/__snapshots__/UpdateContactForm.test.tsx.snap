@@ -200,17 +200,20 @@ exports[`UpdateContactForm should render field 1`] = `
           class="value"
         >
           <div
-            class="ele"
+            data-use-vue-component-wrap=""
+            style="all: unset;"
           >
             <div
-              class="wrapper normal"
+              class="unnnic-text-area sm normal"
+              data-passed-props="[object Object]"
+              data-v-a95e6368=""
             >
-              <input
-                data-testid="Field Value"
-                name="Field Value"
-                placeholder=""
-                value="25"
+              <!---->
+              <textarea
+                data-v-a95e6368=""
               />
+              <!---->
+              <!---->
             </div>
           </div>
         </div>
@@ -443,17 +446,20 @@ exports[`UpdateContactForm should render name 1`] = `
           class="value"
         >
           <div
-            class="ele"
+            data-use-vue-component-wrap=""
+            style="all: unset;"
           >
             <div
-              class="wrapper normal"
+              class="unnnic-text-area sm normal"
+              data-passed-props="[object Object]"
+              data-v-a95e6368=""
             >
-              <input
-                data-testid="Name"
-                name="Name"
-                placeholder="Enter a new name for the contact"
-                value="Jane Goodall"
+              <!---->
+              <textarea
+                data-v-a95e6368=""
               />
+              <!---->
+              <!---->
             </div>
           </div>
         </div>
