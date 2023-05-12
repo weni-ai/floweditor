@@ -7,6 +7,9 @@ import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
 import { unnnicTextArea } from '@weni/unnnic-system';
 
+// @ts-ignore
+import { unnnicInputNext } from '@weni/unnnic-system';
+
 export enum Count {
   SMS = 'SMS'
 }
@@ -40,6 +43,7 @@ export interface TextInputProps extends FormElementProps {
 }
 
 const UnnnicTextArea = applyVueInReact(unnnicTextArea);
+const UnnnicInputNext = applyVueInReact(unnnicInputNext);
 
 export default class TextInputElement extends React.Component<TextInputProps> {
   constructor(props: TextInputProps) {
@@ -79,7 +83,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
       optional['counter'] = this.props.counter;
     }
 
-    return (
+    return this.props.textarea ? (
       <>
         <UnnnicTextArea
           value={this.props.entry.value}
@@ -87,11 +91,23 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             input: (value: string) => this.handleChange({ currentTarget: { value } })
           }}
           label={this.props.showLabel ? this.props.name : null}
+          placeholder={this.props.placeholder}
           size={this.props.size || TextInputSizes.sm}
         />
 
         {this.props.helpText}
       </>
+    ) : (
+      <UnnnicInputNext
+        value={this.props.entry.value}
+        on={{
+          input: (value: string) => this.handleChange({ currentTarget: { value } })
+        }}
+        label={this.props.showLabel ? this.props.name : null}
+        placeholder={this.props.placeholder}
+        size={this.props.size || TextInputSizes.sm}
+        message={this.props.helpText}
+      />
     );
   }
 }
