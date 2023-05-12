@@ -1,10 +1,12 @@
 import { react as bindCallbacks } from 'auto-bind';
-import FormElement, { FormElementProps } from 'components/form/FormElement';
+import { FormElementProps } from 'components/form/FormElement';
 import * as React from 'react';
 import { StringEntry } from 'store/nodeEditor';
-import { createTextInput } from './helpers';
+import { applyVueInReact } from 'vuereact-combined';
 
-import styles from './TextInputElement.module.scss';
+// @ts-ignore
+import { unnnicTextArea } from '@weni/unnnic-system';
+
 export enum Count {
   SMS = 'SMS'
 }
@@ -13,6 +15,11 @@ export enum TextInputStyle {
   small = 'small',
   medium = 'medium',
   normal = 'normal'
+}
+
+export enum TextInputSizes {
+  sm = 'sm',
+  md = 'md'
 }
 
 export interface TextInputProps extends FormElementProps {
@@ -27,9 +34,12 @@ export interface TextInputProps extends FormElementProps {
   maxLength?: number;
   counter?: string;
   style?: TextInputStyle;
+  size?: TextInputSizes;
   onChange?: (value: string, name?: string) => void;
   onBlur?: (event: React.ChangeEvent) => void;
 }
+
+const UnnnicTextArea = applyVueInReact(unnnicTextArea);
 
 export default class TextInputElement extends React.Component<TextInputProps> {
   constructor(props: TextInputProps) {
@@ -60,11 +70,6 @@ export default class TextInputElement extends React.Component<TextInputProps> {
   }
 
   public render(): JSX.Element {
-    const charCount: JSX.Element =
-      this.props.count && this.props.count === Count.SMS ? (
-        <temba-charcount text={this.props.entry.value}></temba-charcount>
-      ) : null;
-
     const optional: any = {};
     if (this.props.textarea) {
       optional['textarea'] = true;
@@ -75,19 +80,19 @@ export default class TextInputElement extends React.Component<TextInputProps> {
     }
 
     return (
-      <FormElement
-        __className={this.props.__className}
-        name={this.props.name}
-        helpText={this.props.helpText}
-        showLabel={this.props.showLabel}
-        // errors={this.state.errors}
-        entry={this.props.entry}
-      >
-        <div className={styles.wrapper + ' ' + styles[this.props.style || TextInputStyle.normal]}>
-          {createTextInput(this.props, this.handleChange, optional)}
-          {charCount}
-        </div>
-      </FormElement>
+      <>
+        <UnnnicTextArea
+          value={this.props.entry.value}
+          on={{
+            input: (value: string) => this.handleChange({ currentTarget: { value } })
+          }}
+          label={this.props.showLabel ? this.props.name : null}
+          maxLength={this.props.maxLength}
+          size={this.props.size || TextInputSizes.sm}
+        />
+
+        {this.props.helpText}
+      </>
     );
   }
 }

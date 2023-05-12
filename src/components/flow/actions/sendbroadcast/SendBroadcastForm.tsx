@@ -110,13 +110,14 @@ export default class SendBroadcastForm extends React.Component<
         <p />
         <TextInputElement
           name={i18n.t('forms.message', 'Message')}
-          showLabel={false}
+          showLabel={true}
           count={Count.SMS}
           onChange={this.handleMessageUpdate}
           entry={this.state.message}
           autocomplete={true}
           focus={true}
           textarea={true}
+          maxLength={150}
         />
         {renderIssues(this.props)}
       </Dialog>
