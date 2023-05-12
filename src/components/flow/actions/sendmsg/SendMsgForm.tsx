@@ -412,7 +412,6 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
           autocomplete={true}
           focus={true}
           textarea={true}
-          maxLength={150}
         />
         <temba-charcount class="sms-counter"></temba-charcount>
         {renderIssues(this.props)}

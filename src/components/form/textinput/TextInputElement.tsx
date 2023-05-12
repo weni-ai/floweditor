@@ -87,7 +87,6 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             input: (value: string) => this.handleChange({ currentTarget: { value } })
           }}
           label={this.props.showLabel ? this.props.name : null}
-          maxLength={this.props.maxLength}
           size={this.props.size || TextInputSizes.sm}
         />
 

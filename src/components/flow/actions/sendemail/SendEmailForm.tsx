@@ -137,7 +137,6 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
             entry={this.state.body}
             autocomplete={true}
             textarea={true}
-            maxLength={150}
           />
         </div>
         {renderIssues(this.props)}

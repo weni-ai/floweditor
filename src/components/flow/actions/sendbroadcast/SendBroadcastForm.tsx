@@ -117,7 +117,6 @@ export default class SendBroadcastForm extends React.Component<
           autocomplete={true}
           focus={true}
           textarea={true}
-          maxLength={150}
         />
         {renderIssues(this.props)}
       </Dialog>

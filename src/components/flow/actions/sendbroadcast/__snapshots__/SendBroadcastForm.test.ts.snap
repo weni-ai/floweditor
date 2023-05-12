@@ -75,7 +75,6 @@ exports[`SendBroadcastForm render should render an empty form with no action 2`]
       }
     }
     focus={true}
-    maxLength={150}
     name="Message"
     onChange={[Function]}
     showLabel={true}
@@ -176,7 +175,6 @@ exports[`SendBroadcastForm render should render self, children with base props 1
       }
     }
     focus={true}
-    maxLength={150}
     name="Message"
     onChange={[Function]}
     showLabel={true}
