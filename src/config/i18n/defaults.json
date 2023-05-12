@@ -264,6 +264,7 @@
     "quick_replies": "Quick Replies",
     "quick_replies_summary": "Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for \"Yes\" and one for \"No\".",
     "quick_reply": "Quick Reply",
+    "general": "General",
     "recipients": "Recipients",
     "recording": "Recording",
     "recording_label": "Previous Recording",
