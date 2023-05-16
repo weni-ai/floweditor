@@ -13,7 +13,7 @@
   ],
   "private": false,
   "dependencies": {
-    "@weni/unnnic-system": "1.16.11",
+    "@weni/unnnic-system": "1.17.11-alpha",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "vuereact-combined": "1.2.11"
