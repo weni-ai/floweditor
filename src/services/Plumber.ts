@@ -100,7 +100,7 @@ export default class Plumber {
       DropOptions: { tolerance: 'touch', hoverClass: 'plumb-hover' },
       Endpoint: 'Rectangle',
       EndpointStyle: { strokeStyle: 'transparent' },
-      PaintStyle: { strokeWidth: 3.5 },
+      PaintStyle: { strokeWidth: 2 },
       ConnectionsDetachable: true,
       Connector: defaultConnector,
       ConnectionOverlays: [
@@ -108,8 +108,8 @@ export default class Plumber {
           'PlainArrow',
           {
             location: 0.999,
-            width: 12,
-            length: 12,
+            width: 11.5,
+            length: 10,
             cssClass: 'jtk-arrow'
           }
         ]
