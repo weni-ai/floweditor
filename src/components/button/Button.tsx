@@ -21,7 +21,17 @@ export interface ButtonProps {
   onRef?: (ele: any) => void;
 }
 
-const UnnnicButton = applyVueInReact(unnnicButton);
+const UnnnicButton = applyVueInReact(unnnicButton, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: ''
+      }
+    }
+  }
+});
 
 export default class Button extends React.Component<ButtonProps> {
   constructor(props: ButtonProps) {
