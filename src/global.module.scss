@@ -41,13 +41,10 @@
     }
 
     .ReactModal__Overlay {
-      background-color: rgba(0, 0, 0, 0.6) !important;
       z-index: $z_modal;
     }
 
     .ReactModalPortal .ReactModal__Overlay {
-      background: rgba(0, 0, 0, 0.15);
-
       &--after-open {
         opacity: 1;
       }
