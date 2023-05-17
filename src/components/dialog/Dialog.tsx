@@ -1,6 +1,5 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Button, { ButtonProps, ButtonTypes } from 'components/button/Button';
-import shared from 'components/shared.module.scss';
 import * as React from 'react';
 import { renderIf } from 'utils';
 import { applyVueInReact } from 'vuereact-combined';
@@ -138,7 +137,7 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
     };
 
     if (buttons.secondary) {
-      rightButtons.push(<Button key={0} type={ButtonTypes.secondary} {...buttons.secondary} />);
+      rightButtons.push(<Button key={0} type={ButtonTypes.tertiary} {...buttons.secondary} />);
     }
 
     if (buttons.primary) {
@@ -154,7 +153,7 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
           leftSpacing={true}
           name={buttons.primary.name}
           disabled={buttons.primary.disabled}
-          type={ButtonTypes.primary}
+          type={ButtonTypes.secondary}
         />
       );
     }
@@ -177,10 +176,6 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
 
     if (this.state.activeTab > -1) {
       headerClasses.push(styles.clickable);
-    }
-
-    if (this.props.headerClass) {
-      headerClasses.push(shared[this.props.headerClass]);
     }
 
     if (this.props.headerIcon) {
@@ -211,13 +206,16 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
             <span className={`${styles.header_icon} ${this.props.headerIcon}`} />
           )}
           <div className={styles.title_container}>
-            <div className={styles.title}>{this.props.title}</div>
+            <div className={`${styles.title} u font secondary title-sm black`}>
+              {this.props.title}
+            </div>
             <div className={styles.subtitle}>{this.props.subtitle}</div>
           </div>
         </div>
         <div className={this.props.noPadding ? '' : styles.content}>
           {(this.props.tabs || []).length > 0 ? (
             <UnnnicTab
+              className={styles.tabs}
               size="sm"
               initialTab={String(this.state.activeTab + 1)}
               tabs={[

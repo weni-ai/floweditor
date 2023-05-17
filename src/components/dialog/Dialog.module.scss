@@ -1,4 +1,5 @@
 @import 'variables.module.scss';
+@import '@weni/unnnic-system/dist/scss/unnnic.scss';
 
 $curvature: 10px;
 
@@ -7,17 +8,14 @@ $curvature: 10px;
 }
 
 .dialog {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0px 5px 10px 1px #555;
-  width: 655px;
+  background: $unnnic-color-background-carpet;
+  border-radius: $unnnic-border-radius-sm;
+  box-shadow: $unnnic-shadow-level-separated;
+  width: 31.125 * $unnnic-font-size;
 
   .header {
-    color: #fff;
-    height: 56px;
-
-    border-top-left-radius: $curvature;
-    border-top-right-radius: $curvature;
+    color: $unnnic-color-neutral-dark;
+    text-align: center;
 
     &:hover {
       .header_overlay {
@@ -28,10 +26,7 @@ $curvature: 10px;
     .header_overlay {
       position: absolute;
       width: 647px;
-      height: 28px;
       text-align: right;
-      padding-top: 28px;
-      padding-right: 8px;
 
       border-top-left-radius: $curvature;
       border-top-right-radius: $curvature;
@@ -48,8 +43,8 @@ $curvature: 10px;
     }
 
     .title {
-      font-size: 20px;
-      padding: 16px;
+      padding: $unnnic-spacing-inset-md;
+      padding-top: $unnnic-spacing-stack-giant;
     }
 
     &.barber {
@@ -72,22 +67,23 @@ $curvature: 10px;
   }
 
   .content {
-    padding: 10px 20px;
-    margin-bottom: 10px;
+    padding: 0 $unnnic-spacing-inline-md;
 
     p {
       margin-top: 10px;
       line-height: 20px;
     }
+
+    .tabs {
+      margin-bottom: $unnnic-spacing-stack-md;
+    }
   }
 
   .footer {
-    padding: 12px;
-    background: $light_gray;
+    padding: $unnnic-spacing-stack-giant $unnnic-spacing-inline-md $unnnic-spacing-stack-lg $unnnic-spacing-inline-md;
     border-bottom-left-radius: $curvature;
     border-bottom-right-radius: $curvature;
 
-    justify-content: space-between;
     align-items: center;
 
     .gutter {
@@ -97,15 +93,21 @@ $curvature: 10px;
 
     .buttons {
       display: flex;
-    }
-    .left_buttons {
-      margin-right: auto;
+      column-gap: $unnnic-spacing-inline-lg;
     }
 
-    .right_buttons {
-      margin-left: auto;
-      text-align: right;
-      vertical-align: baseline;
+    .left_buttons, .right_buttons {
+      flex: 1;
+      display: flex;
+      column-gap: $unnnic-spacing-inline-lg;
+
+      > * {
+        flex: 1;
+      }
+    }
+
+    button {
+      width: 100%;
     }
   }
 }
