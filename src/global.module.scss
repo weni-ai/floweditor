@@ -106,9 +106,11 @@
 
       path {
         stroke: $connector_color;
+        stroke-width: 2px;
 
         &.jtk-arrow {
           fill: $connector_color;
+          stroke-width: 0;
         }
       }
 
@@ -117,11 +119,11 @@
 
         path {
           stroke: $connector_hover_color;
-          stroke-width: 4px;
+          stroke-width: 3px;
 
           &.jtk-arrow {
             fill: $connector_hover_color;
-            stroke-width: 1px;
+            stroke-width: 0;
           }
         }
       }
