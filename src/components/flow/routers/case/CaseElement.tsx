@@ -480,18 +480,20 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
           >
             {this.renderArguments()}
           </div>
-          <div className={styles.categorize_as} data-draggable={true}>
-            {i18n.t('forms.categorize_as', 'categorize as')}
-          </div>
-          <div className={styles.category}>
-            <TextInputElement
-              name={i18n.t('forms.exit_name', 'Exit Name')}
-              style={TextInputStyle.small}
-              onChange={this.handleExitChanged}
-              entry={this.state.categoryName}
-              maxLength={36}
-              showInvalid={hasErrorType(this.state.errors, [/category/])}
-            />
+          <div>
+            <div className={styles.categorize_as} data-draggable={true}>
+              {i18n.t('forms.categorize_as', 'categorize as')}
+            </div>
+            <div className={styles.category}>
+              <TextInputElement
+                name={i18n.t('forms.exit_name', 'Exit Name')}
+                style={TextInputStyle.small}
+                onChange={this.handleExitChanged}
+                entry={this.state.categoryName}
+                maxLength={36}
+                showInvalid={hasErrorType(this.state.errors, [/category/])}
+              />
+            </div>
           </div>
           <span
             data-testid={'remove-case-' + this.props.kase.uuid}

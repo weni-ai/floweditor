@@ -5,13 +5,7 @@ import styles from './TembaSelect.module.scss';
 import { Assets } from 'store/flowContext';
 
 // @ts-ignore
-import { unnnicSelect } from '@weni/unnnic-system';
-// @ts-ignore
-import { unnnicInput } from '@weni/unnnic-system';
-// @ts-ignore
-import { unnnicTag } from '@weni/unnnic-system';
-// @ts-ignore
-import { unnnicAutocomplete } from '@weni/unnnic-system';
+import { unnnicSelect, unnnicInput, unnnicTag, unnnicAutocomplete } from '@weni/unnnic-system';
 import { applyVueInReact } from 'vuereact-combined';
 import axios from 'axios';
 
@@ -70,11 +64,6 @@ interface TembaSelectState {
   availableOptions?: any[];
   key: number;
 }
-
-const testeSearch = [
-  { name: 'Teste1', id: 'fae05fb1-3021-4df2-a443-db8356b953fa', type: 'group', extra: 212 },
-  { name: 'Teste2', id: '773fa0f6-dffd-4e7d-bcc1-e5709374354f', type: 'contact' }
-];
 
 export default class TembaSelect extends React.Component<TembaSelectProps, TembaSelectState> {
   constructor(props: TembaSelectProps) {
@@ -212,10 +201,12 @@ export default class TembaSelect extends React.Component<TembaSelectProps, Temba
   }
 
   private handleTagInputChange(event: any) {
+    console.log('input', event);
     this.setState({ currentTagInput: event });
   }
 
   private handleTagCreation(event: any) {
+    console.log('event', event);
     if (event.code === 'Enter') {
       if (!this.state.currentTagInput || !this.state.currentTagInput.trim()) {
         return;
@@ -319,7 +310,7 @@ export default class TembaSelect extends React.Component<TembaSelectProps, Temba
             keyup: this.handleTagCreation
           }}
           iconRight="keyboard-return-1"
-          size={this.props.style}
+          size={this.props.style || TembaSelectStyle.small}
           disabled={this.props.disabled}
         />
       );
@@ -332,6 +323,7 @@ export default class TembaSelect extends React.Component<TembaSelectProps, Temba
           placeholder={this.props.placeholder}
           disabled={this.props.disabled}
           iconRight="keyboard-return-1"
+          size={this.props.style || TembaSelectStyle.small}
           openWithFocus={true}
         />
       );
@@ -345,7 +337,7 @@ export default class TembaSelect extends React.Component<TembaSelectProps, Temba
           }}
           placeholder={this.props.placeholder}
           search={this.props.searchable}
-          size={this.props.style}
+          size={this.props.style || TembaSelectStyle.small}
           disabled={this.props.disabled}
           key={this.state.key}
         >
