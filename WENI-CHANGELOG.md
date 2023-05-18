@@ -1,3 +1,7 @@
+1.2.1-floweditor-1.15.2
+----------
+* Fix: External services action name
+
 1.2.0-floweditor-1.15.2
 ----------
 * New External Services router card
