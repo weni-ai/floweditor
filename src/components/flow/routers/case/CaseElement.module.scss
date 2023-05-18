@@ -33,7 +33,7 @@ input:focus {
 }
 
 .kase {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   user-select: none;
   margin-bottom: 5px;
@@ -44,6 +44,7 @@ input:focus {
 
   .choice {
     width: 185px;
+    margin-top: 20px;
   }
 
   .single_operand {
@@ -51,8 +52,9 @@ input:focus {
     align-items: center;
     position: relative;
     margin-left: $spacing;
-
-    width: 184px;
+    margin-right: $spacing;
+    margin-top: 20px;
+    padding: 1px 0;
 
     input {
       width: 170px;
@@ -63,7 +65,9 @@ input:focus {
     display: inline-flex;
     align-items: center;
     margin-left: $spacing;
+    margin-right: $spacing;
     width: 184px;
+    margin-top: 20px;
 
     input[name='intent'] {
       width: 105px;
@@ -76,17 +80,14 @@ input:focus {
   }
 
   .categorize_as {
-    font-size: 13px;
-    line-height: 13px;
+    font-size: 12px;
+    line-height: 20px;
     position: relative;
-    width: 95px;
-    text-align: center;
-    margin: 0px $spacing - 2;
-    margin-top: 4px;
   }
 
   .category {
     position: relative;
+    padding: 1px 0;
   }
 
   &:hover {
@@ -101,9 +102,6 @@ input:focus {
 
   input {
     padding: 6px 7px;
-    height: 29px !important;
-    margin-bottom: -4px;
-    font-size: 13px !important;
   }
 
   .relative_date {
@@ -119,7 +117,7 @@ input:focus {
 .dnd_icon {
   color: #aaa;
   font-weight: bold;
-  padding-top: 9px;
+  padding-top: 20px;
   padding-right: 2px;
   padding-left: 5px;
   float: left;
@@ -130,12 +128,12 @@ input:focus {
 
 .remove_icon {
   color: #aaa;
-  padding-top: 8px;
+  padding-top: 20px;
   float: right;
   opacity: 0;
   line-height: 12px;
   cursor: pointer;
-  margin-left: 2px;
+  margin-left: 4px;
   font-size: 9px;
   z-index: 3000;
 }
