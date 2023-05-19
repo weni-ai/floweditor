@@ -206,7 +206,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     this.props.removeNode(this.props.renderNode.node);
   }
 
-  private getExits(): JSX.Element[] {
+  private getExits(hasBackground: boolean): JSX.Element[] {
     if (this.props.renderNode.node.exits) {
       return this.props.renderNode.node.exits.map((exit: Exit, idx: number) => (
         <ExitComp
@@ -219,6 +219,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
           plumberRemove={this.props.plumberRemove}
           plumberConnectExit={this.props.plumberConnectExit}
           plumberUpdateClass={this.props.plumberUpdateClass}
+          hasBackground={hasBackground}
         />
       ));
     }
@@ -353,13 +354,13 @@ export class NodeComp extends React.PureComponent<NodeProps> {
           <div style={{ position: 'relative' }}>
             <div {...this.events}>
               <TitleBar
-                __className={
+                __className={`${
                   (shared as any)[
                     hasIssues(this.props.issues, this.props.translating, this.props.language)
                       ? 'missing'
                       : config.type
                   ]
-                }
+                } ${styles.title}`}
                 showRemoval={!this.props.translating}
                 onRemoval={this.handleRemoval}
                 shouldCancelClick={this.handleShouldCancelClick}
@@ -383,7 +384,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       }
     }
 
-    const exits: JSX.Element[] = this.getExits();
+    const exits: JSX.Element[] = this.getExits(!!(actionList || summary));
 
     const classes = cx({
       'plumb-drag': true,
@@ -396,7 +397,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     const uuid: JSX.Element = this.renderDebug();
 
     const body = (
-      <div className={styles.node}>
+      <div className={`${styles.node} ${styles[type]}`}>
         {this.isStartNodeVisible() ? (
           <div className={styles.flow_start_message}>{i18n.t('flow_start', 'Flow Start')}</div>
         ) : null}

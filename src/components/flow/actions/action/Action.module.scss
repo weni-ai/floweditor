@@ -1,22 +1,72 @@
 @import 'variables.module.scss';
+@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
 
 .action {
   position: relative;
   margin: 0px;
   overflow: hidden;
+  outline: $unnnic-color-neutral-cleanest solid $unnnic-border-width-thin;
+
+  &.send_msg,
+  &.say_msg,
+  &.add_contact_urn,
+  &.set_contact_channel,
+  &.set_contact_field,
+  &.set_contact_name,
+  &.set_contact_language,
+  &.set_contact_status {
+    outline-color: $unnnic-color-aux-blue;
+  }
+
+  &.add_contact_groups,
+  &.remove_contact_groups,
+  &.send_email {
+    outline-color: $unnnic-color-aux-purple;
+  }
+
+  &.wait_for_response,
+  &.wait_for_menu,
+  &.wait_for_dial,
+  &.wait_for_digits,
+  &.wait_for_audio,
+  &.wait_for_video,
+  &.wait_for_location,
+  &.wait_for_image {
+    outline-color: $unnnic-color-feedback-blue;
+  }
+
+  &.call_classifier,
+  &.call_external_service,
+  &.call_resthook,
+  &.call_webhook {
+    outline-color: $unnnic-color-aux-orange;
+  }
+
+  &.enter_flow {
+    outline-color: $unnnic-color-aux-pink;
+  }
+  
+  &.set_contact_field,
+  &.set_contact_name,
+  &.set_contact_language,
+  &.set_contact_status {
+    outline-color: $unnnic-color-aux-pink;
+  }
+
+  &:first-child {
+    border-top-right-radius: $unnnic-border-radius-md;
+    border-top-left-radius: $unnnic-border-radius-md;
+  }
 
   &:last-child {
-    border-bottom-right-radius: $curvature;
-    border-bottom-left-radius: $curvature;
+    border-bottom-right-radius: $unnnic-border-radius-md;
+    border-bottom-left-radius: $unnnic-border-radius-md;
   }
 
   &.has_router {
     &:last-child {
-      border-bottom: 1px solid $borders;
-    }
-
-    &:last-child {
-      border-radius: 0px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
   clear: both;

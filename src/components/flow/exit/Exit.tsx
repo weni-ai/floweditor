@@ -39,6 +39,7 @@ export interface ExitPassedProps {
     className: string,
     confirmDelete: boolean
   ) => void;
+  hasBackground?: boolean;
 }
 
 export interface ExitStoreProps {
@@ -243,10 +244,10 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
 
   public getName(): { name: string; localized?: boolean } {
     if (this.props.translating) {
-      let name: string = '';
-      let delim: string = '';
+      let name = '';
+      let delim = '';
 
-      let localized: boolean = false;
+      let localized = false;
 
       this.props.categories.forEach((category: Category) => {
         const localization = getLocalization(
@@ -359,8 +360,10 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
       : {};
 
     return (
-      <div className={exitClasses}>
-        {name ? <div className={nameStyle}>{name}</div> : null}
+      <div
+        className={`${exitClasses} ${this.props.hasBackground ? styles['has-background'] : null}`}
+      >
+        {name ? <div className={`${nameStyle} u font secondary body-md`}>{name}</div> : null}
         <div
           ref={(ref: HTMLDivElement) => (this.ele = ref)}
           {...events}

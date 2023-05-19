@@ -200,7 +200,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
     return (
       <div
         id={`action-${this.props.action.uuid}`}
-        className={classes}
+        className={`${classes} ${styles[this.props.action.type]}`}
         data-spec={actionContainerSpecId}
       >
         <div className={styles.overlay} data-spec={actionOverlaySpecId} />

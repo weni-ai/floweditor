@@ -161,9 +161,11 @@ export default class TitleBar extends React.Component<TitleBarProps, TitleBarSta
     const remove: JSX.Element = this.getRemove();
     return (
       <div className={styles.titlebar} data-spec={titlebarContainerSpecId}>
-        <div className={`${this.props.__className} ${styles.normal}`} data-spec={titlebarSpecId}>
+        <div className={`${styles.normal} ${this.props.__className}`} data-spec={titlebarSpecId}>
           {moveArrow}
-          <div className={styles.titletext}>{this.props.title}</div>
+          <div className={`${styles.titletext} u font secondary body-md bold`}>
+            {this.props.title}
+          </div>
           {remove}
         </div>
         {confirmation}
