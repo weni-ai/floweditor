@@ -98,16 +98,20 @@ export default class TextInputElement extends React.Component<TextInputProps> {
         {this.props.helpText}
       </>
     ) : (
-      <UnnnicInputNext
-        value={this.props.entry.value}
-        on={{
-          input: (value: string) => this.handleChange({ currentTarget: { value } })
-        }}
-        label={this.props.showLabel ? this.props.name : null}
-        placeholder={this.props.placeholder}
-        size={this.props.size || TextInputSizes.sm}
-        message={this.props.helpText}
-      />
+      <>
+        <UnnnicInputNext
+          value={this.props.entry.value}
+          on={{
+            input: (value: string) => this.handleChange({ currentTarget: { value } })
+          }}
+          label={this.props.showLabel ? this.props.name : null}
+          placeholder={this.props.placeholder}
+          size={this.props.size || TextInputSizes.sm}
+          message={typeof this.props.helpText === 'string' ? this.props.helpText : undefined}
+        />
+
+        {typeof this.props.helpText !== 'string' ? this.props.helpText : null}
+      </>
     );
   }
 }
