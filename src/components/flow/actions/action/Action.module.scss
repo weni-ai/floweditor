@@ -36,10 +36,15 @@
   }
 
   &.call_classifier,
-  &.call_external_service,
-  &.call_resthook,
-  &.call_webhook {
+  &.call_resthook {
     outline-color: $unnnic-color-aux-orange;
+  }
+
+  &.call_external_service,
+  &.has_intent,
+  &.has_top_intent,
+  &.call_webhook {
+    outline-width: 0;
   }
 
   &.enter_flow {

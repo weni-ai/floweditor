@@ -63,6 +63,12 @@
       outline-color: $unnnic-color-aux-pink;
     }
 
+    &.split_by_external_service,
+    &.split_by_intent,
+    &.split_by_webhook {
+      outline-color: $unnnic-color-aux-orange;
+    }
+
     &.wait_for_response,
     &.wait_for_menu,
     &.wait_for_dial,
