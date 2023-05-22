@@ -6,7 +6,7 @@ import {
 } from 'components/flow/actions/changegroups/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
-import CheckboxElement from 'components/form/checkbox/CheckboxElement';
+import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import { fakePropType } from 'config/ConfigProvider';
 import { ChangeGroups } from 'flowTypes';
@@ -129,13 +129,14 @@ export default class RemoveGroupsForm extends React.Component<
           </div>
         )}
 
-        <CheckboxElement
+        <SwitchElement
           name={REMOVE_FROM_ALL}
           title={REMOVE_FROM_ALL}
           labelClassName={this.state.removeAll ? '' : styles.checkbox}
           checked={this.state.removeAll!}
           description={REMOVE_FROM_ALL_DESC}
           onChange={this.handleRemoveAllUpdate}
+          size={SwitchSizes.small}
         />
         {renderIssues(this.props)}
       </Dialog>
