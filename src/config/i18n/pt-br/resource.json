@@ -294,6 +294,7 @@
     "send_msg_facebook_warning": "O envio de mensagens em massa por um canal do Facebook exige que um tópico seja especificado se o usuário não tiver enviado uma mensagem nas últimas 24 horas. Definir um tópico para usar no Facebook é especialmente importante para a primeira mensagem no seu fluxo.",
     "send_msg_summary": "Adicione um anexo a cada mensagem. O anexo pode ser um arquivo que você carrega ou uma URL dinâmica usando expressões e variáveis ​​do seu Fluxo.",
     "send_msg_summary_plural": "Adicione um anexo a cada mensagem. O anexo pode ser um arquivo que você carrega ou uma URL dinâmica usando expressões e variáveis ​​do seu Fluxo.",
+    "sms_counter_info": "Essa mensagem tem [[characters]] caracteres e usará [[messages]] mensagens para ser enviada por SMS",
     "split_by_channel_placeholder": "Selecione os canais para dividir por",
     "split_by_groups": "Selecione os grupos que você deseja dividir abaixo",
     "split_by_scheme": "Tipos de canal",

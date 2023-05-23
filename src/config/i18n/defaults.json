@@ -298,6 +298,7 @@
     "send_msg_facebook_warning": "Sending bulk messages over a Facebook channel requires that a topic be specified if the user has not sent a message in the last 24 hours. Setting a topic to use over Facebook is especially important for the first message in your flow.",
     "send_msg_summary": "Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.",
     "send_msg_summary_plural": "Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.",
+    "sms_counter_info": "This message is [[characters]] characters and will use [[messages]] messages to send over SMS",
     "split_by_channel_placeholder": "Select the channels to split by",
     "split_by_groups": "Select the groups you'd like to split by below",
     "split_by_scheme": "Channel types",

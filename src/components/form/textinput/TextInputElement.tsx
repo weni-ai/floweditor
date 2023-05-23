@@ -3,12 +3,13 @@ import { FormElementProps } from 'components/form/FormElement';
 import * as React from 'react';
 import { StringEntry } from 'store/nodeEditor';
 import { applyVueInReact } from 'vuereact-combined';
+import { count as SmsCount } from 'sms-length';
+import i18n from 'config/i18n';
 
 // @ts-ignore
-import { unnnicTextArea } from '@weni/unnnic-system';
+import { unnnicTextArea, unnnicInputNext, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
 
-// @ts-ignore
-import { unnnicInputNext } from '@weni/unnnic-system';
+import styles from './TextInputElement.module.scss';
 
 export enum Count {
   SMS = 'SMS'
@@ -44,6 +45,8 @@ export interface TextInputProps extends FormElementProps {
 
 const UnnnicTextArea = applyVueInReact(unnnicTextArea);
 const UnnnicInputNext = applyVueInReact(unnnicInputNext);
+const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicToolTip = applyVueInReact(unnnicToolTip);
 
 export default class TextInputElement extends React.Component<TextInputProps> {
   constructor(props: TextInputProps) {
@@ -96,6 +99,23 @@ export default class TextInputElement extends React.Component<TextInputProps> {
         />
 
         {this.props.helpText}
+
+        {this.props.counter ? (
+          <div className={`${styles.sms_counter} u font secondary body-md color-neutral-cloudy`}>
+            {SmsCount(this.props.entry.value).length} / {SmsCount(this.props.entry.value).messages}
+            <UnnnicToolTip
+              enabled
+              text={i18n.t('forms.sms_counter_info', {
+                characters: SmsCount(this.props.entry.value).length,
+                messages: SmsCount(this.props.entry.value).messages
+              })}
+              side="top"
+              maxWidth="180px"
+            >
+              <UnnnicIcon icon="information-circle-4" size="sm" scheme="neutral-soft" />
+            </UnnnicToolTip>
+          </div>
+        ) : null}
       </>
     ) : (
       <>

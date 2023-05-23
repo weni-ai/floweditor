@@ -294,6 +294,7 @@
     "send_msg_facebook_warning": "El envío de mensajes masivos a través de un canal de Facebook requiere que se especifique un tema si el usuario no ha enviado un mensaje en las últimas 24 horas. Establecer un tema para usar en Facebook es especialmente importante para el primer mensaje de su flujo.",
     "send_msg_summary": "Agrega un archivo adjunto a cada mensaje. El archivo adjunto puede ser un archivo que cargue o una URL dinámica que use expresiones y variables de su flujo.",
     "send_msg_summary_plural": "Agrega un archivo adjunto a cada mensaje. El archivo adjunto puede ser un archivo que cargue o una URL dinámica que use expresiones y variables de su flujo.",
+    "sms_counter_info": "Este mensaje tiene [[characters]] caracteres y utilizará [[messages]] mensajes para enviarse por SMS",
     "split_by_channel_placeholder": "Seleccione los canales para dividir",
     "split_by_groups": "Seleccione los grupos por los que le gustaría dividir a continuación",
     "split_by_scheme": "Tipos de canal",
