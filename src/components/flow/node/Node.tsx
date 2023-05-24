@@ -35,6 +35,10 @@ import {
   removeNode
 } from 'store/thunks';
 import { ClickHandler, createClickHandler } from 'utils';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
 
 import styles from './Node.module.scss';
 import { hasIssues } from '../helpers';
@@ -87,6 +91,9 @@ const EMPTY: any[] = [];
 /**
  * A single node in the rendered flow
  */
+
+const UnnnicIcon = applyVueInReact(unnnicIcon);
+
 export class NodeComp extends React.PureComponent<NodeProps> {
   public ele: HTMLDivElement;
   private firstAction: any;
@@ -378,7 +385,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
             className={styles.add}
             {...createClickHandler(this.handleAddToNode, this.handleShouldCancelClick)}
           >
-            <span className="fe-add" />
+            <UnnnicIcon icon="add-1" size="sm" scheme="neutral-darkest" />
           </div>
         );
       }

@@ -141,15 +141,21 @@
 
     .add {
       position: absolute;
-      right: $node_padding / 2 + px;
-      bottom: $node_padding / 2 + px;
+      right: (-$unnnic-font-size / 2) - $node_padding / 2;
+      bottom: (-$unnnic-font-size / 2) - $node_padding / 2;
       visibility: hidden;
-      color: $blue;
       text-decoration: none;
-      background: #fff;
-      border-radius: 5px;
-      line-height: 8px;
-      font-size: 14px;
+      padding: $unnnic-spacing-stack-nano $unnnic-spacing-inline-nano;
+      border-radius: $unnnic-border-radius-sm;
+      background-color: $unnnic-color-background-sky;
+      outline: $unnnic-border-width-thinner solid $unnnic-color-neutral-clean;
+      outline-offset: -$unnnic-border-width-thinner;
+      width: $unnnic-font-size;
+      height: $unnnic-font-size;
+
+      &:hover {
+        outline-width: 0;
+      }
     }
     &:hover {
       .add {
