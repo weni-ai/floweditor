@@ -148,7 +148,8 @@
     "cancel": "Cancel",
     "create_message": "Create Message",
     "download": "Download",
-    "ok": "Ok"
+    "ok": "Ok",
+    "close": "Close"
   },
   "contact_statuses": {
     "active": "Active",

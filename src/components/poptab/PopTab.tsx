@@ -1,9 +1,16 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
+import { applyVueInReact } from 'vuereact-combined';
 
 import styles from './PopTab.module.scss';
 
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+import Button, { ButtonTypes } from 'components/button/Button';
+import i18n from 'config/i18n';
+
 export interface PopTabProps {
+  type?: string;
   color: string;
   icon: string;
   label: string;
@@ -17,6 +24,8 @@ export interface PopTabProps {
 export interface PopTabState {
   width: number;
 }
+
+const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 export class PopTab extends React.Component<PopTabProps, PopTabState> {
   private poppedEle: HTMLDivElement;
@@ -65,27 +74,44 @@ export class PopTab extends React.Component<PopTabProps, PopTabState> {
             onClick={this.handleTabClick}
           >
             <div className={styles.icon}>
-              <span className={this.props.icon} />
+              <UnnnicIcon icon={this.props.icon} size="lg" scheme="neutral-snow" />
             </div>
             <div className={styles.label}>{this.props.label}</div>
           </div>
         </div>
         <div
           ref={this.handlePoppedRef}
-          className={styles.popped}
+          className={`${styles.popped} ${styles[this.props.type]}`}
           style={{
-            borderColor: this.props.color,
+            borderColor: this.props.type !== 'revisions' && this.props.color,
             right: this.props.visible ? 15 + this.state.width : 0,
             top: -100
           }}
         >
-          <div className={styles.header} style={{ background: this.props.color }}>
-            <div className={styles.close + ' fe-x'} onClick={this.handleClose} />
-            <div className={styles.header_label}>{this.props.header}</div>
-          </div>
-          <div className={styles.body} style={{ background: this.props.color }}>
-            {this.props.children}
-          </div>
+          {this.props.type === 'revisions' ? (
+            <>
+              <div className={styles.body}>{this.props.children}</div>
+
+              <div className={styles.footer}>
+                <Button
+                  name={i18n.t('buttons.close', 'Close')}
+                  onClick={this.handleClose}
+                  type={ButtonTypes.secondary}
+                  size="small"
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className={styles.header} style={{ background: this.props.color }}>
+                <div className={styles.close + ' fe-x'} onClick={this.handleClose} />
+                <div className={styles.header_label}>{this.props.header}</div>
+              </div>
+              <div className={styles.body} style={{ background: this.props.color }}>
+                {this.props.children}
+              </div>
+            </>
+          )}
         </div>
       </div>
     );

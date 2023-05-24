@@ -37,22 +37,46 @@ $revision_color: $purple;
     overflow: hidden;
 
     .revisions {
-      background: #fff;
       height: 325px;
-      overflow-y: auto;
+      padding-right: $unnnic-spacing-inline-sm;
+      overflow-y: overlay;
       overflow-x: hidden;
 
+      &::-webkit-scrollbar {
+        width: $unnnic-spacing-inline-nano;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $unnnic-color-neutral-clean;
+        border-radius: $unnnic-border-radius-pill;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $unnnic-color-neutral-soft;
+        border-radius: $unnnic-border-radius-pill;
+      }
+
       .revision {
+        border-radius: $unnnic-border-radius-sm;
         color: $text_color;
-        padding: 11px 10px;
+        padding: 0.5 * $unnnic-font-size;
+        display: flex;
+        flex-direction: column;
+        row-gap: $unnnic-spacing-stack-nano;
 
         &.selected {
-          background: $light_gray_2;
+          background: $unnnic-color-background-carpet;
         }
 
         &:hover {
-          background: $light_gray_2;
+          background: $unnnic-color-background-carpet;
           cursor: pointer;
+        }
+
+        .title {
+          display: flex;
+          align-items: center;
+          column-gap: $unnnic-spacing-inline-xs;
         }
 
         .button {
@@ -78,14 +102,17 @@ $revision_color: $purple;
             color: #999;
           }
         }
-      }
 
-      .created_on {
-        font-size: 12px;
-      }
+        .tag {
+          background-color: $unnnic-color-neutral-soft;
+          border-radius: $unnnic-border-radius-lg;
+          padding: 0.125 * $unnnic-font-size 0.75 * $unnnic-font-size;
+          text-transform: capitalize;
 
-      .email {
-        font-size: 11px;
+          &.revert {
+            background-color: $unnnic-color-brand-weni-soft;
+          }
+        }
       }
     }
   }

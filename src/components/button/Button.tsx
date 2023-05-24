@@ -18,6 +18,7 @@ export interface ButtonProps {
   leftSpacing?: boolean;
   topSpacing?: boolean;
   iconName?: string;
+  size?: string;
   onRef?: (ele: any) => void;
 }
 
@@ -57,6 +58,7 @@ export default class Button extends React.Component<ButtonProps> {
         disabled={disabled}
         iconLeft={iconName}
         text={name}
+        size={this.props.size || undefined}
       />
     );
   }
