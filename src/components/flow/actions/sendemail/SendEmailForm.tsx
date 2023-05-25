@@ -120,18 +120,21 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
             entry={this.state.recipients}
             onChange={this.handleRecipientsChanged}
             createPrompt={''}
+            showLabel
           />
           <TextInputElement
             __className={styles.subject}
             name={i18n.t('forms.subject', 'Subject')}
-            placeholder={i18n.t('forms.subject', 'Subject')}
+            placeholder={i18n.t('forms.subject_placeholder', 'E-mail subject')}
             onChange={this.handleSubjectChanged}
             entry={this.state.subject}
             autocomplete={true}
+            showLabel
           />
           <TextInputElement
             __className={styles.message}
-            name={i18n.t('forms.message', 'Message')}
+            name={i18n.t('forms.email_message', 'E-mail text')}
+            placeholder={i18n.t('forms.email_message_placeholder', 'Enter the e-mail text')}
             showLabel={true}
             onChange={this.handleBodyChanged}
             entry={this.state.body}

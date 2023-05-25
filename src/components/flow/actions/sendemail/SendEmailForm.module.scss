@@ -1,4 +1,10 @@
+@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
+
 .ele {
+    display: flex;
+    flex-direction: column;
+    row-gap: $unnnic-spacing-stack-sm;
+
     .subject {
         margin-top: 8px;
     }
