@@ -348,6 +348,7 @@
     "variable": "Variable",
     "video_url": "URL de Video",
     "webhook_body_summary": "Modifique el cuerpo de la solicitud de [[method]] que se enviará a su webhook.",
+    "webhook_body_placeholder": "Cuerpo de la solicitud",
     "webhook_example": "Esta respuesta agregará <1>@webhook.product</1> y <4>@webhook[\"stock level\"]</4> para utilizarlos en el flujo.",
     "webhook_header": "Cabecera",
     "webhook_header_name": "Nombre de Cabecera",

@@ -1,5 +1,7 @@
+@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
+
 .optional_text_input {
-  padding: 15px 0px 0px 0px;
+  padding: $unnnic-spacing-stack-md 0px 0px 0px;
 
   .toggle_link {
     cursor: pointer;

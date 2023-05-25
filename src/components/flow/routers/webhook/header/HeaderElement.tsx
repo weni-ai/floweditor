@@ -8,6 +8,10 @@ import * as React from 'react';
 import { StringEntry, ValidationFailure } from 'store/nodeEditor';
 import { HeaderName, validate } from 'store/validators';
 import i18n from 'config/i18n';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
 
 // TODO: move this into webhook router component
 export interface Header {
@@ -22,6 +26,7 @@ export interface HeaderElementProps {
   onRemove: (header: Header) => void;
   onChange: (header: Header, validationFailures: ValidationFailure[]) => void;
   empty?: boolean;
+  canRemove?: boolean;
 }
 
 interface HeaderElementState {
@@ -40,6 +45,8 @@ export const HEADER_NAME_ERROR = i18n.t(
 );
 export const NAME_PLACEHOLDER = i18n.t('forms.webhook_header_name', 'Header Name');
 export const VALUE_PLACEHOLDER = i18n.t('forms.value', 'Value');
+
+const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 export default class HeaderElement extends React.Component<HeaderElementProps, HeaderElementState> {
   constructor(props: HeaderElementProps) {
@@ -95,8 +102,17 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
 
   private getRemoveIco(): JSX.Element {
     return (
-      <div className={styles.remove_ico} onClick={this.handleRemove} data-spec={removeIcoSpecId}>
-        <span className="fe-x" />
+      <div className={styles.remove_icon}>
+        {this.props.canRemove ? (
+          <UnnnicIcon
+            icon="delete-1-1"
+            size="sm"
+            scheme="neutral-cloudy"
+            clickable
+            onClick={this.handleRemove}
+            data-spec={removeIcoSpecId}
+          />
+        ) : null}
       </div>
     );
   }
