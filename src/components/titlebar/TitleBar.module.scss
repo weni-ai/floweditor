@@ -19,6 +19,7 @@
     box-sizing: border-box;
     width: 100%;
     display: flex;
+    align-items: center;
     background-color: $unnnic-color-background-sky;
     color: $unnnic-color-neutral-dark;
   }
@@ -42,22 +43,12 @@
   }
 
   .remove_button {
-    padding-right: 3px;
     visibility: hidden;
-    font-size: 15px;
-    line-height: 12px;
-    width: 20px;
-    right: 0;
-    color: rgba(255, 255, 255, 0.4);
   }
 
   .up_button {
     visibility: hidden;
-    font-size: 10px;
-    line-height: 15px;
-    padding-left: 3px;
-    width: 20px;
-    left: 0px;
+    width: 12px;
   }
 
   &:hover {

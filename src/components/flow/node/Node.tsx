@@ -207,9 +207,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     });
   }
 
-  private handleRemoval(event: React.MouseEvent<HTMLElement>): void {
-    event.preventDefault();
-    event.stopPropagation();
+  private handleRemoval(): void {
     this.props.removeNode(this.props.renderNode.node);
   }
 

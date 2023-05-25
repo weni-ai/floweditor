@@ -81,11 +81,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
     });
   }
 
-  public handleRemoval(event: React.MouseEvent<HTMLDivElement>): void {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+  public handleRemoval(): void {
     this.props.removeAction(this.props.renderNode.node.uuid, this.props.action);
   }
 

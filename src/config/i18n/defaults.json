@@ -149,7 +149,8 @@
     "create_message": "Create Message",
     "download": "Download",
     "ok": "Ok",
-    "close": "Close"
+    "close": "Close",
+    "confirm": "Confirm"
   },
   "contact_statuses": {
     "active": "Active",
@@ -410,7 +411,9 @@
     "header": "Recent Messages",
     "header_empty": "No Recent Messages"
   },
-  "removal_confirmation": "Remove?",
+  "removal_confirmation": "Do you want to delete the card?",
+  "removal_confirmation_description": "Are you sure you want to delete the card?",
+  "action_cannot_be_reversed": "This action cannot be reversed.",
   "revisions": {
     "current": "current",
     "header": "Revisions",

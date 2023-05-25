@@ -149,7 +149,8 @@
     "create_message": "Crear mensaje",
     "download": "Descargar",
     "ok": "Ok",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "confirm": "Confirme"
   },
   "contact_statuses": {
     "active": "Activo",
@@ -401,7 +402,9 @@
     "header": "Mensajes Recientes",
     "header_empty": "No hay mensajes recientes"
   },
-  "removal_confirmation": "Remover?",
+  "removal_confirmation": "¿Quieres borrar la tarjeta?",
+  "removal_confirmation_description": "¿Estás seguro de que quieres borrar la tarjeta?",
+  "action_cannot_be_reversed": "Esta acción no tiene marcha atrás.",
   "revisions": {
     "current": "actual",
     "header": "Revisiones",
