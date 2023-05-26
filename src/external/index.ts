@@ -351,6 +351,11 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
         endpoint: getURL(endpoints.external_services),
         type: AssetType.ExternalService,
         items: {}
+      },
+      completion: {
+        endpoint: getURL(endpoints.completion),
+        type: AssetType.Expression,
+        items: {}
       }
     };
 
