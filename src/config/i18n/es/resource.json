@@ -354,7 +354,8 @@
     "webhook_header_name": "Nombre de Cabecera",
     "webhook_header_summary": "A continuación agregue las cabeceras adicionales que le gustaría enviar junto con su solicitud.",
     "webhook_help": "Si su servidor responde con JSON, cada propiedad se agregará al flujo.",
-    "whatsapp_warning": "Enviar mensajes a través de un canal de WhatsApp requiere que se use una plantilla si no ha recibido un mensaje de un contacto en las últimas 24 horas. Configurar una plantilla para usar en WhatsApp es especialmente importante para el primer mensaje de su flujo."
+    "whatsapp_warning": "Enviar mensajes a través de un canal de WhatsApp requiere que se use una plantilla si no ha recibido un mensaje de un contacto en las últimas 24 horas. Configurar una plantilla para usar en WhatsApp es especialmente importante para el primer mensaje de su flujo.",
+    "file": "Archivo"
   },
   "issues": {
     "header": "Problemas de Flujo",

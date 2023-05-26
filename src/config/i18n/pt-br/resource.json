@@ -357,7 +357,8 @@
     "webhook_header_name": "Nome do Cabeçalho",
     "webhook_header_summary": "Adicione abaixo os cabeçalhos adicionais que você gostaria de enviar juntamente com sua solicitação.",
     "webhook_help": "Se seu servidor responder com JSON, cada propriedade será adicionada ao Fluxo.",
-    "whatsapp_warning": "O envio de mensagens por um canal do WhatsApp exige que um template seja usado se você não recebeu uma mensagem de um contato nas últimas 24 horas. A configuração de template para uso no WhatsApp é especialmente importante para a primeira mensagem no seu fluxo."
+    "whatsapp_warning": "O envio de mensagens por um canal do WhatsApp exige que um template seja usado se você não recebeu uma mensagem de um contato nas últimas 24 horas. A configuração de template para uso no WhatsApp é especialmente importante para a primeira mensagem no seu fluxo.",
+    "file": "Arquivo"
   },
   "issues": {
     "header": "Problemas no Fluxo",

@@ -1,39 +1,38 @@
-.type_choice {
+@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
+
+.label {
+  margin-bottom: $unnnic-spacing-stack-nano;
+}
+
+.url_attachment_container {
+  margin-top: $unnnic-spacing-stack-sm;
+}
+
+.url_attachment {
+  display: flex;
+  align-items: center;
+
+  .upload {
+    
+  }
+
+  .remove_upload {
     display: inline-block;
-    width: 180px;
   }
-  
-  .url_attachment {
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-  
-    .upload {
-      
-    }
-  
-    .remove_upload {
-      margin-left: 8px;
-      margin-top: 4px;
-      display: inline-block;
-    }
-  
-    .url {
-      display: inline-block;
-      margin-left: 8px;
-      width: 329px;
-      margin-right: 10px;
-      input {
-        vertical-align: top;
-        height: 28px !important;
-        margin-top: -11px;
-        width: 100%;
-        font-size: 12px;
-      }
-    }
-  
-    .remove {
-      margin-top: 4px;
-    }
+
+  .remove {
+    width: $unnnic-spacing-inline-sm;
   }
-  
+
+  .type_choice {
+    flex: 1;
+  }
+
+  .url {
+    display: inline-block;
+    width: 329px;
+    margin-left: $unnnic-spacing-inline-sm;
+    margin-right: $unnnic-spacing-inline-xs;
+    flex: 1;
+  }
+}

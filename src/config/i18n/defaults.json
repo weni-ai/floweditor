@@ -363,7 +363,8 @@
     "webhook_header_name": "Header Name",
     "webhook_header_summary": "Add any additional headers below that you would like to send along with your request.",
     "webhook_help": "If your server responds with JSON, each property will be added to the Flow.",
-    "whatsapp_warning": "Sending messages over a WhatsApp channel requires that a template be used if you have not received a message from a contact in the last 24 hours. Setting a template to use over WhatsApp is especially important for the first message in your flow."
+    "whatsapp_warning": "Sending messages over a WhatsApp channel requires that a template be used if you have not received a message from a contact in the last 24 hours. Setting a template to use over WhatsApp is especially important for the first message in your flow.",
+    "file": "File"
   },
   "issues": {
     "header": "Flow Issues",
