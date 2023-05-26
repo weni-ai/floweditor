@@ -480,7 +480,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
           >
             {this.renderArguments()}
           </div>
-          <div>
+          <div className={styles.category_wrapper}>
             <div className={styles.categorize_as} data-draggable={true}>
               {i18n.t('forms.categorize_as', 'categorize as')}
             </div>

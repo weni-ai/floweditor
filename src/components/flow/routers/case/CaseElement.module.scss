@@ -43,7 +43,7 @@ input:focus {
   }
 
   .choice {
-    width: 185px;
+    flex: 1;
     margin-top: 20px;
   }
 
@@ -69,6 +69,10 @@ input:focus {
     width: 184px;
     margin-top: 20px;
 
+    input {
+      width: 100% !important;
+    }
+
     input[name='intent'] {
       width: 105px;
     }
@@ -88,6 +92,10 @@ input:focus {
   .category {
     position: relative;
     padding: 1px 0;
+  }
+
+  .category_wrapper {
+    flex: 1;
   }
 
   &:hover {
