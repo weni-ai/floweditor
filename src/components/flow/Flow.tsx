@@ -1,5 +1,5 @@
+import ReactDOM from 'react-dom';
 import { react as bindCallbacks } from 'auto-bind';
-import Button, { ButtonTypes } from 'components/button/Button';
 import { Canvas } from 'components/canvas/Canvas';
 import { CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
 import Node from 'components/flow/node/Node';
@@ -49,16 +49,32 @@ import {
 } from 'utils';
 import Debug from 'utils/debug';
 
-import styles from './Flow.module.scss';
-import { Trans } from 'react-i18next';
 import { PopTabType } from 'config/interfaces';
 import i18n from 'config/i18n';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicModalNext } from '@weni/unnnic-system';
 
 declare global {
   interface Window {
     fe: any;
   }
 }
+
+const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+        position: 'relative',
+        zIndex: 10e2
+      }
+    }
+  }
+});
 
 export interface FlowStoreProps {
   ghostNode: RenderNode;
@@ -124,6 +140,12 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     config: fakePropType
   };
 
+  public componentDidUpdate(): void {
+    if (this.getNodes().length === 0) {
+      this.getEmptyFlow();
+    }
+  }
+
   constructor(props: FlowStoreProps, context: ConfigProviderContext) {
     super(props, context);
 
@@ -141,6 +163,10 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     });
 
     timeStart('Loaded Flow');
+
+    if (this.getNodes().length === 0) {
+      this.getEmptyFlow();
+    }
   }
 
   private ghostRef(ref: any): any {
@@ -351,30 +377,43 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     });
   }
 
-  private getEmptyFlow(): JSX.Element {
-    return (
-      <div key="create_node" className={styles.empty_flow}>
-        <Trans i18nKey="empty_flow_message">
-          <h1>Let's get started</h1>
-          <div>
-            We recommend starting your flow by sending a message. This message will be sent to
-            anybody right after they join the flow. This is your chance to send a single message or
-            ask them a question.
-          </div>
-        </Trans>
+  private getEmptyFlow(): void {
+    let getStartedModalEl: HTMLDivElement = document.querySelector('#get-started-modal');
 
-        <Button
-          type={ButtonTypes.secondary}
-          name={i18n.t('buttons.create_message', 'Create Message')}
-          onClick={() => {
+    if (!getStartedModalEl) {
+      getStartedModalEl = document.createElement('div');
+      getStartedModalEl.setAttribute('id', 'get-started-modal');
+      document.body.appendChild(getStartedModalEl);
+    }
+
+    if (getStartedModalEl.hasChildNodes()) {
+      return;
+    }
+
+    ReactDOM.render(
+      <UnnnicModalNext
+        type="alert"
+        scheme="feedback-yellow"
+        title={i18n.t('empty_flow_message_title', "Let's get started")}
+        description={i18n.t(
+          'empty_flow_message_description',
+          'We recommend starting your flow by sending a message. This message will be sent to anybody right after they join the flow. This is your chance to send a single message or ask them a question.'
+        )}
+        actionPrimaryLabel={i18n.t('buttons.create_message', 'Create Message')}
+        actionPrimaryButtonType="secondary"
+        on={{
+          'click-action-primary': () => {
             const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
             this.props.onOpenNodeEditor({
               originalNode: emptyNode,
               originalAction: emptyNode.node.actions[0]
             });
-          }}
-        />
-      </div>
+
+            ReactDOM.unmountComponentAtNode(getStartedModalEl);
+          }
+        }}
+      />,
+      getStartedModalEl
     );
   }
 
@@ -405,7 +444,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
     return (
       <div>
-        {nodes.length === 0 ? this.getEmptyFlow() : <>{this.getSimulator()}</>}
+        {nodes.length !== 0 ? <>{this.getSimulator()}</> : null}
         {this.getNodeEditor()}
 
         <Canvas
