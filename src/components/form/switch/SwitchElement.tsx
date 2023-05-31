@@ -77,7 +77,7 @@ export default class SwitchElement extends React.Component<SwitchElementProps, S
         {renderIf(isRealValue(this.props.description))(
           <div
             data-spec={descSpecId}
-            className={`u font secondary body-sm color-neutral-cloudy ${styles.description}`}
+            className={`u font secondary body-md color-neutral-cleanest ${styles.description}`}
           >
             {this.props.description}
           </div>
