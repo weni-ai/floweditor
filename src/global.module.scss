@@ -10,10 +10,10 @@
 :global {
   body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-family: $unnnic-font-family-secondary, sans-serif;
+    font-weight: $unnnic-font-weight-regular;
     font-size: 14px;
-    color: #777;
+    color: $unnnic-color-neutral-cloudy;
 
     #editor-container {
       height: 100%;
