@@ -35,7 +35,6 @@
     outline-color: $unnnic-color-feedback-blue;
   }
 
-  &.call_classifier,
   &.call_resthook {
     outline-color: $unnnic-color-aux-orange;
   }
@@ -43,7 +42,8 @@
   &.call_external_service,
   &.has_intent,
   &.has_top_intent,
-  &.call_webhook {
+  &.call_webhook,
+  &.call_classifier {
     outline-width: 0;
   }
 

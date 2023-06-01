@@ -114,6 +114,10 @@
     .save_result {
       background: #fff;
       padding: 10px 10px;
+
+      &.border_top {
+        border-top: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+      }
       // width: inherit;
       .result_name {
         font-weight: 500;
