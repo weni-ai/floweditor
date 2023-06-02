@@ -83,6 +83,7 @@ interface TembaSelectState {
   showingExpressionsSelection: boolean;
   availableExpressions?: CompletionOption[];
   currentQuery?: string;
+  selectKey: number;
 }
 
 export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectState> {
@@ -92,7 +93,9 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     super(props);
 
     this.state = {
-      showingExpressionsSelection: false
+      showingExpressionsSelection: false,
+      availableOptions: [],
+      selectKey: 0
     };
 
     bindCallbacks(this, {
@@ -121,6 +124,8 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
   }
 
   public getValue(option: any): string {
+    if (!option) return null;
+
     return option[this.props.valueKey || 'value'] || this.getName(option);
   }
 
@@ -157,7 +162,8 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
       }
       const { data } = await axios.get(endpoint);
 
-      this.setAvailableOptions(data.results);
+      let options = (this.props.options || []).concat(data.results || []);
+      this.setAvailableOptions(options);
     }
   }
 
@@ -171,10 +177,29 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
   }
 
   private setAvailableOptions(options: any[]) {
-    this.setState({ availableOptions: options });
+    const remmapedOptions = options.map((option: any) => {
+      const newOption = { ...option, value: this.getValue(option) };
+      if (!newOption[this.props.nameKey]) {
+        newOption[this.props.nameKey] = this.getName(option);
+      }
+      if (!newOption[this.props.valueKey]) {
+        newOption[this.props.valueKey] = this.getValue(option);
+      }
+      return newOption;
+    });
+
+    this.setState({ availableOptions: remmapedOptions, selectKey: this.state.selectKey + 1 });
   }
 
   private handleSelectChange(event: any): void {
+    if (!Array.isArray(event)) {
+      event = [
+        this.state.availableOptions.find((option: any) => {
+          return this.getValue(option) === event;
+        })
+      ];
+    }
+
     let resolved = event;
 
     if (!this.props.assets && !this.props.tags && !this.props.endpoint) {
@@ -208,6 +233,8 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
         this.props.onChange(resolved[0]);
       }
     }
+
+    this.fetchOptions();
   }
 
   private handleTagCreation(event: any) {
@@ -243,10 +270,30 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
       }
     }
 
-    this.addSelection({ name: event, value: event });
+    const selection: any = { name: event, value: event };
+    if (event.indexOf('@') > -1) {
+      selection.expression = true;
+    }
+    this.addSelection(selection);
+  }
+
+  private isInOptions(options: any[], search: string) {
+    const loweredSearch = search.toLowerCase();
+
+    return options.find((option: any) => {
+      const value = this.getValue(option).toLowerCase();
+      const name = this.getName(option).toLowerCase();
+      return value.includes(loweredSearch) || name.includes(loweredSearch);
+    });
   }
 
   handleSearch(event: string) {
+    if (!event || !event.trim()) {
+      this.fetchOptions();
+      this.setState({ showingExpressionsSelection: false, availableExpressions: [] });
+      return;
+    }
+
     if (this.props.expressions && event.indexOf('@') > -1) {
       this.setState({ showingExpressionsSelection: true });
 
@@ -276,7 +323,21 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
       });
     } else {
       this.setState({ showingExpressionsSelection: false });
-      this.fetchOptions(event);
+      debounce(this.fetchOptions, 300, async () => {
+        await this.fetchOptions(event);
+
+        if (this.props.createPrefix) {
+          let isInOptions = this.isInOptions(this.state.availableOptions, event);
+
+          if (!isInOptions) {
+            this.setState({
+              showingExpressionsSelection: false,
+              availableExpressions: [],
+              availableOptions: []
+            });
+          }
+        }
+      });
     }
   }
 
@@ -340,9 +401,9 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
   public async componentDidMount(): Promise<void> {
     if (this.props.options && this.props.options.length) {
       this.setAvailableOptions(this.props.options);
-    } else {
-      this.fetchOptions();
     }
+
+    this.fetchOptions();
 
     if (this.props.expressions) {
       this.fetchExpressions();
@@ -360,8 +421,30 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     const isTagComponent = !!this.props.tags || !!this.props.createPrefix;
     const isMultiComponent = !!this.props.multi;
 
-    return (
-      <>
+    let selectInput: any;
+    if (!isTagComponent && !isMultiComponent && !this.props.searchable) {
+      selectInput = (
+        <ElUnnnicSelect
+          value={this.getValue(this.props.value)}
+          on={{
+            input: this.handleSelectChange
+          }}
+          placeholder={this.props.placeholder}
+          size={this.props.style || TembaSelectStyle.small}
+          disabled={this.props.disabled}
+          key={this.state.selectKey}
+        >
+          {this.state.availableOptions.map((option: any, index: number) => {
+            return (
+              <option key={index} value={this.getValue(option)} label={this.getName(option)}>
+                {this.getName(option)}
+              </option>
+            );
+          })}
+        </ElUnnnicSelect>
+      );
+    } else {
+      selectInput = (
         <ElUnnnicAutocompleteSelect
           ref={(ele: any) => {
             this.selectInputRef = ele;
@@ -383,20 +466,28 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
               : this.state.availableOptions) || []
           }
           textKey={this.props.nameKey || 'name'}
+          getTextFunc={this.props.getName}
           valueKey={
             (this.state.showingExpressionsSelection ? 'value' : this.props.valueKey) || 'value'
           }
           descriptionKey={this.state.showingExpressionsSelection ? 'summary' : ''}
           closeOnSelect={true}
+          clearOnCreate={!!this.props.tags}
           multi={isMultiComponent}
           tag={isTagComponent && !this.state.showingExpressionsSelection}
           tagCreateLabel={this.props.createPrefix || ''}
-          showValue={!isTagComponent && !isMultiComponent}
+          showValue={!this.props.tags && !isMultiComponent}
           hasIconRight={isTagComponent}
           hasIconLeft={!isTagComponent}
         />
+      );
+    }
 
-        {isTagComponent || isMultiComponent ? (
+    return (
+      <>
+        {selectInput}
+
+        {this.props.tags || isMultiComponent ? (
           <div className={styles['selected-list-container']}>
             {selectedArray.map((selected, index) => {
               return (

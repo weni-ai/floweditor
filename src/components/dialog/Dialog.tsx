@@ -260,13 +260,15 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
 
         <div className={styles.footer}>
           <div className={styles.buttons}>
-            {renderIf(leftButtons.length > 0)(
-              <div className={styles.left_buttons}>{leftButtons}</div>
-            )}
             {renderIf(this.props.gutter != null)(
               <div className={styles.gutter}>{this.props.gutter}</div>
             )}
-            <div className={styles.right_buttons}>{rightButtons}</div>
+            <div className={styles.buttons_wrapper}>
+              {renderIf(leftButtons.length > 0)(
+                <div className={styles.left_buttons}>{leftButtons}</div>
+              )}
+              <div className={styles.right_buttons}>{rightButtons}</div>
+            </div>
           </div>
         </div>
       </div>

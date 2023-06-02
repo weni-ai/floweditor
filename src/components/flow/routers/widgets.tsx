@@ -18,7 +18,7 @@ export const createResultNameInput = (
       maxLength={64}
       value={value}
       onChange={onChange}
-      toggleText={i18n.t('forms.save_as_title', 'Save as..')}
+      toggleText={i18n.t('forms.save_as_title', 'Save as')}
       helpText={
         <Trans i18nKey="forms.result_name_help" values={{ resultFormat: `@results${snaked}` }}>
           By naming the result, you can reference it later using [[resultFormat]]

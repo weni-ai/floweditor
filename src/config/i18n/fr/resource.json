@@ -277,7 +277,7 @@
     "result_value_help": "The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))",
     "rules": "règles",
     "save_as": "Save as",
-    "save_as_title": "Enregistrer sous..",
+    "save_as_title": "Enregistrer sous",
     "save_result_name": "Nom du résultat",
     "select_channel": "Select the channel to use for this contact",
     "select_contacts": "Select Contacts",
@@ -481,7 +481,7 @@
     "msg_wait": "Attendre une réponse",
     "prompt": {
       "message": "Enter message",
-      "restart": "Press home to start again"
+      "restart": "Press refresh to start again"
     },
     "removed_from_group": "Removed from",
     "resthook_called": "Événement de flux déclenché \"[[resthook]]\"",

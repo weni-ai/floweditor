@@ -2,8 +2,8 @@
 
 .editor {
   position: relative;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-family: $unnnic-font-family-secondary, sans-serif;
+  font-weight: $unnnic-font-weight-regular;
   color: $text_color; // height: 100vh;
   // height: 100%;
   // width: 100%;
