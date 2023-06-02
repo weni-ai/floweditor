@@ -1,17 +1,32 @@
 @import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
 
 .optional_text_input {
-  padding: $unnnic-spacing-stack-md 0px 0px 0px;
   font-family: $unnnic-font-family-secondary;
   font-weight: $unnnic-font-weight-regular;
   font-size: $unnnic-font-size-body-md;
   line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
   color: $unnnic-color-neutral-cleanest;
 
-
   .toggle_link {
+    display: flex;
+    gap: $unnnic-spacing-inline-xs;
+    align-items: center;
     cursor: pointer;
-    text-decoration: underline;
-    font-size: 11px;
+
+    font-family: $unnnic-font-family-secondary;
+    font-weight: $unnnic-font-weight-regular;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+    color: $unnnic-color-neutral-cloudy;
   }
+
+  .expanded {
+    margin-bottom: $unnnic-spacing-stack-sm;
+  }
+}
+
+.toggle {
+  border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+  border-radius: $unnnic-border-radius-sm;
+  padding: $unnnic-spacing-inset-xs;
 }
