@@ -95,6 +95,8 @@ export interface Asset {
   references?: Reference[];
   isNew?: boolean;
   content?: any;
+
+  key?: string;
 }
 
 export const REMOVE_VALUE_ASSET = {

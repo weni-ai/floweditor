@@ -414,7 +414,7 @@ export const typeConfigList: Type[] = [
   {
     type: Types.call_external_service,
     name: i18n.t('actions.external_service.name', 'Call External Service'),
-    description: i18n.t('actions.external_service.description', 'Call a external service'),
+    description: i18n.t('actions.external_service.description', 'Call an external service'),
     form: ExternalServiceRouterForm,
     localization: RouterLocalizationForm,
     localizeableKeys: ['exists'],

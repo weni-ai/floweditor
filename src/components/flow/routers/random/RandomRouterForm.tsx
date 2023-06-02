@@ -142,7 +142,9 @@ export default class RandomRouterForm extends React.Component<
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <div className={styles.options}>
-          <div className={styles.lead_in}>Split them randomly into one of</div>
+          <div className={`${styles.lead_in} u font secondary body-md color-neutral-cloudy`}>
+            Split them randomly into one of
+          </div>
           <div className={styles.bucket_select}>
             <SelectElement
               key="buckets_select"

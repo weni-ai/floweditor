@@ -21,72 +21,64 @@ input:focus {
   margin-top: 4px;
 }
 
-.kase.has_intent,
-.kase.has_top_intent {
-  .choice {
-    width: 150px;
-  }
-
-  .multi_operand {
-    width: 202px;
-  }
-}
-
 .kase {
   display: flex;
   align-items: center;
   user-select: none;
-  margin-bottom: 5px;
+
+  display: flex;
+  align-items: center;
+  column-gap: $unnnic-spacing-inline-xs;
 
   .form_group {
     margin: 0;
   }
 
+  .operator_container {
+    flex: 0.70;
+    display: flex;
+    align-items: center;
+    column-gap: $unnnic-spacing-inline-xs;
+  }
+
+  .categorize_as_container {
+    flex: 0.30;
+    display: flex;
+    align-items: center;
+    column-gap: $unnnic-spacing-inline-xs;
+    white-space: nowrap;
+  }
+
   .choice {
     flex: 1;
-    margin-top: 20px;
+
+    :global {
+      .unnnic-select {
+        max-width: 100%;
+      }
+    }
   }
 
   .single_operand {
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-    margin-left: $spacing;
-    margin-right: $spacing;
-    margin-top: 20px;
-    padding: 1px 0;
+    flex: 1;
 
-    input {
-      width: 170px;
+    :global {
+      input {
+        width: 100% !important;
+      }
     }
   }
 
   .multi_operand {
-    display: inline-flex;
+    flex: 1;
+    display: flex;
     align-items: center;
-    margin-left: $spacing;
-    margin-right: $spacing;
-    width: 184px;
-    margin-top: 20px;
 
-    input {
-      width: 100% !important;
+    :global {
+      input {
+        width: 100% !important;
+      }
     }
-
-    input[name='intent'] {
-      width: 105px;
-    }
-
-    input[name='confidence'] {
-      // width: 40px;
-      padding: 10px 6px !important;
-    }
-  }
-
-  .categorize_as {
-    font-size: 12px;
-    line-height: 20px;
-    position: relative;
   }
 
   .category {
@@ -138,7 +130,6 @@ input:focus {
   color: #aaa;
   padding-top: 20px;
   float: right;
-  opacity: 0;
   line-height: 12px;
   cursor: pointer;
   margin-left: 4px;

@@ -221,7 +221,7 @@
     "delimiter": "Delimiter",
     "district": "District",
     "email_recipient_name": "Recipient",
-    "email_recipient_placeholder": "To",
+    "email_recipient_placeholder": "Email",
     "email_recipient_prompt": "Enter email address",
     "enter_a_body": "Enter a body",
     "enter_a_url": "Enter a URL",
@@ -285,7 +285,7 @@
     "result_value_help": "The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))",
     "rules": "rules",
     "save_as": "Save as",
-    "save_as_title": "Save as..",
+    "save_as_title": "Save as",
     "save_result_name": "Result Name",
     "select_channel": "Select the channel to use for this contact",
     "select_contacts": "Select Contacts",
@@ -514,7 +514,7 @@
     "msg_wait": "Waiting for reply",
     "prompt": {
       "message": "Enter message",
-      "restart": "Press home to start again"
+      "restart": "Press refresh to start again"
     },
     "removed_from_group": "Removed from",
     "resthook_called": "Triggered flow event \"[[resthook]]\"",

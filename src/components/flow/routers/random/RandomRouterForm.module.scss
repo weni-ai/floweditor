@@ -2,29 +2,21 @@
 
 .options {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  row-gap: $unnnic-spacing-stack-nano;
 }
 
 .lead_in {
+  display: block;
 }
-
-.bucket_select {
-  width: 154px;
-  margin-left: 10px;
-  margin-top: -5px;
-}
-
-$bucketSpacing: 6px;
 
 .bucket_list {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px 0;
-  margin: 0px -$bucketSpacing;
-  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: $unnnic-spacing-stack-sm;
+  gap: $unnnic-spacing-stack-sm $unnnic-spacing-inline-sm;
 }
 
 .bucket_name {
   flex: 1 1 120px;
-  margin: $bucketSpacing;
 }

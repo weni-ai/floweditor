@@ -29,6 +29,7 @@ export enum TextInputSizes {
 export interface TextInputProps extends FormElementProps {
   entry?: StringEntry;
   __className?: string;
+  error?: string;
   count?: Count;
   textarea?: boolean;
   placeholder?: string;
@@ -41,14 +42,24 @@ export interface TextInputProps extends FormElementProps {
   size?: TextInputSizes;
   onChange?: (value: string, name?: string) => void;
   onBlur?: (event: React.ChangeEvent) => void;
+  onKeyPressEnter?: () => void;
+  onKeyDown?: () => void;
 }
 
 const UnnnicTextArea = applyVueInReact(unnnicTextArea);
-const UnnnicInputNext = applyVueInReact(unnnicInputNext);
+const UnnnicInputNext = applyVueInReact(unnnicInputNext, {
+  vue: {
+    componentWrapAttrs: {
+      'unnnic-input': 'true'
+    }
+  }
+});
 const UnnnicIcon = applyVueInReact(unnnicIcon);
 const UnnnicToolTip = applyVueInReact(unnnicToolTip);
 
 export default class TextInputElement extends React.Component<TextInputProps> {
+  private inputItem: React.RefObject<any> = React.createRef();
+
   constructor(props: TextInputProps) {
     super(props);
 
@@ -67,7 +78,21 @@ export default class TextInputElement extends React.Component<TextInputProps> {
   }
 
   public componentDidMount(): void {
-    // return this.props.focus && this.focusInput();
+    if (this.inputItem.current) {
+      this.inputItem.current.vueRef.$el.querySelector('input').addEventListener('keydown', () => {
+        if (this.props.onKeyDown) {
+          this.props.onKeyDown();
+        }
+      });
+
+      this.inputItem.current.vueRef.$el
+        .querySelector('input')
+        .addEventListener('keypress', (event: React.KeyboardEvent<HTMLInputElement>) => {
+          if (event.key === 'Enter' && this.props.onKeyPressEnter) {
+            this.props.onKeyPressEnter();
+          }
+        });
+    }
   }
 
   public handleChange({ currentTarget: { value } }: any): void {
@@ -128,6 +153,8 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           placeholder={this.props.placeholder}
           size={this.props.size || TextInputSizes.sm}
           message={typeof this.props.helpText === 'string' ? this.props.helpText : undefined}
+          ref={this.inputItem}
+          error={this.props.error}
         />
 
         {typeof this.props.helpText !== 'string' ? this.props.helpText : null}

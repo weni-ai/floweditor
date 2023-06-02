@@ -13,13 +13,21 @@ import styles from './SendEmailForm.module.scss';
 import i18n from 'config/i18n';
 import { renderIssues } from '../helpers';
 
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+import { applyVueInReact } from 'vuereact-combined';
+
 const EMAIL_PATTERN = /\S+@\S+\.\S+/;
 
 export interface SendEmailFormState extends FormState {
+  recipient: StringEntry;
+  recipientError: string;
   recipients: StringArrayEntry;
   subject: StringEntry;
   body: StringEntry;
 }
+
+const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 export default class SendEmailForm extends React.Component<ActionFormProps, SendEmailFormState> {
   constructor(props: ActionFormProps) {
@@ -29,6 +37,32 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
 
     bindCallbacks(this, {
       include: [/^on/, /^handle/]
+    });
+  }
+
+  public onAddRecipient(): void {
+    if (!this.handleCheckValid(this.state.recipient.value)) {
+      this.setState({
+        recipientError: i18n.t('forms.email_recipient_prompt', 'Enter email address')
+      });
+      return;
+    }
+
+    if (this.state.recipients.value.find(email => email === this.state.recipient.value)) {
+      return;
+    }
+
+    this.setState({
+      recipient: { value: '' },
+      recipients: { value: [...this.state.recipients.value, this.state.recipient.value] }
+    });
+  }
+
+  public onRemoveRecipient(indexToRemove: number): void {
+    this.setState({
+      recipients: {
+        value: this.state.recipients.value.filter((recipient, index) => index !== indexToRemove)
+      }
     });
   }
 
@@ -112,16 +146,40 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <div className={styles.ele}>
-          <TaggingElement
+          <TextInputElement
+            __className={styles.subject}
             name={i18n.t('forms.email_recipient_name', 'Recipient')}
-            placeholder={i18n.t('forms.email_recipient_placeholder', 'To')}
-            prompt={i18n.t('forms.email_recipient_prompt', 'Enter email address')}
-            onCheckValid={this.handleCheckValid}
-            entry={this.state.recipients}
-            onChange={this.handleRecipientsChanged}
-            createPrompt={''}
+            placeholder={i18n.t('forms.email_recipient_placeholder', 'Email')}
+            onChange={value => this.setState({ recipient: { value } })}
+            entry={this.state.recipient}
             showLabel
+            onKeyDown={() =>
+              this.setState({
+                recipientError: undefined
+              })
+            }
+            onKeyPressEnter={this.onAddRecipient}
+            error={this.state.recipientError}
           />
+
+          <div className={styles.pills}>
+            {this.state.recipients.value.map((recipient, index) => (
+              <div
+                key={index}
+                className={`${styles.pill} u font secondary body-md color-neutral-darkest`}
+              >
+                {recipient}
+                <UnnnicIcon
+                  icon="close-1"
+                  size="xs"
+                  scheme="neutral-darkest"
+                  clickable
+                  onClick={() => this.onRemoveRecipient(index)}
+                />
+              </div>
+            ))}
+          </div>
+
           <TextInputElement
             __className={styles.subject}
             name={i18n.t('forms.subject', 'Subject')}

@@ -6,7 +6,7 @@ const STATE_STRING_LITERAL = 4; // a string literal which could contain )
 const STATE_ESCAPED_PREFIX = 5; // a '@' prefix preceded by another '@'
 const STATE_IGNORE = 6;
 
-interface Expression {
+export interface Expression {
   start: number;
   end: number;
   text: string;

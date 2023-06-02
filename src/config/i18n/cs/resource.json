@@ -277,7 +277,7 @@
     "result_value_help": "Hodnota, která se má pro tento výsledek uložit, nebo prázdná, která jej vymaže. Můžete použít výrazy, např: @(title(input))",
     "rules": "pravidla",
     "save_as": "Uložit jako",
-    "save_as_title": "Uložit jako..",
+    "save_as_title": "Uložit jako",
     "save_result_name": "Název výsledku",
     "select_channel": "Vyberte kanál, který chcete použít pro tento kontakt",
     "select_contacts": "Vyberte kontakty",

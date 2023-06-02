@@ -7,6 +7,12 @@ import { Trans } from 'react-i18next';
 import shared from 'components/shared.module.scss';
 import { showHelpArticle } from 'external';
 import { IssueProps } from '../props';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 export const renderIssues = (issueProps: IssueProps): JSX.Element => {
   const { issues, helpArticles } = issueProps;
@@ -16,7 +22,7 @@ export const renderIssues = (issueProps: IssueProps): JSX.Element => {
 
   return (
     <div style={{ padding: '10px 0px' }}>
-      {issues.map((issue: FlowIssue, num: Number) => {
+      {issues.map((issue: FlowIssue, num: number) => {
         const key = issue.node_uuid + issue.action_uuid + num;
         return (
           <div
@@ -148,7 +154,7 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
     case AssetType.Group:
       assetBody = (
         <>
-          <span className={`${shared.node_group} fe-group`} />
+          <UnnnicIcon icon="single-neutral-actions-1" size="avatar-nano" scheme="neutral-dark" />
           {asset.name}
         </>
       );
@@ -156,7 +162,7 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
     case AssetType.Label:
       assetBody = (
         <>
-          <span className={`${shared.node_label} fe-label`} />
+          <UnnnicIcon icon="bookmark-tag-1" size="avatar-nano" scheme="neutral-dark" />
           {asset.name}
         </>
       );
@@ -164,7 +170,7 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
     case AssetType.Flow:
       assetBody = (
         <>
-          <span className={`${shared.node_label} fe-split`} />
+          <UnnnicIcon icon="hierarchy-3-2" size="avatar-nano" scheme="neutral-dark" />
           <a
             onMouseDown={(e: any) => {
               e.preventDefault();

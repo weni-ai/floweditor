@@ -54,23 +54,27 @@ export interface LocalizationFormProps extends IssueProps {
 export const NAME_PROPERTY: Asset = {
   name: titleCase(ContactProperties.Name),
   id: ContactProperties.Name,
-  type: AssetType.ContactProperty
+  type: AssetType.ContactProperty,
+  key: ContactProperties.Name
 };
 
 export const CHANNEL_PROPERTY: Asset = {
   name: titleCase(ContactProperties.Channel),
   id: ContactProperties.Channel,
-  type: AssetType.ContactProperty
+  type: AssetType.ContactProperty,
+  key: ContactProperties.Channel
 };
 
 export const LANGUAGE_PROPERTY: Asset = {
   name: titleCase(ContactProperties.Language),
   id: ContactProperties.Language,
-  type: AssetType.ContactProperty
+  type: AssetType.ContactProperty,
+  key: ContactProperties.Language
 };
 
 export const STATUS_PROPERTY: Asset = {
   name: titleCase(ContactProperties.Status),
   id: ContactProperties.Status,
-  type: AssetType.ContactProperty
+  type: AssetType.ContactProperty,
+  key: ContactProperties.Status
 };

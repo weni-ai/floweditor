@@ -84,8 +84,10 @@
 }
 
 .help_text {
-  color: #ccc;
-  font-size: 11px;
+  color: $unnnic-color-neutral-cloudy;
+  font-family: $unnnic-font-family-secondary;
+  font-weight: $unnnic-font-weight-regular;
+  font-size: $unnnic-font-size-body-md;
   padding-top: 6px;
   padding-bottom: 10px;
 }
