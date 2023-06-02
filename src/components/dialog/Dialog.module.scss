@@ -84,20 +84,28 @@ $curvature: 10px;
   }
 
   .footer {
-    padding: $unnnic-spacing-stack-giant $unnnic-spacing-inline-md $unnnic-spacing-stack-lg $unnnic-spacing-inline-md;
+    padding: $unnnic-spacing-stack-sm $unnnic-spacing-inline-md $unnnic-spacing-stack-lg $unnnic-spacing-inline-md;
     border-bottom-left-radius: $curvature;
     border-bottom-right-radius: $curvature;
 
     align-items: center;
 
     .gutter {
-      vertical-align: baseline;
-      margin-right: auto;
+      border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+      border-radius: $unnnic-border-radius-sm;
+      padding: $unnnic-spacing-inset-xs;
     }
 
     .buttons {
       display: flex;
+      flex-direction: column;
       column-gap: $unnnic-spacing-inline-lg;
+    }
+
+    .buttons_wrapper {
+      display: flex;
+      column-gap: $unnnic-spacing-inline-lg;
+      margin-top: $unnnic-spacing-stack-giant;
     }
 
     .left_buttons, .right_buttons {
