@@ -28,21 +28,21 @@ input:focus {
 
   display: flex;
   align-items: center;
-  column-gap: $unnnic-spacing-inline-sm;
+  column-gap: $unnnic-spacing-inline-xs;
 
   .form_group {
     margin: 0;
   }
 
   .operator_container {
-    flex: 0.56;
+    flex: 0.70;
     display: flex;
     align-items: center;
     column-gap: $unnnic-spacing-inline-xs;
   }
 
   .categorize_as_container {
-    flex: 0.44;
+    flex: 0.30;
     display: flex;
     align-items: center;
     column-gap: $unnnic-spacing-inline-xs;
@@ -84,6 +84,10 @@ input:focus {
   .category {
     position: relative;
     padding: 1px 0;
+  }
+
+  .category_wrapper {
+    flex: 1;
   }
 
   &:hover {
