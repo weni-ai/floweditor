@@ -64,12 +64,20 @@
     }
 
     &.split_by_external_service,
-    &.split_by_intent,
     &.split_by_webhook {
       outline-color: $unnnic-color-aux-orange;
     }
 
-    &.wait_for_response,
+    &.split_by_intent,
+    &.split_by_run_result
+    &.split_by_run_result_delimited,
+    &.split_by_random,
+    &.split_by_groups,
+    &.split_by_expression,
+    &.split_by_scheme {
+      outline-color: $unnnic-color-neutral-cleanest;
+    }
+
     &.wait_for_menu,
     &.wait_for_dial,
     &.wait_for_digits,
@@ -78,6 +86,10 @@
     &.wait_for_location,
     &.wait_for_image {
       outline-color: $unnnic-color-feedback-blue;
+    }
+
+    &.wait_for_response {
+      outline-color: #005888;
     }
   }
 

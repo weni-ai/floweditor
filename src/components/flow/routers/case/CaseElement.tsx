@@ -17,6 +17,23 @@ import { initializeForm, validateCase } from './helpers';
 import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
 import i18n from 'config/i18n';
 import TembaSelect, { TembaSelectStyle } from 'temba/TembaSelect';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      'data-draggable': 'true',
+      style: {
+        all: ''
+      }
+    }
+  }
+});
 
 export interface CaseElementProps {
   kase: Case;
@@ -461,26 +478,33 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
           className={`${styles.kase} ${styles[this.state.operatorConfig.type]}`}
           data-draggable={true}
         >
-          <span className={`fe-chevrons-expand ${styles.dnd_icon}`} data-draggable={true} />
-          <div className={styles.choice}>
-            <TembaSelect
-              name={i18n.t('forms.operator', 'operator')}
-              style={TembaSelectStyle.small}
-              options={this.getOperators()}
-              nameKey="verboseName"
-              valueKey="type"
-              onChange={this.handleOperatorChanged}
-              value={this.state.operatorConfig}
-            ></TembaSelect>
+          <div className={styles.operator_container}>
+            <span data-draggable={true}>
+              <UnnnicIcon icon="move-expand-vertical-1" size="sm" scheme="neutral-cloudy" />
+            </span>
+
+            <div className={styles.choice}>
+              <TembaSelect
+                name={i18n.t('forms.operator', 'operator')}
+                style={TembaSelectStyle.small}
+                options={this.getOperators()}
+                nameKey="verboseName"
+                valueKey="type"
+                onChange={this.handleOperatorChanged}
+                value={this.state.operatorConfig}
+              ></TembaSelect>
+            </div>
+            <div
+              className={
+                this.state.operatorConfig.operands > 1
+                  ? styles.multi_operand
+                  : styles.single_operand
+              }
+            >
+              {this.renderArguments()}
+            </div>
           </div>
-          <div
-            className={
-              this.state.operatorConfig.operands > 1 ? styles.multi_operand : styles.single_operand
-            }
-          >
-            {this.renderArguments()}
-          </div>
-          <div>
+          <div className={styles.categorize_as_container}>
             <div className={styles.categorize_as} data-draggable={true}>
               {i18n.t('forms.categorize_as', 'categorize as')}
             </div>
@@ -494,12 +518,19 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 showInvalid={hasErrorType(this.state.errors, [/category/])}
               />
             </div>
+
+            <span data-draggable={true}>
+              <UnnnicIcon
+                className={styles.remove_icon}
+                data-testid={'remove-case-' + this.props.kase.uuid}
+                icon="delete-1-1"
+                size="sm"
+                scheme="neutral-cloudy"
+                onClick={this.handleRemoveClicked}
+                clickable
+              />
+            </span>
           </div>
-          <span
-            data-testid={'remove-case-' + this.props.kase.uuid}
-            className={`fe-x ${styles.remove_icon}`}
-            onClick={this.handleRemoveClicked}
-          />
         </div>
       </FormElement>
     );
