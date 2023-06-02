@@ -43,7 +43,7 @@ exports[`ExternalServiceRouterForm render should render 1`] = `
                 namekey="description"
                 searchable="true"
                 valuekey="type"
-                values="[{\\"type\\":\\"call_external_service\\",\\"name\\":\\"Call External Service\\",\\"description\\":\\"Call a external service\\",\\"localizeableKeys\\":[\\"exists\\"],\\"aliases\\":[\\"split_by_external_service\\"],\\"filter\\":\\"external_service\\"}]"
+                values="[{\\"type\\":\\"call_external_service\\",\\"name\\":\\"Call External Service\\",\\"description\\":\\"Call an external service\\",\\"localizeableKeys\\":[\\"exists\\"],\\"aliases\\":[\\"split_by_external_service\\"],\\"filter\\":\\"external_service\\"}]"
               />
             </div>
           </div>
@@ -176,7 +176,7 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
                 namekey="description"
                 searchable="true"
                 valuekey="type"
-                values="[{\\"type\\":\\"call_external_service\\",\\"name\\":\\"Call External Service\\",\\"description\\":\\"Call a external service\\",\\"localizeableKeys\\":[\\"exists\\"],\\"aliases\\":[\\"split_by_external_service\\"],\\"filter\\":\\"external_service\\"}]"
+                values="[{\\"type\\":\\"call_external_service\\",\\"name\\":\\"Call External Service\\",\\"description\\":\\"Call an external service\\",\\"localizeableKeys\\":[\\"exists\\"],\\"aliases\\":[\\"split_by_external_service\\"],\\"filter\\":\\"external_service\\"}]"
               />
             </div>
           </div>

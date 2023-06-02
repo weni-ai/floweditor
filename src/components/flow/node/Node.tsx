@@ -334,7 +334,10 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       const resultName = getResultName(this.props.renderNode.node);
       if (resultName) {
         summary = (
-          <div {...this.events} className={styles.save_result}>
+          <div
+            {...this.events}
+            className={`${styles.save_result} ${actionList && styles.border_top}`}
+          >
             <div className={styles.save_as}>{i18n.t('forms.save_as', 'Save as')} </div>
             <div className={styles.result_name}>{resultName}</div>
           </div>
