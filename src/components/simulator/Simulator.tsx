@@ -4,6 +4,7 @@ import { getTime, isMessage, isMT } from 'components/simulator/helpers';
 import LogEvent, { EventProps } from 'components/simulator/LogEvent';
 import ContextExplorer from './ContextExplorer';
 import styles from 'components/simulator/Simulator.module.scss';
+import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
 import { ConfigProviderContext, fakePropType } from 'config/ConfigProvider';
 import { getURL } from 'external';
 import { FlowDefinition, Group, Wait } from 'flowTypes';
@@ -20,6 +21,22 @@ import { DispatchWithState, MergeEditorState } from 'store/thunks';
 import { createUUID } from 'utils';
 import { PopTabType } from 'config/interfaces';
 import i18n from 'config/i18n';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: ''
+      }
+    }
+  }
+});
 
 const MESSAGE_DELAY_MS = 200;
 
@@ -110,6 +127,8 @@ interface SimulatorState {
 
   // are we at a wait hint, ie, a forced attachment
   waitingForHint: boolean;
+
+  simulatorStyle: string;
 }
 
 interface Contact {
@@ -187,7 +206,8 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
       drawerOpen: false,
       attachmentOptionsVisible: false,
       contextExplorerVisible: false,
-      sprinting: false
+      sprinting: false,
+      simulatorStyle: 'default'
     };
     this.bottomRef = this.bottomRef.bind(this);
     this.inputBoxRef = this.inputBoxRef.bind(this);
@@ -895,15 +915,29 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     );
   }
 
-  private getAttachmentButton(icon: string, drawerType: DrawerType): JSX.Element {
-    return (
-      <div
-        className={icon}
-        onClick={() => {
-          this.showAttachmentDrawer(drawerType);
-        }}
-      />
-    );
+  private getAttachmentButton(icon: string, drawerType: DrawerType, type: string): JSX.Element {
+    if (type === 'unnnic') {
+      return (
+        <UnnnicIcon
+          className={styles.icon}
+          icon={icon}
+          size="md"
+          scheme="neutral-cloudy"
+          onClick={() => {
+            this.showAttachmentDrawer(drawerType);
+          }}
+        />
+      );
+    } else {
+      return (
+        <div
+          className={icon}
+          onClick={() => {
+            this.showAttachmentDrawer(drawerType);
+          }}
+        />
+      );
+    }
   }
 
   private getAttachmentOptions(): JSX.Element {
@@ -916,10 +950,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         }
       >
         <div className="fe-x" onClick={this.handleHideAttachments} />
-        {this.getAttachmentButton('fe-picture2', DrawerType.images)}
-        {this.getAttachmentButton('fe-video', DrawerType.videos)}
-        {this.getAttachmentButton('fe-mic', DrawerType.audio)}
-        {this.getAttachmentButton('fe-map-marker', DrawerType.location)}
+        {this.getAttachmentButton('video-file-mp4-1', DrawerType.videos, 'unnnic')}
+        {this.getAttachmentButton('common-file-horizontal-image-1', DrawerType.images, 'unnnic')}
+        {this.getAttachmentButton('microphone', DrawerType.audio, 'unnnic')}
+        {this.getAttachmentButton('fe-map-marker', DrawerType.location, 'default')}
       </div>
     );
   }
@@ -961,10 +995,34 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     }
   }
 
+  private handleSimulatorStyleChange() {
+    this.setState({
+      simulatorStyle: this.state.simulatorStyle === 'default' ? 'whatsapp' : 'default'
+    });
+  }
+
+  private preloadBgImage() {
+    var img = new Image();
+    img.src =
+      'https://user-images.githubusercontent.com/30026625/242899357-3b7dd272-b2bf-4ac4-a4e1-aba24556a9f2.png';
+  }
+
+  public componentDidMount() {
+    this.preloadBgImage();
+  }
+
   public render(): ReactNode {
+    const simStyle = this.state.simulatorStyle === 'whatsapp' ? styles.whatsapp : '';
+
     const messages: JSX.Element[] = [];
     for (const event of this.state.events) {
-      messages.push(<LogEvent {...event} key={event.type + '_' + String(event.created_on)} />);
+      messages.push(
+        <LogEvent
+          {...event}
+          key={event.type + '_' + String(event.created_on)}
+          style={this.state.simulatorStyle === 'whatsapp' ? 'whatsapp' : ''}
+        />
+      );
     }
 
     const hidden = this.props.popped && this.props.popped !== PopTabType.SIMULATOR;
@@ -987,10 +1045,19 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
             {this.getContextExplorer()}
 
             <div className={styles.screen}>
-              <div className={styles.header}>
+              <div className={styles.header + ' ' + simStyle}>
+                <div className={styles.reset}>
+                  <UnnnicIcon
+                    icon="button-refresh-arrow-1"
+                    size="md"
+                    scheme="neutral-snow"
+                    onClick={this.onReset}
+                  />
+                </div>
+
                 <div className={styles.close + ' fe-x'} onClick={this.onToggle} />
               </div>
-              <div className={styles.messages} style={messagesStyle}>
+              <div className={styles.messages + ' ' + simStyle} style={messagesStyle}>
                 {messages}
                 <div
                   id="bottom"
@@ -1007,12 +1074,14 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                   placeholder={
                     this.state.active
                       ? i18n.t('simulator.prompt.message', 'Enter message')
-                      : i18n.t('simulator.prompt.restart', 'Press home to start again')
+                      : i18n.t('simulator.prompt.restart', 'Press refresh to start again')
                   }
                 />
                 <div className={styles.show_attachments_button}>
-                  <div
-                    className="fe-paperclip"
+                  <UnnnicIcon
+                    icon="attachment"
+                    size="sm"
+                    scheme="neutral-cloudy"
                     onClick={() => {
                       this.setState({
                         attachmentOptionsVisible: true,
@@ -1024,7 +1093,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
               </div>
               {this.getAttachmentOptions()}
               {this.getDrawer()}
-              <div className={styles.footer}>
+              <div className={styles.footer + ' ' + simStyle}>
                 {!this.state.contextExplorerVisible ? (
                   <div className={styles.show_context_button}>
                     <div
@@ -1053,12 +1122,15 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                   </div>
                 )}
 
-                <span
-                  className={
-                    styles.reset + ' ' + (this.state.active ? styles.active : styles.inactive)
-                  }
-                  onClick={this.onReset}
-                />
+                <div className={styles.whatsapp_switch}>
+                  <span>WhatsApp</span>
+                  <SwitchElement
+                    name="WhatsApp"
+                    checked={this.state.simulatorStyle === 'whatsapp'}
+                    onChange={this.handleSimulatorStyleChange}
+                    size={SwitchSizes.small}
+                  />
+                </div>
               </div>
             </div>
           </div>

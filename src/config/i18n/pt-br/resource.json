@@ -281,7 +281,7 @@
     "result_value_help": "O valor a ser salvo para este resultado ou vazio para apagá-lo. Você pode usar expressões, por exemplo: @(title(input))",
     "rules": "regras",
     "save_as": "Salvar como",
-    "save_as_title": "Salve como..",
+    "save_as_title": "Salve como",
     "save_result_name": "Nome do Resultado",
     "select_channel": "Selecione o canal à ser utilizado para esse contato",
     "select_contacts": "Selecione os Contatos",
