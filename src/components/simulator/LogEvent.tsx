@@ -8,8 +8,24 @@ import * as React from 'react';
 import { createUUID, getURNPath } from 'utils';
 import i18n from 'config/i18n';
 import { Trans } from 'react-i18next';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
 
 const MAP_THUMB = require('static/images/map.jpg');
+
+const UnnnicIcon = applyVueInReact(unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: ''
+      }
+    }
+  }
+});
 
 interface MsgProps {
   text: string;
@@ -72,6 +88,7 @@ export interface EventProps {
   classifier?: { uuid: string; name: string };
   ticketer?: { uuid: string; name: string };
   ticket?: { topic: Topic; body: string };
+  style?: string;
 }
 
 interface FlowEvent {
@@ -101,18 +118,18 @@ const getStyleForDirection = (direction: Direction): string => {
   return direction === Direction.MO ? styles.msg_received : styles.send_msg;
 };
 
-const renderError = (error: string): JSX.Element => {
+const renderError = (error: string, style?: string): JSX.Element => {
   return (
-    <div className={styles.error}>
+    <div className={styles.error + ' ' + style}>
       <span>Error: {error}</span>
     </div>
   );
 };
 
-const renderInfo = (info: string): JSX.Element => {
+const renderInfo = (info: string, style?: string): JSX.Element => {
   // localized text can have html entities, so this isn't as dangerous as it looks
   return (
-    <div key={info} className={styles.info}>
+    <div key={info} className={styles.info + ' ' + style}>
       <span dangerouslySetInnerHTML={{ __html: info }} />
     </div>
   );
@@ -175,26 +192,43 @@ const renderAttachment = (attachment: string): JSX.Element => {
   return null;
 };
 
-const renderMessage = (text: string, attachments: string[], direction: Direction): JSX.Element => {
+const renderMessage = (
+  text: string,
+  attachments: string[],
+  direction: Direction,
+  style?: string
+): JSX.Element => {
   const attaches = attachments || [];
 
   return (
-    <div className={getStyleForDirection(direction)}>
-      {attaches.map((attachment: string) => (
-        <div key={text + attachment}>{renderAttachment(attachment)}</div>
-      ))}
-      {text
-        ? text
-            .trim()
-            .split('\n')
-            .map((item, key) => {
-              return (
-                <div key={createUUID()} className={styles.msg_text}>
-                  {item}
-                </div>
-              );
-            })
-        : null}
+    <div className={getStyleForDirection(direction) + ' ' + style}>
+      {direction === Direction.MT && style !== styles.whatsapp ? (
+        <div className={styles.profile_image}>
+          <UnnnicIcon
+            className={styles.profile_icon}
+            icon="single-neutral-2"
+            size="xs"
+            scheme="neutral-snow"
+          />
+        </div>
+      ) : null}
+      <div>
+        {attaches.map((attachment: string) => (
+          <div key={text + attachment}>{renderAttachment(attachment)}</div>
+        ))}
+        {text
+          ? text
+              .trim()
+              .split('\n')
+              .map((item, key) => {
+                return (
+                  <div key={createUUID()} className={styles.msg_text}>
+                    {item}
+                  </div>
+                );
+              })
+          : null}
+      </div>
     </div>
   );
 };
@@ -243,14 +277,15 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
       );
     }
 
-    return renderInfo(parts.join('. '));
+    return renderInfo(parts.join('. '), this.props.style);
   }
 
   private renderLabelsAdded(): JSX.Element {
     let info = i18n.t('simulator.input_labels_added', 'Message labeled with');
 
     return renderInfo(
-      info + ' ' + this.renderValueList(this.props.labels.map(label => label.name))
+      info + ' ' + this.renderValueList(this.props.labels.map(label => label.name)),
+      this.props.style
     );
   }
 
@@ -284,9 +319,9 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
     );
   }
 
-  private renderHTTPRequest(headerClass: Types, log: WebRequestLog): JSX.Element {
+  private renderHTTPRequest(headerClass: Types, log: WebRequestLog, style?: string): JSX.Element {
     return this.renderClickable(
-      <div className={styles.info + ' ' + styles.webhook}>
+      <div className={styles.info + ' ' + styles.webhook + ' ' + style}>
         <span>Called {log.url}</span>
       </div>,
       <Dialog
@@ -303,31 +338,31 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
     );
   }
 
-  private renderWebhook(headerClass: Types): JSX.Element {
+  private renderWebhook(headerClass: Types, style?: string): JSX.Element {
     if (this.props.http_logs) {
       return (
         <>
           {this.props.http_logs.map((log: WebRequestLog) => {
-            return this.renderHTTPRequest(headerClass, log);
+            return this.renderHTTPRequest(headerClass, log, style);
           })}
         </>
       );
     }
     if (this.props.url) {
-      return this.renderHTTPRequest(headerClass, this.props as WebRequestLog);
+      return this.renderHTTPRequest(headerClass, this.props as WebRequestLog, style);
     }
   }
 
   private renderClickable(element: JSX.Element, details: JSX.Element): JSX.Element {
     return (
-      <div key={this.props.step_uuid}>
-        <div className={styles.has_detail} onClick={this.showDetails}>
+      <>
+        <div className={styles.has_detail} onClick={this.showDetails} key={this.props.step_uuid}>
           {element}
         </div>
         <Modal show={this.state.detailsVisible}>
           <div className={styles.event_viewer}>{details}</div>
         </Modal>
-      </div>
+      </>
     );
   }
 
@@ -361,27 +396,43 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
   }
 
   public renderLogEvent(): JSX.Element {
+    const logStyle = this.props.style === 'whatsapp' ? styles.whatsapp : '';
     if (this.props.extra && this.props.extra.intents) {
       return this.renderClassification();
     }
 
     switch (this.props.type) {
       case 'msg_received':
-        return renderMessage(this.props.msg.text, this.props.msg.attachments, Direction.MO);
+        return renderMessage(
+          this.props.msg.text,
+          this.props.msg.attachments,
+          Direction.MO,
+          logStyle
+        );
       case 'msg_created':
-        return renderMessage(this.props.msg.text, this.props.msg.attachments, Direction.MT);
+        return renderMessage(
+          this.props.msg.text,
+          this.props.msg.attachments,
+          Direction.MT,
+          logStyle
+        );
       case 'ivr_created':
-        return renderMessage(this.props.msg.text, this.props.msg.attachments, Direction.MT);
+        return renderMessage(
+          this.props.msg.text,
+          this.props.msg.attachments,
+          Direction.MT,
+          logStyle
+        );
       case 'error':
-        return renderError(this.props.text);
+        return renderError(this.props.text, logStyle);
       case 'failure':
-        return renderError(this.props.text);
+        return renderError(this.props.text, logStyle);
       case 'msg_wait':
-        return renderInfo(i18n.t('simulator.msg_wait', 'Waiting for reply'));
+        return renderInfo(i18n.t('simulator.msg_wait', 'Waiting for reply'), logStyle);
       case 'contact_groups_changed':
         return this.renderGroupsChanged();
       case 'contact_urns_changed':
-        return renderInfo('Added a URN for the contact');
+        return renderInfo('Added a URN for the contact', logStyle);
       case 'contact_field_changed':
         const value = this.getValue(this.props.value);
         if (value !== '') {
@@ -389,13 +440,15 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
             i18n.t('simulator.contact_field_changed', 'Set contact "[[field]]" to "[[value]]"', {
               field: this.props.field.name,
               value: this.getValue(this.props.value)
-            })
+            }),
+            logStyle
           );
         } else {
           return renderInfo(
             i18n.t('simulator.contact_field_cleared', 'Cleared contact "[[field]]"', {
               field: this.props.field.name
-            })
+            }),
+            logStyle
           );
         }
       case 'run_result_changed':
@@ -403,13 +456,15 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
           i18n.t('simulator.run_result_changed', 'Set result "[[field]]" to "[[value]]"', {
             field: this.props.name,
             value: this.getValue(this.props.value)
-          })
+          }),
+          logStyle
         );
       case 'contact_name_changed':
         return renderInfo(
           i18n.t('simulator.contact_name_changed', 'Set contact name to "[[name]]"', {
             name: this.props.name
-          })
+          }),
+          logStyle
         );
       case 'email_created':
       case 'email_sent':
@@ -418,47 +473,53 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
         return renderMessage(
           this.props.translations[this.props.base_language].text,
           this.props.msg ? this.props.msg.attachments : [],
-          Direction.MT
+          Direction.MT,
+          logStyle
         );
       case 'resthook_called':
         return renderInfo(
           i18n.t('simulator.resthook_called', 'Triggered flow event "[[resthook]]"', {
             resthook: this.props.resthook
-          })
+          }),
+          logStyle
         );
       case 'service_called':
         if (this.props.service === 'classifier') {
-          return this.renderWebhook(Types.call_classifier);
+          return this.renderWebhook(Types.call_classifier, logStyle);
         }
         break;
       case 'webhook_called':
-        return this.renderWebhook(Types.call_webhook);
+        return this.renderWebhook(Types.call_webhook, logStyle);
       case 'flow_entered':
         return renderInfo(
           i18n.t('simulator.flow_entered', 'Entered flow "[[flow]]"', {
             flow: this.props.flow.name
-          })
+          }),
+          logStyle
         );
       case 'session_triggered':
         return renderInfo(
           i18n.t('simulator.session_triggered', 'Started somebody else in "[[flow]]"', {
             flow: this.props.flow.name
-          })
+          }),
+          logStyle
         );
       case 'contact_language_changed':
         return renderInfo(
           i18n.t('simulator.contact_language_changed', 'Set preferred language to "[[language]]"', {
             language: this.props.language
-          })
+          }),
+          logStyle
         );
       case 'contact_status_changed':
         return renderInfo(
           i18n.t('simulator.contact_status_changed', 'Set status to "[[status]]"', {
             status: this.props.status
-          })
+          }),
+          logStyle
         );
       case 'info':
-        return renderInfo(this.props.text);
+        return renderInfo(this.props.text, logStyle);
       case 'input_labels_added':
         return this.renderLabelsAdded();
       case 'environment_refreshed':
@@ -467,13 +528,14 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
         return renderInfo(
           i18n.t('simulator.ticket_opened', 'Ticket opened with topic "[[topic]]"', {
             topic: this.props.ticket.topic.name
-          })
+          }),
+          logStyle
         );
       case 'airtime_transferred':
         const event = this.props as AirtimeTransferEvent;
         return (
           <>
-            {this.renderWebhook(Types.transfer_airtime)}
+            {this.renderWebhook(Types.transfer_airtime, logStyle)}
 
             {renderInfo(
               i18n.t(
@@ -484,7 +546,8 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
                   currency: event.currency,
                   recipient: getURNPath(event.recipient)
                 }
-              )
+              ),
+              logStyle
             )}
           </>
         );
