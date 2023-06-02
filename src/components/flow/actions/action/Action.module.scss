@@ -7,21 +7,32 @@
   overflow: hidden;
   outline: $unnnic-color-neutral-cleanest solid $unnnic-border-width-thin;
 
-  &.send_msg,
+  &.send_msg {
+    outline-color: $unnnic-color-feedback-blue;
+  }
+
+  &.send_broadcast,
+  &.send_email {
+    outline-color: #8E5EA7;
+  }
+
   &.say_msg,
   &.add_contact_urn,
   &.set_contact_channel,
   &.set_contact_field,
   &.set_contact_name,
   &.set_contact_language,
-  &.set_contact_status {
+  &.set_contact_status,
+  &.add_input_labels {
     outline-color: $unnnic-color-aux-blue;
   }
 
-  &.add_contact_groups,
-  &.remove_contact_groups,
-  &.send_email {
-    outline-color: $unnnic-color-aux-purple;
+  &.add_contact_groups {
+    outline-color: #43309C;
+  }
+
+  &.remove_contact_groups {
+    outline-color: $unnnic-color-neutral-cloudy;
   }
 
   &.wait_for_menu,
@@ -46,15 +57,13 @@
     outline-width: 0;
   }
 
-  &.enter_flow {
+  &.enter_flow,
+  &.start_session {
     outline-color: $unnnic-color-aux-pink;
   }
-  
-  &.set_contact_field,
-  &.set_contact_name,
-  &.set_contact_language,
-  &.set_contact_status {
-    outline-color: $unnnic-color-aux-pink;
+
+  &.set_run_result {
+    outline-color: $unnnic-color-feedback-green;
   }
 
   &:first-child {

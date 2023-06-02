@@ -63,9 +63,12 @@
       outline-color: $unnnic-color-aux-pink;
     }
 
-    &.split_by_external_service,
     &.split_by_webhook {
-      outline-color: $unnnic-color-aux-orange;
+      outline-color: $unnnic-color-feedback-yellow;
+    }
+
+    &.split_by_external_service {
+      outline-color: $unnnic-color-aux-purple;
     }
 
     &.split_by_intent,
