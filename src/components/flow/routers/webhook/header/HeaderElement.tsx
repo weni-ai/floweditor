@@ -32,6 +32,7 @@ export interface HeaderElementProps {
 interface HeaderElementState {
   name: StringEntry;
   value: StringEntry;
+  errors: string[];
 }
 
 export const headerContainerSpecId = 'header-container';
@@ -58,7 +59,8 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
 
     this.state = {
       name: { value: name },
-      value: { value }
+      value: { value },
+      errors: []
     };
 
     bindCallbacks(this, {
@@ -76,7 +78,12 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
 
   private handleChangeName(value: string): void {
     const name = validate(i18n.t('forms.header_name', 'Header name'), value, [HeaderName]);
-    this.setState({ name: { value: name.value } }, () =>
+
+    const errors = getAllErrors(this.state.value)
+      .concat(getAllErrors(name))
+      .map(({ message }) => message);
+
+    this.setState({ name: { value: name.value }, errors }, () =>
       this.props.onChange(
         this.getHeader(),
         getAllErrors(this.state.value).concat(getAllErrors(name))
@@ -128,6 +135,7 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
               name={NAME_PLACEHOLDER}
               onChange={this.handleChangeName}
               entry={this.state.name}
+              error={this.state.errors.length ? this.state.errors.join(', ') : undefined}
             />
           </div>
           <div className={styles.header_value} data-spec={valueConatainerSpecId}>
@@ -137,6 +145,7 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
               onChange={this.handleChangeValue}
               entry={this.state.value}
               autocomplete={true}
+              error={this.state.errors.length ? '' : undefined}
             />
           </div>
           {removeIco}
