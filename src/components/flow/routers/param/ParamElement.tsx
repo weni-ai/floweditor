@@ -1,6 +1,6 @@
 import { react as bindCallbacks } from 'auto-bind';
 import FormElement from 'components/form/FormElement';
-import TextInputElement, { TextInputStyle } from 'components/form/textinput/TextInputElement';
+import TextInputElement from 'components/form/textinput/TextInputElement';
 import { ServiceCallParam, ParamFilter } from 'config/interfaces';
 import * as React from 'react';
 import { FormState, StringEntry } from 'store/nodeEditor';
@@ -129,7 +129,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
               name={i18n.t('forms.service_call_param', 'Service Call Param')}
               placeholder={i18n.t('forms.param', 'param')}
               style={TembaSelectStyle.small}
-              options={this.props.availableParams}
+              options={[this.state.currentParam].concat(this.props.availableParams)}
               nameKey="verboseName"
               valueKey="name"
               disabled={disableParam || disableFilter}
@@ -143,7 +143,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
                 name={i18n.t('forms.service_call_param_filter', 'Service Call Param Filter')}
                 placeholder={i18n.t('forms.filter', 'filter')}
                 style={TembaSelectStyle.small}
-                options={paramFilters}
+                options={[this.state.currentFilter].concat(paramFilters)}
                 nameKey="verboseName"
                 valueKey="name"
                 onChange={this.handleFilterChange}
@@ -157,7 +157,6 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
           <div className={styles.data}>
             <TextInputElement
               name={i18n.t('forms.service_call_param_data', 'Service Call Param Data')}
-              style={TextInputStyle.small}
               onChange={this.handleDataChange}
               entry={this.state.data}
               autocomplete={true}

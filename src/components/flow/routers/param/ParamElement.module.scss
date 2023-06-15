@@ -7,11 +7,6 @@ $spacing: 10px;
   margin-bottom: 0px;
 }
 
-textarea:focus,
-input:focus {
-  outline: none;
-}
-
 .divider {
   padding-left: $spacing;
   padding-right: $spacing;
@@ -48,10 +43,6 @@ input:focus {
     margin-left: $spacing;
 
     width: 184px;
-
-    input {
-      width: 170px;
-    }
   }
 
   .multi_operand {
@@ -59,14 +50,6 @@ input:focus {
     align-items: center;
     margin-left: $spacing;
     width: 184px;
-
-    input[name='intent'] {
-      width: 105px;
-    }
-
-    input[name='confidence'] {
-      padding: 10px 6px !important;
-    }
   }
 
   .categorize_as {
@@ -94,20 +77,9 @@ input:focus {
     }
   }
 
-  input {
-    padding: 6px 7px;
-    height: 29px !important;
-    margin-bottom: -4px;
-    font-size: 13px !important;
-  }
-
   .relative_date {
     display: inline-block;
     width: 50px;
-
-    input {
-      width: 50px;
-    }
   }
 }
 
