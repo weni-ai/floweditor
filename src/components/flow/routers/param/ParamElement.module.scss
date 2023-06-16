@@ -22,17 +22,16 @@ $spacing: 10px;
 
 .param {
   display: flex;
-  gap: 8px;
+  gap: $unnnic-spacing-inline-sm;
   align-items: center;
   user-select: none;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
 
   .form_group {
     margin: 0;
   }
 
   .choice {
-    width: 160px;
     flex: 1;
   }
 
@@ -99,7 +98,6 @@ $spacing: 10px;
   color: #aaa;
   padding-top: 8px;
   float: right;
-  opacity: 0;
   line-height: 12px;
   cursor: pointer;
   margin-left: 2px;

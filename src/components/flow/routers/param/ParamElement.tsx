@@ -10,6 +10,30 @@ import { initializeForm, validateParam } from './helpers';
 import i18n from 'config/i18n';
 import TembaSelect, { TembaSelectStyle } from 'temba/TembaSelect';
 import { ParamProps } from '../paramlist/ParamList';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      'data-draggable': 'true',
+      style: {
+        all: ''
+      }
+    },
+
+    slotWrapAttrs: {
+      'data-draggable': 'true',
+      style: {
+        all: ''
+      }
+    }
+  }
+});
 
 export interface ParamElementProps {
   initialParam: ParamProps;
@@ -119,12 +143,14 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
         kaseError={this.state.errors.length > 0}
       >
         <div className={`${styles.param}`} data-draggable={canArrange}>
-          {canArrange ? (
-            <span className={`fe-chevrons-expand ${styles.dnd_icon}`} data-draggable={canArrange} />
-          ) : (
-            <div className={styles.order_filler}></div>
-          )}
-          <div className={styles.choice}>
+          <UnnnicIcon
+            icon="move-expand-vertical-1"
+            size="sm"
+            scheme={canArrange ? 'neutral-cloudy' : 'neutral-clean'}
+            data-draggable={canArrange}
+          />
+
+          <div className={styles.choice} style={{ flex: showFilter ? 1 : 2 }}>
             <TembaSelect
               name={i18n.t('forms.service_call_param', 'Service Call Param')}
               placeholder={i18n.t('forms.param', 'param')}
@@ -162,15 +188,15 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
               autocomplete={true}
             />
           </div>
-          {!disableParam && !disableFilter ? (
-            <span
-              data-testid={'remove-param-' + this.props.initialParam.uuid}
-              className={`fe-x ${styles.remove_icon}`}
-              onClick={this.handleRemoveClicked}
-            />
-          ) : (
-            <div className={styles.remove_filler}></div>
-          )}
+          <UnnnicIcon
+            className={styles.remove_icon}
+            data-testid={'remove-param-' + this.props.initialParam.uuid}
+            icon="delete-1-1"
+            size="sm"
+            scheme={!disableParam && !disableFilter ? 'neutral-cloudy' : 'neutral-clean'}
+            onClick={!disableParam && !disableFilter ? this.handleRemoveClicked : () => {}}
+            clickable
+          />
         </div>
       </FormElement>
     );
