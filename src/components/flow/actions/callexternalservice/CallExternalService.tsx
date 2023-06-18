@@ -7,7 +7,7 @@ const CallExternalServiceComp: React.SFC<CallExternalService> = (
   context: any
 ): JSX.Element => {
   return (
-    <div style={{ fontSize: '80%' }}>
+    <div style={{ fontSize: '80%', textAlign: 'center' }}>
       <span style={{ fontWeight: 400 }}>{external_service.name}</span>
     </div>
   );

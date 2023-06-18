@@ -128,7 +128,8 @@
 
     .save_result {
       background: #fff;
-      padding: 10px 10px;
+      padding: 10px 0px;
+      text-align: center;
 
       &.border_top {
         border-top: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
