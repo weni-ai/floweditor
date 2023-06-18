@@ -9,6 +9,7 @@ import { Asset } from 'store/flowContext';
 import { mergeForm } from 'store/nodeEditor';
 import { shouldRequireIf, validate } from 'store/validators';
 
+import styles from './AddGroupsForm.module.scss';
 import { ChangeGroupsFormState, excludeDynamicGroups, labelSpecId } from '../helpers';
 import { initializeForm, stateToAction } from './helpers';
 import i18n from 'config/i18n';
@@ -69,7 +70,12 @@ export default class AddGroupsForm extends React.Component<ActionFormProps, Chan
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
+      <Dialog
+        className={styles.dialog}
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <p data-spec={labelSpecId}>
           <Trans i18nKey="forms.add_groups_summary">Select the groups to add the contact to.</Trans>

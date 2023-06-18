@@ -157,7 +157,7 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
           };
 
           return (
-            <Modal width="600px" show={true}>
+            <Modal width="fit-content" show={true}>
               <LocalizationForm {...{ ...localizationProps }} />
             </Modal>
           );
@@ -180,7 +180,7 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
       };
 
       return (
-        <Modal width="600px" show={true}>
+        <Modal width="fit-content" show={true}>
           <Form {...{ ...formProps }} />
         </Modal>
       );

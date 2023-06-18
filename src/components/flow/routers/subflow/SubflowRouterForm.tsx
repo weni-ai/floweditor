@@ -186,6 +186,7 @@ export default class SubflowRouterForm extends React.PureComponent<
         headerClass={typeConfig.type}
         buttons={this.getButtons()}
         tabs={tabs}
+        className={styles.dialog}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <AssetSelector
