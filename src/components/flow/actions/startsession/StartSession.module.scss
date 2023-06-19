@@ -2,18 +2,15 @@
 
 .node {
   .to {
-    padding: 3px $action_padding;
+    padding: 3px 0px;
     background: $light_gray_2;
     width: 100%;
     font-size: 11px;
+    display: flex;
+    justify-content: center;
 
     .name {
       font-size: 10px;
-    }
-
-    .icon {
-      font-size: 9px;
-      padding-right: 2px;
     }
 
     .more {
@@ -29,5 +26,11 @@
 }
 
 .flow {
-  padding: $action_padding;
+  padding: $action_padding 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  margin-right: 6px;
 }

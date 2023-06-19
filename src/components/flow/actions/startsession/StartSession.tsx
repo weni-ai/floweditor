@@ -5,6 +5,11 @@ import * as React from 'react';
 import { AssetType } from 'store/flowContext';
 
 import styles from './StartSession.module.scss';
+import { applyVueInReact } from 'vuereact-combined';
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 const MAX_TO_SHOW = 5;
 
@@ -16,6 +21,7 @@ export const StartSessionComp: React.SFC<StartSession> = (
   return (
     <div className={styles.node}>
       <div className={styles.to}>
+        <UnnnicIcon icon="single-neutral-actions-1" size="xs" className={styles.icon} />
         {action.create_contact
           ? 'Create a new contact'
           : action.contact_query
@@ -23,6 +29,7 @@ export const StartSessionComp: React.SFC<StartSession> = (
           : renderAssetList(recipients, MAX_TO_SHOW, context.config.endpoints)}
       </div>
       <div className={styles.flow}>
+        <UnnnicIcon icon="hierarchy-3-2" size="xs" className={styles.icon} />
         {renderAsset(
           {
             name: action.flow.name,

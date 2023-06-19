@@ -4,6 +4,10 @@
   margin-bottom: 15px;
 }
 
+.icon {
+  margin-right: 6px;
+}
+
 .node {
   .to {
     padding: 3px $action_padding;
@@ -12,6 +16,8 @@
 
     .name {
       font-size: 10px;
+      display: flex;
+      justify-content: center;
     }
 
     .icon {
