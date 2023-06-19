@@ -420,14 +420,15 @@ export const createOpenTicketNode = (subject: string, body: string): FlowNode =>
   return createWebhookNode(action, true);
 };
 
-export const createCallExternalServiceNode = (type: string): FlowNode => {
+export const createCallExternalServiceNode = (type: string, actions: any[]): FlowNode => {
   const action: CallExternalService = {
     uuid: utils.createUUID(),
     type: Types.call_external_service,
     external_service: {
       uuid: '4b154b06-5ecd-43d9-afca-39738e6859d7',
       name: `${type} dummy project`,
-      external_service_type: type
+      external_service_type: type,
+      actions: actions
     },
     call: null,
     params: [],
