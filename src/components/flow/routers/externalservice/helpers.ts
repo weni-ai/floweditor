@@ -1,5 +1,5 @@
 import { createWebhookBasedNode } from 'components/flow/routers/helpers';
-import { ServiceCall, Types } from 'config/interfaces';
+import { Types } from 'config/interfaces';
 import { getType } from 'config/typeConfigs';
 import { CallExternalService } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';

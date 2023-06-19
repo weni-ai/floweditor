@@ -1,5 +1,5 @@
 import { react as bindCallbacks } from 'auto-bind';
-import { FormEntry, FormState, StringEntry, mergeForm } from 'store/nodeEditor';
+import { FormEntry, FormState, mergeForm } from 'store/nodeEditor';
 import * as React from 'react';
 import styles from './ParamList.module.scss';
 import { ServiceCallParam } from 'config/interfaces';
@@ -109,6 +109,8 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
       if (typeof paramProps.data.value === 'string' || paramProps.data.value instanceof String) {
         return paramProps.data.value.trim().length === 0;
       }
+
+      return false;
     });
 
     return emptyParam !== undefined;
