@@ -230,11 +230,12 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
                       {currentTab.name}
                       {currentTab.checked ? (
                         <UnnnicIcon
-                          icon="check-2"
+                          icon="check-square-1"
                           size="sm"
                           scheme={
                             this.state.activeTab + 1 === index ? 'neutral-clean' : 'neutral-darkest'
                           }
+                          className={styles.icon}
                         />
                       ) : null}
                     </>
