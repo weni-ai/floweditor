@@ -153,16 +153,22 @@ export const renderUpload = (
         />
       </div>
       <div className={styles.url}>
-        <span className={styles.upload}>
-          <Pill
-            icon="fe-download"
-            text="Download"
-            large={true}
-            onClick={() => {
-              window.open(attachment.url, '_blank');
-            }}
-          />
-        </span>
+        <div className={styles.upload}>
+          <div className={`u font secondary body-md neutral-cloudy`}>
+            {attachment.url.substring(attachment.url.lastIndexOf('/') + 1)}
+          </div>
+        </div>
+      </div>
+      <div className={styles.download}>
+        <UnnnicIcon
+          icon="download-bottom-1"
+          size="sm"
+          scheme="neutral-cloudy"
+          clickable
+          onClick={() => {
+            window.open(attachment.url, '_blank');
+          }}
+        />
       </div>
       <div className={styles.remove}>
         <UnnnicIcon

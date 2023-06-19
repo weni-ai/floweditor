@@ -304,7 +304,12 @@ export default class UpdateContactForm extends React.Component<
     const typeConfig = this.props.typeConfig;
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
+      <Dialog
+        className={styles.dialog}
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
 
         <p>{i18n.t('forms.select_what_to_update', 'Select what to update')}</p>

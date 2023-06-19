@@ -71,7 +71,12 @@ export default class AddURNForm extends React.PureComponent<ActionFormProps, Add
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
+      <Dialog
+        className={styles.dialog}
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <p data-spec={controlLabelSpecId}>
           <Trans i18nKey="forms.add_urn_summary">

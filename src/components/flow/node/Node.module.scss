@@ -128,7 +128,8 @@
 
     .save_result {
       background: #fff;
-      padding: 10px 10px;
+      padding: 10px 0px;
+      text-align: center;
 
       &.border_top {
         border-top: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
@@ -206,16 +207,19 @@
 
 .active {
   position: absolute;
-  background: $active_color;
-  border: 1px solid darken($active_color, 5%);
-  border-radius: 12px;
+  background: #C4EAF5;
+  border-radius: 8px 0px 0px 0px;
+  font-family: $unnnic-font-family-secondary;
+  color: $unnnic-color-neutral-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 3px 5px;
-  color: #fff;
   font-weight: 500;
   top: -10px;
   left: -10px;
-  font-size: 13px;
+  font-size: 12px;
   min-width: 22px;
-  text-align: center;
+  height: 28px
   cursor: pointer;
 }

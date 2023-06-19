@@ -6,6 +6,12 @@ import * as React from 'react';
 import styles from './SendBroadcast.module.scss';
 import i18n from 'config/i18n';
 
+import { applyVueInReact } from 'vuereact-combined';
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(unnnicIcon);
+
 export const PLACEHOLDER = i18n.t(
   'actions.send_broadcast.placeholder',
   'Send a message to the contact'
@@ -22,7 +28,10 @@ const SendBroadcastComp: React.SFC<BroadcastMsg> = (
     return (
       <div className={styles.node}>
         <div className={styles.to} key={action.uuid + '_broadcast_recipients'}>
-          {renderAssetList(assets, MAX_TO_SHOW, context.config.endpoints)}
+          <div className={styles.name}>
+            <UnnnicIcon icon="single-neutral-actions-1" size="xs" className={styles.icon} />
+            {renderAssetList(assets, MAX_TO_SHOW, context.config.endpoints)}
+          </div>
         </div>
         <div className={styles.message}>
           {action.text.split(/\r?\n/).map((line: string, idx: number) => (

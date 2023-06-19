@@ -110,7 +110,12 @@ export default class RemoveGroupsForm extends React.Component<
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
+      <Dialog
+        className={styles.dialog}
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
 
         {renderIf(!this.state.removeAll)(
