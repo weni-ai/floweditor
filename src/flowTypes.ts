@@ -45,8 +45,6 @@ export interface Endpoints {
   editor: string;
   ticketer_queues: string;
   external_services: string;
-  external_services_calls: string;
-  external_services_calls_base: string;
 }
 
 export interface FlowEditorConfig {
