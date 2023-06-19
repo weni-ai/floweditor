@@ -1,3 +1,5 @@
+import { ParamTypes } from '../components/flow/routers/param/ParamElement';
+
 export enum FlowTypes {
   MESSAGING = 'messaging',
   MESSAGING_BACKGROUND = 'messaging_background',
@@ -156,11 +158,15 @@ export interface ParamFilter {
 
 export interface ServiceCallParam {
   type: string;
-  paramType?: string;
+  paramType?: ParamTypes;
   maxLength?: number;
   verboseName: string;
   required?: boolean;
   filters?: ParamFilter[];
+  options?: any[];
+  defaultValue?: any;
+  nameKey?: string;
+  valueKey?: string;
 }
 
 export interface ServiceCall {
@@ -168,6 +174,7 @@ export interface ServiceCall {
   name: string;
   verboseName: string;
   params: ServiceCallParam[];
+  disableEmptyParams: boolean;
 }
 
 export interface ServiceCallMap {

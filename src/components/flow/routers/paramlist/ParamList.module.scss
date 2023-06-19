@@ -15,6 +15,9 @@
   }
 
   .param_list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     margin: 4px 0px;
     position: relative;
     overflow-x: hidden;
@@ -26,7 +29,7 @@
 }
 
 .param {
-  z-index: 2000;
+  margin: 0 3px;
 
   &:last-child {
     :global {

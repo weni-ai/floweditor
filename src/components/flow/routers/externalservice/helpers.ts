@@ -24,7 +24,6 @@ export const nodeToState = (
   let resultName = { value: 'Result' };
 
   let externalService: FormEntry = null;
-  let initialCalls: ServiceCall[] = [];
   let initialCall: FormEntry = null;
   let initialParams: any[] = [];
 
@@ -40,7 +39,8 @@ export const nodeToState = (
           value: {
             uuid: initialExternalService.id,
             name: initialExternalService.name,
-            type: initialExternalService.type
+            type: initialExternalService.type,
+            actions: initialExternalService.actions
           }
         }
       : { value: null };
@@ -50,7 +50,6 @@ export const nodeToState = (
     externalService,
     call: initialCall,
     resultName,
-    calls: { value: initialCalls },
     params: { value: initialParams },
     valid: true
   };
@@ -75,7 +74,8 @@ export const stateToNode = (
       uuid: state.externalService.value.uuid,
       name: state.externalService.value.name,
       external_service_type:
-        state.externalService.value.external_service_type || state.externalService.value.type
+        state.externalService.value.external_service_type || state.externalService.value.type,
+      actions: state.externalService.value.actions
     },
     call: state.call.value,
     params: state.params.value,
