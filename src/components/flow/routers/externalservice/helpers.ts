@@ -40,7 +40,7 @@ export const nodeToState = (
             uuid: initialExternalService.id,
             name: initialExternalService.name,
             type: initialExternalService.type,
-            actions: initialExternalService.actions
+            actions: initialExternalService.content.actions
           }
         }
       : { value: null };
