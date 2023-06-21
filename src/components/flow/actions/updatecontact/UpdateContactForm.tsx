@@ -233,6 +233,7 @@ export default class UpdateContactForm extends React.Component<
         <AssetSelector
           key="select_channel"
           name={i18n.t('forms.channel', 'Channel')}
+          showLabel={true}
           placeholder={i18n.t('forms.select_channel', 'Select the channel to use for this contact')}
           assets={this.props.assetStore.channels}
           entry={this.state.channel}
@@ -248,6 +249,7 @@ export default class UpdateContactForm extends React.Component<
         <AssetSelector
           key="select_language"
           name={i18n.t('forms.language', 'Language')}
+          showLabel={true}
           placeholder={i18n.t(
             'forms.select_language',
             'Select the language to use for this contact'
@@ -263,18 +265,25 @@ export default class UpdateContactForm extends React.Component<
       );
     } else if (this.state.type === Types.set_contact_status) {
       return (
-        <SelectElement
-          key="contact_status_select"
-          name={i18n.t('forms.status', 'Status')}
-          entry={this.state.status}
-          onChange={this.handleStatusUpdate}
-          options={CONTACT_STATUS_OPTIONS}
-        />
+        <>
+          <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+            {i18n.t('forms.status', 'Status')}
+          </div>
+
+          <SelectElement
+            key="contact_status_select"
+            name={i18n.t('forms.status', 'Status')}
+            entry={this.state.status}
+            onChange={this.handleStatusUpdate}
+            options={CONTACT_STATUS_OPTIONS}
+          />
+        </>
       );
     } else if (this.state.type === Types.set_contact_name) {
       return (
         <TextInputElement
           name={i18n.t('forms.name', 'Name')}
+          showLabel={true}
           placeholder={i18n.t('forms.enter_new_name', 'Enter a new name for the contact')}
           onChange={this.handleNameUpdate}
           entry={this.state.name}
@@ -286,6 +295,7 @@ export default class UpdateContactForm extends React.Component<
       return (
         <TextInputElement
           name={i18n.t('forms.field_value', 'Field Value')}
+          showLabel={true}
           placeholder={i18n.t('forms.enter_field_value', { field: this.state.field.value.label })}
           onChange={this.handleFieldValueUpdate}
           entry={this.state.fieldValue}
@@ -312,9 +322,9 @@ export default class UpdateContactForm extends React.Component<
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
 
-        <p>{i18n.t('forms.select_what_to_update', 'Select what to update')}</p>
         <AssetSelector
-          name={i18n.t('forms.contact_field', 'Contact Field')}
+          name={i18n.t('forms.select_what_to_update', 'Select what to update')}
+          showLabel={true}
           assets={this.props.assetStore.fields}
           additionalOptions={getContactProperties(this.context.config.flowType)}
           entry={this.state.field}
