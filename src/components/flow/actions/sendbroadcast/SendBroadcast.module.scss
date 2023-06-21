@@ -8,6 +8,10 @@
   margin-right: 6px;
 }
 
+.recipients_container {
+  margin-bottom: $unnnic-spacing-stack-sm;
+}
+
 .node {
   .to {
     padding: 3px $action_padding;
