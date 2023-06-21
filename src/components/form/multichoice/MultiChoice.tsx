@@ -3,6 +3,8 @@ import * as React from 'react';
 import { StringArrayEntry, StringEntry } from 'store/nodeEditor';
 import TembaSelect from 'temba/TembaSelect';
 
+import styles from './MultiChoice.module.scss';
+
 export interface MultiChoiceInputProps {
   name: string;
   items: StringArrayEntry;
@@ -47,7 +49,13 @@ export default class MultiChoiceInput extends React.Component<
     });
     return (
       <>
-        {this.props.helpText ? <p>{this.props.helpText}</p> : <p />}
+        {this.props.helpText ? (
+          <div className={`${styles.label} u font secondary body-md neutral-cloudy`}>
+            {this.props.helpText}
+          </div>
+        ) : (
+          <div />
+        )}
         <TembaSelect
           name={this.props.name}
           placeholder={this.props.name}
