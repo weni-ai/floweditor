@@ -157,7 +157,9 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           error={this.props.error}
         />
 
-        {typeof this.props.helpText !== 'string' ? this.props.helpText : null}
+        {typeof this.props.helpText !== 'string' ? (
+          <div className={styles.help}>{this.props.helpText}</div>
+        ) : null}
       </>
     );
   }
