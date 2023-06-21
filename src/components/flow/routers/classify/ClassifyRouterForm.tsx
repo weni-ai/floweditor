@@ -210,7 +210,7 @@ export default class ClassifyRouterForm extends React.Component<
 
         {renderIf(!!this.state.classifier.value)(
           <>
-            <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+            <div className="u font secondary body-md color-neutral-cloudy">
               {i18n.t('forms.message_label', 'If the message response...')}
             </div>
 
