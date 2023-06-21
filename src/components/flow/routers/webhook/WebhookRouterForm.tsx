@@ -246,11 +246,11 @@ export default class WebhookRouterForm extends React.Component<
       hasErrors: !!this.state.headers.find((header: HeaderEntry) => hasErrors(header)),
       body: (
         <>
-          <p className={`${styles.info} u font secondary body-md neutral-cloudy`}>
+          <div className={`${styles.info} u font secondary body-md color-neutral-cloudy`}>
             <Trans i18nKey="forms.webhook_header_summary">
               Add any additional headers below that you would like to send along with your request.
             </Trans>
-          </p>
+          </div>
           {headerElements}
         </>
       ),
