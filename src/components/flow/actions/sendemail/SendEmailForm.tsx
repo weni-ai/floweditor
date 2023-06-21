@@ -162,23 +162,25 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
             error={this.state.recipientError}
           />
 
-          <div className={styles.pills}>
-            {this.state.recipients.value.map((recipient, index) => (
-              <div
-                key={index}
-                className={`${styles.pill} u font secondary body-md color-neutral-darkest`}
-              >
-                {recipient}
-                <UnnnicIcon
-                  icon="close-1"
-                  size="xs"
-                  scheme="neutral-darkest"
-                  clickable
-                  onClick={() => this.onRemoveRecipient(index)}
-                />
-              </div>
-            ))}
-          </div>
+          {this.state.recipients.value.length ? (
+            <div className={styles.pills}>
+              {this.state.recipients.value.map((recipient, index) => (
+                <div
+                  key={index}
+                  className={`${styles.pill} u font secondary body-md color-neutral-darkest`}
+                >
+                  {recipient}
+                  <UnnnicIcon
+                    icon="close-1"
+                    size="xs"
+                    scheme="neutral-darkest"
+                    clickable
+                    onClick={() => this.onRemoveRecipient(index)}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : null}
 
           <TextInputElement
             __className={styles.subject}
