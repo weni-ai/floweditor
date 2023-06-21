@@ -15,13 +15,32 @@ describe(ExternalServiceRouterForm.name, () => {
     beforeEach(() => {
       // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
       externalServiceForm = getRouterFormProps({
-        node: createCallExternalServiceNode('chatgpt', externalServiceAsset.results[0].actions),
+        node: createCallExternalServiceNode(
+          'chatgpt',
+          externalServiceAsset.results[0].actions,
+          externalServiceAsset.results[0].uuid,
+          externalServiceAsset.results[0].actions[0]
+        ),
         ui: { type: Types.split_by_external_service }
       } as RenderNode);
     });
 
     describe('render', () => {
       it('should render', async () => {
+        externalServiceForm.assetStore.externalServices.items = {
+          [externalServiceAsset.results[0].uuid]: {
+            content: externalServiceAsset.results[0],
+            name: externalServiceAsset.results[0].name,
+            type: externalServiceAsset.results[0].external_service_type,
+            id: externalServiceAsset.results[0].uuid
+          },
+          [externalServiceAsset.results[1].uuid]: {
+            content: externalServiceAsset.results[1],
+            name: externalServiceAsset.results[1].name,
+            type: externalServiceAsset.results[1].external_service_type,
+            id: externalServiceAsset.results[1].uuid
+          }
+        };
         let rendered: any;
         await act(async () => {
           rendered = render(<ExternalServiceRouterForm {...externalServiceForm} />);
@@ -34,8 +53,18 @@ describe(ExternalServiceRouterForm.name, () => {
     describe('updates', () => {
       it('should save changes', async () => {
         externalServiceForm.assetStore.externalServices.items = {
-          [externalServiceAsset.results[0].uuid]: externalServiceAsset.results[0],
-          [externalServiceAsset.results[1].uuid]: externalServiceAsset.results[1]
+          [externalServiceAsset.results[0].uuid]: {
+            content: externalServiceAsset.results[0],
+            name: externalServiceAsset.results[0].name,
+            type: externalServiceAsset.results[0].external_service_type,
+            id: externalServiceAsset.results[0].uuid
+          },
+          [externalServiceAsset.results[1].uuid]: {
+            content: externalServiceAsset.results[1],
+            name: externalServiceAsset.results[1].name,
+            type: externalServiceAsset.results[1].external_service_type,
+            id: externalServiceAsset.results[1].uuid
+          }
         };
         let rendered: any;
 
@@ -93,7 +122,12 @@ describe(ExternalServiceRouterForm.name, () => {
     beforeEach(() => {
       // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
       externalServiceForm = getRouterFormProps({
-        node: createCallExternalServiceNode('omie', externalServiceAsset.results[1].actions),
+        node: createCallExternalServiceNode(
+          'omie',
+          externalServiceAsset.results[1].actions,
+          externalServiceAsset.results[1].uuid,
+          externalServiceAsset.results[1].actions[0]
+        ),
         ui: { type: Types.split_by_external_service }
       } as RenderNode);
     });
@@ -112,8 +146,18 @@ describe(ExternalServiceRouterForm.name, () => {
     describe('updates', () => {
       it('should save changes', async () => {
         externalServiceForm.assetStore.externalServices.items = {
-          [externalServiceAsset.results[0].uuid]: externalServiceAsset.results[0],
-          [externalServiceAsset.results[1].uuid]: externalServiceAsset.results[1]
+          [externalServiceAsset.results[0].uuid]: {
+            content: externalServiceAsset.results[0],
+            name: externalServiceAsset.results[0].name,
+            type: externalServiceAsset.results[0].external_service_type,
+            id: externalServiceAsset.results[0].uuid
+          },
+          [externalServiceAsset.results[1].uuid]: {
+            content: externalServiceAsset.results[1],
+            name: externalServiceAsset.results[1].name,
+            type: externalServiceAsset.results[1].external_service_type,
+            id: externalServiceAsset.results[1].uuid
+          }
         };
         let rendered: any;
 
