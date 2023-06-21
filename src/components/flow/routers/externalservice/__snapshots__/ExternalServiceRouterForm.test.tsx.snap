@@ -1,134 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExternalServiceRouterForm render should render 1`] = `
-<body>
-  <div>
-    <div
-      class="dialog"
-    >
-      <div
-        class="header call_external_service"
-      >
-        <div
-          class="title_container"
-        >
-          <div
-            class="title"
-          >
-            Call External Service
-          </div>
-          <div
-            class="subtitle"
-          />
-        </div>
-      </div>
-      <div
-        class="content"
-      >
-        <div
-          class=" type_list"
-        >
-          <p>
-            When a contact arrives at this point in your flow...
-          </p>
-          <div>
-            <div
-              class="normal "
-            >
-              <temba-select
-                data-testid="temba_select_type"
-                errors="[]"
-                expressions=""
-                name="type"
-                namekey="description"
-                searchable="true"
-                valuekey="type"
-                values="[{\\"type\\":\\"call_external_service\\",\\"name\\":\\"Call External Service\\",\\"description\\":\\"Call an external service\\",\\"localizeableKeys\\":[\\"exists\\"],\\"aliases\\":[\\"split_by_external_service\\"],\\"filter\\":\\"external_service\\"}]"
-              />
-            </div>
-          </div>
-        </div>
-        
-        <div>
-          <p>
-            <span>
-              Action
-            </span>
-          </p>
-          <div
-            class="normal "
-          >
-            <temba-select
-              data-testid="temba_select_external_service_call"
-              errors="[]"
-              expressions=""
-              name="External Service Call"
-              namekey="verboseName"
-              placeholder="Select the call from external service to do"
-              valuekey="value"
-              values="[]"
-            />
-          </div>
-        </div>
-        <div
-          class="optional_text_input"
-        >
-          <div
-            class="ele"
-          >
-            <div
-              class="label"
-            >
-              Result Name
-            </div>
-            <div
-              class="wrapper normal"
-            >
-              <input
-                data-testid="Result Name"
-                name="Result Name"
-                value="Result"
-              />
-            </div>
-            <div
-              class="help_text"
-            >
-              By naming the result, you can reference it later using @results.result
-               
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="footer"
-      >
-        <div
-          class="buttons"
-        >
-          <div
-            class="right_buttons"
-          >
-            <div
-              class="btn secondary  "
-              style="margin-left: 0px; margin-top: 0px;"
-            >
-              Cancel
-            </div>
-            <div
-              class="btn primary  "
-              style="margin-left: 10px; margin-top: 0px;"
-            >
-              Ok
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`ExternalServiceRouterForm updates should save changes 1`] = `
+exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
 <body>
   <div>
     <div
@@ -197,7 +69,7 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
                 namekey="name"
                 placeholder="Select the external service to use"
                 valuekey="uuid"
-                values="[{\\"uuid\\":\\"4b154b06-5ecd-43d9-afca-39738e6859d7\\",\\"name\\":\\"omie dummy project\\",\\"external_service_type\\":\\"omie\\"}]"
+                values="[{\\"uuid\\":\\"6b154b06-5ecd-43d9-afca-39738e6859d7\\",\\"name\\":\\"ChatGPT dummy project\\",\\"external_service_type\\":\\"chatgpt\\",\\"created_on\\":\\"2019-10-15T20:07:58.529130Z\\",\\"actions\\":[{\\"name\\":\\"ConsultarChatGPT\\",\\"value\\":\\"ConsultarChatGPT\\",\\"verboseName\\":\\"Consultar Chat GPT\\",\\"disableEmptyParams\\":true,\\"params\\":[{\\"name\\":\\"AditionalPrompts\\",\\"type\\":\\"AditionalPrompts\\",\\"paramType\\":\\"multiSelect\\",\\"verboseName\\":\\"Aditional Prompts\\",\\"nameKey\\":\\"text\\",\\"valueKey\\":\\"uuid\\",\\"required\\":true,\\"defaultValue\\":[],\\"options\\":[{\\"text\\":\\"Aditional Prompt 1 content\\",\\"uuid\\":\\"ab154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 2 content\\",\\"uuid\\":\\"ac154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 3 content\\",\\"uuid\\":\\"ad154b06-5ecd-43d9-afca-39738e6859d7\\"}]},{\\"name\\":\\"SendCompleteHistory\\",\\"type\\":\\"SendCompleteHistory\\",\\"paramType\\":\\"boolean\\",\\"verboseName\\":\\"Send complete messages history as context\\",\\"defaultValue\\":true,\\"required\\":true},{\\"name\\":\\"UserInput\\",\\"type\\":\\"UserInput\\",\\"paramType\\":\\"expressionInput\\",\\"verboseName\\":\\"User Input\\",\\"defaultValue\\":\\"@input.value\\",\\"required\\":true}]}]}]"
               />
             </div>
           </div>
@@ -219,8 +91,274 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
               namekey="verboseName"
               placeholder="Select the call from external service to do"
               valuekey="value"
-              values="[]"
+              values="[{\\"name\\":\\"ConsultarChatGPT\\",\\"value\\":\\"ConsultarChatGPT\\",\\"verboseName\\":\\"Consultar Chat GPT\\",\\"disableEmptyParams\\":true,\\"params\\":[{\\"name\\":\\"AditionalPrompts\\",\\"type\\":\\"AditionalPrompts\\",\\"paramType\\":\\"multiSelect\\",\\"verboseName\\":\\"Aditional Prompts\\",\\"nameKey\\":\\"text\\",\\"valueKey\\":\\"uuid\\",\\"required\\":true,\\"defaultValue\\":[],\\"options\\":[{\\"text\\":\\"Aditional Prompt 1 content\\",\\"uuid\\":\\"ab154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 2 content\\",\\"uuid\\":\\"ac154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 3 content\\",\\"uuid\\":\\"ad154b06-5ecd-43d9-afca-39738e6859d7\\"}]},{\\"name\\":\\"SendCompleteHistory\\",\\"type\\":\\"SendCompleteHistory\\",\\"paramType\\":\\"boolean\\",\\"verboseName\\":\\"Send complete messages history as context\\",\\"defaultValue\\":true,\\"required\\":true},{\\"name\\":\\"UserInput\\",\\"type\\":\\"UserInput\\",\\"paramType\\":\\"expressionInput\\",\\"verboseName\\":\\"User Input\\",\\"defaultValue\\":\\"@input.value\\",\\"required\\":true}]}]"
             />
+          </div>
+        </div>
+        <div
+          class="param_list_container "
+          tabindex="0"
+        >
+          <div
+            class="param_list"
+          />
+        </div>
+        <div
+          class="optional_text_input"
+        >
+          <div
+            class="ele"
+          >
+            <div
+              class="label"
+            >
+              Result Name
+            </div>
+            <div
+              class="wrapper normal"
+            >
+              <input
+                data-testid="Result Name"
+                name="Result Name"
+                value="Result"
+              />
+            </div>
+            <div
+              class="help_text"
+            >
+              By naming the result, you can reference it later using @results.result
+               
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div
+          class="buttons"
+        >
+          <div
+            class="right_buttons"
+          >
+            <div
+              class="btn secondary  "
+              style="margin-left: 0px; margin-top: 0px;"
+            >
+              Cancel
+            </div>
+            <div
+              class="btn primary  "
+              style="margin-left: 10px; margin-top: 0px;"
+            >
+              Ok
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
+<body>
+  <div>
+    <div
+      class="dialog"
+    >
+      <div
+        class="header call_external_service"
+      >
+        <div
+          class="title_container"
+        >
+          <div
+            class="title"
+          >
+            Call External Service
+          </div>
+          <div
+            class="subtitle"
+          />
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class=" type_list"
+        >
+          <p>
+            When a contact arrives at this point in your flow...
+          </p>
+          <div>
+            <div
+              class="normal "
+            >
+              <temba-select
+                data-testid="temba_select_type"
+                errors="[]"
+                expressions=""
+                name="type"
+                namekey="description"
+                searchable="true"
+                valuekey="type"
+                values="[{\\"type\\":\\"call_external_service\\",\\"name\\":\\"Call External Service\\",\\"description\\":\\"Call an external service\\",\\"localizeableKeys\\":[\\"exists\\"],\\"aliases\\":[\\"split_by_external_service\\"],\\"filter\\":\\"external_service\\"}]"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Integration with... 
+            </span>
+          </p>
+          <div
+            class="ele"
+          >
+            <div
+              class="normal "
+            >
+              <temba-select
+                cachekey="0"
+                data-testid="temba_select_external_service"
+                errors="[]"
+                expressions=""
+                name="External Service"
+                namekey="name"
+                placeholder="Select the external service to use"
+                valuekey="uuid"
+                values="[{\\"uuid\\":\\"6b154b06-5ecd-43d9-afca-39738e6859d7\\",\\"name\\":\\"ChatGPT dummy project\\",\\"external_service_type\\":\\"chatgpt\\",\\"created_on\\":\\"2019-10-15T20:07:58.529130Z\\",\\"actions\\":[{\\"name\\":\\"ConsultarChatGPT\\",\\"value\\":\\"ConsultarChatGPT\\",\\"verboseName\\":\\"Consultar Chat GPT\\",\\"disableEmptyParams\\":true,\\"params\\":[{\\"name\\":\\"AditionalPrompts\\",\\"type\\":\\"AditionalPrompts\\",\\"paramType\\":\\"multiSelect\\",\\"verboseName\\":\\"Aditional Prompts\\",\\"nameKey\\":\\"text\\",\\"valueKey\\":\\"uuid\\",\\"required\\":true,\\"defaultValue\\":[],\\"options\\":[{\\"text\\":\\"Aditional Prompt 1 content\\",\\"uuid\\":\\"ab154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 2 content\\",\\"uuid\\":\\"ac154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 3 content\\",\\"uuid\\":\\"ad154b06-5ecd-43d9-afca-39738e6859d7\\"}]},{\\"name\\":\\"SendCompleteHistory\\",\\"type\\":\\"SendCompleteHistory\\",\\"paramType\\":\\"boolean\\",\\"verboseName\\":\\"Send complete messages history as context\\",\\"defaultValue\\":true,\\"required\\":true},{\\"name\\":\\"UserInput\\",\\"type\\":\\"UserInput\\",\\"paramType\\":\\"expressionInput\\",\\"verboseName\\":\\"User Input\\",\\"defaultValue\\":\\"@input.value\\",\\"required\\":true}]}]}]"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Action
+            </span>
+          </p>
+          <div
+            class="normal "
+          >
+            <temba-select
+              data-testid="temba_select_external_service_call"
+              errors="[]"
+              expressions=""
+              name="External Service Call"
+              namekey="verboseName"
+              placeholder="Select the call from external service to do"
+              valuekey="value"
+              values="[{\\"name\\":\\"ConsultarChatGPT\\",\\"value\\":\\"ConsultarChatGPT\\",\\"verboseName\\":\\"Consultar Chat GPT\\",\\"disableEmptyParams\\":true,\\"params\\":[{\\"name\\":\\"AditionalPrompts\\",\\"type\\":\\"AditionalPrompts\\",\\"paramType\\":\\"multiSelect\\",\\"verboseName\\":\\"Aditional Prompts\\",\\"nameKey\\":\\"text\\",\\"valueKey\\":\\"uuid\\",\\"required\\":true,\\"defaultValue\\":[],\\"options\\":[{\\"text\\":\\"Aditional Prompt 1 content\\",\\"uuid\\":\\"ab154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 2 content\\",\\"uuid\\":\\"ac154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 3 content\\",\\"uuid\\":\\"ad154b06-5ecd-43d9-afca-39738e6859d7\\"}]},{\\"name\\":\\"SendCompleteHistory\\",\\"type\\":\\"SendCompleteHistory\\",\\"paramType\\":\\"boolean\\",\\"verboseName\\":\\"Send complete messages history as context\\",\\"defaultValue\\":true,\\"required\\":true},{\\"name\\":\\"UserInput\\",\\"type\\":\\"UserInput\\",\\"paramType\\":\\"expressionInput\\",\\"verboseName\\":\\"User Input\\",\\"defaultValue\\":\\"@input.value\\",\\"required\\":true}]}]"
+            />
+          </div>
+        </div>
+        <div
+          class="param_list_container "
+          tabindex="0"
+        >
+          <div
+            class="param_list"
+          >
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <div
+                    class="choice"
+                  >
+                    <span>
+                      Aditional Prompts
+                    </span>
+                    <div
+                      class="small "
+                    >
+                      <temba-select
+                        data-testid="temba_select_aditional_prompts"
+                        errors="[]"
+                        expressions=""
+                        multi="true"
+                        name="Aditional Prompts"
+                        namekey="text"
+                        placeholder="Select an option"
+                        tags="false"
+                        valuekey="uuid"
+                        values="[]"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <label
+                    class="label"
+                  >
+                    <span
+                      class="fe-check-square"
+                      data-spec="checkbox"
+                    />
+                    <div
+                      class="title"
+                      data-spec="title"
+                    >
+                      Send complete messages history as context
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <div
+                    class="expression_input"
+                  >
+                    <span>
+                      User Input
+                    </span>
+                    <div
+                      class="ele"
+                    >
+                      <div
+                        class="wrapper normal"
+                      >
+                        <input
+                          data-testid="User Input"
+                          name="User Input"
+                          value="@input.value"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div
@@ -281,7 +419,1077 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
 </body>
 `;
 
-exports[`ExternalServiceRouterForm updates should save changes 2`] = `
+exports[`ExternalServiceRouterForm ChatGPT updates should save changes 2`] = `
+<body>
+  <div>
+    <div
+      class="dialog"
+    >
+      <div
+        class="header call_external_service"
+      >
+        <div
+          class="title_container"
+        >
+          <div
+            class="title"
+          >
+            Call External Service
+          </div>
+          <div
+            class="subtitle"
+          />
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class=" type_list"
+        >
+          <p>
+            When a contact arrives at this point in your flow...
+          </p>
+          <div>
+            <div
+              class="normal "
+            >
+              <temba-select
+                data-testid="temba_select_type"
+                errors="[]"
+                expressions=""
+                name="type"
+                namekey="description"
+                searchable="true"
+                valuekey="type"
+                values="[{\\"type\\":\\"call_external_service\\",\\"name\\":\\"Call External Service\\",\\"description\\":\\"Call an external service\\",\\"localizeableKeys\\":[\\"exists\\"],\\"aliases\\":[\\"split_by_external_service\\"],\\"filter\\":\\"external_service\\"}]"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Integration with... 
+            </span>
+          </p>
+          <div
+            class="ele"
+          >
+            <div
+              class="normal "
+            >
+              <temba-select
+                cachekey="0"
+                data-testid="temba_select_external_service"
+                errors="[]"
+                expressions=""
+                name="External Service"
+                namekey="name"
+                placeholder="Select the external service to use"
+                valuekey="uuid"
+                values="[{\\"uuid\\":\\"6b154b06-5ecd-43d9-afca-39738e6859d7\\",\\"name\\":\\"ChatGPT dummy project\\",\\"external_service_type\\":\\"chatgpt\\",\\"created_on\\":\\"2019-10-15T20:07:58.529130Z\\",\\"actions\\":[{\\"name\\":\\"ConsultarChatGPT\\",\\"value\\":\\"ConsultarChatGPT\\",\\"verboseName\\":\\"Consultar Chat GPT\\",\\"disableEmptyParams\\":true,\\"params\\":[{\\"name\\":\\"AditionalPrompts\\",\\"type\\":\\"AditionalPrompts\\",\\"paramType\\":\\"multiSelect\\",\\"verboseName\\":\\"Aditional Prompts\\",\\"nameKey\\":\\"text\\",\\"valueKey\\":\\"uuid\\",\\"required\\":true,\\"defaultValue\\":[],\\"options\\":[{\\"text\\":\\"Aditional Prompt 1 content\\",\\"uuid\\":\\"ab154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 2 content\\",\\"uuid\\":\\"ac154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 3 content\\",\\"uuid\\":\\"ad154b06-5ecd-43d9-afca-39738e6859d7\\"}]},{\\"name\\":\\"SendCompleteHistory\\",\\"type\\":\\"SendCompleteHistory\\",\\"paramType\\":\\"boolean\\",\\"verboseName\\":\\"Send complete messages history as context\\",\\"defaultValue\\":true,\\"required\\":true},{\\"name\\":\\"UserInput\\",\\"type\\":\\"UserInput\\",\\"paramType\\":\\"expressionInput\\",\\"verboseName\\":\\"User Input\\",\\"defaultValue\\":\\"@input.value\\",\\"required\\":true}]}]}]"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Action
+            </span>
+          </p>
+          <div
+            class="normal "
+          >
+            <temba-select
+              data-testid="temba_select_external_service_call"
+              errors="[]"
+              expressions=""
+              name="External Service Call"
+              namekey="verboseName"
+              placeholder="Select the call from external service to do"
+              valuekey="value"
+              values="[{\\"name\\":\\"ConsultarChatGPT\\",\\"value\\":\\"ConsultarChatGPT\\",\\"verboseName\\":\\"Consultar Chat GPT\\",\\"disableEmptyParams\\":true,\\"params\\":[{\\"name\\":\\"AditionalPrompts\\",\\"type\\":\\"AditionalPrompts\\",\\"paramType\\":\\"multiSelect\\",\\"verboseName\\":\\"Aditional Prompts\\",\\"nameKey\\":\\"text\\",\\"valueKey\\":\\"uuid\\",\\"required\\":true,\\"defaultValue\\":[],\\"options\\":[{\\"text\\":\\"Aditional Prompt 1 content\\",\\"uuid\\":\\"ab154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 2 content\\",\\"uuid\\":\\"ac154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 3 content\\",\\"uuid\\":\\"ad154b06-5ecd-43d9-afca-39738e6859d7\\"}]},{\\"name\\":\\"SendCompleteHistory\\",\\"type\\":\\"SendCompleteHistory\\",\\"paramType\\":\\"boolean\\",\\"verboseName\\":\\"Send complete messages history as context\\",\\"defaultValue\\":true,\\"required\\":true},{\\"name\\":\\"UserInput\\",\\"type\\":\\"UserInput\\",\\"paramType\\":\\"expressionInput\\",\\"verboseName\\":\\"User Input\\",\\"defaultValue\\":\\"@input.value\\",\\"required\\":true}]}]"
+            />
+          </div>
+        </div>
+        <div
+          class="param_list_container "
+          tabindex="0"
+        >
+          <div
+            class="param_list"
+          >
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <div
+                    class="choice"
+                  >
+                    <span>
+                      Aditional Prompts
+                    </span>
+                    <div
+                      class="small "
+                    >
+                      <temba-select
+                        data-testid="temba_select_aditional_prompts"
+                        errors="[]"
+                        expressions=""
+                        multi="true"
+                        name="Aditional Prompts"
+                        namekey="text"
+                        placeholder="Select an option"
+                        tags="false"
+                        valuekey="uuid"
+                        values="[{\\"text\\":\\"Aditional Prompt 1 content\\",\\"uuid\\":\\"ab154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 2 content\\",\\"uuid\\":\\"ac154b06-5ecd-43d9-afca-39738e6859d7\\"}]"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <label
+                    class="label"
+                  >
+                    <span
+                      class="fe-check-square"
+                      data-spec="checkbox"
+                    />
+                    <div
+                      class="title"
+                      data-spec="title"
+                    >
+                      Send complete messages history as context
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <div
+                    class="expression_input"
+                  >
+                    <span>
+                      User Input
+                    </span>
+                    <div
+                      class="ele"
+                    >
+                      <div
+                        class="wrapper normal"
+                      >
+                        <input
+                          data-testid="User Input"
+                          name="User Input"
+                          value="@input.value"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="optional_text_input"
+        >
+          <div
+            class="ele"
+          >
+            <div
+              class="label"
+            >
+              Result Name
+            </div>
+            <div
+              class="wrapper normal"
+            >
+              <input
+                data-testid="Result Name"
+                name="Result Name"
+                value="My External Service Result"
+              />
+            </div>
+            <div
+              class="help_text"
+            >
+              By naming the result, you can reference it later using @results.my_external_service_result
+               
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div
+          class="buttons"
+        >
+          <div
+            class="right_buttons"
+          >
+            <div
+              class="btn secondary  "
+              style="margin-left: 0px; margin-top: 0px;"
+            >
+              Cancel
+            </div>
+            <div
+              class="btn primary  "
+              style="margin-left: 10px; margin-top: 0px;"
+            >
+              Ok
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ExternalServiceRouterForm ChatGPT updates should save changes 3`] = `
+Array [
+  Object {
+    "inboundConnections": Object {},
+    "node": Object {
+      "actions": Array [
+        Object {
+          "call": Object {
+            "disableEmptyParams": true,
+            "name": "ConsultarChatGPT",
+            "params": Array [
+              Object {
+                "defaultValue": Array [],
+                "name": "AditionalPrompts",
+                "nameKey": "text",
+                "options": Array [
+                  Object {
+                    "text": "Aditional Prompt 1 content",
+                    "uuid": "ab154b06-5ecd-43d9-afca-39738e6859d7",
+                  },
+                  Object {
+                    "text": "Aditional Prompt 2 content",
+                    "uuid": "ac154b06-5ecd-43d9-afca-39738e6859d7",
+                  },
+                  Object {
+                    "text": "Aditional Prompt 3 content",
+                    "uuid": "ad154b06-5ecd-43d9-afca-39738e6859d7",
+                  },
+                ],
+                "paramType": "multiSelect",
+                "required": true,
+                "type": "AditionalPrompts",
+                "valueKey": "uuid",
+                "verboseName": "Aditional Prompts",
+              },
+              Object {
+                "defaultValue": true,
+                "name": "SendCompleteHistory",
+                "paramType": "boolean",
+                "required": true,
+                "type": "SendCompleteHistory",
+                "verboseName": "Send complete messages history as context",
+              },
+              Object {
+                "defaultValue": "@input.value",
+                "name": "UserInput",
+                "paramType": "expressionInput",
+                "required": true,
+                "type": "UserInput",
+                "verboseName": "User Input",
+              },
+            ],
+            "value": "ConsultarChatGPT",
+            "verboseName": "Consultar Chat GPT",
+          },
+          "external_service": Object {
+            "actions": Array [
+              Object {
+                "disableEmptyParams": true,
+                "name": "ConsultarChatGPT",
+                "params": Array [
+                  Object {
+                    "defaultValue": Array [],
+                    "name": "AditionalPrompts",
+                    "nameKey": "text",
+                    "options": Array [
+                      Object {
+                        "text": "Aditional Prompt 1 content",
+                        "uuid": "ab154b06-5ecd-43d9-afca-39738e6859d7",
+                      },
+                      Object {
+                        "text": "Aditional Prompt 2 content",
+                        "uuid": "ac154b06-5ecd-43d9-afca-39738e6859d7",
+                      },
+                      Object {
+                        "text": "Aditional Prompt 3 content",
+                        "uuid": "ad154b06-5ecd-43d9-afca-39738e6859d7",
+                      },
+                    ],
+                    "paramType": "multiSelect",
+                    "required": true,
+                    "type": "AditionalPrompts",
+                    "valueKey": "uuid",
+                    "verboseName": "Aditional Prompts",
+                  },
+                  Object {
+                    "defaultValue": true,
+                    "name": "SendCompleteHistory",
+                    "paramType": "boolean",
+                    "required": true,
+                    "type": "SendCompleteHistory",
+                    "verboseName": "Send complete messages history as context",
+                  },
+                  Object {
+                    "defaultValue": "@input.value",
+                    "name": "UserInput",
+                    "paramType": "expressionInput",
+                    "required": true,
+                    "type": "UserInput",
+                    "verboseName": "User Input",
+                  },
+                ],
+                "value": "ConsultarChatGPT",
+                "verboseName": "Consultar Chat GPT",
+              },
+            ],
+            "external_service_type": "chatgpt",
+            "name": "ChatGPT dummy project",
+            "uuid": "6b154b06-5ecd-43d9-afca-39738e6859d7",
+          },
+          "params": Array [
+            Object {
+              "data": Object {
+                "validationFailures": Array [],
+                "value": Array [],
+              },
+              "defaultValue": Array [],
+              "filter": Object {
+                "value": null,
+              },
+              "filters": undefined,
+              "nameKey": "text",
+              "options": Array [
+                Object {
+                  "text": "Aditional Prompt 1 content",
+                  "uuid": "ab154b06-5ecd-43d9-afca-39738e6859d7",
+                },
+                Object {
+                  "text": "Aditional Prompt 2 content",
+                  "uuid": "ac154b06-5ecd-43d9-afca-39738e6859d7",
+                },
+                Object {
+                  "text": "Aditional Prompt 3 content",
+                  "uuid": "ad154b06-5ecd-43d9-afca-39738e6859d7",
+                },
+              ],
+              "paramType": "multiSelect",
+              "required": true,
+              "type": "AditionalPrompts",
+              "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
+              "valid": true,
+              "valueKey": "uuid",
+              "verboseName": "Aditional Prompts",
+            },
+            Object {
+              "data": Object {
+                "validationFailures": Array [],
+                "value": true,
+              },
+              "defaultValue": true,
+              "filter": Object {
+                "value": null,
+              },
+              "filters": undefined,
+              "nameKey": undefined,
+              "options": undefined,
+              "paramType": "boolean",
+              "required": true,
+              "type": "SendCompleteHistory",
+              "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
+              "valid": true,
+              "valueKey": undefined,
+              "verboseName": "Send complete messages history as context",
+            },
+            Object {
+              "data": Object {
+                "validationFailures": Array [],
+                "value": "@input.value",
+              },
+              "defaultValue": "@input.value",
+              "filter": Object {
+                "value": null,
+              },
+              "filters": undefined,
+              "nameKey": undefined,
+              "options": undefined,
+              "paramType": "expressionInput",
+              "required": true,
+              "type": "UserInput",
+              "uuid": "6b59e863-2e14-442b-9987-aaa284871b8e",
+              "valid": true,
+              "valueKey": undefined,
+              "verboseName": "User Input",
+            },
+          ],
+          "result_name": "Result",
+          "type": "call_external_service",
+          "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+        },
+      ],
+      "exits": Array [
+        Object {
+          "destination_uuid": null,
+          "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+        },
+        Object {
+          "destination_uuid": null,
+          "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+        },
+      ],
+      "router": Object {
+        "cases": Array [
+          Object {
+            "arguments": Array [
+              "Success",
+            ],
+            "category_uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+            "type": "has_category",
+            "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+          },
+        ],
+        "categories": Array [
+          Object {
+            "exit_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+            "name": "Success",
+            "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+          },
+          Object {
+            "exit_uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+            "name": "Failure",
+            "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+          },
+        ],
+        "default_category_uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+        "operand": "@results.result",
+        "type": "switch",
+      },
+      "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
+    },
+    "ui": Object {
+      "config": Object {},
+      "position": null,
+      "type": "split_by_external_service",
+    },
+  },
+]
+`;
+
+exports[`ExternalServiceRouterForm Omie render should render 1`] = `
+<body>
+  <div>
+    <div
+      class="dialog"
+    >
+      <div
+        class="header call_external_service"
+      >
+        <div
+          class="title_container"
+        >
+          <div
+            class="title"
+          >
+            Call External Service
+          </div>
+          <div
+            class="subtitle"
+          />
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class=" type_list"
+        >
+          <p>
+            When a contact arrives at this point in your flow...
+          </p>
+          <div>
+            <div
+              class="normal "
+            >
+              <temba-select
+                data-testid="temba_select_type"
+                errors="[]"
+                expressions=""
+                name="type"
+                namekey="description"
+                searchable="true"
+                valuekey="type"
+                values="[{\\"type\\":\\"call_external_service\\",\\"name\\":\\"Call External Service\\",\\"description\\":\\"Call an external service\\",\\"localizeableKeys\\":[\\"exists\\"],\\"aliases\\":[\\"split_by_external_service\\"],\\"filter\\":\\"external_service\\"}]"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Integration with... 
+            </span>
+          </p>
+          <div
+            class="ele"
+          >
+            <div
+              class="normal "
+            >
+              <temba-select
+                cachekey="0"
+                data-testid="temba_select_external_service"
+                errors="[]"
+                expressions=""
+                name="External Service"
+                namekey="name"
+                placeholder="Select the external service to use"
+                valuekey="uuid"
+                values="[{\\"uuid\\":\\"5b154b06-5ecd-43d9-afca-39738e6859d7\\",\\"name\\":\\"Omie dummy project\\",\\"external_service_type\\":\\"omie\\",\\"created_on\\":\\"2020-10-15T20:07:58.529130Z\\",\\"actions\\":[{\\"name\\":\\"IncluirContato\\",\\"value\\":\\"IncluirContato\\",\\"verboseName\\":\\"Inserir Contato\\",\\"params\\":[{\\"name\\":\\"identificacao\\",\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\",\\"required\\":true},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\",\\"required\\":true},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]},{\\"name\\":\\"endereco\\",\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato\\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}]},{\\"type\\":\\"telefone_email\\",\\"verboseName\\":\\"Telefone e Email\\",\\"filters\\":[{\\"name\\":\\"cDDDCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do celular 1\\"},{\\"name\\":\\"cNumCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 1\\"},{\\"name\\":\\"cDDDCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Celular 2\\"},{\\"name\\":\\"cNumCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 2\\"},{\\"name\\":\\"cDDDTel\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Telefone\\"},{\\"name\\":\\"cNumTel\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Telefone\\"},{\\"name\\":\\"cDDDFax\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Fax\\"},{\\"name\\":\\"cNumFax\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Fax\\"},{\\"name\\":\\"cEmail\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"E-mail do contato\\"},{\\"name\\":\\"cWebsite\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"}]},{\\"type\\":\\"cObs\\",\\"verboseName\\":\\"Observações\\",\\"filters\\":[]}]},{\\"name\\":\\"IncluirOportunidade\\",\\"value\\":\\"IncluirOportunidade\\",\\"verboseName\\":\\"Incluir Oportunidade\\",\\"params\\":[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Cabeçalho da Oportunidade\\",\\"filters\\":[{\\"name\\":\\"nCodOp\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Oportunidade\\"},{\\"name\\":\\"cCodIntOp\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de integração da oportunidade\\",\\"required\\":true},{\\"name\\":\\"cDesOp\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Descrição da oportunidade\\",\\"required\\":true},{\\"name\\":\\"nCodContato\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do contato\\",\\"required\\":true},{\\"name\\":\\"nCodSolucao\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da solução\\",\\"required\\":true},{\\"name\\":\\"nCodOrigem\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da origem\\",\\"required\\":true},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da conta\\"},{\\"name\\":\\"nCodVendedor\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do vendedor\\",\\"required\\":true}]},{\\"type\\":\\"fasesStatus\\",\\"verboseName\\":\\"Fase e Status da Oportunidade\\",\\"filters\\":[{\\"name\\":\\"nCodFase\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da fase\\"},{\\"name\\":\\"nCodStatus\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do status\\"},{\\"name\\":\\"nCodMotivo\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do motivo\\"},{\\"name\\":\\"dNovoLead\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data do Novo Lead\\"},{\\"name\\":\\"dQualificacao\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data da Qualificação.\\"},{\\"name\\":\\"dTreinamento\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de Treinamento\\"},{\\"name\\":\\"dShowRoom\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de ShowRoom\\"},{\\"name\\":\\"dProjeto\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de projeto\\"},{\\"name\\":\\"dConclusao\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de conclusão\\"}]},{\\"type\\":\\"ticket\\",\\"verboseName\\":\\"Ticket da Oportunidade\\",\\"filters\\":[{\\"name\\":\\"nProdutos\\",\\"type\\":\\"float\\",\\"verboseName\\":\\"Valor de produtos\\"},{\\"name\\":\\"nServicos\\",\\"type\\":\\"float\\",\\"verboseName\\":\\"Valor de serviços\\"},{\\"name\\":\\"nRecorrencia\\",\\"type\\":\\"float\\",\\"verboseName\\":\\"Valor da recorrência\\"},{\\"name\\":\\"nMeses\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Meses de contrato\\"},{\\"name\\":\\"nTicket\\",\\"type\\":\\"float\\",\\"verboseName\\":\\"Valor do ticket calculado\\"}]},{\\"type\\":\\"previsaoTemp\\",\\"verboseName\\":\\"Previsão e Temperatura\\",\\"filters\\":[{\\"name\\":\\"nTemperatura\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Temperatura\\"},{\\"name\\":\\"nMesPrev\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Mês de previsão de fechamento\\"},{\\"name\\":\\"nAnoPrev\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Ano de previsão de fechamento\\"}]},{\\"type\\":\\"observacoes\\",\\"verboseName\\":\\"Observações da oportunidade\\",\\"filters\\":[{\\"name\\":\\"cObs\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Observações\\"}]},{\\"type\\":\\"outrasInf\\",\\"verboseName\\":\\"Outras informações\\",\\"filters\\":[{\\"name\\":\\"nCodTipo\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do tipo\\"},{\\"name\\":\\"cEmailOp\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"E-mail da oportunidade\\"},{\\"name\\":\\"dInclusao\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de inclusão da oportunidade\\"},{\\"name\\":\\"hInclusao\\",\\"type\\":\\"string\\",\\"maxLength\\":8,\\"verboseName\\":\\"Hora de inclusão da oportunidade\\"},{\\"name\\":\\"dAlteracao\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de alteração da oportunidade\\"},{\\"name\\":\\"hAlteracao\\",\\"type\\":\\"string\\",\\"maxLength\\":8,\\"verboseName\\":\\"Hora de alteração da oportunidade\\"}]},{\\"type\\":\\"envolvidos\\",\\"verboseName\\":\\"Envolvidos na oportunidade\\",\\"filters\\":[{\\"name\\":\\"nCodFinder\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Finder\\"},{\\"name\\":\\"nCodParceiro\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do parceiro\\"},{\\"name\\":\\"nCodPrevenda\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da prevenda\\"}]}]},{\\"name\\":\\"ListarClientes\\",\\"value\\":\\"ListarClientes\\",\\"verboseName\\":\\"Listar Clientes\\",\\"params\\":[{\\"type\\":\\"pagina\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Número da página retornada\\"},{\\"type\\":\\"registros_por_pagina\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Número de registros retornados na página\\"},{\\"type\\":\\"apenas_importado_api\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Exibir apenas os registros gerados pela API\\"},{\\"type\\":\\"ordenar_por\\",\\"paramType\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Ordem de exibição dos dados\\"},{\\"type\\":\\"ordem_decrescente\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Se a lista será apresentada em ordem decrescente\\"},{\\"type\\":\\"filtrar_por_data_de\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Filtrar os registros a partir de uma data\\"},{\\"type\\":\\"filtrar_por_data_ate\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Filtrar os registros até uma data\\"},{\\"type\\":\\"filtrar_por_hora_de\\",\\"paramType\\":\\"string\\",\\"maxLength\\":8,\\"verboseName\\":\\"Filtro por hora a apartir de\\"},{\\"type\\":\\"filtrar_por_hora_ate\\",\\"paramType\\":\\"string\\",\\"maxLength\\":8,\\"verboseName\\":\\"Filtro por hora até\\"},{\\"type\\":\\"filtrar_apenas_inclusao\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Filtrar apenas os registros incluídos\\"},{\\"type\\":\\"filtrar_apenas_alteracao\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Filtrar apenas os registros alterados\\"},{\\"type\\":\\"clientesFiltro\\",\\"verboseName\\":\\"Filtrar cadastro de clientes\\",\\"filters\\":[{\\"name\\":\\"codigo_cliente_omie\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código de Cliente / Fornecedor\\"},{\\"name\\":\\"codigo_cliente_integracao\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Código de Integração com sistemas legados.\\"},{\\"name\\":\\"cnpj_cpf\\",\\"type\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"CNPJ / CPF\\"},{\\"name\\":\\"razao_social\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Razão Social\\"},{\\"name\\":\\"nome_fantasia\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Nome Fantasia\\"},{\\"name\\":\\"endereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço\\"},{\\"name\\":\\"bairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro\\"},{\\"name\\":\\"cidade\\",\\"type\\":\\"string\\",\\"maxLength\\":40,\\"verboseName\\":\\"Código da Cidade\\"},{\\"name\\":\\"estado\\",\\"type\\":\\"string\\",\\"maxLength\\":2,\\"verboseName\\":\\"Sigla do Estado\\"},{\\"name\\":\\"cep\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"contato\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Nome para contato\\"},{\\"name\\":\\"email\\",\\"type\\":\\"string\\",\\"maxLength\\":500,\\"verboseName\\":\\"E-Mail\\"},{\\"name\\":\\"homepage\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"},{\\"name\\":\\"inscricao_municipal\\",\\"type\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Inscrição Municipal\\"},{\\"name\\":\\"inscricao_estadual\\",\\"type\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Inscrição Estadual\\"},{\\"name\\":\\"inscricao_suframa\\",\\"type\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Inscrição Suframa\\"},{\\"name\\":\\"pessoa_fisica\\",\\"type\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Pessoa Física\\"},{\\"name\\":\\"optante_simples_nacional\\",\\"type\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Indica se o Cliente / Fornecedor é Optante do Simples Nacional\\"},{\\"name\\":\\"inativo\\",\\"type\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Indica se o cliente está inativo\\"}]},{\\"type\\":\\"clientesPorCodigo\\",\\"verboseName\\":\\"Lista de Códigos para filtro de cliente\\"},{\\"type\\":\\"exibir_caracteristicas\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Exibe as caracteristicas do cliente\\"}]},{\\"name\\":\\"PesquisarLancamentos\\",\\"value\\":\\"PesquisarLancamentos\\",\\"verboseName\\":\\"Pesquisar Títulos/Lançamentos\\",\\"params\\":[{\\"type\\":\\"nPagina\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Número da página retornada\\"},{\\"type\\":\\"nRegPorPagina\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Número de registros retornados na página\\"},{\\"type\\":\\"cOrdenarPor\\",\\"paramType\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Ordem de exibição do dados\\"},{\\"type\\":\\"cOrdemDecrescente\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Se a lista será apresentada em ordem decrescente.\\"},{\\"type\\":\\"nCodTitulo\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do titulo\\"},{\\"type\\":\\"cCodIntTitulo\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Código de integração do título\\"},{\\"type\\":\\"cNumTitulo\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Número do título\\"},{\\"type\\":\\"dDtEmisDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Filtrar os títulos pela data de emissão - de\\"},{\\"type\\":\\"dDtEmisAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":8,\\"verboseName\\":\\"Filtrar os títulos pela data de emissão - até\\"},{\\"type\\":\\"dDtVencDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de vencimento do título - de\\"},{\\"type\\":\\"dDtVencAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de vencimento do título - até\\"},{\\"type\\":\\"dDtPagtoDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data do Lançamento - de\\"},{\\"type\\":\\"dDtPagtoAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de Lançamento - até\\"},{\\"type\\":\\"dDtPrevDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de previsão de Pagamento/Recebimento - de\\"},{\\"type\\":\\"dDtPrevAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de previsão de Pagamento/Recebimento - até\\"},{\\"type\\":\\"dDtRegDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de registro da NF - de\\"},{\\"type\\":\\"dDtRegAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de registro da NF - até\\"},{\\"type\\":\\"nCodCliente\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código de Cliente / Fornecedor\\"},{\\"type\\":\\"cCPFCNPJCliente\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Filtrar os títulos por CPF/CNPJ do cliente\\"},{\\"type\\":\\"nCodCtr\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do contrato associado ao título\\"},{\\"type\\":\\"cNumCtr\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Número do contrato associado ao título\\"},{\\"type\\":\\"nCodOS\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do Pedido de Venda / Ordem de Serviço\\"},{\\"type\\":\\"cNumOS\\",\\"paramType\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do pedido de venda / Ordem de Serviço\\"},{\\"type\\":\\"nCodCC\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código da conta corrente\\"},{\\"type\\":\\"cStatus\\",\\"paramType\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Status do título\\"},{\\"type\\":\\"cNatureza\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Natureza do título\\"},{\\"type\\":\\"cTipo\\",\\"paramType\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"Tipo de documento\\"},{\\"type\\":\\"cOperacao\\",\\"paramType\\":\\"string\\",\\"maxLength\\":2,\\"verboseName\\":\\"Operação do título\\"},{\\"type\\":\\"cNumDocFiscal\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Número do documento fiscal\\"},{\\"type\\":\\"cCodigoBarras\\",\\"paramType\\":\\"string\\",\\"maxLength\\":70,\\"verboseName\\":\\"Código de Barras do título\\"},{\\"type\\":\\"nCodProjeto\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do projeto\\"},{\\"type\\":\\"nCodVendedor\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do vendedor\\"},{\\"type\\":\\"nCodComprador\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do comprador\\"},{\\"type\\":\\"cCodCateg\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Código da categoria\\"},{\\"type\\":\\"dDtIncDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de inclusão - de\\"},{\\"type\\":\\"dDtIncAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de inclusão - até\\"},{\\"type\\":\\"dDtAltDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de alteração - de\\"},{\\"type\\":\\"dDtAltAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de alteração - até\\"},{\\"type\\":\\"dDtCancDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de Cancelamento do título - de\\"},{\\"type\\":\\"dDtCancAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de Cancelamento do título - até\\"},{\\"type\\":\\"cChaveNFe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":44,\\"verboseName\\":\\"Chave da NF-e, CT-e, NFC-e de origem\\"}]},{\\"name\\":\\"VerificarContato\\",\\"value\\":\\"VerificarContato\\",\\"verboseName\\":\\"Verificar Contato\\",\\"params\\":[{\\"type\\":\\"cNome\\",\\"paramType\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"type\\":\\"cEmail\\",\\"paramType\\":\\"string\\",\\"verboseName\\":\\"Email do contato\\"}]},{\\"name\\":\\"ObterBoleto\\",\\"value\\":\\"ObterBoleto\\",\\"verboseName\\":\\"Obter Boleto\\",\\"params\\":[{\\"type\\":\\"nCodTitulo\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do Boleto\\",\\"required\\":true},{\\"type\\":\\"cCodIntTitulo\\",\\"paramType\\":\\"string\\",\\"verboseName\\":\\"Código de Integração do Título\\",\\"required\\":true}]}]}]"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Action
+            </span>
+          </p>
+          <div
+            class="normal "
+          >
+            <temba-select
+              data-testid="temba_select_external_service_call"
+              errors="[]"
+              expressions=""
+              name="External Service Call"
+              namekey="verboseName"
+              placeholder="Select the call from external service to do"
+              valuekey="value"
+              values="[{\\"name\\":\\"IncluirContato\\",\\"value\\":\\"IncluirContato\\",\\"verboseName\\":\\"Inserir Contato\\",\\"params\\":[{\\"name\\":\\"identificacao\\",\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\",\\"required\\":true},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\",\\"required\\":true},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]},{\\"name\\":\\"endereco\\",\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato\\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}]},{\\"type\\":\\"telefone_email\\",\\"verboseName\\":\\"Telefone e Email\\",\\"filters\\":[{\\"name\\":\\"cDDDCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do celular 1\\"},{\\"name\\":\\"cNumCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 1\\"},{\\"name\\":\\"cDDDCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Celular 2\\"},{\\"name\\":\\"cNumCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 2\\"},{\\"name\\":\\"cDDDTel\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Telefone\\"},{\\"name\\":\\"cNumTel\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Telefone\\"},{\\"name\\":\\"cDDDFax\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Fax\\"},{\\"name\\":\\"cNumFax\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Fax\\"},{\\"name\\":\\"cEmail\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"E-mail do contato\\"},{\\"name\\":\\"cWebsite\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"}]},{\\"type\\":\\"cObs\\",\\"verboseName\\":\\"Observações\\",\\"filters\\":[]}]}]"
+            />
+          </div>
+        </div>
+        <div
+          class="param_list_container "
+          tabindex="0"
+        >
+          <div
+            class="param_list"
+          >
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="true"
+                >
+                  <span
+                    class="fe-chevrons-expand dnd_icon"
+                    data-draggable="true"
+                  />
+                  <div
+                    class="choice"
+                  >
+                    <div
+                      class="small "
+                    >
+                      <temba-select
+                        data-testid="temba_select_service_call_param"
+                        errors="[]"
+                        expressions=""
+                        name="Service Call Param"
+                        namekey="verboseName"
+                        placeholder="param"
+                        valuekey="name"
+                        values="[{\\"uuid\\":\\"96249bdc-cb58-4489-a188-0eeb6686a8c9\\",\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\",\\"required\\":true},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\",\\"required\\":true},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}],\\"filter\\":{\\"value\\":null},\\"data\\":{\\"value\\":\\"\\",\\"validationFailures\\":[]},\\"valid\\":false,\\"availableParams\\":[{\\"name\\":\\"identificacao\\",\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\",\\"required\\":true},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\",\\"required\\":true},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]},{\\"name\\":\\"endereco\\",\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato\\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}]},{\\"type\\":\\"telefone_email\\",\\"verboseName\\":\\"Telefone e Email\\",\\"filters\\":[{\\"name\\":\\"cDDDCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do celular 1\\"},{\\"name\\":\\"cNumCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 1\\"},{\\"name\\":\\"cDDDCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Celular 2\\"},{\\"name\\":\\"cNumCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 2\\"},{\\"name\\":\\"cDDDTel\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Telefone\\"},{\\"name\\":\\"cNumTel\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Telefone\\"},{\\"name\\":\\"cDDDFax\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Fax\\"},{\\"name\\":\\"cNumFax\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Fax\\"},{\\"name\\":\\"cEmail\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"E-mail do contato\\"},{\\"name\\":\\"cWebsite\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"}]},{\\"type\\":\\"cObs\\",\\"verboseName\\":\\"Observações\\",\\"filters\\":[]}]}]"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="choice"
+                  >
+                    <div
+                      class="small "
+                    >
+                      <temba-select
+                        data-testid="temba_select_service_call_param_filter"
+                        errors="[]"
+                        expressions=""
+                        name="Service Call Param Filter"
+                        namekey="verboseName"
+                        placeholder="filter"
+                        valuekey="name"
+                        values="[]"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="data"
+                  >
+                    <div
+                      class="ele"
+                    >
+                      <div
+                        class="wrapper small"
+                      >
+                        <input
+                          data-testid="Service Call Param Data"
+                          name="Service Call Param Data"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <span
+                    class="fe-x remove_icon"
+                    data-testid="remove-param-96249bdc-cb58-4489-a188-0eeb6686a8c9"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="optional_text_input"
+        >
+          <div
+            class="ele"
+          >
+            <div
+              class="label"
+            >
+              Result Name
+            </div>
+            <div
+              class="wrapper normal"
+            >
+              <input
+                data-testid="Result Name"
+                name="Result Name"
+                value="Result"
+              />
+            </div>
+            <div
+              class="help_text"
+            >
+              By naming the result, you can reference it later using @results.result
+               
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div
+          class="buttons"
+        >
+          <div
+            class="right_buttons"
+          >
+            <div
+              class="btn secondary  "
+              style="margin-left: 0px; margin-top: 0px;"
+            >
+              Cancel
+            </div>
+            <div
+              class="btn primary  "
+              style="margin-left: 10px; margin-top: 0px;"
+            >
+              Ok
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
+<body>
+  <div>
+    <div
+      class="dialog"
+    >
+      <div
+        class="header call_external_service"
+      >
+        <div
+          class="title_container"
+        >
+          <div
+            class="title"
+          >
+            Call External Service
+          </div>
+          <div
+            class="subtitle"
+          />
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class=" type_list"
+        >
+          <p>
+            When a contact arrives at this point in your flow...
+          </p>
+          <div>
+            <div
+              class="normal "
+            >
+              <temba-select
+                data-testid="temba_select_type"
+                errors="[]"
+                expressions=""
+                name="type"
+                namekey="description"
+                searchable="true"
+                valuekey="type"
+                values="[{\\"type\\":\\"call_external_service\\",\\"name\\":\\"Call External Service\\",\\"description\\":\\"Call an external service\\",\\"localizeableKeys\\":[\\"exists\\"],\\"aliases\\":[\\"split_by_external_service\\"],\\"filter\\":\\"external_service\\"}]"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Integration with... 
+            </span>
+          </p>
+          <div
+            class="ele"
+          >
+            <div
+              class="normal "
+            >
+              <temba-select
+                cachekey="0"
+                data-testid="temba_select_external_service"
+                errors="[]"
+                expressions=""
+                name="External Service"
+                namekey="name"
+                placeholder="Select the external service to use"
+                valuekey="uuid"
+                values="[{\\"uuid\\":\\"5b154b06-5ecd-43d9-afca-39738e6859d7\\",\\"name\\":\\"Omie dummy project\\",\\"external_service_type\\":\\"omie\\",\\"created_on\\":\\"2020-10-15T20:07:58.529130Z\\",\\"actions\\":[{\\"name\\":\\"IncluirContato\\",\\"value\\":\\"IncluirContato\\",\\"verboseName\\":\\"Inserir Contato\\",\\"params\\":[{\\"name\\":\\"identificacao\\",\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\",\\"required\\":true},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\",\\"required\\":true},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]},{\\"name\\":\\"endereco\\",\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato\\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}]},{\\"type\\":\\"telefone_email\\",\\"verboseName\\":\\"Telefone e Email\\",\\"filters\\":[{\\"name\\":\\"cDDDCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do celular 1\\"},{\\"name\\":\\"cNumCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 1\\"},{\\"name\\":\\"cDDDCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Celular 2\\"},{\\"name\\":\\"cNumCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 2\\"},{\\"name\\":\\"cDDDTel\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Telefone\\"},{\\"name\\":\\"cNumTel\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Telefone\\"},{\\"name\\":\\"cDDDFax\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Fax\\"},{\\"name\\":\\"cNumFax\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Fax\\"},{\\"name\\":\\"cEmail\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"E-mail do contato\\"},{\\"name\\":\\"cWebsite\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"}]},{\\"type\\":\\"cObs\\",\\"verboseName\\":\\"Observações\\",\\"filters\\":[]}]},{\\"name\\":\\"IncluirOportunidade\\",\\"value\\":\\"IncluirOportunidade\\",\\"verboseName\\":\\"Incluir Oportunidade\\",\\"params\\":[{\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Cabeçalho da Oportunidade\\",\\"filters\\":[{\\"name\\":\\"nCodOp\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Oportunidade\\"},{\\"name\\":\\"cCodIntOp\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de integração da oportunidade\\",\\"required\\":true},{\\"name\\":\\"cDesOp\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Descrição da oportunidade\\",\\"required\\":true},{\\"name\\":\\"nCodContato\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do contato\\",\\"required\\":true},{\\"name\\":\\"nCodSolucao\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da solução\\",\\"required\\":true},{\\"name\\":\\"nCodOrigem\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da origem\\",\\"required\\":true},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da conta\\"},{\\"name\\":\\"nCodVendedor\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do vendedor\\",\\"required\\":true}]},{\\"type\\":\\"fasesStatus\\",\\"verboseName\\":\\"Fase e Status da Oportunidade\\",\\"filters\\":[{\\"name\\":\\"nCodFase\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da fase\\"},{\\"name\\":\\"nCodStatus\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do status\\"},{\\"name\\":\\"nCodMotivo\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do motivo\\"},{\\"name\\":\\"dNovoLead\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data do Novo Lead\\"},{\\"name\\":\\"dQualificacao\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data da Qualificação.\\"},{\\"name\\":\\"dTreinamento\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de Treinamento\\"},{\\"name\\":\\"dShowRoom\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de ShowRoom\\"},{\\"name\\":\\"dProjeto\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de projeto\\"},{\\"name\\":\\"dConclusao\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de conclusão\\"}]},{\\"type\\":\\"ticket\\",\\"verboseName\\":\\"Ticket da Oportunidade\\",\\"filters\\":[{\\"name\\":\\"nProdutos\\",\\"type\\":\\"float\\",\\"verboseName\\":\\"Valor de produtos\\"},{\\"name\\":\\"nServicos\\",\\"type\\":\\"float\\",\\"verboseName\\":\\"Valor de serviços\\"},{\\"name\\":\\"nRecorrencia\\",\\"type\\":\\"float\\",\\"verboseName\\":\\"Valor da recorrência\\"},{\\"name\\":\\"nMeses\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Meses de contrato\\"},{\\"name\\":\\"nTicket\\",\\"type\\":\\"float\\",\\"verboseName\\":\\"Valor do ticket calculado\\"}]},{\\"type\\":\\"previsaoTemp\\",\\"verboseName\\":\\"Previsão e Temperatura\\",\\"filters\\":[{\\"name\\":\\"nTemperatura\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Temperatura\\"},{\\"name\\":\\"nMesPrev\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Mês de previsão de fechamento\\"},{\\"name\\":\\"nAnoPrev\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Ano de previsão de fechamento\\"}]},{\\"type\\":\\"observacoes\\",\\"verboseName\\":\\"Observações da oportunidade\\",\\"filters\\":[{\\"name\\":\\"cObs\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Observações\\"}]},{\\"type\\":\\"outrasInf\\",\\"verboseName\\":\\"Outras informações\\",\\"filters\\":[{\\"name\\":\\"nCodTipo\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do tipo\\"},{\\"name\\":\\"cEmailOp\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"E-mail da oportunidade\\"},{\\"name\\":\\"dInclusao\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de inclusão da oportunidade\\"},{\\"name\\":\\"hInclusao\\",\\"type\\":\\"string\\",\\"maxLength\\":8,\\"verboseName\\":\\"Hora de inclusão da oportunidade\\"},{\\"name\\":\\"dAlteracao\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de alteração da oportunidade\\"},{\\"name\\":\\"hAlteracao\\",\\"type\\":\\"string\\",\\"maxLength\\":8,\\"verboseName\\":\\"Hora de alteração da oportunidade\\"}]},{\\"type\\":\\"envolvidos\\",\\"verboseName\\":\\"Envolvidos na oportunidade\\",\\"filters\\":[{\\"name\\":\\"nCodFinder\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Finder\\"},{\\"name\\":\\"nCodParceiro\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do parceiro\\"},{\\"name\\":\\"nCodPrevenda\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da prevenda\\"}]}]},{\\"name\\":\\"ListarClientes\\",\\"value\\":\\"ListarClientes\\",\\"verboseName\\":\\"Listar Clientes\\",\\"params\\":[{\\"type\\":\\"pagina\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Número da página retornada\\"},{\\"type\\":\\"registros_por_pagina\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Número de registros retornados na página\\"},{\\"type\\":\\"apenas_importado_api\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Exibir apenas os registros gerados pela API\\"},{\\"type\\":\\"ordenar_por\\",\\"paramType\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Ordem de exibição dos dados\\"},{\\"type\\":\\"ordem_decrescente\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Se a lista será apresentada em ordem decrescente\\"},{\\"type\\":\\"filtrar_por_data_de\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Filtrar os registros a partir de uma data\\"},{\\"type\\":\\"filtrar_por_data_ate\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Filtrar os registros até uma data\\"},{\\"type\\":\\"filtrar_por_hora_de\\",\\"paramType\\":\\"string\\",\\"maxLength\\":8,\\"verboseName\\":\\"Filtro por hora a apartir de\\"},{\\"type\\":\\"filtrar_por_hora_ate\\",\\"paramType\\":\\"string\\",\\"maxLength\\":8,\\"verboseName\\":\\"Filtro por hora até\\"},{\\"type\\":\\"filtrar_apenas_inclusao\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Filtrar apenas os registros incluídos\\"},{\\"type\\":\\"filtrar_apenas_alteracao\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Filtrar apenas os registros alterados\\"},{\\"type\\":\\"clientesFiltro\\",\\"verboseName\\":\\"Filtrar cadastro de clientes\\",\\"filters\\":[{\\"name\\":\\"codigo_cliente_omie\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código de Cliente / Fornecedor\\"},{\\"name\\":\\"codigo_cliente_integracao\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Código de Integração com sistemas legados.\\"},{\\"name\\":\\"cnpj_cpf\\",\\"type\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"CNPJ / CPF\\"},{\\"name\\":\\"razao_social\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Razão Social\\"},{\\"name\\":\\"nome_fantasia\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Nome Fantasia\\"},{\\"name\\":\\"endereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço\\"},{\\"name\\":\\"bairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro\\"},{\\"name\\":\\"cidade\\",\\"type\\":\\"string\\",\\"maxLength\\":40,\\"verboseName\\":\\"Código da Cidade\\"},{\\"name\\":\\"estado\\",\\"type\\":\\"string\\",\\"maxLength\\":2,\\"verboseName\\":\\"Sigla do Estado\\"},{\\"name\\":\\"cep\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"contato\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Nome para contato\\"},{\\"name\\":\\"email\\",\\"type\\":\\"string\\",\\"maxLength\\":500,\\"verboseName\\":\\"E-Mail\\"},{\\"name\\":\\"homepage\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"},{\\"name\\":\\"inscricao_municipal\\",\\"type\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Inscrição Municipal\\"},{\\"name\\":\\"inscricao_estadual\\",\\"type\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Inscrição Estadual\\"},{\\"name\\":\\"inscricao_suframa\\",\\"type\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Inscrição Suframa\\"},{\\"name\\":\\"pessoa_fisica\\",\\"type\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Pessoa Física\\"},{\\"name\\":\\"optante_simples_nacional\\",\\"type\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Indica se o Cliente / Fornecedor é Optante do Simples Nacional\\"},{\\"name\\":\\"inativo\\",\\"type\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Indica se o cliente está inativo\\"}]},{\\"type\\":\\"clientesPorCodigo\\",\\"verboseName\\":\\"Lista de Códigos para filtro de cliente\\"},{\\"type\\":\\"exibir_caracteristicas\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Exibe as caracteristicas do cliente\\"}]},{\\"name\\":\\"PesquisarLancamentos\\",\\"value\\":\\"PesquisarLancamentos\\",\\"verboseName\\":\\"Pesquisar Títulos/Lançamentos\\",\\"params\\":[{\\"type\\":\\"nPagina\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Número da página retornada\\"},{\\"type\\":\\"nRegPorPagina\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Número de registros retornados na página\\"},{\\"type\\":\\"cOrdenarPor\\",\\"paramType\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Ordem de exibição do dados\\"},{\\"type\\":\\"cOrdemDecrescente\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Se a lista será apresentada em ordem decrescente.\\"},{\\"type\\":\\"nCodTitulo\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do titulo\\"},{\\"type\\":\\"cCodIntTitulo\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Código de integração do título\\"},{\\"type\\":\\"cNumTitulo\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Número do título\\"},{\\"type\\":\\"dDtEmisDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Filtrar os títulos pela data de emissão - de\\"},{\\"type\\":\\"dDtEmisAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":8,\\"verboseName\\":\\"Filtrar os títulos pela data de emissão - até\\"},{\\"type\\":\\"dDtVencDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de vencimento do título - de\\"},{\\"type\\":\\"dDtVencAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de vencimento do título - até\\"},{\\"type\\":\\"dDtPagtoDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data do Lançamento - de\\"},{\\"type\\":\\"dDtPagtoAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de Lançamento - até\\"},{\\"type\\":\\"dDtPrevDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de previsão de Pagamento/Recebimento - de\\"},{\\"type\\":\\"dDtPrevAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de previsão de Pagamento/Recebimento - até\\"},{\\"type\\":\\"dDtRegDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de registro da NF - de\\"},{\\"type\\":\\"dDtRegAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de registro da NF - até\\"},{\\"type\\":\\"nCodCliente\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código de Cliente / Fornecedor\\"},{\\"type\\":\\"cCPFCNPJCliente\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Filtrar os títulos por CPF/CNPJ do cliente\\"},{\\"type\\":\\"nCodCtr\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do contrato associado ao título\\"},{\\"type\\":\\"cNumCtr\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Número do contrato associado ao título\\"},{\\"type\\":\\"nCodOS\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do Pedido de Venda / Ordem de Serviço\\"},{\\"type\\":\\"cNumOS\\",\\"paramType\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do pedido de venda / Ordem de Serviço\\"},{\\"type\\":\\"nCodCC\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código da conta corrente\\"},{\\"type\\":\\"cStatus\\",\\"paramType\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"Status do título\\"},{\\"type\\":\\"cNatureza\\",\\"paramType\\":\\"string\\",\\"maxLength\\":1,\\"verboseName\\":\\"Natureza do título\\"},{\\"type\\":\\"cTipo\\",\\"paramType\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"Tipo de documento\\"},{\\"type\\":\\"cOperacao\\",\\"paramType\\":\\"string\\",\\"maxLength\\":2,\\"verboseName\\":\\"Operação do título\\"},{\\"type\\":\\"cNumDocFiscal\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Número do documento fiscal\\"},{\\"type\\":\\"cCodigoBarras\\",\\"paramType\\":\\"string\\",\\"maxLength\\":70,\\"verboseName\\":\\"Código de Barras do título\\"},{\\"type\\":\\"nCodProjeto\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do projeto\\"},{\\"type\\":\\"nCodVendedor\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do vendedor\\"},{\\"type\\":\\"nCodComprador\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do comprador\\"},{\\"type\\":\\"cCodCateg\\",\\"paramType\\":\\"string\\",\\"maxLength\\":20,\\"verboseName\\":\\"Código da categoria\\"},{\\"type\\":\\"dDtIncDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de inclusão - de\\"},{\\"type\\":\\"dDtIncAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de inclusão - até\\"},{\\"type\\":\\"dDtAltDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de alteração - de\\"},{\\"type\\":\\"dDtAltAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de alteração - até\\"},{\\"type\\":\\"dDtCancDe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de Cancelamento do título - de\\"},{\\"type\\":\\"dDtCancAte\\",\\"paramType\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"Data de Cancelamento do título - até\\"},{\\"type\\":\\"cChaveNFe\\",\\"paramType\\":\\"string\\",\\"maxLength\\":44,\\"verboseName\\":\\"Chave da NF-e, CT-e, NFC-e de origem\\"}]},{\\"name\\":\\"VerificarContato\\",\\"value\\":\\"VerificarContato\\",\\"verboseName\\":\\"Verificar Contato\\",\\"params\\":[{\\"type\\":\\"cNome\\",\\"paramType\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\"},{\\"type\\":\\"cEmail\\",\\"paramType\\":\\"string\\",\\"verboseName\\":\\"Email do contato\\"}]},{\\"name\\":\\"ObterBoleto\\",\\"value\\":\\"ObterBoleto\\",\\"verboseName\\":\\"Obter Boleto\\",\\"params\\":[{\\"type\\":\\"nCodTitulo\\",\\"paramType\\":\\"integer\\",\\"verboseName\\":\\"Código do Boleto\\",\\"required\\":true},{\\"type\\":\\"cCodIntTitulo\\",\\"paramType\\":\\"string\\",\\"verboseName\\":\\"Código de Integração do Título\\",\\"required\\":true}]}]}]"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Action
+            </span>
+          </p>
+          <div
+            class="normal "
+          >
+            <temba-select
+              data-testid="temba_select_external_service_call"
+              errors="[]"
+              expressions=""
+              name="External Service Call"
+              namekey="verboseName"
+              placeholder="Select the call from external service to do"
+              valuekey="value"
+              values="[{\\"name\\":\\"IncluirContato\\",\\"value\\":\\"IncluirContato\\",\\"verboseName\\":\\"Inserir Contato\\",\\"params\\":[{\\"name\\":\\"identificacao\\",\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\",\\"required\\":true},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\",\\"required\\":true},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]},{\\"name\\":\\"endereco\\",\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato\\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}]},{\\"type\\":\\"telefone_email\\",\\"verboseName\\":\\"Telefone e Email\\",\\"filters\\":[{\\"name\\":\\"cDDDCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do celular 1\\"},{\\"name\\":\\"cNumCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 1\\"},{\\"name\\":\\"cDDDCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Celular 2\\"},{\\"name\\":\\"cNumCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 2\\"},{\\"name\\":\\"cDDDTel\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Telefone\\"},{\\"name\\":\\"cNumTel\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Telefone\\"},{\\"name\\":\\"cDDDFax\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Fax\\"},{\\"name\\":\\"cNumFax\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Fax\\"},{\\"name\\":\\"cEmail\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"E-mail do contato\\"},{\\"name\\":\\"cWebsite\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"}]},{\\"type\\":\\"cObs\\",\\"verboseName\\":\\"Observações\\",\\"filters\\":[]}]}]"
+            />
+          </div>
+        </div>
+        <div
+          class="param_list_container "
+          tabindex="0"
+        >
+          <div
+            class="param_list"
+          >
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <div
+                    class="order_filler"
+                  />
+                  <div
+                    class="choice"
+                  >
+                    <div
+                      class="small "
+                    >
+                      <temba-select
+                        data-testid="temba_select_service_call_param"
+                        disabled="true"
+                        errors="[]"
+                        expressions=""
+                        name="Service Call Param"
+                        namekey="verboseName"
+                        placeholder="param"
+                        valuekey="name"
+                        values="[{\\"uuid\\":\\"57bf1459-14b9-4a73-b579-9d1b56f0b276\\",\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\",\\"required\\":true},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\",\\"required\\":true},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}],\\"filter\\":{\\"value\\":{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\",\\"required\\":true}},\\"data\\":{\\"value\\":\\"\\",\\"validationFailures\\":[{\\"message\\":\\"Parameter is required\\"}]},\\"valid\\":false,\\"availableParams\\":[{\\"name\\":\\"identificacao\\",\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]},{\\"name\\":\\"endereco\\",\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato\\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}]},{\\"type\\":\\"telefone_email\\",\\"verboseName\\":\\"Telefone e Email\\",\\"filters\\":[{\\"name\\":\\"cDDDCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do celular 1\\"},{\\"name\\":\\"cNumCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 1\\"},{\\"name\\":\\"cDDDCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Celular 2\\"},{\\"name\\":\\"cNumCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 2\\"},{\\"name\\":\\"cDDDTel\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Telefone\\"},{\\"name\\":\\"cNumTel\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Telefone\\"},{\\"name\\":\\"cDDDFax\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Fax\\"},{\\"name\\":\\"cNumFax\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Fax\\"},{\\"name\\":\\"cEmail\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"E-mail do contato\\"},{\\"name\\":\\"cWebsite\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"}]},{\\"type\\":\\"cObs\\",\\"verboseName\\":\\"Observações\\",\\"filters\\":[]}]}]"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="choice"
+                  >
+                    <div
+                      class="small "
+                    >
+                      <temba-select
+                        data-testid="temba_select_service_call_param_filter"
+                        disabled="true"
+                        errors="[]"
+                        expressions=""
+                        name="Service Call Param Filter"
+                        namekey="verboseName"
+                        placeholder="filter"
+                        valuekey="name"
+                        values="[{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\",\\"required\\":true}]"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="data"
+                  >
+                    <div
+                      class="ele invalid"
+                    >
+                      <div
+                        class="wrapper small"
+                      >
+                        <input
+                          data-testid="Service Call Param Data"
+                          name="Service Call Param Data"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="error_list"
+                      >
+                        <div
+                          class="error"
+                        >
+                          <div
+                            class="arrow_up"
+                          />
+                          <div>
+                            Parameter is required
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="remove_filler"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <div
+                    class="order_filler"
+                  />
+                  <div
+                    class="choice"
+                  >
+                    <div
+                      class="small "
+                    >
+                      <temba-select
+                        data-testid="temba_select_service_call_param"
+                        disabled="true"
+                        errors="[]"
+                        expressions=""
+                        name="Service Call Param"
+                        namekey="verboseName"
+                        placeholder="param"
+                        valuekey="name"
+                        values="[{\\"uuid\\":\\"a0bf60d1-2333-41a5-9bcb-7c56cc5e969e\\",\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cCodInt\\",\\"type\\":\\"text\\",\\"verboseName\\":\\"Código de Integração\\",\\"required\\":true},{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\",\\"required\\":true},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}],\\"filter\\":{\\"value\\":{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\",\\"required\\":true}},\\"data\\":{\\"value\\":\\"\\",\\"validationFailures\\":[{\\"message\\":\\"Parameter is required\\"}]},\\"valid\\":false,\\"availableParams\\":[{\\"name\\":\\"identificacao\\",\\"type\\":\\"identificacao\\",\\"verboseName\\":\\"Identificação\\",\\"filters\\":[{\\"name\\":\\"nCod\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Contato\\"},{\\"name\\":\\"cSobrenome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Sobrenome do contato\\"},{\\"name\\":\\"cCargo\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Cargo\\"},{\\"name\\":\\"dDtNasc\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Data de Nascimento\\"},{\\"name\\":\\"nCodVend\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código do Vendedor\\"},{\\"name\\":\\"nCodConta\\",\\"type\\":\\"integer\\",\\"verboseName\\":\\"Código da Conta\\"}]},{\\"name\\":\\"endereco\\",\\"type\\":\\"endereco\\",\\"verboseName\\":\\"Endereço\\",\\"filters\\":[{\\"name\\":\\"cEndereco\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Endereço do contato\\"},{\\"name\\":\\"cCompl\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"Complemento \\"},{\\"name\\":\\"cCEP\\",\\"type\\":\\"string\\",\\"maxLength\\":10,\\"verboseName\\":\\"CEP\\"},{\\"name\\":\\"cBairro\\",\\"type\\":\\"string\\",\\"maxLength\\":60,\\"verboseName\\":\\"Bairro \\"},{\\"name\\":\\"cCidade\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Cidade \\"},{\\"name\\":\\"cUF\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"Estado \\"},{\\"name\\":\\"cPais\\",\\"type\\":\\"string\\",\\"maxLength\\":50,\\"verboseName\\":\\"País\\"}]},{\\"type\\":\\"telefone_email\\",\\"verboseName\\":\\"Telefone e Email\\",\\"filters\\":[{\\"name\\":\\"cDDDCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do celular 1\\"},{\\"name\\":\\"cNumCel1\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 1\\"},{\\"name\\":\\"cDDDCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Celular 2\\"},{\\"name\\":\\"cNumCel2\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Celular 2\\"},{\\"name\\":\\"cDDDTel\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Telefone\\"},{\\"name\\":\\"cNumTel\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Telefone\\"},{\\"name\\":\\"cDDDFax\\",\\"type\\":\\"string\\",\\"maxLength\\":5,\\"verboseName\\":\\"DDD do Fax\\"},{\\"name\\":\\"cNumFax\\",\\"type\\":\\"string\\",\\"maxLength\\":15,\\"verboseName\\":\\"Número do Fax\\"},{\\"name\\":\\"cEmail\\",\\"type\\":\\"string\\",\\"maxLength\\":200,\\"verboseName\\":\\"E-mail do contato\\"},{\\"name\\":\\"cWebsite\\",\\"type\\":\\"string\\",\\"maxLength\\":100,\\"verboseName\\":\\"WebSite\\"}]},{\\"type\\":\\"cObs\\",\\"verboseName\\":\\"Observações\\",\\"filters\\":[]}]}]"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="choice"
+                  >
+                    <div
+                      class="small "
+                    >
+                      <temba-select
+                        data-testid="temba_select_service_call_param_filter"
+                        disabled="true"
+                        errors="[]"
+                        expressions=""
+                        name="Service Call Param Filter"
+                        namekey="verboseName"
+                        placeholder="filter"
+                        valuekey="name"
+                        values="[{\\"name\\":\\"cNome\\",\\"type\\":\\"string\\",\\"verboseName\\":\\"Nome do contato\\",\\"required\\":true}]"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="data"
+                  >
+                    <div
+                      class="ele invalid"
+                    >
+                      <div
+                        class="wrapper small"
+                      >
+                        <input
+                          data-testid="Service Call Param Data"
+                          name="Service Call Param Data"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="error_list"
+                      >
+                        <div
+                          class="error"
+                        >
+                          <div
+                            class="arrow_up"
+                          />
+                          <div>
+                            Parameter is required
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="remove_filler"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="optional_text_input"
+        >
+          <div
+            class="ele"
+          >
+            <div
+              class="label"
+            >
+              Result Name
+            </div>
+            <div
+              class="wrapper normal"
+            >
+              <input
+                data-testid="Result Name"
+                name="Result Name"
+                value="Result"
+              />
+            </div>
+            <div
+              class="help_text"
+            >
+              By naming the result, you can reference it later using @results.result
+               
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div
+          class="buttons"
+        >
+          <div
+            class="right_buttons"
+          >
+            <div
+              class="btn secondary  "
+              style="margin-left: 0px; margin-top: 0px;"
+            >
+              Cancel
+            </div>
+            <div
+              class="btn primary  "
+              style="margin-left: 10px; margin-top: 0px;"
+            >
+              Ok
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ExternalServiceRouterForm Omie updates should save changes 2`] = `
 Array [
   Object {
     "inboundConnections": Object {},
@@ -336,6 +1544,7 @@ Array [
                     "verboseName": "Código da Conta",
                   },
                 ],
+                "name": "identificacao",
                 "type": "identificacao",
                 "verboseName": "Identificação",
               },
@@ -384,6 +1593,7 @@ Array [
                     "verboseName": "País",
                   },
                 ],
+                "name": "endereco",
                 "type": "endereco",
                 "verboseName": "Endereço",
               },
@@ -463,8 +1673,907 @@ Array [
             "verboseName": "Inserir Contato",
           },
           "external_service": Object {
+            "actions": Array [
+              Object {
+                "name": "IncluirContato",
+                "params": Array [
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nCod",
+                        "type": "integer",
+                        "verboseName": "Código do Contato",
+                      },
+                      Object {
+                        "name": "cCodInt",
+                        "required": true,
+                        "type": "text",
+                        "verboseName": "Código de Integração",
+                      },
+                      Object {
+                        "name": "cNome",
+                        "required": true,
+                        "type": "string",
+                        "verboseName": "Nome do contato",
+                      },
+                      Object {
+                        "name": "cSobrenome",
+                        "type": "string",
+                        "verboseName": "Sobrenome do contato",
+                      },
+                      Object {
+                        "name": "cCargo",
+                        "type": "string",
+                        "verboseName": "Cargo",
+                      },
+                      Object {
+                        "name": "dDtNasc",
+                        "type": "string",
+                        "verboseName": "Data de Nascimento",
+                      },
+                      Object {
+                        "name": "nCodVend",
+                        "type": "integer",
+                        "verboseName": "Código do Vendedor",
+                      },
+                      Object {
+                        "name": "nCodConta",
+                        "type": "integer",
+                        "verboseName": "Código da Conta",
+                      },
+                    ],
+                    "name": "identificacao",
+                    "type": "identificacao",
+                    "verboseName": "Identificação",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "maxLength": 60,
+                        "name": "cEndereco",
+                        "type": "string",
+                        "verboseName": "Endereço do contato",
+                      },
+                      Object {
+                        "maxLength": 200,
+                        "name": "cCompl",
+                        "type": "string",
+                        "verboseName": "Complemento ",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "cCEP",
+                        "type": "string",
+                        "verboseName": "CEP",
+                      },
+                      Object {
+                        "maxLength": 60,
+                        "name": "cBairro",
+                        "type": "string",
+                        "verboseName": "Bairro ",
+                      },
+                      Object {
+                        "maxLength": 50,
+                        "name": "cCidade",
+                        "type": "string",
+                        "verboseName": "Cidade ",
+                      },
+                      Object {
+                        "maxLength": 50,
+                        "name": "cUF",
+                        "type": "string",
+                        "verboseName": "Estado ",
+                      },
+                      Object {
+                        "maxLength": 50,
+                        "name": "cPais",
+                        "type": "string",
+                        "verboseName": "País",
+                      },
+                    ],
+                    "name": "endereco",
+                    "type": "endereco",
+                    "verboseName": "Endereço",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "maxLength": 5,
+                        "name": "cDDDCel1",
+                        "type": "string",
+                        "verboseName": "DDD do celular 1",
+                      },
+                      Object {
+                        "maxLength": 15,
+                        "name": "cNumCel1",
+                        "type": "string",
+                        "verboseName": "Número do Celular 1",
+                      },
+                      Object {
+                        "maxLength": 5,
+                        "name": "cDDDCel2",
+                        "type": "string",
+                        "verboseName": "DDD do Celular 2",
+                      },
+                      Object {
+                        "maxLength": 15,
+                        "name": "cNumCel2",
+                        "type": "string",
+                        "verboseName": "Número do Celular 2",
+                      },
+                      Object {
+                        "maxLength": 5,
+                        "name": "cDDDTel",
+                        "type": "string",
+                        "verboseName": "DDD do Telefone",
+                      },
+                      Object {
+                        "maxLength": 15,
+                        "name": "cNumTel",
+                        "type": "string",
+                        "verboseName": "Número do Telefone",
+                      },
+                      Object {
+                        "maxLength": 5,
+                        "name": "cDDDFax",
+                        "type": "string",
+                        "verboseName": "DDD do Fax",
+                      },
+                      Object {
+                        "maxLength": 15,
+                        "name": "cNumFax",
+                        "type": "string",
+                        "verboseName": "Número do Fax",
+                      },
+                      Object {
+                        "maxLength": 200,
+                        "name": "cEmail",
+                        "type": "string",
+                        "verboseName": "E-mail do contato",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "cWebsite",
+                        "type": "string",
+                        "verboseName": "WebSite",
+                      },
+                    ],
+                    "type": "telefone_email",
+                    "verboseName": "Telefone e Email",
+                  },
+                  Object {
+                    "filters": Array [],
+                    "type": "cObs",
+                    "verboseName": "Observações",
+                  },
+                ],
+                "value": "IncluirContato",
+                "verboseName": "Inserir Contato",
+              },
+              Object {
+                "name": "IncluirOportunidade",
+                "params": Array [
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nCodOp",
+                        "type": "integer",
+                        "verboseName": "Código da Oportunidade",
+                      },
+                      Object {
+                        "name": "cCodIntOp",
+                        "required": true,
+                        "type": "text",
+                        "verboseName": "Código de integração da oportunidade",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "cDesOp",
+                        "required": true,
+                        "type": "string",
+                        "verboseName": "Descrição da oportunidade",
+                      },
+                      Object {
+                        "name": "nCodContato",
+                        "required": true,
+                        "type": "integer",
+                        "verboseName": "Código do contato",
+                      },
+                      Object {
+                        "name": "nCodSolucao",
+                        "required": true,
+                        "type": "integer",
+                        "verboseName": "Código da solução",
+                      },
+                      Object {
+                        "name": "nCodOrigem",
+                        "required": true,
+                        "type": "integer",
+                        "verboseName": "Código da origem",
+                      },
+                      Object {
+                        "name": "nCodConta",
+                        "type": "integer",
+                        "verboseName": "Código da conta",
+                      },
+                      Object {
+                        "name": "nCodVendedor",
+                        "required": true,
+                        "type": "integer",
+                        "verboseName": "Código do vendedor",
+                      },
+                    ],
+                    "type": "identificacao",
+                    "verboseName": "Cabeçalho da Oportunidade",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nCodFase",
+                        "type": "integer",
+                        "verboseName": "Código da fase",
+                      },
+                      Object {
+                        "name": "nCodStatus",
+                        "type": "integer",
+                        "verboseName": "Código do status",
+                      },
+                      Object {
+                        "name": "nCodMotivo",
+                        "type": "integer",
+                        "verboseName": "Código do motivo",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dNovoLead",
+                        "type": "string",
+                        "verboseName": "Data do Novo Lead",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dQualificacao",
+                        "type": "string",
+                        "verboseName": "Data da Qualificação.",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dTreinamento",
+                        "type": "string",
+                        "verboseName": "Data de Treinamento",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dShowRoom",
+                        "type": "string",
+                        "verboseName": "Data de ShowRoom",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dProjeto",
+                        "type": "string",
+                        "verboseName": "Data de projeto",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dConclusao",
+                        "type": "string",
+                        "verboseName": "Data de conclusão",
+                      },
+                    ],
+                    "type": "fasesStatus",
+                    "verboseName": "Fase e Status da Oportunidade",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nProdutos",
+                        "type": "float",
+                        "verboseName": "Valor de produtos",
+                      },
+                      Object {
+                        "name": "nServicos",
+                        "type": "float",
+                        "verboseName": "Valor de serviços",
+                      },
+                      Object {
+                        "name": "nRecorrencia",
+                        "type": "float",
+                        "verboseName": "Valor da recorrência",
+                      },
+                      Object {
+                        "name": "nMeses",
+                        "type": "integer",
+                        "verboseName": "Meses de contrato",
+                      },
+                      Object {
+                        "name": "nTicket",
+                        "type": "float",
+                        "verboseName": "Valor do ticket calculado",
+                      },
+                    ],
+                    "type": "ticket",
+                    "verboseName": "Ticket da Oportunidade",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nTemperatura",
+                        "type": "integer",
+                        "verboseName": "Temperatura",
+                      },
+                      Object {
+                        "name": "nMesPrev",
+                        "type": "integer",
+                        "verboseName": "Mês de previsão de fechamento",
+                      },
+                      Object {
+                        "name": "nAnoPrev",
+                        "type": "integer",
+                        "verboseName": "Ano de previsão de fechamento",
+                      },
+                    ],
+                    "type": "previsaoTemp",
+                    "verboseName": "Previsão e Temperatura",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "cObs",
+                        "type": "text",
+                        "verboseName": "Observações",
+                      },
+                    ],
+                    "type": "observacoes",
+                    "verboseName": "Observações da oportunidade",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nCodTipo",
+                        "type": "integer",
+                        "verboseName": "Código do tipo",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "cEmailOp",
+                        "type": "string",
+                        "verboseName": "E-mail da oportunidade",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dInclusao",
+                        "type": "string",
+                        "verboseName": "Data de inclusão da oportunidade",
+                      },
+                      Object {
+                        "maxLength": 8,
+                        "name": "hInclusao",
+                        "type": "string",
+                        "verboseName": "Hora de inclusão da oportunidade",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dAlteracao",
+                        "type": "string",
+                        "verboseName": "Data de alteração da oportunidade",
+                      },
+                      Object {
+                        "maxLength": 8,
+                        "name": "hAlteracao",
+                        "type": "string",
+                        "verboseName": "Hora de alteração da oportunidade",
+                      },
+                    ],
+                    "type": "outrasInf",
+                    "verboseName": "Outras informações",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nCodFinder",
+                        "type": "integer",
+                        "verboseName": "Código do Finder",
+                      },
+                      Object {
+                        "name": "nCodParceiro",
+                        "type": "integer",
+                        "verboseName": "Código do parceiro",
+                      },
+                      Object {
+                        "name": "nCodPrevenda",
+                        "type": "integer",
+                        "verboseName": "Código da prevenda",
+                      },
+                    ],
+                    "type": "envolvidos",
+                    "verboseName": "Envolvidos na oportunidade",
+                  },
+                ],
+                "value": "IncluirOportunidade",
+                "verboseName": "Incluir Oportunidade",
+              },
+              Object {
+                "name": "ListarClientes",
+                "params": Array [
+                  Object {
+                    "paramType": "integer",
+                    "type": "pagina",
+                    "verboseName": "Número da página retornada",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "registros_por_pagina",
+                    "verboseName": "Número de registros retornados na página",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "apenas_importado_api",
+                    "verboseName": "Exibir apenas os registros gerados pela API",
+                  },
+                  Object {
+                    "maxLength": 100,
+                    "paramType": "string",
+                    "type": "ordenar_por",
+                    "verboseName": "Ordem de exibição dos dados",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "ordem_decrescente",
+                    "verboseName": "Se a lista será apresentada em ordem decrescente",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "filtrar_por_data_de",
+                    "verboseName": "Filtrar os registros a partir de uma data",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "filtrar_por_data_ate",
+                    "verboseName": "Filtrar os registros até uma data",
+                  },
+                  Object {
+                    "maxLength": 8,
+                    "paramType": "string",
+                    "type": "filtrar_por_hora_de",
+                    "verboseName": "Filtro por hora a apartir de",
+                  },
+                  Object {
+                    "maxLength": 8,
+                    "paramType": "string",
+                    "type": "filtrar_por_hora_ate",
+                    "verboseName": "Filtro por hora até",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "filtrar_apenas_inclusao",
+                    "verboseName": "Filtrar apenas os registros incluídos",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "filtrar_apenas_alteracao",
+                    "verboseName": "Filtrar apenas os registros alterados",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "codigo_cliente_omie",
+                        "type": "integer",
+                        "verboseName": "Código de Cliente / Fornecedor",
+                      },
+                      Object {
+                        "maxLength": 60,
+                        "name": "codigo_cliente_integracao",
+                        "type": "string",
+                        "verboseName": "Código de Integração com sistemas legados.",
+                      },
+                      Object {
+                        "maxLength": 20,
+                        "name": "cnpj_cpf",
+                        "type": "string",
+                        "verboseName": "CNPJ / CPF",
+                      },
+                      Object {
+                        "maxLength": 60,
+                        "name": "razao_social",
+                        "type": "string",
+                        "verboseName": "Razão Social",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "nome_fantasia",
+                        "type": "string",
+                        "verboseName": "Nome Fantasia",
+                      },
+                      Object {
+                        "maxLength": 60,
+                        "name": "endereco",
+                        "type": "string",
+                        "verboseName": "Endereço",
+                      },
+                      Object {
+                        "maxLength": 60,
+                        "name": "bairro",
+                        "type": "string",
+                        "verboseName": "Bairro",
+                      },
+                      Object {
+                        "maxLength": 40,
+                        "name": "cidade",
+                        "type": "string",
+                        "verboseName": "Código da Cidade",
+                      },
+                      Object {
+                        "maxLength": 2,
+                        "name": "estado",
+                        "type": "string",
+                        "verboseName": "Sigla do Estado",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "cep",
+                        "type": "string",
+                        "verboseName": "CEP",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "contato",
+                        "type": "string",
+                        "verboseName": "Nome para contato",
+                      },
+                      Object {
+                        "maxLength": 500,
+                        "name": "email",
+                        "type": "string",
+                        "verboseName": "E-Mail",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "homepage",
+                        "type": "string",
+                        "verboseName": "WebSite",
+                      },
+                      Object {
+                        "maxLength": 20,
+                        "name": "inscricao_municipal",
+                        "type": "string",
+                        "verboseName": "Inscrição Municipal",
+                      },
+                      Object {
+                        "maxLength": 20,
+                        "name": "inscricao_estadual",
+                        "type": "string",
+                        "verboseName": "Inscrição Estadual",
+                      },
+                      Object {
+                        "maxLength": 20,
+                        "name": "inscricao_suframa",
+                        "type": "string",
+                        "verboseName": "Inscrição Suframa",
+                      },
+                      Object {
+                        "maxLength": 1,
+                        "name": "pessoa_fisica",
+                        "type": "string",
+                        "verboseName": "Pessoa Física",
+                      },
+                      Object {
+                        "maxLength": 1,
+                        "name": "optante_simples_nacional",
+                        "type": "string",
+                        "verboseName": "Indica se o Cliente / Fornecedor é Optante do Simples Nacional",
+                      },
+                      Object {
+                        "maxLength": 1,
+                        "name": "inativo",
+                        "type": "string",
+                        "verboseName": "Indica se o cliente está inativo",
+                      },
+                    ],
+                    "type": "clientesFiltro",
+                    "verboseName": "Filtrar cadastro de clientes",
+                  },
+                  Object {
+                    "type": "clientesPorCodigo",
+                    "verboseName": "Lista de Códigos para filtro de cliente",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "exibir_caracteristicas",
+                    "verboseName": "Exibe as caracteristicas do cliente",
+                  },
+                ],
+                "value": "ListarClientes",
+                "verboseName": "Listar Clientes",
+              },
+              Object {
+                "name": "PesquisarLancamentos",
+                "params": Array [
+                  Object {
+                    "paramType": "integer",
+                    "type": "nPagina",
+                    "verboseName": "Número da página retornada",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nRegPorPagina",
+                    "verboseName": "Número de registros retornados na página",
+                  },
+                  Object {
+                    "maxLength": 100,
+                    "paramType": "string",
+                    "type": "cOrdenarPor",
+                    "verboseName": "Ordem de exibição do dados",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "cOrdemDecrescente",
+                    "verboseName": "Se a lista será apresentada em ordem decrescente.",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodTitulo",
+                    "verboseName": "Código do titulo",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cCodIntTitulo",
+                    "verboseName": "Código de integração do título",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cNumTitulo",
+                    "verboseName": "Número do título",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtEmisDe",
+                    "verboseName": "Filtrar os títulos pela data de emissão - de",
+                  },
+                  Object {
+                    "maxLength": 8,
+                    "paramType": "string",
+                    "type": "dDtEmisAte",
+                    "verboseName": "Filtrar os títulos pela data de emissão - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtVencDe",
+                    "verboseName": "Data de vencimento do título - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtVencAte",
+                    "verboseName": "Data de vencimento do título - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtPagtoDe",
+                    "verboseName": "Data do Lançamento - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtPagtoAte",
+                    "verboseName": "Data de Lançamento - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtPrevDe",
+                    "verboseName": "Data de previsão de Pagamento/Recebimento - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtPrevAte",
+                    "verboseName": "Data de previsão de Pagamento/Recebimento - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtRegDe",
+                    "verboseName": "Data de registro da NF - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtRegAte",
+                    "verboseName": "Data de registro da NF - até",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodCliente",
+                    "verboseName": "Código de Cliente / Fornecedor",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cCPFCNPJCliente",
+                    "verboseName": "Filtrar os títulos por CPF/CNPJ do cliente",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodCtr",
+                    "verboseName": "Código do contrato associado ao título",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cNumCtr",
+                    "verboseName": "Número do contrato associado ao título",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodOS",
+                    "verboseName": "Código do Pedido de Venda / Ordem de Serviço",
+                  },
+                  Object {
+                    "maxLength": 15,
+                    "paramType": "string",
+                    "type": "cNumOS",
+                    "verboseName": "Número do pedido de venda / Ordem de Serviço",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodCC",
+                    "verboseName": "Código da conta corrente",
+                  },
+                  Object {
+                    "maxLength": 100,
+                    "paramType": "string",
+                    "type": "cStatus",
+                    "verboseName": "Status do título",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "cNatureza",
+                    "verboseName": "Natureza do título",
+                  },
+                  Object {
+                    "maxLength": 5,
+                    "paramType": "string",
+                    "type": "cTipo",
+                    "verboseName": "Tipo de documento",
+                  },
+                  Object {
+                    "maxLength": 2,
+                    "paramType": "string",
+                    "type": "cOperacao",
+                    "verboseName": "Operação do título",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cNumDocFiscal",
+                    "verboseName": "Número do documento fiscal",
+                  },
+                  Object {
+                    "maxLength": 70,
+                    "paramType": "string",
+                    "type": "cCodigoBarras",
+                    "verboseName": "Código de Barras do título",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodProjeto",
+                    "verboseName": "Código do projeto",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodVendedor",
+                    "verboseName": "Código do vendedor",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodComprador",
+                    "verboseName": "Código do comprador",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cCodCateg",
+                    "verboseName": "Código da categoria",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtIncDe",
+                    "verboseName": "Data de inclusão - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtIncAte",
+                    "verboseName": "Data de inclusão - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtAltDe",
+                    "verboseName": "Data de alteração - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtAltAte",
+                    "verboseName": "Data de alteração - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtCancDe",
+                    "verboseName": "Data de Cancelamento do título - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtCancAte",
+                    "verboseName": "Data de Cancelamento do título - até",
+                  },
+                  Object {
+                    "maxLength": 44,
+                    "paramType": "string",
+                    "type": "cChaveNFe",
+                    "verboseName": "Chave da NF-e, CT-e, NFC-e de origem",
+                  },
+                ],
+                "value": "PesquisarLancamentos",
+                "verboseName": "Pesquisar Títulos/Lançamentos",
+              },
+              Object {
+                "name": "VerificarContato",
+                "params": Array [
+                  Object {
+                    "paramType": "string",
+                    "type": "cNome",
+                    "verboseName": "Nome do contato",
+                  },
+                  Object {
+                    "paramType": "string",
+                    "type": "cEmail",
+                    "verboseName": "Email do contato",
+                  },
+                ],
+                "value": "VerificarContato",
+                "verboseName": "Verificar Contato",
+              },
+              Object {
+                "name": "ObterBoleto",
+                "params": Array [
+                  Object {
+                    "paramType": "integer",
+                    "required": true,
+                    "type": "nCodTitulo",
+                    "verboseName": "Código do Boleto",
+                  },
+                  Object {
+                    "paramType": "string",
+                    "required": true,
+                    "type": "cCodIntTitulo",
+                    "verboseName": "Código de Integração do Título",
+                  },
+                ],
+                "value": "ObterBoleto",
+                "verboseName": "Obter Boleto",
+              },
+            ],
             "external_service_type": "omie",
-            "name": "Omie dummy project 2",
+            "name": "Omie dummy project",
             "uuid": "5b154b06-5ecd-43d9-afca-39738e6859d7",
           },
           "params": Array [
@@ -473,6 +2582,7 @@ Array [
                 "validationFailures": Array [],
                 "value": "data 1",
               },
+              "defaultValue": undefined,
               "filter": Object {
                 "value": Object {
                   "name": "cCodInt",
@@ -525,10 +2635,14 @@ Array [
                   "verboseName": "Código da Conta",
                 },
               ],
+              "nameKey": undefined,
+              "options": undefined,
+              "paramType": undefined,
               "required": undefined,
               "type": "identificacao",
-              "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+              "uuid": "87c8708e-6839-44ce-b80a-c1d133a3a0c6",
               "valid": true,
+              "valueKey": undefined,
               "verboseName": "Identificação",
             },
             Object {
@@ -536,6 +2650,7 @@ Array [
                 "validationFailures": Array [],
                 "value": "data 2",
               },
+              "defaultValue": undefined,
               "filter": Object {
                 "value": Object {
                   "name": "cNome",
@@ -588,26 +2703,30 @@ Array [
                   "verboseName": "Código da Conta",
                 },
               ],
+              "nameKey": undefined,
+              "options": undefined,
+              "paramType": undefined,
               "required": undefined,
               "type": "identificacao",
-              "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+              "uuid": "452c1751-5b03-4d1a-8346-83be999a8258",
               "valid": true,
+              "valueKey": undefined,
               "verboseName": "Identificação",
             },
           ],
           "result_name": "My External Service Result",
           "type": "call_external_service",
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+          "uuid": "7663e5a1-6a46-4b0d-af01-b2262a6ad4b5",
         },
       ],
       "exits": Array [
         Object {
           "destination_uuid": null,
-          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          "uuid": "38282c32-100e-4376-af57-7f6a36ddafba",
         },
         Object {
           "destination_uuid": null,
-          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+          "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
         },
       ],
       "router": Object {
@@ -616,28 +2735,28 @@ Array [
             "arguments": Array [
               "Success",
             ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            "category_uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
             "type": "has_category",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "uuid": "90e20a49-6ecc-4b0b-97bf-bcbd37069b63",
           },
         ],
         "categories": Array [
           Object {
-            "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            "exit_uuid": "38282c32-100e-4376-af57-7f6a36ddafba",
             "name": "Success",
-            "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            "uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
           },
           Object {
-            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            "exit_uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
             "name": "Failure",
-            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
           },
         ],
-        "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+        "default_category_uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
         "operand": "@results.my_external_service_result",
         "type": "switch",
       },
-      "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+      "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
     },
     "ui": Object {
       "config": Object {},

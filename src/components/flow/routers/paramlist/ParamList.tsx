@@ -1,5 +1,5 @@
 import { react as bindCallbacks } from 'auto-bind';
-import { FormEntry, FormState, StringEntry, mergeForm } from 'store/nodeEditor';
+import { FormEntry, FormState, mergeForm } from 'store/nodeEditor';
 import * as React from 'react';
 import styles from './ParamList.module.scss';
 import { ServiceCallParam } from 'config/interfaces';
@@ -10,13 +10,14 @@ import { createEmptyParam } from './helpers';
 export interface ParamProps extends ServiceCallParam {
   uuid: string;
   filter: FormEntry;
-  data: StringEntry;
+  data: FormEntry;
   valid: boolean;
 }
 
 export interface ParamListProps {
   availableParams: ServiceCallParam[];
   params: ParamProps[];
+  shouldCreateEmptyParam: boolean;
   onParamsUpdated(params: ParamProps[]): void;
 }
 
@@ -34,6 +35,7 @@ const SortableItem = SortableElement(({ value: row }: any) => {
         availableParams={item.availableParams}
         onRemove={row.list.handleRemoveParam}
         onChange={row.list.handleUpdateParam}
+        hasArrangeFunctionality={row.list.props.shouldCreateEmptyParam}
       />
     </div>
   );
@@ -75,7 +77,7 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
 
     const paramProps = this.props.params;
 
-    if (!this.hasEmptyParam(paramProps)) {
+    if (this.props.shouldCreateEmptyParam && !this.hasEmptyParam(paramProps)) {
       paramProps.push(this.createEmptyParam());
     }
 
@@ -85,16 +87,33 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
     };
   }
 
+  // eslint-disable-next-line react/no-deprecated
+  public componentWillReceiveProps(nextProps: Readonly<ParamListProps>): void {
+    if (nextProps.params !== this.props.params) {
+      this.setState({ currentParams: nextProps.params });
+    }
+  }
+
   componentDidUpdate(): void {
-    if (!this.hasEmptyParam(this.state.currentParams) && this.hasAvailableParam()) {
+    if (
+      this.props.shouldCreateEmptyParam &&
+      !this.hasEmptyParam(this.state.currentParams) &&
+      this.hasAvailableParam()
+    ) {
       this.handleUpdate({ paramProps: this.createEmptyParam() });
     }
   }
 
   private hasEmptyParam(params: ParamProps[]): boolean {
-    return (
-      params.find((paramProps: ParamProps) => paramProps.data.value.trim().length === 0) != null
-    );
+    const emptyParam = params.find((paramProps: ParamProps) => {
+      if (typeof paramProps.data.value === 'string' || paramProps.data.value instanceof String) {
+        return paramProps.data.value.trim().length === 0;
+      }
+
+      return false;
+    });
+
+    return emptyParam !== undefined;
   }
 
   private hasAvailableParam() {
