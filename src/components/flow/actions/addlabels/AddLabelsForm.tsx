@@ -89,18 +89,17 @@ export default class AddLabelsForm extends React.PureComponent<
         buttons={this.getButtons()}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <p data-spec={controlLabelSpecId}>
-          <Trans i18nKey="forms.add_labels_summary">
-            Select the labels to apply to the incoming message.
-          </Trans>
-        </p>
 
         <AssetSelector
-          name={i18n.t('forms.labels', 'Labels')}
+          name={i18n.t(
+            'forms.add_labels_summary',
+            'Select the labels to apply to the incoming message'
+          )}
           placeholder={i18n.t(
             'enter_to_create_label',
             'Enter the name of an existing label or create a new one'
           )}
+          showLabel={true}
           assets={this.props.assetStore.labels}
           entry={this.state.labels}
           searchable={true}

@@ -183,7 +183,7 @@
   "forms": {
     "add_attachment": "Adicione um arquivo",
     "add_groups_summary": "Selecione os grupos para adicionar o contato.",
-    "add_labels_summary": "Selecione as etiquetas a serem aplicadas na mensagem recebida.",
+    "add_labels_summary": "Selecione as etiquetas a serem aplicadas na mensagem recebida",
     "add_quick_reply": "Adicione uma nova Resposta Rápida e pressione enter",
     "add_urn_summary": "Adicione uma nova URN para encontrar o contato, como um número de telefone.",
     "advanced": "Avançado",
