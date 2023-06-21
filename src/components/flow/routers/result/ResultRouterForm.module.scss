@@ -5,30 +5,17 @@
   align-items: baseline;
 }
 
-.non_delimited {
-  display: flex;
-  align-items: baseline;
-}
-
-.lead_in {
-}
-
 .lead_in_sub {
   margin-left: 8px;
 }
 
 .result_select {
-  width: 254px;
-  margin-left: 10px;
+  margin-bottom: $unnnic-spacing-stack-sm;
 }
 
 .result_select_delimited {
   width: 166px;
   margin-left: 10px;
-}
-
-.should_delimit {
-  margin-top: 20px;
 }
 
 .field_number {
