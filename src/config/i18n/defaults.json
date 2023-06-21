@@ -182,7 +182,7 @@
   "flow_start": "Flow Start",
   "forms": {
     "add_attachment": "Add Attachment",
-    "add_groups_summary": "Select the groups to add the contact to.",
+    "add_groups_summary": "Select the groups to add the contact to",
     "add_labels_summary": "Select the labels to apply to the incoming message",
     "add_quick_reply": "Add a new Quick Reply and press enter",
     "add_urn_summary": "Add a new URN to reach the contact such as a phone number",

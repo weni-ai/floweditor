@@ -182,7 +182,7 @@
   "flow_start": "Inicio de Flujo",
   "forms": {
     "add_attachment": "Agregar Adjunto",
-    "add_groups_summary": "Seleccione los grupos a los que se agregará el contacto.",
+    "add_groups_summary": "Seleccione los grupos a los que se agregará el contacto",
     "add_labels_summary": "Seleccione las etiquetas para aplicar a los mensajes entrantes",
     "add_quick_reply": "Agregue una nueva respuesta rápida y presione enter",
     "add_urn_summary": "Agregue un nuevo URN para comunicarse con el contacto, como un número de teléfono",

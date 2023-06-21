@@ -77,12 +77,10 @@ export default class AddGroupsForm extends React.Component<ActionFormProps, Chan
         buttons={this.getButtons()}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <p data-spec={labelSpecId}>
-          <Trans i18nKey="forms.add_groups_summary">Select the groups to add the contact to.</Trans>
-        </p>
 
         <AssetSelector
-          name={i18n.t('forms.groups', 'Groups')}
+          name={i18n.t('forms.add_groups_summary', 'Select the groups to add the contact to')}
+          showLabel={true}
           multi={true}
           noOptionsMessage={i18n.t('enter_to_create_group', 'Enter a name to create a new group')}
           assets={this.props.assetStore.groups}
