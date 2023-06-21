@@ -1,8 +1,8 @@
 import { createWebhookBasedNode } from 'components/flow/routers/helpers';
-import { Types } from 'config/interfaces';
+import { ServiceCall, Types } from 'config/interfaces';
 import { getType } from 'config/typeConfigs';
 import { CallExternalService } from 'flowTypes';
-import { RenderNode } from 'store/flowContext';
+import { AssetMap, RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, FormEntry } from 'store/nodeEditor';
 import { createUUID } from 'utils';
 import { ExternalServiceRouterFormState } from 'components/flow/routers/externalservice/ExternalServiceRouterForm';
@@ -19,6 +19,7 @@ export const getOriginalAction = (settings: NodeEditorSettings): CallExternalSer
 
 export const nodeToState = (
   settings: NodeEditorSettings,
+  existingServices: AssetMap,
   initialExternalService: any
 ): ExternalServiceRouterFormState => {
   let resultName = { value: 'Result' };
@@ -29,8 +30,24 @@ export const nodeToState = (
 
   if (settings.originalNode && getType(settings.originalNode) === Types.split_by_external_service) {
     const action = getOriginalAction(settings) as CallExternalService;
-    externalService = { value: action.external_service };
-    initialCall = { value: action.call };
+    externalService = {
+      value: {
+        ...existingServices[action.external_service.uuid].content,
+        name: existingServices[action.external_service.uuid].name,
+        external_service_type: existingServices[action.external_service.uuid].type,
+        uuid: existingServices[action.external_service.uuid].id
+      }
+    };
+
+    const existingCallParams =
+      externalService.value.actions &&
+      externalService.value.actions.find((a: ServiceCall) => {
+        return a.name === action.call.name;
+      }).params;
+
+    initialCall = {
+      value: existingCallParams ? { ...action.call, params: existingCallParams } : action.call
+    };
     initialParams = action.params;
     resultName = { value: action.result_name };
   } else {

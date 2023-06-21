@@ -57,14 +57,14 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
   // eslint-disable-next-line react/no-deprecated
   public componentWillReceiveProps(nextProps: Readonly<ParamElementProps>): void {
     if (nextProps.initialParam !== this.props.initialParam) {
-      this.setState(initializeForm(nextProps));
-
-      const updates = validateParam({
-        currentParam: this.state.currentParam,
-        currentFilter: this.state.currentFilter,
-        data: this.state.data
+      this.setState(initializeForm(nextProps), () => {
+        const updates = validateParam({
+          currentParam: this.state.currentParam,
+          currentFilter: this.state.currentFilter,
+          data: this.state.data
+        });
+        this.setState(updates as ParamElementState);
       });
-      this.setState(updates as ParamElementState);
     }
   }
 

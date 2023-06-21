@@ -42,7 +42,11 @@ export default class ExternalServiceRouterForm extends React.Component<
     super(props);
     const externalServices = Object.values(this.props.assetStore.externalServices.items);
     const externalService = externalServices.length === 1 ? externalServices[0] : null;
-    this.state = nodeToState(this.props.nodeSettings, externalService);
+    this.state = nodeToState(
+      this.props.nodeSettings,
+      this.props.assetStore.externalServices.items,
+      externalService
+    );
 
     bindCallbacks(this, {
       include: [/^handle/]
