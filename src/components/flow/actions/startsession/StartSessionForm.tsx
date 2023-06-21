@@ -21,6 +21,8 @@ import TextInputElement from 'components/form/textinput/TextInputElement';
 import i18n from 'config/i18n';
 import { renderIssues } from '../helpers';
 
+import styles from './StartSession.module.scss';
+
 export const START_TYPE_ASSETS: SelectOption = {
   name: i18n.t('forms.start_type_manual', 'Select recipients manually'),
   value: 'assets'
@@ -163,13 +165,14 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
         <p />
         <div>
           {renderIf(this.state.startType.value === START_TYPE_ASSETS)(
-            <div data-testid="recipients">
+            <div data-testid="recipients" className={styles.form_element}>
               <AssetSelector
                 name={i18n.t('forms.recipients', 'Recipients')}
                 placeholder={i18n.t(
                   'forms.select_who_to_start',
                   'Select who should be started in the flow'
                 )}
+                showLabel={true}
                 assets={this.props.assetStore.recipients}
                 entry={this.state.recipients}
                 searchable={true}
@@ -177,26 +180,26 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
                 expressions={true}
                 onChange={this.handleRecipientsChanged}
               />
-              <p />
             </div>
           )}
 
           {renderIf(this.state.startType.value === START_TYPE_QUERY)(
-            <div data-testid="contact_query">
+            <div data-testid="contact_query" className={styles.form_element}>
               <TextInputElement
                 name={i18n.t('forms.contact_query', 'Contact Query')}
+                showLabel={true}
                 placeholder={'household_id = @fields.household_id'}
                 onChange={this.handleContactQueryChanged}
                 entry={this.state.contactQuery}
                 autocomplete={true}
                 focus={true}
               />
-              <p />
             </div>
           )}
 
           <AssetSelector
             name={i18n.t('forms.flow', 'Flow')}
+            showLabel={true}
             placeholder={i18n.t('forms.select_flow', 'Select the flow to start')}
             assets={this.props.assetStore.flows}
             entry={this.state.flow}
