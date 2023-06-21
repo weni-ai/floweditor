@@ -1,12 +1,14 @@
 @import 'variables.module.scss';
 
 .type_list {
-  margin-bottom: 15px;
-  margin-top: 10px;
+  margin-bottom: $unnnic-spacing-stack-sm;
   font-family: $unnnic-font-family-secondary;
   font-weight: $unnnic-font-weight-regular;
   font-size: $unnnic-font-size-body-md;
   line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+  display: flex;
+  flex-direction: column;
+  row-gap: $unnnic-spacing-stack-nano;
 }
 
 input {
