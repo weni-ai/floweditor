@@ -177,13 +177,15 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
   }
 
   private setAvailableOptions(options: any[]) {
+    const nameKey = this.props.nameKey || 'name';
+    const valueKey = this.props.valueKey || 'value';
     const remmapedOptions = options.map((option: any) => {
       const newOption = { ...option, value: this.getValue(option) };
-      if (!newOption[this.props.nameKey]) {
-        newOption[this.props.nameKey] = this.getName(option);
+      if (!newOption[nameKey]) {
+        newOption[nameKey] = this.getName(option);
       }
-      if (!newOption[this.props.valueKey]) {
-        newOption[this.props.valueKey] = this.getValue(option);
+      if (!newOption[valueKey]) {
+        newOption[valueKey] = this.getValue(option);
       }
       return newOption;
     });

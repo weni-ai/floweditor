@@ -131,6 +131,7 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
       if (toCreate) {
         // filter it out
         selected = selected.filter((option: any) => !option.arbitrary);
+        this.props.onChange(selected);
         this.handleCreateOption(toCreate.name);
       } else {
         this.props.onChange(selected);
