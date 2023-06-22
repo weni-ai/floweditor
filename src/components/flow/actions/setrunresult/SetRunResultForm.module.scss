@@ -1,7 +1,7 @@
-.form {
-    .name,
-    .value,
-    .category {
-        margin-top: 5px;
-    }
+@import 'variables.module.scss';
+
+.name,
+.value,
+.category {
+  margin-top: $unnnic-spacing-stack-sm;
 }

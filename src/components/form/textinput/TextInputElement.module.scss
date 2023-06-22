@@ -14,6 +14,10 @@
 .normal {
 }
 
+.help {
+  margin-top: $unnnic-spacing-stack-nano;
+}
+
 .sms_counter {
   display: flex;
   align-items: center;
@@ -162,14 +166,6 @@
 
 .wrapper {
   position: relative;
-}
-
-.help {
-  font-size: 10px;
-  color: #999;
-  padding: 4px;
-  border-radius: 0 0 4px 4px;
-  background-color: #f5f5f5;
 }
 
 .hidden {

@@ -12,6 +12,8 @@ import { getChannelTypeOptions, nodeToState, stateToNode } from './helpers';
 import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
 import { renderIssues } from 'components/flow/actions/helpers';
 
+import styles from './SchemeRouterForm.module.scss';
+
 export interface SchemeRouterFormState extends FormState {
   schemes: SelectOptionArrayEntry;
   resultName: StringEntry;
@@ -88,15 +90,18 @@ export default class SchemeRouterForm extends React.Component<
     return (
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <p>
+
+        <div className={`${styles.info} u font secondary body-md neutral-cloudy`}>
           {i18n.t(
             'forms.split_by_scheme_summary',
             "The contact's URN is the address they used to reach you such as their phone number or a Facebook ID. Select which URN types to split by below."
           )}
-        </p>
+        </div>
+
         <SelectElement
           key="channel_type_select"
           name={i18n.t('forms.channel_type', 'Channel Type')}
+          showLabel={true}
           placeholder={i18n.t(
             'forms.split_by_channel_placeholder',
             'Select the channels to split by'

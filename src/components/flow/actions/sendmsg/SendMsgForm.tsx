@@ -322,18 +322,16 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
       name: i18n.t('forms.quick_replies', 'Quick Replies'),
       body: (
         <>
-          <p>
+          <div className={`${styles.quick_reply_summary} u font secondary body-md neutral-cloudy`}>
             {i18n.t(
               'forms.quick_replies_summary',
               'Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for "Yes" and one for "No".'
             )}
-          </p>
+          </div>
 
           <MultiChoiceInput
-            name={i18n.t('forms.quick_reply', 'quick_reply')}
-            helpText={
-              <Trans i18nKey="forms.add_quick_reply">Add a new Quick Reply and press enter.</Trans>
-            }
+            name={i18n.t('forms.add_quick_reply', 'Add a new Quick Reply and press enter')}
+            helpText={<Trans i18nKey="forms.quick_reply">quick_reply</Trans>}
             items={this.state.quickReplies}
             entry={this.state.quickReplyEntry}
             onChange={this.handleQuickRepliesUpdate}

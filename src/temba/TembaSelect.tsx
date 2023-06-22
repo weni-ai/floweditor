@@ -487,7 +487,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
       <>
         {selectInput}
 
-        {this.props.tags || isMultiComponent ? (
+        {(this.props.tags || isMultiComponent) && selectedArray.length ? (
           <div className={styles['selected-list-container']}>
             {selectedArray.map((selected, index) => {
               return (

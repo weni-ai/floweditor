@@ -1,5 +1,9 @@
 @import "variables.module.scss";
 
+.form_element {
+  margin-bottom: $unnnic-spacing-stack-sm;
+}
+
 .node {
   .to {
     padding: 3px 0px;

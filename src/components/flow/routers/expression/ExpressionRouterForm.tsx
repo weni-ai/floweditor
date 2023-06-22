@@ -12,6 +12,8 @@ import { FormState, mergeForm, StringEntry } from 'store/nodeEditor';
 import { Alphanumeric, Required, StartIsNonNumeric, validate } from 'store/validators';
 import i18n from 'config/i18n';
 
+import styles from './ExpressionRouterForm.module.scss';
+
 // TODO: Remove use of Function
 // tslint:disable:ban-types
 export enum InputToFocus {
@@ -119,14 +121,21 @@ export default class ExpressionRouterForm extends React.Component<
     return (
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <p>If the expression...</p>
-        <TextInputElement
-          name={i18n.t('forms.operand', 'Operand')}
-          showLabel={false}
-          autocomplete={true}
-          onChange={this.handleOperandUpdated}
-          entry={this.state.operand}
-        />
+
+        <div className={styles.form_element}>
+          <TextInputElement
+            name={i18n.t('forms.expression_label', 'If the expression...')}
+            showLabel={true}
+            autocomplete={true}
+            onChange={this.handleOperandUpdated}
+            entry={this.state.operand}
+          />
+        </div>
+
+        <div className="u font secondary body-md color-neutral-cloudy">
+          {i18n.t('forms.message_label', 'If the message response...')}
+        </div>
+
         <CaseList
           data-spec="cases"
           cases={this.state.cases}

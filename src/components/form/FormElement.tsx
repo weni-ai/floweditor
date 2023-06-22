@@ -35,12 +35,16 @@ export default class FormElement extends React.PureComponent<FormElementProps> {
         this.props.name !== undefined &&
         this.props.name !== null &&
         this.props.name.length > 0
-    )(<div className={styles.label}>{this.props.name}</div>);
+    )(
+      <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+        {this.props.name}
+      </div>
+    );
   }
 
   private getHelpText(): JSX.Element {
     return renderIf(this.props.helpText != null)(
-      <div className={styles.help_text}>{this.props.helpText} </div>
+      <div className={styles.help_text}>{this.props.helpText}</div>
     );
   }
 

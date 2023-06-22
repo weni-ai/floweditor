@@ -13,6 +13,8 @@ import { shouldRequireIf, validate } from 'store/validators';
 import i18n from 'config/i18n';
 import { renderIssues } from '../helpers';
 
+import styles from './SendBroadcast.module.scss';
+
 export interface SendBroadcastFormState extends FormState {
   message: StringEntry;
   recipients: AssetArrayEntry;
@@ -97,17 +99,21 @@ export default class SendBroadcastForm extends React.Component<
     return (
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <AssetSelector
-          name={i18n.t('forms.recipients', 'Recipients')}
-          placeholder={i18n.t('forms.select_contacts', 'Select Contacts')}
-          assets={this.props.assetStore.recipients}
-          entry={this.state.recipients}
-          searchable={true}
-          multi={true}
-          expressions={true}
-          onChange={this.handleRecipientsChanged}
-        />
-        <p />
+
+        <div className={styles.recipients_container}>
+          <AssetSelector
+            name={i18n.t('forms.recipients', 'Recipients')}
+            placeholder={i18n.t('forms.select_contacts', 'Select Contacts')}
+            assets={this.props.assetStore.recipients}
+            entry={this.state.recipients}
+            searchable={true}
+            multi={true}
+            expressions={true}
+            onChange={this.handleRecipientsChanged}
+            showLabel={true}
+          />
+        </div>
+
         <TextInputElement
           name={i18n.t('forms.message', 'Message')}
           showLabel={true}

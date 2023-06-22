@@ -140,12 +140,12 @@ export default class ResultRouterForm extends React.Component<
   private renderField(): JSX.Element {
     return (
       <div className={styles.non_delimited}>
-        <div className={styles.lead_in}>If the flow result</div>
         <div className={styles.result_select}>
           <AssetSelector
             entry={this.state.result}
             style={TembaSelectStyle.small}
-            name={i18n.t('forms.flow_result', 'Flow Result')}
+            name="If the flow result"
+            showLabel={true}
             placeholder="Select Result"
             searchable={false}
             assets={this.props.assetStore.results}
@@ -204,7 +204,7 @@ export default class ResultRouterForm extends React.Component<
     const advanced: Tab = {
       name: 'Advanced',
       body: (
-        <div className={styles.should_delimit}>
+        <div>
           <CheckboxElement
             name={i18n.t('forms.delimit', 'Delimit')}
             title={i18n.t('forms.delimit_result', 'Delimit Result')}
@@ -230,6 +230,10 @@ export default class ResultRouterForm extends React.Component<
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
 
         {this.state.shouldDelimit ? this.renderFieldDelimited() : this.renderField()}
+
+        <div className="u font secondary body-md color-neutral-cloudy">
+          {i18n.t('forms.message_label', 'If the message response...')}
+        </div>
 
         <CaseList
           data-spec="cases"
