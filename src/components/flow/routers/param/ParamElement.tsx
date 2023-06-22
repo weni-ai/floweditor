@@ -133,7 +133,13 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     const rawParam = this.props.availableParams.find(
       param => param.type === this.state.currentParam.type
     );
-    const paramFilters = rawParam ? rawParam.filters : [];
+    let paramFilters = rawParam ? rawParam.filters : [];
+    paramFilters = this.state.currentFilter
+      ? [this.state.currentFilter].concat(paramFilters)
+      : paramFilters;
+    const paramOptions = this.state.currentParam
+      ? [this.state.currentParam].concat(this.props.availableParams)
+      : this.props.availableParams;
 
     return (
       <FormElement
@@ -153,9 +159,9 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
           <div className={styles.choice} style={{ flex: showFilter ? 1 : 2 }}>
             <TembaSelect
               name={i18n.t('forms.service_call_param', 'Service Call Param')}
-              placeholder={i18n.t('forms.param', 'param')}
+              placeholder={i18n.t('forms.param', 'Param')}
               style={TembaSelectStyle.small}
-              options={[this.state.currentParam].concat(this.props.availableParams)}
+              options={paramOptions}
               nameKey="verboseName"
               valueKey="name"
               disabled={disableParam || disableFilter}
@@ -167,9 +173,9 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
             <div className={styles.choice}>
               <TembaSelect
                 name={i18n.t('forms.service_call_param_filter', 'Service Call Param Filter')}
-                placeholder={i18n.t('forms.filter', 'filter')}
+                placeholder={i18n.t('forms.filter', 'Filter')}
                 style={TembaSelectStyle.small}
-                options={[this.state.currentFilter].concat(paramFilters)}
+                options={paramFilters}
                 nameKey="verboseName"
                 valueKey="name"
                 onChange={this.handleFilterChange}
