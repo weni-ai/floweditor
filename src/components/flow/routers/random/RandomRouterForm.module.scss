@@ -12,7 +12,7 @@
 
 .bucket_list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin-top: $unnnic-spacing-stack-sm;
   gap: $unnnic-spacing-stack-sm $unnnic-spacing-inline-sm;
 }
