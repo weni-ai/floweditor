@@ -94,12 +94,19 @@
     &.wait_for_response {
       outline-color: #005888;
     }
+
+    &:hover {
+      box-shadow: 0px 0px 0px 2px $unnnic-color-brand-weni !important;
+      outline: none;
+    }
   }
 
   &.selected {
     .node {
-      box-shadow: 0px 0px 0px 2px $selected !important;
+      box-shadow: 0px 0px 0px 2px $unnnic-color-brand-weni !important;
+      outline: none;
     }
+
   }
 
   &.immutable {

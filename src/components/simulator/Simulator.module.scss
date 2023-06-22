@@ -178,7 +178,7 @@ $reset_color: #666;
     }
 
     .controls {
-      z-index: 100;
+      z-index: 160;
       background: $unnnic-color-background-sky;
       bottom: 0px;
       width: 266px;
@@ -232,7 +232,7 @@ $reset_color: #666;
       background: $unnnic-color-background-sky;
       height: 40px;
       color: $unnnic-color-neutral-cloudy;
-      z-index: 100;
+      z-index: 160;
       text-align: center;
 
       &.visible {
@@ -263,7 +263,7 @@ $reset_color: #666;
 
   width: 100%;
   position: absolute;
-  z-index: 50;
+  z-index: 160;
   background: $unnnic-color-background-sky;
   transition: bottom 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   padding-bottom: 20px;
