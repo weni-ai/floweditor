@@ -154,6 +154,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           size={this.props.size || TextInputSizes.sm}
           ref={this.inputItem}
           error={this.props.error}
+          iconRight={'keyboard-return-1'}
         />
 
         {this.props.helpText && typeof this.props.helpText === 'string' ? (
