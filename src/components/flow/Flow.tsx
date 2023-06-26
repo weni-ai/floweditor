@@ -140,12 +140,6 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     config: fakePropType
   };
 
-  public componentDidUpdate(): void {
-    if (this.getNodes().length === 0) {
-      this.getEmptyFlow();
-    }
-  }
-
   constructor(props: FlowStoreProps, context: ConfigProviderContext) {
     super(props, context);
 
@@ -163,10 +157,6 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     });
 
     timeStart('Loaded Flow');
-
-    if (this.getNodes().length === 0) {
-      this.getEmptyFlow();
-    }
   }
 
   private ghostRef(ref: any): any {
@@ -376,52 +366,6 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
       body: STICKY_BODY
     });
   }
-
-  private getEmptyFlow(): void {
-    let getStartedModalEl: HTMLDivElement = document.querySelector('#get-started-modal');
-
-    if (!getStartedModalEl) {
-      getStartedModalEl = document.createElement('div');
-      getStartedModalEl.setAttribute('id', 'get-started-modal');
-      document.body.appendChild(getStartedModalEl);
-    }
-
-    if (getStartedModalEl.hasChildNodes()) {
-      return;
-    }
-
-    ReactDOM.render(
-      <UnnnicModalNext
-        type="alert"
-        scheme="feedback-yellow"
-        title={i18n.t('empty_flow_message_title', "Let's get started")}
-        description={i18n.t(
-          'empty_flow_message_description',
-          'We recommend starting your flow by sending a message. This message will be sent to anybody right after they join the flow. This is your chance to send a single message or ask them a question.'
-        )}
-        actionPrimaryLabel={i18n.t('buttons.create_message', 'Create Message')}
-        actionPrimaryButtonType="secondary"
-        on={{
-          'click-action-primary': () => {
-            const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
-            this.props.onOpenNodeEditor({
-              originalNode: emptyNode,
-              originalAction: emptyNode.node.actions[0]
-            });
-
-            ReactDOM.unmountComponentAtNode(getStartedModalEl);
-          }
-        }}
-      />,
-      getStartedModalEl
-    );
-  }
-
-  /* 
-  public componentDidUpdate(prevProps: FlowStoreProps): void {
-    traceUpdate(this, prevProps);
-  }
-  */
 
   public handleDragging(uuids: string[]): void {
     uuids.forEach((uuid: string) => {

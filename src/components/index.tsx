@@ -9,6 +9,7 @@ import Loading from 'components/loading/Loading';
 import Modal from 'components/modal/Modal';
 import { RevisionExplorer } from 'components/revisions/RevisionExplorer';
 import { IssuesTab, IssueDetail } from 'components/issues/IssuesTab';
+import Sidebar from 'components/sidebar/Sidebar';
 import ConfigProvider from 'config';
 import { fakePropType } from 'config/ConfigProvider';
 import { FlowDefinition, FlowEditorConfig, AnyAction } from 'flowTypes';
@@ -266,6 +267,10 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
             )(<ConnectedLanguageSelector />)}
 
             {this.getSavingIndicator()}
+
+            {renderIf(this.props.definition && this.props.language && !this.props.fetchingFlow)(
+              <Sidebar />
+            )}
 
             {renderIf(this.props.definition && this.props.language && !this.props.fetchingFlow)(
               <ConnectedFlow />

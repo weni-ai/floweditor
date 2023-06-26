@@ -150,7 +150,8 @@
     "download": "Download",
     "ok": "Ok",
     "close": "Close",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "after": "After"
   },
   "contact_statuses": {
     "active": "Active",
