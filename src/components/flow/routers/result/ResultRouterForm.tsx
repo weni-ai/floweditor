@@ -5,8 +5,8 @@ import { RouterFormProps } from 'components/flow/props';
 import CaseList, { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
-import CheckboxElement from 'components/form/checkbox/CheckboxElement';
 import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
+import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import * as React from 'react';
 import { Asset } from 'store/flowContext';
@@ -205,7 +205,7 @@ export default class ResultRouterForm extends React.Component<
       name: 'Advanced',
       body: (
         <div>
-          <CheckboxElement
+          <SwitchElement
             name={i18n.t('forms.delimit', 'Delimit')}
             title={i18n.t('forms.delimit_result', 'Delimit Result')}
             checked={this.state.shouldDelimit}
@@ -214,6 +214,7 @@ export default class ResultRouterForm extends React.Component<
               'Evaluate your rules against a delimited part of your result'
             )}
             onChange={this.handleShouldDelimitChanged}
+            size={SwitchSizes.small}
           />
         </div>
       ),
