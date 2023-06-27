@@ -40,6 +40,7 @@ export interface ExitPassedProps {
     confirmDelete: boolean
   ) => void;
   hasBackground?: boolean;
+  selected?: boolean;
 }
 
 export interface ExitStoreProps {
@@ -361,7 +362,11 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
 
     return (
       <div
-        className={`${exitClasses} ${this.props.hasBackground ? styles['has-background'] : null}`}
+        className={`
+          ${exitClasses} 
+          ${this.props.hasBackground ? styles['has-background'] : null}
+          ${this.props.selected ? styles['selected'] : null} 
+        `}
       >
         {name ? <div className={`${nameStyle} u font secondary body-md`}>{name}</div> : null}
         <div

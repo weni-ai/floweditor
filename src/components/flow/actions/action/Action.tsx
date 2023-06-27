@@ -187,6 +187,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
           showMove={showMove}
           onMoveUp={this.handleMoveUp}
           shouldCancelClick={() => this.props.selected}
+          selected={this.props.selected}
         />
         <div className={styles.body + ' ' + actionClass} data-spec={actionBodySpecId}>
           {this.props.render(actionToInject, this.context.config.endpoints)}
