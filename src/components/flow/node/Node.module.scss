@@ -67,7 +67,7 @@
       outline-color: $unnnic-color-feedback-yellow;
     }
 
-    &.split_by_external_service {
+    &.split_by_external_service, &.send_broadcast, &.send_email {
       outline-color: $unnnic-color-aux-purple;
     }
 
