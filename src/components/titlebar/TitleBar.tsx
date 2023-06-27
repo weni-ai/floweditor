@@ -18,6 +18,7 @@ export interface TitleBarProps {
   showMove?: boolean;
   onMoveUp?(event: React.MouseEvent<HTMLElement>): any;
   shouldCancelClick?: () => boolean;
+  selected?: boolean;
 }
 
 export const titlebarContainerSpecId = 'titlebar-container';
@@ -171,7 +172,14 @@ export default class TitleBar extends React.Component<TitleBarProps> {
     const remove: JSX.Element = this.getRemove();
     return (
       <div className={styles.titlebar} data-spec={titlebarContainerSpecId}>
-        <div className={`${styles.normal} ${this.props.__className}`} data-spec={titlebarSpecId}>
+        <div
+          className={`
+            ${styles.normal} 
+            ${this.props.__className} 
+            ${this.props.selected ? styles['selected'] : null}
+          `}
+          data-spec={titlebarSpecId}
+        >
           {moveArrow}
           <div className={`${styles.titletext} u font secondary body-md bold`}>
             {this.props.title}

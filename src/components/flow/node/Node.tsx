@@ -225,6 +225,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
           plumberConnectExit={this.props.plumberConnectExit}
           plumberUpdateClass={this.props.plumberUpdateClass}
           hasBackground={hasBackground}
+          selected={this.props.selected}
         />
       ));
     }
@@ -373,6 +374,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
                 onRemoval={this.handleRemoval}
                 shouldCancelClick={this.handleShouldCancelClick}
                 title={title}
+                selected={this.props.selected}
               />
             </div>
           </div>
