@@ -29,4 +29,12 @@
   gap: $unnnic-squish-xs;
   flex-wrap: wrap;
   margin-top: $unnnic-spacing-stack-xs;
+
+  :global {
+    .unnnic-tag__label {
+      max-width: 400px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
 }
