@@ -42,6 +42,7 @@ import { ACTIVITY_INTERVAL, downloadJSON, renderIf, onNextRender } from 'utils';
 import { PopTabType } from 'config/interfaces';
 import { TranslatorTab, TranslationBundle } from './translator/TranslatorTab';
 import i18n from 'config/i18n';
+import nodesCopy from './copyAndPasteNodes';
 
 const { default: PageVisibility } = require('react-page-visibility');
 
@@ -114,6 +115,24 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
   public componentDidMount(): void {
     const { endpoints, flow, forceSaveOnLoad } = this.context.config;
     this.props.fetchFlow(endpoints, flow, forceSaveOnLoad);
+
+    window.document.addEventListener('paste', event => {
+      console.log('flows here', this.props.nodes, event.clipboardData.getData('application/json'));
+
+      if (event.clipboardData.getData('application/json')) {
+        const nodes = JSON.parse(event.clipboardData.getData('application/json'));
+
+        const instance = new nodesCopy();
+
+        const nodesPasted = instance.createNewUuids(nodes);
+
+        nodesPasted.forEach((item: any) => {
+          this.props.nodes[item.node.uuid] = item;
+        });
+
+        this.props.createNewRevision();
+      }
+    });
   }
 
   private handleDownloadClicked(): void {
