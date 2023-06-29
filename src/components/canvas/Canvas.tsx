@@ -11,6 +11,7 @@ import { MergeEditorState } from 'store/thunks';
 import { COLLISION_FUDGE, snapPositionToGrid, throttle, snapToGrid } from 'utils';
 
 import styles from './Canvas.module.scss';
+import nodesCopy from '../../components/copyAndPasteNodes';
 
 export const CANVAS_PADDING = 300;
 export const REFLOW_QUIET = 200;
@@ -95,6 +96,28 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     /* istanbul ignore next */
     window.addEventListener('resize', this.handleWindowResize);
     document.addEventListener('keydown', this.handleKeyDown);
+
+    window.document.addEventListener('copy', event => {
+      if (Object.keys(this.state.selected).length === 0) {
+        return;
+      }
+
+      const instance = new nodesCopy();
+
+      const nodes = instance.replaceUuidsToUpdate(
+        this.props.draggables
+          .filter(({ uuid }) => Object.keys(this.state.selected).includes(uuid))
+          .map(({ config }) => ({
+            node: config.node,
+            ui: config.ui,
+            inboundConnections: config.inboundConnections
+          }))
+          .map(node => JSON.parse(JSON.stringify(node)))
+      );
+
+      event.clipboardData.setData('application/json', JSON.stringify(nodes));
+      event.preventDefault();
+    });
 
     this.props.onLoaded();
   }
