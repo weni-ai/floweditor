@@ -117,8 +117,6 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
     this.props.fetchFlow(endpoints, flow, forceSaveOnLoad);
 
     window.document.addEventListener('paste', event => {
-      console.log('flows here', this.props.nodes, event.clipboardData.getData('application/json'));
-
       if (event.clipboardData.getData('application/json')) {
         const nodes = JSON.parse(event.clipboardData.getData('application/json'));
 

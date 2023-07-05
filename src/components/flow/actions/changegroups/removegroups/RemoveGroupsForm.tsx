@@ -21,6 +21,22 @@ import styles from './RemoveGroupsForm.module.scss';
 import i18n from 'config/i18n';
 import { renderIssues } from '../../helpers';
 
+// @ts-ignore
+import { unnnicRadio } from '@weni/unnnic-system';
+import { applyVueInReact } from 'vuereact-combined';
+
+const UnnnicRadio = applyVueInReact(unnnicRadio, {
+  react: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: ''
+      }
+    }
+  }
+});
+
 export const LABEL = i18n.t(
   'forms.remove_groups_summary',
   'Select the groups to remove the contact from.'
@@ -93,8 +109,8 @@ export default class RemoveGroupsForm extends React.Component<
     return this.handleUpdate({ groups }, submitting);
   }
 
-  public handleRemoveAllUpdate(removeAll: boolean): boolean {
-    return this.handleUpdate({ removeAll });
+  public handleRemoveAllUpdate(removeAll: string): boolean {
+    return this.handleUpdate({ removeAll: removeAll === 'true' });
   }
 
   private getButtons(): ButtonSet {
@@ -117,10 +133,35 @@ export default class RemoveGroupsForm extends React.Component<
         buttons={this.getButtons()}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-
+        <div className={`${styles.form_element} u font secondary body-md color-neutral-cloudy`}>
+          {i18n.t('forms.remove_groups_type_label', 'Groups that the contact will be removed:')}
+          <UnnnicRadio
+            $model={{
+              value: String(this.state.removeAll),
+              setter: this.handleRemoveAllUpdate
+            }}
+            value="false"
+            size="sm"
+          >
+            <span className="color-neutral-cloudy">
+              {i18n.t('forms.remove_groups_type_values_selected_label', 'Selected')}
+            </span>
+          </UnnnicRadio>
+          <UnnnicRadio
+            $model={{
+              value: String(this.state.removeAll),
+              setter: this.handleRemoveAllUpdate
+            }}
+            value="true"
+            size="sm"
+          >
+            <span className="color-neutral-cloudy">
+              {i18n.t('forms.remove_groups_type_values_all_label', 'All')}
+            </span>
+          </UnnnicRadio>
+        </div>
         {renderIf(!this.state.removeAll)(
-          <div>
-            <p data-spec={labelSpecId}>{LABEL}</p>
+          <div className={styles.form_element}>
             <AssetSelector
               name={i18n.t('forms.groups', 'Groups')}
               placeholder={i18n.t('forms.select_groups', 'Select Groups')}
@@ -133,16 +174,6 @@ export default class RemoveGroupsForm extends React.Component<
             />
           </div>
         )}
-
-        <SwitchElement
-          name={REMOVE_FROM_ALL}
-          title={REMOVE_FROM_ALL}
-          labelClassName={this.state.removeAll ? '' : styles.checkbox}
-          checked={this.state.removeAll!}
-          description={REMOVE_FROM_ALL_DESC}
-          onChange={this.handleRemoveAllUpdate}
-          size={SwitchSizes.small}
-        />
         {renderIssues(this.props)}
       </Dialog>
     );
