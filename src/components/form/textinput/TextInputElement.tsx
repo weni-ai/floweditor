@@ -155,14 +155,13 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           ref={this.inputItem}
           error={this.props.error}
           iconRight={'keyboard-return-1'}
+          maxlength={this.props.maxLength}
         />
-
         {this.props.helpText && typeof this.props.helpText === 'string' ? (
           <div className={`${styles.help} u font secondary body-md color-neutral-cleanest`}>
             {this.props.helpText}
           </div>
         ) : null}
-
         {this.props.helpText && typeof this.props.helpText !== 'string' ? (
           <div className={`${styles.help} u font secondary body-md color-neutral-cleanest`}>
             {this.props.helpText}
