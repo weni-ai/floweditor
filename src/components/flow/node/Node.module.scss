@@ -95,6 +95,10 @@
       outline-color: #005888;
     }
 
+    &.missing {
+      outline-color: #FF2626;
+    }
+
     &:hover {
       box-shadow: 0px 0px 0px 2px $unnnic-color-brand-weni !important;
       outline: none;

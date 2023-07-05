@@ -125,11 +125,6 @@
     padding: 0px;
     width: $node_min_width + px;
   }
-
-  &.missing {
-    color: tomato;
-    cursor: default;
-  }
 }
 
 .not_localizable {
@@ -137,7 +132,7 @@
     display: block;
   }
   .body {
-    background: #fff !important;
+    background: #fff;
   }
 }
 
@@ -178,6 +173,10 @@
   .body {
     background: #fff;
   }
+}
+
+.body.missing {
+  background-color: #FFF1F1;
 }
 
 .overlay {

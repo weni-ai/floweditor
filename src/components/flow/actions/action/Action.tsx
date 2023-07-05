@@ -165,12 +165,13 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
     const actionToInject = this.getAction();
 
     let titleBarClass = (shared as any)[this.props.action.type] || shared.missing;
-    const actionClass = (styles as any)[this.props.action.type] || styles.missing;
+    let actionClass = (styles as any)[this.props.action.type] || styles.missing;
     const showRemoval = !this.props.translating;
     const showMove = !this.props.first && !this.props.translating;
 
     if (hasIssues(this.props.issues, this.props.translating, this.props.language)) {
       titleBarClass = shared.missing;
+      actionClass = styles.missing;
     }
 
     const events = this.context.config.mutable
