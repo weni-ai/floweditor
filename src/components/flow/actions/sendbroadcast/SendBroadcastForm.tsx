@@ -86,7 +86,7 @@ export default class SendBroadcastForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -102,7 +102,7 @@ export default class SendBroadcastForm extends React.Component<
 
         <div className={styles.recipients_container}>
           <AssetSelector
-            name={i18n.t('forms.recipients', 'Recipients')}
+            name={i18n.t('forms.select_contacts', 'Select Contacts')}
             placeholder={i18n.t('forms.select_contacts', 'Select Contacts')}
             assets={this.props.assetStore.recipients}
             entry={this.state.recipients}

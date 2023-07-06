@@ -60,7 +60,7 @@ export default class AddLabelsForm extends React.PureComponent<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -106,7 +106,7 @@ export default class AddLabelsForm extends React.PureComponent<
           multi={true}
           expressions={true}
           onChange={this.handleLabelsChanged}
-          createPrefix={i18n.t('create_label', 'Create Label') + ': '}
+          createPrefix={i18n.t('create_label') + ': '}
           createAssetFromInput={this.handleCreateAssetFromInput}
           onAssetCreated={this.handleLabelCreated}
         />

@@ -165,7 +165,7 @@
     "hide_empty": "Mostrando chaves com valores",
     "show_empty": "Mostrando todas as chaves"
   },
-  "create_label": "Criar Label",
+  "create_label": "Criar etiqueta",
   "document": "Document",
   "drag_helper": "Para conectar nós, <1>arraste</1> a partir do círculo vermelho.",
   "email": {
@@ -291,7 +291,7 @@
     "save_as_title": "Salve como",
     "save_result_name": "Salvar como resultado",
     "select_channel": "Selecione o canal à ser utilizado para esse contato",
-    "select_contacts": "Selecione os Contatos",
+    "select_contacts": "Selecione os contatos",
     "select_flow": "Selecione o fluxo para iniciar",
     "select_groups": "Selecione os Grupos",
     "select_intent": "Select intent",

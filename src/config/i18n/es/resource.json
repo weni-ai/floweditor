@@ -10,7 +10,7 @@
     },
     "add_input": {
       "description": "Etiquetar el mensaje entrante",
-      "name": "Añadir Etiquetas"
+      "name": "Añadir etiqueta"
     },
     "call_resthook": {
       "description": "Llamar Zapier",
@@ -45,7 +45,7 @@
     },
     "send_broadcast": {
       "description": "Enviar un mensaje a alguien más",
-      "name": "Enviar Difusión",
+      "name": "Enviar difusión",
       "placeholder": "Enviar un mensaje al contacto"
     },
     "send_email": {
@@ -54,7 +54,7 @@
     },
     "send_msg": {
       "description": "Enviar un mensage al contacto",
-      "name": "Enviar Mensaje",
+      "name": "Enviar mensaje",
       "placeholder": "Enviar un mensaje al contacto"
     },
     "set_contact_field": {
@@ -127,7 +127,7 @@
     },
     "wait_for_response": {
       "description": "Esperar a que el contacto responda",
-      "name": "Esperar por Respuesta"
+      "name": "Esperar por respuesta"
     },
     "wait_for_video": {
       "description": "Esperar por un video",
@@ -165,7 +165,7 @@
     "hide_empty": "Mostrando claves con valores",
     "show_empty": "Mostrando todas las claves"
   },
-  "create_label": "Crear Etiqueta",
+  "create_label": "Crear etiqueta",
   "document": "Documento",
   "drag_helper": "Para conectar nodos, <1>arrastre</1> desde el círculo rojo.",
   "email": {
@@ -288,7 +288,7 @@
     "save_as_title": "Salvar como",
     "save_result_name": "Guardar como resultado",
     "select_channel": "Seleccionar el canal a utilizar para este contacto",
-    "select_contacts": "Seleccionar Contactos",
+    "select_contacts": "Seleccionar contactos",
     "select_flow": "Seleccionar el flujo a iniciar",
     "select_groups": "Seleccionar Grupos",
     "select_intent": "Seleccionar intención",

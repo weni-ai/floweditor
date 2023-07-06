@@ -10,7 +10,7 @@
     },
     "add_input": {
       "description": "Label the incoming message",
-      "name": "Add Labels"
+      "name": "Add label"
     },
     "call_resthook": {
       "description": "Call Zapier",
@@ -45,7 +45,7 @@
     },
     "send_broadcast": {
       "description": "Send somebody else a message",
-      "name": "Send Broadcast",
+      "name": "Send broadcast",
       "placeholder": "Send a message to the contact"
     },
     "send_email": {
@@ -54,7 +54,7 @@
     },
     "send_msg": {
       "description": "Send the contact a message",
-      "name": "Send Message",
+      "name": "Send message",
       "placeholder": "Send a message to the contact"
     },
     "set_contact_field": {
@@ -127,7 +127,7 @@
     },
     "wait_for_response": {
       "description": "Wait for the contact to respond",
-      "name": "Wait for Response"
+      "name": "Wait for response"
     },
     "wait_for_video": {
       "description": "Wait for a video",
@@ -165,7 +165,7 @@
     "hide_empty": "Showing keys with values",
     "show_empty": "Showing all keys"
   },
-  "create_label": "Create Label",
+  "create_label": "Create label",
   "document": "Document",
   "drag_helper": "To connect nodes, <1>drag</1> from the red circle.",
   "email": {
@@ -295,7 +295,7 @@
     "save_as_title": "Save as",
     "save_result_name": "Save as result",
     "select_channel": "Select the channel to use for this contact",
-    "select_contacts": "Select Contacts",
+    "select_contacts": "Select contacts",
     "select_flow": "Select the flow to start",
     "select_groups": "Select Groups",
     "select_intent": "Select intent",
