@@ -133,7 +133,7 @@ export default class ExpressionRouterForm extends React.Component<
         </div>
 
         <div className="u font secondary body-md color-neutral-cloudy">
-          {i18n.t('forms.message_label', 'If the message response...')}
+          {i18n.t('forms.message_label')}
         </div>
 
         <CaseList
