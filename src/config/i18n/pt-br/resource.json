@@ -151,7 +151,8 @@
     "ok": "Ok",
     "close": "Fechar",
     "confirm": "Confirmar",
-    "after": "Depois"
+    "after": "Depois",
+    "later": "Mais tarde"
   },
   "contact_statuses": {
     "active": "Ativo",
@@ -171,7 +172,8 @@
     "subject": "Assunto",
     "to": "Para"
   },
-  "empty_flow_message": "<0>Vamos começar </0><1>Nos recomendamos iniciar seu fluxo enviando uma mensagem. Esta mensagem será enviada para qualquer pessoa que entrar no seu fluxo. Esta é a sua chance de enviar uma mensagem simples ou fazer uma pergunta. </1>",
+  "empty_flow_message_title": "Vamos começar",
+  "empty_flow_message_description": "Recomendamos iniciar seu fluxo enviando uma mensagem. Essa mensagem será enviada para qualquer pessoa que entrar no seu fluxo. Esta é a sua chance de enviar uma mensagem ou fazer uma pergunta.",
   "enter_to_create_group": "Insira um nome para criar um novo grupo",
   "enter_to_create_label": "Insira o nome de uma label existente ou crie uma nova",
   "errors": {
@@ -185,11 +187,11 @@
     "add_attachment": "Adicione um arquivo",
     "add_groups_summary": "Selecione os grupos para adicionar o contato",
     "add_labels_summary": "Selecione as etiquetas a serem aplicadas na mensagem recebida",
-    "add_quick_reply": "Adicione uma nova Resposta Rápida e pressione enter",
+    "add_quick_reply": "Adicione uma nova Resposta rápida e pressione Enter",
     "add_urn_summary": "Adicione uma nova URN para encontrar o contato, como um número de telefone",
     "advanced": "Avançado",
     "all_destinations": "Envie uma mensagem para todos os destinos",
-    "all_destinations_title": "Envie uma mensagem para todos os destinos conhecidos deste contato",
+    "all_destinations_title": "Envie uma mensagem para todos os destinos conhecidos deste contato.",
     "all_destinations_description": "Se você não tiver certeza do que isso significa, deixe-o desmarcado.",
     "and": "e",
     "are_required": "são requeridos",
@@ -260,7 +262,7 @@
     "pdf_url": "PDF Document URL",
     "phone_number": "Número de Telefone",
     "play_audio_help_text": "Digite uma variável que contém uma gravação que o contato gravou anteriormente. Por exemplo, @ results.voicemail ou @ fields.short_bio.",
-    "quick_replies": "Respostas Rápidas",
+    "quick_replies": "Repostas rápidas",
     "quick_replies_summary": "As Respostas rápidas são transformadas em botões para os canais suportados. Por exemplo, ao fazer uma pergunta, você pode adicionar uma Resposta rápida para \"Sim\" e outra para \"Não\".",
     "quick_reply": "Resposta Rápida",
     "general": "Geral",

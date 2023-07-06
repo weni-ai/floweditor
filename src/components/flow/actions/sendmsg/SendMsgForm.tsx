@@ -161,7 +161,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       tertiary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -319,7 +319,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     const typeConfig = this.props.typeConfig;
 
     const quickReplies: Tab = {
-      name: i18n.t('forms.quick_replies', 'Quick Replies'),
+      name: i18n.t('forms.quick_replies'),
       body: (
         <>
           <div className={`${styles.quick_reply_summary} u font secondary body-md neutral-cloudy`}>
@@ -331,7 +331,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
 
           <MultiChoiceInput
             name={i18n.t('forms.add_quick_reply', 'Add a new Quick Reply and press enter')}
-            helpText={<Trans i18nKey="forms.quick_reply">quick_reply</Trans>}
+            helpText={<Trans i18nKey="forms.quick_replies" />}
             items={this.state.quickReplies}
             entry={this.state.quickReplyEntry}
             onChange={this.handleQuickRepliesUpdate}

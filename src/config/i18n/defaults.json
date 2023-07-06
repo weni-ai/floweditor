@@ -146,12 +146,13 @@
   "body": "Body",
   "buttons": {
     "cancel": "Cancel",
-    "create_message": "Create Message",
+    "create_message": "Create message",
     "download": "Download",
     "ok": "Ok",
     "close": "Close",
     "confirm": "Confirm",
-    "after": "After"
+    "after": "After",
+    "later": "Later"
   },
   "contact_statuses": {
     "active": "Active",
@@ -171,7 +172,8 @@
     "subject": "Subject",
     "to": "To"
   },
-  "empty_flow_message": "<0>Let's get started</0><1>We recommend starting your flow by sending a message. This message will be sent to anybody right after they join the flow. This is your chance to send a single message or ask them a question.</1>",
+  "empty_flow_message_title": "Let's get started",
+  "empty_flow_message_description": "We recommend starting your flow by sending a message. This message will be sent to anyone who joins your flow. This is your chance to send a message or ask a question.",
   "enter_to_create_group": "Enter a name to create a new group",
   "enter_to_create_label": "Enter the name of an existing label or create a new one",
   "errors": {
@@ -185,7 +187,7 @@
     "add_attachment": "Add Attachment",
     "add_groups_summary": "Select the groups to add the contact to",
     "add_labels_summary": "Select the labels to apply to the incoming message",
-    "add_quick_reply": "Add a new Quick Reply and press enter",
+    "add_quick_reply": "Add a new Quick reply and press Enter",
     "add_urn_summary": "Add a new URN to reach the contact such as a phone number",
     "advanced": "Advanced",
     "all_destinations": "Send a message to all destinations",

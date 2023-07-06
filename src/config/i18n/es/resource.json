@@ -151,7 +151,8 @@
     "ok": "Ok",
     "close": "Cerrar",
     "confirm": "Confirme",
-    "after": "Después"
+    "after": "Después",
+    "later": "Más tarde"
   },
   "contact_statuses": {
     "active": "Activo",
@@ -171,7 +172,8 @@
     "subject": "Asunto",
     "to": "Para"
   },
-  "empty_flow_message": "<0>Vamos a comenzar</0><1>Recomendamos comenzar su flujo enviando un mensaje. Este mensaje se enviará a cualquiera justo después de unirse al flujo. Esta es su oportunidad de enviar un solo mensaje o hacerles una pregunta.</1>",
+  "empty_flow_message_title": "Comencemos",
+  "empty_flow_message_description": "Le recomendamos que inicie su flujo enviando un mensaje. Este mensaje se enviará a cualquier persona que se una a tu flujo. Esta es tu oportunidad para enviar un mensaje o hacer una pregunta.",
   "enter_to_create_group": "Ingrese un nombre para crear un nuevo grupo.",
   "enter_to_create_label": "Ingrese el nombre de una etiqueta existente o cree una nueva",
   "errors": {
@@ -185,7 +187,7 @@
     "add_attachment": "Agregar Adjunto",
     "add_groups_summary": "Seleccione los grupos a los que se agregará el contacto",
     "add_labels_summary": "Seleccione las etiquetas para aplicar a los mensajes entrantes",
-    "add_quick_reply": "Agregue una nueva respuesta rápida y presione enter",
+    "add_quick_reply": "Agregue una nueva Respuesta rápida y presione Enter",
     "add_urn_summary": "Agregue un nuevo URN para comunicarse con el contacto, como un número de teléfono",
     "advanced": "Avanzado",
     "all_destinations": "Envíe un mensaje a todos los destinos",
@@ -260,7 +262,7 @@
     "pdf_url": "URL de Documento PDF",
     "phone_number": "Número Telefónico",
     "play_audio_help_text": "Ingrese una variable que contenga una grabación que el contacto haya grabado previamente. Por ejemplo, @results.voicemail o @fields.short_bio.",
-    "quick_replies": "Respuestas Rápidas",
+    "quick_replies": "Respuestas rápidas",
     "quick_replies_summary": "Las respuestas rápidas se convierten en botones para canales compatibles. Por ejemplo, al hacer una pregunta, puede agregar una respuesta rápida para \"Sí\" y una para \"No\".",
     "quick_reply": "Respuesta Rápida",
     "general": "General",
