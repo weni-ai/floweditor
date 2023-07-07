@@ -139,7 +139,7 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -167,7 +167,7 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
           {renderIf(this.state.startType.value === START_TYPE_ASSETS)(
             <div data-testid="recipients" className={styles.form_element}>
               <AssetSelector
-                name={i18n.t('forms.recipients', 'Recipients')}
+                name={i18n.t('forms.contacts')}
                 placeholder={i18n.t(
                   'forms.select_who_to_start',
                   'Select who should be started in the flow'

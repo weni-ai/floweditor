@@ -232,7 +232,7 @@ export default class UpdateContactForm extends React.Component<
       return (
         <AssetSelector
           key="select_channel"
-          name={i18n.t('forms.channel', 'Channel')}
+          name={i18n.t('forms.select_channel', 'Select the channel to use for this contact')}
           showLabel={true}
           placeholder={i18n.t('forms.select_channel', 'Select the channel to use for this contact')}
           assets={this.props.assetStore.channels}
@@ -248,7 +248,7 @@ export default class UpdateContactForm extends React.Component<
       return (
         <AssetSelector
           key="select_language"
-          name={i18n.t('forms.language', 'Language')}
+          name={i18n.t('forms.select_language', 'Select the language to use for this contact')}
           showLabel={true}
           placeholder={i18n.t(
             'forms.select_language',
@@ -282,7 +282,7 @@ export default class UpdateContactForm extends React.Component<
     } else if (this.state.type === Types.set_contact_name) {
       return (
         <TextInputElement
-          name={i18n.t('forms.name', 'Name')}
+          name={i18n.t('forms.enter_new_name', 'Enter a new name for the contact')}
           showLabel={true}
           placeholder={i18n.t('forms.enter_new_name', 'Enter a new name for the contact')}
           onChange={this.handleNameUpdate}
@@ -333,7 +333,7 @@ export default class UpdateContactForm extends React.Component<
           onChange={this.handlePropertyChange}
           getName={getName}
           // Fields can be created on the fly
-          createPrefix="Create Contact Field: "
+          createPrefix={i18n.t('forms.create_contact_field')}
           createAssetFromInput={this.handleCreateAssetFromInput}
           onAssetCreated={this.handleFieldAdded}
         />

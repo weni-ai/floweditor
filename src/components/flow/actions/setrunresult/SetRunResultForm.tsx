@@ -103,7 +103,7 @@ export default class SetRunResultForm extends React.PureComponent<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -154,7 +154,8 @@ export default class SetRunResultForm extends React.PureComponent<
           />
           <div className={styles.value}>
             <TextInputElement
-              name={i18n.t('forms.value', 'Value')}
+              name={i18n.t('forms.value')}
+              placeholder={i18n.t('forms.value')}
               showLabel={true}
               onChange={this.handleValueUpdate}
               entry={this.state.value}
@@ -168,16 +169,13 @@ export default class SetRunResultForm extends React.PureComponent<
 
           <div className={styles.category}>
             <TextInputElement
-              name={i18n.t('forms.category', 'Category')}
-              placeholder="Optional"
+              name={i18n.t('forms.category')}
+              placeholder={i18n.t('forms.category_placeholder')}
               showLabel={true}
               onChange={this.handleCategoryUpdate}
               entry={this.state.category}
               autocomplete={false}
-              helpText={i18n.t(
-                'forms.result_category_help',
-                "An optional category for your result. For age, the value might be 17, but the category might be 'Young Adult'"
-              )}
+              helpText={i18n.t('forms.result_category_help')}
             />
           </div>
         </div>

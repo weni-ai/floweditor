@@ -11,6 +11,8 @@ import TembaSelect, { TembaSelectStyle } from 'temba/TembaSelect';
 import { sortByName } from './helpers';
 
 export interface AssetSelectorProps extends FormElementProps {
+  namePure?: string;
+
   assets?: Assets;
   onChange: (selected: Asset[]) => void;
 
@@ -200,7 +202,12 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
     const fallbackPlaceholder = i18n.t(
       'asset_selector.placeholder',
       'Select existing [[name]] or enter a new one',
-      { name: this.props.name.toLocaleLowerCase(), count: this.props.multi ? 1000 : 1 }
+      {
+        name:
+          (this.props.namePure && this.props.namePure.toLocaleLowerCase()) ||
+          this.props.name.toLocaleLowerCase(),
+        count: this.props.multi ? 1000 : 1
+      }
     );
 
     return (

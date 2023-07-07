@@ -395,7 +395,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 ></SelectElement>
               </div>
               <div className={styles.divider} data-draggable={true}>
-                above
+                {i18n.t('forms.above')}
               </div>
               <div style={{ width: '60px' }}>
                 <TextInputElement

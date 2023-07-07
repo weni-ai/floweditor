@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { SetRunResult } from 'flowTypes';
 import { ellipsize, emphasize } from 'utils';
+import i18n from 'config/i18n';
 
 export const getSavePlaceholder = (value: string, name: string): JSX.Element => (
   <div>
-    Save {emphasize(ellipsize(value, 100))} as {emphasize(name)}
+    {i18n.t('forms.save')} {emphasize(ellipsize(value, 100))} {i18n.t('forms.as')} {emphasize(name)}
   </div>
 );
 

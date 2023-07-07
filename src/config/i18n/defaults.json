@@ -2,7 +2,7 @@
   "actions": {
     "add_contact_groups": {
       "description": "Add the contact to a group",
-      "name": "Add to Group"
+      "name": "Add to group"
     },
     "add_contact_urn": {
       "description": "Add a URN for the contact",
@@ -18,11 +18,11 @@
     },
     "call_webhook": {
       "description": "Call a webhook",
-      "name": "Call Webhook"
+      "name": "Call webhook"
     },
     "enter_flow": {
       "description": "Enter another flow",
-      "name": "Enter a Flow"
+      "name": "Enter another flow"
     },
     "open_ticket": {
       "description": "Open a ticket with a human agent",
@@ -38,7 +38,7 @@
     },
     "remove_contact_groups": {
       "description": "Remove the contact from a group",
-      "name": "Remove from Group"
+      "name": "Remove from group"
     },
     "say_msg": {
       "placeholder": "Send a message to the contact"
@@ -49,8 +49,8 @@
       "placeholder": "Send a message to the contact"
     },
     "send_email": {
-      "description": "Send an email",
-      "name": "Send Email"
+      "description": "Send email",
+      "name": "Send email"
     },
     "send_msg": {
       "description": "Send the contact a message",
@@ -59,43 +59,43 @@
     },
     "set_contact_field": {
       "description": "Update the contact",
-      "name": "Update Contact"
+      "name": "Update contact"
     },
     "set_run_result": {
       "description": "Save a result for this flow",
-      "name": "Save Flow Result"
+      "name": "Save flow result"
     },
     "split_by_contact_field": {
-      "description": "Split by a contact field",
-      "name": "Split by Contact Field"
+      "description": "Split by contact field",
+      "name": "Split by contact field"
     },
     "split_by_expression": {
       "description": "Split by a custom expression",
-      "name": "Split by Expression"
+      "name": "Split by expression"
     },
     "split_by_groups": {
       "description": "Split by group membership",
-      "name": "Split by Group Membership"
+      "name": "Split by group membership"
     },
     "split_by_intent": {
       "description": "Split by intent",
-      "name": "Split by Intent"
+      "name": "Split by intent"
     },
     "split_by_random": {
-      "description": "Split by random chance",
-      "name": "Split Randomly"
+      "description": "Split randomly",
+      "name": "Split randomly"
     },
     "split_by_run_result": {
       "description": "Split by a result in the flow",
-      "name": "Split by Flow Result"
+      "name": "Split by flow result"
     },
     "split_by_scheme": {
       "description": "Split by URN type",
-      "name": "Split by URN Type"
+      "name": "Split by URN type"
     },
     "start_session": {
       "description": "Start somebody else in a flow",
-      "name": "Start Somebody Else"
+      "name": "Start somebody else"
     },
     "transfer_airtime": {
       "description": "Send the contact airtime",
@@ -135,6 +135,8 @@
     }
   },
   "add": "Add",
+  "set": "Set",
+  "to": "to",
   "asset_selector": {
     "placeholder": "Select existing [[name]] or enter a new one",
     "placeholder_plural": "Select existing [[name]] or enter a new one"
@@ -188,7 +190,7 @@
     "add_groups_summary": "Select the groups to add the contact to",
     "add_labels_summary": "Select the labels to apply to the incoming message",
     "add_quick_reply": "Add a new Quick reply and press Enter",
-    "add_urn_summary": "Add a new URN to reach the contact such as a phone number",
+    "add_urn_summary": "Add a new URN to reach the contact",
     "advanced": "Advanced",
     "all_destinations": "Send a message to all destinations",
     "all_destinations_title": "Send a message to all destinations known for this contact.",
@@ -204,9 +206,10 @@
     "call": "Call",
     "categories": "categories",
     "categorize_as": "Categorize as:",
-    "category": "Category",
+    "category": "Category (optional)",
+    "category_placeholder": "Category",
     "channel": "Channel",
-    "channel_type": "Channel Type",
+    "channel_type": "Channels",
     "classifier": "Classifier",
     "clear": "Clear",
     "confidence": "confidence",
@@ -214,13 +217,13 @@
     "contact_query": "Contact Query",
     "continue_when_no_response": "Continue when there is no response",
     "wait_response_for": "Wait for a response for:",
-    "create_group": "Create Group",
+    "create_group": "Create group",
     "create_prefix": "New: ",
     "currency": "Currency",
     "day": "day",
     "days": "days",
     "delimit": "Delimit",
-    "delimit_result": "Delimit Result",
+    "delimit_result": "Delimit result",
     "delimit_result_description": "Evaluate your rules against a delimited part of your result",
     "delimiter": "Delimiter",
     "district": "District",
@@ -232,16 +235,17 @@
     "enter_field_value": "",
     "enter_flow_parameters_summary": "<0>[[flow]]</0> expects the following parameters to be set by this flow. These can be set using a <4>Save Flow Result</4> action or directly below.",
     "enter_flow_parameters_tab": "Parameters",
-    "enter_new_name": "Enter a new name for the contact",
+    "enter_new_name": "Enter a new contact name",
     "enter_urn_value": "Enter the URN value",
     "exit_name": "Exit Name",
-    "expression_label": "If the expression...",
+    "expression_label": "If the expression",
     "externalService": "External Service",
     "external_service": "External Service",
     "field": "Field",
     "field_number": "Field Number",
     "field_value": "Field Value",
     "flow": "Flow",
+    "flow_to_start": "Flow to start",
     "flow_result": "Flow Result",
     "groups": "Groups",
     "header_name": "Header name",
@@ -265,13 +269,14 @@
     "operand": "Operand",
     "operator": "operator",
     "pdf_url": "PDF Document URL",
-    "phone_number": "Phone Number",
+    "phone_number": "Phone number",
     "play_audio_help_text": "Enter a variable that contains a recording the contact has previously recorded. For example, @results.voicemail or @fields.short_bio.",
     "quick_replies": "Quick Replies",
     "quick_replies_summary": "Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for \"Yes\" and one for \"No\".",
     "quick_reply": "Quick Reply",
     "general": "General",
     "recipients": "Recipients",
+    "contacts": "Contacts",
     "recording": "Recording",
     "recording_label": "Previous Recording",
     "remove_groups_type_label": "Groups that the contact will be removed:",
@@ -285,7 +290,7 @@
     "resthook": "Resthook",
     "resthook_to_call": "Select the resthook to call",
     "result": "Result",
-    "result_category_help": "An optional category for your result. For age, the value might be 17, but the category might be 'Young Adult'",
+    "result_category_help": "An optional category for your result. For age, the value might be 17, but the category might be “Teenager”",
     "result_name": "Result Name",
     "result_name_help": "By naming the result, you can reference it later using [[resultFormat]]",
     "result_to_split_on": "Result to split on",
@@ -297,11 +302,12 @@
     "select_channel": "Select the channel to use for this contact",
     "select_contacts": "Select contacts",
     "select_flow": "Select the flow to start",
-    "select_groups": "Select Groups",
+    "select_groups": "Select groups",
     "select_intent": "Select intent",
     "select_language": "Select the language to use for this contact",
     "select_result": "Select Result",
     "select_what_to_update": "Select what to update",
+    "create_contact_field": "Create contact field: ",
     "select_who_to_start": "Select who should be started in the flow",
     "send_msg_facebook_topic_placeholder": "Select a topic to use over Facebook",
     "send_msg_facebook_warning": "Sending bulk messages over a Facebook channel requires that a topic be specified if the user has not sent a message in the last 24 hours. Setting a topic to use over Facebook is especially important for the first message in your flow.",
@@ -311,7 +317,7 @@
     "split_by_channel_placeholder": "Select the channels to split by",
     "split_by_groups": "Select the groups you'd like to split by below",
     "split_by_scheme": "Channel types",
-    "split_by_scheme_summary": "The contact's URN is the address they used to reach you such as their phone number or a Facebook ID. Select which URN types to split by below.",
+    "split_by_scheme_summary": "The contact's URN is the address they used to reach you such as their phone number or a Facebook ID. Select which URN types to split.",
     "start_type": "Start Type",
     "start_type_create": "Create a new contact",
     "start_type_manual": "Select recipients manually",
@@ -357,21 +363,43 @@
     "type_options": "Type Options",
     "upload_attachment": "Upload Attachment",
     "url": "URL",
-    "urn": "URN",
+    "urn": "Value of URN",
     "urn_type": "URN Type",
     "use_as_default_language": "Use as default language",
     "value": "Value",
     "variable": "Variable",
     "video_url": "Video URL",
-    "webhook_body_summary": "Modify the body of the [[method]] request that will be sent to your webhook.",
+    "webhook_body_summary": "Modify the body of the [[method]] request that will be sent to your webhook",
     "webhook_body_placeholder": "Body of the request",
     "webhook_example": "This response would add <1>@webhook.product</1> and <4>@webhook[\"stock level\"]</4> for use in the flow.",
     "webhook_header": "Header",
-    "webhook_header_name": "Header Name",
-    "webhook_header_summary": "Add any additional headers below that you would like to send along with your request.",
+    "webhook_header_name": "Header name",
+    "webhook_header_summary": "Add any additional headers below that you would like to send along with your request",
     "webhook_help": "If your server responds with JSON, each property will be added to the Flow.",
     "whatsapp_warning": "Sending messages over a WhatsApp channel requires that a template be used if you have not received a message from a contact in the last 24 hours. Setting a template to use over WhatsApp is especially important for the first message in your flow.",
-    "file": "File"
+    "file": "File",
+    "execute": "Run ",
+    "the_last_response": "the last response",
+    "through_the_classifier": " through the classifier",
+    "above": "Above",
+    "classifier_input": "Classifier input",
+    "classifier_input_description": "Enter an expression to use as the input to your classifier. To classify the last response from the contact use",
+    "select_contact_field_label": "If the contact's",
+    "select_result_label": "If the result",
+    "select_result_placeholder": "Select the result",
+    "select_quantity_of_buckets_label": "Split randomly into",
+    "save": "Save",
+    "as": "as",
+    "All Responses": "All responses",
+    "No Response": "No response",
+    "Any Value": "Any value",
+    "Other": "Other",
+    "Success": "Success",
+    "Failure": "Failure",
+    "Complete": "Complete",
+    "Expired": "Expiredo",
+    "remove_from_all_groups": "Remove from all groups",
+    "split_by": "Split by"
   },
   "issues": {
     "header": "Flow Issues",
@@ -470,7 +498,7 @@
     },
     "phone": {
       "name": "SMS",
-      "path": "Phone Number"
+      "path": "Phone number"
     },
     "slack": {
       "name": "Slack",

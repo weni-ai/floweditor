@@ -2,7 +2,7 @@
   "actions": {
     "add_contact_groups": {
       "description": "Añadir el contacto a un grupo",
-      "name": "Añadir a Grupo"
+      "name": "Añadir a grupo"
     },
     "add_contact_urn": {
       "description": "Añadir una URN para el contacto",
@@ -18,11 +18,11 @@
     },
     "call_webhook": {
       "description": "Llamar un Webhook",
-      "name": "Llamar Webhook"
+      "name": "Llamar webhook"
     },
     "enter_flow": {
       "description": "Ingresar en otro flujo",
-      "name": "Ingresar en un Flujo"
+      "name": "Ingresar en otro flujo"
     },
     "open_ticket": {
       "description": "Abrir un ticket con un agente humano",
@@ -38,7 +38,7 @@
     },
     "remove_contact_groups": {
       "description": "Eliminar el contacto de un grupo",
-      "name": "Eliminar de Grupo"
+      "name": "Eliminar de grupo"
     },
     "say_msg": {
       "placeholder": "Enviar un mensaje al contacto"
@@ -49,8 +49,8 @@
       "placeholder": "Enviar un mensaje al contacto"
     },
     "send_email": {
-      "description": "Enviar un correo electrónico",
-      "name": "Enviar Correo Electrónico"
+      "description": "Enviar correo electrónico",
+      "name": "Enviar correo electrónico"
     },
     "send_msg": {
       "description": "Enviar un mensage al contacto",
@@ -59,43 +59,43 @@
     },
     "set_contact_field": {
       "description": "Actualizar el contacto",
-      "name": "Actualizar Contacto"
+      "name": "Actualizar contacto"
     },
     "set_run_result": {
       "description": "Guardar un resultado para este flujo",
-      "name": "Guardar Resultado de Flujo"
+      "name": "Guardar resultado de Flujo"
     },
     "split_by_contact_field": {
-      "description": "Dividir por un campo de contacto",
-      "name": "Dividir por Campo de Contacto"
+      "description": "Dividir por campo de contacto",
+      "name": "Dividir por campo de contacto"
     },
     "split_by_expression": {
       "description": "Dividir por una expresión personalizada",
-      "name": "Dividir por Expresión"
+      "name": "Dividir por expresión"
     },
     "split_by_groups": {
       "description": "Dividir por afiliación a grupo",
-      "name": "Dividir por Afiliación a Grupo"
+      "name": "Dividir por afiliación a grupo"
     },
     "split_by_intent": {
       "description": "Dividir por intención",
-      "name": "Dividir por Intención"
+      "name": "Dividir por intención"
     },
     "split_by_random": {
-      "description": "Dividir por oportunidad al azar",
-      "name": "Dividir al Azar"
+      "description": "Divide al azar",
+      "name": "Divide al azar"
     },
     "split_by_run_result": {
       "description": "Dividir por un resultado en el flujo",
-      "name": "Dividir por Resultado de Flujo"
+      "name": "Dividir por resultado de flujo"
     },
     "split_by_scheme": {
       "description": "Dividir por tipo de URN",
-      "name": "Dividir por Tipo de URN"
+      "name": "Dividir por tipo de URN"
     },
     "start_session": {
       "description": "Iniciar a otra persona en un flujo",
-      "name": "Iniciar a Otra Persona"
+      "name": "Iniciar a otra persona"
     },
     "transfer_airtime": {
       "description": "Enviar el tiempo-aire de contacto.",
@@ -135,9 +135,11 @@
     }
   },
   "add": "Añadir",
+  "set": "Establecer",
+  "to": "como",
   "asset_selector": {
     "placeholder": "Seleccione el [[name]] existente o ingrese uno nuevo",
-    "placeholder_plural": "Seleccione el [[name]] existente o ingrese uno nuevo"
+    "placeholder_plural": "Seleccione los [[name]] existentes o ingrese uno nuevo"
   },
   "assets": {
     "classifier": "Llamar clasificador [[name]]",
@@ -188,7 +190,7 @@
     "add_groups_summary": "Seleccione los grupos a los que se agregará el contacto",
     "add_labels_summary": "Seleccione las etiquetas para aplicar a los mensajes entrantes",
     "add_quick_reply": "Agregue una nueva Respuesta rápida y presione Enter",
-    "add_urn_summary": "Agregue un nuevo URN para comunicarse con el contacto, como un número de teléfono",
+    "add_urn_summary": "Agregue un nuevo URN para comunicarse con el contacto",
     "advanced": "Avanzado",
     "all_destinations": "Envíe un mensaje a todos los destinos",
     "all_destinations_title": "Envíe un mensaje a todos los destinos conocidos para este contacto.",
@@ -202,9 +204,10 @@
     "buckets": "Cubos",
     "categories": "categorías",
     "categorize_as": "Categorizar como:",
-    "category": "Categoría",
+    "category": "Categoría (opcional)",
+    "category_placeholder": "Categoría",
     "channel": "Canal",
-    "channel_type": "Tipo de Canal",
+    "channel_type": "Canales",
     "classifier": "Clasificador",
     "clear": "Limpiar",
     "confidence": "confidencia",
@@ -212,13 +215,13 @@
     "contact_query": "Consulta de Contacto",
     "continue_when_no_response": "Continuar si no hay respuesta",
     "wait_response_for": "Espere una respuesta de hasta:",
-    "create_group": "Crear Grupo",
+    "create_group": "Crear grupo",
     "create_prefix": "Nuevo:",
     "currency": "Moneda",
     "day": "día",
     "days": "días",
     "delimit": "Delimitar",
-    "delimit_result": "Delimitar Resultado",
+    "delimit_result": "Delimitar resultado",
     "delimit_result_description": "Evalúe sus reglas contra una parte delimitada de su resultado",
     "delimiter": "Delimitador",
     "district": "Distrito",
@@ -227,17 +230,18 @@
     "email_recipient_prompt": "Introducir la dirección de correo electrónico",
     "enter_a_body": "Introducir cuerpo",
     "enter_a_subject": "Introducir asunto",
-    "enter_a_url": "Introducir URL",
+    "enter_a_url": "Introduzca una URL",
     "enter_field_value": "Ingrese un nuevo valor para [[field]]",
     "enter_flow_parameters_summary": "<0>[[flow]]</0> espera que este flujo establezca los siguientes parámetros. Estos se pueden configurar usando una acción de <4>Save Flow Result</4>o directamente abajo.",
     "enter_flow_parameters_tab": "Parametros",
-    "enter_new_name": "Ingrese un nombre para el contacto",
+    "enter_new_name": "Ingrese un nuevo nombre de contacto",
     "enter_urn_value": "Ingrese el valor URN",
     "exit_name": "Nombre de Salida",
-    "expression_label": "Si la expresión...",
+    "expression_label": "Si la expresión",
     "field_number": "Número de campo",
     "field_value": "Valor de Campo",
     "flow": "Flujo",
+    "flow_to_start": "Flujo para empezar",
     "flow_result": "Resultado de Flujo",
     "groups": "Grupos",
     "header_name": "Nombre de cabecera",
@@ -261,13 +265,14 @@
     "operand": "Operando",
     "operator": "operador",
     "pdf_url": "URL de Documento PDF",
-    "phone_number": "Número Telefónico",
+    "phone_number": "Número telefónico",
     "play_audio_help_text": "Ingrese una variable que contenga una grabación que el contacto haya grabado previamente. Por ejemplo, @results.voicemail o @fields.short_bio.",
     "quick_replies": "Respuestas rápidas",
     "quick_replies_summary": "Las respuestas rápidas se convierten en botones para canales compatibles. Por ejemplo, al hacer una pregunta, puede agregar una respuesta rápida para \"Sí\" y una para \"No\".",
     "quick_reply": "Respuesta Rápida",
     "general": "General",
     "recipients": "Destinatarios",
+    "contacts": "Contactos",
     "recording": "Grabación",
     "recording_label": "Grabación Previa",
     "remove_from_all_label": "Remover de todos",
@@ -278,7 +283,7 @@
     "resthook": "Resthook",
     "resthook_to_call": "Seleccione el resthook que se llamará",
     "result": "Resultado",
-    "result_category_help": "Una categoría opcional para su resultado. Para la edad, el valor podría ser 17, pero la categoría podría ser 'Adulto Joven'",
+    "result_category_help": "Una categoría opcional para su resultado. Para la edad, el valor podría ser 17, pero la categoría podría ser “Adolescente”",
     "result_name": "Nombre del Resultado",
     "result_name_help": "Al nombrar el resultado, puede hacer referencia a él más tarde usando [[resultFormat]]",
     "result_to_split_on": "Resultado para dividir",
@@ -290,11 +295,12 @@
     "select_channel": "Seleccionar el canal a utilizar para este contacto",
     "select_contacts": "Seleccionar contactos",
     "select_flow": "Seleccionar el flujo a iniciar",
-    "select_groups": "Seleccionar Grupos",
+    "select_groups": "Seleccionar grupos",
     "select_intent": "Seleccionar intención",
     "select_language": "Seleccionar el lenguaje a utilizar para este contacto",
     "select_result": "Seleccionar Resultado",
     "select_what_to_update": "Seleccionar los datos a actualizar",
+    "create_contact_field": "Crear campo de contacto: ",
     "select_who_to_start": "Seleccionar quien debe ser iniciado en el flujo",
     "send_msg_facebook_topic_placeholder": "Seleccione un tema para usar en Facebook",
     "send_msg_facebook_warning": "El envío de mensajes masivos a través de un canal de Facebook requiere que se especifique un tema si el usuario no ha enviado un mensaje en las últimas 24 horas. Establecer un tema para usar en Facebook es especialmente importante para el primer mensaje de su flujo.",
@@ -304,7 +310,7 @@
     "split_by_channel_placeholder": "Seleccione los canales para dividir",
     "split_by_groups": "Seleccione los grupos por los que le gustaría dividir a continuación",
     "split_by_scheme": "Tipos de canal",
-    "split_by_scheme_summary": "El URN del contacto es la dirección que usaron para comunicarse con usted, como un número de teléfono o una identificación de Facebook. Seleccione los tipos de URN para dividir a continuación.",
+    "split_by_scheme_summary": "El URN del contacto es la dirección que usaron para comunicarse con usted, como un número de teléfono o una identificación de Facebook. Seleccione los tipos de URN a dividir.",
     "start_type": "Tipo de Inicio",
     "start_type_create": "Crear un nuevo contacto",
     "start_type_manual": "Seleccionar destinatarios manualmente",
@@ -350,21 +356,43 @@
     "type_options": "Opciones de Tipo",
     "upload_attachment": "Subir Archivo Adjunto",
     "url": "URL",
-    "urn": "URN",
+    "urn": "Valor del URN",
     "urn_type": "Tipo de URN",
     "use_as_default_language": "Usar como idioma predeterminado",
     "value": "Valor",
     "variable": "Variable",
     "video_url": "URL de Video",
-    "webhook_body_summary": "Modifique el cuerpo de la solicitud de [[method]] que se enviará a su webhook.",
+    "webhook_body_summary": "Modifique el cuerpo de la solicitud de [[method]] que se enviará a su webhook",
     "webhook_body_placeholder": "Cuerpo de la solicitud",
     "webhook_example": "Esta respuesta agregará <1>@webhook.product</1> y <4>@webhook[\"stock level\"]</4> para utilizarlos en el flujo.",
     "webhook_header": "Cabecera",
-    "webhook_header_name": "Nombre de Cabecera",
-    "webhook_header_summary": "A continuación agregue las cabeceras adicionales que le gustaría enviar junto con su solicitud.",
+    "webhook_header_name": "Nombre de cabecera",
+    "webhook_header_summary": "A continuación agregue las cabeceras adicionales que le gustaría enviar junto con su solicitud",
     "webhook_help": "Si su servidor responde con JSON, cada propiedad se agregará al flujo.",
     "whatsapp_warning": "Enviar mensajes a través de un canal de WhatsApp requiere que se use una plantilla si no ha recibido un mensaje de un contacto en las últimas 24 horas. Configurar una plantilla para usar en WhatsApp es especialmente importante para el primer mensaje de su flujo.",
-    "file": "Archivo"
+    "file": "Archivo",
+    "execute": "Pasar ",
+    "the_last_response": "la última respuesta",
+    "through_the_classifier": " por el clasificador",
+    "above": "Encima de",
+    "classifier_input": "Entrada del clasificador",
+    "classifier_input_description": "Introduzca una expresión para utilizarla como entrada de su clasificador. Para clasificar la última respuesta del contacto utilice",
+    "select_contact_field_label": "Si el contacto",
+    "select_result_label": "Si el resultado",
+    "select_result_placeholder": "Seleccione el resultado",
+    "select_quantity_of_buckets_label": "Dividir al azar en",
+    "save": "Guardar",
+    "as": "como",
+    "All Responses": "Todas las respuestas",
+    "No Response": "Sin respuesta",
+    "Any Value": "Cualquier valor",
+    "Other": "Otro",
+    "Success": "Éxito",
+    "Failure": "Fallo",
+    "Complete": "Complete",
+    "Expired": "Caducado",
+    "remove_from_all_groups": "Eliminar de todos los grupos",
+    "split_by": "Dividir por"
   },
   "issues": {
     "header": "Problemas de Flujo",
@@ -459,7 +487,7 @@
     },
     "phone": {
       "name": "SMS",
-      "path": "Número Telefónico"
+      "path": "Número telefónico"
     },
     "telegram": {
       "name": "Telegram",

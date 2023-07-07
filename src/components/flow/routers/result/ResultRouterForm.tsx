@@ -117,7 +117,7 @@ export default class ResultRouterForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -144,9 +144,9 @@ export default class ResultRouterForm extends React.Component<
           <AssetSelector
             entry={this.state.result}
             style={TembaSelectStyle.small}
-            name="If the flow result"
+            name={i18n.t('forms.select_result_label')}
             showLabel={true}
-            placeholder="Select Result"
+            placeholder={i18n.t('forms.select_result_placeholder')}
             searchable={false}
             assets={this.props.assetStore.results}
             onChange={this.handleResultChanged}
@@ -202,12 +202,12 @@ export default class ResultRouterForm extends React.Component<
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
     const advanced: Tab = {
-      name: 'Advanced',
+      name: i18n.t('forms.advanced'),
       body: (
         <div>
           <SwitchElement
             name={i18n.t('forms.delimit', 'Delimit')}
-            title={i18n.t('forms.delimit_result', 'Delimit Result')}
+            title={i18n.t('forms.delimit_result')}
             checked={this.state.shouldDelimit}
             description={i18n.t(
               'forms.delimit_result_description',

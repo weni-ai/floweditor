@@ -108,7 +108,7 @@ export default class FieldRouterForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -124,7 +124,7 @@ export default class FieldRouterForm extends React.Component<
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <div className={styles.lead_in}>
           <AssetSelector
-            name="If the contact's"
+            name={i18n.t('forms.select_contact_field_label')}
             showLabel={true}
             style={TembaSelectStyle.small}
             assets={this.props.assetStore.fields}
