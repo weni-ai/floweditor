@@ -33,8 +33,6 @@ export const TIMEOUT_OPTIONS: SelectOption[] = [
 
 export const DEFAULT_TIMEOUT = TIMEOUT_OPTIONS[4];
 
-export const ellipsize = (str: string) => `${str}...`;
-
 export interface TimeoutControlProps {
   timeout: number;
   onChanged(timeout: number): void;
@@ -62,8 +60,7 @@ export default class TimeoutControl extends React.Component<TimeoutControlProps>
   }
 
   private getInstructions(): string {
-    const base = i18n.t('forms.continue_when_no_response', 'Continue when there is no response');
-    return this.isChecked() ? `${base} for` : ellipsize(base);
+    return i18n.t('forms.continue_when_no_response');
   }
 
   private handleChecked(): void {
@@ -92,9 +89,7 @@ export default class TimeoutControl extends React.Component<TimeoutControlProps>
         </div>
         {renderIf(this.isChecked())(
           <div className={styles.drop_down}>
-            <p className={styles.timeout_label}>
-              {i18n.t('forms.wait_response_for', 'Wait response for:')}
-            </p>
+            <p className={styles.timeout_label}>{i18n.t('forms.wait_response_for')}</p>
             <TembaSelect
               name={i18n.t('forms.timeout', 'Timeout')}
               style={TembaSelectStyle.small}

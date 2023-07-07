@@ -217,7 +217,10 @@ export class NodeComp extends React.PureComponent<NodeProps> {
         <ExitComp
           key={exit.uuid}
           node={this.props.renderNode.node}
-          categories={getCategoriesForExit(this.props.renderNode, exit)}
+          categories={getCategoriesForExit(this.props.renderNode, exit).map(item => ({
+            ...item,
+            name: i18n.t(`forms.${item.name}`, item.name)
+          }))}
           exit={exit}
           showDragHelper={this.props.onlyNode && idx === 0}
           plumberMakeSource={this.props.plumberMakeSource}
@@ -328,7 +331,9 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       const switchRouter = getSwitchRouter(this.props.renderNode.node);
       if (switchRouter) {
         if (type === Types.split_by_contact_field && this.props.renderNode.ui.config.operand.name) {
-          title = `Split by ${this.props.renderNode.ui.config.operand.name}`;
+          title =
+            i18n.t('forms.split_by') +
+            ` ${this.props.renderNode.ui.config.operand.name.toLowerCase()}`;
         }
       }
 
@@ -349,7 +354,9 @@ export class NodeComp extends React.PureComponent<NodeProps> {
         title === null &&
         (type === Types.split_by_run_result || type === Types.split_by_run_result_delimited)
       ) {
-        title = `Split by ${this.props.results[this.props.renderNode.ui.config.operand.id].name}`;
+        title =
+          i18n.t('forms.split_by') +
+          ` ${this.props.results[this.props.renderNode.ui.config.operand.id].name.toLowerCase()}`;
       }
 
       if (title === null) {

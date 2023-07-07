@@ -50,7 +50,7 @@ export default class AddURNForm extends React.PureComponent<ActionFormProps, Add
 
   public handlePathChanged(value: string, name: string, submitting: boolean = false): boolean {
     const updates: Partial<AddURNFormState> = {
-      path: validate(i18n.t('forms.urn', 'URN'), value, [shouldRequireIf(submitting)])
+      path: validate(i18n.t('forms.urn'), value, [shouldRequireIf(submitting)])
     };
 
     const updated = mergeForm(this.state, updates);
@@ -60,7 +60,7 @@ export default class AddURNForm extends React.PureComponent<ActionFormProps, Add
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -97,7 +97,7 @@ export default class AddURNForm extends React.PureComponent<ActionFormProps, Add
         </div>
 
         <TextInputElement
-          name={i18n.t('forms.urn', 'URN')}
+          name={i18n.t('forms.urn')}
           showLabel={true}
           placeholder={i18n.t('forms.enter_urn_value', 'Enter the URN value')}
           entry={this.state.path}

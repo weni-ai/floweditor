@@ -76,7 +76,7 @@ export default class SchemeRouterForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -100,7 +100,7 @@ export default class SchemeRouterForm extends React.Component<
 
         <SelectElement
           key="channel_type_select"
-          name={i18n.t('forms.channel_type', 'Channel Type')}
+          name={i18n.t('forms.channel_type')}
           showLabel={true}
           placeholder={i18n.t(
             'forms.split_by_channel_placeholder',

@@ -134,7 +134,7 @@ export default class ClassifyRouterForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -149,13 +149,12 @@ export default class ClassifyRouterForm extends React.Component<
 
     const tabs: Tab[] = [
       {
-        name: 'Classifier Input',
+        name: i18n.t('forms.classifier_input'),
         checked: this.state.operand.value !== DEFAULT_OPERAND,
         body: (
           <>
             <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
-              Enter an expression to use as the input to your classifier. To classify the last
-              response from the contact use <code>{DEFAULT_OPERAND}</code>.
+              {i18n.t('forms.classifier_input_description')} <code>{DEFAULT_OPERAND}</code>.
             </div>
 
             <TextInputElement
@@ -184,7 +183,7 @@ export default class ClassifyRouterForm extends React.Component<
 
         <div className={styles.form_element}>
           <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
-            <span>Run </span>
+            <span>{i18n.t('forms.execute')}</span>
             <span
               className={styles.link}
               onClick={() => {
@@ -192,10 +191,10 @@ export default class ClassifyRouterForm extends React.Component<
               }}
             >
               {this.state.operand.value === DEFAULT_OPERAND
-                ? 'the last response'
+                ? i18n.t('forms.the_last_response')
                 : this.state.operand.value}
             </span>
-            <span> through the classifier...</span>
+            <span>{i18n.t('forms.through_the_classifier')}</span>
           </div>
 
           <AssetSelector
@@ -211,7 +210,7 @@ export default class ClassifyRouterForm extends React.Component<
         {renderIf(!!this.state.classifier.value)(
           <>
             <div className="u font secondary body-md color-neutral-cloudy">
-              {i18n.t('forms.message_label', 'If the message response...')}
+              {i18n.t('forms.message_label')}
             </div>
 
             <CaseList

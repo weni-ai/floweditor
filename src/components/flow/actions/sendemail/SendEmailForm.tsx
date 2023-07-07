@@ -128,7 +128,7 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -185,7 +185,7 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
           <TextInputElement
             __className={styles.subject}
             name={i18n.t('forms.subject', 'Subject')}
-            placeholder={i18n.t('forms.subject_placeholder', 'E-mail subject')}
+            placeholder={i18n.t('forms.subject_placeholder')}
             onChange={this.handleSubjectChanged}
             entry={this.state.subject}
             autocomplete={true}

@@ -213,7 +213,7 @@ export default class WebhookRouterForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -271,7 +271,7 @@ export default class WebhookRouterForm extends React.Component<
               i18nKey="forms.webhook_body_summary"
               values={{ method: this.state.method.value.name }}
             >
-              Modify the body of the [[method]] request that will be sent to your webhook.
+              Modify the body of the [[method]] request that will be sent to your webhook
             </Trans>
           </div>
           <div className={styles.req_body}>
@@ -281,14 +281,6 @@ export default class WebhookRouterForm extends React.Component<
               entry={this.state.body}
               onChange={this.handleBodyUpdate}
               placeholder={i18n.t('forms.webhook_body_placeholder', 'Body of the request')}
-              helpText={
-                <Trans
-                  i18nKey="forms.webhook_body_summary"
-                  values={{ method: this.state.method.value.name }}
-                >
-                  Modify the body of the [[method]] request that will be sent to your webhook.
-                </Trans>
-              }
               autocomplete={true}
               textarea={true}
             />

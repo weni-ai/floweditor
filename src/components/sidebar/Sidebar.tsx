@@ -121,12 +121,9 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
       <UnnnicModalNext
         type="alert"
         scheme="feedback-yellow"
-        title={i18n.t('empty_flow_message_title', "Let's get started")}
-        description={i18n.t(
-          'empty_flow_message_description',
-          'We recommend starting your flow by sending a message. This message will be sent to anybody right after they join the flow. This is your chance to send a single message or ask them a question.'
-        )}
-        actionPrimaryLabel={i18n.t('buttons.create_message', 'Create Message')}
+        title={i18n.t('empty_flow_message_title')}
+        description={i18n.t('empty_flow_message_description')}
+        actionPrimaryLabel={i18n.t('buttons.create_message')}
         actionPrimaryButtonType="secondary"
         on={{
           'click-action-primary': () => {
@@ -142,7 +139,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             ReactDOM.unmountComponentAtNode(getStartedModalEl);
           }
         }}
-        actionSecondaryLabel={i18n.t('buttons.after', 'After')}
+        actionSecondaryLabel={i18n.t('buttons.later')}
       />,
       getStartedModalEl
     );

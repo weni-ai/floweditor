@@ -395,7 +395,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 ></SelectElement>
               </div>
               <div className={styles.divider} data-draggable={true}>
-                above
+                {i18n.t('forms.above')}
               </div>
               <div style={{ width: '60px' }}>
                 <TextInputElement
@@ -506,7 +506,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
           </div>
           <div className={styles.categorize_as_container}>
             <div className={styles.categorize_as} data-draggable={true}>
-              {i18n.t('forms.categorize_as', 'categorize as')}
+              {i18n.t('forms.categorize_as')}
             </div>
             <div className={styles.category}>
               <TextInputElement
