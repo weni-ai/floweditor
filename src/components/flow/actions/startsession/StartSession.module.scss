@@ -6,8 +6,8 @@
 
 .node {
   .to {
-    padding: 3px 0px;
-    background: $light_gray_2;
+    padding: $unnnic-spacing-inset-xs;
+    box-sizing: border-box;
     width: 100%;
     font-size: 11px;
     display: flex;
@@ -20,6 +20,10 @@
     .more {
       line-height: 5px;
       padding-bottom: 5px;
+    }
+
+    + .flow {
+      border-top: 1px solid $unnnic-color-neutral-soft;
     }
   }
 

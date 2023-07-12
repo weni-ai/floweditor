@@ -7,7 +7,7 @@ $grid_size: 20;
 // buffer to bump out connections
 $node_padding: 3;
 
-$action_padding: 10px;
+$action_padding: $unnnic-spacing-inset-xs;
 
 // how much extra room to add during reflow
 $node_spacing: 13;

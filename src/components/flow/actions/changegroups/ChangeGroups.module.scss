@@ -1,0 +1,8 @@
+@import 'variables.module.scss';
+
+.groups_container {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: $unnnic-spacing-stack-nano;
+  text-align: left;
+}

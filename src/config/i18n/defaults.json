@@ -142,7 +142,7 @@
     "placeholder_plural": "Select existing [[name]] or enter a new one"
   },
   "assets": {
-    "classifier": "Call [[name]] classifier",
+    "classifier": "Call <1>[[name]]</1> classifier",
     "ticketer": "Open a new Ticket on [[name]]"
   },
   "body": "Body",

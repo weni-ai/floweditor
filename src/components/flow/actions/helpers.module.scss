@@ -1,0 +1,14 @@
+@import 'variables.module.scss';
+
+.icon {
+  margin-right: $unnnic-spacing-inline-nano;
+}
+
+.link {
+  font-family: $unnnic-font-family-secondary;
+  font-size: $unnnic-font-size-body-md;
+  line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+  color: $unnnic-color-neutral-dark;
+  text-underline-offset: 0.1875 * $unnnic-font-size; // 3px
+  display: inline-block;
+}
