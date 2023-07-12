@@ -1,15 +1,17 @@
 import * as React from 'react';
 
-import styles from './Pill.module.scss';
+import { applyVueInReact } from 'vuereact-combined';
+// @ts-ignore
+import { unnnicTag } from '@weni/unnnic-system';
+
+const UnnnicTag = applyVueInReact(unnnicTag);
 
 export interface PillProps {
   advanced?: boolean;
   onClick?(event: React.MouseEvent<HTMLDivElement>): void;
   text: string;
   maxLength?: number;
-  icon?: string;
-  large?: boolean;
-  style?: React.CSSProperties;
+  disabled?: boolean;
 }
 
 const Pill: React.SFC<PillProps> = (props: PillProps): JSX.Element => {
@@ -21,28 +23,14 @@ const Pill: React.SFC<PillProps> = (props: PillProps): JSX.Element => {
     text = props.text.substring(0, props.maxLength) + '...';
   }
 
-  const pillStyles = [styles.pill];
-
-  if (props.large) {
-    pillStyles.push(styles.large);
-  }
-
-  if (props.onClick) {
-    pillStyles.push(styles.clickable);
-  }
-
   return (
-    <div
-      style={props.style}
+    <UnnnicTag
       data-advanced={props.advanced}
+      text={text}
+      disabled={props.disabled}
+      clickable={!!props.onClick}
       onClick={props.onClick}
-      className={pillStyles.join(' ')}
-    >
-      {text}
-      {props.icon ? (
-        <span data-advanced={props.advanced} className={styles.icon + ' ' + props.icon} />
-      ) : null}
-    </div>
+    />
   );
 };
 
