@@ -16,13 +16,7 @@ const SendMsgComp: React.SFC<SendMsg> = (action: SendMsg): JSX.Element => {
       replies = (
         <div className={styles.quick_replies}>
           {quickReplies.map(reply => (
-            <Pill
-              style={{ marginLeft: 4, marginTop: 4 }}
-              maxLength={20}
-              advanced={true}
-              key={action.uuid + reply}
-              text={reply}
-            />
+            <Pill maxLength={20} advanced={true} key={action.uuid + reply} text={reply} disabled />
           ))}
         </div>
       );

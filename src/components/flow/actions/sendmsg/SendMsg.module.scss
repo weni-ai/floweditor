@@ -1,8 +1,8 @@
 @import 'variables.module.scss';
 
 .quick_replies {
-  display: inline-block;
-  color: $gray;
+  display: inline-flex;
+  gap: $unnnic-spacing-stack-xs $unnnic-spacing-inline-xs;
 }
 
 .attachment {
