@@ -104,7 +104,22 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
     timeStart('Loaded Flow');
   }
 
-  private getEmptyFlow(): void {
+  private createSendMessageNode(): void {
+    const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
+
+    this.props.onOpenNodeEditor({
+      originalNode: emptyNode,
+      originalAction: emptyNode.node.actions[0]
+    });
+  }
+
+  public componentDidMount(): void {
+    if (Object.keys(this.props.nodes).length === 0) {
+      this.showGetStartedModal();
+    }
+  }
+
+  private showGetStartedModal(): void {
     let getStartedModalEl: HTMLDivElement = document.querySelector('#get-started-modal');
 
     if (!getStartedModalEl) {
@@ -127,11 +142,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
         actionPrimaryButtonType="secondary"
         on={{
           'click-action-primary': () => {
-            const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
-            this.props.onOpenNodeEditor({
-              originalNode: emptyNode,
-              originalAction: emptyNode.node.actions[0]
-            });
+            this.createSendMessageNode();
 
             ReactDOM.unmountComponentAtNode(getStartedModalEl);
           },
@@ -149,7 +160,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
     return (
       <div className={styles.sidebar}>
         <div className={styles.option}>
-          <UnnnicIcon icon="add-circle-1" onClick={() => this.getEmptyFlow()} />
+          <UnnnicIcon icon="add-circle-1" onClick={() => this.createSendMessageNode()} />
         </div>
       </div>
     );
