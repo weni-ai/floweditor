@@ -10,8 +10,14 @@
     outline-color: $unnnic-color-feedback-blue;
   }
 
+  &.start_session {
+    outline-style: auto;
+    outline-color: $unnnic-color-feedback-blue;
+  }
+
   &.send_broadcast,
   &.send_email {
+    outline-style: auto;
     outline-color: #8E5EA7;
   }
 
@@ -27,10 +33,12 @@
   }
 
   &.add_contact_groups {
+    outline-style: auto;
     outline-color: #43309C;
   }
 
   &.remove_contact_groups {
+    outline-style: auto;
     outline-color: $unnnic-color-neutral-cloudy;
   }
 
@@ -111,8 +119,24 @@
   &.missing,
   &.enter_flow,
   &.call_external_service {
-    width: $node_min_width - $action_padding * 2;
     padding: $action_padding;
+    font-family: $unnnic-font-family-secondary;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+    color: $unnnic-color-neutral-dark;
+  }
+
+  &.call_webhook {
+    text-decoration: underline;
+    text-underline-offset: 0.1875 * $unnnic-font-size; // 3px
+  }
+
+  &.add_contact_groups, &.remove_contact_groups {
+    text-align: center;
+  }
+
+  &.call_classifier {
+    text-align: center;
   }
 
   &.call_classifier {

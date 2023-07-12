@@ -9,10 +9,23 @@ import { showHelpArticle } from 'external';
 import { IssueProps } from '../props';
 import { applyVueInReact } from 'vuereact-combined';
 
+import styles from './helpers.module.scss';
+
 // @ts-ignore
 import { unnnicIcon } from '@weni/unnnic-system';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicIcon = applyVueInReact(unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+        display: 'inline-block'
+      }
+    }
+  }
+});
 
 export const renderIssues = (issueProps: IssueProps): JSX.Element => {
   const { issues, helpArticles } = issueProps;
@@ -147,22 +160,33 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
     case AssetType.Classifier:
       assetBody = (
         <Trans i18nKey="assets.classifier" values={{ name: asset.name }}>
-          Call [[name]] classifier
+          Call <b>[[name]]</b> classifier
         </Trans>
       );
       break;
     case AssetType.Group:
       assetBody = (
         <>
-          <UnnnicIcon icon="single-neutral-actions-1" size="avatar-nano" scheme="neutral-dark" />
-          {asset.name}
+          <UnnnicIcon
+            icon="single-neutral-actions-1"
+            size="avatar-nano"
+            scheme="neutral-dark"
+            className={styles.icon}
+          />
+
+          <span className={styles.link}>{asset.name}</span>
         </>
       );
       break;
     case AssetType.Label:
       assetBody = (
         <>
-          <UnnnicIcon icon="bookmark-tag-1" size="avatar-nano" scheme="neutral-dark" />
+          <UnnnicIcon
+            icon="bookmark-tag-1"
+            size="avatar-nano"
+            scheme="neutral-dark"
+            className={styles.icon}
+          />
           {asset.name}
         </>
       );
@@ -170,7 +194,13 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
     case AssetType.Flow:
       assetBody = (
         <>
-          <UnnnicIcon icon="hierarchy-3-2" size="avatar-nano" scheme="neutral-dark" />
+          <UnnnicIcon
+            icon="hierarchy-3-2"
+            size="avatar-nano"
+            scheme="neutral-dark"
+            className={styles.icon}
+          />
+
           <a
             onMouseDown={(e: any) => {
               e.preventDefault();
@@ -183,6 +213,7 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
             href={`${endpoints.editor}/${asset.id}`}
             rel="noopener noreferrer"
             target="_blank"
+            className={styles.link}
           >
             {asset.name}
           </a>

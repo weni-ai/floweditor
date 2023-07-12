@@ -29,7 +29,6 @@ const SendBroadcastComp: React.SFC<BroadcastMsg> = (
       <div className={styles.node}>
         <div className={styles.to} key={action.uuid + '_broadcast_recipients'}>
           <div className={styles.name}>
-            <UnnnicIcon icon="single-neutral-actions-1" size="xs" className={styles.icon} />
             {renderAssetList(assets, MAX_TO_SHOW, context.config.endpoints)}
           </div>
         </div>

@@ -21,7 +21,6 @@ export const StartSessionComp: React.SFC<StartSession> = (
   return (
     <div className={styles.node}>
       <div className={styles.to}>
-        <UnnnicIcon icon="single-neutral-actions-1" size="xs" className={styles.icon} />
         {action.create_contact
           ? 'Create a new contact'
           : action.contact_query
@@ -29,7 +28,6 @@ export const StartSessionComp: React.SFC<StartSession> = (
           : renderAssetList(recipients, MAX_TO_SHOW, context.config.endpoints)}
       </div>
       <div className={styles.flow}>
-        <UnnnicIcon icon="hierarchy-3-2" size="xs" className={styles.icon} />
         {renderAsset(
           {
             name: action.flow.name,

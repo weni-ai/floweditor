@@ -142,7 +142,7 @@
     "placeholder_plural": "Selecione [[name]] existentes ou adicione um novo"
   },
   "assets": {
-    "classifier": "Chame o classificador [[name]]",
+    "classifier": "Chame o classificador <1>[[name]]</1>",
     "ticketer": "Open a new Ticket on [[name]]"
   },
   "body": "Corpo",

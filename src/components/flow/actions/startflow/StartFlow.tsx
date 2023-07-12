@@ -15,7 +15,6 @@ const StartFlowComp: React.SFC<StartFlow> = (
   context: any
 ): JSX.Element => (
   <div className={styles.start_flow}>
-    <UnnnicIcon icon="hierarchy-3-2" size="xs" className={styles.icon} />
     {renderAssetList([{ name, id: uuid, type: AssetType.Flow }], 3, context.config.endpoints)}
   </div>
 );
