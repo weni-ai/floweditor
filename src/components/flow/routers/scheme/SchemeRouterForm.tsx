@@ -91,7 +91,7 @@ export default class SchemeRouterForm extends React.Component<
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
 
-        <div className={`${styles.info} u font secondary body-md neutral-cloudy`}>
+        <div className={`${styles.info} u font secondary body-md color-neutral-cloudy`}>
           {i18n.t(
             'forms.split_by_scheme_summary',
             "The contact's URN is the address they used to reach you such as their phone number or a Facebook ID. Select which URN types to split by below."
