@@ -350,7 +350,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 entry={this.state.min}
                 autocomplete={true}
               />
-              <span className={styles.divider} data-draggable={true}>
+              <span className={`${styles.divider} u font secondary body-md`} data-draggable={true}>
                 {i18n.t('forms.and', 'and')}
               </span>
               <TextInputElement
@@ -394,7 +394,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                   hideError={true}
                 ></SelectElement>
               </div>
-              <div className={styles.divider} data-draggable={true}>
+              <div className={`${styles.divider} u font secondary body-md`} data-draggable={true}>
                 {i18n.t('forms.above')}
               </div>
               <div style={{ width: '60px' }}>
@@ -418,8 +418,8 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 style={TextInputStyle.small}
                 entry={this.state.state}
               />
-              <span className={styles.divider} data-draggable={true}>
-                and
+              <span className={`${styles.divider} u font secondary body-md`} data-draggable={true}>
+                {i18n.t('forms.and', 'and')}
               </span>
               <TextInputElement
                 name={i18n.t('forms.district', 'District')}
@@ -445,7 +445,9 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
               style={TextInputStyle.small}
               autocomplete={false}
             />
-            <span className={styles.divider}>days</span>
+            <span className={`${styles.divider} u font secondary body-md`}>
+              {i18n.t('forms.days')}
+            </span>
           </>
         );
       } else {
@@ -456,7 +458,9 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
             onChange={this.handleArgumentChanged}
             entry={this.state.argument}
             style={TextInputStyle.small}
-            placeholder={this.state.operatorConfig.type === Operators.has_district ? 'State' : ''}
+            placeholder={
+              this.state.operatorConfig.type === Operators.has_district ? i18n.t('forms.state') : ''
+            }
             autocomplete={true}
           />
         );
@@ -505,7 +509,10 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
             </div>
           </div>
           <div className={styles.categorize_as_container}>
-            <div className={styles.categorize_as} data-draggable={true}>
+            <div
+              className={`${styles.categorize_as} u font secondary body-md color-neutral-cloudy`}
+              data-draggable={true}
+            >
               {i18n.t('forms.categorize_as')}
             </div>
             <div className={styles.category}>

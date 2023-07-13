@@ -50,7 +50,7 @@ export default class MultiChoiceInput extends React.Component<
     return (
       <>
         {this.props.helpText ? (
-          <div className={`${styles.label} u font secondary body-md neutral-cloudy`}>
+          <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
             {this.props.helpText}
           </div>
         ) : (

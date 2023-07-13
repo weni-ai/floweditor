@@ -264,7 +264,7 @@ export default class WebhookRouterForm extends React.Component<
       body: (
         <div
           key="post_body"
-          className={`${styles.body_form} u font secondary body-md neutral-cloudy`}
+          className={`${styles.body_form} u font secondary body-md color-neutral-cloudy`}
         >
           <div>
             <Trans
