@@ -350,7 +350,10 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 entry={this.state.min}
                 autocomplete={true}
               />
-              <span className={`${styles.divider} u font secondary body-md`} data-draggable={true}>
+              <span
+                className={`${styles.divider} u font secondary body-md color-neutral-cloudy`}
+                data-draggable={true}
+              >
                 {i18n.t('forms.and', 'and')}
               </span>
               <TextInputElement
@@ -394,7 +397,10 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                   hideError={true}
                 ></SelectElement>
               </div>
-              <div className={`${styles.divider} u font secondary body-md`} data-draggable={true}>
+              <div
+                className={`${styles.divider} u font secondary body-md color-neutral-cloudy`}
+                data-draggable={true}
+              >
                 {i18n.t('forms.above')}
               </div>
               <div style={{ width: '60px' }}>
@@ -418,7 +424,10 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 style={TextInputStyle.small}
                 entry={this.state.state}
               />
-              <span className={`${styles.divider} u font secondary body-md`} data-draggable={true}>
+              <span
+                className={`${styles.divider} u font secondary body-md color-neutral-cloudy`}
+                data-draggable={true}
+              >
                 {i18n.t('forms.and', 'and')}
               </span>
               <TextInputElement
@@ -445,7 +454,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
               style={TextInputStyle.small}
               autocomplete={false}
             />
-            <span className={`${styles.divider} u font secondary body-md`}>
+            <span className={`${styles.divider} u font secondary body-md color-neutral-cloudy`}>
               {i18n.t('forms.days')}
             </span>
           </>
