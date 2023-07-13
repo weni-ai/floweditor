@@ -421,10 +421,6 @@ export class NodeComp extends React.PureComponent<NodeProps> {
 
     const body = (
       <div className={`${styles.node} ${nodeContainerStatusStyle}`}>
-        {this.isStartNodeVisible() ? (
-          <div className={styles.flow_start_message}>{i18n.t('flow_start', 'Flow Start')}</div>
-        ) : null}
-
         {uuid}
         <Counter
           count={this.props.activeCount}
@@ -439,6 +435,14 @@ export class NodeComp extends React.PureComponent<NodeProps> {
         />
 
         <div className={styles.cropped}>
+          {this.isStartNodeVisible() ? (
+            <div
+              className={`${styles.flow_start_message} u font secondary body-md bold color-brand-weni-soft`}
+            >
+              {i18n.t('flow_start', 'Flow Start')}
+            </div>
+          ) : null}
+
           {header}
           {actionList}
           {summary}

@@ -161,6 +161,7 @@
       border: 0px solid green;
       border-top-left-radius: $curvature - 1px;
       border-top-right-radius: $curvature - 1px;
+      position: relative;
       // min-width: $node_min_width + px;
       // max-width: $node_max_width + px;
     }
@@ -208,14 +209,9 @@
       position: absolute;
       width: 100%;
       z-index: 10000;
-      color: $selected;
-      height: 14px;
-      padding-top: 2px;
-      font-size: 11px;
       text-transform: uppercase;
-      font-weight: bold;
       text-align: center;
-      top: -14px;
+      top: - $unnnic-font-size-body-md - $unnnic-line-height-md - $unnnic-spacing-stack-xs;
       // animation: pulse 300ms;
     }
   }
