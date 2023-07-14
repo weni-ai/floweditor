@@ -30,14 +30,20 @@ export const nodeToState = (
 
   if (settings.originalNode && getType(settings.originalNode) === Types.split_by_external_service) {
     const action = getOriginalAction(settings) as CallExternalService;
-    externalService = {
-      value: {
-        ...existingServices[action.external_service.uuid].content,
-        name: existingServices[action.external_service.uuid].name,
-        external_service_type: existingServices[action.external_service.uuid].type,
-        uuid: existingServices[action.external_service.uuid].id
-      }
-    };
+    const service = existingServices[action.external_service.uuid];
+
+    if (service) {
+      externalService = {
+        value: {
+          ...service.content,
+          name: service.name,
+          external_service_type: service.type,
+          uuid: service.id
+        }
+      };
+    } else {
+      externalService = { value: action.external_service };
+    }
 
     const existingCallParams =
       externalService.value.actions &&
