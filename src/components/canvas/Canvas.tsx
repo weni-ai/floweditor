@@ -29,6 +29,8 @@ export interface CanvasProps {
   onRemoveNodes: (nodeUUIDs: string[]) => void;
   onDoubleClick: (position: FlowPosition) => void;
   mergeEditorState: MergeEditorState;
+  nodes: any;
+  updateNodesEditor: any;
 }
 
 interface CanvasState {
@@ -40,6 +42,8 @@ interface CanvasState {
   positions: CanvasPositions;
   selected: CanvasPositions;
   height: number;
+  mouseX: number;
+  mouseY: number;
 }
 
 export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
@@ -79,7 +83,9 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       dragSelection: null,
       uuid: this.props.uuid,
       selected: {},
-      positions
+      positions,
+      mouseX: 0,
+      mouseY: 0
     };
 
     bindCallbacks(this, {
@@ -104,7 +110,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
       const instance = new nodesCopy();
 
-      const nodes = instance.replaceUuidsToUpdate(
+      const edgeCorner: any = {
+        left: null,
+        top: null
+      };
+
+      let nodes = instance.replaceUuidsToUpdate(
         this.props.draggables
           .filter(({ uuid }) => Object.keys(this.state.selected).includes(uuid))
           .map(({ config }) => ({
@@ -115,8 +126,59 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           .map(node => JSON.parse(JSON.stringify(node)))
       );
 
+      nodes.forEach((node: any) => {
+        if (!node.ui) {
+          return;
+        }
+
+        if (edgeCorner.left === null || node.ui.position.left < edgeCorner.left) {
+          edgeCorner.left = node.ui.position.left;
+        }
+
+        if (edgeCorner.top === null || node.ui.position.top < edgeCorner.top) {
+          edgeCorner.top = node.ui.position.top;
+        }
+      });
+
+      nodes = nodes.map((node: any) => ({
+        ...node,
+        ui: {
+          ...node.ui,
+          position: {
+            left: node.ui.position.left - edgeCorner.left,
+            top: node.ui.position.top - edgeCorner.top
+          }
+        }
+      }));
+
       event.clipboardData.setData('application/json', JSON.stringify(nodes));
       event.preventDefault();
+    });
+
+    window.document.addEventListener('paste', event => {
+      if (event.clipboardData.getData('application/json')) {
+        const nodes = JSON.parse(event.clipboardData.getData('application/json'));
+
+        const instance = new nodesCopy();
+
+        const nodesPasted = instance.createNewUuids(nodes);
+
+        nodesPasted.forEach((item: any) => {
+          this.props.nodes[item.node.uuid] = {
+            ...item,
+
+            ui: {
+              ...item.ui,
+              position: {
+                left: item.ui.position.left + this.state.mouseX,
+                top: item.ui.position.top + this.state.mouseY
+              }
+            }
+          };
+        });
+
+        this.props.updateNodesEditor(this.props.nodes);
+      }
     });
 
     this.props.onLoaded();
@@ -213,6 +275,25 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         dragSelection: { startX, startY, currentX: startX, currentY: startY }
       });
     }
+  }
+
+  private handleMouseMoveCanvas(event: React.MouseEvent<HTMLDivElement>): void {
+    let pageX = 0,
+      pageY = 0;
+
+    let currentTarget: HTMLElement = event.currentTarget;
+
+    do {
+      pageX += currentTarget.offsetLeft;
+      pageY += currentTarget.offsetTop;
+
+      currentTarget = currentTarget.offsetParent as HTMLElement;
+    } while (currentTarget !== document.body);
+
+    this.setState({
+      mouseX: event.pageX - pageX,
+      mouseY: event.pageY - pageY
+    });
   }
 
   private handleMouseMove(event: React.MouseEvent<HTMLDivElement>): void {
@@ -590,6 +671,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
               this.ele = ele;
             }}
             className={styles.canvas}
+            onMouseMove={this.handleMouseMoveCanvas}
           >
             {this.props.newDragElement}
             {this.props.draggables.map((draggable: CanvasDraggableProps, idx: number) => {

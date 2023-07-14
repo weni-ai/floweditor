@@ -115,22 +115,6 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
   public componentDidMount(): void {
     const { endpoints, flow, forceSaveOnLoad } = this.context.config;
     this.props.fetchFlow(endpoints, flow, forceSaveOnLoad);
-
-    window.document.addEventListener('paste', event => {
-      if (event.clipboardData.getData('application/json')) {
-        const nodes = JSON.parse(event.clipboardData.getData('application/json'));
-
-        const instance = new nodesCopy();
-
-        const nodesPasted = instance.createNewUuids(nodes);
-
-        nodesPasted.forEach((item: any) => {
-          this.props.nodes[item.node.uuid] = item;
-        });
-
-        this.props.createNewRevision();
-      }
-    });
   }
 
   private handleDownloadClicked(): void {

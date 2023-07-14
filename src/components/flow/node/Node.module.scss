@@ -105,6 +105,10 @@
     }
   }
 
+  & .large_node {
+    width: 220px;
+  }
+
   &.selected {
     .node {
       box-shadow: 0px 0px 0px 2px $unnnic-color-brand-weni !important;
@@ -132,6 +136,8 @@
     flex-shrink: 0;
     // max-width: $node_max_width + px;
     transition: transform 200ms;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
 
     .save_as {
       display: inline;
@@ -139,7 +145,7 @@
 
     .save_result {
       background: #fff;
-      padding: $action_padding 0px;
+      padding: $unnnic-spacing-inset-xs;
       text-align: center;
 
       font-family: $unnnic-font-family-secondary;
@@ -182,13 +188,15 @@
       bottom: (-$unnnic-font-size / 2) - $node_padding / 2;
       visibility: hidden;
       text-decoration: none;
-      padding: $unnnic-spacing-stack-nano $unnnic-spacing-inline-nano;
       border-radius: $unnnic-border-radius-sm;
       background-color: $unnnic-color-background-sky;
       outline: $unnnic-border-width-thinner solid $unnnic-color-neutral-clean;
       outline-offset: -$unnnic-border-width-thinner;
-      width: $unnnic-font-size;
-      height: $unnnic-font-size;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &:hover {
         outline-width: 0;
