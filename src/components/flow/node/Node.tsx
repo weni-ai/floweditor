@@ -428,10 +428,6 @@ export class NodeComp extends React.PureComponent<NodeProps> {
           isAction ? styles.large_node : ''
         }`}
       >
-        {this.isStartNodeVisible() ? (
-          <div className={styles.flow_start_message}>{i18n.t('flow_start', 'Flow Start')}</div>
-        ) : null}
-
         {uuid}
         <Counter
           count={this.props.activeCount}
