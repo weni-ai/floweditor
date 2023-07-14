@@ -93,7 +93,7 @@
 }
 
 .body {
-  line-height: 1.4em;
+  line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
   word-wrap: break-word;
   width: auto;
 
@@ -119,11 +119,13 @@
   &.missing,
   &.enter_flow,
   &.call_external_service {
-    padding: $action_padding;
     font-family: $unnnic-font-family-secondary;
     font-size: $unnnic-font-size-body-md;
     line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
     color: $unnnic-color-neutral-dark;
+
+    width: $node_min_width - $unnnic-spacing-inset-xs * 2;
+    padding: $unnnic-spacing-inset-xs;
   }
 
   &.call_webhook {

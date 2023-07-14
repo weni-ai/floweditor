@@ -38,7 +38,7 @@ const SendMsgComp: React.SFC<SendMsg> = (action: SendMsg): JSX.Element => {
           ) : null}
           {action.topic ? <div className={`${styles.facebook} fe-facebook`} /> : null}
         </div>
-        <div className={styles.summary}>{replies}</div>
+        <div className={replies ? styles.summary : ''}>{replies}</div>
       </>
     );
   }

@@ -419,8 +419,15 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       nodeContainerStatusStyle = styles.missing;
     }
 
+    const isAction =
+      this.props.renderNode.node.actions && this.props.renderNode.node.actions.length;
+
     const body = (
-      <div className={`${styles.node} ${nodeContainerStatusStyle}`}>
+      <div
+        className={`${styles.node} ${styles[type]} ${nodeContainerStatusStyle} ${
+          isAction ? styles.large_node : ''
+        }`}
+      >
         {this.isStartNodeVisible() ? (
           <div className={styles.flow_start_message}>{i18n.t('flow_start', 'Flow Start')}</div>
         ) : null}

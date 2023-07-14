@@ -173,11 +173,9 @@ export default class TitleBar extends React.Component<TitleBarProps> {
     return (
       <div className={styles.titlebar} data-spec={titlebarContainerSpecId}>
         <div
-          className={`
-            ${styles.normal} 
-            ${this.props.__className} 
-            ${this.props.selected ? styles['selected'] : null}
-          `}
+          className={`${styles.normal} ${this.props.__className} ${
+            this.props.selected ? styles['selected'] : null
+          }`}
           data-spec={titlebarSpecId}
         >
           {moveArrow}
