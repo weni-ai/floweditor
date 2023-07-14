@@ -13,7 +13,7 @@ import styles from './Sticky.module.scss';
 import i18n from 'config/i18n';
 
 type DragFunction = (event: DragEvent) => void;
-export const STICKY_SPEC_ID: string = 'sticky-container';
+export const STICKY_SPEC_ID = 'sticky-container';
 export const STICKY_TITLE = i18n.t('sticky.title', 'New Note');
 export const STICKY_BODY = i18n.t('sticky.body', '...');
 
@@ -166,15 +166,17 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
       <div className={styles.color_chooser_container}>
         <div className={styles.color_chooser}>
           {Object.keys(COLOR_OPTIONS).map((color: string) => {
-            return (
-              <div
-                key={this.props.uuid + color}
-                onClick={() => {
-                  this.handleChangeColor(color);
-                }}
-                className={styles.color_option + ' ' + COLOR_OPTIONS[color]}
-              />
-            );
+            if (color !== this.props.sticky.color) {
+              return (
+                <div
+                  key={this.props.uuid + color}
+                  onClick={() => {
+                    this.handleChangeColor(color);
+                  }}
+                  className={styles.color_option + ' ' + COLOR_OPTIONS[color]}
+                />
+              );
+            }
           })}
         </div>
       </div>

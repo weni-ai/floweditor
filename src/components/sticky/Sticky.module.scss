@@ -7,24 +7,23 @@
 
   .sticky {
     background: $color;
-    box-shadow: 5px 5px 0px -2px rgba(darken($color, 10%), 0.3);
   }
 }
 
 .yellow {
-  @include color-choice($sticky_yellow);
+  @include color-choice($unnnic-color-aux-baby-yellow);
 }
 .blue {
-  @include color-choice($sticky_blue);
+  @include color-choice($unnnic-color-aux-baby-blue);
 }
 .purple {
-  @include color-choice($sticky_purple);
+  @include color-choice($unnnic-color-aux-baby-pink);
 }
 .gray {
-  @include color-choice($sticky_gray);
+  @include color-choice($unnnic-color-neutral-lightest);
 }
 .green {
-  @include color-choice($sticky_green);
+  @include color-choice($unnnic-color-aux-baby-green);
 }
 
 .color_chooser_container {
@@ -50,17 +49,15 @@
     .color_option {
       height: 12px;
       width: 12px;
-      border: 1px inset rgba(0, 0, 0, 0.2);
+      border-radius: $unnnic-border-radius-pill;
       display: inline-block;
       margin: 2px 3px;
 
       &:hover {
-        //margin-top: 0px;
         margin-top: 1px;
         margin-bottom: 1px;
         margin-right: 2px;
         margin-left: 2px;
-        border: 1px inset rgba(0, 0, 0, 0.3);
         height: 14px;
         width: 14px;
       }
@@ -78,10 +75,11 @@
   }
 
   .sticky {
-    font-size: 13px;
-    width: 176px;
+    border-radius: 8px;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+    width: 220px;
     cursor: pointer;
-    // transition: all 300ms linear;
 
     &.selected {
       box-shadow: 0px 0px 0px 2px $selected !important;
@@ -109,8 +107,6 @@
       padding: 8px 8px;
       padding-right: 12px;
       padding-bottom: 4px;
-      width: 156px;
-      background: rgba(0, 0, 0, 0.05);
 
       position: relative;
       &:hover {
@@ -123,10 +119,10 @@
         position: absolute;
         right: 8px;
         top: 10px;
-        color: rgba(0, 0, 0, 0.2);
+        color: $unnnic-color-neutral-darkest;
         z-index: 1000;
         visibility: hidden;
-        font-size: 14px;
+        font-size: 12px;
       }
 
       .confirmation {
@@ -145,16 +141,15 @@
         transition: none;
         border: 0px solid grey;
         background: none;
-        font-weight: 500;
-        font-size: 12px;
-        font-family: 'Roboto', sans-serif;
-        line-height: 14px;
+        font-weight: $unnnic-font-weight-bold;
+        font-family: $unnnic-font-family-secondary;
+        font-size: $unnnic-font-size-body-md;
+        line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
         width: 140px;
         resize: none !important;
         outline: none;
         box-shadow: none;
-        font-size: 12px;
-        color: darken($text_color, 5%);
+        color: $unnnic-color-neutral-dark;
         height: inherit;
         cursor: pointer;
       }
@@ -162,18 +157,18 @@
 
     .body_wrapper {
       padding: 8px 8px;
-      width: 160px;
 
       textarea.body {
-        font-family: 'Roboto', sans-serif;
+        font-family: $unnnic-font-family-secondary;
         outline: none;
         box-shadow: none;
         border: none;
         background: none;
         resize: none !important;
-        color: $text_color;
-        font-weight: 300;
-        font-size: 12px;
+        color: $unnnic-color-neutral-dark;
+        font-weight: $unnnic-font-weight-regular;
+        font-size: $unnnic-font-size-body-md;
+        line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
         width: 154px;
         height: inherit;
         cursor: pointer;

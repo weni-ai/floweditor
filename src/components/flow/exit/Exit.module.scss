@@ -73,19 +73,18 @@
     margin: auto;
     max-width: 110px;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .endpoint {
     position: relative;
     background: $terminal_color;
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 14px;
     top: 7px;
     margin-top: -14px;
     border-radius: 50%;
-
-    // this is needed to maintain consistency with disconnected endpoints
-    border-bottom: 1px solid transparent;
   }
 
   &.confirm_delete {
