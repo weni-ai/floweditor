@@ -5,7 +5,6 @@ export default class {
 
   createNewUuids(array: any): any {
     if (array instanceof Array) {
-      console.log('func', this.createNewUuids);
       return array.map(this.createNewUuids.bind(this));
     } else if (array instanceof Object) {
       const i = {};
@@ -28,8 +27,6 @@ export default class {
           newKey = this.dicForNewUuids[array];
         }
 
-        console.log('func', this);
-
         // @ts-ignore
         i[newKey] = this.createNewUuids.bind(this)(array[key]);
       }
@@ -47,7 +44,6 @@ export default class {
           this.dicForNewUuids[array] = createUUID();
         }
 
-        console.log('will update: ', array);
         // @ts-ignore
         return this.dicForNewUuids[array];
       }

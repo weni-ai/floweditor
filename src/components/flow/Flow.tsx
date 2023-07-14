@@ -35,6 +35,8 @@ import {
   resetNodeEditingState,
   UpdateConnection,
   updateConnection,
+  UpdateNodesEditor,
+  updateNodesEditor,
   updateSticky,
   UpdateSticky
 } from 'store/thunks';
@@ -97,6 +99,8 @@ export interface FlowStoreProps {
   resetNodeEditingState: NoParamsAC;
   onConnectionDrag: OnConnectionDrag;
   updateSticky: UpdateSticky;
+
+  updateNodesEditor?: UpdateNodesEditor;
 }
 
 export interface Translations {
@@ -404,6 +408,8 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           onDoubleClick={this.handleDoubleClick}
           onUpdatePositions={this.props.onUpdateCanvasPositions}
           onLoaded={this.handleCanvasLoaded}
+          nodes={this.props.nodes}
+          updateNodesEditor={this.props.updateNodesEditor}
         ></Canvas>
         <div id="activity_recent_messages"></div>
       </div>
@@ -442,7 +448,8 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
       onUpdateCanvasPositions,
       onRemoveNodes,
       updateConnection,
-      updateSticky
+      updateSticky,
+      updateNodesEditor
     },
     dispatch
   );
