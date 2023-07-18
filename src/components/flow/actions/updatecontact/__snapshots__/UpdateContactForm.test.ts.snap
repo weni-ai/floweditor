@@ -14,8 +14,9 @@ exports[`UpdateContactForm render should render an empty form with different act
       },
     }
   }
+  className="dialog"
   headerClass="set_contact_field"
-  title="Update Contact"
+  title="Update contact"
 >
   <TypeList
     __className=""
@@ -30,35 +31,36 @@ exports[`UpdateContactForm render should render an empty form with different act
         "component": [Function],
         "description": "Update the contact",
         "form": [Function],
-        "name": "Update Contact",
+        "name": "Update contact",
         "type": "set_contact_field",
       }
     }
     onChange={[MockFunction]}
   />
-  <p>
-    Select what to update
-  </p>
   <AssetSelector
     additionalOptions={
       Array [
         Object {
           "id": "name",
+          "key": "name",
           "name": "Name",
           "type": "property",
         },
         Object {
           "id": "language",
+          "key": "language",
           "name": "Language",
           "type": "property",
         },
         Object {
           "id": "channel",
+          "key": "channel",
           "name": "Channel",
           "type": "property",
         },
         Object {
           "id": "status",
+          "key": "status",
           "name": "Status",
           "type": "property",
         },
@@ -71,21 +73,23 @@ exports[`UpdateContactForm render should render an empty form with different act
       }
     }
     createAssetFromInput={[Function]}
-    createPrefix="Create Contact Field: "
+    createPrefix="Create contact field: "
     entry={
       Object {
         "value": Object {
           "id": "name",
+          "key": "name",
           "name": "Name",
           "type": "property",
         },
       }
     }
     getName={[Function]}
-    name="Contact Field"
+    name="Select what to update"
     onAssetCreated={[Function]}
     onChange={[Function]}
     searchable={true}
+    showLabel={true}
     sortFunction={[Function]}
   />
   <div
@@ -99,9 +103,10 @@ exports[`UpdateContactForm render should render an empty form with different act
         }
       }
       focus={true}
-      name="Name"
+      name="Enter a new contact name"
       onChange={[Function]}
-      placeholder="Enter a new name for the contact"
+      placeholder="Enter a new contact name"
+      showLabel={true}
     />
   </div>
 </Dialog>
@@ -121,8 +126,9 @@ exports[`UpdateContactForm render should render an empty form with no action 1`]
       },
     }
   }
+  className="dialog"
   headerClass="set_contact_field"
-  title="Update Contact"
+  title="Update contact"
 >
   <TypeList
     __className=""
@@ -137,35 +143,36 @@ exports[`UpdateContactForm render should render an empty form with no action 1`]
         "component": [Function],
         "description": "Update the contact",
         "form": [Function],
-        "name": "Update Contact",
+        "name": "Update contact",
         "type": "set_contact_field",
       }
     }
     onChange={[MockFunction]}
   />
-  <p>
-    Select what to update
-  </p>
   <AssetSelector
     additionalOptions={
       Array [
         Object {
           "id": "name",
+          "key": "name",
           "name": "Name",
           "type": "property",
         },
         Object {
           "id": "language",
+          "key": "language",
           "name": "Language",
           "type": "property",
         },
         Object {
           "id": "channel",
+          "key": "channel",
           "name": "Channel",
           "type": "property",
         },
         Object {
           "id": "status",
+          "key": "status",
           "name": "Status",
           "type": "property",
         },
@@ -178,21 +185,23 @@ exports[`UpdateContactForm render should render an empty form with no action 1`]
       }
     }
     createAssetFromInput={[Function]}
-    createPrefix="Create Contact Field: "
+    createPrefix="Create contact field: "
     entry={
       Object {
         "value": Object {
           "id": "name",
+          "key": "name",
           "name": "Name",
           "type": "property",
         },
       }
     }
     getName={[Function]}
-    name="Contact Field"
+    name="Select what to update"
     onAssetCreated={[Function]}
     onChange={[Function]}
     searchable={true}
+    showLabel={true}
     sortFunction={[Function]}
   />
   <div
@@ -206,9 +215,10 @@ exports[`UpdateContactForm render should render an empty form with no action 1`]
         }
       }
       focus={true}
-      name="Name"
+      name="Enter a new contact name"
       onChange={[Function]}
-      placeholder="Enter a new name for the contact"
+      placeholder="Enter a new contact name"
+      showLabel={true}
     />
   </div>
 </Dialog>
@@ -227,6 +237,7 @@ Object {
   "field": Object {
     "value": Object {
       "id": "channel",
+      "key": "channel",
       "name": "Channel",
       "type": "property",
     },
@@ -332,6 +343,7 @@ Object {
   "field": Object {
     "value": Object {
       "id": "language",
+      "key": "language",
       "name": "Language",
       "type": "property",
     },
@@ -376,6 +388,7 @@ Object {
   "field": Object {
     "value": Object {
       "id": "status",
+      "key": "status",
       "name": "Status",
       "type": "property",
     },
@@ -425,6 +438,7 @@ Object {
   "field": Object {
     "value": Object {
       "id": "channel",
+      "key": "channel",
       "name": "Channel",
       "type": "property",
     },
@@ -512,6 +526,7 @@ Object {
   "field": Object {
     "value": Object {
       "id": "language",
+      "key": "language",
       "name": "Language",
       "type": "property",
     },
@@ -556,6 +571,7 @@ Object {
   "field": Object {
     "value": Object {
       "id": "name",
+      "key": "name",
       "name": "Name",
       "type": "property",
     },
@@ -600,6 +616,7 @@ Object {
   "field": Object {
     "value": Object {
       "id": "status",
+      "key": "status",
       "name": "Status",
       "type": "property",
     },
@@ -649,6 +666,7 @@ Object {
   "field": Object {
     "value": Object {
       "id": "channel",
+      "key": "channel",
       "name": "Channel",
       "type": "property",
     },
