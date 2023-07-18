@@ -10,6 +10,7 @@ import i18n from 'config/i18n';
 import { unnnicTextArea, unnnicInputNext, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
 
 import styles from './TextInputElement.module.scss';
+import TembaCompletion from '../../../temba/TembaCompletion';
 
 export enum Count {
   SMS = 'SMS'
@@ -144,19 +145,29 @@ export default class TextInputElement extends React.Component<TextInputProps> {
       </>
     ) : (
       <>
-        <UnnnicInputNext
-          value={this.props.entry.value}
-          on={{
-            input: (value: string) => this.handleChange({ currentTarget: { value } })
-          }}
-          label={this.props.showLabel ? this.props.name : null}
-          placeholder={this.props.placeholder}
-          size={this.props.size || TextInputSizes.sm}
-          ref={this.inputItem}
-          error={this.props.error}
-          iconRight={'keyboard-return-1'}
-          maxlength={this.props.maxLength}
-        />
+        {this.props.autocomplete ? (
+          <TembaCompletion
+            value={this.props.entry.value}
+            onInput={(value: string) => this.handleChange({ currentTarget: { value } })}
+            label={this.props.showLabel ? this.props.name : null}
+            placeholder={this.props.placeholder}
+            size={this.props.size || TextInputSizes.sm}
+          />
+        ) : (
+          <UnnnicInputNext
+            value={this.props.entry.value}
+            on={{
+              input: (value: string) => this.handleChange({ currentTarget: { value } })
+            }}
+            label={this.props.showLabel ? this.props.name : null}
+            placeholder={this.props.placeholder}
+            size={this.props.size || TextInputSizes.sm}
+            ref={this.inputItem}
+            error={this.props.error}
+            iconRight={'keyboard-return-1'}
+            maxlength={this.props.maxLength}
+          />
+        )}
         {this.props.helpText && typeof this.props.helpText === 'string' ? (
           <div className={`${styles.help} u font secondary body-md color-neutral-cleanest`}>
             {this.props.helpText}
