@@ -30,9 +30,8 @@ interface SwitchState {
 export const boxIco = 'fe-square';
 export const checkedBoxIco = 'fe-check-square';
 
-export const switchSpecId = 'switch';
-export const titleSpecId = 'title';
-export const descSpecId = 'description';
+export const switchTestId = 'switch';
+export const descTestId = 'description';
 
 const UnnnicSwitch = applyVueInReact(unnnicSwitch);
 
@@ -63,11 +62,10 @@ export default class SwitchElement extends React.Component<SwitchElementProps, S
   }
 
   public render(): JSX.Element {
-    // const switchIcon = this.state.checked ? checkedBoxIco : boxIco;
     return (
       <>
         <UnnnicSwitch
-          data-spec={switchSpecId}
+          data-testid={switchTestId}
           value={this.state.checked}
           textRight={this.props.title}
           on={{ input: this.handleChange }}
@@ -76,7 +74,7 @@ export default class SwitchElement extends React.Component<SwitchElementProps, S
 
         {renderIf(isRealValue(this.props.description))(
           <div
-            data-spec={descSpecId}
+            data-testid={descTestId}
             className={`u font secondary body-md color-neutral-cleanest ${styles.description}`}
           >
             {this.props.description}

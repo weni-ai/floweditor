@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwitchElement should render a switch element with description 1`] = `
+<body>
+  <div>
+    <div
+      data-use-vue-component-wrap=""
+      style="all: unset;"
+    >
+      <div
+        class="unnnic-switch"
+        data-passed-props="[object Object]"
+        data-testid="switch"
+        data-v-5be79627=""
+      >
+        <!---->
+        <span
+          class="unnnic-icon unnnic-icon__size--sm unnnic-icon__line-height--sm unnnic-icon-scheme--neutral-soft unnnic-switch__icon"
+          data-v-5be79627=""
+          data-v-a1936218=""
+        >
+          <svg
+            id="default"
+            viewBox="0 0 80 40"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style
+              type="text/css"
+            >
+               rect { transition: fill .2s ease; } 
+            </style>
+            <rect
+              class="primary"
+              height="35.8"
+              rx="17.9"
+              width="71.6"
+              x="4.20013"
+              y="2.10046"
+            />
+            <circle
+              cx="22.5"
+              cy="20.0005"
+              fill="white"
+              id="default-circle"
+              r="12.5"
+            />
+          </svg>
+        </span>
+        <div
+          class="unnnic-switch__label unnnic-switch__label__right unnnic-switch__label__small"
+          data-v-5be79627=""
+        >
+           Switch Title 
+        </div>
+      </div>
+    </div>
+    <div
+      class="u font secondary body-md color-neutral-cleanest description"
+      data-testid="description"
+    >
+      Switch Description
+    </div>
+  </div>
+</body>
+`;
