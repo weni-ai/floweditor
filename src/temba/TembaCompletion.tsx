@@ -143,29 +143,31 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
 
   public render(): JSX.Element {
     return (
-      <UnnnicAutocompleteSelect
-        className={styles.completion}
-        ref={(ele: any) => {
-          this.refInput = ele;
-        }}
-        value={[this.props.value]}
-        on={{
-          input: this.handleInput,
-          search: this.handleSearch
-        }}
-        placeholder={this.props.placeholder}
-        size={this.props.size}
-        label={this.props.label} // TODO: CHECK IF THIS WORKS
-        items={this.state.options}
-        textKey="name"
-        valueKey="value"
-        descriptionKey="summary"
-        closeOnSelect={true}
-        multi={false}
-        hasIconLeft={false}
-        hasIconRight={false}
-        showMenu={this.state.showExpressionsMenu}
-      />
+      <>
+        {this.props.label && <span className={styles.label}>{this.props.label}</span>}
+        <UnnnicAutocompleteSelect
+          className={styles.completion}
+          ref={(ele: any) => {
+            this.refInput = ele;
+          }}
+          value={[this.props.value]}
+          on={{
+            input: this.handleInput,
+            search: this.handleSearch
+          }}
+          placeholder={this.props.placeholder}
+          size={this.props.size}
+          items={this.state.options}
+          textKey="name"
+          valueKey="value"
+          descriptionKey="summary"
+          closeOnSelect={true}
+          multi={false}
+          hasIconLeft={false}
+          hasIconRight={false}
+          showMenu={this.state.showExpressionsMenu}
+        />
+      </>
     );
   }
 }
