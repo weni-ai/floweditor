@@ -1,0 +1,10 @@
+@import 'variables.module.scss';
+
+.completion>:nth-child(n+2):last-child {
+  position: fixed;
+  width: 190px;
+
+  div > span > div {
+    white-space: normal;
+  }
+}

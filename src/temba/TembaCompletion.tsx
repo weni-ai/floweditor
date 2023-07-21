@@ -1,5 +1,6 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
+import styles from './TembaCompletion.module.scss';
 import {
   updateInputElementWithCompletion,
   executeCompletionQuery,
@@ -17,9 +18,13 @@ import { connect } from 'react-redux';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
-import { unnnicAutocomplete } from '@weni/unnnic-system';
+import { unnnicAutocompleteSelect } from '@weni/unnnic-system';
 
-const UnnnicAutocomplete = applyVueInReact(unnnicAutocomplete);
+const UnnnicAutocompleteSelect = applyVueInReact(unnnicAutocompleteSelect);
+
+interface ValuedCompletionOption extends CompletionOption {
+  value: string;
+}
 
 export interface TembaCompletionProps {
   label?: string;
@@ -33,11 +38,12 @@ export interface TembaCompletionProps {
 
 interface TembaCompletionState {
   query: string;
-  options: CompletionOption[];
+  options: ValuedCompletionOption[];
   expressionsData?: {
     functions?: CompletionOption[];
     context?: CompletionSchema;
   };
+  showExpressionsMenu: boolean;
 }
 
 export class TembaCompletion extends React.Component<TembaCompletionProps, TembaCompletionState> {
@@ -48,7 +54,8 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
 
     this.state = {
       query: '',
-      options: []
+      options: [],
+      showExpressionsMenu: true
     };
 
     bindCallbacks(this, {
@@ -57,7 +64,15 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
   }
 
   public async componentDidMount(): Promise<void> {
+    this.setState({ showExpressionsMenu: false });
     this.fetchExpressions();
+
+    if (this.props.value) {
+      const inputEl = (this.refInput as any).vueRef.$el.querySelector('input') as HTMLInputElement;
+      inputEl.value = this.props.value;
+      inputEl.dispatchEvent(new Event('input'));
+    }
+    setTimeout(() => this.setState({ showExpressionsMenu: true }));
   }
 
   private async fetchExpressions() {
@@ -71,68 +86,85 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
   }
 
   private executeQuery(ele: HTMLInputElement) {
-    const result = executeCompletionQuery(
-      ele,
-      this.props.session,
-      this.state.expressionsData.functions,
-      this.state.expressionsData.context
-    );
+    if (this.state.expressionsData) {
+      const result = executeCompletionQuery(
+        ele,
+        this.props.session,
+        this.state.expressionsData.functions,
+        this.state.expressionsData.context
+      );
+
+      const expressions = result.options.map(
+        (option: CompletionOption): ValuedCompletionOption => {
+          if (option.signature) {
+            return { ...option, name: `ƒ ${option.signature}`, value: option.signature };
+          }
+
+          return { ...option, value: option.name };
+        }
+      );
+
+      this.setState({
+        query: result.query,
+        options: expressions
+      });
+    }
+  }
+
+  private handleInput(event: any[]) {
+    const expression = event[0];
+    const inputEl = (this.refInput as any).vueRef.$el.querySelector('input') as HTMLInputElement;
+    updateInputElementWithCompletion(this.state.query, inputEl, expression);
 
     this.setState({
-      query: result.query,
-      options: result.options
+      query: null,
+      options: []
     });
+
+    if (this.props.onInput) {
+      this.props.onInput(inputEl.value);
+    }
   }
 
-  private handleInput() {
+  private handleSearch(event: string) {
+    if (!event || !event.trim()) {
+      this.setState({ showExpressionsMenu: false, options: [] });
+      return;
+    }
+
+    this.setState({ showExpressionsMenu: true });
     const ele = (this.refInput as any).vueRef.$el.querySelector('input') as HTMLInputElement;
-
-    setTimeout(() => {
-      this.props.onInput(ele.value);
-    });
-
     this.executeQuery(ele);
-  }
 
-  private handleChoose(option: CompletionOption) {
-    const ele = (this.refInput as any).vueRef.$el.querySelector('input') as HTMLInputElement;
-
-    setTimeout(() => {
-      ele.value = this.props.value;
-
-      updateInputElementWithCompletion(this.state.query, ele, option);
-    });
+    if (this.props.onInput) {
+      this.props.onInput(event);
+    }
   }
 
   public render(): JSX.Element {
     return (
-      <UnnnicAutocomplete
+      <UnnnicAutocompleteSelect
+        className={styles.completion}
         ref={(ele: any) => {
           this.refInput = ele;
         }}
-        value={this.props.value}
+        value={[this.props.value]}
         on={{
           input: this.handleInput,
-          choose: this.handleChoose
+          search: this.handleSearch
         }}
-        data={this.state.options.map(option => {
-          let text;
-
-          if (option.signature) {
-            const argStart = option.signature.indexOf('(');
-            const name = option.signature.substr(0, argStart);
-            const args = option.signature.substr(argStart);
-
-            text = `ƒ ${name} (${args} ${option.summary})`;
-          } else {
-            text = `${option.name} (${option.summary})`;
-          }
-
-          return { type: 'option', text, value: option };
-        })}
-        label={this.props.label}
         placeholder={this.props.placeholder}
         size={this.props.size}
+        label={this.props.label} // TODO: CHECK IF THIS WORKS
+        items={this.state.options}
+        textKey="name"
+        valueKey="value"
+        descriptionKey="summary"
+        closeOnSelect={true}
+        multi={false}
+        hasIconLeft={false}
+        hasIconRight={false}
+        showMenu={this.state.showExpressionsMenu}
       />
     );
   }
