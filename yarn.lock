@@ -2194,10 +2194,10 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@weni/unnnic-system@1.16.15":
-  version "1.16.15"
-  resolved "https://registry.yarnpkg.com/@weni/unnnic-system/-/unnnic-system-1.16.15.tgz#2eb5191c36eb851fd86d93232af033e191b0f5c7"
-  integrity sha512-0J1vMY099eVYhsvfsa+6JfYglQdytkdN4EMmhOeMU7KilZ/75UyLXzSK88hwAMz2C6VEdmWSFoPoLc8tSFFjnw==
+"@weni/unnnic-system@1.16.20":
+  version "1.16.20"
+  resolved "https://registry.yarnpkg.com/@weni/unnnic-system/-/unnnic-system-1.16.20.tgz#b60e06812270a7f1e210c9dba96e4b769815ac06"
+  integrity sha512-9JGrQ7MbX+dUVoJkedKrwnrUJMIR0MI6A1OoHV7ED5YJfrYq9YJyv+jxMJQlTaSKV1/E254nWRpCYC15ITqyaw==
   dependencies:
     core-js "^3.6.5"
     mime-types "^2.1.35"
@@ -11319,6 +11319,11 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+
+resize-observer-polyfill@1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
 
 resolve-cwd@^2.0.0:
   version "2.0.0"
