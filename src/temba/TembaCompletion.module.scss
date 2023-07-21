@@ -1,0 +1,19 @@
+@import 'variables.module.scss';
+
+.completion>:nth-child(n+2):last-child {
+  position: fixed;
+  width: 190px;
+
+  div > span > div {
+    white-space: normal;
+  }
+}
+
+.label {
+  display: flex;
+  margin-bottom: $unnnic-spacing-stack-nano;
+  font-family: $unnnic-font-family-secondary;
+  color: $unnnic-color-neutral-cloudy;
+  font-size: $unnnic-font-size-body-md;
+  line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+}

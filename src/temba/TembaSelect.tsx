@@ -299,8 +299,9 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     if (this.props.expressions && event.indexOf('@') > -1) {
       this.setState({ showingExpressionsSelection: true });
 
-      const inputEl = (this.selectInputRef as any).vueRef.$children[0].$children[0].$children[0]
-        .$el;
+      const inputEl = (this.selectInputRef as any).vueRef.$el.querySelector(
+        'input'
+      ) as HTMLInputElement;
       const result = executeCompletionQuery(
         inputEl,
         this.props.expressions,
@@ -346,7 +347,9 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
   private handleExpressionInput(event: any) {
     // Always get the last value, in the case of a multiple select event
     const option = event[event.length - 1];
-    const inputEl = (this.selectInputRef as any).vueRef.$children[0].$children[0].$children[0].$el;
+    const inputEl = (this.selectInputRef as any).vueRef.$el.querySelector(
+      'input'
+    ) as HTMLInputElement;
     updateInputElementWithCompletion(this.state.currentQuery, inputEl, option);
 
     if (!this.props.tags && !this.props.createPrefix) {
