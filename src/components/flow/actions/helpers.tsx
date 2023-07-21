@@ -174,7 +174,21 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
             className={styles.icon}
           />
 
-          <span className={styles.link}>{asset.name}</span>
+          <span className={styles.link + ' ' + styles.truncated}>{asset.name}</span>
+        </>
+      );
+      break;
+    case AssetType.Contact:
+      assetBody = (
+        <>
+          <UnnnicIcon
+            icon="single-neutral-actions-1"
+            size="avatar-nano"
+            scheme="neutral-dark"
+            className={styles.icon}
+          />
+
+          <span className={styles.link + ' ' + styles.truncated}>{asset.name}</span>
         </>
       );
       break;

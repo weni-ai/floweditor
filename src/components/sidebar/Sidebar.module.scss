@@ -2,7 +2,7 @@
 @import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   width: 72px;
   background-color: $unnnic-color-background-sky;
   border-radius: $unnnic-border-radius-sm;
@@ -14,7 +14,7 @@
   margin-left: 33px;
 
   .option {
-    background-color: $unnnic-color-background-snow;
+    background-color: $unnnic-color-background-sky;
     border-radius: 4px;
     display: flex;
     justify-content: center;
@@ -23,6 +23,11 @@
     height: 40px;
     margin: $unnnic-spacing-stack-sm 0px;
     cursor: pointer;
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $unnnic-color-neutral-soft;
+    }
   }
 }
 

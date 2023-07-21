@@ -1,11 +1,10 @@
 import ReactDOM from 'react-dom';
 import { react as bindCallbacks } from 'auto-bind';
 import { ConfigProviderContext, fakePropType } from 'config/ConfigProvider';
-import { FlowDefinition, FlowMetadata } from 'flowTypes';
+import { FlowDefinition, FlowMetadata, FlowPosition } from 'flowTypes';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Plumber from 'services/Plumber';
 import { DebugState } from 'store/editor';
 import { RenderNode } from 'store/flowContext';
 import { createEmptyNode } from 'store/helpers';
@@ -107,6 +106,8 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   private createSendMessageNode(): void {
     const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
 
+    emptyNode.ui.position = this.getNewNodePosition();
+
     this.props.onOpenNodeEditor({
       originalNode: emptyNode,
       originalAction: emptyNode.node.actions[0]
@@ -117,6 +118,13 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
     if (Object.keys(this.props.nodes).length === 0) {
       this.showGetStartedModal();
     }
+  }
+
+  private getNewNodePosition(): FlowPosition {
+    return {
+      top: window.scrollY,
+      left: window.scrollX
+    };
   }
 
   private showGetStartedModal(): void {

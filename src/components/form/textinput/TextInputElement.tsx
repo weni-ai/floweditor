@@ -115,6 +115,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
     return this.props.textarea ? (
       <>
         <UnnnicTextArea
+          className={styles.textarea}
           value={this.props.entry.value}
           on={{
             input: (value: string) => this.handleChange({ currentTarget: { value } })
@@ -164,7 +165,6 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             size={this.props.size || TextInputSizes.sm}
             ref={this.inputItem}
             error={this.props.error}
-            iconRight={'keyboard-return-1'}
             maxlength={this.props.maxLength}
           />
         )}

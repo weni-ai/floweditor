@@ -40,7 +40,8 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
 
 const MESSAGE_DELAY_MS = 200;
 
-const MAP_THUMB = require('static/images/map.jpg');
+const MAP_THUMB =
+  'https://user-images.githubusercontent.com/30026625/254405938-58f4c526-b06e-4890-b19c-2d3af55b7962.jpg';
 const IMAGE_A = 'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_image_a.jpg';
 const IMAGE_B = 'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_image_b.jpg';
 const IMAGE_C = 'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_image_c.jpg';
@@ -866,7 +867,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     const style: any = {};
 
     if (this.state.drawerOpen) {
-      style.bottom = 50;
+      style.bottom = 72;
 
       // are we being forced open
       if (this.state.waitingForHint) {
@@ -949,11 +950,13 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           (this.state.attachmentOptionsVisible ? styles.visible : '')
         }
       >
-        <div className="fe-x" onClick={this.handleHideAttachments} />
-        {this.getAttachmentButton('video-file-mp4-1', DrawerType.videos, 'unnnic')}
+        <span className="ml-auto">
+          {this.getAttachmentButton('video-file-mp4-1', DrawerType.videos, 'unnnic')}
+        </span>
         {this.getAttachmentButton('common-file-horizontal-image-1', DrawerType.images, 'unnnic')}
         {this.getAttachmentButton('microphone', DrawerType.audio, 'unnnic')}
         {this.getAttachmentButton('fe-map-marker', DrawerType.location, 'default')}
+        <div className="fe-x ml-auto" onClick={this.handleHideAttachments} />
       </div>
     );
   }
