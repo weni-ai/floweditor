@@ -18,13 +18,13 @@ export default class {
           )
         ) {
           // @ts-ignore
-          if (!this.dicForNewUuids[array]) {
+          if (!this.dicForNewUuids[newKey]) {
             // @ts-ignore
-            this.dicForNewUuids[array] = createUUID();
+            this.dicForNewUuids[newKey] = createUUID();
           }
 
           // @ts-ignore
-          newKey = this.dicForNewUuids[array];
+          newKey = this.dicForNewUuids[newKey];
         }
 
         // @ts-ignore

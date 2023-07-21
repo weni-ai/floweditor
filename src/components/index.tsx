@@ -42,7 +42,6 @@ import { ACTIVITY_INTERVAL, downloadJSON, renderIf, onNextRender } from 'utils';
 import { PopTabType } from 'config/interfaces';
 import { TranslatorTab, TranslationBundle } from './translator/TranslatorTab';
 import i18n from 'config/i18n';
-import nodesCopy from './copyAndPasteNodes';
 
 const { default: PageVisibility } = require('react-page-visibility');
 
