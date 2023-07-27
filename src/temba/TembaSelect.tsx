@@ -21,6 +21,7 @@ import {
   executeCompletionQuery,
   updateInputElementWithCompletion
 } from '../utils/completion/helper';
+import { TembaStore } from '../temba-components';
 
 const ElUnnnicSelect = applyVueInReact(unnnicSelect);
 const ElUnnnicInput = applyVueInReact(unnnicInput);
@@ -302,8 +303,11 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
       const inputEl = (this.selectInputRef as any).vueRef.$el.querySelector(
         'input'
       ) as HTMLInputElement;
+
+      const store: TembaStore = document.querySelector('temba-store');
       const result = executeCompletionQuery(
         inputEl,
+        store,
         this.props.expressions,
         this.state.expressionsData.functions,
         this.state.expressionsData.context
