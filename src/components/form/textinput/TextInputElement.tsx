@@ -114,16 +114,28 @@ export default class TextInputElement extends React.Component<TextInputProps> {
 
     return this.props.textarea ? (
       <>
-        <UnnnicTextArea
-          className={styles.textarea}
-          value={this.props.entry.value}
-          on={{
-            input: (value: string) => this.handleChange({ currentTarget: { value } })
-          }}
-          label={this.props.showLabel ? this.props.name : null}
-          placeholder={this.props.placeholder}
-          size={this.props.size || TextInputSizes.sm}
-        />
+        {this.props.autocomplete ? (
+          <TembaCompletion
+            value={this.props.entry.value}
+            onInput={(value: string) => this.handleChange({ currentTarget: { value } })}
+            label={this.props.showLabel ? this.props.name : null}
+            placeholder={this.props.placeholder}
+            size={this.props.size || TextInputSizes.sm}
+            type="textarea"
+            session={true}
+          />
+        ) : (
+          <UnnnicTextArea
+            className={styles.textarea}
+            value={this.props.entry.value}
+            on={{
+              input: (value: string) => this.handleChange({ currentTarget: { value } })
+            }}
+            label={this.props.showLabel ? this.props.name : null}
+            placeholder={this.props.placeholder}
+            size={this.props.size || TextInputSizes.sm}
+          />
+        )}
 
         {this.props.helpText}
 
@@ -153,6 +165,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             label={this.props.showLabel ? this.props.name : null}
             placeholder={this.props.placeholder}
             size={this.props.size || TextInputSizes.sm}
+            session={true}
           />
         ) : (
           <UnnnicInputNext
