@@ -36,7 +36,7 @@ import i18n from 'config/i18n';
 import { applyVueInReact } from 'vuereact-combined';
 import styles from './Sidebar.module.scss';
 // @ts-ignore
-import { unnnicModalNext, unnnicIcon } from '@weni/unnnic-system';
+import { unnnicModalNext, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
 
 declare global {
   interface Window {
@@ -45,6 +45,7 @@ declare global {
 }
 
 const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicTooltip = applyVueInReact(unnnicToolTip);
 
 const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
   vue: {
@@ -167,9 +168,11 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   public render(): JSX.Element {
     return (
       <div className={styles.sidebar}>
-        <div className={styles.option}>
-          <UnnnicIcon icon="add-circle-1" onClick={() => this.createSendMessageNode()} />
-        </div>
+        <UnnnicTooltip text={i18n.t('create_block')} enabled side="right">
+          <div className={styles.option}>
+            <UnnnicIcon icon="add-circle-1" onClick={() => this.createSendMessageNode()} />
+          </div>
+        </UnnnicTooltip>
       </div>
     );
   }
