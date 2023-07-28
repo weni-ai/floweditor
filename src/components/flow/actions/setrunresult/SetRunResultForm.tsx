@@ -170,7 +170,7 @@ export default class SetRunResultForm extends React.PureComponent<
           <div className={styles.category}>
             <TextInputElement
               name={i18n.t('forms.category')}
-              placeholder={i18n.t('forms.category_placeholder')}
+              placeholder={i18n.t('forms.ex_shop')}
               showLabel={true}
               onChange={this.handleCategoryUpdate}
               entry={this.state.category}

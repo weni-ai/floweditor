@@ -8,6 +8,7 @@ import { applyVueInReact } from 'vuereact-combined';
 import { unnnicIcon } from '@weni/unnnic-system';
 
 import styles from './OptionalTextInput.module.scss';
+import i18n from '../../../config/i18n';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon);
 
@@ -84,6 +85,7 @@ export default class OptionalTextInput extends React.Component<
             onChange={this.handleTextChanged}
             helpText={this.props.helpText}
             maxLength={this.props.maxLength}
+            placeholder={i18n.t('form.result', 'Result')}
           />
         ) : null}
       </div>

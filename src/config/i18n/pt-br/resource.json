@@ -322,7 +322,7 @@
     "state": "Estado",
     "status": "Status",
     "subject": "Assunto",
-    "subject_placeholder": "Assunto do e-mail",
+    "subject_placeholder": "Ex: Seu pedido foi entregue",
     "email_message": "Texto do e-mail",
     "email_message_placeholder": "Digite o texto do e-mail",
     "template": "modelo",
@@ -394,7 +394,14 @@
     "Complete": "Completo",
     "Expired": "Expirado",
     "remove_from_all_groups": "Remover de todos os grupos",
-    "split_by": "Dividir por"
+    "split_by": "Dividir por",
+    "type_here": "Digite aqui...",
+    "select_the_file_type": "Selecione o tipo de arquivo",
+    "ex_cart": "Ex: carrinho",
+    "ex_shop": "Ex: compras",
+    "ex_weni": "Ex: weni.ai",
+    "ex_accept": "Ex: Accept",
+    "ex_application_json": "Ex: application/json"
   },
   "issues": {
     "header": "Problemas no Fluxo",
@@ -551,5 +558,8 @@
   "translation": {
     "header": "Tradução do fluxo",
     "label": "Traduções"
+  },
+  "form": {
+    "result": "Resultado"
   }
 }

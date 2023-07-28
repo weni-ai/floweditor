@@ -421,6 +421,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
           autocomplete={true}
           focus={true}
           textarea={true}
+          placeholder={i18n.t('forms.type_here', 'Type here...')}
         />
         {renderIssues(this.props)}
       </Dialog>
