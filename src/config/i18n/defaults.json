@@ -167,6 +167,7 @@
     "hide_empty": "Showing keys with values",
     "show_empty": "Showing all keys"
   },
+  "create_block": "Create block",
   "create_label": "Create label",
   "document": "Document",
   "drag_helper": "To connect nodes, <1>drag</1> from the red circle.",
