@@ -280,7 +280,7 @@ export default class WebhookRouterForm extends React.Component<
               showLabel={false}
               entry={this.state.body}
               onChange={this.handleBodyUpdate}
-              placeholder={i18n.t('forms.webhook_body_placeholder', 'Body of the request')}
+              placeholder={i18n.t('forms.type_here', 'Type here...')}
               autocomplete={true}
               textarea={true}
             />

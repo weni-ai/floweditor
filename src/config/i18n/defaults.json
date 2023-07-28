@@ -325,7 +325,7 @@
     "state": "State",
     "status": "Status",
     "subject": "Subject",
-    "subject_placeholder": "E-mail subject",
+    "subject_placeholder": "Ex: Your order has been delivered",
     "email_message": "E-mail text",
     "email_message_placeholder": "Enter the e-mail text",
     "template": "template",
@@ -399,7 +399,14 @@
     "Complete": "Complete",
     "Expired": "Expiredo",
     "remove_from_all_groups": "Remove from all groups",
-    "split_by": "Split by"
+    "split_by": "Split by",
+    "type_here": "Type here...",
+    "select_the_file_type": "Select the file type",
+    "ex_cart": "Ex: cart",
+    "ex_shop": "Ex: shopping",
+    "ex_weni": "Ex: weni.ai",
+    "ex_accept": "Ex: Accept",
+    "ex_application_json": "Ex: application/json"
   },
   "issues": {
     "header": "Flow Issues",

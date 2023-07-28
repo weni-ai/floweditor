@@ -44,8 +44,8 @@ export const HEADER_NAME_ERROR = i18n.t(
   'errors.http_header_missing_name',
   'HTTP headers must have a name'
 );
-export const NAME_PLACEHOLDER = i18n.t('forms.webhook_header_name', 'Header Name');
-export const VALUE_PLACEHOLDER = i18n.t('forms.value', 'Value');
+export const NAME_PLACEHOLDER = i18n.t('forms.ex_accept', 'Ex: Accept');
+export const VALUE_PLACEHOLDER = i18n.t('forms.ex_application_json', 'Ex: application/json');
 
 const UnnnicIcon = applyVueInReact(unnnicIcon);
 

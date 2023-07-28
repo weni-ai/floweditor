@@ -349,6 +349,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 onChange={this.handleMinChanged}
                 entry={this.state.min}
                 autocomplete={true}
+                placeholder="0"
               />
               <span
                 className={`${styles.divider} u font secondary body-md color-neutral-cloudy`}
@@ -362,6 +363,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 onChange={this.handleMaxChanged}
                 entry={this.state.max}
                 autocomplete={true}
+                placeholder="100"
               />
             </>
           );
@@ -419,7 +421,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
             <>
               <TextInputElement
                 name={i18n.t('forms.state', 'State')}
-                placeholder="State"
+                placeholder={i18n.t('forms.state', 'State')}
                 onChange={this.handleStateChanged}
                 style={TextInputStyle.small}
                 entry={this.state.state}
@@ -468,7 +470,9 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
             entry={this.state.argument}
             style={TextInputStyle.small}
             placeholder={
-              this.state.operatorConfig.type === Operators.has_district ? i18n.t('forms.state') : ''
+              this.state.operatorConfig.type === Operators.has_district
+                ? i18n.t('forms.state')
+                : i18n.t('forms.ex_cart', 'Ex: cart')
             }
             autocomplete={true}
           />
@@ -532,6 +536,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 entry={this.state.categoryName}
                 maxLength={36}
                 showInvalid={hasErrorType(this.state.errors, [/category/])}
+                placeholder={i18n.t('forms.ex_shop', 'Ex: shopping')}
               />
             </div>
 
