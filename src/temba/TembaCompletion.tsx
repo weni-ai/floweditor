@@ -38,6 +38,7 @@ export interface TembaCompletionProps {
   onInput?: (value: string) => void;
   assetStore: AssetStore;
   type: string;
+  errors?: string[];
 }
 
 interface TembaCompletionState {
@@ -325,6 +326,8 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
         ))}
       </div>
     );
+
+    const hasErrors = this.props.errors && this.props.errors.length > 0;
     return (
       <>
         {this.props.label && <span className={styles.label}>{this.props.label}</span>}
@@ -341,6 +344,8 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
               }}
               placeholder={this.props.placeholder}
               size={this.props.size}
+              type={hasErrors ? 'error' : 'normal'}
+              errors={this.props.errors}
             />
 
             {completionList}
@@ -367,6 +372,8 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
             hasIconLeft={false}
             hasIconRight={false}
             showMenu={this.state.showCompletionsMenu}
+            type={hasErrors ? 'error' : 'normal'}
+            message={this.props.errors && this.props.errors[0]}
           />
         )}
       </>

@@ -492,7 +492,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
           data-draggable={true}
         >
           <div className={styles.operator_container}>
-            <span data-draggable={true}>
+            <span className={styles.move_icon} data-draggable={true}>
               <UnnnicIcon icon="move-expand-vertical-1" size="sm" scheme="neutral-cloudy" />
             </span>
 

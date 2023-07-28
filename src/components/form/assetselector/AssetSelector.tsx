@@ -9,6 +9,7 @@ import styles from './AssetSelector.module.scss';
 import i18n from 'config/i18n';
 import TembaSelect, { TembaSelectStyle } from 'temba/TembaSelect';
 import { sortByName } from './helpers';
+import { getAllErrorMessages } from '../../flow/actions/helpers';
 
 export interface AssetSelectorProps extends FormElementProps {
   namePure?: string;
@@ -235,7 +236,7 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
           multi={this.props.multi}
           expressions={this.props.expressions}
           value={this.state.entry.value}
-          errors={this.state.message ? [this.state.message] : []}
+          errors={getAllErrorMessages(this.state.entry)}
           searchable={this.props.searchable}
           cacheKey={this.lastCreation + ''}
           options={this.options}

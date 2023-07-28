@@ -1,13 +1,12 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { bool, snakify, debounce } from 'utils';
+import { debounce } from 'utils';
 import styles from './TembaSelect.module.scss';
 import { Assets, AssetStore } from 'store/flowContext';
 
 import {
   unnnicSelect,
-  unnnicInput,
   unnnicTag,
   unnnicAutocompleteSelect
   // @ts-ignore
@@ -24,7 +23,6 @@ import {
 import { TembaStore } from '../temba-components';
 
 const ElUnnnicSelect = applyVueInReact(unnnicSelect);
-const ElUnnnicInput = applyVueInReact(unnnicInput);
 const ElUnnnicTag = applyVueInReact(unnnicTag);
 const ElUnnnicAutocompleteSelect = applyVueInReact(unnnicAutocompleteSelect);
 
@@ -429,6 +427,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
 
     const isTagComponent = !!this.props.tags || !!this.props.createPrefix;
     const isMultiComponent = !!this.props.multi;
+    const hasErrors = this.props.errors && this.props.errors.length > 0;
 
     let selectInput: any;
     if (!isTagComponent && !isMultiComponent && !this.props.searchable) {
@@ -442,6 +441,8 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
           size={this.props.style || TembaSelectStyle.small}
           disabled={this.props.disabled}
           key={this.state.selectKey}
+          type={hasErrors ? 'error' : 'normal'}
+          message={this.props.errors && this.props.errors[0]}
         >
           {this.state.availableOptions.map((option: any, index: number) => {
             return (
@@ -488,6 +489,8 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
           showValue={!this.props.tags && !isMultiComponent}
           hasIconRight={isTagComponent}
           hasIconLeft={!isTagComponent}
+          type={hasErrors ? 'error' : 'normal'}
+          message={this.props.errors && this.props.errors[0]}
         />
       );
     }

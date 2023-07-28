@@ -137,9 +137,11 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     paramFilters = this.state.currentFilter
       ? [this.state.currentFilter].concat(paramFilters)
       : paramFilters;
-    const paramOptions = this.state.currentParam
-      ? [this.state.currentParam].concat(this.props.availableParams)
-      : this.props.availableParams;
+    const paramOptions =
+      this.state.currentParam &&
+      !this.props.availableParams.find(p => p.type === this.state.currentParam.type)
+        ? [this.state.currentParam].concat(this.props.availableParams)
+        : this.props.availableParams;
 
     return (
       <FormElement
@@ -150,6 +152,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
       >
         <div className={`${styles.param}`} data-draggable={canArrange}>
           <UnnnicIcon
+            className={styles.move_icon}
             icon="move-expand-vertical-1"
             size="sm"
             scheme={canArrange ? 'neutral-cloudy' : 'neutral-clean'}
