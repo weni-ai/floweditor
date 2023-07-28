@@ -38,7 +38,8 @@ export const EMPTY_TEST_ASSETS = {
   flows: { items: {}, type: AssetType.Flow },
   recipients: { items: {}, type: AssetType.Contact || AssetType.Group || AssetType.URN },
   ticketers: { items: {}, type: AssetType.Ticketer },
-  externalServices: { items: {}, type: AssetType.ExternalService }
+  externalServices: { items: {}, type: AssetType.ExternalService },
+  completion: { items: {}, type: AssetType.Expression }
 };
 
 const initial = initialState;
@@ -60,6 +61,20 @@ const customRender = (ui: any, options?: any) =>
 
 export const fireChangeText = (ele: any, value: string): void => {
   fireEvent.change(ele, { currentTarget: { value }, target: { value } });
+};
+
+export const fireUnnnicInputChangeText = (ele: any, value: string): void => {
+  fireEvent.input(ele.querySelector('input'), {
+    currentTarget: { value },
+    target: { value }
+  });
+};
+
+export const fireUnnnicTextAreaChangeText = (ele: any, value: string): void => {
+  fireEvent.input(ele.querySelector('textarea'), {
+    currentTarget: { value },
+    target: { value }
+  });
 };
 
 export const fireTembaSelect = (ele: HTMLElement, value: any) => {

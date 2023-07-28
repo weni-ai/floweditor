@@ -30,6 +30,7 @@ interface ValuedCompletionOption extends CompletionOption {
 }
 
 export interface TembaCompletionProps {
+  name: string;
   label?: string;
   placeholder?: string;
   size?: any;
@@ -212,7 +213,7 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
     this.executeQuery(textAreaEl);
 
     const caret = getCaretCoordinates(textAreaEl, textAreaEl.selectionEnd);
-    const offset = caret.top + caret.height - textAreaEl.scrollTop;
+    const offset = caret.top + (caret.height || 0) - textAreaEl.scrollTop;
     this.setState({
       completionTopOffset: offset
     });
@@ -334,6 +335,7 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
         {this.props.type === 'textarea' ? (
           <div className={styles.textarea_wrapper}>
             <UnnnicTextArea
+              data-testid={this.props.name}
               ref={(ele: any) => {
                 this.refTextArea = ele;
               }}
@@ -352,6 +354,7 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
           </div>
         ) : (
           <UnnnicAutocompleteSelect
+            data-testid={this.props.name}
             className={styles.completionInput}
             ref={(ele: any) => {
               this.refInput = ele;
