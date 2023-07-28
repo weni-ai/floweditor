@@ -22,25 +22,15 @@ exports[`KeyLocalizationForm removes translations 1`] = `
       class="dialog"
     >
       <div
-        class="tabs"
-      >
-        <div
-          class="tab "
-        >
-          Body Translation
-           
-        </div>
-      </div>
-      <div
-        class="header send_email"
+        class="header"
       >
         <div
           class="title_container"
         >
           <div
-            class="title"
+            class="title u font secondary title-sm black"
           >
-            Send Email
+            Send email
           </div>
           <div
             class="subtitle"
@@ -50,6 +40,60 @@ exports[`KeyLocalizationForm removes translations 1`] = `
       <div
         class="content"
       >
+        <div
+          data-use-vue-component-wrap=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm tabs"
+            data-passed-props="[object Object]"
+            data-v-1727ddfc=""
+          >
+            <header
+              class="tab-header"
+              data-v-1727ddfc=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1727ddfc=""
+              >
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1727ddfc=""
+                >
+                  <div
+                    __use_react_component_wrap=""
+                    data-v-1727ddfc=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1727ddfc=""
+                >
+                  <div
+                    __use_react_component_wrap=""
+                    data-v-1727ddfc=""
+                    style="all: unset;"
+                  >
+                    Body Translation
+                  </div>
+                </li>
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1727ddfc=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1727ddfc=""
+              />
+            </main>
+          </div>
+        </div>
         <div>
           <div
             data-spec="translation-container"
@@ -62,21 +106,31 @@ exports[`KeyLocalizationForm removes translations 1`] = `
             </div>
           </div>
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="textarea_wrapper"
           >
             <div
-              class="unnnic-text-area sm normal"
-              data-passed-props="[object Object]"
-              data-v-a95e6368=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <textarea
-                data-v-a95e6368=""
-              />
-              <!---->
-              <!---->
+              <div
+                class="unnnic-text-area sm normal textarea"
+                data-passed-props="[object Object]"
+                data-testid="Subject"
+                data-v-4b5c6da6=""
+              >
+                <!---->
+                <textarea
+                  data-v-4b5c6da6=""
+                  placeholder="Spanish Translation"
+                />
+                <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="completions"
+              style="display: none;"
+            />
           </div>
         </div>
       </div>
@@ -87,19 +141,53 @@ exports[`KeyLocalizationForm removes translations 1`] = `
           class="buttons"
         >
           <div
-            class="right_buttons"
+            class="buttons_wrapper"
           >
             <div
-              class="btn secondary  "
-              style="margin-left: 0px; margin-top: 0px;"
+              class="right_buttons"
             >
-              Cancel
-            </div>
-            <div
-              class="btn primary  "
-              style="margin-left: 10px; margin-top: 0px;"
-            >
-              Ok
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-left: 0px; margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Cancel 
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Ok 
+                  </span>
+                  <!---->
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -128,25 +216,15 @@ exports[`KeyLocalizationForm renders send email 1`] = `
       class="dialog"
     >
       <div
-        class="tabs"
-      >
-        <div
-          class="tab "
-        >
-          Body Translation
-           
-        </div>
-      </div>
-      <div
-        class="header send_email"
+        class="header"
       >
         <div
           class="title_container"
         >
           <div
-            class="title"
+            class="title u font secondary title-sm black"
           >
-            Send Email
+            Send email
           </div>
           <div
             class="subtitle"
@@ -156,6 +234,60 @@ exports[`KeyLocalizationForm renders send email 1`] = `
       <div
         class="content"
       >
+        <div
+          data-use-vue-component-wrap=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm tabs"
+            data-passed-props="[object Object]"
+            data-v-1727ddfc=""
+          >
+            <header
+              class="tab-header"
+              data-v-1727ddfc=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1727ddfc=""
+              >
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1727ddfc=""
+                >
+                  <div
+                    __use_react_component_wrap=""
+                    data-v-1727ddfc=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1727ddfc=""
+                >
+                  <div
+                    __use_react_component_wrap=""
+                    data-v-1727ddfc=""
+                    style="all: unset;"
+                  >
+                    Body Translation
+                  </div>
+                </li>
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1727ddfc=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1727ddfc=""
+              />
+            </main>
+          </div>
+        </div>
         <div>
           <div
             data-spec="translation-container"
@@ -168,21 +300,31 @@ exports[`KeyLocalizationForm renders send email 1`] = `
             </div>
           </div>
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="textarea_wrapper"
           >
             <div
-              class="unnnic-text-area sm normal"
-              data-passed-props="[object Object]"
-              data-v-a95e6368=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <textarea
-                data-v-a95e6368=""
-              />
-              <!---->
-              <!---->
+              <div
+                class="unnnic-text-area sm normal textarea"
+                data-passed-props="[object Object]"
+                data-testid="Subject"
+                data-v-4b5c6da6=""
+              >
+                <!---->
+                <textarea
+                  data-v-4b5c6da6=""
+                  placeholder="English Translation"
+                />
+                <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="completions"
+              style="display: none;"
+            />
           </div>
         </div>
       </div>
@@ -193,19 +335,53 @@ exports[`KeyLocalizationForm renders send email 1`] = `
           class="buttons"
         >
           <div
-            class="right_buttons"
+            class="buttons_wrapper"
           >
             <div
-              class="btn secondary  "
-              style="margin-left: 0px; margin-top: 0px;"
+              class="right_buttons"
             >
-              Cancel
-            </div>
-            <div
-              class="btn primary  "
-              style="margin-left: 10px; margin-top: 0px;"
-            >
-              Ok
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-left: 0px; margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Cancel 
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Ok 
+                  </span>
+                  <!---->
+                </button>
+              </div>
             </div>
           </div>
         </div>
