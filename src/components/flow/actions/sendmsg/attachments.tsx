@@ -199,7 +199,7 @@ export const renderAttachment = (
           key={'attachment_type_' + index}
           style={TembaSelectStyle.small}
           name={i18n.t('forms.type_options', 'Type Options')}
-          placeholder={i18n.t('forms.add_attachment', 'Add Attachment')}
+          placeholder={i18n.t('forms.select_the_file_type', 'Select the file type')}
           entry={{
             value: index > -1 ? getAttachmentTypeOption(attachment.type) : null
           }}
@@ -219,7 +219,7 @@ export const renderAttachment = (
         <>
           <div className={styles.url}>
             <TextInputElement
-              placeholder="URL"
+              placeholder={i18n.t('forms.ex_weni', 'Ex: weni.ai')}
               name={i18n.t('forms.url', 'URL')}
               size={TextInputSizes.sm}
               onChange={(value: string) => {

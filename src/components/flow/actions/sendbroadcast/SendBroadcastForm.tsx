@@ -123,6 +123,7 @@ export default class SendBroadcastForm extends React.Component<
           autocomplete={true}
           focus={true}
           textarea={true}
+          placeholder={i18n.t('forms.type_here', 'Type here...')}
         />
         {renderIssues(this.props)}
       </Dialog>
