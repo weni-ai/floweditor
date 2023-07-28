@@ -342,7 +342,11 @@ export class NodeComp extends React.PureComponent<NodeProps> {
         summary = (
           <div
             {...this.events}
-            className={`${styles.save_result} ${actionList && styles.border_top}`}
+            className={`
+              ${styles.save_result}
+              ${actionList && styles.border_top}
+              ${this.props.selected && styles.selected}
+            `}
           >
             <div className={styles.save_as}>{i18n.t('forms.save_as', 'Save as')} </div>
             <div className={styles.result_name}>{resultName}</div>

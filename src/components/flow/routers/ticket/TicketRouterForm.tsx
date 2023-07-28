@@ -1,6 +1,6 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
-import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
+import { getAllErrorMessages, hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import { nodeToState, stateToNode } from './helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
@@ -326,6 +326,7 @@ export default class TicketRouterForm extends React.Component<
                 }
                 return `${user.first_name} ${user.last_name}`;
               }}
+              errors={getAllErrorMessages(this.state.assignee.value)}
             />
           </div>
         </div>

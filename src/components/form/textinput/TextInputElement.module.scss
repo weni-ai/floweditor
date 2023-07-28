@@ -63,6 +63,12 @@
   padding-left: 3px;
 }
 
+.textarea {
+  textarea {
+    resize: none !important;
+  }
+}
+
 .option {
   padding: 5px 15px;
   font-size: 14px;

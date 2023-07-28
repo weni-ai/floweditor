@@ -13,21 +13,17 @@ input:focus {
 }
 
 .divider {
-  padding-left: $spacing;
-  padding-right: $spacing;
+  padding-left: $unnnic-spacing-inline-xs;
+  padding-right: $unnnic-spacing-inline-xs;
   vertical-align: sub;
-  font-size: 13px;
-  line-height: 13px;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 .kase {
   display: flex;
-  align-items: center;
   user-select: none;
 
   display: flex;
-  align-items: center;
   column-gap: $unnnic-spacing-inline-xs;
 
   .form_group {
@@ -37,17 +33,23 @@ input:focus {
   .operator_container {
     flex: 0.70;
     display: flex;
-    align-items: center;
     column-gap: $unnnic-spacing-inline-xs;
+
+    .move_icon {
+      margin-top: 8px;
+    }
   }
 
   .categorize_as_container {
     margin-left: $unnnic-spacing-inline-xs;
     flex: 0.30;
     display: flex;
-    align-items: center;
     column-gap: $unnnic-spacing-inline-xs;
     white-space: nowrap;
+
+    .categorize_as {
+      margin-top: 8px;
+    }
   }
 
   .choice {
@@ -73,11 +75,11 @@ input:focus {
   .multi_operand {
     flex: 1;
     display: flex;
-    align-items: center;
 
     :global {
       input {
         width: 100% !important;
+        min-width: 77.7px;
       }
     }
   }

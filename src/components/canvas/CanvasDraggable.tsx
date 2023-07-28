@@ -1,6 +1,7 @@
 import { react as bindCallbacks } from 'auto-bind';
 import { Dimensions, FlowPosition } from 'flowTypes';
 import * as React from 'react';
+import ResizeObserver from 'resize-observer-polyfill';
 import { newPosition } from 'store/helpers';
 
 import styles from './CanvasDraggable.module.scss';
@@ -56,6 +57,22 @@ export class CanvasDraggable extends React.Component<CanvasDraggableProps, Canva
             height
           });
         });
+
+        const observer = new ResizeObserver(entries => {
+          for (const entry of entries) {
+            const { width, height } = entry.contentRect;
+            if (this.props.updateDimensions) {
+              this.setState({ width, height }, () => {
+                this.props.updateDimensions(this.props.uuid, {
+                  width,
+                  height
+                });
+              });
+            }
+          }
+        });
+
+        observer.observe(this.ele);
       }
     }
   }

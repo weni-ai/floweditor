@@ -1,7 +1,7 @@
 import { react as bindCallbacks } from 'auto-bind';
 import { FormElementProps } from 'components/form/FormElement';
 import * as React from 'react';
-import { StringEntry } from 'store/nodeEditor';
+import { StringEntry, ValidationFailure } from 'store/nodeEditor';
 import { applyVueInReact } from 'vuereact-combined';
 import { count as SmsCount } from 'sms-length';
 import i18n from 'config/i18n';
@@ -112,17 +112,44 @@ export default class TextInputElement extends React.Component<TextInputProps> {
       optional['counter'] = this.props.counter;
     }
 
+    let hasError = false;
+    let errorList = null;
+    if (this.props.entry) {
+      if (this.props.entry.validationFailures && this.props.entry.validationFailures.length > 0) {
+        hasError = true;
+        errorList = this.props.entry.validationFailures.map(
+          (error: ValidationFailure) => error.message
+        );
+      }
+    }
+
     return this.props.textarea ? (
       <>
-        <UnnnicTextArea
-          value={this.props.entry.value}
-          on={{
-            input: (value: string) => this.handleChange({ currentTarget: { value } })
-          }}
-          label={this.props.showLabel ? this.props.name : null}
-          placeholder={this.props.placeholder}
-          size={this.props.size || TextInputSizes.sm}
-        />
+        {this.props.autocomplete ? (
+          <TembaCompletion
+            value={this.props.entry.value}
+            onInput={(value: string) => this.handleChange({ currentTarget: { value } })}
+            label={this.props.showLabel ? this.props.name : null}
+            placeholder={this.props.placeholder}
+            size={this.props.size || TextInputSizes.sm}
+            type="textarea"
+            session={true}
+            errors={errorList}
+          />
+        ) : (
+          <UnnnicTextArea
+            className={styles.textarea}
+            value={this.props.entry.value}
+            on={{
+              input: (value: string) => this.handleChange({ currentTarget: { value } })
+            }}
+            label={this.props.showLabel ? this.props.name : null}
+            placeholder={this.props.placeholder}
+            size={this.props.size || TextInputSizes.sm}
+            type={hasError ? 'error' : 'normal'}
+            errors={errorList}
+          />
+        )}
 
         {this.props.helpText}
 
@@ -152,6 +179,8 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             label={this.props.showLabel ? this.props.name : null}
             placeholder={this.props.placeholder}
             size={this.props.size || TextInputSizes.sm}
+            session={true}
+            errors={errorList}
           />
         ) : (
           <UnnnicInputNext
@@ -163,8 +192,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             placeholder={this.props.placeholder}
             size={this.props.size || TextInputSizes.sm}
             ref={this.inputItem}
-            error={this.props.error}
-            iconRight={'keyboard-return-1'}
+            error={hasError ? errorList[0] : null}
             maxlength={this.props.maxLength}
           />
         )}

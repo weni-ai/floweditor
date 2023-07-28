@@ -1,4 +1,5 @@
 import ExcellentParser, { Expression } from '../../components/form/textinput/ExcellentParser';
+import { TembaStore } from '../../temba-components';
 
 const messageParser = new ExcellentParser('@', ['contact', 'fields', 'globals', 'urns']);
 
@@ -66,6 +67,10 @@ export interface CompletionSchema {
   root_no_session: CompletionProperty[];
 }
 
+export interface KeyedAssets {
+  [assetType: string]: string[];
+}
+
 export const getFunctions = (functions: CompletionOption[], query: string): CompletionOption[] => {
   if (!query) {
     return functions;
@@ -85,7 +90,7 @@ export const getFunctions = (functions: CompletionOption[], query: string): Comp
 export const getCompletions = (
   schema: CompletionSchema,
   dotQuery: string,
-  // keyedAssets: KeyedAssets = {},
+  keyedAssets: KeyedAssets = {},
   session: boolean
 ): CompletionOption[] => {
   const parts = (dotQuery || '').split('.');
@@ -110,7 +115,16 @@ export const getCompletions = (
           prefix += part + '.';
         } else if (nextType && nextType.property_template) {
           prefix += part + '.';
-          currentProps = [];
+          const template = nextType.property_template;
+          if (keyedAssets[nextType.name]) {
+            currentProps = keyedAssets[nextType.name].map((key: string) => ({
+              key: template.key.replace('{key}', key),
+              help: template.help.replace('{key}', key),
+              type: template.type
+            }));
+          } else {
+            currentProps = [];
+          }
         } else {
           // eslint-disable-next-line
           currentProps = currentProps.filter((prop: CompletionProperty) =>
@@ -171,6 +185,7 @@ export const updateInputElementWithCompletion = (
 
 export const executeCompletionQuery = (
   ele: HTMLInputElement,
+  store: TembaStore,
   session: boolean,
   functions: CompletionOption[],
   context: CompletionSchema
@@ -183,6 +198,12 @@ export const executeCompletionQuery = (
 
   if (!ele) {
     return;
+  }
+
+  // we need a store to do anything useful
+  // this also disables expressions in local development environment
+  if (!store) {
+    return result;
   }
 
   const cursor = ele.selectionStart;
@@ -218,7 +239,7 @@ export const executeCompletionQuery = (
         result.query = currentExpression.text.substr(i, currentExpression.text.length - i);
 
         result.options = [
-          ...getCompletions(context, result.query, session),
+          ...getCompletions(context, result.query, store.getKeyedAssets(), session),
           ...(includeFunctions ? getFunctions(functions, result.query) : [])
         ];
 

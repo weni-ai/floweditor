@@ -8,7 +8,7 @@ const OpenTicketComp: React.SFC<OpenTicket> = (
 ): JSX.Element => {
   const showTicketer = ticketer.name.indexOf(context.config.brand) === -1;
   return (
-    <div>
+    <div style={{ textAlign: 'center' }}>
       <div>{subject ? subject : topic ? topic.name : null}</div>
       {showTicketer ? (
         <div style={{ fontSize: '80%' }}>

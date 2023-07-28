@@ -6,73 +6,6 @@
   margin: 0px;
   overflow: hidden;
 
-  &.send_msg {
-    outline-color: $unnnic-color-feedback-blue;
-  }
-
-  &.start_session {
-    outline-style: auto;
-    outline-color: $unnnic-color-feedback-blue;
-  }
-
-  &.send_broadcast,
-  &.send_email {
-    outline-style: auto;
-    outline-color: #8E5EA7;
-  }
-
-  &.say_msg,
-  &.add_contact_urn,
-  &.set_contact_channel,
-  &.set_contact_field,
-  &.set_contact_name,
-  &.set_contact_language,
-  &.set_contact_status,
-  &.add_input_labels {
-    outline-color: $unnnic-color-aux-blue;
-  }
-
-  &.add_contact_groups {
-    outline-style: auto;
-    outline-color: #43309C;
-  }
-
-  &.remove_contact_groups {
-    outline-style: auto;
-    outline-color: $unnnic-color-neutral-cloudy;
-  }
-
-  &.wait_for_menu,
-  &.wait_for_dial,
-  &.wait_for_digits,
-  &.wait_for_audio,
-  &.wait_for_video,
-  &.wait_for_location,
-  &.wait_for_image {
-    outline-color: $unnnic-color-feedback-blue;
-  }
-
-  &.call_resthook {
-    outline-color: $unnnic-color-aux-orange;
-  }
-
-  &.call_external_service,
-  &.has_intent,
-  &.has_top_intent,
-  &.call_webhook,
-  &.call_classifier {
-    outline-width: 0;
-  }
-
-  &.enter_flow,
-  &.start_session {
-    outline-color: $unnnic-color-aux-pink;
-  }
-
-  &.set_run_result {
-    outline-color: $unnnic-color-feedback-green;
-  }
-
   &:first-child {
     border-top-right-radius: $unnnic-border-radius-md;
     border-top-left-radius: $unnnic-border-radius-md;
@@ -200,6 +133,19 @@
     background: #fff;
   }
 }
+
+.selected {
+  background: #EEFFFC !important;
+
+  > div {
+    background: #EEFFFC !important;
+
+    > div {
+      background: #EEFFFC !important;
+    }
+  }
+}
+
 
 .body.missing {
   background-color: #FFF1F1;

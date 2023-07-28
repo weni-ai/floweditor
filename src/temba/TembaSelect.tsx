@@ -1,13 +1,12 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { bool, snakify, debounce } from 'utils';
+import { debounce } from 'utils';
 import styles from './TembaSelect.module.scss';
 import { Assets, AssetStore } from 'store/flowContext';
 
 import {
   unnnicSelect,
-  unnnicInput,
   unnnicTag,
   unnnicAutocompleteSelect
   // @ts-ignore
@@ -21,9 +20,9 @@ import {
   executeCompletionQuery,
   updateInputElementWithCompletion
 } from '../utils/completion/helper';
+import { TembaStore } from '../temba-components';
 
 const ElUnnnicSelect = applyVueInReact(unnnicSelect);
-const ElUnnnicInput = applyVueInReact(unnnicInput);
 const ElUnnnicTag = applyVueInReact(unnnicTag);
 const ElUnnnicAutocompleteSelect = applyVueInReact(unnnicAutocompleteSelect);
 
@@ -299,10 +298,14 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     if (this.props.expressions && event.indexOf('@') > -1) {
       this.setState({ showingExpressionsSelection: true });
 
-      const inputEl = (this.selectInputRef as any).vueRef.$children[0].$children[0].$children[0]
-        .$el;
+      const inputEl = (this.selectInputRef as any).vueRef.$el.querySelector(
+        'input'
+      ) as HTMLInputElement;
+
+      const store: TembaStore = document.querySelector('temba-store');
       const result = executeCompletionQuery(
         inputEl,
+        store,
         this.props.expressions,
         this.state.expressionsData.functions,
         this.state.expressionsData.context
@@ -346,7 +349,9 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
   private handleExpressionInput(event: any) {
     // Always get the last value, in the case of a multiple select event
     const option = event[event.length - 1];
-    const inputEl = (this.selectInputRef as any).vueRef.$children[0].$children[0].$children[0].$el;
+    const inputEl = (this.selectInputRef as any).vueRef.$el.querySelector(
+      'input'
+    ) as HTMLInputElement;
     updateInputElementWithCompletion(this.state.currentQuery, inputEl, option);
 
     if (!this.props.tags && !this.props.createPrefix) {
@@ -422,6 +427,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
 
     const isTagComponent = !!this.props.tags || !!this.props.createPrefix;
     const isMultiComponent = !!this.props.multi;
+    const hasErrors = this.props.errors && this.props.errors.length > 0;
 
     let selectInput: any;
     if (!isTagComponent && !isMultiComponent && !this.props.searchable) {
@@ -435,6 +441,8 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
           size={this.props.style || TembaSelectStyle.small}
           disabled={this.props.disabled}
           key={this.state.selectKey}
+          type={hasErrors ? 'error' : 'normal'}
+          message={this.props.errors && this.props.errors[0]}
         >
           {this.state.availableOptions.map((option: any, index: number) => {
             return (
@@ -481,6 +489,8 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
           showValue={!this.props.tags && !isMultiComponent}
           hasIconRight={isTagComponent}
           hasIconLeft={!isTagComponent}
+          type={hasErrors ? 'error' : 'normal'}
+          message={this.props.errors && this.props.errors[0]}
         />
       );
     }

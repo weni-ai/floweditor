@@ -266,7 +266,7 @@ $reset_color: #666;
   z-index: 160;
   background: $unnnic-color-background-sky;
   transition: bottom 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  padding-bottom: 20px;
+  border-bottom: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
 
   .drawer_header {
     height: 10px;

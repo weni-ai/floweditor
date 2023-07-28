@@ -167,6 +167,7 @@
     "hide_empty": "Mostrando claves con valores",
     "show_empty": "Mostrando todas las claves"
   },
+  "create_block": "Crear bloque",
   "create_label": "Crear etiqueta",
   "document": "Documento",
   "drag_helper": "Para conectar nodos, <1>arrastre</1> desde el círculo rojo.",

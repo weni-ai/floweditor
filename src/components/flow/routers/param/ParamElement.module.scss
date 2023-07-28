@@ -8,11 +8,9 @@ $spacing: 10px;
 }
 
 .divider {
-  padding-left: $spacing;
-  padding-right: $spacing;
+  padding-left: $unnnic-spacing-inline-sm;
+  padding-right: $unnnic-spacing-inline-sm;
   vertical-align: sub;
-  font-size: 13px;
-  line-height: 13px;
   margin-top: 4px;
 }
 
@@ -23,7 +21,6 @@ $spacing: 10px;
 .param {
   display: flex;
   gap: $unnnic-spacing-inline-sm;
-  align-items: center;
   user-select: none;
   margin-bottom: 12px;
 
@@ -37,7 +34,6 @@ $spacing: 10px;
 
   .single_operand {
     display: inline-flex;
-    align-items: center;
     position: relative;
     margin-left: $spacing;
 
@@ -46,7 +42,6 @@ $spacing: 10px;
 
   .multi_operand {
     display: inline-flex;
-    align-items: center;
     margin-left: $spacing;
     width: 184px;
   }
@@ -101,8 +96,13 @@ $spacing: 10px;
   line-height: 12px;
   cursor: pointer;
   margin-left: 2px;
+  margin-top: 8px;
   font-size: 9px;
   z-index: 3000;
+}
+
+.move_icon {
+  margin-top: 8px;
 }
 
 .remove_filler {
