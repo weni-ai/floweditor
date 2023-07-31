@@ -185,7 +185,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   }
 
   private handleKeyDown(event: any): void {
-    if (this.state.selected && event.key === 'Backspace') {
+    if (this.state.selected && (event.key === 'Backspace' || event.key === 'Delete')) {
       const nodeUUIDs = Object.keys(this.state.selected);
       if (nodeUUIDs.length > 0) {
         this.props.onRemoveNodes(Object.keys(this.state.selected));
