@@ -2,7 +2,9 @@
 @import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
 
 .sidebar {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 63px;
   width: 72px;
   background-color: $unnnic-color-background-sky;
   border-radius: $unnnic-border-radius-sm;
@@ -10,8 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 63px;
-  margin-left: 33px;
+  margin-left: -97px;
 
   .option {
     background-color: $unnnic-color-background-sky;
