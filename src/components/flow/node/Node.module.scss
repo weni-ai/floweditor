@@ -63,10 +63,6 @@
     }
   }
 
-  & .large_node {
-    width: 220px;
-  }
-
   &.selected {
     .node {
       outline: $unnnic-color-brand-weni-soft solid $unnnic-border-width-thin;
