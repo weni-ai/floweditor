@@ -145,7 +145,9 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
         <Button
           key={'button_' + buttons.primary.name}
           onRef={(ref: any) => {
-            this.primaryButton = ref;
+            if (ref) {
+              this.primaryButton = ref.vueInstance.$el;
+            }
           }}
           onClick={() => {
             this.handlePrimaryButton(buttons.primary.onClick);
