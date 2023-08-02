@@ -38,3 +38,9 @@
     }
   }
 }
+
+.bold_placeholder { 
+  input::placeholder { 
+    color: $unnnic-color-neutral-dark !important;
+  };
+}
