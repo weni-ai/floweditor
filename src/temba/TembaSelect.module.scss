@@ -38,3 +38,14 @@
     }
   }
 }
+
+.bold_placeholder { 
+
+  input:hover, svg {
+    cursor: pointer !important;
+  }
+
+  input::placeholder { 
+    color: $unnnic-color-neutral-dark !important;
+  };
+}
