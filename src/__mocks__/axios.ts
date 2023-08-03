@@ -12,6 +12,7 @@ const labelsResp = require('test/assets/labels.json');
 const revisionsResp = require('test/assets/revisions.json');
 const completionResp = require('test/assets/completion.json');
 const externalServicesCalls = require('test/assets/external_services_calls.json');
+const usersResp = require('test/assets/users.json');
 
 const getEndpoint = (urlStr: string) => {
   const queryIdx = urlStr.indexOf('?');
@@ -36,7 +37,6 @@ const getUUIDQuery = (urlStr: string) => {
 axios.get = jest.fn((url: string) => {
   const { endpoint, containsQuery } = getEndpoint(url);
   const endpoints = config.endpoints;
-
   switch (endpoint) {
     case endpoints.flows:
       if (containsQuery && containsUUIDQuery(url)) {
@@ -63,6 +63,10 @@ axios.get = jest.fn((url: string) => {
       return resolvePromise(revisionsResp);
     case endpoints.external_services_calls:
       return resolvePromise(externalServicesCalls);
+    case endpoints.completion:
+      return resolvePromise(completionResp);
+    case endpoints.users:
+      return resolvePromise(usersResp);
     default:
       throw new Error('Axios mock: url not passed. Passed: ' + url);
   }
