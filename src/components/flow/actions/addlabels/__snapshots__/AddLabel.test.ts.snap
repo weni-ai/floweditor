@@ -3,47 +3,67 @@
 exports[`AddLabelsComp should display labels on action 1`] = `
 <Fragment>
   <div
-    className="node_asset"
-    key="label-0"
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
   >
-    <span
-      className="node_label fe-label"
-    />
-    Help
-  </div>
-  <div
-    className="node_asset"
-    key="label-1"
-  >
-    <span
-      className="node_label fe-label"
-    />
-    New
-  </div>
-  <div
-    className="node_asset"
-    key="label-2"
-  >
-    <span
-      className="node_label fe-label"
-    />
-    Feedback
-  </div>
-  <div
-    className="node_asset"
-    key="label-3"
-  >
-    <span
-      className="node_label fe-label"
-    />
-    Needs Attention
-  </div>
-  <div
-    key="ellipses"
-  >
-    +
-    2
-     more
+    <div
+      className="node_asset"
+      key="label-0"
+    >
+      <ForwardRef
+        className="icon"
+        icon="bookmark-tag-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      Help
+    </div>
+    <div
+      className="node_asset"
+      key="label-1"
+    >
+      <ForwardRef
+        className="icon"
+        icon="bookmark-tag-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      New
+    </div>
+    <div
+      className="node_asset"
+      key="label-2"
+    >
+      <ForwardRef
+        className="icon"
+        icon="bookmark-tag-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      Feedback
+    </div>
+    <div
+      className="node_asset"
+      key="label-3"
+    >
+      <ForwardRef
+        className="icon"
+        icon="bookmark-tag-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      Needs Attention
+    </div>
+    <div
+      key="ellipses"
+    >
+      +
+      2
+       more
+    </div>
   </div>
 </Fragment>
 `;
