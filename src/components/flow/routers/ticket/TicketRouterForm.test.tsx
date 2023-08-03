@@ -5,7 +5,14 @@ import { RenderNode } from 'store/flowContext';
 import TicketRouterForm from './TicketRouterForm';
 import * as utils from 'utils';
 import * as React from 'react';
-import { render, fireEvent, fireChangeText, fireTembaSelect } from 'test/utils';
+import {
+  render,
+  fireEvent,
+  fireUnnnicInputChangeText,
+  fireUnnnicSelect,
+  fireUnnnicAutocompleteSelect,
+  act
+} from 'test/utils';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -17,43 +24,55 @@ const ticketForm = getRouterFormProps({
 
 describe(TicketRouterForm.name, () => {
   describe('render', () => {
-    it('should render', () => {
-      const { baseElement } = render(<TicketRouterForm {...ticketForm} />);
-      expect(baseElement).toMatchSnapshot();
+    it('should render', async () => {
+      let rendered: any;
+      await act(async () => {
+        rendered = render(<TicketRouterForm {...ticketForm} />);
+      });
+      expect(rendered.baseElement).toMatchSnapshot();
     });
   });
 
   describe('updates', () => {
-    it('should save changes', () => {
-      const { baseElement, getByText, getAllByTestId, getByTestId, getByLabelText } = render(
-        <TicketRouterForm {...ticketForm} />
-      );
-      expect(baseElement).toMatchSnapshot();
+    it('should save changes', async () => {
+      let rendered: any;
+      await act(async () => {
+        rendered = render(<TicketRouterForm {...ticketForm} />);
+      });
 
-      const okButton = getByText('Ok');
-      const resultName = getByTestId('Result Name');
+      expect(rendered.baseElement).toMatchSnapshot();
+
+      const okButton = rendered.getByText('Ok');
+      const resultName = rendered.getByTestId('Save as result');
 
       // our ticketer, body and result name are required
-      fireChangeText(resultName, '');
+      fireUnnnicInputChangeText(resultName, '');
       fireEvent.click(okButton);
       expect(ticketForm.updateRouter).not.toBeCalled();
 
-      // we need a topic
-      fireTembaSelect(getByTestId('temba_select_assignee'), {
-        email: 'agent.user@gmail.com',
-        first_name: 'Agent',
-        last_name: 'User',
-        role: 'agent',
-        created_on: '2021-06-10T21:44:30.971221Z'
-      });
+      fireUnnnicSelect(
+        rendered.getByTestId('temba_select_assignee'),
+        {
+          email: 'agent.user@gmail.com',
+          first_name: 'Agent',
+          last_name: 'User',
+          role: 'agent',
+          created_on: '2021-06-10T21:44:30.971221Z'
+        },
+        'email'
+      );
 
       // we need a topic
-      fireTembaSelect(getByTestId('temba_select_topic'), {
-        name: 'General',
-        uuid: '6f38eba0-d673-4a35-82df-21bae2b6d466'
-      });
+      fireUnnnicAutocompleteSelect(
+        rendered.getByTestId('temba_select_topic'),
+        {
+          name: 'General',
+          uuid: '6f38eba0-d673-4a35-82df-21bae2b6d466'
+        },
+        'name'
+      );
 
-      fireChangeText(resultName, 'My Ticket Result');
+      fireUnnnicInputChangeText(resultName, 'My Ticket Result');
 
       fireEvent.click(okButton);
       expect(ticketForm.updateRouter).toBeCalled();
