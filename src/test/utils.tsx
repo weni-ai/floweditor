@@ -77,6 +77,20 @@ export const fireUnnnicTextAreaChangeText = (ele: any, value: string): void => {
   });
 };
 
+export const fireUnnnicSelect = (ele: any, value: any, valueKey: string) => {
+  const result: any = { value: null };
+  result.value = value[valueKey];
+
+  ele.__vue__.onSelectOption(result);
+};
+
+export const fireUnnnicAutocompleteSelect = (ele: any, value: any, valueKey: string) => {
+  const result: any = value;
+  result.value = value[valueKey];
+
+  ele.__vue__.reactWrapperRef.vueRef.toggle(result);
+};
+
 export const fireTembaSelect = (ele: HTMLElement, value: any) => {
   (ele as any).values = Array.isArray(value) ? value : [{ value }];
   var evt = document.createEvent('HTMLEvents');
