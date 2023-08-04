@@ -1,4 +1,13 @@
-import { render, mock, fireEvent, getUpdatedNode, fireTembaSelect } from 'test/utils';
+import {
+  render,
+  mock,
+  fireEvent,
+  getUpdatedNode,
+  fireTembaSelect,
+  fireUnnnicSelect,
+  act,
+  fireUnnnicAutocompleteSelect
+} from 'test/utils';
 import * as React from 'react';
 import * as utils from 'utils';
 import SchemeRouterForm from './SchemeRouterForm';
@@ -19,21 +28,36 @@ describe(SchemeRouterForm.name, () => {
 
   it('should reuse ids on updates', () => {
     const { getByText } = render(<SchemeRouterForm {...routerProps} />);
-    fireEvent.click(getByText('Ok'));
+    fireEvent.click(getByText('Confirm'));
 
     expect(getUpdatedNode(routerProps).node).toEqual(routerProps.nodeSettings.originalNode.node);
   });
 
-  it('should select schemes', () => {
-    const { getByTestId, getByText } = render(<SchemeRouterForm {...routerProps} />);
+  it('should select schemes', async () => {
+    let rendered: any;
+    await act(async () => {
+      rendered = render(<SchemeRouterForm {...routerProps} />);
+    });
 
-    fireTembaSelect(getByTestId('temba_select_channel_type'), 'whatsapp');
-    fireEvent.click(getByText('Ok'));
+    await act(async () => {
+      fireUnnnicAutocompleteSelect(
+        rendered.getByTestId('temba_select_channels'),
+        { value: 'whatsapp' },
+        'value'
+      );
+    });
+
+    await act(async () => {
+      fireEvent.click(rendered.getByText('Confirm'));
+    });
 
     const router = getSwitchRouter(getUpdatedNode(routerProps).node);
-    expect(router.cases.length).toBe(1);
-    expect(router.cases[0].arguments[0]).toBe('whatsapp');
+
+    expect(router.cases.length).toBe(2);
+    expect(router.cases[0].arguments[0]).toBe('tel');
     expect(router.cases[0].type).toBe(Operators.has_only_phrase);
+    expect(router.cases[1].arguments[0]).toBe('facebook');
+    expect(router.cases[1].type).toBe(Operators.has_only_phrase);
     expect(routerProps.updateRouter).toMatchCallSnapshot();
   });
 });
