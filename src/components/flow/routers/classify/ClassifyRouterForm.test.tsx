@@ -8,7 +8,8 @@ import {
   fireTembaSelect,
   getByDisplayValue,
   fireChangeText,
-  getByTestId
+  getByTestId,
+  fireUnnnicInputChangeText
 } from 'test/utils';
 import { mock } from 'testUtils';
 import { createClassifyRouter, getRouterFormProps } from 'testUtils/assetCreators';
@@ -54,8 +55,9 @@ describe(ClassifyRouterForm.name, () => {
 
   it('updates the result name', () => {
     const { baseElement, getByTestId } = render(<ClassifyRouterForm {...getProps()} />);
-    const result = getByTestId('Result Name');
-    fireChangeText(result, 'Updated Result Name');
+
+    const result = getByTestId('Save as result');
+    fireUnnnicInputChangeText(result, 'Updated Result Name');
     expect(baseElement).toMatchSnapshot('updated result name');
   });
 });
