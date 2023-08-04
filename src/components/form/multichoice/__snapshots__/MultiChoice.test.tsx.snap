@@ -2,8 +2,8 @@
 
 exports[`MultiChoiceInput should render 1`] = `
 <Fragment>
-  <p />
-  <TembaSelect
+  <div />
+  <Connect(TembaSelect)
     expressions={true}
     multi={true}
     name="Multi Choice"
