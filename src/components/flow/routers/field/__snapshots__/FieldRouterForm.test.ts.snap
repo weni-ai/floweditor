@@ -5,7 +5,7 @@ exports[`FieldRouterForm initializes 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -15,20 +15,20 @@ exports[`FieldRouterForm initializes 1`] = `
     }
   }
   headerClass="split_by_contact_field"
-  title="Split by Contact Field"
+  title="Split by contact field"
 >
   <TypeList
     __className=""
     initialType={
       Object {
-        "description": "Split by a contact field",
+        "description": "Split by contact field",
         "form": [Function],
         "localization": [Function],
         "localizeableKeys": Array [
           "exits",
           "cases",
         ],
-        "name": "Split by Contact Field",
+        "name": "Split by contact field",
         "type": "split_by_contact_field",
       }
     }
@@ -37,144 +37,150 @@ exports[`FieldRouterForm initializes 1`] = `
   <div
     className="lead_in"
   >
-    If the contact's
-    <div
-      className="field_select select-small"
-    >
-      <AssetSelector
-        additionalOptions={
-          Array [
-            Object {
-              "id": "name",
-              "name": "Name",
-              "type": "property",
-            },
-            Object {
-              "id": "language",
-              "name": "Language",
-              "type": "property",
-            },
-            Object {
-              "id": "channel",
-              "name": "Channel",
-              "type": "property",
-            },
-            Object {
-              "id": "status",
-              "name": "Status",
-              "type": "property",
-            },
-            Object {
-              "id": "tel",
-              "name": "Phone Number",
-              "type": "scheme",
-            },
-            Object {
-              "id": "whatsapp",
-              "name": "WhatsApp Number",
-              "type": "scheme",
-            },
-            Object {
-              "id": "facebook",
-              "name": "Facebook",
-              "type": "scheme",
-            },
-            Object {
-              "id": "twitterid",
-              "name": "Twitter ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "telegram",
-              "name": "Telegram ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "viber",
-              "name": "Viber ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "line",
-              "name": "Line ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "wechat",
-              "name": "Wechat ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "fcm",
-              "name": "Firebase ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "jiochat",
-              "name": "Jiochat ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "freshchat",
-              "name": "Freshchat ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "mailto",
-              "name": "Email Address",
-              "type": "scheme",
-            },
-            Object {
-              "id": "twitter",
-              "name": "Twitter Handle",
-              "type": "scheme",
-            },
-            Object {
-              "id": "ext",
-              "name": "External ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "instagram",
-              "name": "Instagram ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "slack",
-              "name": "Slack ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "teams",
-              "name": "Teams ID",
-              "type": "scheme",
-            },
-          ]
-        }
-        assets={
+    <AssetSelector
+      additionalOptions={
+        Array [
           Object {
-            "items": Object {},
-            "type": "field",
-          }
-        }
-        entry={
+            "id": "name",
+            "key": "name",
+            "name": "Name",
+            "type": "property",
+          },
           Object {
-            "value": Object {
-              "id": "name",
-              "name": "Name",
-              "type": "property",
-            },
-          }
+            "id": "language",
+            "key": "language",
+            "name": "Language",
+            "type": "property",
+          },
+          Object {
+            "id": "channel",
+            "key": "channel",
+            "name": "Channel",
+            "type": "property",
+          },
+          Object {
+            "id": "status",
+            "key": "status",
+            "name": "Status",
+            "type": "property",
+          },
+          Object {
+            "id": "tel",
+            "name": "Phone number",
+            "type": "scheme",
+          },
+          Object {
+            "id": "whatsapp",
+            "name": "WhatsApp Number",
+            "type": "scheme",
+          },
+          Object {
+            "id": "facebook",
+            "name": "Facebook",
+            "type": "scheme",
+          },
+          Object {
+            "id": "twitterid",
+            "name": "Twitter ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "telegram",
+            "name": "Telegram ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "viber",
+            "name": "Viber ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "line",
+            "name": "Line ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "wechat",
+            "name": "Wechat ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "fcm",
+            "name": "Firebase ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "jiochat",
+            "name": "Jiochat ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "freshchat",
+            "name": "Freshchat ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "mailto",
+            "name": "Email Address",
+            "type": "scheme",
+          },
+          Object {
+            "id": "twitter",
+            "name": "Twitter Handle",
+            "type": "scheme",
+          },
+          Object {
+            "id": "ext",
+            "name": "External ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "instagram",
+            "name": "Instagram ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "slack",
+            "name": "Slack ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "teams",
+            "name": "Teams ID",
+            "type": "scheme",
+          },
+        ]
+      }
+      assets={
+        Object {
+          "items": Object {},
+          "type": "field",
         }
-        getName={[Function]}
-        name="Contact Field"
-        onChange={[Function]}
-        searchable={true}
-        sortFunction={[Function]}
-        style="small"
-        valueKey="id"
-      />
-    </div>
+      }
+      entry={
+        Object {
+          "value": Object {
+            "id": "name",
+            "key": "name",
+            "name": "Name",
+            "type": "property",
+          },
+        }
+      }
+      getName={[Function]}
+      name="If the contact's"
+      onChange={[Function]}
+      searchable={true}
+      showLabel={true}
+      sortFunction={[Function]}
+      style="sm"
+      valueKey="id"
+    />
+  </div>
+  <div
+    className="u font secondary body-md color-neutral-cloudy"
+  >
+    If the message response
   </div>
   <CaseList
     cases={
@@ -198,22 +204,10 @@ exports[`FieldRouterForm initializes 1`] = `
     onCasesUpdated={[Function]}
   />
   <OptionalTextInput
-    helpText={
-      <Trans
-        i18nKey="forms.result_name_help"
-        values={
-          Object {
-            "resultFormat": "@results.color",
-          }
-        }
-      >
-        By naming the result, you can reference it later using [[resultFormat]]
-      </Trans>
-    }
     maxLength={64}
-    name="Result Name"
+    name="Save as result"
     onChange={[Function]}
-    toggleText="Save as.."
+    toggleText="Save as"
     value={
       Object {
         "value": "Color",
@@ -228,7 +222,7 @@ exports[`FieldRouterForm should render 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -238,20 +232,20 @@ exports[`FieldRouterForm should render 1`] = `
     }
   }
   headerClass="split_by_contact_field"
-  title="Split by Contact Field"
+  title="Split by contact field"
 >
   <TypeList
     __className=""
     initialType={
       Object {
-        "description": "Split by a contact field",
+        "description": "Split by contact field",
         "form": [Function],
         "localization": [Function],
         "localizeableKeys": Array [
           "exits",
           "cases",
         ],
-        "name": "Split by Contact Field",
+        "name": "Split by contact field",
         "type": "split_by_contact_field",
       }
     }
@@ -260,144 +254,150 @@ exports[`FieldRouterForm should render 1`] = `
   <div
     className="lead_in"
   >
-    If the contact's
-    <div
-      className="field_select select-small"
-    >
-      <AssetSelector
-        additionalOptions={
-          Array [
-            Object {
-              "id": "name",
-              "name": "Name",
-              "type": "property",
-            },
-            Object {
-              "id": "language",
-              "name": "Language",
-              "type": "property",
-            },
-            Object {
-              "id": "channel",
-              "name": "Channel",
-              "type": "property",
-            },
-            Object {
-              "id": "status",
-              "name": "Status",
-              "type": "property",
-            },
-            Object {
-              "id": "tel",
-              "name": "Phone Number",
-              "type": "scheme",
-            },
-            Object {
-              "id": "whatsapp",
-              "name": "WhatsApp Number",
-              "type": "scheme",
-            },
-            Object {
-              "id": "facebook",
-              "name": "Facebook",
-              "type": "scheme",
-            },
-            Object {
-              "id": "twitterid",
-              "name": "Twitter ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "telegram",
-              "name": "Telegram ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "viber",
-              "name": "Viber ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "line",
-              "name": "Line ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "wechat",
-              "name": "Wechat ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "fcm",
-              "name": "Firebase ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "jiochat",
-              "name": "Jiochat ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "freshchat",
-              "name": "Freshchat ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "mailto",
-              "name": "Email Address",
-              "type": "scheme",
-            },
-            Object {
-              "id": "twitter",
-              "name": "Twitter Handle",
-              "type": "scheme",
-            },
-            Object {
-              "id": "ext",
-              "name": "External ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "instagram",
-              "name": "Instagram ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "slack",
-              "name": "Slack ID",
-              "type": "scheme",
-            },
-            Object {
-              "id": "teams",
-              "name": "Teams ID",
-              "type": "scheme",
-            },
-          ]
-        }
-        assets={
+    <AssetSelector
+      additionalOptions={
+        Array [
           Object {
-            "items": Object {},
-            "type": "field",
-          }
-        }
-        entry={
+            "id": "name",
+            "key": "name",
+            "name": "Name",
+            "type": "property",
+          },
           Object {
-            "value": Object {
-              "id": "name",
-              "name": "Name",
-              "type": "property",
-            },
-          }
+            "id": "language",
+            "key": "language",
+            "name": "Language",
+            "type": "property",
+          },
+          Object {
+            "id": "channel",
+            "key": "channel",
+            "name": "Channel",
+            "type": "property",
+          },
+          Object {
+            "id": "status",
+            "key": "status",
+            "name": "Status",
+            "type": "property",
+          },
+          Object {
+            "id": "tel",
+            "name": "Phone number",
+            "type": "scheme",
+          },
+          Object {
+            "id": "whatsapp",
+            "name": "WhatsApp Number",
+            "type": "scheme",
+          },
+          Object {
+            "id": "facebook",
+            "name": "Facebook",
+            "type": "scheme",
+          },
+          Object {
+            "id": "twitterid",
+            "name": "Twitter ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "telegram",
+            "name": "Telegram ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "viber",
+            "name": "Viber ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "line",
+            "name": "Line ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "wechat",
+            "name": "Wechat ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "fcm",
+            "name": "Firebase ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "jiochat",
+            "name": "Jiochat ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "freshchat",
+            "name": "Freshchat ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "mailto",
+            "name": "Email Address",
+            "type": "scheme",
+          },
+          Object {
+            "id": "twitter",
+            "name": "Twitter Handle",
+            "type": "scheme",
+          },
+          Object {
+            "id": "ext",
+            "name": "External ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "instagram",
+            "name": "Instagram ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "slack",
+            "name": "Slack ID",
+            "type": "scheme",
+          },
+          Object {
+            "id": "teams",
+            "name": "Teams ID",
+            "type": "scheme",
+          },
+        ]
+      }
+      assets={
+        Object {
+          "items": Object {},
+          "type": "field",
         }
-        getName={[Function]}
-        name="Contact Field"
-        onChange={[Function]}
-        searchable={true}
-        sortFunction={[Function]}
-        style="small"
-        valueKey="id"
-      />
-    </div>
+      }
+      entry={
+        Object {
+          "value": Object {
+            "id": "name",
+            "key": "name",
+            "name": "Name",
+            "type": "property",
+          },
+        }
+      }
+      getName={[Function]}
+      name="If the contact's"
+      onChange={[Function]}
+      searchable={true}
+      showLabel={true}
+      sortFunction={[Function]}
+      style="sm"
+      valueKey="id"
+    />
+  </div>
+  <div
+    className="u font secondary body-md color-neutral-cloudy"
+  >
+    If the message response
   </div>
   <CaseList
     cases={
@@ -421,22 +421,10 @@ exports[`FieldRouterForm should render 1`] = `
     onCasesUpdated={[Function]}
   />
   <OptionalTextInput
-    helpText={
-      <Trans
-        i18nKey="forms.result_name_help"
-        values={
-          Object {
-            "resultFormat": "@results.color",
-          }
-        }
-      >
-        By naming the result, you can reference it later using [[resultFormat]]
-      </Trans>
-    }
     maxLength={64}
-    name="Result Name"
+    name="Save as result"
     onChange={[Function]}
-    toggleText="Save as.."
+    toggleText="Save as"
     value={
       Object {
         "value": "Color",
@@ -543,6 +531,7 @@ Object {
   "field": Object {
     "value": Object {
       "id": "name",
+      "key": "name",
       "name": "Name",
       "type": "property",
     },
