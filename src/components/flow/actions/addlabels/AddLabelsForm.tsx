@@ -12,7 +12,6 @@ import { shouldRequireIf, validate } from 'store/validators';
 import styles from './AddLabelsForm.module.scss';
 import { initializeForm, stateToAction } from './helpers';
 import i18n from 'config/i18n';
-import { Trans } from 'react-i18next';
 import { renderIssues } from '../helpers';
 
 export interface AddLabelsFormState extends FormState {

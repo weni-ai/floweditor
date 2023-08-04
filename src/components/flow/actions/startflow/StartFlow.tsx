@@ -4,11 +4,6 @@ import { fakePropType } from 'config/ConfigProvider';
 import { StartFlow } from 'flowTypes';
 import { AssetType } from 'store/flowContext';
 import styles from './StartFlow.module.scss';
-import { applyVueInReact } from 'vuereact-combined';
-// @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
-
-const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 const StartFlowComp: React.SFC<StartFlow> = (
   { flow: { name, uuid } },

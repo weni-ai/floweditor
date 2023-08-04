@@ -10,10 +10,9 @@ import { mergeForm } from 'store/nodeEditor';
 import { shouldRequireIf, validate } from 'store/validators';
 
 import styles from './AddGroupsForm.module.scss';
-import { ChangeGroupsFormState, excludeDynamicGroups, labelSpecId } from '../helpers';
+import { ChangeGroupsFormState, excludeDynamicGroups } from '../helpers';
 import { initializeForm, stateToAction } from './helpers';
 import i18n from 'config/i18n';
-import { Trans } from 'react-i18next';
 import { renderIssues } from '../../helpers';
 
 export default class AddGroupsForm extends React.Component<ActionFormProps, ChangeGroupsFormState> {

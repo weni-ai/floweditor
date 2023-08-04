@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom';
 import { react as bindCallbacks } from 'auto-bind';
 import { Canvas } from 'components/canvas/Canvas';
 import { CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
@@ -15,7 +14,7 @@ import { bindActionCreators } from 'redux';
 import Plumber from 'services/Plumber';
 import { DragSelection, DebugState } from 'store/editor';
 import { RenderNode } from 'store/flowContext';
-import { createEmptyNode, detectLoops, getOrderedNodes } from 'store/helpers';
+import { detectLoops, getOrderedNodes } from 'store/helpers';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import AppState from 'store/state';
 import {
@@ -52,32 +51,12 @@ import {
 import Debug from 'utils/debug';
 
 import { PopTabType } from 'config/interfaces';
-import i18n from 'config/i18n';
-import { applyVueInReact } from 'vuereact-combined';
-
-// @ts-ignore
-import { unnnicModalNext } from '@weni/unnnic-system';
 
 declare global {
   interface Window {
     fe: any;
   }
 }
-
-const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
-  vue: {
-    componentWrap: 'div',
-    slotWrap: 'div',
-    componentWrapAttrs: {
-      style: {
-        all: '',
-        position: 'relative',
-        zIndex: 10e2
-      }
-    }
-  }
-});
-
 export interface FlowStoreProps {
   ghostNode: RenderNode;
   debug: DebugState;

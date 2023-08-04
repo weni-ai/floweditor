@@ -177,6 +177,7 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
                 />
               );
             }
+            return null;
           })}
         </div>
       </div>
