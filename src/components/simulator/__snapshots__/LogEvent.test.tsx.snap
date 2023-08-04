@@ -7,12 +7,44 @@ exports[`LogEvent should render broadcast_created event 1`] = `
       class="evt"
     >
       <div
-        class="send_msg"
+        class="send_msg "
       >
         <div
-          class="msg_text"
+          class="profile_image"
         >
-          Hi there
+          <div
+            data-use-vue-component-wrap=""
+          >
+            <span
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow profile_icon"
+              data-passed-props="[object Object]"
+              data-v-a1936218=""
+            >
+              <svg
+                fill="none"
+                viewBox="0 0 40 40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                  fill="#3B414D"
+                />
+                <path
+                  class="primary"
+                  d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div>
+          <div
+            class="msg_text"
+          >
+            Hi there
+          </div>
         </div>
       </div>
     </div>
@@ -27,7 +59,7 @@ exports[`LogEvent should render contact_field_changed event 1`] = `
       class="evt"
     >
       <div
-        class="info"
+        class="info "
       >
         <span>
           Set contact "Age" to "38"
@@ -45,7 +77,7 @@ exports[`LogEvent should render contact_field_changed event with null value 1`] 
       class="evt"
     >
       <div
-        class="info"
+        class="info "
       >
         <span>
           Cleared contact "Age"
@@ -63,7 +95,7 @@ exports[`LogEvent should render contact_groups_changed event 1`] = `
       class="evt"
     >
       <div
-        class="info"
+        class="info undefined"
       >
         <span>
           Added to "U-Reporters", "Youth". Removed from "Unregistered", "Missing Name"
@@ -81,7 +113,7 @@ exports[`LogEvent should render contact_language_changed event 1`] = `
       class="evt"
     >
       <div
-        class="info"
+        class="info "
       >
         <span>
           Set preferred language to "eng"
@@ -99,7 +131,7 @@ exports[`LogEvent should render contact_name_changed event 1`] = `
       class="evt"
     >
       <div
-        class="info"
+        class="info "
       >
         <span>
           Set contact name to "Bobby"
@@ -117,7 +149,7 @@ exports[`LogEvent should render contact_status_changed event 1`] = `
       class="evt"
     >
       <div
-        class="info"
+        class="info "
       >
         <span>
           Set status to "blocked"
@@ -135,7 +167,7 @@ exports[`LogEvent should render contact_urns_changed event 1`] = `
       class="evt"
     >
       <div
-        class="info"
+        class="info "
       >
         <span>
           Added a URN for the contact
@@ -152,15 +184,13 @@ exports[`LogEvent should render email_sent event 1`] = `
     <div
       class="evt"
     >
-      <div>
+      <div
+        class="has_detail"
+      >
         <div
-          class="has_detail"
+          class="info email"
         >
-          <div
-            class="info email"
-          >
-            Sent email to &quot;fun@temba.io&quot;, &quot;events@temba.io&quot; with subject "Party time"
-          </div>
+          Sent email to &quot;fun@temba.io&quot;, &quot;events@temba.io&quot; with subject "Party time"
         </div>
       </div>
     </div>
@@ -178,7 +208,7 @@ exports[`LogEvent should render error event 1`] = `
       class="evt"
     >
       <div
-        class="error"
+        class="error "
       >
         <span>
           Error: 
@@ -197,7 +227,7 @@ exports[`LogEvent should render failure event 1`] = `
       class="evt"
     >
       <div
-        class="error"
+        class="error "
       >
         <span>
           Error: 
@@ -216,7 +246,7 @@ exports[`LogEvent should render input_labels_added event 1`] = `
       class="evt"
     >
       <div
-        class="info"
+        class="info undefined"
       >
         <span>
           Message labeled with "Spam", "Important"
@@ -234,18 +264,50 @@ exports[`LogEvent should render ivr_created event 1`] = `
       class="evt"
     >
       <div
-        class="send_msg"
+        class="send_msg "
       >
-        <div>
-          <img
-            alt="Attachment"
-            src="http://temba.io/test.wav"
-          />
-        </div>
         <div
-          class="msg_text"
+          class="profile_image"
         >
-          Thanks for getting in touch
+          <div
+            data-use-vue-component-wrap=""
+          >
+            <span
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow profile_icon"
+              data-passed-props="[object Object]"
+              data-v-a1936218=""
+            >
+              <svg
+                fill="none"
+                viewBox="0 0 40 40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                  fill="#3B414D"
+                />
+                <path
+                  class="primary"
+                  d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div>
+          <div>
+            <img
+              alt="Attachment"
+              src="http://temba.io/test.wav"
+            />
+          </div>
+          <div
+            class="msg_text"
+          >
+            Thanks for getting in touch
+          </div>
         </div>
       </div>
     </div>
@@ -260,18 +322,50 @@ exports[`LogEvent should render msg_created event 1`] = `
       class="evt"
     >
       <div
-        class="send_msg"
+        class="send_msg "
       >
-        <div>
-          <img
-            alt="Attachment"
-            src="http://temba.io/test.jpg"
-          />
-        </div>
         <div
-          class="msg_text"
+          class="profile_image"
         >
-          Hi there
+          <div
+            data-use-vue-component-wrap=""
+          >
+            <span
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow profile_icon"
+              data-passed-props="[object Object]"
+              data-v-a1936218=""
+            >
+              <svg
+                fill="none"
+                viewBox="0 0 40 40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                  fill="#3B414D"
+                />
+                <path
+                  class="primary"
+                  d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div>
+          <div>
+            <img
+              alt="Attachment"
+              src="http://temba.io/test.jpg"
+            />
+          </div>
+          <div
+            class="msg_text"
+          >
+            Hi there
+          </div>
         </div>
       </div>
     </div>
@@ -286,18 +380,20 @@ exports[`LogEvent should render msg_received event 1`] = `
       class="evt"
     >
       <div
-        class="msg_received"
+        class="msg_received "
       >
         <div>
-          <img
-            alt="Attachment"
-            src="http://temba.io/test.jpg"
-          />
-        </div>
-        <div
-          class="msg_text"
-        >
-          Thanks for getting in touch
+          <div>
+            <img
+              alt="Attachment"
+              src="http://temba.io/test.jpg"
+            />
+          </div>
+          <div
+            class="msg_text"
+          >
+            Thanks for getting in touch
+          </div>
         </div>
       </div>
     </div>
@@ -312,7 +408,7 @@ exports[`LogEvent should render msg_wait event 1`] = `
       class="evt"
     >
       <div
-        class="info"
+        class="info "
       >
         <span>
           Waiting for reply
@@ -330,7 +426,7 @@ exports[`LogEvent should render resthook_called event 1`] = `
       class="evt"
     >
       <div
-        class="info"
+        class="info "
       >
         <span>
           Triggered flow event "new-registration"
@@ -348,7 +444,7 @@ exports[`LogEvent should render run_result_changed event 1`] = `
       class="evt"
     >
       <div
-        class="info"
+        class="info "
       >
         <span>
           Set result "Response 1" to "yes"
@@ -365,18 +461,16 @@ exports[`LogEvent should render service_called event 1`] = `
     <div
       class="evt"
     >
-      <div>
+      <div
+        class="has_detail"
+      >
         <div
-          class="has_detail"
+          class="info webhook "
         >
-          <div
-            class="info webhook"
-          >
-            <span>
-              Called 
-              https://api.wit.ai/message?v=20170307&q=Hi+everybody
-            </span>
-          </div>
+          <span>
+            Called 
+            https://api.wit.ai/message?v=20170307&q=Hi+everybody
+          </span>
         </div>
       </div>
     </div>
@@ -394,7 +488,7 @@ exports[`LogEvent should render ticket_opened event 1`] = `
       class="evt"
     >
       <div
-        class="info"
+        class="info "
       >
         <span>
           Ticket opened with topic "Support"
