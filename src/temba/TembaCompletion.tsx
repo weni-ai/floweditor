@@ -192,6 +192,10 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
   private handleSearch(event: string) {
     if (!event || !event.trim()) {
       this.setState({ showCompletionsMenu: false, options: [] });
+
+      if (this.props.onInput) {
+        this.props.onInput(event);
+      }
       return;
     }
 
