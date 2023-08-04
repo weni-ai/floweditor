@@ -11,7 +11,7 @@ import {
   fireUnnnicInputChangeText,
   fireUnnnicSelect
 } from 'test/utils';
-import { act } from '@testing-library/react';
+import { act, wait } from '@testing-library/react';
 
 const externalServiceAsset = require('test/assets/external_services.json');
 
@@ -29,6 +29,8 @@ describe(ExternalServiceRouterForm.name, () => {
         rendered = render(<ExternalServiceRouterForm {...externalServiceForm} />);
         return undefined;
       });
+
+      await wait();
       expect(rendered.baseElement).toMatchSnapshot();
     });
   });
@@ -45,6 +47,8 @@ describe(ExternalServiceRouterForm.name, () => {
         rendered = render(<ExternalServiceRouterForm {...externalServiceForm} />);
         return undefined;
       });
+
+      await wait();
 
       expect(rendered.baseElement).toMatchSnapshot();
 
