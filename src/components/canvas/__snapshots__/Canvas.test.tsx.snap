@@ -2,6 +2,83 @@
 
 exports[`Canvas adjusts the height when updating dimensions 1`] = `
 <body>
+  <div
+    id="get-started-modal"
+  >
+    <div
+      data-use-vue-component-wrap=""
+      style="position: relative; z-index: 1000;"
+    >
+      <div
+        class="unnnic-modal type-alert show-actions-area"
+        data-passed-props="[object Object]"
+        data-v-73d9abf1=""
+      >
+        <div
+          class="container"
+          data-v-73d9abf1=""
+        >
+          <!---->
+          <div
+            class="content"
+            data-v-73d9abf1=""
+          >
+            <!---->
+            <div
+              class="title"
+              data-v-73d9abf1=""
+            >
+              Let's get started
+            </div>
+            <div
+              class="description"
+              data-v-73d9abf1=""
+            >
+              We recommend starting your flow by sending a message. This message will be sent to anyone who joins your flow. This is your chance to send a message or ask a question.
+            </div>
+            <!---->
+            <div
+              class="actions"
+              data-v-73d9abf1=""
+            >
+              <button
+                class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                data-v-00f478da=""
+                data-v-73d9abf1=""
+              >
+                <!---->
+                <!---->
+                <!---->
+                <span
+                  class="unnnic-button__label"
+                  data-v-00f478da=""
+                >
+                   Later   
+                </span>
+                <!---->
+              </button>
+              <button
+                class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                data-v-00f478da=""
+                data-v-73d9abf1=""
+              >
+                <!---->
+                <!---->
+                <!---->
+                <span
+                  class="unnnic-button__label"
+                  data-v-00f478da=""
+                >
+                   Create message   
+                </span>
+                <!---->
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div>
     <div
       class="canvas_container"
@@ -10,6 +87,48 @@ exports[`Canvas adjusts the height when updating dimensions 1`] = `
       <div
         class="canvas_background"
       >
+        <div
+          class="sidebar"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            style="all: unset;"
+          >
+            <div
+              class="unnnic-tooltip"
+              data-passed-props="[object Object]"
+              data-v-0c4b479e=""
+            >
+              <div
+                __use_react_component_wrap=""
+                data-v-0c4b479e=""
+                style="all: unset;"
+              >
+                <div
+                  class="option"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      id="__vue_wrapper_container_6395351805897482"
+                    />
+                  </div>
+                </div>
+              </div>
+              <span
+                class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                data-v-0c4b479e=""
+              >
+                 Create block 
+                <br
+                  data-v-0c4b479e=""
+                />
+              </span>
+            </div>
+          </div>
+        </div>
         <div
           class="canvas"
           data-testid="canvas"
@@ -31,6 +150,83 @@ exports[`Canvas adjusts the height when updating dimensions 1`] = `
 
 exports[`Canvas initializes the height to the lowest draggable 1`] = `
 <body>
+  <div
+    id="get-started-modal"
+  >
+    <div
+      data-use-vue-component-wrap=""
+      style="position: relative; z-index: 1000;"
+    >
+      <div
+        class="unnnic-modal type-alert show-actions-area"
+        data-passed-props="[object Object]"
+        data-v-73d9abf1=""
+      >
+        <div
+          class="container"
+          data-v-73d9abf1=""
+        >
+          <!---->
+          <div
+            class="content"
+            data-v-73d9abf1=""
+          >
+            <!---->
+            <div
+              class="title"
+              data-v-73d9abf1=""
+            >
+              Let's get started
+            </div>
+            <div
+              class="description"
+              data-v-73d9abf1=""
+            >
+              We recommend starting your flow by sending a message. This message will be sent to anyone who joins your flow. This is your chance to send a message or ask a question.
+            </div>
+            <!---->
+            <div
+              class="actions"
+              data-v-73d9abf1=""
+            >
+              <button
+                class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                data-v-00f478da=""
+                data-v-73d9abf1=""
+              >
+                <!---->
+                <!---->
+                <!---->
+                <span
+                  class="unnnic-button__label"
+                  data-v-00f478da=""
+                >
+                   Later   
+                </span>
+                <!---->
+              </button>
+              <button
+                class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                data-v-00f478da=""
+                data-v-73d9abf1=""
+              >
+                <!---->
+                <!---->
+                <!---->
+                <span
+                  class="unnnic-button__label"
+                  data-v-00f478da=""
+                >
+                   Create message   
+                </span>
+                <!---->
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div>
     <div
       class="canvas_container"
@@ -39,6 +235,48 @@ exports[`Canvas initializes the height to the lowest draggable 1`] = `
       <div
         class="canvas_background"
       >
+        <div
+          class="sidebar"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            style="all: unset;"
+          >
+            <div
+              class="unnnic-tooltip"
+              data-passed-props="[object Object]"
+              data-v-0c4b479e=""
+            >
+              <div
+                __use_react_component_wrap=""
+                data-v-0c4b479e=""
+                style="all: unset;"
+              >
+                <div
+                  class="option"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      id="__vue_wrapper_container_7435376777739029"
+                    />
+                  </div>
+                </div>
+              </div>
+              <span
+                class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                data-v-0c4b479e=""
+              >
+                 Create block 
+                <br
+                  data-v-0c4b479e=""
+                />
+              </span>
+            </div>
+          </div>
+        </div>
         <div
           class="canvas"
           data-testid="canvas"
@@ -77,12 +315,131 @@ exports[`Canvas render default 1`] = `
         class="canvas_background"
       >
         <div
+          class="sidebar"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            style="all: unset;"
+          >
+            <div
+              class="unnnic-tooltip"
+              data-passed-props="[object Object]"
+              data-v-0c4b479e=""
+            >
+              <div
+                __use_react_component_wrap=""
+                data-v-0c4b479e=""
+                style="all: unset;"
+              >
+                <div
+                  class="option"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      id="__vue_wrapper_container_13062796432911639"
+                    />
+                  </div>
+                </div>
+              </div>
+              <span
+                class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                data-v-0c4b479e=""
+              >
+                 Create block 
+                <br
+                  data-v-0c4b479e=""
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
           class="canvas"
           data-testid="canvas"
           id="canvas"
           style="height: 0px;"
         >
           <div />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    id="get-started-modal"
+  >
+    <div
+      data-use-vue-component-wrap=""
+      style="position: relative; z-index: 1000;"
+    >
+      <div
+        class="unnnic-modal type-alert show-actions-area"
+        data-passed-props="[object Object]"
+        data-v-73d9abf1=""
+      >
+        <div
+          class="container"
+          data-v-73d9abf1=""
+        >
+          <!---->
+          <div
+            class="content"
+            data-v-73d9abf1=""
+          >
+            <!---->
+            <div
+              class="title"
+              data-v-73d9abf1=""
+            >
+              Let's get started
+            </div>
+            <div
+              class="description"
+              data-v-73d9abf1=""
+            >
+              We recommend starting your flow by sending a message. This message will be sent to anyone who joins your flow. This is your chance to send a message or ask a question.
+            </div>
+            <!---->
+            <div
+              class="actions"
+              data-v-73d9abf1=""
+            >
+              <button
+                class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                data-v-00f478da=""
+                data-v-73d9abf1=""
+              >
+                <!---->
+                <!---->
+                <!---->
+                <span
+                  class="unnnic-button__label"
+                  data-v-00f478da=""
+                >
+                   Later   
+                </span>
+                <!---->
+              </button>
+              <button
+                class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                data-v-00f478da=""
+                data-v-73d9abf1=""
+              >
+                <!---->
+                <!---->
+                <!---->
+                <span
+                  class="unnnic-button__label"
+                  data-v-00f478da=""
+                >
+                   Create message   
+                </span>
+                <!---->
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

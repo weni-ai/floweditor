@@ -39,7 +39,7 @@ exports[`StartSessionForm render should render 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_type"
                 data-v-4e186498=""
@@ -63,13 +63,13 @@ exports[`StartSessionForm render should render 1`] = `
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Buscar por"
-                      size="29"
+                      placeholder="Start somebody else in a flow"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
@@ -394,7 +394,7 @@ exports[`StartSessionForm render should render 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_flow"
                 data-v-4e186498=""
@@ -418,13 +418,13 @@ exports[`StartSessionForm render should render 1`] = `
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Select the flow to start"
-                      size="13"
+                      placeholder="Flow to Start"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
@@ -692,7 +692,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_type"
                 data-v-4e186498=""
@@ -716,13 +716,13 @@ exports[`StartSessionForm render should render contact query 1`] = `
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Buscar por"
-                      size="29"
+                      placeholder="Start somebody else in a flow"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
@@ -902,7 +902,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_flow"
                 data-v-4e186498=""
@@ -926,13 +926,13 @@ exports[`StartSessionForm render should render contact query 1`] = `
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Select the flow to start"
-                      size="13"
+                      placeholder="Flow to Start"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
@@ -1078,7 +1078,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_type"
                 data-v-4e186498=""
@@ -1102,13 +1102,13 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Buscar por"
-                      size="29"
+                      placeholder="Start somebody else in a flow"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
@@ -1237,7 +1237,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_flow"
                 data-v-4e186498=""
@@ -1261,13 +1261,13 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Select the flow to start"
-                      size="13"
+                      placeholder="Flow to Start"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
@@ -1535,7 +1535,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_type"
                 data-v-4e186498=""
@@ -1559,13 +1559,13 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Buscar por"
-                      size="29"
+                      placeholder="Start somebody else in a flow"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
@@ -1745,7 +1745,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_flow"
                 data-v-4e186498=""
@@ -1769,13 +1769,13 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Select the flow to start"
-                      size="13"
+                      placeholder="Flow to Start"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >

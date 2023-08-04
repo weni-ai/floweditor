@@ -179,7 +179,7 @@ exports[`ResultRouterForm should render 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_type"
                 data-v-4e186498=""
@@ -203,13 +203,13 @@ exports[`ResultRouterForm should render 1`] = `
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Buscar por"
-                      size="29"
+                      placeholder="Split by a result in the flow"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
@@ -881,7 +881,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_type"
                 data-v-4e186498=""
@@ -905,13 +905,13 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Buscar por"
-                      size="29"
+                      placeholder="Split by a result in the flow"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >

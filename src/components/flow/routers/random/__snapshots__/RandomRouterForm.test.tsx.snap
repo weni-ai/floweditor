@@ -252,7 +252,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_type"
                 data-v-4e186498=""
@@ -276,13 +276,13 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Buscar por"
-                      size="14"
+                      placeholder="Split randomly"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
@@ -723,7 +723,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-autocomplete-select"
+                class="unnnic-autocomplete-select bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_type"
                 data-v-4e186498=""
@@ -747,13 +747,13 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                       data-v-2d3b8b50=""
                       data-v-f03c53b0=""
                       iconleft="search-1"
-                      placeholder="Buscar por"
-                      size="14"
+                      placeholder="Split randomly"
+                      size="0"
                       type="text"
                       v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >

@@ -105,7 +105,6 @@ exports[`Root render should render flow if passed a definition, language 1`] = `
       className="editor"
       data-spec="editor"
     >
-      <Connect(Sidebar) />
       <Connect(Flow) />
       <RevisionExplorer
         assetStore={null}
