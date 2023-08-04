@@ -5,7 +5,7 @@ exports[`SubflowRouterForm render should render 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -14,9 +14,10 @@ exports[`SubflowRouterForm render should render 1`] = `
       },
     }
   }
+  className="dialog"
   headerClass="enter_flow"
   tabs={Array []}
-  title="Enter a Flow"
+  title="Enter another flow"
 >
   <TypeList
     __className=""
@@ -32,7 +33,7 @@ exports[`SubflowRouterForm render should render 1`] = `
         "localizeableKeys": Array [
           "exits",
         ],
-        "name": "Enter a Flow",
+        "name": "Enter another flow",
         "type": "enter_flow",
       }
     }
@@ -53,11 +54,12 @@ exports[`SubflowRouterForm render should render 1`] = `
         },
       }
     }
-    name="Flow"
+    name="Flow to start"
     onChange={[Function]}
     placeholder="Select the flow to start"
     searchable={true}
     shouldExclude={[Function]}
+    showLabel={true}
   />
 </Dialog>
 `;
