@@ -5,7 +5,7 @@ exports[`ResponseRouterForm initializes case config 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -21,7 +21,7 @@ exports[`ResponseRouterForm initializes case config 1`] = `
     />
   }
   headerClass="wait_for_response"
-  title="Wait for Response"
+  title="Wait for response"
 >
   <TypeList
     __className=""
@@ -37,7 +37,7 @@ exports[`ResponseRouterForm initializes case config 1`] = `
           "categories",
           "cases",
         ],
-        "name": "Wait for Response",
+        "name": "Wait for response",
         "type": "wait_for_response",
         "visibility": Array [
           "messaging",
@@ -48,7 +48,7 @@ exports[`ResponseRouterForm initializes case config 1`] = `
     onChange={[MockFunction]}
   />
   <div>
-    If the message response...
+    If the message response
   </div>
   <CaseList
     cases={
@@ -85,22 +85,10 @@ exports[`ResponseRouterForm initializes case config 1`] = `
     onCasesUpdated={[Function]}
   />
   <OptionalTextInput
-    helpText={
-      <Trans
-        i18nKey="forms.result_name_help"
-        values={
-          Object {
-            "resultFormat": "@results",
-          }
-        }
-      >
-        By naming the result, you can reference it later using [[resultFormat]]
-      </Trans>
-    }
     maxLength={64}
-    name="Result Name"
+    name="Save as result"
     onChange={[Function]}
-    toggleText="Save as.."
+    toggleText="Save as"
     value={
       Object {
         "value": "",
@@ -115,7 +103,7 @@ exports[`ResponseRouterForm should render 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -131,7 +119,7 @@ exports[`ResponseRouterForm should render 1`] = `
     />
   }
   headerClass="wait_for_response"
-  title="Wait for Response"
+  title="Wait for response"
 >
   <TypeList
     __className=""
@@ -147,7 +135,7 @@ exports[`ResponseRouterForm should render 1`] = `
           "categories",
           "cases",
         ],
-        "name": "Wait for Response",
+        "name": "Wait for response",
         "type": "wait_for_response",
         "visibility": Array [
           "messaging",
@@ -158,7 +146,7 @@ exports[`ResponseRouterForm should render 1`] = `
     onChange={[MockFunction]}
   />
   <div>
-    If the message response...
+    If the message response
   </div>
   <CaseList
     cases={
@@ -182,22 +170,10 @@ exports[`ResponseRouterForm should render 1`] = `
     onCasesUpdated={[Function]}
   />
   <OptionalTextInput
-    helpText={
-      <Trans
-        i18nKey="forms.result_name_help"
-        values={
-          Object {
-            "resultFormat": "@results",
-          }
-        }
-      >
-        By naming the result, you can reference it later using [[resultFormat]]
-      </Trans>
-    }
     maxLength={64}
-    name="Result Name"
+    name="Save as result"
     onChange={[Function]}
-    toggleText="Save as.."
+    toggleText="Save as"
     value={
       Object {
         "value": "",
