@@ -5,7 +5,7 @@ exports[`AddLabelsForm render should render a base action 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -14,8 +14,9 @@ exports[`AddLabelsForm render should render a base action 1`] = `
       },
     }
   }
+  className="dialog"
   headerClass="add_input_labels"
-  title="Add Labels"
+  title="Add label"
 >
   <TypeList
     __className=""
@@ -24,7 +25,7 @@ exports[`AddLabelsForm render should render a base action 1`] = `
         "component": [Function],
         "description": "Label the incoming message",
         "form": [Function],
-        "name": "Add Labels",
+        "name": "Add label",
         "type": "add_input_labels",
         "visibility": Array [
           "messaging",
@@ -35,15 +36,6 @@ exports[`AddLabelsForm render should render a base action 1`] = `
     }
     onChange={[MockFunction]}
   />
-  <p
-    data-spec="label"
-  >
-    <Trans
-      i18nKey="forms.add_labels_summary"
-    >
-      Select the labels to apply to the incoming message.
-    </Trans>
-  </p>
   <AssetSelector
     assets={
       Object {
@@ -52,7 +44,7 @@ exports[`AddLabelsForm render should render a base action 1`] = `
       }
     }
     createAssetFromInput={[Function]}
-    createPrefix="Create Label: "
+    createPrefix="Create label: "
     entry={
       Object {
         "value": Array [
@@ -70,10 +62,12 @@ exports[`AddLabelsForm render should render a base action 1`] = `
     expressions={true}
     multi={true}
     name="Labels"
+    namePure="Select the labels to apply to the incoming message"
     onAssetCreated={[Function]}
     onChange={[Function]}
     placeholder="Enter the name of an existing label or create a new one"
     searchable={true}
+    showLabel={true}
   />
 </Dialog>
 `;

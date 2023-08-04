@@ -91,7 +91,8 @@ export default class AddLabelsForm extends React.PureComponent<
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
 
         <AssetSelector
-          name={i18n.t(
+          name={i18n.t('forms.labels', 'Labels')}
+          namePure={i18n.t(
             'forms.add_labels_summary',
             'Select the labels to apply to the incoming message'
           )}

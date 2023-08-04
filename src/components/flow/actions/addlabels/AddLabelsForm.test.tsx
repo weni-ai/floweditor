@@ -1,7 +1,13 @@
 import { ActionFormProps } from 'components/flow/props';
 import React from 'react';
 import { AssetType, RenderNode } from 'store/flowContext';
-import { fireEvent, render, fireChangeText, fireTembaSelect, getCallParams } from 'test/utils';
+import {
+  fireEvent,
+  render,
+  fireChangeText,
+  fireUnnnicAutocompleteSelect,
+  getCallParams
+} from 'test/utils';
 import { composeComponentTestUtils, mock } from 'testUtils';
 import {
   createAddLabelsAction,
@@ -27,7 +33,7 @@ describe(AddLabelsForm.name, () => {
     it('allows expressions', () => {
       const props = getActionFormProps(createStartSessionAction());
       const { baseElement, getByText, getByTestId } = render(<AddLabelsForm {...props} />);
-      fireTembaSelect(getByTestId('temba_select_labels'), [
+      fireUnnnicAutocompleteSelect(getByTestId('temba_select_labels'), [
         {
           name: '@result.my_expression',
           expression: true
@@ -37,7 +43,7 @@ describe(AddLabelsForm.name, () => {
       expect(baseElement).toMatchSnapshot();
 
       // save our action
-      fireEvent.click(getByText('Ok'));
+      fireEvent.click(getByText('Confirm'));
       expect(props.updateAction).toHaveBeenCalled();
       expect(props.updateAction).toMatchCallSnapshot();
 
