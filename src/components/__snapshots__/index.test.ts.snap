@@ -7,6 +7,7 @@ Array [
     "attachments": "/assets/attachments.json",
     "channels": "/assets/channels.json",
     "classifiers": "/assets/classifiers.json",
+    "completion": "/assets/completion.json",
     "editor": "/flow/editor",
     "environment": "/assets/environment.json",
     "external_services": "/assets/external_services.json",
@@ -104,6 +105,7 @@ exports[`Root render should render flow if passed a definition, language 1`] = `
       className="editor"
       data-spec="editor"
     >
+      <Connect(Sidebar) />
       <Connect(Flow) />
       <RevisionExplorer
         assetStore={null}
