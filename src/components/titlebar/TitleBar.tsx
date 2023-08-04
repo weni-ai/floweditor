@@ -79,6 +79,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
 
     ReactDOM.render(
       <UnnnicModalNext
+        data-testid={confirmRemovalSpecId}
         type="alert"
         icon="alert-circle-1"
         scheme="feedback-yellow"
@@ -133,7 +134,6 @@ export default class TitleBar extends React.Component<TitleBarProps> {
             icon="arrow-button-up-1"
             size="xs"
             scheme="neutral-darkest"
-            data-testid={removeIconSpecId}
           />
         </div>
       );
@@ -155,12 +155,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
         )}
         data-testid={removeIconSpecId}
       >
-        <UnnnicIcon
-          icon="close-1"
-          size="xs"
-          scheme="neutral-darkest"
-          data-testid={removeIconSpecId}
-        />
+        <UnnnicIcon icon="close-1" size="xs" scheme="neutral-darkest" />
       </div>
     );
 
