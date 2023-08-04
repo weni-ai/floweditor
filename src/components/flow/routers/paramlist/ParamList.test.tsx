@@ -1,6 +1,6 @@
 import ParamList from 'components/flow/routers/paramlist/ParamList';
 import React from 'react';
-import { fireEvent, fireChangeText, render } from 'test/utils';
+import { fireEvent, fireChangeText, render, fireUnnnicInputChangeText, act } from 'test/utils';
 import { mock } from 'testUtils';
 import * as utils from 'utils';
 
@@ -67,13 +67,15 @@ describe(ParamList.name, () => {
       expect(queryByTestId(removeParam)).toBeNull();
     });
 
-    it('should update params and call the callback', () => {
+    it('should update params and call the callback', async () => {
       const onParamsUpdated = jest.fn();
       const { baseElement, getByTestId } = render(
         <ParamList availableParams={sampleParams} params={[]} onParamsUpdated={onParamsUpdated} />
       );
 
-      fireChangeText(getByTestId('Service Call Param Data'), 'data 1');
+      await act(async () => {
+        fireUnnnicInputChangeText(getByTestId('Service Call Param Data'), 'data 1');
+      });
 
       expect(onParamsUpdated).toHaveBeenCalled();
       expect(baseElement).toMatchSnapshot();
