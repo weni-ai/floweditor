@@ -47,7 +47,7 @@ exports[`GroupsRouterForm render should render 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -57,7 +57,7 @@ exports[`GroupsRouterForm render should render 1`] = `
     }
   }
   headerClass="split_by_groups"
-  title="Split by Group Membership"
+  title="Split by group membership"
 >
   <TypeList
     __className=""
@@ -69,15 +69,12 @@ exports[`GroupsRouterForm render should render 1`] = `
         "localizeableKeys": Array [
           "exits",
         ],
-        "name": "Split by Group Membership",
+        "name": "Split by group membership",
         "type": "split_by_groups",
       }
     }
     onChange={[MockFunction]}
   />
-  <p>
-    Select the groups you'd like to split by below
-  </p>
   <AssetSelector
     entry={
       Object {
@@ -110,27 +107,17 @@ exports[`GroupsRouterForm render should render 1`] = `
       }
     }
     multi={true}
-    name="Groups"
+    name="Select the groups you'd like to split by below"
+    namePure="Groups"
     onChange={[Function]}
     searchable={true}
+    showLabel={true}
   />
   <OptionalTextInput
-    helpText={
-      <Trans
-        i18nKey="forms.result_name_help"
-        values={
-          Object {
-            "resultFormat": "@results",
-          }
-        }
-      >
-        By naming the result, you can reference it later using [[resultFormat]]
-      </Trans>
-    }
     maxLength={64}
-    name="Result Name"
+    name="Save as result"
     onChange={[Function]}
-    toggleText="Save as.."
+    toggleText="Save as"
     value={
       Object {
         "value": "",
