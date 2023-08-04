@@ -41,26 +41,27 @@ exports[`UpdateContactForm should render channel 1`] = `
               <div
                 class="unnnic-autocomplete-select"
                 data-passed-props="[object Object]"
-                data-v-524d1e60=""
+                data-testid="temba_select_type"
+                data-v-4e186498=""
               >
                 <div
                   class="unnnic-form sm"
-                  data-v-524d1e60=""
-                  data-v-9ef23630=""
+                  data-v-48c0c241=""
+                  data-v-4e186498=""
                 >
                   <!---->
                   <div
                     class="unnnic-form-input"
-                    data-v-8d0754d6=""
-                    data-v-9ef23630=""
+                    data-v-2d3b8b50=""
+                    data-v-48c0c241=""
                     mask=""
                     style="position: relative;"
                     v-bind="[object Object]"
                   >
                     <input
                       class="input size-sm normal has-icon-left"
-                      data-v-8d0754d6=""
-                      data-v-a95503a2=""
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
                       iconleft="search-1"
                       placeholder="Buscar por"
                       size="18"
@@ -69,7 +70,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                     />
                     <span
                       class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
-                      data-v-8d0754d6=""
+                      data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
                       <svg
@@ -108,26 +109,27 @@ exports[`UpdateContactForm should render channel 1`] = `
             <div
               class="unnnic-autocomplete-select"
               data-passed-props="[object Object]"
-              data-v-524d1e60=""
+              data-testid="temba_select_select_what_to_update"
+              data-v-4e186498=""
             >
               <div
                 class="unnnic-form sm"
-                data-v-524d1e60=""
-                data-v-9ef23630=""
+                data-v-48c0c241=""
+                data-v-4e186498=""
               >
                 <!---->
                 <div
                   class="unnnic-form-input"
-                  data-v-8d0754d6=""
-                  data-v-9ef23630=""
+                  data-v-2d3b8b50=""
+                  data-v-48c0c241=""
                   mask=""
                   style="position: relative;"
                   v-bind="[object Object]"
                 >
                   <input
                     class="input size-sm normal has-icon-right"
-                    data-v-8d0754d6=""
-                    data-v-a95503a2=""
+                    data-v-2d3b8b50=""
+                    data-v-f03c53b0=""
                     iconright="keyboard-return-1"
                     placeholder="Select existing select what to update or enter a new one"
                     size="7"
@@ -137,7 +139,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <!---->
                   <span
                     class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
-                    data-v-8d0754d6=""
+                    data-v-2d3b8b50=""
                     data-v-a1936218=""
                   >
                     <svg
@@ -171,7 +173,7 @@ exports[`UpdateContactForm should render channel 1`] = `
             <div
               class="label u font secondary body-md color-neutral-cloudy"
             >
-              Select the channel to use for this contact
+              Channel
             </div>
             <div
               data-use-vue-component-wrap=""
@@ -180,26 +182,27 @@ exports[`UpdateContactForm should render channel 1`] = `
               <div
                 class="unnnic-autocomplete-select"
                 data-passed-props="[object Object]"
-                data-v-524d1e60=""
+                data-testid="temba_select_channel"
+                data-v-4e186498=""
               >
                 <div
                   class="unnnic-form sm"
-                  data-v-524d1e60=""
-                  data-v-9ef23630=""
+                  data-v-48c0c241=""
+                  data-v-4e186498=""
                 >
                   <!---->
                   <div
                     class="unnnic-form-input"
-                    data-v-8d0754d6=""
-                    data-v-9ef23630=""
+                    data-v-2d3b8b50=""
+                    data-v-48c0c241=""
                     mask=""
                     style="position: relative;"
                     v-bind="[object Object]"
                   >
                     <input
                       class="input size-sm normal has-icon-left"
-                      data-v-8d0754d6=""
-                      data-v-a95503a2=""
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
                       iconleft="search-1"
                       placeholder="Select the channel to use for this contact"
                       size="14"
@@ -208,7 +211,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                     />
                     <span
                       class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
-                      data-v-8d0754d6=""
+                      data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
                       <svg
@@ -337,26 +340,27 @@ exports[`UpdateContactForm should render field 1`] = `
               <div
                 class="unnnic-autocomplete-select"
                 data-passed-props="[object Object]"
-                data-v-524d1e60=""
+                data-testid="temba_select_type"
+                data-v-4e186498=""
               >
                 <div
                   class="unnnic-form sm"
-                  data-v-524d1e60=""
-                  data-v-9ef23630=""
+                  data-v-48c0c241=""
+                  data-v-4e186498=""
                 >
                   <!---->
                   <div
                     class="unnnic-form-input"
-                    data-v-8d0754d6=""
-                    data-v-9ef23630=""
+                    data-v-2d3b8b50=""
+                    data-v-48c0c241=""
                     mask=""
                     style="position: relative;"
                     v-bind="[object Object]"
                   >
                     <input
                       class="input size-sm normal has-icon-left"
-                      data-v-8d0754d6=""
-                      data-v-a95503a2=""
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
                       iconleft="search-1"
                       placeholder="Buscar por"
                       size="18"
@@ -365,7 +369,7 @@ exports[`UpdateContactForm should render field 1`] = `
                     />
                     <span
                       class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
-                      data-v-8d0754d6=""
+                      data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
                       <svg
@@ -404,26 +408,27 @@ exports[`UpdateContactForm should render field 1`] = `
             <div
               class="unnnic-autocomplete-select"
               data-passed-props="[object Object]"
-              data-v-524d1e60=""
+              data-testid="temba_select_select_what_to_update"
+              data-v-4e186498=""
             >
               <div
                 class="unnnic-form sm"
-                data-v-524d1e60=""
-                data-v-9ef23630=""
+                data-v-48c0c241=""
+                data-v-4e186498=""
               >
                 <!---->
                 <div
                   class="unnnic-form-input"
-                  data-v-8d0754d6=""
-                  data-v-9ef23630=""
+                  data-v-2d3b8b50=""
+                  data-v-48c0c241=""
                   mask=""
                   style="position: relative;"
                   v-bind="[object Object]"
                 >
                   <input
                     class="input size-sm normal has-icon-right"
-                    data-v-8d0754d6=""
-                    data-v-a95503a2=""
+                    data-v-2d3b8b50=""
+                    data-v-f03c53b0=""
                     iconright="keyboard-return-1"
                     placeholder="Select existing select what to update or enter a new one"
                     size="3"
@@ -433,7 +438,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <!---->
                   <span
                     class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
-                    data-v-8d0754d6=""
+                    data-v-2d3b8b50=""
                     data-v-a1936218=""
                   >
                     <svg
@@ -461,46 +466,48 @@ exports[`UpdateContactForm should render field 1`] = `
         <div
           class="value"
         >
+          <span
+            class="label"
+          >
+            Field Value
+          </span>
           <div
             data-use-vue-component-wrap=""
             style="all: unset;"
           >
             <div
-              class="unnnic-autocomplete"
+              class="unnnic-autocomplete-select completionInput"
               data-passed-props="[object Object]"
+              data-testid="Field Value"
+              data-v-4e186498=""
             >
-              <p
-                class="unnnic-form__label"
-              >
-                 Field Value 
-              </p>
               <div
-                data-v-8d0754d6=""
-                style="position: relative;"
-                tooltip-side-icon-right="right"
-                v-bind="[object Object]"
+                class="unnnic-form sm"
+                data-v-48c0c241=""
+                data-v-4e186498=""
               >
-                <input
-                  class="input size-sm normal"
-                  data-passed-props="[object Object]"
-                  data-v-8d0754d6=""
-                  data-v-a95503a2=""
-                  placeholder=""
-                  size="0"
-                  tooltip-side-icon-right="right"
-                  type="text"
-                  v-bind="[object Object]"
-                />
                 <!---->
-                <!---->
-              </div>
-              <div
-                class="unnnic-autocomplete__container-list"
-                style="display: none;"
-              >
                 <div
-                  class="unnnic-autocomplete__list unnnic-autocomplete__list--size-sm"
-                />
+                  class="unnnic-form-input"
+                  data-v-2d3b8b50=""
+                  data-v-48c0c241=""
+                  mask=""
+                  style="position: relative;"
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input size-sm normal"
+                    data-v-2d3b8b50=""
+                    data-v-f03c53b0=""
+                    placeholder=""
+                    size="0"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
+                <!---->
               </div>
               <!---->
             </div>
@@ -611,26 +618,27 @@ exports[`UpdateContactForm should render language 1`] = `
               <div
                 class="unnnic-autocomplete-select"
                 data-passed-props="[object Object]"
-                data-v-524d1e60=""
+                data-testid="temba_select_type"
+                data-v-4e186498=""
               >
                 <div
                   class="unnnic-form sm"
-                  data-v-524d1e60=""
-                  data-v-9ef23630=""
+                  data-v-48c0c241=""
+                  data-v-4e186498=""
                 >
                   <!---->
                   <div
                     class="unnnic-form-input"
-                    data-v-8d0754d6=""
-                    data-v-9ef23630=""
+                    data-v-2d3b8b50=""
+                    data-v-48c0c241=""
                     mask=""
                     style="position: relative;"
                     v-bind="[object Object]"
                   >
                     <input
                       class="input size-sm normal has-icon-left"
-                      data-v-8d0754d6=""
-                      data-v-a95503a2=""
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
                       iconleft="search-1"
                       placeholder="Buscar por"
                       size="18"
@@ -639,7 +647,7 @@ exports[`UpdateContactForm should render language 1`] = `
                     />
                     <span
                       class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
-                      data-v-8d0754d6=""
+                      data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
                       <svg
@@ -678,26 +686,27 @@ exports[`UpdateContactForm should render language 1`] = `
             <div
               class="unnnic-autocomplete-select"
               data-passed-props="[object Object]"
-              data-v-524d1e60=""
+              data-testid="temba_select_select_what_to_update"
+              data-v-4e186498=""
             >
               <div
                 class="unnnic-form sm"
-                data-v-524d1e60=""
-                data-v-9ef23630=""
+                data-v-48c0c241=""
+                data-v-4e186498=""
               >
                 <!---->
                 <div
                   class="unnnic-form-input"
-                  data-v-8d0754d6=""
-                  data-v-9ef23630=""
+                  data-v-2d3b8b50=""
+                  data-v-48c0c241=""
                   mask=""
                   style="position: relative;"
                   v-bind="[object Object]"
                 >
                   <input
                     class="input size-sm normal has-icon-right"
-                    data-v-8d0754d6=""
-                    data-v-a95503a2=""
+                    data-v-2d3b8b50=""
+                    data-v-f03c53b0=""
                     iconright="keyboard-return-1"
                     placeholder="Select existing select what to update or enter a new one"
                     size="8"
@@ -707,7 +716,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <!---->
                   <span
                     class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
-                    data-v-8d0754d6=""
+                    data-v-2d3b8b50=""
                     data-v-a1936218=""
                   >
                     <svg
@@ -741,7 +750,7 @@ exports[`UpdateContactForm should render language 1`] = `
             <div
               class="label u font secondary body-md color-neutral-cloudy"
             >
-              Select the language to use for this contact
+              Language
             </div>
             <div
               data-use-vue-component-wrap=""
@@ -750,6 +759,7 @@ exports[`UpdateContactForm should render language 1`] = `
               <div
                 class="unnnic-select"
                 data-passed-props="[object Object]"
+                data-testid="temba_select_language"
               >
                 <!---->
                 <span
@@ -757,15 +767,15 @@ exports[`UpdateContactForm should render language 1`] = `
                   data-v-6fe2671f=""
                 >
                   <div
+                    data-v-2d3b8b50=""
                     data-v-6fe2671f=""
-                    data-v-8d0754d6=""
                     readonly="readonly"
                     style="position: relative;"
                   >
                     <input
                       class="input size-sm normal has-icon-right"
-                      data-v-8d0754d6=""
-                      data-v-a95503a2=""
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
                       iconright="arrow-button-down-1"
                       iconrightclickable="true"
                       placeholder="Select the language to use for this contact"
@@ -776,7 +786,7 @@ exports[`UpdateContactForm should render language 1`] = `
                     <!---->
                     <span
                       class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-cloudy"
-                      data-v-8d0754d6=""
+                      data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
                       <svg
@@ -920,26 +930,27 @@ exports[`UpdateContactForm should render name 1`] = `
               <div
                 class="unnnic-autocomplete-select"
                 data-passed-props="[object Object]"
-                data-v-524d1e60=""
+                data-testid="temba_select_type"
+                data-v-4e186498=""
               >
                 <div
                   class="unnnic-form sm"
-                  data-v-524d1e60=""
-                  data-v-9ef23630=""
+                  data-v-48c0c241=""
+                  data-v-4e186498=""
                 >
                   <!---->
                   <div
                     class="unnnic-form-input"
-                    data-v-8d0754d6=""
-                    data-v-9ef23630=""
+                    data-v-2d3b8b50=""
+                    data-v-48c0c241=""
                     mask=""
                     style="position: relative;"
                     v-bind="[object Object]"
                   >
                     <input
                       class="input size-sm normal has-icon-left"
-                      data-v-8d0754d6=""
-                      data-v-a95503a2=""
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
                       iconleft="search-1"
                       placeholder="Buscar por"
                       size="18"
@@ -948,7 +959,7 @@ exports[`UpdateContactForm should render name 1`] = `
                     />
                     <span
                       class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
-                      data-v-8d0754d6=""
+                      data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
                       <svg
@@ -987,26 +998,27 @@ exports[`UpdateContactForm should render name 1`] = `
             <div
               class="unnnic-autocomplete-select"
               data-passed-props="[object Object]"
-              data-v-524d1e60=""
+              data-testid="temba_select_select_what_to_update"
+              data-v-4e186498=""
             >
               <div
                 class="unnnic-form sm"
-                data-v-524d1e60=""
-                data-v-9ef23630=""
+                data-v-48c0c241=""
+                data-v-4e186498=""
               >
                 <!---->
                 <div
                   class="unnnic-form-input"
-                  data-v-8d0754d6=""
-                  data-v-9ef23630=""
+                  data-v-2d3b8b50=""
+                  data-v-48c0c241=""
                   mask=""
                   style="position: relative;"
                   v-bind="[object Object]"
                 >
                   <input
                     class="input size-sm normal has-icon-right"
-                    data-v-8d0754d6=""
-                    data-v-a95503a2=""
+                    data-v-2d3b8b50=""
+                    data-v-f03c53b0=""
                     iconright="keyboard-return-1"
                     placeholder="Select existing select what to update or enter a new one"
                     size="4"
@@ -1016,7 +1028,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <!---->
                   <span
                     class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
-                    data-v-8d0754d6=""
+                    data-v-2d3b8b50=""
                     data-v-a1936218=""
                   >
                     <svg
@@ -1044,46 +1056,48 @@ exports[`UpdateContactForm should render name 1`] = `
         <div
           class="value"
         >
+          <span
+            class="label"
+          >
+            Enter a new contact name
+          </span>
           <div
             data-use-vue-component-wrap=""
             style="all: unset;"
           >
             <div
-              class="unnnic-autocomplete"
+              class="unnnic-autocomplete-select completionInput"
               data-passed-props="[object Object]"
+              data-testid="Enter a new contact name"
+              data-v-4e186498=""
             >
-              <p
-                class="unnnic-form__label"
-              >
-                 Enter a new contact name 
-              </p>
               <div
-                data-v-8d0754d6=""
-                style="position: relative;"
-                tooltip-side-icon-right="right"
-                v-bind="[object Object]"
+                class="unnnic-form sm"
+                data-v-48c0c241=""
+                data-v-4e186498=""
               >
-                <input
-                  class="input size-sm normal"
-                  data-passed-props="[object Object]"
-                  data-v-8d0754d6=""
-                  data-v-a95503a2=""
-                  placeholder="Enter a new contact name"
-                  size="0"
-                  tooltip-side-icon-right="right"
-                  type="text"
-                  v-bind="[object Object]"
-                />
                 <!---->
-                <!---->
-              </div>
-              <div
-                class="unnnic-autocomplete__container-list"
-                style="display: none;"
-              >
                 <div
-                  class="unnnic-autocomplete__list unnnic-autocomplete__list--size-sm"
-                />
+                  class="unnnic-form-input"
+                  data-v-2d3b8b50=""
+                  data-v-48c0c241=""
+                  mask=""
+                  style="position: relative;"
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input size-sm normal"
+                    data-v-2d3b8b50=""
+                    data-v-f03c53b0=""
+                    placeholder="Enter a new contact name"
+                    size="0"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
+                <!---->
               </div>
               <!---->
             </div>

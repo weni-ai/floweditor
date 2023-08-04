@@ -232,7 +232,8 @@ export default class UpdateContactForm extends React.Component<
       return (
         <AssetSelector
           key="select_channel"
-          name={i18n.t('forms.select_channel', 'Select the channel to use for this contact')}
+          name={i18n.t('forms.channel', 'Channel')}
+          namePure={i18n.t('forms.select_channel', 'Select the channel to use for this contact')}
           showLabel={true}
           placeholder={i18n.t('forms.select_channel', 'Select the channel to use for this contact')}
           assets={this.props.assetStore.channels}
@@ -248,7 +249,8 @@ export default class UpdateContactForm extends React.Component<
       return (
         <AssetSelector
           key="select_language"
-          name={i18n.t('forms.select_language', 'Select the language to use for this contact')}
+          name={i18n.t('forms.language', 'Language')}
+          namePure={i18n.t('forms.select_language', 'Select the language to use for this contact')}
           showLabel={true}
           placeholder={i18n.t(
             'forms.select_language',
