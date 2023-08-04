@@ -23,9 +23,16 @@ exports[`IssuesTab renders 1`] = `
             <div
               class="icon"
             >
-              <span
-                class="fe-warning"
-              />
+              <div
+                data-use-vue-component-wrap=""
+                style="all: unset;"
+              >
+                <span
+                  class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
+                  data-passed-props="[object Object]"
+                  data-v-a1936218=""
+                />
+              </div>
             </div>
             <div
               class="label"
@@ -35,7 +42,7 @@ exports[`IssuesTab renders 1`] = `
           </div>
         </div>
         <div
-          class="popped"
+          class="popped undefined"
           style="border-color: tomato; right: 0px; top: -100px;"
         >
           <div
@@ -89,9 +96,16 @@ exports[`IssuesTab renders missing dependencies 1`] = `
             <div
               class="icon"
             >
-              <span
-                class="fe-warning"
-              />
+              <div
+                data-use-vue-component-wrap=""
+                style="all: unset;"
+              >
+                <span
+                  class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
+                  data-passed-props="[object Object]"
+                  data-v-a1936218=""
+                />
+              </div>
             </div>
             <div
               class="label"
@@ -101,7 +115,7 @@ exports[`IssuesTab renders missing dependencies 1`] = `
           </div>
         </div>
         <div
-          class="popped"
+          class="popped undefined"
           style="border-color: tomato; right: 0px; top: -100px;"
         >
           <div
@@ -137,7 +151,7 @@ exports[`IssuesTab renders missing dependencies 1`] = `
                       <div
                         class="header"
                       >
-                        Send Message
+                        Send message
                         :
                       </div>
                        
@@ -164,7 +178,7 @@ exports[`IssuesTab renders missing dependencies 1`] = `
                       <div
                         class="header"
                       >
-                        Send Message
+                        Send message
                         :
                       </div>
                        
@@ -191,7 +205,7 @@ exports[`IssuesTab renders missing dependencies 1`] = `
                       <div
                         class="header"
                       >
-                        Send Message
+                        Send message
                         :
                       </div>
                        

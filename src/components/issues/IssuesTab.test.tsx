@@ -89,7 +89,7 @@ describe(IssuesTab.name, () => {
       />
     );
 
-    expect(getAllByText('Send Message:').length).toBe(3);
+    expect(getAllByText('Send message:').length).toBe(3);
 
     getByText('Flow Issues (3)');
 
