@@ -126,7 +126,7 @@ exports[`SendMsgForm render should render 1`] = `
                       },
                     ]
                   }
-                  placeholder="Add Attachment"
+                  placeholder="Select the file type"
                   style="sm"
                 />
               </div>
@@ -207,6 +207,7 @@ exports[`SendMsgForm render should render 1`] = `
     focus={true}
     name="Message"
     onChange={[Function]}
+    placeholder="Type here..."
     showLabel={true}
     textarea={true}
   />
