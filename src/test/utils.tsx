@@ -63,6 +63,10 @@ export const getUnnnicInputValue = (ele: any) => {
   return ele.querySelector('input').value;
 };
 
+export const getUnnnicSelectValue = (ele: any) => {
+  return ele.__vue__.value;
+};
+
 export const fireUnnnicSwitch = (ele: any) => {
   const icon = ele.querySelector('.unnnic-switch__icon');
 
