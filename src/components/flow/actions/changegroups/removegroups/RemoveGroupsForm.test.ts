@@ -43,7 +43,7 @@ describe(RemoveGroupsForm.name, () => {
       const instance: RemoveGroupsForm = components.instance;
       const props: Partial<ActionFormProps> = components.props;
 
-      instance.handleRemoveAllUpdate(true);
+      instance.handleRemoveAllUpdate('true');
       instance.handleSave();
 
       expect(props.updateAction).toHaveBeenCalled();
