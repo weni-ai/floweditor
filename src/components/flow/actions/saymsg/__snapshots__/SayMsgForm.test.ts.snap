@@ -15,7 +15,7 @@ exports[`SayMsgForm render should render 1`] = `
     }
   }
   headerClass="send_msg"
-  title="Send Message"
+  title="Send message"
 >
   <TypeList
     __className=""
@@ -31,7 +31,7 @@ exports[`SayMsgForm render should render 1`] = `
           "templating.variables",
         ],
         "massageForDisplay": [Function],
-        "name": "Send Message",
+        "name": "Send message",
         "type": "send_msg",
       }
     }
