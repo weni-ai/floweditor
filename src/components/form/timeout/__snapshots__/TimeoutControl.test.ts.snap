@@ -7,18 +7,23 @@ exports[`TimeoutControl handles initial values 1`] = `
   <div
     className="left_section"
   >
-    <CheckboxElement
-      checkboxClassName="checkbox"
+    <SwitchElement
       checked={true}
-      description="Continue when there is no response for"
       name="Timeout"
       onChange={[Function]}
+      size="small"
+      title="Continue when there is no response"
     />
   </div>
   <div
     className="drop_down"
   >
-    <TembaSelect
+    <p
+      className="timeout_label"
+    >
+      Wait for a response for:
+    </p>
+    <Connect(TembaSelect)
       name="Timeout"
       onChange={[Function]}
       options={
@@ -105,7 +110,7 @@ exports[`TimeoutControl handles initial values 1`] = `
           },
         ]
       }
-      style="small"
+      style="sm"
       value={
         Object {
           "name": "15 seconds",
@@ -124,12 +129,12 @@ exports[`TimeoutControl renders 1`] = `
   <div
     className="left_section"
   >
-    <CheckboxElement
-      checkboxClassName="checkbox"
+    <SwitchElement
       checked={false}
-      description="Continue when there is no response..."
       name="Timeout"
       onChange={[Function]}
+      size="small"
+      title="Continue when there is no response"
     />
   </div>
 </div>
