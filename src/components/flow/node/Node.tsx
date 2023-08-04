@@ -423,15 +423,8 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       nodeContainerStatusStyle = styles.missing;
     }
 
-    const isAction =
-      this.props.renderNode.node.actions && this.props.renderNode.node.actions.length;
-
     const body = (
-      <div
-        className={`${styles.node} ${styles[type]} ${nodeContainerStatusStyle} ${
-          isAction ? styles.large_node : ''
-        }`}
-      >
+      <div className={`${styles.node} ${styles[type]} ${nodeContainerStatusStyle}`}>
         {uuid}
         <Counter
           count={this.props.activeCount}

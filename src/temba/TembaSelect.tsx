@@ -429,6 +429,11 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     const isMultiComponent = !!this.props.multi;
     const hasErrors = this.props.errors && this.props.errors.length > 0;
 
+    const autocompletePlaceholder =
+      selectedArray.length > 0 ? this.getName(selectedArray[0]) : this.props.placeholder;
+
+    const isSearchableOnly = this.props.searchable && !isTagComponent && !isMultiComponent;
+
     let selectInput: any;
     if (!isTagComponent && !isMultiComponent && !this.props.searchable) {
       selectInput = (
@@ -458,6 +463,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
       selectInput = (
         <ElUnnnicAutocompleteSelect
           data-testid={`temba_select_${snakify(this.props.name)}`}
+          className={isSearchableOnly ? styles.bold_placeholder : ''}
           ref={(ele: any) => {
             this.selectInputRef = ele;
           }}
@@ -469,7 +475,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
             'tag-create': this.handleTagCreation,
             search: this.handleSearch
           }}
-          placeholder={this.props.placeholder}
+          placeholder={isSearchableOnly ? autocompletePlaceholder : this.props.placeholder}
           size={this.props.style || TembaSelectStyle.small}
           disabled={this.props.disabled}
           items={
@@ -488,7 +494,6 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
           multi={isMultiComponent}
           tag={isTagComponent && !this.state.showingExpressionsSelection}
           tagCreateLabel={this.props.createPrefix || ''}
-          showValue={!this.props.tags && !isMultiComponent}
           hasIconRight={isTagComponent}
           hasIconLeft={!isTagComponent}
           type={hasErrors ? 'error' : 'normal'}

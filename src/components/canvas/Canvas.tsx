@@ -3,6 +3,7 @@ import { CanvasDraggable, CanvasDraggableProps } from 'components/canvas/CanvasD
 import { getDraggablesInBox, reflow } from 'components/canvas/helpers';
 import { DRAG_THRESHOLD } from 'components/flow/Flow';
 import { Dimensions, FlowPosition } from 'flowTypes';
+import Sidebar from 'components/sidebar/Sidebar';
 import mutate from 'immutability-helper';
 import React from 'react';
 import { CanvasPositions, DragSelection } from 'store/editor';
@@ -185,7 +186,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   }
 
   private handleKeyDown(event: any): void {
-    if (this.state.selected && event.key === 'Backspace') {
+    if (this.state.selected && (event.key === 'Backspace' || event.key === 'Delete')) {
       const nodeUUIDs = Object.keys(this.state.selected);
       if (nodeUUIDs.length > 0) {
         this.props.onRemoveNodes(Object.keys(this.state.selected));
@@ -663,6 +664,8 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         onDoubleClick={this.handleDoubleClick}
       >
         <div className={styles.canvas_background}>
+          <Sidebar />
+
           <div
             data-testid="canvas"
             style={{ height: this.state.height }}
