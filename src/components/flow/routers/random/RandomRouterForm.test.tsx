@@ -73,8 +73,6 @@ describe(RandomRouterForm.name, () => {
     // we start off with five input boxes for our buckets plus 2 considering the select elements inputs
     expect(baseElement.querySelectorAll('input').length).toEqual(7);
 
-    debug();
-
     // choose 3 buckets
     await act(async () => {
       fireUnnnicSelect(getByTestId('temba_select_buckets'), { value: '3' }, 'value');
