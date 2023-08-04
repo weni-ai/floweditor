@@ -81,7 +81,7 @@ export const fireUnnnicSelect = (ele: any, value: any, valueKey: string) => {
   const result: any = { value: null };
   result.value = value[valueKey];
 
-  ele.__vue__.onSelectOption(result);
+  ele.__vue__.reactWrapperRef.vueRef.onSelectOption(result);
 };
 
 export const fireUnnnicAutocompleteSelect = (ele: any, value: any, valueKey: string) => {
