@@ -20,9 +20,16 @@ exports[`TranslatorTab finds email translations 1`] = `
             <div
               class="icon"
             >
-              <span
-                class="fe-language"
-              />
+              <div
+                data-use-vue-component-wrap=""
+                style="all: unset;"
+              >
+                <span
+                  class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
+                  data-passed-props="[object Object]"
+                  data-v-a1936218=""
+                />
+              </div>
             </div>
             <div
               class="label"
@@ -32,7 +39,7 @@ exports[`TranslatorTab finds email translations 1`] = `
           </div>
         </div>
         <div
-          class="popped"
+          class="popped undefined"
           style="border-color: #777; right: 0px; top: -100px;"
         >
           <div
@@ -64,7 +71,7 @@ exports[`TranslatorTab finds email translations 1`] = `
                   <div
                     class="type_name"
                   >
-                    Send Email
+                    Send email
                   </div>
                   <div
                     class="item"
@@ -197,9 +204,16 @@ exports[`TranslatorTab finds message translations 1`] = `
             <div
               class="icon"
             >
-              <span
-                class="fe-language"
-              />
+              <div
+                data-use-vue-component-wrap=""
+                style="all: unset;"
+              >
+                <span
+                  class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
+                  data-passed-props="[object Object]"
+                  data-v-a1936218=""
+                />
+              </div>
             </div>
             <div
               class="label"
@@ -209,7 +223,7 @@ exports[`TranslatorTab finds message translations 1`] = `
           </div>
         </div>
         <div
-          class="popped"
+          class="popped undefined"
           style="border-color: #777; right: 0px; top: -100px;"
         >
           <div
@@ -241,7 +255,7 @@ exports[`TranslatorTab finds message translations 1`] = `
                   <div
                     class="type_name"
                   >
-                    Send Message
+                    Send message
                   </div>
                   <div
                     class="item"
@@ -388,9 +402,16 @@ exports[`TranslatorTab finds split translations 1`] = `
             <div
               class="icon"
             >
-              <span
-                class="fe-language"
-              />
+              <div
+                data-use-vue-component-wrap=""
+                style="all: unset;"
+              >
+                <span
+                  class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
+                  data-passed-props="[object Object]"
+                  data-v-a1936218=""
+                />
+              </div>
             </div>
             <div
               class="label"
@@ -400,7 +421,7 @@ exports[`TranslatorTab finds split translations 1`] = `
           </div>
         </div>
         <div
-          class="popped"
+          class="popped undefined"
           style="border-color: #777; right: 0px; top: -100px;"
         >
           <div
@@ -432,7 +453,7 @@ exports[`TranslatorTab finds split translations 1`] = `
                   <div
                     class="type_name"
                   >
-                    Wait for Response
+                    Wait for response
                   </div>
                   <div
                     class="item"
@@ -565,9 +586,16 @@ exports[`TranslatorTab handles partial category translation 1`] = `
             <div
               class="icon"
             >
-              <span
-                class="fe-language"
-              />
+              <div
+                data-use-vue-component-wrap=""
+                style="all: unset;"
+              >
+                <span
+                  class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
+                  data-passed-props="[object Object]"
+                  data-v-a1936218=""
+                />
+              </div>
             </div>
             <div
               class="label"
@@ -577,7 +605,7 @@ exports[`TranslatorTab handles partial category translation 1`] = `
           </div>
         </div>
         <div
-          class="popped"
+          class="popped undefined"
           style="border-color: #777; right: 0px; top: -100px;"
         >
           <div
@@ -609,7 +637,7 @@ exports[`TranslatorTab handles partial category translation 1`] = `
                   <div
                     class="type_name"
                   >
-                    Wait for Response
+                    Wait for response
                   </div>
                   <div
                     class="item"
@@ -742,9 +770,16 @@ exports[`TranslatorTab hides completed translations 1`] = `
             <div
               class="icon"
             >
-              <span
-                class="fe-language"
-              />
+              <div
+                data-use-vue-component-wrap=""
+                style="all: unset;"
+              >
+                <span
+                  class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
+                  data-passed-props="[object Object]"
+                  data-v-a1936218=""
+                />
+              </div>
             </div>
             <div
               class="label"
@@ -754,7 +789,7 @@ exports[`TranslatorTab hides completed translations 1`] = `
           </div>
         </div>
         <div
-          class="popped"
+          class="popped undefined"
           style="border-color: #777; right: 0px; top: -100px;"
         >
           <div
@@ -786,7 +821,7 @@ exports[`TranslatorTab hides completed translations 1`] = `
                   <div
                     class="type_name"
                   >
-                    Send Message
+                    Send message
                   </div>
                   <div
                     class="item"
@@ -905,9 +940,16 @@ exports[`TranslatorTab renders 1`] = `
             <div
               class="icon"
             >
-              <span
-                class="fe-language"
-              />
+              <div
+                data-use-vue-component-wrap=""
+                style="all: unset;"
+              >
+                <span
+                  class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
+                  data-passed-props="[object Object]"
+                  data-v-a1936218=""
+                />
+              </div>
             </div>
             <div
               class="label"
@@ -917,7 +959,7 @@ exports[`TranslatorTab renders 1`] = `
           </div>
         </div>
         <div
-          class="popped"
+          class="popped undefined"
           style="border-color: #777; right: 0px; top: -100px;"
         >
           <div
