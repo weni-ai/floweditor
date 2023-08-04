@@ -47,8 +47,6 @@ export default class SwitchElement extends React.Component<SwitchElementProps, S
   }
 
   private handleChange(checked: boolean): void {
-    console.log('checked', checked);
-
     this.setState({ checked }, () => {
       if (this.props.onChange) {
         this.props.onChange(this.state.checked);

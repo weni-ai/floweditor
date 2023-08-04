@@ -59,6 +59,16 @@ const AllTheProviders = ({ children }: { children: any }) => {
 const customRender = (ui: any, options?: any) =>
   render(ui, { wrapper: AllTheProviders, ...options });
 
+export const getUnnnicInputValue = (ele: any) => {
+  return ele.querySelector('input').value;
+};
+
+export const fireUnnnicSwitch = (ele: any) => {
+  const icon = ele.querySelector('.unnnic-switch__icon');
+
+  fireEvent.click(icon);
+};
+
 export const fireChangeText = (ele: any, value: string): void => {
   fireEvent.change(ele, { currentTarget: { value }, target: { value } });
 };
