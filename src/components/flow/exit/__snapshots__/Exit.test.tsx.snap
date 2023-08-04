@@ -4,10 +4,14 @@ exports[`ExitComp renders 1`] = `
 <body>
   <div>
     <div
-      class="exit plumb-exit"
+      class="
+          exit plumb-exit 
+          null
+          null 
+        "
     >
       <div
-        class="name"
+        class="name u font secondary body-md"
       >
         Red
       </div>
@@ -42,10 +46,14 @@ Object {
     "childNodes": NodeList [
       <div>
         <div
-          class="exit plumb-exit"
+          class="
+          exit plumb-exit 
+          null
+          null 
+        "
         >
           <div
-            class="name"
+            class="name u font secondary body-md"
           >
             Red
           </div>
@@ -79,10 +87,14 @@ exports[`ExitComp shows localization 1`] = `
 <body>
   <div>
     <div
-      class="exit plumb-exit translating"
+      class="
+          exit plumb-exit translating 
+          null
+          null 
+        "
     >
       <div
-        class="name"
+        class="name u font secondary body-md"
       >
         Hola!
       </div>
@@ -114,10 +126,14 @@ exports[`ExitComp shows missing localization 1`] = `
 <body>
   <div>
     <div
-      class="exit plumb-exit translating missing_localization"
+      class="
+          exit plumb-exit translating missing_localization 
+          null
+          null 
+        "
     >
       <div
-        class="name"
+        class="name u font secondary body-md"
       >
         Red
       </div>
@@ -193,10 +209,14 @@ exports[`ExitComp shows recent messages on mouse over 1`] = `
       </div>
     </div>
     <div
-      class="exit plumb-exit"
+      class="
+          exit plumb-exit 
+          null
+          null 
+        "
     >
       <div
-        class="name"
+        class="name u font secondary body-md"
       >
         Red
       </div>
