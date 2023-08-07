@@ -400,7 +400,8 @@
     "ex_shop": "Ej: compras",
     "ex_weni": "Ej: weni.ai",
     "ex_accept": "Ej: Accept",
-    "ex_application_json": "Ej: application/json"
+    "ex_application_json": "Ej: application/json",
+    "none": "Ninguno"
   },
   "issues": {
     "header": "Problemas de Flujo",

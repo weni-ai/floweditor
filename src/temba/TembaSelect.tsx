@@ -21,6 +21,7 @@ import {
   updateInputElementWithCompletion
 } from '../utils/completion/helper';
 import { TembaStore } from '../temba-components';
+import i18n from 'config/i18n';
 
 const ElUnnnicSelect = applyVueInReact(unnnicSelect);
 const ElUnnnicTag = applyVueInReact(unnnicTag);
@@ -178,7 +179,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
   private setAvailableOptions(options: any[]) {
     const nameKey = this.props.nameKey || 'name';
     const valueKey = this.props.valueKey || 'value';
-    const remmapedOptions = options.map((option: any) => {
+    const remappedOptions = options.map((option: any) => {
       const newOption = { ...option, value: this.getValue(option) };
       if (!newOption[nameKey]) {
         newOption[nameKey] = this.getName(option);
@@ -189,7 +190,16 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
       return newOption;
     });
 
-    this.setState({ availableOptions: remmapedOptions, selectKey: this.state.selectKey + 1 });
+    if (this.props.clearable) {
+      const clearOption: any = {
+        [nameKey]: i18n.t('forms.none', 'None'),
+        [valueKey]: null,
+        clear: true
+      };
+      remappedOptions.unshift(clearOption);
+    }
+
+    this.setState({ availableOptions: remappedOptions, selectKey: this.state.selectKey + 1 });
   }
 
   private handleSelectChange(event: any): void {
@@ -199,6 +209,13 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
           return this.getValue(option) === event;
         })
       ];
+    }
+
+    if (this.props.clearable && event.length === 1 && event[0].clear) {
+      if (this.props.onChange) {
+        this.props.onChange(undefined);
+      }
+      return;
     }
 
     let resolved = event;
@@ -490,6 +507,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
           closeOnSelect={true}
           clearOnCreate={!!this.props.tags}
           multi={isMultiComponent}
+          showValue={!this.props.tags && !isMultiComponent && !!this.props.createPrefix}
           tag={isTagComponent && !this.state.showingExpressionsSelection}
           tagCreateLabel={this.props.createPrefix || ''}
           hasIconRight={isTagComponent}
