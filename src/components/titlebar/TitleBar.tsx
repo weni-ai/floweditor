@@ -158,7 +158,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
         <UnnnicIcon
           icon="close-1"
           size="xs"
-          scheme="neutral-darkest"
+          scheme={this.props.selected ? 'neutral-darkest' : 'neutral-snow'}
           data-testid={removeIconSpecId}
         />
       </div>
