@@ -228,6 +228,8 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     if (updated) {
       this.setState({ positions: updatedPositions });
     }
+
+    this.ensureCanvasHeight();
   }
 
   public renderSelectionBox(): JSX.Element | null {
