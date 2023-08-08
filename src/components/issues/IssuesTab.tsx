@@ -30,15 +30,15 @@ export interface IssuesTabProps {
   popped: string;
 }
 
-export type IssueDetail = {
+export interface IssueDetail {
   issues: FlowIssue[];
   renderObjects: RenderObjects;
   language: Asset;
-};
+}
 
-type IssueMap = {
+interface IssueMap {
   [uuid: string]: IssueDetail;
-};
+}
 
 export interface IssuesTabState {
   visible: boolean;
@@ -240,9 +240,9 @@ export class IssuesTab extends React.Component<IssuesTabProps, IssuesTabState> {
         <PopTab
           header={`${i18n.t('issues.label', 'Flow Issues')} (${issueCount})`}
           label={i18n.t('issues.header', 'Flow Issues')}
-          color="tomato"
-          icon="fe-warning"
-          top="416px"
+          color="#FF4545"
+          icon="alert-circle-1"
+          top="348px"
           visible={this.state.visible}
           onShow={this.handleTabClicked}
           onHide={this.handleTabClicked}
