@@ -30,6 +30,12 @@ $spacing: 10px;
 
   .choice {
     flex: 1;
+
+    &.disabled {
+      input {
+        border: 1px solid $unnnic-color-neutral-clean !important;
+      }
+    }
   }
 
   .single_operand {
