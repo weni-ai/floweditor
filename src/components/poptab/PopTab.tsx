@@ -6,12 +6,11 @@ import styles from './PopTab.module.scss';
 
 // @ts-ignore
 import { unnnicIcon } from '@weni/unnnic-system';
-import Button, { ButtonTypes } from 'components/button/Button';
-import i18n from 'config/i18n';
 
 export interface PopTabProps {
   type?: string;
   color: string;
+  bgColor?: string;
   icon: string;
   label: string;
   header: string;
@@ -32,7 +31,7 @@ export class PopTab extends React.Component<PopTabProps, PopTabState> {
 
   constructor(props: PopTabProps) {
     super(props);
-    this.state = { width: 258 };
+    this.state = { width: 250 };
 
     bindCallbacks(this, {
       include: [/^handle/]
@@ -88,29 +87,17 @@ export class PopTab extends React.Component<PopTabProps, PopTabState> {
             top: -100
           }}
         >
-          {this.props.type === 'revisions' ? (
-            <>
-              <div className={styles.body}>{this.props.children}</div>
-
-              <div className={styles.footer}>
-                <Button
-                  name={i18n.t('buttons.close', 'Close')}
-                  onClick={this.handleClose}
-                  type={ButtonTypes.secondary}
-                  size="small"
-                />
-              </div>
-            </>
-          ) : (
-            <>
-              <div className={styles.header} style={{ background: this.props.color }}>
-                <div className={styles.close + ' fe-x'} onClick={this.handleClose} />
-                <div className={styles.header_label}>{this.props.header}</div>
-              </div>
-              <div className={styles.body} style={{ background: this.props.color }}>
-                {this.props.children}
-              </div>
-            </>
+          <div className={styles.header} style={{ background: this.props.color }}>
+            <div className={styles.close + ' fe-x'} onClick={this.handleClose} />
+          </div>
+          <div
+            className={styles.body}
+            style={{ background: this.props.bgColor || this.props.color }}
+          >
+            {this.props.children}
+          </div>
+          {this.props.type === 'revisions' && (
+            <div className={styles.footer} style={{ background: this.props.color }} />
           )}
         </div>
       </div>
