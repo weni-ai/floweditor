@@ -2,7 +2,7 @@ import { react as bindCallbacks } from 'auto-bind';
 import { CanvasDraggable, CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
 import { getDraggablesInBox, reflow } from 'components/canvas/helpers';
 import { DRAG_THRESHOLD } from 'components/flow/Flow';
-import { Dimensions, FlowPosition } from 'flowTypes';
+import { Dimensions, Exit, FlowNode, FlowPosition } from 'flowTypes';
 import Sidebar from 'components/sidebar/Sidebar';
 import mutate from 'immutability-helper';
 import React from 'react';
@@ -13,6 +13,7 @@ import { COLLISION_FUDGE, snapPositionToGrid, throttle, snapToGrid } from 'utils
 
 import styles from './Canvas.module.scss';
 import nodesCopy from '../../components/copyAndPasteNodes';
+import { RenderNode } from '../../store/flowContext';
 
 export const CANVAS_PADDING = 300;
 export const REFLOW_QUIET = 200;
@@ -164,10 +165,16 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
         const nodesPasted = instance.createNewUuids(nodes);
 
-        nodesPasted.forEach((item: any) => {
+        nodesPasted.forEach((item: RenderNode) => {
+          const filteredInboundConnections = this.filterExistingInbounds(nodesPasted, item);
+          const filteredExits = this.filterExistingExits(nodesPasted, item.node);
           this.props.nodes[item.node.uuid] = {
             ...item,
-
+            node: {
+              ...item.node,
+              exits: filteredExits
+            },
+            inboundConnections: filteredInboundConnections,
             ui: {
               ...item.ui,
               position: {
@@ -183,6 +190,53 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     });
 
     this.props.onLoaded();
+  }
+
+  private filterExistingExits(nodeList: RenderNode[], node: FlowNode): Exit[] {
+    const exits: Exit[] = node.exits || [];
+    const filteredExits: Exit[] = [];
+
+    for (const exit of exits) {
+      if (exit.destination_uuid) {
+        let hasDestination = false;
+        for (const n of nodeList) {
+          if (n.node.uuid === exit.destination_uuid) {
+            hasDestination = true;
+            break;
+          }
+        }
+
+        if (hasDestination) {
+          filteredExits.push(exit);
+        } else {
+          filteredExits.push({ ...exit, destination_uuid: undefined });
+        }
+      } else {
+        filteredExits.push(exit);
+      }
+    }
+
+    return filteredExits;
+  }
+
+  private filterExistingInbounds(
+    nodeList: RenderNode[],
+    node: RenderNode
+  ): { [nodeUUID: string]: string } {
+    const inboundConnections: { [nodeUUID: string]: string } = node.inboundConnections || {};
+    const filteredInboundConnections: { [nodeUUID: string]: string } = {};
+
+    for (const key of Object.keys(inboundConnections)) {
+      const inboundConnection = inboundConnections[key];
+      for (const n of nodeList) {
+        if (n.node.exits.find(exit => exit.uuid === key)) {
+          filteredInboundConnections[key] = inboundConnection;
+          break;
+        }
+      }
+    }
+
+    return filteredInboundConnections;
   }
 
   private handleKeyDown(event: any): void {
