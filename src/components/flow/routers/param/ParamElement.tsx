@@ -159,7 +159,10 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
             data-draggable={canArrange}
           />
 
-          <div className={styles.choice} style={{ flex: showFilter ? 1 : 2 }}>
+          <div
+            className={`${styles.choice} ${disableFilter ? styles.disabled : ''}`}
+            style={{ flex: showFilter ? 1 : 2 }}
+          >
             <TembaSelect
               name={i18n.t('forms.service_call_param', 'Service Call Param')}
               placeholder={i18n.t('forms.param', 'Param')}
@@ -173,7 +176,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
             />
           </div>
           {showFilter ? (
-            <div className={styles.choice}>
+            <div className={`${styles.choice} ${disableFilter ? styles.disabled : ''}`}>
               <TembaSelect
                 name={i18n.t('forms.service_call_param_filter', 'Service Call Param Filter')}
                 placeholder={i18n.t('forms.filter', 'Filter')}

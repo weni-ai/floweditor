@@ -2,6 +2,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { createClickHandler } from 'utils';
 
+import shared from 'components/shared.module.scss';
 import styles from './TitleBar.module.scss';
 import { fakePropType } from 'config/ConfigProvider';
 import i18n from 'config/i18n';
@@ -19,6 +20,7 @@ export interface TitleBarProps {
   onMoveUp?(event: React.MouseEvent<HTMLElement>): any;
   shouldCancelClick?: () => boolean;
   selected?: boolean;
+  hasIssues?: boolean;
 }
 
 export const titlebarContainerSpecId = 'titlebar-container';
@@ -155,7 +157,11 @@ export default class TitleBar extends React.Component<TitleBarProps> {
         )}
         data-testid={removeIconSpecId}
       >
-        <UnnnicIcon icon="close-1" size="xs" scheme="neutral-darkest" />
+        <UnnnicIcon
+          icon="close-1"
+          size="xs"
+          scheme={this.props.selected ? 'neutral-darkest' : 'neutral-snow'}
+        />
       </div>
     );
 
@@ -166,7 +172,10 @@ export default class TitleBar extends React.Component<TitleBarProps> {
     const moveArrow: JSX.Element = this.getMoveArrow();
     const remove: JSX.Element = this.getRemove();
     return (
-      <div className={styles.titlebar} data-spec={titlebarContainerSpecId}>
+      <div
+        className={`${styles.titlebar} ${this.props.hasIssues ? shared.missing : null}`}
+        data-spec={titlebarContainerSpecId}
+      >
         <div
           className={`${styles.normal} ${this.props.__className} ${
             this.props.selected ? styles['selected'] : null

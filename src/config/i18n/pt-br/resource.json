@@ -401,7 +401,8 @@
     "ex_shop": "Ex: compras",
     "ex_weni": "Ex: weni.ai",
     "ex_accept": "Ex: Accept",
-    "ex_application_json": "Ex: application/json"
+    "ex_application_json": "Ex: application/json",
+    "none": "Nenhum"
   },
   "issues": {
     "header": "Problemas no Fluxo",

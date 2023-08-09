@@ -377,7 +377,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
                 __className={`${
                   (shared as any)[
                     hasIssues(this.props.issues, this.props.translating, this.props.language)
-                      ? 'missing'
+                      ? shared.missing
                       : config.type
                   ]
                 } ${styles.title}`}
@@ -417,14 +417,8 @@ export class NodeComp extends React.PureComponent<NodeProps> {
 
     const uuid: JSX.Element = this.renderDebug();
 
-    let nodeContainerStatusStyle = (styles as any)[type];
-
-    if (hasIssues(this.props.issues, this.props.translating, this.props.language)) {
-      nodeContainerStatusStyle = styles.missing;
-    }
-
     const body = (
-      <div className={`${styles.node} ${styles[type]} ${nodeContainerStatusStyle}`}>
+      <div className={`${styles.node} ${styles[type]}`}>
         {uuid}
         <Counter
           count={this.props.activeCount}
