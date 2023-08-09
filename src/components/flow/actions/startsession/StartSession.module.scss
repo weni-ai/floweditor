@@ -8,10 +8,10 @@
   .to {
     padding: $unnnic-spacing-inset-xs;
     box-sizing: border-box;
-    width: 100%;
-    font-size: 11px;
-    display: flex;
-    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
 
     .name {
       font-size: 10px;
