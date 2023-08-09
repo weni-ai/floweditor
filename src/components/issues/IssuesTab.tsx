@@ -242,7 +242,7 @@ export class IssuesTab extends React.Component<IssuesTabProps, IssuesTabState> {
           label={i18n.t('issues.header', 'Flow Issues')}
           color="#FF4545"
           icon="alert-circle-1"
-          top="348px"
+          top="396px"
           visible={this.state.visible}
           onShow={this.handleTabClicked}
           onHide={this.handleTabClicked}
