@@ -125,7 +125,8 @@
 }
 
 .node_asset {
-  display: inherit;
+  display: flex;
+  gap: 4x;
   max-width: 100%;
   .node_group {
     padding-right: 5px;
