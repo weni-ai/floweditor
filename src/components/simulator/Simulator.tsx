@@ -1139,7 +1139,9 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           </div>
         </div>
         <div className={styles.simulator_tab + ' ' + tabHidden} onClick={this.onToggle}>
-          <div className={styles.simulator_tab_icon + ' fe-smartphone'} />
+          <div className={styles.simulator_tab_icon}>
+            <UnnnicIcon icon="button-play-1" size="lg" scheme="neutral-snow" />
+          </div>
           <div className={styles.simulator_tab_text}>
             {i18n.t('simulator.label', 'Run in Simulator')}
           </div>

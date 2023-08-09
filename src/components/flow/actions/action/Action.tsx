@@ -169,6 +169,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
     const showRemoval = !this.props.translating;
     const showMove = !this.props.first && !this.props.translating;
     const selectedClass = this.props.selected ? styles.selected : '';
+    const issues = hasIssues(this.props.issues, this.props.translating, this.props.language);
 
     if (hasIssues(this.props.issues, this.props.translating, this.props.language)) {
       titleBarClass = shared.missing;
@@ -190,6 +191,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
           onMoveUp={this.handleMoveUp}
           shouldCancelClick={() => this.props.selected}
           selected={this.props.selected}
+          hasIssues={issues}
         />
         <div
           className={styles.body + ' ' + actionClass + ' ' + selectedClass}

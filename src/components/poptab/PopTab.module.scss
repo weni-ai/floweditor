@@ -65,11 +65,12 @@
       }
 
       .label {
-        width: 50px;
+        width: 60px;
         display: inline-block;
         color: #fff;
         opacity: 0;
         transition: opacity 0.8s;
+        line-height: 16px;
       }
     }
   }

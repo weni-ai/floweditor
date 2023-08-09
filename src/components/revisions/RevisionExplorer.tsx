@@ -144,10 +144,11 @@ export class RevisionExplorer extends React.Component<
         <PopTab
           type="revisions"
           header={i18n.t('revisions.header', 'Revisions')}
+          bgColor="#FFFFFF"
           color="#67738B"
           icon="synchronize-arrow-clock-4"
           label={i18n.t('revisions.label', 'Revision History')}
-          top="360px"
+          top="396px"
           visible={this.state.visible}
           onShow={this.handleTabClicked}
           onHide={this.handleTabClicked}
