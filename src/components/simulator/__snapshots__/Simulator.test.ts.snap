@@ -157,8 +157,14 @@ exports[`Simulator renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="simulator_tab_icon fe-smartphone"
-    />
+      className="simulator_tab_icon"
+    >
+      <ForwardRef
+        icon="button-play-1"
+        scheme="neutral-snow"
+        size="lg"
+      />
+    </div>
     <div
       className="simulator_tab_text"
     >
