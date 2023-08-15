@@ -10,7 +10,6 @@ exports[`Canvas adjusts the height when updating dimensions 1`] = `
       <div
         class="canvas_background"
       >
-        Mocked Sidebar
         <div
           class="canvas"
           data-testid="canvas"
@@ -40,7 +39,6 @@ exports[`Canvas initializes the height to the lowest draggable 1`] = `
       <div
         class="canvas_background"
       >
-        Mocked Sidebar
         <div
           class="canvas"
           data-testid="canvas"
@@ -78,7 +76,6 @@ exports[`Canvas render default 1`] = `
       <div
         class="canvas_background"
       >
-        Mocked Sidebar
         <div
           class="canvas"
           data-testid="canvas"
