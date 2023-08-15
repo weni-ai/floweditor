@@ -4,7 +4,7 @@ exports[`TitleBar render confirmation should render confirmation markup and call
 <body>
   <div>
     <div
-      class="titlebar"
+      class="titlebar null"
       data-spec="titlebar-container"
     >
       <div
@@ -20,7 +20,7 @@ exports[`TitleBar render confirmation should render confirmation markup and call
             style="all: unset;"
           >
             <span
-              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest up_button"
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow up_button"
               data-passed-props="[object Object]"
               data-spec="move"
               data-v-a1936218=""
@@ -53,7 +53,7 @@ exports[`TitleBar render confirmation should render confirmation markup and call
             style="all: unset;"
           >
             <span
-              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
               data-passed-props="[object Object]"
               data-v-a1936218=""
             >
@@ -81,7 +81,7 @@ exports[`TitleBar render move icon should call onMoveUp 1`] = `
 <body>
   <div>
     <div
-      class="titlebar"
+      class="titlebar null"
       data-spec="titlebar-container"
     >
       <div
@@ -97,7 +97,7 @@ exports[`TitleBar render move icon should call onMoveUp 1`] = `
             style="all: unset;"
           >
             <span
-              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest up_button"
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow up_button"
               data-passed-props="[object Object]"
               data-spec="move"
               data-v-a1936218=""
@@ -130,7 +130,7 @@ exports[`TitleBar render move icon should call onMoveUp 1`] = `
             style="all: unset;"
           >
             <span
-              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
               data-passed-props="[object Object]"
               data-v-a1936218=""
             >
@@ -157,7 +157,7 @@ exports[`TitleBar render move icon should call onMoveUp 1`] = `
 exports[`TitleBar render move icon should render move icon 1`] = `
 <div>
   <div
-    class="titlebar"
+    class="titlebar null"
     data-spec="titlebar-container"
   >
     <div
@@ -173,7 +173,7 @@ exports[`TitleBar render move icon should render move icon 1`] = `
           style="all: unset;"
         >
           <span
-            class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest up_button"
+            class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow up_button"
             data-passed-props="[object Object]"
             data-spec="move"
             data-v-a1936218=""
@@ -206,7 +206,7 @@ exports[`TitleBar render move icon should render move icon 1`] = `
           style="all: unset;"
         >
           <span
-            class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+            class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
             data-passed-props="[object Object]"
             data-v-a1936218=""
           >
@@ -233,7 +233,7 @@ exports[`TitleBar render remove icon should render remove icon 1`] = `
 <body>
   <div>
     <div
-      class="titlebar"
+      class="titlebar null"
       data-spec="titlebar-container"
     >
       <div
@@ -249,7 +249,7 @@ exports[`TitleBar render remove icon should render remove icon 1`] = `
             style="all: unset;"
           >
             <span
-              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest up_button"
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow up_button"
               data-passed-props="[object Object]"
               data-spec="move"
               data-v-a1936218=""
@@ -282,7 +282,7 @@ exports[`TitleBar render remove icon should render remove icon 1`] = `
             style="all: unset;"
           >
             <span
-              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
               data-passed-props="[object Object]"
               data-v-a1936218=""
             >
@@ -309,7 +309,7 @@ exports[`TitleBar render remove icon should render remove icon 1`] = `
 exports[`TitleBar render should apply _className prop 1`] = `
 <div>
   <div
-    class="titlebar"
+    class="titlebar null"
     data-spec="titlebar-container"
   >
     <div
@@ -334,7 +334,7 @@ exports[`TitleBar render should apply _className prop 1`] = `
           style="all: unset;"
         >
           <span
-            class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+            class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
             data-passed-props="[object Object]"
             data-v-a1936218=""
           >
@@ -360,7 +360,7 @@ exports[`TitleBar render should apply _className prop 1`] = `
 exports[`TitleBar render should render self, children with base props 1`] = `
 <div>
   <div
-    class="titlebar"
+    class="titlebar null"
     data-spec="titlebar-container"
   >
     <div
@@ -385,7 +385,7 @@ exports[`TitleBar render should render self, children with base props 1`] = `
           style="all: unset;"
         >
           <span
-            class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+            class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
             data-passed-props="[object Object]"
             data-v-a1936218=""
           >
