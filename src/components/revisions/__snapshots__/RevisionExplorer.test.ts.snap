@@ -8,13 +8,14 @@ exports[`RevisionExplorer render should render base component 1`] = `
     className="mask"
   />
   <PopTab
+    bgColor="#FFFFFF"
     color="#67738B"
     header="Revisions"
     icon="synchronize-arrow-clock-4"
     label="Revision History"
     onHide={[Function]}
     onShow={[Function]}
-    top="360px"
+    top="348px"
     type="revisions"
     visible={false}
   >
