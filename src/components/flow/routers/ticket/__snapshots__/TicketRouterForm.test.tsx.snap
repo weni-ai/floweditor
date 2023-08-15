@@ -222,6 +222,12 @@ exports[`TicketRouterForm render should render 1`] = `
                     style="all: unset;"
                   >
                     <option
+                      label="None"
+                      value="None"
+                    >
+                      None
+                    </option>
+                    <option
                       label="Agent User"
                       value="agent.user@gmail.com"
                     >
@@ -606,6 +612,12 @@ exports[`TicketRouterForm updates should save changes 1`] = `
                     data-v-6fe2671f=""
                     style="all: unset;"
                   >
+                    <option
+                      label="None"
+                      value="None"
+                    >
+                      None
+                    </option>
                     <option
                       label="Agent User"
                       value="agent.user@gmail.com"
