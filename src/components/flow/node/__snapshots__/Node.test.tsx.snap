@@ -8,7 +8,7 @@ exports[`NodeComp renders 1`] = `
       id="b1f332f3-bdd3-4891-aec5-1843a712dbf1"
     >
       <div
-        class="node execute_actions execute_actions"
+        class="node execute_actions"
       >
         <div
           class="counter active clickable "
@@ -115,7 +115,7 @@ exports[`NodeComp renders a named random split 1`] = `
       id="2dc85899-0577-4f1b-a620-f12094e34b5e"
     >
       <div
-        class="node split_by_random split_by_random"
+        class="node split_by_random"
       >
         <div
           class="counter active clickable "
@@ -141,7 +141,7 @@ exports[`NodeComp renders a named random split 1`] = `
           >
             <div>
               <div
-                class="titlebar"
+                class="titlebar null"
                 data-spec="titlebar-container"
               >
                 <div
@@ -166,7 +166,7 @@ exports[`NodeComp renders a named random split 1`] = `
                       style="all: unset;"
                     >
                       <span
-                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
                         data-passed-props="[object Object]"
                         data-v-a1936218=""
                       >
