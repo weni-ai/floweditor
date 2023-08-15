@@ -6,6 +6,7 @@ import Node from 'components/flow/node/Node';
 import { getDraggedFrom } from 'components/helpers';
 import NodeEditor from 'components/nodeeditor/NodeEditor';
 import Simulator from 'components/simulator/Simulator';
+import Sidebar from 'components/sidebar/Sidebar';
 import Sticky, { STICKY_BODY, STICKY_TITLE } from 'components/sticky/Sticky';
 import { ConfigProviderContext, fakePropType } from 'config/ConfigProvider';
 import { FlowDefinition, FlowMetadata, FlowPosition } from 'flowTypes';
@@ -394,6 +395,8 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
       <div>
         {nodes.length !== 0 ? <>{this.getSimulator()}</> : null}
         {this.getNodeEditor()}
+
+        <Sidebar />
 
         <Canvas
           mutable={this.context.config.mutable}
