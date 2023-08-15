@@ -132,13 +132,13 @@ exports[`UpdateContactForm should render channel 1`] = `
                     data-v-f03c53b0=""
                     iconright="keyboard-return-1"
                     placeholder="Select existing select what to update or enter a new one"
-                    size="0"
+                    size="7"
                     type="text"
                     v-bind="[object Object]"
                   />
                   <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
+                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
                     data-v-2d3b8b50=""
                     data-v-a1936218=""
                   >
@@ -431,13 +431,13 @@ exports[`UpdateContactForm should render field 1`] = `
                     data-v-f03c53b0=""
                     iconright="keyboard-return-1"
                     placeholder="Select existing select what to update or enter a new one"
-                    size="0"
+                    size="3"
                     type="text"
                     v-bind="[object Object]"
                   />
                   <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
+                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
                     data-v-2d3b8b50=""
                     data-v-a1936218=""
                   >
@@ -709,13 +709,13 @@ exports[`UpdateContactForm should render language 1`] = `
                     data-v-f03c53b0=""
                     iconright="keyboard-return-1"
                     placeholder="Select existing select what to update or enter a new one"
-                    size="0"
+                    size="8"
                     type="text"
                     v-bind="[object Object]"
                   />
                   <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
+                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
                     data-v-2d3b8b50=""
                     data-v-a1936218=""
                   >
@@ -1021,13 +1021,13 @@ exports[`UpdateContactForm should render name 1`] = `
                     data-v-f03c53b0=""
                     iconright="keyboard-return-1"
                     placeholder="Select existing select what to update or enter a new one"
-                    size="0"
+                    size="4"
                     type="text"
                     v-bind="[object Object]"
                   />
                   <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
+                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-dark"
                     data-v-2d3b8b50=""
                     data-v-a1936218=""
                   >
