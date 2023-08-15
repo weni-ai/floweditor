@@ -17,6 +17,7 @@ exports[`ActionWrapper render should display hybrid style 1`] = `
   >
     <TitleBar
       __className="send_msg"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
       selected={false}
@@ -50,6 +51,7 @@ exports[`ActionWrapper render should display missing_localization style 1`] = `
   >
     <TitleBar
       __className="send_msg"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
       selected={false}
@@ -83,6 +85,7 @@ exports[`ActionWrapper render should display not_localizable style 1`] = `
   >
     <TitleBar
       __className="enter_flow"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
       selected={false}
@@ -116,6 +119,7 @@ exports[`ActionWrapper render should display translating style 1`] = `
   >
     <TitleBar
       __className="send_msg"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
       selected={false}
@@ -135,6 +139,7 @@ exports[`ActionWrapper render should display translating style 1`] = `
 exports[`ActionWrapper render should render self, children with base props 1`] = `
 Object {
   "__className": "send_msg",
+  "hasIssues": false,
   "onMoveUp": [Function],
   "onRemoval": [Function],
   "selected": false,
@@ -162,6 +167,7 @@ exports[`ActionWrapper render should render self, children with base props 2`] =
   >
     <TitleBar
       __className="send_msg"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
       selected={false}
@@ -195,6 +201,7 @@ exports[`ActionWrapper render should show move icon 1`] = `
   >
     <TitleBar
       __className="send_msg"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
       selected={false}

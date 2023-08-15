@@ -16,7 +16,7 @@ exports[`ActionWrapper can have localized quick replies when empty on default la
         data-spec="interactive-div"
       >
         <div
-          class="titlebar"
+          class="titlebar null"
           data-spec="titlebar-container"
         >
           <div
@@ -41,7 +41,7 @@ exports[`ActionWrapper can have localized quick replies when empty on default la
                 style="all: unset;"
               >
                 <span
-                  class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+                  class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
                   data-v-a1936218=""
                 >
@@ -128,7 +128,7 @@ exports[`ActionWrapper renders a base language 1`] = `
         data-spec="interactive-div"
       >
         <div
-          class="titlebar"
+          class="titlebar null"
           data-spec="titlebar-container"
         >
           <div
@@ -153,7 +153,7 @@ exports[`ActionWrapper renders a base language 1`] = `
                 style="all: unset;"
               >
                 <span
-                  class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+                  class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
                   data-v-a1936218=""
                 >
