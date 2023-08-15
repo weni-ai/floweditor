@@ -13,7 +13,7 @@ import { ParamProps } from '../paramlist/ParamList';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import { unnnicIcon, unnnicButton } from '@weni/unnnic-system';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -34,6 +34,8 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
     }
   }
 });
+
+const UnnnicButton = applyVueInReact(unnnicButton);
 
 export interface ParamElementProps {
   initialParam: ParamProps;
@@ -151,13 +153,14 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
         kaseError={this.state.errors.length > 0}
       >
         <div className={`${styles.param}`} data-draggable={canArrange}>
-          <UnnnicIcon
-            className={styles.move_icon}
-            icon="move-expand-vertical-1"
-            size="sm"
-            scheme={canArrange ? 'neutral-cloudy' : 'neutral-clean'}
-            data-draggable={canArrange}
-          />
+          <div className={styles.moveIcon}>
+            <UnnnicButton
+              data-draggable={canArrange}
+              iconCenter={'move-expand-vertical-1'}
+              size="small"
+              type="terciary"
+            />
+          </div>
 
           <div
             className={`${styles.choice} ${disableFilter ? styles.disabled : ''}`}

@@ -36,12 +36,33 @@ input:focus {
     column-gap: $unnnic-spacing-inline-xs;
 
     .move_icon {
-      margin-top: 8px;
+      align-self: center;
+      
+      button {
+        padding: 0;
+        width: $unnnic-icon-size-sm;
+        height: $unnnic-icon-size-sm;
+
+        &:hover {
+
+          &:after {
+            border: none;
+          }
+        }
+
+        span {
+          min-width: unset;
+          min-height: unset;
+        }
+
+        svg > path {
+          fill: $unnnic-color-neutral-cloudy;
+        }
+      }
     }
   }
 
   .categorize_as_container {
-    margin-left: $unnnic-spacing-inline-xs;
     flex: 0.30;
     display: flex;
     column-gap: $unnnic-spacing-inline-xs;
@@ -129,13 +150,15 @@ input:focus {
   line-height: 9px;
 }
 
+.remove_icon_wrapper {
+  align-self: center;
+}
+
 .remove_icon {
   color: #aaa;
-  padding-top: 20px;
   float: right;
   line-height: 12px;
   cursor: pointer;
-  margin-left: 4px;
   font-size: 9px;
 }
 

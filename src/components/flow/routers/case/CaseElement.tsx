@@ -20,7 +20,7 @@ import TembaSelect, { TembaSelectStyle } from 'temba/TembaSelect';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import { unnnicIcon, unnnicButton } from '@weni/unnnic-system';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -34,6 +34,8 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
     }
   }
 });
+
+const UnnnicButton = applyVueInReact(unnnicButton);
 
 export interface CaseElementProps {
   kase: Case;
@@ -497,7 +499,12 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
         >
           <div className={styles.operator_container}>
             <span className={styles.move_icon} data-draggable={true}>
-              <UnnnicIcon icon="move-expand-vertical-1" size="sm" scheme="neutral-cloudy" />
+              <UnnnicButton
+                iconCenter={'move-expand-vertical-1'}
+                size="small"
+                data-draggable={true}
+                type="terciary"
+              />
             </span>
 
             <div className={styles.choice}>
@@ -540,7 +547,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
               />
             </div>
 
-            <span data-draggable={true}>
+            <span className={styles.remove_icon_wrapper} data-draggable={true}>
               <UnnnicIcon
                 className={styles.remove_icon}
                 data-testid={'remove-case-' + this.props.kase.uuid}
