@@ -114,7 +114,10 @@ export default class TextInputElement extends React.Component<TextInputProps> {
 
     let hasError = false;
     let errorList = null;
-    if (this.props.entry) {
+    if (this.props.error) {
+      hasError = true;
+      errorList = [this.props.error];
+    } else if (this.props.entry) {
       if (this.props.entry.validationFailures && this.props.entry.validationFailures.length > 0) {
         hasError = true;
         errorList = this.props.entry.validationFailures.map(

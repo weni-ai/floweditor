@@ -20,7 +20,7 @@ $spacing: 10px;
 
 .param {
   display: flex;
-  gap: $unnnic-spacing-inline-sm;
+  gap: $unnnic-spacing-inline-xs;
   user-select: none;
   margin-bottom: 12px;
 
@@ -34,6 +34,32 @@ $spacing: 10px;
     &.disabled {
       input {
         border: 1px solid $unnnic-color-neutral-clean !important;
+      }
+    }
+  }
+
+  .moveIcon {
+    align-self: center;
+      
+    button {
+      padding: 0 !important;
+      width: $unnnic-icon-size-sm;
+      height: $unnnic-icon-size-sm;
+
+      &:hover {
+
+        &:after {
+          border: none;
+        }
+      }
+
+      span {
+        min-width: unset;
+        min-height: unset;
+      }
+
+      svg > path {
+        fill: $unnnic-color-neutral-cloudy;
       }
     }
   }

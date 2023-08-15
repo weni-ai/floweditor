@@ -87,6 +87,10 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
       updates.recipients = validate(i18n.t('forms.recipients', 'Recipients'), keys.recipients!, [
         shouldRequireIf(submitting)
       ]);
+
+      if (updates.recipients.validationFailures.length > 0) {
+        this.setState({ recipientError: updates.recipients.validationFailures[0].message });
+      }
     }
 
     if (keys.hasOwnProperty('subject')) {

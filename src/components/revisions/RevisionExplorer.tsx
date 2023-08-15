@@ -148,7 +148,7 @@ export class RevisionExplorer extends React.Component<
           color="#67738B"
           icon="synchronize-arrow-clock-4"
           label={i18n.t('revisions.label', 'Revision History')}
-          top="396px"
+          top="348px"
           visible={this.state.visible}
           onShow={this.handleTabClicked}
           onHide={this.handleTabClicked}

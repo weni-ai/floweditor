@@ -135,7 +135,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
             data-spec={moveSpecId}
             icon="arrow-button-up-1"
             size="xs"
-            scheme="neutral-darkest"
+            scheme={this.props.selected ? 'neutral-darkest' : 'neutral-snow'}
           />
         </div>
       );
