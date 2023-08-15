@@ -50,6 +50,7 @@ interface TembaCompletionState {
   };
   showCompletionsMenu: boolean;
   completionTopOffset?: number;
+  optionIndex: number;
 }
 
 export class TembaCompletion extends React.Component<TembaCompletionProps, TembaCompletionState> {
@@ -67,7 +68,8 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
     this.state = {
       query: '',
       options: [],
-      showCompletionsMenu: true
+      showCompletionsMenu: true,
+      optionIndex: 0
     };
 
     this.completionsRef = React.createRef();
@@ -95,9 +97,36 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
         'textarea'
       ) as HTMLInputElement;
       textAreaEl.addEventListener('scroll', this.hideExpressionsMenu);
-      textAreaEl.addEventListener('keydown', this.handleTextAreaKeyDown);
-      textAreaEl.addEventListener('keyup', this.handleTextAreaKeyUp);
       document.addEventListener('mousedown', this.handleClickOutside);
+      document.addEventListener('keydown', this.handleCompletionsKeyDown);
+    }
+  }
+
+  public componentWillUnmount() {
+    if (this.props.type === 'textarea') {
+      const textAreaEl = (this.refTextArea as any).vueRef.$el.querySelector(
+        'textarea'
+      ) as HTMLInputElement;
+      textAreaEl.removeEventListener('scroll', this.hideExpressionsMenu);
+      document.removeEventListener('mousedown', this.handleClickOutside);
+      document.removeEventListener('keydown', this.handleCompletionsKeyDown);
+    }
+  }
+
+  public componentDidUpdate(
+    prevProps: Readonly<TembaCompletionProps>,
+    prevState: Readonly<TembaCompletionState>
+  ): void {
+    if (prevState.optionIndex !== this.state.optionIndex) {
+      const completionList = this.completionsRef.current;
+      const activeCompletion = completionList.querySelector(`.${styles.active}`);
+      if (activeCompletion) {
+        activeCompletion.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'start'
+        });
+      }
     }
   }
 
@@ -108,18 +137,6 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
       const { data } = await axios.get(endpoint);
 
       this.setState({ expressionsData: data });
-    }
-  }
-
-  public componentWillUnmount() {
-    if (this.props.type === 'textarea') {
-      const textAreaEl = (this.refTextArea as any).vueRef.$el.querySelector(
-        'textarea'
-      ) as HTMLInputElement;
-      textAreaEl.removeEventListener('scroll', this.hideExpressionsMenu);
-      textAreaEl.removeEventListener('keydown', this.handleTextAreaKeyDown);
-      textAreaEl.removeEventListener('keyup', this.handleTextAreaKeyUp);
-      document.removeEventListener('mousedown', this.handleClickOutside);
     }
   }
 
@@ -134,7 +151,7 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
   }
 
   private hideExpressionsMenu() {
-    this.setState({ showCompletionsMenu: false });
+    this.setState({ showCompletionsMenu: false, optionIndex: 0 });
   }
 
   private executeQuery(ele: HTMLInputElement) {
@@ -181,6 +198,7 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
       inputEl.focus();
     } else {
       updateInputElementWithCompletion(this.state.query, inputEl, event);
+      this.setState({ optionIndex: 0 });
     }
 
     if (this.props.onInput) {
@@ -222,80 +240,43 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
     }
   }
 
-  private handleTextAreaKeyDown(event: any) {
-    const goToFirst = () => {
-      const completionList = this.completionsRef.current.querySelectorAll(
-        `.${styles.completion}`
-      ) as NodeListOf<HTMLElement>;
-      if (completionList.length > 0) {
-        const nextCompletion = completionList[0];
-        nextCompletion.tabIndex = 1;
-        nextCompletion.focus();
-      }
-    };
-
-    if (event.key === 'Tab') {
-      event.preventDefault();
-    } else if (event.key === 'ArrowDown') {
-      if (this.state.options.length > 0 && this.state.showCompletionsMenu) {
-        event.preventDefault();
-        goToFirst();
-      }
-    }
+  private moveFocusedOption(direction: number) {
+    const newIndex = Math.max(
+      Math.min(this.state.optionIndex + direction, this.state.options.length - 1),
+      0
+    );
+    this.setState({
+      optionIndex: newIndex
+    });
   }
 
-  private handleTextAreaKeyUp(event: any) {
-    if (event.key === 'Escape') {
-      this.hideExpressionsMenu();
+  private handleMouseMove(event: any) {
+    if (Math.abs(event.movementX) + Math.abs(event.movementY) > 0) {
+      const index = (event.currentTarget as HTMLElement).getAttribute('data-completion-index');
+      this.setState({ optionIndex: parseInt(index) });
     }
   }
 
   private handleCompletionsKeyDown(event: any) {
-    function goToPrevious() {
-      const prevElement = event.target.previousSibling as HTMLElement;
-      if (prevElement) {
-        prevElement.tabIndex = 1;
-        prevElement.focus();
-      }
-    }
-
-    function goToNext() {
-      const nextElement = event.target.nextSibling as HTMLElement;
-      if (nextElement) {
-        nextElement.tabIndex = 1;
-        nextElement.focus();
-      }
-    }
-
-    if (event.key === 'Tab') {
-      event.preventDefault();
-    } else if (event.key === 'ArrowDown') {
-      goToNext();
-    } else if (event.key === 'ArrowUp') {
-      goToPrevious();
-    } else if (event.key !== 'Enter') {
-      const textAreaEl = (this.refTextArea as any).vueRef.$el.querySelector(
-        'textarea'
-      ) as HTMLInputElement;
-      textAreaEl.focus();
-    }
-  }
-
-  private handleCompletionsKeyUp(event: any) {
     if (event.key === 'Escape') {
       this.hideExpressionsMenu();
+    } else if (event.key === 'Enter' || event.key === 'Tab') {
+      event.preventDefault();
+      event.stopPropagation();
+      this.handleInput(this.getCurrentOption(), this.refTextArea, 'textarea');
+    } else if (event.key === 'ArrowDown') {
+      this.moveFocusedOption(1);
+      event.preventDefault();
+      event.stopPropagation();
+    } else if (event.key === 'ArrowUp') {
+      this.moveFocusedOption(-1);
+      event.preventDefault();
+      event.stopPropagation();
     }
   }
 
-  private handleSingleCompletionKeyUp(
-    event: any,
-    option: ValuedCompletionOption,
-    ref: HTMLElement,
-    selector: string
-  ) {
-    if (event.key === 'Enter' || event.key === 'Tab') {
-      this.handleInput(option, ref, selector);
-    }
+  private getCurrentOption(): ValuedCompletionOption {
+    return this.state.options[this.state.optionIndex];
   }
 
   public render(): JSX.Element {
@@ -308,17 +289,16 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
           display:
             this.state.showCompletionsMenu && this.state.options.length !== 0 ? 'flex' : 'none'
         }}
-        onKeyUp={this.handleCompletionsKeyUp}
-        onKeyDown={this.handleCompletionsKeyDown}
       >
-        {this.state.options.map((option: ValuedCompletionOption) => (
+        {this.state.options.map((option: ValuedCompletionOption, index: number) => (
           <div
-            className={styles.completion}
+            data-completion-index={index}
+            className={
+              styles.completion + ' ' + (index === this.state.optionIndex ? styles.active : '')
+            }
             key={option.value}
             onClick={() => this.handleInput(option, this.refTextArea, 'textarea')}
-            onKeyUp={event =>
-              this.handleSingleCompletionKeyUp(event, option, this.refTextArea, 'textarea')
-            }
+            onMouseMove={this.handleMouseMove}
           >
             <span className={styles.name}>{option.name}</span>
             {option.summary && <span className={styles.summary}>{option.summary}</span>}
