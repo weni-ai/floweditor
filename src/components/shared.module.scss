@@ -57,7 +57,7 @@
 
 .send_email,
 .send_broadcast {
-  background: #38A169 !important;
+  background: #805AD5 !important;
 }
 
 .msg,
@@ -81,9 +81,12 @@
 .set_contact_status,
 .set_contact_channel,
 .add_contact_groups,
-.remove_contact_groups,
 .set_run_result {
-  background: #805AD5 !important;
+  background: #38A169 !important;
+}
+
+.remove_contact_groups {
+  background: $unnnic-color-neutral-darkest !important;
 }
 
 .play_audio {
