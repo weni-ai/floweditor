@@ -55,6 +55,7 @@ interface TembaCompletionState {
 }
 
 export class TembaCompletion extends React.Component<TembaCompletionProps, TembaCompletionState> {
+  private tembaCompletionRef: HTMLElement;
   private refInput: HTMLElement;
   private refTextArea: HTMLElement;
   completionsRef: React.RefObject<HTMLDivElement>;
@@ -99,7 +100,7 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
       ) as HTMLInputElement;
       textAreaEl.addEventListener('scroll', this.hideExpressionsMenu);
       document.addEventListener('mousedown', this.handleClickOutside);
-      document.addEventListener('keydown', this.handleCompletionsKeyDown);
+      this.tembaCompletionRef.addEventListener('keydown', this.handleCompletionsKeyDown);
     }
   }
 
@@ -110,7 +111,7 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
       ) as HTMLInputElement;
       textAreaEl.removeEventListener('scroll', this.hideExpressionsMenu);
       document.removeEventListener('mousedown', this.handleClickOutside);
-      document.removeEventListener('keydown', this.handleCompletionsKeyDown);
+      this.tembaCompletionRef.removeEventListener('keydown', this.handleCompletionsKeyDown);
     }
   }
 
@@ -315,54 +316,59 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
     const hasErrors = this.props.errors && this.props.errors.length > 0;
     return (
       <>
-        {this.props.label && <span className={styles.label}>{this.props.label}</span>}
-        {this.props.type === 'textarea' ? (
-          <div className={styles.textarea_wrapper}>
-            <UnnnicTextArea
-              data-testid={this.props.name}
+        <div
+          ref={(ele: any) => {
+            this.tembaCompletionRef = ele;
+          }}
+        >
+          {this.props.label && <span className={styles.label}>{this.props.label}</span>}
+          {this.props.type === 'textarea' ? (
+            <div className={styles.textarea_wrapper}>
+              <UnnnicTextArea
+                data-testid={this.props.name}
+                ref={(ele: any) => {
+                  this.refTextArea = ele;
+                }}
+                className={styles.textarea}
+                value={this.props.value}
+                on={{
+                  input: this.handleTextAreaInput
+                }}
+                placeholder={this.props.placeholder}
+                size={this.props.size}
+                type={hasErrors ? 'error' : 'normal'}
+                errors={this.props.errors}
+              />
+
+              {completionList}
+            </div>
+          ) : (
+            <UnnnicAutocompleteSelect
+              className={styles.completionInput}
               ref={(ele: any) => {
-                this.refTextArea = ele;
+                this.refInput = ele;
               }}
-              className={styles.textarea}
-              value={this.props.value}
+              value={[this.props.value]}
               on={{
-                input: this.handleTextAreaInput
+                input: (event: any[]) => this.handleInput(event[0], this.refInput, 'input'),
+                search: this.handleSearch
               }}
               placeholder={this.props.placeholder}
               size={this.props.size}
+              items={this.state.options}
+              textKey="name"
+              valueKey="value"
+              descriptionKey="summary"
+              closeOnSelect={true}
+              multi={false}
+              hasIconLeft={false}
+              hasIconRight={false}
+              showMenu={this.state.showCompletionsMenu}
               type={hasErrors ? 'error' : 'normal'}
-              errors={this.props.errors}
+              message={this.props.errors && this.props.errors[0]}
             />
-
-            {completionList}
-          </div>
-        ) : (
-          <UnnnicAutocompleteSelect
-            data-testid={this.props.name}
-            className={styles.completionInput}
-            ref={(ele: any) => {
-              this.refInput = ele;
-            }}
-            value={[this.props.value]}
-            on={{
-              input: (event: any[]) => this.handleInput(event[0], this.refInput, 'input'),
-              search: this.handleSearch
-            }}
-            placeholder={this.props.placeholder}
-            size={this.props.size}
-            items={this.state.options}
-            textKey="name"
-            valueKey="value"
-            descriptionKey="summary"
-            closeOnSelect={true}
-            multi={false}
-            hasIconLeft={false}
-            hasIconRight={false}
-            showMenu={this.state.showCompletionsMenu}
-            type={hasErrors ? 'error' : 'normal'}
-            message={this.props.errors && this.props.errors[0]}
-          />
-        )}
+          )}
+        </div>
       </>
     );
   }
