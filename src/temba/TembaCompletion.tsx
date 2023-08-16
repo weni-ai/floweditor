@@ -344,6 +344,7 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
             </div>
           ) : (
             <UnnnicAutocompleteSelect
+              data-testid={this.props.name}
               className={styles.completionInput}
               ref={(ele: any) => {
                 this.refInput = ele;
