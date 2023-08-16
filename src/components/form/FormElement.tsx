@@ -81,7 +81,6 @@ export default class FormElement extends React.PureComponent<FormElementProps> {
   public render(): JSX.Element {
     const name: JSX.Element = this.getName();
     const helpText: JSX.Element = this.getHelpText();
-    const errorsToDisplay: JSX.Element = this.getErrors();
 
     const className = cx({
       [styles.ele]: true,

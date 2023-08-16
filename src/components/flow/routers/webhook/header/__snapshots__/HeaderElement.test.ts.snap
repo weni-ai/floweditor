@@ -14,6 +14,7 @@ Array [
 exports[`HeaderElement instance methods handleChangeName should update state, call onChange prop: setState 1`] = `
 Array [
   Object {
+    "errors": Array [],
     "name": Object {
       "value": "Content-Type",
     },
@@ -48,9 +49,9 @@ exports[`HeaderElement instance methods handleChangeName should update state, ca
             "value": "Content-Type",
           }
         }
-        name="Header Name"
+        name="Ex: Accept"
         onChange={[Function]}
-        placeholder="Header Name"
+        placeholder="Ex: Accept"
       />
     </div>
     <div
@@ -64,20 +65,14 @@ exports[`HeaderElement instance methods handleChangeName should update state, ca
             "value": "application/json",
           }
         }
-        name="Value"
+        name="Ex: application/json"
         onChange={[Function]}
-        placeholder="Value"
+        placeholder="Ex: application/json"
       />
     </div>
     <div
-      className="remove_ico"
-      data-spec="remove-icon"
-      onClick={[Function]}
-    >
-      <span
-        className="fe-x"
-      />
-    </div>
+      className="remove_icon"
+    />
   </div>
 </FormElement>
 `;
@@ -123,9 +118,9 @@ exports[`HeaderElement instance methods handleChangeValue should update state, c
             "value": "Content-Type",
           }
         }
-        name="Header Name"
+        name="Ex: Accept"
         onChange={[Function]}
-        placeholder="Header Name"
+        placeholder="Ex: Accept"
       />
     </div>
     <div
@@ -143,20 +138,14 @@ exports[`HeaderElement instance methods handleChangeValue should update state, c
             },
           }
         }
-        name="Value"
+        name="Ex: application/json"
         onChange={[Function]}
-        placeholder="Value"
+        placeholder="Ex: application/json"
       />
     </div>
     <div
-      className="remove_ico"
-      data-spec="remove-icon"
-      onClick={[Function]}
-    >
-      <span
-        className="fe-x"
-      />
-    </div>
+      className="remove_icon"
+    />
   </div>
 </FormElement>
 `;
@@ -203,9 +192,9 @@ exports[`HeaderElement render should render remove icon 1`] = `
             "value": "Content-Type",
           }
         }
-        name="Header Name"
+        name="Ex: Accept"
         onChange={[Function]}
-        placeholder="Header Name"
+        placeholder="Ex: Accept"
       />
     </div>
     <div
@@ -219,18 +208,21 @@ exports[`HeaderElement render should render remove icon 1`] = `
             "value": "application/json",
           }
         }
-        name="Value"
+        name="Ex: application/json"
         onChange={[Function]}
-        placeholder="Value"
+        placeholder="Ex: application/json"
       />
     </div>
     <div
-      className="remove_ico"
-      data-spec="remove-icon"
-      onClick={[Function]}
+      className="remove_icon"
     >
-      <span
-        className="fe-x"
+      <ForwardRef
+        clickable={true}
+        data-spec="remove-icon"
+        icon="delete-1-1"
+        onClick={[Function]}
+        scheme="neutral-cloudy"
+        size="sm"
       />
     </div>
   </div>
@@ -243,9 +235,10 @@ Object {
   "entry": Object {
     "value": "application/json",
   },
-  "name": "Value",
+  "error": undefined,
+  "name": "Ex: application/json",
   "onChange": [Function],
-  "placeholder": "Value",
+  "placeholder": "Ex: application/json",
 }
 `;
 
@@ -276,9 +269,9 @@ exports[`HeaderElement render should render self, children with base props 2`] =
             "value": "Content-Type",
           }
         }
-        name="Header Name"
+        name="Ex: Accept"
         onChange={[Function]}
-        placeholder="Header Name"
+        placeholder="Ex: Accept"
       />
     </div>
     <div
@@ -292,20 +285,14 @@ exports[`HeaderElement render should render self, children with base props 2`] =
             "value": "application/json",
           }
         }
-        name="Value"
+        name="Ex: application/json"
         onChange={[Function]}
-        placeholder="Value"
+        placeholder="Ex: application/json"
       />
     </div>
     <div
-      className="remove_ico"
-      data-spec="remove-icon"
-      onClick={[Function]}
-    >
-      <span
-        className="fe-x"
-      />
-    </div>
+      className="remove_icon"
+    />
   </div>
 </FormElement>
 `;

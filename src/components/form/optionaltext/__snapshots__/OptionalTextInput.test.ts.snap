@@ -2,15 +2,20 @@
 
 exports[`OptionalTextInput renders 1`] = `
 <div
-  className="optional_text_input"
+  className="optional_text_input toggle"
 >
   <span
-    className="toggle_link"
+    className="toggle_link "
     data-spec="toggle-link"
     data-testid="toggle-link"
     onClick={[Function]}
   >
     Click me to show
+    <ForwardRef
+      icon="arrow-button-right-1"
+      scheme="neutral-cleanest"
+      size="xs"
+    />
   </span>
 </div>
 `;
@@ -18,6 +23,7 @@ exports[`OptionalTextInput renders 1`] = `
 exports[`OptionalTextInput updates 1`] = `
 Object {
   "editing": true,
+  "showToggle": true,
   "valid": true,
 }
 `;

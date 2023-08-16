@@ -1,5 +1,5 @@
 import UpdateContactComp from 'components/flow/actions/updatecontact/UpdateContact';
-import { SetContactProperty, AnyAction, SetContactField } from 'flowTypes';
+import { SetContactField } from 'flowTypes';
 import { composeComponentTestUtils } from 'testUtils';
 import {
   createSetContactChannelAction,

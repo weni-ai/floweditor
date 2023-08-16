@@ -2,7 +2,7 @@
 
 exports[`ActionWrapper render should display hybrid style 1`] = `
 <div
-  className="action has_router localized"
+  className="action has_router localized send_msg"
   data-spec="action-container"
   id="action-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
 >
@@ -17,15 +17,17 @@ exports[`ActionWrapper render should display hybrid style 1`] = `
   >
     <TitleBar
       __className="send_msg"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
+      selected={false}
       shouldCancelClick={[Function]}
       showMove={false}
       showRemoval={true}
-      title="Send Message"
+      title="Send message"
     />
     <div
-      className="body send_msg"
+      className="body send_msg "
       data-spec="action-body"
     />
   </div>
@@ -34,7 +36,7 @@ exports[`ActionWrapper render should display hybrid style 1`] = `
 
 exports[`ActionWrapper render should display missing_localization style 1`] = `
 <div
-  className="action translating missing_localization"
+  className="action translating missing_localization send_msg"
   data-spec="action-container"
   id="action-0ed4b887-2924-45ea-babe-4d580cdfb000"
 >
@@ -49,15 +51,17 @@ exports[`ActionWrapper render should display missing_localization style 1`] = `
   >
     <TitleBar
       __className="send_msg"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
+      selected={false}
       shouldCancelClick={[Function]}
       showMove={false}
       showRemoval={false}
-      title="Send Message"
+      title="Send message"
     />
     <div
-      className="body send_msg"
+      className="body send_msg "
       data-spec="action-body"
     />
   </div>
@@ -66,7 +70,7 @@ exports[`ActionWrapper render should display missing_localization style 1`] = `
 
 exports[`ActionWrapper render should display not_localizable style 1`] = `
 <div
-  className="action translating not_localizable"
+  className="action translating not_localizable enter_flow"
   data-spec="action-container"
   id="action-d4a3a01c-1dee-4324-b107-4ac7a21d836f"
 >
@@ -81,15 +85,17 @@ exports[`ActionWrapper render should display not_localizable style 1`] = `
   >
     <TitleBar
       __className="enter_flow"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
+      selected={false}
       shouldCancelClick={[Function]}
       showMove={false}
       showRemoval={false}
-      title="Enter a Flow"
+      title="Enter another flow"
     />
     <div
-      className="body enter_flow"
+      className="body enter_flow "
       data-spec="action-body"
     />
   </div>
@@ -98,7 +104,7 @@ exports[`ActionWrapper render should display not_localizable style 1`] = `
 
 exports[`ActionWrapper render should display translating style 1`] = `
 <div
-  className="action translating missing_localization"
+  className="action translating missing_localization send_msg"
   data-spec="action-container"
   id="action-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
 >
@@ -113,15 +119,17 @@ exports[`ActionWrapper render should display translating style 1`] = `
   >
     <TitleBar
       __className="send_msg"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
+      selected={false}
       shouldCancelClick={[Function]}
       showMove={false}
       showRemoval={false}
-      title="Send Message"
+      title="Send message"
     />
     <div
-      className="body send_msg"
+      className="body send_msg "
       data-spec="action-body"
     />
   </div>
@@ -131,18 +139,20 @@ exports[`ActionWrapper render should display translating style 1`] = `
 exports[`ActionWrapper render should render self, children with base props 1`] = `
 Object {
   "__className": "send_msg",
+  "hasIssues": false,
   "onMoveUp": [Function],
   "onRemoval": [Function],
+  "selected": false,
   "shouldCancelClick": [Function],
   "showMove": false,
   "showRemoval": true,
-  "title": "Send Message",
+  "title": "Send message",
 }
 `;
 
 exports[`ActionWrapper render should render self, children with base props 2`] = `
 <div
-  className="action localized"
+  className="action localized send_msg"
   data-spec="action-container"
   id="action-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
 >
@@ -157,15 +167,17 @@ exports[`ActionWrapper render should render self, children with base props 2`] =
   >
     <TitleBar
       __className="send_msg"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
+      selected={false}
       shouldCancelClick={[Function]}
       showMove={false}
       showRemoval={true}
-      title="Send Message"
+      title="Send message"
     />
     <div
-      className="body send_msg"
+      className="body send_msg "
       data-spec="action-body"
     />
   </div>
@@ -174,7 +186,7 @@ exports[`ActionWrapper render should render self, children with base props 2`] =
 
 exports[`ActionWrapper render should show move icon 1`] = `
 <div
-  className="action localized"
+  className="action localized send_msg"
   data-spec="action-container"
   id="action-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
 >
@@ -189,15 +201,17 @@ exports[`ActionWrapper render should show move icon 1`] = `
   >
     <TitleBar
       __className="send_msg"
+      hasIssues={false}
       onMoveUp={[Function]}
       onRemoval={[Function]}
+      selected={false}
       shouldCancelClick={[Function]}
       showMove={true}
       showRemoval={true}
-      title="Send Message"
+      title="Send message"
     />
     <div
-      className="body send_msg"
+      className="body send_msg "
       data-spec="action-body"
     />
   </div>

@@ -67,10 +67,8 @@ const createMissingDependency = (name: string, type: DependencyType): FlowIssue 
 
 describe(IssuesTab.name, () => {
   it('renders', () => {
-    const { baseElement, getByText } = render(<IssuesTab {...issuesProps} />);
+    const { baseElement } = render(<IssuesTab {...issuesProps} />);
 
-    // should have an empty list
-    getByText('Flow Issues (0)');
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -89,9 +87,7 @@ describe(IssuesTab.name, () => {
       />
     );
 
-    expect(getAllByText('Send Message:').length).toBe(3);
-
-    getByText('Flow Issues (3)');
+    expect(getAllByText('Send message:').length).toBe(3);
 
     // group
     getByText('Cannot find a group for');

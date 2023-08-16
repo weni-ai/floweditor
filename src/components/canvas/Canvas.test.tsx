@@ -4,7 +4,7 @@ import React from 'react';
 import { fireEvent, render } from 'test/utils';
 import { createUUID } from 'utils';
 
-const ele = (selected: boolean): JSX.Element => <div>I am a draggable element</div>;
+jest.mock('components/sidebar/Sidebar', () => () => 'Mocked Sidebar');
 
 const baseProps: CanvasProps = {
   uuid: createUUID(),

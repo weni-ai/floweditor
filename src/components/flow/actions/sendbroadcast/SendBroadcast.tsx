@@ -6,12 +6,6 @@ import * as React from 'react';
 import styles from './SendBroadcast.module.scss';
 import i18n from 'config/i18n';
 
-import { applyVueInReact } from 'vuereact-combined';
-// @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
-
-const UnnnicIcon = applyVueInReact(unnnicIcon);
-
 export const PLACEHOLDER = i18n.t(
   'actions.send_broadcast.placeholder',
   'Send a message to the contact'

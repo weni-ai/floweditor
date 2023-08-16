@@ -5,7 +5,7 @@ exports[`ExpressionRouterForm should render 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -15,7 +15,7 @@ exports[`ExpressionRouterForm should render 1`] = `
     }
   }
   headerClass="split_by_expression"
-  title="Split by Expression"
+  title="Split by expression"
 >
   <TypeList
     __className=""
@@ -28,48 +28,42 @@ exports[`ExpressionRouterForm should render 1`] = `
           "exits",
           "cases",
         ],
-        "name": "Split by Expression",
+        "name": "Split by expression",
         "type": "split_by_expression",
       }
     }
     onChange={[MockFunction]}
   />
-  <p>
-    If the expression...
-  </p>
-  <TextInputElement
-    autocomplete={true}
-    entry={
-      Object {
-        "value": "@input.text",
+  <div
+    className="form_element"
+  >
+    <TextInputElement
+      autocomplete={true}
+      entry={
+        Object {
+          "value": "@input.text",
+        }
       }
-    }
-    name="Operand"
-    onChange={[Function]}
-    showLabel={false}
-  />
+      name="If the expression"
+      onChange={[Function]}
+      showLabel={true}
+    />
+  </div>
+  <div
+    className="u font secondary body-md color-neutral-cloudy"
+  >
+    If the message response
+  </div>
   <CaseList
     cases={Array []}
     data-spec="cases"
     onCasesUpdated={[Function]}
   />
   <OptionalTextInput
-    helpText={
-      <Trans
-        i18nKey="forms.result_name_help"
-        values={
-          Object {
-            "resultFormat": "@results",
-          }
-        }
-      >
-        By naming the result, you can reference it later using [[resultFormat]]
-      </Trans>
-    }
     maxLength={64}
-    name="Result Name"
+    name="Save as result"
     onChange={[Function]}
-    toggleText="Save as.."
+    toggleText="Save as"
     value={
       Object {
         "value": "",

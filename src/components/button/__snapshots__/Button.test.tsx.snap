@@ -4,10 +4,25 @@ exports[`Button render should render self, children with base props 1`] = `
 <body>
   <div>
     <div
-      class="btn primary  "
-      style="margin-left: 0px; margin-top: 0px;"
+      data-use-vue-component-wrap=""
     >
-      Save
+      <button
+        class="unnnic-button unnnic-button--size-large unnnic-button--primary unnnic-button-scheme--undefined"
+        data-passed-props="[object Object]"
+        data-v-00f478da=""
+        style="margin-left: 0px; margin-top: 0px;"
+      >
+        <!---->
+        <!---->
+        <!---->
+        <span
+          class="unnnic-button__label"
+          data-v-00f478da=""
+        >
+           Save 
+        </span>
+        <!---->
+      </button>
     </div>
   </div>
 </body>

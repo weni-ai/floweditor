@@ -266,7 +266,7 @@ Array [
           "categories",
           "cases",
         ],
-        "name": "Wait for Response",
+        "name": "Wait for response",
         "type": "wait_for_response",
         "visibility": Array [
           "messaging",

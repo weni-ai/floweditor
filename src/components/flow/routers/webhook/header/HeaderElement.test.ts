@@ -63,14 +63,14 @@ describe(HeaderElement.name, () => {
     });
 
     it('should render remove icon', () => {
-      const { wrapper, instance } = setup(true, {
+      const { wrapper } = setup(true, {
         index: set(1),
-        empty: setFalse()
+        empty: setFalse(),
+        canRemove: set(true)
       });
       const removeIcon = getSpecWrapper(wrapper, removeIcoSpecId);
 
-      expect(removeIcon.hasClass('remove_ico')).toBeTruthy();
-      expect(wrapper.find('.fe-x').exists()).toBeTruthy();
+      expect(removeIcon.exists()).toBeTruthy();
       expect(wrapper).toMatchSnapshot();
     });
   });

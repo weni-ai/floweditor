@@ -5,11 +5,6 @@ import * as React from 'react';
 import { AssetType } from 'store/flowContext';
 
 import styles from './StartSession.module.scss';
-import { applyVueInReact } from 'vuereact-combined';
-// @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
-
-const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 const MAX_TO_SHOW = 5;
 

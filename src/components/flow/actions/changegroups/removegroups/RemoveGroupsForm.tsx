@@ -6,7 +6,6 @@ import {
 } from 'components/flow/actions/changegroups/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
-import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import { fakePropType } from 'config/ConfigProvider';
 import { ChangeGroups } from 'flowTypes';

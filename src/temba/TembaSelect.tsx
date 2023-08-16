@@ -1,7 +1,7 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { debounce } from 'utils';
+import { debounce, snakify } from 'utils';
 import styles from './TembaSelect.module.scss';
 import { Assets, AssetStore } from 'store/flowContext';
 
@@ -455,6 +455,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     if (!isTagComponent && !isMultiComponent && !this.props.searchable) {
       selectInput = (
         <ElUnnnicSelect
+          data-testid={`temba_select_${snakify(this.props.name)}`}
           value={this.getValue(this.props.value)}
           on={{
             input: this.handleSelectChange
@@ -478,6 +479,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     } else {
       selectInput = (
         <ElUnnnicAutocompleteSelect
+          data-testid={`temba_select_${snakify(this.props.name)}`}
           className={isSearchableOnly ? styles.bold_placeholder : ''}
           ref={(ele: any) => {
             this.selectInputRef = ele;

@@ -1,7 +1,7 @@
 import { ActionFormProps } from 'components/flow/props';
 import React from 'react';
 import { AssetType } from 'store/flowContext';
-import { fireEvent, render, fireChangeText, fireTembaSelect } from 'test/utils';
+import { fireEvent, render, fireUnnnicSelect, act, fireUnnnicInputChangeText } from 'test/utils';
 import { composeComponentTestUtils, mock } from 'testUtils';
 import {
   createStartSessionAction,
@@ -28,41 +28,57 @@ describe(StartSessionForm.name, () => {
       expect(queryByTestId('recipients')).not.toBeNull();
     });
 
-    it('should render create new contacts', () => {
+    it('should render create new contacts', async () => {
       const props = getActionFormProps(createStartSessionAction());
       const { baseElement, queryByTestId, getByTestId } = render(<StartSessionForm {...props} />);
 
-      fireTembaSelect(getByTestId('temba_select_start_type'), START_TYPE_CREATE.value);
+      await act(async () => {
+        fireUnnnicSelect(
+          getByTestId('temba_select_start_type'),
+          { value: START_TYPE_CREATE.value },
+          'value'
+        );
+      });
 
       expect(queryByTestId('recipients')).toBeNull();
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('should render contact query', () => {
+    it('should render contact query', async () => {
       const props = getActionFormProps(createStartSessionAction());
-      const { baseElement, getAllByTestId, getByTestId, getByText } = render(
-        <StartSessionForm {...props} />
-      );
+      const { baseElement, getByTestId, getByText } = render(<StartSessionForm {...props} />);
 
-      fireTembaSelect(getByTestId('temba_select_start_type'), START_TYPE_QUERY.value);
+      await act(async () => {
+        fireUnnnicSelect(getByTestId('temba_select_start_type'), START_TYPE_QUERY, 'value');
+      });
 
-      fireChangeText(getByTestId('Contact Query'), 'my_field > 6');
+      await act(async () => {
+        fireUnnnicInputChangeText(getByTestId('Contact Query'), 'my_field > 6');
+      });
       expect(baseElement).toMatchSnapshot();
 
-      fireEvent.click(getByText('Ok'));
+      fireEvent.click(getByText('Confirm'));
       expect(props.updateAction).toHaveBeenCalled();
       expect(props.updateAction).toMatchCallSnapshot();
     });
 
-    it('should warn about invalid fields in contact queries', () => {
+    it('should warn about invalid fields in contact queries', async () => {
       const props = getActionFormProps(createStartSessionAction());
       const { baseElement, getByTestId } = render(<StartSessionForm {...props} />);
 
-      fireTembaSelect(getByTestId('temba_select_start_type'), START_TYPE_QUERY.value);
+      await act(async () => {
+        fireUnnnicSelect(
+          getByTestId('temba_select_start_type'),
+          { value: START_TYPE_QUERY.value },
+          'value'
+        );
+      });
 
       const input = getByTestId('Contact Query');
-      fireChangeText(input, '@fields.arst = 34');
-      fireEvent.blur(input);
+      await act(async () => {
+        fireUnnnicInputChangeText(input, '@fields.arst = 34');
+        fireEvent.blur(input);
+      });
       expect(baseElement).toMatchSnapshot();
     });
 

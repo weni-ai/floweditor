@@ -5,7 +5,7 @@ exports[`WebhookRouterForm should render 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -19,17 +19,18 @@ exports[`WebhookRouterForm should render 1`] = `
     Array [
       Object {
         "body": <React.Fragment>
-          <p
-            className="info"
+          <div
+            className="info u font secondary body-md color-neutral-cloudy"
           >
             <Trans
               i18nKey="forms.webhook_header_summary"
             >
               Add any additional headers below that you would like to send along with your request.
             </Trans>
-          </p>
+          </div>
           <div>
             <HeaderElement
+              canRemove={true}
               entry={
                 Object {
                   "value": Object {
@@ -46,6 +47,7 @@ exports[`WebhookRouterForm should render 1`] = `
           </div>
           <div>
             <HeaderElement
+              canRemove={false}
               entry={
                 Object {
                   "value": Object {
@@ -67,12 +69,9 @@ exports[`WebhookRouterForm should render 1`] = `
       },
       Object {
         "body": <div
-          className="body_form"
+          className="body_form u font secondary body-md color-neutral-cloudy"
         >
-          <h4>
-            GET Body
-          </h4>
-          <p>
+          <div>
             <Trans
               i18nKey="forms.webhook_body_summary"
               values={
@@ -81,41 +80,33 @@ exports[`WebhookRouterForm should render 1`] = `
                 }
               }
             >
-              Modify the body of the [[method]] request that will be sent to your webhook.
+              Modify the body of the [[method]] request that will be sent to your webhook
             </Trans>
-          </p>
-          <TextInputElement
-            __className="req_body"
-            autocomplete={true}
-            entry={
-              Object {
-                "value": "",
-              }
-            }
-            helpText={
-              <Trans
-                i18nKey="forms.webhook_body_summary"
-                values={
-                  Object {
-                    "method": "GET",
-                  }
+          </div>
+          <div
+            className="req_body"
+          >
+            <TextInputElement
+              autocomplete={true}
+              entry={
+                Object {
+                  "value": "",
                 }
-              >
-                Modify the body of the [[method]] request that will be sent to your webhook.
-              </Trans>
-            }
-            name="GET Body"
-            onChange={[Function]}
-            showLabel={false}
-            textarea={true}
-          />
+              }
+              name="GET Body"
+              onChange={[Function]}
+              placeholder="Type here..."
+              showLabel={false}
+              textarea={true}
+            />
+          </div>
         </div>,
         "checked": false,
         "name": "GET Body",
       },
     ]
   }
-  title="Call Webhook"
+  title="Call webhook"
 >
   <TypeList
     __className=""
@@ -131,7 +122,7 @@ exports[`WebhookRouterForm should render 1`] = `
         "localizeableKeys": Array [
           "exits",
         ],
-        "name": "Call Webhook",
+        "name": "Call webhook",
         "type": "call_webhook",
         "visibility": Array [
           "messaging",
@@ -143,6 +134,7 @@ exports[`WebhookRouterForm should render 1`] = `
     onChange={[MockFunction]}
   />
   <div
+    className="url_container"
     style={
       Object {
         "alignItems": "flex-end",
@@ -212,21 +204,21 @@ exports[`WebhookRouterForm should render 1`] = `
     </div>
   </div>
   <div
-    className="instructions"
+    className="instructions u font secondary body-md color-neutral-cloudy"
   >
-    <p>
+    <div>
       <Trans
         i18nKey="forms.webhook_help"
       >
         If your server responds with JSON, each property will be added to the Flow.
       </Trans>
-    </p>
+    </div>
     <pre
       className="code"
     >
       { "product": "Solar Charging Kit", "stock level": 32 }
     </pre>
-    <p>
+    <div>
       <Trans
         i18nKey="forms.webhook_example"
       >
@@ -245,25 +237,13 @@ exports[`WebhookRouterForm should render 1`] = `
         </span>
          for use in the flow.
       </Trans>
-    </p>
+    </div>
   </div>
   <OptionalTextInput
-    helpText={
-      <Trans
-        i18nKey="forms.result_name_help"
-        values={
-          Object {
-            "resultFormat": "@results.result",
-          }
-        }
-      >
-        By naming the result, you can reference it later using [[resultFormat]]
-      </Trans>
-    }
     maxLength={64}
-    name="Result Name"
+    name="Save as result"
     onChange={[Function]}
-    toggleText="Save as.."
+    toggleText="Save as"
     value={
       Object {
         "value": "Result",
@@ -366,201 +346,6 @@ Object {
 `;
 
 exports[`WebhookRouterForm updates should save changes 1`] = `
-<body>
-  <div>
-    <div
-      class="dialog"
-    >
-      <div
-        class="tabs"
-      >
-        <div
-          class="tab "
-        >
-          HTTP Headers
-           
-          <span
-            class="tab_icon fe-check"
-          />
-        </div>
-        <div
-          class="tab "
-        >
-          GET Body
-           
-        </div>
-      </div>
-      <div
-        class="header call_webhook"
-      >
-        <div
-          class="title_container"
-        >
-          <div
-            class="title"
-          >
-            Call Webhook
-          </div>
-          <div
-            class="subtitle"
-          />
-        </div>
-      </div>
-      <div
-        class="content"
-      >
-        <div
-          class=" type_list"
-        >
-          <p>
-            When a contact arrives at this point in your flow...
-          </p>
-          <div>
-            <div
-              class="normal "
-            >
-              <temba-select
-                data-testid="temba_select_type"
-                errors="[]"
-                expressions=""
-                name="type"
-                namekey="description"
-                searchable="true"
-                valuekey="type"
-                values="[{\\"type\\":\\"call_webhook\\",\\"name\\":\\"Call Webhook\\",\\"description\\":\\"Call a webhook\\",\\"localizeableKeys\\":[\\"exits\\"],\\"aliases\\":[\\"split_by_webhook\\"],\\"visibility\\":[\\"messaging\\",\\"messaging_background\\",\\"voice\\"]}]"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          style="display: flex; align-items: flex-end;"
-        >
-          <div
-            class="method"
-          >
-            <div
-              class="ele"
-            >
-              <div
-                class="normal "
-              >
-                <temba-select
-                  data-testid="temba_select_method"
-                  errors="[]"
-                  expressions=""
-                  name="Method"
-                  namekey="name"
-                  valuekey="value"
-                  values="[{\\"value\\":\\"GET\\",\\"name\\":\\"GET\\"}]"
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            class="url"
-          >
-            <div
-              class="ele"
-            >
-              <div
-                class="wrapper normal"
-              >
-                <input
-                  data-testid="URL"
-                  name="URL"
-                  placeholder="Enter a URL"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="instructions"
-        >
-          <p>
-            If your server responds with JSON, each property will be added to the Flow.
-          </p>
-          <pre
-            class="code"
-          >
-            { "product": "Solar Charging Kit", "stock level": 32 }
-          </pre>
-          <p>
-            This response would add 
-            <span
-              class="example"
-            >
-              @webhook.product
-            </span>
-             and 
-            <span
-              class="example"
-            >
-              @webhook["stock level"]
-            </span>
-             for use in the flow.
-          </p>
-        </div>
-        <div
-          class="optional_text_input"
-        >
-          <div
-            class="ele"
-          >
-            <div
-              class="label"
-            >
-              Result Name
-            </div>
-            <div
-              class="wrapper normal"
-            >
-              <input
-                data-testid="Result Name"
-                name="Result Name"
-                value="Result"
-              />
-            </div>
-            <div
-              class="help_text"
-            >
-              By naming the result, you can reference it later using @results.result
-               
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="footer"
-      >
-        <div
-          class="buttons"
-        >
-          <div
-            class="right_buttons"
-          >
-            <div
-              class="btn secondary  "
-              style="margin-left: 0px; margin-top: 0px;"
-            >
-              Cancel
-            </div>
-            <div
-              class="btn primary  "
-              style="margin-left: 10px; margin-top: 0px;"
-            >
-              Ok
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`WebhookRouterForm updates should save changes 2`] = `
 Array [
   Object {
     "inboundConnections": Object {},

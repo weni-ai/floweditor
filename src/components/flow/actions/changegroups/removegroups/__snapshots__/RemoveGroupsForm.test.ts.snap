@@ -14,8 +14,9 @@ exports[`RemoveGroupsForm render should render 1`] = `
       },
     }
   }
+  className="dialog"
   headerClass="remove_contact_groups"
-  title="Remove from Group"
+  title="Remove from group"
 >
   <TypeList
     __className=""
@@ -24,18 +25,52 @@ exports[`RemoveGroupsForm render should render 1`] = `
         "component": [Function],
         "description": "Remove the contact from a group",
         "form": [Function],
-        "name": "Remove from Group",
+        "name": "Remove from group",
         "type": "remove_contact_groups",
       }
     }
     onChange={[MockFunction]}
   />
-  <div>
-    <p
-      data-spec="label"
+  <div
+    className="form_element u font secondary body-md color-neutral-cloudy"
+  >
+    Groups that the contact will be removed:
+    <ForwardRef
+      $model={
+        Object {
+          "setter": [Function],
+          "value": "false",
+        }
+      }
+      size="sm"
+      value="false"
     >
-      Select the groups to remove the contact from.
-    </p>
+      <span
+        className="color-neutral-cloudy"
+      >
+        Selected
+      </span>
+    </ForwardRef>
+    <ForwardRef
+      $model={
+        Object {
+          "setter": [Function],
+          "value": "false",
+        }
+      }
+      size="sm"
+      value="true"
+    >
+      <span
+        className="color-neutral-cloudy"
+      >
+        All
+      </span>
+    </ForwardRef>
+  </div>
+  <div
+    className="form_element"
+  >
     <AssetSelector
       entry={
         Object {
@@ -70,19 +105,11 @@ exports[`RemoveGroupsForm render should render 1`] = `
       multi={true}
       name="Groups"
       onChange={[Function]}
-      placeholder="Select Groups"
+      placeholder="Select groups"
       searchable={true}
       shouldExclude={[Function]}
     />
   </div>
-  <CheckboxElement
-    checked={false}
-    description="Remove the active contact from all groups they're a member of."
-    labelClassName="checkbox"
-    name="Remove from all"
-    onChange={[Function]}
-    title="Remove from all"
-  />
 </Dialog>
 `;
 

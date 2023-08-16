@@ -87,7 +87,7 @@ Array [
       "templating.variables",
     ],
     "massageForDisplay": [Function],
-    "name": "Send Message",
+    "name": "Send message",
     "type": "send_msg",
   },
   Object {
@@ -101,7 +101,7 @@ Array [
       "categories",
       "cases",
     ],
-    "name": "Wait for Response",
+    "name": "Wait for response",
     "type": "wait_for_response",
     "visibility": Array [
       "messaging",
@@ -116,14 +116,14 @@ Array [
     "localizeableKeys": Array [
       "text",
     ],
-    "name": "Send Broadcast",
+    "name": "Send broadcast",
     "type": "send_broadcast",
   },
   Object {
     "component": [Function],
     "description": "Label the incoming message",
     "form": [Function],
-    "name": "Add Labels",
+    "name": "Add label",
     "type": "add_input_labels",
     "visibility": Array [
       "messaging",
@@ -142,14 +142,14 @@ Array [
     "component": [Function],
     "description": "Add the contact to a group",
     "form": [Function],
-    "name": "Add to Group",
+    "name": "Add to group",
     "type": "add_contact_groups",
   },
   Object {
     "component": [Function],
     "description": "Remove the contact from a group",
     "form": [Function],
-    "name": "Remove from Group",
+    "name": "Remove from group",
     "type": "remove_contact_groups",
   },
   Object {
@@ -162,19 +162,19 @@ Array [
     "component": [Function],
     "description": "Update the contact",
     "form": [Function],
-    "name": "Update Contact",
+    "name": "Update contact",
     "type": "set_contact_field",
   },
   Object {
     "component": [Function],
-    "description": "Send an email",
+    "description": "Send email",
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
       "subject",
       "body",
     ],
-    "name": "Send Email",
+    "name": "Send email",
     "type": "send_email",
     "visibility": Array [
       "messaging",
@@ -186,7 +186,7 @@ Array [
     "component": [Function],
     "description": "Save a result for this flow",
     "form": [Function],
-    "name": "Save Flow Result",
+    "name": "Save flow result",
     "type": "set_run_result",
   },
   Object {
@@ -210,7 +210,7 @@ Array [
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Call Webhook",
+    "name": "Call webhook",
     "type": "call_webhook",
     "visibility": Array [
       "messaging",
@@ -249,7 +249,7 @@ Array [
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Enter a Flow",
+    "name": "Enter another flow",
     "type": "enter_flow",
   },
   Object {
@@ -260,7 +260,7 @@ Array [
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Start Somebody Else",
+    "name": "Start somebody else",
     "type": "start_session",
     "visibility": Array [
       "messaging",
@@ -369,7 +369,7 @@ Array [
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Split by Intent",
+    "name": "Split by intent",
     "type": "split_by_intent",
     "visibility": Array [
       "messaging",
@@ -385,18 +385,18 @@ Array [
       "exits",
       "cases",
     ],
-    "name": "Split by Expression",
+    "name": "Split by expression",
     "type": "split_by_expression",
   },
   Object {
-    "description": "Split by a contact field",
+    "description": "Split by contact field",
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
       "exits",
       "cases",
     ],
-    "name": "Split by Contact Field",
+    "name": "Split by contact field",
     "type": "split_by_contact_field",
   },
   Object {
@@ -410,17 +410,17 @@ Array [
       "exits",
       "cases",
     ],
-    "name": "Split by Flow Result",
+    "name": "Split by flow result",
     "type": "split_by_run_result",
   },
   Object {
-    "description": "Split by random chance",
+    "description": "Split randomly",
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Split Randomly",
+    "name": "Split randomly",
     "type": "split_by_random",
   },
   Object {
@@ -430,7 +430,7 @@ Array [
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Split by Group Membership",
+    "name": "Split by group membership",
     "type": "split_by_groups",
   },
   Object {
@@ -440,7 +440,7 @@ Array [
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Split by URN Type",
+    "name": "Split by URN type",
     "type": "split_by_scheme",
   },
 ]
@@ -452,7 +452,7 @@ Object {
     "component": [Function],
     "description": "Add the contact to a group",
     "form": [Function],
-    "name": "Add to Group",
+    "name": "Add to group",
     "type": "add_contact_groups",
   },
   "add_contact_urn": Object {
@@ -466,7 +466,7 @@ Object {
     "component": [Function],
     "description": "Label the incoming message",
     "form": [Function],
-    "name": "Add Labels",
+    "name": "Add label",
     "type": "add_input_labels",
     "visibility": Array [
       "messaging",
@@ -486,7 +486,7 @@ Object {
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Split by Intent",
+    "name": "Split by intent",
     "type": "split_by_intent",
     "visibility": Array [
       "messaging",
@@ -540,7 +540,7 @@ Object {
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Call Webhook",
+    "name": "Call webhook",
     "type": "call_webhook",
     "visibility": Array [
       "messaging",
@@ -559,7 +559,7 @@ Object {
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Enter a Flow",
+    "name": "Enter another flow",
     "type": "enter_flow",
   },
   "missing": Object {
@@ -600,7 +600,7 @@ Object {
     "component": [Function],
     "description": "Remove the contact from a group",
     "form": [Function],
-    "name": "Remove from Group",
+    "name": "Remove from group",
     "type": "remove_contact_groups",
   },
   "say_msg": Object {
@@ -626,19 +626,19 @@ Object {
     "localizeableKeys": Array [
       "text",
     ],
-    "name": "Send Broadcast",
+    "name": "Send broadcast",
     "type": "send_broadcast",
   },
   "send_email": Object {
     "component": [Function],
-    "description": "Send an email",
+    "description": "Send email",
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
       "subject",
       "body",
     ],
-    "name": "Send Email",
+    "name": "Send email",
     "type": "send_email",
     "visibility": Array [
       "messaging",
@@ -657,7 +657,7 @@ Object {
       "templating.variables",
     ],
     "massageForDisplay": [Function],
-    "name": "Send Message",
+    "name": "Send message",
     "type": "send_msg",
   },
   "set_contact_channel": Object {
@@ -670,7 +670,7 @@ Object {
     "component": [Function],
     "description": "Update the contact",
     "form": [Function],
-    "name": "Update Contact",
+    "name": "Update contact",
     "type": "set_contact_field",
   },
   "set_contact_field": Object {
@@ -683,7 +683,7 @@ Object {
     "component": [Function],
     "description": "Update the contact",
     "form": [Function],
-    "name": "Update Contact",
+    "name": "Update contact",
     "type": "set_contact_field",
   },
   "set_contact_language": Object {
@@ -696,7 +696,7 @@ Object {
     "component": [Function],
     "description": "Update the contact",
     "form": [Function],
-    "name": "Update Contact",
+    "name": "Update contact",
     "type": "set_contact_field",
   },
   "set_contact_name": Object {
@@ -709,7 +709,7 @@ Object {
     "component": [Function],
     "description": "Update the contact",
     "form": [Function],
-    "name": "Update Contact",
+    "name": "Update contact",
     "type": "set_contact_field",
   },
   "set_contact_status": Object {
@@ -722,14 +722,14 @@ Object {
     "component": [Function],
     "description": "Update the contact",
     "form": [Function],
-    "name": "Update Contact",
+    "name": "Update contact",
     "type": "set_contact_field",
   },
   "set_run_result": Object {
     "component": [Function],
     "description": "Save a result for this flow",
     "form": [Function],
-    "name": "Save Flow Result",
+    "name": "Save flow result",
     "type": "set_run_result",
   },
   "split_by_airtime": Object {
@@ -753,14 +753,14 @@ Object {
     ],
   },
   "split_by_contact_field": Object {
-    "description": "Split by a contact field",
+    "description": "Split by contact field",
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
       "exits",
       "cases",
     ],
-    "name": "Split by Contact Field",
+    "name": "Split by contact field",
     "type": "split_by_contact_field",
   },
   "split_by_expression": Object {
@@ -771,7 +771,7 @@ Object {
       "exits",
       "cases",
     ],
-    "name": "Split by Expression",
+    "name": "Split by expression",
     "type": "split_by_expression",
   },
   "split_by_external_service": Object {
@@ -796,7 +796,7 @@ Object {
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Split by Group Membership",
+    "name": "Split by group membership",
     "type": "split_by_groups",
   },
   "split_by_intent": Object {
@@ -811,7 +811,7 @@ Object {
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Split by Intent",
+    "name": "Split by intent",
     "type": "split_by_intent",
     "visibility": Array [
       "messaging",
@@ -820,13 +820,13 @@ Object {
     ],
   },
   "split_by_random": Object {
-    "description": "Split by random chance",
+    "description": "Split randomly",
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Split Randomly",
+    "name": "Split randomly",
     "type": "split_by_random",
   },
   "split_by_resthook": Object {
@@ -860,7 +860,7 @@ Object {
       "exits",
       "cases",
     ],
-    "name": "Split by Flow Result",
+    "name": "Split by flow result",
     "type": "split_by_run_result",
   },
   "split_by_run_result_delimited": Object {
@@ -874,7 +874,7 @@ Object {
       "exits",
       "cases",
     ],
-    "name": "Split by Flow Result",
+    "name": "Split by flow result",
     "type": "split_by_run_result",
   },
   "split_by_scheme": Object {
@@ -884,7 +884,7 @@ Object {
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Split by URN Type",
+    "name": "Split by URN type",
     "type": "split_by_scheme",
   },
   "split_by_subflow": Object {
@@ -898,7 +898,7 @@ Object {
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Enter a Flow",
+    "name": "Enter another flow",
     "type": "enter_flow",
   },
   "split_by_ticket": Object {
@@ -927,7 +927,7 @@ Object {
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Call Webhook",
+    "name": "Call webhook",
     "type": "call_webhook",
     "visibility": Array [
       "messaging",
@@ -943,7 +943,7 @@ Object {
     "localizeableKeys": Array [
       "exits",
     ],
-    "name": "Start Somebody Else",
+    "name": "Start somebody else",
     "type": "start_session",
     "visibility": Array [
       "messaging",
@@ -962,7 +962,7 @@ Object {
       "categories",
       "cases",
     ],
-    "name": "Wait for Response",
+    "name": "Wait for response",
     "type": "wait_for_response",
     "visibility": Array [
       "messaging",
@@ -1076,7 +1076,7 @@ Object {
       "categories",
       "cases",
     ],
-    "name": "Wait for Response",
+    "name": "Wait for response",
     "type": "wait_for_response",
     "visibility": Array [
       "messaging",

@@ -2,7 +2,7 @@ import DialRouterForm from 'components/flow/routers/dial/DialRouterForm';
 import { Types } from 'config/interfaces';
 import { WaitTypes } from 'flowTypes';
 import * as React from 'react';
-import { fireEvent, render, getUpdatedNode, fireChangeText } from 'test/utils';
+import { fireEvent, render, getUpdatedNode, fireUnnnicInputChangeText, act } from 'test/utils';
 import { mock } from 'testUtils';
 import { createDialRouter, getRouterFormProps } from 'testUtils/assetCreators';
 import * as utils from 'utils';
@@ -31,10 +31,12 @@ describe(DialRouterForm.name, () => {
     expect(getUpdatedNode(routerProps).node).toEqual(routerProps.nodeSettings.originalNode.node);
   });
 
-  it('should update wait when phone number is changed', () => {
+  it('should update wait when phone number is changed', async () => {
     const { getByTestId, getByText } = render(<DialRouterForm {...routerProps} />);
 
-    fireChangeText(getByTestId('phone'), '@fields.supervisor_phone');
+    await act(async () => {
+      fireUnnnicInputChangeText(getByTestId('phone'), '@fields.supervisor_phone');
+    });
     fireEvent.click(getByText('Ok'));
 
     const router = getSwitchRouter(getUpdatedNode(routerProps).node);

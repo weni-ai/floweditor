@@ -130,6 +130,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
       <>
         {this.props.autocomplete ? (
           <TembaCompletion
+            name={this.props.name}
             value={this.props.entry.value}
             onInput={(value: string) => this.handleChange({ currentTarget: { value } })}
             label={this.props.showLabel ? this.props.name : null}
@@ -141,6 +142,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           />
         ) : (
           <UnnnicTextArea
+            data-testid={this.props.name}
             className={styles.textarea}
             value={this.props.entry.value}
             on={{
@@ -177,6 +179,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
       <>
         {this.props.autocomplete ? (
           <TembaCompletion
+            name={this.props.name}
             value={this.props.entry.value}
             onInput={(value: string) => this.handleChange({ currentTarget: { value } })}
             label={this.props.showLabel ? this.props.name : null}
@@ -187,6 +190,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           />
         ) : (
           <UnnnicInputNext
+            data-testid={this.props.name}
             value={this.props.entry.value}
             on={{
               input: (value: string) => this.handleChange({ currentTarget: { value } })

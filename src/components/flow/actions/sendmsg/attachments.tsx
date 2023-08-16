@@ -1,6 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
 import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
-import Pill from 'components/pill/Pill';
 import i18n from 'config/i18n';
 import { getCookie } from 'external';
 import React from 'react';

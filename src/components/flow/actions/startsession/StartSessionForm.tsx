@@ -97,13 +97,13 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
       updates.contactQuery = validate(
         i18n.t('forms.contact_query', 'Contact Query'),
         keys.contactQuery,
-        [shouldRequireIf(submitting && this.state.startType.value === START_TYPE_QUERY)]
+        [shouldRequireIf(submitting && this.state.startType.value.value === START_TYPE_QUERY.value)]
       );
     }
 
     if (keys.hasOwnProperty('recipients')) {
       updates.recipients = validate(i18n.t('forms.recipients', 'Recipients'), keys.recipients, [
-        shouldRequireIf(submitting && this.state.startType.value === START_TYPE_ASSETS)
+        shouldRequireIf(submitting && this.state.startType.value.value === START_TYPE_ASSETS.value)
       ]);
     }
 
@@ -164,7 +164,7 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
         </div>
         <p />
         <div>
-          {renderIf(this.state.startType.value === START_TYPE_ASSETS)(
+          {renderIf(this.state.startType.value.value === START_TYPE_ASSETS.value)(
             <div data-testid="recipients" className={styles.form_element}>
               <AssetSelector
                 name={i18n.t('forms.contacts')}
@@ -183,7 +183,7 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
             </div>
           )}
 
-          {renderIf(this.state.startType.value === START_TYPE_QUERY)(
+          {renderIf(this.state.startType.value.value === START_TYPE_QUERY.value)(
             <div data-testid="contact_query" className={styles.form_element}>
               <TextInputElement
                 name={i18n.t('forms.contact_query', 'Contact Query')}

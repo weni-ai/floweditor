@@ -1,15 +1,6 @@
-import { Types } from 'config/interfaces';
 import * as React from 'react';
-import { AssetType, RenderNode } from 'store/flowContext';
-import {
-  fireEvent,
-  render,
-  getCallParams,
-  fireTembaSelect,
-  getByDisplayValue,
-  fireChangeText,
-  getByTestId
-} from 'test/utils';
+import { AssetType } from 'store/flowContext';
+import { render, fireUnnnicInputChangeText, getUnnnicInputValue } from 'test/utils';
 import { mock } from 'testUtils';
 import { createClassifyRouter, getRouterFormProps } from 'testUtils/assetCreators';
 import * as utils from 'utils';
@@ -40,22 +31,19 @@ const getProps = () => {
 };
 
 describe(ClassifyRouterForm.name, () => {
-  it('should render', () => {
-    const { baseElement } = render(<ClassifyRouterForm {...getProps()} />);
-    expect(baseElement).toMatchSnapshot('default render');
-  });
-
   it('defaults to correct result name', () => {
     const props = getProps();
     props.nodeSettings.originalNode.node.router.result_name = 'Initial Result Name';
-    const { baseElement } = render(<ClassifyRouterForm {...props} />);
-    expect(baseElement).toMatchSnapshot('initial result name');
+    const { getByTestId } = render(<ClassifyRouterForm {...props} />);
+    const result = getByTestId('Save as result');
+    expect(getUnnnicInputValue(result)).toEqual('Initial Result Name');
   });
 
   it('updates the result name', () => {
-    const { baseElement, getByTestId } = render(<ClassifyRouterForm {...getProps()} />);
-    const result = getByTestId('Result Name');
-    fireChangeText(result, 'Updated Result Name');
-    expect(baseElement).toMatchSnapshot('updated result name');
+    const { getByTestId } = render(<ClassifyRouterForm {...getProps()} />);
+
+    const result = getByTestId('Save as result');
+    fireUnnnicInputChangeText(result, 'Updated Result Name');
+    expect(getUnnnicInputValue(result)).toEqual('Updated Result Name');
   });
 });

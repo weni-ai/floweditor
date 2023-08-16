@@ -17,7 +17,7 @@ exports[`SendBroadcastForm render should render an empty form with no action 2`]
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -27,7 +27,7 @@ exports[`SendBroadcastForm render should render an empty form with no action 2`]
     }
   }
   headerClass="send_broadcast"
-  title="Send Broadcast"
+  title="Send broadcast"
 >
   <TypeList
     __className=""
@@ -40,32 +40,36 @@ exports[`SendBroadcastForm render should render an empty form with no action 2`]
         "localizeableKeys": Array [
           "text",
         ],
-        "name": "Send Broadcast",
+        "name": "Send broadcast",
         "type": "send_broadcast",
       }
     }
     onChange={[MockFunction]}
   />
-  <AssetSelector
-    assets={
-      Object {
-        "items": Object {},
-        "type": "contact",
+  <div
+    className="recipients_container"
+  >
+    <AssetSelector
+      assets={
+        Object {
+          "items": Object {},
+          "type": "contact",
+        }
       }
-    }
-    entry={
-      Object {
-        "value": Array [],
+      entry={
+        Object {
+          "value": Array [],
+        }
       }
-    }
-    expressions={true}
-    multi={true}
-    name="Recipients"
-    onChange={[Function]}
-    placeholder="Select Contacts"
-    searchable={true}
-  />
-  <p />
+      expressions={true}
+      multi={true}
+      name="Select contacts"
+      onChange={[Function]}
+      placeholder="Select contacts"
+      searchable={true}
+      showLabel={true}
+    />
+  </div>
   <TextInputElement
     autocomplete={true}
     count="SMS"
@@ -77,6 +81,7 @@ exports[`SendBroadcastForm render should render an empty form with no action 2`]
     focus={true}
     name="Message"
     onChange={[Function]}
+    placeholder="Type here..."
     showLabel={true}
     textarea={true}
   />
@@ -88,7 +93,7 @@ exports[`SendBroadcastForm render should render self, children with base props 1
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -98,7 +103,7 @@ exports[`SendBroadcastForm render should render self, children with base props 1
     }
   }
   headerClass="send_broadcast"
-  title="Send Broadcast"
+  title="Send broadcast"
 >
   <TypeList
     __className=""
@@ -111,61 +116,65 @@ exports[`SendBroadcastForm render should render self, children with base props 1
         "localizeableKeys": Array [
           "text",
         ],
-        "name": "Send Broadcast",
+        "name": "Send broadcast",
         "type": "send_broadcast",
       }
     }
     onChange={[MockFunction]}
   />
-  <AssetSelector
-    assets={
-      Object {
-        "items": Object {},
-        "type": "contact",
+  <div
+    className="recipients_container"
+  >
+    <AssetSelector
+      assets={
+        Object {
+          "items": Object {},
+          "type": "contact",
+        }
       }
-    }
-    entry={
-      Object {
-        "value": Array [
-          Object {
-            "id": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-            "name": "Cat Fanciers",
-            "type": "group",
-          },
-          Object {
-            "id": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "name": "Cat Facts",
-            "type": "group",
-          },
-          Object {
-            "id": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "missing": false,
-            "name": "Kellan Alexander",
-            "type": "contact",
-          },
-          Object {
-            "id": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "missing": false,
-            "name": "Norbert Kwizera",
-            "type": "contact",
-          },
-          Object {
-            "id": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-            "missing": false,
-            "name": "Rowan Seymour",
-            "type": "contact",
-          },
-        ],
+      entry={
+        Object {
+          "value": Array [
+            Object {
+              "id": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              "name": "Cat Fanciers",
+              "type": "group",
+            },
+            Object {
+              "id": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              "name": "Cat Facts",
+              "type": "group",
+            },
+            Object {
+              "id": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              "missing": false,
+              "name": "Kellan Alexander",
+              "type": "contact",
+            },
+            Object {
+              "id": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              "missing": false,
+              "name": "Norbert Kwizera",
+              "type": "contact",
+            },
+            Object {
+              "id": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              "missing": false,
+              "name": "Rowan Seymour",
+              "type": "contact",
+            },
+          ],
+        }
       }
-    }
-    expressions={true}
-    multi={true}
-    name="Recipients"
-    onChange={[Function]}
-    placeholder="Select Contacts"
-    searchable={true}
-  />
-  <p />
+      expressions={true}
+      multi={true}
+      name="Select contacts"
+      onChange={[Function]}
+      placeholder="Select contacts"
+      searchable={true}
+      showLabel={true}
+    />
+  </div>
   <TextInputElement
     autocomplete={true}
     count="SMS"
@@ -177,6 +186,7 @@ exports[`SendBroadcastForm render should render self, children with base props 1
     focus={true}
     name="Message"
     onChange={[Function]}
+    placeholder="Type here..."
     showLabel={true}
     textarea={true}
   />

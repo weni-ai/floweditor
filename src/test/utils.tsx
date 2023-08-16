@@ -38,7 +38,8 @@ export const EMPTY_TEST_ASSETS = {
   flows: { items: {}, type: AssetType.Flow },
   recipients: { items: {}, type: AssetType.Contact || AssetType.Group || AssetType.URN },
   ticketers: { items: {}, type: AssetType.Ticketer },
-  externalServices: { items: {}, type: AssetType.ExternalService }
+  externalServices: { items: {}, type: AssetType.ExternalService },
+  completion: { items: {}, type: AssetType.Expression }
 };
 
 const initial = initialState;
@@ -58,8 +59,50 @@ const AllTheProviders = ({ children }: { children: any }) => {
 const customRender = (ui: any, options?: any) =>
   render(ui, { wrapper: AllTheProviders, ...options });
 
+export const getUnnnicInputValue = (ele: any) => {
+  return ele.querySelector('input').value;
+};
+
+export const getUnnnicSelectValue = (ele: any) => {
+  return ele.__vue__.value;
+};
+
+export const fireUnnnicSwitch = (ele: any) => {
+  const icon = ele.querySelector('.unnnic-switch__icon');
+
+  fireEvent.click(icon);
+};
+
 export const fireChangeText = (ele: any, value: string): void => {
   fireEvent.change(ele, { currentTarget: { value }, target: { value } });
+};
+
+export const fireUnnnicInputChangeText = (ele: any, value: string): void => {
+  fireEvent.input(ele.querySelector('input'), {
+    currentTarget: { value },
+    target: { value }
+  });
+};
+
+export const fireUnnnicTextAreaChangeText = (ele: any, value: string): void => {
+  fireEvent.input(ele.querySelector('textarea'), {
+    currentTarget: { value },
+    target: { value }
+  });
+};
+
+export const fireUnnnicSelect = (ele: any, value: any, valueKey: string) => {
+  const result: any = { value: null };
+  result.value = value[valueKey];
+
+  ele.__vue__.reactWrapperRef.vueRef.onSelectOption(result);
+};
+
+export const fireUnnnicAutocompleteSelect = (ele: any, value: any, valueKey: string) => {
+  const result: any = value;
+  result.value = value[valueKey];
+
+  ele.__vue__.reactWrapperRef.vueRef.toggle(result);
 };
 
 export const fireTembaSelect = (ele: HTMLElement, value: any) => {
