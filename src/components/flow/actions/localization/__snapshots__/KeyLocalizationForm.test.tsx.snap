@@ -105,32 +105,34 @@ exports[`KeyLocalizationForm removes translations 1`] = `
               New Sign Up
             </div>
           </div>
-          <div
-            class="textarea_wrapper"
-          >
+          <div>
             <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
+              class="textarea_wrapper"
             >
               <div
-                class="unnnic-text-area sm normal textarea"
-                data-passed-props="[object Object]"
-                data-testid="Subject"
-                data-v-4b5c6da6=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
-                <!---->
-                <textarea
+                <div
+                  class="unnnic-text-area sm normal textarea"
+                  data-passed-props="[object Object]"
+                  data-testid="Subject"
                   data-v-4b5c6da6=""
-                  placeholder="Spanish Translation"
-                />
-                <!---->
-                <!---->
+                >
+                  <!---->
+                  <textarea
+                    data-v-4b5c6da6=""
+                    placeholder="Spanish Translation"
+                  />
+                  <!---->
+                  <!---->
+                </div>
               </div>
+              <div
+                class="completions"
+                style="display: none;"
+              />
             </div>
-            <div
-              class="completions"
-              style="display: none;"
-            />
           </div>
         </div>
       </div>
@@ -299,32 +301,34 @@ exports[`KeyLocalizationForm renders send email 1`] = `
               New Sign Up
             </div>
           </div>
-          <div
-            class="textarea_wrapper"
-          >
+          <div>
             <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
+              class="textarea_wrapper"
             >
               <div
-                class="unnnic-text-area sm normal textarea"
-                data-passed-props="[object Object]"
-                data-testid="Subject"
-                data-v-4b5c6da6=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
-                <!---->
-                <textarea
+                <div
+                  class="unnnic-text-area sm normal textarea"
+                  data-passed-props="[object Object]"
+                  data-testid="Subject"
                   data-v-4b5c6da6=""
-                  placeholder="English Translation"
-                />
-                <!---->
-                <!---->
+                >
+                  <!---->
+                  <textarea
+                    data-v-4b5c6da6=""
+                    placeholder="English Translation"
+                  />
+                  <!---->
+                  <!---->
+                </div>
               </div>
+              <div
+                class="completions"
+                style="display: none;"
+              />
             </div>
-            <div
-              class="completions"
-              style="display: none;"
-            />
           </div>
         </div>
       </div>

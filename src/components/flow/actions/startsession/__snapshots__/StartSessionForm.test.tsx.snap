@@ -842,50 +842,52 @@ exports[`StartSessionForm render should render contact query 1`] = `
             class="form_element"
             data-testid="contact_query"
           >
-            <span
-              class="label"
-            >
-              Contact Query
-            </span>
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
+              <span
+                class="label"
+              >
+                Contact Query
+              </span>
               <div
-                class="unnnic-autocomplete-select completionInput"
-                data-passed-props="[object Object]"
-                data-testid="Contact Query"
-                data-v-4e186498=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
                 <div
-                  class="unnnic-form sm"
-                  data-v-48c0c241=""
+                  class="unnnic-autocomplete-select completionInput"
+                  data-passed-props="[object Object]"
+                  data-testid="Contact Query"
                   data-v-4e186498=""
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input"
-                    data-v-2d3b8b50=""
+                    class="unnnic-form sm"
                     data-v-48c0c241=""
-                    mask=""
-                    style="position: relative;"
-                    v-bind="[object Object]"
+                    data-v-4e186498=""
                   >
-                    <input
-                      class="input size-sm normal"
-                      data-v-2d3b8b50=""
-                      data-v-f03c53b0=""
-                      placeholder="household_id = @fields.household_id"
-                      size="12"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
+                    <div
+                      class="unnnic-form-input"
+                      data-v-2d3b8b50=""
+                      data-v-48c0c241=""
+                      mask=""
+                      style="position: relative;"
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input size-sm normal"
+                        data-v-2d3b8b50=""
+                        data-v-f03c53b0=""
+                        placeholder="household_id = @fields.household_id"
+                        size="12"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
                   <!---->
                 </div>
-                <!---->
               </div>
             </div>
           </div>
@@ -1685,50 +1687,52 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
             class="form_element"
             data-testid="contact_query"
           >
-            <span
-              class="label"
-            >
-              Contact Query
-            </span>
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
+              <span
+                class="label"
+              >
+                Contact Query
+              </span>
               <div
-                class="unnnic-autocomplete-select completionInput"
-                data-passed-props="[object Object]"
-                data-testid="Contact Query"
-                data-v-4e186498=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
                 <div
-                  class="unnnic-form sm"
-                  data-v-48c0c241=""
+                  class="unnnic-autocomplete-select completionInput"
+                  data-passed-props="[object Object]"
+                  data-testid="Contact Query"
                   data-v-4e186498=""
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input"
-                    data-v-2d3b8b50=""
+                    class="unnnic-form sm"
                     data-v-48c0c241=""
-                    mask=""
-                    style="position: relative;"
-                    v-bind="[object Object]"
+                    data-v-4e186498=""
                   >
-                    <input
-                      class="input size-sm normal"
-                      data-v-2d3b8b50=""
-                      data-v-f03c53b0=""
-                      placeholder="household_id = @fields.household_id"
-                      size="17"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
+                    <div
+                      class="unnnic-form-input"
+                      data-v-2d3b8b50=""
+                      data-v-48c0c241=""
+                      mask=""
+                      style="position: relative;"
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input size-sm normal"
+                        data-v-2d3b8b50=""
+                        data-v-f03c53b0=""
+                        placeholder="household_id = @fields.household_id"
+                        size="17"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
                   <!---->
                 </div>
-                <!---->
               </div>
             </div>
           </div>

@@ -466,50 +466,52 @@ exports[`UpdateContactForm should render field 1`] = `
         <div
           class="value"
         >
-          <span
-            class="label"
-          >
-            Field Value
-          </span>
-          <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-          >
+          <div>
+            <span
+              class="label"
+            >
+              Field Value
+            </span>
             <div
-              class="unnnic-autocomplete-select completionInput"
-              data-passed-props="[object Object]"
-              data-testid="Field Value"
-              data-v-4e186498=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
               <div
-                class="unnnic-form sm"
-                data-v-48c0c241=""
+                class="unnnic-autocomplete-select completionInput"
+                data-passed-props="[object Object]"
+                data-testid="Field Value"
                 data-v-4e186498=""
               >
-                <!---->
                 <div
-                  class="unnnic-form-input"
-                  data-v-2d3b8b50=""
+                  class="unnnic-form sm"
                   data-v-48c0c241=""
-                  mask=""
-                  style="position: relative;"
-                  v-bind="[object Object]"
+                  data-v-4e186498=""
                 >
-                  <input
-                    class="input size-sm normal"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    placeholder=""
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
+                  <div
+                    class="unnnic-form-input"
+                    data-v-2d3b8b50=""
+                    data-v-48c0c241=""
+                    mask=""
+                    style="position: relative;"
+                    v-bind="[object Object]"
+                  >
+                    <input
+                      class="input size-sm normal"
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
+                      placeholder=""
+                      size="0"
+                      type="text"
+                      v-bind="[object Object]"
+                    />
+                    <!---->
+                    <!---->
+                  </div>
                   <!---->
                 </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -1056,50 +1058,52 @@ exports[`UpdateContactForm should render name 1`] = `
         <div
           class="value"
         >
-          <span
-            class="label"
-          >
-            Enter a new contact name
-          </span>
-          <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-          >
+          <div>
+            <span
+              class="label"
+            >
+              Enter a new contact name
+            </span>
             <div
-              class="unnnic-autocomplete-select completionInput"
-              data-passed-props="[object Object]"
-              data-testid="Enter a new contact name"
-              data-v-4e186498=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
               <div
-                class="unnnic-form sm"
-                data-v-48c0c241=""
+                class="unnnic-autocomplete-select completionInput"
+                data-passed-props="[object Object]"
+                data-testid="Enter a new contact name"
                 data-v-4e186498=""
               >
-                <!---->
                 <div
-                  class="unnnic-form-input"
-                  data-v-2d3b8b50=""
+                  class="unnnic-form sm"
                   data-v-48c0c241=""
-                  mask=""
-                  style="position: relative;"
-                  v-bind="[object Object]"
+                  data-v-4e186498=""
                 >
-                  <input
-                    class="input size-sm normal"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    placeholder="Enter a new contact name"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
+                  <div
+                    class="unnnic-form-input"
+                    data-v-2d3b8b50=""
+                    data-v-48c0c241=""
+                    mask=""
+                    style="position: relative;"
+                    v-bind="[object Object]"
+                  >
+                    <input
+                      class="input size-sm normal"
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
+                      placeholder="Enter a new contact name"
+                      size="0"
+                      type="text"
+                      v-bind="[object Object]"
+                    />
+                    <!---->
+                    <!---->
+                  </div>
                   <!---->
                 </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>

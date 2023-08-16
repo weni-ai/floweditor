@@ -287,6 +287,7 @@ exports[`AddURNForm renders 1`] = `
             <div
               class="unnnic-autocomplete-select completionInput"
               data-passed-props="[object Object]"
+              data-testid="Value of URN"
               data-v-4e186498=""
             >
               <div
