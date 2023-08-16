@@ -41,6 +41,7 @@ export interface TextInputProps extends FormElementProps {
   counter?: string;
   style?: TextInputStyle;
   size?: TextInputSizes;
+  iconRight?: string;
   onChange?: (value: string, name?: string) => void;
   onBlur?: (event: React.ChangeEvent) => void;
   onKeyPressEnter?: () => void;
@@ -201,6 +202,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             ref={this.inputItem}
             error={hasError ? errorList[0] : null}
             maxlength={this.props.maxLength}
+            iconRight={this.props.iconRight}
           />
         )}
         {this.props.helpText && typeof this.props.helpText === 'string' ? (
