@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ParamList render should render list of params 1`] = `
+exports[`ParamList Omie render should render list of params 1`] = `
 <body>
   <div>
     <div
@@ -125,25 +125,25 @@ exports[`ParamList render should render list of params 1`] = `
                       >
                         <option
                           label="Identificação"
-                          value="Identificação"
+                          value="identificacao"
                         >
                           Identificação
                         </option>
                         <option
                           label="Endereço"
-                          value="Endereço"
+                          value="endereco"
                         >
                           Endereço
                         </option>
                         <option
                           label="Telefone e Email"
-                          value="Telefone e Email"
+                          value="telefone_email"
                         >
                           Telefone e Email
                         </option>
                         <option
                           label="Observações"
-                          value="Observações"
+                          value="cObs"
                         >
                           Observações
                         </option>
@@ -474,25 +474,25 @@ exports[`ParamList render should render list of params 1`] = `
                       >
                         <option
                           label="Identificação"
-                          value="Identificação"
+                          value="identificacao"
                         >
                           Identificação
                         </option>
                         <option
                           label="Endereço"
-                          value="Endereço"
+                          value="endereco"
                         >
                           Endereço
                         </option>
                         <option
                           label="Telefone e Email"
-                          value="Telefone e Email"
+                          value="telefone_email"
                         >
                           Telefone e Email
                         </option>
                         <option
                           label="Observações"
-                          value="Observações"
+                          value="cObs"
                         >
                           Observações
                         </option>
@@ -817,25 +817,25 @@ exports[`ParamList render should render list of params 1`] = `
                       >
                         <option
                           label="Identificação"
-                          value="Identificação"
+                          value="identificacao"
                         >
                           Identificação
                         </option>
                         <option
                           label="Endereço"
-                          value="Endereço"
+                          value="endereco"
                         >
                           Endereço
                         </option>
                         <option
                           label="Telefone e Email"
-                          value="Telefone e Email"
+                          value="telefone_email"
                         >
                           Telefone e Email
                         </option>
                         <option
                           label="Observações"
-                          value="Observações"
+                          value="cObs"
                         >
                           Observações
                         </option>
@@ -1051,7 +1051,7 @@ exports[`ParamList render should render list of params 1`] = `
 </body>
 `;
 
-exports[`ParamList render should render list with an empty param 1`] = `
+exports[`ParamList Omie render should render list with an empty param 1`] = `
 <body>
   <div>
     <div
@@ -1176,25 +1176,25 @@ exports[`ParamList render should render list with an empty param 1`] = `
                       >
                         <option
                           label="Identificação"
-                          value="Identificação"
+                          value="identificacao"
                         >
                           Identificação
                         </option>
                         <option
                           label="Endereço"
-                          value="Endereço"
+                          value="endereco"
                         >
                           Endereço
                         </option>
                         <option
                           label="Telefone e Email"
-                          value="Telefone e Email"
+                          value="telefone_email"
                         >
                           Telefone e Email
                         </option>
                         <option
                           label="Observações"
-                          value="Observações"
+                          value="cObs"
                         >
                           Observações
                         </option>
@@ -1410,7 +1410,7 @@ exports[`ParamList render should render list with an empty param 1`] = `
 </body>
 `;
 
-exports[`ParamList updates should remove param and ensure empty param exists 1`] = `
+exports[`ParamList Omie updates should remove param and ensure empty param exists 1`] = `
 <body>
   <div>
     <div
@@ -1535,25 +1535,25 @@ exports[`ParamList updates should remove param and ensure empty param exists 1`]
                       >
                         <option
                           label="Identificação"
-                          value="Identificação"
+                          value="identificacao"
                         >
                           Identificação
                         </option>
                         <option
                           label="Endereço"
-                          value="Endereço"
+                          value="endereco"
                         >
                           Endereço
                         </option>
                         <option
                           label="Telefone e Email"
-                          value="Telefone e Email"
+                          value="telefone_email"
                         >
                           Telefone e Email
                         </option>
                         <option
                           label="Observações"
-                          value="Observações"
+                          value="cObs"
                         >
                           Observações
                         </option>
@@ -1769,7 +1769,7 @@ exports[`ParamList updates should remove param and ensure empty param exists 1`]
 </body>
 `;
 
-exports[`ParamList updates should update params and call the callback 1`] = `
+exports[`ParamList Omie updates should update params and call the callback 1`] = `
 <body>
   <div>
     <div
@@ -1894,25 +1894,25 @@ exports[`ParamList updates should update params and call the callback 1`] = `
                       >
                         <option
                           label="Identificação"
-                          value="Identificação"
+                          value="identificacao"
                         >
                           Identificação
                         </option>
                         <option
                           label="Endereço"
-                          value="Endereço"
+                          value="endereco"
                         >
                           Endereço
                         </option>
                         <option
                           label="Telefone e Email"
-                          value="Telefone e Email"
+                          value="telefone_email"
                         >
                           Telefone e Email
                         </option>
                         <option
                           label="Observações"
-                          value="Observações"
+                          value="cObs"
                         >
                           Observações
                         </option>
@@ -2237,25 +2237,25 @@ exports[`ParamList updates should update params and call the callback 1`] = `
                       >
                         <option
                           label="Identificação"
-                          value="Identificação"
+                          value="identificacao"
                         >
                           Identificação
                         </option>
                         <option
                           label="Endereço"
-                          value="Endereço"
+                          value="endereco"
                         >
                           Endereço
                         </option>
                         <option
                           label="Telefone e Email"
-                          value="Telefone e Email"
+                          value="telefone_email"
                         >
                           Telefone e Email
                         </option>
                         <option
                           label="Observações"
-                          value="Observações"
+                          value="cObs"
                         >
                           Observações
                         </option>

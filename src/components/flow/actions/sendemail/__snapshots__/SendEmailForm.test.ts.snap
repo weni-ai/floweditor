@@ -50,6 +50,7 @@ exports[`SendEmailForm render should render 1`] = `
           "value": "",
         }
       }
+      iconRight="keyboard-return-1"
       name="Recipient"
       onChange={[Function]}
       onKeyDown={[Function]}

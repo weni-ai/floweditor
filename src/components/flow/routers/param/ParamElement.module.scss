@@ -22,7 +22,6 @@ $spacing: 10px;
   display: flex;
   gap: $unnnic-spacing-inline-xs;
   user-select: none;
-  margin-bottom: 12px;
 
   .form_group {
     margin: 0;
@@ -152,4 +151,8 @@ $spacing: 10px;
 
 [data-draggable='true'] {
   cursor: pointer;
+}
+
+.expression_input {
+  flex: 1;
 }

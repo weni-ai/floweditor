@@ -1,4 +1,16 @@
-## 1.2.1-floweditor-1.15.2
+## 1.3.1-floweditor-1.15.2
+
+- Fix: Handle nonexistent service when creating the router state
+
+  1.3.0-floweditor-1.15.2
+
+---
+
+- Feat: ChatGPT External Service
+
+  1.2.1-floweditor-1.15.2
+
+---
 
 - Fix: External services action name
 

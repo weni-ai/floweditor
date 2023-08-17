@@ -411,7 +411,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
   }
 
   private handleSelectedDelete(event: any) {
-    const values = Array.isArray(this.props.value) ? this.props.value : [this.props.value];
+    const values = Array.isArray(this.props.value) ? [...this.props.value] : [this.props.value];
 
     const index = values.findIndex((element: any) => this.getValue(element) === event);
 

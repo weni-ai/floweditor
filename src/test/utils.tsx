@@ -105,6 +105,10 @@ export const fireUnnnicAutocompleteSelect = (ele: any, value: any, valueKey: str
   ele.__vue__.reactWrapperRef.vueRef.toggle(result);
 };
 
+export const fireUnnnicAutocompleteSelectWithArray = (ele: any, value: any) => {
+  ele.__vue__.reactWrapperRef.vueRef.toggle(value);
+};
+
 export const fireTembaSelect = (ele: HTMLElement, value: any) => {
   (ele as any).values = Array.isArray(value) ? value : [{ value }];
   var evt = document.createEvent('HTMLEvents');

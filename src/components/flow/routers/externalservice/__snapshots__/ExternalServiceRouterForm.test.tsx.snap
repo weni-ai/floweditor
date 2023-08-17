@@ -1,300 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExternalServiceRouterForm render should render 1`] = `
-<body>
-  <div>
-    <div
-      class="dialog"
-    >
-      <div
-        class="header"
-      >
-        <div
-          class="title_container"
-        >
-          <div
-            class="title u font secondary title-sm black"
-          >
-            Call External Service
-          </div>
-          <div
-            class="subtitle"
-          />
-        </div>
-      </div>
-      <div
-        class="content"
-      >
-        <div
-          class=" type_list"
-        >
-          <div
-            class="color-neutral-cloudy"
-          >
-            When a contact arrives at this point in your flow...
-          </div>
-          <div>
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
-              <div
-                class="unnnic-autocomplete-select bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_type"
-                data-v-4e186498=""
-              >
-                <div
-                  class="unnnic-form sm"
-                  data-v-48c0c241=""
-                  data-v-4e186498=""
-                >
-                  <!---->
-                  <div
-                    class="unnnic-form-input"
-                    data-v-2d3b8b50=""
-                    data-v-48c0c241=""
-                    mask=""
-                    style="position: relative;"
-                    v-bind="[object Object]"
-                  >
-                    <input
-                      class="input size-sm normal has-icon-left"
-                      data-v-2d3b8b50=""
-                      data-v-f03c53b0=""
-                      iconleft="search-1"
-                      placeholder="Call an external service"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
-                    <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
-                      data-v-2d3b8b50=""
-                      data-v-a1936218=""
-                    >
-                      <svg
-                        fill="none"
-                        viewBox="0 0 40 40"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          class="primary"
-                          d="M34.0615 35.0005C33.8116 35.0005 33.5754 34.903 33.3992 34.7256L25.2575 26.5826C24.3065 27.3961 23.2355 28.0597 22.067 28.5559C20.5312 29.2082 18.9178 29.5394 17.272 29.5394C15.7011 29.5394 14.1578 29.2382 12.6819 28.6421C9.64389 27.4161 7.26574 25.0817 5.98481 22.0662C4.70388 19.052 4.67263 15.7178 5.89858 12.6811C7.12452 9.64433 9.45894 7.26492 12.4732 5.98399C14.009 5.33041 15.6211 5.00049 17.2682 5.00049C18.8391 5.00049 20.3825 5.30291 21.8583 5.89776C24.8963 7.12371 27.2745 9.45812 28.5554 12.4736C29.8363 15.4891 29.8676 18.822 28.6416 21.8588C28.1393 23.1035 27.4469 24.2444 26.5809 25.2554L34.7251 33.4009C35.09 33.7658 35.09 34.3606 34.7251 34.7268C34.5477 34.903 34.3115 35.0005 34.0615 35.0005ZM17.2682 6.87502C15.8748 6.87502 14.5077 7.15495 13.2068 7.70856C10.6524 8.79454 8.67413 10.809 7.63564 13.3821C6.59715 15.9552 6.6234 18.7783 7.70813 21.3327C8.7941 23.887 10.8086 25.8653 13.3817 26.9038C14.6326 27.4086 15.9411 27.6636 17.2707 27.6636C18.6641 27.6636 20.0313 27.3836 21.3322 26.83C22.5494 26.3127 23.6404 25.5828 24.5739 24.6606C24.5864 24.6431 24.6002 24.6281 24.6139 24.6143C24.6339 24.5943 24.6526 24.5781 24.6701 24.5656C25.6236 23.6021 26.381 22.4499 26.9021 21.1565C27.9406 18.5833 27.9143 15.7603 26.8283 13.2059C25.7436 10.6516 23.7279 8.67332 21.1548 7.63483C19.9063 7.13121 18.5979 6.87502 17.2682 6.87502Z"
-                          fill="#3B414D"
-                        />
-                      </svg>
-                    </span>
-                    <!---->
-                  </div>
-                  <!---->
-                </div>
-                <!---->
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div>
-          <p>
-            <span>
-              Action
-            </span>
-          </p>
-          <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-          >
-            <div
-              class="unnnic-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_external_service_call"
-            >
-              <!---->
-              <span
-                class="dropdown"
-                data-v-6fe2671f=""
-              >
-                <div
-                  data-v-2d3b8b50=""
-                  data-v-6fe2671f=""
-                  readonly="readonly"
-                  style="position: relative;"
-                >
-                  <input
-                    class="input size-sm normal has-icon-right"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconright="arrow-button-down-1"
-                    iconrightclickable="true"
-                    placeholder="Select the call from external service to do"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                  />
-                  <!---->
-                  <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-cloudy"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <div
-                  __use_react_component_wrap=""
-                  data-v-6fe2671f=""
-                  style="all: unset;"
-                >
-                  <option
-                    label="Inserir Contato"
-                    value="IncluirContato"
-                  >
-                    Inserir Contato
-                  </option>
-                  <option
-                    label="Incluir Oportunidade"
-                    value="IncluirOportunidade"
-                  >
-                    Incluir Oportunidade
-                  </option>
-                  <option
-                    label="Listar Clientes"
-                    value="ListarClientes"
-                  >
-                    Listar Clientes
-                  </option>
-                  <option
-                    label="Pesquisar Títulos/Lançamentos"
-                    value="PesquisarLancamentosRequest"
-                  >
-                    Pesquisar Títulos/Lançamentos
-                  </option>
-                </div>
-                <div
-                  class="dropdown-data"
-                  data-v-6fe2671f=""
-                  style="position: fixed; top: 0px;"
-                />
-              </span>
-              <!---->
-            </div>
-          </div>
-        </div>
-        <div
-          class="optional_text_input "
-        >
-          <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
-          >
-            <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-391ed932=""
-            >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-391ed932=""
-              >
-                 Save as result 
-              </span>
-              <div
-                class="input-container"
-                data-v-391ed932=""
-              >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-391ed932=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
-                <!---->
-              </div>
-              <!---->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="footer"
-      >
-        <div
-          class="buttons"
-        >
-          <div
-            class="buttons_wrapper"
-          >
-            <div
-              class="right_buttons"
-            >
-              <div
-                data-use-vue-component-wrap=""
-              >
-                <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
-                  data-passed-props="[object Object]"
-                  data-v-00f478da=""
-                  style="margin-left: 0px; margin-top: 0px;"
-                >
-                  <!---->
-                  <!---->
-                  <!---->
-                  <span
-                    class="unnnic-button__label"
-                    data-v-00f478da=""
-                  >
-                     Cancel 
-                  </span>
-                  <!---->
-                </button>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-              >
-                <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
-                  data-passed-props="[object Object]"
-                  data-v-00f478da=""
-                  style="margin-top: 0px;"
-                >
-                  <!---->
-                  <!---->
-                  <!---->
-                  <span
-                    class="unnnic-button__label"
-                    data-v-00f478da=""
-                  >
-                     Ok 
-                  </span>
-                  <!---->
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`ExternalServiceRouterForm updates should save changes 1`] = `
+exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
 <body>
   <div>
     <div
@@ -425,12 +131,12 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
                       iconrightclickable="true"
                       placeholder="Select the external service to use"
                       readonly="readonly"
-                      size="18"
+                      size="0"
                       type="text"
                     />
                     <!---->
                     <span
-                      class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
+                      class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-cloudy"
                       data-v-2d3b8b50=""
                       data-v-a1936218=""
                     >
@@ -453,16 +159,16 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
                     style="all: unset;"
                   >
                     <option
-                      label="Omie dummy project"
-                      value="4b154b06-5ecd-43d9-afca-39738e6859d7"
+                      label="ChatGPT dummy project"
+                      value="ChatGPT dummy project"
                     >
-                      Omie dummy project
+                      ChatGPT dummy project
                     </option>
                     <option
-                      label="Omie dummy project 2"
-                      value="5b154b06-5ecd-43d9-afca-39738e6859d7"
+                      label="Omie dummy project"
+                      value="Omie dummy project"
                     >
-                      Omie dummy project 2
+                      Omie dummy project
                     </option>
                   </div>
                   <div
@@ -510,12 +216,12 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
                     iconrightclickable="true"
                     placeholder="Select the call from external service to do"
                     readonly="readonly"
-                    size="0"
+                    size="18"
                     type="text"
                   />
                   <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-cloudy"
+                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
                     data-v-2d3b8b50=""
                     data-v-a1936218=""
                   >
@@ -538,28 +244,10 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
                   style="all: unset;"
                 >
                   <option
-                    label="Inserir Contato"
-                    value="IncluirContato"
+                    label="Consultar Chat GPT"
+                    value="ConsultarChatGPT"
                   >
-                    Inserir Contato
-                  </option>
-                  <option
-                    label="Incluir Oportunidade"
-                    value="IncluirOportunidade"
-                  >
-                    Incluir Oportunidade
-                  </option>
-                  <option
-                    label="Listar Clientes"
-                    value="ListarClientes"
-                  >
-                    Listar Clientes
-                  </option>
-                  <option
-                    label="Pesquisar Títulos/Lançamentos"
-                    value="PesquisarLancamentosRequest"
-                  >
-                    Pesquisar Títulos/Lançamentos
+                    Consultar Chat GPT
                   </option>
                 </div>
                 <div
@@ -569,6 +257,591 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
                 />
               </span>
               <!---->
+            </div>
+          </div>
+        </div>
+        <div
+          class="param_list_container "
+          tabindex="0"
+        >
+          <div
+            class="param_list"
+          />
+        </div>
+        <div
+          class="optional_text_input "
+        >
+          <div
+            data-use-vue-component-wrap=""
+            style="all: unset;"
+            unnnic-input="true"
+          >
+            <div
+              class="unnnic-input size-sm"
+              data-passed-props="[object Object]"
+              data-testid="Save as result"
+              data-v-391ed932=""
+            >
+              <span
+                class="label unnnic-font secondary color-neutral-cloudy body-md"
+                data-v-391ed932=""
+              >
+                 Save as result 
+              </span>
+              <div
+                class="input-container"
+                data-v-391ed932=""
+              >
+                <!---->
+                <input
+                  class="unnnic-font secondary"
+                  data-v-391ed932=""
+                  maxlength="64"
+                  placeholder="Result"
+                  type="text"
+                />
+                <!---->
+                <!---->
+              </div>
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div
+          class="buttons"
+        >
+          <div
+            class="buttons_wrapper"
+          >
+            <div
+              class="right_buttons"
+            >
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-left: 0px; margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Cancel 
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Ok 
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
+<body>
+  <div>
+    <div
+      class="dialog"
+    >
+      <div
+        class="header"
+      >
+        <div
+          class="title_container"
+        >
+          <div
+            class="title u font secondary title-sm black"
+          >
+            Call External Service
+          </div>
+          <div
+            class="subtitle"
+          />
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class=" type_list"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-autocomplete-select bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_type"
+                data-v-4e186498=""
+              >
+                <div
+                  class="unnnic-form sm"
+                  data-v-48c0c241=""
+                  data-v-4e186498=""
+                >
+                  <!---->
+                  <div
+                    class="unnnic-form-input"
+                    data-v-2d3b8b50=""
+                    data-v-48c0c241=""
+                    mask=""
+                    style="position: relative;"
+                    v-bind="[object Object]"
+                  >
+                    <input
+                      class="input size-sm normal has-icon-left"
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
+                      iconleft="search-1"
+                      placeholder="Call an external service"
+                      size="0"
+                      type="text"
+                      v-bind="[object Object]"
+                    />
+                    <span
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
+                      data-v-2d3b8b50=""
+                      data-v-a1936218=""
+                    >
+                      <svg
+                        fill="none"
+                        viewBox="0 0 40 40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0615 35.0005C33.8116 35.0005 33.5754 34.903 33.3992 34.7256L25.2575 26.5826C24.3065 27.3961 23.2355 28.0597 22.067 28.5559C20.5312 29.2082 18.9178 29.5394 17.272 29.5394C15.7011 29.5394 14.1578 29.2382 12.6819 28.6421C9.64389 27.4161 7.26574 25.0817 5.98481 22.0662C4.70388 19.052 4.67263 15.7178 5.89858 12.6811C7.12452 9.64433 9.45894 7.26492 12.4732 5.98399C14.009 5.33041 15.6211 5.00049 17.2682 5.00049C18.8391 5.00049 20.3825 5.30291 21.8583 5.89776C24.8963 7.12371 27.2745 9.45812 28.5554 12.4736C29.8363 15.4891 29.8676 18.822 28.6416 21.8588C28.1393 23.1035 27.4469 24.2444 26.5809 25.2554L34.7251 33.4009C35.09 33.7658 35.09 34.3606 34.7251 34.7268C34.5477 34.903 34.3115 35.0005 34.0615 35.0005ZM17.2682 6.87502C15.8748 6.87502 14.5077 7.15495 13.2068 7.70856C10.6524 8.79454 8.67413 10.809 7.63564 13.3821C6.59715 15.9552 6.6234 18.7783 7.70813 21.3327C8.7941 23.887 10.8086 25.8653 13.3817 26.9038C14.6326 27.4086 15.9411 27.6636 17.2707 27.6636C18.6641 27.6636 20.0313 27.3836 21.3322 26.83C22.5494 26.3127 23.6404 25.5828 24.5739 24.6606C24.5864 24.6431 24.6002 24.6281 24.6139 24.6143C24.6339 24.5943 24.6526 24.5781 24.6701 24.5656C25.6236 23.6021 26.381 22.4499 26.9021 21.1565C27.9406 18.5833 27.9143 15.7603 26.8283 13.2059C25.7436 10.6516 23.7279 8.67332 21.1548 7.63483C19.9063 7.13121 18.5979 6.87502 17.2682 6.87502Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </span>
+                    <!---->
+                  </div>
+                  <!---->
+                </div>
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Integration with... 
+            </span>
+          </p>
+          <div
+            class="ele"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-select"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_external_service"
+              >
+                <!---->
+                <span
+                  class="dropdown"
+                  data-v-6fe2671f=""
+                >
+                  <div
+                    data-v-2d3b8b50=""
+                    data-v-6fe2671f=""
+                    readonly="readonly"
+                    style="position: relative;"
+                  >
+                    <input
+                      class="input size-sm normal has-icon-right"
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
+                      iconright="arrow-button-down-1"
+                      iconrightclickable="true"
+                      placeholder="Select the external service to use"
+                      readonly="readonly"
+                      size="0"
+                      type="text"
+                    />
+                    <!---->
+                    <span
+                      class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-cloudy"
+                      data-v-2d3b8b50=""
+                      data-v-a1936218=""
+                    >
+                      <svg
+                        fill="none"
+                        viewBox="0 0 40 40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    __use_react_component_wrap=""
+                    data-v-6fe2671f=""
+                    style="all: unset;"
+                  >
+                    <option
+                      label="ChatGPT dummy project"
+                      value="ChatGPT dummy project"
+                    >
+                      ChatGPT dummy project
+                    </option>
+                    <option
+                      label="Omie dummy project"
+                      value="Omie dummy project"
+                    >
+                      Omie dummy project
+                    </option>
+                  </div>
+                  <div
+                    class="dropdown-data"
+                    data-v-6fe2671f=""
+                    style="position: fixed; top: 0px;"
+                  />
+                </span>
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Action
+            </span>
+          </p>
+          <div
+            data-use-vue-component-wrap=""
+            style="all: unset;"
+          >
+            <div
+              class="unnnic-select"
+              data-passed-props="[object Object]"
+              data-testid="temba_select_external_service_call"
+            >
+              <!---->
+              <span
+                class="dropdown"
+                data-v-6fe2671f=""
+              >
+                <div
+                  data-v-2d3b8b50=""
+                  data-v-6fe2671f=""
+                  readonly="readonly"
+                  style="position: relative;"
+                >
+                  <input
+                    class="input size-sm normal has-icon-right"
+                    data-v-2d3b8b50=""
+                    data-v-f03c53b0=""
+                    iconright="arrow-button-down-1"
+                    iconrightclickable="true"
+                    placeholder="Select the call from external service to do"
+                    readonly="readonly"
+                    size="18"
+                    type="text"
+                  />
+                  <!---->
+                  <span
+                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
+                    data-v-2d3b8b50=""
+                    data-v-a1936218=""
+                  >
+                    <svg
+                      fill="none"
+                      viewBox="0 0 40 40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="primary"
+                        d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                        fill="#3B414D"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  __use_react_component_wrap=""
+                  data-v-6fe2671f=""
+                  style="all: unset;"
+                >
+                  <option
+                    label="Consultar Chat GPT"
+                    value="ConsultarChatGPT"
+                  >
+                    Consultar Chat GPT
+                  </option>
+                </div>
+                <div
+                  class="dropdown-data"
+                  data-v-6fe2671f=""
+                  style="position: fixed; top: 0px;"
+                />
+              </span>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <div
+          class="param_list_container "
+          tabindex="0"
+        >
+          <div
+            class="param_list"
+          >
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <div
+                    class="choice"
+                  >
+                    <span>
+                      Aditional Prompts
+                    </span>
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-autocomplete-select"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_aditional_prompts"
+                        data-v-4e186498=""
+                      >
+                        <div
+                          class="unnnic-form sm"
+                          data-v-48c0c241=""
+                          data-v-4e186498=""
+                        >
+                          <!---->
+                          <div
+                            class="unnnic-form-input"
+                            data-v-2d3b8b50=""
+                            data-v-48c0c241=""
+                            mask=""
+                            style="position: relative;"
+                            v-bind="[object Object]"
+                          >
+                            <input
+                              class="input size-sm normal has-icon-left"
+                              data-v-2d3b8b50=""
+                              data-v-f03c53b0=""
+                              iconleft="search-1"
+                              placeholder="Select an option"
+                              size="0"
+                              type="text"
+                              v-bind="[object Object]"
+                            />
+                            <span
+                              class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
+                              data-v-2d3b8b50=""
+                              data-v-a1936218=""
+                            >
+                              <svg
+                                fill="none"
+                                viewBox="0 0 40 40"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  class="primary"
+                                  d="M34.0615 35.0005C33.8116 35.0005 33.5754 34.903 33.3992 34.7256L25.2575 26.5826C24.3065 27.3961 23.2355 28.0597 22.067 28.5559C20.5312 29.2082 18.9178 29.5394 17.272 29.5394C15.7011 29.5394 14.1578 29.2382 12.6819 28.6421C9.64389 27.4161 7.26574 25.0817 5.98481 22.0662C4.70388 19.052 4.67263 15.7178 5.89858 12.6811C7.12452 9.64433 9.45894 7.26492 12.4732 5.98399C14.009 5.33041 15.6211 5.00049 17.2682 5.00049C18.8391 5.00049 20.3825 5.30291 21.8583 5.89776C24.8963 7.12371 27.2745 9.45812 28.5554 12.4736C29.8363 15.4891 29.8676 18.822 28.6416 21.8588C28.1393 23.1035 27.4469 24.2444 26.5809 25.2554L34.7251 33.4009C35.09 33.7658 35.09 34.3606 34.7251 34.7268C34.5477 34.903 34.3115 35.0005 34.0615 35.0005ZM17.2682 6.87502C15.8748 6.87502 14.5077 7.15495 13.2068 7.70856C10.6524 8.79454 8.67413 10.809 7.63564 13.3821C6.59715 15.9552 6.6234 18.7783 7.70813 21.3327C8.7941 23.887 10.8086 25.8653 13.3817 26.9038C14.6326 27.4086 15.9411 27.6636 17.2707 27.6636C18.6641 27.6636 20.0313 27.3836 21.3322 26.83C22.5494 26.3127 23.6404 25.5828 24.5739 24.6606C24.5864 24.6431 24.6002 24.6281 24.6139 24.6143C24.6339 24.5943 24.6526 24.5781 24.6701 24.5656C25.6236 23.6021 26.381 22.4499 26.9021 21.1565C27.9406 18.5833 27.9143 15.7603 26.8283 13.2059C25.7436 10.6516 23.7279 8.67332 21.1548 7.63483C19.9063 7.13121 18.5979 6.87502 17.2682 6.87502Z"
+                                  fill="#3B414D"
+                                />
+                              </svg>
+                            </span>
+                            <!---->
+                          </div>
+                          <!---->
+                        </div>
+                        <!---->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-switch"
+                      data-passed-props="[object Object]"
+                      data-testid="switch"
+                      data-v-5be79627=""
+                    >
+                      <!---->
+                      <span
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon__line-height--sm unnnic-icon-scheme--brand-weni unnnic-switch__icon active"
+                        data-v-5be79627=""
+                        data-v-a1936218=""
+                      >
+                        <svg
+                          id="default"
+                          viewBox="0 0 80 40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <style
+                            type="text/css"
+                          >
+                             rect { transition: fill .2s ease; } 
+                          </style>
+                          <rect
+                            class="primary"
+                            height="35.8"
+                            rx="17.9"
+                            width="71.6"
+                            x="4.20013"
+                            y="2.10046"
+                          />
+                          <circle
+                            cx="22.5"
+                            cy="20.0005"
+                            fill="white"
+                            id="default-circle"
+                            r="12.5"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="unnnic-switch__label unnnic-switch__label__right unnnic-switch__label__small"
+                        data-v-5be79627=""
+                      >
+                         Send complete messages history as context 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <div
+                    class="expression_input"
+                  >
+                    <span>
+                      User Input
+                    </span>
+                    <div>
+                      <div
+                        data-use-vue-component-wrap=""
+                        style="all: unset;"
+                      >
+                        <div
+                          class="unnnic-autocomplete-select completionInput"
+                          data-passed-props="[object Object]"
+                          data-testid="User Input"
+                          data-v-4e186498=""
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-48c0c241=""
+                            data-v-4e186498=""
+                          >
+                            <!---->
+                            <div
+                              class="unnnic-form-input"
+                              data-v-2d3b8b50=""
+                              data-v-48c0c241=""
+                              mask=""
+                              style="position: relative;"
+                              v-bind="[object Object]"
+                            >
+                              <input
+                                class="input size-sm normal"
+                                data-v-2d3b8b50=""
+                                data-v-f03c53b0=""
+                                placeholder="Buscar por"
+                                size="12"
+                                type="text"
+                                v-bind="[object Object]"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                          <!---->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -675,7 +948,2082 @@ exports[`ExternalServiceRouterForm updates should save changes 1`] = `
 </body>
 `;
 
-exports[`ExternalServiceRouterForm updates should save changes 2`] = `
+exports[`ExternalServiceRouterForm ChatGPT updates should save changes 2`] = `
+Array [
+  Object {
+    "inboundConnections": Object {},
+    "node": Object {
+      "actions": Array [
+        Object {
+          "call": Object {
+            "disableEmptyParams": true,
+            "name": "ConsultarChatGPT",
+            "params": Array [
+              Object {
+                "defaultValue": Array [],
+                "name": "AditionalPrompts",
+                "nameKey": "text",
+                "options": Array [
+                  Object {
+                    "text": "Aditional Prompt 1 content",
+                    "uuid": "ab154b06-5ecd-43d9-afca-39738e6859d7",
+                  },
+                  Object {
+                    "text": "Aditional Prompt 2 content",
+                    "uuid": "ac154b06-5ecd-43d9-afca-39738e6859d7",
+                  },
+                  Object {
+                    "text": "Aditional Prompt 3 content",
+                    "uuid": "ad154b06-5ecd-43d9-afca-39738e6859d7",
+                  },
+                ],
+                "paramType": "multiSelect",
+                "required": true,
+                "type": "AditionalPrompts",
+                "valueKey": "uuid",
+                "verboseName": "Aditional Prompts",
+              },
+              Object {
+                "defaultValue": true,
+                "name": "SendCompleteHistory",
+                "paramType": "boolean",
+                "required": true,
+                "type": "SendCompleteHistory",
+                "verboseName": "Send complete messages history as context",
+              },
+              Object {
+                "defaultValue": "@input.value",
+                "name": "UserInput",
+                "paramType": "expressionInput",
+                "required": true,
+                "type": "UserInput",
+                "verboseName": "User Input",
+              },
+            ],
+            "value": "ConsultarChatGPT",
+            "verboseName": "Consultar Chat GPT",
+          },
+          "external_service": Object {
+            "actions": Array [
+              Object {
+                "disableEmptyParams": true,
+                "name": "ConsultarChatGPT",
+                "params": Array [
+                  Object {
+                    "defaultValue": Array [],
+                    "name": "AditionalPrompts",
+                    "nameKey": "text",
+                    "options": Array [
+                      Object {
+                        "text": "Aditional Prompt 1 content",
+                        "uuid": "ab154b06-5ecd-43d9-afca-39738e6859d7",
+                      },
+                      Object {
+                        "text": "Aditional Prompt 2 content",
+                        "uuid": "ac154b06-5ecd-43d9-afca-39738e6859d7",
+                      },
+                      Object {
+                        "text": "Aditional Prompt 3 content",
+                        "uuid": "ad154b06-5ecd-43d9-afca-39738e6859d7",
+                      },
+                    ],
+                    "paramType": "multiSelect",
+                    "required": true,
+                    "type": "AditionalPrompts",
+                    "valueKey": "uuid",
+                    "verboseName": "Aditional Prompts",
+                  },
+                  Object {
+                    "defaultValue": true,
+                    "name": "SendCompleteHistory",
+                    "paramType": "boolean",
+                    "required": true,
+                    "type": "SendCompleteHistory",
+                    "verboseName": "Send complete messages history as context",
+                  },
+                  Object {
+                    "defaultValue": "@input.value",
+                    "name": "UserInput",
+                    "paramType": "expressionInput",
+                    "required": true,
+                    "type": "UserInput",
+                    "verboseName": "User Input",
+                  },
+                ],
+                "value": "ConsultarChatGPT",
+                "verboseName": "Consultar Chat GPT",
+              },
+            ],
+            "external_service_type": "chatgpt",
+            "name": "ChatGPT dummy project",
+            "uuid": "6b154b06-5ecd-43d9-afca-39738e6859d7",
+          },
+          "params": Array [
+            Object {
+              "data": Object {
+                "validationFailures": Array [],
+                "value": Array [],
+              },
+              "defaultValue": Array [],
+              "filter": Object {
+                "value": null,
+              },
+              "filters": undefined,
+              "nameKey": "text",
+              "options": Array [
+                Object {
+                  "text": "Aditional Prompt 1 content",
+                  "uuid": "ab154b06-5ecd-43d9-afca-39738e6859d7",
+                },
+                Object {
+                  "text": "Aditional Prompt 2 content",
+                  "uuid": "ac154b06-5ecd-43d9-afca-39738e6859d7",
+                },
+                Object {
+                  "text": "Aditional Prompt 3 content",
+                  "uuid": "ad154b06-5ecd-43d9-afca-39738e6859d7",
+                },
+              ],
+              "paramType": "multiSelect",
+              "required": true,
+              "type": "AditionalPrompts",
+              "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
+              "valid": true,
+              "valueKey": "uuid",
+              "verboseName": "Aditional Prompts",
+            },
+            Object {
+              "data": Object {
+                "validationFailures": Array [],
+                "value": true,
+              },
+              "defaultValue": true,
+              "filter": Object {
+                "value": null,
+              },
+              "filters": undefined,
+              "nameKey": undefined,
+              "options": undefined,
+              "paramType": "boolean",
+              "required": true,
+              "type": "SendCompleteHistory",
+              "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
+              "valid": true,
+              "valueKey": undefined,
+              "verboseName": "Send complete messages history as context",
+            },
+            Object {
+              "data": Object {
+                "validationFailures": Array [],
+                "value": "@input.value",
+              },
+              "defaultValue": "@input.value",
+              "filter": Object {
+                "value": null,
+              },
+              "filters": undefined,
+              "nameKey": undefined,
+              "options": undefined,
+              "paramType": "expressionInput",
+              "required": true,
+              "type": "UserInput",
+              "uuid": "6b59e863-2e14-442b-9987-aaa284871b8e",
+              "valid": true,
+              "valueKey": undefined,
+              "verboseName": "User Input",
+            },
+          ],
+          "result_name": "Result",
+          "type": "call_external_service",
+          "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+        },
+      ],
+      "exits": Array [
+        Object {
+          "destination_uuid": null,
+          "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+        },
+        Object {
+          "destination_uuid": null,
+          "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+        },
+      ],
+      "router": Object {
+        "cases": Array [
+          Object {
+            "arguments": Array [
+              "Success",
+            ],
+            "category_uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+            "type": "has_category",
+            "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+          },
+        ],
+        "categories": Array [
+          Object {
+            "exit_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+            "name": "Success",
+            "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+          },
+          Object {
+            "exit_uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+            "name": "Failure",
+            "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+          },
+        ],
+        "default_category_uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+        "operand": "@results.result",
+        "type": "switch",
+      },
+      "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
+    },
+    "ui": Object {
+      "config": Object {},
+      "position": null,
+      "type": "split_by_external_service",
+    },
+  },
+]
+`;
+
+exports[`ExternalServiceRouterForm Omie render should render 1`] = `
+<body>
+  <div>
+    <div
+      class="dialog"
+    >
+      <div
+        class="header"
+      >
+        <div
+          class="title_container"
+        >
+          <div
+            class="title u font secondary title-sm black"
+          >
+            Call External Service
+          </div>
+          <div
+            class="subtitle"
+          />
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class=" type_list"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-autocomplete-select bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_type"
+                data-v-4e186498=""
+              >
+                <div
+                  class="unnnic-form sm"
+                  data-v-48c0c241=""
+                  data-v-4e186498=""
+                >
+                  <!---->
+                  <div
+                    class="unnnic-form-input"
+                    data-v-2d3b8b50=""
+                    data-v-48c0c241=""
+                    mask=""
+                    style="position: relative;"
+                    v-bind="[object Object]"
+                  >
+                    <input
+                      class="input size-sm normal has-icon-left"
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
+                      iconleft="search-1"
+                      placeholder="Call an external service"
+                      size="0"
+                      type="text"
+                      v-bind="[object Object]"
+                    />
+                    <span
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
+                      data-v-2d3b8b50=""
+                      data-v-a1936218=""
+                    >
+                      <svg
+                        fill="none"
+                        viewBox="0 0 40 40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0615 35.0005C33.8116 35.0005 33.5754 34.903 33.3992 34.7256L25.2575 26.5826C24.3065 27.3961 23.2355 28.0597 22.067 28.5559C20.5312 29.2082 18.9178 29.5394 17.272 29.5394C15.7011 29.5394 14.1578 29.2382 12.6819 28.6421C9.64389 27.4161 7.26574 25.0817 5.98481 22.0662C4.70388 19.052 4.67263 15.7178 5.89858 12.6811C7.12452 9.64433 9.45894 7.26492 12.4732 5.98399C14.009 5.33041 15.6211 5.00049 17.2682 5.00049C18.8391 5.00049 20.3825 5.30291 21.8583 5.89776C24.8963 7.12371 27.2745 9.45812 28.5554 12.4736C29.8363 15.4891 29.8676 18.822 28.6416 21.8588C28.1393 23.1035 27.4469 24.2444 26.5809 25.2554L34.7251 33.4009C35.09 33.7658 35.09 34.3606 34.7251 34.7268C34.5477 34.903 34.3115 35.0005 34.0615 35.0005ZM17.2682 6.87502C15.8748 6.87502 14.5077 7.15495 13.2068 7.70856C10.6524 8.79454 8.67413 10.809 7.63564 13.3821C6.59715 15.9552 6.6234 18.7783 7.70813 21.3327C8.7941 23.887 10.8086 25.8653 13.3817 26.9038C14.6326 27.4086 15.9411 27.6636 17.2707 27.6636C18.6641 27.6636 20.0313 27.3836 21.3322 26.83C22.5494 26.3127 23.6404 25.5828 24.5739 24.6606C24.5864 24.6431 24.6002 24.6281 24.6139 24.6143C24.6339 24.5943 24.6526 24.5781 24.6701 24.5656C25.6236 23.6021 26.381 22.4499 26.9021 21.1565C27.9406 18.5833 27.9143 15.7603 26.8283 13.2059C25.7436 10.6516 23.7279 8.67332 21.1548 7.63483C19.9063 7.13121 18.5979 6.87502 17.2682 6.87502Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </span>
+                    <!---->
+                  </div>
+                  <!---->
+                </div>
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Integration with... 
+            </span>
+          </p>
+          <div
+            class="ele"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-select"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_external_service"
+              >
+                <!---->
+                <span
+                  class="dropdown"
+                  data-v-6fe2671f=""
+                >
+                  <div
+                    data-v-2d3b8b50=""
+                    data-v-6fe2671f=""
+                    readonly="readonly"
+                    style="position: relative;"
+                  >
+                    <input
+                      class="input size-sm normal has-icon-right"
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
+                      iconright="arrow-button-down-1"
+                      iconrightclickable="true"
+                      placeholder="Select the external service to use"
+                      readonly="readonly"
+                      size="0"
+                      type="text"
+                    />
+                    <!---->
+                    <span
+                      class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-cloudy"
+                      data-v-2d3b8b50=""
+                      data-v-a1936218=""
+                    >
+                      <svg
+                        fill="none"
+                        viewBox="0 0 40 40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    __use_react_component_wrap=""
+                    data-v-6fe2671f=""
+                    style="all: unset;"
+                  >
+                    <option
+                      label="ChatGPT dummy project"
+                      value="ChatGPT dummy project"
+                    >
+                      ChatGPT dummy project
+                    </option>
+                    <option
+                      label="Omie dummy project"
+                      value="Omie dummy project"
+                    >
+                      Omie dummy project
+                    </option>
+                  </div>
+                  <div
+                    class="dropdown-data"
+                    data-v-6fe2671f=""
+                    style="position: fixed; top: 0px;"
+                  />
+                </span>
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Action
+            </span>
+          </p>
+          <div
+            data-use-vue-component-wrap=""
+            style="all: unset;"
+          >
+            <div
+              class="unnnic-select"
+              data-passed-props="[object Object]"
+              data-testid="temba_select_external_service_call"
+            >
+              <!---->
+              <span
+                class="dropdown"
+                data-v-6fe2671f=""
+              >
+                <div
+                  data-v-2d3b8b50=""
+                  data-v-6fe2671f=""
+                  readonly="readonly"
+                  style="position: relative;"
+                >
+                  <input
+                    class="input size-sm normal has-icon-right"
+                    data-v-2d3b8b50=""
+                    data-v-f03c53b0=""
+                    iconright="arrow-button-down-1"
+                    iconrightclickable="true"
+                    placeholder="Select the call from external service to do"
+                    readonly="readonly"
+                    size="15"
+                    type="text"
+                  />
+                  <!---->
+                  <span
+                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
+                    data-v-2d3b8b50=""
+                    data-v-a1936218=""
+                  >
+                    <svg
+                      fill="none"
+                      viewBox="0 0 40 40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="primary"
+                        d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                        fill="#3B414D"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  __use_react_component_wrap=""
+                  data-v-6fe2671f=""
+                  style="all: unset;"
+                >
+                  <option
+                    label="Inserir Contato"
+                    value="IncluirContato"
+                  >
+                    Inserir Contato
+                  </option>
+                  <option
+                    label="Incluir Oportunidade"
+                    value="IncluirOportunidade"
+                  >
+                    Incluir Oportunidade
+                  </option>
+                  <option
+                    label="Listar Clientes"
+                    value="ListarClientes"
+                  >
+                    Listar Clientes
+                  </option>
+                  <option
+                    label="Pesquisar Títulos/Lançamentos"
+                    value="PesquisarLancamentos"
+                  >
+                    Pesquisar Títulos/Lançamentos
+                  </option>
+                  <option
+                    label="Verificar Contato"
+                    value="VerificarContato"
+                  >
+                    Verificar Contato
+                  </option>
+                  <option
+                    label="Obter Boleto"
+                    value="ObterBoleto"
+                  >
+                    Obter Boleto
+                  </option>
+                </div>
+                <div
+                  class="dropdown-data"
+                  data-v-6fe2671f=""
+                  style="position: fixed; top: 0px;"
+                />
+              </span>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <div
+          class="param_list_container "
+          tabindex="0"
+        >
+          <div
+            class="param_list"
+          >
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="true"
+                >
+                  <div
+                    class="moveIcon"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <button
+                        class="unnnic-button unnnic-button--size-small unnnic-button--terciary unnnic-button-scheme-- unnnic-button--icon-on-center"
+                        data-draggable="true"
+                        data-passed-props="[object Object]"
+                        data-v-00f478da=""
+                      >
+                        <!---->
+                        <!---->
+                        <span
+                          class="unnnic-icon unnnic-icon__size--sm"
+                          data-v-00f478da=""
+                          data-v-a1936218=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class="primary"
+                              clip-rule="evenodd"
+                              d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
+                              fill="#D0D3D9"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="unnnic-button__label"
+                          data-v-00f478da=""
+                        >
+                            
+                        </span>
+                        <!---->
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="choice "
+                    style="flex: 1;"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-select"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_service_call_param"
+                      >
+                        <!---->
+                        <span
+                          class="dropdown"
+                          data-v-6fe2671f=""
+                        >
+                          <div
+                            data-v-2d3b8b50=""
+                            data-v-6fe2671f=""
+                            readonly="readonly"
+                            style="position: relative;"
+                          >
+                            <input
+                              class="input size-sm normal has-icon-right"
+                              data-v-2d3b8b50=""
+                              data-v-f03c53b0=""
+                              iconright="arrow-button-down-1"
+                              iconrightclickable="true"
+                              placeholder="Param"
+                              readonly="readonly"
+                              size="13"
+                              type="text"
+                            />
+                            <!---->
+                            <span
+                              class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
+                              data-v-2d3b8b50=""
+                              data-v-a1936218=""
+                            >
+                              <svg
+                                fill="none"
+                                viewBox="0 0 40 40"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  class="primary"
+                                  d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                                  fill="#3B414D"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            __use_react_component_wrap=""
+                            data-v-6fe2671f=""
+                            style="all: unset;"
+                          >
+                            <option
+                              label="Identificação"
+                              value="identificacao"
+                            >
+                              Identificação
+                            </option>
+                            <option
+                              label="Endereço"
+                              value="endereco"
+                            >
+                              Endereço
+                            </option>
+                            <option
+                              label="Telefone e Email"
+                              value="telefone_email"
+                            >
+                              Telefone e Email
+                            </option>
+                            <option
+                              label="Observações"
+                              value="cObs"
+                            >
+                              Observações
+                            </option>
+                          </div>
+                          <div
+                            class="dropdown-data"
+                            data-v-6fe2671f=""
+                            style="position: fixed; top: 0px;"
+                          />
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="choice "
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-select"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_service_call_param_filter"
+                      >
+                        <!---->
+                        <span
+                          class="dropdown"
+                          data-v-6fe2671f=""
+                        >
+                          <div
+                            data-v-2d3b8b50=""
+                            data-v-6fe2671f=""
+                            readonly="readonly"
+                            style="position: relative;"
+                          >
+                            <input
+                              class="input size-sm normal has-icon-right"
+                              data-v-2d3b8b50=""
+                              data-v-f03c53b0=""
+                              iconright="arrow-button-down-1"
+                              iconrightclickable="true"
+                              placeholder="Filter"
+                              readonly="readonly"
+                              size="0"
+                              type="text"
+                            />
+                            <!---->
+                            <span
+                              class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-cloudy"
+                              data-v-2d3b8b50=""
+                              data-v-a1936218=""
+                            >
+                              <svg
+                                fill="none"
+                                viewBox="0 0 40 40"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  class="primary"
+                                  d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                                  fill="#3B414D"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            __use_react_component_wrap=""
+                            data-v-6fe2671f=""
+                            style="all: unset;"
+                          >
+                            <option
+                              label="Código do Contato"
+                              value="nCod"
+                            >
+                              Código do Contato
+                            </option>
+                            <option
+                              label="Código de Integração"
+                              value="cCodInt"
+                            >
+                              Código de Integração
+                            </option>
+                            <option
+                              label="Nome do contato"
+                              value="cNome"
+                            >
+                              Nome do contato
+                            </option>
+                            <option
+                              label="Sobrenome do contato"
+                              value="cSobrenome"
+                            >
+                              Sobrenome do contato
+                            </option>
+                            <option
+                              label="Cargo"
+                              value="cCargo"
+                            >
+                              Cargo
+                            </option>
+                            <option
+                              label="Data de Nascimento"
+                              value="dDtNasc"
+                            >
+                              Data de Nascimento
+                            </option>
+                            <option
+                              label="Código do Vendedor"
+                              value="nCodVend"
+                            >
+                              Código do Vendedor
+                            </option>
+                            <option
+                              label="Código da Conta"
+                              value="nCodConta"
+                            >
+                              Código da Conta
+                            </option>
+                          </div>
+                          <div
+                            class="dropdown-data"
+                            data-v-6fe2671f=""
+                            style="position: fixed; top: 0px;"
+                          />
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="data"
+                  >
+                    <div>
+                      <div
+                        data-use-vue-component-wrap=""
+                        style="all: unset;"
+                      >
+                        <div
+                          class="unnnic-autocomplete-select completionInput"
+                          data-passed-props="[object Object]"
+                          data-testid="Service Call Param Data"
+                          data-v-4e186498=""
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-48c0c241=""
+                            data-v-4e186498=""
+                          >
+                            <!---->
+                            <div
+                              class="unnnic-form-input"
+                              data-v-2d3b8b50=""
+                              data-v-48c0c241=""
+                              mask=""
+                              style="position: relative;"
+                              v-bind="[object Object]"
+                            >
+                              <input
+                                class="input size-sm normal"
+                                data-v-2d3b8b50=""
+                                data-v-f03c53b0=""
+                                placeholder="Buscar por"
+                                size="0"
+                                type="text"
+                                v-bind="[object Object]"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                          <!---->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-draggable="true"
+                    data-use-vue-component-wrap=""
+                  >
+                    <span
+                      class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
+                      data-passed-props="[object Object]"
+                      data-testid="remove-param-96249bdc-cb58-4489-a188-0eeb6686a8c9"
+                      data-v-a1936218=""
+                    >
+                      <svg
+                        fill="none"
+                        viewBox="0 0 40 40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                          fill="#3B414D"
+                        />
+                        <path
+                          class="primary"
+                          d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="optional_text_input "
+        >
+          <div
+            data-use-vue-component-wrap=""
+            style="all: unset;"
+            unnnic-input="true"
+          >
+            <div
+              class="unnnic-input size-sm"
+              data-passed-props="[object Object]"
+              data-testid="Save as result"
+              data-v-391ed932=""
+            >
+              <span
+                class="label unnnic-font secondary color-neutral-cloudy body-md"
+                data-v-391ed932=""
+              >
+                 Save as result 
+              </span>
+              <div
+                class="input-container"
+                data-v-391ed932=""
+              >
+                <!---->
+                <input
+                  class="unnnic-font secondary"
+                  data-v-391ed932=""
+                  maxlength="64"
+                  placeholder="Result"
+                  type="text"
+                />
+                <!---->
+                <!---->
+              </div>
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div
+          class="buttons"
+        >
+          <div
+            class="buttons_wrapper"
+          >
+            <div
+              class="right_buttons"
+            >
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-left: 0px; margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Cancel 
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Ok 
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
+<body>
+  <div>
+    <div
+      class="dialog"
+    >
+      <div
+        class="header"
+      >
+        <div
+          class="title_container"
+        >
+          <div
+            class="title u font secondary title-sm black"
+          >
+            Call External Service
+          </div>
+          <div
+            class="subtitle"
+          />
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class=" type_list"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-autocomplete-select bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_type"
+                data-v-4e186498=""
+              >
+                <div
+                  class="unnnic-form sm"
+                  data-v-48c0c241=""
+                  data-v-4e186498=""
+                >
+                  <!---->
+                  <div
+                    class="unnnic-form-input"
+                    data-v-2d3b8b50=""
+                    data-v-48c0c241=""
+                    mask=""
+                    style="position: relative;"
+                    v-bind="[object Object]"
+                  >
+                    <input
+                      class="input size-sm normal has-icon-left"
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
+                      iconleft="search-1"
+                      placeholder="Call an external service"
+                      size="0"
+                      type="text"
+                      v-bind="[object Object]"
+                    />
+                    <span
+                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
+                      data-v-2d3b8b50=""
+                      data-v-a1936218=""
+                    >
+                      <svg
+                        fill="none"
+                        viewBox="0 0 40 40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0615 35.0005C33.8116 35.0005 33.5754 34.903 33.3992 34.7256L25.2575 26.5826C24.3065 27.3961 23.2355 28.0597 22.067 28.5559C20.5312 29.2082 18.9178 29.5394 17.272 29.5394C15.7011 29.5394 14.1578 29.2382 12.6819 28.6421C9.64389 27.4161 7.26574 25.0817 5.98481 22.0662C4.70388 19.052 4.67263 15.7178 5.89858 12.6811C7.12452 9.64433 9.45894 7.26492 12.4732 5.98399C14.009 5.33041 15.6211 5.00049 17.2682 5.00049C18.8391 5.00049 20.3825 5.30291 21.8583 5.89776C24.8963 7.12371 27.2745 9.45812 28.5554 12.4736C29.8363 15.4891 29.8676 18.822 28.6416 21.8588C28.1393 23.1035 27.4469 24.2444 26.5809 25.2554L34.7251 33.4009C35.09 33.7658 35.09 34.3606 34.7251 34.7268C34.5477 34.903 34.3115 35.0005 34.0615 35.0005ZM17.2682 6.87502C15.8748 6.87502 14.5077 7.15495 13.2068 7.70856C10.6524 8.79454 8.67413 10.809 7.63564 13.3821C6.59715 15.9552 6.6234 18.7783 7.70813 21.3327C8.7941 23.887 10.8086 25.8653 13.3817 26.9038C14.6326 27.4086 15.9411 27.6636 17.2707 27.6636C18.6641 27.6636 20.0313 27.3836 21.3322 26.83C22.5494 26.3127 23.6404 25.5828 24.5739 24.6606C24.5864 24.6431 24.6002 24.6281 24.6139 24.6143C24.6339 24.5943 24.6526 24.5781 24.6701 24.5656C25.6236 23.6021 26.381 22.4499 26.9021 21.1565C27.9406 18.5833 27.9143 15.7603 26.8283 13.2059C25.7436 10.6516 23.7279 8.67332 21.1548 7.63483C19.9063 7.13121 18.5979 6.87502 17.2682 6.87502Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </span>
+                    <!---->
+                  </div>
+                  <!---->
+                </div>
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Integration with... 
+            </span>
+          </p>
+          <div
+            class="ele"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-select"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_external_service"
+              >
+                <!---->
+                <span
+                  class="dropdown"
+                  data-v-6fe2671f=""
+                >
+                  <div
+                    data-v-2d3b8b50=""
+                    data-v-6fe2671f=""
+                    readonly="readonly"
+                    style="position: relative;"
+                  >
+                    <input
+                      class="input size-sm normal has-icon-right"
+                      data-v-2d3b8b50=""
+                      data-v-f03c53b0=""
+                      iconright="arrow-button-down-1"
+                      iconrightclickable="true"
+                      placeholder="Select the external service to use"
+                      readonly="readonly"
+                      size="0"
+                      type="text"
+                    />
+                    <!---->
+                    <span
+                      class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-cloudy"
+                      data-v-2d3b8b50=""
+                      data-v-a1936218=""
+                    >
+                      <svg
+                        fill="none"
+                        viewBox="0 0 40 40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    __use_react_component_wrap=""
+                    data-v-6fe2671f=""
+                    style="all: unset;"
+                  >
+                    <option
+                      label="ChatGPT dummy project"
+                      value="ChatGPT dummy project"
+                    >
+                      ChatGPT dummy project
+                    </option>
+                    <option
+                      label="Omie dummy project"
+                      value="Omie dummy project"
+                    >
+                      Omie dummy project
+                    </option>
+                  </div>
+                  <div
+                    class="dropdown-data"
+                    data-v-6fe2671f=""
+                    style="position: fixed; top: 0px;"
+                  />
+                </span>
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>
+            <span>
+              Action
+            </span>
+          </p>
+          <div
+            data-use-vue-component-wrap=""
+            style="all: unset;"
+          >
+            <div
+              class="unnnic-select"
+              data-passed-props="[object Object]"
+              data-testid="temba_select_external_service_call"
+            >
+              <!---->
+              <span
+                class="dropdown"
+                data-v-6fe2671f=""
+              >
+                <div
+                  data-v-2d3b8b50=""
+                  data-v-6fe2671f=""
+                  readonly="readonly"
+                  style="position: relative;"
+                >
+                  <input
+                    class="input size-sm normal has-icon-right"
+                    data-v-2d3b8b50=""
+                    data-v-f03c53b0=""
+                    iconright="arrow-button-down-1"
+                    iconrightclickable="true"
+                    placeholder="Select the call from external service to do"
+                    readonly="readonly"
+                    size="15"
+                    type="text"
+                  />
+                  <!---->
+                  <span
+                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
+                    data-v-2d3b8b50=""
+                    data-v-a1936218=""
+                  >
+                    <svg
+                      fill="none"
+                      viewBox="0 0 40 40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="primary"
+                        d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                        fill="#3B414D"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  __use_react_component_wrap=""
+                  data-v-6fe2671f=""
+                  style="all: unset;"
+                >
+                  <option
+                    label="Inserir Contato"
+                    value="IncluirContato"
+                  >
+                    Inserir Contato
+                  </option>
+                  <option
+                    label="Incluir Oportunidade"
+                    value="IncluirOportunidade"
+                  >
+                    Incluir Oportunidade
+                  </option>
+                  <option
+                    label="Listar Clientes"
+                    value="ListarClientes"
+                  >
+                    Listar Clientes
+                  </option>
+                  <option
+                    label="Pesquisar Títulos/Lançamentos"
+                    value="PesquisarLancamentos"
+                  >
+                    Pesquisar Títulos/Lançamentos
+                  </option>
+                  <option
+                    label="Verificar Contato"
+                    value="VerificarContato"
+                  >
+                    Verificar Contato
+                  </option>
+                  <option
+                    label="Obter Boleto"
+                    value="ObterBoleto"
+                  >
+                    Obter Boleto
+                  </option>
+                </div>
+                <div
+                  class="dropdown-data"
+                  data-v-6fe2671f=""
+                  style="position: fixed; top: 0px;"
+                />
+              </span>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <div
+          class="param_list_container "
+          tabindex="0"
+        >
+          <div
+            class="param_list"
+          >
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <div
+                    class="moveIcon"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <button
+                        class="unnnic-button unnnic-button--size-small unnnic-button--terciary unnnic-button-scheme-- unnnic-button--icon-on-center"
+                        data-passed-props="[object Object]"
+                        data-v-00f478da=""
+                      >
+                        <!---->
+                        <!---->
+                        <span
+                          class="unnnic-icon unnnic-icon__size--sm"
+                          data-v-00f478da=""
+                          data-v-a1936218=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class="primary"
+                              clip-rule="evenodd"
+                              d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
+                              fill="#D0D3D9"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="unnnic-button__label"
+                          data-v-00f478da=""
+                        >
+                            
+                        </span>
+                        <!---->
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="choice disabled"
+                    style="flex: 1;"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-select"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_service_call_param"
+                      >
+                        <!---->
+                        <span
+                          class="dropdown"
+                          data-v-6fe2671f=""
+                        >
+                          <div
+                            data-v-2d3b8b50=""
+                            data-v-6fe2671f=""
+                            disabled="disabled"
+                            readonly="readonly"
+                            style="position: relative;"
+                          >
+                            <input
+                              class="input size-sm normal has-icon-right"
+                              data-v-2d3b8b50=""
+                              data-v-f03c53b0=""
+                              disabled="disabled"
+                              iconright="arrow-button-down-1"
+                              iconrightclickable="true"
+                              placeholder="Param"
+                              readonly="readonly"
+                              size="13"
+                              type="text"
+                            />
+                            <!---->
+                            <span
+                              class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
+                              data-v-2d3b8b50=""
+                              data-v-a1936218=""
+                            >
+                              <svg
+                                fill="none"
+                                viewBox="0 0 40 40"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  class="primary"
+                                  d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                                  fill="#3B414D"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            __use_react_component_wrap=""
+                            data-v-6fe2671f=""
+                            style="all: unset;"
+                          >
+                            <option
+                              label="Identificação"
+                              value="identificacao"
+                            >
+                              Identificação
+                            </option>
+                            <option
+                              label="Endereço"
+                              value="endereco"
+                            >
+                              Endereço
+                            </option>
+                            <option
+                              label="Telefone e Email"
+                              value="telefone_email"
+                            >
+                              Telefone e Email
+                            </option>
+                            <option
+                              label="Observações"
+                              value="cObs"
+                            >
+                              Observações
+                            </option>
+                          </div>
+                          <div
+                            class="dropdown-data"
+                            data-v-6fe2671f=""
+                            style="position: fixed; top: 0px;"
+                          />
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="choice disabled"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-select"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_service_call_param_filter"
+                      >
+                        <!---->
+                        <span
+                          class="dropdown"
+                          data-v-6fe2671f=""
+                        >
+                          <div
+                            data-v-2d3b8b50=""
+                            data-v-6fe2671f=""
+                            disabled="disabled"
+                            readonly="readonly"
+                            style="position: relative;"
+                          >
+                            <input
+                              class="input size-sm normal has-icon-right"
+                              data-v-2d3b8b50=""
+                              data-v-f03c53b0=""
+                              disabled="disabled"
+                              iconright="arrow-button-down-1"
+                              iconrightclickable="true"
+                              placeholder="Filter"
+                              readonly="readonly"
+                              size="20"
+                              type="text"
+                            />
+                            <!---->
+                            <span
+                              class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
+                              data-v-2d3b8b50=""
+                              data-v-a1936218=""
+                            >
+                              <svg
+                                fill="none"
+                                viewBox="0 0 40 40"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  class="primary"
+                                  d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                                  fill="#3B414D"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            __use_react_component_wrap=""
+                            data-v-6fe2671f=""
+                            style="all: unset;"
+                          >
+                            <option
+                              label="Código de Integração"
+                              value="cCodInt"
+                            >
+                              Código de Integração
+                            </option>
+                            <option
+                              label="Código do Contato"
+                              value="nCod"
+                            >
+                              Código do Contato
+                            </option>
+                            <option
+                              label="Sobrenome do contato"
+                              value="cSobrenome"
+                            >
+                              Sobrenome do contato
+                            </option>
+                            <option
+                              label="Cargo"
+                              value="cCargo"
+                            >
+                              Cargo
+                            </option>
+                            <option
+                              label="Data de Nascimento"
+                              value="dDtNasc"
+                            >
+                              Data de Nascimento
+                            </option>
+                            <option
+                              label="Código do Vendedor"
+                              value="nCodVend"
+                            >
+                              Código do Vendedor
+                            </option>
+                            <option
+                              label="Código da Conta"
+                              value="nCodConta"
+                            >
+                              Código da Conta
+                            </option>
+                          </div>
+                          <div
+                            class="dropdown-data"
+                            data-v-6fe2671f=""
+                            style="position: fixed; top: 0px;"
+                          />
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="data"
+                  >
+                    <div>
+                      <div
+                        data-use-vue-component-wrap=""
+                        style="all: unset;"
+                      >
+                        <div
+                          class="unnnic-autocomplete-select completionInput"
+                          data-passed-props="[object Object]"
+                          data-testid="Service Call Param Data"
+                          data-v-4e186498=""
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-48c0c241=""
+                            data-v-4e186498=""
+                          >
+                            <!---->
+                            <div
+                              class="unnnic-form-input"
+                              data-v-2d3b8b50=""
+                              data-v-48c0c241=""
+                              mask=""
+                              style="position: relative;"
+                              v-bind="[object Object]"
+                            >
+                              <input
+                                class="input size-sm error"
+                                data-v-2d3b8b50=""
+                                data-v-f03c53b0=""
+                                placeholder="Buscar por"
+                                size="0"
+                                type="text"
+                                v-bind="[object Object]"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <p
+                              class="unnnic-form__message"
+                              data-v-48c0c241=""
+                            >
+                              Parameter is required
+                            </p>
+                          </div>
+                          <!---->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-draggable="true"
+                    data-use-vue-component-wrap=""
+                  >
+                    <span
+                      class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-clean remove_icon"
+                      data-passed-props="[object Object]"
+                      data-testid="remove-param-57bf1459-14b9-4a73-b579-9d1b56f0b276"
+                      data-v-a1936218=""
+                    >
+                      <svg
+                        fill="none"
+                        viewBox="0 0 40 40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                          fill="#3B414D"
+                        />
+                        <path
+                          class="primary"
+                          d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="param param_list_param"
+            >
+              <div
+                class="ele group"
+              >
+                <div
+                  class="param"
+                  data-draggable="false"
+                >
+                  <div
+                    class="moveIcon"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <button
+                        class="unnnic-button unnnic-button--size-small unnnic-button--terciary unnnic-button-scheme-- unnnic-button--icon-on-center"
+                        data-passed-props="[object Object]"
+                        data-v-00f478da=""
+                      >
+                        <!---->
+                        <!---->
+                        <span
+                          class="unnnic-icon unnnic-icon__size--sm"
+                          data-v-00f478da=""
+                          data-v-a1936218=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class="primary"
+                              clip-rule="evenodd"
+                              d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
+                              fill="#D0D3D9"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="unnnic-button__label"
+                          data-v-00f478da=""
+                        >
+                            
+                        </span>
+                        <!---->
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="choice disabled"
+                    style="flex: 1;"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-select"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_service_call_param"
+                      >
+                        <!---->
+                        <span
+                          class="dropdown"
+                          data-v-6fe2671f=""
+                        >
+                          <div
+                            data-v-2d3b8b50=""
+                            data-v-6fe2671f=""
+                            disabled="disabled"
+                            readonly="readonly"
+                            style="position: relative;"
+                          >
+                            <input
+                              class="input size-sm normal has-icon-right"
+                              data-v-2d3b8b50=""
+                              data-v-f03c53b0=""
+                              disabled="disabled"
+                              iconright="arrow-button-down-1"
+                              iconrightclickable="true"
+                              placeholder="Param"
+                              readonly="readonly"
+                              size="13"
+                              type="text"
+                            />
+                            <!---->
+                            <span
+                              class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
+                              data-v-2d3b8b50=""
+                              data-v-a1936218=""
+                            >
+                              <svg
+                                fill="none"
+                                viewBox="0 0 40 40"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  class="primary"
+                                  d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                                  fill="#3B414D"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            __use_react_component_wrap=""
+                            data-v-6fe2671f=""
+                            style="all: unset;"
+                          >
+                            <option
+                              label="Identificação"
+                              value="identificacao"
+                            >
+                              Identificação
+                            </option>
+                            <option
+                              label="Endereço"
+                              value="endereco"
+                            >
+                              Endereço
+                            </option>
+                            <option
+                              label="Telefone e Email"
+                              value="telefone_email"
+                            >
+                              Telefone e Email
+                            </option>
+                            <option
+                              label="Observações"
+                              value="cObs"
+                            >
+                              Observações
+                            </option>
+                          </div>
+                          <div
+                            class="dropdown-data"
+                            data-v-6fe2671f=""
+                            style="position: fixed; top: 0px;"
+                          />
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="choice disabled"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-select"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_service_call_param_filter"
+                      >
+                        <!---->
+                        <span
+                          class="dropdown"
+                          data-v-6fe2671f=""
+                        >
+                          <div
+                            data-v-2d3b8b50=""
+                            data-v-6fe2671f=""
+                            disabled="disabled"
+                            readonly="readonly"
+                            style="position: relative;"
+                          >
+                            <input
+                              class="input size-sm normal has-icon-right"
+                              data-v-2d3b8b50=""
+                              data-v-f03c53b0=""
+                              disabled="disabled"
+                              iconright="arrow-button-down-1"
+                              iconrightclickable="true"
+                              placeholder="Filter"
+                              readonly="readonly"
+                              size="15"
+                              type="text"
+                            />
+                            <!---->
+                            <span
+                              class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
+                              data-v-2d3b8b50=""
+                              data-v-a1936218=""
+                            >
+                              <svg
+                                fill="none"
+                                viewBox="0 0 40 40"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  class="primary"
+                                  d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                                  fill="#3B414D"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            __use_react_component_wrap=""
+                            data-v-6fe2671f=""
+                            style="all: unset;"
+                          >
+                            <option
+                              label="Nome do contato"
+                              value="cNome"
+                            >
+                              Nome do contato
+                            </option>
+                            <option
+                              label="Código do Contato"
+                              value="nCod"
+                            >
+                              Código do Contato
+                            </option>
+                            <option
+                              label="Sobrenome do contato"
+                              value="cSobrenome"
+                            >
+                              Sobrenome do contato
+                            </option>
+                            <option
+                              label="Cargo"
+                              value="cCargo"
+                            >
+                              Cargo
+                            </option>
+                            <option
+                              label="Data de Nascimento"
+                              value="dDtNasc"
+                            >
+                              Data de Nascimento
+                            </option>
+                            <option
+                              label="Código do Vendedor"
+                              value="nCodVend"
+                            >
+                              Código do Vendedor
+                            </option>
+                            <option
+                              label="Código da Conta"
+                              value="nCodConta"
+                            >
+                              Código da Conta
+                            </option>
+                          </div>
+                          <div
+                            class="dropdown-data"
+                            data-v-6fe2671f=""
+                            style="position: fixed; top: 0px;"
+                          />
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="data"
+                  >
+                    <div>
+                      <div
+                        data-use-vue-component-wrap=""
+                        style="all: unset;"
+                      >
+                        <div
+                          class="unnnic-autocomplete-select completionInput"
+                          data-passed-props="[object Object]"
+                          data-testid="Service Call Param Data"
+                          data-v-4e186498=""
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-48c0c241=""
+                            data-v-4e186498=""
+                          >
+                            <!---->
+                            <div
+                              class="unnnic-form-input"
+                              data-v-2d3b8b50=""
+                              data-v-48c0c241=""
+                              mask=""
+                              style="position: relative;"
+                              v-bind="[object Object]"
+                            >
+                              <input
+                                class="input size-sm error"
+                                data-v-2d3b8b50=""
+                                data-v-f03c53b0=""
+                                placeholder="Buscar por"
+                                size="0"
+                                type="text"
+                                v-bind="[object Object]"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <p
+                              class="unnnic-form__message"
+                              data-v-48c0c241=""
+                            >
+                              Parameter is required
+                            </p>
+                          </div>
+                          <!---->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-draggable="true"
+                    data-use-vue-component-wrap=""
+                  >
+                    <span
+                      class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-clean remove_icon"
+                      data-passed-props="[object Object]"
+                      data-testid="remove-param-a0bf60d1-2333-41a5-9bcb-7c56cc5e969e"
+                      data-v-a1936218=""
+                    >
+                      <svg
+                        fill="none"
+                        viewBox="0 0 40 40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                          fill="#3B414D"
+                        />
+                        <path
+                          class="primary"
+                          d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="optional_text_input "
+        >
+          <div
+            data-use-vue-component-wrap=""
+            style="all: unset;"
+            unnnic-input="true"
+          >
+            <div
+              class="unnnic-input size-sm"
+              data-passed-props="[object Object]"
+              data-testid="Save as result"
+              data-v-391ed932=""
+            >
+              <span
+                class="label unnnic-font secondary color-neutral-cloudy body-md"
+                data-v-391ed932=""
+              >
+                 Save as result 
+              </span>
+              <div
+                class="input-container"
+                data-v-391ed932=""
+              >
+                <!---->
+                <input
+                  class="unnnic-font secondary"
+                  data-v-391ed932=""
+                  maxlength="64"
+                  placeholder="Result"
+                  type="text"
+                />
+                <!---->
+                <!---->
+              </div>
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div
+          class="buttons"
+        >
+          <div
+            class="buttons_wrapper"
+          >
+            <div
+              class="right_buttons"
+            >
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-left: 0px; margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Cancel 
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Ok 
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ExternalServiceRouterForm Omie updates should save changes 2`] = `
 Array [
   Object {
     "inboundConnections": Object {},
@@ -730,6 +3078,7 @@ Array [
                     "verboseName": "Código da Conta",
                   },
                 ],
+                "name": "identificacao",
                 "type": "identificacao",
                 "verboseName": "Identificação",
               },
@@ -778,6 +3127,7 @@ Array [
                     "verboseName": "País",
                   },
                 ],
+                "name": "endereco",
                 "type": "endereco",
                 "verboseName": "Endereço",
               },
@@ -857,8 +3207,907 @@ Array [
             "verboseName": "Inserir Contato",
           },
           "external_service": Object {
+            "actions": Array [
+              Object {
+                "name": "IncluirContato",
+                "params": Array [
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nCod",
+                        "type": "integer",
+                        "verboseName": "Código do Contato",
+                      },
+                      Object {
+                        "name": "cCodInt",
+                        "required": true,
+                        "type": "text",
+                        "verboseName": "Código de Integração",
+                      },
+                      Object {
+                        "name": "cNome",
+                        "required": true,
+                        "type": "string",
+                        "verboseName": "Nome do contato",
+                      },
+                      Object {
+                        "name": "cSobrenome",
+                        "type": "string",
+                        "verboseName": "Sobrenome do contato",
+                      },
+                      Object {
+                        "name": "cCargo",
+                        "type": "string",
+                        "verboseName": "Cargo",
+                      },
+                      Object {
+                        "name": "dDtNasc",
+                        "type": "string",
+                        "verboseName": "Data de Nascimento",
+                      },
+                      Object {
+                        "name": "nCodVend",
+                        "type": "integer",
+                        "verboseName": "Código do Vendedor",
+                      },
+                      Object {
+                        "name": "nCodConta",
+                        "type": "integer",
+                        "verboseName": "Código da Conta",
+                      },
+                    ],
+                    "name": "identificacao",
+                    "type": "identificacao",
+                    "verboseName": "Identificação",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "maxLength": 60,
+                        "name": "cEndereco",
+                        "type": "string",
+                        "verboseName": "Endereço do contato",
+                      },
+                      Object {
+                        "maxLength": 200,
+                        "name": "cCompl",
+                        "type": "string",
+                        "verboseName": "Complemento ",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "cCEP",
+                        "type": "string",
+                        "verboseName": "CEP",
+                      },
+                      Object {
+                        "maxLength": 60,
+                        "name": "cBairro",
+                        "type": "string",
+                        "verboseName": "Bairro ",
+                      },
+                      Object {
+                        "maxLength": 50,
+                        "name": "cCidade",
+                        "type": "string",
+                        "verboseName": "Cidade ",
+                      },
+                      Object {
+                        "maxLength": 50,
+                        "name": "cUF",
+                        "type": "string",
+                        "verboseName": "Estado ",
+                      },
+                      Object {
+                        "maxLength": 50,
+                        "name": "cPais",
+                        "type": "string",
+                        "verboseName": "País",
+                      },
+                    ],
+                    "name": "endereco",
+                    "type": "endereco",
+                    "verboseName": "Endereço",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "maxLength": 5,
+                        "name": "cDDDCel1",
+                        "type": "string",
+                        "verboseName": "DDD do celular 1",
+                      },
+                      Object {
+                        "maxLength": 15,
+                        "name": "cNumCel1",
+                        "type": "string",
+                        "verboseName": "Número do Celular 1",
+                      },
+                      Object {
+                        "maxLength": 5,
+                        "name": "cDDDCel2",
+                        "type": "string",
+                        "verboseName": "DDD do Celular 2",
+                      },
+                      Object {
+                        "maxLength": 15,
+                        "name": "cNumCel2",
+                        "type": "string",
+                        "verboseName": "Número do Celular 2",
+                      },
+                      Object {
+                        "maxLength": 5,
+                        "name": "cDDDTel",
+                        "type": "string",
+                        "verboseName": "DDD do Telefone",
+                      },
+                      Object {
+                        "maxLength": 15,
+                        "name": "cNumTel",
+                        "type": "string",
+                        "verboseName": "Número do Telefone",
+                      },
+                      Object {
+                        "maxLength": 5,
+                        "name": "cDDDFax",
+                        "type": "string",
+                        "verboseName": "DDD do Fax",
+                      },
+                      Object {
+                        "maxLength": 15,
+                        "name": "cNumFax",
+                        "type": "string",
+                        "verboseName": "Número do Fax",
+                      },
+                      Object {
+                        "maxLength": 200,
+                        "name": "cEmail",
+                        "type": "string",
+                        "verboseName": "E-mail do contato",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "cWebsite",
+                        "type": "string",
+                        "verboseName": "WebSite",
+                      },
+                    ],
+                    "type": "telefone_email",
+                    "verboseName": "Telefone e Email",
+                  },
+                  Object {
+                    "filters": Array [],
+                    "type": "cObs",
+                    "verboseName": "Observações",
+                  },
+                ],
+                "value": "IncluirContato",
+                "verboseName": "Inserir Contato",
+              },
+              Object {
+                "name": "IncluirOportunidade",
+                "params": Array [
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nCodOp",
+                        "type": "integer",
+                        "verboseName": "Código da Oportunidade",
+                      },
+                      Object {
+                        "name": "cCodIntOp",
+                        "required": true,
+                        "type": "text",
+                        "verboseName": "Código de integração da oportunidade",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "cDesOp",
+                        "required": true,
+                        "type": "string",
+                        "verboseName": "Descrição da oportunidade",
+                      },
+                      Object {
+                        "name": "nCodContato",
+                        "required": true,
+                        "type": "integer",
+                        "verboseName": "Código do contato",
+                      },
+                      Object {
+                        "name": "nCodSolucao",
+                        "required": true,
+                        "type": "integer",
+                        "verboseName": "Código da solução",
+                      },
+                      Object {
+                        "name": "nCodOrigem",
+                        "required": true,
+                        "type": "integer",
+                        "verboseName": "Código da origem",
+                      },
+                      Object {
+                        "name": "nCodConta",
+                        "type": "integer",
+                        "verboseName": "Código da conta",
+                      },
+                      Object {
+                        "name": "nCodVendedor",
+                        "required": true,
+                        "type": "integer",
+                        "verboseName": "Código do vendedor",
+                      },
+                    ],
+                    "type": "identificacao",
+                    "verboseName": "Cabeçalho da Oportunidade",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nCodFase",
+                        "type": "integer",
+                        "verboseName": "Código da fase",
+                      },
+                      Object {
+                        "name": "nCodStatus",
+                        "type": "integer",
+                        "verboseName": "Código do status",
+                      },
+                      Object {
+                        "name": "nCodMotivo",
+                        "type": "integer",
+                        "verboseName": "Código do motivo",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dNovoLead",
+                        "type": "string",
+                        "verboseName": "Data do Novo Lead",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dQualificacao",
+                        "type": "string",
+                        "verboseName": "Data da Qualificação.",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dTreinamento",
+                        "type": "string",
+                        "verboseName": "Data de Treinamento",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dShowRoom",
+                        "type": "string",
+                        "verboseName": "Data de ShowRoom",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dProjeto",
+                        "type": "string",
+                        "verboseName": "Data de projeto",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dConclusao",
+                        "type": "string",
+                        "verboseName": "Data de conclusão",
+                      },
+                    ],
+                    "type": "fasesStatus",
+                    "verboseName": "Fase e Status da Oportunidade",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nProdutos",
+                        "type": "float",
+                        "verboseName": "Valor de produtos",
+                      },
+                      Object {
+                        "name": "nServicos",
+                        "type": "float",
+                        "verboseName": "Valor de serviços",
+                      },
+                      Object {
+                        "name": "nRecorrencia",
+                        "type": "float",
+                        "verboseName": "Valor da recorrência",
+                      },
+                      Object {
+                        "name": "nMeses",
+                        "type": "integer",
+                        "verboseName": "Meses de contrato",
+                      },
+                      Object {
+                        "name": "nTicket",
+                        "type": "float",
+                        "verboseName": "Valor do ticket calculado",
+                      },
+                    ],
+                    "type": "ticket",
+                    "verboseName": "Ticket da Oportunidade",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nTemperatura",
+                        "type": "integer",
+                        "verboseName": "Temperatura",
+                      },
+                      Object {
+                        "name": "nMesPrev",
+                        "type": "integer",
+                        "verboseName": "Mês de previsão de fechamento",
+                      },
+                      Object {
+                        "name": "nAnoPrev",
+                        "type": "integer",
+                        "verboseName": "Ano de previsão de fechamento",
+                      },
+                    ],
+                    "type": "previsaoTemp",
+                    "verboseName": "Previsão e Temperatura",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "cObs",
+                        "type": "text",
+                        "verboseName": "Observações",
+                      },
+                    ],
+                    "type": "observacoes",
+                    "verboseName": "Observações da oportunidade",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nCodTipo",
+                        "type": "integer",
+                        "verboseName": "Código do tipo",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "cEmailOp",
+                        "type": "string",
+                        "verboseName": "E-mail da oportunidade",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dInclusao",
+                        "type": "string",
+                        "verboseName": "Data de inclusão da oportunidade",
+                      },
+                      Object {
+                        "maxLength": 8,
+                        "name": "hInclusao",
+                        "type": "string",
+                        "verboseName": "Hora de inclusão da oportunidade",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "dAlteracao",
+                        "type": "string",
+                        "verboseName": "Data de alteração da oportunidade",
+                      },
+                      Object {
+                        "maxLength": 8,
+                        "name": "hAlteracao",
+                        "type": "string",
+                        "verboseName": "Hora de alteração da oportunidade",
+                      },
+                    ],
+                    "type": "outrasInf",
+                    "verboseName": "Outras informações",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "nCodFinder",
+                        "type": "integer",
+                        "verboseName": "Código do Finder",
+                      },
+                      Object {
+                        "name": "nCodParceiro",
+                        "type": "integer",
+                        "verboseName": "Código do parceiro",
+                      },
+                      Object {
+                        "name": "nCodPrevenda",
+                        "type": "integer",
+                        "verboseName": "Código da prevenda",
+                      },
+                    ],
+                    "type": "envolvidos",
+                    "verboseName": "Envolvidos na oportunidade",
+                  },
+                ],
+                "value": "IncluirOportunidade",
+                "verboseName": "Incluir Oportunidade",
+              },
+              Object {
+                "name": "ListarClientes",
+                "params": Array [
+                  Object {
+                    "paramType": "integer",
+                    "type": "pagina",
+                    "verboseName": "Número da página retornada",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "registros_por_pagina",
+                    "verboseName": "Número de registros retornados na página",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "apenas_importado_api",
+                    "verboseName": "Exibir apenas os registros gerados pela API",
+                  },
+                  Object {
+                    "maxLength": 100,
+                    "paramType": "string",
+                    "type": "ordenar_por",
+                    "verboseName": "Ordem de exibição dos dados",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "ordem_decrescente",
+                    "verboseName": "Se a lista será apresentada em ordem decrescente",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "filtrar_por_data_de",
+                    "verboseName": "Filtrar os registros a partir de uma data",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "filtrar_por_data_ate",
+                    "verboseName": "Filtrar os registros até uma data",
+                  },
+                  Object {
+                    "maxLength": 8,
+                    "paramType": "string",
+                    "type": "filtrar_por_hora_de",
+                    "verboseName": "Filtro por hora a apartir de",
+                  },
+                  Object {
+                    "maxLength": 8,
+                    "paramType": "string",
+                    "type": "filtrar_por_hora_ate",
+                    "verboseName": "Filtro por hora até",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "filtrar_apenas_inclusao",
+                    "verboseName": "Filtrar apenas os registros incluídos",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "filtrar_apenas_alteracao",
+                    "verboseName": "Filtrar apenas os registros alterados",
+                  },
+                  Object {
+                    "filters": Array [
+                      Object {
+                        "name": "codigo_cliente_omie",
+                        "type": "integer",
+                        "verboseName": "Código de Cliente / Fornecedor",
+                      },
+                      Object {
+                        "maxLength": 60,
+                        "name": "codigo_cliente_integracao",
+                        "type": "string",
+                        "verboseName": "Código de Integração com sistemas legados.",
+                      },
+                      Object {
+                        "maxLength": 20,
+                        "name": "cnpj_cpf",
+                        "type": "string",
+                        "verboseName": "CNPJ / CPF",
+                      },
+                      Object {
+                        "maxLength": 60,
+                        "name": "razao_social",
+                        "type": "string",
+                        "verboseName": "Razão Social",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "nome_fantasia",
+                        "type": "string",
+                        "verboseName": "Nome Fantasia",
+                      },
+                      Object {
+                        "maxLength": 60,
+                        "name": "endereco",
+                        "type": "string",
+                        "verboseName": "Endereço",
+                      },
+                      Object {
+                        "maxLength": 60,
+                        "name": "bairro",
+                        "type": "string",
+                        "verboseName": "Bairro",
+                      },
+                      Object {
+                        "maxLength": 40,
+                        "name": "cidade",
+                        "type": "string",
+                        "verboseName": "Código da Cidade",
+                      },
+                      Object {
+                        "maxLength": 2,
+                        "name": "estado",
+                        "type": "string",
+                        "verboseName": "Sigla do Estado",
+                      },
+                      Object {
+                        "maxLength": 10,
+                        "name": "cep",
+                        "type": "string",
+                        "verboseName": "CEP",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "contato",
+                        "type": "string",
+                        "verboseName": "Nome para contato",
+                      },
+                      Object {
+                        "maxLength": 500,
+                        "name": "email",
+                        "type": "string",
+                        "verboseName": "E-Mail",
+                      },
+                      Object {
+                        "maxLength": 100,
+                        "name": "homepage",
+                        "type": "string",
+                        "verboseName": "WebSite",
+                      },
+                      Object {
+                        "maxLength": 20,
+                        "name": "inscricao_municipal",
+                        "type": "string",
+                        "verboseName": "Inscrição Municipal",
+                      },
+                      Object {
+                        "maxLength": 20,
+                        "name": "inscricao_estadual",
+                        "type": "string",
+                        "verboseName": "Inscrição Estadual",
+                      },
+                      Object {
+                        "maxLength": 20,
+                        "name": "inscricao_suframa",
+                        "type": "string",
+                        "verboseName": "Inscrição Suframa",
+                      },
+                      Object {
+                        "maxLength": 1,
+                        "name": "pessoa_fisica",
+                        "type": "string",
+                        "verboseName": "Pessoa Física",
+                      },
+                      Object {
+                        "maxLength": 1,
+                        "name": "optante_simples_nacional",
+                        "type": "string",
+                        "verboseName": "Indica se o Cliente / Fornecedor é Optante do Simples Nacional",
+                      },
+                      Object {
+                        "maxLength": 1,
+                        "name": "inativo",
+                        "type": "string",
+                        "verboseName": "Indica se o cliente está inativo",
+                      },
+                    ],
+                    "type": "clientesFiltro",
+                    "verboseName": "Filtrar cadastro de clientes",
+                  },
+                  Object {
+                    "type": "clientesPorCodigo",
+                    "verboseName": "Lista de Códigos para filtro de cliente",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "exibir_caracteristicas",
+                    "verboseName": "Exibe as caracteristicas do cliente",
+                  },
+                ],
+                "value": "ListarClientes",
+                "verboseName": "Listar Clientes",
+              },
+              Object {
+                "name": "PesquisarLancamentos",
+                "params": Array [
+                  Object {
+                    "paramType": "integer",
+                    "type": "nPagina",
+                    "verboseName": "Número da página retornada",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nRegPorPagina",
+                    "verboseName": "Número de registros retornados na página",
+                  },
+                  Object {
+                    "maxLength": 100,
+                    "paramType": "string",
+                    "type": "cOrdenarPor",
+                    "verboseName": "Ordem de exibição do dados",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "cOrdemDecrescente",
+                    "verboseName": "Se a lista será apresentada em ordem decrescente.",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodTitulo",
+                    "verboseName": "Código do titulo",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cCodIntTitulo",
+                    "verboseName": "Código de integração do título",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cNumTitulo",
+                    "verboseName": "Número do título",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtEmisDe",
+                    "verboseName": "Filtrar os títulos pela data de emissão - de",
+                  },
+                  Object {
+                    "maxLength": 8,
+                    "paramType": "string",
+                    "type": "dDtEmisAte",
+                    "verboseName": "Filtrar os títulos pela data de emissão - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtVencDe",
+                    "verboseName": "Data de vencimento do título - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtVencAte",
+                    "verboseName": "Data de vencimento do título - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtPagtoDe",
+                    "verboseName": "Data do Lançamento - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtPagtoAte",
+                    "verboseName": "Data de Lançamento - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtPrevDe",
+                    "verboseName": "Data de previsão de Pagamento/Recebimento - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtPrevAte",
+                    "verboseName": "Data de previsão de Pagamento/Recebimento - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtRegDe",
+                    "verboseName": "Data de registro da NF - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtRegAte",
+                    "verboseName": "Data de registro da NF - até",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodCliente",
+                    "verboseName": "Código de Cliente / Fornecedor",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cCPFCNPJCliente",
+                    "verboseName": "Filtrar os títulos por CPF/CNPJ do cliente",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodCtr",
+                    "verboseName": "Código do contrato associado ao título",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cNumCtr",
+                    "verboseName": "Número do contrato associado ao título",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodOS",
+                    "verboseName": "Código do Pedido de Venda / Ordem de Serviço",
+                  },
+                  Object {
+                    "maxLength": 15,
+                    "paramType": "string",
+                    "type": "cNumOS",
+                    "verboseName": "Número do pedido de venda / Ordem de Serviço",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodCC",
+                    "verboseName": "Código da conta corrente",
+                  },
+                  Object {
+                    "maxLength": 100,
+                    "paramType": "string",
+                    "type": "cStatus",
+                    "verboseName": "Status do título",
+                  },
+                  Object {
+                    "maxLength": 1,
+                    "paramType": "string",
+                    "type": "cNatureza",
+                    "verboseName": "Natureza do título",
+                  },
+                  Object {
+                    "maxLength": 5,
+                    "paramType": "string",
+                    "type": "cTipo",
+                    "verboseName": "Tipo de documento",
+                  },
+                  Object {
+                    "maxLength": 2,
+                    "paramType": "string",
+                    "type": "cOperacao",
+                    "verboseName": "Operação do título",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cNumDocFiscal",
+                    "verboseName": "Número do documento fiscal",
+                  },
+                  Object {
+                    "maxLength": 70,
+                    "paramType": "string",
+                    "type": "cCodigoBarras",
+                    "verboseName": "Código de Barras do título",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodProjeto",
+                    "verboseName": "Código do projeto",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodVendedor",
+                    "verboseName": "Código do vendedor",
+                  },
+                  Object {
+                    "paramType": "integer",
+                    "type": "nCodComprador",
+                    "verboseName": "Código do comprador",
+                  },
+                  Object {
+                    "maxLength": 20,
+                    "paramType": "string",
+                    "type": "cCodCateg",
+                    "verboseName": "Código da categoria",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtIncDe",
+                    "verboseName": "Data de inclusão - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtIncAte",
+                    "verboseName": "Data de inclusão - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtAltDe",
+                    "verboseName": "Data de alteração - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtAltAte",
+                    "verboseName": "Data de alteração - até",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtCancDe",
+                    "verboseName": "Data de Cancelamento do título - de",
+                  },
+                  Object {
+                    "maxLength": 10,
+                    "paramType": "string",
+                    "type": "dDtCancAte",
+                    "verboseName": "Data de Cancelamento do título - até",
+                  },
+                  Object {
+                    "maxLength": 44,
+                    "paramType": "string",
+                    "type": "cChaveNFe",
+                    "verboseName": "Chave da NF-e, CT-e, NFC-e de origem",
+                  },
+                ],
+                "value": "PesquisarLancamentos",
+                "verboseName": "Pesquisar Títulos/Lançamentos",
+              },
+              Object {
+                "name": "VerificarContato",
+                "params": Array [
+                  Object {
+                    "paramType": "string",
+                    "type": "cNome",
+                    "verboseName": "Nome do contato",
+                  },
+                  Object {
+                    "paramType": "string",
+                    "type": "cEmail",
+                    "verboseName": "Email do contato",
+                  },
+                ],
+                "value": "VerificarContato",
+                "verboseName": "Verificar Contato",
+              },
+              Object {
+                "name": "ObterBoleto",
+                "params": Array [
+                  Object {
+                    "paramType": "integer",
+                    "required": true,
+                    "type": "nCodTitulo",
+                    "verboseName": "Código do Boleto",
+                  },
+                  Object {
+                    "paramType": "string",
+                    "required": true,
+                    "type": "cCodIntTitulo",
+                    "verboseName": "Código de Integração do Título",
+                  },
+                ],
+                "value": "ObterBoleto",
+                "verboseName": "Obter Boleto",
+              },
+            ],
             "external_service_type": "omie",
-            "name": "Omie dummy project 2",
+            "name": "Omie dummy project",
             "uuid": "5b154b06-5ecd-43d9-afca-39738e6859d7",
           },
           "params": Array [
@@ -867,6 +4116,7 @@ Array [
                 "validationFailures": Array [],
                 "value": "data 1",
               },
+              "defaultValue": undefined,
               "filter": Object {
                 "value": Object {
                   "name": "cCodInt",
@@ -919,10 +4169,14 @@ Array [
                   "verboseName": "Código da Conta",
                 },
               ],
+              "nameKey": undefined,
+              "options": undefined,
+              "paramType": undefined,
               "required": undefined,
               "type": "identificacao",
-              "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+              "uuid": "28ab7e47-57cc-42ae-8269-5d8d442d4276",
               "valid": true,
+              "valueKey": undefined,
               "verboseName": "Identificação",
             },
             Object {
@@ -930,6 +4184,7 @@ Array [
                 "validationFailures": Array [],
                 "value": "data 2",
               },
+              "defaultValue": undefined,
               "filter": Object {
                 "value": Object {
                   "name": "cNome",
@@ -982,26 +4237,30 @@ Array [
                   "verboseName": "Código da Conta",
                 },
               ],
+              "nameKey": undefined,
+              "options": undefined,
+              "paramType": undefined,
               "required": undefined,
               "type": "identificacao",
-              "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+              "uuid": "6f87dde3-5df3-4935-8585-2656df068d61",
               "valid": true,
+              "valueKey": undefined,
               "verboseName": "Identificação",
             },
           ],
           "result_name": "My External Service Result",
           "type": "call_external_service",
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+          "uuid": "7663e5a1-6a46-4b0d-af01-b2262a6ad4b5",
         },
       ],
       "exits": Array [
         Object {
           "destination_uuid": null,
-          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          "uuid": "38282c32-100e-4376-af57-7f6a36ddafba",
         },
         Object {
           "destination_uuid": null,
-          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+          "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
         },
       ],
       "router": Object {
@@ -1010,28 +4269,28 @@ Array [
             "arguments": Array [
               "Success",
             ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            "category_uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
             "type": "has_category",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "uuid": "90e20a49-6ecc-4b0b-97bf-bcbd37069b63",
           },
         ],
         "categories": Array [
           Object {
-            "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            "exit_uuid": "38282c32-100e-4376-af57-7f6a36ddafba",
             "name": "Success",
-            "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            "uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
           },
           Object {
-            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            "exit_uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
             "name": "Failure",
-            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
           },
         ],
-        "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+        "default_category_uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
         "operand": "@results.my_external_service_result",
         "type": "switch",
       },
-      "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+      "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
     },
     "ui": Object {
       "config": Object {},
