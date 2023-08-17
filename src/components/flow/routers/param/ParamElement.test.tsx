@@ -196,7 +196,7 @@ describe(ParamElement.name, () => {
           );
         });
         expect(getUnnnicSelectValue(getByTestId('temba_select_service_call_param'))).toBe(
-          omieParams[2].verboseName
+          omieParams[2].type
         );
         expect(baseElement).toMatchSnapshot();
       });
@@ -224,7 +224,7 @@ describe(ParamElement.name, () => {
           fireUnnnicInputChangeText(getByTestId('Service Call Param Data'), 'new data');
         });
         expect(getUnnnicSelectValue(getByTestId('temba_select_service_call_param'))).toBe(
-          omieParams[2].verboseName
+          omieParams[2].type
         );
         expect(getUnnnicSelectValue(getByTestId('temba_select_service_call_param_filter'))).toBe(
           omieParams[2].filters[2].name

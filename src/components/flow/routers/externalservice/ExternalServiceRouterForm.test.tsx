@@ -9,7 +9,8 @@ import {
   fireChangeText,
   fireTembaSelect,
   fireUnnnicInputChangeText,
-  fireUnnnicSelect
+  fireUnnnicSelect,
+  fireUnnnicAutocompleteSelectWithArray
 } from 'test/utils';
 import { act, wait } from '@testing-library/react';
 import { RouterFormProps } from '../../props';
@@ -81,41 +82,44 @@ describe(ExternalServiceRouterForm.name, () => {
         });
 
         await act(async () => {
-          fireTembaSelect(rendered.getByTestId('temba_select_external_service'), [
-            externalServiceAsset.results[0]
-          ]);
+          fireUnnnicSelect(
+            rendered.getByTestId('temba_select_external_service'),
+            { value: [externalServiceAsset.results[0]] },
+            'value'
+          );
         });
 
         expect(rendered.baseElement).toMatchSnapshot();
 
         const okButton = rendered.getByText('Ok');
-        const resultName = rendered.getByTestId('Result Name');
+        const resultName = rendered.getByTestId('Save as result');
 
         // since there are no mandatory fields, we can save the router right away
         fireEvent.click(okButton);
         expect(externalServiceForm.updateRouter).toBeCalledTimes(1);
 
         // cannot save without the result field filled
-        fireChangeText(resultName, '');
+        fireUnnnicInputChangeText(resultName, '');
         fireEvent.click(okButton);
         expect(externalServiceForm.updateRouter).toBeCalledTimes(1);
 
-        fireChangeText(resultName, 'My External Service Result');
+        fireUnnnicInputChangeText(resultName, 'My External Service Result');
 
         await act(async () => {
-          fireTembaSelect(rendered.getByTestId('temba_select_aditional_prompts'), [
-            {
-              text: 'Aditional Prompt 1 content',
-              uuid: 'ab154b06-5ecd-43d9-afca-39738e6859d7'
-            },
-            {
-              text: 'Aditional Prompt 2 content',
-              uuid: 'ac154b06-5ecd-43d9-afca-39738e6859d7'
-            }
-          ]);
+          fireUnnnicAutocompleteSelectWithArray(
+            rendered.getByTestId('temba_select_aditional_prompts'),
+            [
+              {
+                text: 'Aditional Prompt 1 content',
+                uuid: 'ab154b06-5ecd-43d9-afca-39738e6859d7'
+              },
+              {
+                text: 'Aditional Prompt 2 content',
+                uuid: 'ac154b06-5ecd-43d9-afca-39738e6859d7'
+              }
+            ]
+          );
         });
-
-        expect(rendered.baseElement).toMatchSnapshot();
 
         fireEvent.click(okButton);
         expect(externalServiceForm.updateRouter).toHaveBeenCalled();
@@ -178,9 +182,11 @@ describe(ExternalServiceRouterForm.name, () => {
         await wait();
 
         await act(async () => {
-          fireTembaSelect(rendered.getByTestId('temba_select_external_service'), [
-            externalServiceAsset.results[1]
-          ]);
+          fireUnnnicSelect(
+            rendered.getByTestId('temba_select_external_service'),
+            { value: [externalServiceAsset.results[1]] },
+            'value'
+          );
         });
 
         expect(rendered.baseElement).toMatchSnapshot();

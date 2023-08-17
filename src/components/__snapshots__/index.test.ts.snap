@@ -11,6 +11,8 @@ Array [
     "editor": "/flow/editor",
     "environment": "/assets/environment.json",
     "external_services": "/assets/external_services.json",
+    "external_services_calls": "/assets/external_services_calls.json",
+    "external_services_calls_base": "",
     "fields": "/assets/fields.json",
     "flows": "/assets/flows.json",
     "globals": "/assets/globals.json",

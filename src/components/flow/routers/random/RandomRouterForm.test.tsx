@@ -9,7 +9,6 @@ import {
   getByDisplayValue,
   getByTitle,
   fireUnnnicSelect,
-  fireUnnnicAutocompleteSelect,
   act
 } from 'test/utils';
 import { composeComponentTestUtils, mock } from 'testUtils';
