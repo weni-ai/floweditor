@@ -152,8 +152,9 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
           <TextInputElement
             __className={styles.subject}
             name={i18n.t('forms.email_recipient_name', 'Recipient')}
-            placeholder={i18n.t('forms.email_recipient_placeholder', 'Email')}
+            placeholder={i18n.t('forms.email_recipient_placeholder', 'Add Email and press Enter')}
             onChange={value => this.setState({ recipient: { value } })}
+            iconRight="keyboard-return-1"
             entry={this.state.recipient}
             showLabel
             onKeyDown={() =>

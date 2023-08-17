@@ -128,8 +128,8 @@
 }
 
 .node_asset {
-  display: flex;
-  gap: 4x;
+  display: inherit;
+  gap: 4px;
   max-width: 100%;
   .node_group {
     padding-right: 5px;

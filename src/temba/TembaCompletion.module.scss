@@ -84,3 +84,9 @@
     }
   }
 }
+
+.textarea {
+  textarea {
+    resize: none !important;
+  }
+}
