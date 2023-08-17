@@ -1,7 +1,7 @@
 import { react as bindCallbacks } from 'auto-bind';
 import FormElement from 'components/form/FormElement';
 import TextInputElement, { TextInputStyle } from 'components/form/textinput/TextInputElement';
-import CheckboxElement from 'components/form/checkbox/CheckboxElement';
+import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
 import { ServiceCallParam, ParamFilter } from 'config/interfaces';
 import * as React from 'react';
 import { FormEntry, FormState } from 'store/nodeEditor';
@@ -178,11 +178,12 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
       );
     } else if (param.paramType === ParamTypes.boolean) {
       return (
-        <CheckboxElement
+        <SwitchElement
           name={param.verboseName}
           title={param.verboseName}
           checked={this.state.data.value}
           onChange={this.handleDataChange}
+          size={SwitchSizes.small}
         />
       );
     } else if (param.paramType === ParamTypes.expressionInput) {
@@ -211,7 +212,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
               style={TembaSelectStyle.small}
               options={paramOptions}
               nameKey="verboseName"
-              valueKey="name"
+              valueKey="type"
               disabled={disableParam || disableFilter}
               onChange={this.handleParamChange}
               value={this.state.currentParam}
@@ -288,26 +289,30 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
         kaseError={this.state.errors.length > 0}
       >
         <div className={`${styles.param}`} data-draggable={canArrange}>
-          <div className={styles.moveIcon}>
-            <UnnnicButton
-              data-draggable={canArrange}
-              iconCenter={'move-expand-vertical-1'}
-              size="small"
-              type="terciary"
-            />
-          </div>
+          {this.props.hasArrangeFunctionality && (
+            <div className={styles.moveIcon}>
+              <UnnnicButton
+                data-draggable={canArrange}
+                iconCenter={'move-expand-vertical-1'}
+                size="small"
+                type="terciary"
+              />
+            </div>
+          )}
 
           {paramElement}
 
-          <UnnnicIcon
-            className={styles.remove_icon}
-            data-testid={'remove-param-' + this.props.initialParam.uuid}
-            icon="delete-1-1"
-            size="sm"
-            scheme={!disableParam && !disableFilter ? 'neutral-cloudy' : 'neutral-clean'}
-            onClick={!disableParam && !disableFilter ? this.handleRemoveClicked : () => {}}
-            clickable
-          />
+          {this.props.hasArrangeFunctionality && (
+            <UnnnicIcon
+              className={styles.remove_icon}
+              data-testid={'remove-param-' + this.props.initialParam.uuid}
+              icon="delete-1-1"
+              size="sm"
+              scheme={!disableParam && !disableFilter ? 'neutral-cloudy' : 'neutral-clean'}
+              onClick={!disableParam && !disableFilter ? this.handleRemoveClicked : () => {}}
+              clickable
+            />
+          )}
         </div>
       </FormElement>
     );
