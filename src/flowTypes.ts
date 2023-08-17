@@ -419,6 +419,7 @@ export interface ExternalService {
   name: string;
   external_service_type: string;
   type?: string;
+  actions: ServiceCall[];
 }
 
 export interface Ticketer {

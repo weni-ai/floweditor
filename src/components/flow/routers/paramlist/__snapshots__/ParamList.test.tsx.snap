@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ParamList render should render list of params 1`] = `
+exports[`ParamList Omie render should render list of params 1`] = `
 <body>
   <div>
     <div
@@ -1051,7 +1051,7 @@ exports[`ParamList render should render list of params 1`] = `
 </body>
 `;
 
-exports[`ParamList render should render list with an empty param 1`] = `
+exports[`ParamList Omie render should render list with an empty param 1`] = `
 <body>
   <div>
     <div
@@ -1410,7 +1410,7 @@ exports[`ParamList render should render list with an empty param 1`] = `
 </body>
 `;
 
-exports[`ParamList updates should remove param and ensure empty param exists 1`] = `
+exports[`ParamList Omie updates should remove param and ensure empty param exists 1`] = `
 <body>
   <div>
     <div
@@ -1769,7 +1769,7 @@ exports[`ParamList updates should remove param and ensure empty param exists 1`]
 </body>
 `;
 
-exports[`ParamList updates should update params and call the callback 1`] = `
+exports[`ParamList Omie updates should update params and call the callback 1`] = `
 <body>
   <div>
     <div

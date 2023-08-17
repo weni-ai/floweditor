@@ -1,6 +1,150 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ParamElement render should render param 1`] = `
+exports[`ParamElement ChatGPT params boolean render should render param 1`] = `
+<body>
+  <div>
+    <div
+      class="ele group"
+    >
+      <div
+        class="param"
+        data-draggable="false"
+      >
+        <label
+          class="label"
+        >
+          <span
+            class="fe-square"
+            data-spec="checkbox"
+          />
+          <div
+            class="title"
+            data-spec="title"
+          >
+            Send complete messages history as context
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ParamElement ChatGPT params expressionInput render should render param 1`] = `
+<body>
+  <div>
+    <div
+      class="ele group"
+    >
+      <div
+        class="param"
+        data-draggable="false"
+      >
+        <div
+          class="expression_input"
+        >
+          <span>
+            User Input
+          </span>
+          <div
+            class="ele"
+          >
+            <div
+              class="wrapper normal"
+            >
+              <input
+                data-testid="User Input"
+                name="User Input"
+                value="@input.value"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ParamElement ChatGPT params multiselect render should render param 1`] = `
+<body>
+  <div>
+    <div
+      class="ele group"
+    >
+      <div
+        class="param"
+        data-draggable="false"
+      >
+        <div
+          class="choice"
+        >
+          <span>
+            Aditional Prompts
+          </span>
+          <div
+            class="small "
+          >
+            <temba-select
+              data-testid="temba_select_aditional_prompts"
+              errors="[]"
+              expressions=""
+              multi="true"
+              name="Aditional Prompts"
+              namekey="text"
+              placeholder="Select an option"
+              tags="false"
+              valuekey="uuid"
+              values="[]"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ParamElement ChatGPT params multiselect update handles data change 1`] = `
+<body>
+  <div>
+    <div
+      class="ele group"
+    >
+      <div
+        class="param"
+        data-draggable="false"
+      >
+        <div
+          class="choice"
+        >
+          <span>
+            Aditional Prompts
+          </span>
+          <div
+            class="small "
+          >
+            <temba-select
+              data-testid="temba_select_aditional_prompts"
+              errors="[]"
+              expressions=""
+              multi="true"
+              name="Aditional Prompts"
+              namekey="text"
+              placeholder="Select an option"
+              tags="false"
+              valuekey="uuid"
+              values="[{\\"text\\":\\"Aditional Prompt 1 content\\",\\"uuid\\":\\"ab154b06-5ecd-43d9-afca-39738e6859d7\\"},{\\"text\\":\\"Aditional Prompt 2 content\\",\\"uuid\\":\\"ac154b06-5ecd-43d9-afca-39738e6859d7\\"}]"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ParamElement Omie params render should render param 1`] = `
 <body>
   <div>
     <div
@@ -352,7 +496,7 @@ exports[`ParamElement render should render param 1`] = `
 </body>
 `;
 
-exports[`ParamElement update handles data change 1`] = `
+exports[`ParamElement Omie params update handles data change 1`] = `
 <body>
   <div>
     <div
@@ -704,7 +848,7 @@ exports[`ParamElement update handles data change 1`] = `
 </body>
 `;
 
-exports[`ParamElement update handles filter change 1`] = `
+exports[`ParamElement Omie params update handles filter change 1`] = `
 <body>
   <div>
     <div
@@ -1056,7 +1200,7 @@ exports[`ParamElement update handles filter change 1`] = `
 </body>
 `;
 
-exports[`ParamElement update handles filter change from correct param after param change 1`] = `
+exports[`ParamElement Omie params update handles filter change from correct param after param change 1`] = `
 <body>
   <div>
     <div
@@ -1420,7 +1564,7 @@ exports[`ParamElement update handles filter change from correct param after para
 </body>
 `;
 
-exports[`ParamElement update handles param change 1`] = `
+exports[`ParamElement Omie params update handles param change 1`] = `
 <body>
   <div>
     <div
