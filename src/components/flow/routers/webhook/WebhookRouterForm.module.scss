@@ -64,6 +64,11 @@
   border-radius: 4px;
 }
 
+.header_wrapper {
+  max-height: 273px;
+  overflow: auto;
+}
+
 .header {
   display: flex;
   column-gap: $unnnic-spacing-inline-sm;
