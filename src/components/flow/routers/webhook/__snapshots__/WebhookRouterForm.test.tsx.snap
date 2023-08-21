@@ -28,39 +28,43 @@ exports[`WebhookRouterForm should render 1`] = `
               Add any additional headers below that you would like to send along with your request.
             </Trans>
           </div>
-          <div>
-            <HeaderElement
-              canRemove={true}
-              entry={
-                Object {
-                  "value": Object {
-                    "name": "Accept",
-                    "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-                    "value": "application/json",
-                  },
+          <div
+            className="header_wrapper"
+          >
+            <div>
+              <HeaderElement
+                canRemove={true}
+                entry={
+                  Object {
+                    "value": Object {
+                      "name": "Accept",
+                      "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+                      "value": "application/json",
+                    },
+                  }
                 }
-              }
-              index={0}
-              onChange={[Function]}
-              onRemove={[Function]}
-            />
-          </div>
-          <div>
-            <HeaderElement
-              canRemove={false}
-              entry={
-                Object {
-                  "value": Object {
-                    "name": "",
-                    "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
-                    "value": "",
-                  },
+                index={0}
+                onChange={[Function]}
+                onRemove={[Function]}
+              />
+            </div>
+            <div>
+              <HeaderElement
+                canRemove={false}
+                entry={
+                  Object {
+                    "value": Object {
+                      "name": "",
+                      "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+                      "value": "",
+                    },
+                  }
                 }
-              }
-              index={1}
-              onChange={[Function]}
-              onRemove={[Function]}
-            />
+                index={1}
+                onChange={[Function]}
+                onRemove={[Function]}
+              />
+            </div>
           </div>
         </React.Fragment>,
         "checked": true,
@@ -135,12 +139,6 @@ exports[`WebhookRouterForm should render 1`] = `
   />
   <div
     className="url_container"
-    style={
-      Object {
-        "alignItems": "flex-end",
-        "display": "flex",
-      }
-    }
   >
     <div
       className="method"
