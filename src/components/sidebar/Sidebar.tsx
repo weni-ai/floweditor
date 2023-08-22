@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { ConfigProviderContext, fakePropType } from 'config/ConfigProvider';
+import { fakePropType } from 'config/ConfigProvider';
 import { FlowPosition } from 'flowTypes';
 import * as React from 'react';
 import { connect } from 'react-redux';
