@@ -32,5 +32,14 @@
       background-color: $unnnic-color-neutral-soft;
     }
   }
+
+  .disabled {
+    cursor: not-allowed;
+  }
 }
 
+.left_aligned {
+  span {
+    text-align: left !important;
+  }
+}

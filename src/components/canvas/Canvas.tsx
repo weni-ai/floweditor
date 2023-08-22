@@ -5,6 +5,7 @@ import { DRAG_THRESHOLD } from 'components/flow/Flow';
 import { Dimensions, Exit, FlowNode, FlowPosition } from 'flowTypes';
 import mutate from 'immutability-helper';
 import React from 'react';
+import i18n from 'config/i18n';
 import { CanvasPositions, DragSelection } from 'store/editor';
 import { addPosition } from 'store/helpers';
 import { MergeEditorState } from 'store/thunks';
@@ -13,6 +14,9 @@ import { COLLISION_FUDGE, snapPositionToGrid, throttle, snapToGrid } from 'utils
 import styles from './Canvas.module.scss';
 import nodesCopy from '../../components/copyAndPasteNodes';
 import { RenderNode } from '../../store/flowContext';
+
+// @ts-ignore
+import { unnnicCallAlert } from '@weni/unnnic-system';
 
 export const CANVAS_PADDING = 300;
 export const REFLOW_QUIET = 200;
@@ -99,6 +103,10 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     this.setState({ height: Math.max(windowHeight, this.state.height) });
   }
 
+  public manuallyCopy() {
+    document.execCommand('copy');
+  }
+
   public componentDidMount(): void {
     /* istanbul ignore next */
     window.addEventListener('resize', this.handleWindowResize);
@@ -154,6 +162,18 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
       event.clipboardData.setData('application/json', JSON.stringify(nodes));
       event.preventDefault();
+
+      unnnicCallAlert({
+        props: {
+          text: nodes.length > 1 ? i18n.t('copy.multiple') : i18n.t('copy.single'),
+          title: i18n.t('forms.Success'),
+          icon: 'check-circle-1-1-1',
+          scheme: 'feedback-green',
+          position: 'bottom-right',
+          closeText: i18n.t('buttons.close')
+        },
+        seconds: 6
+      });
     });
 
     window.document.addEventListener('paste', event => {
@@ -283,6 +303,15 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     }
 
     this.ensureCanvasHeight();
+
+    let selectionActive = false;
+    if (this.state.selected && Object.keys(this.state.selected).length > 0) {
+      selectionActive = true;
+    }
+
+    this.props.mergeEditorState({
+      selectionActive
+    });
   }
 
   public renderSelectionBox(): JSX.Element | null {

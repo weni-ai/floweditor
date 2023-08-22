@@ -1,48 +1,19 @@
 import ReactDOM from 'react-dom';
-import { react as bindCallbacks } from 'auto-bind';
-import { ConfigProviderContext, fakePropType } from 'config/ConfigProvider';
-import { FlowDefinition, FlowMetadata, FlowPosition } from 'flowTypes';
+import { fakePropType } from 'config/ConfigProvider';
+import { FlowPosition } from 'flowTypes';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { DebugState } from 'store/editor';
 import { RenderNode } from 'store/flowContext';
 import { createEmptyNode } from 'store/helpers';
-import { NodeEditorSettings } from 'store/nodeEditor';
 import AppState from 'store/state';
-import {
-  DispatchWithState,
-  mergeEditorState,
-  MergeEditorState,
-  NoParamsAC,
-  onConnectionDrag,
-  OnConnectionDrag,
-  OnOpenNodeEditor,
-  onOpenNodeEditor,
-  onRemoveNodes,
-  OnRemoveNodes,
-  OnUpdateCanvasPositions,
-  onUpdateCanvasPositions,
-  resetNodeEditingState,
-  UpdateConnection,
-  updateConnection,
-  updateSticky,
-  UpdateSticky
-} from 'store/thunks';
-import { timeStart } from 'utils';
-import Debug from 'utils/debug';
+import { DispatchWithState, OnOpenNodeEditor, onOpenNodeEditor } from 'store/thunks';
 
 import i18n from 'config/i18n';
 import { applyVueInReact } from 'vuereact-combined';
 import styles from './Sidebar.module.scss';
 // @ts-ignore
 import { unnnicModalNext, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
-
-declare global {
-  interface Window {
-    fe: any;
-  }
-}
 
 const UnnnicIcon = applyVueInReact(unnnicIcon);
 const UnnnicTooltip = applyVueInReact(unnnicToolTip);
@@ -62,47 +33,16 @@ const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
 });
 
 export interface SidebarStoreProps {
-  ghostNode: RenderNode;
-  debug: DebugState;
-  translating: boolean;
-  popped: string;
-  dragActive: boolean;
-
-  mergeEditorState: MergeEditorState;
-
-  definition: FlowDefinition;
+  onCopyClick: () => void;
+  selectionActive: boolean;
   nodes: { [uuid: string]: RenderNode };
-  metadata: FlowMetadata;
-  nodeEditorSettings: NodeEditorSettings;
-
-  updateConnection: UpdateConnection;
   onOpenNodeEditor: OnOpenNodeEditor;
-  onUpdateCanvasPositions: OnUpdateCanvasPositions;
-  onRemoveNodes: OnRemoveNodes;
-  resetNodeEditingState: NoParamsAC;
-  onConnectionDrag: OnConnectionDrag;
-  updateSticky: UpdateSticky;
 }
 
 export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   public static contextTypes = {
     config: fakePropType
   };
-
-  constructor(props: SidebarStoreProps, context: ConfigProviderContext) {
-    super(props, context);
-
-    /* istanbul ignore next */
-    if (context.config.debug) {
-      window.fe = new Debug(props, this.props.debug);
-    }
-
-    bindCallbacks(this, {
-      include: [/Ref$/, /^on/, /^is/, /^get/, /^handle/]
-    });
-
-    timeStart('Loaded Flow');
-  }
 
   private createSendMessageNode(): void {
     const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
@@ -165,12 +105,50 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
     );
   }
 
+  private getCopyTooltip(): string {
+    if (!this.props.selectionActive) {
+      return i18n.t('disabled_copy_tooltip');
+    }
+
+    return i18n.t('copy_tooltip');
+  }
+
+  private getCopyIconScheme(): string {
+    if (!this.props.selectionActive) {
+      return 'neutral-cleanest';
+    }
+
+    return 'neutral-cloudy';
+  }
+
+  private handleCopyClick(): void {
+    if (!this.props.selectionActive) {
+      return;
+    }
+
+    this.props.onCopyClick();
+  }
+
   public render(): JSX.Element {
     return (
       <div className={styles.sidebar}>
         <UnnnicTooltip text={i18n.t('create_block')} enabled side="right">
-          <div className={styles.option}>
-            <UnnnicIcon icon="add-circle-1" onClick={() => this.createSendMessageNode()} />
+          <div className={styles.option} onClick={() => this.createSendMessageNode()}>
+            <UnnnicIcon icon="add-circle-1" />
+          </div>
+        </UnnnicTooltip>
+
+        <UnnnicTooltip
+          className={styles.left_aligned}
+          text={this.getCopyTooltip()}
+          enabled
+          side="right"
+        >
+          <div
+            className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
+            onClick={() => this.handleCopyClick()}
+          >
+            <UnnnicIcon icon="paginate-filter-text-1" scheme={this.getCopyIconScheme()} />
           </div>
         </UnnnicTooltip>
       </div>
@@ -180,39 +158,18 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 
 /* istanbul ignore next */
 const mapStateToProps = ({
-  flowContext: { definition, metadata, nodes },
-  editorState: { ghostNode, debug, translating, popped, dragActive },
-  // tslint:disable-next-line: no-shadowed-variable
-  nodeEditor: { settings }
+  flowContext: { nodes },
+  editorState: { selectionActive }
 }: AppState) => {
   return {
-    nodeEditorSettings: settings,
-    definition,
     nodes,
-    metadata,
-    ghostNode,
-    debug,
-    translating,
-    popped,
-    dragActive
+    selectionActive
   };
 };
 
 /* istanbul ignore next */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
-  bindActionCreators(
-    {
-      mergeEditorState,
-      resetNodeEditingState,
-      onConnectionDrag,
-      onOpenNodeEditor,
-      onUpdateCanvasPositions,
-      onRemoveNodes,
-      updateConnection,
-      updateSticky
-    },
-    dispatch
-  );
+  bindActionCreators({ onOpenNodeEditor }, dispatch);
 
 export default connect(
   mapStateToProps,

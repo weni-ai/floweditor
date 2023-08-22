@@ -116,6 +116,7 @@ export const getDragStyle = (drag: DragSelection) => {
 export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   private Plumber: Plumber;
   private nodeContainerUUID: string;
+  private canvas: React.RefObject<Canvas>;
 
   // Refs
   private ghost: any;
@@ -126,6 +127,8 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
   constructor(props: FlowStoreProps, context: ConfigProviderContext) {
     super(props, context);
+
+    this.canvas = React.createRef();
 
     this.nodeContainerUUID = createUUID();
 
@@ -365,6 +368,10 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     this.Plumber.setContainer('canvas');
   }
 
+  private callCanvasCopy(): void {
+    this.canvas.current.manuallyCopy();
+  }
+
   public render(): JSX.Element {
     const nodes = this.getNodes();
 
@@ -375,9 +382,10 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
         {nodes.length !== 0 ? <>{this.getSimulator()}</> : null}
         {this.getNodeEditor()}
 
-        <Sidebar />
+        <Sidebar onCopyClick={() => this.callCanvasCopy()} />
 
         <Canvas
+          ref={this.canvas}
           mutable={this.context.config.mutable}
           draggingNew={!!this.props.ghostNode && !this.props.nodeEditorSettings}
           newDragElement={this.getDragNode()}
