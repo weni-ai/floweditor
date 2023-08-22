@@ -44,10 +44,6 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
     config: fakePropType
   };
 
-  constructor(props: SidebarStoreProps, context: ConfigProviderContext) {
-    super(props, context);
-  }
-
   private createSendMessageNode(): void {
     const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
 
