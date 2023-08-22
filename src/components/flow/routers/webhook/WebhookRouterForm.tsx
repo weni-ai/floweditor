@@ -251,7 +251,7 @@ export default class WebhookRouterForm extends React.Component<
               Add any additional headers below that you would like to send along with your request.
             </Trans>
           </div>
-          {headerElements}
+          <div className={styles.header_wrapper}>{headerElements}</div>
         </>
       ),
       checked: this.state.headers.length > 1
@@ -298,7 +298,7 @@ export default class WebhookRouterForm extends React.Component<
         tabs={tabs}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <div className={styles.url_container} style={{ display: 'flex', alignItems: 'flex-end' }}>
+        <div className={styles.url_container}>
           <div className={styles.method}>
             <SelectElement
               key="method_select"
