@@ -169,6 +169,8 @@
   },
   "create_block": "Create block",
   "create_label": "Create label",
+  "disabled_copy_tooltip": "Select one or more blocks to copy",
+  "copy_tooltip": "Click or press Ctrl + C to copy and Ctrl + V to paste.\nYou can paste blocks on any flow",
   "document": "Document",
   "drag_helper": "To connect nodes, <1>drag</1> from the red circle.",
   "email": {
@@ -576,5 +578,9 @@
   "translation": {
     "header": "Flow Translation",
     "label": "Translations"
+  },
+  "copy": {
+    "multiple": "Blocks successfully copied",
+    "single": "Block successfully copied"
   }
 }

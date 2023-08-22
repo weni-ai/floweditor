@@ -51,6 +51,7 @@ export interface EditorState {
   dragNodeUUID: string | null;
   dragGroup: boolean;
   dragSelection: DragSelection | null;
+  selectionActive: boolean;
   debug?: DebugState | null;
 
   // which poptab is popped
@@ -106,6 +107,7 @@ export const initialState: EditorState = {
   dragGroup: false,
   dragSelection: null,
   ghostNode: null,
+  selectionActive: false,
   debug: null,
   warnings: {},
 

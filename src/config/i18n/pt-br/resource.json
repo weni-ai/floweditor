@@ -169,6 +169,8 @@
   },
   "create_block": "Criar bloco",
   "create_label": "Criar etiqueta",
+  "disabled_copy_tooltip": "Selecione um ou mais blocos para copiar",
+  "copy_tooltip": "Clique ou pressione Ctrl + C para copiar e Ctrl + V para colar.\nVocê pode colar os blocos em qualquer fluxo",
   "document": "Document",
   "drag_helper": "Para conectar nós, <1>arraste</1> a partir do círculo vermelho.",
   "email": {
@@ -562,5 +564,9 @@
   },
   "form": {
     "result": "Resultado"
+  },
+  "copy": {
+    "multiple": "Blocos copiados com sucesso",
+    "single": "Bloco copiado com sucesso"
   }
 }
