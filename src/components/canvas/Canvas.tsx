@@ -547,13 +547,16 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   public getStartingNode() {
     let startingNodeUuid: string = null;
     let startingNode: FlowPosition | null = null;
-    Object.keys(this.props.nodes).forEach(uuid => {
-      const position = this.state.positions[uuid];
-      if (!startingNode || position.top < startingNode.top) {
-        startingNode = position;
-        startingNodeUuid = uuid;
-      }
-    });
+
+    if (this.props.nodes) {
+      Object.keys(this.props.nodes).forEach(uuid => {
+        const position = this.state.positions[uuid];
+        if (position && (!startingNode || position.top < startingNode.top)) {
+          startingNode = position;
+          startingNodeUuid = uuid;
+        }
+      });
+    }
 
     return { position: startingNode, uuid: startingNodeUuid };
   }
