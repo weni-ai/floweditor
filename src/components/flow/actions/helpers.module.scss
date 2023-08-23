@@ -10,11 +10,13 @@
   line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
   color: $unnnic-color-neutral-dark;
   text-underline-offset: 0.1875 * $unnnic-font-size; // 3px
-  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .truncated {
-  display: inline-block;
   max-width: 100%;
   white-space: nowrap;
   overflow: hidden;

@@ -2,11 +2,10 @@
 @import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
 
 .exit {
-  font-size: 13px;
+  font-size: $unnnic-font-size-body-md;
   flex-grow: 1;
   background: #fff;
   position: relative;
-  min-width: 6.875 * $unnnic-font-size;
   color: $unnnic-color-neutral-dark;
 
   &.has-background {
