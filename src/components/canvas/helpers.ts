@@ -117,7 +117,8 @@ const setTop = (position: FlowPosition, newTop: number) => {
  */
 export const reflow = (
   positions: CanvasPositions,
-  fudge: number
+  fudge: number,
+  startingNodeUuid: string
 ): { positions: CanvasPositions; changed: string[] } => {
   let newPositions = positions;
   const changed: string[] = [];
@@ -132,10 +133,17 @@ export const reflow = (
     attempts++;
     if (collision.length) {
       const [top, bottom, cascade] = collision;
-      newPositions = mutate(newPositions, {
-        [bottom.uuid]: set(setTop(bottom, top.bottom! + NODE_SPACING))
-      });
-      changed.push(bottom.uuid);
+      if (bottom.uuid !== startingNodeUuid) {
+        newPositions = mutate(newPositions, {
+          [bottom.uuid]: set(setTop(bottom, top.bottom! + NODE_SPACING))
+        });
+        changed.push(bottom.uuid);
+      } else {
+        newPositions = mutate(newPositions, {
+          [top.uuid]: set(setTop(top, bottom.top! + NODE_SPACING))
+        });
+        changed.push(top.uuid);
+      }
 
       if (cascade) {
         // start with the top of the bottom node
