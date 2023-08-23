@@ -543,10 +543,30 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     }
   }
 
+  // Get the node with the lowest top position
+  public getStartingNode() {
+    let startingNodeUuid: string = null;
+    let startingNode: FlowPosition | null = null;
+
+    if (this.props.nodes) {
+      Object.keys(this.props.nodes).forEach(uuid => {
+        const position = this.state.positions[uuid];
+        if (position && (!startingNode || position.top < startingNode.top)) {
+          startingNode = position;
+          startingNodeUuid = uuid;
+        }
+      });
+    }
+
+    return { position: startingNode, uuid: startingNodeUuid };
+  }
+
   public doReflow(): void {
     const reflowPositions = { ...this.state.positions };
     delete reflowPositions[this.state.dragUUID];
-    const { positions, changed } = reflow(reflowPositions, COLLISION_FUDGE);
+
+    const { uuid: startingNodeUuid } = this.getStartingNode();
+    const { positions, changed } = reflow(reflowPositions, COLLISION_FUDGE, startingNodeUuid);
 
     if (changed) {
       this.setState({ positions });
