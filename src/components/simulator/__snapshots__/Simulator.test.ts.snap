@@ -152,24 +152,35 @@ exports[`Simulator renders 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="simulator_tab "
-    onClick={[Function]}
+  <Connect(GuidingSteps)
+    buttonText="Got it 3/3"
+    className="guiding_steps"
+    description="Now the simulator looks like Whatsapp
+so you can more faithfully predict how your flow will look"
+    guide="v2"
+    side="left"
+    step={2}
+    title="WhatsApp simulator skin"
   >
     <div
-      className="simulator_tab_icon"
+      className="simulator_tab "
+      onClick={[Function]}
     >
-      <ForwardRef
-        icon="button-play-1"
-        scheme="neutral-snow"
-        size="lg"
-      />
+      <div
+        className="simulator_tab_icon"
+      >
+        <ForwardRef
+          icon="button-play-1"
+          scheme="neutral-snow"
+          size="lg"
+        />
+      </div>
+      <div
+        className="simulator_tab_text"
+      >
+        Run in Simulator
+      </div>
     </div>
-    <div
-      className="simulator_tab_text"
-    >
-      Run in Simulator
-    </div>
-  </div>
+  </Connect(GuidingSteps)>
 </div>
 `;
