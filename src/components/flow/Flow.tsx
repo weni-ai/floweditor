@@ -442,7 +442,10 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
               •&nbsp; {i18n.t('new_updates.news.second', 'Nodes copy and paste functionality')}
             </span>
             <span>•&nbsp; {i18n.t('new_updates.news.third', 'Sidebar with tools (evolving)')}</span>
-            <span>•&nbsp; {i18n.t('new_updates.news.fourth', 'Create a new node anywhere')}</span>
+            <span>
+              •&nbsp;{' '}
+              {i18n.t('new_updates.news.fourth', 'Possibility to create a new block anywhere')}
+            </span>
             <span>•&nbsp; {i18n.t('new_updates.news.fifth', 'WhatsApp simulator skin')}</span>
           </div>
         </div>

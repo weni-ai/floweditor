@@ -1076,7 +1076,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                   ref={this.inputBoxRef}
                   type="text"
                   onKeyUp={this.onKeyUp}
-                  disabled={this.state.sprinting}
+                  disabled={this.state.sprinting || Object.keys(this.props.nodes).length === 0}
                   placeholder={
                     this.state.active
                       ? i18n.t('simulator.prompt.message', 'Enter message')
@@ -1149,7 +1149,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           title={i18n.t('guiding.v2.2.title', 'WhatsApp simulator skin')}
           description={i18n.t(
             'guiding.v2.2.description',
-            'Now the simulator looks like Whatsapp\nso you can more faithfully predict how your flow will look'
+            'Now the simulator looks like Whatsapp\nso you can more faithfully predict how your flow will look.'
           )}
           buttonText={i18n.t('guiding.v2.2.button', 'Got it 3/3')}
           side="left"
