@@ -152,7 +152,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
           title={i18n.t('guiding.v2.0.title', 'New block')}
           description={i18n.t(
             'guiding.v2.0.description',
-            `Now just click on this button to create a new block\nsoon you will also be able to select the type of block you want to create`
+            `Now just click on this button to create a new block.`
           )}
           buttonText={i18n.t('guiding.v2.0.button', 'Got it 1/3')}
         >
@@ -173,7 +173,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
           title={i18n.t('guiding.v2.1.title', 'Copy and paste')}
           description={i18n.t(
             'guiding.v2.1.description',
-            `Finally, you can copy and paste the blocks wherever you want, including in\nanother flow. Click the button or use the shortcut Ctrl C + Ctrl V`
+            `Finally, you can copy and paste the blocks wherever you want, including in\nanother flow. Click the button or use the shortcut Ctrl C + Ctrl V.`
           )}
           buttonText={i18n.t('guiding.v2.1.button', 'Got it 2/3')}
         >
