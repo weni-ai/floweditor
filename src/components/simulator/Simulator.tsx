@@ -5,6 +5,7 @@ import LogEvent, { EventProps } from 'components/simulator/LogEvent';
 import ContextExplorer from './ContextExplorer';
 import styles from 'components/simulator/Simulator.module.scss';
 import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
+import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 import { ConfigProviderContext, fakePropType } from 'config/ConfigProvider';
 import { getURL } from 'external';
 import { FlowDefinition, Group, Wait } from 'flowTypes';
@@ -645,6 +646,8 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   }
 
   private onToggle(event: any): void {
+    this.props.mergeEditorState({ currentGuide: null, guidingStep: -1 });
+
     const newVisible = !this.state.visible;
 
     this.props.onToggled(newVisible, PopTabType.SIMULATOR);
@@ -1138,14 +1141,28 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
             </div>
           </div>
         </div>
-        <div className={styles.simulator_tab + ' ' + tabHidden} onClick={this.onToggle}>
-          <div className={styles.simulator_tab_icon}>
-            <UnnnicIcon icon="button-play-1" size="lg" scheme="neutral-snow" />
+
+        <GuidingSteps
+          className={styles.guiding_steps}
+          guide="v2"
+          step={2}
+          title={i18n.t('guiding.v2.2.title', 'WhatsApp simulator skin')}
+          description={i18n.t(
+            'guiding.v2.2.description',
+            'Now the simulator looks like Whatsapp\nso you can more faithfully predict how your flow will look'
+          )}
+          buttonText={i18n.t('guiding.v2.2.button', 'Got it 3/3')}
+          side="left"
+        >
+          <div className={styles.simulator_tab + ' ' + tabHidden} onClick={this.onToggle}>
+            <div className={styles.simulator_tab_icon}>
+              <UnnnicIcon icon="button-play-1" size="lg" scheme="neutral-snow" />
+            </div>
+            <div className={styles.simulator_tab_text}>
+              {i18n.t('simulator.label', 'Run in Simulator')}
+            </div>
           </div>
-          <div className={styles.simulator_tab_text}>
-            {i18n.t('simulator.label', 'Run in Simulator')}
-          </div>
-        </div>
+        </GuidingSteps>
       </div>
     );
   }

@@ -1,22 +1,64 @@
 @import 'variables.module.scss';
 
-.empty_flow {
-  margin: 30px;
-  width: 400px;
+.new_updates {
 
-  h1 {
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 1px;
-    padding: 0;
-    text-transform: none;
-    font-weight: 100;
-    font-size: 18px;
-    margin: 0;
+  > div {
+    padding: $unnnic-spacing-stack-lg $unnnic-spacing-stack-md !important;
   }
 
-  div {
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 18px;
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .title {
+      color: $unnnic-color-neutral-darkest;
+      font-family: $unnnic-font-family-secondary;
+      font-size: $unnnic-font-size-title-sm;
+      font-weight: $unnnic-font-weight-black;
+      line-height: $unnnic-line-height-md + $unnnic-font-size-title-sm;
+    }
+
+    .description {
+      text-align: center;
+      color: $unnnic-color-neutral-cloudy;
+      font-family: $unnnic-font-family-secondary;
+      font-size: $unnnic-font-size-body-lg;
+      font-weight: $unnnic-font-weight-regular;
+      line-height: $unnnic-line-height-md + $unnnic-font-size-body-lg;
+    }
+
+
+    .news_list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $unnnic-color-neutral-black;
+      font-family: $unnnic-font-family-secondary;
+      font-size: $unnnic-font-size-body-lg;
+      font-weight: $unnnic-font-weight-regular;
+      line-height: $unnnic-line-height-md + $unnnic-font-size-body-lg;
+    }
+  }
+
+  .buttons {
+    margin-top: $unnnic-spacing-stack-lg;
+    display: flex;
+    gap: $unnnic-spacing-stack-md;
+    flex: 1;
+
+    > * {
+      flex: 1;
+
+      button {
+        width: 100%;
+      }
+    }
+    
+    .primary {
+      background-color: $unnnic-color-brand-weni-soft;
+    }
+
   }
 }

@@ -73,6 +73,8 @@ export interface FlowEditorConfig {
   forceSaveOnLoad?: boolean;
 
   filters?: string[];
+
+  showNewUpdates?: boolean;
 }
 
 export interface LocalizationMap {

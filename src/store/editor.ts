@@ -36,7 +36,9 @@ export interface Warning {
   type: string;
 }
 
-export type Warnings = { [uuid: string]: Warning };
+export interface Warnings {
+  [uuid: string]: Warning;
+}
 
 export interface EditorState {
   currentRevision: number | null;
@@ -77,6 +79,9 @@ export interface EditorState {
 
   scrollToNode: string;
   scrollToAction: string;
+
+  currentGuide: string;
+  guidingStep: number;
 }
 
 export interface ModalMessage {
@@ -119,7 +124,10 @@ export const initialState: EditorState = {
   visible: true,
 
   scrollToNode: null,
-  scrollToAction: null
+  scrollToAction: null,
+
+  currentGuide: null,
+  guidingStep: -1
 };
 
 // Action Creator

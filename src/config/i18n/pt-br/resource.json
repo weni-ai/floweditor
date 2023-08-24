@@ -568,5 +568,40 @@
   "copy": {
     "multiple": "Blocos copiados com sucesso",
     "single": "Bloco copiado com sucesso"
+  },
+  "new_updates": {
+    "title": "O Editor de Fluxos tá de cara nova!",
+    "description": "O que tem de novo?",
+    "news": {
+      "first": "Uma linda interface nova",
+      "second": "Funcionalidade de copiar e colar blocos",
+      "third": "Sidebar com ferramentas (evoluindo)",
+      "fourth": "Criar um novo bloco em qualquer lugar",
+      "fifth": "Skin do WhatsApp no simulador"
+    },
+    "buttons": {
+      "first": "Ignorar",
+      "second": "Me mostra tudo"
+    }
+  },
+  "guiding": {
+    "close_tour": "Fechar tour",
+    "v2": {
+      "0": {
+        "title": "Novo bloco",
+        "description": "Agora é só clicar nesse botão pra criar um novo bloco\nem breve você vai poder selecionar também o tipo de bloco que quer criar",
+        "button": "Entendi 1/3"
+      },
+      "1": {
+        "title": "Copiar e colar",
+        "description": "Finalmente você pode copiar e colar os blocos onde quiser, inclusive em\noutro fluxo. Clique no botão ou use o atalho Ctrl C + Ctrl V",
+        "button": "Entendi 2/3"
+      },
+      "2": {
+        "title": "Skin do WhatsApp no simulador",
+        "description": "Agora o simulador ta com a aparência do Whatsapp\nassim você consegue prever com mais fidelidade como seu fluxo vai ficar",
+        "button": "Entendi 3/3"
+      }
+    }
   }
 }

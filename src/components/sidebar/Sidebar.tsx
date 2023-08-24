@@ -7,13 +7,20 @@ import { bindActionCreators } from 'redux';
 import { RenderNode } from 'store/flowContext';
 import { createEmptyNode } from 'store/helpers';
 import AppState from 'store/state';
-import { DispatchWithState, OnOpenNodeEditor, onOpenNodeEditor } from 'store/thunks';
+import {
+  DispatchWithState,
+  OnOpenNodeEditor,
+  onOpenNodeEditor,
+  mergeEditorState,
+  MergeEditorState
+} from 'store/thunks';
 
 import i18n from 'config/i18n';
 import { applyVueInReact } from 'vuereact-combined';
 import styles from './Sidebar.module.scss';
 // @ts-ignore
 import { unnnicModalNext, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
+import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon);
 const UnnnicTooltip = applyVueInReact(unnnicToolTip);
@@ -37,6 +44,9 @@ export interface SidebarStoreProps {
   selectionActive: boolean;
   nodes: { [uuid: string]: RenderNode };
   onOpenNodeEditor: OnOpenNodeEditor;
+  guidingStep: number;
+  currentGuide: string;
+  mergeEditorState: MergeEditorState;
 }
 
 export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
@@ -45,6 +55,10 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   };
 
   private createSendMessageNode(): void {
+    if (this.props.guidingStep === 0 && this.props.currentGuide === 'v2') {
+      this.props.mergeEditorState({ guidingStep: 1 });
+    }
+
     const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
 
     emptyNode.ui.position = this.getNewNodePosition();
@@ -57,7 +71,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 
   public componentDidMount(): void {
     if (Object.keys(this.props.nodes).length === 0) {
-      this.showGetStartedModal();
+      // this.showGetStartedModal();
     }
   }
 
@@ -132,25 +146,51 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   public render(): JSX.Element {
     return (
       <div className={styles.sidebar}>
-        <UnnnicTooltip text={i18n.t('create_block')} enabled side="right">
-          <div className={styles.option} onClick={() => this.createSendMessageNode()}>
-            <UnnnicIcon icon="add-circle-1" />
-          </div>
-        </UnnnicTooltip>
-
-        <UnnnicTooltip
-          className={styles.left_aligned}
-          text={this.getCopyTooltip()}
-          enabled
-          side="right"
+        <GuidingSteps
+          guide="v2"
+          step={0}
+          title={i18n.t('guiding.v2.0.title', 'New block')}
+          description={i18n.t(
+            'guiding.v2.0.description',
+            `Now just click on this button to create a new block\nsoon you will also be able to select the type of block you want to create`
+          )}
+          buttonText={i18n.t('guiding.v2.0.button', 'Got it 1/3')}
         >
-          <div
-            className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
-            onClick={() => this.handleCopyClick()}
+          <UnnnicTooltip
+            text={i18n.t('create_block')}
+            enabled={this.props.guidingStep !== 0}
+            side="right"
           >
-            <UnnnicIcon icon="paginate-filter-text-1" scheme={this.getCopyIconScheme()} />
-          </div>
-        </UnnnicTooltip>
+            <div className={styles.option} onClick={() => this.createSendMessageNode()}>
+              <UnnnicIcon icon="add-circle-1" />
+            </div>
+          </UnnnicTooltip>
+        </GuidingSteps>
+
+        <GuidingSteps
+          guide="v2"
+          step={1}
+          title={i18n.t('guiding.v2.1.title', 'Copy and paste')}
+          description={i18n.t(
+            'guiding.v2.1.description',
+            `Finally, you can copy and paste the blocks wherever you want, including in\nanother flow. Click the button or use the shortcut Ctrl C + Ctrl V`
+          )}
+          buttonText={i18n.t('guiding.v2.1.button', 'Got it 2/3')}
+        >
+          <UnnnicTooltip
+            className={styles.left_aligned}
+            text={this.getCopyTooltip()}
+            enabled={this.props.guidingStep !== 1}
+            side="right"
+          >
+            <div
+              className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
+              onClick={() => this.handleCopyClick()}
+            >
+              <UnnnicIcon icon="paginate-filter-text-1" scheme={this.getCopyIconScheme()} />
+            </div>
+          </UnnnicTooltip>
+        </GuidingSteps>
       </div>
     );
   }
@@ -159,17 +199,19 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 /* istanbul ignore next */
 const mapStateToProps = ({
   flowContext: { nodes },
-  editorState: { selectionActive }
+  editorState: { selectionActive, guidingStep, currentGuide }
 }: AppState) => {
   return {
     nodes,
-    selectionActive
+    selectionActive,
+    guidingStep,
+    currentGuide
   };
 };
 
 /* istanbul ignore next */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
-  bindActionCreators({ onOpenNodeEditor }, dispatch);
+  bindActionCreators({ onOpenNodeEditor, mergeEditorState }, dispatch);
 
 export default connect(
   mapStateToProps,
