@@ -567,5 +567,40 @@
   "copy": {
     "multiple": "Bloques copiados con éxito",
     "single": "Bloque copiados con éxito"
+  },
+  "new_updates": {
+    "title": "¡El Editor de flujo tiene una nueva apariencia!",
+    "description": "¿Qué hay de nuevo?",
+    "news": {
+      "first": "Una nueva y hermosa interfaz",
+      "second": "Funcionalidad de copiar y pegar bloques",
+      "third": "Barra lateral con herramientas (en evolución)",
+      "fourth": "Crea un nuevo bloque en cualquier lugar",
+      "fifth": "Máscara de WhatsApp en el simulador."
+    },
+    "buttons": {
+      "first": "Ignorar",
+      "second": "Muestrame todo"
+    }
+  },
+  "guiding": {
+    "close_tour": "Cerrar guía",
+    "v2": {
+      "0": {
+        "title": "Nuevo bloque",
+        "description": "Ahora simplemente haga clic en este botón para crear un nuevo bloque.\nPronto también podrá seleccionar el tipo de bloque que desea crear.",
+        "button": "Lo tengo 1/3"
+      },
+      "1": {
+        "title": "Copiar y pegar",
+        "description": "Finalmente, puedes copiar y pegar los bloques donde quieras, incluso en\notra secuencia. Haga clic en el botón o use el atajo Ctrl C + Ctrl V",
+        "button": "Lo tengo 2/3"
+      },
+      "2": {
+        "title": "Máscara de Whatsapp en el simulador.",
+        "description": "Ahora el simulador se parece a Whatsapp\npara que puedas predecir con mayor fidelidad cómo se verá tu flujo",
+        "button": "Lo tengo 3/3"
+      }
+    }
   }
 }

@@ -369,6 +369,7 @@ Array [
           "segments": Object {},
         },
         "activityInterval": 5000,
+        "currentGuide": null,
         "currentRevision": null,
         "debug": null,
         "dragActive": false,
@@ -379,6 +380,7 @@ Array [
         "dragStartTime": 0,
         "fetchingFlow": false,
         "ghostNode": null,
+        "guidingStep": -1,
         "language": null,
         "liveActivity": Object {
           "nodes": Object {},
@@ -409,6 +411,7 @@ Array [
           "segments": Object {},
         },
         "activityInterval": 5000,
+        "currentGuide": null,
         "currentRevision": null,
         "debug": null,
         "dragActive": false,
@@ -419,6 +422,7 @@ Array [
         "dragStartTime": 0,
         "fetchingFlow": false,
         "ghostNode": null,
+        "guidingStep": -1,
         "language": null,
         "liveActivity": Object {
           "nodes": Object {},
@@ -1135,6 +1139,7 @@ Array [
           "segments": Object {},
         },
         "activityInterval": 5000,
+        "currentGuide": null,
         "currentRevision": null,
         "debug": null,
         "dragActive": false,
@@ -1183,6 +1188,7 @@ Array [
             "type": "wait_for_response",
           },
         },
+        "guidingStep": -1,
         "language": null,
         "liveActivity": Object {
           "nodes": Object {},

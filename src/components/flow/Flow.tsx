@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom';
 import { react as bindCallbacks } from 'auto-bind';
 import { Canvas } from 'components/canvas/Canvas';
 import { CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
@@ -52,6 +53,39 @@ import {
 import Debug from 'utils/debug';
 
 import { PopTabType } from 'config/interfaces';
+
+import styles from './Flow.module.scss';
+import { applyVueInReact } from 'vuereact-combined';
+// @ts-ignore
+import { unnnicModalNext, unnnicButton } from '@weni/unnnic-system';
+import { WeniLoveIcon } from './WeniLoveIcon';
+import i18n from '../../config/i18n';
+
+const UnnnicButton = applyVueInReact(unnnicButton, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: ''
+      }
+    }
+  }
+});
+
+const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+        position: 'relative',
+        zIndex: 10e2
+      }
+    }
+  }
+});
 
 declare global {
   interface Window {
@@ -172,6 +206,8 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     this.Plumber.bind('beforeDetach', (event: ConnectionEvent) => true);
     this.Plumber.bind('beforeDrop', (event: ConnectionEvent) => this.onBeforeConnectorDrop(event));
     this.Plumber.triggerLoaded(this.context.config.onLoad);
+
+    this.checkToShowNewUpdates();
 
     timeEnd('Loaded Flow');
   }
@@ -372,6 +408,74 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     this.canvas.current.manuallyCopy();
   }
 
+  private startGuiding() {
+    this.props.mergeEditorState({ currentGuide: 'v2', guidingStep: 0 });
+  }
+
+  private showNewUpdatesModal(): void {
+    let newUpdatesModalEl: HTMLDivElement = document.querySelector('#new-updates-modal');
+
+    if (!newUpdatesModalEl) {
+      newUpdatesModalEl = document.createElement('div');
+      newUpdatesModalEl.setAttribute('id', 'new-updates-modal');
+      document.body.appendChild(newUpdatesModalEl);
+    }
+
+    if (newUpdatesModalEl.hasChildNodes()) {
+      return;
+    }
+
+    ReactDOM.render(
+      <UnnnicModalNext className={styles.new_updates}>
+        <div className={styles.content}>
+          <WeniLoveIcon />
+          <span className={styles.title}>
+            {i18n.t('new_updates.title', 'Flow Editor has a new look!')}
+          </span>
+          <span className={styles.description}>
+            {i18n.t('new_updates.description', 'Whats new?')}
+          </span>
+
+          <div className={styles.news_list}>
+            <span>•&nbsp; {i18n.t('new_updates.news.first', 'A beautiful new interface')}</span>
+            <span>
+              •&nbsp; {i18n.t('new_updates.news.second', 'Nodes copy and paste functionality')}
+            </span>
+            <span>•&nbsp; {i18n.t('new_updates.news.third', 'Sidebar with tools (evolving)')}</span>
+            <span>•&nbsp; {i18n.t('new_updates.news.fourth', 'Create a new node anywhere')}</span>
+            <span>•&nbsp; {i18n.t('new_updates.news.fifth', 'WhatsApp simulator skin')}</span>
+          </div>
+        </div>
+
+        <div className={styles.buttons}>
+          <UnnnicButton
+            type="terciary"
+            text={i18n.t('new_updates.buttons.first', 'Ignore')}
+            onClick={() => {
+              ReactDOM.unmountComponentAtNode(newUpdatesModalEl);
+            }}
+          />
+          <UnnnicButton
+            className={styles.primary}
+            type="primary"
+            text={i18n.t('new_updates.buttons.second', 'Show me everything')}
+            onClick={() => {
+              this.startGuiding();
+              ReactDOM.unmountComponentAtNode(newUpdatesModalEl);
+            }}
+          />
+        </div>
+      </UnnnicModalNext>,
+      newUpdatesModalEl
+    );
+  }
+
+  private checkToShowNewUpdates() {
+    if (this.context.config.showNewUpdates) {
+      this.showNewUpdatesModal();
+    }
+  }
+
   public render(): JSX.Element {
     const nodes = this.getNodes();
 
@@ -379,7 +483,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
     return (
       <div>
-        {nodes.length !== 0 ? <>{this.getSimulator()}</> : null}
+        {this.getSimulator()}
         {this.getNodeEditor()}
 
         <Sidebar onCopyClick={() => this.callCanvasCopy()} />

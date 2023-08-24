@@ -406,6 +406,11 @@ $reset_color: #666;
   }
 }
 
+.simulator_tab:hover + .guiding_steps {
+  right: 130px !important;
+  transition: right 100ms;
+}
+
 .detail_webhook_called {
   background: $orange;
 }
@@ -432,4 +437,12 @@ $reset_color: #666;
       transform: scale(1.05);
     }
   }
+}
+
+.guiding_steps {
+  position: fixed !important;
+  top: 320px !important;
+  right: 65px !important;
+  transition: right 200ms, opacity 300ms;
+  transition-delay: 300ms;
 }
