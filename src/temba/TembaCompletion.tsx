@@ -193,6 +193,10 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
   }
 
   private handleInput(event: ValuedCompletionOption, ref: HTMLElement, selector: string) {
+    if (!event) {
+      return;
+    }
+
     const inputEl = (ref as any).vueRef.$el.querySelector(selector) as HTMLInputElement;
 
     if (event.value === this.state.query) {
@@ -264,20 +268,22 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
   }
 
   private handleCompletionsKeyDown(event: any) {
-    if (event.key === 'Escape') {
-      this.hideExpressionsMenu();
-    } else if (event.key === 'Enter' || event.key === 'Tab') {
-      event.preventDefault();
-      event.stopPropagation();
-      this.handleInput(this.getCurrentOption(), this.refTextArea, 'textarea');
-    } else if (event.key === 'ArrowDown') {
-      this.moveFocusedOption(1);
-      event.preventDefault();
-      event.stopPropagation();
-    } else if (event.key === 'ArrowUp') {
-      this.moveFocusedOption(-1);
-      event.preventDefault();
-      event.stopPropagation();
+    if (this.state.options.length !== 0) {
+      if (event.key === 'Escape') {
+        this.hideExpressionsMenu();
+      } else if (event.key === 'Enter' || event.key === 'Tab') {
+        event.preventDefault();
+        event.stopPropagation();
+        this.handleInput(this.getCurrentOption(), this.refTextArea, 'textarea');
+      } else if (event.key === 'ArrowDown') {
+        this.moveFocusedOption(1);
+        event.preventDefault();
+        event.stopPropagation();
+      } else if (event.key === 'ArrowUp') {
+        this.moveFocusedOption(-1);
+        event.preventDefault();
+        event.stopPropagation();
+      }
     }
   }
 
