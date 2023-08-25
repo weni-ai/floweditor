@@ -1,11 +1,16 @@
 @import 'variables.module.scss';
+@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
 
 .exit {
-  font-size: 13px;
-  border-left: 1px solid $borders;
+  font-size: $unnnic-font-size-body-md;
   flex-grow: 1;
   background: #fff;
   position: relative;
+  color: $unnnic-color-neutral-dark;
+
+  &.has-background {
+    background-color: $unnnic-color-background-sky;
+  }
 
   display: flex;
   align-items: center;
@@ -14,7 +19,6 @@
   flex-shrink: 0;
 
   &:first-child {
-    border-left: none;
     border-bottom-left-radius: $curvature;
   }
 
@@ -37,6 +41,7 @@
       z-index: 1;
       visibility: hidden;
       top: 0px;
+      border: 1px solid gray;
     }
 
     &:last-child {
@@ -63,23 +68,22 @@
 
   .name {
     line-height: 1.2em;
-    padding: 12px;
+    padding: $unnnic-spacing-inset-xs;
     margin: auto;
     max-width: 110px;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .endpoint {
     position: relative;
     background: $terminal_color;
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 14px;
     top: 7px;
     margin-top: -14px;
     border-radius: 50%;
-
-    // this is needed to maintain consistency with disconnected endpoints
-    border-bottom: 1px solid transparent;
   }
 
   &.confirm_delete {
@@ -98,10 +102,14 @@
         position: absolute;
         font-size: 10px;
         font-weight: 400;
-        left: 0.04rem;
-        top: 0.11rem;
+        left: 0.12rem;
+        top: 0.15rem;
       }
     }
+  }
+
+  &.selected {
+    background-color: #C6FFF7;
   }
 }
 

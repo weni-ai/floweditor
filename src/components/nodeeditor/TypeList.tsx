@@ -48,7 +48,10 @@ export default class TypeList extends React.PureComponent<TypeListProps, TypeLis
   public render(): JSX.Element {
     return (
       <div className={`${this.props.__className} ${styles.type_list}`}>
-        <p>{i18n.t('forms.type_label', 'When a contact arrives at this point in your flow...')}</p>
+        <div className="color-neutral-cloudy">
+          {i18n.t('forms.type_label', 'When a contact arrives at this point in your flow...')}
+        </div>
+
         <div>
           <TembaSelect
             key="type_select"

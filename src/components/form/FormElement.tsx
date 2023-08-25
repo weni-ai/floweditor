@@ -35,12 +35,16 @@ export default class FormElement extends React.PureComponent<FormElementProps> {
         this.props.name !== undefined &&
         this.props.name !== null &&
         this.props.name.length > 0
-    )(<div className={styles.label}>{this.props.name}</div>);
+    )(
+      <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+        {this.props.name}
+      </div>
+    );
   }
 
   private getHelpText(): JSX.Element {
     return renderIf(this.props.helpText != null)(
-      <div className={styles.help_text}>{this.props.helpText} </div>
+      <div className={styles.help_text}>{this.props.helpText}</div>
     );
   }
 
@@ -77,12 +81,10 @@ export default class FormElement extends React.PureComponent<FormElementProps> {
   public render(): JSX.Element {
     const name: JSX.Element = this.getName();
     const helpText: JSX.Element = this.getHelpText();
-    const errorsToDisplay: JSX.Element = this.getErrors();
 
     const className = cx({
       [styles.ele]: true,
       [styles.border]: this.props.border,
-      [styles.invalid]: this.hasErrors(),
       [this.props.__className]: this.props.__className !== undefined
     });
 
@@ -91,7 +93,6 @@ export default class FormElement extends React.PureComponent<FormElementProps> {
         {name}
         {this.props.children}
         {helpText}
-        {errorsToDisplay}
       </div>
     );
   }

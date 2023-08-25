@@ -1,6 +1,6 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
-import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
+import { getAllErrorMessages, hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import { nodeToState, stateToNode } from './helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
@@ -33,6 +33,7 @@ export interface TicketRouterFormState extends FormState {
   resultName: StringEntry;
   queues: any[];
   topics: any[];
+  topicSelectKey: number;
 }
 
 export default class TicketRouterForm extends React.Component<
@@ -175,6 +176,7 @@ export default class TicketRouterForm extends React.Component<
         ? { queues: topics, topic: toUpdateTopic as Topic }
         : { topics: topics, topic: toUpdateTopic as Topic };
       this.handleUpdate(toUpdate);
+      this.setState({ topicSelectKey: this.state.topicSelectKey + 1 });
     });
   }
 
@@ -296,13 +298,15 @@ export default class TicketRouterForm extends React.Component<
         <div style={{ display: 'flex', width: '100%', marginTop: '0.5em' }}>
           <div style={{ flexBasis: 250 }}>
             <TembaSelect
-              key="select_topic"
+              key={this.state.topicSelectKey}
               name={i18n.t('forms.topic', 'Topic')}
               options={isWenichatsType ? this.state.queues : this.state.topics}
               onChange={this.handleTopicUpdate}
               value={this.state.topic.value}
               createPrefix={i18n.t('forms.topic_prefix', 'Create Topic: ')}
               searchable={!isWenichatsType}
+              valueKey="uuid"
+              nameKey="name"
             />
           </div>
 
@@ -322,6 +326,7 @@ export default class TicketRouterForm extends React.Component<
                 }
                 return `${user.first_name} ${user.last_name}`;
               }}
+              errors={getAllErrorMessages(this.state.assignee.value)}
             />
           </div>
         </div>

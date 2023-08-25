@@ -96,7 +96,7 @@ export default class SubflowRouterForm extends React.PureComponent<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -186,10 +186,12 @@ export default class SubflowRouterForm extends React.PureComponent<
         headerClass={typeConfig.type}
         buttons={this.getButtons()}
         tabs={tabs}
+        className={styles.dialog}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <AssetSelector
-          name={i18n.t('forms.flow', 'Flow')}
+          name={i18n.t('forms.flow_to_start')}
+          showLabel={true}
           placeholder={i18n.t('forms.select_flow', 'Select the flow to start')}
           assets={this.props.assetStore.flows}
           entry={this.state.flow}

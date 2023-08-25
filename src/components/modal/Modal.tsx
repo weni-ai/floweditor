@@ -1,6 +1,8 @@
 import * as React from 'react';
 import ReactModal from 'react-modal';
 
+import styles from './Modal.module.scss';
+
 interface CustomStyles {
   content: { [cssProperty: string]: string | number };
 }
@@ -38,6 +40,7 @@ export default class Modal extends React.Component<ModalProps> {
         style={customStyles}
         shouldCloseOnOverlayClick={false}
         contentLabel="Modal"
+        overlayClassName={styles.overlay}
       >
         {this.props.children}
       </ReactModal>

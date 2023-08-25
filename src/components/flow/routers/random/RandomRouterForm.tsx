@@ -98,7 +98,7 @@ export default class RandomRouterForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -142,7 +142,9 @@ export default class RandomRouterForm extends React.Component<
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <div className={styles.options}>
-          <div className={styles.lead_in}>Split them randomly into one of</div>
+          <div className={`${styles.lead_in} u font secondary body-md color-neutral-cloudy`}>
+            {i18n.t('forms.select_quantity_of_buckets_label')}
+          </div>
           <div className={styles.bucket_select}>
             <SelectElement
               key="buckets_select"

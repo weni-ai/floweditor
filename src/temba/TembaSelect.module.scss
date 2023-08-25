@@ -23,3 +23,29 @@
     --widget-box-shadow-focused: 0 0 0 3px rgba(var(--error-rgb), 0.3);
   }
 }
+
+.selected-list-container {
+  display: flex;
+  gap: $unnnic-squish-xs;
+  flex-wrap: wrap;
+  margin-top: $unnnic-spacing-stack-xs;
+
+  :global {
+    .unnnic-tag__label {
+      max-width: 400px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}
+
+.bold_placeholder { 
+
+  input:hover, svg {
+    cursor: pointer !important;
+  }
+
+  input::placeholder { 
+    color: $unnnic-color-neutral-dark !important;
+  };
+}

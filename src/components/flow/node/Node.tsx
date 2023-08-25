@@ -35,6 +35,10 @@ import {
   removeNode
 } from 'store/thunks';
 import { ClickHandler, createClickHandler } from 'utils';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
 
 import styles from './Node.module.scss';
 import { hasIssues } from '../helpers';
@@ -87,6 +91,9 @@ const EMPTY: any[] = [];
 /**
  * A single node in the rendered flow
  */
+
+const UnnnicIcon = applyVueInReact(unnnicIcon);
+
 export class NodeComp extends React.PureComponent<NodeProps> {
   public ele: HTMLDivElement;
   private firstAction: any;
@@ -200,25 +207,28 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     });
   }
 
-  private handleRemoval(event: React.MouseEvent<HTMLElement>): void {
-    event.preventDefault();
-    event.stopPropagation();
+  private handleRemoval(): void {
     this.props.removeNode(this.props.renderNode.node);
   }
 
-  private getExits(): JSX.Element[] {
+  private getExits(hasBackground: boolean): JSX.Element[] {
     if (this.props.renderNode.node.exits) {
       return this.props.renderNode.node.exits.map((exit: Exit, idx: number) => (
         <ExitComp
           key={exit.uuid}
           node={this.props.renderNode.node}
-          categories={getCategoriesForExit(this.props.renderNode, exit)}
+          categories={getCategoriesForExit(this.props.renderNode, exit).map(item => ({
+            ...item,
+            name: i18n.t(`forms.${item.name}`, item.name)
+          }))}
           exit={exit}
           showDragHelper={this.props.onlyNode && idx === 0}
           plumberMakeSource={this.props.plumberMakeSource}
           plumberRemove={this.props.plumberRemove}
           plumberConnectExit={this.props.plumberConnectExit}
           plumberUpdateClass={this.props.plumberUpdateClass}
+          hasBackground={hasBackground}
+          selected={this.props.selected}
         />
       ));
     }
@@ -321,14 +331,23 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       const switchRouter = getSwitchRouter(this.props.renderNode.node);
       if (switchRouter) {
         if (type === Types.split_by_contact_field && this.props.renderNode.ui.config.operand.name) {
-          title = `Split by ${this.props.renderNode.ui.config.operand.name}`;
+          title =
+            i18n.t('forms.split_by') +
+            ` ${this.props.renderNode.ui.config.operand.name.toLowerCase()}`;
         }
       }
 
       const resultName = getResultName(this.props.renderNode.node);
       if (resultName) {
         summary = (
-          <div {...this.events} className={styles.save_result}>
+          <div
+            {...this.events}
+            className={`
+              ${styles.save_result}
+              ${actionList && styles.border_top}
+              ${this.props.selected && styles.selected}
+            `}
+          >
             <div className={styles.save_as}>{i18n.t('forms.save_as', 'Save as')} </div>
             <div className={styles.result_name}>{resultName}</div>
           </div>
@@ -339,7 +358,9 @@ export class NodeComp extends React.PureComponent<NodeProps> {
         title === null &&
         (type === Types.split_by_run_result || type === Types.split_by_run_result_delimited)
       ) {
-        title = `Split by ${this.props.results[this.props.renderNode.ui.config.operand.id].name}`;
+        title =
+          i18n.t('forms.split_by') +
+          ` ${this.props.results[this.props.renderNode.ui.config.operand.id].name.toLowerCase()}`;
       }
 
       if (title === null) {
@@ -353,17 +374,18 @@ export class NodeComp extends React.PureComponent<NodeProps> {
           <div style={{ position: 'relative' }}>
             <div {...this.events}>
               <TitleBar
-                __className={
+                __className={`${
                   (shared as any)[
                     hasIssues(this.props.issues, this.props.translating, this.props.language)
-                      ? 'missing'
+                      ? shared.missing
                       : config.type
                   ]
-                }
+                } ${styles.title}`}
                 showRemoval={!this.props.translating}
                 onRemoval={this.handleRemoval}
                 shouldCancelClick={this.handleShouldCancelClick}
                 title={title}
+                selected={this.props.selected}
               />
             </div>
           </div>
@@ -377,13 +399,13 @@ export class NodeComp extends React.PureComponent<NodeProps> {
             className={styles.add}
             {...createClickHandler(this.handleAddToNode, this.handleShouldCancelClick)}
           >
-            <span className="fe-add" />
+            <UnnnicIcon icon="add-1" size="sm" scheme="neutral-darkest" />
           </div>
         );
       }
     }
 
-    const exits: JSX.Element[] = this.getExits();
+    const exits: JSX.Element[] = this.getExits(!!(actionList || summary));
 
     const classes = cx({
       'plumb-drag': true,
@@ -396,11 +418,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     const uuid: JSX.Element = this.renderDebug();
 
     const body = (
-      <div className={styles.node}>
-        {this.isStartNodeVisible() ? (
-          <div className={styles.flow_start_message}>{i18n.t('flow_start', 'Flow Start')}</div>
-        ) : null}
-
+      <div className={`${styles.node} ${styles[type]}`}>
         {uuid}
         <Counter
           count={this.props.activeCount}
@@ -415,6 +433,14 @@ export class NodeComp extends React.PureComponent<NodeProps> {
         />
 
         <div className={styles.cropped}>
+          {this.isStartNodeVisible() ? (
+            <div
+              className={`${styles.flow_start_message} u font secondary body-md bold color-brand-weni-soft`}
+            >
+              {i18n.t('flow_start', 'Flow Start')}
+            </div>
+          ) : null}
+
           {header}
           {actionList}
           {summary}

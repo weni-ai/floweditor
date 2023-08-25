@@ -1,3 +1,10 @@
+2.0.0
+----------
+* Feature: Unnnic system migration
+* Feature: Action Sidebar
+* Feature: Copy and Paste nodes
+* Feature: Simulator WhatsApp skin
+
 1.3.1-floweditor-1.15.2
 ----------
 * Fix: Handle nonexistent service when creating the router state

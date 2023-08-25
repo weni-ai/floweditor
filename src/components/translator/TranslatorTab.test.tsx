@@ -91,8 +91,7 @@ const createRouterNode = (
 
 describe(TranslatorTab.name, () => {
   it('renders', () => {
-    const { baseElement, getByText } = render(<TranslatorTab {...translatorProps} />);
-    getByText('Spanish Translations');
+    const { baseElement } = render(<TranslatorTab {...translatorProps} />);
     expect(baseElement).toMatchSnapshot();
   });
 

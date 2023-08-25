@@ -2,15 +2,21 @@ import { react as bindCallbacks } from 'auto-bind';
 import { CanvasDraggable, CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
 import { getDraggablesInBox, reflow } from 'components/canvas/helpers';
 import { DRAG_THRESHOLD } from 'components/flow/Flow';
-import { Dimensions, FlowPosition } from 'flowTypes';
+import { Dimensions, Exit, FlowNode, FlowPosition } from 'flowTypes';
 import mutate from 'immutability-helper';
 import React from 'react';
+import i18n from 'config/i18n';
 import { CanvasPositions, DragSelection } from 'store/editor';
 import { addPosition } from 'store/helpers';
 import { MergeEditorState } from 'store/thunks';
 import { COLLISION_FUDGE, snapPositionToGrid, throttle, snapToGrid } from 'utils';
 
 import styles from './Canvas.module.scss';
+import nodesCopy from '../../components/copyAndPasteNodes';
+import { RenderNode } from '../../store/flowContext';
+
+// @ts-ignore
+import { unnnicCallAlert } from '@weni/unnnic-system';
 
 export const CANVAS_PADDING = 300;
 export const REFLOW_QUIET = 200;
@@ -28,6 +34,8 @@ export interface CanvasProps {
   onRemoveNodes: (nodeUUIDs: string[]) => void;
   onDoubleClick: (position: FlowPosition) => void;
   mergeEditorState: MergeEditorState;
+  nodes: any;
+  updateNodesEditor: any;
 }
 
 interface CanvasState {
@@ -39,6 +47,8 @@ interface CanvasState {
   positions: CanvasPositions;
   selected: CanvasPositions;
   height: number;
+  mouseX: number;
+  mouseY: number;
 }
 
 export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
@@ -78,7 +88,9 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       dragSelection: null,
       uuid: this.props.uuid,
       selected: {},
-      positions
+      positions,
+      mouseX: 0,
+      mouseY: 0
     };
 
     bindCallbacks(this, {
@@ -91,16 +103,163 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     this.setState({ height: Math.max(windowHeight, this.state.height) });
   }
 
+  public manuallyCopy() {
+    document.execCommand('copy');
+  }
+
   public componentDidMount(): void {
     /* istanbul ignore next */
     window.addEventListener('resize', this.handleWindowResize);
     document.addEventListener('keydown', this.handleKeyDown);
 
+    window.document.addEventListener('copy', event => {
+      if (Object.keys(this.state.selected).length === 0) {
+        return;
+      }
+
+      const instance = new nodesCopy();
+
+      const edgeCorner: any = {
+        left: null,
+        top: null
+      };
+
+      let nodes = instance.replaceUuidsToUpdate(
+        this.props.draggables
+          .filter(({ uuid }) => Object.keys(this.state.selected).includes(uuid))
+          .map(({ config }) => ({
+            node: config.node,
+            ui: config.ui,
+            inboundConnections: config.inboundConnections
+          }))
+          .map(node => JSON.parse(JSON.stringify(node)))
+      );
+
+      nodes.forEach((node: any) => {
+        if (!node.ui) {
+          return;
+        }
+
+        if (edgeCorner.left === null || node.ui.position.left < edgeCorner.left) {
+          edgeCorner.left = node.ui.position.left;
+        }
+
+        if (edgeCorner.top === null || node.ui.position.top < edgeCorner.top) {
+          edgeCorner.top = node.ui.position.top;
+        }
+      });
+
+      nodes = nodes.map((node: any) => ({
+        ...node,
+        ui: {
+          ...node.ui,
+          position: {
+            left: node.ui.position.left - edgeCorner.left,
+            top: node.ui.position.top - edgeCorner.top
+          }
+        }
+      }));
+
+      event.clipboardData.setData('application/json', JSON.stringify(nodes));
+      event.preventDefault();
+
+      unnnicCallAlert({
+        props: {
+          text: nodes.length > 1 ? i18n.t('copy.multiple') : i18n.t('copy.single'),
+          title: i18n.t('forms.Success'),
+          icon: 'check-circle-1-1-1',
+          scheme: 'feedback-green',
+          position: 'bottom-right',
+          closeText: i18n.t('buttons.close')
+        },
+        seconds: 6
+      });
+    });
+
+    window.document.addEventListener('paste', event => {
+      if (event.clipboardData.getData('application/json')) {
+        const nodes = JSON.parse(event.clipboardData.getData('application/json'));
+
+        const instance = new nodesCopy();
+
+        const nodesPasted = instance.createNewUuids(nodes);
+
+        nodesPasted.forEach((item: RenderNode) => {
+          const filteredInboundConnections = this.filterExistingInbounds(nodesPasted, item);
+          const filteredExits = this.filterExistingExits(nodesPasted, item.node);
+          this.props.nodes[item.node.uuid] = {
+            ...item,
+            node: {
+              ...item.node,
+              exits: filteredExits
+            },
+            inboundConnections: filteredInboundConnections,
+            ui: {
+              ...item.ui,
+              position: {
+                left: item.ui.position.left + this.state.mouseX,
+                top: item.ui.position.top + this.state.mouseY
+              }
+            }
+          };
+        });
+
+        this.props.updateNodesEditor(this.props.nodes);
+      }
+    });
+
     this.props.onLoaded();
   }
 
+  private filterExistingExits(nodeList: RenderNode[], node: FlowNode): Exit[] {
+    const exits: Exit[] = node.exits || [];
+    const filteredExits: Exit[] = [];
+
+    for (const exit of exits) {
+      if (exit.destination_uuid) {
+        let hasDestination = false;
+        for (const n of nodeList) {
+          if (n.node.uuid === exit.destination_uuid) {
+            hasDestination = true;
+            break;
+          }
+        }
+
+        if (hasDestination) {
+          filteredExits.push(exit);
+        } else {
+          filteredExits.push({ ...exit, destination_uuid: undefined });
+        }
+      } else {
+        filteredExits.push(exit);
+      }
+    }
+
+    return filteredExits;
+  }
+
+  private filterExistingInbounds(
+    nodeList: RenderNode[],
+    node: RenderNode
+  ): { [nodeUUID: string]: string } {
+    const inboundConnections: { [nodeUUID: string]: string } = node.inboundConnections || {};
+    const filteredInboundConnections: { [nodeUUID: string]: string } = {};
+
+    for (const key of Object.keys(inboundConnections)) {
+      const inboundConnection = inboundConnections[key];
+      for (const n of nodeList) {
+        if (n.node.exits.find(exit => exit.uuid === key)) {
+          filteredInboundConnections[key] = inboundConnection;
+          break;
+        }
+      }
+    }
+
+    return filteredInboundConnections;
+  }
+
   private handleKeyDown(event: any): void {
-    if (this.state.selected && event.key === 'Backspace') {
+    if (this.state.selected && (event.key === 'Backspace' || event.key === 'Delete')) {
       const nodeUUIDs = Object.keys(this.state.selected);
       if (nodeUUIDs.length > 0) {
         this.props.onRemoveNodes(Object.keys(this.state.selected));
@@ -142,6 +301,17 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     if (updated) {
       this.setState({ positions: updatedPositions });
     }
+
+    this.ensureCanvasHeight();
+
+    let selectionActive = false;
+    if (this.state.selected && Object.keys(this.state.selected).length > 0) {
+      selectionActive = true;
+    }
+
+    this.props.mergeEditorState({
+      selectionActive
+    });
   }
 
   public renderSelectionBox(): JSX.Element | null {
@@ -190,6 +360,25 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         dragSelection: { startX, startY, currentX: startX, currentY: startY }
       });
     }
+  }
+
+  private handleMouseMoveCanvas(event: React.MouseEvent<HTMLDivElement>): void {
+    let pageX = 0,
+      pageY = 0;
+
+    let currentTarget: HTMLElement = event.currentTarget;
+
+    do {
+      pageX += currentTarget.offsetLeft;
+      pageY += currentTarget.offsetTop;
+
+      currentTarget = currentTarget.offsetParent as HTMLElement;
+    } while (currentTarget !== document.body);
+
+    this.setState({
+      mouseX: event.pageX - pageX,
+      mouseY: event.pageY - pageY
+    });
   }
 
   private handleMouseMove(event: React.MouseEvent<HTMLDivElement>): void {
@@ -354,10 +543,30 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     }
   }
 
+  // Get the node with the lowest top position
+  public getStartingNode() {
+    let startingNodeUuid: string = null;
+    let startingNode: FlowPosition | null = null;
+
+    if (this.props.nodes) {
+      Object.keys(this.props.nodes).forEach(uuid => {
+        const position = this.state.positions[uuid];
+        if (position && (!startingNode || position.top < startingNode.top)) {
+          startingNode = position;
+          startingNodeUuid = uuid;
+        }
+      });
+    }
+
+    return { position: startingNode, uuid: startingNodeUuid };
+  }
+
   public doReflow(): void {
     const reflowPositions = { ...this.state.positions };
     delete reflowPositions[this.state.dragUUID];
-    const { positions, changed } = reflow(reflowPositions, COLLISION_FUDGE);
+
+    const { uuid: startingNodeUuid } = this.getStartingNode();
+    const { positions, changed } = reflow(reflowPositions, COLLISION_FUDGE, startingNodeUuid);
 
     if (changed) {
       this.setState({ positions });
@@ -567,6 +776,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
               this.ele = ele;
             }}
             className={styles.canvas}
+            onMouseMove={this.handleMouseMoveCanvas}
           >
             {this.props.newDragElement}
             {this.props.draggables.map((draggable: CanvasDraggableProps, idx: number) => {

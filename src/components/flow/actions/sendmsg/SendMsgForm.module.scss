@@ -1,28 +1,12 @@
 @import 'variables.module.scss';
+@import '@weni/unnnic-system/dist/scss/unnnic.scss';
 
-.checkbox {
-  margin-top: 20px;
+.title {
+  margin-bottom: $unnnic-spacing-stack-sm;
 }
 
 .quick_reply_summary {
-  margin-top: -20px;
-  position: relative;
-}
-
-
-.existing_quick_replies {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid $light_gray;
-
-  .existing_quick_reply {
-    margin: 2px;
-    display: inline-block;
-  }
-}
-
-.add_quick_replies {
-  margin-top: 10px;
+  margin-bottom: $unnnic-spacing-stack-sm;
 }
 
 .template_text {

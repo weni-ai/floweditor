@@ -1,10 +1,18 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Button, { ButtonProps, ButtonTypes } from 'components/button/Button';
-import shared from 'components/shared.module.scss';
 import * as React from 'react';
 import { renderIf } from 'utils';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicTab } from '@weni/unnnic-system';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
 
 import styles from './Dialog.module.scss';
+
+import i18n from 'config/i18n';
 
 export enum HeaderStyle {
   NORMAL = 'normal',
@@ -46,6 +54,9 @@ export interface DialogProps {
 export interface DialogState {
   activeTab: number;
 }
+
+const UnnnicTab = applyVueInReact(unnnicTab);
+const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 /**
  * A component that has a front and back and can flip back and forth between them
@@ -126,7 +137,7 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
     };
 
     if (buttons.secondary) {
-      rightButtons.push(<Button key={0} type={ButtonTypes.secondary} {...buttons.secondary} />);
+      rightButtons.push(<Button key={0} type={ButtonTypes.tertiary} {...buttons.secondary} />);
     }
 
     if (buttons.primary) {
@@ -134,7 +145,9 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
         <Button
           key={'button_' + buttons.primary.name}
           onRef={(ref: any) => {
-            this.primaryButton = ref;
+            if (ref) {
+              this.primaryButton = ref.vueInstance.$el;
+            }
           }}
           onClick={() => {
             this.handlePrimaryButton(buttons.primary.onClick);
@@ -142,7 +155,7 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
           leftSpacing={true}
           name={buttons.primary.name}
           disabled={buttons.primary.disabled}
-          type={ButtonTypes.primary}
+          type={ButtonTypes.secondary}
         />
       );
     }
@@ -167,10 +180,6 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
       headerClasses.push(styles.clickable);
     }
 
-    if (this.props.headerClass) {
-      headerClasses.push(shared[this.props.headerClass]);
-    }
-
     if (this.props.headerIcon) {
       headerClasses.push(styles.iconed);
     }
@@ -188,23 +197,6 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
 
     return (
       <div className={activeClasses.join(' ')}>
-        {(this.props.tabs || []).length > 0 ? (
-          <div className={styles.tabs}>
-            {(this.props.tabs || []).map((tab: Tab, index: number) => (
-              <div
-                key={'tab_' + tab.name}
-                className={styles.tab + ' ' + (index === this.state.activeTab ? styles.active : '')}
-                onClick={(evt: React.MouseEvent<HTMLDivElement>) => {
-                  evt.stopPropagation();
-                  this.setState({ activeTab: index });
-                }}
-              >
-                {tab.name} {tab.icon ? <span className={styles.tab_icon + ' ' + tab.icon} /> : null}
-                {tab.checked ? <span className={styles.tab_icon + ' fe-check'} /> : null}
-              </div>
-            ))}
-          </div>
-        ) : null}
         <div
           onClick={() => {
             this.setState({ activeTab: -1 });
@@ -216,11 +208,54 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
             <span className={`${styles.header_icon} ${this.props.headerIcon}`} />
           )}
           <div className={styles.title_container}>
-            <div className={styles.title}>{this.props.title}</div>
+            <div className={`${styles.title} u font secondary title-sm black`}>
+              {this.props.title}
+            </div>
             <div className={styles.subtitle}>{this.props.subtitle}</div>
           </div>
         </div>
         <div className={this.props.noPadding ? '' : styles.content}>
+          {(this.props.tabs || []).length > 0 ? (
+            <UnnnicTab
+              className={styles.tabs}
+              size="sm"
+              initialTab={String(this.state.activeTab + 1)}
+              tabs={[
+                '0',
+                ...(this.props.tabs || []).map((tab: Tab, index: number) => String(index + 1))
+              ]}
+              $slots={(this.props.tabs || []).reduce(
+                (tabs, currentTab: Tab, index: number) => ({
+                  ...tabs,
+                  [`tab-head-${index + 1}`]: (
+                    <>
+                      {currentTab.name}
+                      {currentTab.checked ? (
+                        <UnnnicIcon
+                          icon="check-square-1"
+                          size="sm"
+                          scheme={
+                            this.state.activeTab + 1 === index ? 'neutral-clean' : 'neutral-darkest'
+                          }
+                          className={styles.icon}
+                        />
+                      ) : null}
+                    </>
+                  )
+                }),
+                {
+                  'tab-head-0': i18n.t('forms.general', 'General')
+                }
+              )}
+              $model={{
+                value: String(this.state.activeTab + 1),
+                setter: (index: string) => {
+                  this.setState({ activeTab: Number(index) - 1 });
+                }
+              }}
+            />
+          ) : null}
+
           {this.state.activeTab > -1
             ? this.props.tabs![this.state.activeTab].body
             : this.props.children}
@@ -228,13 +263,15 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
 
         <div className={styles.footer}>
           <div className={styles.buttons}>
-            {renderIf(leftButtons.length > 0)(
-              <div className={styles.left_buttons}>{leftButtons}</div>
-            )}
             {renderIf(this.props.gutter != null)(
               <div className={styles.gutter}>{this.props.gutter}</div>
             )}
-            <div className={styles.right_buttons}>{rightButtons}</div>
+            <div className={styles.buttons_wrapper}>
+              {renderIf(leftButtons.length > 0)(
+                <div className={styles.left_buttons}>{leftButtons}</div>
+              )}
+              <div className={styles.right_buttons}>{rightButtons}</div>
+            </div>
           </div>
         </div>
       </div>

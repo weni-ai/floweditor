@@ -5,10 +5,10 @@ exports[`SendMsgForm render should render 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
-      "secondary": Object {
+      "tertiary": Object {
         "name": "Cancel",
         "onClick": [Function],
       },
@@ -42,9 +42,11 @@ exports[`SendMsgForm render should render 1`] = `
       },
       Object {
         "body": <React.Fragment>
-          <p>
+          <div
+            className="quick_reply_summary u font secondary body-md color-neutral-cloudy"
+          >
             Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for "Yes" and one for "No".
-          </p>
+          </div>
           <MultiChoiceInput
             entry={
               Object {
@@ -53,17 +55,15 @@ exports[`SendMsgForm render should render 1`] = `
             }
             helpText={
               <Trans
-                i18nKey="forms.add_quick_reply"
-              >
-                Add a new Quick Reply and press enter.
-              </Trans>
+                i18nKey="forms.quick_replies"
+              />
             }
             items={
               Object {
                 "value": Array [],
               }
             }
-            name="Quick Reply"
+            name="Add a new Quick reply and press Enter"
             onChange={[Function]}
           />
         </React.Fragment>,
@@ -73,50 +73,71 @@ exports[`SendMsgForm render should render 1`] = `
       },
       Object {
         "body": <React.Fragment>
-          <p>
-            Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.
-          </p>
           <div
-            className="url_attachment"
+            className="u font secondary body-md color-neutral-cloudy"
+          >
+            Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.
+          </div>
+          <div
+            className="url_attachment_container"
           >
             <div
-              className="type_choice"
+              className="label u font secondary body-md color-neutral-cloudy"
             >
-              <SelectElement
-                entry={
-                  Object {
-                    "value": null,
+              File
+               
+              1
+            </div>
+            <div
+              className="url_attachment"
+            >
+              <div
+                className="type_choice"
+              >
+                <SelectElement
+                  entry={
+                    Object {
+                      "value": null,
+                    }
                   }
-                }
-                name="Type Options"
-                onChange={[Function]}
-                options={
-                  Array [
-                    Object {
-                      "name": "Image URL",
-                      "value": "image",
-                    },
-                    Object {
-                      "name": "Audio URL",
-                      "value": "audio",
-                    },
-                    Object {
-                      "name": "Video URL",
-                      "value": "video",
-                    },
-                    Object {
-                      "name": "PDF Document URL",
-                      "value": "application",
-                    },
-                    Object {
-                      "name": "Upload Attachment",
-                      "value": "upload",
-                    },
-                  ]
-                }
-                placeholder="Add Attachment"
-                style="small"
-              />
+                  name="Type Options"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "name": "Image URL",
+                        "value": "image",
+                      },
+                      Object {
+                        "name": "Audio URL",
+                        "value": "audio",
+                      },
+                      Object {
+                        "name": "Video URL",
+                        "value": "video",
+                      },
+                      Object {
+                        "name": "PDF Document URL",
+                        "value": "application",
+                      },
+                      Object {
+                        "name": "Upload Attachment",
+                        "value": "upload",
+                      },
+                    ]
+                  }
+                  placeholder="Select the file type"
+                  style="sm"
+                />
+              </div>
+              <React.Fragment>
+                <div
+                  className="url"
+                />
+                <div
+                  className="remove"
+                />
+              </React.Fragment>
             </div>
           </div>
           <input
@@ -133,20 +154,27 @@ exports[`SendMsgForm render should render 1`] = `
         "name": "Attachments",
       },
       Object {
-        "body": <CheckboxElement
-          checked={false}
-          description="Send a message to all destinations known for this contact. If you aren't sure what this means, leave it unchecked."
-          labelClassName="checkbox"
-          name="All Destinations"
-          onChange={[Function]}
-          title="All Destinations"
-        />,
+        "body": <React.Fragment>
+          <div
+            className="u font secondary body-md color-neutral-cloudy title"
+          >
+            Send a message to all destinations known for this contact.
+          </div>
+          <SwitchElement
+            checked={false}
+            description="If you aren't sure what this means, leave it unchecked."
+            name="Send a message to all destinations"
+            onChange={[Function]}
+            size="small"
+            title="Send a message to all destinations"
+          />
+        </React.Fragment>,
         "checked": false,
         "name": "Advanced",
       },
     ]
   }
-  title="Send Message"
+  title="Send message"
 >
   <TypeList
     __className=""
@@ -162,7 +190,7 @@ exports[`SendMsgForm render should render 1`] = `
           "templating.variables",
         ],
         "massageForDisplay": [Function],
-        "name": "Send Message",
+        "name": "Send message",
         "type": "send_msg",
       }
     }
@@ -179,11 +207,9 @@ exports[`SendMsgForm render should render 1`] = `
     focus={true}
     name="Message"
     onChange={[Function]}
-    showLabel={false}
+    placeholder="Type here..."
+    showLabel={true}
     textarea={true}
-  />
-  <temba-charcount
-    class="sms-counter"
   />
 </Dialog>
 `;

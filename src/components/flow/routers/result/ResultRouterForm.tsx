@@ -5,8 +5,8 @@ import { RouterFormProps } from 'components/flow/props';
 import CaseList, { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
-import CheckboxElement from 'components/form/checkbox/CheckboxElement';
 import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
+import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import * as React from 'react';
 import { Asset } from 'store/flowContext';
@@ -117,7 +117,7 @@ export default class ResultRouterForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -140,13 +140,13 @@ export default class ResultRouterForm extends React.Component<
   private renderField(): JSX.Element {
     return (
       <div className={styles.non_delimited}>
-        <div className={styles.lead_in}>If the flow result</div>
         <div className={styles.result_select}>
           <AssetSelector
             entry={this.state.result}
             style={TembaSelectStyle.small}
-            name={i18n.t('forms.flow_result', 'Flow Result')}
-            placeholder="Select Result"
+            name={i18n.t('forms.select_result_label')}
+            showLabel={true}
+            placeholder={i18n.t('forms.select_result_placeholder')}
             searchable={false}
             assets={this.props.assetStore.results}
             onChange={this.handleResultChanged}
@@ -202,18 +202,19 @@ export default class ResultRouterForm extends React.Component<
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
     const advanced: Tab = {
-      name: 'Advanced',
+      name: i18n.t('forms.advanced'),
       body: (
-        <div className={styles.should_delimit}>
-          <CheckboxElement
+        <div>
+          <SwitchElement
             name={i18n.t('forms.delimit', 'Delimit')}
-            title={i18n.t('forms.delimit_result', 'Delimit Result')}
+            title={i18n.t('forms.delimit_result')}
             checked={this.state.shouldDelimit}
             description={i18n.t(
               'forms.delimit_result_description',
               'Evaluate your rules against a delimited part of your result'
             )}
             onChange={this.handleShouldDelimitChanged}
+            size={SwitchSizes.small}
           />
         </div>
       ),
@@ -230,6 +231,10 @@ export default class ResultRouterForm extends React.Component<
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
 
         {this.state.shouldDelimit ? this.renderFieldDelimited() : this.renderField()}
+
+        <div className="u font secondary body-md color-neutral-cloudy">
+          {i18n.t('forms.message_label')}
+        </div>
 
         <CaseList
           data-spec="cases"

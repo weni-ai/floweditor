@@ -1,6 +1,15 @@
 import ParamElement, { ParamElementProps } from 'components/flow/routers/param/ParamElement';
 import * as React from 'react';
-import { fireEvent, render, fireTembaSelect, fireChangeText } from 'test/utils';
+import {
+  fireEvent,
+  render,
+  fireTembaSelect,
+  fireChangeText,
+  fireUnnnicInputChangeText,
+  fireUnnnicSelect,
+  getUnnnicSelectValue,
+  act
+} from 'test/utils';
 import { createUUID } from 'utils';
 
 const services = require('test/assets/external_services.json');
@@ -141,49 +150,85 @@ describe(ParamElement.name, () => {
         expect(onRemove).toHaveBeenCalled();
       });
 
-      it('handles data change', () => {
+      it('handles data change', async () => {
         const { baseElement, getByTestId } = render(
           <ParamElement {...omieParamProps} onRemove={jest.fn()} />
         );
-
-        fireChangeText(getByTestId('Service Call Param Data'), 'new data');
+        await act(async () => {
+          fireUnnnicInputChangeText(getByTestId('Service Call Param Data'), 'new data');
+        });
         expect(baseElement).toMatchSnapshot();
       });
 
-      it('handles filter change', () => {
+      it('handles filter change', async () => {
         const { baseElement, getByTestId } = render(
           <ParamElement {...omieParamProps} onRemove={jest.fn()} />
         );
 
-        fireTembaSelect(getByTestId('temba_select_service_call_param_filter'), [
-          {
-            name: 'nCodConta',
-            type: 'integer',
-            verboseName: 'Código da Conta'
-          }
-        ]);
+        await act(async () => {
+          fireUnnnicSelect(
+            getByTestId('temba_select_service_call_param_filter'),
+            {
+              value: [
+                {
+                  name: 'nCodConta',
+                  type: 'integer',
+                  verboseName: 'Código da Conta'
+                }
+              ]
+            },
+            'value'
+          );
+        });
         expect(baseElement).toMatchSnapshot();
       });
 
-      it('handles param change', () => {
+      it('handles param change', async () => {
         const { baseElement, getByTestId } = render(
           <ParamElement {...omieParamProps} onRemove={jest.fn()} />
         );
 
-        fireTembaSelect(getByTestId('temba_select_service_call_param'), [omieParams[2]]);
+        await act(async () => {
+          fireUnnnicSelect(
+            getByTestId('temba_select_service_call_param'),
+            { value: [omieParams[2]] },
+            'value'
+          );
+        });
+        expect(getUnnnicSelectValue(getByTestId('temba_select_service_call_param'))).toBe(
+          omieParams[2].type
+        );
         expect(baseElement).toMatchSnapshot();
       });
 
-      it('handles filter change from correct param after param change', () => {
+      it('handles filter change from correct param after param change', async () => {
         const { baseElement, getByTestId } = render(
           <ParamElement {...omieParamProps} onRemove={jest.fn()} />
         );
 
-        fireTembaSelect(getByTestId('temba_select_service_call_param'), [omieParams[2]]);
-        fireTembaSelect(getByTestId('temba_select_service_call_param_filter'), [
-          omieParams[2].filters[2]
-        ]);
-        fireChangeText(getByTestId('Service Call Param Data'), 'new data');
+        await act(async () => {
+          fireUnnnicSelect(
+            getByTestId('temba_select_service_call_param'),
+            { value: [omieParams[2]] },
+            'value'
+          );
+        });
+        await act(async () => {
+          fireUnnnicSelect(
+            getByTestId('temba_select_service_call_param_filter'),
+            { value: [omieParams[2].filters[2]] },
+            'value'
+          );
+        });
+        await act(async () => {
+          fireUnnnicInputChangeText(getByTestId('Service Call Param Data'), 'new data');
+        });
+        expect(getUnnnicSelectValue(getByTestId('temba_select_service_call_param'))).toBe(
+          omieParams[2].type
+        );
+        expect(getUnnnicSelectValue(getByTestId('temba_select_service_call_param_filter'))).toBe(
+          omieParams[2].filters[2].name
+        );
         expect(baseElement).toMatchSnapshot();
       });
     });

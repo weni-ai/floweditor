@@ -53,7 +53,7 @@ describe(SendMsgForm.name, () => {
         $merge: { onClose: jest.fn(), updateAction: jest.fn() }
       });
       instance.handleMessageUpdate("Don't save me bro", []);
-      instance.getButtons().secondary.onClick();
+      instance.getButtons().tertiary.onClick();
       expect(props.onClose).toHaveBeenCalled();
       expect(props.updateAction).not.toHaveBeenCalled();
     });

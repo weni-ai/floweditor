@@ -213,7 +213,7 @@ export default class WebhookRouterForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -233,6 +233,7 @@ export default class WebhookRouterForm extends React.Component<
               onRemove={this.handleHeaderRemoved}
               onChange={this.handleHeaderUpdated}
               index={index}
+              canRemove={index !== arr.length - 1}
             />
           </div>
         );
@@ -245,12 +246,12 @@ export default class WebhookRouterForm extends React.Component<
       hasErrors: !!this.state.headers.find((header: HeaderEntry) => hasErrors(header)),
       body: (
         <>
-          <p className={styles.info}>
+          <div className={`${styles.info} u font secondary body-md color-neutral-cloudy`}>
             <Trans i18nKey="forms.webhook_header_summary">
               Add any additional headers below that you would like to send along with your request.
             </Trans>
-          </p>
-          {headerElements}
+          </div>
+          <div className={styles.header_wrapper}>{headerElements}</div>
         </>
       ),
       checked: this.state.headers.length > 1
@@ -261,33 +262,29 @@ export default class WebhookRouterForm extends React.Component<
     tabs.push({
       name,
       body: (
-        <div key="post_body" className={styles.body_form}>
-          <h4>{name}</h4>
-          <p>
+        <div
+          key="post_body"
+          className={`${styles.body_form} u font secondary body-md color-neutral-cloudy`}
+        >
+          <div>
             <Trans
               i18nKey="forms.webhook_body_summary"
               values={{ method: this.state.method.value.name }}
             >
-              Modify the body of the [[method]] request that will be sent to your webhook.
+              Modify the body of the [[method]] request that will be sent to your webhook
             </Trans>
-          </p>
-          <TextInputElement
-            __className={styles.req_body}
-            name={name}
-            showLabel={false}
-            entry={this.state.body}
-            onChange={this.handleBodyUpdate}
-            helpText={
-              <Trans
-                i18nKey="forms.webhook_body_summary"
-                values={{ method: this.state.method.value.name }}
-              >
-                Modify the body of the [[method]] request that will be sent to your webhook.
-              </Trans>
-            }
-            autocomplete={true}
-            textarea={true}
-          />
+          </div>
+          <div className={styles.req_body}>
+            <TextInputElement
+              name={name}
+              showLabel={false}
+              entry={this.state.body}
+              onChange={this.handleBodyUpdate}
+              placeholder={i18n.t('forms.type_here', 'Type here...')}
+              autocomplete={true}
+              textarea={true}
+            />
+          </div>
         </div>
       ),
       checked: this.state.body.value !== getDefaultBody(method)
@@ -301,7 +298,7 @@ export default class WebhookRouterForm extends React.Component<
         tabs={tabs}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+        <div className={styles.url_container}>
           <div className={styles.method}>
             <SelectElement
               key="method_select"
@@ -321,21 +318,21 @@ export default class WebhookRouterForm extends React.Component<
             />
           </div>
         </div>
-        <div className={styles.instructions}>
-          <p>
+        <div className={`${styles.instructions} u font secondary body-md color-neutral-cloudy`}>
+          <div>
             <Trans i18nKey="forms.webhook_help">
               If your server responds with JSON, each property will be added to the Flow.
             </Trans>
-          </p>
+          </div>
           <pre className={styles.code}>
             {'{ "product": "Solar Charging Kit", "stock level": 32 }'}
           </pre>
-          <p>
+          <div>
             <Trans i18nKey="forms.webhook_example">
               This response would add <span className={styles.example}>@webhook.product</span> and{' '}
               <span className={styles.example}>@webhook["stock level"]</span> for use in the flow.
             </Trans>
-          </p>
+          </div>
         </div>
         {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
         {renderIssues(this.props)}

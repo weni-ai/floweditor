@@ -52,41 +52,25 @@
 .wait_for_digits,
 .wait_for_response,
 .wait_for_dial {
-  background: $dark_blue;
-}
-
-.add_contact_groups {
-  background: $green;
-}
-
-.remove_contact_groups {
-  background: $gray;
+  background: #086766 !important;
 }
 
 .send_email,
 .send_broadcast {
-  background: $purple;
+  background: #805AD5 !important;
 }
 
 .msg,
 .say_msg,
 .send_msg {
-  background: $blue;
+  background: $unnnic-color-brand-weni-soft !important;
 }
 
 .open_ticket,
 .transfer_airtime,
 .enter_flow,
 .start_session {
-  background: $pink;
-}
-
-.call_external_service {
-  background: $vivid_purple;
-}
-
-.set_run_result {
-  background: $dark_teal;
+  background: #DE16BA !important;
 }
 
 .add_input_labels,
@@ -95,30 +79,20 @@
 .set_contact_field,
 .set_contact_language,
 .set_contact_status,
-.set_contact_channel {
-  background: $teal;
+.set_contact_channel,
+.add_contact_groups,
+.set_run_result {
+  background: #38A169 !important;
+}
+
+.remove_contact_groups {
+  background: $unnnic-color-neutral-darkest !important;
 }
 
 .play_audio {
   background: $yellow;
 }
 
-.missing {
-  $color_1: tomato;
-  $color_2: lighten(tomato, 3%);
-
-  background-image: repeating-linear-gradient(
-    120deg,
-    $color_1,
-    $color_1 6px,
-    $color_2 6px,
-    $color_2 18px
-  ) !important;
-}
-
-.missing_asset {
-  color: $error_color;
-}
 
 .call_classifier,
 .split_by_random,
@@ -128,12 +102,21 @@
 .split_by_intent,
 .split_by_run_result,
 .split_by_scheme {
-  background: $dark_gray;
+  background: $unnnic-color-neutral-cloudy !important;
 }
 
 .call_resthook,
-.call_webhook {
-  background: $orange;
+.call_webhook,
+.call_external_service {
+  background: #DD6B20 !important;
+}
+
+.missing {
+  background: #E53E3E !important;
+}
+
+.missing_asset {
+  color: #E53E3E !important;
 }
 
 .breaks {
@@ -145,6 +128,9 @@
 }
 
 .node_asset {
+  display: inherit;
+  gap: 4px;
+  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -162,5 +148,5 @@
 }
 
 .alert {
-  background: $red;
+  background: #E53E3E;
 }

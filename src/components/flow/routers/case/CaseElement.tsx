@@ -17,6 +17,25 @@ import { initializeForm, validateCase } from './helpers';
 import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
 import i18n from 'config/i18n';
 import TembaSelect, { TembaSelectStyle } from 'temba/TembaSelect';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon, unnnicButton } from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      'data-draggable': 'true',
+      style: {
+        all: ''
+      }
+    }
+  }
+});
+
+const UnnnicButton = applyVueInReact(unnnicButton);
 
 export interface CaseElementProps {
   kase: Case;
@@ -332,8 +351,12 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 onChange={this.handleMinChanged}
                 entry={this.state.min}
                 autocomplete={true}
+                placeholder="0"
               />
-              <span className={styles.divider} data-draggable={true}>
+              <span
+                className={`${styles.divider} u font secondary body-md color-neutral-cloudy`}
+                data-draggable={true}
+              >
                 {i18n.t('forms.and', 'and')}
               </span>
               <TextInputElement
@@ -342,6 +365,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 onChange={this.handleMaxChanged}
                 entry={this.state.max}
                 autocomplete={true}
+                placeholder="100"
               />
             </>
           );
@@ -377,10 +401,13 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                   hideError={true}
                 ></SelectElement>
               </div>
-              <div className={styles.divider} data-draggable={true}>
-                above
+              <div
+                className={`${styles.divider} u font secondary body-md color-neutral-cloudy`}
+                data-draggable={true}
+              >
+                {i18n.t('forms.above')}
               </div>
-              <div style={{ width: '34px' }}>
+              <div style={{ width: '60px' }}>
                 <TextInputElement
                   name={i18n.t('forms.confidence', 'confidence')}
                   onChange={this.handleConfidenceChanged}
@@ -396,13 +423,16 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
             <>
               <TextInputElement
                 name={i18n.t('forms.state', 'State')}
-                placeholder="State"
+                placeholder={i18n.t('forms.state', 'State')}
                 onChange={this.handleStateChanged}
                 style={TextInputStyle.small}
                 entry={this.state.state}
               />
-              <span className={styles.divider} data-draggable={true}>
-                and
+              <span
+                className={`${styles.divider} u font secondary body-md color-neutral-cloudy`}
+                data-draggable={true}
+              >
+                {i18n.t('forms.and', 'and')}
               </span>
               <TextInputElement
                 name={i18n.t('forms.district', 'District')}
@@ -428,7 +458,9 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
               style={TextInputStyle.small}
               autocomplete={false}
             />
-            <span className={styles.divider}>days</span>
+            <span className={`${styles.divider} u font secondary body-md color-neutral-cloudy`}>
+              {i18n.t('forms.days')}
+            </span>
           </>
         );
       } else {
@@ -439,7 +471,11 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
             onChange={this.handleArgumentChanged}
             entry={this.state.argument}
             style={TextInputStyle.small}
-            placeholder={this.state.operatorConfig.type === Operators.has_district ? 'State' : ''}
+            placeholder={
+              this.state.operatorConfig.type === Operators.has_district
+                ? i18n.t('forms.state')
+                : i18n.t('forms.ex_cart', 'Ex: cart')
+            }
             autocomplete={true}
           />
         );
@@ -461,43 +497,68 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
           className={`${styles.kase} ${styles[this.state.operatorConfig.type]}`}
           data-draggable={true}
         >
-          <span className={`fe-chevrons-expand ${styles.dnd_icon}`} data-draggable={true} />
-          <div className={styles.choice}>
-            <TembaSelect
-              name={i18n.t('forms.operator', 'operator')}
-              style={TembaSelectStyle.small}
-              options={this.getOperators()}
-              nameKey="verboseName"
-              valueKey="type"
-              onChange={this.handleOperatorChanged}
-              value={this.state.operatorConfig}
-            ></TembaSelect>
+          <div className={styles.operator_container}>
+            <span className={styles.move_icon} data-draggable={true}>
+              <UnnnicButton
+                iconCenter={'move-expand-vertical-1'}
+                size="small"
+                data-draggable={true}
+                type="terciary"
+              />
+            </span>
+
+            <div className={styles.choice}>
+              <TembaSelect
+                name={i18n.t('forms.operator', 'operator')}
+                style={TembaSelectStyle.small}
+                options={this.getOperators()}
+                nameKey="verboseName"
+                valueKey="type"
+                onChange={this.handleOperatorChanged}
+                value={this.state.operatorConfig}
+              ></TembaSelect>
+            </div>
+            <div
+              className={
+                this.state.operatorConfig.operands > 1
+                  ? styles.multi_operand
+                  : styles.single_operand
+              }
+            >
+              {this.renderArguments()}
+            </div>
           </div>
-          <div
-            className={
-              this.state.operatorConfig.operands > 1 ? styles.multi_operand : styles.single_operand
-            }
-          >
-            {this.renderArguments()}
+          <div className={styles.categorize_as_container}>
+            <div
+              className={`${styles.categorize_as} u font secondary body-md color-neutral-cloudy`}
+              data-draggable={true}
+            >
+              {i18n.t('forms.categorize_as')}
+            </div>
+            <div className={styles.category}>
+              <TextInputElement
+                name={i18n.t('forms.exit_name', 'Exit Name')}
+                style={TextInputStyle.small}
+                onChange={this.handleExitChanged}
+                entry={this.state.categoryName}
+                maxLength={36}
+                showInvalid={hasErrorType(this.state.errors, [/category/])}
+                placeholder={i18n.t('forms.ex_shop', 'Ex: shopping')}
+              />
+            </div>
+
+            <span className={styles.remove_icon_wrapper} data-draggable={true}>
+              <UnnnicIcon
+                className={styles.remove_icon}
+                data-testid={'remove-case-' + this.props.kase.uuid}
+                icon="delete-1-1"
+                size="sm"
+                scheme="neutral-cloudy"
+                onClick={this.handleRemoveClicked}
+                clickable
+              />
+            </span>
           </div>
-          <div className={styles.categorize_as} data-draggable={true}>
-            {i18n.t('forms.categorize_as', 'categorize as')}
-          </div>
-          <div className={styles.category}>
-            <TextInputElement
-              name={i18n.t('forms.exit_name', 'Exit Name')}
-              style={TextInputStyle.small}
-              onChange={this.handleExitChanged}
-              entry={this.state.categoryName}
-              maxLength={36}
-              showInvalid={hasErrorType(this.state.errors, [/category/])}
-            />
-          </div>
-          <span
-            data-testid={'remove-case-' + this.props.kase.uuid}
-            className={`fe-x ${styles.remove_icon}`}
-            onClick={this.handleRemoveClicked}
-          />
         </div>
       </FormElement>
     );

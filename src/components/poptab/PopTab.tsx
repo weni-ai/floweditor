@@ -1,10 +1,16 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
+import { applyVueInReact } from 'vuereact-combined';
 
 import styles from './PopTab.module.scss';
 
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+
 export interface PopTabProps {
+  type?: string;
   color: string;
+  bgColor?: string;
   icon: string;
   label: string;
   header: string;
@@ -18,12 +24,14 @@ export interface PopTabState {
   width: number;
 }
 
+const UnnnicIcon = applyVueInReact(unnnicIcon);
+
 export class PopTab extends React.Component<PopTabProps, PopTabState> {
   private poppedEle: HTMLDivElement;
 
   constructor(props: PopTabProps) {
     super(props);
-    this.state = { width: 258 };
+    this.state = { width: 250 };
 
     bindCallbacks(this, {
       include: [/^handle/]
@@ -65,27 +73,32 @@ export class PopTab extends React.Component<PopTabProps, PopTabState> {
             onClick={this.handleTabClick}
           >
             <div className={styles.icon}>
-              <span className={this.props.icon} />
+              <UnnnicIcon icon={this.props.icon} size="lg" scheme="neutral-snow" />
             </div>
             <div className={styles.label}>{this.props.label}</div>
           </div>
         </div>
         <div
           ref={this.handlePoppedRef}
-          className={styles.popped}
+          className={`${styles.popped} ${styles[this.props.type]}`}
           style={{
-            borderColor: this.props.color,
+            borderColor: this.props.type !== 'revisions' && this.props.color,
             right: this.props.visible ? 15 + this.state.width : 0,
             top: -100
           }}
         >
           <div className={styles.header} style={{ background: this.props.color }}>
             <div className={styles.close + ' fe-x'} onClick={this.handleClose} />
-            <div className={styles.header_label}>{this.props.header}</div>
           </div>
-          <div className={styles.body} style={{ background: this.props.color }}>
+          <div
+            className={styles.body}
+            style={{ background: this.props.bgColor || this.props.color }}
+          >
             {this.props.children}
           </div>
+          {this.props.type === 'revisions' && (
+            <div className={styles.footer} style={{ background: this.props.color }} />
+          )}
         </div>
       </div>
     );

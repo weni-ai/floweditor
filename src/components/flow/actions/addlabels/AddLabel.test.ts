@@ -26,7 +26,8 @@ describe(AddLabelsComp.name, () => {
 
     // Assert that we're displaying the max labels
     // we want to display plus an ellipses.
-    expect(wrapper.find('div').length).toBe(MAX_TO_SHOW);
+    // the plus one is to include de center wrapper
+    expect(wrapper.find('div').length).toBe(MAX_TO_SHOW + 1);
     expect(wrapper).toMatchSnapshot();
   });
 });

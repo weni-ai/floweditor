@@ -5,7 +5,7 @@ exports[`SendEmailForm render should render 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -15,21 +15,21 @@ exports[`SendEmailForm render should render 1`] = `
     }
   }
   headerClass="send_email"
-  title="Send Email"
+  title="Send email"
 >
   <TypeList
     __className=""
     initialType={
       Object {
         "component": [Function],
-        "description": "Send an email",
+        "description": "Send email",
         "form": [Function],
         "localization": [Function],
         "localizeableKeys": Array [
           "subject",
           "body",
         ],
-        "name": "Send Email",
+        "name": "Send email",
         "type": "send_email",
         "visibility": Array [
           "messaging",
@@ -43,46 +43,67 @@ exports[`SendEmailForm render should render 1`] = `
   <div
     className="ele"
   >
-    <TaggingElement
-      createPrompt=""
-      entry={
-        Object {
-          "value": Array [
-            "jane@example.com",
-          ],
-        }
-      }
-      name="Recipient"
-      onChange={[Function]}
-      onCheckValid={[Function]}
-      placeholder="To"
-      prompt="Enter email address"
-    />
     <TextInputElement
       __className="subject"
-      autocomplete={true}
       entry={
         Object {
-          "value": "New Sign Up",
+          "value": "",
         }
       }
-      name="Subject"
+      iconRight="keyboard-return-1"
+      name="Recipient"
       onChange={[Function]}
-      placeholder="Subject"
+      onKeyDown={[Function]}
+      onKeyPressEnter={[Function]}
+      placeholder="Email"
+      showLabel={true}
     />
-    <TextInputElement
-      __className="message"
-      autocomplete={true}
-      entry={
-        Object {
-          "value": "@run.results.name just signed up.",
+    <div
+      className="pills"
+    >
+      <div
+        className="pill u font secondary body-md color-neutral-darkest"
+        key="0"
+      >
+        jane@example.com
+        <ForwardRef
+          clickable={true}
+          icon="close-1"
+          onClick={[Function]}
+          scheme="neutral-darkest"
+          size="xs"
+        />
+      </div>
+    </div>
+    <div>
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          Object {
+            "value": "New Sign Up",
+          }
         }
-      }
-      name="Message"
-      onChange={[Function]}
-      showLabel={false}
-      textarea={true}
-    />
+        name="Subject"
+        onChange={[Function]}
+        placeholder="Ex: Your order has been delivered"
+        showLabel={true}
+      />
+    </div>
+    <div>
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          Object {
+            "value": "@run.results.name just signed up.",
+          }
+        }
+        name="E-mail text"
+        onChange={[Function]}
+        placeholder="Type here..."
+        showLabel={true}
+        textarea={true}
+      />
+    </div>
   </div>
 </Dialog>
 `;
@@ -108,6 +129,10 @@ Object {
     "validationFailures": Array [],
     "value": "What is a group of tigers called?",
   },
+  "recipient": Object {
+    "value": "",
+  },
+  "recipientError": undefined,
   "recipients": Object {
     "validationFailures": Array [],
     "value": Array [

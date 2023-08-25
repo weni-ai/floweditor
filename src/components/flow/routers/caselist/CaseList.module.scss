@@ -3,7 +3,7 @@
 .case_list_container {
   overflow: hidden;
   border-radius: $curvature;
-  margin-top: 8px;
+  margin-top: $unnnic-spacing-stack-xs + $unnnic-spacing-stack-nano;
   &:focus {
     outline: none;
   }
@@ -14,18 +14,20 @@
   }
 
   .case_list {
-    margin: 4px 0px;
+    display: flex;
+    flex-direction: column;
     position: relative;
     overflow-y: auto;
     max-height: 190px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    row-gap: $unnnic-spacing-stack-xs + $unnnic-spacing-stack-nano;
   }
 }
 
-.kase {
+.card_z_index {
   z-index: 2000;
+}
 
+.kase {
   &:last-child {
     :global {
       .fe-x {

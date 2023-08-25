@@ -1,7 +1,16 @@
 import CaseList from 'components/flow/routers/caselist/CaseList';
 import { Operators } from 'config/interfaces';
 import React from 'react';
-import { fireEvent, fireTembaSelect, render, waitForDomChange } from 'test/utils';
+import {
+  act,
+  fireEvent,
+  fireTembaSelect,
+  fireUnnnicInputChangeText,
+  fireUnnnicSelect,
+  getUnnnicSelectValue,
+  render,
+  waitForDomChange
+} from 'test/utils';
 import { mock } from 'testUtils';
 import * as utils from 'utils';
 
@@ -62,20 +71,22 @@ describe(CaseList.name, () => {
       expect(queryByTestId(removeCase)).toBeNull();
     });
 
-    it('should update cases', () => {
+    it('should update cases', async () => {
       const onCasesUpdated = jest.fn();
-      const { baseElement, getByDisplayValue } = render(
+      const { baseElement, getAllByTestId } = render(
         <CaseList cases={cases} onCasesUpdated={onCasesUpdated} />
       );
 
-      const argsInput = getByDisplayValue('Red, r') as any;
-      fireEvent.change(argsInput, { target: { value: 'Purple, p' } });
+      const argsInput = getAllByTestId('arguments')[0] as any;
+      await act(async () => {
+        fireUnnnicInputChangeText(argsInput, 'Purple, p');
+      });
 
-      expect(onCasesUpdated).toHaveBeenCalledTimes(4);
+      expect(onCasesUpdated).toHaveBeenCalledTimes(5);
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('changes default operator on add', () => {
+    it('changes default operator on add', async () => {
       const onCasesUpdated = jest.fn();
 
       // start with an empty list
@@ -87,20 +98,22 @@ describe(CaseList.name, () => {
       expect(getAllByTestId('temba_select_operator').length).toBe(1);
 
       // switch default to greater than operator and populate it
-      fireTembaSelect(getAllByTestId('temba_select_operator')[0], [
-        { type: Operators.has_number_gt }
-      ]);
+      fireUnnnicSelect(
+        getAllByTestId('temba_select_operator')[0],
+        { value: [{ type: Operators.has_number_gt }] },
+        'value'
+      );
       const argsInput = getAllByTestId('arguments')[0];
-      fireEvent.change(argsInput, { target: { value: '42' } });
+      await act(async () => {
+        fireUnnnicInputChangeText(argsInput, '42');
+      });
 
       // now we should have two rules
       expect(getAllByTestId('temba_select_operator').length).toBe(2);
 
       // our new default operator should match the last one we entered
       const newOperator = getAllByTestId('temba_select_operator')[1];
-      expect(newOperator.getAttribute('values')).toBe(
-        JSON.stringify([{ type: 'has_number_gt', verboseName: 'has a number above', operands: 1 }])
-      );
+      expect(getUnnnicSelectValue(newOperator)).toBe('has_number_gt');
 
       expect(baseElement).toMatchSnapshot();
     });

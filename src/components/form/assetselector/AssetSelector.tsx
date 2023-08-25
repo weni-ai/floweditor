@@ -9,8 +9,11 @@ import styles from './AssetSelector.module.scss';
 import i18n from 'config/i18n';
 import TembaSelect, { TembaSelectStyle } from 'temba/TembaSelect';
 import { sortByName } from './helpers';
+import { getAllErrorMessages } from '../../flow/actions/helpers';
 
 export interface AssetSelectorProps extends FormElementProps {
+  namePure?: string;
+
   assets?: Assets;
   onChange: (selected: Asset[]) => void;
 
@@ -131,6 +134,7 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
       if (toCreate) {
         // filter it out
         selected = selected.filter((option: any) => !option.arbitrary);
+        this.props.onChange(selected);
         this.handleCreateOption(toCreate.name);
       } else {
         this.props.onChange(selected);
@@ -199,7 +203,12 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
     const fallbackPlaceholder = i18n.t(
       'asset_selector.placeholder',
       'Select existing [[name]] or enter a new one',
-      { name: this.props.name.toLocaleLowerCase(), count: this.props.multi ? 1000 : 1 }
+      {
+        name:
+          (this.props.namePure && this.props.namePure.toLocaleLowerCase()) ||
+          this.props.name.toLocaleLowerCase(),
+        count: this.props.multi ? 1000 : 1
+      }
     );
 
     return (
@@ -227,7 +236,7 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
           multi={this.props.multi}
           expressions={this.props.expressions}
           value={this.state.entry.value}
-          errors={this.state.message ? [this.state.message] : []}
+          errors={getAllErrorMessages(this.state.entry)}
           searchable={this.props.searchable}
           cacheKey={this.lastCreation + ''}
           options={this.options}

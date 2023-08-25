@@ -8,6 +8,10 @@ import * as React from 'react';
 import { StringEntry, ValidationFailure } from 'store/nodeEditor';
 import { HeaderName, validate } from 'store/validators';
 import i18n from 'config/i18n';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
 
 // TODO: move this into webhook router component
 export interface Header {
@@ -22,11 +26,13 @@ export interface HeaderElementProps {
   onRemove: (header: Header) => void;
   onChange: (header: Header, validationFailures: ValidationFailure[]) => void;
   empty?: boolean;
+  canRemove?: boolean;
 }
 
 interface HeaderElementState {
   name: StringEntry;
   value: StringEntry;
+  errors: string[];
 }
 
 export const headerContainerSpecId = 'header-container';
@@ -38,8 +44,10 @@ export const HEADER_NAME_ERROR = i18n.t(
   'errors.http_header_missing_name',
   'HTTP headers must have a name'
 );
-export const NAME_PLACEHOLDER = i18n.t('forms.webhook_header_name', 'Header Name');
-export const VALUE_PLACEHOLDER = i18n.t('forms.value', 'Value');
+export const NAME_PLACEHOLDER = i18n.t('forms.ex_accept', 'Ex: Accept');
+export const VALUE_PLACEHOLDER = i18n.t('forms.ex_application_json', 'Ex: application/json');
+
+const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 export default class HeaderElement extends React.Component<HeaderElementProps, HeaderElementState> {
   constructor(props: HeaderElementProps) {
@@ -51,7 +59,8 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
 
     this.state = {
       name: { value: name },
-      value: { value }
+      value: { value },
+      errors: []
     };
 
     bindCallbacks(this, {
@@ -69,7 +78,12 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
 
   private handleChangeName(value: string): void {
     const name = validate(i18n.t('forms.header_name', 'Header name'), value, [HeaderName]);
-    this.setState({ name: { value: name.value } }, () =>
+
+    const errors = getAllErrors(this.state.value)
+      .concat(getAllErrors(name))
+      .map(({ message }) => message);
+
+    this.setState({ name: { value: name.value }, errors }, () =>
       this.props.onChange(
         this.getHeader(),
         getAllErrors(this.state.value).concat(getAllErrors(name))
@@ -95,8 +109,17 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
 
   private getRemoveIco(): JSX.Element {
     return (
-      <div className={styles.remove_ico} onClick={this.handleRemove} data-spec={removeIcoSpecId}>
-        <span className="fe-x" />
+      <div className={styles.remove_icon}>
+        {this.props.canRemove ? (
+          <UnnnicIcon
+            icon="delete-1-1"
+            size="sm"
+            scheme="neutral-cloudy"
+            clickable
+            onClick={this.handleRemove}
+            data-spec={removeIcoSpecId}
+          />
+        ) : null}
       </div>
     );
   }
@@ -112,6 +135,7 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
               name={NAME_PLACEHOLDER}
               onChange={this.handleChangeName}
               entry={this.state.name}
+              error={this.state.errors.length ? this.state.errors.join(', ') : undefined}
             />
           </div>
           <div className={styles.header_value} data-spec={valueConatainerSpecId}>
@@ -121,6 +145,7 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
               onChange={this.handleChangeValue}
               entry={this.state.value}
               autocomplete={true}
+              error={this.state.errors.length ? '' : undefined}
             />
           </div>
           {removeIco}

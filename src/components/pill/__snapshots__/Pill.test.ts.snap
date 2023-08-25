@@ -1,19 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pill renders 1`] = `
-<div
-  className="pill"
+<ForwardRef
+  clickable={false}
   data-advanced={false}
->
-  This is my...
-</div>
+  text="This is my..."
+/>
 `;
 
 exports[`Pill treats @ text differently 1`] = `
-<div
-  className="pill"
+<ForwardRef
+  clickable={false}
   data-advanced={false}
->
-  @(exp)
-</div>
+  text="@(exp)"
+/>
 `;

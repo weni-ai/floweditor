@@ -13,6 +13,8 @@ import { shouldRequireIf, validate } from 'store/validators';
 import i18n from 'config/i18n';
 import { renderIssues } from '../helpers';
 
+import styles from './SendBroadcast.module.scss';
+
 export interface SendBroadcastFormState extends FormState {
   message: StringEntry;
   recipients: AssetArrayEntry;
@@ -84,7 +86,7 @@ export default class SendBroadcastForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -97,26 +99,31 @@ export default class SendBroadcastForm extends React.Component<
     return (
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <AssetSelector
-          name={i18n.t('forms.recipients', 'Recipients')}
-          placeholder={i18n.t('forms.select_contacts', 'Select Contacts')}
-          assets={this.props.assetStore.recipients}
-          entry={this.state.recipients}
-          searchable={true}
-          multi={true}
-          expressions={true}
-          onChange={this.handleRecipientsChanged}
-        />
-        <p />
+
+        <div className={styles.recipients_container}>
+          <AssetSelector
+            name={i18n.t('forms.select_contacts', 'Select Contacts')}
+            placeholder={i18n.t('forms.select_contacts', 'Select Contacts')}
+            assets={this.props.assetStore.recipients}
+            entry={this.state.recipients}
+            searchable={true}
+            multi={true}
+            expressions={true}
+            onChange={this.handleRecipientsChanged}
+            showLabel={true}
+          />
+        </div>
+
         <TextInputElement
           name={i18n.t('forms.message', 'Message')}
-          showLabel={false}
+          showLabel={true}
           count={Count.SMS}
           onChange={this.handleMessageUpdate}
           entry={this.state.message}
           autocomplete={true}
           focus={true}
           textarea={true}
+          placeholder={i18n.t('forms.type_here', 'Type here...')}
         />
         {renderIssues(this.props)}
       </Dialog>

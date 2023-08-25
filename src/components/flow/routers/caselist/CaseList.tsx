@@ -206,6 +206,7 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
         <this.sortableList
           items={this.state.currentCases}
           onSortEnd={this.handleSortEnd}
+          helperClass={styles.card_z_index}
           shouldCancelStart={(e: React.MouseEvent<HTMLDivElement>) => {
             if (!(e.target instanceof HTMLElement)) {
               return true;

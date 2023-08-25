@@ -7,17 +7,10 @@ $spacing: 10px;
   margin-bottom: 0px;
 }
 
-textarea:focus,
-input:focus {
-  outline: none;
-}
-
 .divider {
-  padding-left: $spacing;
-  padding-right: $spacing;
+  padding-left: $unnnic-spacing-inline-sm;
+  padding-right: $unnnic-spacing-inline-sm;
   vertical-align: sub;
-  font-size: 13px;
-  line-height: 13px;
   margin-top: 4px;
 }
 
@@ -27,46 +20,61 @@ input:focus {
 
 .param {
   display: flex;
-  gap: 8px;
-  align-items: center;
+  gap: $unnnic-spacing-inline-xs;
   user-select: none;
-  margin-bottom: 5px;
 
   .form_group {
     margin: 0;
   }
 
   .choice {
-    width: 160px;
     flex: 1;
+
+    &.disabled {
+      input {
+        border: 1px solid $unnnic-color-neutral-clean !important;
+      }
+    }
+  }
+
+  .moveIcon {
+    align-self: center;
+      
+    button {
+      padding: 0 !important;
+      width: $unnnic-icon-size-sm;
+      height: $unnnic-icon-size-sm;
+
+      &:hover {
+
+        &:after {
+          border: none;
+        }
+      }
+
+      span {
+        min-width: unset;
+        min-height: unset;
+      }
+
+      svg > path {
+        fill: $unnnic-color-neutral-cloudy;
+      }
+    }
   }
 
   .single_operand {
     display: inline-flex;
-    align-items: center;
     position: relative;
     margin-left: $spacing;
 
     width: 184px;
-
-    input {
-      width: 170px;
-    }
   }
 
   .multi_operand {
     display: inline-flex;
-    align-items: center;
     margin-left: $spacing;
     width: 184px;
-
-    input[name='intent'] {
-      width: 105px;
-    }
-
-    input[name='confidence'] {
-      padding: 10px 6px !important;
-    }
   }
 
   .categorize_as {
@@ -94,20 +102,9 @@ input:focus {
     }
   }
 
-  input {
-    padding: 6px 7px;
-    height: 29px !important;
-    margin-bottom: -4px;
-    font-size: 13px !important;
-  }
-
   .relative_date {
     display: inline-block;
     width: 50px;
-
-    input {
-      width: 50px;
-    }
   }
 }
 
@@ -127,12 +124,16 @@ input:focus {
   color: #aaa;
   padding-top: 8px;
   float: right;
-  opacity: 0;
   line-height: 12px;
   cursor: pointer;
   margin-left: 2px;
+  margin-top: 8px;
   font-size: 9px;
   z-index: 3000;
+}
+
+.move_icon {
+  margin-top: 8px;
 }
 
 .remove_filler {

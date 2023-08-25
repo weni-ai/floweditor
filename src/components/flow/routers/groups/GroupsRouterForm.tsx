@@ -75,7 +75,7 @@ export default class GroupsRouterForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -89,9 +89,11 @@ export default class GroupsRouterForm extends React.Component<
     return (
       <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <p>{GROUP_LABEL}</p>
+
         <AssetSelector
-          name={i18n.t('forms.groups', 'Groups')}
+          name={GROUP_LABEL}
+          namePure={i18n.t('forms.groups')}
+          showLabel={true}
           assets={this.props.assetStore.groups}
           entry={this.state.groups}
           searchable={true}

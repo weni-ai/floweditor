@@ -7,6 +7,25 @@ import { Trans } from 'react-i18next';
 import shared from 'components/shared.module.scss';
 import { showHelpArticle } from 'external';
 import { IssueProps } from '../props';
+import { applyVueInReact } from 'vuereact-combined';
+
+import styles from './helpers.module.scss';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+        display: 'inline-block'
+      }
+    }
+  }
+});
 
 export const renderIssues = (issueProps: IssueProps): JSX.Element => {
   const { issues, helpArticles } = issueProps;
@@ -16,7 +35,7 @@ export const renderIssues = (issueProps: IssueProps): JSX.Element => {
 
   return (
     <div style={{ padding: '10px 0px' }}>
-      {issues.map((issue: FlowIssue, num: Number) => {
+      {issues.map((issue: FlowIssue, num: number) => {
         const key = issue.node_uuid + issue.action_uuid + num;
         return (
           <div
@@ -141,22 +160,47 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
     case AssetType.Classifier:
       assetBody = (
         <Trans i18nKey="assets.classifier" values={{ name: asset.name }}>
-          Call [[name]] classifier
+          Call <b>[[name]]</b> classifier
         </Trans>
       );
       break;
     case AssetType.Group:
       assetBody = (
         <>
-          <span className={`${shared.node_group} fe-group`} />
-          {asset.name}
+          <UnnnicIcon
+            icon="single-neutral-actions-1"
+            size="avatar-nano"
+            scheme="neutral-dark"
+            className={styles.icon}
+          />
+
+          <span className={styles.link + ' ' + styles.truncated}>{asset.name}</span>
+        </>
+      );
+      break;
+    case AssetType.Contact:
+      assetBody = (
+        <>
+          <UnnnicIcon
+            icon="single-neutral-actions-1"
+            size="avatar-nano"
+            scheme="neutral-dark"
+            className={styles.icon}
+          />
+
+          <span className={styles.link + ' ' + styles.truncated}>{asset.name}</span>
         </>
       );
       break;
     case AssetType.Label:
       assetBody = (
         <>
-          <span className={`${shared.node_label} fe-label`} />
+          <UnnnicIcon
+            icon="bookmark-tag-1"
+            size="avatar-nano"
+            scheme="neutral-dark"
+            className={styles.icon}
+          />
           {asset.name}
         </>
       );
@@ -164,7 +208,13 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
     case AssetType.Flow:
       assetBody = (
         <>
-          <span className={`${shared.node_label} fe-split`} />
+          <UnnnicIcon
+            icon="hierarchy-3-2"
+            size="avatar-nano"
+            scheme="neutral-dark"
+            className={styles.icon}
+          />
+
           <a
             onMouseDown={(e: any) => {
               e.preventDefault();
@@ -177,6 +227,7 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
             href={`${endpoints.editor}/${asset.id}`}
             rel="noopener noreferrer"
             target="_blank"
+            className={styles.link}
           >
             {asset.name}
           </a>

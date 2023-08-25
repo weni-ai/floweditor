@@ -12,7 +12,7 @@ import {
 import { ActionFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
 import { hasUseableTranslation } from 'components/form/assetselector/helpers';
-import CheckboxElement from 'components/form/checkbox/CheckboxElement';
+import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
 import MultiChoiceInput from 'components/form/multichoice/MultiChoice';
 import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
 import TextInputElement from 'components/form/textinput/TextInputElement';
@@ -161,8 +161,8 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
-      secondary: {
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
+      tertiary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
       }
@@ -319,21 +319,21 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     const typeConfig = this.props.typeConfig;
 
     const quickReplies: Tab = {
-      name: i18n.t('forms.quick_replies', 'Quick Replies'),
+      name: i18n.t('forms.quick_replies'),
       body: (
         <>
-          <p>
+          <div
+            className={`${styles.quick_reply_summary} u font secondary body-md color-neutral-cloudy`}
+          >
             {i18n.t(
               'forms.quick_replies_summary',
               'Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for "Yes" and one for "No".'
             )}
-          </p>
+          </div>
 
           <MultiChoiceInput
-            name={i18n.t('forms.quick_reply', 'quick_reply')}
-            helpText={
-              <Trans i18nKey="forms.add_quick_reply">Add a new Quick Reply and press enter.</Trans>
-            }
+            name={i18n.t('forms.add_quick_reply', 'Add a new Quick Reply and press enter')}
+            helpText={<Trans i18nKey="forms.quick_replies" />}
             items={this.state.quickReplies}
             entry={this.state.quickReplyEntry}
             onChange={this.handleQuickRepliesUpdate}
@@ -359,17 +359,26 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     const advanced: Tab = {
       name: i18n.t('forms.advanced', 'Advanced'),
       body: (
-        <CheckboxElement
-          name={i18n.t('forms.all_destinations', 'All Destinations')}
-          title={i18n.t('forms.all_destinations', 'All Destinations')}
-          labelClassName={styles.checkbox}
-          checked={this.state.sendAll}
-          description={i18n.t(
-            'forms.all_destinations_description',
-            "Send a message to all destinations known for this contact. If you aren't sure what this means, leave it unchecked."
-          )}
-          onChange={this.handleSendAllUpdate}
-        />
+        <>
+          <div className={`u font secondary body-md color-neutral-cloudy ${styles.title}`}>
+            {i18n.t(
+              'forms.all_destinations_title',
+              'Send a message to all destinations known for this contact.'
+            )}
+          </div>
+
+          <SwitchElement
+            name={i18n.t('forms.all_destinations', 'Send a message to all destinations')}
+            title={i18n.t('forms.all_destinations', 'Send a message to all destinations')}
+            checked={this.state.sendAll}
+            description={i18n.t(
+              'forms.all_destinations_description',
+              "If you aren't sure what this means, leave it unchecked."
+            )}
+            onChange={this.handleSendAllUpdate}
+            size={SwitchSizes.small}
+          />
+        </>
       ),
       checked: this.state.sendAll
     };
@@ -405,15 +414,15 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <TextInputElement
           name={i18n.t('forms.message', 'Message')}
-          showLabel={false}
+          showLabel={true}
           counter=".sms-counter"
           onChange={this.handleMessageUpdate}
           entry={this.state.message}
           autocomplete={true}
           focus={true}
           textarea={true}
+          placeholder={i18n.t('forms.type_here', 'Type here...')}
         />
-        <temba-charcount class="sms-counter"></temba-charcount>
         {renderIssues(this.props)}
       </Dialog>
     );

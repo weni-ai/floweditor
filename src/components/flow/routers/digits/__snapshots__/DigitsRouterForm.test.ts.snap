@@ -93,22 +93,10 @@ exports[`DigitsRouterForm initializes 1`] = `
     }
   />
   <OptionalTextInput
-    helpText={
-      <Trans
-        i18nKey="forms.result_name_help"
-        values={
-          Object {
-            "resultFormat": "@results",
-          }
-        }
-      >
-        By naming the result, you can reference it later using [[resultFormat]]
-      </Trans>
-    }
     maxLength={64}
-    name="Result Name"
+    name="Save as result"
     onChange={[Function]}
-    toggleText="Save as.."
+    toggleText="Save as"
     value={
       Object {
         "value": "",
@@ -211,22 +199,10 @@ exports[`DigitsRouterForm should render 1`] = `
     }
   />
   <OptionalTextInput
-    helpText={
-      <Trans
-        i18nKey="forms.result_name_help"
-        values={
-          Object {
-            "resultFormat": "@results",
-          }
-        }
-      >
-        By naming the result, you can reference it later using [[resultFormat]]
-      </Trans>
-    }
     maxLength={64}
-    name="Result Name"
+    name="Save as result"
     onChange={[Function]}
-    toggleText="Save as.."
+    toggleText="Save as"
     value={
       Object {
         "value": "",

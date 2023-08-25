@@ -8,13 +8,15 @@ exports[`RevisionExplorer render should render base component 1`] = `
     className="mask"
   />
   <PopTab
-    color="#8e5ea7"
+    bgColor="#FFFFFF"
+    color="#67738B"
     header="Revisions"
-    icon="fe-time"
+    icon="synchronize-arrow-clock-4"
     label="Revision History"
     onHide={[Function]}
     onShow={[Function]}
-    top="360px"
+    top="348px"
+    type="revisions"
     visible={false}
   >
     <div
@@ -32,17 +34,17 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="button current"
-            >
-              current
-            </div>
-            <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 11, 2019, 9:34 PM
+              <div
+                className="tag u font secondary body-sm color-neutral-cloudy current"
+              >
+                current
+              </div>
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -53,12 +55,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 11, 2019, 9:34 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -69,12 +71,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 11, 2019, 9:34 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -85,12 +87,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 11, 2019, 8:34 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -101,12 +103,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 11, 2019, 8:34 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -117,12 +119,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 6:00 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -133,12 +135,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:59 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -149,12 +151,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:59 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -165,12 +167,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:59 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -181,12 +183,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:59 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -197,12 +199,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:59 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -213,12 +215,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:59 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -229,12 +231,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:59 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -245,12 +247,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:58 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -261,12 +263,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:58 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -277,12 +279,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:58 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -293,12 +295,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:58 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -309,12 +311,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 5:58 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -325,12 +327,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 6, 2019, 1:18 AM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -341,12 +343,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 5, 2019, 11:16 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -357,12 +359,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               February 1, 2019, 6:23 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               System Update
             </div>
@@ -373,12 +375,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               January 31, 2019, 9:32 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -389,12 +391,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               January 31, 2019, 9:30 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -405,12 +407,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               January 31, 2019, 9:30 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>
@@ -421,12 +423,12 @@ exports[`RevisionExplorer render should render base component 1`] = `
             onClick={[Function]}
           >
             <div
-              className="created_on"
+              className="title u font secondary body-gt color-neutral-darkest"
             >
               January 31, 2019, 9:30 PM
             </div>
             <div
-              className="email"
+              className="u font secondary body-md color-neutral-cloudy"
             >
               org1.admin@nyaruka.com
             </div>

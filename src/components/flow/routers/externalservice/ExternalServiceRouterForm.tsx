@@ -184,20 +184,23 @@ export default class ExternalServiceRouterForm extends React.Component<
 
   private handleSave(): void {
     // remove the last param if they are not required as it is an empty one
-    try {
-      const lastParam = this.state.params.value.length > 0 && this.state.params.value.slice(-1)[0];
-      if (lastParam && (!lastParam.data || !lastParam.data.value)) {
-        const hasFilters = lastParam.required || lastParam.filters;
-        const hasSelectedFilter =
-          typeof lastParam.filter.value === 'object' && lastParam.filter.value;
-        const isRequired =
-          lastParam.required || (lastParam.filter.value && lastParam.filter.value.required);
+    if (!this.state.call.value.disableEmptyParams) {
+      try {
+        const lastParam =
+          this.state.params.value.length > 0 && this.state.params.value.slice(-1)[0];
+        if (lastParam && (!lastParam.data || !lastParam.data.value)) {
+          const hasFilters = lastParam.required || lastParam.filters;
+          const hasSelectedFilter =
+            typeof lastParam.filter.value === 'object' && lastParam.filter.value;
+          const isRequired =
+            lastParam.required || (lastParam.filter.value && lastParam.filter.value.required);
 
-        if (!hasFilters || !hasSelectedFilter || !isRequired) {
-          this.state.params.value.pop();
+          if (!hasFilters || !hasSelectedFilter || !isRequired) {
+            this.state.params.value.pop();
+          }
         }
-      }
-    } catch (e) {}
+      } catch (e) {}
+    }
 
     const valid = this.handleUpdate(
       {

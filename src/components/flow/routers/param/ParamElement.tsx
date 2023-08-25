@@ -1,7 +1,7 @@
 import { react as bindCallbacks } from 'auto-bind';
 import FormElement from 'components/form/FormElement';
 import TextInputElement, { TextInputStyle } from 'components/form/textinput/TextInputElement';
-import CheckboxElement from 'components/form/checkbox/CheckboxElement';
+import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
 import { ServiceCallParam, ParamFilter } from 'config/interfaces';
 import * as React from 'react';
 import { FormEntry, FormState } from 'store/nodeEditor';
@@ -11,6 +11,33 @@ import { initializeForm, validateParam } from './helpers';
 import i18n from 'config/i18n';
 import TembaSelect, { TembaSelectStyle } from 'temba/TembaSelect';
 import { ParamProps } from '../paramlist/ParamList';
+
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon, unnnicButton } from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      'data-draggable': 'true',
+      style: {
+        all: ''
+      }
+    },
+
+    slotWrapAttrs: {
+      'data-draggable': 'true',
+      style: {
+        all: ''
+      }
+    }
+  }
+});
+
+const UnnnicButton = applyVueInReact(unnnicButton);
 
 export enum ParamTypes {
   multiSelect = 'multiSelect',
@@ -126,7 +153,8 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     disableParam: boolean,
     disableFilter: boolean,
     showFilter: boolean | number,
-    paramFilters: ParamFilter[]
+    paramFilters: ParamFilter[],
+    paramOptions: ServiceCallParam[]
   ): JSX.Element {
     if (!param) return null;
 
@@ -150,11 +178,12 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
       );
     } else if (param.paramType === ParamTypes.boolean) {
       return (
-        <CheckboxElement
+        <SwitchElement
           name={param.verboseName}
           title={param.verboseName}
           checked={this.state.data.value}
           onChange={this.handleDataChange}
+          size={SwitchSizes.small}
         />
       );
     } else if (param.paramType === ParamTypes.expressionInput) {
@@ -173,24 +202,27 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     } else {
       return (
         <>
-          <div className={styles.choice}>
+          <div
+            className={`${styles.choice} ${disableFilter ? styles.disabled : ''}`}
+            style={{ flex: showFilter ? 1 : 2 }}
+          >
             <TembaSelect
               name={i18n.t('forms.service_call_param', 'Service Call Param')}
-              placeholder={i18n.t('forms.param', 'param')}
+              placeholder={i18n.t('forms.param', 'Param')}
               style={TembaSelectStyle.small}
-              options={this.props.availableParams}
+              options={paramOptions}
               nameKey="verboseName"
-              valueKey="name"
+              valueKey="type"
               disabled={disableParam || disableFilter}
               onChange={this.handleParamChange}
               value={this.state.currentParam}
             />
           </div>
           {showFilter ? (
-            <div className={styles.choice}>
+            <div className={`${styles.choice} ${disableFilter ? styles.disabled : ''}`}>
               <TembaSelect
                 name={i18n.t('forms.service_call_param_filter', 'Service Call Param Filter')}
-                placeholder={i18n.t('forms.filter', 'filter')}
+                placeholder={i18n.t('forms.filter', 'Filter')}
                 style={TembaSelectStyle.small}
                 options={paramFilters}
                 nameKey="verboseName"
@@ -206,7 +238,6 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
           <div className={styles.data}>
             <TextInputElement
               name={i18n.t('forms.service_call_param_data', 'Service Call Param Data')}
-              style={TextInputStyle.small}
               onChange={this.handleDataChange}
               entry={this.state.data}
               autocomplete={true}
@@ -231,14 +262,23 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     const rawParam = this.props.availableParams.find(
       param => param.type === this.state.currentParam.type
     );
-    const paramFilters = rawParam ? rawParam.filters : [];
+    let paramFilters = rawParam ? rawParam.filters : [];
+    paramFilters = this.state.currentFilter
+      ? [this.state.currentFilter].concat(paramFilters)
+      : paramFilters;
+    const paramOptions =
+      this.state.currentParam &&
+      !this.props.availableParams.find(p => p.type === this.state.currentParam.type)
+        ? [this.state.currentParam].concat(this.props.availableParams)
+        : this.props.availableParams;
 
     const paramElement = this.renderParamElement(
       this.state.currentParam,
       disableParam,
       disableFilter,
       showFilter,
-      paramFilters
+      paramFilters,
+      paramOptions
     );
 
     return (
@@ -249,23 +289,30 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
         kaseError={this.state.errors.length > 0}
       >
         <div className={`${styles.param}`} data-draggable={canArrange}>
-          {canArrange ? (
-            <span className={`fe-chevrons-expand ${styles.dnd_icon}`} data-draggable={canArrange} />
-          ) : this.props.hasArrangeFunctionality ? (
-            <div className={styles.order_filler}></div>
-          ) : null}
+          {this.props.hasArrangeFunctionality && (
+            <div className={styles.moveIcon}>
+              <UnnnicButton
+                data-draggable={canArrange}
+                iconCenter={'move-expand-vertical-1'}
+                size="small"
+                type="terciary"
+              />
+            </div>
+          )}
 
           {paramElement}
 
-          {!disableParam && !disableFilter ? (
-            <span
+          {this.props.hasArrangeFunctionality && (
+            <UnnnicIcon
+              className={styles.remove_icon}
               data-testid={'remove-param-' + this.props.initialParam.uuid}
-              className={`fe-x ${styles.remove_icon}`}
-              onClick={this.handleRemoveClicked}
+              icon="delete-1-1"
+              size="sm"
+              scheme={!disableParam && !disableFilter ? 'neutral-cloudy' : 'neutral-clean'}
+              onClick={!disableParam && !disableFilter ? this.handleRemoveClicked : () => {}}
+              clickable
             />
-          ) : this.props.hasArrangeFunctionality ? (
-            <div className={styles.remove_filler}></div>
-          ) : null}
+          )}
         </div>
       </FormElement>
     );

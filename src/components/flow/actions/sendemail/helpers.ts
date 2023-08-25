@@ -11,6 +11,8 @@ export const initializeForm = (settings: NodeEditorSettings): SendEmailFormState
       body: { value: action.body },
       subject: { value: action.subject },
       recipients: { value: action.addresses },
+      recipient: { value: '' },
+      recipientError: undefined,
       valid: true
     };
   }
@@ -19,6 +21,8 @@ export const initializeForm = (settings: NodeEditorSettings): SendEmailFormState
     body: { value: '' },
     subject: { value: '' },
     recipients: { value: [] },
+    recipient: { value: '' },
+    recipientError: undefined,
     valid: true
   };
 };

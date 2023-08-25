@@ -53,18 +53,9 @@ describe(TitleBar.name, () => {
     });
 
     describe('confirmation', () => {
-      it('should render confirmation markup', () => {
-        const { baseElement, getByTestId } = render(
-          <TitleBar {...baseProps} showMove={true} showRemoval={true} />
-        );
-
-        fireEvent.mouseUp(getByTestId(removeIconSpecId));
-        expect(baseElement).toMatchSnapshot();
-      });
-
-      it('should call onRemoval prop', () => {
+      it('should render confirmation markup and call onRemoval prop', () => {
         const handleRemoveClicked = jest.fn();
-        const { getByTestId } = render(
+        const { baseElement, getByTestId, getByText } = render(
           <TitleBar
             {...baseProps}
             showMove={true}
@@ -73,8 +64,10 @@ describe(TitleBar.name, () => {
           />
         );
 
+        expect(baseElement).toMatchSnapshot();
+
         fireEvent.mouseUp(getByTestId(removeIconSpecId));
-        fireEvent.mouseUp(getByTestId(confirmRemovalSpecId));
+        fireEvent.click(getByText('Confirm'));
         expect(handleRemoveClicked).toHaveBeenCalledTimes(1);
       });
     });

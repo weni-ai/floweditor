@@ -3,8 +3,16 @@ import { Types } from 'config/interfaces';
 import { RenderNode } from 'store/flowContext';
 import ExternalServiceRouterForm from './ExternalServiceRouterForm';
 import * as React from 'react';
-import { render, fireEvent, fireChangeText, fireTembaSelect } from 'test/utils';
-import { act } from '@testing-library/react';
+import {
+  render,
+  fireEvent,
+  fireChangeText,
+  fireTembaSelect,
+  fireUnnnicInputChangeText,
+  fireUnnnicSelect,
+  fireUnnnicAutocompleteSelectWithArray
+} from 'test/utils';
+import { act, wait } from '@testing-library/react';
 import { RouterFormProps } from '../../props';
 
 const externalServiceAsset = require('test/assets/external_services.json');
@@ -74,41 +82,44 @@ describe(ExternalServiceRouterForm.name, () => {
         });
 
         await act(async () => {
-          fireTembaSelect(rendered.getByTestId('temba_select_external_service'), [
-            externalServiceAsset.results[0]
-          ]);
+          fireUnnnicSelect(
+            rendered.getByTestId('temba_select_external_service'),
+            { value: [externalServiceAsset.results[0]] },
+            'value'
+          );
         });
 
         expect(rendered.baseElement).toMatchSnapshot();
 
         const okButton = rendered.getByText('Ok');
-        const resultName = rendered.getByTestId('Result Name');
+        const resultName = rendered.getByTestId('Save as result');
 
         // since there are no mandatory fields, we can save the router right away
         fireEvent.click(okButton);
         expect(externalServiceForm.updateRouter).toBeCalledTimes(1);
 
         // cannot save without the result field filled
-        fireChangeText(resultName, '');
+        fireUnnnicInputChangeText(resultName, '');
         fireEvent.click(okButton);
         expect(externalServiceForm.updateRouter).toBeCalledTimes(1);
 
-        fireChangeText(resultName, 'My External Service Result');
+        fireUnnnicInputChangeText(resultName, 'My External Service Result');
 
         await act(async () => {
-          fireTembaSelect(rendered.getByTestId('temba_select_aditional_prompts'), [
-            {
-              text: 'Aditional Prompt 1 content',
-              uuid: 'ab154b06-5ecd-43d9-afca-39738e6859d7'
-            },
-            {
-              text: 'Aditional Prompt 2 content',
-              uuid: 'ac154b06-5ecd-43d9-afca-39738e6859d7'
-            }
-          ]);
+          fireUnnnicAutocompleteSelectWithArray(
+            rendered.getByTestId('temba_select_aditional_prompts'),
+            [
+              {
+                text: 'Aditional Prompt 1 content',
+                uuid: 'ab154b06-5ecd-43d9-afca-39738e6859d7'
+              },
+              {
+                text: 'Aditional Prompt 2 content',
+                uuid: 'ac154b06-5ecd-43d9-afca-39738e6859d7'
+              }
+            ]
+          );
         });
-
-        expect(rendered.baseElement).toMatchSnapshot();
 
         fireEvent.click(okButton);
         expect(externalServiceForm.updateRouter).toHaveBeenCalled();
@@ -139,6 +150,8 @@ describe(ExternalServiceRouterForm.name, () => {
           rendered = render(<ExternalServiceRouterForm {...externalServiceForm} />);
           return undefined;
         });
+
+        await wait();
         expect(rendered.baseElement).toMatchSnapshot();
       });
     });
@@ -166,41 +179,70 @@ describe(ExternalServiceRouterForm.name, () => {
           return undefined;
         });
 
+        await wait();
+
         await act(async () => {
-          fireTembaSelect(rendered.getByTestId('temba_select_external_service'), [
-            externalServiceAsset.results[1]
-          ]);
+          fireUnnnicSelect(
+            rendered.getByTestId('temba_select_external_service'),
+            { value: [externalServiceAsset.results[1]] },
+            'value'
+          );
         });
 
         expect(rendered.baseElement).toMatchSnapshot();
 
         const okButton = rendered.getByText('Ok');
-        const resultName = rendered.getByTestId('Result Name');
+        const resultName = rendered.getByTestId('Save as result');
 
-        // since there mandatory fields, we cannot save the router right away
-        fireChangeText(resultName, '');
+        fireUnnnicInputChangeText(resultName, '');
         fireEvent.click(okButton);
         expect(externalServiceForm.updateRouter).not.toBeCalled();
 
         await act(async () => {
-          fireTembaSelect(rendered.getByTestId('temba_select_external_service_call'), [
-            {
-              name: 'IncluirContato',
-              value: 'IncluirContato',
-              verboseName: 'Inserir Contato'
-            }
-          ]);
+          fireUnnnicSelect(
+            rendered.getByTestId('temba_select_external_service'),
+            { value: [externalServiceAsset.results[1]] },
+            'value'
+          );
         });
 
-        fireChangeText(resultName, 'My External Service Result');
+        await act(async () => {
+          fireUnnnicSelect(
+            rendered.getByTestId('temba_select_external_service_call'),
+            {
+              value: [
+                {
+                  name: 'IncluirContato',
+                  value: 'IncluirContato',
+                  verboseName: 'Inserir Contato'
+                }
+              ]
+            },
+            'value'
+          );
+        });
 
-        fireChangeText(rendered.getAllByTestId('Service Call Param Data')[0], 'data 1');
+        await act(async () => {
+          fireUnnnicInputChangeText(resultName, 'My External Service Result');
+        });
+
+        await act(async () => {
+          fireUnnnicInputChangeText(
+            rendered.getAllByTestId('Service Call Param Data')[0],
+            'data 1'
+          );
+        });
 
         fireEvent.click(okButton);
         // cannot be called due to missing second required field
         expect(externalServiceForm.updateRouter).not.toBeCalled();
 
-        fireChangeText(rendered.getAllByTestId('Service Call Param Data')[1], 'data 2');
+        await act(async () => {
+          fireUnnnicInputChangeText(
+            rendered.getAllByTestId('Service Call Param Data')[1],
+            'data 2'
+          );
+        });
 
         fireEvent.click(okButton);
         expect(externalServiceForm.updateRouter).toHaveBeenCalled();

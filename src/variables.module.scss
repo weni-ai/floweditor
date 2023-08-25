@@ -1,4 +1,5 @@
 @import './palette_ec.scss';
+@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
 
 // how big our blocks are
 $grid_size: 20;
@@ -6,7 +7,7 @@ $grid_size: 20;
 // buffer to bump out connections
 $node_padding: 3;
 
-$action_padding: 10px;
+$action_padding: $unnnic-spacing-inset-xs;
 
 // how much extra room to add during reflow
 $node_spacing: 13;
@@ -40,8 +41,8 @@ $node_shadow_color: rgba(99, 184, 226, 0.1);
 $node_shadow_hover: rgba(145, 218, 255, 0.25);
 $selection_square: rgb(173, 216, 230);
 $selected: rgba(52, 152, 219, 0.5);
-$connector_color: #95cbef;
-$connector_hover_color: $lime;
+$connector_color: $unnnic-color-neutral-cleanest;
+$connector_hover_color: $unnnic-color-neutral-cleanest;
 $removal_confirmation: $red;
 $path_color: #fff;
 $text_color: #666;

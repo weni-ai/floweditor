@@ -7,7 +7,7 @@ exports[`Dialog should render 1`] = `
       class="dialog"
     >
       <div
-        class="header header-class iconed barber"
+        class="header iconed barber"
       >
         <span
           class="header_icon fe-icon"
@@ -16,7 +16,7 @@ exports[`Dialog should render 1`] = `
           class="title_container"
         >
           <div
-            class="title"
+            class="title u font secondary title-sm black"
           >
             My Dialog
           </div>
@@ -37,16 +37,6 @@ exports[`Dialog should render 1`] = `
           class="buttons"
         >
           <div
-            class="left_buttons"
-          >
-            <div
-              class="btn tertiary  "
-              style="margin-left: 0px; margin-top: 0px;"
-            >
-              Other
-            </div>
-          </div>
-          <div
             class="gutter"
           >
             <div>
@@ -54,19 +44,78 @@ exports[`Dialog should render 1`] = `
             </div>
           </div>
           <div
-            class="right_buttons"
+            class="buttons_wrapper"
           >
             <div
-              class="btn secondary  "
-              style="margin-left: 0px; margin-top: 0px;"
+              class="left_buttons"
             >
-              Cancel
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-left: 0px; margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Other 
+                  </span>
+                  <!---->
+                </button>
+              </div>
             </div>
             <div
-              class="btn primary  "
-              style="margin-left: 10px; margin-top: 0px;"
+              class="right_buttons"
             >
-              Ok
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-left: 0px; margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Cancel 
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                  data-passed-props="[object Object]"
+                  data-v-00f478da=""
+                  style="margin-top: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-00f478da=""
+                  >
+                     Ok 
+                  </span>
+                  <!---->
+                </button>
+              </div>
             </div>
           </div>
         </div>

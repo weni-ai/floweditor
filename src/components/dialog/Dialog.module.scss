@@ -1,4 +1,5 @@
 @import 'variables.module.scss';
+@import '@weni/unnnic-system/dist/scss/unnnic.scss';
 
 $curvature: 10px;
 
@@ -6,18 +7,19 @@ $curvature: 10px;
   cursor: pointer;
 }
 
+.icon {
+  margin-left: 6px;
+}
+
 .dialog {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0px 5px 10px 1px #555;
-  width: 655px;
+  background: $unnnic-color-background-carpet;
+  border-radius: $unnnic-border-radius-sm;
+  box-shadow: $unnnic-shadow-level-separated;
+  width: 750px;
 
   .header {
-    color: #fff;
-    height: 56px;
-
-    border-top-left-radius: $curvature;
-    border-top-right-radius: $curvature;
+    color: $unnnic-color-neutral-dark;
+    text-align: center;
 
     &:hover {
       .header_overlay {
@@ -28,10 +30,7 @@ $curvature: 10px;
     .header_overlay {
       position: absolute;
       width: 647px;
-      height: 28px;
       text-align: right;
-      padding-top: 28px;
-      padding-right: 8px;
 
       border-top-left-radius: $curvature;
       border-top-right-radius: $curvature;
@@ -48,8 +47,8 @@ $curvature: 10px;
     }
 
     .title {
-      font-size: 20px;
-      padding: 16px;
+      padding: $unnnic-spacing-inset-md;
+      padding-top: $unnnic-spacing-stack-giant;
     }
 
     &.barber {
@@ -72,81 +71,59 @@ $curvature: 10px;
   }
 
   .content {
-    padding: 10px 20px;
-    margin-bottom: 10px;
+    padding: 0 $unnnic-spacing-inline-md;
 
     p {
       margin-top: 10px;
       line-height: 20px;
+      font-family: $unnnic-font-family-secondary;
+      font-weight: $unnnic-font-weight-regular;
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+    }
+
+    .tabs {
+      margin-bottom: $unnnic-spacing-stack-md;
     }
   }
 
   .footer {
-    padding: 12px;
-    background: $light_gray;
+    padding: $unnnic-spacing-stack-sm $unnnic-spacing-inline-md $unnnic-spacing-stack-lg $unnnic-spacing-inline-md;
     border-bottom-left-radius: $curvature;
     border-bottom-right-radius: $curvature;
 
-    justify-content: space-between;
     align-items: center;
 
     .gutter {
-      vertical-align: baseline;
-      margin-right: auto;
+      border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+      border-radius: $unnnic-border-radius-sm;
+      padding: $unnnic-spacing-inset-xs;
     }
 
     .buttons {
       display: flex;
+      flex-direction: column;
+      column-gap: $unnnic-spacing-inline-lg;
     }
-    .left_buttons {
-      margin-right: auto;
+
+    .buttons_wrapper {
+      display: flex;
+      column-gap: $unnnic-spacing-inline-lg;
+      margin-top: $unnnic-spacing-stack-giant;
     }
 
-    .right_buttons {
-      margin-left: auto;
-      text-align: right;
-      vertical-align: baseline;
+    .left_buttons, .right_buttons {
+      flex: 1;
+      display: flex;
+      column-gap: $unnnic-spacing-inline-lg;
+
+      > * {
+        flex: 1;
+      }
     }
-  }
 
-  .tabs {
-    z-index: $z_modal_tabs;
-    padding-right: 18px;
-    float: right;
-    margin-top: 33px;
-    position: relative;
-
-    .tab {
-      .tab_icon {
-        font-size: 8px;
-        padding-left: 5px;
-      }
-
-      background: rgba(0, 0, 0, 0.1);
-      display: inline-block;
-      padding: 5px 10px;
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
-
-      margin-left: 7px;
-      font-size: 11px;
-      cursor: pointer;
-      color: #fff;
-
-      &:hover {
-        background: #00000020;
-      }
-
-      &.active {
-        // border: 3px solid #00000011;
-        // border-bottom: none;
-        background: #fff;
-        cursor: default;
-        color: #000;
-        &:hover {
-          background: #fff;
-        }
-      }
+    button {
+      width: 100%;
     }
   }
 }

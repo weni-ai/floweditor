@@ -13,80 +13,105 @@ input:focus {
 }
 
 .divider {
-  padding-left: $spacing;
-  padding-right: $spacing;
+  padding-left: $unnnic-spacing-inline-xs;
+  padding-right: $unnnic-spacing-inline-xs;
   vertical-align: sub;
-  font-size: 13px;
-  line-height: 13px;
-  margin-top: 4px;
-}
-
-.kase.has_intent,
-.kase.has_top_intent {
-  .choice {
-    width: 150px;
-  }
-
-  .multi_operand {
-    width: 202px;
-  }
+  margin-top: 8px;
 }
 
 .kase {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
   user-select: none;
-  margin-bottom: 5px;
+
+  display: flex;
+  column-gap: $unnnic-spacing-inline-xs;
 
   .form_group {
     margin: 0;
   }
 
+  .operator_container {
+    flex: 0.70;
+    display: flex;
+    column-gap: $unnnic-spacing-inline-xs;
+
+    .move_icon {
+      align-self: center;
+      
+      button {
+        padding: 0;
+        width: $unnnic-icon-size-sm;
+        height: $unnnic-icon-size-sm;
+
+        &:hover {
+
+          &:after {
+            border: none;
+          }
+        }
+
+        span {
+          min-width: unset;
+          min-height: unset;
+        }
+
+        svg > path {
+          fill: $unnnic-color-neutral-cloudy;
+        }
+      }
+    }
+  }
+
+  .categorize_as_container {
+    flex: 0.30;
+    display: flex;
+    column-gap: $unnnic-spacing-inline-xs;
+    white-space: nowrap;
+
+    .categorize_as {
+      margin-top: 8px;
+    }
+  }
+
   .choice {
-    width: 185px;
+    flex: 1;
+
+    :global {
+      .unnnic-select {
+        max-width: 100%;
+      }
+    }
   }
 
   .single_operand {
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-    margin-left: $spacing;
+    flex: 1;
 
-    width: 184px;
-
-    input {
-      width: 170px;
+    :global {
+      input {
+        width: 100% !important;
+      }
     }
   }
 
   .multi_operand {
-    display: inline-flex;
-    align-items: center;
-    margin-left: $spacing;
-    width: 184px;
+    flex: 1;
+    display: flex;
 
-    input[name='intent'] {
-      width: 105px;
+    :global {
+      input {
+        width: 100% !important;
+        min-width: 77.7px;
+      }
     }
-
-    input[name='confidence'] {
-      // width: 40px;
-      padding: 10px 6px !important;
-    }
-  }
-
-  .categorize_as {
-    font-size: 13px;
-    line-height: 13px;
-    position: relative;
-    width: 95px;
-    text-align: center;
-    margin: 0px $spacing - 2;
-    margin-top: 4px;
   }
 
   .category {
     position: relative;
+    padding: 1px 0;
+  }
+
+  .category_wrapper {
+    flex: 1;
   }
 
   &:hover {
@@ -101,9 +126,6 @@ input:focus {
 
   input {
     padding: 6px 7px;
-    height: 29px !important;
-    margin-bottom: -4px;
-    font-size: 13px !important;
   }
 
   .relative_date {
@@ -119,7 +141,7 @@ input:focus {
 .dnd_icon {
   color: #aaa;
   font-weight: bold;
-  padding-top: 9px;
+  padding-top: 20px;
   padding-right: 2px;
   padding-left: 5px;
   float: left;
@@ -128,16 +150,16 @@ input:focus {
   line-height: 9px;
 }
 
+.remove_icon_wrapper {
+  align-self: center;
+}
+
 .remove_icon {
   color: #aaa;
-  padding-top: 8px;
   float: right;
-  opacity: 0;
   line-height: 12px;
   cursor: pointer;
-  margin-left: 2px;
   font-size: 9px;
-  z-index: 3000;
 }
 
 .empty {

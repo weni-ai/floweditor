@@ -9,10 +9,10 @@ import { Asset } from 'store/flowContext';
 import { mergeForm } from 'store/nodeEditor';
 import { shouldRequireIf, validate } from 'store/validators';
 
-import { ChangeGroupsFormState, excludeDynamicGroups, labelSpecId } from '../helpers';
+import styles from './AddGroupsForm.module.scss';
+import { ChangeGroupsFormState, excludeDynamicGroups } from '../helpers';
 import { initializeForm, stateToAction } from './helpers';
 import i18n from 'config/i18n';
-import { Trans } from 'react-i18next';
 import { renderIssues } from '../../helpers';
 
 export default class AddGroupsForm extends React.Component<ActionFormProps, ChangeGroupsFormState> {
@@ -58,7 +58,7 @@ export default class AddGroupsForm extends React.Component<ActionFormProps, Chan
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -69,14 +69,17 @@ export default class AddGroupsForm extends React.Component<ActionFormProps, Chan
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
+      <Dialog
+        className={styles.dialog}
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <p data-spec={labelSpecId}>
-          <Trans i18nKey="forms.add_groups_summary">Select the groups to add the contact to.</Trans>
-        </p>
 
         <AssetSelector
-          name={i18n.t('forms.groups', 'Groups')}
+          name={i18n.t('forms.add_groups_summary', 'Select the groups to add the contact to')}
+          showLabel={true}
           multi={true}
           noOptionsMessage={i18n.t('enter_to_create_group', 'Enter a name to create a new group')}
           assets={this.props.assetStore.groups}

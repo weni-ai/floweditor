@@ -1,4 +1,5 @@
 @import 'variables.module.scss';
+@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
 
 @keyframes pulse {
   0% {
@@ -12,9 +13,13 @@
   }
 }
 
+.title {
+  border-top-right-radius: $unnnic-border-radius-md;
+  border-top-left-radius: $unnnic-border-radius-md;
+}
+
 .node_container {
   display: flex;
-  // flex-direction: row;
 
   padding: $node_padding + px;
   z-index: $z_nodes;
@@ -50,11 +55,19 @@
     transition: opacity 400ms ease;
   }
 
+  .node {
+    box-shadow: $unnnic-shadow-level-near;
+
+    &:hover {
+      outline: $unnnic-color-brand-weni-soft solid $unnnic-border-width-thin;
+    }
+  }
+
   &.selected {
     .node {
-      box-shadow: 0px 0px 0px 2px $selected !important;
-      border: 1px solid $selected;
+      outline: $unnnic-color-brand-weni-soft solid $unnnic-border-width-thin;
     }
+
   }
 
   &.immutable {
@@ -64,19 +77,16 @@
   }
 
   .node {
-    // transition: box-shadow 50ms ease-in, border 50ms ease-in;
-    border: 1px solid $borders;
-    border-radius: $curvature;
-    // background: #fff;
+    border-radius: $unnnic-border-radius-md;
     padding: 0;
     user-select: none;
     cursor: pointer;
-    // align-items: stretch;
     min-width: $node_min_width + px;
 
     flex-shrink: 0;
-    // max-width: $node_max_width + px;
     transition: transform 200ms;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
 
     .save_as {
       display: inline;
@@ -84,21 +94,32 @@
 
     .save_result {
       background: #fff;
-      padding: 10px 10px;
-      // width: inherit;
+      padding: $unnnic-spacing-inset-xs;
+      text-align: center;
+
+      font-family: $unnnic-font-family-secondary;
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+      color: $unnnic-color-neutral-dark;
+
+      &.border_top {
+        border-top: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+      }
       .result_name {
-        font-weight: 500;
+        font-weight: $unnnic-font-weight-bold;
         display: inline;
       }
     }
 
+    .selected {
+      background: #EEFFFC;
+    }
+
     .cropped {
       border: 0px solid green;
-      overflow: hidden;
       border-top-left-radius: $curvature - 1px;
       border-top-right-radius: $curvature - 1px;
-      // min-width: $node_min_width + px;
-      // max-width: $node_max_width + px;
+      position: relative;
     }
 
     .exit_table {
@@ -113,15 +134,23 @@
 
     .add {
       position: absolute;
-      right: $node_padding / 2 + px;
-      bottom: $node_padding / 2 + px;
+      right: (-$unnnic-font-size / 2) - $node_padding / 2;
+      bottom: (-$unnnic-font-size / 2) - $node_padding / 2;
       visibility: hidden;
-      color: $blue;
       text-decoration: none;
-      background: #fff;
-      border-radius: 5px;
-      line-height: 8px;
-      font-size: 14px;
+      border-radius: $unnnic-border-radius-sm;
+      background-color: $unnnic-color-background-sky;
+      outline: $unnnic-border-width-thinner solid $unnnic-color-neutral-clean;
+      outline-offset: -$unnnic-border-width-thinner;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        outline-width: 0;
+      }
     }
     &:hover {
       .add {
@@ -138,31 +167,27 @@
       position: absolute;
       width: 100%;
       z-index: 10000;
-      color: $selected;
-      height: 14px;
-      padding-top: 2px;
-      font-size: 11px;
       text-transform: uppercase;
-      font-weight: bold;
       text-align: center;
-      top: -14px;
-      // animation: pulse 300ms;
+      top: - $unnnic-font-size-body-md - $unnnic-line-height-md - $unnnic-spacing-stack-xs;
     }
   }
 }
 
 .active {
   position: absolute;
-  background: $active_color;
-  border: 1px solid darken($active_color, 5%);
-  border-radius: 12px;
-  padding: 3px 5px;
-  color: #fff;
+  background: #C4EAF5;
+  border-radius: 4px;
+  font-family: $unnnic-font-family-secondary;
+  color: $unnnic-color-neutral-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 500;
   top: -10px;
   left: -10px;
-  font-size: 13px;
-  min-width: 22px;
-  text-align: center;
+  font-size: 12px;
+  width: 22px;
+  height: 28px;
   cursor: pointer;
 }

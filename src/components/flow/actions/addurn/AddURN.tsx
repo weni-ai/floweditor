@@ -12,7 +12,7 @@ const AddURNComp: React.SFC<AddURN> = ({ scheme, path }): JSX.Element => {
   const schemeName = schemeObject ? schemeObject.path : scheme;
   return (
     <>
-      {i18n.t('add', 'Add')} {schemeName} {emphasize(path)}
+      {i18n.t('add', 'Add')} {schemeName && schemeName.toLowerCase()} {emphasize(path)}
     </>
   );
 };

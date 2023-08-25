@@ -5,7 +5,7 @@ exports[`RouterLocalizationForm initializes 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -209,7 +209,7 @@ exports[`RouterLocalizationForm should render 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {

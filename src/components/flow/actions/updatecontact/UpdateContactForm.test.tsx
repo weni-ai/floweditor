@@ -9,7 +9,7 @@ import {
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import * as React from 'react';
-import { render, fireEvent } from 'test/utils';
+import { render, fireEvent, act } from 'test/utils';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 

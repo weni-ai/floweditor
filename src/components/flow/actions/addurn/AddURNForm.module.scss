@@ -1,9 +1,13 @@
-.scheme_selection {
-  width: 250px;
+@import 'variables.module.scss';
+
+.label {
+  margin-bottom: $unnnic-spacing-stack-nano;
 }
 
-.path {
-  width: 455px;
-  margin-left: 10px;
-  vertical-align: top;
+.dialog {
+  width: 498px;
+}
+
+.scheme_selection {
+  margin-bottom: $unnnic-spacing-stack-sm;
 }

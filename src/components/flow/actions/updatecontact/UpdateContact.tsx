@@ -22,7 +22,7 @@ export const renderSetText = (
   if (value) {
     return (
       <div className={`${styles.node_asset}`}>
-        Set {withEmph(name, emphasizeName)} to {emphasize(value)}.
+        {i18n.t('set')} {withEmph(name, emphasizeName)} {i18n.t('to')} {emphasize(value)}.
       </div>
     );
   } else {

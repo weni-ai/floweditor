@@ -7,9 +7,9 @@ import {
   mock,
   fireEvent,
   wait,
-  fireChangeText,
   getUpdatedNode,
-  getByTestId
+  fireUnnnicInputChangeText,
+  act
 } from 'test/utils';
 import * as React from 'react';
 import * as utils from 'utils';
@@ -64,9 +64,7 @@ describe(SubflowRouterForm.name, () => {
   });
 
   it('should create result actions for parameters', async () => {
-    const { getByText, queryAllByTestId, getByTestId } = render(
-      <SubflowRouterForm {...subflowProps} />
-    );
+    const { getByText, getByTestId } = render(<SubflowRouterForm {...subflowProps} />);
     await wait();
 
     // open the parameter tab
@@ -76,10 +74,12 @@ describe(SubflowRouterForm.name, () => {
     const max = getByTestId('max');
 
     // enter some values
-    fireChangeText(min, '1');
-    fireChangeText(max, '100');
+    await act(async () => {
+      fireUnnnicInputChangeText(min, '1');
+      fireUnnnicInputChangeText(max, '100');
+    });
 
-    fireEvent.click(getByText('Ok'));
+    fireEvent.click(getByText('Confirm'));
     let actions = getUpdatedNode(subflowProps).node.actions;
 
     // should have a run result action for each parameter, plus an enter flow action
@@ -90,9 +90,11 @@ describe(SubflowRouterForm.name, () => {
     expect(subflowProps.updateRouter).toMatchCallSnapshot();
 
     // remove a parameter
-    fireChangeText(min, '');
-    fireEvent.click(getByText('Ok'));
+    await act(async () => {
+      fireUnnnicInputChangeText(min, '');
+    });
 
+    fireEvent.click(getByText('Confirm'));
     // now only two actions
     actions = getUpdatedNode(subflowProps).node.actions;
     expect(actions.length).toEqual(2);

@@ -5,7 +5,7 @@ exports[`AddGroupsForm render should render self, children with base props 1`] =
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -14,8 +14,9 @@ exports[`AddGroupsForm render should render self, children with base props 1`] =
       },
     }
   }
+  className="dialog"
   headerClass="add_contact_groups"
-  title="Add to Group"
+  title="Add to group"
 >
   <TypeList
     __className=""
@@ -24,24 +25,15 @@ exports[`AddGroupsForm render should render self, children with base props 1`] =
         "component": [Function],
         "description": "Add the contact to a group",
         "form": [Function],
-        "name": "Add to Group",
+        "name": "Add to group",
         "type": "add_contact_groups",
       }
     }
     onChange={[MockFunction]}
   />
-  <p
-    data-spec="label"
-  >
-    <Trans
-      i18nKey="forms.add_groups_summary"
-    >
-      Select the groups to add the contact to.
-    </Trans>
-  </p>
   <AssetSelector
     createAssetFromInput={[Function]}
-    createPrefix="Create Group: "
+    createPrefix="Create group: "
     entry={
       Object {
         "value": Array [
@@ -74,13 +66,14 @@ exports[`AddGroupsForm render should render self, children with base props 1`] =
     }
     expressions={true}
     multi={true}
-    name="Groups"
+    name="Select the groups to add the contact to"
     noOptionsMessage="Enter a name to create a new group"
     onAssetCreated={[Function]}
     onChange={[Function]}
-    placeholder="Select Groups"
+    placeholder="Select groups"
     searchable={true}
     shouldExclude={[Function]}
+    showLabel={true}
   />
 </Dialog>
 `;

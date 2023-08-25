@@ -134,7 +134,7 @@ export default class ClassifyRouterForm extends React.Component<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -149,14 +149,14 @@ export default class ClassifyRouterForm extends React.Component<
 
     const tabs: Tab[] = [
       {
-        name: 'Classifier Input',
+        name: i18n.t('forms.classifier_input'),
         checked: this.state.operand.value !== DEFAULT_OPERAND,
         body: (
           <>
-            <p>
-              Enter an expression to use as the input to your classifier. To classify the last
-              response from the contact use <code>{DEFAULT_OPERAND}</code>.
-            </p>
+            <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+              {i18n.t('forms.classifier_input_description')} <code>{DEFAULT_OPERAND}</code>.
+            </div>
+
             <TextInputElement
               name={i18n.t('forms.operand', 'Operand')}
               showLabel={false}
@@ -180,37 +180,47 @@ export default class ClassifyRouterForm extends React.Component<
         }}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <p>
-          <span>Run </span>
-          <span
-            className={styles.link}
-            onClick={() => {
-              this.dialog.showTab(0);
-            }}
-          >
-            {this.state.operand.value === DEFAULT_OPERAND
-              ? 'the last response'
-              : this.state.operand.value}
-          </span>
-          <span> through the classifier...</span>
-        </p>
-        <AssetSelector
-          key="select_classifier"
-          name={i18n.t('forms.classifier', 'Classifier')}
-          placeholder="Select the classifier to use"
-          assets={this.props.assetStore.classifiers}
-          onChange={this.handleClassifierUpdated}
-          entry={this.state.classifier}
-        />
+
+        <div className={styles.form_element}>
+          <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+            <span>{i18n.t('forms.execute')}</span>
+            <span
+              className={styles.link}
+              onClick={() => {
+                this.dialog.showTab(0);
+              }}
+            >
+              {this.state.operand.value === DEFAULT_OPERAND
+                ? i18n.t('forms.the_last_response')
+                : this.state.operand.value}
+            </span>
+            <span>{i18n.t('forms.through_the_classifier')}</span>
+          </div>
+
+          <AssetSelector
+            key="select_classifier"
+            name={i18n.t('forms.classifier', 'Classifier')}
+            placeholder="Select the classifier to use"
+            assets={this.props.assetStore.classifiers}
+            onChange={this.handleClassifierUpdated}
+            entry={this.state.classifier}
+          />
+        </div>
 
         {renderIf(!!this.state.classifier.value)(
-          <CaseList
-            data-spec="cases"
-            cases={this.state.cases}
-            onCasesUpdated={this.handleCasesUpdated}
-            operators={intentOperatorList}
-            classifier={this.state.classifier.value}
-          />
+          <>
+            <div className="u font secondary body-md color-neutral-cloudy">
+              {i18n.t('forms.message_label')}
+            </div>
+
+            <CaseList
+              data-spec="cases"
+              cases={this.state.cases}
+              onCasesUpdated={this.handleCasesUpdated}
+              operators={intentOperatorList}
+              classifier={this.state.classifier.value}
+            />
+          </>
         )}
 
         {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}

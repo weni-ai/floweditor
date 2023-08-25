@@ -22,7 +22,9 @@ const SendBroadcastComp: React.SFC<BroadcastMsg> = (
     return (
       <div className={styles.node}>
         <div className={styles.to} key={action.uuid + '_broadcast_recipients'}>
-          {renderAssetList(assets, MAX_TO_SHOW, context.config.endpoints)}
+          <div className={styles.name}>
+            {renderAssetList(assets, MAX_TO_SHOW, context.config.endpoints)}
+          </div>
         </div>
         <div className={styles.message}>
           {action.text.split(/\r?\n/).map((line: string, idx: number) => (

@@ -81,11 +81,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
     });
   }
 
-  public handleRemoval(event: React.MouseEvent<HTMLDivElement>): void {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+  public handleRemoval(): void {
     this.props.removeAction(this.props.renderNode.node.uuid, this.props.action);
   }
 
@@ -169,12 +165,15 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
     const actionToInject = this.getAction();
 
     let titleBarClass = (shared as any)[this.props.action.type] || shared.missing;
-    const actionClass = (styles as any)[this.props.action.type] || styles.missing;
+    let actionClass = (styles as any)[this.props.action.type] || styles.missing;
     const showRemoval = !this.props.translating;
     const showMove = !this.props.first && !this.props.translating;
+    const selectedClass = this.props.selected ? styles.selected : '';
+    const issues = hasIssues(this.props.issues, this.props.translating, this.props.language);
 
     if (hasIssues(this.props.issues, this.props.translating, this.props.language)) {
       titleBarClass = shared.missing;
+      actionClass = styles.missing;
     }
 
     const events = this.context.config.mutable
@@ -191,8 +190,13 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
           showMove={showMove}
           onMoveUp={this.handleMoveUp}
           shouldCancelClick={() => this.props.selected}
+          selected={this.props.selected}
+          hasIssues={issues}
         />
-        <div className={styles.body + ' ' + actionClass} data-spec={actionBodySpecId}>
+        <div
+          className={styles.body + ' ' + actionClass + ' ' + selectedClass}
+          data-spec={actionBodySpecId}
+        >
           {this.props.render(actionToInject, this.context.config.endpoints)}
         </div>
       </>
@@ -200,7 +204,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
     return (
       <div
         id={`action-${this.props.action.uuid}`}
-        className={classes}
+        className={`${classes} ${styles[this.props.action.type]}`}
         data-spec={actionContainerSpecId}
       >
         <div className={styles.overlay} data-spec={actionOverlaySpecId} />

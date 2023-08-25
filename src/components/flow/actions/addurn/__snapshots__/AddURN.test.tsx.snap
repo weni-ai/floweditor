@@ -4,7 +4,7 @@ exports[`AddURNComp should display urn on action 1`] = `
 <Fragment>
   Add
    
-  Phone Number
+  phone number
    
   <span
     className="emphasize"

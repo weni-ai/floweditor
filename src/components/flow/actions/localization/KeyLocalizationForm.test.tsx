@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { fireEvent, render } from 'test/utils';
+import { fireEvent, render, fireUnnnicTextAreaChangeText } from 'test/utils';
 import { createSendEmailAction, getLocalizationFormProps, Spanish } from 'testUtils/assetCreators';
 
 import KeyLocalizationForm from './KeyLocalizationForm';
@@ -16,11 +16,11 @@ describe(KeyLocalizationForm.name, () => {
     const { getByTestId, getByText } = render(<KeyLocalizationForm {...props} />);
 
     // modify the subject
-    fireEvent.change(getByTestId('Subject'), { target: { value: 'translated subject' } });
+    fireUnnnicTextAreaChangeText(getByTestId('Subject'), 'translated subject');
 
     // modify the body
     fireEvent.click(getByText('Body Translation'));
-    fireEvent.change(getByTestId('Body'), { target: { value: 'translated body' } });
+    fireUnnnicTextAreaChangeText(getByTestId('Body'), 'translated body');
 
     // save our translations
     fireEvent.click(getByText('Ok'));
@@ -38,7 +38,7 @@ describe(KeyLocalizationForm.name, () => {
     expect(baseElement).toMatchSnapshot();
 
     // clear the translation
-    fireEvent.change(getByTestId('Subject'), { target: { value: '' } });
+    fireUnnnicTextAreaChangeText(getByTestId('Subject'), '');
 
     // save our translations, which should remove the key
     fireEvent.click(getByText('Ok'));

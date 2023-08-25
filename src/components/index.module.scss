@@ -1,14 +1,16 @@
 @import 'variables.module.scss';
+@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
 
 .editor {
   position: relative;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: $text_color; // height: 100vh;
+  font-family: $unnnic-font-family-secondary, sans-serif;
+  font-weight: $unnnic-font-weight-regular;
+  color: $unnnic-color-neutral-dark; 
+  // height: 100vh;
   // height: 100%;
   // width: 100%;
-  font-size: 13px;
-  line-height: 1.2;
+  font-size: $unnnic-font-size-body-md;
+  line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
   margin: 0;
   user-select: none;
 }

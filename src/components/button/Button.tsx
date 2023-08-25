@@ -1,13 +1,14 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
-import { renderIf } from 'utils';
+import { applyVueInReact } from 'vuereact-combined';
 
-import styles from './Button.module.scss';
+// @ts-ignore
+import { unnnicButton } from '@weni/unnnic-system';
 
 export enum ButtonTypes {
   primary = 'primary',
   secondary = 'secondary',
-  tertiary = 'tertiary'
+  tertiary = 'terciary'
 }
 export interface ButtonProps {
   name: string;
@@ -17,53 +18,48 @@ export interface ButtonProps {
   leftSpacing?: boolean;
   topSpacing?: boolean;
   iconName?: string;
+  size?: string;
   onRef?: (ele: any) => void;
 }
 
-interface ButtonState {
-  active: boolean;
-}
+const UnnnicButton = applyVueInReact(unnnicButton, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: ''
+      }
+    }
+  }
+});
 
-export default class Button extends React.Component<ButtonProps, ButtonState> {
+export default class Button extends React.Component<ButtonProps> {
   constructor(props: ButtonProps) {
     super(props);
-    this.state = {
-      active: false
-    };
 
     bindCallbacks(this, {
       include: [/^handle/]
     });
   }
 
-  private handleMouseDown(event: React.MouseEvent<HTMLDivElement>): void {
-    this.setState({ active: true });
-  }
-
-  private handleMouseUp(event: React.MouseEvent<HTMLDivElement>): void {
-    this.setState({ active: false });
-  }
-
   public render(): JSX.Element {
     const { onRef, name, onClick, type, disabled, leftSpacing, topSpacing, iconName } = this.props;
 
     return (
-      <div
+      <UnnnicButton
         ref={onRef}
         style={{
           marginLeft: leftSpacing ? 10 : 0,
           marginTop: topSpacing ? 10 : 0
         }}
         onClick={onClick}
-        onMouseDown={this.handleMouseDown}
-        onMouseUp={this.handleMouseUp}
-        className={`${styles.btn} ${styles[type!]} ${disabled ? styles.disabled : ''} ${
-          this.state.active ? styles.active : ''
-        }`}
-      >
-        {renderIf(iconName != null)(<span style={{ paddingRight: 4 }} className={iconName} />)}
-        {name}
-      </div>
+        type={type}
+        disabled={disabled}
+        iconLeft={iconName}
+        text={name}
+        size={this.props.size || undefined}
+      />
     );
   }
 }

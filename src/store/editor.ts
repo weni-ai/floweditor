@@ -36,7 +36,9 @@ export interface Warning {
   type: string;
 }
 
-export type Warnings = { [uuid: string]: Warning };
+export interface Warnings {
+  [uuid: string]: Warning;
+}
 
 export interface EditorState {
   currentRevision: number | null;
@@ -51,6 +53,7 @@ export interface EditorState {
   dragNodeUUID: string | null;
   dragGroup: boolean;
   dragSelection: DragSelection | null;
+  selectionActive: boolean;
   debug?: DebugState | null;
 
   // which poptab is popped
@@ -76,6 +79,9 @@ export interface EditorState {
 
   scrollToNode: string;
   scrollToAction: string;
+
+  currentGuide: string;
+  guidingStep: number;
 }
 
 export interface ModalMessage {
@@ -106,6 +112,7 @@ export const initialState: EditorState = {
   dragGroup: false,
   dragSelection: null,
   ghostNode: null,
+  selectionActive: false,
   debug: null,
   warnings: {},
 
@@ -117,7 +124,10 @@ export const initialState: EditorState = {
   visible: true,
 
   scrollToNode: null,
-  scrollToAction: null
+  scrollToAction: null,
+
+  currentGuide: null,
+  guidingStep: -1
 };
 
 // Action Creator

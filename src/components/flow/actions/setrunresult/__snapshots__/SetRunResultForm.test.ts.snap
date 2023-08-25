@@ -5,7 +5,7 @@ exports[`SetRunResultForm render should render 1`] = `
   buttons={
     Object {
       "primary": Object {
-        "name": "Ok",
+        "name": "Confirm",
         "onClick": [Function],
       },
       "secondary": Object {
@@ -15,7 +15,7 @@ exports[`SetRunResultForm render should render 1`] = `
     }
   }
   headerClass="set_run_result"
-  title="Save Flow Result"
+  title="Save flow result"
 >
   <TypeList
     __className=""
@@ -24,7 +24,7 @@ exports[`SetRunResultForm render should render 1`] = `
         "component": [Function],
         "description": "Save a result for this flow",
         "form": [Function],
-        "name": "Save Flow Result",
+        "name": "Save flow result",
         "type": "set_run_result",
       }
     }
@@ -72,33 +72,40 @@ exports[`SetRunResultForm render should render 1`] = `
       showLabel={true}
       valueKey="value"
     />
-    <TextInputElement
-      __className="value"
-      autocomplete={true}
-      entry={
-        Object {
-          "value": "Grace",
+    <div
+      className="value"
+    >
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          Object {
+            "value": "Grace",
+          }
         }
-      }
-      helpText="The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))"
-      name="Value"
-      onChange={[Function]}
-      showLabel={true}
-    />
-    <TextInputElement
-      __className="category"
-      autocomplete={false}
-      entry={
-        Object {
-          "value": "",
+        helpText="The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))"
+        name="Value"
+        onChange={[Function]}
+        placeholder="Value"
+        showLabel={true}
+      />
+    </div>
+    <div
+      className="category"
+    >
+      <TextInputElement
+        autocomplete={false}
+        entry={
+          Object {
+            "value": "",
+          }
         }
-      }
-      helpText="An optional category for your result. For age, the value might be 17, but the category might be 'Young Adult'"
-      name="Category"
-      onChange={[Function]}
-      placeholder="Optional"
-      showLabel={true}
-    />
+        helpText="An optional category for your result. For age, the value might be 17, but the category might be “Teenager”"
+        name="Category (optional)"
+        onChange={[Function]}
+        placeholder="Ex: shopping"
+        showLabel={true}
+      />
+    </div>
   </div>
 </Dialog>
 `;

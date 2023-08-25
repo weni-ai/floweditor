@@ -1,13 +1,18 @@
 import axios, { AxiosResponse } from 'axios';
 import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
-import Pill from 'components/pill/Pill';
 import i18n from 'config/i18n';
 import { getCookie } from 'external';
 import React from 'react';
 import { TembaSelectStyle } from 'temba/TembaSelect';
 import { createUUID } from 'utils';
 import styles from './attachments.module.scss';
-import TextInputElement, { TextInputStyle } from 'components/form/textinput/TextInputElement';
+import TextInputElement, { TextInputSizes } from 'components/form/textinput/TextInputElement';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
+import { applyVueInReact } from 'vuereact-combined';
+
+const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 export interface Attachment {
   type: string;
@@ -59,6 +64,17 @@ export const handleUploadFile = (
     });
 };
 
+const renderWithLabel = (index: number, children: JSX.Element): JSX.Element => {
+  return (
+    <div className={styles.url_attachment_container}>
+      <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+        {i18n.t('forms.file', 'File')} {index + 1}
+      </div>
+      {children}
+    </div>
+  );
+};
+
 export const renderAttachments = (
   endpoint: string,
   attachments: Attachment[],
@@ -67,30 +83,36 @@ export const renderAttachments = (
   onAttachmentRemoved: (index: number) => void
 ): JSX.Element => {
   const renderedAttachments = attachments.map((attachment, index: number) =>
-    attachment.uploaded
-      ? renderUpload(index, attachment, onAttachmentRemoved)
-      : renderAttachment(index, attachment, onAttachmentChanged, onAttachmentRemoved)
+    renderWithLabel(
+      index,
+      attachment.uploaded
+        ? renderUpload(index, attachment, onAttachmentRemoved)
+        : renderAttachment(index, attachment, onAttachmentChanged, onAttachmentRemoved)
+    )
   );
 
   const emptyOption =
     attachments.length < MAX_ATTACHMENTS
-      ? renderAttachment(
-          -1,
-          { url: '', type: '' },
+      ? renderWithLabel(
+          attachments.length,
+          renderAttachment(
+            -1,
+            { url: '', type: '' },
 
-          onAttachmentChanged,
-          onAttachmentRemoved
+            onAttachmentChanged,
+            onAttachmentRemoved
+          )
         )
       : null;
   return (
     <>
-      <p>
+      <div className="u font secondary body-md color-neutral-cloudy">
         {i18n.t(
           'forms.send_msg_summary',
           'Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.',
           { count: MAX_ATTACHMENTS }
         )}
-      </p>
+      </div>
       {renderedAttachments}
       {emptyOption}
       <input
@@ -130,26 +152,31 @@ export const renderUpload = (
         />
       </div>
       <div className={styles.url}>
-        <span className={styles.upload}>
-          <Pill
-            icon="fe-download"
-            text="Download"
-            large={true}
-            onClick={() => {
-              window.open(attachment.url, '_blank');
-            }}
-          />
-          <div className={styles.remove_upload}>
-            <Pill
-              icon="fe-x"
-              text="Remove"
-              large={true}
-              onClick={() => {
-                onAttachmentRemoved(index);
-              }}
-            />
+        <div className={styles.upload}>
+          <div className={`u font secondary body-md color-neutral-cloudy`}>
+            {attachment.url.substring(attachment.url.lastIndexOf('/') + 1)}
           </div>
-        </span>
+        </div>
+      </div>
+      <div className={styles.download}>
+        <UnnnicIcon
+          icon="download-bottom-1"
+          size="sm"
+          scheme="neutral-cloudy"
+          clickable
+          onClick={() => {
+            window.open(attachment.url, '_blank');
+          }}
+        />
+      </div>
+      <div className={styles.remove}>
+        <UnnnicIcon
+          icon="delete-1-1"
+          size="sm"
+          scheme="neutral-cloudy"
+          clickable
+          onClick={() => onAttachmentRemoved(index)}
+        />
       </div>
     </div>
   );
@@ -171,7 +198,7 @@ export const renderAttachment = (
           key={'attachment_type_' + index}
           style={TembaSelectStyle.small}
           name={i18n.t('forms.type_options', 'Type Options')}
-          placeholder={i18n.t('forms.add_attachment', 'Add Attachment')}
+          placeholder={i18n.t('forms.select_the_file_type', 'Select the file type')}
           entry={{
             value: index > -1 ? getAttachmentTypeOption(attachment.type) : null
           }}
@@ -191,9 +218,9 @@ export const renderAttachment = (
         <>
           <div className={styles.url}>
             <TextInputElement
-              placeholder="URL"
+              placeholder={i18n.t('forms.ex_weni', 'Ex: weni.ai')}
               name={i18n.t('forms.url', 'URL')}
-              style={TextInputStyle.small}
+              size={TextInputSizes.sm}
               onChange={(value: string) => {
                 onAttachmentChanged(index, attachment.type, value);
               }}
@@ -202,17 +229,21 @@ export const renderAttachment = (
             />
           </div>
           <div className={styles.remove}>
-            <Pill
-              icon="fe-x"
-              text=" Remove"
-              large={true}
-              onClick={() => {
-                onAttachmentRemoved(index);
-              }}
+            <UnnnicIcon
+              icon="delete-1-1"
+              size="sm"
+              scheme="neutral-cloudy"
+              clickable
+              onClick={() => onAttachmentRemoved(index)}
             />
           </div>
         </>
-      ) : null}
+      ) : (
+        <>
+          <div className={styles.url}></div>
+          <div className={styles.remove}></div>
+        </>
+      )}
     </div>
   );
 };

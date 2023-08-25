@@ -103,7 +103,7 @@ export default class SetRunResultForm extends React.PureComponent<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -152,33 +152,34 @@ export default class SetRunResultForm extends React.PureComponent<
               </Trans>
             }
           />
+          <div className={styles.value}>
+            <TextInputElement
+              name={i18n.t('forms.value')}
+              placeholder={i18n.t('forms.value')}
+              showLabel={true}
+              onChange={this.handleValueUpdate}
+              entry={this.state.value}
+              autocomplete={true}
+              helpText={i18n.t(
+                'forms.result_value_help',
+                'The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))'
+              )}
+            />
+          </div>
 
-          <TextInputElement
-            __className={styles.value}
-            name={i18n.t('forms.value', 'Value')}
-            showLabel={true}
-            onChange={this.handleValueUpdate}
-            entry={this.state.value}
-            autocomplete={true}
-            helpText={i18n.t(
-              'forms.result_value_help',
-              'The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))'
-            )}
-          />
-          <TextInputElement
-            __className={styles.category}
-            name={i18n.t('forms.category', 'Category')}
-            placeholder="Optional"
-            showLabel={true}
-            onChange={this.handleCategoryUpdate}
-            entry={this.state.category}
-            autocomplete={false}
-            helpText={i18n.t(
-              'forms.result_category_help',
-              "An optional category for your result. For age, the value might be 17, but the category might be 'Young Adult'"
-            )}
-          />
+          <div className={styles.category}>
+            <TextInputElement
+              name={i18n.t('forms.category')}
+              placeholder={i18n.t('forms.ex_shop')}
+              showLabel={true}
+              onChange={this.handleCategoryUpdate}
+              entry={this.state.category}
+              autocomplete={false}
+              helpText={i18n.t('forms.result_category_help')}
+            />
+          </div>
         </div>
+
         {renderIssues(this.props)}
       </Dialog>
     );

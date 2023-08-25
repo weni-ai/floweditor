@@ -2,13 +2,16 @@
 
 exports[`SetRunResultComp should render save placeholder when value prop passed 1`] = `
 <div>
-  Save 
+  Save
+   
   <span
     className="emphasize"
   >
     Grace
   </span>
-   as 
+   
+  as
+   
   <span
     className="emphasize"
   >

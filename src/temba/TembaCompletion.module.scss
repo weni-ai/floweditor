@@ -1,0 +1,92 @@
+@import 'variables.module.scss';
+
+@mixin scrollbars {
+
+  scrollbar-width: thin;
+  scrollbar-color: $unnnic-color-neutral-clean $unnnic-color-neutral-soft;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $unnnic-color-neutral-clean ;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $unnnic-color-neutral-soft;
+    border-radius: 8px;
+  }
+}
+
+.completionInput>:nth-child(n+2):last-child {
+  position: fixed !important;
+  width: 190px !important;
+
+  div > span > div {
+    white-space: normal;
+  }
+}
+
+.label {
+  display: flex;
+  margin-bottom: $unnnic-spacing-stack-nano;
+  font-family: $unnnic-font-family-secondary;
+  color: $unnnic-color-neutral-cloudy;
+  font-size: $unnnic-font-size-body-md;
+  line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+}
+
+.textarea_wrapper {
+  position: relative;
+
+  .completions {
+    @include scrollbars;
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 95.3%;
+    flex: 1;
+    margin: 0 8px;
+    padding: 8px;
+    background-color: $unnnic-color-background-snow;
+    box-shadow: $unnnic-shadow-level-near;
+    max-height: 164px;
+    overflow: auto;
+    z-index: 1;
+
+    .completion {
+      display: flex;
+      flex-direction: column;
+      font-family: $unnnic-font-family-secondary;
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+      outline: none;
+      border-radius: $unnnic-border-radius-sm;
+      padding: $unnnic-spacing-stack-nano $unnnic-spacing-inline-xs;
+      cursor: pointer;
+
+      .name {
+        color: $unnnic-color-neutral-darkest;
+      }
+
+      .summary {
+        color: $unnnic-color-neutral-cloudy;
+        &:first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .active {
+      background-color: $unnnic-color-neutral-lightest;
+      font-weight: $unnnic-font-weight-bold;
+    }
+  }
+}
+
+.textarea {
+  textarea {
+    resize: none !important;
+  }
+}

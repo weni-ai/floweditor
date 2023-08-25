@@ -15,8 +15,8 @@ $reset_color: #666;
 }
 
 .simulator {
-  background: $black;
-  border-radius: 12px;
+  box-shadow: $unnnic-shadow-level-near;
+  border-radius: $unnnic-border-radius-md;
 
   img {
     height: auto;
@@ -63,35 +63,31 @@ $reset_color: #666;
   left: -300px;
   top: 0px;
   position: absolute;
-  height: 500px;
-  width: 260px;
-  cursor: pointer;
+  width: 280px;
   z-index: $z_simulator;
   transition: right 400ms cubic-bezier(0.175, 0.885, 0.32, 1.075);
   transition-delay: 100ms;
 
   .screen {
-    top: 6px;
     height: 488px;
-    border-radius: 10px;
+    border-radius: $unnnic-border-radius-md;
     overflow: hidden;
     position: relative;
-    margin: 0px 5px;
     cursor: default;
 
     .header {
       color: #eee;
-      background: #555;
-      height: 32px;
+      background-color: $unnnic-color-brand-weni-soft;
+      height: 40px;
 
       .close {
         font-size: 20px;
         width: 25px;
         height: 25px;
         right: 5px;
-        top: 5px;
+        top: 10px;
         position: absolute;
-        color: #ddd;
+        color: $unnnic-color-background-snow;
         cursor: pointer;
         &:hover {
           color: #fff;
@@ -114,12 +110,24 @@ $reset_color: #666;
         right: 38px;
         position: absolute;
       }
+      .reset {
+        position: absolute;
+        cursor: pointer;
+        right: 36px;
+        top: 8px;
+      }
+    }
+    
+    .header.whatsapp {
+      background-color: $unnnic-color-neutral-dark;
     }
 
     .footer {
+      display: flex;
+      justify-content: space-between;
       color: #eee;
-      background: #555;
-      height: 35px;
+      background: $unnnic-color-brand-weni-soft;
+      height: 27px;
       position: absolute;
       z-index: 200;
       bottom: 0;
@@ -129,7 +137,7 @@ $reset_color: #666;
 
       .show_context_button {
         display: inline-block;
-        padding: 12px;
+        padding: 8px;
         cursor: pointer;
 
         &:hover {
@@ -137,34 +145,18 @@ $reset_color: #666;
         }
       }
 
-      .reset {
-        background-color: $reset_color;
-        border: 2px solid lighten($reset_color, 7%);
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        border-radius: 16px;
-        cursor: pointer;
-        width: 60px;
-        height: 15px;
-        position: absolute;
-        left: 94px;
-        margin: 8px 0px;
-
-        &:hover {
-          background-color: $light_reset;
-          border: 2px solid lighten($light_reset, 5%);
-        }
-
-        .inactive {
-          background-color: $reset_color;
-          border: 2px solid $light_reset;
-        }
-
-        .active {
-          background-color: $reset_color;
-          border: 2px solid $light_reset;
-        }
+      .whatsapp_switch {
+        display: flex;
+        align-items: center;
+        gap: $unnnic-spacing-inline-nano;
+        font-size: $unnnic-font-size-body-md;
+        line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+        color: $unnnic-color-neutral-snow;
       }
+    }
+
+    .footer.whatsapp {
+      background-color: $unnnic-color-neutral-dark;
     }
 
     .messages {
@@ -177,16 +169,27 @@ $reset_color: #666;
       position: relative;
       transition: height 0.3s linear;
     }
+
+    .messages.whatsapp {
+      background: url("https://user-images.githubusercontent.com/30026625/242899357-3b7dd272-b2bf-4ac4-a4e1-aba24556a9f2.png") $unnnic-color-brand-sec-dark;
+      background-size: 400px;
+      background-blend-mode: luminosity;
+      background-color: #dedede;
+    }
+
     .controls {
-      z-index: 100;
-      background: #444;
+      z-index: 160;
+      background: $unnnic-color-background-sky;
       bottom: 0px;
-      width: 240px;
-      padding: 5px 5px;
-      bottom: 35px;
+      width: 266px;
+      padding: 7px;
+      bottom: 27px;
       position: absolute;
 
       input {
+        &::placeholder {
+          color: $unnnic-color-neutral-cleanest;
+        }
         &:focus {
           outline: none;
           box-shadow: none;
@@ -199,12 +202,13 @@ $reset_color: #666;
         font-size: 12px !important;
         font-weight: 300;
         height: 13px;
-        width: 195px;
+        width: 205px;
         padding: 6px 8px;
         padding-right: 36px;
         color: #333;
         display: inline-block;
         margin: 0;
+        background-color: $unnnic-color-background-sky;
       }
     }
 
@@ -216,40 +220,35 @@ $reset_color: #666;
       top: 11px;
       right: 4px;
       cursor: pointer;
-      transform: rotate(20deg);
-
-      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.075);
-      &:hover {
-        transform: rotate(0deg) scale(1.1);
-        color: #333;
-      }
     }
 
     .attachment_buttons {
+      display: flex;
+      justify-content: center;
       bottom: -100px;
       position: absolute;
       transition: bottom 200ms cubic-bezier(0.175, 0.885, 0.32, 1.075);
       width: 100%;
-      background: #666;
+      background: $unnnic-color-background-sky;
       height: 40px;
-      color: #e6e6e6;
-      z-index: 100;
+      color: $unnnic-color-neutral-cloudy;
+      z-index: 160;
       text-align: center;
 
       &.visible {
-        bottom: 30px;
+        bottom: 27px;
       }
 
       div {
-        display: inline-block;
         cursor: pointer;
-        padding-left: 7px;
-        padding-right: 7px;
+        padding-left: 4px;
+        padding-right: 4px;
         padding-top: 10px;
-        font-size: 15px;
-        &:hover {
-          color: #ccc;
-        }
+        font-size: 18px;
+      }
+
+      .icon {
+        margin-top: -6px;
       }
     }
   }
@@ -258,21 +257,20 @@ $reset_color: #666;
 .drawer {
   &.drawer_visible {
     &.forced {
-      background: #666;
+      background: $unnnic-color-background-sky;
     }
   }
 
   width: 100%;
-  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.2);
   position: absolute;
-  z-index: 50;
-  background: #555;
+  z-index: 160;
+  background: $unnnic-color-background-sky;
   transition: bottom 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  padding-bottom: 20px;
+  border-bottom: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
 
   .drawer_header {
     height: 10px;
-    background: #555;
+    background: $unnnic-color-background-sky;
     color: $light_gray;
     width: 100%;
   }
@@ -285,12 +283,12 @@ $reset_color: #666;
 
   .audio_picker {
     padding: 20px;
-    color: $light_gray;
+    color: $unnnic-color-neutral-cloudy;
     cursor: pointer;
     text-align: center;
 
     &:hover {
-      background: #777;
+      background: $unnnic-color-neutral-soft;
     }
     .audio_icon {
       display: inline;
@@ -369,11 +367,11 @@ $reset_color: #666;
 }
 
 .simulator_tab {
-  background-color: #2db379;
+  background-color: #009E96;
   width: 130px;
-  height: 50px;
+  height: 40px;
   position: fixed;
-  right: -92px;
+  right: -75px;
   top: 300px;
   cursor: pointer;
   z-index: $z_simulator;
@@ -381,22 +379,21 @@ $reset_color: #666;
   transition-delay: 300ms;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
+  display: flex;
+
   .simulator_tab_icon {
-    position: absolute;
-    font-size: 34px;
-    color: white;
-    padding: 8px 0px;
-    margin-left: 3px;
+    display: inline-block;
+    padding: 4px 12px;
   }
   .simulator_tab_text {
-    position: absolute;
-    left: 40px;
-    top: 10px;
     color: white;
     opacity: 0.01;
     font-weight: 400;
     transition: opacity 500ms;
     transition-delay: 1000ms;
+    font-size: 12px;
+    line-height: 16px;
+    align-self: center;
   }
 }
 
@@ -407,6 +404,11 @@ $reset_color: #666;
     opacity: 0.99;
     transition: opacity 500ms;
   }
+}
+
+.simulator_tab:hover + .guiding_steps {
+  right: 130px !important;
+  transition: right 100ms;
 }
 
 .detail_webhook_called {
@@ -435,4 +437,12 @@ $reset_color: #666;
       transform: scale(1.05);
     }
   }
+}
+
+.guiding_steps {
+  position: fixed !important;
+  top: 320px !important;
+  right: 65px !important;
+  transition: right 200ms, opacity 300ms;
+  transition-delay: 300ms;
 }

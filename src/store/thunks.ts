@@ -84,6 +84,8 @@ export type UpdateTranslationFilters = (translationFilters: {
 
 export type OnOpenNodeEditor = (settings: NodeEditorSettings) => Thunk<void>;
 
+export type UpdateNodesEditor = (nodes: any) => Thunk<void>;
+
 export type OnUpdateCanvasPositions = (positions: CanvasPositions) => Thunk<RenderNodeMap>;
 
 export type OnRemoveNodes = (nodeUUIDs: string[]) => Thunk<RenderNodeMap>;
@@ -692,6 +694,11 @@ export const handleTypeConfigChange = (typeConfig: Type) => (dispatch: DispatchW
 export const resetNodeEditingState = () => (dispatch: DispatchWithState, getState: GetState) => {
   dispatch(mergeEditorState({ ghostNode: null }));
   dispatch(updateNodeEditorSettings(null));
+};
+
+export const updateNodesEditor = (nodes: any) => (dispatch: DispatchWithState) => {
+  dispatch(updateNodes(nodes));
+  markDirty(0);
 };
 
 export const onUpdateAction = (

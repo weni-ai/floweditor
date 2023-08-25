@@ -2,8 +2,15 @@ import { react as bindCallbacks } from 'auto-bind';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import * as React from 'react';
 import { FormState, StringEntry } from 'store/nodeEditor';
+import { applyVueInReact } from 'vuereact-combined';
+
+// @ts-ignore
+import { unnnicIcon } from '@weni/unnnic-system';
 
 import styles from './OptionalTextInput.module.scss';
+import i18n from '../../../config/i18n';
+
+const UnnnicIcon = applyVueInReact(unnnicIcon);
 
 export interface OptionalTextInputProps {
   name: string;
@@ -16,6 +23,7 @@ export interface OptionalTextInputProps {
 
 export interface OptionalTextInputState extends FormState {
   editing: boolean;
+  showToggle: boolean;
 }
 
 /**
@@ -32,6 +40,7 @@ export default class OptionalTextInput extends React.Component<
     });
 
     this.state = {
+      showToggle: !(this.props.value.value.trim().length > 0),
       editing: this.props.value.value.trim().length > 0,
       valid: true
     };
@@ -42,38 +51,44 @@ export default class OptionalTextInput extends React.Component<
   }
 
   private handleEditingChanged(): void {
-    this.setState({ editing: true });
+    this.setState({ editing: !this.state.editing });
   }
 
   public render(): JSX.Element {
-    let ele: JSX.Element;
+    return (
+      <div
+        className={`${styles.optional_text_input} ${this.state.showToggle ? styles.toggle : ''}`}
+      >
+        {this.state.showToggle ? (
+          <span
+            data-testid="toggle-link"
+            data-spec="toggle-link"
+            className={`${styles.toggle_link} ${this.state.editing ? styles.expanded : ''}`}
+            onClick={this.handleEditingChanged}
+          >
+            {this.props.toggleText}
+            <UnnnicIcon
+              icon={this.state.editing ? 'arrow-button-down-1' : 'arrow-button-right-1'}
+              size="xs"
+              scheme="neutral-cleanest"
+            />
+          </span>
+        ) : null}
 
-    if (this.state.editing) {
-      ele = (
-        <TextInputElement
-          data-testid="optional-field"
-          data-spec="optional-field"
-          name={this.props.name}
-          showLabel={true}
-          entry={this.props.value}
-          onChange={this.handleTextChanged}
-          helpText={this.props.helpText}
-          maxLength={this.props.maxLength}
-        />
-      );
-    } else {
-      ele = (
-        <span
-          data-testid="toggle-link"
-          data-spec="toggle-link"
-          className={styles.toggle_link}
-          onClick={this.handleEditingChanged}
-        >
-          {this.props.toggleText}
-        </span>
-      );
-    }
-
-    return <div className={styles.optional_text_input}>{ele}</div>;
+        {this.state.editing ? (
+          <TextInputElement
+            data-testid="optional-field"
+            data-spec="optional-field"
+            name={this.props.name}
+            showLabel={true}
+            entry={this.props.value}
+            onChange={this.handleTextChanged}
+            helpText={this.props.helpText}
+            maxLength={this.props.maxLength}
+            placeholder={i18n.t('form.result', 'Result')}
+          />
+        ) : null}
+      </div>
+    );
   }
 }

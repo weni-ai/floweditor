@@ -62,10 +62,7 @@
 }
 
 .label {
-  margin-left: 2px;
-  margin-bottom: 5px;
-  font-weight: 400;
-  color: #666;
+  margin-bottom: $unnnic-spacing-stack-nano;
 }
 
 .invalid {
@@ -84,8 +81,10 @@
 }
 
 .help_text {
-  color: #ccc;
-  font-size: 11px;
-  padding-top: 6px;
-  padding-bottom: 10px;
+  color: $unnnic-color-neutral-cleanest;
+  font-family: $unnnic-font-family-secondary;
+  font-weight: $unnnic-font-weight-regular;
+  font-size: $unnnic-font-size-body-md;
+  line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+  margin-top: $unnnic-spacing-stack-nano;
 }

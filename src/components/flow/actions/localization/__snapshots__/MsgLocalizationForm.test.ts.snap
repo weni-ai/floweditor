@@ -19,50 +19,71 @@ exports[`MsgLocalizationForm inits inits with initial values 1`] = `
     Array [
       Object {
         "body": <React.Fragment>
-          <p>
-            Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.
-          </p>
           <div
-            className="url_attachment"
+            className="u font secondary body-md color-neutral-cloudy"
+          >
+            Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.
+          </div>
+          <div
+            className="url_attachment_container"
           >
             <div
-              className="type_choice"
+              className="label u font secondary body-md color-neutral-cloudy"
             >
-              <SelectElement
-                entry={
-                  Object {
-                    "value": null,
+              File
+               
+              1
+            </div>
+            <div
+              className="url_attachment"
+            >
+              <div
+                className="type_choice"
+              >
+                <SelectElement
+                  entry={
+                    Object {
+                      "value": null,
+                    }
                   }
-                }
-                name="Type Options"
-                onChange={[Function]}
-                options={
-                  Array [
-                    Object {
-                      "name": "Image URL",
-                      "value": "image",
-                    },
-                    Object {
-                      "name": "Audio URL",
-                      "value": "audio",
-                    },
-                    Object {
-                      "name": "Video URL",
-                      "value": "video",
-                    },
-                    Object {
-                      "name": "PDF Document URL",
-                      "value": "application",
-                    },
-                    Object {
-                      "name": "Upload Attachment",
-                      "value": "upload",
-                    },
-                  ]
-                }
-                placeholder="Add Attachment"
-                style="small"
-              />
+                  name="Type Options"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "name": "Image URL",
+                        "value": "image",
+                      },
+                      Object {
+                        "name": "Audio URL",
+                        "value": "audio",
+                      },
+                      Object {
+                        "name": "Video URL",
+                        "value": "video",
+                      },
+                      Object {
+                        "name": "PDF Document URL",
+                        "value": "application",
+                      },
+                      Object {
+                        "name": "Upload Attachment",
+                        "value": "upload",
+                      },
+                    ]
+                  }
+                  placeholder="Select the file type"
+                  style="sm"
+                />
+              </div>
+              <React.Fragment>
+                <div
+                  className="url"
+                />
+                <div
+                  className="remove"
+                />
+              </React.Fragment>
             </div>
           </div>
           <input
@@ -107,7 +128,7 @@ exports[`MsgLocalizationForm inits inits with initial values 1`] = `
       },
     ]
   }
-  title="Send Message"
+  title="Send message"
 >
   <div
     data-spec="translation-container"
@@ -155,50 +176,71 @@ exports[`MsgLocalizationForm render should render 1`] = `
     Array [
       Object {
         "body": <React.Fragment>
-          <p>
-            Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.
-          </p>
           <div
-            className="url_attachment"
+            className="u font secondary body-md color-neutral-cloudy"
+          >
+            Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.
+          </div>
+          <div
+            className="url_attachment_container"
           >
             <div
-              className="type_choice"
+              className="label u font secondary body-md color-neutral-cloudy"
             >
-              <SelectElement
-                entry={
-                  Object {
-                    "value": null,
+              File
+               
+              1
+            </div>
+            <div
+              className="url_attachment"
+            >
+              <div
+                className="type_choice"
+              >
+                <SelectElement
+                  entry={
+                    Object {
+                      "value": null,
+                    }
                   }
-                }
-                name="Type Options"
-                onChange={[Function]}
-                options={
-                  Array [
-                    Object {
-                      "name": "Image URL",
-                      "value": "image",
-                    },
-                    Object {
-                      "name": "Audio URL",
-                      "value": "audio",
-                    },
-                    Object {
-                      "name": "Video URL",
-                      "value": "video",
-                    },
-                    Object {
-                      "name": "PDF Document URL",
-                      "value": "application",
-                    },
-                    Object {
-                      "name": "Upload Attachment",
-                      "value": "upload",
-                    },
-                  ]
-                }
-                placeholder="Add Attachment"
-                style="small"
-              />
+                  name="Type Options"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "name": "Image URL",
+                        "value": "image",
+                      },
+                      Object {
+                        "name": "Audio URL",
+                        "value": "audio",
+                      },
+                      Object {
+                        "name": "Video URL",
+                        "value": "video",
+                      },
+                      Object {
+                        "name": "PDF Document URL",
+                        "value": "application",
+                      },
+                      Object {
+                        "name": "Upload Attachment",
+                        "value": "upload",
+                      },
+                    ]
+                  }
+                  placeholder="Select the file type"
+                  style="sm"
+                />
+              </div>
+              <React.Fragment>
+                <div
+                  className="url"
+                />
+                <div
+                  className="remove"
+                />
+              </React.Fragment>
             </div>
           </div>
           <input
@@ -243,7 +285,7 @@ exports[`MsgLocalizationForm render should render 1`] = `
       },
     ]
   }
-  title="Send Message"
+  title="Send message"
 >
   <div
     data-spec="translation-container"

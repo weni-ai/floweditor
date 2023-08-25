@@ -1,7 +1,14 @@
 import CaseElement, { CaseElementProps } from 'components/flow/routers/case/CaseElement';
 import { Operators } from 'config/interfaces';
 import * as React from 'react';
-import { fireEvent, render, fireTembaSelect } from 'test/utils';
+import {
+  fireEvent,
+  render,
+  fireTembaSelect,
+  fireUnnnicSelect,
+  fireUnnnicInputChangeText,
+  getUnnnicInputValue
+} from 'test/utils';
 import { createUUID } from 'utils';
 
 const caseUUID = createUUID();
@@ -20,7 +27,7 @@ const caseProps: CaseElementProps = {
 };
 
 const selectOperator = (getByTestId: any, operator: Operators) => {
-  fireTembaSelect(getByTestId('temba_select_operator'), [{ type: operator }]);
+  fireUnnnicSelect(getByTestId('temba_select_operator'), { value: [{ type: operator }] }, 'value');
 };
 
 describe(CaseElement.name, () => {
@@ -58,7 +65,7 @@ describe(CaseElement.name, () => {
     });
 
     it('shouldnt update exit if it has been edited', () => {
-      const { baseElement, queryByDisplayValue, getByTestId, getByDisplayValue } = render(
+      const { baseElement, queryByDisplayValue, getByTestId } = render(
         <CaseElement {...caseProps} />
       );
 
@@ -66,8 +73,8 @@ describe(CaseElement.name, () => {
       selectOperator(getByTestId, Operators.has_phone);
 
       // update our category to a user supplied value
-      const category = getByDisplayValue('Has Phone');
-      fireEvent.change(category, { target: { value: 'My Exit Name' } });
+      const category = getByTestId('Exit Name');
+      fireUnnnicInputChangeText(category, 'My Exit Name');
 
       // now swithc our type to force a category change
       selectOperator(getByTestId, Operators.has_number);
@@ -94,7 +101,8 @@ describe(CaseElement.name, () => {
         <CaseElement {...caseProps} onRemove={onRemove} />
       );
       const args = getAllByTestId('arguments');
-      fireEvent.change(args[0], { target: { value: 'Purple, p' } });
+      fireUnnnicInputChangeText(args[0], 'Purple, p');
+      expect(getUnnnicInputValue(args[0])).toEqual('Purple, p');
       expect(baseElement).toMatchSnapshot();
     });
 
@@ -107,8 +115,11 @@ describe(CaseElement.name, () => {
       selectOperator(getByTestId, Operators.has_number_between);
 
       const args = getAllByTestId('arguments');
-      fireEvent.change(args[0], { target: { value: '1' } });
-      fireEvent.change(args[1], { target: { value: '100' } });
+
+      fireUnnnicInputChangeText(args[0], '1');
+      fireUnnnicInputChangeText(args[1], '100');
+      expect(getUnnnicInputValue(args[0])).toEqual('1');
+      expect(getUnnnicInputValue(args[1])).toEqual('100');
       expect(baseElement).toMatchSnapshot();
     });
   });

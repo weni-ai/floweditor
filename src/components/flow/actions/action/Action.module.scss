@@ -1,29 +1,32 @@
 @import 'variables.module.scss';
+@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
 
 .action {
   position: relative;
   margin: 0px;
   overflow: hidden;
 
+  &:first-child {
+    border-top-right-radius: $unnnic-border-radius-md;
+    border-top-left-radius: $unnnic-border-radius-md;
+  }
+
   &:last-child {
-    border-bottom-right-radius: $curvature;
-    border-bottom-left-radius: $curvature;
+    border-bottom-right-radius: $unnnic-border-radius-md;
+    border-bottom-left-radius: $unnnic-border-radius-md;
   }
 
   &.has_router {
     &:last-child {
-      border-bottom: 1px solid $borders;
-    }
-
-    &:last-child {
-      border-radius: 0px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
   clear: both;
 }
 
 .body {
-  line-height: 1.4em;
+  line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
   word-wrap: break-word;
   width: auto;
 
@@ -49,8 +52,26 @@
   &.missing,
   &.enter_flow,
   &.call_external_service {
+    font-family: $unnnic-font-family-secondary;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+    color: $unnnic-color-neutral-dark;
+
     width: $node_min_width - $action_padding * 2;
     padding: $action_padding;
+  }
+
+  &.call_webhook {
+    text-decoration: underline;
+    text-underline-offset: 0.1875 * $unnnic-font-size; // 3px
+  }
+
+  &.add_contact_groups, &.remove_contact_groups {
+    text-align: center;
+  }
+
+  &.call_classifier {
+    text-align: center;
   }
 
   &.call_classifier {
@@ -63,11 +84,6 @@
     padding: 0px;
     width: $node_min_width + px;
   }
-
-  &.missing {
-    color: tomato;
-    cursor: default;
-  }
 }
 
 .not_localizable {
@@ -75,7 +91,7 @@
     display: block;
   }
   .body {
-    background: #fff !important;
+    background: #fff;
   }
 }
 
@@ -116,6 +132,23 @@
   .body {
     background: #fff;
   }
+}
+
+.selected {
+  background: #EEFFFC !important;
+
+  > div {
+    background: #EEFFFC !important;
+
+    > div {
+      background: #EEFFFC !important;
+    }
+  }
+}
+
+
+.body.missing {
+  background-color: #FFF1F1;
 }
 
 .overlay {

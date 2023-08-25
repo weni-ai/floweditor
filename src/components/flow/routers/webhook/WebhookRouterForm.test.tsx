@@ -8,7 +8,16 @@ import { composeComponentTestUtils, mock } from 'testUtils';
 import { createWebhookRouterNode, getRouterFormProps } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import * as React from 'react';
-import { render, fireEvent, fireChangeText, fireTembaSelect } from 'test/utils';
+import {
+  render,
+  fireEvent,
+  fireChangeText,
+  fireTembaSelect,
+  fireUnnnicInputChangeText,
+  act,
+  fireUnnnicSelect,
+  fireUnnnicTextAreaChangeText
+} from 'test/utils';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -26,13 +35,12 @@ describe(WebhookRouterForm.name, () => {
   });
 
   describe('updates', () => {
-    it('should save changes', () => {
-      const { baseElement, getByText, getByTestId, getAllByTestId } = render(
+    it('should save changes', async () => {
+      const { getByText, getByTestId, getAllByTestId } = render(
         <WebhookRouterForm {...webhookForm} />
       );
-      expect(baseElement).toMatchSnapshot();
 
-      const okButton = getByText('Ok');
+      const okButton = getByText('Confirm');
 
       // our url is required
       fireEvent.click(okButton);
@@ -40,24 +48,28 @@ describe(WebhookRouterForm.name, () => {
 
       // set our url and name
       const url = getByTestId('URL');
-      const resultName = getByTestId('Result Name');
+      const resultName = getByTestId('Save as result');
 
-      fireChangeText(url, 'http://app.rapidpro.io');
-      fireChangeText(resultName, 'My Webhook Result');
+      fireUnnnicInputChangeText(url, 'http://app.rapidpro.io');
+      fireUnnnicInputChangeText(resultName, 'My Webhook Result');
 
-      // make it a post
-      fireTembaSelect(getByTestId('temba_select_method'), 'POST');
+      await act(async () => {
+        // make it a post
+        fireUnnnicSelect(getByTestId('temba_select_method'), { value: 'POST' }, 'value');
+      });
 
       // set a post body
       fireEvent.click(getByText('POST Body'));
       const postBody = getByTestId('POST Body');
 
-      fireChangeText(postBody, 'Updated post body');
+      await act(async () => {
+        fireUnnnicTextAreaChangeText(postBody, 'Updated post body');
+      });
 
       // add http header
       fireEvent.click(getByText('HTTP Headers'));
-      const headerName = getAllByTestId('Header Name')[0];
-      const headerValue = getAllByTestId('Value')[0];
+      const headerName = getAllByTestId('Ex: Accept')[0];
+      const headerValue = getAllByTestId('Ex: application/json')[0];
 
       fireEvent.change(headerName, 'Content-type');
       fireEvent.change(headerValue, 'application/json');
@@ -90,24 +102,26 @@ describe(WebhookRouterForm.name, () => {
       expect(props.updateRouter).not.toHaveBeenCalled();
     });
 
-    it('should validate urls', () => {
+    it('should validate urls', async () => {
       webhookForm.updateRouter = jest.fn();
       const { getByText, getByTestId } = render(<WebhookRouterForm {...webhookForm} />);
 
       // set our url and name
       const url = getByTestId('URL');
-      const resultName = getByTestId('Result Name');
+      const resultName = getByTestId('Save as result');
 
-      fireChangeText(url, 'bad url');
-      fireChangeText(resultName, 'My Webhook Result');
+      fireUnnnicInputChangeText(url, 'bad url');
+      fireUnnnicInputChangeText(resultName, 'My Webhook Result');
 
       // we need a valid url
-      const okButton = getByText('Ok');
+      const okButton = getByText('Confirm');
       fireEvent.click(okButton);
       expect(webhookForm.updateRouter).not.toBeCalled();
 
       // but not if it has an expression
-      fireChangeText(url, '@fields.valid_url');
+      await act(async () => {
+        fireUnnnicInputChangeText(url, '@fields.valid_url');
+      });
       fireEvent.click(okButton);
       expect(webhookForm.updateRouter).toBeCalled();
     });

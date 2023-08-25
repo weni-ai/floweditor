@@ -44,7 +44,7 @@ describe(WaitRouterForm.name, () => {
 
   it('shoud save a normal wait', () => {
     const { getByText } = render(<WaitRouterForm {...colorsWait} />);
-    fireEvent.click(getByText('Ok'));
+    fireEvent.click(getByText('Confirm'));
     expect(colorsWait.updateRouter).toMatchCallSnapshot();
   });
 
@@ -56,7 +56,7 @@ describe(WaitRouterForm.name, () => {
 
   it('should use the right operand for media types', () => {
     const { getByText } = render(<WaitRouterForm {...audioWait} />);
-    fireEvent.click(getByText('Ok'));
+    fireEvent.click(getByText('Confirm'));
 
     // we should have an operand that looks at attachments
     const [newNode]: [RenderNode] = getCallParams(audioWait.updateRouter);

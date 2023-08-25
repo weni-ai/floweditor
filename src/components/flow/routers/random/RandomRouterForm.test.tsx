@@ -2,7 +2,15 @@ import { RouterFormProps } from 'components/flow/props';
 import { getTypeConfig } from 'config';
 import { Types } from 'config/interfaces';
 import * as React from 'react';
-import { fireEvent, render, fireTembaSelect, getByDisplayValue, getByTitle } from 'test/utils';
+import {
+  fireEvent,
+  render,
+  fireTembaSelect,
+  getByDisplayValue,
+  getByTitle,
+  fireUnnnicSelect,
+  act
+} from 'test/utils';
 import { composeComponentTestUtils, mock } from 'testUtils';
 import {
   createRandomNode,
@@ -45,7 +53,7 @@ describe(RandomRouterForm.name, () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('should remove exits when shrinking', () => {
+  it('should remove exits when shrinking', async () => {
     const props: RouterFormProps = {
       nodeSettings: {
         originalNode: createRandomNode(5)
@@ -59,27 +67,22 @@ describe(RandomRouterForm.name, () => {
       issues: []
     };
 
-    const {
-      baseElement,
-      getAllByTestId,
-      getByText,
-      getByDisplayValue,
-      getByTitle,
-      getByTestId
-    } = render(<RandomRouterForm {...props} />);
+    const { baseElement, getByText, getByTestId, debug } = render(<RandomRouterForm {...props} />);
 
-    // we start off with five input boxes for our buckets
-    expect(baseElement.querySelectorAll('input').length).toEqual(5);
+    // we start off with five input boxes for our buckets plus 2 considering the select elements inputs
+    expect(baseElement.querySelectorAll('input').length).toEqual(7);
 
     // choose 3 buckets
-    fireTembaSelect(getByTestId('temba_select_buckets'), '3');
+    await act(async () => {
+      fireUnnnicSelect(getByTestId('temba_select_buckets'), { value: '3' }, 'value');
+    });
 
-    // now we should only have three input buckets
-    expect(baseElement.querySelectorAll('input').length).toEqual(3);
+    // now we should only have three input buckets plus 2 from the select elements inputs
+    expect(baseElement.querySelectorAll('input').length).toEqual(5);
     expect(baseElement).toMatchSnapshot();
 
     // now lets save our form
-    fireEvent.click(getByText('Ok'));
+    fireEvent.click(getByText('Confirm'));
 
     expect(props.updateRouter).toMatchCallSnapshot();
   });

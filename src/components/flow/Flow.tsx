@@ -1,11 +1,12 @@
+import ReactDOM from 'react-dom';
 import { react as bindCallbacks } from 'auto-bind';
-import Button from 'components/button/Button';
 import { Canvas } from 'components/canvas/Canvas';
 import { CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
 import Node from 'components/flow/node/Node';
 import { getDraggedFrom } from 'components/helpers';
 import NodeEditor from 'components/nodeeditor/NodeEditor';
 import Simulator from 'components/simulator/Simulator';
+import Sidebar from 'components/sidebar/Sidebar';
 import Sticky, { STICKY_BODY, STICKY_TITLE } from 'components/sticky/Sticky';
 import { ConfigProviderContext, fakePropType } from 'config/ConfigProvider';
 import { FlowDefinition, FlowMetadata, FlowPosition } from 'flowTypes';
@@ -15,7 +16,7 @@ import { bindActionCreators } from 'redux';
 import Plumber from 'services/Plumber';
 import { DragSelection, DebugState } from 'store/editor';
 import { RenderNode } from 'store/flowContext';
-import { createEmptyNode, detectLoops, getOrderedNodes } from 'store/helpers';
+import { detectLoops, getOrderedNodes } from 'store/helpers';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import AppState from 'store/state';
 import {
@@ -35,6 +36,8 @@ import {
   resetNodeEditingState,
   UpdateConnection,
   updateConnection,
+  UpdateNodesEditor,
+  updateNodesEditor,
   updateSticky,
   UpdateSticky
 } from 'store/thunks';
@@ -49,17 +52,46 @@ import {
 } from 'utils';
 import Debug from 'utils/debug';
 
-import styles from './Flow.module.scss';
-import { Trans } from 'react-i18next';
 import { PopTabType } from 'config/interfaces';
-import i18n from 'config/i18n';
+
+import styles from './Flow.module.scss';
+import { applyVueInReact } from 'vuereact-combined';
+// @ts-ignore
+import { unnnicModalNext, unnnicButton } from '@weni/unnnic-system';
+import { WeniLoveIcon } from './WeniLoveIcon';
+import i18n from '../../config/i18n';
+
+const UnnnicButton = applyVueInReact(unnnicButton, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: ''
+      }
+    }
+  }
+});
+
+const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+        position: 'relative',
+        zIndex: 10e2
+      }
+    }
+  }
+});
 
 declare global {
   interface Window {
     fe: any;
   }
 }
-
 export interface FlowStoreProps {
   ghostNode: RenderNode;
   debug: DebugState;
@@ -81,6 +113,8 @@ export interface FlowStoreProps {
   resetNodeEditingState: NoParamsAC;
   onConnectionDrag: OnConnectionDrag;
   updateSticky: UpdateSticky;
+
+  updateNodesEditor?: UpdateNodesEditor;
 }
 
 export interface Translations {
@@ -116,6 +150,7 @@ export const getDragStyle = (drag: DragSelection) => {
 export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   private Plumber: Plumber;
   private nodeContainerUUID: string;
+  private canvas: React.RefObject<Canvas>;
 
   // Refs
   private ghost: any;
@@ -126,6 +161,8 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
   constructor(props: FlowStoreProps, context: ConfigProviderContext) {
     super(props, context);
+
+    this.canvas = React.createRef();
 
     this.nodeContainerUUID = createUUID();
 
@@ -169,6 +206,8 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     this.Plumber.bind('beforeDetach', (event: ConnectionEvent) => true);
     this.Plumber.bind('beforeDrop', (event: ConnectionEvent) => this.onBeforeConnectorDrop(event));
     this.Plumber.triggerLoaded(this.context.config.onLoad);
+
+    this.checkToShowNewUpdates();
 
     timeEnd('Loaded Flow');
   }
@@ -351,38 +390,6 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     });
   }
 
-  private getEmptyFlow(): JSX.Element {
-    return (
-      <div key="create_node" className={styles.empty_flow}>
-        <Trans i18nKey="empty_flow_message">
-          <h1>Let's get started</h1>
-          <div>
-            We recommend starting your flow by sending a message. This message will be sent to
-            anybody right after they join the flow. This is your chance to send a single message or
-            ask them a question.
-          </div>
-        </Trans>
-
-        <Button
-          name={i18n.t('buttons.create_message', 'Create Message')}
-          onClick={() => {
-            const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
-            this.props.onOpenNodeEditor({
-              originalNode: emptyNode,
-              originalAction: emptyNode.node.actions[0]
-            });
-          }}
-        />
-      </div>
-    );
-  }
-
-  /* 
-  public componentDidUpdate(prevProps: FlowStoreProps): void {
-    traceUpdate(this, prevProps);
-  }
-  */
-
   public handleDragging(uuids: string[]): void {
     uuids.forEach((uuid: string) => {
       try {
@@ -397,6 +404,81 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     this.Plumber.setContainer('canvas');
   }
 
+  private callCanvasCopy(): void {
+    this.canvas.current.manuallyCopy();
+  }
+
+  private startGuiding() {
+    this.props.mergeEditorState({ currentGuide: 'v2', guidingStep: 0 });
+  }
+
+  private showNewUpdatesModal(): void {
+    let newUpdatesModalEl: HTMLDivElement = document.querySelector('#new-updates-modal');
+
+    if (!newUpdatesModalEl) {
+      newUpdatesModalEl = document.createElement('div');
+      newUpdatesModalEl.setAttribute('id', 'new-updates-modal');
+      document.body.appendChild(newUpdatesModalEl);
+    }
+
+    if (newUpdatesModalEl.hasChildNodes()) {
+      return;
+    }
+
+    ReactDOM.render(
+      <UnnnicModalNext className={styles.new_updates}>
+        <div className={styles.content}>
+          <WeniLoveIcon />
+          <span className={styles.title}>
+            {i18n.t('new_updates.title', 'Flow Editor has a new look!')}
+          </span>
+          <span className={styles.description}>
+            {i18n.t('new_updates.description', 'Whats new?')}
+          </span>
+
+          <div className={styles.news_list}>
+            <span>•&nbsp; {i18n.t('new_updates.news.first', 'A beautiful new interface')}</span>
+            <span>
+              •&nbsp; {i18n.t('new_updates.news.second', 'Nodes copy and paste functionality')}
+            </span>
+            <span>•&nbsp; {i18n.t('new_updates.news.third', 'Sidebar with tools (evolving)')}</span>
+            <span>
+              •&nbsp;{' '}
+              {i18n.t('new_updates.news.fourth', 'Possibility to create a new block anywhere')}
+            </span>
+            <span>•&nbsp; {i18n.t('new_updates.news.fifth', 'WhatsApp simulator skin')}</span>
+          </div>
+        </div>
+
+        <div className={styles.buttons}>
+          <UnnnicButton
+            type="terciary"
+            text={i18n.t('new_updates.buttons.first', 'Ignore')}
+            onClick={() => {
+              ReactDOM.unmountComponentAtNode(newUpdatesModalEl);
+            }}
+          />
+          <UnnnicButton
+            className={styles.primary}
+            type="primary"
+            text={i18n.t('new_updates.buttons.second', 'Show me everything')}
+            onClick={() => {
+              this.startGuiding();
+              ReactDOM.unmountComponentAtNode(newUpdatesModalEl);
+            }}
+          />
+        </div>
+      </UnnnicModalNext>,
+      newUpdatesModalEl
+    );
+  }
+
+  private checkToShowNewUpdates() {
+    if (this.context.config.showNewUpdates) {
+      this.showNewUpdatesModal();
+    }
+  }
+
   public render(): JSX.Element {
     const nodes = this.getNodes();
 
@@ -404,10 +486,13 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
     return (
       <div>
-        {nodes.length === 0 ? this.getEmptyFlow() : <>{this.getSimulator()}</>}
+        {this.getSimulator()}
         {this.getNodeEditor()}
 
+        <Sidebar onCopyClick={() => this.callCanvasCopy()} />
+
         <Canvas
+          ref={this.canvas}
           mutable={this.context.config.mutable}
           draggingNew={!!this.props.ghostNode && !this.props.nodeEditorSettings}
           newDragElement={this.getDragNode()}
@@ -420,6 +505,8 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           onDoubleClick={this.handleDoubleClick}
           onUpdatePositions={this.props.onUpdateCanvasPositions}
           onLoaded={this.handleCanvasLoaded}
+          nodes={this.props.nodes}
+          updateNodesEditor={this.props.updateNodesEditor}
         ></Canvas>
         <div id="activity_recent_messages"></div>
       </div>
@@ -458,7 +545,8 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
       onUpdateCanvasPositions,
       onRemoveNodes,
       updateConnection,
-      updateSticky
+      updateSticky,
+      updateNodesEditor
     },
     dispatch
   );

@@ -142,11 +142,13 @@ export class RevisionExplorer extends React.Component<
       <div className={classes}>
         <div className={styles.mask} />
         <PopTab
+          type="revisions"
           header={i18n.t('revisions.header', 'Revisions')}
-          color="#8e5ea7"
-          icon="fe-time"
+          bgColor="#FFFFFF"
+          color="#67738B"
+          icon="synchronize-arrow-clock-4"
           label={i18n.t('revisions.label', 'Revision History')}
-          top="360px"
+          top="348px"
           visible={this.state.visible}
           onShow={this.handleTabClicked}
           onHide={this.handleTabClicked}
@@ -167,24 +169,37 @@ export class RevisionExplorer extends React.Component<
                       key={'revision_' + asset.id}
                       onClick={this.onRevisionClicked(asset)}
                     >
-                      {renderIf(revision.current)(
-                        <div className={styles.button + ' ' + styles.current}>
-                          {i18n.t('revisions.current', 'current')}
-                        </div>
-                      )}
-                      {renderIf(isSelected && !revision.current)(
-                        <div onClick={this.onRevertClicked(asset)} className={styles.button}>
-                          {i18n.t('revisions.revert', 'revert')}
-                        </div>
-                      )}
-                      <div className={styles.created_on}>
+                      <div
+                        className={`${styles.title} u font secondary body-gt color-neutral-darkest`}
+                      >
                         {dateFormat(
                           new Date(revision.created_on),
                           'mmmm d, yyyy, h:MM TT',
                           this.props.utc
                         )}
+
+                        {renderIf(revision.current)(
+                          <div
+                            className={
+                              styles.tag +
+                              ' u font secondary body-sm color-neutral-cloudy ' +
+                              styles.current
+                            }
+                          >
+                            {i18n.t('revisions.current', 'current')}
+                          </div>
+                        )}
+
+                        {renderIf(isSelected && !revision.current)(
+                          <div
+                            onClick={this.onRevertClicked(asset)}
+                            className={`${styles.tag} ${styles.revert} u font secondary body-sm color-neutral-snow`}
+                          >
+                            {i18n.t('revisions.revert', 'revert')}
+                          </div>
+                        )}
                       </div>
-                      <div className={styles.email}>
+                      <div className="u font secondary body-md color-neutral-cloudy">
                         {revision.user.name || revision.user.email}
                       </div>
                     </div>

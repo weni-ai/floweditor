@@ -2,7 +2,7 @@ import ResultRouterForm from 'components/flow/routers/result/ResultRouterForm';
 import { Types } from 'config/interfaces';
 import * as React from 'react';
 import { AssetType, RenderNode } from 'store/flowContext';
-import { fireEvent, render, getCallParams, fireTembaSelect, getByDisplayValue } from 'test/utils';
+import { fireEvent, render, getCallParams, fireUnnnicSelect, fireUnnnicSwitch } from 'test/utils';
 import { mock } from 'testUtils';
 import { createMatchRouter, getRouterFormProps } from 'testUtils/assetCreators';
 import * as utils from 'utils';
@@ -32,10 +32,10 @@ describe(ResultRouterForm.name, () => {
 
     // turn on delimiting
     fireEvent.click(getByText('Advanced'));
-    fireEvent.click(getByText('Delimit Result'));
+    fireUnnnicSwitch(document.querySelector('.unnnic-switch'));
 
     // return to main view
-    fireEvent.click(getByText('Split by Flow Result'));
+    fireEvent.click(getByText('Split by flow result'));
 
     // should have delimit options
     getByText('delimited by');
@@ -59,7 +59,7 @@ describe(ResultRouterForm.name, () => {
     props.assetStore.results.items = { [testResult.id]: testResult };
     const { getByText } = render(<ResultRouterForm {...props} />);
 
-    fireEvent.click(getByText('Ok'));
+    fireEvent.click(getByText('Confirm'));
 
     const [renderNode]: [RenderNode] = getCallParams(props.updateRouter);
     const router = getSwitchRouter(renderNode.node);
@@ -87,10 +87,10 @@ describe(ResultRouterForm.name, () => {
 
     const { getByText, getByTestId } = render(<ResultRouterForm {...props} />);
 
-    fireTembaSelect(getByTestId('temba_select_field_number'), '0');
-    fireTembaSelect(getByTestId('temba_select_delimiter'), '+');
+    fireUnnnicSelect(getByTestId('temba_select_field_number'), { value: '0' }, 'value');
+    fireUnnnicSelect(getByTestId('temba_select_delimiter'), { value: '+' }, 'value');
 
-    fireEvent.click(getByText('Ok'));
+    fireEvent.click(getByText('Confirm'));
 
     const [renderNode]: [RenderNode] = getCallParams(props.updateRouter);
     const router = getSwitchRouter(renderNode.node);

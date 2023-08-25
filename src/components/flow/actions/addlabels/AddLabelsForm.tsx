@@ -9,9 +9,9 @@ import { Asset } from 'store/flowContext';
 import { FormState, mergeForm } from 'store/nodeEditor';
 import { shouldRequireIf, validate } from 'store/validators';
 
+import styles from './AddLabelsForm.module.scss';
 import { initializeForm, stateToAction } from './helpers';
 import i18n from 'config/i18n';
-import { Trans } from 'react-i18next';
 import { renderIssues } from '../helpers';
 
 export interface AddLabelsFormState extends FormState {
@@ -59,7 +59,7 @@ export default class AddLabelsForm extends React.PureComponent<
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true)
@@ -81,27 +81,32 @@ export default class AddLabelsForm extends React.PureComponent<
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
+      <Dialog
+        className={styles.dialog}
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <p data-spec={controlLabelSpecId}>
-          <Trans i18nKey="forms.add_labels_summary">
-            Select the labels to apply to the incoming message.
-          </Trans>
-        </p>
 
         <AssetSelector
           name={i18n.t('forms.labels', 'Labels')}
+          namePure={i18n.t(
+            'forms.add_labels_summary',
+            'Select the labels to apply to the incoming message'
+          )}
           placeholder={i18n.t(
             'enter_to_create_label',
             'Enter the name of an existing label or create a new one'
           )}
+          showLabel={true}
           assets={this.props.assetStore.labels}
           entry={this.state.labels}
           searchable={true}
           multi={true}
           expressions={true}
           onChange={this.handleLabelsChanged}
-          createPrefix={i18n.t('create_label', 'Create Label') + ': '}
+          createPrefix={i18n.t('create_label') + ': '}
           createAssetFromInput={this.handleCreateAssetFromInput}
           onAssetCreated={this.handleLabelCreated}
         />

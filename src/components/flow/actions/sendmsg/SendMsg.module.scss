@@ -1,8 +1,9 @@
 @import 'variables.module.scss';
 
 .quick_replies {
-  display: inline-block;
-  color: $gray;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $unnnic-spacing-stack-xs $unnnic-spacing-inline-xs;
 }
 
 .attachment {
@@ -13,7 +14,7 @@
 }
 
 .summary {
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 .whatsapp {
@@ -30,6 +31,4 @@
 
 .line {
   display: block;
-  margin-top: 3px;
-  min-height: 11px;
 }
