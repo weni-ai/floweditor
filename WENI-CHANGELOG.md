@@ -1,3 +1,8 @@
+2.0.1
+----------
+* Fix: enter not working on temba completion
+* Fix: clear input value if showValue is false
+
 2.0.0
 ----------
 * Feature: Unnnic system migration
