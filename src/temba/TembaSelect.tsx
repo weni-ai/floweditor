@@ -244,6 +244,15 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
       });
     }
 
+    const showValue = !this.props.tags && !!this.props.multi && !!this.props.createPrefix;
+    if (!showValue && this.selectInputRef) {
+      const inputEl = (this.selectInputRef as any).vueRef.$el.querySelector(
+        'input'
+      ) as HTMLInputElement;
+      inputEl.value = '';
+      inputEl.dispatchEvent(new Event('input'));
+    }
+
     if (this.props.onChange) {
       if (this.props.multi) {
         this.props.onChange(resolved);
