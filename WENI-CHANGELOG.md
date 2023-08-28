@@ -1,3 +1,8 @@
+2.0.2
+----------
+- Fix: Prevent needless rerenders on TembaSelect
+- Fix: TembaSelect get next pages of options
+
 2.0.1
 ----------
 * Fix: enter not working on temba completion
