@@ -3,7 +3,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { debounce, snakify } from 'utils';
 import styles from './TembaSelect.module.scss';
-import { Assets, AssetStore } from 'store/flowContext';
+import { Assets } from 'store/flowContext';
 
 import {
   unnnicSelect,
@@ -70,7 +70,7 @@ export interface TembaSelectProps {
 
   queryParam?: string;
 
-  assetStore: AssetStore;
+  completionEndpoint: string;
 }
 
 interface TembaSelectState {
@@ -168,7 +168,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
   }
 
   private async fetchExpressions() {
-    let endpoint = this.props.assetStore.completion.endpoint;
+    let endpoint = this.props.completionEndpoint;
 
     if (endpoint) {
       const { data } = await axios.get(endpoint);
@@ -557,7 +557,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
 
 /* istanbul ignore next */
 const mapStateToProps = ({ flowContext: { assetStore } }: AppState) => ({
-  assetStore
+  completionEndpoint: assetStore.completion.endpoint
 });
 
 export default connect(
