@@ -147,23 +147,33 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
   }
 
   private async fetchOptions(query?: string) {
-    let endpoint = this.props.assets ? this.props.assets.endpoint : this.props.endpoint;
+    let url = this.props.assets ? this.props.assets.endpoint : this.props.endpoint;
 
-    if (endpoint) {
-      // TODO: handle search from endpoint
-      if (this.props.queryParam) {
-        if (endpoint.indexOf('?') > -1) {
-          endpoint += '&';
-        } else {
-          endpoint += '?';
+    try {
+      if (url) {
+        if (this.props.queryParam) {
+          if (url.indexOf('?') > -1) {
+            url += '&';
+          } else {
+            url += '?';
+          }
+
+          url += this.props.queryParam + '=' + encodeURIComponent(query || '');
         }
 
-        endpoint += this.props.queryParam + '=' + encodeURIComponent(query || '');
-      }
-      const { data } = await axios.get(endpoint);
+        let options: any[] = [];
+        let pageUrl = url;
+        while (pageUrl) {
+          const { data } = await axios.get(pageUrl);
+          options = options.concat(data.results || []);
+          pageUrl = data.next;
+        }
 
-      let options = (this.props.options || []).concat(data.results || []);
-      this.setAvailableOptions(options);
+        options = (this.props.options || []).concat(options || []);
+        this.setAvailableOptions(options);
+      }
+    } catch (err) {
+      this.setAvailableOptions(this.props.options || []);
     }
   }
 
