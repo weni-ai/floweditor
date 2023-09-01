@@ -98,7 +98,14 @@ export default class TitleBar extends React.Component<TitleBarProps> {
                 'Are you sure you want to delete the card?'
               )}
               <br />
-              {i18n.t('action_cannot_be_reversed', 'This action cannot be reversed.')}
+              <b>{i18n.t('action_cannot_be_reversed', 'This action cannot be reversed.')}</b>
+              <br />
+              <br />
+              {i18n.t(
+                'you_can_also_delete_cards_pressing_the_keys',
+                'You can also delete cards by pressing'
+              )}{' '}
+              <b>delete</b> {i18n.t('or', 'or')} <b>backspace</b>.
             </>
           )
         }}
