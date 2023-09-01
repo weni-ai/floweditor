@@ -404,7 +404,8 @@
     "ex_weni": "Ex: weni.ai",
     "ex_accept": "Ex: Accept",
     "ex_application_json": "Ex: application/json",
-    "none": "Nenhum"
+    "none": "Nenhum",
+    "topic_placeholder": "Selecione o tópico"
   },
   "issues": {
     "header": "Problemas no Fluxo",

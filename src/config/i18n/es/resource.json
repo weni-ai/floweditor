@@ -403,7 +403,8 @@
     "ex_weni": "Ej: weni.ai",
     "ex_accept": "Ej: Accept",
     "ex_application_json": "Ej: application/json",
-    "none": "Ninguno"
+    "none": "Ninguno",
+    "topic_placeholder": "Seleccionar tema"
   },
   "issues": {
     "header": "Problemas de Flujo",
