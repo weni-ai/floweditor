@@ -39,7 +39,9 @@ exports[`LogEvent should render broadcast_created event 1`] = `
             </span>
           </div>
         </div>
-        <div>
+        <div
+          class="msg_wrapper"
+        >
           <div
             class="msg_text"
           >
@@ -296,7 +298,9 @@ exports[`LogEvent should render ivr_created event 1`] = `
             </span>
           </div>
         </div>
-        <div>
+        <div
+          class="msg_wrapper"
+        >
           <div>
             <img
               alt="Attachment"
@@ -354,7 +358,9 @@ exports[`LogEvent should render msg_created event 1`] = `
             </span>
           </div>
         </div>
-        <div>
+        <div
+          class="msg_wrapper"
+        >
           <div>
             <img
               alt="Attachment"
@@ -382,7 +388,9 @@ exports[`LogEvent should render msg_received event 1`] = `
       <div
         class="msg_received "
       >
-        <div>
+        <div
+          class="msg_wrapper"
+        >
           <div>
             <img
               alt="Attachment"

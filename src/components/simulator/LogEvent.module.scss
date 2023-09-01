@@ -20,10 +20,7 @@
   font-weight: $unnnic-font-weight-regular;
   font-size: $unnnic-font-size-body-md;
 }
- 
-.msg_text {
-  padding: 8px 15px;
-}
+
 .ivr_msg,
 .send_msg {
   display: flex;
@@ -32,10 +29,15 @@
   color: $unnnic-color-neutral-darkest;
   width: 100%;
   
-  .msg_text {
-    border-radius: 0 $unnnic-border-radius-sm $unnnic-border-radius-sm $unnnic-border-radius-sm;
-    background: $unnnic-color-background-sky;
+  .msg_wrapper {
     margin-top: $unnnic-spacing-stack-xs;
+    padding: 8px 15px;
+    background: $unnnic-color-background-sky;
+    border-radius: 0 $unnnic-border-radius-sm $unnnic-border-radius-sm $unnnic-border-radius-sm;
+  }
+
+  .msg_text {
+    min-height: $unnnic-font-size-body-md;
   }
 
   .profile_image {
