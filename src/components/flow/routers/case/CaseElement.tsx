@@ -21,6 +21,7 @@ import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
 import { unnnicIcon, unnnicButton } from '@weni/unnnic-system';
+import { DragIcon } from '../../../../pureIcons/DragIcon';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -497,14 +498,9 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
           className={`${styles.kase} ${styles[this.state.operatorConfig.type]}`}
           data-draggable={true}
         >
-          <div className={styles.operator_container}>
+          <div className={styles.operator_container} data-draggable={true}>
             <span className={styles.move_icon} data-draggable={true}>
-              <UnnnicButton
-                iconCenter={'move-expand-vertical-1'}
-                size="small"
-                data-draggable={true}
-                type="terciary"
-              />
+              <DragIcon draggable={true} />
             </span>
 
             <div className={styles.choice}>

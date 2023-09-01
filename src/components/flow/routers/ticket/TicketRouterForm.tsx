@@ -33,7 +33,6 @@ export interface TicketRouterFormState extends FormState {
   resultName: StringEntry;
   queues: any[];
   topics: any[];
-  topicSelectKey: number;
 }
 
 export default class TicketRouterForm extends React.Component<
@@ -176,7 +175,6 @@ export default class TicketRouterForm extends React.Component<
         ? { queues: topics, topic: toUpdateTopic as Topic }
         : { topics: topics, topic: toUpdateTopic as Topic };
       this.handleUpdate(toUpdate);
-      this.setState({ topicSelectKey: this.state.topicSelectKey + 1 });
     });
   }
 
@@ -298,9 +296,9 @@ export default class TicketRouterForm extends React.Component<
         <div style={{ display: 'flex', width: '100%', marginTop: '0.5em' }}>
           <div style={{ flexBasis: 250 }}>
             <TembaSelect
-              key={this.state.topicSelectKey}
               name={i18n.t('forms.topic', 'Topic')}
               options={isWenichatsType ? this.state.queues : this.state.topics}
+              placeholder={i18n.t('forms.topic_placeholder', 'Select the topic to use')}
               onChange={this.handleTopicUpdate}
               value={this.state.topic.value}
               createPrefix={i18n.t('forms.topic_prefix', 'Create Topic: ')}

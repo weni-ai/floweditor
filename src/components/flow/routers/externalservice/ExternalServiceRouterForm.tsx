@@ -60,7 +60,8 @@ export default class ExternalServiceRouterForm extends React.Component<
       resultName?: string;
       params?: any[];
     },
-    submitting = false
+    submitting = false,
+    callback?: () => void
   ): boolean {
     const updates: Partial<ExternalServiceRouterFormState> = {};
 
@@ -113,7 +114,7 @@ export default class ExternalServiceRouterForm extends React.Component<
       updated.valid = false;
     }
 
-    this.setState(updated);
+    this.setState(updated, callback);
     return updated.valid;
   }
 
@@ -140,8 +141,9 @@ export default class ExternalServiceRouterForm extends React.Component<
   private async handleExternalServiceUpdate(selected: any[]) {
     const newService = selected[0];
 
-    this.handleUpdate({ externalService: newService });
-    this.handleCallUpdate(newService.actions[0]);
+    this.handleUpdate({ externalService: newService }, false, () => {
+      this.handleCallUpdate(newService.actions[0]);
+    });
   }
 
   private handleCallUpdate(call: ServiceCall): void {

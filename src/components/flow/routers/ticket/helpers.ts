@@ -53,7 +53,6 @@ export const nodeToState = (
     resultName,
     queues,
     topics,
-    topicSelectKey: 0,
     valid: true
   };
 

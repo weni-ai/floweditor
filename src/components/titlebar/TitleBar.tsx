@@ -88,7 +88,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
         title={i18n.t('removal_confirmation', 'Do you want to delete the card?')}
         actionPrimaryLabel={i18n.t('buttons.confirm', 'Confirm')}
         actionSecondaryLabel={i18n.t('buttons.cancel', 'Cancel')}
-        actionPrimaryButtonType="secondary"
+        actionPrimaryButtonType="primary"
         showCloseButton
         $slots={{
           description: (
