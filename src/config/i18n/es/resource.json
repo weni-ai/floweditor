@@ -403,7 +403,8 @@
     "ex_weni": "Ej: weni.ai",
     "ex_accept": "Ej: Accept",
     "ex_application_json": "Ej: application/json",
-    "none": "Ninguno"
+    "none": "Ninguno",
+    "quick_replies_limit": "Puedes agregar hasta 10 respuestas rápidas."
   },
   "issues": {
     "header": "Problemas de Flujo",
@@ -602,5 +603,7 @@
         "button": "Lo tengo 3/3"
       }
     }
-  }
+  },
+  "you_can_also_delete_cards_pressing_the_keys": "También puedes eliminar bloques escribiendo las teclas",
+  "or": "o"
 }
