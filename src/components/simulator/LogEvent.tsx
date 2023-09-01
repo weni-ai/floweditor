@@ -212,7 +212,7 @@ const renderMessage = (
           />
         </div>
       ) : null}
-      <div>
+      <div className={styles.msg_wrapper}>
         {attaches.map((attachment: string) => (
           <div key={text + attachment}>{renderAttachment(attachment)}</div>
         ))}
