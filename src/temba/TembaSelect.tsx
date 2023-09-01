@@ -540,6 +540,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     }
 
     this.setState({ showOptions: false });
+    this.clearInputValue();
   }
 
   private handleInputFocus() {
@@ -563,6 +564,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
 
   private clearInputValue() {
     this.setState({ input: null });
+    this.getRefFromVueInputRef(this.selectInputRef).blur();
   }
 
   private getRefFromVueInputRef(inputRef: HTMLInputElement) {

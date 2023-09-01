@@ -47,6 +47,11 @@
     .name {
       color: $unnnic-color-neutral-dark ;
     }
+
+    .multi_wrapper {
+      display: flex;
+      gap: $unnnic-spacing-inline-xs;
+    }
   }
 
   .completion {
@@ -87,12 +92,12 @@
     }
   }
 
-  .option.active {
-    background-color: $unnnic-color-neutral-light;
-  }
-
-  .completion.active {
+  .active {
     background-color: $unnnic-color-neutral-light;
     font-weight: $unnnic-font-weight-bold;
+  }
+
+  .active.selected {
+    font-weight: $unnnic-font-weight-black;
   }
 }

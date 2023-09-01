@@ -255,7 +255,10 @@ export default class SelectOptions extends React.Component<SelectOptionsProps, S
       return <span className={styles.name}>{optionText}</span>;
     } else {
       return (
-        <UnnnicCheckbox className={styles.checkbox} value={!!selected} textRight={optionText} />
+        <div className={styles.multi_wrapper}>
+          <UnnnicCheckbox className={styles.checkbox} value={!!selected} />
+          <span className={styles.name}>{optionText}</span>
+        </div>
       );
     }
   }
