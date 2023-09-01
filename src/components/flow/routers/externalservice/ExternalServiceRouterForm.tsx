@@ -101,10 +101,12 @@ export default class ExternalServiceRouterForm extends React.Component<
         return { ...param, valid };
       });
 
-      updates.params.value = this.mapParamOptions(
-        updates.params.value,
-        this.state.externalService.value.actions
-      );
+      if (this.state.externalService.value.actions) {
+        updates.params.value = this.mapParamOptions(
+          updates.params.value,
+          this.state.externalService.value.actions
+        );
+      }
     }
 
     const updated = mergeForm(this.state, updates);
