@@ -1,3 +1,10 @@
+2.0.3
+----------
+- Fix: Add texts into quick replies and node deletion cards
+- Fix: Node add alignment
+- Fix: Check if service is defined before param map
+- Fix: Add linebreaks on simulator and sendmsg renders
+
 2.0.2
 ----------
 - Fix: Prevent needless rerenders on TembaSelect
