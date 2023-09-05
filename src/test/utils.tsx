@@ -11,6 +11,7 @@ import { createUUID } from 'utils';
 
 import config from './config';
 import { RouterFormProps } from 'components/flow/props';
+const completionResp = require('test/assets/completion.json');
 
 export const TEST_NODE: FlowNode = {
   uuid: createUUID(),
@@ -39,7 +40,7 @@ export const EMPTY_TEST_ASSETS = {
   recipients: { items: {}, type: AssetType.Contact || AssetType.Group || AssetType.URN },
   ticketers: { items: {}, type: AssetType.Ticketer },
   externalServices: { items: {}, type: AssetType.ExternalService },
-  completion: { items: {}, type: AssetType.Expression }
+  completion: { items: completionResp, type: AssetType.Expression }
 };
 
 const initial = initialState;
@@ -107,6 +108,15 @@ export const fireUnnnicAutocompleteSelect = (ele: any, value: any, valueKey: str
 
 export const fireUnnnicAutocompleteSelectWithArray = (ele: any, value: any) => {
   ele.__vue__.reactWrapperRef.vueRef.toggle(value);
+};
+
+export const fireOptionSelect = (ele: HTMLElement, value: any) => {
+  const event = new CustomEvent('select', { detail: value });
+  fireEvent(ele, event);
+};
+
+export const getDomElement = (ele: HTMLElement, selector: string) => {
+  return ele.querySelector(selector);
 };
 
 export const fireTembaSelect = (ele: HTMLElement, value: any) => {

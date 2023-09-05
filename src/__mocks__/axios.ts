@@ -7,12 +7,12 @@ const flowsResp = require('test/assets/flows.json');
 const groupsResp = require('test/assets/groups.json');
 const contactsResp = require('test/assets/contacts.json');
 const fieldsResp = require('test/assets/fields.json');
-const recipientsResp = require('test/assets/recipients.json');
 const labelsResp = require('test/assets/labels.json');
 const revisionsResp = require('test/assets/revisions.json');
 const completionResp = require('test/assets/completion.json');
 const externalServicesCalls = require('test/assets/external_services_calls.json');
 const usersResp = require('test/assets/users.json');
+const topicsResp = require('test/assets/topics.json');
 
 const getEndpoint = (urlStr: string) => {
   const queryIdx = urlStr.indexOf('?');
@@ -55,8 +55,6 @@ axios.get = jest.fn((url: string) => {
       return resolvePromise(contactsResp);
     case endpoints.fields:
       return resolvePromise(fieldsResp);
-    case endpoints.recipients:
-      return resolvePromise(recipientsResp);
     case endpoints.labels:
       return resolvePromise(labelsResp);
     case endpoints.revisions:
@@ -67,6 +65,8 @@ axios.get = jest.fn((url: string) => {
       return resolvePromise(completionResp);
     case endpoints.users:
       return resolvePromise(usersResp);
+    case endpoints.topics:
+      return resolvePromise(topicsResp);
     default:
       throw new Error('Axios mock: url not passed. Passed: ' + url);
   }

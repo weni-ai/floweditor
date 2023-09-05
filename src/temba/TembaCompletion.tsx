@@ -15,11 +15,11 @@ import { connect } from 'react-redux';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
-import { unnnicTextArea, unnnicInput } from '@weni/unnnic-system';
+import { unnnicTextArea, unnnicInputNext } from '@weni/unnnic-system';
 import { TembaStore } from '../temba-components';
 import SelectOptions from './SelectOptions';
 const UnnnicTextArea = applyVueInReact(unnnicTextArea);
-const UnnnicInput = applyVueInReact(unnnicInput);
+const UnnnicInputNext = applyVueInReact(unnnicInputNext);
 
 interface ValuedCompletionOption extends CompletionOption {
   value: string;
@@ -255,20 +255,22 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
               errors={this.props.errors}
             />
           ) : (
-            <UnnnicInput
+            <UnnnicInputNext
               ref={(ele: any) => {
                 this.refInput = ele;
               }}
+              data-testid={this.props.name}
               value={this.props.value}
               on={{ input: this.handleInputChange }}
               placeholder={this.props.placeholder}
               size={this.props.size}
               type={hasErrors ? 'error' : 'normal'}
-              message={this.props.errors && this.props.errors[0]}
+              error={this.props.errors && this.props.errors[0]}
             />
           )}
           {this.tembaCompletionRef && ref ? (
             <SelectOptions
+              testId={`temba_completion_options_${this.props.name}`}
               options={this.state.options}
               onBlur={this.hideExpressionsMenu}
               onSelect={option => this.handleInput(option, ref, selector)}

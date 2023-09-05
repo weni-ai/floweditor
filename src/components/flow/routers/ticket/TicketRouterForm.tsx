@@ -138,7 +138,7 @@ export default class TicketRouterForm extends React.Component<
       let ticketerQueuesEndpoint =
         this.context.config.endpoints.ticketer_queues +
         `?ticketer_uuid=${this.state.ticketer.value.uuid}`;
-      axios(ticketerQueuesEndpoint).then(response => {
+      axios.get(ticketerQueuesEndpoint).then(response => {
         const topics = response.data;
         let toUpdateTopic = topics.length > 0 ? topics[0] : {};
         if (this.state.topic.value) {
@@ -164,7 +164,7 @@ export default class TicketRouterForm extends React.Component<
       ? this.context.config.endpoints.topics
       : this.props.assetStore.ticketers.endpoint.replace('ticketers', 'topics');
 
-    axios(url).then(response => {
+    axios.get(url).then(response => {
       const topics = isWenichatsType ? response.data : response.data.results;
 
       let toUpdateTopic = topics.length > 0 ? topics[0] : {};
@@ -187,7 +187,7 @@ export default class TicketRouterForm extends React.Component<
         'ticketer_queues'
       );
       ticketerQueuesEndpoint += `?ticketer_uuid=${ticketer.uuid}`;
-      axios(ticketerQueuesEndpoint).then(response => {
+      axios.get(ticketerQueuesEndpoint).then(response => {
         const topics = response.data;
         let toUpdateTopic = topics.length > 0 ? topics[0] : {};
         if (this.state.topic.value) {

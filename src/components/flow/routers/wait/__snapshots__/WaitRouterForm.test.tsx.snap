@@ -75,43 +75,35 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
           </div>
           <div>
             <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
+              class="select_wrapper"
+              data-testid="temba_select_type"
             >
               <div
-                class="unnnic-autocomplete-select bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_type"
-                data-v-4e186498=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
                 <div
-                  class="unnnic-form sm"
-                  data-v-48c0c241=""
-                  data-v-4e186498=""
+                  class="unnnic-input size-sm bold_placeholder"
+                  data-passed-props="[object Object]"
+                  data-testid="temba_select_input_type"
+                  data-v-37e767d4=""
                 >
                   <!---->
                   <div
-                    class="unnnic-form-input"
-                    data-v-2d3b8b50=""
-                    data-v-48c0c241=""
-                    mask=""
-                    style="position: relative;"
-                    v-bind="[object Object]"
+                    class="input-container"
+                    data-v-37e767d4=""
                   >
+                    <!---->
                     <input
-                      class="input size-sm normal has-icon-left"
-                      data-v-2d3b8b50=""
-                      data-v-f03c53b0=""
-                      iconleft="search-1"
+                      class="unnnic-font secondary"
+                      data-v-37e767d4=""
                       placeholder="Wait for the contact to respond"
-                      size="0"
                       type="text"
-                      v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
-                      data-v-2d3b8b50=""
-                      data-v-a1936218=""
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      data-v-37e767d4=""
+                      data-v-59b073b4=""
                     >
                       <svg
                         fill="none"
@@ -120,7 +112,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                       >
                         <path
                           class="primary"
-                          d="M34.0615 35.0005C33.8116 35.0005 33.5754 34.903 33.3992 34.7256L25.2575 26.5826C24.3065 27.3961 23.2355 28.0597 22.067 28.5559C20.5312 29.2082 18.9178 29.5394 17.272 29.5394C15.7011 29.5394 14.1578 29.2382 12.6819 28.6421C9.64389 27.4161 7.26574 25.0817 5.98481 22.0662C4.70388 19.052 4.67263 15.7178 5.89858 12.6811C7.12452 9.64433 9.45894 7.26492 12.4732 5.98399C14.009 5.33041 15.6211 5.00049 17.2682 5.00049C18.8391 5.00049 20.3825 5.30291 21.8583 5.89776C24.8963 7.12371 27.2745 9.45812 28.5554 12.4736C29.8363 15.4891 29.8676 18.822 28.6416 21.8588C28.1393 23.1035 27.4469 24.2444 26.5809 25.2554L34.7251 33.4009C35.09 33.7658 35.09 34.3606 34.7251 34.7268C34.5477 34.903 34.3115 35.0005 34.0615 35.0005ZM17.2682 6.87502C15.8748 6.87502 14.5077 7.15495 13.2068 7.70856C10.6524 8.79454 8.67413 10.809 7.63564 13.3821C6.59715 15.9552 6.6234 18.7783 7.70813 21.3327C8.7941 23.887 10.8086 25.8653 13.3817 26.9038C14.6326 27.4086 15.9411 27.6636 17.2707 27.6636C18.6641 27.6636 20.0313 27.3836 21.3322 26.83C22.5494 26.3127 23.6404 25.5828 24.5739 24.6606C24.5864 24.6431 24.6002 24.6281 24.6139 24.6143C24.6339 24.5943 24.6526 24.5781 24.6701 24.5656C25.6236 23.6021 26.381 22.4499 26.9021 21.1565C27.9406 18.5833 27.9143 15.7603 26.8283 13.2059C25.7436 10.6516 23.7279 8.67332 21.1548 7.63483C19.9063 7.13121 18.5979 6.87502 17.2682 6.87502Z"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
                           fill="#3B414D"
                         />
                       </svg>
@@ -129,8 +121,248 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   </div>
                   <!---->
                 </div>
-                <!---->
               </div>
+              <div
+                class="options_wrapper"
+                data-testid="temba_select_options_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              >
+                <div
+                  class="option active "
+                  data-option-index="0"
+                >
+                  <span
+                    class="name"
+                  >
+                    Send the contact a message
+                  </span>
+                </div>
+                <div
+                  class="option  selected"
+                  data-option-index="1"
+                >
+                  <span
+                    class="name"
+                  >
+                    Wait for the contact to respond
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="name"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="3"
+                >
+                  <span
+                    class="name"
+                  >
+                    Label the incoming message
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="4"
+                >
+                  <span
+                    class="name"
+                  >
+                    Add a URN for the contact
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="name"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="name"
+                  >
+                    Remove the contact from a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="name"
+                  >
+                    Update the contact
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="8"
+                >
+                  <span
+                    class="name"
+                  >
+                    Send email
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="name"
+                  >
+                    Save a result for this flow
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="10"
+                >
+                  <span
+                    class="name"
+                  >
+                    Call a webhook
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="11"
+                >
+                  <span
+                    class="name"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="12"
+                >
+                  <span
+                    class="name"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="13"
+                >
+                  <span
+                    class="name"
+                  >
+                    Start somebody else in a flow
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="14"
+                >
+                  <span
+                    class="name"
+                  >
+                    Open a ticket with a human agent
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="name"
+                  >
+                    Send the contact airtime
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="16"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by intent
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="17"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="18"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="19"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by a result in the flow
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="22"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by URN type
+                  </span>
+                </div>
+              </div>
+              <div
+                class="options_wrapper"
+                data-testid="temba_select_expressions_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
             </div>
           </div>
         </div>
@@ -153,7 +385,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cleanest"
                   data-passed-props="[object Object]"
-                  data-v-a1936218=""
+                  data-v-59b073b4=""
                 >
                   <svg
                     fill="none"
@@ -188,9 +420,9 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--ghost unnnic-button-scheme--"
                   data-passed-props="[object Object]"
-                  data-v-00f478da=""
+                  data-v-c21b2f22=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
@@ -198,7 +430,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-00f478da=""
+                    data-v-c21b2f22=""
                   >
                      Cancel 
                   </span>
@@ -209,9 +441,9 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary unnnic-button-scheme--undefined"
                   data-passed-props="[object Object]"
-                  data-v-00f478da=""
+                  data-v-c21b2f22=""
                   style="margin-top: 0px;"
                 >
                   <!---->
@@ -219,7 +451,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-00f478da=""
+                    data-v-c21b2f22=""
                   >
                      Confirm 
                   </span>
@@ -270,43 +502,35 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
           </div>
           <div>
             <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
+              class="select_wrapper"
+              data-testid="temba_select_type"
             >
               <div
-                class="unnnic-autocomplete-select bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_type"
-                data-v-4e186498=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
                 <div
-                  class="unnnic-form sm"
-                  data-v-48c0c241=""
-                  data-v-4e186498=""
+                  class="unnnic-input size-sm bold_placeholder"
+                  data-passed-props="[object Object]"
+                  data-testid="temba_select_input_type"
+                  data-v-37e767d4=""
                 >
                   <!---->
                   <div
-                    class="unnnic-form-input"
-                    data-v-2d3b8b50=""
-                    data-v-48c0c241=""
-                    mask=""
-                    style="position: relative;"
-                    v-bind="[object Object]"
+                    class="input-container"
+                    data-v-37e767d4=""
                   >
+                    <!---->
                     <input
-                      class="input size-sm normal has-icon-left"
-                      data-v-2d3b8b50=""
-                      data-v-f03c53b0=""
-                      iconleft="search-1"
+                      class="unnnic-font secondary"
+                      data-v-37e767d4=""
                       placeholder="Wait for an audio recording"
-                      size="0"
                       type="text"
-                      v-bind="[object Object]"
                     />
                     <span
-                      class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
-                      data-v-2d3b8b50=""
-                      data-v-a1936218=""
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      data-v-37e767d4=""
+                      data-v-59b073b4=""
                     >
                       <svg
                         fill="none"
@@ -315,7 +539,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                       >
                         <path
                           class="primary"
-                          d="M34.0615 35.0005C33.8116 35.0005 33.5754 34.903 33.3992 34.7256L25.2575 26.5826C24.3065 27.3961 23.2355 28.0597 22.067 28.5559C20.5312 29.2082 18.9178 29.5394 17.272 29.5394C15.7011 29.5394 14.1578 29.2382 12.6819 28.6421C9.64389 27.4161 7.26574 25.0817 5.98481 22.0662C4.70388 19.052 4.67263 15.7178 5.89858 12.6811C7.12452 9.64433 9.45894 7.26492 12.4732 5.98399C14.009 5.33041 15.6211 5.00049 17.2682 5.00049C18.8391 5.00049 20.3825 5.30291 21.8583 5.89776C24.8963 7.12371 27.2745 9.45812 28.5554 12.4736C29.8363 15.4891 29.8676 18.822 28.6416 21.8588C28.1393 23.1035 27.4469 24.2444 26.5809 25.2554L34.7251 33.4009C35.09 33.7658 35.09 34.3606 34.7251 34.7268C34.5477 34.903 34.3115 35.0005 34.0615 35.0005ZM17.2682 6.87502C15.8748 6.87502 14.5077 7.15495 13.2068 7.70856C10.6524 8.79454 8.67413 10.809 7.63564 13.3821C6.59715 15.9552 6.6234 18.7783 7.70813 21.3327C8.7941 23.887 10.8086 25.8653 13.3817 26.9038C14.6326 27.4086 15.9411 27.6636 17.2707 27.6636C18.6641 27.6636 20.0313 27.3836 21.3322 26.83C22.5494 26.3127 23.6404 25.5828 24.5739 24.6606C24.5864 24.6431 24.6002 24.6281 24.6139 24.6143C24.6339 24.5943 24.6526 24.5781 24.6701 24.5656C25.6236 23.6021 26.381 22.4499 26.9021 21.1565C27.9406 18.5833 27.9143 15.7603 26.8283 13.2059C25.7436 10.6516 23.7279 8.67332 21.1548 7.63483C19.9063 7.13121 18.5979 6.87502 17.2682 6.87502Z"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
                           fill="#3B414D"
                         />
                       </svg>
@@ -324,8 +548,248 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   </div>
                   <!---->
                 </div>
-                <!---->
               </div>
+              <div
+                class="options_wrapper"
+                data-testid="temba_select_options_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              >
+                <div
+                  class="option active "
+                  data-option-index="0"
+                >
+                  <span
+                    class="name"
+                  >
+                    Send the contact a message
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="name"
+                  >
+                    Wait for the contact to respond
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="name"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="3"
+                >
+                  <span
+                    class="name"
+                  >
+                    Label the incoming message
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="4"
+                >
+                  <span
+                    class="name"
+                  >
+                    Add a URN for the contact
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="name"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="name"
+                  >
+                    Remove the contact from a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="name"
+                  >
+                    Update the contact
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="8"
+                >
+                  <span
+                    class="name"
+                  >
+                    Send email
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="name"
+                  >
+                    Save a result for this flow
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="10"
+                >
+                  <span
+                    class="name"
+                  >
+                    Call a webhook
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="11"
+                >
+                  <span
+                    class="name"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="12"
+                >
+                  <span
+                    class="name"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="13"
+                >
+                  <span
+                    class="name"
+                  >
+                    Start somebody else in a flow
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="14"
+                >
+                  <span
+                    class="name"
+                  >
+                    Open a ticket with a human agent
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="name"
+                  >
+                    Send the contact airtime
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="16"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by intent
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="17"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="18"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="19"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by a result in the flow
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="22"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by URN type
+                  </span>
+                </div>
+              </div>
+              <div
+                class="options_wrapper"
+                data-testid="temba_select_expressions_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
             </div>
           </div>
         </div>
@@ -344,22 +808,22 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                 class="unnnic-input size-sm"
                 data-passed-props="[object Object]"
                 data-testid="Save as result"
-                data-v-391ed932=""
+                data-v-37e767d4=""
               >
                 <span
                   class="label unnnic-font secondary color-neutral-cloudy body-md"
-                  data-v-391ed932=""
+                  data-v-37e767d4=""
                 >
                    Save as result 
                 </span>
                 <div
                   class="input-container"
-                  data-v-391ed932=""
+                  data-v-37e767d4=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-391ed932=""
+                    data-v-37e767d4=""
                     maxlength="64"
                     placeholder="Result"
                     type="text"
@@ -389,9 +853,9 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--ghost unnnic-button-scheme--"
                   data-passed-props="[object Object]"
-                  data-v-00f478da=""
+                  data-v-c21b2f22=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
@@ -399,7 +863,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-00f478da=""
+                    data-v-c21b2f22=""
                   >
                      Cancel 
                   </span>
@@ -410,9 +874,9 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary unnnic-button-scheme--undefined"
                   data-passed-props="[object Object]"
-                  data-v-00f478da=""
+                  data-v-c21b2f22=""
                   style="margin-top: 0px;"
                 >
                   <!---->
@@ -420,7 +884,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-00f478da=""
+                    data-v-c21b2f22=""
                   >
                      Confirm 
                   </span>

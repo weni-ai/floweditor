@@ -1,13 +1,4 @@
-import {
-  render,
-  mock,
-  fireEvent,
-  getUpdatedNode,
-  fireTembaSelect,
-  fireUnnnicSelect,
-  act,
-  fireUnnnicAutocompleteSelect
-} from 'test/utils';
+import { render, mock, fireEvent, getUpdatedNode, act } from 'test/utils';
 import * as React from 'react';
 import * as utils from 'utils';
 import SchemeRouterForm from './SchemeRouterForm';
@@ -15,6 +6,7 @@ import { createSchemeRouter, getRouterFormProps } from 'testUtils/assetCreators'
 import { SCHEMES } from 'config/typeConfigs';
 import { getSwitchRouter } from '../helpers';
 import { Operators } from 'config/interfaces';
+import userEvent from '@testing-library/user-event';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -39,13 +31,7 @@ describe(SchemeRouterForm.name, () => {
       rendered = render(<SchemeRouterForm {...routerProps} />);
     });
 
-    await act(async () => {
-      fireUnnnicAutocompleteSelect(
-        rendered.getByTestId('temba_select_channels'),
-        { value: 'whatsapp' },
-        'value'
-      );
-    });
+    userEvent.click(rendered.getAllByText('WhatsApp')[0]);
 
     await act(async () => {
       fireEvent.click(rendered.getByText('Confirm'));

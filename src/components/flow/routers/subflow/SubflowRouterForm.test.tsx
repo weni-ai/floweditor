@@ -74,10 +74,10 @@ describe(SubflowRouterForm.name, () => {
     const max = getByTestId('max');
 
     // enter some values
-    await act(async () => {
-      fireUnnnicInputChangeText(min, '1');
-      fireUnnnicInputChangeText(max, '100');
-    });
+    fireUnnnicInputChangeText(min, '1');
+    fireUnnnicInputChangeText(max, '100');
+
+    await wait();
 
     fireEvent.click(getByText('Confirm'));
     let actions = getUpdatedNode(subflowProps).node.actions;

@@ -7,41 +7,36 @@ exports[`AssetSelector renders 1`] = `
       class="ele"
     >
       <div
-        data-use-vue-component-wrap=""
-        style="all: unset;"
+        class="select_wrapper"
+        data-testid="temba_select_recipients"
       >
         <div
-          class="unnnic-select"
-          data-passed-props="[object Object]"
-          data-testid="temba_select_recipients"
+          data-use-vue-component-wrap=""
+          style="all: unset;"
         >
-          <!---->
-          <span
-            class="dropdown"
-            data-v-6fe2671f=""
+          <div
+            class="unnnic-input size-sm bold_placeholder"
+            data-passed-props="[object Object]"
+            data-testid="temba_select_input_recipients"
+            data-v-37e767d4=""
+            readonly="readonly"
           >
+            <!---->
             <div
-              data-v-2d3b8b50=""
-              data-v-6fe2671f=""
-              readonly="readonly"
-              style="position: relative;"
+              class="input-container"
+              data-v-37e767d4=""
             >
+              <!---->
               <input
-                class="input size-sm normal has-icon-right"
-                data-v-2d3b8b50=""
-                data-v-f03c53b0=""
-                iconright="arrow-button-down-1"
-                iconrightclickable="true"
+                class="unnnic-font secondary"
+                data-v-37e767d4=""
                 placeholder="Select existing recipients or enter a new one"
-                readonly="readonly"
-                size="0"
                 type="text"
               />
-              <!---->
               <span
-                class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-cloudy"
-                data-v-2d3b8b50=""
-                data-v-a1936218=""
+                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                data-v-37e767d4=""
+                data-v-59b073b4=""
               >
                 <svg
                   fill="none"
@@ -55,27 +50,32 @@ exports[`AssetSelector renders 1`] = `
                   />
                 </svg>
               </span>
+              <!---->
             </div>
-            <div
-              __use_react_component_wrap=""
-              data-v-6fe2671f=""
-              style="all: unset;"
-            >
-              <option
-                label="My Test Group"
-                value="My Test Group"
-              >
-                My Test Group
-              </option>
-            </div>
-            <div
-              class="dropdown-data"
-              data-v-6fe2671f=""
-              style="position: fixed; top: 0px;"
-            />
-          </span>
-          <!---->
+            <!---->
+          </div>
         </div>
+        <div
+          class="options_wrapper"
+          data-testid="temba_select_options_recipients"
+          style="margin-top: 0px; width: 0px; display: none;"
+        >
+          <div
+            class="option active "
+            data-option-index="0"
+          >
+            <span
+              class="name"
+            >
+              My Test Group
+            </span>
+          </div>
+        </div>
+        <div
+          class="options_wrapper"
+          data-testid="temba_select_expressions_recipients"
+          style="margin-top: 0px; width: 0px; display: none;"
+        />
       </div>
     </div>
   </div>

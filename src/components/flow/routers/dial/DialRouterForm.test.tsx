@@ -34,9 +34,8 @@ describe(DialRouterForm.name, () => {
   it('should update wait when phone number is changed', async () => {
     const { getByTestId, getByText } = render(<DialRouterForm {...routerProps} />);
 
-    await act(async () => {
-      fireUnnnicInputChangeText(getByTestId('phone'), '@fields.supervisor_phone');
-    });
+    fireUnnnicInputChangeText(getByTestId('phone'), '@fields.supervisor_phone');
+
     fireEvent.click(getByText('Ok'));
 
     const router = getSwitchRouter(getUpdatedNode(routerProps).node);
