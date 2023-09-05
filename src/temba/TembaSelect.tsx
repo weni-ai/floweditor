@@ -1,13 +1,13 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { debounce } from 'utils';
+import { debounce, snakify } from 'utils';
 import styles from './TembaSelect.module.scss';
 import { Assets } from 'store/flowContext';
 
 import {
   unnnicTag,
-  unnnicInput
+  unnnicInputNext
   // @ts-ignore
 } from '@weni/unnnic-system';
 import { applyVueInReact } from 'vuereact-combined';
@@ -24,7 +24,7 @@ import i18n from 'config/i18n';
 import SelectOptions from './SelectOptions';
 
 const ElUnnnicTag = applyVueInReact(unnnicTag);
-const UnnnicInput = applyVueInReact(unnnicInput);
+const UnnnicInputNext = applyVueInReact(unnnicInputNext);
 
 export enum TembaSelectStyle {
   small = 'sm',
@@ -69,16 +69,15 @@ export interface TembaSelectProps {
 
   queryParam?: string;
 
-  completionEndpoint: string;
+  expressionsData: {
+    functions: CompletionOption[];
+    context: CompletionSchema;
+  };
 }
 
 interface TembaSelectState {
   expressionInput?: string;
   availableOptions?: any[];
-  expressionsData?: {
-    functions?: CompletionOption[];
-    context?: CompletionSchema;
-  };
   showingExpressionsSelection: boolean;
   availableExpressions?: CompletionOption[];
   currentQuery?: string;
@@ -101,7 +100,8 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
       availableOptions: [],
       availableExpressions: [],
       selectKey: 0,
-      showOptions: false
+      showOptions: false,
+      currentQuery: ''
     };
 
     bindCallbacks(this, {
@@ -115,10 +115,6 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     }
 
     this.fetchOptions();
-
-    if (this.props.expressions) {
-      this.fetchExpressions();
-    }
 
     const selectInputEl = this.getRefFromVueInputRef(this.selectInputRef);
     selectInputEl.addEventListener('keyup', this.handleInputKeyUp);
@@ -247,15 +243,6 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     }
   }
 
-  private async fetchExpressions() {
-    let endpoint = this.props.completionEndpoint;
-
-    if (endpoint) {
-      const { data } = await axios.get(endpoint);
-      this.setState({ expressionsData: data });
-    }
-  }
-
   private setAvailableOptions(options: any[], filter?: string) {
     const nameKey = this.props.nameKey || 'name';
     const valueKey = this.props.valueKey || 'value';
@@ -349,6 +336,17 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     });
   }
 
+  private getExpressionResult(inputElement: HTMLInputElement) {
+    const store: TembaStore = document.querySelector('temba-store');
+    return executeCompletionQuery(
+      inputElement,
+      store,
+      this.props.expressions,
+      this.props.expressionsData.functions,
+      this.props.expressionsData.context
+    );
+  }
+
   handleSearch(event: string) {
     this.setState({ input: event });
     if (event === undefined || event === null) {
@@ -367,14 +365,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
 
       const inputEl = this.getRefFromVueInputRef(this.selectInputRef);
 
-      const store: TembaStore = document.querySelector('temba-store');
-      const result = executeCompletionQuery(
-        inputEl,
-        store,
-        this.props.expressions,
-        this.state.expressionsData.functions,
-        this.state.expressionsData.context
-      );
+      const result = this.getExpressionResult(inputEl);
 
       const availableExpressions = result.options.map((option: CompletionOption) => {
         if (option.signature) {
@@ -559,6 +550,13 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
         this.handleTagCreation(event.target.value);
         this.clearInputValue();
       }
+    } else if (this.props.multi && event.target.value.indexOf('@') > -1) {
+      if (event.key === 'Enter') {
+        const expressionResult = this.getExpressionResult(event.target);
+        if (expressionResult.options.length <= 1) {
+          this.handleTagCreation(event.target.value);
+        }
+      }
     }
   }
 
@@ -599,11 +597,13 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
             this.selectRef = ele;
           }}
           className={styles.select_wrapper}
+          data-testid={`temba_select_${snakify(this.props.name)}`}
         >
-          <UnnnicInput
+          <UnnnicInputNext
             ref={(ele: any) => {
               this.selectInputRef = ele;
             }}
+            data-testid={`temba_select_input_${snakify(this.props.name)}`}
             className={styles.bold_placeholder}
             value={this.state.input}
             on={{ input: this.handleSearch }}
@@ -611,7 +611,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
             size={this.props.style || TembaSelectStyle.small}
             disabled={this.props.disabled}
             type={hasErrors ? 'error' : 'normal'}
-            message={this.props.errors && this.props.errors[0]}
+            error={this.props.errors && this.props.errors[0]}
             onClick={this.handleInputFocus}
             iconRight={inputIcon}
             readonly={!this.props.searchable}
@@ -620,6 +620,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
           {this.selectRef && this.selectInputRef ? (
             <>
               <SelectOptions
+                testId={`temba_select_options_${snakify(this.props.name)}`}
                 options={this.state.availableOptions}
                 selected={selectedArray}
                 onBlur={() => this.setState({ showOptions: false })}
@@ -634,6 +635,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
               />
 
               <SelectOptions
+                testId={`temba_select_expressions_${snakify(this.props.name)}`}
                 options={this.state.availableExpressions}
                 onBlur={() => this.setState({ availableExpressions: [] })}
                 onSelect={option => this.selectExpression(option)}
@@ -670,7 +672,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
 
 /* istanbul ignore next */
 const mapStateToProps = ({ flowContext: { assetStore } }: AppState) => ({
-  completionEndpoint: assetStore.completion.endpoint
+  expressionsData: assetStore.completion.items as any
 });
 
 export default connect(
