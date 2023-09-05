@@ -4,12 +4,13 @@ import * as React from 'react';
 import {
   fireEvent,
   render,
-  fireTembaSelect,
   fireUnnnicSelect,
   fireUnnnicInputChangeText,
-  getUnnnicInputValue
+  getUnnnicInputValue,
+  wait
 } from 'test/utils';
 import { createUUID } from 'utils';
+import userEvent from '@testing-library/user-event';
 
 const caseUUID = createUUID();
 
@@ -24,10 +25,6 @@ const caseProps: CaseElementProps = {
   categoryName: null,
   onRemove: jest.fn(),
   onChange: jest.fn()
-};
-
-const selectOperator = (getByTestId: any, operator: Operators) => {
-  fireUnnnicSelect(getByTestId('temba_select_operator'), { value: [{ type: operator }] }, 'value');
 };
 
 describe(CaseElement.name, () => {
@@ -51,33 +48,40 @@ describe(CaseElement.name, () => {
 
   describe('operator changes', () => {
     // we need a full renders because we update our category reference
-    it('should handle updates', () => {
-      const { baseElement, getByTestId } = render(<CaseElement {...caseProps} />);
+    it('should handle updates', async () => {
+      const { baseElement, getByText } = render(<CaseElement {...caseProps} />);
 
-      selectOperator(getByTestId, Operators.has_phone);
+      userEvent.click(getByText('has a phone number'));
+      await wait();
+
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('should should set arguments for numeric range', () => {
-      const { baseElement, getByTestId } = render(<CaseElement {...caseProps} />);
-      selectOperator(getByTestId, Operators.has_number_between);
+    it('should should set arguments for numeric range', async () => {
+      const { baseElement, getByText } = render(<CaseElement {...caseProps} />);
+
+      userEvent.click(getByText('has a number between'));
+      await wait();
+
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('shouldnt update exit if it has been edited', () => {
-      const { baseElement, queryByDisplayValue, getByTestId } = render(
+    it('should not update exit if it has been edited', async () => {
+      const { baseElement, queryByDisplayValue, getByTestId, getByText } = render(
         <CaseElement {...caseProps} />
       );
 
       // make us a has phone so we can look up our category by value
-      selectOperator(getByTestId, Operators.has_phone);
+      userEvent.click(getByText('has a phone number'));
+      await wait();
 
       // update our category to a user supplied value
       const category = getByTestId('Exit Name');
       fireUnnnicInputChangeText(category, 'My Exit Name');
 
-      // now swithc our type to force a category change
-      selectOperator(getByTestId, Operators.has_number);
+      // now switch our type to force a category change
+      userEvent.click(getByText('has a number'));
+      await wait();
 
       // we shouldn't have updated our category
       expect(queryByDisplayValue('My Exit Name')).not.toBeNull();
@@ -106,13 +110,14 @@ describe(CaseElement.name, () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('handles multiple argument change', () => {
+    it('handles multiple argument change', async () => {
       const onRemove = jest.fn();
-      const { baseElement, getByTestId, getAllByTestId } = render(
+      const { baseElement, getByText, getAllByTestId } = render(
         <CaseElement {...caseProps} onRemove={onRemove} />
       );
 
-      selectOperator(getByTestId, Operators.has_number_between);
+      userEvent.click(getByText('has a number between'));
+      await wait();
 
       const args = getAllByTestId('arguments');
 

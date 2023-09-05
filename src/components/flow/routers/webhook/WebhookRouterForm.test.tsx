@@ -11,13 +11,11 @@ import * as React from 'react';
 import {
   render,
   fireEvent,
-  fireChangeText,
-  fireTembaSelect,
   fireUnnnicInputChangeText,
   act,
-  fireUnnnicSelect,
   fireUnnnicTextAreaChangeText
 } from 'test/utils';
+import userEvent from '@testing-library/user-event';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -54,8 +52,7 @@ describe(WebhookRouterForm.name, () => {
       fireUnnnicInputChangeText(resultName, 'My Webhook Result');
 
       await act(async () => {
-        // make it a post
-        fireUnnnicSelect(getByTestId('temba_select_method'), { value: 'POST' }, 'value');
+        userEvent.click(getByText('POST'));
       });
 
       // set a post body

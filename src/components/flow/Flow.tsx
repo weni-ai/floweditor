@@ -452,7 +452,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
         <div className={styles.buttons}>
           <UnnnicButton
-            type="terciary"
+            type="ghost"
             text={i18n.t('new_updates.buttons.first', 'Ignore')}
             onClick={() => {
               ReactDOM.unmountComponentAtNode(newUpdatesModalEl);

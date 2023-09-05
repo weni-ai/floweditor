@@ -1,7 +1,7 @@
 import { ActionFormProps } from 'components/flow/props';
 import React from 'react';
 import { AssetType } from 'store/flowContext';
-import { fireEvent, render, fireUnnnicSelect, act, fireUnnnicInputChangeText } from 'test/utils';
+import { fireEvent, render, act, fireUnnnicInputChangeText } from 'test/utils';
 import { composeComponentTestUtils, mock } from 'testUtils';
 import {
   createStartSessionAction,
@@ -9,8 +9,9 @@ import {
   SubscribersGroup
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
+import userEvent from '@testing-library/user-event';
 
-import { StartSessionForm, START_TYPE_CREATE, START_TYPE_QUERY } from './StartSessionForm';
+import { StartSessionForm } from './StartSessionForm';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -30,15 +31,9 @@ describe(StartSessionForm.name, () => {
 
     it('should render create new contacts', async () => {
       const props = getActionFormProps(createStartSessionAction());
-      const { baseElement, queryByTestId, getByTestId } = render(<StartSessionForm {...props} />);
+      const { baseElement, queryByTestId, getByText } = render(<StartSessionForm {...props} />);
 
-      await act(async () => {
-        fireUnnnicSelect(
-          getByTestId('temba_select_start_type'),
-          { value: START_TYPE_CREATE.value },
-          'value'
-        );
-      });
+      userEvent.click(getByText('Create a new contact'));
 
       expect(queryByTestId('recipients')).toBeNull();
       expect(baseElement).toMatchSnapshot();
@@ -48,9 +43,7 @@ describe(StartSessionForm.name, () => {
       const props = getActionFormProps(createStartSessionAction());
       const { baseElement, getByTestId, getByText } = render(<StartSessionForm {...props} />);
 
-      await act(async () => {
-        fireUnnnicSelect(getByTestId('temba_select_start_type'), START_TYPE_QUERY, 'value');
-      });
+      userEvent.click(getByText('Select recipients from a query'));
 
       await act(async () => {
         fireUnnnicInputChangeText(getByTestId('Contact Query'), 'my_field > 6');
@@ -64,15 +57,11 @@ describe(StartSessionForm.name, () => {
 
     it('should warn about invalid fields in contact queries', async () => {
       const props = getActionFormProps(createStartSessionAction());
-      const { baseElement, getByTestId } = render(<StartSessionForm {...props} />);
+      const { baseElement, getByTestId, getByText, debug } = render(
+        <StartSessionForm {...props} />
+      );
 
-      await act(async () => {
-        fireUnnnicSelect(
-          getByTestId('temba_select_start_type'),
-          { value: START_TYPE_QUERY.value },
-          'value'
-        );
-      });
+      userEvent.click(getByText('Select recipients from a query'));
 
       const input = getByTestId('Contact Query');
       await act(async () => {

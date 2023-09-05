@@ -16,8 +16,8 @@ exports[`SwitchElement should render a switch element with description 1`] = `
         <!---->
         <span
           class="unnnic-icon unnnic-icon__size--sm unnnic-icon__line-height--sm unnnic-icon-scheme--neutral-soft unnnic-switch__icon"
+          data-v-59b073b4=""
           data-v-5be79627=""
-          data-v-a1936218=""
         >
           <svg
             id="default"

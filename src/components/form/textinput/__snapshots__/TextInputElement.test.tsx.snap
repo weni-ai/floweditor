@@ -12,17 +12,17 @@ exports[`TextInputElement renders 1`] = `
         class="unnnic-input size-sm"
         data-passed-props="[object Object]"
         data-testid="Message"
-        data-v-391ed932=""
+        data-v-79844726=""
       >
         <!---->
         <div
           class="input-container"
-          data-v-391ed932=""
+          data-v-79844726=""
         >
           <!---->
           <input
             class="unnnic-font secondary"
-            data-v-391ed932=""
+            data-v-79844726=""
             type="text"
           />
           <!---->

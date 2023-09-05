@@ -53,9 +53,9 @@ exports[`Dialog should render 1`] = `
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--ghost unnnic-button-scheme--"
                   data-passed-props="[object Object]"
-                  data-v-00f478da=""
+                  data-v-c21b2f22=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
@@ -63,7 +63,7 @@ exports[`Dialog should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-00f478da=""
+                    data-v-c21b2f22=""
                   >
                      Other 
                   </span>
@@ -78,9 +78,9 @@ exports[`Dialog should render 1`] = `
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--ghost unnnic-button-scheme--"
                   data-passed-props="[object Object]"
-                  data-v-00f478da=""
+                  data-v-c21b2f22=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
@@ -88,7 +88,7 @@ exports[`Dialog should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-00f478da=""
+                    data-v-c21b2f22=""
                   >
                      Cancel 
                   </span>
@@ -99,9 +99,9 @@ exports[`Dialog should render 1`] = `
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary unnnic-button-scheme--undefined"
                   data-passed-props="[object Object]"
-                  data-v-00f478da=""
+                  data-v-c21b2f22=""
                   style="margin-top: 0px;"
                 >
                   <!---->
@@ -109,7 +109,7 @@ exports[`Dialog should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-00f478da=""
+                    data-v-c21b2f22=""
                   >
                      Ok 
                   </span>

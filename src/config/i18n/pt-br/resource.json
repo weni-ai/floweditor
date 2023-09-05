@@ -405,6 +405,7 @@
     "ex_accept": "Ex: Accept",
     "ex_application_json": "Ex: application/json",
     "none": "Nenhum",
+    "topic_placeholder": "Selecione o tópico",
     "quick_replies_limit": "Você pode adicionar até 10 Respostas rápidas."
   },
   "issues": {

@@ -64,6 +64,7 @@ import * as utils from 'utils';
 
 const { results: groupsResults } = require('test/assets/groups.json');
 const languagesResults = require('test/assets/languages.json');
+const completions = require('test/assets/completion.json');
 mock(utils, 'createUUID', utils.seededUUIDs());
 
 export const createSayMsgAction = ({
@@ -479,7 +480,8 @@ export const getActionFormProps = (action: AnyAction): ActionFormProps => ({
     labels: { items: {}, type: AssetType.Label },
     results: { items: {}, type: AssetType.Result },
     flows: { items: {}, type: AssetType.Flow },
-    recipients: { items: {}, type: AssetType.Contact || AssetType.Group || AssetType.URN }
+    recipients: { items: {}, type: AssetType.Contact || AssetType.Group || AssetType.URN },
+    completion: { items: completions, type: AssetType.Expression }
   },
   helpArticles: {},
   addAsset: jest.fn(),

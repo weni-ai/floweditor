@@ -67,7 +67,7 @@ export default class UploadButton extends React.Component<UploadButtonProps, Upl
             name={this.props.removeText}
             topSpacing={true}
             onClick={this.handleRemoveUpload}
-            type={ButtonTypes.tertiary}
+            type={ButtonTypes.ghost}
           />
         ) : (
           <Button
@@ -77,7 +77,7 @@ export default class UploadButton extends React.Component<UploadButtonProps, Upl
             onClick={() => {
               this.filePicker.click();
             }}
-            type={ButtonTypes.tertiary}
+            type={ButtonTypes.ghost}
           />
         )}
       </>

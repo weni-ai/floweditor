@@ -208,6 +208,10 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
           onSortEnd={this.handleSortEnd}
           helperClass={styles.card_z_index}
           shouldCancelStart={(e: React.MouseEvent<HTMLDivElement>) => {
+            if (e.target.constructor.name === 'SVGSVGElement') {
+              return !(e.target as any).dataset.draggable;
+            }
+
             if (!(e.target instanceof HTMLElement)) {
               return true;
             }

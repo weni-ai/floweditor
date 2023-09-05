@@ -2,15 +2,7 @@ import { RouterFormProps } from 'components/flow/props';
 import { getTypeConfig } from 'config';
 import { Types } from 'config/interfaces';
 import * as React from 'react';
-import {
-  fireEvent,
-  render,
-  fireTembaSelect,
-  getByDisplayValue,
-  getByTitle,
-  fireUnnnicSelect,
-  act
-} from 'test/utils';
+import { fireEvent, render } from 'test/utils';
 import { composeComponentTestUtils, mock } from 'testUtils';
 import {
   createRandomNode,
@@ -19,6 +11,7 @@ import {
   getRouterFormProps
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
+import userEvent from '@testing-library/user-event';
 
 import RandomRouterForm from './RandomRouterForm';
 
@@ -73,9 +66,7 @@ describe(RandomRouterForm.name, () => {
     expect(baseElement.querySelectorAll('input').length).toEqual(7);
 
     // choose 3 buckets
-    await act(async () => {
-      fireUnnnicSelect(getByTestId('temba_select_buckets'), { value: '3' }, 'value');
-    });
+    userEvent.click(getByText('3 buckets'));
 
     // now we should only have three input buckets plus 2 from the select elements inputs
     expect(baseElement.querySelectorAll('input').length).toEqual(5);

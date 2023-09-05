@@ -192,6 +192,10 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
           items={this.state.currentParams}
           onSortEnd={this.handleSortEnd}
           shouldCancelStart={(e: React.MouseEvent<HTMLDivElement>) => {
+            if (e.target.constructor.name === 'SVGSVGElement') {
+              return !(e.target as any).dataset.draggable;
+            }
+
             if (!(e.target instanceof HTMLElement)) {
               return true;
             }

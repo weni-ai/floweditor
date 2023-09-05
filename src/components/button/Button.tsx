@@ -8,7 +8,8 @@ import { unnnicButton } from '@weni/unnnic-system';
 export enum ButtonTypes {
   primary = 'primary',
   secondary = 'secondary',
-  tertiary = 'terciary'
+  tertiary = 'terciary',
+  ghost = 'ghost'
 }
 export interface ButtonProps {
   name: string;

@@ -200,12 +200,6 @@ export const executeCompletionQuery = (
     return;
   }
 
-  // we need a store to do anything useful
-  // this also disables expressions in local development environment
-  if (!store) {
-    return result;
-  }
-
   const cursor = ele.selectionStart;
   const input = ele.value.substring(0, cursor);
 
@@ -215,7 +209,6 @@ export const executeCompletionQuery = (
     (expr: Expression) =>
       expr.start <= cursor && (expr.end > cursor || (expr.end === cursor && !expr.closed))
   );
-
   if (currentExpression) {
     const includeFunctions = currentExpression.text.indexOf('(') > -1;
     if (includeFunctions) {
@@ -238,8 +231,9 @@ export const executeCompletionQuery = (
 
         result.query = currentExpression.text.substr(i, currentExpression.text.length - i);
 
+        const keyedAssets: KeyedAssets = store ? store.getKeyedAssets() : {};
         result.options = [
-          ...getCompletions(context, result.query, store.getKeyedAssets(), session),
+          ...getCompletions(context, result.query, keyedAssets, session),
           ...(includeFunctions ? getFunctions(functions, result.query) : [])
         ];
 

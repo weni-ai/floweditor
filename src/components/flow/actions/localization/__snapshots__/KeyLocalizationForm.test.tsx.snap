@@ -47,23 +47,23 @@ exports[`KeyLocalizationForm removes translations 1`] = `
           <div
             class="tab size-sm tabs"
             data-passed-props="[object Object]"
-            data-v-1727ddfc=""
+            data-v-69271fcc=""
           >
             <header
               class="tab-header"
-              data-v-1727ddfc=""
+              data-v-69271fcc=""
             >
               <ul
                 class="tab-content"
-                data-v-1727ddfc=""
+                data-v-69271fcc=""
               >
                 <li
                   class="tab-head tab-head--active"
-                  data-v-1727ddfc=""
+                  data-v-69271fcc=""
                 >
                   <div
                     __use_react_component_wrap=""
-                    data-v-1727ddfc=""
+                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     General
@@ -71,11 +71,11 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                 </li>
                 <li
                   class="tab-head"
-                  data-v-1727ddfc=""
+                  data-v-69271fcc=""
                 >
                   <div
                     __use_react_component_wrap=""
-                    data-v-1727ddfc=""
+                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     Body Translation
@@ -85,11 +85,11 @@ exports[`KeyLocalizationForm removes translations 1`] = `
             </header>
             <main
               class="tab-body"
-              data-v-1727ddfc=""
+              data-v-69271fcc=""
             >
               <div
                 class="tab-panel"
-                data-v-1727ddfc=""
+                data-v-69271fcc=""
               />
             </main>
           </div>
@@ -107,7 +107,7 @@ exports[`KeyLocalizationForm removes translations 1`] = `
           </div>
           <div>
             <div
-              class="textarea_wrapper"
+              class="completion_wrapper"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -117,11 +117,11 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                   class="unnnic-text-area sm normal textarea"
                   data-passed-props="[object Object]"
                   data-testid="Subject"
-                  data-v-4b5c6da6=""
+                  data-v-2f3d79bf=""
                 >
                   <!---->
                   <textarea
-                    data-v-4b5c6da6=""
+                    data-v-2f3d79bf=""
                     placeholder="Spanish Translation"
                   />
                   <!---->
@@ -129,8 +129,9 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                 </div>
               </div>
               <div
-                class="completions"
-                style="display: none;"
+                class="options_wrapper"
+                data-testid="temba_completion_options_Subject"
+                style="margin-top: 1px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -152,9 +153,9 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--ghost unnnic-button-scheme--"
                   data-passed-props="[object Object]"
-                  data-v-00f478da=""
+                  data-v-c21b2f22=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
@@ -162,7 +163,7 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-00f478da=""
+                    data-v-c21b2f22=""
                   >
                      Cancel 
                   </span>
@@ -173,9 +174,9 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary unnnic-button-scheme--undefined"
                   data-passed-props="[object Object]"
-                  data-v-00f478da=""
+                  data-v-c21b2f22=""
                   style="margin-top: 0px;"
                 >
                   <!---->
@@ -183,7 +184,7 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-00f478da=""
+                    data-v-c21b2f22=""
                   >
                      Ok 
                   </span>
@@ -243,23 +244,23 @@ exports[`KeyLocalizationForm renders send email 1`] = `
           <div
             class="tab size-sm tabs"
             data-passed-props="[object Object]"
-            data-v-1727ddfc=""
+            data-v-69271fcc=""
           >
             <header
               class="tab-header"
-              data-v-1727ddfc=""
+              data-v-69271fcc=""
             >
               <ul
                 class="tab-content"
-                data-v-1727ddfc=""
+                data-v-69271fcc=""
               >
                 <li
                   class="tab-head tab-head--active"
-                  data-v-1727ddfc=""
+                  data-v-69271fcc=""
                 >
                   <div
                     __use_react_component_wrap=""
-                    data-v-1727ddfc=""
+                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     General
@@ -267,11 +268,11 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                 </li>
                 <li
                   class="tab-head"
-                  data-v-1727ddfc=""
+                  data-v-69271fcc=""
                 >
                   <div
                     __use_react_component_wrap=""
-                    data-v-1727ddfc=""
+                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     Body Translation
@@ -281,11 +282,11 @@ exports[`KeyLocalizationForm renders send email 1`] = `
             </header>
             <main
               class="tab-body"
-              data-v-1727ddfc=""
+              data-v-69271fcc=""
             >
               <div
                 class="tab-panel"
-                data-v-1727ddfc=""
+                data-v-69271fcc=""
               />
             </main>
           </div>
@@ -303,7 +304,7 @@ exports[`KeyLocalizationForm renders send email 1`] = `
           </div>
           <div>
             <div
-              class="textarea_wrapper"
+              class="completion_wrapper"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -313,11 +314,11 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                   class="unnnic-text-area sm normal textarea"
                   data-passed-props="[object Object]"
                   data-testid="Subject"
-                  data-v-4b5c6da6=""
+                  data-v-2f3d79bf=""
                 >
                   <!---->
                   <textarea
-                    data-v-4b5c6da6=""
+                    data-v-2f3d79bf=""
                     placeholder="English Translation"
                   />
                   <!---->
@@ -325,8 +326,9 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                 </div>
               </div>
               <div
-                class="completions"
-                style="display: none;"
+                class="options_wrapper"
+                data-testid="temba_completion_options_Subject"
+                style="margin-top: 1px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -348,9 +350,9 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--terciary unnnic-button-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--ghost unnnic-button-scheme--"
                   data-passed-props="[object Object]"
-                  data-v-00f478da=""
+                  data-v-c21b2f22=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
@@ -358,7 +360,7 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-00f478da=""
+                    data-v-c21b2f22=""
                   >
                      Cancel 
                   </span>
@@ -369,9 +371,9 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button unnnic-button--size-large unnnic-button--secondary unnnic-button-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary unnnic-button-scheme--undefined"
                   data-passed-props="[object Object]"
-                  data-v-00f478da=""
+                  data-v-c21b2f22=""
                   style="margin-top: 0px;"
                 >
                   <!---->
@@ -379,7 +381,7 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-00f478da=""
+                    data-v-c21b2f22=""
                   >
                      Ok 
                   </span>

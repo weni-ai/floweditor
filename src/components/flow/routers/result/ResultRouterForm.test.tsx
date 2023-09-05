@@ -2,11 +2,12 @@ import ResultRouterForm from 'components/flow/routers/result/ResultRouterForm';
 import { Types } from 'config/interfaces';
 import * as React from 'react';
 import { AssetType, RenderNode } from 'store/flowContext';
-import { fireEvent, render, getCallParams, fireUnnnicSelect, fireUnnnicSwitch } from 'test/utils';
+import { fireEvent, render, getCallParams, fireUnnnicSwitch } from 'test/utils';
 import { mock } from 'testUtils';
 import { createMatchRouter, getRouterFormProps } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import { getSwitchRouter } from 'components/flow/routers/helpers';
+import userEvent from '@testing-library/user-event';
 
 const routerNode = createMatchRouter([]);
 routerNode.ui = {
@@ -85,10 +86,10 @@ describe(ResultRouterForm.name, () => {
     props.assetStore.results.items = { [testResult.id]: testResult };
     props.nodeSettings.originalNode.ui.type = Types.split_by_run_result_delimited;
 
-    const { getByText, getByTestId } = render(<ResultRouterForm {...props} />);
+    const { getByText } = render(<ResultRouterForm {...props} />);
 
-    fireUnnnicSelect(getByTestId('temba_select_field_number'), { value: '0' }, 'value');
-    fireUnnnicSelect(getByTestId('temba_select_delimiter'), { value: '+' }, 'value');
+    userEvent.click(getByText('first'));
+    userEvent.click(getByText('plusses'));
 
     fireEvent.click(getByText('Confirm'));
 

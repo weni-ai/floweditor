@@ -15,7 +15,8 @@ import { ParamProps } from '../paramlist/ParamList';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
-import { unnnicIcon, unnnicButton } from '@weni/unnnic-system';
+import { unnnicIcon } from '@weni/unnnic-system';
+import { DragIcon } from '../../../../pureIcons/DragIcon';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -36,8 +37,6 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
     }
   }
 });
-
-const UnnnicButton = applyVueInReact(unnnicButton);
 
 export enum ParamTypes {
   multiSelect = 'multiSelect',
@@ -291,12 +290,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
         <div className={`${styles.param}`} data-draggable={canArrange}>
           {this.props.hasArrangeFunctionality && (
             <div className={styles.moveIcon}>
-              <UnnnicButton
-                data-draggable={canArrange}
-                iconCenter={'move-expand-vertical-1'}
-                size="small"
-                type="terciary"
-              />
+              <DragIcon draggable={true} />
             </div>
           )}
 

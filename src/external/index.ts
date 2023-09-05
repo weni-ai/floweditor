@@ -380,6 +380,14 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
       );
     });
 
+    // prefetch our non asset-like completions
+    fetches.push(
+      axios.get(assetStore.completion.endpoint).then((response: AxiosResponse) => {
+        assetStore.completion.items = response.data;
+        assetStore.completion.prefetched = true;
+      })
+    );
+
     // wait for our prefetches to finish
     Promise.all(fetches).then((results: any) => {
       resolve(assetStore);

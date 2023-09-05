@@ -43,7 +43,7 @@ exports[`ActionWrapper can have localized quick replies when empty on default la
                 <span
                   class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-a1936218=""
+                  data-v-59b073b4=""
                 >
                   <svg
                     fill="none"
@@ -89,14 +89,14 @@ exports[`ActionWrapper can have localized quick replies when empty on default la
                   count="0"
                   data-advanced="true"
                   data-passed-props="[object Object]"
-                  data-v-3e4e81d5=""
+                  data-v-32b4068e=""
                   v-bind="[object Object]"
                 >
                   <span
                     class="unnnic-tag__label
     
     unnnic-tag__label--disabled"
-                    data-v-3e4e81d5=""
+                    data-v-32b4068e=""
                   >
                     Sí
                   </span>
@@ -155,7 +155,7 @@ exports[`ActionWrapper renders a base language 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-a1936218=""
+                  data-v-59b073b4=""
                 >
                   <svg
                     fill="none"
