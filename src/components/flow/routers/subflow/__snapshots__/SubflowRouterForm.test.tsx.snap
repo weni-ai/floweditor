@@ -183,24 +183,24 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Enter another flow"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -483,24 +483,24 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
                 class="unnnic-input size-sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_flow_to_start"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     placeholder="My Subflow Flow"
                     type="text"
                   />
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                    data-v-37e767d4=""
                     data-v-59b073b4=""
+                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -641,24 +641,24 @@ exports[`SubflowRouterForm should render 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Enter another flow"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -941,24 +941,24 @@ exports[`SubflowRouterForm should render 1`] = `
                 class="unnnic-input size-sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_flow_to_start"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     placeholder="Colors"
                     type="text"
                   />
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                    data-v-37e767d4=""
                     data-v-59b073b4=""
+                    data-v-79844726=""
                   >
                     <svg
                       fill="none"

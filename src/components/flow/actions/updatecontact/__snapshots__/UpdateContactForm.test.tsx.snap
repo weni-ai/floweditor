@@ -46,24 +46,24 @@ exports[`UpdateContactForm should render channel 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Update the contact"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -346,24 +346,24 @@ exports[`UpdateContactForm should render channel 1`] = `
                 class="unnnic-input size-sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_select_what_to_update"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     placeholder="Channel"
                     type="text"
                   />
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                    data-v-37e767d4=""
                     data-v-59b073b4=""
+                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -458,24 +458,24 @@ exports[`UpdateContactForm should render channel 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_channel"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Twilio Channel"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -628,24 +628,24 @@ exports[`UpdateContactForm should render field 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Update the contact"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -928,24 +928,24 @@ exports[`UpdateContactForm should render field 1`] = `
                 class="unnnic-input size-sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_select_what_to_update"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     placeholder="Age"
                     type="text"
                   />
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                    data-v-37e767d4=""
                     data-v-59b073b4=""
+                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -1037,17 +1037,17 @@ exports[`UpdateContactForm should render field 1`] = `
                   class="unnnic-input size-sm"
                   data-passed-props="[object Object]"
                   data-testid="Field Value"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder=""
                       type="text"
                     />
@@ -1175,24 +1175,24 @@ exports[`UpdateContactForm should render language 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Update the contact"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -1475,24 +1475,24 @@ exports[`UpdateContactForm should render language 1`] = `
                 class="unnnic-input size-sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_select_what_to_update"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     placeholder="Language"
                     type="text"
                   />
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                    data-v-37e767d4=""
                     data-v-59b073b4=""
+                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -1587,25 +1587,25 @@ exports[`UpdateContactForm should render language 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_language"
-                  data-v-37e767d4=""
-                  readonly="readonly"
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="eng"
+                      readonly="readonly"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -1758,24 +1758,24 @@ exports[`UpdateContactForm should render name 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Update the contact"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -2058,24 +2058,24 @@ exports[`UpdateContactForm should render name 1`] = `
                 class="unnnic-input size-sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_select_what_to_update"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     placeholder="Name"
                     type="text"
                   />
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                    data-v-37e767d4=""
                     data-v-59b073b4=""
+                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -2167,17 +2167,17 @@ exports[`UpdateContactForm should render name 1`] = `
                   class="unnnic-input size-sm"
                   data-passed-props="[object Object]"
                   data-testid="Enter a new contact name"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Enter a new contact name"
                       type="text"
                     />

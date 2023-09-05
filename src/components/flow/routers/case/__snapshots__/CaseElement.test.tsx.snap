@@ -50,25 +50,25 @@ exports[`CaseElement operator changes should handle updates 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_operator"
-                  data-v-37e767d4=""
-                  readonly="readonly"
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="has a phone number"
+                      readonly="readonly"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -335,17 +335,17 @@ exports[`CaseElement operator changes should handle updates 1`] = `
                 class="unnnic-input size-sm"
                 data-passed-props="[object Object]"
                 data-testid="Exit Name"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
@@ -447,25 +447,25 @@ exports[`CaseElement operator changes should not update exit if it has been edit
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_operator"
-                  data-v-37e767d4=""
-                  readonly="readonly"
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="has a number"
+                      readonly="readonly"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -732,17 +732,17 @@ exports[`CaseElement operator changes should not update exit if it has been edit
                 class="unnnic-input size-sm"
                 data-passed-props="[object Object]"
                 data-testid="Exit Name"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
@@ -844,25 +844,25 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_operator"
-                  data-v-37e767d4=""
-                  readonly="readonly"
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="has a number between"
+                      readonly="readonly"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -1119,17 +1119,17 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
                     class="unnnic-input size-sm"
                     data-passed-props="[object Object]"
                     data-testid="arguments"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <div
                       class="input-container"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                     >
                       <!---->
                       <input
                         class="unnnic-font secondary"
-                        data-v-37e767d4=""
+                        data-v-79844726=""
                         placeholder="0"
                         type="text"
                       />
@@ -1164,17 +1164,17 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
                     class="unnnic-input size-sm"
                     data-passed-props="[object Object]"
                     data-testid="arguments"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <div
                       class="input-container"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                     >
                       <!---->
                       <input
                         class="unnnic-font secondary"
-                        data-v-37e767d4=""
+                        data-v-79844726=""
                         placeholder="100"
                         type="text"
                       />
@@ -1214,17 +1214,17 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
                 class="unnnic-input size-sm"
                 data-passed-props="[object Object]"
                 data-testid="Exit Name"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
@@ -1326,25 +1326,25 @@ exports[`CaseElement render renders no argument rules 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_operator"
-                  data-v-37e767d4=""
-                  readonly="readonly"
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="has a number"
+                      readonly="readonly"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -1611,17 +1611,17 @@ exports[`CaseElement render renders no argument rules 1`] = `
                 class="unnnic-input size-sm"
                 data-passed-props="[object Object]"
                 data-testid="Exit Name"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
@@ -1723,25 +1723,25 @@ exports[`CaseElement render should render empty case 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_operator"
-                  data-v-37e767d4=""
-                  readonly="readonly"
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="has any of the words"
+                      readonly="readonly"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -1998,17 +1998,17 @@ exports[`CaseElement render should render empty case 1`] = `
                     class="unnnic-input size-sm"
                     data-passed-props="[object Object]"
                     data-testid="arguments"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <div
                       class="input-container"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                     >
                       <!---->
                       <input
                         class="unnnic-font secondary"
-                        data-v-37e767d4=""
+                        data-v-79844726=""
                         placeholder="Ex: cart"
                         type="text"
                       />
@@ -2048,17 +2048,17 @@ exports[`CaseElement render should render empty case 1`] = `
                 class="unnnic-input size-sm"
                 data-passed-props="[object Object]"
                 data-testid="Exit Name"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
@@ -2160,25 +2160,25 @@ exports[`CaseElement update handles argument change 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_operator"
-                  data-v-37e767d4=""
-                  readonly="readonly"
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="has any of the words"
+                      readonly="readonly"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -2435,17 +2435,17 @@ exports[`CaseElement update handles argument change 1`] = `
                     class="unnnic-input size-sm"
                     data-passed-props="[object Object]"
                     data-testid="arguments"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <div
                       class="input-container"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                     >
                       <!---->
                       <input
                         class="unnnic-font secondary"
-                        data-v-37e767d4=""
+                        data-v-79844726=""
                         placeholder="Ex: cart"
                         type="text"
                       />
@@ -2485,17 +2485,17 @@ exports[`CaseElement update handles argument change 1`] = `
                 class="unnnic-input size-sm"
                 data-passed-props="[object Object]"
                 data-testid="Exit Name"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
@@ -2597,25 +2597,25 @@ exports[`CaseElement update handles multiple argument change 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_operator"
-                  data-v-37e767d4=""
-                  readonly="readonly"
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="has a number between"
+                      readonly="readonly"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -2872,17 +2872,17 @@ exports[`CaseElement update handles multiple argument change 1`] = `
                     class="unnnic-input size-sm"
                     data-passed-props="[object Object]"
                     data-testid="arguments"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <div
                       class="input-container"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                     >
                       <!---->
                       <input
                         class="unnnic-font secondary"
-                        data-v-37e767d4=""
+                        data-v-79844726=""
                         placeholder="0"
                         type="text"
                       />
@@ -2917,17 +2917,17 @@ exports[`CaseElement update handles multiple argument change 1`] = `
                     class="unnnic-input size-sm"
                     data-passed-props="[object Object]"
                     data-testid="arguments"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <div
                       class="input-container"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                     >
                       <!---->
                       <input
                         class="unnnic-font secondary"
-                        data-v-37e767d4=""
+                        data-v-79844726=""
                         placeholder="100"
                         type="text"
                       />
@@ -2967,17 +2967,17 @@ exports[`CaseElement update handles multiple argument change 1`] = `
                 class="unnnic-input size-sm"
                 data-passed-props="[object Object]"
                 data-testid="Exit Name"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"

@@ -46,24 +46,24 @@ exports[`AddURNForm renders 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Add a URN for the contact"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -349,25 +349,25 @@ exports[`AddURNForm renders 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_urn_type"
-                  data-v-37e767d4=""
-                  readonly="readonly"
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Phone number"
+                      readonly="readonly"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -587,17 +587,17 @@ exports[`AddURNForm renders 1`] = `
                 class="unnnic-input size-sm"
                 data-passed-props="[object Object]"
                 data-testid="Value of URN"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <div
                   class="input-container"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <input
                     class="unnnic-font secondary"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                     placeholder="Enter the URN value"
                     type="text"
                   />

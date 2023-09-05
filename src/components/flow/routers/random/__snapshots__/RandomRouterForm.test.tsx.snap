@@ -259,24 +259,24 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Split randomly"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -565,25 +565,25 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                     class="unnnic-input size-sm bold_placeholder"
                     data-passed-props="[object Object]"
                     data-testid="temba_select_input_buckets"
-                    data-v-37e767d4=""
-                    readonly="readonly"
+                    data-v-79844726=""
                   >
                     <!---->
                     <div
                       class="input-container"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                     >
                       <!---->
                       <input
                         class="unnnic-font secondary"
-                        data-v-37e767d4=""
+                        data-v-79844726=""
                         placeholder="5 buckets"
+                        readonly="readonly"
                         type="text"
                       />
                       <span
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                        data-v-37e767d4=""
                         data-v-59b073b4=""
+                        data-v-79844726=""
                       >
                         <svg
                           fill="none"
@@ -719,17 +719,17 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
               class="unnnic-input size-sm"
               data-passed-props="[object Object]"
               data-testid="e67ce051-f3e4-4c42-807b-e393df5fa382"
-              data-v-37e767d4=""
+              data-v-79844726=""
             >
               <!---->
               <div
                 class="input-container"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <input
                   class="unnnic-font secondary"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                   type="text"
                 />
                 <!---->
@@ -747,17 +747,17 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
               class="unnnic-input size-sm"
               data-passed-props="[object Object]"
               data-testid="e0bc3776-792f-49d2-b4be-48be2cf8159a"
-              data-v-37e767d4=""
+              data-v-79844726=""
             >
               <!---->
               <div
                 class="input-container"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <input
                   class="unnnic-font secondary"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                   type="text"
                 />
                 <!---->
@@ -775,17 +775,17 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
               class="unnnic-input size-sm"
               data-passed-props="[object Object]"
               data-testid="6c22884b-0e35-4206-982e-18320691eda9"
-              data-v-37e767d4=""
+              data-v-79844726=""
             >
               <!---->
               <div
                 class="input-container"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <input
                   class="unnnic-font secondary"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                   type="text"
                 />
                 <!---->
@@ -803,17 +803,17 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
               class="unnnic-input size-sm"
               data-passed-props="[object Object]"
               data-testid="a62e8284-49f8-4292-adbc-d5f6607f85c5"
-              data-v-37e767d4=""
+              data-v-79844726=""
             >
               <!---->
               <div
                 class="input-container"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <input
                   class="unnnic-font secondary"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                   type="text"
                 />
                 <!---->
@@ -831,17 +831,17 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
               class="unnnic-input size-sm"
               data-passed-props="[object Object]"
               data-testid="0c8c9239-9b59-473a-a229-d8a9693be270"
-              data-v-37e767d4=""
+              data-v-79844726=""
             >
               <!---->
               <div
                 class="input-container"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <input
                   class="unnnic-font secondary"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                   type="text"
                 />
                 <!---->
@@ -994,24 +994,24 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                   class="unnnic-input size-sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                 >
                   <!---->
                   <div
                     class="input-container"
-                    data-v-37e767d4=""
+                    data-v-79844726=""
                   >
                     <!---->
                     <input
                       class="unnnic-font secondary"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                       placeholder="Split randomly"
                       type="text"
                     />
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                      data-v-37e767d4=""
                       data-v-59b073b4=""
+                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -1300,25 +1300,25 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                     class="unnnic-input size-sm bold_placeholder"
                     data-passed-props="[object Object]"
                     data-testid="temba_select_input_buckets"
-                    data-v-37e767d4=""
-                    readonly="readonly"
+                    data-v-79844726=""
                   >
                     <!---->
                     <div
                       class="input-container"
-                      data-v-37e767d4=""
+                      data-v-79844726=""
                     >
                       <!---->
                       <input
                         class="unnnic-font secondary"
-                        data-v-37e767d4=""
+                        data-v-79844726=""
                         placeholder="5 buckets"
+                        readonly="readonly"
                         type="text"
                       />
                       <span
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
-                        data-v-37e767d4=""
                         data-v-59b073b4=""
+                        data-v-79844726=""
                       >
                         <svg
                           fill="none"
@@ -1464,17 +1464,17 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
               class="unnnic-input size-sm"
               data-passed-props="[object Object]"
               data-testid="e81b3f1a-0863-4418-8a72-9c9f8aa72b7c"
-              data-v-37e767d4=""
+              data-v-79844726=""
             >
               <!---->
               <div
                 class="input-container"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <input
                   class="unnnic-font secondary"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                   type="text"
                 />
                 <!---->
@@ -1492,17 +1492,17 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
               class="unnnic-input size-sm"
               data-passed-props="[object Object]"
               data-testid="1888ae1f-2518-4727-98e2-731674e1760e"
-              data-v-37e767d4=""
+              data-v-79844726=""
             >
               <!---->
               <div
                 class="input-container"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <input
                   class="unnnic-font secondary"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                   type="text"
                 />
                 <!---->
@@ -1520,17 +1520,17 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
               class="unnnic-input size-sm"
               data-passed-props="[object Object]"
               data-testid="dd57500e-a8e8-4a98-8b5b-a33637523a8d"
-              data-v-37e767d4=""
+              data-v-79844726=""
             >
               <!---->
               <div
                 class="input-container"
-                data-v-37e767d4=""
+                data-v-79844726=""
               >
                 <!---->
                 <input
                   class="unnnic-font secondary"
-                  data-v-37e767d4=""
+                  data-v-79844726=""
                   type="text"
                 />
                 <!---->
