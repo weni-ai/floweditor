@@ -581,7 +581,11 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
         selectedArray.length > 0 ? this.getName(selectedArray[0]) : this.props.placeholder;
     }
 
-    let inputIcon = this.state.showOptions ? 'arrow-button-up-1' : 'arrow-button-down-1';
+    let inputIcon = this.props.disabled
+      ? 'arrow-button-down-1'
+      : this.state.showOptions
+      ? 'arrow-button-up-1'
+      : 'arrow-button-down-1';
     if (this.props.tags) {
       inputIcon = 'keyboard-return-1';
     }
@@ -621,7 +625,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
                 selected={selectedArray}
                 onBlur={() => this.setState({ showOptions: false })}
                 onSelect={option => this.selectOption(option)}
-                active={this.state.showOptions}
+                active={!this.props.disabled && this.state.showOptions}
                 anchorRef={this.selectRef}
                 inputRef={this.getRefFromVueInputRef(this.selectInputRef)}
                 getName={option => this.getName(option)}
@@ -635,7 +639,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
                 options={this.state.availableExpressions}
                 onBlur={() => this.setState({ availableExpressions: [] })}
                 onSelect={option => this.selectExpression(option)}
-                active={this.state.availableExpressions.length > 0}
+                active={!this.props.disabled && this.state.availableExpressions.length > 0}
                 anchorRef={this.selectRef}
                 inputRef={this.getRefFromVueInputRef(this.selectInputRef)}
                 expressions={true}
