@@ -126,11 +126,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
     }
 
     if (this.state.showOptions && !prevState.showOptions && this.state.fetchOnOpen) {
-      let query: any;
-      if (!Array.isArray(this.props.value)) {
-        query = this.getName(this.props.value);
-      }
-      this.fetchOptions(query);
+      this.fetchOptions();
       this.setState({ fetchOnOpen: false });
     }
   }
