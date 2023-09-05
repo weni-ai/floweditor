@@ -56,10 +56,12 @@ export default class SelectOptions extends React.Component<SelectOptionsProps, S
 
   public componentDidMount() {
     if (this.props.inputRef instanceof HTMLTextAreaElement) {
-      this.props.inputRef.addEventListener('scroll', () => this.hideAndRecalculatePosition());
+      this.props.inputRef.addEventListener('scroll', () => this.hide());
+      this.props.inputRef.addEventListener('scrollend', () => this.recalculatePosition());
     } else {
       const scrollableParent = this.findScrollableParent(this.props.anchorRef);
-      scrollableParent.addEventListener('scroll', () => this.hideAndRecalculatePosition());
+      scrollableParent.addEventListener('scroll', () => this.hide());
+      scrollableParent.addEventListener('scrollend', () => this.recalculatePosition());
     }
     document.addEventListener('mousedown', this.handleClickOutside);
     this.props.anchorRef.addEventListener('keydown', this.handleCompletionsKeyDown);
@@ -68,10 +70,12 @@ export default class SelectOptions extends React.Component<SelectOptionsProps, S
 
   public componentWillUnmount() {
     if (this.props.inputRef instanceof HTMLTextAreaElement) {
-      this.props.inputRef.removeEventListener('scroll', () => this.hideAndRecalculatePosition());
+      this.props.inputRef.removeEventListener('scroll', () => this.hide());
+      this.props.inputRef.removeEventListener('scrollend', () => this.recalculatePosition());
     } else {
       const scrollableParent = this.findScrollableParent(this.props.anchorRef);
-      scrollableParent.removeEventListener('scroll', () => this.hideAndRecalculatePosition());
+      scrollableParent.removeEventListener('scroll', () => this.hide());
+      scrollableParent.removeEventListener('scrollend', () => this.recalculatePosition());
     }
     document.removeEventListener('mousedown', this.handleClickOutside);
     this.props.anchorRef.removeEventListener('keydown', this.handleCompletionsKeyDown);
@@ -182,8 +186,13 @@ export default class SelectOptions extends React.Component<SelectOptionsProps, S
     return 0;
   }
 
-  private hideAndRecalculatePosition() {
-    this.props.onBlur();
+  private hide() {
+    if (this.props.active) {
+      this.props.onBlur();
+    }
+  }
+
+  private recalculatePosition() {
     debounce(this.calculateOptionsOffset, 1000, () => {
       this.calculateOptionsOffset(this.props.inputRef);
     });

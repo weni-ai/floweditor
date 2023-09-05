@@ -522,7 +522,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
       this.props.onChange(resolved);
     }
 
-    if (this.props.createArbitraryOption) {
+    if (this.props.createArbitraryOption && this.props.createPrefix) {
       this.setState({ fetchOnOpen: true });
     }
 

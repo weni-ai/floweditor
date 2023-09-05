@@ -33,18 +33,17 @@ export interface TembaCompletionProps {
   session?: boolean;
   value: string;
   onInput?: (value: string) => void;
-  completionEndpoint: string;
   type: string;
   errors?: string[];
+  expressionsData: {
+    functions: CompletionOption[];
+    context: CompletionSchema;
+  };
 }
 
 interface TembaCompletionState {
   query: string;
   options: ValuedCompletionOption[];
-  expressionsData?: {
-    functions?: CompletionOption[];
-    context?: CompletionSchema;
-  };
   showCompletionsMenu: boolean;
   completionTopOffset?: number;
   optionIndex: number;
@@ -81,23 +80,12 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
 
   public async componentDidMount(): Promise<void> {
     this.setState({ showCompletionsMenu: false });
-    this.fetchExpressions();
 
     if (this.props.value && this.props.type === 'input') {
       const inputEl = (this.refInput as any).vueRef.$el.querySelector('input') as HTMLInputElement;
       inputEl.value = this.props.value;
       inputEl.dispatchEvent(new Event('input'));
       setTimeout(() => this.setState({ showCompletionsMenu: true }));
-    }
-  }
-
-  private async fetchExpressions() {
-    let endpoint = this.props.completionEndpoint;
-
-    if (endpoint) {
-      const { data } = await axios.get(endpoint);
-
-      this.setState({ expressionsData: data });
     }
   }
 
@@ -118,14 +106,14 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
   }
 
   private executeQuery(ele: HTMLInputElement) {
-    if (this.state.expressionsData) {
+    if (this.props.expressionsData) {
       const store: TembaStore = document.querySelector('temba-store');
       const result = executeCompletionQuery(
         ele,
         store,
         this.props.session,
-        this.state.expressionsData.functions,
-        this.state.expressionsData.context
+        this.props.expressionsData.functions,
+        this.props.expressionsData.context
       );
 
       const expressions = result.options.map(
@@ -288,7 +276,7 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
 
 /* istanbul ignore next */
 const mapStateToProps = ({ flowContext: { assetStore } }: AppState) => ({
-  completionEndpoint: assetStore.completion.endpoint
+  expressionsData: assetStore.completion.items as any
 });
 
 export default connect(

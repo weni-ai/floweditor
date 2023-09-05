@@ -66,7 +66,7 @@ export const handleUploadFile = (
 
 const renderWithLabel = (index: number, children: JSX.Element): JSX.Element => {
   return (
-    <div className={styles.url_attachment_container}>
+    <div key={index} className={styles.url_attachment_container}>
       <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
         {i18n.t('forms.file', 'File')} {index + 1}
       </div>
