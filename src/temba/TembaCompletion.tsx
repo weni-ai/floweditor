@@ -10,7 +10,6 @@ import {
 
 import AppState from '../store/state';
 
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { applyVueInReact } from 'vuereact-combined';
 
