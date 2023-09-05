@@ -1,3 +1,7 @@
+2.1.0
+----------
+- Fix: Update select component
+
 2.0.3
 ----------
 - Fix: Add texts into quick replies and node deletion cards
