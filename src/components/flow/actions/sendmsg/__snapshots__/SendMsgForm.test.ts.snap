@@ -46,6 +46,9 @@ exports[`SendMsgForm render should render 1`] = `
             className="quick_reply_summary u font secondary body-md color-neutral-cloudy"
           >
             Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for "Yes" and one for "No".
+            <br />
+            <br />
+            You can add up to 10 Quick Replies.
           </div>
           <MultiChoiceInput
             entry={

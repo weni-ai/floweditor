@@ -1,49 +1,78 @@
-2.0.2
-----------
+## 2.0.3
+
+- Fix: Add texts into quick replies and node deletion cards
+- Fix: Node add alignment
+- Fix: Check if service is defined before param map
+- Fix: Add linebreaks on simulator and sendmsg renders
+
+  2.0.2
+
+---
+
 - Fix: Prevent needless rerenders on TembaSelect
 - Fix: TembaSelect get next pages of options
 
-2.0.1
-----------
-* Fix: enter not working on temba completion
-* Fix: clear input value if showValue is false
+  2.0.1
 
-2.0.0
-----------
-* Feature: Unnnic system migration
-* Feature: Action Sidebar
-* Feature: Copy and Paste nodes
-* Feature: Simulator WhatsApp skin
+---
 
-1.3.1-floweditor-1.15.2
-----------
-* Fix: Handle nonexistent service when creating the router state
+- Fix: enter not working on temba completion
+- Fix: clear input value if showValue is false
 
-1.3.0-floweditor-1.15.2
-----------
-* Feat: ChatGPT External Service
+  2.0.0
 
-1.2.1-floweditor-1.15.2
-----------
-* Fix: External services action name
+---
 
-1.2.0-floweditor-1.15.2
-----------
-* New External Services router card
+- Feature: Unnnic system migration
+- Feature: Action Sidebar
+- Feature: Copy and Paste nodes
+- Feature: Simulator WhatsApp skin
 
-1.1.2-floweditor-1.15.2
-----------
-* Fix: Case removal and reorder on expression and field routers
+  1.3.1-floweditor-1.15.2
 
-1.1.1-floweditor-1.15.2
-----------
-* Fix get ticketer uuid when coming from assetStore
+---
 
-1.1.0-floweditor-1.15.2
-----------
-* Add wenichats ticketer integration
+- Fix: Handle nonexistent service when creating the router state
 
-1.0.0-floweditor-1.15.2
-----------
-* Add instagram, slack and teams schemes available in split by URN
-* More options in wait for response
+  1.3.0-floweditor-1.15.2
+
+---
+
+- Feat: ChatGPT External Service
+
+  1.2.1-floweditor-1.15.2
+
+---
+
+- Fix: External services action name
+
+  1.2.0-floweditor-1.15.2
+
+---
+
+- New External Services router card
+
+  1.1.2-floweditor-1.15.2
+
+---
+
+- Fix: Case removal and reorder on expression and field routers
+
+  1.1.1-floweditor-1.15.2
+
+---
+
+- Fix get ticketer uuid when coming from assetStore
+
+  1.1.0-floweditor-1.15.2
+
+---
+
+- Add wenichats ticketer integration
+
+  1.0.0-floweditor-1.15.2
+
+---
+
+- Add instagram, slack and teams schemes available in split by URN
+- More options in wait for response

@@ -405,7 +405,8 @@
     "ex_accept": "Ex: Accept",
     "ex_application_json": "Ex: application/json",
     "none": "Nenhum",
-    "topic_placeholder": "Selecione o tópico"
+    "topic_placeholder": "Selecione o tópico",
+    "quick_replies_limit": "Você pode adicionar até 10 Respostas rápidas."
   },
   "issues": {
     "header": "Problemas no Fluxo",
@@ -604,5 +605,7 @@
         "button": "Entendi 3/3"
       }
     }
-  }
+  },
+  "you_can_also_delete_cards_pressing_the_keys": "Você também pode excluir blocos digitando as teclas",
+  "or": "ou"
 }

@@ -329,6 +329,9 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
               'forms.quick_replies_summary',
               'Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for "Yes" and one for "No".'
             )}
+            <br />
+            <br />
+            {i18n.t('forms.quick_replies_limit', 'You can add up to 10 Quick Replies.')}
           </div>
 
           <MultiChoiceInput
