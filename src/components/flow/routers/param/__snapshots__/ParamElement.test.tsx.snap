@@ -23,8 +23,8 @@ exports[`ParamElement ChatGPT params boolean render should render param 1`] = `
             <!---->
             <span
               class="unnnic-icon unnnic-icon__size--sm unnnic-icon__line-height--sm unnnic-icon-scheme--neutral-soft unnnic-switch__icon"
+              data-v-59b073b4=""
               data-v-5be79627=""
-              data-v-a1936218=""
             >
               <svg
                 id="default"
@@ -85,45 +85,40 @@ exports[`ParamElement ChatGPT params expressionInput render should render param 
           </span>
           <div>
             <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
+              class="completion_wrapper"
             >
               <div
-                class="unnnic-autocomplete-select completionInput"
-                data-passed-props="[object Object]"
-                data-testid="User Input"
-                data-v-4e186498=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
                 <div
-                  class="unnnic-form sm"
-                  data-v-48c0c241=""
-                  data-v-4e186498=""
+                  class="unnnic-input size-sm"
+                  data-passed-props="[object Object]"
+                  data-testid="User Input"
+                  data-v-37e767d4=""
                 >
                   <!---->
                   <div
-                    class="unnnic-form-input"
-                    data-v-2d3b8b50=""
-                    data-v-48c0c241=""
-                    mask=""
-                    style="position: relative;"
-                    v-bind="[object Object]"
+                    class="input-container"
+                    data-v-37e767d4=""
                   >
+                    <!---->
                     <input
-                      class="input size-sm normal"
-                      data-v-2d3b8b50=""
-                      data-v-f03c53b0=""
-                      placeholder="Buscar por"
-                      size="0"
+                      class="unnnic-font secondary"
+                      data-v-37e767d4=""
                       type="text"
-                      v-bind="[object Object]"
                     />
                     <!---->
                     <!---->
                   </div>
                   <!---->
                 </div>
-                <!---->
               </div>
+              <div
+                class="options_wrapper"
+                data-testid="temba_completion_options_User Input"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
             </div>
           </div>
         </div>
@@ -150,43 +145,36 @@ exports[`ParamElement ChatGPT params multiselect render should render param 1`] 
             Aditional Prompts
           </span>
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_aditional_prompts"
           >
             <div
-              class="unnnic-autocomplete-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_aditional_prompts"
-              data-v-4e186498=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
               <div
-                class="unnnic-form sm"
-                data-v-48c0c241=""
-                data-v-4e186498=""
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_aditional_prompts"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="unnnic-form-input"
-                  data-v-2d3b8b50=""
-                  data-v-48c0c241=""
-                  mask=""
-                  style="position: relative;"
-                  v-bind="[object Object]"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-left"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconleft="search-1"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
                     placeholder="Select an option"
-                    size="0"
                     type="text"
-                    v-bind="[object Object]"
                   />
                   <span
-                    class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -195,7 +183,7 @@ exports[`ParamElement ChatGPT params multiselect render should render param 1`] 
                     >
                       <path
                         class="primary"
-                        d="M34.0615 35.0005C33.8116 35.0005 33.5754 34.903 33.3992 34.7256L25.2575 26.5826C24.3065 27.3961 23.2355 28.0597 22.067 28.5559C20.5312 29.2082 18.9178 29.5394 17.272 29.5394C15.7011 29.5394 14.1578 29.2382 12.6819 28.6421C9.64389 27.4161 7.26574 25.0817 5.98481 22.0662C4.70388 19.052 4.67263 15.7178 5.89858 12.6811C7.12452 9.64433 9.45894 7.26492 12.4732 5.98399C14.009 5.33041 15.6211 5.00049 17.2682 5.00049C18.8391 5.00049 20.3825 5.30291 21.8583 5.89776C24.8963 7.12371 27.2745 9.45812 28.5554 12.4736C29.8363 15.4891 29.8676 18.822 28.6416 21.8588C28.1393 23.1035 27.4469 24.2444 26.5809 25.2554L34.7251 33.4009C35.09 33.7658 35.09 34.3606 34.7251 34.7268C34.5477 34.903 34.3115 35.0005 34.0615 35.0005ZM17.2682 6.87502C15.8748 6.87502 14.5077 7.15495 13.2068 7.70856C10.6524 8.79454 8.67413 10.809 7.63564 13.3821C6.59715 15.9552 6.6234 18.7783 7.70813 21.3327C8.7941 23.887 10.8086 25.8653 13.3817 26.9038C14.6326 27.4086 15.9411 27.6636 17.2707 27.6636C18.6641 27.6636 20.0313 27.3836 21.3322 26.83C22.5494 26.3127 23.6404 25.5828 24.5739 24.6606C24.5864 24.6431 24.6002 24.6281 24.6139 24.6143C24.6339 24.5943 24.6526 24.5781 24.6701 24.5656C25.6236 23.6021 26.381 22.4499 26.9021 21.1565C27.9406 18.5833 27.9143 15.7603 26.8283 13.2059C25.7436 10.6516 23.7279 8.67332 21.1548 7.63483C19.9063 7.13121 18.5979 6.87502 17.2682 6.87502Z"
+                        d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
                         fill="#3B414D"
                       />
                     </svg>
@@ -204,8 +192,159 @@ exports[`ParamElement ChatGPT params multiselect render should render param 1`] 
                 </div>
                 <!---->
               </div>
-              <!---->
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_aditional_prompts"
+              style="margin-top: 0px; width: 0px; display: none;"
+            >
+              <div
+                class="option active "
+                data-option-index="0"
+              >
+                <div
+                  class="multi_wrapper"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper checkbox"
+                      data-passed-props="[object Object]"
+                      data-v-ff6a4e60=""
+                    >
+                      <span
+                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                        data-v-59b073b4=""
+                        data-v-ff6a4e60=""
+                      >
+                        <svg
+                          fill="none"
+                          viewBox="0 0 40 40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            class="primary-stroke"
+                            height="29"
+                            rx="3.5"
+                            stroke="#3B414D"
+                            width="29"
+                            x="5.5"
+                            y="5.50049"
+                          />
+                        </svg>
+                      </span>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="name"
+                  >
+                    Aditional Prompt 1 content
+                  </span>
+                </div>
+              </div>
+              <div
+                class="option  "
+                data-option-index="1"
+              >
+                <div
+                  class="multi_wrapper"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper checkbox"
+                      data-passed-props="[object Object]"
+                      data-v-ff6a4e60=""
+                    >
+                      <span
+                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                        data-v-59b073b4=""
+                        data-v-ff6a4e60=""
+                      >
+                        <svg
+                          fill="none"
+                          viewBox="0 0 40 40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            class="primary-stroke"
+                            height="29"
+                            rx="3.5"
+                            stroke="#3B414D"
+                            width="29"
+                            x="5.5"
+                            y="5.50049"
+                          />
+                        </svg>
+                      </span>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="name"
+                  >
+                    Aditional Prompt 2 content
+                  </span>
+                </div>
+              </div>
+              <div
+                class="option  "
+                data-option-index="2"
+              >
+                <div
+                  class="multi_wrapper"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper checkbox"
+                      data-passed-props="[object Object]"
+                      data-v-ff6a4e60=""
+                    >
+                      <span
+                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                        data-v-59b073b4=""
+                        data-v-ff6a4e60=""
+                      >
+                        <svg
+                          fill="none"
+                          viewBox="0 0 40 40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            class="primary-stroke"
+                            height="29"
+                            rx="3.5"
+                            stroke="#3B414D"
+                            width="29"
+                            x="5.5"
+                            y="5.50049"
+                          />
+                        </svg>
+                      </span>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="name"
+                  >
+                    Aditional Prompt 3 content
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_aditional_prompts"
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
           </div>
         </div>
       </div>
@@ -231,43 +370,36 @@ exports[`ParamElement ChatGPT params multiselect update handles data change 1`] 
             Aditional Prompts
           </span>
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_aditional_prompts"
           >
             <div
-              class="unnnic-autocomplete-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_aditional_prompts"
-              data-v-4e186498=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
               <div
-                class="unnnic-form sm"
-                data-v-48c0c241=""
-                data-v-4e186498=""
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_aditional_prompts"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="unnnic-form-input"
-                  data-v-2d3b8b50=""
-                  data-v-48c0c241=""
-                  mask=""
-                  style="position: relative;"
-                  v-bind="[object Object]"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-left"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconleft="search-1"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
                     placeholder="Select an option"
-                    size="0"
                     type="text"
-                    v-bind="[object Object]"
                   />
                   <span
-                    class="icon-left unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cloudy"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -276,7 +408,7 @@ exports[`ParamElement ChatGPT params multiselect update handles data change 1`] 
                     >
                       <path
                         class="primary"
-                        d="M34.0615 35.0005C33.8116 35.0005 33.5754 34.903 33.3992 34.7256L25.2575 26.5826C24.3065 27.3961 23.2355 28.0597 22.067 28.5559C20.5312 29.2082 18.9178 29.5394 17.272 29.5394C15.7011 29.5394 14.1578 29.2382 12.6819 28.6421C9.64389 27.4161 7.26574 25.0817 5.98481 22.0662C4.70388 19.052 4.67263 15.7178 5.89858 12.6811C7.12452 9.64433 9.45894 7.26492 12.4732 5.98399C14.009 5.33041 15.6211 5.00049 17.2682 5.00049C18.8391 5.00049 20.3825 5.30291 21.8583 5.89776C24.8963 7.12371 27.2745 9.45812 28.5554 12.4736C29.8363 15.4891 29.8676 18.822 28.6416 21.8588C28.1393 23.1035 27.4469 24.2444 26.5809 25.2554L34.7251 33.4009C35.09 33.7658 35.09 34.3606 34.7251 34.7268C34.5477 34.903 34.3115 35.0005 34.0615 35.0005ZM17.2682 6.87502C15.8748 6.87502 14.5077 7.15495 13.2068 7.70856C10.6524 8.79454 8.67413 10.809 7.63564 13.3821C6.59715 15.9552 6.6234 18.7783 7.70813 21.3327C8.7941 23.887 10.8086 25.8653 13.3817 26.9038C14.6326 27.4086 15.9411 27.6636 17.2707 27.6636C18.6641 27.6636 20.0313 27.3836 21.3322 26.83C22.5494 26.3127 23.6404 25.5828 24.5739 24.6606C24.5864 24.6431 24.6002 24.6281 24.6139 24.6143C24.6339 24.5943 24.6526 24.5781 24.6701 24.5656C25.6236 23.6021 26.381 22.4499 26.9021 21.1565C27.9406 18.5833 27.9143 15.7603 26.8283 13.2059C25.7436 10.6516 23.7279 8.67332 21.1548 7.63483C19.9063 7.13121 18.5979 6.87502 17.2682 6.87502Z"
+                        d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
                         fill="#3B414D"
                       />
                     </svg>
@@ -285,8 +417,159 @@ exports[`ParamElement ChatGPT params multiselect update handles data change 1`] 
                 </div>
                 <!---->
               </div>
-              <!---->
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_aditional_prompts"
+              style="margin-top: 0px; width: 0px; display: none;"
+            >
+              <div
+                class="option active "
+                data-option-index="0"
+              >
+                <div
+                  class="multi_wrapper"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper checkbox"
+                      data-passed-props="[object Object]"
+                      data-v-ff6a4e60=""
+                    >
+                      <span
+                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                        data-v-59b073b4=""
+                        data-v-ff6a4e60=""
+                      >
+                        <svg
+                          fill="none"
+                          viewBox="0 0 40 40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            class="primary-stroke"
+                            height="29"
+                            rx="3.5"
+                            stroke="#3B414D"
+                            width="29"
+                            x="5.5"
+                            y="5.50049"
+                          />
+                        </svg>
+                      </span>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="name"
+                  >
+                    Aditional Prompt 1 content
+                  </span>
+                </div>
+              </div>
+              <div
+                class="option  "
+                data-option-index="1"
+              >
+                <div
+                  class="multi_wrapper"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper checkbox"
+                      data-passed-props="[object Object]"
+                      data-v-ff6a4e60=""
+                    >
+                      <span
+                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                        data-v-59b073b4=""
+                        data-v-ff6a4e60=""
+                      >
+                        <svg
+                          fill="none"
+                          viewBox="0 0 40 40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            class="primary-stroke"
+                            height="29"
+                            rx="3.5"
+                            stroke="#3B414D"
+                            width="29"
+                            x="5.5"
+                            y="5.50049"
+                          />
+                        </svg>
+                      </span>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="name"
+                  >
+                    Aditional Prompt 2 content
+                  </span>
+                </div>
+              </div>
+              <div
+                class="option  "
+                data-option-index="2"
+              >
+                <div
+                  class="multi_wrapper"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper checkbox"
+                      data-passed-props="[object Object]"
+                      data-v-ff6a4e60=""
+                    >
+                      <span
+                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                        data-v-59b073b4=""
+                        data-v-ff6a4e60=""
+                      >
+                        <svg
+                          fill="none"
+                          viewBox="0 0 40 40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            class="primary-stroke"
+                            height="29"
+                            rx="3.5"
+                            stroke="#3B414D"
+                            width="29"
+                            x="5.5"
+                            y="5.50049"
+                          />
+                        </svg>
+                      </span>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="name"
+                  >
+                    Aditional Prompt 3 content
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_aditional_prompts"
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
           </div>
         </div>
       </div>
@@ -308,87 +591,58 @@ exports[`ParamElement Omie params render should render param 1`] = `
         <div
           class="moveIcon"
         >
-          <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+          <svg
+            data-draggable="true"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <button
-              class="unnnic-button unnnic-button--size-small unnnic-button--terciary unnnic-button-scheme-- unnnic-button--icon-on-center"
-              data-draggable="true"
-              data-passed-props="[object Object]"
-              data-v-00f478da=""
-            >
-              <!---->
-              <!---->
-              <span
-                class="unnnic-icon unnnic-icon__size--sm"
-                data-v-00f478da=""
-                data-v-a1936218=""
-              >
-                <svg
-                  fill="none"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="primary"
-                    clip-rule="evenodd"
-                    d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
-                    fill="#D0D3D9"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              <span
-                class="unnnic-button__label"
-                data-v-00f478da=""
-              >
-                  
-              </span>
-              <!---->
-            </button>
-          </div>
+            <path
+              class="primary"
+              clip-rule="evenodd"
+              d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
+              fill="#D0D3D9"
+              fill-rule="evenodd"
+            />
+          </svg>
         </div>
         <div
           class="choice "
           style="flex: 1;"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_service_call_param"
           >
             <div
-              class="unnnic-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_service_call_param"
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <span
-                class="dropdown"
-                data-v-6fe2671f=""
+              <div
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_service_call_param"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
+                <!---->
                 <div
-                  data-v-2d3b8b50=""
-                  data-v-6fe2671f=""
-                  readonly="readonly"
-                  style="position: relative;"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-right"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconright="arrow-button-down-1"
-                    iconrightclickable="true"
-                    placeholder="Param"
-                    readonly="readonly"
-                    size="0"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
+                    placeholder="Identificação"
                     type="text"
                   />
-                  <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-cloudy"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -402,86 +656,98 @@ exports[`ParamElement Omie params render should render param 1`] = `
                       />
                     </svg>
                   </span>
+                  <!---->
                 </div>
-                <div
-                  __use_react_component_wrap=""
-                  data-v-6fe2671f=""
-                  style="all: unset;"
-                >
-                  <option
-                    label="Identificação"
-                    value="identificacao"
-                  >
-                    Identificação
-                  </option>
-                  <option
-                    label="Endereço"
-                    value="endereco"
-                  >
-                    Endereço
-                  </option>
-                  <option
-                    label="Telefone e Email"
-                    value="telefone_email"
-                  >
-                    Telefone e Email
-                  </option>
-                  <option
-                    label="Observações"
-                    value="cObs"
-                  >
-                    Observações
-                  </option>
-                </div>
-                <div
-                  class="dropdown-data"
-                  data-v-6fe2671f=""
-                  style="position: fixed; top: 0px;"
-                />
-              </span>
-              <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_service_call_param"
+              style="margin-top: 0px; width: 0px; display: none;"
+            >
+              <div
+                class="option active selected"
+                data-option-index="0"
+              >
+                <span
+                  class="name"
+                >
+                  Identificação
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="1"
+              >
+                <span
+                  class="name"
+                >
+                  Endereço
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="2"
+              >
+                <span
+                  class="name"
+                >
+                  Telefone e Email
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="3"
+              >
+                <span
+                  class="name"
+                >
+                  Observações
+                </span>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_service_call_param"
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
           </div>
         </div>
         <div
           class="choice "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_service_call_param_filter"
           >
             <div
-              class="unnnic-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_service_call_param_filter"
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <span
-                class="dropdown"
-                data-v-6fe2671f=""
+              <div
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_service_call_param_filter"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
+                <!---->
                 <div
-                  data-v-2d3b8b50=""
-                  data-v-6fe2671f=""
-                  readonly="readonly"
-                  style="position: relative;"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-right"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconright="arrow-button-down-1"
-                    iconrightclickable="true"
-                    placeholder="Filter"
-                    readonly="readonly"
-                    size="0"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
+                    placeholder="Código do Contato"
                     type="text"
                   />
-                  <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-cloudy"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -495,75 +761,112 @@ exports[`ParamElement Omie params render should render param 1`] = `
                       />
                     </svg>
                   </span>
+                  <!---->
                 </div>
-                <div
-                  __use_react_component_wrap=""
-                  data-v-6fe2671f=""
-                  style="all: unset;"
-                >
-                  <option
-                    label="Código do Contato"
-                    value="nCod"
-                  >
-                    Código do Contato
-                  </option>
-                  <option
-                    label="Código do Contato"
-                    value="nCod"
-                  >
-                    Código do Contato
-                  </option>
-                  <option
-                    label="Código de Integração"
-                    value="cCodInt"
-                  >
-                    Código de Integração
-                  </option>
-                  <option
-                    label="Nome do contato"
-                    value="cNome"
-                  >
-                    Nome do contato
-                  </option>
-                  <option
-                    label="Sobrenome do contato"
-                    value="cSobrenome"
-                  >
-                    Sobrenome do contato
-                  </option>
-                  <option
-                    label="Cargo"
-                    value="cCargo"
-                  >
-                    Cargo
-                  </option>
-                  <option
-                    label="Data de Nascimento"
-                    value="dDtNasc"
-                  >
-                    Data de Nascimento
-                  </option>
-                  <option
-                    label="Código do Vendedor"
-                    value="nCodVend"
-                  >
-                    Código do Vendedor
-                  </option>
-                  <option
-                    label="Código da Conta"
-                    value="nCodConta"
-                  >
-                    Código da Conta
-                  </option>
-                </div>
-                <div
-                  class="dropdown-data"
-                  data-v-6fe2671f=""
-                  style="position: fixed; top: 0px;"
-                />
-              </span>
-              <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_service_call_param_filter"
+              style="margin-top: 0px; width: -24px; display: none;"
+            >
+              <div
+                class="option active selected"
+                data-option-index="0"
+              >
+                <span
+                  class="name"
+                >
+                  Código do Contato
+                </span>
+              </div>
+              <div
+                class="option  selected"
+                data-option-index="1"
+              >
+                <span
+                  class="name"
+                >
+                  Código do Contato
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="2"
+              >
+                <span
+                  class="name"
+                >
+                  Código de Integração
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="3"
+              >
+                <span
+                  class="name"
+                >
+                  Nome do contato
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="4"
+              >
+                <span
+                  class="name"
+                >
+                  Sobrenome do contato
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="5"
+              >
+                <span
+                  class="name"
+                >
+                  Cargo
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="6"
+              >
+                <span
+                  class="name"
+                >
+                  Data de Nascimento
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="7"
+              >
+                <span
+                  class="name"
+                >
+                  Código do Vendedor
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="8"
+              >
+                <span
+                  class="name"
+                >
+                  Código da Conta
+                </span>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_service_call_param_filter"
+              style="margin-top: 0px; width: -24px; display: none;"
+            />
           </div>
         </div>
         <div
@@ -571,45 +874,40 @@ exports[`ParamElement Omie params render should render param 1`] = `
         >
           <div>
             <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
+              class="completion_wrapper"
             >
               <div
-                class="unnnic-autocomplete-select completionInput"
-                data-passed-props="[object Object]"
-                data-testid="Service Call Param Data"
-                data-v-4e186498=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
                 <div
-                  class="unnnic-form sm"
-                  data-v-48c0c241=""
-                  data-v-4e186498=""
+                  class="unnnic-input size-sm"
+                  data-passed-props="[object Object]"
+                  data-testid="Service Call Param Data"
+                  data-v-37e767d4=""
                 >
                   <!---->
                   <div
-                    class="unnnic-form-input"
-                    data-v-2d3b8b50=""
-                    data-v-48c0c241=""
-                    mask=""
-                    style="position: relative;"
-                    v-bind="[object Object]"
+                    class="input-container"
+                    data-v-37e767d4=""
                   >
+                    <!---->
                     <input
-                      class="input size-sm normal"
-                      data-v-2d3b8b50=""
-                      data-v-f03c53b0=""
-                      placeholder="Buscar por"
-                      size="0"
+                      class="unnnic-font secondary"
+                      data-v-37e767d4=""
                       type="text"
-                      v-bind="[object Object]"
                     />
                     <!---->
                     <!---->
                   </div>
                   <!---->
                 </div>
-                <!---->
               </div>
+              <div
+                class="options_wrapper"
+                data-testid="temba_completion_options_Service Call Param Data"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
             </div>
           </div>
         </div>
@@ -621,7 +919,7 @@ exports[`ParamElement Omie params render should render param 1`] = `
             class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
             data-passed-props="[object Object]"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-a1936218=""
+            data-v-59b073b4=""
           >
             <svg
               fill="none"
@@ -660,87 +958,58 @@ exports[`ParamElement Omie params update handles data change 1`] = `
         <div
           class="moveIcon"
         >
-          <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+          <svg
+            data-draggable="true"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <button
-              class="unnnic-button unnnic-button--size-small unnnic-button--terciary unnnic-button-scheme-- unnnic-button--icon-on-center"
-              data-draggable="true"
-              data-passed-props="[object Object]"
-              data-v-00f478da=""
-            >
-              <!---->
-              <!---->
-              <span
-                class="unnnic-icon unnnic-icon__size--sm"
-                data-v-00f478da=""
-                data-v-a1936218=""
-              >
-                <svg
-                  fill="none"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="primary"
-                    clip-rule="evenodd"
-                    d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
-                    fill="#D0D3D9"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              <span
-                class="unnnic-button__label"
-                data-v-00f478da=""
-              >
-                  
-              </span>
-              <!---->
-            </button>
-          </div>
+            <path
+              class="primary"
+              clip-rule="evenodd"
+              d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
+              fill="#D0D3D9"
+              fill-rule="evenodd"
+            />
+          </svg>
         </div>
         <div
           class="choice "
           style="flex: 1;"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_service_call_param"
           >
             <div
-              class="unnnic-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_service_call_param"
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <span
-                class="dropdown"
-                data-v-6fe2671f=""
+              <div
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_service_call_param"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
+                <!---->
                 <div
-                  data-v-2d3b8b50=""
-                  data-v-6fe2671f=""
-                  readonly="readonly"
-                  style="position: relative;"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-right"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconright="arrow-button-down-1"
-                    iconrightclickable="true"
-                    placeholder="Param"
-                    readonly="readonly"
-                    size="13"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
+                    placeholder="Identificação"
                     type="text"
                   />
-                  <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -754,86 +1023,98 @@ exports[`ParamElement Omie params update handles data change 1`] = `
                       />
                     </svg>
                   </span>
+                  <!---->
                 </div>
-                <div
-                  __use_react_component_wrap=""
-                  data-v-6fe2671f=""
-                  style="all: unset;"
-                >
-                  <option
-                    label="Identificação"
-                    value="identificacao"
-                  >
-                    Identificação
-                  </option>
-                  <option
-                    label="Endereço"
-                    value="endereco"
-                  >
-                    Endereço
-                  </option>
-                  <option
-                    label="Telefone e Email"
-                    value="telefone_email"
-                  >
-                    Telefone e Email
-                  </option>
-                  <option
-                    label="Observações"
-                    value="cObs"
-                  >
-                    Observações
-                  </option>
-                </div>
-                <div
-                  class="dropdown-data"
-                  data-v-6fe2671f=""
-                  style="position: fixed; top: 0px;"
-                />
-              </span>
-              <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_service_call_param"
+              style="margin-top: 0px; width: 0px; display: none;"
+            >
+              <div
+                class="option active selected"
+                data-option-index="0"
+              >
+                <span
+                  class="name"
+                >
+                  Identificação
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="1"
+              >
+                <span
+                  class="name"
+                >
+                  Endereço
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="2"
+              >
+                <span
+                  class="name"
+                >
+                  Telefone e Email
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="3"
+              >
+                <span
+                  class="name"
+                >
+                  Observações
+                </span>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_service_call_param"
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
           </div>
         </div>
         <div
           class="choice "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_service_call_param_filter"
           >
             <div
-              class="unnnic-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_service_call_param_filter"
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <span
-                class="dropdown"
-                data-v-6fe2671f=""
+              <div
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_service_call_param_filter"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
+                <!---->
                 <div
-                  data-v-2d3b8b50=""
-                  data-v-6fe2671f=""
-                  readonly="readonly"
-                  style="position: relative;"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-right"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconright="arrow-button-down-1"
-                    iconrightclickable="true"
-                    placeholder="Filter"
-                    readonly="readonly"
-                    size="17"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
+                    placeholder="Código do Contato"
                     type="text"
                   />
-                  <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -847,75 +1128,112 @@ exports[`ParamElement Omie params update handles data change 1`] = `
                       />
                     </svg>
                   </span>
+                  <!---->
                 </div>
-                <div
-                  __use_react_component_wrap=""
-                  data-v-6fe2671f=""
-                  style="all: unset;"
-                >
-                  <option
-                    label="Código do Contato"
-                    value="nCod"
-                  >
-                    Código do Contato
-                  </option>
-                  <option
-                    label="Código do Contato"
-                    value="nCod"
-                  >
-                    Código do Contato
-                  </option>
-                  <option
-                    label="Código de Integração"
-                    value="cCodInt"
-                  >
-                    Código de Integração
-                  </option>
-                  <option
-                    label="Nome do contato"
-                    value="cNome"
-                  >
-                    Nome do contato
-                  </option>
-                  <option
-                    label="Sobrenome do contato"
-                    value="cSobrenome"
-                  >
-                    Sobrenome do contato
-                  </option>
-                  <option
-                    label="Cargo"
-                    value="cCargo"
-                  >
-                    Cargo
-                  </option>
-                  <option
-                    label="Data de Nascimento"
-                    value="dDtNasc"
-                  >
-                    Data de Nascimento
-                  </option>
-                  <option
-                    label="Código do Vendedor"
-                    value="nCodVend"
-                  >
-                    Código do Vendedor
-                  </option>
-                  <option
-                    label="Código da Conta"
-                    value="nCodConta"
-                  >
-                    Código da Conta
-                  </option>
-                </div>
-                <div
-                  class="dropdown-data"
-                  data-v-6fe2671f=""
-                  style="position: fixed; top: 0px;"
-                />
-              </span>
-              <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_service_call_param_filter"
+              style="margin-top: 0px; width: -24px; display: none;"
+            >
+              <div
+                class="option active selected"
+                data-option-index="0"
+              >
+                <span
+                  class="name"
+                >
+                  Código do Contato
+                </span>
+              </div>
+              <div
+                class="option  selected"
+                data-option-index="1"
+              >
+                <span
+                  class="name"
+                >
+                  Código do Contato
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="2"
+              >
+                <span
+                  class="name"
+                >
+                  Código de Integração
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="3"
+              >
+                <span
+                  class="name"
+                >
+                  Nome do contato
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="4"
+              >
+                <span
+                  class="name"
+                >
+                  Sobrenome do contato
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="5"
+              >
+                <span
+                  class="name"
+                >
+                  Cargo
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="6"
+              >
+                <span
+                  class="name"
+                >
+                  Data de Nascimento
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="7"
+              >
+                <span
+                  class="name"
+                >
+                  Código do Vendedor
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="8"
+              >
+                <span
+                  class="name"
+                >
+                  Código da Conta
+                </span>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_service_call_param_filter"
+              style="margin-top: 0px; width: -24px; display: none;"
+            />
           </div>
         </div>
         <div
@@ -923,45 +1241,40 @@ exports[`ParamElement Omie params update handles data change 1`] = `
         >
           <div>
             <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
+              class="completion_wrapper"
             >
               <div
-                class="unnnic-autocomplete-select completionInput"
-                data-passed-props="[object Object]"
-                data-testid="Service Call Param Data"
-                data-v-4e186498=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
                 <div
-                  class="unnnic-form sm"
-                  data-v-48c0c241=""
-                  data-v-4e186498=""
+                  class="unnnic-input size-sm"
+                  data-passed-props="[object Object]"
+                  data-testid="Service Call Param Data"
+                  data-v-37e767d4=""
                 >
                   <!---->
                   <div
-                    class="unnnic-form-input"
-                    data-v-2d3b8b50=""
-                    data-v-48c0c241=""
-                    mask=""
-                    style="position: relative;"
-                    v-bind="[object Object]"
+                    class="input-container"
+                    data-v-37e767d4=""
                   >
+                    <!---->
                     <input
-                      class="input size-sm normal"
-                      data-v-2d3b8b50=""
-                      data-v-f03c53b0=""
-                      placeholder="Buscar por"
-                      size="8"
+                      class="unnnic-font secondary"
+                      data-v-37e767d4=""
                       type="text"
-                      v-bind="[object Object]"
                     />
                     <!---->
                     <!---->
                   </div>
                   <!---->
                 </div>
-                <!---->
               </div>
+              <div
+                class="options_wrapper"
+                data-testid="temba_completion_options_Service Call Param Data"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
             </div>
           </div>
         </div>
@@ -973,7 +1286,7 @@ exports[`ParamElement Omie params update handles data change 1`] = `
             class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
             data-passed-props="[object Object]"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-a1936218=""
+            data-v-59b073b4=""
           >
             <svg
               fill="none"
@@ -1012,87 +1325,58 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
         <div
           class="moveIcon"
         >
-          <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+          <svg
+            data-draggable="true"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <button
-              class="unnnic-button unnnic-button--size-small unnnic-button--terciary unnnic-button-scheme-- unnnic-button--icon-on-center"
-              data-draggable="true"
-              data-passed-props="[object Object]"
-              data-v-00f478da=""
-            >
-              <!---->
-              <!---->
-              <span
-                class="unnnic-icon unnnic-icon__size--sm"
-                data-v-00f478da=""
-                data-v-a1936218=""
-              >
-                <svg
-                  fill="none"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="primary"
-                    clip-rule="evenodd"
-                    d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
-                    fill="#D0D3D9"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              <span
-                class="unnnic-button__label"
-                data-v-00f478da=""
-              >
-                  
-              </span>
-              <!---->
-            </button>
-          </div>
+            <path
+              class="primary"
+              clip-rule="evenodd"
+              d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
+              fill="#D0D3D9"
+              fill-rule="evenodd"
+            />
+          </svg>
         </div>
         <div
           class="choice "
           style="flex: 1;"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_service_call_param"
           >
             <div
-              class="unnnic-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_service_call_param"
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <span
-                class="dropdown"
-                data-v-6fe2671f=""
+              <div
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_service_call_param"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
+                <!---->
                 <div
-                  data-v-2d3b8b50=""
-                  data-v-6fe2671f=""
-                  readonly="readonly"
-                  style="position: relative;"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-right"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconright="arrow-button-down-1"
-                    iconrightclickable="true"
-                    placeholder="Param"
-                    readonly="readonly"
-                    size="13"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
+                    placeholder="Identificação"
                     type="text"
                   />
-                  <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -1106,86 +1390,98 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
                       />
                     </svg>
                   </span>
+                  <!---->
                 </div>
-                <div
-                  __use_react_component_wrap=""
-                  data-v-6fe2671f=""
-                  style="all: unset;"
-                >
-                  <option
-                    label="Identificação"
-                    value="identificacao"
-                  >
-                    Identificação
-                  </option>
-                  <option
-                    label="Endereço"
-                    value="endereco"
-                  >
-                    Endereço
-                  </option>
-                  <option
-                    label="Telefone e Email"
-                    value="telefone_email"
-                  >
-                    Telefone e Email
-                  </option>
-                  <option
-                    label="Observações"
-                    value="cObs"
-                  >
-                    Observações
-                  </option>
-                </div>
-                <div
-                  class="dropdown-data"
-                  data-v-6fe2671f=""
-                  style="position: fixed; top: 0px;"
-                />
-              </span>
-              <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_service_call_param"
+              style="margin-top: 0px; width: -24px; display: none;"
+            >
+              <div
+                class="option active selected"
+                data-option-index="0"
+              >
+                <span
+                  class="name"
+                >
+                  Identificação
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="1"
+              >
+                <span
+                  class="name"
+                >
+                  Endereço
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="2"
+              >
+                <span
+                  class="name"
+                >
+                  Telefone e Email
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="3"
+              >
+                <span
+                  class="name"
+                >
+                  Observações
+                </span>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_service_call_param"
+              style="margin-top: 0px; width: -24px; display: none;"
+            />
           </div>
         </div>
         <div
           class="choice "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_service_call_param_filter"
           >
             <div
-              class="unnnic-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_service_call_param_filter"
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <span
-                class="dropdown"
-                data-v-6fe2671f=""
+              <div
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_service_call_param_filter"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
+                <!---->
                 <div
-                  data-v-2d3b8b50=""
-                  data-v-6fe2671f=""
-                  readonly="readonly"
-                  style="position: relative;"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-right"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconright="arrow-button-down-1"
-                    iconrightclickable="true"
-                    placeholder="Filter"
-                    readonly="readonly"
-                    size="15"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
+                    placeholder="Código do Contato"
                     type="text"
                   />
-                  <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -1199,75 +1495,112 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
                       />
                     </svg>
                   </span>
+                  <!---->
                 </div>
-                <div
-                  __use_react_component_wrap=""
-                  data-v-6fe2671f=""
-                  style="all: unset;"
-                >
-                  <option
-                    label="Código da Conta"
-                    value="nCodConta"
-                  >
-                    Código da Conta
-                  </option>
-                  <option
-                    label="Código do Contato"
-                    value="nCod"
-                  >
-                    Código do Contato
-                  </option>
-                  <option
-                    label="Código de Integração"
-                    value="cCodInt"
-                  >
-                    Código de Integração
-                  </option>
-                  <option
-                    label="Nome do contato"
-                    value="cNome"
-                  >
-                    Nome do contato
-                  </option>
-                  <option
-                    label="Sobrenome do contato"
-                    value="cSobrenome"
-                  >
-                    Sobrenome do contato
-                  </option>
-                  <option
-                    label="Cargo"
-                    value="cCargo"
-                  >
-                    Cargo
-                  </option>
-                  <option
-                    label="Data de Nascimento"
-                    value="dDtNasc"
-                  >
-                    Data de Nascimento
-                  </option>
-                  <option
-                    label="Código do Vendedor"
-                    value="nCodVend"
-                  >
-                    Código do Vendedor
-                  </option>
-                  <option
-                    label="Código da Conta"
-                    value="nCodConta"
-                  >
-                    Código da Conta
-                  </option>
-                </div>
-                <div
-                  class="dropdown-data"
-                  data-v-6fe2671f=""
-                  style="position: fixed; top: 0px;"
-                />
-              </span>
-              <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_service_call_param_filter"
+              style="margin-top: 0px; width: -24px; display: none;"
+            >
+              <div
+                class="option active selected"
+                data-option-index="0"
+              >
+                <span
+                  class="name"
+                >
+                  Código da Conta
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="1"
+              >
+                <span
+                  class="name"
+                >
+                  Código do Contato
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="2"
+              >
+                <span
+                  class="name"
+                >
+                  Código de Integração
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="3"
+              >
+                <span
+                  class="name"
+                >
+                  Nome do contato
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="4"
+              >
+                <span
+                  class="name"
+                >
+                  Sobrenome do contato
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="5"
+              >
+                <span
+                  class="name"
+                >
+                  Cargo
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="6"
+              >
+                <span
+                  class="name"
+                >
+                  Data de Nascimento
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="7"
+              >
+                <span
+                  class="name"
+                >
+                  Código do Vendedor
+                </span>
+              </div>
+              <div
+                class="option  selected"
+                data-option-index="8"
+              >
+                <span
+                  class="name"
+                >
+                  Código da Conta
+                </span>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_service_call_param_filter"
+              style="margin-top: 0px; width: -24px; display: none;"
+            />
           </div>
         </div>
         <div
@@ -1275,45 +1608,40 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
         >
           <div>
             <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
+              class="completion_wrapper"
             >
               <div
-                class="unnnic-autocomplete-select completionInput"
-                data-passed-props="[object Object]"
-                data-testid="Service Call Param Data"
-                data-v-4e186498=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
                 <div
-                  class="unnnic-form sm"
-                  data-v-48c0c241=""
-                  data-v-4e186498=""
+                  class="unnnic-input size-sm"
+                  data-passed-props="[object Object]"
+                  data-testid="Service Call Param Data"
+                  data-v-37e767d4=""
                 >
                   <!---->
                   <div
-                    class="unnnic-form-input"
-                    data-v-2d3b8b50=""
-                    data-v-48c0c241=""
-                    mask=""
-                    style="position: relative;"
-                    v-bind="[object Object]"
+                    class="input-container"
+                    data-v-37e767d4=""
                   >
+                    <!---->
                     <input
-                      class="input size-sm normal"
-                      data-v-2d3b8b50=""
-                      data-v-f03c53b0=""
-                      placeholder="Buscar por"
-                      size="0"
+                      class="unnnic-font secondary"
+                      data-v-37e767d4=""
                       type="text"
-                      v-bind="[object Object]"
                     />
                     <!---->
                     <!---->
                   </div>
                   <!---->
                 </div>
-                <!---->
               </div>
+              <div
+                class="options_wrapper"
+                data-testid="temba_completion_options_Service Call Param Data"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
             </div>
           </div>
         </div>
@@ -1325,7 +1653,7 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
             class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
             data-passed-props="[object Object]"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-a1936218=""
+            data-v-59b073b4=""
           >
             <svg
               fill="none"
@@ -1364,87 +1692,58 @@ exports[`ParamElement Omie params update handles filter change from correct para
         <div
           class="moveIcon"
         >
-          <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+          <svg
+            data-draggable="true"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <button
-              class="unnnic-button unnnic-button--size-small unnnic-button--terciary unnnic-button-scheme-- unnnic-button--icon-on-center"
-              data-draggable="true"
-              data-passed-props="[object Object]"
-              data-v-00f478da=""
-            >
-              <!---->
-              <!---->
-              <span
-                class="unnnic-icon unnnic-icon__size--sm"
-                data-v-00f478da=""
-                data-v-a1936218=""
-              >
-                <svg
-                  fill="none"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="primary"
-                    clip-rule="evenodd"
-                    d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
-                    fill="#D0D3D9"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              <span
-                class="unnnic-button__label"
-                data-v-00f478da=""
-              >
-                  
-              </span>
-              <!---->
-            </button>
-          </div>
+            <path
+              class="primary"
+              clip-rule="evenodd"
+              d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
+              fill="#D0D3D9"
+              fill-rule="evenodd"
+            />
+          </svg>
         </div>
         <div
           class="choice "
           style="flex: 1;"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_service_call_param"
           >
             <div
-              class="unnnic-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_service_call_param"
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <span
-                class="dropdown"
-                data-v-6fe2671f=""
+              <div
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_service_call_param"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
+                <!---->
                 <div
-                  data-v-2d3b8b50=""
-                  data-v-6fe2671f=""
-                  readonly="readonly"
-                  style="position: relative;"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-right"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconright="arrow-button-down-1"
-                    iconrightclickable="true"
-                    placeholder="Param"
-                    readonly="readonly"
-                    size="16"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
+                    placeholder="Telefone e Email"
                     type="text"
                   />
-                  <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -1458,86 +1757,98 @@ exports[`ParamElement Omie params update handles filter change from correct para
                       />
                     </svg>
                   </span>
+                  <!---->
                 </div>
-                <div
-                  __use_react_component_wrap=""
-                  data-v-6fe2671f=""
-                  style="all: unset;"
-                >
-                  <option
-                    label="Identificação"
-                    value="identificacao"
-                  >
-                    Identificação
-                  </option>
-                  <option
-                    label="Endereço"
-                    value="endereco"
-                  >
-                    Endereço
-                  </option>
-                  <option
-                    label="Telefone e Email"
-                    value="telefone_email"
-                  >
-                    Telefone e Email
-                  </option>
-                  <option
-                    label="Observações"
-                    value="cObs"
-                  >
-                    Observações
-                  </option>
-                </div>
-                <div
-                  class="dropdown-data"
-                  data-v-6fe2671f=""
-                  style="position: fixed; top: 0px;"
-                />
-              </span>
-              <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_service_call_param"
+              style="margin-top: 0px; width: -24px; display: none;"
+            >
+              <div
+                class="option active "
+                data-option-index="0"
+              >
+                <span
+                  class="name"
+                >
+                  Identificação
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="1"
+              >
+                <span
+                  class="name"
+                >
+                  Endereço
+                </span>
+              </div>
+              <div
+                class="option  selected"
+                data-option-index="2"
+              >
+                <span
+                  class="name"
+                >
+                  Telefone e Email
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="3"
+              >
+                <span
+                  class="name"
+                >
+                  Observações
+                </span>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_service_call_param"
+              style="margin-top: 0px; width: -24px; display: none;"
+            />
           </div>
         </div>
         <div
           class="choice "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_service_call_param_filter"
           >
             <div
-              class="unnnic-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_service_call_param_filter"
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <span
-                class="dropdown"
-                data-v-6fe2671f=""
+              <div
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_service_call_param_filter"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
+                <!---->
                 <div
-                  data-v-2d3b8b50=""
-                  data-v-6fe2671f=""
-                  readonly="readonly"
-                  style="position: relative;"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-right"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconright="arrow-button-down-1"
-                    iconrightclickable="true"
-                    placeholder="Filter"
-                    readonly="readonly"
-                    size="16"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
+                    placeholder="DDD do Celular 2"
                     type="text"
                   />
-                  <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -1551,87 +1862,132 @@ exports[`ParamElement Omie params update handles filter change from correct para
                       />
                     </svg>
                   </span>
+                  <!---->
                 </div>
-                <div
-                  __use_react_component_wrap=""
-                  data-v-6fe2671f=""
-                  style="all: unset;"
-                >
-                  <option
-                    label="DDD do Celular 2"
-                    value="cDDDCel2"
-                  >
-                    DDD do Celular 2
-                  </option>
-                  <option
-                    label="DDD do celular 1"
-                    value="cDDDCel1"
-                  >
-                    DDD do celular 1
-                  </option>
-                  <option
-                    label="Número do Celular 1"
-                    value="cNumCel1"
-                  >
-                    Número do Celular 1
-                  </option>
-                  <option
-                    label="DDD do Celular 2"
-                    value="cDDDCel2"
-                  >
-                    DDD do Celular 2
-                  </option>
-                  <option
-                    label="Número do Celular 2"
-                    value="cNumCel2"
-                  >
-                    Número do Celular 2
-                  </option>
-                  <option
-                    label="DDD do Telefone"
-                    value="cDDDTel"
-                  >
-                    DDD do Telefone
-                  </option>
-                  <option
-                    label="Número do Telefone"
-                    value="cNumTel"
-                  >
-                    Número do Telefone
-                  </option>
-                  <option
-                    label="DDD do Fax"
-                    value="cDDDFax"
-                  >
-                    DDD do Fax
-                  </option>
-                  <option
-                    label="Número do Fax"
-                    value="cNumFax"
-                  >
-                    Número do Fax
-                  </option>
-                  <option
-                    label="E-mail do contato"
-                    value="cEmail"
-                  >
-                    E-mail do contato
-                  </option>
-                  <option
-                    label="WebSite"
-                    value="cWebsite"
-                  >
-                    WebSite
-                  </option>
-                </div>
-                <div
-                  class="dropdown-data"
-                  data-v-6fe2671f=""
-                  style="position: fixed; top: 0px;"
-                />
-              </span>
-              <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_service_call_param_filter"
+              style="margin-top: 0px; width: -24px; display: none;"
+            >
+              <div
+                class="option active selected"
+                data-option-index="0"
+              >
+                <span
+                  class="name"
+                >
+                  DDD do Celular 2
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="1"
+              >
+                <span
+                  class="name"
+                >
+                  DDD do celular 1
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="2"
+              >
+                <span
+                  class="name"
+                >
+                  Número do Celular 1
+                </span>
+              </div>
+              <div
+                class="option  selected"
+                data-option-index="3"
+              >
+                <span
+                  class="name"
+                >
+                  DDD do Celular 2
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="4"
+              >
+                <span
+                  class="name"
+                >
+                  Número do Celular 2
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="5"
+              >
+                <span
+                  class="name"
+                >
+                  DDD do Telefone
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="6"
+              >
+                <span
+                  class="name"
+                >
+                  Número do Telefone
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="7"
+              >
+                <span
+                  class="name"
+                >
+                  DDD do Fax
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="8"
+              >
+                <span
+                  class="name"
+                >
+                  Número do Fax
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="9"
+              >
+                <span
+                  class="name"
+                >
+                  E-mail do contato
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="10"
+              >
+                <span
+                  class="name"
+                >
+                  WebSite
+                </span>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_service_call_param_filter"
+              style="margin-top: 0px; width: -24px; display: none;"
+            />
           </div>
         </div>
         <div
@@ -1639,45 +1995,40 @@ exports[`ParamElement Omie params update handles filter change from correct para
         >
           <div>
             <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
+              class="completion_wrapper"
             >
               <div
-                class="unnnic-autocomplete-select completionInput"
-                data-passed-props="[object Object]"
-                data-testid="Service Call Param Data"
-                data-v-4e186498=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
                 <div
-                  class="unnnic-form sm"
-                  data-v-48c0c241=""
-                  data-v-4e186498=""
+                  class="unnnic-input size-sm"
+                  data-passed-props="[object Object]"
+                  data-testid="Service Call Param Data"
+                  data-v-37e767d4=""
                 >
                   <!---->
                   <div
-                    class="unnnic-form-input"
-                    data-v-2d3b8b50=""
-                    data-v-48c0c241=""
-                    mask=""
-                    style="position: relative;"
-                    v-bind="[object Object]"
+                    class="input-container"
+                    data-v-37e767d4=""
                   >
+                    <!---->
                     <input
-                      class="input size-sm normal"
-                      data-v-2d3b8b50=""
-                      data-v-f03c53b0=""
-                      placeholder="Buscar por"
-                      size="8"
+                      class="unnnic-font secondary"
+                      data-v-37e767d4=""
                       type="text"
-                      v-bind="[object Object]"
                     />
                     <!---->
                     <!---->
                   </div>
                   <!---->
                 </div>
-                <!---->
               </div>
+              <div
+                class="options_wrapper"
+                data-testid="temba_completion_options_Service Call Param Data"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
             </div>
           </div>
         </div>
@@ -1689,7 +2040,7 @@ exports[`ParamElement Omie params update handles filter change from correct para
             class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
             data-passed-props="[object Object]"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-a1936218=""
+            data-v-59b073b4=""
           >
             <svg
               fill="none"
@@ -1728,87 +2079,58 @@ exports[`ParamElement Omie params update handles param change 1`] = `
         <div
           class="moveIcon"
         >
-          <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+          <svg
+            data-draggable="true"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <button
-              class="unnnic-button unnnic-button--size-small unnnic-button--terciary unnnic-button-scheme-- unnnic-button--icon-on-center"
-              data-draggable="true"
-              data-passed-props="[object Object]"
-              data-v-00f478da=""
-            >
-              <!---->
-              <!---->
-              <span
-                class="unnnic-icon unnnic-icon__size--sm"
-                data-v-00f478da=""
-                data-v-a1936218=""
-              >
-                <svg
-                  fill="none"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="primary"
-                    clip-rule="evenodd"
-                    d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
-                    fill="#D0D3D9"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              <span
-                class="unnnic-button__label"
-                data-v-00f478da=""
-              >
-                  
-              </span>
-              <!---->
-            </button>
-          </div>
+            <path
+              class="primary"
+              clip-rule="evenodd"
+              d="M7.91422 2.00989C7.86649 2.02164 7.82897 2.03857 7.79282 2.06468C7.74877 2.09651 3.54653 6.30199 3.52607 6.33472C3.50908 6.36192 3.48965 6.40724 3.47876 6.44512C3.47512 6.45777 3.47253 6.49256 3.47249 6.52912C3.47245 6.57971 3.4745 6.59875 3.48334 6.62971C3.51797 6.75101 3.61974 6.85233 3.74065 6.88586C3.76225 6.89185 3.78827 6.89385 3.84174 6.89362C3.90591 6.89335 3.91779 6.89197 3.95107 6.88089C4.03806 6.85193 3.87354 7.01214 6.02937 4.85694L8.00101 2.88589L9.97264 4.85694C12.1296 7.01331 11.9645 6.85256 12.0509 6.88056C12.1015 6.89694 12.1868 6.90098 12.2419 6.8896C12.3223 6.87299 12.4043 6.82035 12.4562 6.75198C12.5112 6.67955 12.5296 6.6236 12.5295 6.52912C12.5295 6.49256 12.5269 6.45777 12.5233 6.44512C12.5124 6.40724 12.4929 6.36192 12.4759 6.33472C12.4555 6.30199 8.25324 2.09651 8.20919 2.06468C8.12948 2.0071 8.01329 1.98552 7.91422 2.00989ZM3.79339 9.10481C3.74621 9.11027 3.69174 9.12854 3.6508 9.15264C3.60962 9.17687 3.5463 9.2393 3.52323 9.2784C3.4526 9.39811 3.45254 9.53867 3.52308 9.66011C3.53538 9.68128 4.02231 10.1712 5.64881 11.7988C6.8092 12.9599 7.77156 13.9193 7.7874 13.9306C7.90755 14.0169 8.06109 14.0231 8.19195 13.9471C8.21312 13.9348 8.70302 13.4479 10.3306 11.8214C11.4918 10.661 12.4511 9.69861 12.4625 9.68277C12.5114 9.61453 12.5295 9.5569 12.5295 9.46917C12.5295 9.42155 12.5273 9.40144 12.5188 9.37169C12.4529 9.14042 12.194 9.03352 11.9818 9.14993C11.9525 9.16598 11.7404 9.37651 9.97505 11.1413L8.00101 13.1148L6.02458 11.139L4.04814 9.16328L4.00254 9.14115C3.93469 9.1082 3.86652 9.09636 3.79339 9.10481Z"
+              fill="#D0D3D9"
+              fill-rule="evenodd"
+            />
+          </svg>
         </div>
         <div
           class="choice "
           style="flex: 1;"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_service_call_param"
           >
             <div
-              class="unnnic-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_service_call_param"
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <span
-                class="dropdown"
-                data-v-6fe2671f=""
+              <div
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_service_call_param"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
+                <!---->
                 <div
-                  data-v-2d3b8b50=""
-                  data-v-6fe2671f=""
-                  readonly="readonly"
-                  style="position: relative;"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-right"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconright="arrow-button-down-1"
-                    iconrightclickable="true"
-                    placeholder="Param"
-                    readonly="readonly"
-                    size="16"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
+                    placeholder="Identificação"
                     type="text"
                   />
-                  <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -1822,86 +2144,98 @@ exports[`ParamElement Omie params update handles param change 1`] = `
                       />
                     </svg>
                   </span>
+                  <!---->
                 </div>
-                <div
-                  __use_react_component_wrap=""
-                  data-v-6fe2671f=""
-                  style="all: unset;"
-                >
-                  <option
-                    label="Identificação"
-                    value="identificacao"
-                  >
-                    Identificação
-                  </option>
-                  <option
-                    label="Endereço"
-                    value="endereco"
-                  >
-                    Endereço
-                  </option>
-                  <option
-                    label="Telefone e Email"
-                    value="telefone_email"
-                  >
-                    Telefone e Email
-                  </option>
-                  <option
-                    label="Observações"
-                    value="cObs"
-                  >
-                    Observações
-                  </option>
-                </div>
-                <div
-                  class="dropdown-data"
-                  data-v-6fe2671f=""
-                  style="position: fixed; top: 0px;"
-                />
-              </span>
-              <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_service_call_param"
+              style="margin-top: 0px; width: -24px; display: none;"
+            >
+              <div
+                class="option active "
+                data-option-index="0"
+              >
+                <span
+                  class="name"
+                >
+                  Identificação
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="1"
+              >
+                <span
+                  class="name"
+                >
+                  Endereço
+                </span>
+              </div>
+              <div
+                class="option  selected"
+                data-option-index="2"
+              >
+                <span
+                  class="name"
+                >
+                  Telefone e Email
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="3"
+              >
+                <span
+                  class="name"
+                >
+                  Observações
+                </span>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_service_call_param"
+              style="margin-top: 0px; width: -24px; display: none;"
+            />
           </div>
         </div>
         <div
           class="choice "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
+            class="select_wrapper"
+            data-testid="temba_select_service_call_param_filter"
           >
             <div
-              class="unnnic-select"
-              data-passed-props="[object Object]"
-              data-testid="temba_select_service_call_param_filter"
+              data-use-vue-component-wrap=""
+              style="all: unset;"
             >
-              <!---->
-              <span
-                class="dropdown"
-                data-v-6fe2671f=""
+              <div
+                class="unnnic-input size-sm bold_placeholder"
+                data-passed-props="[object Object]"
+                data-testid="temba_select_input_service_call_param_filter"
+                data-v-37e767d4=""
+                readonly="readonly"
               >
+                <!---->
                 <div
-                  data-v-2d3b8b50=""
-                  data-v-6fe2671f=""
-                  readonly="readonly"
-                  style="position: relative;"
+                  class="input-container"
+                  data-v-37e767d4=""
                 >
+                  <!---->
                   <input
-                    class="input size-sm normal has-icon-right"
-                    data-v-2d3b8b50=""
-                    data-v-f03c53b0=""
-                    iconright="arrow-button-down-1"
-                    iconrightclickable="true"
-                    placeholder="Filter"
-                    readonly="readonly"
-                    size="16"
+                    class="unnnic-font secondary"
+                    data-v-37e767d4=""
+                    placeholder="Código do Contato"
                     type="text"
                   />
-                  <!---->
                   <span
-                    class="icon-right unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-dark"
-                    data-v-2d3b8b50=""
-                    data-v-a1936218=""
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    data-v-37e767d4=""
+                    data-v-59b073b4=""
                   >
                     <svg
                       fill="none"
@@ -1915,87 +2249,132 @@ exports[`ParamElement Omie params update handles param change 1`] = `
                       />
                     </svg>
                   </span>
+                  <!---->
                 </div>
-                <div
-                  __use_react_component_wrap=""
-                  data-v-6fe2671f=""
-                  style="all: unset;"
-                >
-                  <option
-                    label="DDD do celular 1"
-                    value="cDDDCel1"
-                  >
-                    DDD do celular 1
-                  </option>
-                  <option
-                    label="DDD do celular 1"
-                    value="cDDDCel1"
-                  >
-                    DDD do celular 1
-                  </option>
-                  <option
-                    label="Número do Celular 1"
-                    value="cNumCel1"
-                  >
-                    Número do Celular 1
-                  </option>
-                  <option
-                    label="DDD do Celular 2"
-                    value="cDDDCel2"
-                  >
-                    DDD do Celular 2
-                  </option>
-                  <option
-                    label="Número do Celular 2"
-                    value="cNumCel2"
-                  >
-                    Número do Celular 2
-                  </option>
-                  <option
-                    label="DDD do Telefone"
-                    value="cDDDTel"
-                  >
-                    DDD do Telefone
-                  </option>
-                  <option
-                    label="Número do Telefone"
-                    value="cNumTel"
-                  >
-                    Número do Telefone
-                  </option>
-                  <option
-                    label="DDD do Fax"
-                    value="cDDDFax"
-                  >
-                    DDD do Fax
-                  </option>
-                  <option
-                    label="Número do Fax"
-                    value="cNumFax"
-                  >
-                    Número do Fax
-                  </option>
-                  <option
-                    label="E-mail do contato"
-                    value="cEmail"
-                  >
-                    E-mail do contato
-                  </option>
-                  <option
-                    label="WebSite"
-                    value="cWebsite"
-                  >
-                    WebSite
-                  </option>
-                </div>
-                <div
-                  class="dropdown-data"
-                  data-v-6fe2671f=""
-                  style="position: fixed; top: 0px;"
-                />
-              </span>
-              <!---->
+                <!---->
+              </div>
             </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_options_service_call_param_filter"
+              style="margin-top: 0px; width: -24px; display: none;"
+            >
+              <div
+                class="option active selected"
+                data-option-index="0"
+              >
+                <span
+                  class="name"
+                >
+                  DDD do celular 1
+                </span>
+              </div>
+              <div
+                class="option  selected"
+                data-option-index="1"
+              >
+                <span
+                  class="name"
+                >
+                  DDD do celular 1
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="2"
+              >
+                <span
+                  class="name"
+                >
+                  Número do Celular 1
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="3"
+              >
+                <span
+                  class="name"
+                >
+                  DDD do Celular 2
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="4"
+              >
+                <span
+                  class="name"
+                >
+                  Número do Celular 2
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="5"
+              >
+                <span
+                  class="name"
+                >
+                  DDD do Telefone
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="6"
+              >
+                <span
+                  class="name"
+                >
+                  Número do Telefone
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="7"
+              >
+                <span
+                  class="name"
+                >
+                  DDD do Fax
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="8"
+              >
+                <span
+                  class="name"
+                >
+                  Número do Fax
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="9"
+              >
+                <span
+                  class="name"
+                >
+                  E-mail do contato
+                </span>
+              </div>
+              <div
+                class="option  "
+                data-option-index="10"
+              >
+                <span
+                  class="name"
+                >
+                  WebSite
+                </span>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_select_expressions_service_call_param_filter"
+              style="margin-top: 0px; width: -24px; display: none;"
+            />
           </div>
         </div>
         <div
@@ -2003,45 +2382,40 @@ exports[`ParamElement Omie params update handles param change 1`] = `
         >
           <div>
             <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
+              class="completion_wrapper"
             >
               <div
-                class="unnnic-autocomplete-select completionInput"
-                data-passed-props="[object Object]"
-                data-testid="Service Call Param Data"
-                data-v-4e186498=""
+                data-use-vue-component-wrap=""
+                style="all: unset;"
               >
                 <div
-                  class="unnnic-form sm"
-                  data-v-48c0c241=""
-                  data-v-4e186498=""
+                  class="unnnic-input size-sm"
+                  data-passed-props="[object Object]"
+                  data-testid="Service Call Param Data"
+                  data-v-37e767d4=""
                 >
                   <!---->
                   <div
-                    class="unnnic-form-input"
-                    data-v-2d3b8b50=""
-                    data-v-48c0c241=""
-                    mask=""
-                    style="position: relative;"
-                    v-bind="[object Object]"
+                    class="input-container"
+                    data-v-37e767d4=""
                   >
+                    <!---->
                     <input
-                      class="input size-sm normal"
-                      data-v-2d3b8b50=""
-                      data-v-f03c53b0=""
-                      placeholder="Buscar por"
-                      size="0"
+                      class="unnnic-font secondary"
+                      data-v-37e767d4=""
                       type="text"
-                      v-bind="[object Object]"
                     />
                     <!---->
                     <!---->
                   </div>
                   <!---->
                 </div>
-                <!---->
               </div>
+              <div
+                class="options_wrapper"
+                data-testid="temba_completion_options_Service Call Param Data"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
             </div>
           </div>
         </div>
@@ -2053,7 +2427,7 @@ exports[`ParamElement Omie params update handles param change 1`] = `
             class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
             data-passed-props="[object Object]"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-a1936218=""
+            data-v-59b073b4=""
           >
             <svg
               fill="none"
