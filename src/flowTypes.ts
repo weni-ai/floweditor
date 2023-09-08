@@ -178,7 +178,8 @@ export interface Exit {
 
 export enum RouterTypes {
   switch = 'switch',
-  random = 'random'
+  random = 'random',
+  smart = 'smart'
 }
 
 export interface Router {

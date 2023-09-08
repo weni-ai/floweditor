@@ -38,6 +38,7 @@ export enum Types {
   enter_flow = 'enter_flow',
   start_session = 'start_session',
   transfer_airtime = 'transfer_airtime',
+  smart_wait_for_response = 'smart_wait_for_response',
   split_by_airtime = 'split_by_airtime',
   split_by_expression = 'split_by_expression',
   split_by_contact_field = 'split_by_contact_field',

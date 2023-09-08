@@ -12,7 +12,7 @@ import {
 import { RenderNodeMap } from 'store/flowContext';
 import { createUUID } from 'utils';
 import { Category } from 'flowTypes';
-import { getSwitchRouter } from 'components/flow/routers/helpers';
+import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 
 const translatorProps: TranslatorTabProps = {
   localization: {},
@@ -80,7 +80,7 @@ const createRouterNode = (
   nodes[renderNode.node.uuid] = renderNode;
 
   if (localization && translations) {
-    const router = getSwitchRouter(renderNode.node);
+    const router = getSmartOrSwitchRouter(renderNode.node);
     router.categories.forEach((category: Category, idx: number) => {
       localization[category.uuid] = { name: [translations[idx]] };
     });

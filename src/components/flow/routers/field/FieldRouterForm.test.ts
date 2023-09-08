@@ -6,7 +6,7 @@ import { getUpdatedNode } from 'test/utils';
 import { composeComponentTestUtils, mock } from 'testUtils';
 import { createMatchRouter, getRouterFormProps } from 'testUtils/assetCreators';
 import * as utils from 'utils';
-import { getSwitchRouter } from '../helpers';
+import { getSmartOrSwitchRouter } from '../helpers';
 
 import FieldRouterForm from './FieldRouterForm';
 
@@ -114,7 +114,7 @@ describe(FieldRouterForm.name, () => {
       instance.handleSave();
 
       const node = getUpdatedNode(instance.props);
-      expect(getSwitchRouter(node.node).operand).toEqual('@fields.my_field');
+      expect(getSmartOrSwitchRouter(node.node).operand).toEqual('@fields.my_field');
 
       expect(props.updateRouter).toHaveBeenCalled();
       expect(props.updateRouter).toMatchCallSnapshot();

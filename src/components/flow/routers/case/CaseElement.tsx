@@ -36,6 +36,13 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
   }
 });
 
+const noArgumentList = ['has_text', 'has_number', 'has_date', 'has_time', 'has_phone', 'has_email'];
+
+export enum CaseElementType {
+  smart = 'smart',
+  default = 'default'
+}
+
 export interface CaseElementProps {
   kase: Case;
   categoryName: string;
@@ -44,6 +51,7 @@ export interface CaseElementProps {
   onChange?(c: CaseProps): void;
   operators?: Operator[];
   classifier?: any;
+  type: CaseElementType;
 }
 
 export interface CaseElementState extends FormState {
@@ -485,6 +493,15 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
   }
 
   public render(): JSX.Element {
+    let argumentClass = styles.no_argument;
+    if (this.state.operatorConfig.operands > 1) {
+      argumentClass = styles.multi_operand;
+    } else if (!noArgumentList.includes(this.state.operatorConfig.type)) {
+      argumentClass = styles.single_operand;
+    }
+
+    const isSmart = this.props.type === CaseElementType.smart;
+
     return (
       <FormElement
         data-spec="case-form"
@@ -496,11 +513,11 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
           className={`${styles.kase} ${styles[this.state.operatorConfig.type]}`}
           data-draggable={true}
         >
-          <div className={styles.operator_container} data-draggable={true}>
-            <span className={styles.move_icon} data-draggable={true}>
-              <DragIcon draggable={true} />
-            </span>
+          <span className={styles.move_icon} data-draggable={true}>
+            <DragIcon draggable={true} />
+          </span>
 
+          {!isSmart && (
             <div className={styles.choice}>
               <TembaSelect
                 name={i18n.t('forms.operator', 'operator')}
@@ -512,47 +529,40 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
                 value={this.state.operatorConfig}
               ></TembaSelect>
             </div>
-            <div
-              className={
-                this.state.operatorConfig.operands > 1
-                  ? styles.multi_operand
-                  : styles.single_operand
-              }
-            >
-              {this.renderArguments()}
-            </div>
-          </div>
-          <div className={styles.categorize_as_container}>
+          )}
+          <div className={argumentClass}>{this.renderArguments()}</div>
+
+          {!isSmart && (
             <div
               className={`${styles.categorize_as} u font secondary body-md color-neutral-cloudy`}
               data-draggable={true}
             >
               {i18n.t('forms.categorize_as')}
             </div>
-            <div className={styles.category}>
-              <TextInputElement
-                name={i18n.t('forms.exit_name', 'Exit Name')}
-                style={TextInputStyle.small}
-                onChange={this.handleExitChanged}
-                entry={this.state.categoryName}
-                maxLength={36}
-                showInvalid={hasErrorType(this.state.errors, [/category/])}
-                placeholder={i18n.t('forms.ex_shop', 'Ex: shopping')}
-              />
-            </div>
-
-            <span className={styles.remove_icon_wrapper} data-draggable={true}>
-              <UnnnicIcon
-                className={styles.remove_icon}
-                data-testid={'remove-case-' + this.props.kase.uuid}
-                icon="delete-1-1"
-                size="sm"
-                scheme="neutral-cloudy"
-                onClick={this.handleRemoveClicked}
-                clickable
-              />
-            </span>
+          )}
+          <div className={isSmart ? styles.expanded_category : styles.category}>
+            <TextInputElement
+              name={i18n.t('forms.exit_name', 'Exit Name')}
+              style={TextInputStyle.small}
+              onChange={this.handleExitChanged}
+              entry={this.state.categoryName}
+              maxLength={36}
+              showInvalid={hasErrorType(this.state.errors, [/category/])}
+              placeholder={i18n.t('forms.ex_shop', 'Ex: shopping')}
+            />
           </div>
+
+          <span className={styles.remove_icon_wrapper} data-draggable={true}>
+            <UnnnicIcon
+              className={styles.remove_icon}
+              data-testid={'remove-case-' + this.props.kase.uuid}
+              icon="delete-1-1"
+              size="sm"
+              scheme="neutral-cloudy"
+              onClick={this.handleRemoveClicked}
+              clickable
+            />
+          </span>
         </div>
       </FormElement>
     );

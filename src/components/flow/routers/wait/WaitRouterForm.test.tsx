@@ -8,7 +8,7 @@ import { render, fireEvent, mock, getCallParams } from 'test/utils';
 import * as React from 'react';
 import * as utils from 'utils';
 import { RenderNode } from 'store/flowContext';
-import { getSwitchRouter } from 'components/flow/routers/helpers';
+import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 import { MEDIA_OPERAND } from 'components/nodeeditor/constants';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
@@ -60,7 +60,7 @@ describe(WaitRouterForm.name, () => {
 
     // we should have an operand that looks at attachments
     const [newNode]: [RenderNode] = getCallParams(audioWait.updateRouter);
-    const router = getSwitchRouter(newNode.node);
+    const router = getSmartOrSwitchRouter(newNode.node);
     expect(router.operand).toEqual(MEDIA_OPERAND);
 
     // check the snapshot for the rest of our call

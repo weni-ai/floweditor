@@ -18,6 +18,10 @@ export enum DragCursor {
   pointer = 'pointer'
 }
 
+export enum CaseListType {
+  smart = 'smart',
+  default = 'default'
+}
 export interface CaseProps {
   uuid: string;
   kase: Case;
@@ -32,6 +36,7 @@ export interface CaseListProps {
   onCasesUpdated(cases: CaseProps[]): void;
   operators?: Operator[];
   classifier?: Asset;
+  type: CaseListType;
 }
 
 export interface CaseListState extends FormState {
@@ -49,6 +54,7 @@ const SortableItem = SortableElement(({ value: row }: any) => {
         onChange={row.list.handleUpdateCase}
         operators={row.list.props.operators}
         classifier={row.list.props.classifier}
+        type={row.list.props.type}
       />
     </div>
   );
@@ -77,6 +83,10 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
       </div>
     );
   });
+
+  public static defaultProps = {
+    type: CaseListType.default
+  };
 
   constructor(props: CaseListProps) {
     super(props);

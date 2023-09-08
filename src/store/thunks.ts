@@ -1,6 +1,6 @@
 import { determineTypeConfig } from 'components/flow/helpers';
 import { getResultName } from 'components/flow/node/helpers';
-import { getSwitchRouter } from 'components/flow/routers/helpers';
+import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 import { SaveResult } from 'components/revisions/RevisionExplorer';
 import { FlowTypes, Type, Types } from 'config/interfaces';
 import { getTypeConfig } from 'config/typeConfigs';
@@ -158,7 +158,7 @@ export interface ErrorMessage {
   description: string;
 }
 
-export type LocalizationUpdates = Array<{ uuid: string; translations?: any }>;
+export type LocalizationUpdates = { uuid: string; translations?: any }[];
 const QUIET_SAVE = 1000;
 const SAVE_ALERT_MILLIS = 1000 * 60;
 
@@ -166,8 +166,8 @@ let markDirty: (quiet?: number) => void = () => {};
 let lastDirtyAttemptTimeout: any = null;
 let postingRevision = false;
 
-let lastDirtyMillis: number = 0;
-let lastSuccessfulMillis: number = 0;
+let lastDirtyMillis = 0;
+let lastSuccessfulMillis = 0;
 
 const NETWORK_ERROR = i18n.t(
   'errors.network',
@@ -998,7 +998,7 @@ export const onUpdateRouter = (renderNode: RenderNode) => (
     originalNode &&
     originalAction &&
     !originalNode.ghost &&
-    !getSwitchRouter(originalNode.node)
+    !getSmartOrSwitchRouter(originalNode.node)
   ) {
     const actionToSplice = originalNode.node.actions.find(
       (action: Action) => action.uuid === originalAction.uuid
@@ -1018,7 +1018,7 @@ export const onUpdateRouter = (renderNode: RenderNode) => (
 
     // didn't recognize that action, let's add a new router node
     // if we are appendeng in, see if we need to route through
-    const switchRouter = getSwitchRouter(renderNode.node);
+    const switchRouter = getSmartOrSwitchRouter(renderNode.node);
     if (switchRouter) {
       const defaultCategory = switchRouter.categories.find(
         (cat: Category) => cat.uuid === switchRouter.default_category_uuid

@@ -38,6 +38,7 @@ import RouterLocalizationForm from 'components/flow/routers/localization/RouterL
 import MenuRouterForm from 'components/flow/routers/menu/MenuRouterForm';
 import RandomRouterForm from 'components/flow/routers/random/RandomRouterForm';
 import ResponseRouterForm from 'components/flow/routers/response/ResponseRouterForm';
+import SmartResponseRouterForm from 'components/flow/routers/response/SmartResponseRouterForm';
 import ResthookRouterForm from 'components/flow/routers/resthook/ResthookRouterForm';
 import ResultRouterForm from 'components/flow/routers/result/ResultRouterForm';
 import SubflowRouterForm from 'components/flow/routers/subflow/SubflowRouterForm';
@@ -263,7 +264,19 @@ export const typeConfigList: Type[] = [
     aliases: [RouterTypes.switch],
     visibility: VISIBILITY_MESSAGING_INTERACTIVE
   },
-
+  {
+    type: Types.smart_wait_for_response,
+    name: i18n.t('actions.smart_wait_for_response.name', 'Smart Wait for Response'),
+    description: i18n.t(
+      'actions.smart_wait_for_response.description',
+      'Smartly wait for response (New)'
+    ),
+    form: SmartResponseRouterForm,
+    localization: RouterLocalizationForm,
+    localizeableKeys: ['categories', 'cases'],
+    aliases: [RouterTypes.smart],
+    visibility: VISIBILITY_MESSAGING_INTERACTIVE
+  },
   {
     type: Types.send_broadcast,
     name: i18n.t('actions.send_broadcast.name', 'Send Broadcast'),

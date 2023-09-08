@@ -3,7 +3,7 @@ import * as React from 'react';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
-import CaseList, { CaseProps } from 'components/flow/routers/caselist/CaseList';
+import CaseList, { CaseListType, CaseProps } from 'components/flow/routers/caselist/CaseList';
 import { nodeToState, stateToNode } from 'components/flow/routers/response/helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import TimeoutControl from 'components/form/timeout/TimeoutControl';
@@ -12,6 +12,7 @@ import { FormState, StringEntry } from 'store/nodeEditor';
 import { Alphanumeric, StartIsNonNumeric, validate } from 'store/validators';
 import { WAIT_LABEL } from 'components/flow/routers/constants';
 import i18n from 'config/i18n';
+import { Types } from '../../../../config/interfaces';
 
 // TODO: Remove use of Function
 // tslint:disable:ban-types
@@ -69,7 +70,9 @@ export default class ResponseRouterForm extends React.Component<
 
   private handleSave(): void {
     if (this.state.valid) {
-      this.props.updateRouter(stateToNode(this.props.nodeSettings, this.state));
+      this.props.updateRouter(
+        stateToNode(this.props.nodeSettings, this.props.typeConfig, this.state)
+      );
       this.props.onClose(false);
     }
   }
@@ -87,6 +90,9 @@ export default class ResponseRouterForm extends React.Component<
   public renderEdit(): JSX.Element {
     const typeConfig = this.props.typeConfig;
 
+    const caseListType =
+      typeConfig.type === Types.smart_wait_for_response ? CaseListType.smart : CaseListType.default;
+
     return (
       <Dialog
         title={typeConfig.name}
@@ -102,6 +108,7 @@ export default class ResponseRouterForm extends React.Component<
           data-spec="cases"
           cases={this.state.cases}
           onCasesUpdated={this.handleCasesUpdated}
+          type={caseListType}
         />
         {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
         {renderIssues(this.props)}

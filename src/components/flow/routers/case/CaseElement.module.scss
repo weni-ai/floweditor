@@ -21,6 +21,7 @@ input:focus {
 }
 
 .kase {
+  box-sizing: unset !important;
   display: flex;
   user-select: none;
 
@@ -31,47 +32,12 @@ input:focus {
     margin: 0;
   }
 
-  .operator_container {
-    flex: 0.70;
-    display: flex;
-    column-gap: $unnnic-spacing-inline-xs;
-
-    .move_icon {
-      align-self: center;
-      
-      button {
-        padding: 0;
-        width: $unnnic-icon-size-sm;
-        height: $unnnic-icon-size-sm;
-
-        &:hover {
-
-          &:after {
-            border: none;
-          }
-        }
-
-        span {
-          min-width: unset;
-          min-height: unset;
-        }
-
-        svg > path {
-          fill: $unnnic-color-neutral-cloudy;
-        }
-      }
-    }
+  .move_icon {
+    margin-top: 8px;
   }
 
-  .categorize_as_container {
-    flex: 0.30;
-    display: flex;
-    column-gap: $unnnic-spacing-inline-xs;
-    white-space: nowrap;
-
-    .categorize_as {
-      margin-top: 8px;
-    }
+  .categorize_as {
+    margin-top: 8px;
   }
 
   .choice {
@@ -104,6 +70,16 @@ input:focus {
         min-width: 77.7px;
       }
     }
+  }
+
+  .no_argument {
+    display: none;
+  }
+
+  .expanded_category {
+    flex: 1 1;
+    margin-left: 16px;
+    flex-grow: 1.06;
   }
 
   .category {
@@ -152,7 +128,7 @@ input:focus {
 }
 
 .remove_icon_wrapper {
-  align-self: center;
+  margin-top: 12px;
 }
 
 .remove_icon {

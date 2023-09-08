@@ -7,7 +7,7 @@ import {
 } from 'components/flow/routers/helpers';
 import { ResponseRouterFormState } from 'components/flow/routers/response/ResponseRouterForm';
 import { DEFAULT_OPERAND } from 'components/nodeeditor/constants';
-import { Types } from 'config/interfaces';
+import { Type, Types } from 'config/interfaces';
 import { getType } from 'config/typeConfigs';
 import { Router, RouterTypes, SwitchRouter, Wait, WaitTypes } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
@@ -20,7 +20,10 @@ export const nodeToState = (settings: NodeEditorSettings): ResponseRouterFormSta
   let resultName: StringEntry = { value: 'Result' };
   let timeout = 0;
 
-  if (settings.originalNode && getType(settings.originalNode) === Types.wait_for_response) {
+  if (
+    (settings.originalNode && getType(settings.originalNode) === Types.wait_for_response) ||
+    getType(settings.originalNode) === Types.smart_wait_for_response
+  ) {
     const router = settings.originalNode.node.router as SwitchRouter;
     if (router) {
       if (hasCases(settings.originalNode.node)) {
@@ -45,6 +48,7 @@ export const nodeToState = (settings: NodeEditorSettings): ResponseRouterFormSta
 
 export const stateToNode = (
   settings: NodeEditorSettings,
+  typeConfig: Type,
   state: ResponseRouterFormState
 ): RenderNode => {
   const { cases, exits, defaultCategory, timeoutCategory, caseConfig, categories } = resolveRoutes(
@@ -67,7 +71,8 @@ export const stateToNode = (
   }
 
   const router: SwitchRouter = {
-    type: RouterTypes.switch,
+    type:
+      typeConfig.type === Types.smart_wait_for_response ? RouterTypes.smart : RouterTypes.switch,
     default_category_uuid: defaultCategory,
     cases,
     categories,
@@ -80,7 +85,7 @@ export const stateToNode = (
     settings.originalNode.node.uuid,
     router,
     exits,
-    Types.wait_for_response,
+    typeConfig.type,
     [],
     { cases: caseConfig }
   );

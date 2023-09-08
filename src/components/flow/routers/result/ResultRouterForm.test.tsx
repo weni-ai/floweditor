@@ -6,7 +6,7 @@ import { fireEvent, render, getCallParams, fireUnnnicSwitch } from 'test/utils';
 import { mock } from 'testUtils';
 import { createMatchRouter, getRouterFormProps } from 'testUtils/assetCreators';
 import * as utils from 'utils';
-import { getSwitchRouter } from 'components/flow/routers/helpers';
+import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 import userEvent from '@testing-library/user-event';
 
 const routerNode = createMatchRouter([]);
@@ -63,7 +63,7 @@ describe(ResultRouterForm.name, () => {
     fireEvent.click(getByText('Confirm'));
 
     const [renderNode]: [RenderNode] = getCallParams(props.updateRouter);
-    const router = getSwitchRouter(renderNode.node);
+    const router = getSmartOrSwitchRouter(renderNode.node);
     expect(router.operand).toEqual('@results.my_test_result');
 
     expect(props.updateRouter).toHaveBeenCalled();
@@ -94,7 +94,7 @@ describe(ResultRouterForm.name, () => {
     fireEvent.click(getByText('Confirm'));
 
     const [renderNode]: [RenderNode] = getCallParams(props.updateRouter);
-    const router = getSwitchRouter(renderNode.node);
+    const router = getSmartOrSwitchRouter(renderNode.node);
     expect(router.operand).toEqual('@(field(results.my_test_result, 0, "+"))');
 
     expect(props.updateRouter).toHaveBeenCalled();

@@ -132,6 +132,10 @@
     "wait_for_video": {
       "description": "Aguarde por um vídeo",
       "name": "Aguarde por Vídeo"
+    },
+    "smart_wait_for_response": {
+      "name": "Aguarde por resposta inteligente",
+      "description": "Aguarde por resposta Inteligente (Novo)"
     }
   },
   "add": "Adicione",
