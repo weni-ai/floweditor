@@ -104,10 +104,6 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
             class="subtitle"
           />
         </div>
-      </div>
-      <div
-        class="content"
-      >
         <div
           data-use-vue-component-wrap=""
           style="all: unset;"
@@ -162,6 +158,10 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
             </main>
           </div>
         </div>
+      </div>
+      <div
+        class="content"
+      >
         <div
           class=" type_list"
         >
