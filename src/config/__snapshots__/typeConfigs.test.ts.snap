@@ -112,7 +112,7 @@ Array [
     "aliases": Array [
       "smart",
     ],
-    "description": "Smartly wait for response (New)",
+    "description": "Smartly wait for response",
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
@@ -120,6 +120,7 @@ Array [
       "cases",
     ],
     "name": "Smart Wait for Response",
+    "new": true,
     "type": "smart_wait_for_response",
     "visibility": Array [
       "messaging",
@@ -754,7 +755,7 @@ Object {
     "aliases": Array [
       "smart",
     ],
-    "description": "Smartly wait for response (New)",
+    "description": "Smartly wait for response",
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
@@ -762,6 +763,7 @@ Object {
       "cases",
     ],
     "name": "Smart Wait for Response",
+    "new": true,
     "type": "smart_wait_for_response",
     "visibility": Array [
       "messaging",
@@ -772,7 +774,7 @@ Object {
     "aliases": Array [
       "smart",
     ],
-    "description": "Smartly wait for response (New)",
+    "description": "Smartly wait for response",
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
@@ -780,6 +782,7 @@ Object {
       "cases",
     ],
     "name": "Smart Wait for Response",
+    "new": true,
     "type": "smart_wait_for_response",
     "visibility": Array [
       "messaging",
