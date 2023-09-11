@@ -202,6 +202,7 @@ exports[`FieldRouterForm initializes 1`] = `
     }
     data-spec="cases"
     onCasesUpdated={[Function]}
+    type="default"
   />
   <OptionalTextInput
     maxLength={64}
@@ -419,6 +420,7 @@ exports[`FieldRouterForm should render 1`] = `
     }
     data-spec="cases"
     onCasesUpdated={[Function]}
+    type="default"
   />
   <OptionalTextInput
     maxLength={64}

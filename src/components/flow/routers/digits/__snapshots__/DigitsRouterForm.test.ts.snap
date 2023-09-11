@@ -91,6 +91,7 @@ exports[`DigitsRouterForm initializes 1`] = `
         },
       ]
     }
+    type="default"
   />
   <OptionalTextInput
     maxLength={64}
@@ -197,6 +198,7 @@ exports[`DigitsRouterForm should render 1`] = `
         },
       ]
     }
+    type="default"
   />
   <OptionalTextInput
     maxLength={64}

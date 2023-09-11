@@ -109,6 +109,24 @@ Array [
     ],
   },
   Object {
+    "aliases": Array [
+      "smart",
+    ],
+    "description": "Smartly wait for response (New)",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "categories",
+      "cases",
+    ],
+    "name": "Smart Wait for Response",
+    "type": "smart_wait_for_response",
+    "visibility": Array [
+      "messaging",
+      "messaging_offline",
+    ],
+  },
+  Object {
     "component": [Function],
     "description": "Send somebody else a message",
     "form": [Function],
@@ -731,6 +749,42 @@ Object {
     "form": [Function],
     "name": "Save flow result",
     "type": "set_run_result",
+  },
+  "smart": Object {
+    "aliases": Array [
+      "smart",
+    ],
+    "description": "Smartly wait for response (New)",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "categories",
+      "cases",
+    ],
+    "name": "Smart Wait for Response",
+    "type": "smart_wait_for_response",
+    "visibility": Array [
+      "messaging",
+      "messaging_offline",
+    ],
+  },
+  "smart_wait_for_response": Object {
+    "aliases": Array [
+      "smart",
+    ],
+    "description": "Smartly wait for response (New)",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "categories",
+      "cases",
+    ],
+    "name": "Smart Wait for Response",
+    "type": "smart_wait_for_response",
+    "visibility": Array [
+      "messaging",
+      "messaging_offline",
+    ],
   },
   "split_by_airtime": Object {
     "aliases": Array [

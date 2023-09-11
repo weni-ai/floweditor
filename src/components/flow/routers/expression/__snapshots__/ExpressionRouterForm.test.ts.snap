@@ -58,6 +58,7 @@ exports[`ExpressionRouterForm should render 1`] = `
     cases={Array []}
     data-spec="cases"
     onCasesUpdated={[Function]}
+    type="default"
   />
   <OptionalTextInput
     maxLength={64}
