@@ -21,6 +21,7 @@ export interface TitleBarProps {
   shouldCancelClick?: () => boolean;
   selected?: boolean;
   hasIssues?: boolean;
+  new?: boolean;
 }
 
 export const titlebarContainerSpecId = 'titlebar-container';
@@ -192,6 +193,8 @@ export default class TitleBar extends React.Component<TitleBarProps> {
           {moveArrow}
           <div className={`${styles.titletext} u font secondary body-md bold`}>
             {this.props.title}
+
+            {this.props.new && <span className={styles.new}>{i18n.t('new', 'New')}!</span>}
           </div>
           {remove}
         </div>

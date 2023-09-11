@@ -159,7 +159,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
   }
 
   public render(): JSX.Element {
-    const { name } = getTypeConfig(this.props.action.type);
+    const { name, new: newType } = getTypeConfig(this.props.action.type);
 
     const classes = this.getClasses();
     const actionToInject = this.getAction();
@@ -192,6 +192,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
           shouldCancelClick={() => this.props.selected}
           selected={this.props.selected}
           hasIssues={issues}
+          new={newType}
         />
         <div
           className={styles.body + ' ' + actionClass + ' ' + selectedClass}

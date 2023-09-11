@@ -6,6 +6,7 @@ import {
   VISIBILITY_ONLINE
 } from 'config/interfaces';
 import { FlowEditorConfig } from 'flowTypes';
+import i18n from './i18n';
 
 export const isOnlineFlowType = (flowType: FlowTypes) => {
   return !!VISIBILITY_ONLINE.find((type: FlowTypes) => type === flowType);
@@ -16,7 +17,13 @@ export const filterOperators = (operators: Operator[], config: FlowEditorConfig)
 };
 
 export const filterTypeConfigs = (typeConfigs: Type[], config: FlowEditorConfig): Type[] => {
-  return filterVisibility(typeConfigs, config);
+  return filterVisibility(typeConfigs, config).map((typeConfig: Type) => {
+    if (typeConfig.new) {
+      return { ...typeConfig, description: `${typeConfig.description} (${i18n.t('new', 'New')})` };
+    }
+
+    return typeConfig;
+  });
 };
 
 const filterVisibility = (items: FlowTypeVisibility[], config: FlowEditorConfig): any[] => {

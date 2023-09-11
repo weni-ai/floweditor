@@ -267,15 +267,13 @@ export const typeConfigList: Type[] = [
   {
     type: Types.smart_wait_for_response,
     name: i18n.t('actions.smart_wait_for_response.name', 'Smart Wait for Response'),
-    description: i18n.t(
-      'actions.smart_wait_for_response.description',
-      'Smartly wait for response (New)'
-    ),
+    description: i18n.t('actions.smart_wait_for_response.description', 'Smartly wait for response'),
     form: SmartResponseRouterForm,
     localization: RouterLocalizationForm,
     localizeableKeys: ['categories', 'cases'],
     aliases: [RouterTypes.smart],
-    visibility: VISIBILITY_MESSAGING_INTERACTIVE
+    visibility: VISIBILITY_MESSAGING_INTERACTIVE,
+    new: true
   },
   {
     type: Types.send_broadcast,

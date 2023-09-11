@@ -386,6 +386,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
                 shouldCancelClick={this.handleShouldCancelClick}
                 title={title}
                 selected={this.props.selected}
+                new={config.new}
               />
             </div>
           </div>

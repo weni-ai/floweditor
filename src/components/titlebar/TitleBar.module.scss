@@ -14,6 +14,17 @@
     flex-grow: 1;
   }
 
+  .new {
+    margin-left: $unnnic-spacing-xs;
+    background-color: $unnnic-color-neutral-white;
+    border-radius: $unnnic-border-radius-pill;
+    padding: 1px $unnnic-spacing-nano;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+    font-weight: $unnnic-font-weight-bold;
+    color: $unnnic-color-weni-900;
+  }
+
   .normal {
     padding: $unnnic-spacing-inset-xs;
     box-sizing: border-box;

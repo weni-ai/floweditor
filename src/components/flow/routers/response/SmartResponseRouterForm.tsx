@@ -85,6 +85,7 @@ export default class SmartResponseRouterForm extends React.Component<
         gutter={
           <TimeoutControl timeout={this.state.timeout} onChanged={this.handleUpdateTimeout} />
         }
+        new={typeConfig.new}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
         <div className={styles.content}>

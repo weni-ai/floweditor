@@ -49,6 +49,7 @@ export interface DialogProps {
   noPadding?: boolean;
   tabs?: Tab[];
   className?: string;
+  new?: boolean;
 }
 
 export interface DialogState {
@@ -210,6 +211,8 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
           <div className={styles.title_container}>
             <div className={`${styles.title} u font secondary title-sm black`}>
               {this.props.title}
+
+              {this.props.new && <span className={styles.new}>{i18n.t('new', 'New')}!</span>}
             </div>
             <div className={styles.subtitle}>{this.props.subtitle}</div>
           </div>

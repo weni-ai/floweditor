@@ -133,6 +133,7 @@ export interface Type extends FlowTypeVisibility {
   aliases?: string[];
   localization?: React.ComponentClass<any>;
   localizeableKeys?: string[];
+  new?: boolean;
 
   // opportunity to massage our object for display
   massageForDisplay?: (obj: any) => void;

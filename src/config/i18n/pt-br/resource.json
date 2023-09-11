@@ -135,7 +135,7 @@
     },
     "smart_wait_for_response": {
       "name": "Aguarde por resposta inteligente",
-      "description": "Aguarde por resposta Inteligente (Novo)"
+      "description": "Aguarde por resposta Inteligente"
     }
   },
   "add": "Adicione",
@@ -413,7 +413,7 @@
     "quick_replies_limit": "Você pode adicionar até 10 Respostas rápidas.",
     "smart_wait": {
       "words_title": "Palavras ou frases",
-      "words_description": "Exemplos de palavras ou frases relacionados com a Categoria",
+      "words_description": "Exemplos de palavras ou frases relacionadas com a Categoria",
       "category_title": "Categorize como",
       "category_description": "Defina a Categoria que deseja classificar a resposta do Contato"
     }
@@ -617,5 +617,6 @@
     }
   },
   "you_can_also_delete_cards_pressing_the_keys": "Você também pode excluir blocos digitando as teclas",
-  "or": "ou"
+  "or": "ou",
+  "new": "Novo"
 }

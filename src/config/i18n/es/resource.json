@@ -135,7 +135,7 @@
     },
     "smart_wait_for_response": {
       "name": "Esperar por respuesta inteligente",
-      "description": "Espere inteligentemente la respuesta (Nuevo)"
+      "description": "Espere inteligentemente la respuesta"
     }
   },
   "add": "Añadir",
@@ -616,5 +616,6 @@
     }
   },
   "you_can_also_delete_cards_pressing_the_keys": "También puedes eliminar bloques escribiendo las teclas",
-  "or": "o"
+  "or": "o",
+  "new": "Nuevo"
 }
