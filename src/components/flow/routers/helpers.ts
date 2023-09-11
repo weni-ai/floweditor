@@ -211,7 +211,11 @@ export const categorizeCases = (
 };
 
 export const getSmartOrSwitchRouter = (node: FlowNode): SwitchRouter => {
-  if (node && node.router && (node.router.type === RouterTypes.switch || RouterTypes.smart)) {
+  if (
+    node &&
+    node.router &&
+    (node.router.type === RouterTypes.switch || node.router.type === RouterTypes.smart)
+  ) {
     return node.router as SwitchRouter;
   }
   return null;
