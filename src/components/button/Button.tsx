@@ -3,7 +3,7 @@ import * as React from 'react';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
-import { unnnicButton } from '@weni/unnnic-system';
+import { unnnicButtonNext } from '@weni/unnnic-system';
 
 export enum ButtonTypes {
   primary = 'primary',
@@ -23,7 +23,7 @@ export interface ButtonProps {
   onRef?: (ele: any) => void;
 }
 
-const UnnnicButton = applyVueInReact(unnnicButton, {
+const UnnnicButton = applyVueInReact(unnnicButtonNext, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
