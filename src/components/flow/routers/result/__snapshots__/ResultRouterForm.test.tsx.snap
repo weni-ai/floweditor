@@ -107,10 +107,6 @@ exports[`ResultRouterForm should render 1`] = `
             class="subtitle"
           />
         </div>
-      </div>
-      <div
-        class="content"
-      >
         <div
           data-use-vue-component-wrap=""
           style="all: unset;"
@@ -165,6 +161,10 @@ exports[`ResultRouterForm should render 1`] = `
             </main>
           </div>
         </div>
+      </div>
+      <div
+        class="content"
+      >
         <div
           class=" type_list"
         >
@@ -1109,10 +1109,6 @@ exports[`ResultRouterForm should show delimit options 1`] = `
             class="subtitle"
           />
         </div>
-      </div>
-      <div
-        class="content"
-      >
         <div
           data-use-vue-component-wrap=""
           style="all: unset;"
@@ -1167,6 +1163,10 @@ exports[`ResultRouterForm should show delimit options 1`] = `
             </main>
           </div>
         </div>
+      </div>
+      <div
+        class="content"
+      >
         <div
           class=" type_list"
         >

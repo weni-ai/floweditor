@@ -197,24 +197,23 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
 
     return (
       <div className={activeClasses.join(' ')}>
-        <div
-          onClick={() => {
-            this.setState({ activeTab: -1 });
-          }}
-          className={headerClasses.join(' ')}
-        >
+        <div className={headerClasses.join(' ')}>
           {this.state.activeTab > -1 ? <div className={styles.header_overlay} /> : null}
           {renderIf(this.props.headerIcon !== undefined)(
             <span className={`${styles.header_icon} ${this.props.headerIcon}`} />
           )}
-          <div className={styles.title_container}>
+          <div
+            onClick={() => {
+              this.setState({ activeTab: -1 });
+            }}
+            className={styles.title_container}
+          >
             <div className={`${styles.title} u font secondary title-sm black`}>
               {this.props.title}
             </div>
             <div className={styles.subtitle}>{this.props.subtitle}</div>
           </div>
-        </div>
-        <div className={this.props.noPadding ? '' : styles.content}>
+
           {(this.props.tabs || []).length > 0 ? (
             <UnnnicTab
               className={styles.tabs}
@@ -255,7 +254,8 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
               }}
             />
           ) : null}
-
+        </div>
+        <div className={this.props.noPadding ? '' : styles.content}>
           {this.state.activeTab > -1
             ? this.props.tabs![this.state.activeTab].body
             : this.props.children}
