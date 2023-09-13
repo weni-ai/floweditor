@@ -1,3 +1,10 @@
+2.2.0
+----------
+- Fix: Modify delete node phrase
+- Fix: Dialog height on small screens
+- Fix: Check for static uuids before copy action
+- Feat: New sidebar tooltips
+
 2.1.0
 ----------
 - Fix: Update select component
