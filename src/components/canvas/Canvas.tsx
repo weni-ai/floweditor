@@ -124,15 +124,21 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         top: null
       };
 
+      const selectedNodes = this.props.draggables.filter(({ uuid }) =>
+        Object.keys(this.state.selected).includes(uuid)
+      );
+
+      const staticUuids = instance.getStaticUuids(selectedNodes);
+
       let nodes = instance.replaceUuidsToUpdate(
-        this.props.draggables
-          .filter(({ uuid }) => Object.keys(this.state.selected).includes(uuid))
+        selectedNodes
           .map(({ config }) => ({
             node: config.node,
             ui: config.ui,
             inboundConnections: config.inboundConnections
           }))
-          .map(node => JSON.parse(JSON.stringify(node)))
+          .map(node => JSON.parse(JSON.stringify(node))),
+        staticUuids
       );
 
       nodes.forEach((node: any) => {
