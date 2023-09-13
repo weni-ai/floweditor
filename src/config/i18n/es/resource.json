@@ -170,7 +170,7 @@
   "create_block": "Crear bloque",
   "create_label": "Crear etiqueta",
   "disabled_copy_tooltip": "Seleccione uno o varios bloques para copiar",
-  "copy_tooltip": "Haga clic o pulse Ctrl + C para copiar y Ctrl + V para pegar.\nPuede pegar bloques en cualquier flujo",
+  "copy_tooltip": "Copiar bloque(s)",
   "document": "Documento",
   "drag_helper": "Para conectar nodos, <1>arrastre</1> desde el círculo rojo.",
   "email": {
