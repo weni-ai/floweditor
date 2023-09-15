@@ -12,6 +12,10 @@
       "description": "Etiquetar el mensaje entrante",
       "name": "Añadir etiqueta"
     },
+    "automatic_classify": {
+      "description": "Ordenar automáticamente",
+      "name": "Ordenar automáticamente"
+    },
     "call_resthook": {
       "description": "Llamar Zapier",
       "name": "Llamar Zapier"
@@ -413,6 +417,12 @@
     "smart_wait": {
       "words_title": "Palabras o frases",
       "words_description": "Ejemplos de palabras o frases relacionadas con la Categoría",
+      "category_title": "Categorizar cómo",
+      "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto"
+    },
+    "automatic_classify": {
+      "words_title": "Palabras",
+      "words_description": "Ejemplos de palabras relacionadas con la Categoría",
       "category_title": "Categorizar cómo",
       "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto"
     }

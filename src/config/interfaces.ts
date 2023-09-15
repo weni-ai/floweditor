@@ -20,6 +20,7 @@ export enum Types {
   add_contact_urn = 'add_contact_urn',
   add_contact_groups = 'add_contact_groups',
   add_input_labels = 'add_input_labels',
+  automatic_classify = 'automatic_classify',
   remove_contact_groups = 'remove_contact_groups',
   set_contact_channel = 'set_contact_channel',
   set_contact_field = 'set_contact_field',

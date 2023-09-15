@@ -60,6 +60,7 @@ import { HintTypes, RouterTypes, FlowEditorConfig, SendMsg } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import CallClassifierComp from 'components/flow/actions/callclassifier/CallClassifier';
 import ClassifyRouterForm from 'components/flow/routers/classify/ClassifyRouterForm';
+import AutomaticClassifyRouterForm from 'components/flow/routers/classify/automatic/AutomaticClassifyRouterForm';
 import i18n from 'config/i18n';
 import SchemeRouterForm from 'components/flow/routers/scheme/SchemeRouterForm';
 import TicketRouterForm from 'components/flow/routers/ticket/TicketRouterForm';
@@ -477,6 +478,17 @@ export const typeConfigList: Type[] = [
     aliases: [Types.call_classifier],
     visibility: VISIBILITY_ONLINE,
     filter: FeatureFilter.HAS_CLASSIFIER
+  },
+  {
+    type: Types.automatic_classify,
+    name: i18n.t('actions.automatic_classify.name', 'Automatic Classify'),
+    description: i18n.t('actions.automatic_classify.description', 'Automatic Classify'),
+    form: AutomaticClassifyRouterForm,
+    localization: RouterLocalizationForm,
+    localizeableKeys: ['categories', 'cases'],
+    aliases: [RouterTypes.smart],
+    visibility: VISIBILITY_ONLINE,
+    new: true
   },
   {
     type: Types.split_by_expression,

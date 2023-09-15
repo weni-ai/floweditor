@@ -12,6 +12,10 @@
       "description": "Etiquete a mensagem recebida",
       "name": "Adicione etiqueta"
     },
+    "automatic_classify": {
+      "description": "Classificar automaticamente",
+      "name": "Classificar automaticamente"
+    },
     "call_resthook": {
       "description": "Ligar para Zapier",
       "name": "Chamar Zapier"
@@ -414,6 +418,12 @@
     "smart_wait": {
       "words_title": "Palavras ou frases",
       "words_description": "Exemplos de palavras ou frases relacionadas com a Categoria",
+      "category_title": "Categorize como",
+      "category_description": "Defina a Categoria que deseja classificar a resposta do Contato"
+    },
+    "automatic_classify": {
+      "words_title": "Palavras",
+      "words_description": "Exemplos de palavras relacionadas com a categoria",
       "category_title": "Categorize como",
       "category_description": "Defina a Categoria que deseja classificar a resposta do Contato"
     }
