@@ -1,3 +1,7 @@
+2.3.0
+----------
+- Chore: Bump version
+
 2.2.0
 ----------
 - Fix: Modify delete node phrase
