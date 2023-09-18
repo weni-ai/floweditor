@@ -182,6 +182,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             text={this.getCopyTooltip()}
             enabled={this.props.guidingStep !== 1}
             side="right"
+            shortcutText={this.props.selectionActive ? 'Ctrl C' : null}
           >
             <div
               className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
