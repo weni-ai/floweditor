@@ -416,10 +416,10 @@
     "topic_placeholder": "Selecione o tópico",
     "quick_replies_limit": "Você pode adicionar até 10 Respostas rápidas.",
     "smart_wait": {
-      "words_title": "Palavras ou frases",
-      "words_description": "Exemplos de palavras ou frases relacionadas com a Categoria",
+      "words_title": "Palavras",
+      "words_description": "Palavras relacionadas com a categoria desejada.",
       "category_title": "Categorize como",
-      "category_description": "Defina a Categoria que deseja classificar a resposta do Contato"
+      "category_description": "Defina a Categoria que deseja classificar a resposta do Contato."
     },
     "automatic_classify": {
       "words_title": "Palavras",

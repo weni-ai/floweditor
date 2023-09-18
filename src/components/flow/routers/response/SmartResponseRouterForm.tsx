@@ -92,12 +92,12 @@ export default class SmartResponseRouterForm extends React.Component<
           <div className={styles.phrases}>
             <div className={styles.header}>
               <span className={styles.title}>
-                {i18n.t('forms.smart_wait.words_title', 'Words or phrases')}
+                {i18n.t('forms.smart_wait.words_title', 'Words')}
               </span>
               <span className={styles.description}>
                 {i18n.t(
                   'forms.smart_wait.words_description',
-                  'Examples of words or phrases related to the Category'
+                  'Words that are related with the Category.'
                 )}
               </span>
             </div>
@@ -110,7 +110,7 @@ export default class SmartResponseRouterForm extends React.Component<
               <span className={styles.description}>
                 {i18n.t(
                   'forms.smart_wait.category_description',
-                  "Define the Category you want to classify the Contact's response"
+                  "Define the Category you want to classify the Contact's response."
                 )}
               </span>
             </div>

@@ -415,10 +415,10 @@
     "topic_placeholder": "Seleccionar tema",
     "quick_replies_limit": "Puedes agregar hasta 10 respuestas rápidas.",
     "smart_wait": {
-      "words_title": "Palabras o frases",
-      "words_description": "Ejemplos de palabras o frases relacionadas con la Categoría",
+      "words_title": "Palabras",
+      "words_description": "Palabras relacionadas con la Categoría.",
       "category_title": "Categorizar cómo",
-      "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto"
+      "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto."
     },
     "automatic_classify": {
       "words_title": "Palabras",
