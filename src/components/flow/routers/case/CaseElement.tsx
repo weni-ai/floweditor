@@ -405,7 +405,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
 
           return (
             <>
-              <div style={{ width: '114px' }}>
+              <div style={{ width: '125px' }}>
                 <SelectElement
                   key="intent_select"
                   style={TembaSelectStyle.small}
@@ -425,7 +425,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
               >
                 {i18n.t('forms.above')}
               </div>
-              <div style={{ width: '60px' }}>
+              <div style={{ width: '55px' }}>
                 <TextInputElement
                   name={i18n.t('forms.confidence', 'confidence')}
                   onChange={this.handleConfidenceChanged}

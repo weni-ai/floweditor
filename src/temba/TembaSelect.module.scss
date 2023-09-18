@@ -39,7 +39,11 @@
   }
 }
 
-.bold_placeholder { 
+.input {
+
+  input {
+    width: 100% !important;
+  }
 
   input:hover, svg {
     cursor: pointer !important;
