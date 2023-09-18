@@ -91,16 +91,21 @@ export default class AutomaticClassifyRouterForm extends React.Component<
         new={typeConfig.new}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <div className={styles.content}>
-          <div>
-            <TextInputElement
-              name={i18n.t('forms.operand', 'Operand')}
-              showLabel={false}
-              autocomplete={true}
-              onChange={this.handleOperandUpdated}
-              entry={this.state.operand}
-            />
+        <div className={styles.input}>
+          <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+            {i18n.t('forms.classifier_input_description')}
+            <span className={`${styles.link} color-weni-600`}>{i18n.t(' @input.text')}</span>
           </div>
+          <TextInputElement
+            name={i18n.t('forms.operand', 'Operand')}
+            placeholder={i18n.t('@input.text')}
+            showLabel={false}
+            autocomplete={true}
+            onChange={this.handleOperandUpdated}
+            entry={this.state.operand}
+          />
+        </div>
+        <div className={styles.content}>
           <div className={styles.phrases}>
             <div className={styles.header}>
               <span className={styles.title}>

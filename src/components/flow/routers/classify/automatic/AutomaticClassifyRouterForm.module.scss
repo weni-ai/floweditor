@@ -1,5 +1,13 @@
 @import "variables.module.scss";
 
+.input {
+  margin-bottom: $unnnic-spacing-sm;
+
+  .label {
+    margin-bottom: $unnnic-spacing-stack-nano;
+  }
+}
+
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
