@@ -12,7 +12,6 @@ import { FormState, StringEntry } from 'store/nodeEditor';
 import { Alphanumeric, StartIsNonNumeric, validate } from 'store/validators';
 import { WAIT_LABEL } from 'components/flow/routers/constants';
 import i18n from 'config/i18n';
-import { Types } from '../../../../config/interfaces';
 
 // TODO: Remove use of Function
 // tslint:disable:ban-types
@@ -90,9 +89,6 @@ export default class ResponseRouterForm extends React.Component<
   public renderEdit(): JSX.Element {
     const typeConfig = this.props.typeConfig;
 
-    const caseListType =
-      typeConfig.type === Types.smart_wait_for_response ? CaseListType.smart : CaseListType.default;
-
     return (
       <Dialog
         title={typeConfig.name}
@@ -108,7 +104,7 @@ export default class ResponseRouterForm extends React.Component<
           data-spec="cases"
           cases={this.state.cases}
           onCasesUpdated={this.handleCasesUpdated}
-          type={caseListType}
+          type={CaseListType.default}
         />
         {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
         {renderIssues(this.props)}

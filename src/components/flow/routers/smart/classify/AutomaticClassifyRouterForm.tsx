@@ -4,7 +4,7 @@ import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import CaseList, { CaseListType, CaseProps } from 'components/flow/routers/caselist/CaseList';
-import { nodeToState, stateToNode } from 'components/flow/routers/classify/automatic/helpers';
+import { nodeToState, stateToNode } from 'components/flow/routers/smart/classify/helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import TypeList from 'components/nodeeditor/TypeList';
 import { FormState, StringEntry, FormEntry, mergeForm } from 'store/nodeEditor';
@@ -19,6 +19,7 @@ export const leadInSpecId = 'lead-in';
 export interface AutomaticClassifyRouterFormState extends FormState {
   operand: StringEntry;
   cases: CaseProps[];
+  hiddenCases: CaseProps[];
   resultName: StringEntry;
 }
 
@@ -138,6 +139,7 @@ export default class AutomaticClassifyRouterForm extends React.Component<
           cases={this.state.cases}
           onCasesUpdated={this.handleCasesUpdated}
           type={CaseListType.smart}
+          required
         />
         {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
         {renderIssues(this.props)}

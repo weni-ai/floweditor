@@ -4,7 +4,7 @@ import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import CaseList, { CaseListType, CaseProps } from 'components/flow/routers/caselist/CaseList';
-import { nodeToState, stateToNode } from 'components/flow/routers/response/helpers';
+import { nodeToState, stateToNode } from 'components/flow/routers/smart/response/helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import TimeoutControl from 'components/form/timeout/TimeoutControl';
 import TypeList from 'components/nodeeditor/TypeList';
@@ -13,14 +13,20 @@ import { Alphanumeric, StartIsNonNumeric, validate } from 'store/validators';
 import { WAIT_LABEL } from 'components/flow/routers/constants';
 import styles from './ResponseRouterForm.module.scss';
 import i18n from 'config/i18n';
-import { ResponseRouterFormState } from './ResponseRouterForm';
-import TextInputElement from '../../../form/textinput/TextInputElement';
+import TextInputElement from 'components/form/textinput/TextInputElement';
 
 export const leadInSpecId = 'lead-in';
 
+export interface SmartResponseRouterFormState extends FormState {
+  cases: CaseProps[];
+  hiddenCases: CaseProps[];
+  resultName: StringEntry;
+  timeout: number;
+}
+
 export default class SmartResponseRouterForm extends React.Component<
   RouterFormProps,
-  ResponseRouterFormState
+  SmartResponseRouterFormState
 > {
   constructor(props: RouterFormProps) {
     super(props);

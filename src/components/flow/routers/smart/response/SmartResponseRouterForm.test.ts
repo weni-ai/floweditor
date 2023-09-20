@@ -1,6 +1,6 @@
 import { RouterFormProps } from 'components/flow/props';
 import { CaseProps } from 'components/flow/routers/caselist/CaseList';
-import SmartResponseRouterForm from 'components/flow/routers/response/SmartResponseRouterForm';
+import SmartResponseRouterForm from 'components/flow/routers/smart/response/SmartResponseRouterForm';
 import { Operators } from 'config/interfaces';
 import { Types } from 'config/interfaces';
 import { composeComponentTestUtils, mock } from 'testUtils';

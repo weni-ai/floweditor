@@ -38,7 +38,7 @@ import RouterLocalizationForm from 'components/flow/routers/localization/RouterL
 import MenuRouterForm from 'components/flow/routers/menu/MenuRouterForm';
 import RandomRouterForm from 'components/flow/routers/random/RandomRouterForm';
 import ResponseRouterForm from 'components/flow/routers/response/ResponseRouterForm';
-import SmartResponseRouterForm from 'components/flow/routers/response/SmartResponseRouterForm';
+import SmartResponseRouterForm from 'components/flow/routers/smart/response/SmartResponseRouterForm';
 import ResthookRouterForm from 'components/flow/routers/resthook/ResthookRouterForm';
 import ResultRouterForm from 'components/flow/routers/result/ResultRouterForm';
 import SubflowRouterForm from 'components/flow/routers/subflow/SubflowRouterForm';
@@ -60,7 +60,7 @@ import { HintTypes, RouterTypes, FlowEditorConfig, SendMsg } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import CallClassifierComp from 'components/flow/actions/callclassifier/CallClassifier';
 import ClassifyRouterForm from 'components/flow/routers/classify/ClassifyRouterForm';
-import AutomaticClassifyRouterForm from 'components/flow/routers/classify/automatic/AutomaticClassifyRouterForm';
+import AutomaticClassifyRouterForm from 'components/flow/routers/smart/classify/AutomaticClassifyRouterForm';
 import i18n from 'config/i18n';
 import SchemeRouterForm from 'components/flow/routers/scheme/SchemeRouterForm';
 import TicketRouterForm from 'components/flow/routers/ticket/TicketRouterForm';
