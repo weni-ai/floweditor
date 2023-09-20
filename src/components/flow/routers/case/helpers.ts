@@ -127,9 +127,10 @@ export const validateCase = (keys: {
   exitName?: string;
   exitEdited?: boolean;
   classifier?: Asset;
+  required?: boolean;
 }): Partial<CaseElementState> => {
   // when the exit is set, our arguments become required
-  const validators = keys.exitEdited && keys.exitName ? [Required] : [];
+  const validators = (keys.exitEdited && keys.exitName) || keys.required ? [Required] : [];
 
   const updates: Partial<CaseElementState> = {
     operatorConfig: keys.operatorConfig
@@ -230,11 +231,12 @@ export const validateCase = (keys: {
 
   updates.categoryNameEdited = !!keys.exitEdited;
   updates.categoryName = validate(
-    i18n.t('forms.category', 'Category'),
+    i18n.t('forms.category_required', 'Category'),
     updates.categoryNameEdited ? keys.exitName : getCategoryName(updates),
     updates.argument.value ||
       (updates.min.value && updates.max.value) ||
-      (updates.state.value && updates.district.value)
+      (updates.state.value && updates.district.value) ||
+      keys.required
       ? [Required]
       : []
   );

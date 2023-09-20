@@ -38,8 +38,8 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
 
 const noArgumentList = ['has_text', 'has_number', 'has_date', 'has_time', 'has_phone', 'has_email'];
 
-const SMART_CATEGORY_REGEX = /[^A-Za-zÀ-ÖØ-öø-ÿ]+/g;
-const SMART_ARGUMENT_REGEX = /[^A-Za-zÀ-ÖØ-öø-ÿ@.,]+/g;
+const SMART_CATEGORY_REGEX = /[^\p{Letter}]+/gu;
+const SMART_ARGUMENT_REGEX = /[^\p{Letter}@.,]+/gu;
 
 export enum CaseElementType {
   smart = 'smart',
@@ -55,6 +55,7 @@ export interface CaseElementProps {
   operators?: Operator[];
   classifier?: any;
   type: CaseElementType;
+  required?: boolean;
 }
 
 export interface CaseElementState extends FormState {
@@ -105,7 +106,8 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       confidence: this.state.confidence.value,
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
-      classifier: this.props.classifier
+      classifier: this.props.classifier,
+      required: this.props.required
     });
 
     this.setState(updates as CaseElementState, this.handleChange);
@@ -179,7 +181,8 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       confidence: this.state.confidence.value,
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
-      classifier: this.props.classifier
+      classifier: this.props.classifier,
+      required: this.props.required
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -194,7 +197,8 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       operatorConfig: this.state.operatorConfig,
       argument: value,
       exitName: this.state.categoryName.value,
-      exitEdited: this.state.categoryNameEdited
+      exitEdited: this.state.categoryNameEdited,
+      required: this.props.required
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -207,7 +211,8 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       state: this.state.state.value,
       district: value,
       exitName: this.state.categoryName.value,
-      exitEdited: this.state.categoryNameEdited
+      exitEdited: this.state.categoryNameEdited,
+      required: this.props.required
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -221,7 +226,8 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       district: this.state.district.value,
       state: value,
       exitName: this.state.categoryName.value,
-      exitEdited: this.state.categoryNameEdited
+      exitEdited: this.state.categoryNameEdited,
+      required: this.props.required
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -234,7 +240,8 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       confidence: this.state.confidence.value || '.9',
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
-      classifier: this.props.classifier
+      classifier: this.props.classifier,
+      required: this.props.required
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -247,7 +254,8 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       confidence: value,
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
-      classifier: this.props.classifier
+      classifier: this.props.classifier,
+      required: this.props.required
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -259,7 +267,8 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       min: value,
       max: this.state.max.value,
       exitName: this.state.categoryName.value,
-      exitEdited: this.state.categoryNameEdited
+      exitEdited: this.state.categoryNameEdited,
+      required: this.props.required
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -271,7 +280,8 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       min: this.state.min.value,
       max: value,
       exitName: this.state.categoryName.value,
-      exitEdited: this.state.categoryNameEdited
+      exitEdited: this.state.categoryNameEdited,
+      required: this.props.required
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -293,7 +303,8 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       confidence: this.state.confidence.value,
       classifier: this.props.classifier,
       exitName: value,
-      exitEdited: true
+      exitEdited: true,
+      required: this.props.required
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());

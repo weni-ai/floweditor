@@ -37,6 +37,7 @@ export interface CaseListProps {
   operators?: Operator[];
   classifier?: Asset;
   type: CaseListType;
+  required?: boolean;
 }
 
 export interface CaseListState extends FormState {
@@ -55,6 +56,7 @@ const SortableItem = SortableElement(({ value: row }: any) => {
         operators={row.list.props.operators}
         classifier={row.list.props.classifier}
         type={row.list.props.type}
+        required={row.required}
       />
     </div>
   );
@@ -68,18 +70,29 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
   private sortableList = SortableContainer(({ items }: any) => {
     return (
       <div className={styles.case_list}>
-        {items.map((value: any, index: any) => (
-          <SortableItem
-            key={`item-${index}`}
-            index={index}
-            value={{ item: value, list: this }}
-            disabled={index === this.state.currentCases.length - 1}
-            shouldCancelStart={(e: any) => {
-              console.log(e);
-              return true;
-            }}
-          />
-        ))}
+        {items.map((value: any, index: any) => {
+          let required = false;
+          if (this.props.required) {
+            if (this.state.currentCases.length === 1) {
+              required = true;
+            } else {
+              required = index !== this.state.currentCases.length - 1;
+            }
+          }
+
+          return (
+            <SortableItem
+              key={`item-${index}`}
+              index={index}
+              value={{ item: value, list: this, required }}
+              disabled={index === this.state.currentCases.length - 1}
+              shouldCancelStart={(e: any) => {
+                console.log(e);
+                return true;
+              }}
+            />
+          );
+        })}
       </div>
     );
   });
