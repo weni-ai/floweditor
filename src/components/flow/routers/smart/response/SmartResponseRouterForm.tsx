@@ -10,10 +10,8 @@ import TimeoutControl from 'components/form/timeout/TimeoutControl';
 import TypeList from 'components/nodeeditor/TypeList';
 import { FormState, StringEntry } from 'store/nodeEditor';
 import { Alphanumeric, StartIsNonNumeric, validate } from 'store/validators';
-import { WAIT_LABEL } from 'components/flow/routers/constants';
 import styles from './ResponseRouterForm.module.scss';
 import i18n from 'config/i18n';
-import TextInputElement from 'components/form/textinput/TextInputElement';
 
 export const leadInSpecId = 'lead-in';
 

@@ -7,9 +7,8 @@ import CaseList, { CaseListType, CaseProps } from 'components/flow/routers/casel
 import { nodeToState, stateToNode } from 'components/flow/routers/smart/classify/helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import TypeList from 'components/nodeeditor/TypeList';
-import { FormState, StringEntry, FormEntry, mergeForm } from 'store/nodeEditor';
+import { FormState, StringEntry } from 'store/nodeEditor';
 import { Alphanumeric, StartIsNonNumeric, validate, Required } from 'store/validators';
-import { WAIT_LABEL } from 'components/flow/routers/constants';
 import styles from './AutomaticClassifyRouterForm.module.scss';
 import i18n from 'config/i18n';
 import TextInputElement from 'components/form/textinput/TextInputElement';
