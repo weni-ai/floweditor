@@ -38,8 +38,8 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
 
 const noArgumentList = ['has_text', 'has_number', 'has_date', 'has_time', 'has_phone', 'has_email'];
 
-const SMART_CATEGORY_REGEX = /[^\p{Letter}~'^`]+/gu;
-const SMART_ARGUMENT_REGEX = /[^\p{Letter}~'^@`.,]+/gu;
+const SMART_CATEGORY_REGEX = /[^\p{Letter}~'^`´]+/gu;
+const SMART_ARGUMENT_REGEX = /[^\p{Letter}~'^@`´.,]+/gu;
 
 export enum CaseElementType {
   smart = 'smart',
