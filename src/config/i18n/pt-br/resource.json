@@ -426,7 +426,8 @@
       "words_description": "Exemplos de palavras relacionadas com a categoria",
       "category_title": "Categorize como",
       "category_description": "Defina a Categoria que deseja classificar a resposta do Contato"
-    }
+    },
+    "category_required": "Categoria"
   },
   "issues": {
     "header": "Problemas no Fluxo",

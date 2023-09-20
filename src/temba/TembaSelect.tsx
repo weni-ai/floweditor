@@ -604,7 +604,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
               this.selectInputRef = ele;
             }}
             data-testid={`temba_select_input_${snakify(this.props.name)}`}
-            className={styles.input}
+            className={styles.bold_placeholder}
             value={this.state.input}
             on={{ input: this.handleSearch }}
             placeholder={autocompletePlaceholder}

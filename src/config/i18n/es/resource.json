@@ -425,7 +425,8 @@
       "words_description": "Ejemplos de palabras relacionadas con la Categoría",
       "category_title": "Categorizar cómo",
       "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto"
-    }
+    },
+    "category_required": "Categoría"
   },
   "issues": {
     "header": "Problemas de Flujo",
