@@ -397,6 +397,26 @@ Array [
     ],
   },
   Object {
+    "aliases": Array [
+      "smart",
+    ],
+    "description": "Automatic Classify",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "categories",
+      "cases",
+    ],
+    "name": "Automatic Classify",
+    "new": true,
+    "type": "automatic_classify",
+    "visibility": Array [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  Object {
     "description": "Split by a custom expression",
     "form": [Function],
     "localization": [Function],
@@ -490,6 +510,26 @@ Object {
     "visibility": Array [
       "messaging",
       "messaging_offline",
+      "voice",
+    ],
+  },
+  "automatic_classify": Object {
+    "aliases": Array [
+      "smart",
+    ],
+    "description": "Automatic Classify",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "categories",
+      "cases",
+    ],
+    "name": "Automatic Classify",
+    "new": true,
+    "type": "automatic_classify",
+    "visibility": Array [
+      "messaging",
+      "messaging_background",
       "voice",
     ],
   },
@@ -755,19 +795,20 @@ Object {
     "aliases": Array [
       "smart",
     ],
-    "description": "Smartly wait for response",
+    "description": "Automatic Classify",
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
       "categories",
       "cases",
     ],
-    "name": "Smart Wait for Response",
+    "name": "Automatic Classify",
     "new": true,
-    "type": "smart_wait_for_response",
+    "type": "automatic_classify",
     "visibility": Array [
       "messaging",
-      "messaging_offline",
+      "messaging_background",
+      "voice",
     ],
   },
   "smart_wait_for_response": Object {

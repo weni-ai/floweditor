@@ -414,7 +414,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -424,12 +424,22 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="name"
+                  >
                     Split by contact field
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -439,7 +449,7 @@ exports[`ResultRouterForm should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -449,7 +459,7 @@ exports[`ResultRouterForm should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -459,7 +469,7 @@ exports[`ResultRouterForm should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -1417,7 +1427,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -1427,12 +1437,22 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="name"
+                  >
                     Split by contact field
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -1442,7 +1462,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -1452,7 +1472,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -1462,7 +1482,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
