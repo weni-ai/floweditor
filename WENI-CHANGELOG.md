@@ -1,3 +1,7 @@
+2.4.1
+----------
+- Fix: Smart cases regex and placeholders
+
 2.4.0
 ----------
 - Feat: Zeroshot routers (Smart Wait for Response and Automatic Classify)
