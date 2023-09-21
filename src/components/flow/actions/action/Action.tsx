@@ -9,7 +9,7 @@ import { Action, AnyAction, Endpoints, LocalizationMap, FlowIssue } from 'flowTy
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Asset, RenderNode, AssetStore } from 'store/flowContext';
+import { Asset, RenderNode } from 'store/flowContext';
 import AppState from 'store/state';
 import {
   ActionAC,
@@ -35,7 +35,6 @@ export interface ActionWrapperPassedProps {
 }
 
 export interface ActionWrapperStoreProps {
-  assetStore: AssetStore;
   renderNode: RenderNode;
   language: Asset;
   translating: boolean;
@@ -224,13 +223,11 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
 /* istanbul ignore next */
 const mapStateToProps = ({
   flowContext: {
-    assetStore,
     definition: { localization }
   },
   editorState: { language, translating, scrollToAction }
 }: AppState) => ({
   scrollToAction,
-  assetStore,
   language,
   translating,
   localization
