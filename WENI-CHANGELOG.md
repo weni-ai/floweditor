@@ -1,3 +1,7 @@
+2.4.0
+----------
+- Feat: Zeroshot routers (Smart Wait for Response and Automatic Classify)
+
 2.3.0
 ----------
 - Chore: Bump version
