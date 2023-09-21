@@ -50,7 +50,7 @@ const baseProps: ActionWrapperProps = {
   removeAction: jest.fn(),
   moveActionUp: jest.fn(),
   issues: [],
-  assetStore: null
+  scrollToAction: ''
 };
 
 const { setup, spyOn } = composeComponentTestUtils(ActionWrapper, baseProps);
