@@ -416,13 +416,13 @@
     "quick_replies_limit": "Puedes agregar hasta 10 respuestas rápidas.",
     "smart_wait": {
       "words_title": "Palabras",
-      "words_description": "Palabras relacionadas con la Categoría.",
+      "words_description": "Palabras únicas relacionadas con la categoría.",
       "category_title": "Categorizar cómo",
       "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto."
     },
     "automatic_classify": {
       "words_title": "Palabras",
-      "words_description": "Ejemplos de palabras relacionadas con la Categoría",
+      "words_description": "Palabras únicas relacionadas con la categoría.",
       "category_title": "Categorizar cómo",
       "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto"
     },

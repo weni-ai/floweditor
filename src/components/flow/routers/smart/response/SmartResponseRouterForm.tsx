@@ -101,7 +101,7 @@ export default class SmartResponseRouterForm extends React.Component<
               <span className={styles.description}>
                 {i18n.t(
                   'forms.smart_wait.words_description',
-                  'Words that are related with the Category.'
+                  'Unique words that are related with the Category.'
                 )}
               </span>
             </div>
