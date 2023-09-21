@@ -38,6 +38,7 @@ import RouterLocalizationForm from 'components/flow/routers/localization/RouterL
 import MenuRouterForm from 'components/flow/routers/menu/MenuRouterForm';
 import RandomRouterForm from 'components/flow/routers/random/RandomRouterForm';
 import ResponseRouterForm from 'components/flow/routers/response/ResponseRouterForm';
+import SmartResponseRouterForm from 'components/flow/routers/smart/response/SmartResponseRouterForm';
 import ResthookRouterForm from 'components/flow/routers/resthook/ResthookRouterForm';
 import ResultRouterForm from 'components/flow/routers/result/ResultRouterForm';
 import SubflowRouterForm from 'components/flow/routers/subflow/SubflowRouterForm';
@@ -59,6 +60,7 @@ import { HintTypes, RouterTypes, FlowEditorConfig, SendMsg } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import CallClassifierComp from 'components/flow/actions/callclassifier/CallClassifier';
 import ClassifyRouterForm from 'components/flow/routers/classify/ClassifyRouterForm';
+import AutomaticClassifyRouterForm from 'components/flow/routers/smart/classify/AutomaticClassifyRouterForm';
 import i18n from 'config/i18n';
 import SchemeRouterForm from 'components/flow/routers/scheme/SchemeRouterForm';
 import TicketRouterForm from 'components/flow/routers/ticket/TicketRouterForm';
@@ -263,7 +265,17 @@ export const typeConfigList: Type[] = [
     aliases: [RouterTypes.switch],
     visibility: VISIBILITY_MESSAGING_INTERACTIVE
   },
-
+  {
+    type: Types.smart_wait_for_response,
+    name: i18n.t('actions.smart_wait_for_response.name', 'Smart Wait for Response'),
+    description: i18n.t('actions.smart_wait_for_response.description', 'Smartly wait for response'),
+    form: SmartResponseRouterForm,
+    localization: RouterLocalizationForm,
+    localizeableKeys: ['categories', 'cases'],
+    aliases: [RouterTypes.smart],
+    visibility: VISIBILITY_MESSAGING_INTERACTIVE,
+    new: true
+  },
   {
     type: Types.send_broadcast,
     name: i18n.t('actions.send_broadcast.name', 'Send Broadcast'),
@@ -466,6 +478,17 @@ export const typeConfigList: Type[] = [
     aliases: [Types.call_classifier],
     visibility: VISIBILITY_ONLINE,
     filter: FeatureFilter.HAS_CLASSIFIER
+  },
+  {
+    type: Types.automatic_classify,
+    name: i18n.t('actions.automatic_classify.name', 'Automatic Classify'),
+    description: i18n.t('actions.automatic_classify.description', 'Automatic Classify'),
+    form: AutomaticClassifyRouterForm,
+    localization: RouterLocalizationForm,
+    localizeableKeys: ['categories', 'cases'],
+    aliases: [RouterTypes.smart],
+    visibility: VISIBILITY_ONLINE,
+    new: true
   },
   {
     type: Types.split_by_expression,

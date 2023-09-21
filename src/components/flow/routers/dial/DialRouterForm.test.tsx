@@ -6,7 +6,7 @@ import { fireEvent, render, getUpdatedNode, fireUnnnicInputChangeText, act } fro
 import { mock } from 'testUtils';
 import { createDialRouter, getRouterFormProps } from 'testUtils/assetCreators';
 import * as utils from 'utils';
-import { getSwitchRouter } from '../helpers';
+import { getSmartOrSwitchRouter } from '../helpers';
 
 const routerNode = createDialRouter('0979123456', 'Dial Result');
 routerNode.ui = {
@@ -38,7 +38,7 @@ describe(DialRouterForm.name, () => {
 
     fireEvent.click(getByText('Ok'));
 
-    const router = getSwitchRouter(getUpdatedNode(routerProps).node);
+    const router = getSmartOrSwitchRouter(getUpdatedNode(routerProps).node);
     expect(router.wait.type).toBe(WaitTypes.dial);
     expect(router.wait.phone).toBe('@fields.supervisor_phone');
     expect(routerProps.updateRouter).toMatchCallSnapshot();

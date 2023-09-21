@@ -9,7 +9,7 @@ import {
   getVisibleActions,
   filterIssuesForAction
 } from 'components/flow/node/helpers';
-import { getSwitchRouter } from 'components/flow/routers/helpers';
+import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 import shared from 'components/shared.module.scss';
 import TitleBar from 'components/titlebar/TitleBar';
 import { fakePropType } from 'config/ConfigProvider';
@@ -328,7 +328,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       const config = getTypeConfig(type);
       let title: string = config.name;
 
-      const switchRouter = getSwitchRouter(this.props.renderNode.node);
+      const switchRouter = getSmartOrSwitchRouter(this.props.renderNode.node);
       if (switchRouter) {
         if (type === Types.split_by_contact_field && this.props.renderNode.ui.config.operand.name) {
           title =
@@ -386,6 +386,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
                 shouldCancelClick={this.handleShouldCancelClick}
                 title={title}
                 selected={this.props.selected}
+                new={config.new}
               />
             </div>
           </div>

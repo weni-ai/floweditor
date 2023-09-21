@@ -77,7 +77,7 @@
     border: 6px solid transparent;
     border-right-color: #FAFAFA;
     border-left: 0;
-    margin-left: -5px;
+    margin-left: -20px;
   }
 }
 
@@ -90,6 +90,7 @@
     border-radius: $unnnic-border-radius-sm;
     background: $unnnic-color-brand-weni-soft;
     min-height: 16px;
+    padding: 8px 15px;
   }
 
   &.image_attachment {

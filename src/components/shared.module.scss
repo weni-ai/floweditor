@@ -51,7 +51,8 @@
 .wait_for_menu,
 .wait_for_digits,
 .wait_for_response,
-.wait_for_dial {
+.wait_for_dial,
+.smart_wait_for_response  {
   background: #086766 !important;
 }
 
@@ -101,7 +102,8 @@
 .split_by_contact_field,
 .split_by_intent,
 .split_by_run_result,
-.split_by_scheme {
+.split_by_scheme,
+.automatic_classify {
   background: $unnnic-color-neutral-cloudy !important;
 }
 

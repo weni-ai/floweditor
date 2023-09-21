@@ -1,5 +1,5 @@
 import { DialRouterFormState } from 'components/flow/routers/dial/DialRouterForm';
-import { createRenderNode, getSwitchRouter } from 'components/flow/routers/helpers';
+import { createRenderNode, getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 import { DIAL_OPERAND } from 'components/nodeeditor/constants';
 import { Operators, Types } from 'config/interfaces';
 import { getType } from 'config/typeConfigs';
@@ -46,7 +46,9 @@ export const stateToNode = (
   let cases: Case[] = [];
   let exits: Exit[] = [];
 
-  const previousRouter = settings.originalNode ? getSwitchRouter(settings.originalNode.node) : null;
+  const previousRouter = settings.originalNode
+    ? getSmartOrSwitchRouter(settings.originalNode.node)
+    : null;
 
   // see if we are editing an existing dial router so we reuse exits
   if (previousRouter && previousRouter.wait && previousRouter.wait.type === WaitTypes.dial) {

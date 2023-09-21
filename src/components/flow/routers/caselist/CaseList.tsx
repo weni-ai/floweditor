@@ -18,6 +18,10 @@ export enum DragCursor {
   pointer = 'pointer'
 }
 
+export enum CaseListType {
+  smart = 'smart',
+  default = 'default'
+}
 export interface CaseProps {
   uuid: string;
   kase: Case;
@@ -32,6 +36,8 @@ export interface CaseListProps {
   onCasesUpdated(cases: CaseProps[]): void;
   operators?: Operator[];
   classifier?: Asset;
+  type: CaseListType;
+  required?: boolean;
 }
 
 export interface CaseListState extends FormState {
@@ -49,6 +55,8 @@ const SortableItem = SortableElement(({ value: row }: any) => {
         onChange={row.list.handleUpdateCase}
         operators={row.list.props.operators}
         classifier={row.list.props.classifier}
+        type={row.list.props.type}
+        required={row.required}
       />
     </div>
   );
@@ -62,21 +70,36 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
   private sortableList = SortableContainer(({ items }: any) => {
     return (
       <div className={styles.case_list}>
-        {items.map((value: any, index: any) => (
-          <SortableItem
-            key={`item-${index}`}
-            index={index}
-            value={{ item: value, list: this }}
-            disabled={index === this.state.currentCases.length - 1}
-            shouldCancelStart={(e: any) => {
-              console.log(e);
-              return true;
-            }}
-          />
-        ))}
+        {items.map((value: any, index: any) => {
+          let required = false;
+          if (this.props.required) {
+            if (this.state.currentCases.length === 1) {
+              required = true;
+            } else {
+              required = index !== this.state.currentCases.length - 1;
+            }
+          }
+
+          return (
+            <SortableItem
+              key={`item-${index}`}
+              index={index}
+              value={{ item: value, list: this, required }}
+              disabled={index === this.state.currentCases.length - 1}
+              shouldCancelStart={(e: any) => {
+                console.log(e);
+                return true;
+              }}
+            />
+          );
+        })}
       </div>
     );
   });
+
+  public static defaultProps = {
+    type: CaseListType.default
+  };
 
   constructor(props: CaseListProps) {
     super(props);

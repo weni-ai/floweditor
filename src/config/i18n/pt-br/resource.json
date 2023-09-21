@@ -12,6 +12,10 @@
       "description": "Etiquete a mensagem recebida",
       "name": "Adicione etiqueta"
     },
+    "automatic_classify": {
+      "description": "Classificar automaticamente",
+      "name": "Classificar automaticamente"
+    },
     "call_resthook": {
       "description": "Ligar para Zapier",
       "name": "Chamar Zapier"
@@ -132,6 +136,10 @@
     "wait_for_video": {
       "description": "Aguarde por um vídeo",
       "name": "Aguarde por Vídeo"
+    },
+    "smart_wait_for_response": {
+      "name": "Aguarde por resposta inteligente",
+      "description": "Aguarde por resposta Inteligente"
     }
   },
   "add": "Adicione",
@@ -406,7 +414,20 @@
     "ex_application_json": "Ex: application/json",
     "none": "Nenhum",
     "topic_placeholder": "Selecione o tópico",
-    "quick_replies_limit": "Você pode adicionar até 10 Respostas rápidas."
+    "quick_replies_limit": "Você pode adicionar até 10 Respostas rápidas.",
+    "smart_wait": {
+      "words_title": "Palavras",
+      "words_description": "Palavras relacionadas com a categoria desejada.",
+      "category_title": "Categorize como",
+      "category_description": "Defina a Categoria que deseja classificar a resposta do Contato."
+    },
+    "automatic_classify": {
+      "words_title": "Palavras",
+      "words_description": "Exemplos de palavras relacionadas com a categoria",
+      "category_title": "Categorize como",
+      "category_description": "Defina a Categoria que deseja classificar a resposta do Contato"
+    },
+    "category_required": "Categoria"
   },
   "issues": {
     "header": "Problemas no Fluxo",
@@ -607,5 +628,6 @@
     }
   },
   "you_can_also_delete_cards_pressing_the_keys": "Você também pode excluir blocos utilizando as teclas",
-  "or": "ou"
+  "or": "ou",
+  "new": "Novo"
 }

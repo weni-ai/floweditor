@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ResponseRouterForm initializes case config 1`] = `
+exports[`SmartResponseRouterForm initializes case config 1`] = `
 <Dialog
   buttons={
     Object {
@@ -47,8 +47,45 @@ exports[`ResponseRouterForm initializes case config 1`] = `
     }
     onChange={[MockFunction]}
   />
-  <div>
-    If the message response
+  <div
+    className="content"
+  >
+    <div
+      className="phrases"
+    >
+      <div
+        className="header"
+      >
+        <span
+          className="title"
+        >
+          Words
+        </span>
+        <span
+          className="description"
+        >
+          Words that are related with the Category.
+        </span>
+      </div>
+    </div>
+    <div
+      className="categories"
+    >
+      <div
+        className="header"
+      >
+        <span
+          className="title"
+        >
+          Categorize as
+        </span>
+        <span
+          className="description"
+        >
+          Define the Category you want to classify the Contact's response.
+        </span>
+      </div>
+    </div>
   </div>
   <CaseList
     cases={
@@ -70,10 +107,10 @@ exports[`ResponseRouterForm initializes case config 1`] = `
           "categoryName": "Red",
           "kase": Object {
             "arguments": Array [
-              "5",
+              "not blue",
             ],
             "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "type": "has_date_eq",
+            "type": "has_any_word",
             "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
           },
           "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
@@ -83,7 +120,7 @@ exports[`ResponseRouterForm initializes case config 1`] = `
     }
     data-spec="cases"
     onCasesUpdated={[Function]}
-    type="default"
+    type="smart"
   />
   <OptionalTextInput
     maxLength={64}
@@ -99,7 +136,7 @@ exports[`ResponseRouterForm initializes case config 1`] = `
 </Dialog>
 `;
 
-exports[`ResponseRouterForm should render 1`] = `
+exports[`SmartResponseRouterForm should render 1`] = `
 <Dialog
   buttons={
     Object {
@@ -146,8 +183,45 @@ exports[`ResponseRouterForm should render 1`] = `
     }
     onChange={[MockFunction]}
   />
-  <div>
-    If the message response
+  <div
+    className="content"
+  >
+    <div
+      className="phrases"
+    >
+      <div
+        className="header"
+      >
+        <span
+          className="title"
+        >
+          Words
+        </span>
+        <span
+          className="description"
+        >
+          Words that are related with the Category.
+        </span>
+      </div>
+    </div>
+    <div
+      className="categories"
+    >
+      <div
+        className="header"
+      >
+        <span
+          className="title"
+        >
+          Categorize as
+        </span>
+        <span
+          className="description"
+        >
+          Define the Category you want to classify the Contact's response.
+        </span>
+      </div>
+    </div>
   </div>
   <CaseList
     cases={
@@ -169,7 +243,7 @@ exports[`ResponseRouterForm should render 1`] = `
     }
     data-spec="cases"
     onCasesUpdated={[Function]}
-    type="default"
+    type="smart"
   />
   <OptionalTextInput
     maxLength={64}
@@ -185,7 +259,7 @@ exports[`ResponseRouterForm should render 1`] = `
 </Dialog>
 `;
 
-exports[`ResponseRouterForm updates should save changes 1`] = `
+exports[`SmartResponseRouterForm updates should save changes 1`] = `
 Object {
   "cases": Array [
     Object {
@@ -222,6 +296,7 @@ Object {
       "valid": true,
     },
   ],
+  "hiddenCases": Array [],
   "resultName": Object {
     "validationFailures": Array [],
     "value": "Favorite Color",
@@ -231,7 +306,7 @@ Object {
 }
 `;
 
-exports[`ResponseRouterForm updates should save changes 2`] = `
+exports[`SmartResponseRouterForm updates should save changes 2`] = `
 Array [
   Object {
     "inboundConnections": Object {},
@@ -246,6 +321,9 @@ Array [
         },
         Object {
           "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+        },
+        Object {
+          "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
         },
         Object {
           "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
@@ -274,6 +352,12 @@ Array [
             "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
             "type": "has_any_word",
           },
+          Object {
+            "arguments": Array [],
+            "category_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+            "type": "has_category",
+            "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+          },
         ],
         "categories": Array [
           Object {
@@ -288,7 +372,7 @@ Array [
           },
           Object {
             "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "name": "Other",
+            "name": "Failure",
             "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
           },
           Object {
@@ -296,11 +380,16 @@ Array [
             "name": "No Response",
             "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
           },
+          Object {
+            "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+            "name": "Other",
+            "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+          },
         ],
         "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
         "operand": "@input.text",
         "result_name": "Favorite Color",
-        "type": "switch",
+        "type": "smart",
         "wait": Object {
           "timeout": Object {
             "category_uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
@@ -314,91 +403,6 @@ Array [
     "ui": Object {
       "config": Object {
         "cases": Object {},
-      },
-      "position": null,
-      "type": "wait_for_response",
-    },
-  },
-]
-`;
-
-exports[`ResponseRouterForm updates should save save config for relative dates 1`] = `
-Object {
-  "cases": Array [
-    Object {
-      "categoryName": "In the Zone",
-      "kase": Object {
-        "arguments": Array [
-          "5",
-        ],
-        "type": "has_date_gt",
-      },
-      "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-      "valid": true,
-    },
-  ],
-  "resultName": Object {
-    "value": "",
-  },
-  "timeout": 0,
-  "valid": true,
-}
-`;
-
-exports[`ResponseRouterForm updates should save save config for relative dates 2`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [],
-      "exits": Array [
-        Object {
-          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-        },
-        Object {
-          "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "@(datetime_add(today(), 5, \\"D\\"))",
-            ],
-            "category_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "type": "has_date_gt",
-          },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-            "name": "In the Zone",
-            "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-          },
-          Object {
-            "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "name": "Other",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-          },
-        ],
-        "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-        "operand": "@input.text",
-        "type": "switch",
-        "wait": Object {
-          "type": "msg",
-        },
-      },
-      "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
-    },
-    "ui": Object {
-      "config": Object {
-        "cases": Object {
-          "b1f332f3-bdd3-4891-aec5-1843a712dbf1": Object {
-            "arguments": Array [
-              "5",
-            ],
-          },
-        },
       },
       "position": null,
       "type": "wait_for_response",

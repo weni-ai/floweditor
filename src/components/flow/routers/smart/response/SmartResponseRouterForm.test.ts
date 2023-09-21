@@ -1,6 +1,6 @@
 import { RouterFormProps } from 'components/flow/props';
 import { CaseProps } from 'components/flow/routers/caselist/CaseList';
-import ResponseRouterForm from 'components/flow/routers/response/ResponseRouterForm';
+import SmartResponseRouterForm from 'components/flow/routers/smart/response/SmartResponseRouterForm';
 import { Operators } from 'config/interfaces';
 import { Types } from 'config/interfaces';
 import { composeComponentTestUtils, mock } from 'testUtils';
@@ -12,11 +12,11 @@ import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 const routerNode = createMatchRouter(['Red']);
 
 const { setup } = composeComponentTestUtils<RouterFormProps>(
-  ResponseRouterForm,
+  SmartResponseRouterForm,
   getRouterFormProps(routerNode)
 );
 
-describe(ResponseRouterForm.name, () => {
+describe(SmartResponseRouterForm.name, () => {
   beforeEach(() => {
     mock(utils, 'createUUID', utils.seededUUIDs());
   });
@@ -27,27 +27,27 @@ describe(ResponseRouterForm.name, () => {
   });
 
   it('initializes case config', () => {
-    const dateCase = createUUID();
+    const baseCase = createUUID();
 
-    const dateNode = createMatchRouter(['Red']);
-    const router = getSmartOrSwitchRouter(dateNode.node);
+    const baseNode = createMatchRouter(['Red']);
+    const router = getSmartOrSwitchRouter(baseNode.node);
     router.cases.push({
-      uuid: dateCase,
-      type: Operators.has_date_eq,
-      arguments: ['@(datetime_add(today(), 5, "D"))'],
+      uuid: baseCase,
+      type: Operators.has_any_word,
+      arguments: ['not blue'],
       category_uuid: router.categories[0].uuid
     });
 
-    dateNode.ui = {
+    baseNode.ui = {
       position: { left: 0, top: 0 },
-      type: Types.wait_for_response,
-      config: { cases: { [dateCase]: { arguments: ['5'] } } }
+      type: Types.smart_wait_for_response,
+      config: { cases: { [baseCase]: { arguments: ['not blue'] } } }
     };
 
     const { wrapper } = setup(true, {
       nodeSettings: {
         $set: {
-          originalNode: dateNode
+          originalNode: baseNode
         }
       }
     });
@@ -80,28 +80,6 @@ describe(ResponseRouterForm.name, () => {
           uuid: createUUID(),
           kase: { type: Operators.has_any_word, arguments: ['green'] },
           categoryName: 'Green',
-          valid: true
-        }
-      ] as CaseProps[]);
-
-      expect(instance.state).toMatchSnapshot();
-
-      instance.handleSave();
-      expect(props.onClose).toHaveBeenCalled();
-      expect(props.updateRouter).toHaveBeenCalled();
-      expect(props.updateRouter).toMatchCallSnapshot();
-    });
-
-    it('should save save config for relative dates', () => {
-      const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() }
-      });
-
-      instance.handleCasesUpdated([
-        {
-          uuid: createUUID(),
-          kase: { type: Operators.has_date_gt, arguments: ['5'] },
-          categoryName: 'In the Zone',
           valid: true
         }
       ] as CaseProps[]);

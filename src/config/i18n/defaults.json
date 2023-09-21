@@ -211,6 +211,7 @@
     "categorize_as": "Categorize as:",
     "category": "Category (optional)",
     "category_placeholder": "Category",
+    "category_required": "Category",
     "channel": "Channel",
     "channel_type": "Channels",
     "classifier": "Classifier",

@@ -12,13 +12,13 @@ import {
   createMatchRouter
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
-import { getSwitchRouter } from 'components/flow/routers/helpers';
+import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
 const responseRenderNode = createMatchRouter(['Red', 'Blue']);
 
-const router = getSwitchRouter(responseRenderNode.node);
+const router = getSmartOrSwitchRouter(responseRenderNode.node);
 
 const redCase = router.cases[0];
 const otherCategory = router.categories[router.categories.length - 1];

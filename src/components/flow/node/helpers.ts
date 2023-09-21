@@ -1,4 +1,4 @@
-import { getSwitchRouter } from 'components/flow/routers/helpers';
+import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 import { Types } from 'config/interfaces';
 import {
   CallResthook,
@@ -37,7 +37,7 @@ export const getCategoriesForExit = (renderNode: RenderNode, exit: Exit): Catego
 };
 
 export const getResultName = (node: FlowNode) => {
-  const switchRouter = getSwitchRouter(node);
+  const switchRouter = getSmartOrSwitchRouter(node);
   if (switchRouter && switchRouter.result_name) {
     return switchRouter.result_name;
   }

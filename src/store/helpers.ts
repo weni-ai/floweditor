@@ -1,7 +1,7 @@
 import { fieldToAsset } from 'components/flow/actions/updatecontact/helpers';
 import { getResultName } from 'components/flow/node/helpers';
 import { DefaultExitNames } from 'components/flow/routers/constants';
-import { getSwitchRouter } from 'components/flow/routers/helpers';
+import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 import { GROUPS_OPERAND } from 'components/nodeeditor/constants';
 import { FlowTypes, Types } from 'config/interfaces';
 import { getType } from 'config/typeConfigs';
@@ -476,7 +476,7 @@ export const guessNodeType = (node: FlowNode) => {
       return Types.split_by_random;
     }
 
-    const switchRouter = getSwitchRouter(node);
+    const switchRouter = getSmartOrSwitchRouter(node);
     if (switchRouter) {
       if (switchRouter.operand === GROUPS_OPERAND) {
         return Types.split_by_groups;
@@ -548,7 +548,7 @@ export const getFlowComponents = (definition: FlowDefinition): FlowComponents =>
 
     // if we are split by group, look at our categories for groups
     if (type === Types.split_by_groups) {
-      const router = getSwitchRouter(node);
+      const router = getSmartOrSwitchRouter(node);
 
       for (const kase of router.cases) {
         const groupUUID = kase.arguments[0];

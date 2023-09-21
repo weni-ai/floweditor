@@ -114,7 +114,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -124,7 +124,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -134,7 +134,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -144,7 +144,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -154,12 +154,22 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="name"
+                  >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="7"
+                  data-option-index="8"
                 >
                   <span
                     class="name"
@@ -169,7 +179,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="8"
+                  data-option-index="9"
                 >
                   <span
                     class="name"
@@ -179,7 +189,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="name"
@@ -189,7 +199,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="name"
@@ -199,7 +209,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="name"
@@ -209,7 +219,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="name"
@@ -219,7 +229,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="name"
@@ -229,7 +239,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="name"
@@ -239,7 +249,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -249,7 +259,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -259,22 +269,12 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
-                >
-                  <span
-                    class="name"
-                  >
-                    Split by a custom expression
-                  </span>
-                </div>
-                <div
-                  class="option  "
                   data-option-index="18"
                 >
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -284,7 +284,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -294,7 +294,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -304,12 +304,32 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="22"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -696,7 +716,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -706,7 +726,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -716,7 +736,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -726,7 +746,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -736,12 +756,22 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="name"
+                  >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="7"
+                  data-option-index="8"
                 >
                   <span
                     class="name"
@@ -751,7 +781,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="8"
+                  data-option-index="9"
                 >
                   <span
                     class="name"
@@ -761,7 +791,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="name"
@@ -771,7 +801,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="name"
@@ -781,7 +811,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="name"
@@ -791,7 +821,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="name"
@@ -801,7 +831,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="name"
@@ -811,7 +841,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="name"
@@ -821,7 +851,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -831,7 +861,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -841,22 +871,12 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
-                >
-                  <span
-                    class="name"
-                  >
-                    Split by a custom expression
-                  </span>
-                </div>
-                <div
-                  class="option  "
                   data-option-index="18"
                 >
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -866,7 +886,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -876,7 +896,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -886,12 +906,32 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="22"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -1243,7 +1283,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -1253,7 +1293,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -1263,7 +1303,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -1273,7 +1313,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -1283,12 +1323,22 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="name"
+                  >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="7"
+                  data-option-index="8"
                 >
                   <span
                     class="name"
@@ -1298,7 +1348,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="8"
+                  data-option-index="9"
                 >
                   <span
                     class="name"
@@ -1308,7 +1358,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="name"
@@ -1318,7 +1368,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="name"
@@ -1328,7 +1378,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="name"
@@ -1338,7 +1388,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="name"
@@ -1348,7 +1398,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="name"
@@ -1358,7 +1408,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="name"
@@ -1368,7 +1418,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -1378,7 +1428,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -1388,22 +1438,12 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
-                >
-                  <span
-                    class="name"
-                  >
-                    Split by a custom expression
-                  </span>
-                </div>
-                <div
-                  class="option  "
                   data-option-index="18"
                 >
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -1413,7 +1453,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -1423,7 +1463,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -1433,12 +1473,32 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="22"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -1826,7 +1886,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -1836,7 +1896,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -1846,7 +1906,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -1856,7 +1916,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -1866,12 +1926,22 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="name"
+                  >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="7"
+                  data-option-index="8"
                 >
                   <span
                     class="name"
@@ -1881,7 +1951,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="8"
+                  data-option-index="9"
                 >
                   <span
                     class="name"
@@ -1891,7 +1961,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="name"
@@ -1901,7 +1971,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="name"
@@ -1911,7 +1981,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="name"
@@ -1921,7 +1991,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="name"
@@ -1931,7 +2001,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="name"
@@ -1941,7 +2011,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="name"
@@ -1951,7 +2021,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -1961,7 +2031,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -1971,22 +2041,12 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
-                >
-                  <span
-                    class="name"
-                  >
-                    Split by a custom expression
-                  </span>
-                </div>
-                <div
-                  class="option  "
                   data-option-index="18"
                 >
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -1996,7 +2056,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -2006,7 +2066,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -2016,12 +2076,32 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="22"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="24"
                 >
                   <span
                     class="name"

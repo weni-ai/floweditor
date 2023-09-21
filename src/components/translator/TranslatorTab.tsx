@@ -17,7 +17,7 @@ import {
 } from './helpers';
 import CheckboxElement from 'components/form/checkbox/CheckboxElement';
 import { UpdateTranslationFilters } from 'store/thunks';
-import { getSwitchRouter } from 'components/flow/routers/helpers';
+import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 import { getType } from 'config/typeConfigs';
 import { fakePropType } from 'config/ConfigProvider';
 
@@ -138,7 +138,7 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
 
         if (this.state.translationFilters.rules) {
           const localizeableKeys = ['arguments'];
-          const switchRouter = getSwitchRouter(renderNode.node);
+          const switchRouter = getSmartOrSwitchRouter(renderNode.node);
           if (switchRouter) {
             switchRouter.cases.forEach((kase: Case) => {
               translations.push(

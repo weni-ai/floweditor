@@ -4,35 +4,27 @@ import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import CaseList, { CaseListType, CaseProps } from 'components/flow/routers/caselist/CaseList';
-import { nodeToState, stateToNode } from 'components/flow/routers/response/helpers';
+import { nodeToState, stateToNode } from 'components/flow/routers/smart/classify/helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
-import TimeoutControl from 'components/form/timeout/TimeoutControl';
 import TypeList from 'components/nodeeditor/TypeList';
 import { FormState, StringEntry } from 'store/nodeEditor';
-import { Alphanumeric, StartIsNonNumeric, validate } from 'store/validators';
-import { WAIT_LABEL } from 'components/flow/routers/constants';
+import { Alphanumeric, StartIsNonNumeric, validate, Required } from 'store/validators';
+import styles from './AutomaticClassifyRouterForm.module.scss';
 import i18n from 'config/i18n';
-
-// TODO: Remove use of Function
-// tslint:disable:ban-types
-export enum InputToFocus {
-  args = 'args',
-  min = 'min',
-  max = 'max',
-  exit = 'exit'
-}
-
-export interface ResponseRouterFormState extends FormState {
-  cases: CaseProps[];
-  resultName: StringEntry;
-  timeout: number;
-}
+import TextInputElement from 'components/form/textinput/TextInputElement';
 
 export const leadInSpecId = 'lead-in';
 
-export default class ResponseRouterForm extends React.Component<
+export interface AutomaticClassifyRouterFormState extends FormState {
+  operand: StringEntry;
+  cases: CaseProps[];
+  hiddenCases: CaseProps[];
+  resultName: StringEntry;
+}
+
+export default class AutomaticClassifyRouterForm extends React.Component<
   RouterFormProps,
-  ResponseRouterFormState
+  AutomaticClassifyRouterFormState
 > {
   constructor(props: RouterFormProps) {
     super(props);
@@ -55,10 +47,6 @@ export default class ResponseRouterForm extends React.Component<
       resultName,
       valid: !invalidCase && !hasErrors(resultName)
     });
-  }
-
-  private handleUpdateTimeout(timeout: number): void {
-    this.setState({ timeout });
   }
 
   private handleCasesUpdated(cases: CaseProps[]): void {
@@ -86,6 +74,12 @@ export default class ResponseRouterForm extends React.Component<
     };
   }
 
+  private handleOperandUpdated(value: string): void {
+    this.setState({
+      operand: validate(i18n.t('forms.operand', 'Operand'), value, [Required])
+    });
+  }
+
   public renderEdit(): JSX.Element {
     const typeConfig = this.props.typeConfig;
 
@@ -94,17 +88,57 @@ export default class ResponseRouterForm extends React.Component<
         title={typeConfig.name}
         headerClass={typeConfig.type}
         buttons={this.getButtons()}
-        gutter={
-          <TimeoutControl timeout={this.state.timeout} onChanged={this.handleUpdateTimeout} />
-        }
+        new={typeConfig.new}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <div>{WAIT_LABEL}</div>
+        <div className={styles.input}>
+          <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+            {i18n.t('forms.classifier_input_description')}
+            <span className={`${styles.link} color-weni-600`}>{i18n.t(' @input.text')}</span>
+          </div>
+          <TextInputElement
+            name={i18n.t('forms.operand', 'Operand')}
+            placeholder={i18n.t('@input.text')}
+            showLabel={false}
+            autocomplete={true}
+            onChange={this.handleOperandUpdated}
+            entry={this.state.operand}
+          />
+        </div>
+        <div className={styles.content}>
+          <div className={styles.phrases}>
+            <div className={styles.header}>
+              <span className={styles.title}>
+                {i18n.t('forms.automatic_classify.words_title', 'Words')}
+              </span>
+              <span className={styles.description}>
+                {i18n.t(
+                  'forms.automatic_classify.words_description',
+                  'Examples of words related to the category'
+                )}
+              </span>
+            </div>
+          </div>
+          <div className={styles.categories}>
+            <div className={styles.header}>
+              <span className={styles.title}>
+                {i18n.t('forms.automatic_classify.category_title', 'Categorize as')}
+              </span>
+              <span className={styles.description}>
+                {i18n.t(
+                  'forms.automatic_classify.category_description',
+                  "Define the category you want to classify the contact's response"
+                )}
+              </span>
+            </div>
+          </div>
+        </div>
         <CaseList
           data-spec="cases"
           cases={this.state.cases}
           onCasesUpdated={this.handleCasesUpdated}
-          type={CaseListType.default}
+          type={CaseListType.smart}
+          required
         />
         {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
         {renderIssues(this.props)}

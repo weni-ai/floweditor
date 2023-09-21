@@ -1,6 +1,10 @@
 import { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import { GroupsRouterFormState } from 'components/flow/routers/groups/GroupsRouterForm';
-import { createRenderNode, getSwitchRouter, resolveRoutes } from 'components/flow/routers/helpers';
+import {
+  createRenderNode,
+  getSmartOrSwitchRouter,
+  resolveRoutes
+} from 'components/flow/routers/helpers';
 import { GROUPS_OPERAND } from 'components/nodeeditor/constants';
 import { Operators, Types } from 'config/interfaces';
 import { getType } from 'config/typeConfigs';
@@ -59,7 +63,7 @@ export const stateToNode = (
 
 export const extractGroups = (node: FlowNode): any[] => {
   let groups: any[] = [];
-  const router = getSwitchRouter(node);
+  const router = getSmartOrSwitchRouter(node);
   if (router) {
     groups = (router as SwitchRouter).cases.map(kase => {
       const category = router.categories.find((cat: Category) => cat.uuid === kase.category_uuid);

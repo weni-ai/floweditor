@@ -1,4 +1,8 @@
-import { getSwitchRouter, resolveRoutes, createCaseProps } from 'components/flow/routers/helpers';
+import {
+  getSmartOrSwitchRouter,
+  resolveRoutes,
+  createCaseProps
+} from 'components/flow/routers/helpers';
 import { createCases, createMatchRouter, createRoutes } from 'testUtils/assetCreators';
 import { createUUID } from 'utils';
 import { Operators } from 'config/interfaces';
@@ -38,7 +42,7 @@ describe('routers', () => {
 
     it('creates converts all responses category to other', () => {
       const renderNode = createMatchRouter([]);
-      const router = getSwitchRouter(renderNode.node);
+      const router = getSmartOrSwitchRouter(renderNode.node);
       expect(router.categories.length).toBe(1);
       expect(router.categories[0].name).toBe('All Responses');
 
@@ -127,7 +131,7 @@ describe('routers', () => {
       // start off with a red case
       const originalNode = createMatchRouter(['Red']);
       const categories = originalNode.node.router.categories;
-      const cases = getSwitchRouter(originalNode.node).cases;
+      const cases = getSmartOrSwitchRouter(originalNode.node).cases;
       const exits = originalNode.node.exits;
 
       expect(categories[0].name).toBe('Red');
@@ -156,7 +160,7 @@ describe('routers', () => {
       expect(originalNode.node.exits.length).toBe(3);
 
       // edit that node, but change one of the green case categories to something new
-      const cases = createCaseProps(getSwitchRouter(originalNode.node).cases, originalNode);
+      const cases = createCaseProps(getSmartOrSwitchRouter(originalNode.node).cases, originalNode);
       cases[2].categoryName = 'New Name';
       const routes = resolveRoutes(cases, false, originalNode.node);
 

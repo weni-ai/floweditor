@@ -54,6 +54,24 @@ $curvature: 10px;
     .title {
       padding: $unnnic-spacing-inset-md;
       padding-top: $unnnic-spacing-stack-giant;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: $unnnic-spacing-xs;
+      font-family: $unnnic-font-family-secondary;
+    }
+
+    .new {
+      display: flex;
+      align-items: center;
+      background-color: $unnnic-color-weni-600;
+      border-radius: $unnnic-border-radius-pill;
+      padding: 2px 12px;
+
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+      color: $unnnic-color-weni-50;
+      font-weight: $unnnic-font-weight-regular;
     }
 
     &.barber {

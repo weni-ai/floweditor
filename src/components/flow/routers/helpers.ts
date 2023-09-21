@@ -153,7 +153,7 @@ export const categorizeCases = (
 
       // still no category, lets see if we can find a case uuid match
       if (!category) {
-        const router = getSwitchRouter(originalNode);
+        const router = getSmartOrSwitchRouter(originalNode);
         if (router) {
           const previousCase = router.cases.find((kase: Case) => kase.uuid === newCase.uuid);
           if (previousCase) {
@@ -210,8 +210,12 @@ export const categorizeCases = (
   return { cases, categories, exits, caseConfig };
 };
 
-export const getSwitchRouter = (node: FlowNode): SwitchRouter => {
-  if (node && node.router && node.router.type === RouterTypes.switch) {
+export const getSmartOrSwitchRouter = (node: FlowNode): SwitchRouter => {
+  if (
+    node &&
+    node.router &&
+    (node.router.type === RouterTypes.switch || node.router.type === RouterTypes.smart)
+  ) {
     return node.router as SwitchRouter;
   }
   return null;
@@ -225,7 +229,7 @@ export const getDefaultRoute = (
   defaultCategoryName: string,
   originalNode: FlowNode
 ): { defaultCategory: Category; defaultExit: Exit } => {
-  const originalRouter = getSwitchRouter(originalNode);
+  const originalRouter = getSmartOrSwitchRouter(originalNode);
 
   // use the previous default if it had one
   if (originalRouter) {
@@ -261,7 +265,7 @@ const getTimeoutRoute = (
   let timeoutCategory: Category = null;
   let timeoutExit: Exit = null;
 
-  const originalRouter = getSwitchRouter(originalNode);
+  const originalRouter = getSmartOrSwitchRouter(originalNode);
 
   // see if our previous node had a timeout case
   if (originalRouter) {
@@ -346,7 +350,7 @@ export const createWebhookBasedNode = (
     originalNode.node.actions.length === 1 &&
     originalNode.node.actions[0].type === action.type
   ) {
-    const previousRouter = getSwitchRouter(originalNode.node);
+    const previousRouter = getSmartOrSwitchRouter(originalNode.node);
     originalNode.node.exits.forEach((exit: any) => exits.push(exit));
     previousRouter.cases.forEach(kase => cases.push(kase));
     originalNode.node.router.categories.forEach(category => categories.push(category));

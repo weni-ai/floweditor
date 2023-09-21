@@ -2,7 +2,7 @@ import { SCHEMES, Scheme, getType } from 'config/typeConfigs';
 import { SelectOption } from 'components/form/select/SelectElement';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import { SchemeRouterFormState } from './SchemeRouterForm';
-import { getSwitchRouter, resolveRoutes, createRenderNode } from '../helpers';
+import { getSmartOrSwitchRouter, resolveRoutes, createRenderNode } from '../helpers';
 import { RenderNode } from 'store/flowContext';
 import { SwitchRouter, FlowNode, RouterTypes, Case } from 'flowTypes';
 import { CaseProps } from '../caselist/CaseList';
@@ -41,7 +41,7 @@ export const stateToNode = (
 ): RenderNode => {
   let orginalCases: Case[] = [];
   if (getType(settings.originalNode) === Types.split_by_scheme) {
-    orginalCases = getSwitchRouter(settings.originalNode.node).cases;
+    orginalCases = getSmartOrSwitchRouter(settings.originalNode.node).cases;
   }
 
   const currentCases = schemesToCases(state.schemes.value, orginalCases);
@@ -73,7 +73,7 @@ export const stateToNode = (
 
 export const extractSchemes = (node: FlowNode): SelectOption[] => {
   let schemes: SelectOption[] = [];
-  const router = getSwitchRouter(node);
+  const router = getSmartOrSwitchRouter(node);
   const selectOptions = getChannelTypeOptions();
 
   if (router) {

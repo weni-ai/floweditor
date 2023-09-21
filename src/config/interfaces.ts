@@ -20,6 +20,7 @@ export enum Types {
   add_contact_urn = 'add_contact_urn',
   add_contact_groups = 'add_contact_groups',
   add_input_labels = 'add_input_labels',
+  automatic_classify = 'automatic_classify',
   remove_contact_groups = 'remove_contact_groups',
   set_contact_channel = 'set_contact_channel',
   set_contact_field = 'set_contact_field',
@@ -38,6 +39,7 @@ export enum Types {
   enter_flow = 'enter_flow',
   start_session = 'start_session',
   transfer_airtime = 'transfer_airtime',
+  smart_wait_for_response = 'smart_wait_for_response',
   split_by_airtime = 'split_by_airtime',
   split_by_expression = 'split_by_expression',
   split_by_contact_field = 'split_by_contact_field',
@@ -132,6 +134,7 @@ export interface Type extends FlowTypeVisibility {
   aliases?: string[];
   localization?: React.ComponentClass<any>;
   localizeableKeys?: string[];
+  new?: boolean;
 
   // opportunity to massage our object for display
   massageForDisplay?: (obj: any) => void;

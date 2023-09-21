@@ -140,6 +140,7 @@ exports[`ActionWrapper render should render self, children with base props 1`] =
 Object {
   "__className": "send_msg",
   "hasIssues": false,
+  "new": undefined,
   "onMoveUp": [Function],
   "onRemoval": [Function],
   "selected": false,
