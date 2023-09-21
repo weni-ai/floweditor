@@ -7,7 +7,7 @@ import styles from 'components/index.module.scss';
 import ConnectedLanguageSelector from 'components/languageselector/LanguageSelector';
 import Loading from 'components/loading/Loading';
 import Modal from 'components/modal/Modal';
-import { RevisionExplorer } from 'components/revisions/RevisionExplorer';
+import RevisionExplorer from 'components/revisions/RevisionExplorer';
 import { IssuesTab, IssueDetail } from 'components/issues/IssuesTab';
 import ConfigProvider from 'config';
 import { fakePropType } from 'config/ConfigProvider';
@@ -17,7 +17,7 @@ import { connect, Provider as ReduxProvider } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import createStore from 'store/createStore';
 import { ModalMessage } from 'store/editor';
-import { Asset, Assets, AssetStore, RenderNodeMap, FlowIssueMap } from 'store/flowContext';
+import { Asset, Assets, RenderNodeMap, FlowIssueMap } from 'store/flowContext';
 import { getCurrentDefinition } from 'store/helpers';
 import AppState from 'store/state';
 import {
@@ -49,7 +49,6 @@ export interface FlowEditorContainerProps {
 }
 
 export interface FlowEditorStoreProps {
-  assetStore: AssetStore;
   baseLanguage: Asset;
   language: Asset;
   languages: Assets;
@@ -295,7 +294,6 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
             <RevisionExplorer
               loadFlowDefinition={this.props.loadFlowDefinition}
               createNewRevision={this.props.createNewRevision}
-              assetStore={this.props.assetStore}
               onToggled={this.handleTabPopped}
               popped={this.props.popped}
             />
@@ -342,7 +340,6 @@ const mapStateToProps = ({
     modalMessage,
     saving,
     simulating,
-    assetStore,
     translating,
     language,
     fetchingFlow,
