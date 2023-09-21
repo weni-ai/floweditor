@@ -114,7 +114,7 @@ export default class AutomaticClassifyRouterForm extends React.Component<
               <span className={styles.description}>
                 {i18n.t(
                   'forms.automatic_classify.words_description',
-                  'Examples of words related to the category'
+                  'Unique words that are related with the Category.'
                 )}
               </span>
             </div>
