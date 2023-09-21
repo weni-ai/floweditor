@@ -493,6 +493,15 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
           </>
         );
       } else {
+        let placeholder =
+          this.state.operatorConfig.type === Operators.has_district
+            ? i18n.t('forms.state')
+            : i18n.t('forms.ex_cart', 'Ex: cart');
+
+        if (this.props.type === CaseElementType.smart) {
+          placeholder = i18n.t('forms.ex_smart_argument', 'Ex: good yes positive');
+        }
+
         return (
           <TextInputElement
             data-test-id="case-arguments"
@@ -500,11 +509,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
             onChange={this.handleArgumentChanged}
             entry={this.state.argument}
             style={TextInputStyle.small}
-            placeholder={
-              this.state.operatorConfig.type === Operators.has_district
-                ? i18n.t('forms.state')
-                : i18n.t('forms.ex_cart', 'Ex: cart')
-            }
+            placeholder={placeholder}
             autocomplete={true}
           />
         );
@@ -570,7 +575,11 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
               entry={this.state.categoryName}
               maxLength={this.props.type === CaseElementType.smart ? 20 : 36}
               showInvalid={hasErrorType(this.state.errors, [/category/])}
-              placeholder={i18n.t('forms.ex_shop', 'Ex: shopping')}
+              placeholder={
+                this.props.type === CaseElementType.smart
+                  ? i18n.t('forms.ex_smart_category', 'Ex: Positive')
+                  : i18n.t('forms.ex_shop', 'Ex: shopping')
+              }
             />
           </div>
 
