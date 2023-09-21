@@ -52,7 +52,6 @@ export interface FlowEditorStoreProps {
   baseLanguage: Asset;
   language: Asset;
   languages: Assets;
-  simulating: boolean;
   translating: boolean;
   fetchingFlow: boolean;
   definition: FlowDefinition;
@@ -324,7 +323,6 @@ const mapStateToProps = ({
     translating,
     language,
     fetchingFlow,
-    simulating,
     modalMessage,
     saving,
     scrollToAction,
@@ -339,7 +337,6 @@ const mapStateToProps = ({
     baseLanguage,
     modalMessage,
     saving,
-    simulating,
     translating,
     language,
     fetchingFlow,
