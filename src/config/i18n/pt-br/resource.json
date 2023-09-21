@@ -427,7 +427,9 @@
       "category_title": "Categorize como",
       "category_description": "Defina a Categoria que deseja classificar a resposta do Contato"
     },
-    "category_required": "Categoria"
+    "category_required": "Categoria",
+    "ex_smart_argument": "Ex: bom sim positivo",
+    "ex_smart_category": "Positivo"
   },
   "issues": {
     "header": "Problemas no Fluxo",

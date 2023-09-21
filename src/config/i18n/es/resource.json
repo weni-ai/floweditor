@@ -426,7 +426,9 @@
       "category_title": "Categorizar cómo",
       "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto"
     },
-    "category_required": "Categoría"
+    "category_required": "Categoría",
+    "ex_smart_argument": "Ej: bueno si positivo",
+    "ex_smart_category": "Positivo"
   },
   "issues": {
     "header": "Problemas de Flujo",
