@@ -11,6 +11,9 @@ import { renderIf } from 'utils';
 import styles from './RevisionExplorer.module.scss';
 import i18n from 'config/i18n';
 import { PopTabType } from 'config/interfaces';
+import { connect } from 'react-redux';
+import AppState from 'store/state';
+import { ConfigProviderContext } from 'config/ConfigProvider';
 
 const cx: any = classNames.bind(styles);
 
@@ -54,8 +57,8 @@ export class RevisionExplorer extends React.Component<
   RevisionExplorerProps,
   RevisionExplorerState
 > {
-  constructor(props: RevisionExplorerProps) {
-    super(props);
+  constructor(props: RevisionExplorerProps, context: ConfigProviderContext) {
+    super(props, context);
     this.state = {
       revisions: [],
       revision: null,
@@ -213,3 +216,13 @@ export class RevisionExplorer extends React.Component<
     );
   }
 }
+
+/* istanbul ignore next */
+const mapStateToProps = ({ flowContext: { assetStore } }: AppState) => ({
+  assetStore: assetStore
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(RevisionExplorer);

@@ -62,8 +62,7 @@ exports[`Root render should apply translating style if passed a truthy translati
       className="editor"
       data-spec="editor"
     >
-      <RevisionExplorer
-        assetStore={null}
+      <Connect(RevisionExplorer)
         createNewRevision={[MockFunction]}
         loadFlowDefinition={[MockFunction]}
         onToggled={[Function]}
@@ -106,8 +105,7 @@ exports[`Root render should render flow if passed a definition, language 1`] = `
       data-spec="editor"
     >
       <Connect(Flow) />
-      <RevisionExplorer
-        assetStore={null}
+      <Connect(RevisionExplorer)
         createNewRevision={[MockFunction]}
         loadFlowDefinition={[MockFunction]}
         onToggled={[Function]}
@@ -149,8 +147,7 @@ exports[`Root render should render self, children with required props 1`] = `
       className="editor"
       data-spec="editor"
     >
-      <RevisionExplorer
-        assetStore={null}
+      <Connect(RevisionExplorer)
         createNewRevision={[MockFunction]}
         loadFlowDefinition={[MockFunction]}
         onToggled={[Function]}

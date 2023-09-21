@@ -6,10 +6,8 @@ import { set, setTrue } from 'utils';
 const colorsFlow = require('test/flows/colors.json');
 
 const baseProps: FlowEditorStoreProps = {
-  assetStore: null,
   language: English,
   languages,
-  simulating: false,
   translating: false,
   fetchingFlow: false,
   definition: null,
@@ -26,7 +24,8 @@ const baseProps: FlowEditorStoreProps = {
   scrollToAction: null,
   scrollToNode: null,
   popped: null,
-  issues: {}
+  issues: {},
+  updateTranslationFilters: jest.fn()
 };
 
 const { setup, spyOn } = composeComponentTestUtils(FlowEditor, baseProps);

@@ -19,10 +19,11 @@ const baseProps: RevisionExplorerProps = {
   createNewRevision: jest.fn(),
   loadFlowDefinition: jest.fn(),
   utc: true,
-  simulating: false
+  onToggled: jest.fn(),
+  popped: ''
 };
 
-const { setup } = composeComponentTestUtils(RevisionExplorer, baseProps);
+const { setup } = composeComponentTestUtils<RevisionExplorerProps>(RevisionExplorer, baseProps);
 
 describe(RevisionExplorer.name, () => {
   describe('render', () => {
