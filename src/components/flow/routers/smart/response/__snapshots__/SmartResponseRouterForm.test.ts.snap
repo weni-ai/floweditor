@@ -64,7 +64,7 @@ exports[`SmartResponseRouterForm initializes case config 1`] = `
         <span
           className="description"
         >
-          Words that are related with the Category.
+          Unique words that are related with the Category.
         </span>
       </div>
     </div>
@@ -200,7 +200,7 @@ exports[`SmartResponseRouterForm should render 1`] = `
         <span
           className="description"
         >
-          Words that are related with the Category.
+          Unique words that are related with the Category.
         </span>
       </div>
     </div>
