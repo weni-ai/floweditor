@@ -57,11 +57,11 @@ import { PopTabType } from 'config/interfaces';
 import styles from './Flow.module.scss';
 import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
-import { unnnicModalNext, unnnicButton } from '@weni/unnnic-system';
+import { unnnicModalNext, unnnicButtonNext } from '@weni/unnnic-system';
 import { WeniLoveIcon } from './WeniLoveIcon';
 import i18n from '../../config/i18n';
 
-const UnnnicButton = applyVueInReact(unnnicButton, {
+const UnnnicButton = applyVueInReact(unnnicButtonNext, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -429,36 +429,47 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
       <UnnnicModalNext className={styles.new_updates}>
         <div className={styles.content}>
           <WeniLoveIcon />
-          <span className={styles.title}>
-            {i18n.t('new_updates.title', 'Flow Editor has a new look!')}
-          </span>
-          <span className={styles.description}>
+          <span className={styles.title}>{i18n.t('new_updates.title', 'News in the area!')}</span>
+          {/* <span className={styles.description}>
             {i18n.t('new_updates.description', 'Whats new?')}
-          </span>
+          </span> */}
 
           <div className={styles.news_list}>
-            <span>•&nbsp; {i18n.t('new_updates.news.first', 'A beautiful new interface')}</span>
-            <span>
-              •&nbsp; {i18n.t('new_updates.news.second', 'Nodes copy and paste functionality')}
-            </span>
-            <span>•&nbsp; {i18n.t('new_updates.news.third', 'Sidebar with tools (evolving)')}</span>
+            <span>•&nbsp; {i18n.t('new_updates.news.first', 'The editor is faster')}</span>
             <span>
               •&nbsp;{' '}
-              {i18n.t('new_updates.news.fourth', 'Possibility to create a new block anywhere')}
+              {i18n.t(
+                'new_updates.news.second',
+                'Two new cards for processing responses in a 100% intelligent way'
+              )}
+            </span>
+            <span>
+              •&nbsp;{' '}
+              {i18n.t('new_updates.news.third', 'Copy and paste any type of card without worrying')}
+            </span>
+            <span>
+              •&nbsp;{' '}
+              {i18n.t('new_updates.news.fourth', 'Bugs fixed in the selection component on cards')}
             </span>
             <span>•&nbsp; {i18n.t('new_updates.news.fifth', 'WhatsApp simulator skin')}</span>
+          </div>
+
+          <div className={styles.footer}>
+            <span>
+              {i18n.t('new_updates.footer', 'Feel free to send feedback on your experience')}
+            </span>
           </div>
         </div>
 
         <div className={styles.buttons}>
           <UnnnicButton
             type="ghost"
-            text={i18n.t('new_updates.buttons.first', 'Ignore')}
+            text={i18n.t('new_updates.buttons.first', 'Close')}
             onClick={() => {
               ReactDOM.unmountComponentAtNode(newUpdatesModalEl);
             }}
           />
-          <UnnnicButton
+          {/* <UnnnicButton
             className={styles.primary}
             type="primary"
             text={i18n.t('new_updates.buttons.second', 'Show me everything')}
@@ -466,7 +477,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
               this.startGuiding();
               ReactDOM.unmountComponentAtNode(newUpdatesModalEl);
             }}
-          />
+          /> */}
         </div>
       </UnnnicModalNext>,
       newUpdatesModalEl

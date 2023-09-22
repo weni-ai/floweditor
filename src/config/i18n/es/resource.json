@@ -594,19 +594,20 @@
     "single": "Bloque copiados con éxito"
   },
   "new_updates": {
-    "title": "¡El Editor de flujo tiene una nueva apariencia!",
+    "title": "¡Novedades en la zona!",
     "description": "¿Qué hay de nuevo?",
     "news": {
-      "first": "Una nueva y hermosa interfaz",
-      "second": "Funcionalidad de copiar y pegar bloques",
-      "third": "Barra lateral con herramientas (en evolución)",
-      "fourth": "Posibilidad de crear un nuevo bloque en cualquier lugar.",
+      "first": "El editor es más rápido",
+      "second": "Dos nuevas tarjetas para procesar respuestas de forma 100% inteligente",
+      "third": "Copia y pega cualquier tipo de tarjeta sin preocuparte",
+      "fourth": "Errores solucionados en el componente de selección de tarjetas.",
       "fifth": "Máscara de WhatsApp en el simulador."
     },
     "buttons": {
-      "first": "Ignorar",
+      "first": "Fechar",
       "second": "Muestrame todo"
-    }
+    },
+    "footer": "No dude en enviarnos sus comentarios sobre su experiencia"
   },
   "guiding": {
     "close_tour": "Cerrar guía",
