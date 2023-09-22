@@ -72,7 +72,7 @@ describe(CaseList.name, () => {
       userEvent.type(getAllByTestId('arguments')[0].querySelector('input'), 'Purple, p');
 
       // TODO: REDUCE THESE CALLED TIMES TO 4/5
-      expect(onCasesUpdated).toHaveBeenCalledTimes(14);
+      expect(onCasesUpdated).toHaveBeenCalledTimes(12);
       expect(baseElement).toMatchSnapshot();
     });
 

@@ -180,6 +180,8 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
   }
 
   private handleInputChange(input: string) {
+    if (input === this.props.value) return;
+
     this.setState({ showCompletionsMenu: true });
     const inputEl = (this.refInput as any).vueRef.$el.querySelector('input') as HTMLInputElement;
     this.executeQuery(inputEl);
