@@ -1,11 +1,10 @@
 import { react as bindCallbacks } from 'auto-bind';
-import { FlowDefinition, StickyNote } from 'flowTypes';
+import { StickyNote } from 'flowTypes';
 import * as React from 'react';
 import TextareaAutosize from 'react-autosize-textarea/lib';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { DragEvent } from 'services/Plumber';
-import AppState from 'store/state';
 import { DispatchWithState, UpdateSticky, updateSticky } from 'store/thunks';
 import { CONFIRMATION_TIME, QUIET_NOTE, snapToGrid } from 'utils';
 
@@ -24,7 +23,6 @@ export interface StickyPassedProps {
 }
 
 export interface StickyStoreProps {
-  definition: FlowDefinition;
   updateSticky: UpdateSticky;
 }
 
@@ -241,9 +239,7 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
 }
 
 /* istanbul ignore next */
-const mapStateToProps = ({ flowContext: { definition } }: AppState) => ({
-  definition
-});
+const mapStateToProps = () => ({});
 
 /* istanbul ignore next */
 const mapDispatchToProps = (dispatch: DispatchWithState) => {
