@@ -15,7 +15,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Activity, RecentMessage } from 'store/editor';
-import { AssetStore, RenderNodeMap, Asset } from 'store/flowContext';
+import { RenderNodeMap, Asset } from 'store/flowContext';
 import { getCurrentDefinition } from 'store/helpers';
 import AppState from 'store/state';
 import { DispatchWithState, MergeEditorState } from 'store/thunks';
@@ -67,7 +67,6 @@ interface Message {
 export interface SimulatorStoreProps {
   nodes: RenderNodeMap;
   definition: FlowDefinition;
-  assetStore: AssetStore;
 
   activity: Activity;
 
@@ -1170,12 +1169,11 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
 
 /* istanbul ignore next */
 const mapStateToProps = ({
-  flowContext: { definition, nodes, assetStore },
+  flowContext: { definition, nodes },
   editorState: { liveActivity, activity, language }
 }: AppState) => ({
   liveActivity,
   activity,
-  assetStore,
   definition,
   nodes,
   language
