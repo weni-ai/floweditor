@@ -9,7 +9,7 @@ import Simulator from 'components/simulator/Simulator';
 import Sidebar from 'components/sidebar/Sidebar';
 import Sticky, { STICKY_BODY, STICKY_TITLE } from 'components/sticky/Sticky';
 import { ConfigProviderContext, fakePropType } from 'config/ConfigProvider';
-import { FlowDefinition, FlowMetadata, FlowPosition } from 'flowTypes';
+import { FlowMetadata, FlowPosition, StickyNote } from 'flowTypes';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -101,7 +101,7 @@ export interface FlowStoreProps {
 
   mergeEditorState: MergeEditorState;
 
-  definition: FlowDefinition;
+  stickyMap: { [key: string]: StickyNote };
   nodes: { [uuid: string]: RenderNode };
   metadata: FlowMetadata;
   nodeEditorSettings: NodeEditorSettings;
@@ -281,7 +281,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   }
 
   private handleStickyCreation(props: CanvasDraggableProps) {
-    const stickyMap = this.props.definition._ui.stickies || {};
+    const stickyMap = this.props.stickyMap || {};
     const uuid = props.uuid;
     return <Sticky key={uuid} uuid={uuid} sticky={stickyMap[uuid]} selected={props.selected} />;
   }
@@ -319,7 +319,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   }
 
   private getStickies(): CanvasDraggableProps[] {
-    const stickyMap = this.props.definition._ui.stickies || {};
+    const stickyMap = this.props.stickyMap || {};
     return Object.keys(stickyMap).map((uuid: string, idx: number) => {
       return {
         uuid,
@@ -523,7 +523,7 @@ const mapStateToProps = ({
 }: AppState) => {
   return {
     nodeEditorSettings: settings,
-    definition,
+    stickyMap: definition._ui.stickies,
     nodes,
     metadata,
     ghostNode,
