@@ -64,8 +64,18 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   // did we just select something
   private justSelected = false;
 
-  private onDragThrottled: (uuids: string[]) => void = throttle(this.props.onDragging, 300);
-  private onMouseThrottled: (event: any) => void = throttle(this.handleMouseMove.bind(this), 10);
+  private onDragThrottled: (uuids: string[]) => void = throttle(this.props.onDragging, 15);
+  private onMouseThrottled: (event: any) => void = throttle(this.handleMouseMove.bind(this), 15);
+  private onMouseCanvasThrottled: (event: any) => void = throttle(
+    this.handleMouseMoveCanvas.bind(this),
+    100
+  );
+  private onUpdatePositionsThrottled: (
+    pageX: number,
+    pageY: number,
+    clientY: number,
+    snap: boolean
+  ) => void = throttle(this.updatePositions.bind(this), 15);
 
   constructor(props: CanvasProps) {
     super(props);
@@ -397,7 +407,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       this.lastY = event.pageY;
       this.updateStateWithScroll(event.clientY, event.pageY);
       if (this.state.dragUUID) {
-        this.updatePositions(event.pageX, event.pageY, event.clientY, false);
+        this.onUpdatePositionsThrottled(event.pageX, event.pageY, event.clientY, false);
       }
       return;
     }
@@ -438,7 +448,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     }
 
     if (this.state.dragUUID) {
-      this.updatePositions(event.pageX, event.pageY, event.clientY, false);
+      this.onUpdatePositionsThrottled(event.pageX, event.pageY, event.clientY, false);
     }
   }
 
@@ -454,7 +464,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       this.isScrolling = window.setInterval(() => {
         if (this.lastX && this.lastY) {
           // as we scroll we need to move our dragged items along with us
-          this.updatePositions(this.lastX, this.lastY + speed, 0, false);
+          this.onUpdatePositionsThrottled(this.lastX, this.lastY + speed, 0, false);
           window.scrollBy(0, speed);
         }
       }, 30);
@@ -733,7 +743,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
   private handleDragStop(): void {
     if (this.state.dragUUID) {
-      this.updatePositions(this.lastX!, this.lastY!, 0, true);
+      this.onUpdatePositionsThrottled(this.lastX!, this.lastY!, 0, true);
     }
 
     this.props.onUpdatePositions(this.getSelectedPositions());
@@ -782,7 +792,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
               this.ele = ele;
             }}
             className={styles.canvas}
-            onMouseMove={this.handleMouseMoveCanvas}
+            onMouseMove={this.onMouseCanvasThrottled}
           >
             {this.props.newDragElement}
             {this.props.draggables.map((draggable: CanvasDraggableProps, idx: number) => {
