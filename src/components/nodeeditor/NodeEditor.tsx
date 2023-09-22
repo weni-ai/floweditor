@@ -2,7 +2,7 @@ import { react as bindCallbacks } from 'auto-bind';
 import { getDraggedFrom } from 'components/helpers';
 import Modal from 'components/modal/Modal';
 import { Type } from 'config/interfaces';
-import { Action, AnyAction, FlowDefinition, FlowIssue } from 'flowTypes';
+import { Action, AnyAction, FlowIssue } from 'flowTypes';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -44,7 +44,6 @@ export interface NodeEditorStoreProps {
   assetStore: AssetStore;
   addAsset: AddAsset;
   language: Asset;
-  definition: FlowDefinition;
   translating: boolean;
   typeConfig: Type;
   settings: NodeEditorSettings;
@@ -191,7 +190,7 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
 
 /* istanbul ignore next */
 const mapStateToProps = ({
-  flowContext: { definition, nodes, assetStore, issues },
+  flowContext: { nodes, assetStore, issues },
   editorState: { language, translating },
   nodeEditor: { typeConfig, settings }
 }: AppState) => {
@@ -203,7 +202,6 @@ const mapStateToProps = ({
   return {
     issues: filteredIssues,
     language,
-    definition,
     nodes,
     translating,
     typeConfig,
