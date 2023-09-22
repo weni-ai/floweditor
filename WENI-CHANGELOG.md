@@ -1,3 +1,9 @@
+2.5.0
+----------
+- Feat: Performance improvements
+- Feat: New updates modal content
+- Fix: Prevent completion menu to show on card open
+
 2.4.1
 ----------
 - Fix: Smart cases regex and placeholders
