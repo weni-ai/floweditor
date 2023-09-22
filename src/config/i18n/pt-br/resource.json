@@ -595,19 +595,20 @@
     "single": "Bloco copiado com sucesso"
   },
   "new_updates": {
-    "title": "O Editor de Fluxos tá de cara nova!",
+    "title": "Novidade na área!",
     "description": "O que tem de novo?",
     "news": {
-      "first": "Uma linda interface nova",
-      "second": "Funcionalidade de copiar e colar blocos",
-      "third": "Sidebar com ferramentas (evoluindo)",
-      "fourth": "Possiblidade de criar um novo bloco em qualquer lugar",
+      "first": "O editor está mais rápido",
+      "second": "Dois novos cards para tratamento das respostas de forma 100% inteligente",
+      "third": "Copie e cole qualquer tipo de card sem se preocupar",
+      "fourth": "Bugs corrigidos no componente de seleção nos cards",
       "fifth": "Skin do WhatsApp no simulador"
     },
     "buttons": {
-      "first": "Ignorar",
+      "first": "Fechar",
       "second": "Me mostra tudo"
-    }
+    },
+    "footer": "Fique à vontade para enviar feedbacks sobre sua experiência"
   },
   "guiding": {
     "close_tour": "Fechar tour",
