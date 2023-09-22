@@ -9,7 +9,7 @@ import Simulator from 'components/simulator/Simulator';
 import Sidebar from 'components/sidebar/Sidebar';
 import Sticky, { STICKY_BODY, STICKY_TITLE } from 'components/sticky/Sticky';
 import { ConfigProviderContext, fakePropType } from 'config/ConfigProvider';
-import { FlowMetadata, FlowPosition, StickyNote } from 'flowTypes';
+import { FlowPosition, StickyNote } from 'flowTypes';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -103,7 +103,6 @@ export interface FlowStoreProps {
 
   stickyMap: { [key: string]: StickyNote };
   nodes: { [uuid: string]: RenderNode };
-  metadata: FlowMetadata;
   nodeEditorSettings: NodeEditorSettings;
 
   updateConnection: UpdateConnection;
@@ -516,7 +515,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
 /* istanbul ignore next */
 const mapStateToProps = ({
-  flowContext: { definition, metadata, nodes },
+  flowContext: { definition, nodes },
   editorState: { ghostNode, debug, translating, popped, dragActive },
   // tslint:disable-next-line: no-shadowed-variable
   nodeEditor: { settings }
@@ -525,7 +524,6 @@ const mapStateToProps = ({
     nodeEditorSettings: settings,
     stickyMap: definition._ui.stickies,
     nodes,
-    metadata,
     ghostNode,
     debug,
     translating,

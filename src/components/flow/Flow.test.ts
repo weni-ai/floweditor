@@ -1,22 +1,8 @@
-import {
-  Flow,
-  FlowStoreProps,
-  getDragStyle,
-  ghostNodeSpecId,
-  isDraggingBack,
-  REPAINT_TIMEOUT
-} from 'components/flow/Flow';
-import { getDraggedFrom } from 'components/helpers';
+import { Flow, FlowStoreProps, getDragStyle, isDraggingBack } from 'components/flow/Flow';
 import { FlowTypes } from 'config/interfaces';
 import { createEmptyNode, getFlowComponents } from 'store/helpers';
 import { ConnectionEvent } from 'store/thunks';
-import {
-  composeComponentTestUtils,
-  composeDuxState,
-  getSpecWrapper,
-  mock,
-  setMock
-} from 'testUtils';
+import { composeComponentTestUtils, composeDuxState, mock, setMock } from 'testUtils';
 import { createUUID, merge, set } from 'utils';
 import * as utils from 'utils';
 
@@ -38,10 +24,9 @@ const baseProps: FlowStoreProps = {
   popped: null,
   dragActive: false,
   mergeEditorState: jest.fn(),
-  definition,
   nodeEditorSettings: null,
   nodes: initialNodes,
-  metadata: null,
+  stickyMap: definition._ui.stickies,
   updateConnection: jest.fn(),
   onOpenNodeEditor: jest.fn(),
   onRemoveNodes: jest.fn(),
