@@ -1,3 +1,7 @@
+2.5.1
+----------
+- Fix: Updates modal footer text
+
 2.5.0
 ----------
 - Feat: Performance improvements
