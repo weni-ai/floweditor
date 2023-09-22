@@ -454,7 +454,10 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
           <div className={styles.footer}>
             <span>
-              {i18n.t('new_updates.footer', 'Feel free to send feedback on your experience')}
+              {i18n.t(
+                'new_updates.footer',
+                'Feel free to send feedbacks about your experience clicking on the detective'
+              )}
             </span>
           </div>
         </div>
