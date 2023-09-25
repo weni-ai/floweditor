@@ -114,6 +114,11 @@ $curvature: 10px;
     }
   }
 
+  .content_no_padding {
+    overflow: auto;
+    height: 100%;
+  }
+
   .footer {
     padding: $unnnic-spacing-stack-sm $unnnic-spacing-inline-md $unnnic-spacing-stack-lg $unnnic-spacing-inline-md;
     border-bottom-left-radius: $curvature;
