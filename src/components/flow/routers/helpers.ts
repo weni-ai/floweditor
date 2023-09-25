@@ -112,7 +112,7 @@ export const isRelativeDate = (operatorType: Operators): boolean => {
 
 const isCategoryMatch = (cat: Category, kase: CaseProps) => {
   // see if we have the same name
-  return cat.name.toLowerCase().trim() === kase.categoryName.trim().toLowerCase();
+  return cat.name.trim() === kase.categoryName.trim();
 };
 
 /**
