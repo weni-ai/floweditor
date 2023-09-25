@@ -258,7 +258,7 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
             />
           ) : null}
         </div>
-        <div className={this.props.noPadding ? '' : styles.content}>
+        <div className={this.props.noPadding ? styles.content_no_padding : styles.content}>
           {this.state.activeTab > -1
             ? this.props.tabs![this.state.activeTab].body
             : this.props.children}
