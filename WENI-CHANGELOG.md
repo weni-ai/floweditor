@@ -1,3 +1,9 @@
+2.5.2
+----------
+- Fix: Align updates modal footer text
+- Fix: Simulator webhook log height
+- Fix: Allow different letters cases in category name
+
 2.5.1
 ----------
 - Fix: Updates modal footer text
