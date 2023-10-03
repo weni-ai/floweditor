@@ -1,13 +1,6 @@
 import { FlowPosition } from 'flowTypes';
 import { CanvasPositions } from 'store/editor';
-import {
-  MAX_REFLOW_ATTEMPTS,
-  NODE_SPACING,
-  set,
-  snapPositionToGrid,
-  timeEnd,
-  timeStart
-} from 'utils';
+import { MAX_REFLOW_ATTEMPTS, NODE_SPACING, set, timeEnd, timeStart } from 'utils';
 
 const mutate = require('immutability-helper');
 

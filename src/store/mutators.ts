@@ -23,7 +23,7 @@ import {
 import { assetListToMap, detectLoops, getActionIndex, getExitIndex, getNode } from 'store/helpers';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import { LocalizationUpdates } from 'store/thunks';
-import { createUUID, merge, push, set, snakify, snapToGrid, splice, unset } from 'utils';
+import { createUUID, merge, push, set, snakify, splice, unset } from 'utils';
 
 const mutate = require('immutability-helper');
 
