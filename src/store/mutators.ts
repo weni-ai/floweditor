@@ -457,10 +457,6 @@ export const updatePosition = (
   // make sure we are on the grid
   let adjusted = { left, top };
 
-  if (snap) {
-    adjusted = snapToGrid(left, top);
-  }
-
   return mutate(nodes, {
     [nodeUUID]: {
       ui: {
@@ -491,10 +487,6 @@ export const updateStickyNotePosition = (
 
   // make sure we are on the grid
   let adjusted = { left, top };
-
-  if (snap) {
-    adjusted = snapToGrid(left, top);
-  }
 
   return mutate(definition, {
     _ui: {

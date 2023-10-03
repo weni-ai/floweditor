@@ -24,6 +24,7 @@ import { createClickHandler, getLocalization } from 'utils';
 import styles from './Action.module.scss';
 import { hasIssues } from 'components/flow/helpers';
 import MountScroll from 'components/mountscroll/MountScroll';
+import { MouseState } from 'store/editor';
 
 export interface ActionWrapperPassedProps {
   first: boolean;
@@ -42,6 +43,7 @@ export interface ActionWrapperStoreProps {
   removeAction: ActionAC;
   moveActionUp: ActionAC;
   scrollToAction: string;
+  mouseState: MouseState;
 }
 
 export type ActionWrapperProps = ActionWrapperPassedProps & ActionWrapperStoreProps;
@@ -68,16 +70,18 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
   }
 
   public handleActionClicked(event: React.MouseEvent<HTMLElement>): void {
-    const target = event.target as any;
+    if (this.props.mouseState !== MouseState.DRAGGING) {
+      const target = event.target as any;
 
-    const showAdvanced =
-      target && target.attributes && target.getAttribute('data-advanced') === 'true';
+      const showAdvanced =
+        target && target.attributes && target.getAttribute('data-advanced') === 'true';
 
-    this.props.onOpenNodeEditor({
-      originalNode: this.props.renderNode,
-      originalAction: this.props.action,
-      showAdvanced
-    });
+      this.props.onOpenNodeEditor({
+        originalNode: this.props.renderNode,
+        originalAction: this.props.action,
+        showAdvanced
+      });
+    }
   }
 
   public handleRemoval(): void {
@@ -225,12 +229,13 @@ const mapStateToProps = ({
   flowContext: {
     definition: { localization }
   },
-  editorState: { language, translating, scrollToAction }
+  editorState: { language, translating, scrollToAction, mouseState }
 }: AppState) => ({
   scrollToAction,
   language,
   translating,
-  localization
+  localization,
+  mouseState
 });
 
 /* istanbul ignore next */

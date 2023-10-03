@@ -82,11 +82,19 @@ export interface EditorState {
 
   currentGuide: string;
   guidingStep: number;
+
+  mouseState: MouseState;
 }
 
 export interface ModalMessage {
   title: string;
   body: string;
+}
+
+export enum MouseState {
+  SELECT = 'select',
+  DRAG = 'drag',
+  DRAGGING = 'dragging'
 }
 
 export const EMPTY_DRAG_STATE: any = {
@@ -127,7 +135,9 @@ export const initialState: EditorState = {
   scrollToAction: null,
 
   currentGuide: null,
-  guidingStep: -1
+  guidingStep: -1,
+
+  mouseState: MouseState.SELECT
 };
 
 // Action Creator

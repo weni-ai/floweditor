@@ -20,7 +20,7 @@ import * as React from 'react';
 import FlipMove from 'react-flip-move';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { DebugState } from 'store/editor';
+import { DebugState, MouseState } from 'store/editor';
 import { AssetMap, RenderNode, Asset } from 'store/flowContext';
 import AppState from 'store/state';
 import {
@@ -81,6 +81,7 @@ export interface NodeStoreProps {
   mergeEditorState: MergeEditorState;
   scrollToNode: string;
   scrollToAction: string;
+  mouseState: MouseState;
 }
 
 export type NodeProps = NodePassedProps & NodeStoreProps;
@@ -133,11 +134,12 @@ export class NodeComp extends React.PureComponent<NodeProps> {
         }
 
         const canvasBounds = canvas.getBoundingClientRect();
+        const scale = canvasBounds.width / canvas.offsetWidth;
 
         // move our ghost node into position
         const width = this.ele.getBoundingClientRect().width;
-        const left = e.pageX - width / 2 - 15 - canvasBounds.left;
-        const top = e.pageY - canvasBounds.top - window.scrollY;
+        const left = (e.pageX - width / 2 - 15 - canvasBounds.left) * (1 / scale);
+        const top = (e.pageY - canvasBounds.top - window.scrollY) * (1 / scale);
         const style = this.ele.style;
         style.left = left + 'px';
         style.top = top + 'px';
@@ -202,9 +204,11 @@ export class NodeComp extends React.PureComponent<NodeProps> {
   // Applies only to router nodes;
   // ./Action/Action handles click logic for Action nodes.
   private onClick(event: React.MouseEvent<HTMLElement>): void {
-    this.props.onOpenNodeEditor({
-      originalNode: this.props.renderNode
-    });
+    if (this.props.mouseState !== MouseState.DRAGGING) {
+      this.props.onOpenNodeEditor({
+        originalNode: this.props.renderNode
+      });
+    }
   }
 
   private handleRemoval(): void {
@@ -493,7 +497,8 @@ const mapStateToProps = (
       activity,
       language,
       scrollToAction,
-      scrollToNode
+      scrollToNode,
+      mouseState
     }
   }: AppState,
   props: NodePassedProps
@@ -531,7 +536,8 @@ const mapStateToProps = (
     renderNode,
     simulating,
     scrollToNode: scrollNode,
-    scrollToAction: scrollAction
+    scrollToAction: scrollAction,
+    mouseState
   };
 };
 

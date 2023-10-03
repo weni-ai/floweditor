@@ -103,12 +103,12 @@ const getFirstCollision = (
 };
 
 const setTop = (position: FlowPosition, newTop: number) => {
-  return snapPositionToGrid({
+  return {
     top: newTop,
     left: position.left,
     bottom: newTop + (position.bottom! - position.top),
     right: position.right
-  });
+  };
 };
 
 /**

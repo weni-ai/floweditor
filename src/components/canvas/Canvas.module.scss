@@ -4,22 +4,18 @@
 $background_offset: ($grid_size / 2) + ($node_padding) + px;
 
 .canvas_container {
-  overflow-x: scroll;
+  overflow: hidden;
   width: 100%;
-  margin-top: -200px;
+  margin-top: -281px;
 }
 
 .canvas_background {
-  padding-top: 60px;
-  padding-left: 130px;
-  margin-right: -20px;
-
   background-color: $unnnic-color-background-snow;
-  background-position: 0px 0px;
+  background-position: 0p x 0px;
   background-image: radial-gradient(
     circle at center,
-    $unnnic-color-neutral-clean 0,
-    $unnnic-color-neutral-clean 1px,
+    $unnnic-color-neutral-soft 0,
+    $unnnic-color-neutral-soft 1px,
     $unnnic-color-background-snow 2px,
     $unnnic-color-background-snow 100%);
   background-size: 40px 40px;
@@ -27,8 +23,8 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
 .canvas {
   position: relative;
   width: 100%;
-
-  // margin-top: -40px;
+  overflow: hidden;
+  outline: none;
 }
 
 .canvas:after {
@@ -39,15 +35,6 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   width: 400%;
   left: 100%;
 
-  background-color: $unnnic-color-background-snow;
-  background-position: 0px 0px;
-  background-image: radial-gradient(
-    circle at center,
-    $unnnic-color-neutral-clean 0,
-    $unnnic-color-neutral-clean 1px,
-    $unnnic-color-background-snow 2px,
-    $unnnic-color-background-snow 100%);
-  background-size: 40px 40px;
 }
 
 .drag_selection {
@@ -57,4 +44,74 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   opacity: 0.2;
   pointer-events: none;
   z-index: $z_selection;
+}
+
+
+.cursor_select {
+  cursor: default;
+}
+
+.cursor_drag {
+  cursor: grab;
+}
+
+.cursor_dragging {
+  cursor: grabbing;
+}
+
+.zoom_control {
+  position: fixed;
+  bottom: $unnnic-spacing-giant;
+  left: 36px; 
+  display: inline-flex;
+  align-items: center;
+  gap: $unnnic-spacing-xs;
+
+  border-radius: $unnnic-border-radius-sm;
+  background: #FFF;
+  color: $unnnic-color-neutral-cloudy;
+
+  box-shadow: $unnnic-shadow-level-near;
+
+  .in, .out {
+    display: flex;
+    width: $unnnic-spacing-xl;
+    height: $unnnic-spacing-xl;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $unnnic-spacing-xs;
+    background: #FFF;
+    font-size: $unnnic-font-size-title-md;
+    cursor: pointer;
+
+    &:hover {
+      background: $unnnic-color-neutral-light;
+    }
+
+    &:active {
+      background: $unnnic-color-neutral-soft;
+    }
+
+    span {
+      padding:  $unnnic-spacing-xs;
+    }
+  }
+
+  .percentage {
+    display: flex;
+    width: 44px;
+    padding: $unnnic-spacing-nano;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    font-family: $unnnic-font-family-secondary;
+    font-size: $unnnic-font-size-body-gt;
+    line-height: 24px; /* 166.667% */
+
+    span {
+      font-size: 18px;
+    }
+  }
 }
