@@ -41,15 +41,7 @@ import {
   updateSticky,
   UpdateSticky
 } from 'store/thunks';
-import {
-  createUUID,
-  isRealValue,
-  NODE_PADDING,
-  renderIf,
-  snapToGrid,
-  timeEnd,
-  timeStart
-} from 'utils';
+import { createUUID, isRealValue, NODE_PADDING, renderIf, timeEnd, timeStart } from 'utils';
 import Debug from 'utils/debug';
 
 import { PopTabType } from 'config/interfaces';

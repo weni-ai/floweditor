@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { DragEvent } from 'services/Plumber';
 import { DispatchWithState, UpdateSticky, updateSticky } from 'store/thunks';
-import { CONFIRMATION_TIME, QUIET_NOTE, snapToGrid } from 'utils';
+import { CONFIRMATION_TIME, QUIET_NOTE } from 'utils';
 
 import styles from './Sticky.module.scss';
 import i18n from 'config/i18n';
