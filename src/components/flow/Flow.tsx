@@ -14,7 +14,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Plumber from 'services/Plumber';
-import { DragSelection, DebugState } from 'store/editor';
+import { DragSelection, DebugState, MouseState } from 'store/editor';
 import { RenderNode } from 'store/flowContext';
 import { detectLoops, getOrderedNodes } from 'store/helpers';
 import { NodeEditorSettings } from 'store/nodeEditor';
@@ -98,6 +98,7 @@ export interface FlowStoreProps {
   translating: boolean;
   popped: string;
   dragActive: boolean;
+  mouseState: MouseState;
 
   mergeEditorState: MergeEditorState;
 
@@ -184,9 +185,10 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   }
 
   public componentDidMount(): void {
-    this.Plumber.bind('connection', (event: ConnectionEvent) =>
-      this.props.updateConnection(event.sourceId, event.targetId)
-    );
+    this.Plumber.bind('connection', (event: ConnectionEvent) => {
+      this.props.updateConnection(event.sourceId, event.targetId);
+    });
+
     this.Plumber.bind('beforeDrag', (event: ConnectionEvent) => {
       this.beforeConnectionDrag(event);
     });
@@ -245,8 +247,10 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
       this.Plumber.connect(dragPoint.nodeUUID + ':' + dragPoint.exitUUID, ghostNode.node.uuid);
 
       // Save our position for later
-      const { left, top } = (this.ghost &&
-        snapToGrid(this.ghost.ele.offsetLeft, this.ghost.ele.offsetTop)) || { left: 0, top: 0 };
+      const { left, top } = (this.ghost && {
+        left: this.ghost.ele.offsetLeft,
+        top: this.ghost.ele.offsetTop
+      }) || { left: 0, top: 0 };
 
       this.props.ghostNode.ui.position = { left, top };
 
@@ -383,7 +387,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   private handleDoubleClick(position: FlowPosition): void {
     const { left, top } = position;
     this.props.updateSticky(createUUID(), {
-      position: snapToGrid(left - 90 + NODE_PADDING, top - 40),
+      position: { left: left - 90 + NODE_PADDING, top: top - 40 },
       title: STICKY_TITLE,
       body: STICKY_BODY
     });
@@ -400,11 +404,28 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   }
 
   public handleCanvasLoaded(): void {
-    this.Plumber.setContainer('canvas');
+    this.Plumber.setContainer('panzoom');
   }
 
   private callCanvasCopy(): void {
     this.canvas.current.manuallyCopy();
+  }
+
+  private callCanvasCreateNode(node: RenderNode): void {
+    this.canvas.current.manuallyCreateNode(node, (newNode: RenderNode) => {
+      this.props.onOpenNodeEditor({
+        originalNode: newNode,
+        originalAction: newNode.node.actions[0]
+      });
+    });
+  }
+
+  private handleZoom(scale: number) {
+    this.Plumber.setZoom(scale);
+  }
+
+  private handleMouseStateChange(mouseState: MouseState): void {
+    this.props.mergeEditorState({ mouseState });
   }
 
   private startGuiding() {
@@ -501,7 +522,12 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
         {this.getSimulator()}
         {this.getNodeEditor()}
 
-        <Sidebar onCopyClick={() => this.callCanvasCopy()} />
+        <Sidebar
+          mouseState={this.props.mouseState}
+          onCopyClick={() => this.callCanvasCopy()}
+          onCreateNode={(node: RenderNode) => this.callCanvasCreateNode(node)}
+          onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
+        />
 
         <Canvas
           ref={this.canvas}
@@ -519,6 +545,9 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           onLoaded={this.handleCanvasLoaded}
           nodes={this.props.nodes}
           updateNodesEditor={this.props.updateNodesEditor}
+          onZoom={this.handleZoom}
+          mouseState={this.props.mouseState}
+          onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
         ></Canvas>
         <div id="activity_recent_messages"></div>
       </div>
@@ -529,8 +558,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 /* istanbul ignore next */
 const mapStateToProps = ({
   flowContext: { definition, nodes },
-  editorState: { ghostNode, debug, translating, popped, dragActive },
-  // tslint:disable-next-line: no-shadowed-variable
+  editorState: { ghostNode, debug, translating, popped, dragActive, mouseState },
   nodeEditor: { settings }
 }: AppState) => {
   return {
@@ -541,7 +569,8 @@ const mapStateToProps = ({
     debug,
     translating,
     popped,
-    dragActive
+    dragActive,
+    mouseState
   };
 };
 

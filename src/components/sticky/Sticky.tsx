@@ -94,7 +94,7 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
 
   public handleDragStop(event: DragEvent): void {
     // snap us to the same grid
-    const { left, top } = snapToGrid(event.finalPos[0], event.finalPos[1]);
+    const { left, top } = { left: event.finalPos[0], top: event.finalPos[1] };
     this.ele.style.left = `${left}px`;
     this.ele.style.top = `${top}px`;
 

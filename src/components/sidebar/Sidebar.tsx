@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom';
 import { fakePropType } from 'config/ConfigProvider';
-import { FlowPosition } from 'flowTypes';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -21,6 +20,7 @@ import styles from './Sidebar.module.scss';
 // @ts-ignore
 import { unnnicModalNext, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
 import GuidingSteps from 'components/guidingsteps/GuidingSteps';
+import { MouseState } from 'store/editor';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon);
 const UnnnicTooltip = applyVueInReact(unnnicToolTip);
@@ -41,12 +41,15 @@ const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
 
 export interface SidebarStoreProps {
   onCopyClick: () => void;
+  onCreateNode: (node: RenderNode) => void;
+  onMouseStateChange: (mouseState: MouseState) => void;
   selectionActive: boolean;
   nodes: { [uuid: string]: RenderNode };
   onOpenNodeEditor: OnOpenNodeEditor;
   guidingStep: number;
   currentGuide: string;
   mergeEditorState: MergeEditorState;
+  mouseState: MouseState;
 }
 
 export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
@@ -61,25 +64,13 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 
     const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
 
-    emptyNode.ui.position = this.getNewNodePosition();
-
-    this.props.onOpenNodeEditor({
-      originalNode: emptyNode,
-      originalAction: emptyNode.node.actions[0]
-    });
+    this.props.onCreateNode(emptyNode);
   }
 
   public componentDidMount(): void {
     if (Object.keys(this.props.nodes).length === 0) {
       // this.showGetStartedModal();
     }
-  }
-
-  private getNewNodePosition(): FlowPosition {
-    return {
-      top: window.scrollY,
-      left: window.scrollX
-    };
   }
 
   private showGetStartedModal(): void {
@@ -143,9 +134,35 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
     this.props.onCopyClick();
   }
 
+  private toggleMouseState(): void {
+    const mouseState =
+      this.props.mouseState === MouseState.SELECT ? MouseState.DRAG : MouseState.SELECT;
+
+    this.props.onMouseStateChange(mouseState);
+  }
+
   public render(): JSX.Element {
     return (
       <div className={styles.sidebar}>
+        <UnnnicTooltip
+          enabled={this.props.guidingStep !== 0}
+          side="right"
+          text={
+            this.props.mouseState === MouseState.SELECT
+              ? i18n.t('select', 'Select')
+              : i18n.t('drag', 'Drag')
+          }
+          shortcutText={this.props.mouseState === MouseState.SELECT ? 'V' : 'H'}
+        >
+          <div className={styles.option} onClick={() => this.toggleMouseState()}>
+            {this.props.mouseState === MouseState.SELECT ? (
+              <span className="material-symbols-outlined">near_me</span>
+            ) : (
+              <span className="material-symbols-outlined">back_hand</span>
+            )}
+          </div>
+        </UnnnicTooltip>
+
         <GuidingSteps
           guide="v2"
           step={0}
