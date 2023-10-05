@@ -10,14 +10,16 @@ import i18n from 'config/i18n';
 import { CanvasPositions, DragSelection, MouseState } from 'store/editor';
 import { addPosition } from 'store/helpers';
 import { MergeEditorState } from 'store/thunks';
-import { COLLISION_FUDGE, throttle } from 'utils';
+import { COLLISION_FUDGE, getOS, throttle } from 'utils';
 
 import styles from './Canvas.module.scss';
 import nodesCopy from '../../components/copyAndPasteNodes';
 import { RenderNode } from '../../store/flowContext';
 
+import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
-import { unnnicCallAlert } from '@weni/unnnic-system';
+import { unnnicCallAlert, unnnicToolTip } from '@weni/unnnic-system';
+const UnnnicTooltip = applyVueInReact(unnnicToolTip);
 
 export const CANVAS_PADDING = 300;
 export const REFLOW_QUIET = 200;
@@ -1017,18 +1019,26 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
             </div>
 
             {this.panzoomInstance && (
-              <div className={styles.zoom_control}>
-                <div className={styles.out} onClick={() => this.handleZoomClick(0)}>
-                  <span className="material-symbols-outlined">remove</span>
+              <UnnnicTooltip
+                className={styles.zoom_tooltip}
+                text="Zoom"
+                enabled={true}
+                side="top"
+                shortcutText={(getOS() === 'Macintosh' ? 'Cmd' : 'Ctrl') + ' + Scroll'}
+              >
+                <div className={styles.zoom_control}>
+                  <div className={styles.out} onClick={() => this.handleZoomClick(0)}>
+                    <span className="material-symbols-outlined">remove</span>
+                  </div>
+                  <div className={styles.percentage}>
+                    {this.state.currentZoom}
+                    <span className="material-symbols-outlined">percent</span>
+                  </div>
+                  <div className={styles.in} onClick={() => this.handleZoomClick(1)}>
+                    <span className="material-symbols-outlined">add</span>
+                  </div>
                 </div>
-                <div className={styles.percentage}>
-                  {this.state.currentZoom}
-                  <span className="material-symbols-outlined">percent</span>
-                </div>
-                <div className={styles.in} onClick={() => this.handleZoomClick(1)}>
-                  <span className="material-symbols-outlined">add</span>
-                </div>
-              </div>
+              </UnnnicTooltip>
             )}
           </div>
         </div>
