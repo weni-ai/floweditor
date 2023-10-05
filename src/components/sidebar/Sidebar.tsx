@@ -152,7 +152,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
               ? i18n.t('select', 'Select')
               : i18n.t('drag', 'Drag')
           }
-          shortcutText={this.props.mouseState === MouseState.SELECT ? 'V' : 'H'}
+          shortcutText={'V'}
         >
           <div className={styles.option} onClick={() => this.toggleMouseState()}>
             {this.props.mouseState === MouseState.SELECT ? (
