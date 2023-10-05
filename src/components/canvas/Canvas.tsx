@@ -52,20 +52,23 @@ interface CanvasState {
   uuid: string;
   positions: CanvasPositions;
   selected: CanvasPositions;
-  height: number;
   currentZoom: number;
 }
 
 export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   private ele!: HTMLDivElement;
   private canvasBg!: HTMLDivElement;
-  private isScrolling: any;
+  private isScrollingY: any;
+  private isScrollingX: any;
 
   private reflowTimeout: any;
 
   // when auto scrolling we need to move dragged elements
   private lastX!: number | null;
   private lastY!: number | null;
+
+  private lastCanvasX!: number | null;
+  private lastCanvasY!: number | null;
 
   private mouseX: number;
   private mouseY: number;
@@ -84,25 +87,18 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   private updatePositionsThrottled: (
     pageX: number,
     pageY: number,
-    clientY: number,
-    snap: boolean
+    clientY: number
   ) => void = throttle(this.updatePositions.bind(this), 15);
 
   constructor(props: CanvasProps) {
     super(props);
 
-    let height = document.documentElement.clientHeight;
-
     const positions: { [uuid: string]: FlowPosition } = {};
     this.props.draggables.forEach((draggable: CanvasDraggableProps) => {
       positions[draggable.uuid] = draggable.position;
-      if (draggable.position.bottom) {
-        height = Math.max(height, draggable.position.bottom + CANVAS_PADDING);
-      }
     });
 
     this.state = {
-      height,
       dragDownPosition: null,
       dragUUID: null,
       dragGroup: false,
@@ -116,11 +112,6 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     bindCallbacks(this, {
       include: [/^handle/, /^render/, /^mark/, /^do/, /^ensure/]
     });
-  }
-
-  private handleWindowResize(): void {
-    const windowHeight = document.documentElement.clientHeight;
-    this.setState({ height: Math.max(windowHeight, this.state.height) });
   }
 
   public manuallyCopy() {
@@ -143,10 +134,13 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
   public componentDidMount(): void {
     /* istanbul ignore next */
-    window.addEventListener('resize', this.handleWindowResize);
     document.addEventListener('keydown', this.handleKeyDown);
     document.addEventListener('keyup', this.handleKeyUp);
     window.addEventListener('keydown', this.handleWindowKeyDown);
+    this.ele.addEventListener('keydown', this.handleCanvasKeyDown);
+    this.ele.addEventListener('wheel', this.handleMouseWheel, {
+      passive: true
+    });
 
     window.document.addEventListener('copy', event => {
       if (Object.keys(this.state.selected).length === 0) {
@@ -274,13 +268,17 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
     this.panzoomInstance = panzoom(canvas, {
       maxZoom: 1,
-      minZoom: 0.25,
+      minZoom: 0.15,
       beforeMouseDown: () => {
         var shouldIgnore = this.isInSelectState();
         return shouldIgnore;
       },
       onDoubleClick: function() {
         return false;
+      },
+      beforeWheel: function(e) {
+        var shouldIgnore = !e.ctrlKey;
+        return shouldIgnore;
       },
       zoomDoubleClickSpeed: 1
     });
@@ -372,6 +370,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     return filteredInboundConnections;
   }
 
+  private handleMouseWheel(event: any) {
+    if (event.ctrlKey) return;
+    const transforms = this.panzoomInstance.getTransform();
+    this.panzoomInstance.smoothMoveTo(transforms.x - event.deltaX, transforms.y - event.deltaY);
+  }
+
   private handleKeyDown(event: any): void {
     if (this.state.selected && (event.key === 'Backspace' || event.key === 'Delete')) {
       const nodeUUIDs = Object.keys(this.state.selected);
@@ -379,13 +383,15 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         this.props.onRemoveNodes(Object.keys(this.state.selected));
       }
     }
+  }
 
-    if (event.key === 'h') {
-      this.props.onMouseStateChange(MouseState.DRAG);
-    }
-
+  private handleCanvasKeyDown(event: any) {
     if (event.key === 'v') {
-      this.props.onMouseStateChange(MouseState.SELECT);
+      if (this.props.mouseState === MouseState.SELECT) {
+        this.props.onMouseStateChange(MouseState.DRAG);
+      } else {
+        this.props.onMouseStateChange(MouseState.SELECT);
+      }
     }
 
     if (event.key === ' ' || event.key === 'Space') {
@@ -413,8 +419,11 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   }
 
   public componentWillUnmount(): void {
-    window.removeEventListener('resize', this.handleWindowResize);
     document.removeEventListener('keydown', this.handleKeyDown);
+    document.removeEventListener('keyup', this.handleKeyUp);
+    window.removeEventListener('keydown', this.handleWindowKeyDown);
+    this.ele.removeEventListener('keydown', this.handleCanvasKeyDown);
+    this.ele.removeEventListener('wheel', this.handleMouseWheel);
   }
 
   public componentDidUpdate(prevProps: CanvasProps, prevState: CanvasState): void {
@@ -446,8 +455,6 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     if (updated) {
       this.setState({ positions: updatedPositions });
     }
-
-    this.ensureCanvasHeight();
 
     let selectionActive = false;
     if (this.state.selected && Object.keys(this.state.selected).length > 0) {
@@ -533,8 +540,9 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       if (this.props.draggingNew) {
         this.lastX = event.pageX;
         this.lastY = event.pageY;
+        this.updateStateWithScroll(event.clientX, event.clientY);
         if (this.state.dragUUID) {
-          this.updatePositionsThrottled(event.pageX, event.pageY, event.clientY, false);
+          this.updatePositions(event.pageX, event.pageY, event.clientX, event.clientY);
         }
         return;
       }
@@ -578,25 +586,34 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       }
 
       if (this.state.dragUUID) {
-        this.updatePositionsThrottled(event.pageX, event.pageY, event.clientY, false);
+        this.updatePositions(event.pageX, event.pageY, event.clientX, event.clientY);
       }
     }
   }
 
-  private scrollCanvas(amount: number): void {
-    if (!this.isScrolling) {
-      this.isScrolling = true;
+  private scrollCanvasY(amount: number): void {
+    if (!this.isScrollingY) {
+      this.isScrollingY = true;
 
-      let speed = amount;
-      if (window.scrollY + amount < 0) {
-        speed = 0;
-      }
-
-      this.isScrolling = window.setInterval(() => {
+      this.isScrollingY = window.setInterval(() => {
         if (this.lastX && this.lastY) {
           // as we scroll we need to move our dragged items along with us
-          this.updatePositionsThrottled(this.lastX, this.lastY + speed, 0, false);
-          window.scrollBy(0, speed);
+          this.panzoomInstance.moveBy(0, amount, false);
+          this.updatePositions(this.lastX, this.lastY, 0, 0, 0, amount);
+        }
+      }, 30);
+    }
+  }
+
+  private scrollCanvasX(amount: number): void {
+    if (!this.isScrollingX) {
+      this.isScrollingX = true;
+
+      this.isScrollingX = window.setInterval(() => {
+        if (this.lastX && this.lastY) {
+          // as we scroll we need to move our dragged items along with us
+          this.panzoomInstance.moveBy(amount, 0, false);
+          this.updatePositions(this.lastX, this.lastY, 0, 0, 0, amount);
         }
       }, 30);
     }
@@ -668,25 +685,10 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           });
 
           return {
-            positions: newPositions,
-            height: Math.max(newPosition.bottom + CANVAS_PADDING, prevState.height)
+            positions: newPositions
           };
         }, this.markReflow);
       }
-    }
-  }
-
-  public ensureCanvasHeight() {
-    let height = this.state.height;
-    Object.keys(this.state.positions).forEach(uuid => {
-      const bottom = this.state.positions[uuid].bottom + CANVAS_PADDING;
-      if (bottom > height) {
-        height = bottom;
-      }
-    });
-
-    if (height > this.state.height) {
-      this.setState({ height });
     }
   }
 
@@ -746,43 +748,64 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
   /**
    * Updates the state of the canvas, expanding and scrolling as needed
+   * @param windowX the mouse position in the viewport
    * @param windowY the mouse position in the viewport
-   * @param pageY the mouse position in the full canvas
    * @param otherState optional state to set
    */
   private updateStateWithScroll(
+    windowX: number,
     windowY: number,
-    pageY: number,
     otherState: Partial<CanvasState> = {}
   ): void {
     const viewportHeight = document.documentElement.clientHeight;
+    const viewportWidth = document.documentElement.clientWidth;
+    const MARGIN = 100;
+
     this.setState(
-      (prevState: CanvasState) => {
-        return {
-          ...(otherState as CanvasState),
-          height: Math.max(pageY + CANVAS_PADDING, prevState.height)
-        };
+      {
+        ...(otherState as CanvasState)
       },
       () => {
         // check if we need to scroll our canvas
 
-        if (!this.isScrolling && windowY !== 0) {
-          if (windowY + 100 > viewportHeight) {
-            this.scrollCanvas(15);
-          } else if (windowY < 100) {
-            this.scrollCanvas(-15);
+        if (!this.isScrollingY && windowY !== 0) {
+          if (windowY + MARGIN > viewportHeight) {
+            this.scrollCanvasY(-15);
+          } else if (windowY < MARGIN) {
+            this.scrollCanvasY(+15);
           }
         }
         // if we are scrolling but given a clientY then user is mousing
-        else if (windowY !== 0 && (windowY > 100 && windowY + 100 < viewportHeight)) {
-          window.clearInterval(this.isScrolling);
-          this.isScrolling = null;
+        else if (windowY !== 0 && (windowY > MARGIN && windowY + MARGIN < viewportHeight)) {
+          window.clearInterval(this.isScrollingY);
+          this.isScrollingY = null;
+        }
+
+        if (!this.isScrollingX && windowX !== 0) {
+          if (windowX + MARGIN > viewportWidth) {
+            this.scrollCanvasX(-15);
+          } else if (windowX < MARGIN) {
+            this.scrollCanvasX(+15);
+          }
+        }
+        // if we are scrolling but given a clientX then user is mousing
+        else if (windowX !== 0 && (windowX > MARGIN && windowX + MARGIN < viewportWidth)) {
+          window.clearInterval(this.isScrollingX);
+          this.isScrollingX = null;
         }
       }
     );
   }
 
-  private updatePositions(pageX: number, pageY: number, clientY: number, snap: boolean): void {
+  private updatePositions(
+    pageX: number,
+    pageY: number,
+    clientX: number,
+    clientY: number,
+    scrollX: number = 0,
+    scrollY: number = 0
+  ): void {
+    console.log('called updatePosition', pageX, pageY, clientX, clientY, scrollX, scrollY);
     if (this.state.dragUUID) {
       const { dragUUID } = this.state;
 
@@ -794,20 +817,23 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         ? this.state.selected[dragUUID]
         : this.state.positions[dragUUID];
 
-      const offset = this.ele.getBoundingClientRect();
-      const { transformScale } = this.getTransformOffsets();
+      const { transformOffsetX, transformOffsetY, transformScale } = this.getTransformOffsets();
+      const [canvasDiffX, canvasDiffY] = [
+        this.lastCanvasX - transformOffsetX,
+        this.lastCanvasY - transformOffsetY
+      ];
 
       if (this.state.dragDownPosition) {
         const xd =
-          (pageX - offset.left - this.state.dragDownPosition.left - startPosition.left) *
+          (pageX - this.state.dragDownPosition.left - startPosition.left + canvasDiffX) *
           (1 / transformScale);
 
         const yd =
           (pageY -
-            offset.top -
             this.state.dragDownPosition.top -
             startPosition.top -
-            window.scrollY) *
+            window.scrollY +
+            canvasDiffY) *
           (1 / transformScale);
 
         let lowestNode: number | undefined = 0;
@@ -830,7 +856,9 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
             $merge: newPositions
           });
 
-          this.setState({ positions: newPositions });
+          this.updateStateWithScroll(clientX, clientY, {
+            positions: newPositions
+          });
 
           if (uuids.length <= 5) {
             this.props.onDragging(uuids);
@@ -865,6 +893,10 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         top: position.top - offset.top - window.scrollY
       }
     });
+
+    const { transformOffsetX, transformOffsetY } = this.getTransformOffsets();
+    this.lastCanvasX = transformOffsetX;
+    this.lastCanvasY = transformOffsetY;
   }
 
   /** Gets all the positions for nodes that were dragged */
@@ -877,7 +909,10 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
   private handleDragStop(): void {
     if (this.state.dragUUID) {
-      this.updatePositionsThrottled(this.lastX!, this.lastY!, 0, true);
+      this.updatePositions(this.lastX!, this.lastY!, 0, 0);
+
+      this.lastCanvasX = null;
+      this.lastCanvasY = null;
     }
 
     this.props.onUpdatePositions(this.getSelectedPositions());
@@ -950,7 +985,6 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         >
           <div
             data-testid="canvas"
-            style={{ height: this.state.height }}
             id="canvas"
             ref={(ele: HTMLDivElement) => {
               this.ele = ele;
