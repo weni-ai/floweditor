@@ -325,7 +325,7 @@ export const unset = (val: any): Query<any> => ({ $unset: val });
 export const push = (arr: any[]): Query<any[]> => ({ $push: arr });
 
 // tslint:disable-next-line:array-type
-export const splice = (arr: Array<Array<any>>): Query<Array<Array<any>>> => ({
+export const splice = (arr: any[][]): Query<any[][]> => ({
   $splice: arr
 });
 
@@ -426,7 +426,7 @@ export const copyToClipboard = (text: string) => {
 };
 
 export const throttle = (func: any, timeout: any) => {
-  let ready: boolean = true;
+  let ready = true;
 
   return (...args: any) => {
     if (!ready) {
@@ -483,4 +483,14 @@ export const desnake = (text: string): string => {
 
 export const bool = (prop: boolean) => {
   return prop ? 'true' : null;
+};
+
+export const getOS = () => {
+  var OSName = 'Unknown OS';
+  if (navigator.userAgent.indexOf('Win') !== -1) OSName = 'Windows';
+  if (navigator.userAgent.indexOf('Mac') !== -1) OSName = 'Macintosh';
+  if (navigator.userAgent.indexOf('Linux') !== -1) OSName = 'Linux';
+  if (navigator.userAgent.indexOf('Android') !== -1) OSName = 'Android';
+
+  return OSName;
 };

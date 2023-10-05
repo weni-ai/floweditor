@@ -116,3 +116,9 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
     }
   }
 }
+
+.zoom_tooltip {
+  position: fixed !important;
+  bottom: 85px !important;
+  left: 110px !important;
+}
