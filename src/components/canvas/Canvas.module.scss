@@ -22,6 +22,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
 }
 .canvas {
   position: relative;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   outline: none;
