@@ -11,7 +11,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
 
 .canvas_background {
   background-color: $unnnic-color-background-snow;
-  background-position: 0p x 0px;
+  background-position: 0px 0px;
   background-image: radial-gradient(
     circle at center,
     $unnnic-color-neutral-soft 0,
