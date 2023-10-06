@@ -279,7 +279,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         return false;
       },
       beforeWheel: function(e) {
-        var shouldIgnore = !e.ctrlKey;
+        let shouldIgnore = !e.ctrlKey;
+
+        if (getOS() === 'Mac OS') {
+          shouldIgnore = !e.metaKey;
+        }
+
         return shouldIgnore;
       },
       zoomDoubleClickSpeed: 1
@@ -289,14 +294,6 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       const transform = e.getTransform();
       this.props.onZoom(transform.scale);
       this.canvasBg.style.backgroundSize = `${transform.scale * 40}px ${transform.scale * 40}px`;
-      const spread = transform.scale < 1 ? '1px' : '2px';
-      const bgImage = `radial-gradient(
-        circle at center,
-        #E2E6ED 0,
-        #E2E6ED 1px,
-        #FFFFFF ${spread},
-        #FFFFFF 100%)`;
-      this.canvasBg.style.backgroundImage = bgImage;
       this.setState({ currentZoom: Math.round(transform.scale * 100) });
     });
 
@@ -373,9 +370,13 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   }
 
   private handleMouseWheel(event: any) {
-    if (event.ctrlKey) return;
+    if (getOS() === 'Mac OS') {
+      if (event.metaKey) return;
+    } else {
+      if (event.ctrlKey) return;
+    }
     const transforms = this.panzoomInstance.getTransform();
-    this.panzoomInstance.smoothMoveTo(transforms.x - event.deltaX, transforms.y - event.deltaY);
+    this.panzoomInstance.moveTo(transforms.x - event.deltaX, transforms.y - event.deltaY);
   }
 
   private handleKeyDown(event: any): void {
@@ -601,7 +602,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         if (this.lastX && this.lastY) {
           // as we scroll we need to move our dragged items along with us
           this.panzoomInstance.moveBy(0, amount, false);
-          this.updatePositions(this.lastX, this.lastY, 0, 0, 0, amount);
+          this.updatePositions(this.lastX, this.lastY, 0, 0);
         }
       }, 30);
     }
@@ -615,7 +616,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         if (this.lastX && this.lastY) {
           // as we scroll we need to move our dragged items along with us
           this.panzoomInstance.moveBy(amount, 0, false);
-          this.updatePositions(this.lastX, this.lastY, 0, 0, 0, amount);
+          this.updatePositions(this.lastX, this.lastY, 0, 0);
         }
       }, 30);
     }
@@ -799,15 +800,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     );
   }
 
-  private updatePositions(
-    pageX: number,
-    pageY: number,
-    clientX: number,
-    clientY: number,
-    scrollX: number = 0,
-    scrollY: number = 0
-  ): void {
-    console.log('called updatePosition', pageX, pageY, clientX, clientY, scrollX, scrollY);
+  private updatePositions(pageX: number, pageY: number, clientX: number, clientY: number): void {
     if (this.state.dragUUID) {
       const { dragUUID } = this.state;
 
