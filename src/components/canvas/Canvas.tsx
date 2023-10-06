@@ -812,6 +812,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         ? this.state.selected[dragUUID]
         : this.state.positions[dragUUID];
 
+      const offset = this.ele.getBoundingClientRect();
       const { transformOffsetX, transformOffsetY, transformScale } = this.getTransformOffsets();
       const [canvasDiffX, canvasDiffY] = [
         this.lastCanvasX - transformOffsetX,
@@ -820,11 +821,16 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
       if (this.state.dragDownPosition) {
         const xd =
-          (pageX - this.state.dragDownPosition.left - startPosition.left + canvasDiffX) *
+          (pageX -
+            offset.left -
+            this.state.dragDownPosition.left -
+            startPosition.left +
+            canvasDiffX) *
           (1 / transformScale);
 
         const yd =
           (pageY -
+            offset.top -
             this.state.dragDownPosition.top -
             startPosition.top -
             window.scrollY +
