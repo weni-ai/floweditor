@@ -370,7 +370,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   }
 
   private handleMouseWheel(event: any) {
-    if (getOS() === 'Mac OS') {
+    if (getOS() === 'Macintosh') {
       if (event.metaKey) return;
     } else {
       if (event.ctrlKey) return;
