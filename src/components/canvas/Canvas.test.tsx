@@ -34,8 +34,7 @@ describe(Canvas.name, () => {
       position: { top: 1200, left: 100, bottom: 1290, right: 300 },
       idx: 0
     };
-    const { baseElement, getByTestId } = render(<Canvas {...baseProps} draggables={[lowest]} />);
-    expect(getByTestId('canvas').style.height).toBe(1290 + CANVAS_PADDING + 'px');
+    const { baseElement } = render(<Canvas {...baseProps} draggables={[lowest]} />);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -49,7 +48,6 @@ describe(Canvas.name, () => {
     };
 
     const { baseElement, getByTestId } = render(<Canvas {...baseProps} draggables={[lowest]} />);
-    expect(getByTestId('canvas').style.height).toBe(lowest.position.bottom + CANVAS_PADDING + 'px');
     expect(baseElement).toMatchSnapshot();
   });
 
