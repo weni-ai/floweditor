@@ -143,6 +143,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     this.ele.addEventListener('wheel', this.handleMouseWheel, {
       passive: true
     });
+    window.addEventListener('visibilitychange', () => this.forceCanvasUpdate());
 
     window.document.addEventListener('copy', event => {
       if (Object.keys(this.state.selected).length === 0) {
@@ -264,6 +265,20 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     this.props.onLoaded();
   }
 
+  private forceCanvasUpdate() {
+    if (this.props.mouseState === MouseState.SELECT) {
+      this.props.onMouseStateChange(MouseState.DRAG);
+      setTimeout(() => {
+        this.props.onMouseStateChange(MouseState.SELECT);
+      });
+    } else if (this.props.mouseState === MouseState.DRAG) {
+      this.props.onMouseStateChange(MouseState.SELECT);
+      setTimeout(() => {
+        this.props.onMouseStateChange(MouseState.DRAG);
+      });
+    }
+  }
+
   private loadPanZoom() {
     const canvas = document.getElementById('panzoom');
     const startingNode = this.getStartingNode();
@@ -311,8 +326,9 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     });
 
     if (startingNode.position) {
+      const viewportWidth = document.documentElement.clientWidth;
       this.panzoomInstance.moveTo(
-        TRANSFORM_START_X - startingNode.position.left,
+        viewportWidth / 2 - startingNode.position.left,
         TRANSFORM_START_Y - startingNode.position.top
       );
     }
