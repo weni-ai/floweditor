@@ -1,3 +1,9 @@
+2.6.0
+----------
+- Add pan and zoom functionality
+- Fixed node pasting behavior
+- New connector colors
+
 2.5.2
 ----------
 - Fix: Align updates modal footer text
