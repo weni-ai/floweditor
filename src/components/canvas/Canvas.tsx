@@ -143,7 +143,6 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     this.ele.addEventListener('wheel', this.handleMouseWheel, {
       passive: true
     });
-    window.addEventListener('visibilitychange', () => this.forceCanvasUpdate());
 
     window.document.addEventListener('copy', event => {
       if (Object.keys(this.state.selected).length === 0) {
@@ -265,23 +264,8 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     this.props.onLoaded();
   }
 
-  private forceCanvasUpdate() {
-    if (this.props.mouseState === MouseState.SELECT) {
-      this.props.onMouseStateChange(MouseState.DRAG);
-      setTimeout(() => {
-        this.props.onMouseStateChange(MouseState.SELECT);
-      });
-    } else if (this.props.mouseState === MouseState.DRAG) {
-      this.props.onMouseStateChange(MouseState.SELECT);
-      setTimeout(() => {
-        this.props.onMouseStateChange(MouseState.DRAG);
-      });
-    }
-  }
-
   private loadPanZoom() {
     const canvas = document.getElementById('panzoom');
-    const startingNode = this.getStartingNode();
 
     this.panzoomInstance = panzoom(canvas, {
       maxZoom: 1,
@@ -325,6 +309,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       this.props.onMouseStateChange(MouseState.DRAG);
     });
 
+    const startingNode = this.getStartingNode();
     if (startingNode.position) {
       const viewportWidth = document.documentElement.clientWidth;
       this.panzoomInstance.moveTo(
@@ -1014,7 +999,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
             className={styles.canvas}
             onMouseMove={this.handleMouseMoveCanvas}
           >
-            <div id="panzoom">
+            <div id="panzoom" className={styles.panzoom}>
               {this.props.newDragElement}
               {this.props.draggables.map((draggable: CanvasDraggableProps, idx: number) => {
                 const pos = this.state.positions[draggable.uuid] || draggable.position;
