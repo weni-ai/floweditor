@@ -120,10 +120,10 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 
   private getCopyIconScheme(): string {
     if (!this.props.selectionActive) {
-      return 'neutral-cleanest';
+      return styles.disabled;
     }
 
-    return 'neutral-cloudy';
+    return styles.enabled;
   }
 
   private handleCopyClick(): void {
@@ -156,9 +156,9 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
         >
           <div className={styles.option} onClick={() => this.toggleMouseState()}>
             {this.props.mouseState === MouseState.SELECT ? (
-              <span className="material-symbols-outlined">near_me</span>
+              <span className="material-symbols-rounded">near_me</span>
             ) : (
-              <span className="material-symbols-outlined">back_hand</span>
+              <span className="material-symbols-rounded">back_hand</span>
             )}
           </div>
         </UnnnicTooltip>
@@ -179,7 +179,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             side="right"
           >
             <div className={styles.option} onClick={() => this.createSendMessageNode()}>
-              <UnnnicIcon icon="add-circle-1" />
+              <span className="material-symbols-rounded">add_circle</span>
             </div>
           </UnnnicTooltip>
         </GuidingSteps>
@@ -205,7 +205,9 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
               className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
               onClick={() => this.handleCopyClick()}
             >
-              <UnnnicIcon icon="paginate-filter-text-1" scheme={this.getCopyIconScheme()} />
+              <span className={'material-symbols-rounded' + ' ' + this.getCopyIconScheme()}>
+                content_copy
+              </span>
             </div>
           </UnnnicTooltip>
         </GuidingSteps>

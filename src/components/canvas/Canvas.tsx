@@ -1043,14 +1043,14 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
               >
                 <div className={styles.zoom_control}>
                   <div className={styles.out} onClick={() => this.handleZoomClick(0)}>
-                    <span className="material-symbols-outlined">remove</span>
+                    <span className="material-symbols-rounded">remove</span>
                   </div>
                   <div className={styles.percentage}>
                     {this.state.currentZoom}
-                    <span className="material-symbols-outlined">percent</span>
+                    <span className="material-symbols-rounded">percent</span>
                   </div>
                   <div className={styles.in} onClick={() => this.handleZoomClick(1)}>
-                    <span className="material-symbols-outlined">add</span>
+                    <span className="material-symbols-rounded">add</span>
                   </div>
                 </div>
               </UnnnicTooltip>
