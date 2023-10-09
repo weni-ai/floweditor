@@ -280,7 +280,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       beforeWheel: function(e) {
         let shouldIgnore = !e.ctrlKey;
 
-        if (getOS() === 'Mac OS') {
+        if (getOS() === 'Macintosh') {
           shouldIgnore = !e.metaKey;
         }
 
