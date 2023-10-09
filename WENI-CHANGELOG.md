@@ -1,3 +1,10 @@
+2.6.1
+----------
+- Fix: OS comparison from scroll
+- Fix: Canvas initial connectors position
+- Feat: New Sidebar and Zoom Control icons
+- Feat: Add shift scroll into canvas
+
 2.6.0
 ----------
 - Add pan and zoom functionality
