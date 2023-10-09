@@ -6,10 +6,11 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
 .canvas_container {
   overflow: hidden;
   width: 100%;
-  margin-top: -281px;
+  height: 100%;
 }
 
 .canvas_background {
+  height: 100%;
   background-color: $unnnic-color-background-snow;
   background-position: 0px 0px;
   background-image: radial-gradient(
@@ -22,7 +23,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
 }
 .canvas {
   position: relative;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   outline: none;
@@ -36,6 +37,10 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   width: 400%;
   left: 100%;
 
+}
+
+.panzoom {
+  position: relative;
 }
 
 .drag_selection {

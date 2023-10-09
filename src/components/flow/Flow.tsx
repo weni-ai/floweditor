@@ -510,7 +510,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     const draggables = this.getStickies().concat(nodes);
 
     return (
-      <div>
+      <>
         {this.getSimulator()}
         {this.getNodeEditor()}
 
@@ -542,7 +542,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
         ></Canvas>
         <div id="activity_recent_messages"></div>
-      </div>
+      </>
     );
   }
 }
