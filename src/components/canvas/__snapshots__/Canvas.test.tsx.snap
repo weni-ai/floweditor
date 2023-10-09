@@ -17,6 +17,7 @@ exports[`Canvas adjusts the height when updating dimensions 1`] = `
           tabindex="0"
         >
           <div
+            class="panzoom"
             id="panzoom"
           >
             <div />
@@ -50,6 +51,7 @@ exports[`Canvas initializes the height to the lowest draggable 1`] = `
           tabindex="0"
         >
           <div
+            class="panzoom"
             id="panzoom"
           >
             <div />
@@ -91,6 +93,7 @@ exports[`Canvas render default 1`] = `
           tabindex="0"
         >
           <div
+            class="panzoom"
             id="panzoom"
           >
             <div />
