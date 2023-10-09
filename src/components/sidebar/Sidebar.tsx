@@ -18,11 +18,10 @@ import i18n from 'config/i18n';
 import { applyVueInReact } from 'vuereact-combined';
 import styles from './Sidebar.module.scss';
 // @ts-ignore
-import { unnnicModalNext, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
+import { unnnicModalNext, unnnicToolTip } from '@weni/unnnic-system';
 import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 import { MouseState } from 'store/editor';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
 const UnnnicTooltip = applyVueInReact(unnnicToolTip);
 
 const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
@@ -205,7 +204,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
               className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
               onClick={() => this.handleCopyClick()}
             >
-              <span className={'material-symbols-rounded' + ' ' + this.getCopyIconScheme()}>
+              <span className={'material-symbols-rounded ' + this.getCopyIconScheme()}>
                 content_copy
               </span>
             </div>
