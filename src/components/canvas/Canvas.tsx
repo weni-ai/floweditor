@@ -392,7 +392,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       if (event.ctrlKey) return;
     }
     const transforms = this.panzoomInstance.getTransform();
-    this.panzoomInstance.moveTo(transforms.x - event.deltaX, transforms.y - event.deltaY);
+
+    if (event.shiftKey) {
+      this.panzoomInstance.moveTo(transforms.x - event.deltaY, transforms.y - event.deltaX);
+    } else {
+      this.panzoomInstance.moveTo(transforms.x - event.deltaX, transforms.y - event.deltaY);
+    }
   }
 
   private handleKeyDown(event: any): void {
