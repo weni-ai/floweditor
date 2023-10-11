@@ -1,5 +1,9 @@
 2.6.1
 ----------
+- Fix: Parse float in flow definition loading
+
+2.6.1
+----------
 - Fix: OS comparison from scroll
 - Fix: Canvas initial connectors position
 - Feat: New Sidebar and Zoom Control icons
