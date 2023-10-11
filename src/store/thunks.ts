@@ -326,6 +326,11 @@ export const loadFlowDefinition = (details: FlowDetails, assetStore: AssetStore)
         type: guessNodeType(node)
       };
       currentTop += 150;
+    } else {
+      definition._ui.nodes[node.uuid].position = {
+        left: parseFloat(definition._ui.nodes[node.uuid].position.left as any),
+        top: parseFloat(definition._ui.nodes[node.uuid].position.top as any)
+      };
     }
   }
 
