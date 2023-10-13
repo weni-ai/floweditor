@@ -1,4 +1,9 @@
-2.6.1
+2.6.3
+----------
+- Fix: Language selector and sidebar positions
+- Feat: Remove zeroshot authorization from logevent
+
+2.6.2
 ----------
 - Fix: Parse float in flow definition loading
 
