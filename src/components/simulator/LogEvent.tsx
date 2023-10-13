@@ -12,7 +12,6 @@ import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
 import { unnnicIcon } from '@weni/unnnic-system';
-import { string } from 'prop-types';
 
 const MAP_THUMB = require('static/images/map.jpg');
 
