@@ -395,7 +395,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   }
 
   private handleCanvasKeyDown(event: any) {
-    if (event.key === 'v') {
+    if (event.key === 'v' && !(event.ctrlKey || event.metaKey)) {
       if (this.props.mouseState === MouseState.SELECT) {
         this.props.onMouseStateChange(MouseState.DRAG);
       } else {
