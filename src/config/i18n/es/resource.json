@@ -162,7 +162,8 @@
     "close": "Cerrar",
     "confirm": "Confirme",
     "after": "Después",
-    "later": "Más tarde"
+    "later": "Más tarde",
+    "save": "Guardar"
   },
   "contact_statuses": {
     "active": "Activo",
@@ -428,7 +429,14 @@
     },
     "category_required": "Categoría",
     "ex_smart_argument": "Ej: bueno si positivo",
-    "ex_smart_category": "Positivo"
+    "ex_smart_category": "Positivo",
+    "knowledge_base": "Base de conocimientos",
+    "expression": "Expresión",
+    "knowledge_base_placeholder": "Seleccione una base de conocimientos",
+    "knowledge_base_message": "¿Aún no tienes ninguna base de conocimientos para tu IA?",
+    "knowledge_base_click": "Haga clic aquí",
+    "expression_input": "Insertar una expresión para usar como entrada",
+    "expression_input_placeholder": "Ej: @results.result"
   },
   "issues": {
     "header": "Problemas de Flujo",

@@ -45,6 +45,7 @@ import ResultRouterForm from 'components/flow/routers/result/ResultRouterForm';
 import SubflowRouterForm from 'components/flow/routers/subflow/SubflowRouterForm';
 import WaitRouterForm from 'components/flow/routers/wait/WaitRouterForm';
 import WebhookRouterForm from 'components/flow/routers/webhook/WebhookRouterForm';
+import WeniGPTRouterForm from 'components/flow/routers/wenigpt/WeniGPTRouterForm';
 import {
   FeatureFilter,
   FlowTypes,
@@ -275,6 +276,17 @@ export const typeConfigList: Type[] = [
     localizeableKeys: ['categories', 'cases'],
     aliases: [RouterTypes.smart],
     visibility: VISIBILITY_MESSAGING_INTERACTIVE,
+    new: true
+  },
+  {
+    type: Types.call_wenigpt,
+    name: i18n.t('actions.call_wenigpt.name', 'Call WeniGPT'),
+    description: i18n.t('actions.call_wenigpt.description', 'Call WeniGPT'),
+    form: WeniGPTRouterForm,
+    localization: RouterLocalizationForm,
+    localizeableKeys: ['exits'],
+    component: CallWeniGPTComp,
+    aliases: [Types.split_by_wenigpt],
     new: true
   },
   {

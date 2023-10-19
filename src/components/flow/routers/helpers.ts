@@ -17,7 +17,8 @@ import {
   UIConfig,
   WebhookExitNames,
   CallClassifier,
-  OpenTicket
+  OpenTicket,
+  CallWeniGPT
 } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { createUUID, snakify } from 'utils';
@@ -336,9 +337,16 @@ export const resolveRoutes = (
 };
 
 export const createWebhookBasedNode = (
-  action: CallWebhook | CallResthook | OpenTicket | TransferAirtime | CallExternalService,
+  action:
+    | CallWebhook
+    | CallResthook
+    | OpenTicket
+    | TransferAirtime
+    | CallExternalService
+    | CallWeniGPT,
   originalNode: RenderNode,
-  useCategoryTest: boolean
+  useCategoryTest: boolean,
+  hasOtherExit: boolean = false
 ): RenderNode => {
   const exits: Exit[] = [];
   let cases: Case[] = [];
@@ -388,6 +396,27 @@ export const createWebhookBasedNode = (
         category_uuid: categories[0].uuid
       }
     ];
+
+    // add in our other exit if we need it in between success and failure
+    if (hasOtherExit) {
+      exits.splice(1, 0, {
+        uuid: createUUID(),
+        destination_uuid: null
+      });
+
+      categories.splice(1, 0, {
+        uuid: createUUID(),
+        name: WebhookExitNames.Other,
+        exit_uuid: exits[1].uuid
+      });
+
+      cases.push({
+        uuid: createUUID(),
+        type: Operators.has_category,
+        arguments: [WebhookExitNames.Other],
+        category_uuid: categories[1].uuid
+      });
+    }
   }
 
   let operand = '@results.' + snakify(action.result_name);
@@ -412,6 +441,8 @@ export const createWebhookBasedNode = (
     splitType = Types.split_by_airtime;
   } else if (action.type === Types.call_external_service) {
     splitType = Types.split_by_external_service;
+  } else if (action.type === Types.call_wenigpt) {
+    splitType = Types.split_by_wenigpt;
   }
 
   return createRenderNode(originalNode.node.uuid, router, exits, splitType, [action]);

@@ -588,7 +588,8 @@ export enum StartFlowExitNames {
 
 export enum WebhookExitNames {
   Success = 'Success',
-  Failure = 'Failure'
+  Failure = 'Failure',
+  Other = 'Other'
 }
 
 export enum TransferAirtimeExitNames {

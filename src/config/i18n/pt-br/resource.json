@@ -162,7 +162,8 @@
     "close": "Fechar",
     "confirm": "Confirmar",
     "after": "Depois",
-    "later": "Mais tarde"
+    "later": "Mais tarde",
+    "save": "Salvar"
   },
   "contact_statuses": {
     "active": "Ativo",
@@ -429,7 +430,14 @@
     },
     "category_required": "Categoria",
     "ex_smart_argument": "Ex: bom sim positivo",
-    "ex_smart_category": "Positivo"
+    "ex_smart_category": "Positivo",
+    "knowledge_base": "Base de conhecimento",
+    "expression": "Expressão",
+    "knowledge_base_placeholder": "Escolha uma base de conhecimento",
+    "knowledge_base_message": "Ainda não tem nenhuma base de conhecimento para sua IA?",
+    "knowledge_base_click": "Clique aqui",
+    "expression_input": "Insira uma expressão para usar como entrada",
+    "expression_input_placeholder": "Ex: @results.result"
   },
   "issues": {
     "header": "Problemas no Fluxo",

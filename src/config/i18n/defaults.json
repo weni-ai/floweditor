@@ -154,7 +154,8 @@
     "close": "Close",
     "confirm": "Confirm",
     "after": "After",
-    "later": "Later"
+    "later": "Later",
+    "save": "Save"
   },
   "contact_statuses": {
     "active": "Active",
