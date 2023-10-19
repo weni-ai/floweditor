@@ -17,6 +17,7 @@ Array [
     "flows": "/assets/flows.json",
     "globals": "/assets/globals.json",
     "groups": "/assets/groups.json",
+    "knowledgeBases": "/assets/knowledge_bases.json",
     "labels": "/assets/labels.json",
     "languages": "/assets/languages.json",
     "recents": "/assets/recents.json",

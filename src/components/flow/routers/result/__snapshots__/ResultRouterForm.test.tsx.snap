@@ -264,7 +264,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -274,7 +274,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -284,7 +284,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -294,7 +294,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -304,7 +304,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -314,7 +314,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -324,7 +324,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -334,7 +334,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -344,7 +344,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -354,7 +354,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -364,7 +364,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -374,7 +374,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -384,7 +384,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -394,7 +394,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -404,7 +404,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -414,7 +414,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -424,7 +424,7 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -434,12 +434,22 @@ exports[`ResultRouterForm should render 1`] = `
                   <span
                     class="name"
                   >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="name"
+                  >
                     Split by contact field
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -449,7 +459,7 @@ exports[`ResultRouterForm should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -459,7 +469,7 @@ exports[`ResultRouterForm should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -469,7 +479,7 @@ exports[`ResultRouterForm should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -1277,7 +1287,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -1287,7 +1297,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -1297,7 +1307,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -1307,7 +1317,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -1317,7 +1327,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -1327,7 +1337,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -1337,7 +1347,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -1347,7 +1357,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -1357,7 +1367,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -1367,7 +1377,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -1377,7 +1387,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -1387,7 +1397,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -1397,7 +1407,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -1407,7 +1417,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -1417,7 +1427,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -1427,7 +1437,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -1437,7 +1447,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -1447,12 +1457,22 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <span
                     class="name"
                   >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="name"
+                  >
                     Split by contact field
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -1462,7 +1482,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -1472,7 +1492,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -1482,7 +1502,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"

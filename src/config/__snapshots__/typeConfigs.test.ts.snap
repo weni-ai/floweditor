@@ -128,6 +128,21 @@ Array [
     ],
   },
   Object {
+    "aliases": Array [
+      "split_by_wenigpt",
+    ],
+    "component": [Function],
+    "description": "Call WeniGPT",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "exits",
+    ],
+    "name": "Call WeniGPT",
+    "new": true,
+    "type": "call_wenigpt",
+  },
+  Object {
     "component": [Function],
     "description": "Send somebody else a message",
     "form": [Function],
@@ -607,6 +622,21 @@ Object {
       "voice",
     ],
   },
+  "call_wenigpt": Object {
+    "aliases": Array [
+      "split_by_wenigpt",
+    ],
+    "component": [Function],
+    "description": "Call WeniGPT",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "exits",
+    ],
+    "name": "Call WeniGPT",
+    "new": true,
+    "type": "call_wenigpt",
+  },
   "enter_flow": Object {
     "aliases": Array [
       "split_by_subflow",
@@ -1032,6 +1062,21 @@ Object {
       "messaging_background",
       "voice",
     ],
+  },
+  "split_by_wenigpt": Object {
+    "aliases": Array [
+      "split_by_wenigpt",
+    ],
+    "component": [Function],
+    "description": "Call WeniGPT",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "exits",
+    ],
+    "name": "Call WeniGPT",
+    "new": true,
+    "type": "call_wenigpt",
   },
   "start_session": Object {
     "component": [Function],
