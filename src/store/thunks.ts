@@ -334,11 +334,13 @@ export const loadFlowDefinition = (details: FlowDetails, assetStore: AssetStore)
     }
   }
 
-  for (const stickyUuid of Object.keys(definition._ui.stickies)) {
-    definition._ui.stickies[stickyUuid].position = {
-      left: parseFloat(definition._ui.stickies[stickyUuid].position.left as any),
-      top: parseFloat(definition._ui.stickies[stickyUuid].position.top as any)
-    };
+  if (definition._ui.stickies) {
+    for (const stickyUuid of Object.keys(definition._ui.stickies)) {
+      definition._ui.stickies[stickyUuid].position = {
+        left: parseFloat(definition._ui.stickies[stickyUuid].position.left as any),
+        top: parseFloat(definition._ui.stickies[stickyUuid].position.top as any)
+      };
+    }
   }
 
   // add assets we found in our flow to our asset store
