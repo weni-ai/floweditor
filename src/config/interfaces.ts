@@ -32,6 +32,7 @@ export enum Types {
   call_external_service = 'call_external_service',
   call_resthook = 'call_resthook',
   call_webhook = 'call_webhook',
+  call_wenigpt = 'call_wenigpt',
   open_ticket = 'open_ticket',
   send_msg = 'send_msg',
   send_email = 'send_email',

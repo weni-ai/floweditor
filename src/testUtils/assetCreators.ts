@@ -53,7 +53,8 @@ import {
   WebhookExitNames,
   HintTypes,
   CallClassifier,
-  CallExternalService
+  CallExternalService,
+  CallWeniGPT
 } from 'flowTypes';
 import Localization from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
@@ -349,6 +350,24 @@ export const createSetRunResultAction = ({
   value,
   category,
   type: Types.set_run_result
+});
+
+export const createCallWeniGPTAction = ({
+  uuid = utils.createUUID(),
+  expression = 'Hello',
+  knowledge_base_id = 1,
+  result_name = 'Result'
+}: {
+  uuid?: string;
+  expression?: string;
+  knowledge_base_id?: number;
+  result_name?: string;
+} = {}): CallWeniGPT => ({
+  uuid: uuid,
+  type: Types.call_wenigpt,
+  expression,
+  knowledge_base_id,
+  result_name
 });
 
 export const createWebhookNode = (

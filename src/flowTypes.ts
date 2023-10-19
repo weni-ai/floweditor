@@ -455,6 +455,12 @@ export interface CallWebhook extends Action {
   headers?: Headers;
 }
 
+export interface CallWeniGPT extends Action {
+  knowledge_base_id: number;
+  expression: string;
+  result_name: string;
+}
+
 export interface CallExternalService extends Action {
   external_service: ExternalService;
   call: ServiceCall;

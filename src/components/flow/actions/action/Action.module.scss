@@ -51,7 +51,8 @@
   &.open_ticket,
   &.missing,
   &.enter_flow,
-  &.call_external_service {
+  &.call_external_service,
+  &.call_wenigpt {
     font-family: $unnnic-font-family-secondary;
     font-size: $unnnic-font-size-body-md;
     line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
@@ -66,11 +67,7 @@
     text-underline-offset: 0.1875 * $unnnic-font-size; // 3px
   }
 
-  &.add_contact_groups, &.remove_contact_groups {
-    text-align: center;
-  }
-
-  &.call_classifier {
+  &.add_contact_groups, &.remove_contact_groups, &.call_classifier, &.call_wenigpt {
     text-align: center;
   }
 
