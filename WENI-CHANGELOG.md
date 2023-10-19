@@ -1,3 +1,8 @@
+2.6.4
+----------
+- Fix: parse sticky position on definition load
+- Fix: Paste action changing mouse state
+
 2.6.3
 ----------
 - Fix: Language selector and sidebar positions
