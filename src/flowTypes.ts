@@ -48,6 +48,7 @@ export interface Endpoints {
   external_services_calls: string;
   external_services_calls_base: string;
   completion: string;
+  knowledgeBases: string;
 }
 
 export interface FlowEditorConfig {

@@ -78,7 +78,8 @@ export enum AssetType {
   Template = 'template',
   Ticketer = 'ticketer',
   URN = 'urn',
-  ExternalService = 'external_service'
+  ExternalService = 'external_service',
+  KnowledgeBase = 'knowledge_base'
 }
 
 export interface Reference {

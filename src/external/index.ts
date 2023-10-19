@@ -356,6 +356,12 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
         endpoint: getURL(endpoints.completion),
         type: AssetType.Expression,
         items: {}
+      },
+      knowledgeBases: {
+        endpoint: getURL(endpoints.knowledgeBases),
+        type: AssetType.KnowledgeBase,
+        items: {},
+        id: 'id'
       }
     };
 
@@ -369,7 +375,8 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
       'globals',
       'classifiers',
       'ticketers',
-      'externalServices'
+      'externalServices',
+      'knowledgeBases'
     ].forEach((storeId: string) => {
       const store = assetStore[storeId];
       fetches.push(

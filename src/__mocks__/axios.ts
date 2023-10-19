@@ -13,6 +13,7 @@ const completionResp = require('test/assets/completion.json');
 const externalServicesCalls = require('test/assets/external_services_calls.json');
 const usersResp = require('test/assets/users.json');
 const topicsResp = require('test/assets/topics.json');
+const knowledgeBasesResp = require('test/assets/knowledge_bases.json');
 
 const getEndpoint = (urlStr: string) => {
   const queryIdx = urlStr.indexOf('?');
@@ -67,6 +68,8 @@ axios.get = jest.fn((url: string) => {
       return resolvePromise(usersResp);
     case endpoints.topics:
       return resolvePromise(topicsResp);
+    case endpoints.knowledgeBases:
+      return resolvePromise(knowledgeBasesResp);
     default:
       throw new Error('Axios mock: url not passed. Passed: ' + url);
   }
