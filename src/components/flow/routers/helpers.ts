@@ -17,7 +17,8 @@ import {
   UIConfig,
   WebhookExitNames,
   CallClassifier,
-  OpenTicket
+  OpenTicket,
+  SendWhatsAppProduct
 } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { createUUID, snakify } from 'utils';
@@ -336,7 +337,13 @@ export const resolveRoutes = (
 };
 
 export const createWebhookBasedNode = (
-  action: CallWebhook | CallResthook | OpenTicket | TransferAirtime | CallExternalService,
+  action:
+    | CallWebhook
+    | CallResthook
+    | OpenTicket
+    | TransferAirtime
+    | CallExternalService
+    | SendWhatsAppProduct,
   originalNode: RenderNode,
   useCategoryTest: boolean
 ): RenderNode => {
@@ -412,6 +419,8 @@ export const createWebhookBasedNode = (
     splitType = Types.split_by_airtime;
   } else if (action.type === Types.call_external_service) {
     splitType = Types.split_by_external_service;
+  } else if (action.type === Types.send_msg_catalog) {
+    splitType = Types.split_by_whatsapp_product;
   }
 
   return createRenderNode(originalNode.node.uuid, router, exits, splitType, [action]);

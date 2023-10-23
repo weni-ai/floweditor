@@ -34,6 +34,8 @@ export interface TembaCompletionProps {
   onInput?: (value: string) => void;
   type: string;
   errors?: string[];
+  maxLength?: number;
+  disabled?: boolean;
   expressionsData: {
     functions: CompletionOption[];
     context: CompletionSchema;
@@ -242,6 +244,8 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
               size={this.props.size}
               type={hasErrors ? 'error' : 'normal'}
               errors={this.props.errors}
+              maxLength={this.props.maxLength}
+              disabled={this.props.disabled}
             />
           ) : (
             <UnnnicInputNext
@@ -255,6 +259,8 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
               size={this.props.size}
               type={hasErrors ? 'error' : 'normal'}
               error={this.props.errors && this.props.errors[0]}
+              maxLength={this.props.maxLength}
+              disabled={this.props.disabled}
             />
           )}
           {this.tembaCompletionRef && ref ? (

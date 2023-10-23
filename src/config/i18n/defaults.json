@@ -132,6 +132,12 @@
     "wait_for_video": {
       "description": "Wait for a video",
       "name": "Wait for Video"
+    },
+    "send_msg_catalog": {
+      "automatic_sending": "Automatic sending",
+      "manual_sending": "[[count]] product",
+      "manual_sending_plural": "[[count]] products",
+      "manual_sending_multiple": "+3 products"
     }
   },
   "add": "Add",
@@ -154,7 +160,8 @@
     "close": "Close",
     "confirm": "Confirm",
     "after": "After",
-    "later": "Later"
+    "later": "Later",
+    "save": "Save"
   },
   "contact_statuses": {
     "active": "Active",
