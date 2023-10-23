@@ -37,7 +37,8 @@ export const config: FlowEditorConfig = {
     external_services: '/assets/external_services.json',
     external_services_calls: '/assets/external_services_calls.json',
     external_services_calls_base: '',
-    completion: '/assets/completion.json'
+    completion: '/assets/completion.json',
+    whatsapp_products: '/assets/whatsapp_products.json'
   },
   onChangeLanguage: (code: string, name: string) => {}
 };

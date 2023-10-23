@@ -96,7 +96,6 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
   };
 
   private handleUpdate(keys: UpdateKeys, submitting = false): boolean {
-    console.log('Handle update', keys);
     const updates: Partial<SendWhatsAppProductRouterFormState> = {};
     if (keys.hasOwnProperty('automaticProductSearch')) {
       updates.automaticProductSearch = keys.automaticProductSearch;
@@ -199,7 +198,6 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
   }
 
   public toggleProductViewSettings() {
-    console.log('toggling');
     this.setState({ showProductViewSettings: !this.state.showProductViewSettings });
   }
 
@@ -231,7 +229,6 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
   }
 
   private handleSendCatalogUpdate(newValue: string) {
-    console.log('handleSendCatalogUpdate', newValue);
     return this.handleUpdate({
       sendCatalog: newValue === 'true'
     });
