@@ -19,7 +19,17 @@ import { RenderNode } from '../../store/flowContext';
 import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
 import { unnnicCallAlert, unnnicToolTip } from '@weni/unnnic-system';
-const UnnnicTooltip = applyVueInReact(unnnicToolTip);
+const UnnnicTooltip = applyVueInReact(unnnicToolTip, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: ''
+      }
+    }
+  }
+});
 
 export const CANVAS_PADDING = 300;
 export const REFLOW_QUIET = 200;
@@ -55,6 +65,7 @@ interface CanvasState {
   positions: CanvasPositions;
   selected: CanvasPositions;
   currentZoom: number;
+  panzoomInstance: PanZoom;
 }
 
 export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
@@ -77,8 +88,6 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
   // did we just select something
   private justSelected = false;
-
-  private panzoomInstance: PanZoom;
 
   private onDragThrottled: (uuids: string[]) => void = throttle(this.props.onDragging, 15);
   private onMouseThrottled: (event: any) => void = throttle(this.handleMouseMove.bind(this), 15);
@@ -108,7 +117,8 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       uuid: this.props.uuid,
       selected: {},
       positions,
-      currentZoom: 100
+      currentZoom: 100,
+      panzoomInstance: null
     };
 
     bindCallbacks(this, {
@@ -222,7 +232,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
         const nodesPasted = instance.createNewUuids(nodes);
 
-        const transform = this.panzoomInstance.getTransform();
+        const transform = this.state.panzoomInstance.getTransform();
         const scaleInverse = parseFloat((1 / transform.scale).toPrecision(16));
 
         nodesPasted.forEach((item: RenderNode) => {
@@ -267,7 +277,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   private loadPanZoom() {
     const canvas = document.getElementById('panzoom');
 
-    this.panzoomInstance = panzoom(canvas, {
+    const panzoomInstance = panzoom(canvas, {
       maxZoom: 1,
       minZoom: 0.15,
       beforeMouseDown: () => {
@@ -289,34 +299,36 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       zoomDoubleClickSpeed: 1
     });
 
-    this.panzoomInstance.on('zoom', (e: PanZoom) => {
+    panzoomInstance.on('zoom', (e: PanZoom) => {
       const transform = e.getTransform();
       this.props.onZoom(transform.scale);
       this.canvasBg.style.backgroundSize = `${transform.scale * 40}px ${transform.scale * 40}px`;
       this.setState({ currentZoom: Math.round(transform.scale * 100) });
     });
 
-    this.panzoomInstance.on('panstart', (e: PanZoom) => {
+    panzoomInstance.on('panstart', (e: PanZoom) => {
       this.props.onMouseStateChange(MouseState.DRAGGING);
     });
 
-    this.panzoomInstance.on('pan', (e: PanZoom) => {
+    panzoomInstance.on('pan', (e: PanZoom) => {
       const transform = e.getTransform();
       this.canvasBg.style.backgroundPosition = `${transform.x}px ${transform.y}px`;
     });
 
-    this.panzoomInstance.on('panend', (e: PanZoom) => {
+    panzoomInstance.on('panend', (e: PanZoom) => {
       this.props.onMouseStateChange(MouseState.DRAG);
     });
 
     const startingNode = this.getStartingNode();
     if (startingNode.position) {
       const viewportWidth = document.documentElement.clientWidth;
-      this.panzoomInstance.moveTo(
+      panzoomInstance.moveTo(
         viewportWidth / 2 - startingNode.position.left,
         TRANSFORM_START_Y - startingNode.position.top
       );
     }
+
+    this.setState({ panzoomInstance });
   }
 
   private isInSelectState() {
@@ -376,12 +388,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     } else {
       if (event.ctrlKey) return;
     }
-    const transforms = this.panzoomInstance.getTransform();
+    const transforms = this.state.panzoomInstance.getTransform();
 
     if (event.shiftKey) {
-      this.panzoomInstance.moveTo(transforms.x - event.deltaY, transforms.y - event.deltaX);
+      this.state.panzoomInstance.moveTo(transforms.x - event.deltaY, transforms.y - event.deltaX);
     } else {
-      this.panzoomInstance.moveTo(transforms.x - event.deltaX, transforms.y - event.deltaY);
+      this.state.panzoomInstance.moveTo(transforms.x - event.deltaX, transforms.y - event.deltaY);
     }
   }
 
@@ -501,9 +513,9 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   }
 
   private getTransformOffsets() {
-    const transformOffsetX = this.panzoomInstance.getTransform().x;
-    const transformOffsetY = this.panzoomInstance.getTransform().y;
-    const transformScale = this.panzoomInstance.getTransform().scale;
+    const transformOffsetX = this.state.panzoomInstance.getTransform().x;
+    const transformOffsetY = this.state.panzoomInstance.getTransform().y;
+    const transformScale = this.state.panzoomInstance.getTransform().scale;
     return { transformOffsetX, transformOffsetY, transformScale };
   }
 
@@ -607,7 +619,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       this.isScrollingY = window.setInterval(() => {
         if (this.lastX && this.lastY) {
           // as we scroll we need to move our dragged items along with us
-          this.panzoomInstance.moveBy(0, amount, false);
+          this.state.panzoomInstance.moveBy(0, amount, false);
           this.updatePositions(this.lastX, this.lastY, 0, 0);
         }
       }, 30);
@@ -621,7 +633,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       this.isScrollingX = window.setInterval(() => {
         if (this.lastX && this.lastY) {
           // as we scroll we need to move our dragged items along with us
-          this.panzoomInstance.moveBy(amount, 0, false);
+          this.state.panzoomInstance.moveBy(amount, 0, false);
           this.updatePositions(this.lastX, this.lastY, 0, 0);
         }
       }, 30);
@@ -957,7 +969,22 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     const centerY = transformOffsetY;
 
     const zoomBy = direction ? 2 : 0.5;
-    this.panzoomInstance.smoothZoom(centerX, centerY, zoomBy);
+    this.state.panzoomInstance.smoothZoom(centerX, centerY, zoomBy);
+  }
+
+  private moveToStart() {
+    const startingNode = this.getStartingNode();
+
+    if (startingNode) {
+      const { position } = startingNode;
+      const viewportWidth = document.documentElement.clientWidth;
+      const scale = this.state.panzoomInstance.getTransform().scale;
+
+      this.state.panzoomInstance.smoothMoveTo(
+        viewportWidth / 2 - position.left * scale,
+        TRANSFORM_START_Y - position.top * scale
+      );
+    }
   }
 
   private getCursorCss() {
@@ -1023,15 +1050,15 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
               {this.renderSelectionBox()}
             </div>
 
-            {this.panzoomInstance && (
-              <UnnnicTooltip
-                className={styles.zoom_tooltip}
-                text="Zoom"
-                enabled={true}
-                side="top"
-                shortcutText={(getOS() === 'Macintosh' ? 'Cmd' : 'Ctrl') + ' + Scroll'}
-              >
-                <div className={styles.zoom_control}>
+            {this.state.panzoomInstance && (
+              <div className={styles.zoom_control}>
+                <UnnnicTooltip
+                  className={styles.zoom_tooltip}
+                  text="Zoom"
+                  enabled={true}
+                  side="top"
+                  shortcutText={(getOS() === 'Macintosh' ? 'Cmd' : 'Ctrl') + ' + Scroll'}
+                >
                   <div className={styles.out} onClick={() => this.handleZoomClick(0)}>
                     <span className="material-symbols-rounded">remove</span>
                   </div>
@@ -1042,8 +1069,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                   <div className={styles.in} onClick={() => this.handleZoomClick(1)}>
                     <span className="material-symbols-rounded">add</span>
                   </div>
+                </UnnnicTooltip>
+                <div className={styles.start} onClick={() => this.moveToStart()}>
+                  <span className={styles.hide}>{i18n.t('to_flow_start', 'Start of flow')}</span>
+                  <span className="material-symbols-rounded">arrow_upward</span>
                 </div>
-              </UnnnicTooltip>
+              </div>
             )}
           </div>
         </div>
