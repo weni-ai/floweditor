@@ -104,7 +104,7 @@ exports[`AddURNForm renders 1`] = `
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp product (New)
                   </span>
                 </div>
                 <div
@@ -114,7 +114,7 @@ exports[`AddURNForm renders 1`] = `
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -124,7 +124,7 @@ exports[`AddURNForm renders 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -134,12 +134,22 @@ exports[`AddURNForm renders 1`] = `
                   <span
                     class="name"
                   >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="name"
+                  >
                     Label the incoming message
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="5"
+                  data-option-index="6"
                 >
                   <span
                     class="name"
@@ -149,7 +159,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="6"
+                  data-option-index="7"
                 >
                   <span
                     class="name"
@@ -159,7 +169,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="7"
+                  data-option-index="8"
                 >
                   <span
                     class="name"
@@ -169,7 +179,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="8"
+                  data-option-index="9"
                 >
                   <span
                     class="name"
@@ -179,7 +189,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="name"
@@ -189,7 +199,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="name"
@@ -199,7 +209,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="name"
@@ -209,7 +219,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="name"
@@ -219,7 +229,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="name"
@@ -229,7 +239,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="name"
@@ -239,7 +249,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -249,7 +259,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -259,7 +269,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="name"
@@ -269,7 +279,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="name"
@@ -279,7 +289,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="name"
@@ -289,7 +299,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -299,7 +309,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -309,7 +319,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -319,7 +329,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -329,7 +339,7 @@ exports[`AddURNForm renders 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
