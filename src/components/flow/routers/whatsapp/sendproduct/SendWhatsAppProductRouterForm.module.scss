@@ -35,6 +35,24 @@
       width: 100%;
       gap: $unnnic-spacing-xs;
 
+      .label {
+        display: flex;
+        align-items: center;
+        margin-bottom: $unnnic-spacing-nano;
+        gap: $unnnic-spacing-nano;
+        color: $unnnic-color-neutral-cloudy;
+
+        font-size: $unnnic-font-size-body-md;
+        line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+
+        .info_icon {
+          vertical-align: middle;
+          font-size: $unnnic-font-size-body-lg;
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+          color: $unnnic-color-neutral-cleanest;
+        }
+      }
+
     }
 
     .help_text {

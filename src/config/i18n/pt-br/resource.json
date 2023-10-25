@@ -439,7 +439,10 @@
     "ex_smart_category": "Positivo",
     "search_and_send_products_automatically": "Buscar e enviar produtos automaticamente",
     "product_view_settings": "Configurações de visualização (obrigatório)",
-    "product_help_text": "Os campos tem limitações de caracteres, sendo header e footer 60 caracteres, body 1024 e título do botão de ação 20 caracteres."
+    "product_help_text": "Os campos tem limitações de caracteres, sendo header e footer 60 caracteres, body 1024 e título do botão de ação 20 caracteres.",
+    "send_product": {
+      "header_info": "Só é possível enviar um header personalizado quando \nestão selecionados múltiplos produtos."
+    }
   },
   "issues": {
     "header": "Problemas no Fluxo",

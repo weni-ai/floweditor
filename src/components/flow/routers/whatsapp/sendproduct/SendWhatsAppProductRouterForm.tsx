@@ -27,11 +27,23 @@ import i18n from 'config/i18n';
 
 import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
-import { unnnicIcon, unnnicRadio } from '@weni/unnnic-system';
+import { unnnicIcon, unnnicRadio, unnnicToolTip } from '@weni/unnnic-system';
 import { TembaSelectStyle } from 'temba/TembaSelect';
 import { WhatsAppProduct } from '../../../../../flowTypes';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon);
+
+const UnnnicTooltip = applyVueInReact(unnnicToolTip, {
+  react: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: ''
+      }
+    }
+  }
+});
 
 const UnnnicRadio = applyVueInReact(unnnicRadio, {
   react: {
@@ -300,6 +312,8 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
   }
 
   private renderWhatsappProductsConfig() {
+    const disableHeader = this.state.sendCatalog || this.state.products.value.length <= 1;
+
     return (
       <div className={styles.products_config}>
         <div className={styles.automatic_check}>
@@ -341,16 +355,35 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           {this.state.showProductViewSettings ? (
             <>
               <div className={styles.content}>
-                <TextInputElement
-                  name={i18n.t('forms.header', 'Header')}
-                  placeholder={i18n.t('forms.ex_offers', 'Ex: Offers')}
-                  onChange={value => this.handleProductViewSettingsChange(value, 'header')}
-                  entry={this.state.productViewSettings.value.header}
-                  size={TextInputSizes.sm}
-                  showLabel
-                  autocomplete
-                  disabled={this.state.sendCatalog || this.state.products.value.length <= 1}
-                />
+                <div>
+                  <span className={styles.label}>
+                    {i18n.t('forms.header', 'Header')}
+
+                    {disableHeader && (
+                      <UnnnicTooltip
+                        text={i18n.t(
+                          'forms.send_product.header_info',
+                          'It is only possible to send a personalized header when \nmultiple products are selected.'
+                        )}
+                        side="right"
+                        enabled={true}
+                      >
+                        <span className={`${styles.info_icon} material-symbols-outlined`}>
+                          info
+                        </span>
+                      </UnnnicTooltip>
+                    )}
+                  </span>
+                  <TextInputElement
+                    name={i18n.t('forms.header', 'Header')}
+                    placeholder={i18n.t('forms.ex_offers', 'Ex: Offers')}
+                    onChange={value => this.handleProductViewSettingsChange(value, 'header')}
+                    entry={this.state.productViewSettings.value.header}
+                    size={TextInputSizes.sm}
+                    autocomplete
+                    disabled={disableHeader}
+                  />
+                </div>
 
                 <TextInputElement
                   name={i18n.t('forms.body', 'Body')}

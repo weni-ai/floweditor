@@ -438,7 +438,10 @@
     "ex_smart_category": "Positivo",
     "search_and_send_products_automatically": "Buscar y enviar productos automáticamente",
     "product_view_settings": "Ajustes de visualización (obligatorios)",
-    "product_help_text": "Los campos tienen limitaciones de caracteres, con encabezado y pie de página de 60 caracteres, cuerpo de 1024 y título del botón de acción de 20 caracteres."
+    "product_help_text": "Los campos tienen limitaciones de caracteres, con encabezado y pie de página de 60 caracteres, cuerpo de 1024 y título del botón de acción de 20 caracteres.",
+    "send_product": {
+      "header_info": "Sólo es posible enviar un encabezado personalizado cuando \nse seleccionan varios productos."
+    }
   },
   "issues": {
     "header": "Problemas de Flujo",

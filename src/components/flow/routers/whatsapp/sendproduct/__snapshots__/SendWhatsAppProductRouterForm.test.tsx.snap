@@ -1711,44 +1711,81 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   class="label"
                 >
                   Header
-                </span>
-                <div
-                  class="completion_wrapper"
-                >
                   <div
                     data-use-vue-component-wrap=""
                     style="all: unset;"
                   >
                     <div
-                      class="unnnic-input size-sm"
+                      class="unnnic-tooltip"
                       data-passed-props="[object Object]"
-                      data-testid="Header"
-                      data-v-79844726=""
+                      data-v-49d78ffa=""
                     >
-                      <!---->
                       <div
-                        class="input-container"
+                        __use_react_component_wrap=""
+                        data-v-49d78ffa=""
+                      >
+                        <span
+                          class="info_icon material-symbols-outlined"
+                        >
+                          info
+                        </span>
+                      </div>
+                      <span
+                        class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                        data-v-49d78ffa=""
+                      >
+                         It is only possible to send a personalized header when  
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                         multiple products are selected. 
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                        <!---->
+                      </span>
+                    </div>
+                  </div>
+                </span>
+                <div>
+                  <div
+                    class="completion_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-input size-sm"
+                        data-passed-props="[object Object]"
+                        data-testid="Header"
                         data-v-79844726=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
+                        <div
+                          class="input-container"
                           data-v-79844726=""
-                          disabled="disabled"
-                          placeholder="Ex: Offers"
-                          type="text"
-                        />
-                        <!---->
+                        >
+                          <!---->
+                          <input
+                            class="unnnic-font secondary"
+                            data-v-79844726=""
+                            disabled="disabled"
+                            placeholder="Ex: Offers"
+                            type="text"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
+                    <div
+                      class="options_wrapper"
+                      data-testid="temba_completion_options_Header"
+                      style="margin-top: 0px; width: 0px; display: none;"
+                    />
                   </div>
-                  <div
-                    class="options_wrapper"
-                    data-testid="temba_completion_options_Header"
-                    style="margin-top: 0px; width: 0px; display: none;"
-                  />
                 </div>
               </div>
               <div>
@@ -6048,44 +6085,81 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   class="label"
                 >
                   Header
-                </span>
-                <div
-                  class="completion_wrapper"
-                >
                   <div
                     data-use-vue-component-wrap=""
                     style="all: unset;"
                   >
                     <div
-                      class="unnnic-input size-sm"
+                      class="unnnic-tooltip"
                       data-passed-props="[object Object]"
-                      data-testid="Header"
-                      data-v-79844726=""
+                      data-v-49d78ffa=""
                     >
-                      <!---->
                       <div
-                        class="input-container"
+                        __use_react_component_wrap=""
+                        data-v-49d78ffa=""
+                      >
+                        <span
+                          class="info_icon material-symbols-outlined"
+                        >
+                          info
+                        </span>
+                      </div>
+                      <span
+                        class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                        data-v-49d78ffa=""
+                      >
+                         It is only possible to send a personalized header when  
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                         multiple products are selected. 
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                        <!---->
+                      </span>
+                    </div>
+                  </div>
+                </span>
+                <div>
+                  <div
+                    class="completion_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-input size-sm"
+                        data-passed-props="[object Object]"
+                        data-testid="Header"
                         data-v-79844726=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
+                        <div
+                          class="input-container"
                           data-v-79844726=""
-                          disabled="disabled"
-                          placeholder="Ex: Offers"
-                          type="text"
-                        />
-                        <!---->
+                        >
+                          <!---->
+                          <input
+                            class="unnnic-font secondary"
+                            data-v-79844726=""
+                            disabled="disabled"
+                            placeholder="Ex: Offers"
+                            type="text"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
+                    <div
+                      class="options_wrapper"
+                      data-testid="temba_completion_options_Header"
+                      style="margin-top: 0px; width: 0px; display: none;"
+                    />
                   </div>
-                  <div
-                    class="options_wrapper"
-                    data-testid="temba_completion_options_Header"
-                    style="margin-top: 0px; width: 0px; display: none;"
-                  />
                 </div>
               </div>
               <div>
@@ -6891,44 +6965,81 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   class="label"
                 >
                   Header
-                </span>
-                <div
-                  class="completion_wrapper"
-                >
                   <div
                     data-use-vue-component-wrap=""
                     style="all: unset;"
                   >
                     <div
-                      class="unnnic-input size-sm"
+                      class="unnnic-tooltip"
                       data-passed-props="[object Object]"
-                      data-testid="Header"
-                      data-v-79844726=""
+                      data-v-49d78ffa=""
                     >
-                      <!---->
                       <div
-                        class="input-container"
+                        __use_react_component_wrap=""
+                        data-v-49d78ffa=""
+                      >
+                        <span
+                          class="info_icon material-symbols-outlined"
+                        >
+                          info
+                        </span>
+                      </div>
+                      <span
+                        class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                        data-v-49d78ffa=""
+                      >
+                         It is only possible to send a personalized header when  
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                         multiple products are selected. 
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                        <!---->
+                      </span>
+                    </div>
+                  </div>
+                </span>
+                <div>
+                  <div
+                    class="completion_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-input size-sm"
+                        data-passed-props="[object Object]"
+                        data-testid="Header"
                         data-v-79844726=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
+                        <div
+                          class="input-container"
                           data-v-79844726=""
-                          disabled="disabled"
-                          placeholder="Ex: Offers"
-                          type="text"
-                        />
-                        <!---->
+                        >
+                          <!---->
+                          <input
+                            class="unnnic-font secondary"
+                            data-v-79844726=""
+                            disabled="disabled"
+                            placeholder="Ex: Offers"
+                            type="text"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
+                    <div
+                      class="options_wrapper"
+                      data-testid="temba_completion_options_Header"
+                      style="margin-top: 0px; width: -24px; display: none;"
+                    />
                   </div>
-                  <div
-                    class="options_wrapper"
-                    data-testid="temba_completion_options_Header"
-                    style="margin-top: 0px; width: -24px; display: none;"
-                  />
                 </div>
               </div>
               <div>
@@ -8884,44 +8995,81 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   class="label"
                 >
                   Header
-                </span>
-                <div
-                  class="completion_wrapper"
-                >
                   <div
                     data-use-vue-component-wrap=""
                     style="all: unset;"
                   >
                     <div
-                      class="unnnic-input size-sm"
+                      class="unnnic-tooltip"
                       data-passed-props="[object Object]"
-                      data-testid="Header"
-                      data-v-79844726=""
+                      data-v-49d78ffa=""
                     >
-                      <!---->
                       <div
-                        class="input-container"
+                        __use_react_component_wrap=""
+                        data-v-49d78ffa=""
+                      >
+                        <span
+                          class="info_icon material-symbols-outlined"
+                        >
+                          info
+                        </span>
+                      </div>
+                      <span
+                        class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                        data-v-49d78ffa=""
+                      >
+                         It is only possible to send a personalized header when  
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                         multiple products are selected. 
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                        <!---->
+                      </span>
+                    </div>
+                  </div>
+                </span>
+                <div>
+                  <div
+                    class="completion_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-input size-sm"
+                        data-passed-props="[object Object]"
+                        data-testid="Header"
                         data-v-79844726=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
+                        <div
+                          class="input-container"
                           data-v-79844726=""
-                          disabled="disabled"
-                          placeholder="Ex: Offers"
-                          type="text"
-                        />
-                        <!---->
+                        >
+                          <!---->
+                          <input
+                            class="unnnic-font secondary"
+                            data-v-79844726=""
+                            disabled="disabled"
+                            placeholder="Ex: Offers"
+                            type="text"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
+                    <div
+                      class="options_wrapper"
+                      data-testid="temba_completion_options_Header"
+                      style="margin-top: 0px; width: 0px; display: none;"
+                    />
                   </div>
-                  <div
-                    class="options_wrapper"
-                    data-testid="temba_completion_options_Header"
-                    style="margin-top: 0px; width: 0px; display: none;"
-                  />
                 </div>
               </div>
               <div>
