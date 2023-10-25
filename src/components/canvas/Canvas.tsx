@@ -1,6 +1,7 @@
 import { react as bindCallbacks } from 'auto-bind';
 import panzoom, { PanZoom } from 'panzoom';
 import { CanvasDraggable, CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
+import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 import { getDraggablesInBox, reflow } from 'components/canvas/helpers';
 import { DRAG_THRESHOLD } from 'components/flow/Flow';
 import { Dimensions, Exit, FlowNode, FlowPosition } from 'flowTypes';
@@ -422,6 +423,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       if (this.props.mouseState === MouseState.SELECT) {
         this.props.onMouseStateChange(MouseState.DRAG);
       }
+    }
+
+    if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.moveToStart();
     }
   }
 
@@ -973,10 +980,9 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   }
 
   private moveToStart() {
-    const startingNode = this.getStartingNode();
+    const { position } = this.getStartingNode();
 
-    if (startingNode) {
-      const { position } = startingNode;
+    if (position) {
       const viewportWidth = document.documentElement.clientWidth;
       const scale = this.state.panzoomInstance.getTransform().scale;
 
@@ -1052,28 +1058,65 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
             {this.state.panzoomInstance && (
               <div className={styles.zoom_control}>
-                <UnnnicTooltip
-                  className={styles.zoom_tooltip}
-                  text="Zoom"
-                  enabled={true}
+                <GuidingSteps
+                  guide="control_tools"
+                  step={1}
+                  title={i18n.t('guiding.control_tools.1.title', 'Zoom tool')}
+                  description={i18n.t(
+                    'guiding.control_tools.1.description',
+                    `Now you can zoom in and zoom out natively, without having to zoom in on the entire browser, which also helps with the navigability of cards.`
+                  )}
+                  buttonText={i18n.t('guiding.v2.1.button', 'Got it 2/3')}
                   side="top"
-                  shortcutText={(getOS() === 'Macintosh' ? 'Cmd' : 'Ctrl') + ' + Scroll'}
+                  align="arrow_left"
                 >
-                  <div className={styles.out} onClick={() => this.handleZoomClick(0)}>
-                    <span className="material-symbols-rounded">remove</span>
-                  </div>
-                  <div className={styles.percentage}>
-                    {this.state.currentZoom}
-                    <span className="material-symbols-rounded">percent</span>
-                  </div>
-                  <div className={styles.in} onClick={() => this.handleZoomClick(1)}>
-                    <span className="material-symbols-rounded">add</span>
-                  </div>
-                </UnnnicTooltip>
-                <div className={styles.start} onClick={() => this.moveToStart()}>
-                  <span className={styles.hide}>{i18n.t('to_flow_start', 'Start of flow')}</span>
-                  <span className="material-symbols-rounded">arrow_upward</span>
-                </div>
+                  <UnnnicTooltip
+                    className={styles.zoom_tooltip}
+                    text="Zoom"
+                    enabled={true}
+                    side="top"
+                    shortcutText={(getOS() === 'Macintosh' ? 'Cmd' : 'Ctrl') + ' + Scroll'}
+                  >
+                    <div className={styles.out} onClick={() => this.handleZoomClick(0)}>
+                      <span className="material-symbols-rounded">remove</span>
+                    </div>
+                    <div className={styles.percentage}>
+                      {this.state.currentZoom}
+                      <span className="material-symbols-rounded">percent</span>
+                    </div>
+                    <div className={styles.in} onClick={() => this.handleZoomClick(1)}>
+                      <span className="material-symbols-rounded">add</span>
+                    </div>
+                  </UnnnicTooltip>
+                </GuidingSteps>
+
+                <GuidingSteps
+                  guide="control_tools"
+                  step={2}
+                  title={i18n.t('guiding.control_tools.2.title', 'Start of flow')}
+                  description={i18n.t(
+                    'guiding.control_tools.2.description',
+                    `Your flow is too big and sometimes you get lost? Your problems are over, just click here or use the shortcut Ctrl + Enter to go back to the beginning of your flow.`
+                  )}
+                  buttonText={i18n.t('guiding.v2.2.button', 'Got it 3/3')}
+                  side="top"
+                  align="arrow_left"
+                >
+                  <UnnnicTooltip
+                    className={styles.start_tooltip}
+                    text=""
+                    enabled={true}
+                    side="right"
+                    shortcutText={(getOS() === 'Macintosh' ? 'Cmd' : 'Ctrl') + ' + Enter'}
+                  >
+                    <div className={styles.start} onClick={() => this.moveToStart()}>
+                      <span className={styles.hide}>
+                        {i18n.t('to_flow_start', 'Start of flow')}
+                      </span>
+                      <span className="material-symbols-rounded">arrow_upward</span>
+                    </div>
+                  </UnnnicTooltip>
+                </GuidingSteps>
               </div>
             )}
           </div>

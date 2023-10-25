@@ -143,24 +143,35 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   public render(): JSX.Element {
     return (
       <div className={styles.sidebar}>
-        <UnnnicTooltip
-          enabled={this.props.guidingStep !== 0}
-          side="right"
-          text={
-            this.props.mouseState === MouseState.SELECT
-              ? i18n.t('select', 'Select')
-              : i18n.t('drag', 'Drag')
-          }
-          shortcutText={'V'}
+        <GuidingSteps
+          guide="control_tools"
+          step={0}
+          title={i18n.t('guiding.control_tools.0.title', 'Select and drag')}
+          description={i18n.t(
+            'guiding.control_tools.0.description',
+            `Click here, use the “V” shortcut or hold down the space bar to use the “little hand” tool, with it you will be able to navigate through your entire flow just by clicking and dragging on the screen`
+          )}
+          buttonText={i18n.t('guiding.v2.0.button', 'Got it 1/3')}
         >
-          <div className={styles.option} onClick={() => this.toggleMouseState()}>
-            {this.props.mouseState === MouseState.SELECT ? (
-              <span className="material-symbols-rounded">near_me</span>
-            ) : (
-              <span className="material-symbols-rounded">back_hand</span>
-            )}
-          </div>
-        </UnnnicTooltip>
+          <UnnnicTooltip
+            enabled={this.props.guidingStep !== 0}
+            side="right"
+            text={
+              this.props.mouseState === MouseState.SELECT
+                ? i18n.t('select', 'Select')
+                : i18n.t('drag', 'Drag')
+            }
+            shortcutText={'V'}
+          >
+            <div className={styles.option} onClick={() => this.toggleMouseState()}>
+              {this.props.mouseState === MouseState.SELECT ? (
+                <span className="material-symbols-rounded">near_me</span>
+              ) : (
+                <span className="material-symbols-rounded">back_hand</span>
+              )}
+            </div>
+          </UnnnicTooltip>
+        </GuidingSteps>
 
         <GuidingSteps
           guide="v2"

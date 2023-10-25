@@ -598,17 +598,17 @@
     "title": "Novidade na área!",
     "description": "O que tem de novo?",
     "news": {
-      "first": "O editor está mais rápido",
-      "second": "Dois novos cards para tratamento das respostas de forma 100% inteligente",
-      "third": "Copie e cole qualquer tipo de card sem se preocupar",
-      "fourth": "Bugs corrigidos no componente de seleção nos cards",
-      "fifth": "Skin do WhatsApp no simulador"
+      "first": "Agora você pode usar a “mãozinha” pra navegar no seu fluxo",
+      "second": "Ferramenta de zoom",
+      "third": "Ficou mais fácil de saber pra onde vai seu fluxo com as novas cores nas setas que ligam os blocos",
+      "fourth": "O modal de avaliação está diferente e ocupa menos espaço na sua tela",
+      "fifth": "Agora ficou mais fácil encontrar o início do seu fluxo"
     },
     "buttons": {
       "first": "Fechar",
       "second": "Me mostra tudo"
     },
-    "footer": "Fique à vontade para enviar feedbacks sobre sua experiência clicando no detetive"
+    "footer": "Fique à vontade para enviar feedbacks sobre sua experiência"
   },
   "guiding": {
     "close_tour": "Fechar tour",
@@ -627,6 +627,20 @@
         "title": "Skin do WhatsApp no simulador",
         "description": "Agora o simulador ta com a aparência do Whatsapp,\nassim você consegue prever com mais fidelidade como seu fluxo vai ficar.",
         "button": "Entendi 3/3"
+      }
+    },
+    "control_tools": {
+      "0": {
+        "title": "Selecionar e arrastar",
+        "description": "Clique aqui, use o atalho “V” ou segure a barra de espaço para utilizar a ferramenta de “mãozinha”, com ela você vai poder navegar por todo o seu fluxo apenas clicando e arrastando na tela."
+      },
+      "1": {
+        "title": "Ferramenta de zoom",
+        "description": "Agora você pode dar zoom in e zoom out de forma nativa, sem precisar fazer o zoom no navegador inteiro, o que também ajuda na navegabilidade dos cards."
+      },
+      "2": {
+        "title": "Início do fluxo",
+        "description": "Seu fluxo é muito grande e as vezes você se perde? Seus problemas acabaram, basta clicar aqui ou usar o atalho Ctrl + Enter pra voltar para o início do seu fluxo."
       }
     }
   },
