@@ -153,6 +153,7 @@ exports[`Simulator renders 1`] = `
     </div>
   </div>
   <Connect(GuidingSteps)
+    action={[Function]}
     buttonText="Got it 3/3"
     className="guiding_steps"
     description="Now the simulator looks like Whatsapp

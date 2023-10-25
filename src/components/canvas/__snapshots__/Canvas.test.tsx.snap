@@ -31,77 +31,116 @@ exports[`Canvas adjusts the height when updating dimensions 1`] = `
             class="zoom_control"
           >
             <div
-              data-use-vue-component-wrap=""
+              class="guiding_wrapper"
             >
               <div
-                class="unnnic-tooltip zoom_tooltip"
-                data-passed-props="[object Object]"
-                data-v-49d78ffa=""
+                data-use-vue-component-wrap=""
               >
                 <div
-                  __use_react_component_wrap=""
-                  data-v-49d78ffa=""
-                  style="all: unset;"
-                >
-                  <div
-                    class="out"
-                  >
-                    <span
-                      class="material-symbols-rounded"
-                    >
-                      remove
-                    </span>
-                  </div>
-                  <div
-                    class="percentage"
-                  >
-                    100
-                    <span
-                      class="material-symbols-rounded"
-                    >
-                      percent
-                    </span>
-                  </div>
-                  <div
-                    class="in"
-                  >
-                    <span
-                      class="material-symbols-rounded"
-                    >
-                      add
-                    </span>
-                  </div>
-                </div>
-                <span
-                  class="unnnic-tooltip-label unnnic-tooltip-label-top"
+                  class="unnnic-tooltip zoom_tooltip"
+                  data-passed-props="[object Object]"
                   data-v-49d78ffa=""
                 >
-                   Zoom 
-                  <br
+                  <div
+                    __use_react_component_wrap=""
                     data-v-49d78ffa=""
-                  />
+                    style="all: unset;"
+                  >
+                    <div
+                      class="out"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        remove
+                      </span>
+                    </div>
+                    <div
+                      class="percentage"
+                    >
+                      100
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        percent
+                      </span>
+                    </div>
+                    <div
+                      class="in"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        add
+                      </span>
+                    </div>
+                  </div>
                   <span
-                    class="unnnic-tooltip-label-shortcut"
+                    class="unnnic-tooltip-label unnnic-tooltip-label-top"
                     data-v-49d78ffa=""
                   >
-                     Ctrl + Scroll 
+                     Zoom 
+                    <br
+                      data-v-49d78ffa=""
+                    />
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-49d78ffa=""
+                    >
+                       Ctrl + Scroll 
+                    </span>
                   </span>
-                </span>
+                </div>
               </div>
             </div>
             <div
-              class="start"
+              class="guiding_wrapper"
             >
-              <span
-                class="hide"
+              <div
+                data-use-vue-component-wrap=""
               >
-                Start of flow
-              </span>
-              <span
-                class="material-symbols-rounded"
-              >
-                arrow_upward
-              </span>
+                <div
+                  class="unnnic-tooltip start_tooltip"
+                  data-passed-props="[object Object]"
+                  data-v-49d78ffa=""
+                >
+                  <div
+                    __use_react_component_wrap=""
+                    data-v-49d78ffa=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="start"
+                    >
+                      <span
+                        class="hide"
+                      >
+                        Start of flow
+                      </span>
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        arrow_upward
+                      </span>
+                    </div>
+                  </div>
+                  <span
+                    class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                    data-v-49d78ffa=""
+                  >
+                      
+                    <br
+                      data-v-49d78ffa=""
+                    />
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-49d78ffa=""
+                    >
+                       Ctrl + Enter 
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -142,77 +181,116 @@ exports[`Canvas initializes the height to the lowest draggable 1`] = `
             class="zoom_control"
           >
             <div
-              data-use-vue-component-wrap=""
+              class="guiding_wrapper"
             >
               <div
-                class="unnnic-tooltip zoom_tooltip"
-                data-passed-props="[object Object]"
-                data-v-49d78ffa=""
+                data-use-vue-component-wrap=""
               >
                 <div
-                  __use_react_component_wrap=""
-                  data-v-49d78ffa=""
-                  style="all: unset;"
-                >
-                  <div
-                    class="out"
-                  >
-                    <span
-                      class="material-symbols-rounded"
-                    >
-                      remove
-                    </span>
-                  </div>
-                  <div
-                    class="percentage"
-                  >
-                    100
-                    <span
-                      class="material-symbols-rounded"
-                    >
-                      percent
-                    </span>
-                  </div>
-                  <div
-                    class="in"
-                  >
-                    <span
-                      class="material-symbols-rounded"
-                    >
-                      add
-                    </span>
-                  </div>
-                </div>
-                <span
-                  class="unnnic-tooltip-label unnnic-tooltip-label-top"
+                  class="unnnic-tooltip zoom_tooltip"
+                  data-passed-props="[object Object]"
                   data-v-49d78ffa=""
                 >
-                   Zoom 
-                  <br
+                  <div
+                    __use_react_component_wrap=""
                     data-v-49d78ffa=""
-                  />
+                    style="all: unset;"
+                  >
+                    <div
+                      class="out"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        remove
+                      </span>
+                    </div>
+                    <div
+                      class="percentage"
+                    >
+                      100
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        percent
+                      </span>
+                    </div>
+                    <div
+                      class="in"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        add
+                      </span>
+                    </div>
+                  </div>
                   <span
-                    class="unnnic-tooltip-label-shortcut"
+                    class="unnnic-tooltip-label unnnic-tooltip-label-top"
                     data-v-49d78ffa=""
                   >
-                     Ctrl + Scroll 
+                     Zoom 
+                    <br
+                      data-v-49d78ffa=""
+                    />
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-49d78ffa=""
+                    >
+                       Ctrl + Scroll 
+                    </span>
                   </span>
-                </span>
+                </div>
               </div>
             </div>
             <div
-              class="start"
+              class="guiding_wrapper"
             >
-              <span
-                class="hide"
+              <div
+                data-use-vue-component-wrap=""
               >
-                Start of flow
-              </span>
-              <span
-                class="material-symbols-rounded"
-              >
-                arrow_upward
-              </span>
+                <div
+                  class="unnnic-tooltip start_tooltip"
+                  data-passed-props="[object Object]"
+                  data-v-49d78ffa=""
+                >
+                  <div
+                    __use_react_component_wrap=""
+                    data-v-49d78ffa=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="start"
+                    >
+                      <span
+                        class="hide"
+                      >
+                        Start of flow
+                      </span>
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        arrow_upward
+                      </span>
+                    </div>
+                  </div>
+                  <span
+                    class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                    data-v-49d78ffa=""
+                  >
+                      
+                    <br
+                      data-v-49d78ffa=""
+                    />
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-49d78ffa=""
+                    >
+                       Ctrl + Enter 
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -256,77 +334,116 @@ exports[`Canvas render default 1`] = `
             class="zoom_control"
           >
             <div
-              data-use-vue-component-wrap=""
+              class="guiding_wrapper"
             >
               <div
-                class="unnnic-tooltip zoom_tooltip"
-                data-passed-props="[object Object]"
-                data-v-49d78ffa=""
+                data-use-vue-component-wrap=""
               >
                 <div
-                  __use_react_component_wrap=""
-                  data-v-49d78ffa=""
-                  style="all: unset;"
-                >
-                  <div
-                    class="out"
-                  >
-                    <span
-                      class="material-symbols-rounded"
-                    >
-                      remove
-                    </span>
-                  </div>
-                  <div
-                    class="percentage"
-                  >
-                    100
-                    <span
-                      class="material-symbols-rounded"
-                    >
-                      percent
-                    </span>
-                  </div>
-                  <div
-                    class="in"
-                  >
-                    <span
-                      class="material-symbols-rounded"
-                    >
-                      add
-                    </span>
-                  </div>
-                </div>
-                <span
-                  class="unnnic-tooltip-label unnnic-tooltip-label-top"
+                  class="unnnic-tooltip zoom_tooltip"
+                  data-passed-props="[object Object]"
                   data-v-49d78ffa=""
                 >
-                   Zoom 
-                  <br
+                  <div
+                    __use_react_component_wrap=""
                     data-v-49d78ffa=""
-                  />
+                    style="all: unset;"
+                  >
+                    <div
+                      class="out"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        remove
+                      </span>
+                    </div>
+                    <div
+                      class="percentage"
+                    >
+                      100
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        percent
+                      </span>
+                    </div>
+                    <div
+                      class="in"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        add
+                      </span>
+                    </div>
+                  </div>
                   <span
-                    class="unnnic-tooltip-label-shortcut"
+                    class="unnnic-tooltip-label unnnic-tooltip-label-top"
                     data-v-49d78ffa=""
                   >
-                     Ctrl + Scroll 
+                     Zoom 
+                    <br
+                      data-v-49d78ffa=""
+                    />
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-49d78ffa=""
+                    >
+                       Ctrl + Scroll 
+                    </span>
                   </span>
-                </span>
+                </div>
               </div>
             </div>
             <div
-              class="start"
+              class="guiding_wrapper"
             >
-              <span
-                class="hide"
+              <div
+                data-use-vue-component-wrap=""
               >
-                Start of flow
-              </span>
-              <span
-                class="material-symbols-rounded"
-              >
-                arrow_upward
-              </span>
+                <div
+                  class="unnnic-tooltip start_tooltip"
+                  data-passed-props="[object Object]"
+                  data-v-49d78ffa=""
+                >
+                  <div
+                    __use_react_component_wrap=""
+                    data-v-49d78ffa=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="start"
+                    >
+                      <span
+                        class="hide"
+                      >
+                        Start of flow
+                      </span>
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        arrow_upward
+                      </span>
+                    </div>
+                  </div>
+                  <span
+                    class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                    data-v-49d78ffa=""
+                  >
+                      
+                    <br
+                      data-v-49d78ffa=""
+                    />
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-49d78ffa=""
+                    >
+                       Ctrl + Enter 
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
