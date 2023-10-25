@@ -34,6 +34,8 @@ export interface GuidingStepsProps {
   description: string;
   buttonText: string;
   side?: string;
+  align?: string;
+  action?: () => void;
 }
 
 export class GuidingSteps extends React.Component<
@@ -46,6 +48,10 @@ export class GuidingSteps extends React.Component<
 
   private nextGuide(): void {
     this.props.mergeEditorState({ guidingStep: this.props.guidingStep + 1 });
+
+    if (this.props.action) {
+      this.props.action();
+    }
   }
 
   private shouldRenderGuide(): boolean {
@@ -56,12 +62,15 @@ export class GuidingSteps extends React.Component<
 
   public render(): JSX.Element {
     const directionStyle = this.props.side ? styles[this.props.side] : styles.right;
+    const arrowAlign = this.props.align ? styles[this.props.align] : styles.arrow_center;
 
     return (
       <div className={styles.guiding_wrapper}>
         {this.props.children}
         {this.shouldRenderGuide() && (
-          <div className={`${this.props.className} ${styles.guiding} ${directionStyle}`}>
+          <div
+            className={`${this.props.className} ${styles.guiding} ${directionStyle} ${arrowAlign}`}
+          >
             <div className={styles.title_wrapper}>
               <span className={styles.title}> {this.props.title}</span>
 
