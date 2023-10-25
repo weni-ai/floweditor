@@ -88,6 +88,16 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
     }
   }
 
+  .start_tooltip {
+    :last-child {
+      left: 300px !important;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
   .in, .out, .start {
     display: flex;
     width: $unnnic-spacing-xl;
