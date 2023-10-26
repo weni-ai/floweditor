@@ -141,7 +141,9 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           keys.productViewSettings.header,
           [
             shouldRequireIf(
-              submitting && !this.state.sendCatalog && this.state.products.value.length > 1
+              submitting &&
+                (this.state.automaticProductSearch ||
+                  (!this.state.sendCatalog && this.state.products.value.length > 1))
             )
           ]
         );
@@ -312,7 +314,9 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
   }
 
   private renderWhatsappProductsConfig() {
-    const disableHeader = this.state.sendCatalog || this.state.products.value.length <= 1;
+    const disableHeader =
+      !this.state.automaticProductSearch &&
+      (this.state.sendCatalog || this.state.products.value.length <= 1);
 
     return (
       <div className={styles.products_config}>
