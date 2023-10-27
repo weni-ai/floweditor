@@ -14,11 +14,11 @@ import { connect } from 'react-redux';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
-import { unnnicTextArea, unnnicInputNext } from '@weni/unnnic-system';
+import { unnnicTextArea, unnnicInput } from '@weni/unnnic-system';
 import { TembaStore } from '../temba-components';
 import SelectOptions from './SelectOptions';
 const UnnnicTextArea = applyVueInReact(unnnicTextArea);
-const UnnnicInputNext = applyVueInReact(unnnicInputNext);
+const UnnnicInput = applyVueInReact(unnnicInput);
 
 interface ValuedCompletionOption extends CompletionOption {
   value: string;
@@ -244,7 +244,7 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
               errors={this.props.errors}
             />
           ) : (
-            <UnnnicInputNext
+            <UnnnicInput
               ref={(ele: any) => {
                 this.refInput = ele;
               }}
