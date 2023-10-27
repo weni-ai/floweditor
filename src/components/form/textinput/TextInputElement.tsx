@@ -7,7 +7,7 @@ import { count as SmsCount } from 'sms-length';
 import i18n from 'config/i18n';
 
 // @ts-ignore
-import { unnnicTextArea, unnnicInputNext, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
+import { unnnicTextArea, unnnicInput, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
 
 import styles from './TextInputElement.module.scss';
 import TembaCompletion from '../../../temba/TembaCompletion';
@@ -49,7 +49,7 @@ export interface TextInputProps extends FormElementProps {
 }
 
 const UnnnicTextArea = applyVueInReact(unnnicTextArea);
-const UnnnicInputNext = applyVueInReact(unnnicInputNext, {
+const UnnnicInput = applyVueInReact(unnnicInput, {
   vue: {
     componentWrapAttrs: {
       'unnnic-input': 'true'
@@ -190,7 +190,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             errors={errorList}
           />
         ) : (
-          <UnnnicInputNext
+          <UnnnicInput
             data-testid={this.props.name}
             value={this.props.entry.value}
             on={{
