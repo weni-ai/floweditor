@@ -545,17 +545,17 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       return;
     }
 
-    if (this.isInSelectState()) {
-      if (this.props.draggingNew) {
-        this.lastX = event.pageX;
-        this.lastY = event.pageY;
-        this.updateStateWithScroll(event.clientX, event.clientY);
-        if (this.state.dragUUID) {
-          this.updatePositions(event.pageX, event.pageY, event.clientX, event.clientY);
-        }
-        return;
+    if (this.props.draggingNew) {
+      this.lastX = event.pageX;
+      this.lastY = event.pageY;
+      this.updateStateWithScroll(event.clientX, event.clientY);
+      if (this.state.dragUUID) {
+        this.updatePositions(event.pageX, event.pageY, event.clientX, event.clientY);
       }
+      return;
+    }
 
+    if (this.isInSelectState()) {
       if (this.state.dragSelection && this.state.dragSelection.startX) {
         const drag = this.state.dragSelection;
 
