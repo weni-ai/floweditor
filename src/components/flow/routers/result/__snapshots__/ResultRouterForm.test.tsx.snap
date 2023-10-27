@@ -183,27 +183,36 @@ exports[`ResultRouterForm should render 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Split by a result in the flow"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -217,7 +226,6 @@ exports[`ResultRouterForm should render 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -509,28 +517,38 @@ exports[`ResultRouterForm should render 1`] = `
                   style="all: unset;"
                 >
                   <div
-                    class="unnnic-input size-sm bold_placeholder"
+                    class="unnnic-form sm bold_placeholder"
                     data-passed-props="[object Object]"
                     data-testid="temba_select_input_if_the_result"
-                    data-v-79844726=""
+                    data-v-48c0c241=""
+                    readonly="readonly"
                   >
                     <!---->
                     <div
-                      class="input-container"
-                      data-v-79844726=""
+                      class="unnnic-form-input text-input size--sm has-icon-right"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
                     >
-                      <!---->
                       <input
-                        class="unnnic-font secondary"
-                        data-v-79844726=""
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_input_if_the_result"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        iconright="arrow-button-down-1"
                         placeholder="Select the result"
                         readonly="readonly"
+                        size="0"
                         type="text"
+                        v-bind="[object Object]"
                       />
+                      <!---->
                       <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-400546b3=""
                         data-v-59b073b4=""
-                        data-v-79844726=""
                       >
                         <svg
                           fill="none"
@@ -544,7 +562,6 @@ exports[`ResultRouterForm should render 1`] = `
                           />
                         </svg>
                       </span>
-                      <!---->
                     </div>
                     <!---->
                   </div>
@@ -618,28 +635,38 @@ exports[`ResultRouterForm should render 1`] = `
                         style="all: unset;"
                       >
                         <div
-                          class="unnnic-input size-sm bold_placeholder"
+                          class="unnnic-form sm bold_placeholder"
                           data-passed-props="[object Object]"
                           data-testid="temba_select_input_operator"
-                          data-v-79844726=""
+                          data-v-48c0c241=""
+                          readonly="readonly"
                         >
                           <!---->
                           <div
-                            class="input-container"
-                            data-v-79844726=""
+                            class="unnnic-form-input text-input size--sm has-icon-right"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
                           >
-                            <!---->
                             <input
-                              class="unnnic-font secondary"
-                              data-v-79844726=""
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-testid="temba_select_input_operator"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
+                              iconright="arrow-button-down-1"
                               placeholder="has any of the words"
                               readonly="readonly"
+                              size="0"
                               type="text"
+                              v-bind="[object Object]"
                             />
+                            <!---->
                             <span
-                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                              data-v-400546b3=""
                               data-v-59b073b4=""
-                              data-v-79844726=""
                             >
                               <svg
                                 fill="none"
@@ -653,7 +680,6 @@ exports[`ResultRouterForm should render 1`] = `
                                 />
                               </svg>
                             </span>
-                            <!---->
                           </div>
                           <!---->
                         </div>
@@ -889,31 +915,40 @@ exports[`ResultRouterForm should render 1`] = `
                         class="completion_wrapper"
                       >
                         <div
-                          data-use-vue-component-wrap=""
-                          style="all: unset;"
+                          data-testid="arguments"
                         >
                           <div
-                            class="unnnic-input size-sm"
-                            data-passed-props="[object Object]"
-                            data-testid="arguments"
-                            data-v-79844726=""
+                            data-use-vue-component-wrap=""
+                            style="all: unset;"
                           >
-                            <!---->
                             <div
-                              class="input-container"
-                              data-v-79844726=""
+                              class="unnnic-form sm"
+                              data-passed-props="[object Object]"
+                              data-v-48c0c241=""
                             >
                               <!---->
-                              <input
-                                class="unnnic-font secondary"
-                                data-v-79844726=""
-                                placeholder="Ex: cart"
-                                type="text"
-                              />
-                              <!---->
+                              <div
+                                class="unnnic-form-input text-input size--sm"
+                                data-v-400546b3=""
+                                data-v-48c0c241=""
+                                mask=""
+                                v-bind="[object Object]"
+                              >
+                                <input
+                                  class="input-itself input size-sm normal"
+                                  data-passed-props="[object Object]"
+                                  data-v-400546b3=""
+                                  data-v-97b44e8c=""
+                                  placeholder="Ex: cart"
+                                  size="0"
+                                  type="text"
+                                  v-bind="[object Object]"
+                                />
+                                <!---->
+                                <!---->
+                              </div>
                               <!---->
                             </div>
-                            <!---->
                           </div>
                         </div>
                         <div
@@ -934,33 +969,43 @@ exports[`ResultRouterForm should render 1`] = `
                     class="category"
                   >
                     <div
-                      data-use-vue-component-wrap=""
-                      style="all: unset;"
-                      unnnic-input="true"
+                      data-testid="Exit Name"
                     >
                       <div
-                        class="unnnic-input size-sm"
-                        data-passed-props="[object Object]"
-                        data-testid="Exit Name"
-                        data-v-79844726=""
+                        data-use-vue-component-wrap=""
+                        style="all: unset;"
+                        unnnic-input="true"
                       >
-                        <!---->
                         <div
-                          class="input-container"
-                          data-v-79844726=""
+                          class="unnnic-form sm"
+                          data-passed-props="[object Object]"
+                          data-v-48c0c241=""
+                          maxlength="36"
                         >
                           <!---->
-                          <input
-                            class="unnnic-font secondary"
-                            data-v-79844726=""
-                            maxlength="36"
-                            placeholder="Ex: shopping"
-                            type="text"
-                          />
-                          <!---->
+                          <div
+                            class="unnnic-form-input text-input size--sm"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
+                          >
+                            <input
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
+                              maxlength="36"
+                              placeholder="Ex: shopping"
+                              size="0"
+                              type="text"
+                              v-bind="[object Object]"
+                            />
+                            <!---->
+                            <!---->
+                          </div>
                           <!---->
                         </div>
-                        <!---->
                       </div>
                     </div>
                   </div>
@@ -1196,27 +1241,36 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Split by a result in the flow"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -1230,7 +1284,6 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -1522,28 +1575,38 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   style="all: unset;"
                 >
                   <div
-                    class="unnnic-input size-sm bold_placeholder"
+                    class="unnnic-form sm bold_placeholder"
                     data-passed-props="[object Object]"
                     data-testid="temba_select_input_field_number"
-                    data-v-79844726=""
+                    data-v-48c0c241=""
+                    readonly="readonly"
                   >
                     <!---->
                     <div
-                      class="input-container"
-                      data-v-79844726=""
+                      class="unnnic-form-input text-input size--sm has-icon-right"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
                     >
-                      <!---->
                       <input
-                        class="unnnic-font secondary"
-                        data-v-79844726=""
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_input_field_number"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        iconright="arrow-button-down-1"
                         placeholder="second"
                         readonly="readonly"
+                        size="0"
                         type="text"
+                        v-bind="[object Object]"
                       />
+                      <!---->
                       <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-400546b3=""
                         data-v-59b073b4=""
-                        data-v-79844726=""
                       >
                         <svg
                           fill="none"
@@ -1557,7 +1620,6 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                           />
                         </svg>
                       </span>
-                      <!---->
                     </div>
                     <!---->
                   </div>
@@ -1796,28 +1858,38 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   style="all: unset;"
                 >
                   <div
-                    class="unnnic-input size-sm bold_placeholder"
+                    class="unnnic-form sm bold_placeholder"
                     data-passed-props="[object Object]"
                     data-testid="temba_select_input_flow_result"
-                    data-v-79844726=""
+                    data-v-48c0c241=""
+                    readonly="readonly"
                   >
                     <!---->
                     <div
-                      class="input-container"
-                      data-v-79844726=""
+                      class="unnnic-form-input text-input size--sm has-icon-right"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
                     >
-                      <!---->
                       <input
-                        class="unnnic-font secondary"
-                        data-v-79844726=""
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_input_flow_result"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        iconright="arrow-button-down-1"
                         placeholder="Select Result"
                         readonly="readonly"
+                        size="0"
                         type="text"
+                        v-bind="[object Object]"
                       />
+                      <!---->
                       <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-400546b3=""
                         data-v-59b073b4=""
-                        data-v-79844726=""
                       >
                         <svg
                           fill="none"
@@ -1831,7 +1903,6 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                           />
                         </svg>
                       </span>
-                      <!---->
                     </div>
                     <!---->
                   </div>
@@ -1869,28 +1940,38 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   style="all: unset;"
                 >
                   <div
-                    class="unnnic-input size-sm bold_placeholder"
+                    class="unnnic-form sm bold_placeholder"
                     data-passed-props="[object Object]"
                     data-testid="temba_select_input_delimiter"
-                    data-v-79844726=""
+                    data-v-48c0c241=""
+                    readonly="readonly"
                   >
                     <!---->
                     <div
-                      class="input-container"
-                      data-v-79844726=""
+                      class="unnnic-form-input text-input size--sm has-icon-right"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
                     >
-                      <!---->
                       <input
-                        class="unnnic-font secondary"
-                        data-v-79844726=""
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_input_delimiter"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        iconright="arrow-button-down-1"
                         placeholder="spaces"
                         readonly="readonly"
+                        size="0"
                         type="text"
+                        v-bind="[object Object]"
                       />
+                      <!---->
                       <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-400546b3=""
                         data-v-59b073b4=""
-                        data-v-79844726=""
                       >
                         <svg
                           fill="none"
@@ -1904,7 +1985,6 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                           />
                         </svg>
                       </span>
-                      <!---->
                     </div>
                     <!---->
                   </div>
@@ -2009,28 +2089,38 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                         style="all: unset;"
                       >
                         <div
-                          class="unnnic-input size-sm bold_placeholder"
+                          class="unnnic-form sm bold_placeholder"
                           data-passed-props="[object Object]"
                           data-testid="temba_select_input_operator"
-                          data-v-79844726=""
+                          data-v-48c0c241=""
+                          readonly="readonly"
                         >
                           <!---->
                           <div
-                            class="input-container"
-                            data-v-79844726=""
+                            class="unnnic-form-input text-input size--sm has-icon-right"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
                           >
-                            <!---->
                             <input
-                              class="unnnic-font secondary"
-                              data-v-79844726=""
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-testid="temba_select_input_operator"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
+                              iconright="arrow-button-down-1"
                               placeholder="has any of the words"
                               readonly="readonly"
+                              size="0"
                               type="text"
+                              v-bind="[object Object]"
                             />
+                            <!---->
                             <span
-                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                              data-v-400546b3=""
                               data-v-59b073b4=""
-                              data-v-79844726=""
                             >
                               <svg
                                 fill="none"
@@ -2044,7 +2134,6 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                                 />
                               </svg>
                             </span>
-                            <!---->
                           </div>
                           <!---->
                         </div>
@@ -2280,31 +2369,40 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                         class="completion_wrapper"
                       >
                         <div
-                          data-use-vue-component-wrap=""
-                          style="all: unset;"
+                          data-testid="arguments"
                         >
                           <div
-                            class="unnnic-input size-sm"
-                            data-passed-props="[object Object]"
-                            data-testid="arguments"
-                            data-v-79844726=""
+                            data-use-vue-component-wrap=""
+                            style="all: unset;"
                           >
-                            <!---->
                             <div
-                              class="input-container"
-                              data-v-79844726=""
+                              class="unnnic-form sm"
+                              data-passed-props="[object Object]"
+                              data-v-48c0c241=""
                             >
                               <!---->
-                              <input
-                                class="unnnic-font secondary"
-                                data-v-79844726=""
-                                placeholder="Ex: cart"
-                                type="text"
-                              />
-                              <!---->
+                              <div
+                                class="unnnic-form-input text-input size--sm"
+                                data-v-400546b3=""
+                                data-v-48c0c241=""
+                                mask=""
+                                v-bind="[object Object]"
+                              >
+                                <input
+                                  class="input-itself input size-sm normal"
+                                  data-passed-props="[object Object]"
+                                  data-v-400546b3=""
+                                  data-v-97b44e8c=""
+                                  placeholder="Ex: cart"
+                                  size="0"
+                                  type="text"
+                                  v-bind="[object Object]"
+                                />
+                                <!---->
+                                <!---->
+                              </div>
                               <!---->
                             </div>
-                            <!---->
                           </div>
                         </div>
                         <div
@@ -2325,33 +2423,43 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                     class="category"
                   >
                     <div
-                      data-use-vue-component-wrap=""
-                      style="all: unset;"
-                      unnnic-input="true"
+                      data-testid="Exit Name"
                     >
                       <div
-                        class="unnnic-input size-sm"
-                        data-passed-props="[object Object]"
-                        data-testid="Exit Name"
-                        data-v-79844726=""
+                        data-use-vue-component-wrap=""
+                        style="all: unset;"
+                        unnnic-input="true"
                       >
-                        <!---->
                         <div
-                          class="input-container"
-                          data-v-79844726=""
+                          class="unnnic-form sm"
+                          data-passed-props="[object Object]"
+                          data-v-48c0c241=""
+                          maxlength="36"
                         >
                           <!---->
-                          <input
-                            class="unnnic-font secondary"
-                            data-v-79844726=""
-                            maxlength="36"
-                            placeholder="Ex: shopping"
-                            type="text"
-                          />
-                          <!---->
+                          <div
+                            class="unnnic-form-input text-input size--sm"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
+                          >
+                            <input
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
+                              maxlength="36"
+                              placeholder="Ex: shopping"
+                              size="0"
+                              type="text"
+                              v-bind="[object Object]"
+                            />
+                            <!---->
+                            <!---->
+                          </div>
                           <!---->
                         </div>
-                        <!---->
                       </div>
                     </div>
                   </div>

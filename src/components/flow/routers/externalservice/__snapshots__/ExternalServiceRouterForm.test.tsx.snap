@@ -43,27 +43,36 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Call an external service"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -77,7 +86,6 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -364,28 +372,38 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_external_service"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
+                  readonly="readonly"
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_external_service"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="ChatGPT dummy project"
                       readonly="readonly"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -399,7 +417,6 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -453,28 +470,38 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_external_service_call"
-                data-v-79844726=""
+                data-v-48c0c241=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_external_service_call"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="Consultar Chat GPT"
                     readonly="readonly"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -488,7 +515,6 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -517,38 +543,48 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -659,27 +695,36 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Call an external service"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -693,7 +738,6 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -980,28 +1024,38 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_external_service"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
+                  readonly="readonly"
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_external_service"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="ChatGPT dummy project"
                       readonly="readonly"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -1015,7 +1069,6 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -1069,28 +1122,38 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_external_service_call"
-                data-v-79844726=""
+                data-v-48c0c241=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_external_service_call"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="Consultar Chat GPT"
                     readonly="readonly"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -1104,7 +1167,6 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -1164,28 +1226,38 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                         style="all: unset;"
                       >
                         <div
-                          class="unnnic-input size-sm bold_placeholder"
+                          class="unnnic-form sm bold_placeholder"
                           data-passed-props="[object Object]"
                           data-testid="temba_select_input_aditional_prompts"
-                          data-v-79844726=""
+                          data-v-48c0c241=""
+                          readonly="readonly"
                         >
                           <!---->
                           <div
-                            class="input-container"
-                            data-v-79844726=""
+                            class="unnnic-form-input text-input size--sm has-icon-right"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
                           >
-                            <!---->
                             <input
-                              class="unnnic-font secondary"
-                              data-v-79844726=""
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-testid="temba_select_input_aditional_prompts"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
+                              iconright="arrow-button-down-1"
                               placeholder="Select an option"
                               readonly="readonly"
+                              size="0"
                               type="text"
+                              v-bind="[object Object]"
                             />
+                            <!---->
                             <span
-                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                              data-v-400546b3=""
                               data-v-59b073b4=""
-                              data-v-79844726=""
                             >
                               <svg
                                 fill="none"
@@ -1199,7 +1271,6 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                                 />
                               </svg>
                             </span>
-                            <!---->
                           </div>
                           <!---->
                         </div>
@@ -1446,30 +1517,40 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                         class="completion_wrapper"
                       >
                         <div
-                          data-use-vue-component-wrap=""
-                          style="all: unset;"
+                          data-testid="User Input"
                         >
                           <div
-                            class="unnnic-input size-sm"
-                            data-passed-props="[object Object]"
-                            data-testid="User Input"
-                            data-v-79844726=""
+                            data-use-vue-component-wrap=""
+                            style="all: unset;"
                           >
-                            <!---->
                             <div
-                              class="input-container"
-                              data-v-79844726=""
+                              class="unnnic-form sm"
+                              data-passed-props="[object Object]"
+                              data-v-48c0c241=""
                             >
                               <!---->
-                              <input
-                                class="unnnic-font secondary"
-                                data-v-79844726=""
-                                type="text"
-                              />
-                              <!---->
+                              <div
+                                class="unnnic-form-input text-input size--sm"
+                                data-v-400546b3=""
+                                data-v-48c0c241=""
+                                mask=""
+                                v-bind="[object Object]"
+                              >
+                                <input
+                                  class="input-itself input size-sm normal"
+                                  data-passed-props="[object Object]"
+                                  data-v-400546b3=""
+                                  data-v-97b44e8c=""
+                                  placeholder=""
+                                  size="12"
+                                  type="text"
+                                  v-bind="[object Object]"
+                                />
+                                <!---->
+                                <!---->
+                              </div>
                               <!---->
                             </div>
-                            <!---->
                           </div>
                         </div>
                         <div
@@ -1489,38 +1570,48 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -1869,27 +1960,36 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Call an external service"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -1903,7 +2003,6 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -2190,28 +2289,38 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_external_service"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
+                  readonly="readonly"
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_external_service"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Omie dummy project"
                       readonly="readonly"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -2225,7 +2334,6 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -2279,28 +2387,38 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_external_service_call"
-                data-v-79844726=""
+                data-v-48c0c241=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_external_service_call"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="Inserir Contato"
                     readonly="readonly"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -2314,7 +2432,6 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -2381,28 +2498,38 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                         style="all: unset;"
                       >
                         <div
-                          class="unnnic-input size-sm bold_placeholder"
+                          class="unnnic-form sm bold_placeholder"
                           data-passed-props="[object Object]"
                           data-testid="temba_select_input_service_call_param"
-                          data-v-79844726=""
+                          data-v-48c0c241=""
+                          readonly="readonly"
                         >
                           <!---->
                           <div
-                            class="input-container"
-                            data-v-79844726=""
+                            class="unnnic-form-input text-input size--sm has-icon-right"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
                           >
-                            <!---->
                             <input
-                              class="unnnic-font secondary"
-                              data-v-79844726=""
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-testid="temba_select_input_service_call_param"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
+                              iconright="arrow-button-down-1"
                               placeholder="Identificação"
                               readonly="readonly"
+                              size="0"
                               type="text"
+                              v-bind="[object Object]"
                             />
+                            <!---->
                             <span
-                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                              data-v-400546b3=""
                               data-v-59b073b4=""
-                              data-v-79844726=""
                             >
                               <svg
                                 fill="none"
@@ -2416,7 +2543,6 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                                 />
                               </svg>
                             </span>
-                            <!---->
                           </div>
                           <!---->
                         </div>
@@ -2486,28 +2612,38 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                         style="all: unset;"
                       >
                         <div
-                          class="unnnic-input size-sm bold_placeholder"
+                          class="unnnic-form sm bold_placeholder"
                           data-passed-props="[object Object]"
                           data-testid="temba_select_input_service_call_param_filter"
-                          data-v-79844726=""
+                          data-v-48c0c241=""
+                          readonly="readonly"
                         >
                           <!---->
                           <div
-                            class="input-container"
-                            data-v-79844726=""
+                            class="unnnic-form-input text-input size--sm has-icon-right"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
                           >
-                            <!---->
                             <input
-                              class="unnnic-font secondary"
-                              data-v-79844726=""
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-testid="temba_select_input_service_call_param_filter"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
+                              iconright="arrow-button-down-1"
                               placeholder="Filter"
                               readonly="readonly"
+                              size="0"
                               type="text"
+                              v-bind="[object Object]"
                             />
+                            <!---->
                             <span
-                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                              data-v-400546b3=""
                               data-v-59b073b4=""
-                              data-v-79844726=""
                             >
                               <svg
                                 fill="none"
@@ -2521,7 +2657,6 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                                 />
                               </svg>
                             </span>
-                            <!---->
                           </div>
                           <!---->
                         </div>
@@ -2627,30 +2762,40 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                         class="completion_wrapper"
                       >
                         <div
-                          data-use-vue-component-wrap=""
-                          style="all: unset;"
+                          data-testid="Service Call Param Data"
                         >
                           <div
-                            class="unnnic-input size-sm"
-                            data-passed-props="[object Object]"
-                            data-testid="Service Call Param Data"
-                            data-v-79844726=""
+                            data-use-vue-component-wrap=""
+                            style="all: unset;"
                           >
-                            <!---->
                             <div
-                              class="input-container"
-                              data-v-79844726=""
+                              class="unnnic-form sm"
+                              data-passed-props="[object Object]"
+                              data-v-48c0c241=""
                             >
                               <!---->
-                              <input
-                                class="unnnic-font secondary"
-                                data-v-79844726=""
-                                type="text"
-                              />
-                              <!---->
+                              <div
+                                class="unnnic-form-input text-input size--sm"
+                                data-v-400546b3=""
+                                data-v-48c0c241=""
+                                mask=""
+                                v-bind="[object Object]"
+                              >
+                                <input
+                                  class="input-itself input size-sm normal"
+                                  data-passed-props="[object Object]"
+                                  data-v-400546b3=""
+                                  data-v-97b44e8c=""
+                                  placeholder=""
+                                  size="0"
+                                  type="text"
+                                  v-bind="[object Object]"
+                                />
+                                <!---->
+                                <!---->
+                              </div>
                               <!---->
                             </div>
-                            <!---->
                           </div>
                         </div>
                         <div
@@ -2668,7 +2813,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                       data-passed-props="[object Object]"
-                      data-testid="remove-param-96249bdc-cb58-4489-a188-0eeb6686a8c9"
+                      data-testid="remove-param-7663e5a1-6a46-4b0d-af01-b2262a6ad4b5"
                       data-v-59b073b4=""
                     >
                       <svg
@@ -2698,38 +2843,48 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -2840,27 +2995,36 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Call an external service"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -2874,7 +3038,6 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -3161,28 +3324,38 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_external_service"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
+                  readonly="readonly"
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_external_service"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Omie dummy project"
                       readonly="readonly"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -3196,7 +3369,6 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -3250,28 +3422,38 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_external_service_call"
-                data-v-79844726=""
+                data-v-48c0c241=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_external_service_call"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="Inserir Contato"
                     readonly="readonly"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -3285,7 +3467,6 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -3413,29 +3594,40 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                         style="all: unset;"
                       >
                         <div
-                          class="unnnic-input size-sm bold_placeholder"
+                          class="unnnic-form sm bold_placeholder"
                           data-passed-props="[object Object]"
                           data-testid="temba_select_input_service_call_param"
-                          data-v-79844726=""
+                          data-v-48c0c241=""
+                          disabled="disabled"
+                          readonly="readonly"
                         >
                           <!---->
                           <div
-                            class="input-container"
-                            data-v-79844726=""
+                            class="unnnic-form-input text-input size--sm has-icon-right"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
                           >
-                            <!---->
                             <input
-                              class="unnnic-font secondary"
-                              data-v-79844726=""
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-testid="temba_select_input_service_call_param"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
                               disabled="disabled"
+                              iconright="arrow-button-down-1"
                               placeholder="Identificação"
                               readonly="readonly"
+                              size="0"
                               type="text"
+                              v-bind="[object Object]"
                             />
+                            <!---->
                             <span
-                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                              data-v-400546b3=""
                               data-v-59b073b4=""
-                              data-v-79844726=""
                             >
                               <svg
                                 fill="none"
@@ -3449,7 +3641,6 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                                 />
                               </svg>
                             </span>
-                            <!---->
                           </div>
                           <!---->
                         </div>
@@ -3519,29 +3710,40 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                         style="all: unset;"
                       >
                         <div
-                          class="unnnic-input size-sm bold_placeholder"
+                          class="unnnic-form sm bold_placeholder"
                           data-passed-props="[object Object]"
                           data-testid="temba_select_input_service_call_param_filter"
-                          data-v-79844726=""
+                          data-v-48c0c241=""
+                          disabled="disabled"
+                          readonly="readonly"
                         >
                           <!---->
                           <div
-                            class="input-container"
-                            data-v-79844726=""
+                            class="unnnic-form-input text-input size--sm has-icon-right"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
                           >
-                            <!---->
                             <input
-                              class="unnnic-font secondary"
-                              data-v-79844726=""
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-testid="temba_select_input_service_call_param_filter"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
                               disabled="disabled"
+                              iconright="arrow-button-down-1"
                               placeholder="Código de Integração"
                               readonly="readonly"
+                              size="0"
                               type="text"
+                              v-bind="[object Object]"
                             />
+                            <!---->
                             <span
-                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                              data-v-400546b3=""
                               data-v-59b073b4=""
-                              data-v-79844726=""
                             >
                               <svg
                                 fill="none"
@@ -3555,7 +3757,6 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                                 />
                               </svg>
                             </span>
-                            <!---->
                           </div>
                           <!---->
                         </div>
@@ -3651,30 +3852,40 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                         class="completion_wrapper"
                       >
                         <div
-                          data-use-vue-component-wrap=""
-                          style="all: unset;"
+                          data-testid="Service Call Param Data"
                         >
                           <div
-                            class="unnnic-input size-sm"
-                            data-passed-props="[object Object]"
-                            data-testid="Service Call Param Data"
-                            data-v-79844726=""
+                            data-use-vue-component-wrap=""
+                            style="all: unset;"
                           >
-                            <!---->
                             <div
-                              class="input-container"
-                              data-v-79844726=""
+                              class="unnnic-form sm"
+                              data-passed-props="[object Object]"
+                              data-v-48c0c241=""
                             >
                               <!---->
-                              <input
-                                class="unnnic-font secondary"
-                                data-v-79844726=""
-                                type="text"
-                              />
-                              <!---->
+                              <div
+                                class="unnnic-form-input text-input size--sm"
+                                data-v-400546b3=""
+                                data-v-48c0c241=""
+                                mask=""
+                                v-bind="[object Object]"
+                              >
+                                <input
+                                  class="input-itself input size-sm normal"
+                                  data-passed-props="[object Object]"
+                                  data-v-400546b3=""
+                                  data-v-97b44e8c=""
+                                  placeholder=""
+                                  size="0"
+                                  type="text"
+                                  v-bind="[object Object]"
+                                />
+                                <!---->
+                                <!---->
+                              </div>
                               <!---->
                             </div>
-                            <!---->
                           </div>
                         </div>
                         <div
@@ -3692,7 +3903,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-clean remove_icon"
                       data-passed-props="[object Object]"
-                      data-testid="remove-param-57bf1459-14b9-4a73-b579-9d1b56f0b276"
+                      data-testid="remove-param-a0bf60d1-2333-41a5-9bcb-7c56cc5e969e"
                       data-v-59b073b4=""
                     >
                       <svg
@@ -3759,29 +3970,40 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                         style="all: unset;"
                       >
                         <div
-                          class="unnnic-input size-sm bold_placeholder"
+                          class="unnnic-form sm bold_placeholder"
                           data-passed-props="[object Object]"
                           data-testid="temba_select_input_service_call_param"
-                          data-v-79844726=""
+                          data-v-48c0c241=""
+                          disabled="disabled"
+                          readonly="readonly"
                         >
                           <!---->
                           <div
-                            class="input-container"
-                            data-v-79844726=""
+                            class="unnnic-form-input text-input size--sm has-icon-right"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
                           >
-                            <!---->
                             <input
-                              class="unnnic-font secondary"
-                              data-v-79844726=""
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-testid="temba_select_input_service_call_param"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
                               disabled="disabled"
+                              iconright="arrow-button-down-1"
                               placeholder="Identificação"
                               readonly="readonly"
+                              size="0"
                               type="text"
+                              v-bind="[object Object]"
                             />
+                            <!---->
                             <span
-                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                              data-v-400546b3=""
                               data-v-59b073b4=""
-                              data-v-79844726=""
                             >
                               <svg
                                 fill="none"
@@ -3795,7 +4017,6 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                                 />
                               </svg>
                             </span>
-                            <!---->
                           </div>
                           <!---->
                         </div>
@@ -3865,29 +4086,40 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                         style="all: unset;"
                       >
                         <div
-                          class="unnnic-input size-sm bold_placeholder"
+                          class="unnnic-form sm bold_placeholder"
                           data-passed-props="[object Object]"
                           data-testid="temba_select_input_service_call_param_filter"
-                          data-v-79844726=""
+                          data-v-48c0c241=""
+                          disabled="disabled"
+                          readonly="readonly"
                         >
                           <!---->
                           <div
-                            class="input-container"
-                            data-v-79844726=""
+                            class="unnnic-form-input text-input size--sm has-icon-right"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
                           >
-                            <!---->
                             <input
-                              class="unnnic-font secondary"
-                              data-v-79844726=""
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-testid="temba_select_input_service_call_param_filter"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
                               disabled="disabled"
+                              iconright="arrow-button-down-1"
                               placeholder="Nome do contato"
                               readonly="readonly"
+                              size="0"
                               type="text"
+                              v-bind="[object Object]"
                             />
+                            <!---->
                             <span
-                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                              data-v-400546b3=""
                               data-v-59b073b4=""
-                              data-v-79844726=""
                             >
                               <svg
                                 fill="none"
@@ -3901,7 +4133,6 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                                 />
                               </svg>
                             </span>
-                            <!---->
                           </div>
                           <!---->
                         </div>
@@ -3997,30 +4228,40 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                         class="completion_wrapper"
                       >
                         <div
-                          data-use-vue-component-wrap=""
-                          style="all: unset;"
+                          data-testid="Service Call Param Data"
                         >
                           <div
-                            class="unnnic-input size-sm"
-                            data-passed-props="[object Object]"
-                            data-testid="Service Call Param Data"
-                            data-v-79844726=""
+                            data-use-vue-component-wrap=""
+                            style="all: unset;"
                           >
-                            <!---->
                             <div
-                              class="input-container"
-                              data-v-79844726=""
+                              class="unnnic-form sm"
+                              data-passed-props="[object Object]"
+                              data-v-48c0c241=""
                             >
                               <!---->
-                              <input
-                                class="unnnic-font secondary"
-                                data-v-79844726=""
-                                type="text"
-                              />
-                              <!---->
+                              <div
+                                class="unnnic-form-input text-input size--sm"
+                                data-v-400546b3=""
+                                data-v-48c0c241=""
+                                mask=""
+                                v-bind="[object Object]"
+                              >
+                                <input
+                                  class="input-itself input size-sm normal"
+                                  data-passed-props="[object Object]"
+                                  data-v-400546b3=""
+                                  data-v-97b44e8c=""
+                                  placeholder=""
+                                  size="0"
+                                  type="text"
+                                  v-bind="[object Object]"
+                                />
+                                <!---->
+                                <!---->
+                              </div>
                               <!---->
                             </div>
-                            <!---->
                           </div>
                         </div>
                         <div
@@ -4038,7 +4279,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-clean remove_icon"
                       data-passed-props="[object Object]"
-                      data-testid="remove-param-a0bf60d1-2333-41a5-9bcb-7c56cc5e969e"
+                      data-testid="remove-param-87c8708e-6839-44ce-b80a-c1d133a3a0c6"
                       data-v-59b073b4=""
                     >
                       <svg
@@ -4068,38 +4309,48 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -5318,7 +5569,7 @@ Array [
               "paramType": undefined,
               "required": undefined,
               "type": "identificacao",
-              "uuid": "87c8708e-6839-44ce-b80a-c1d133a3a0c6",
+              "uuid": "452c1751-5b03-4d1a-8346-83be999a8258",
               "valid": true,
               "valueKey": undefined,
               "verboseName": "Identificação",
@@ -5386,7 +5637,7 @@ Array [
               "paramType": undefined,
               "required": undefined,
               "type": "identificacao",
-              "uuid": "452c1751-5b03-4d1a-8346-83be999a8258",
+              "uuid": "28ab7e47-57cc-42ae-8269-5d8d442d4276",
               "valid": true,
               "valueKey": undefined,
               "verboseName": "Identificação",
@@ -5394,17 +5645,17 @@ Array [
           ],
           "result_name": "My External Service Result",
           "type": "call_external_service",
-          "uuid": "7663e5a1-6a46-4b0d-af01-b2262a6ad4b5",
+          "uuid": "38282c32-100e-4376-af57-7f6a36ddafba",
         },
       ],
       "exits": Array [
         Object {
           "destination_uuid": null,
-          "uuid": "38282c32-100e-4376-af57-7f6a36ddafba",
+          "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
         },
         Object {
           "destination_uuid": null,
-          "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
+          "uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
         },
       ],
       "router": Object {
@@ -5413,28 +5664,28 @@ Array [
             "arguments": Array [
               "Success",
             ],
-            "category_uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
+            "category_uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
             "type": "has_category",
-            "uuid": "90e20a49-6ecc-4b0b-97bf-bcbd37069b63",
+            "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
           },
         ],
         "categories": Array [
           Object {
-            "exit_uuid": "38282c32-100e-4376-af57-7f6a36ddafba",
-            "name": "Success",
-            "uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
-          },
-          Object {
             "exit_uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
-            "name": "Failure",
+            "name": "Success",
             "uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
           },
+          Object {
+            "exit_uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
+            "name": "Failure",
+            "uuid": "90e20a49-6ecc-4b0b-97bf-bcbd37069b63",
+          },
         ],
-        "default_category_uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
+        "default_category_uuid": "90e20a49-6ecc-4b0b-97bf-bcbd37069b63",
         "operand": "@results.my_external_service_result",
         "type": "switch",
       },
-      "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
+      "uuid": "f627a69c-a227-451f-9520-ce969f02162e",
     },
     "ui": Object {
       "config": Object {},

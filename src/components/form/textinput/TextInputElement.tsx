@@ -190,20 +190,21 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             errors={errorList}
           />
         ) : (
-          <UnnnicInput
-            data-testid={this.props.name}
-            value={this.props.entry.value}
-            on={{
-              input: (value: string) => this.handleChange({ currentTarget: { value } })
-            }}
-            label={this.props.showLabel ? this.props.name : null}
-            placeholder={this.props.placeholder}
-            size={this.props.size || TextInputSizes.sm}
-            ref={this.inputItem}
-            error={hasError ? errorList[0] : null}
-            maxlength={this.props.maxLength}
-            iconRight={this.props.iconRight}
-          />
+          <div data-testid={this.props.name}>
+            <UnnnicInput
+              value={this.props.entry.value}
+              on={{
+                input: (value: string) => this.handleChange({ currentTarget: { value } })
+              }}
+              label={this.props.showLabel ? this.props.name : null}
+              placeholder={this.props.placeholder}
+              size={this.props.size || TextInputSizes.sm}
+              ref={this.inputItem}
+              error={hasError ? errorList[0] : null}
+              maxlength={this.props.maxLength}
+              iconRight={this.props.iconRight}
+            />
+          </div>
         )}
         {this.props.helpText && typeof this.props.helpText === 'string' ? (
           <div className={`${styles.help} u font secondary body-md color-neutral-cleanest`}>
