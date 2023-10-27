@@ -125,7 +125,7 @@
     "identity-obj-proxy": "3.0.0",
     "immutability-helper": "2.7.1",
     "jest-environment-jsdom-sixteen": "2.0.0",
-    "jsplumb": "^2.9.3",
+    "jsplumb": "file:jsplumb-2.13.1.tgz",
     "lint-staged": "8.1.7",
     "local-storage": "1.4.2",
     "lodash.clonedeep": "4.5.0",
