@@ -180,27 +180,36 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Enter another flow"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -214,7 +223,6 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -500,27 +508,36 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_flow_to_start"
-                data-v-79844726=""
+                data-v-48c0c241=""
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_flow_to_start"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="My Subflow Flow"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -534,7 +551,6 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -658,27 +674,36 @@ exports[`SubflowRouterForm should render 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Enter another flow"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -692,7 +717,6 @@ exports[`SubflowRouterForm should render 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -978,27 +1002,36 @@ exports[`SubflowRouterForm should render 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_flow_to_start"
-                data-v-79844726=""
+                data-v-48c0c241=""
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_flow_to_start"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="Colors"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -1012,7 +1045,6 @@ exports[`SubflowRouterForm should render 1`] = `
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>

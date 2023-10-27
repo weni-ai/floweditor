@@ -244,18 +244,19 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
               errors={this.props.errors}
             />
           ) : (
-            <UnnnicInput
-              ref={(ele: any) => {
-                this.refInput = ele;
-              }}
-              data-testid={this.props.name}
-              value={this.props.value}
-              on={{ input: this.handleInputChange }}
-              placeholder={this.props.placeholder}
-              size={this.props.size}
-              type={hasErrors ? 'error' : 'normal'}
-              error={this.props.errors && this.props.errors[0]}
-            />
+            <div data-testid={this.props.name}>
+              <UnnnicInput
+                ref={(ele: any) => {
+                  this.refInput = ele;
+                }}
+                value={this.props.value}
+                on={{ input: this.handleInputChange }}
+                placeholder={this.props.placeholder}
+                size={this.props.size}
+                type={hasErrors ? 'error' : 'normal'}
+                error={this.props.errors && this.props.errors[0]}
+              />
+            </div>
           )}
           {this.tembaCompletionRef && ref ? (
             <SelectOptions

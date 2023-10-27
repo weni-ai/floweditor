@@ -5,7 +5,7 @@ import { AssetType, RenderNode } from 'store/flowContext';
 import TicketRouterForm from './TicketRouterForm';
 import * as utils from 'utils';
 import * as React from 'react';
-import { render, fireEvent, fireUnnnicInputChangeText, wait } from 'test/utils';
+import { render, fireEvent, fireUnnnicInputChangeText, wait, act } from 'test/utils';
 import userEvent from '@testing-library/user-event';
 import { Ticketer } from '../../../../flowTypes';
 
@@ -48,7 +48,9 @@ describe(TicketRouterForm.name, () => {
       const resultName = getByTestId('Save as result');
 
       // our ticketer, body and result name are required
-      fireUnnnicInputChangeText(resultName, '');
+      await act(async () => {
+        fireUnnnicInputChangeText(resultName, '');
+      });
       fireEvent.click(okButton);
       expect(ticketForm.updateRouter).not.toBeCalled();
 
@@ -57,9 +59,14 @@ describe(TicketRouterForm.name, () => {
       // we need a topic
       userEvent.click(getByText('General'));
 
-      fireUnnnicInputChangeText(resultName, 'My Ticket Result');
+      await act(async () => {
+        fireUnnnicInputChangeText(resultName, 'My Ticket Result');
+      });
 
       fireEvent.click(okButton);
+
+      await wait();
+
       expect(ticketForm.updateRouter).toBeCalled();
       expect(ticketForm.updateRouter).toMatchCallSnapshot();
     });
