@@ -117,6 +117,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
     display: inline-flex;
     gap: $unnnic-spacing-nano;
     padding: $unnnic-spacing-xs;
+    box-sizing: content-box;
 
     width: $unnnic-avatar-size-nano;
     height: $unnnic-spacing-md;
