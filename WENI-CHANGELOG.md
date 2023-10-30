@@ -1,3 +1,10 @@
+2.7.0
+----------
+Feat: Control tools guide and modal
+Feat: Change default mouse state into DRAG
+Feat: Find starting node button
+Fix: Ghost node position on canvas scroll
+
 2.6.5
 ----------
 - Fix: check stickies before parse

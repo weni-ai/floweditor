@@ -1016,6 +1016,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     this.preloadBgImage();
   }
 
+  private startNextTour() {
+    this.props.mergeEditorState({ currentGuide: 'control_tools', guidingStep: 0 });
+  }
+
   public render(): ReactNode {
     const simStyle = this.state.simulatorStyle === 'whatsapp' ? styles.whatsapp : '';
 
@@ -1152,6 +1156,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           )}
           buttonText={i18n.t('guiding.v2.2.button', 'Got it 3/3')}
           side="left"
+          action={() => this.startNextTour()}
         >
           <div className={styles.simulator_tab + ' ' + tabHidden} onClick={this.onToggle}>
             <div className={styles.simulator_tab_icon}>
