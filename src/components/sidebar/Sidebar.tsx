@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom';
 import { fakePropType } from 'config/ConfigProvider';
-import { FlowPosition } from 'flowTypes';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -19,10 +18,10 @@ import i18n from 'config/i18n';
 import { applyVueInReact } from 'vuereact-combined';
 import styles from './Sidebar.module.scss';
 // @ts-ignore
-import { unnnicModalNext, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
+import { unnnicModalNext, unnnicToolTip } from '@weni/unnnic-system';
 import GuidingSteps from 'components/guidingsteps/GuidingSteps';
+import { MouseState } from 'store/editor';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
 const UnnnicTooltip = applyVueInReact(unnnicToolTip);
 
 const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
@@ -41,12 +40,15 @@ const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
 
 export interface SidebarStoreProps {
   onCopyClick: () => void;
+  onCreateNode: (node: RenderNode) => void;
+  onMouseStateChange: (mouseState: MouseState) => void;
   selectionActive: boolean;
   nodes: { [uuid: string]: RenderNode };
   onOpenNodeEditor: OnOpenNodeEditor;
   guidingStep: number;
   currentGuide: string;
   mergeEditorState: MergeEditorState;
+  mouseState: MouseState;
 }
 
 export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
@@ -61,25 +63,13 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 
     const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
 
-    emptyNode.ui.position = this.getNewNodePosition();
-
-    this.props.onOpenNodeEditor({
-      originalNode: emptyNode,
-      originalAction: emptyNode.node.actions[0]
-    });
+    this.props.onCreateNode(emptyNode);
   }
 
   public componentDidMount(): void {
     if (Object.keys(this.props.nodes).length === 0) {
       // this.showGetStartedModal();
     }
-  }
-
-  private getNewNodePosition(): FlowPosition {
-    return {
-      top: window.scrollY,
-      left: window.scrollX
-    };
   }
 
   private showGetStartedModal(): void {
@@ -129,10 +119,10 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 
   private getCopyIconScheme(): string {
     if (!this.props.selectionActive) {
-      return 'neutral-cleanest';
+      return styles.disabled;
     }
 
-    return 'neutral-cloudy';
+    return styles.enabled;
   }
 
   private handleCopyClick(): void {
@@ -143,9 +133,46 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
     this.props.onCopyClick();
   }
 
+  private toggleMouseState(): void {
+    const mouseState =
+      this.props.mouseState === MouseState.SELECT ? MouseState.DRAG : MouseState.SELECT;
+
+    this.props.onMouseStateChange(mouseState);
+  }
+
   public render(): JSX.Element {
     return (
       <div className={styles.sidebar}>
+        <GuidingSteps
+          guide="control_tools"
+          step={0}
+          title={i18n.t('guiding.control_tools.0.title', 'Select and drag')}
+          description={i18n.t(
+            'guiding.control_tools.0.description',
+            `Click here, use the “V” shortcut or hold down the space bar to use the “little hand” tool, with it you will be able to navigate through your entire flow just by clicking and dragging on the screen`
+          )}
+          buttonText={i18n.t('guiding.v2.0.button', 'Got it 1/3')}
+        >
+          <UnnnicTooltip
+            enabled={this.props.guidingStep !== 0}
+            side="right"
+            text={
+              this.props.mouseState === MouseState.SELECT
+                ? i18n.t('select', 'Select')
+                : i18n.t('drag', 'Drag')
+            }
+            shortcutText={'V'}
+          >
+            <div className={styles.option} onClick={() => this.toggleMouseState()}>
+              {this.props.mouseState === MouseState.SELECT ? (
+                <span className="material-symbols-rounded">near_me</span>
+              ) : (
+                <span className="material-symbols-rounded">back_hand</span>
+              )}
+            </div>
+          </UnnnicTooltip>
+        </GuidingSteps>
+
         <GuidingSteps
           guide="v2"
           step={0}
@@ -162,7 +189,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             side="right"
           >
             <div className={styles.option} onClick={() => this.createSendMessageNode()}>
-              <UnnnicIcon icon="add-circle-1" />
+              <span className="material-symbols-rounded">add_circle</span>
             </div>
           </UnnnicTooltip>
         </GuidingSteps>
@@ -188,7 +215,9 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
               className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
               onClick={() => this.handleCopyClick()}
             >
-              <UnnnicIcon icon="paginate-filter-text-1" scheme={this.getCopyIconScheme()} />
+              <span className={'material-symbols-rounded ' + this.getCopyIconScheme()}>
+                content_copy
+              </span>
             </div>
           </UnnnicTooltip>
         </GuidingSteps>

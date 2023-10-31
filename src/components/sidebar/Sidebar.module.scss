@@ -3,8 +3,9 @@
 
 .sidebar {
   position: -webkit-sticky;
-  position: sticky;
-  top: 63px;
+  position: fixed;
+  top: 120px;
+  left: 50px;
   width: 72px;
   background-color: $unnnic-color-background-sky;
   border-radius: $unnnic-border-radius-sm;
@@ -12,8 +13,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 50px;
-  margin-top: 63px;
   z-index: 1000;
 
   .option {
@@ -27,6 +26,7 @@
     margin: $unnnic-spacing-stack-sm 0px;
     cursor: pointer;
     transition: background 0.2s ease-in-out;
+    color: $unnnic-color-neutral-cloudy;
 
     &:hover {
       background-color: $unnnic-color-neutral-soft;
@@ -42,4 +42,8 @@
   span {
     text-align: left !important;
   }
+}
+
+.disabled {
+  color: $unnnic-color-neutral-cleanest;
 }

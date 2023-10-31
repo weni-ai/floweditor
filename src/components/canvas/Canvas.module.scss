@@ -4,31 +4,29 @@
 $background_offset: ($grid_size / 2) + ($node_padding) + px;
 
 .canvas_container {
-  overflow-x: scroll;
+  overflow: hidden;
   width: 100%;
-  margin-top: -200px;
+  height: 100%;
 }
 
 .canvas_background {
-  padding-top: 60px;
-  padding-left: 130px;
-  margin-right: -20px;
-
+  height: 100%;
   background-color: $unnnic-color-background-snow;
   background-position: 0px 0px;
   background-image: radial-gradient(
     circle at center,
-    $unnnic-color-neutral-clean 0,
-    $unnnic-color-neutral-clean 1px,
+    $unnnic-color-neutral-soft 0,
+    $unnnic-color-neutral-soft 1px,
     $unnnic-color-background-snow 2px,
     $unnnic-color-background-snow 100%);
   background-size: 40px 40px;
 }
 .canvas {
   position: relative;
+  height: 100%;
   width: 100%;
-
-  // margin-top: -40px;
+  overflow: hidden;
+  outline: none;
 }
 
 .canvas:after {
@@ -39,15 +37,10 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   width: 400%;
   left: 100%;
 
-  background-color: $unnnic-color-background-snow;
-  background-position: 0px 0px;
-  background-image: radial-gradient(
-    circle at center,
-    $unnnic-color-neutral-clean 0,
-    $unnnic-color-neutral-clean 1px,
-    $unnnic-color-background-snow 2px,
-    $unnnic-color-background-snow 100%);
-  background-size: 40px 40px;
+}
+
+.panzoom {
+  position: relative;
 }
 
 .drag_selection {
@@ -57,4 +50,167 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   opacity: 0.2;
   pointer-events: none;
   z-index: $z_selection;
+}
+
+
+.cursor_select {
+  cursor: default;
+}
+
+.cursor_drag {
+  cursor: grab;
+}
+
+.cursor_dragging {
+  cursor: grabbing;
+}
+
+.zoom_control {
+  position: fixed;
+  bottom: $unnnic-spacing-giant;
+  left: 36px; 
+  display: inline-flex;
+  align-items: center;
+
+  border-radius: $unnnic-border-radius-sm;
+  background: #FFF;
+  color: $unnnic-color-neutral-cloudy;
+
+  box-shadow: $unnnic-shadow-level-near;
+
+  .zoom_tooltip {
+    display: inline-flex !important;
+    align-items: center;
+    gap: $unnnic-spacing-xs;
+
+    :first-child {
+      display: inline-flex !important;
+    }
+  }
+
+  .start_tooltip {
+    overflow-wrap: unset;
+    white-space: nowrap;
+
+    :last-child {
+      left: 300px !important;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .in, .out, .start {
+    display: flex;
+    width: $unnnic-spacing-xl;
+    height: $unnnic-spacing-xl;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $unnnic-spacing-xs;
+    background: #FFF;
+    font-size: $unnnic-font-size-title-md;
+    cursor: pointer;
+
+    &:hover {
+      background: $unnnic-color-neutral-light;
+    }
+
+    &:active {
+      background: $unnnic-color-neutral-soft;
+    }
+
+    span {
+      padding: $unnnic-spacing-xs;
+    }
+  }
+
+  .start {
+    display: inline-flex;
+    gap: $unnnic-spacing-nano;
+    padding: $unnnic-spacing-xs;
+    box-sizing: content-box;
+
+    width: $unnnic-avatar-size-nano;
+    height: $unnnic-spacing-md;
+    flex-direction: row;
+    color: $unnnic-color-neutral-cloudy;
+    font-size: $unnnic-font-size-body-gt;
+    line-height: 24px;
+    transition: all 0.5s;
+    background: $unnnic-color-neutral-light;
+
+    span {
+      padding: 0;
+    }
+
+    :last-child {
+      font-size: 20px;
+    }
+
+    .hide {
+      display: inline-block;
+      text-wrap: nowrap;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.5s;
+      padding-right: 0;
+      animation: shrink-and-hide 0.5s cubic-bezier(0.250, 0.460, 0.450, 1) both;
+      max-width: fit-content;
+    }
+
+    &:hover {
+      max-width: fit-content;
+      width: 110px;
+      background: $unnnic-color-neutral-soft;
+    }
+
+    &:hover > .hide {
+      visibility: visible;
+      animation: grow-and-show 0.5s cubic-bezier(0.250, 0.460, 0.450, 1) both;
+    }
+  }
+
+  .percentage {
+    display: flex;
+    width: 44px;
+    padding: $unnnic-spacing-nano;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    font-family: $unnnic-font-family-secondary;
+    font-size: $unnnic-font-size-body-gt;
+    line-height: 24px;
+
+    span {
+      font-size: 18px;
+    }
+  }
+}
+
+@keyframes grow-and-show {
+  0% {
+    opacity: 0;
+    width: 0px
+  }
+  100% {
+    opacity: 1;
+    width: 100px;
+  }
+}
+
+@keyframes shrink-and-hide {
+  0% {
+    opacity: 1;
+    width: 100px
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 0px;
+  }
 }

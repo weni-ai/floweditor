@@ -77,6 +77,7 @@ export interface FlowEditorConfig {
   filters?: string[];
 
   showNewUpdates?: boolean;
+  initialGuide?: string;
 }
 
 export interface LocalizationMap {

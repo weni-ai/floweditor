@@ -62,10 +62,18 @@
     background-color: $unnnic-color-brand-weni-soft;
     width: 100%;
   }
+
+  &.arrow_left {
+
+    &::before {
+      left: 2.5%;
+    }
+  }
 }
 
 .top {
   top: calc(var(--tooltip-margin) * -1);
+  transform: translateX(-2%) translateY(-100%);
 
   &::before {
     top: 100%;

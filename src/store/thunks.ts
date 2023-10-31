@@ -326,6 +326,20 @@ export const loadFlowDefinition = (details: FlowDetails, assetStore: AssetStore)
         type: guessNodeType(node)
       };
       currentTop += 150;
+    } else {
+      definition._ui.nodes[node.uuid].position = {
+        left: parseFloat(definition._ui.nodes[node.uuid].position.left as any),
+        top: parseFloat(definition._ui.nodes[node.uuid].position.top as any)
+      };
+    }
+  }
+
+  if (definition._ui.stickies) {
+    for (const stickyUuid of Object.keys(definition._ui.stickies)) {
+      definition._ui.stickies[stickyUuid].position = {
+        left: parseFloat(definition._ui.stickies[stickyUuid].position.left as any),
+        top: parseFloat(definition._ui.stickies[stickyUuid].position.top as any)
+      };
     }
   }
 

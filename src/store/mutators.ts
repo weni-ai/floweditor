@@ -23,7 +23,7 @@ import {
 import { assetListToMap, detectLoops, getActionIndex, getExitIndex, getNode } from 'store/helpers';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import { LocalizationUpdates } from 'store/thunks';
-import { createUUID, merge, push, set, snakify, snapToGrid, splice, unset } from 'utils';
+import { createUUID, merge, push, set, snakify, splice, unset } from 'utils';
 
 const mutate = require('immutability-helper');
 
@@ -457,10 +457,6 @@ export const updatePosition = (
   // make sure we are on the grid
   let adjusted = { left, top };
 
-  if (snap) {
-    adjusted = snapToGrid(left, top);
-  }
-
   return mutate(nodes, {
     [nodeUUID]: {
       ui: {
@@ -491,10 +487,6 @@ export const updateStickyNotePosition = (
 
   // make sure we are on the grid
   let adjusted = { left, top };
-
-  if (snap) {
-    adjusted = snapToGrid(left, top);
-  }
 
   return mutate(definition, {
     _ui: {

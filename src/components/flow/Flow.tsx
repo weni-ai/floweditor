@@ -14,7 +14,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Plumber from 'services/Plumber';
-import { DragSelection, DebugState } from 'store/editor';
+import { DragSelection, DebugState, MouseState } from 'store/editor';
 import { RenderNode } from 'store/flowContext';
 import { detectLoops, getOrderedNodes } from 'store/helpers';
 import { NodeEditorSettings } from 'store/nodeEditor';
@@ -41,15 +41,7 @@ import {
   updateSticky,
   UpdateSticky
 } from 'store/thunks';
-import {
-  createUUID,
-  isRealValue,
-  NODE_PADDING,
-  renderIf,
-  snapToGrid,
-  timeEnd,
-  timeStart
-} from 'utils';
+import { createUUID, isRealValue, NODE_PADDING, renderIf, timeEnd, timeStart } from 'utils';
 import Debug from 'utils/debug';
 
 import { PopTabType } from 'config/interfaces';
@@ -98,6 +90,7 @@ export interface FlowStoreProps {
   translating: boolean;
   popped: string;
   dragActive: boolean;
+  mouseState: MouseState;
 
   mergeEditorState: MergeEditorState;
 
@@ -184,9 +177,10 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   }
 
   public componentDidMount(): void {
-    this.Plumber.bind('connection', (event: ConnectionEvent) =>
-      this.props.updateConnection(event.sourceId, event.targetId)
-    );
+    this.Plumber.bind('connection', (event: ConnectionEvent) => {
+      this.props.updateConnection(event.sourceId, event.targetId);
+    });
+
     this.Plumber.bind('beforeDrag', (event: ConnectionEvent) => {
       this.beforeConnectionDrag(event);
     });
@@ -245,8 +239,10 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
       this.Plumber.connect(dragPoint.nodeUUID + ':' + dragPoint.exitUUID, ghostNode.node.uuid);
 
       // Save our position for later
-      const { left, top } = (this.ghost &&
-        snapToGrid(this.ghost.ele.offsetLeft, this.ghost.ele.offsetTop)) || { left: 0, top: 0 };
+      const { left, top } = (this.ghost && {
+        left: this.ghost.ele.offsetLeft,
+        top: this.ghost.ele.offsetTop
+      }) || { left: 0, top: 0 };
 
       this.props.ghostNode.ui.position = { left, top };
 
@@ -383,7 +379,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   private handleDoubleClick(position: FlowPosition): void {
     const { left, top } = position;
     this.props.updateSticky(createUUID(), {
-      position: snapToGrid(left - 90 + NODE_PADDING, top - 40),
+      position: { left: left - 90 + NODE_PADDING, top: top - 40 },
       title: STICKY_TITLE,
       body: STICKY_BODY
     });
@@ -400,15 +396,35 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   }
 
   public handleCanvasLoaded(): void {
-    this.Plumber.setContainer('canvas');
+    this.Plumber.setContainer('panzoom');
   }
 
   private callCanvasCopy(): void {
     this.canvas.current.manuallyCopy();
   }
 
+  private callCanvasCreateNode(node: RenderNode): void {
+    this.canvas.current.manuallyCreateNode(node, (newNode: RenderNode) => {
+      this.props.onOpenNodeEditor({
+        originalNode: newNode,
+        originalAction: newNode.node.actions[0]
+      });
+    });
+  }
+
+  private handleZoom(scale: number) {
+    this.Plumber.setZoom(scale);
+  }
+
+  private handleMouseStateChange(mouseState: MouseState): void {
+    this.props.mergeEditorState({ mouseState });
+  }
+
   private startGuiding() {
-    this.props.mergeEditorState({ currentGuide: 'v2', guidingStep: 0 });
+    const initialGuide = this.context.config.initialGuide;
+    if (initialGuide) {
+      this.props.mergeEditorState({ currentGuide: initialGuide, guidingStep: 0 });
+    }
   }
 
   private showNewUpdatesModal(): void {
@@ -434,30 +450,37 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           </span> */}
 
           <div className={styles.news_list}>
-            <span>•&nbsp; {i18n.t('new_updates.news.first', 'The editor is faster')}</span>
             <span>
               •&nbsp;{' '}
               {i18n.t(
-                'new_updates.news.second',
-                'Two new cards for processing responses in a 100% intelligent way'
+                'new_updates.news.first',
+                'Now you can use your “little hand” to navigate in your flow'
+              )}
+            </span>
+            <span>•&nbsp; {i18n.t('new_updates.news.second', 'Zoom tool')}</span>
+            <span>
+              •&nbsp;{' '}
+              {i18n.t(
+                'new_updates.news.third',
+                "It's easier to know where your flow is going with the new colors on the arrows that connect the blocks"
               )}
             </span>
             <span>
               •&nbsp;{' '}
-              {i18n.t('new_updates.news.third', 'Copy and paste any type of card without worrying')}
+              {i18n.t(
+                'new_updates.news.fourth',
+                'The feedback modal is different and takes up less space on your screen'
+              )}
             </span>
             <span>
               •&nbsp;{' '}
-              {i18n.t('new_updates.news.fourth', 'Bugs fixed in the selection component on cards')}
+              {i18n.t('new_updates.news.fifth', "Now it's easier to find the start of your flow")}
             </span>
           </div>
 
           <div className={styles.footer}>
             <span>
-              {i18n.t(
-                'new_updates.footer',
-                'Feel free to send feedbacks about your experience clicking on the detective'
-              )}
+              {i18n.t('new_updates.footer', 'Feel free to send feedbacks about your experience')}
             </span>
           </div>
         </div>
@@ -470,7 +493,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
               ReactDOM.unmountComponentAtNode(newUpdatesModalEl);
             }}
           />
-          {/* <UnnnicButton
+          <UnnnicButton
             className={styles.primary}
             type="primary"
             text={i18n.t('new_updates.buttons.second', 'Show me everything')}
@@ -478,7 +501,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
               this.startGuiding();
               ReactDOM.unmountComponentAtNode(newUpdatesModalEl);
             }}
-          /> */}
+          />
         </div>
       </UnnnicModalNext>,
       newUpdatesModalEl
@@ -497,11 +520,16 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     const draggables = this.getStickies().concat(nodes);
 
     return (
-      <div>
+      <>
         {this.getSimulator()}
         {this.getNodeEditor()}
 
-        <Sidebar onCopyClick={() => this.callCanvasCopy()} />
+        <Sidebar
+          mouseState={this.props.mouseState}
+          onCopyClick={() => this.callCanvasCopy()}
+          onCreateNode={(node: RenderNode) => this.callCanvasCreateNode(node)}
+          onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
+        />
 
         <Canvas
           ref={this.canvas}
@@ -519,9 +547,12 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           onLoaded={this.handleCanvasLoaded}
           nodes={this.props.nodes}
           updateNodesEditor={this.props.updateNodesEditor}
+          onZoom={this.handleZoom}
+          mouseState={this.props.mouseState}
+          onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
         ></Canvas>
         <div id="activity_recent_messages"></div>
-      </div>
+      </>
     );
   }
 }
@@ -529,8 +560,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 /* istanbul ignore next */
 const mapStateToProps = ({
   flowContext: { definition, nodes },
-  editorState: { ghostNode, debug, translating, popped, dragActive },
-  // tslint:disable-next-line: no-shadowed-variable
+  editorState: { ghostNode, debug, translating, popped, dragActive, mouseState },
   nodeEditor: { settings }
 }: AppState) => {
   return {
@@ -541,7 +571,8 @@ const mapStateToProps = ({
     debug,
     translating,
     popped,
-    dragActive
+    dragActive,
+    mouseState
   };
 };
 

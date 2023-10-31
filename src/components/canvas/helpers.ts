@@ -1,13 +1,6 @@
 import { FlowPosition } from 'flowTypes';
 import { CanvasPositions } from 'store/editor';
-import {
-  MAX_REFLOW_ATTEMPTS,
-  NODE_SPACING,
-  set,
-  snapPositionToGrid,
-  timeEnd,
-  timeStart
-} from 'utils';
+import { MAX_REFLOW_ATTEMPTS, NODE_SPACING, set, timeEnd, timeStart } from 'utils';
 
 const mutate = require('immutability-helper');
 
@@ -103,12 +96,12 @@ const getFirstCollision = (
 };
 
 const setTop = (position: FlowPosition, newTop: number) => {
-  return snapPositionToGrid({
+  return {
     top: newTop,
     left: position.left,
     bottom: newTop + (position.bottom! - position.top),
     right: position.right
-  });
+  };
 };
 
 /**

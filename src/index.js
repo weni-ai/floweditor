@@ -4,6 +4,8 @@ import 'static/fonts/floweditor/style.css';
 import '@weni/unnnic-system/dist/unnnic.css';
 import 'material-symbols';
 
+import 'material-symbols';
+
 import FlowEditor from 'components';
 import React from 'react';
 import ReactDOM from 'react-dom';

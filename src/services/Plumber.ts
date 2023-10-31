@@ -141,6 +141,10 @@ export default class Plumber {
     this.jsPlumb.setContainer(containerId);
   }
 
+  public setZoom(scale: number) {
+    this.jsPlumb.setZoom(scale);
+  }
+
   public debug(): any {
     return this.jsPlumb;
   }

@@ -610,17 +610,17 @@
     "title": "¡Novedades en la zona!",
     "description": "¿Qué hay de nuevo?",
     "news": {
-      "first": "El editor es más rápido",
-      "second": "Dos nuevas tarjetas para procesar respuestas de forma 100% inteligente",
-      "third": "Copia y pega cualquier tipo de tarjeta sin preocuparte",
-      "fourth": "Errores solucionados en el componente de selección de tarjetas.",
-      "fifth": "Máscara de WhatsApp en el simulador."
+      "first": "Ahora puedes usar tu “pequeña mano” para navegar tu flujo",
+      "second": "Herramienta de zoom",
+      "third": "Es más fácil saber hacia dónde va tu flujo con los nuevos colores en las flechas que conectan los bloques",
+      "fourth": "El modo de evaluación es diferente y ocupa menos espacio en tu pantalla",
+      "fifth": "Ahora es más fácil encontrar el inicio de tu flujo"
     },
     "buttons": {
       "first": "Fechar",
       "second": "Muestrame todo"
     },
-    "footer": "No dudes en enviarnos comentarios sobre tu experiencia haciendo clic en el detective"
+    "footer": "No dudes en enviarnos comentarios sobre tu experiencia"
   },
   "guiding": {
     "close_tour": "Cerrar guía",
@@ -640,9 +640,24 @@
         "description": "Ahora el simulador se parece a Whatsapp\npara que puedas predecir con mayor fidelidad cómo se verá tu flujo.",
         "button": "Lo tengo 3/3"
       }
+    },
+    "control_tools": {
+      "0": {
+        "title": "Seleccionar y arrastrar",
+        "description": "Haz clic aquí, usa el atajo “V” o mantén presionada la barra espaciadora para usar la herramienta “manita”, con ella podrás navegar por todo tu flujo con solo hacer clic y arrastrar en la pantalla."
+      },
+      "1": {
+        "title": "Herramienta de zoom",
+        "description": "Ahora puedes acercar y alejar de forma nativa, sin tener que acercar todo el navegador, lo que también ayuda con la navegabilidad de las tarjetas."
+      },
+      "2": {
+        "title": "Inicio del flujo",
+        "description": "¿Tu flujo es demasiado grande y a veces te pierdes? Tus problemas terminaron, simplemente haz clic aquí o usa el atajo Ctrl + Enter para volver al comienzo de tu flujo."
+      }
     }
   },
   "you_can_also_delete_cards_pressing_the_keys": "También puedes eliminar bloques usando las teclas",
   "or": "o",
-  "new": "Nuevo"
+  "new": "Nuevo",
+  "to_flow_start": "Inicio del flujo"
 }

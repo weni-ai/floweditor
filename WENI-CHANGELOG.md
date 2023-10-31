@@ -1,3 +1,41 @@
+2.7.0
+----------
+Feat: Control tools guide and modal
+Feat: Change default mouse state into DRAG
+Feat: Find starting node button
+Fix: Ghost node position on canvas scroll
+
+2.6.5
+----------
+- Fix: check stickies before parse
+
+2.6.4
+----------
+- Fix: parse sticky position on definition load
+- Fix: Paste action changing mouse state
+
+2.6.3
+----------
+- Fix: Language selector and sidebar positions
+- Feat: Remove zeroshot authorization from logevent
+
+2.6.2
+----------
+- Fix: Parse float in flow definition loading
+
+2.6.1
+----------
+- Fix: OS comparison from scroll
+- Fix: Canvas initial connectors position
+- Feat: New Sidebar and Zoom Control icons
+- Feat: Add shift scroll into canvas
+
+2.6.0
+----------
+- Add pan and zoom functionality
+- Fixed node pasting behavior
+- New connector colors
+
 2.5.2
 ----------
 - Fix: Align updates modal footer text

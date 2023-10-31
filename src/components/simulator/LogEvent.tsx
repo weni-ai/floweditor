@@ -262,6 +262,19 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
     this.setState({ detailsVisible: true });
   }
 
+  private renderFilteredRequest(request: string) {
+    let filtered: string | string[] = request;
+    if (request.includes('api.bothub.it')) {
+      filtered = request.split('\n').filter((line: string) => {
+        return !line.startsWith('Authorization');
+      });
+
+      filtered = filtered.join('\n');
+    }
+
+    return filtered;
+  }
+
   private renderGroupsChanged(): JSX.Element {
     let parts: string[] = [];
     if (this.props.groups_added) {
@@ -331,7 +344,7 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
         noPadding={true}
       >
         <div className={styles.webhook_details}>
-          <div className={''}>{log.request}</div>
+          <div className={''}>{this.renderFilteredRequest(log.request)}</div>
           <div className={styles.response}>{log.response}</div>
         </div>
       </Dialog>
