@@ -1,23 +1,23 @@
 /* eslint-disable @typescript-eslint/camelcase */
 const whatsapp_products = [
   {
-    uuid: '6e38eba0-d673-4a35-82df-21bae2b6d466',
+    facebook_product_id: '7417461401663795',
     title: 'Product 1',
     created_on: '2021-09-01T01:06:39.178493Z'
   },
   {
-    uuid: '7e38eba0-d673-4a35-82df-21bae2b6d467',
+    facebook_product_id: '8417461401663796',
     title: 'Product 2',
     created_on: '2021-09-01T01:06:39.178493Z'
   },
   {
-    uuid: '8e38eba0-d683-4a35-82df-21bae2b6d468',
+    facebook_product_id: '9417461401663797',
     title: 'Product 3',
     created_on: '2021-09-01T01:06:39.178493Z'
   },
   {
-    uuid: '9e38eba0-d683-4a35-82df-21bae2b6d468',
-    title: 'Product 4',
+    facebook_product_id: '5417461401663798',
+    title: 'Product 1',
     created_on: '2021-09-01T01:06:39.178493Z'
   }
 ];

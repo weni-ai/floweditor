@@ -443,6 +443,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
         entry={this.state.products}
         onChange={this.handleProductsChanged}
         nameKey="title"
+        valueKey="facebook_product_id"
         style={TembaSelectStyle.small}
         multi
         searchable
