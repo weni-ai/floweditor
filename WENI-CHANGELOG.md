@@ -1,3 +1,8 @@
+2.7.1
+----------
+Feat: Use @material-symbols/font-400 to reduce font load size and time
+Feat: Use default UnnnicInput
+
 2.7.0
 ----------
 Feat: Control tools guide and modal
