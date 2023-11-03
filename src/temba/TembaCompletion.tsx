@@ -14,11 +14,11 @@ import { connect } from 'react-redux';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
-import { unnnicTextArea, unnnicInputNext } from '@weni/unnnic-system';
+import { unnnicTextArea, unnnicInput } from '@weni/unnnic-system';
 import { TembaStore } from '../temba-components';
 import SelectOptions from './SelectOptions';
 const UnnnicTextArea = applyVueInReact(unnnicTextArea);
-const UnnnicInputNext = applyVueInReact(unnnicInputNext);
+const UnnnicInput = applyVueInReact(unnnicInput);
 
 interface ValuedCompletionOption extends CompletionOption {
   value: string;
@@ -248,20 +248,21 @@ export class TembaCompletion extends React.Component<TembaCompletionProps, Temba
               disabled={this.props.disabled}
             />
           ) : (
-            <UnnnicInputNext
-              ref={(ele: any) => {
-                this.refInput = ele;
-              }}
-              data-testid={this.props.name}
-              value={this.props.value}
-              on={{ input: this.handleInputChange }}
-              placeholder={this.props.placeholder}
-              size={this.props.size}
-              type={hasErrors ? 'error' : 'normal'}
-              error={this.props.errors && this.props.errors[0]}
-              maxLength={this.props.maxLength}
-              disabled={this.props.disabled}
-            />
+            <div data-testid={this.props.name}>
+              <UnnnicInput
+                ref={(ele: any) => {
+                  this.refInput = ele;
+                }}
+                value={this.props.value}
+                on={{ input: this.handleInputChange }}
+                placeholder={this.props.placeholder}
+                size={this.props.size}
+                type={hasErrors ? 'error' : 'normal'}
+                error={this.props.errors && this.props.errors[0]}
+                maxLength={this.props.maxLength}
+                disabled={this.props.disabled}
+              />
+            </div>
           )}
           {this.tembaCompletionRef && ref ? (
             <SelectOptions

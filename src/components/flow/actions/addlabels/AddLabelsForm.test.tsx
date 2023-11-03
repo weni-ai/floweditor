@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, getCallParams, getDomElement } from 'test/utils';
+import { fireEvent, render, getCallParams, getDomElement, act, wait } from 'test/utils';
 import { mock } from 'testUtils';
 import {
   createAddLabelsAction,
@@ -29,9 +29,14 @@ describe(AddLabelsForm.name, () => {
         <AddLabelsForm ref={ref} {...props} />
       );
 
-      const input = getDomElement(getByTestId('temba_select_input_labels'), 'input');
+      const input = getDomElement(getByTestId('temba_select_labels'), 'input');
 
-      userEvent.type(input, '@contact.uuid');
+      await act(async () => {
+        userEvent.type(input, '@contact.uuid');
+      });
+
+      await wait();
+
       userEvent.click(getByText('contact.uuid'));
 
       expect(baseElement).toMatchSnapshot();

@@ -4,31 +4,41 @@ exports[`TextInputElement renders 1`] = `
 <body>
   <div>
     <div
-      data-use-vue-component-wrap=""
-      style="all: unset;"
-      unnnic-input="true"
+      data-testid="Message"
     >
       <div
-        class="unnnic-input size-sm"
-        data-passed-props="[object Object]"
-        data-testid="Message"
-        data-v-79844726=""
+        data-use-vue-component-wrap=""
+        style="all: unset;"
+        unnnic-input="true"
       >
-        <!---->
         <div
-          class="input-container"
-          data-v-79844726=""
+          class="unnnic-form sm"
+          data-passed-props="[object Object]"
+          data-v-48c0c241=""
         >
           <!---->
-          <input
-            class="unnnic-font secondary"
-            data-v-79844726=""
-            type="text"
-          />
-          <!---->
+          <div
+            class="unnnic-form-input text-input size--sm"
+            data-v-400546b3=""
+            data-v-48c0c241=""
+            mask=""
+            v-bind="[object Object]"
+          >
+            <input
+              class="input-itself input size-sm normal"
+              data-passed-props="[object Object]"
+              data-v-400546b3=""
+              data-v-97b44e8c=""
+              placeholder=""
+              size="0"
+              type="text"
+              v-bind="[object Object]"
+            />
+            <!---->
+            <!---->
+          </div>
           <!---->
         </div>
-        <!---->
       </div>
     </div>
   </div>

@@ -7,7 +7,7 @@ import { count as SmsCount } from 'sms-length';
 import i18n from 'config/i18n';
 
 // @ts-ignore
-import { unnnicTextArea, unnnicInputNext, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
+import { unnnicTextArea, unnnicInput, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
 
 import styles from './TextInputElement.module.scss';
 import TembaCompletion from '../../../temba/TembaCompletion';
@@ -50,7 +50,7 @@ export interface TextInputProps extends FormElementProps {
 }
 
 const UnnnicTextArea = applyVueInReact(unnnicTextArea);
-const UnnnicInputNext = applyVueInReact(unnnicInputNext, {
+const UnnnicInput = applyVueInReact(unnnicInput, {
   vue: {
     componentWrapAttrs: {
       'unnnic-input': 'true'
@@ -196,21 +196,22 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             disabled={this.props.disabled}
           />
         ) : (
-          <UnnnicInputNext
-            data-testid={this.props.name}
-            value={this.props.entry.value}
-            on={{
-              input: (value: string) => this.handleChange({ currentTarget: { value } })
-            }}
-            label={this.props.showLabel ? this.props.name : null}
-            placeholder={this.props.placeholder}
-            size={this.props.size || TextInputSizes.sm}
-            ref={this.inputItem}
-            error={hasError ? errorList[0] : null}
-            maxlength={this.props.maxLength}
-            iconRight={this.props.iconRight}
-            disabled={this.props.disabled}
-          />
+          <div data-testid={this.props.name}>
+            <UnnnicInput
+              value={this.props.entry.value}
+              on={{
+                input: (value: string) => this.handleChange({ currentTarget: { value } })
+              }}
+              label={this.props.showLabel ? this.props.name : null}
+              placeholder={this.props.placeholder}
+              size={this.props.size || TextInputSizes.sm}
+              ref={this.inputItem}
+              error={hasError ? errorList[0] : null}
+              maxlength={this.props.maxLength}
+              iconRight={this.props.iconRight}
+              disabled={this.props.disabled}
+            />
+          </div>
         )}
         {this.props.helpText && typeof this.props.helpText === 'string' ? (
           <div className={`${styles.help} u font secondary body-md color-neutral-cleanest`}>

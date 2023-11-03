@@ -2,7 +2,7 @@
   "name": "@weni/flow-editor",
   "license": "AGPL-3.0",
   "repository": "git://github.com/weni-ai/floweditor.git",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "description": "Standalone flow editing tool designed for use within the RapidPro suite of messaging tools but can be adopted for use outside of that ecosystem.",
   "browser": "umd/flow-editor.min.js",
   "unpkg": "umd/flow-editor.min.js",
@@ -13,8 +13,8 @@
   ],
   "private": false,
   "dependencies": {
+    "@material-symbols/font-400": "0.13.2",
     "@weni/unnnic-system": "1.16.51",
-    "material-symbols": "0.13.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "sms-length": "0.1.2",
