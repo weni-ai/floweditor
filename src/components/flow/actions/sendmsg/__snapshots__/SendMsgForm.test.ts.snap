@@ -201,7 +201,7 @@ exports[`SendMsgForm render should render 1`] = `
   />
   <TextInputElement
     autocomplete={true}
-    counter=".sms-counter"
+    counter="sms"
     entry={
       Object {
         "value": "Hey!",

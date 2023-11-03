@@ -78,7 +78,8 @@ export enum AssetType {
   Template = 'template',
   Ticketer = 'ticketer',
   URN = 'urn',
-  ExternalService = 'external_service'
+  ExternalService = 'external_service',
+  WhatsAppProduct = 'whatsapp_product'
 }
 
 export interface Reference {

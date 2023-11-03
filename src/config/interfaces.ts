@@ -34,6 +34,7 @@ export enum Types {
   call_webhook = 'call_webhook',
   open_ticket = 'open_ticket',
   send_msg = 'send_msg',
+  send_msg_catalog = 'send_msg_catalog',
   send_email = 'send_email',
   send_broadcast = 'send_broadcast',
   enter_flow = 'enter_flow',
@@ -53,6 +54,7 @@ export enum Types {
   split_by_scheme = 'split_by_scheme',
   split_by_subflow = 'split_by_subflow',
   split_by_webhook = 'split_by_webhook',
+  split_by_whatsapp_product = 'split_by_whatsapp_product',
   split_by_external_service = 'split_by_external_service',
   wait_for_response = 'wait_for_response',
   wait_for_menu = 'wait_for_menu',
@@ -110,7 +112,8 @@ export enum FeatureFilter {
   HAS_TICKETER = 'ticketer',
   HAS_FACEBOOK = 'facebook',
   HAS_LOCATIONS = 'locations',
-  HAS_EXTERNAL_SERVICE = 'external_service'
+  HAS_EXTERNAL_SERVICE = 'external_service',
+  HAS_WHATSAPP_PRODUCTS = 'whatsapp_products'
 }
 
 export interface FlowTypeVisibility {

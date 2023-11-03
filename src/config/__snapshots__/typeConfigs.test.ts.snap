@@ -92,6 +92,18 @@ Array [
   },
   Object {
     "aliases": Array [
+      "split_by_whatsapp_product",
+    ],
+    "component": [Function],
+    "description": "Send a WhatsApp product",
+    "filter": "whatsapp",
+    "form": [Function],
+    "name": "Send WhatsApp Product",
+    "new": true,
+    "type": "send_msg_catalog",
+  },
+  Object {
+    "aliases": Array [
       "switch",
     ],
     "description": "Wait for the contact to respond",
@@ -719,6 +731,18 @@ Object {
     "name": "Send message",
     "type": "send_msg",
   },
+  "send_msg_catalog": Object {
+    "aliases": Array [
+      "split_by_whatsapp_product",
+    ],
+    "component": [Function],
+    "description": "Send a WhatsApp product",
+    "filter": "whatsapp",
+    "form": [Function],
+    "name": "Send WhatsApp Product",
+    "new": true,
+    "type": "send_msg_catalog",
+  },
   "set_contact_channel": Object {
     "aliases": Array [
       "set_contact_name",
@@ -1032,6 +1056,18 @@ Object {
       "messaging_background",
       "voice",
     ],
+  },
+  "split_by_whatsapp_product": Object {
+    "aliases": Array [
+      "split_by_whatsapp_product",
+    ],
+    "component": [Function],
+    "description": "Send a WhatsApp product",
+    "filter": "whatsapp",
+    "form": [Function],
+    "name": "Send WhatsApp Product",
+    "new": true,
+    "type": "send_msg_catalog",
   },
   "start_session": Object {
     "component": [Function],

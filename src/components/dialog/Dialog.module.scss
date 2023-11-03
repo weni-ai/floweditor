@@ -135,13 +135,12 @@ $curvature: 10px;
     .buttons {
       display: flex;
       flex-direction: column;
-      column-gap: $unnnic-spacing-inline-lg;
+      gap: $unnnic-spacing-sm;
     }
 
     .buttons_wrapper {
       display: flex;
       column-gap: $unnnic-spacing-inline-lg;
-      margin-top: $unnnic-spacing-stack-giant;
     }
 
     .left_buttons, .right_buttons {

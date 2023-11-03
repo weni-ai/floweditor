@@ -42,6 +42,7 @@ export interface TextInputProps extends FormElementProps {
   style?: TextInputStyle;
   size?: TextInputSizes;
   iconRight?: string;
+  disabled?: boolean;
   onChange?: (value: string, name?: string) => void;
   onBlur?: (event: React.ChangeEvent) => void;
   onKeyPressEnter?: () => void;
@@ -140,6 +141,8 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             type="textarea"
             session={true}
             errors={errorList}
+            maxLength={this.props.counter ? null : this.props.maxLength}
+            disabled={this.props.disabled}
           />
         ) : (
           <UnnnicTextArea
@@ -154,6 +157,8 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             size={this.props.size || TextInputSizes.sm}
             type={hasError ? 'error' : 'normal'}
             errors={errorList}
+            maxLength={this.props.counter ? null : this.props.maxLength}
+            disabled={this.props.disabled}
           />
         )}
 
@@ -188,6 +193,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             size={this.props.size || TextInputSizes.sm}
             session={true}
             errors={errorList}
+            disabled={this.props.disabled}
           />
         ) : (
           <div data-testid={this.props.name}>
@@ -203,6 +209,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
               error={hasError ? errorList[0] : null}
               maxlength={this.props.maxLength}
               iconRight={this.props.iconRight}
+              disabled={this.props.disabled}
             />
           </div>
         )}

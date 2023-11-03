@@ -129,6 +129,7 @@
     "lint-staged": "8.1.7",
     "local-storage": "1.4.2",
     "lodash.clonedeep": "4.5.0",
+    "material-symbols": "0.12.0",
     "moment": "2.24.0",
     "netlify-lambda": "^1.4.9",
     "panzoom": "9.4.3",

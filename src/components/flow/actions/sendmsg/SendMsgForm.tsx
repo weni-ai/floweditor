@@ -418,7 +418,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
         <TextInputElement
           name={i18n.t('forms.message', 'Message')}
           showLabel={true}
-          counter=".sms-counter"
+          counter="sms"
           onChange={this.handleMessageUpdate}
           entry={this.state.message}
           autocomplete={true}
