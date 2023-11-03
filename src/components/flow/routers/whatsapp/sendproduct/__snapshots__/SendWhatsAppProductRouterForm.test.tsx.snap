@@ -49,27 +49,36 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Send a WhatsApp product"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -83,7 +92,6 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -430,31 +438,40 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
               class="completion_wrapper"
             >
               <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
+                data-testid="Product Search"
               >
                 <div
-                  class="unnnic-input size-sm"
-                  data-passed-props="[object Object]"
-                  data-testid="Product Search"
-                  data-v-79844726=""
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form sm"
+                    data-passed-props="[object Object]"
+                    data-v-48c0c241=""
                   >
                     <!---->
-                    <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
-                      placeholder="Ex: @input.text"
-                      type="text"
-                    />
-                    <!---->
+                    <div
+                      class="unnnic-form-input text-input size--sm"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        placeholder="Ex: @input.text"
+                        size="0"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
@@ -501,38 +518,48 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -653,27 +680,36 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Send a WhatsApp product"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -687,7 +723,6 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -1034,31 +1069,40 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               class="completion_wrapper"
             >
               <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
+                data-testid="Product Search"
               >
                 <div
-                  class="unnnic-input size-sm"
-                  data-passed-props="[object Object]"
-                  data-testid="Product Search"
-                  data-v-79844726=""
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form sm"
+                    data-passed-props="[object Object]"
+                    data-v-48c0c241=""
                   >
                     <!---->
-                    <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
-                      placeholder="Ex: @input.text"
-                      type="text"
-                    />
-                    <!---->
+                    <div
+                      class="unnnic-form-input text-input size--sm"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        placeholder="Ex: @input.text"
+                        size="0"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
@@ -1105,38 +1149,48 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -1257,27 +1311,36 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Send a WhatsApp product"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -1291,7 +1354,6 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -1638,31 +1700,40 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               class="completion_wrapper"
             >
               <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
+                data-testid="Product Search"
               >
                 <div
-                  class="unnnic-input size-sm"
-                  data-passed-props="[object Object]"
-                  data-testid="Product Search"
-                  data-v-79844726=""
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form sm"
+                    data-passed-props="[object Object]"
+                    data-v-48c0c241=""
                   >
                     <!---->
-                    <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
-                      placeholder="Ex: @input.text"
-                      type="text"
-                    />
-                    <!---->
+                    <div
+                      class="unnnic-form-input text-input size--sm"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        placeholder="Ex: @input.text"
+                        size="0"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
@@ -1717,31 +1788,40 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                     class="completion_wrapper"
                   >
                     <div
-                      data-use-vue-component-wrap=""
-                      style="all: unset;"
+                      data-testid="Header"
                     >
                       <div
-                        class="unnnic-input size-sm"
-                        data-passed-props="[object Object]"
-                        data-testid="Header"
-                        data-v-79844726=""
+                        data-use-vue-component-wrap=""
+                        style="all: unset;"
                       >
-                        <!---->
                         <div
-                          class="input-container"
-                          data-v-79844726=""
+                          class="unnnic-form sm"
+                          data-passed-props="[object Object]"
+                          data-v-48c0c241=""
                         >
                           <!---->
-                          <input
-                            class="unnnic-font secondary"
-                            data-v-79844726=""
-                            placeholder="Ex: Offers"
-                            type="text"
-                          />
-                          <!---->
+                          <div
+                            class="unnnic-form-input text-input size--sm"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
+                          >
+                            <input
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
+                              placeholder="Ex: Offers"
+                              size="0"
+                              type="text"
+                              v-bind="[object Object]"
+                            />
+                            <!---->
+                            <!---->
+                          </div>
                           <!---->
                         </div>
-                        <!---->
                       </div>
                     </div>
                     <div
@@ -1803,31 +1883,40 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   class="completion_wrapper"
                 >
                   <div
-                    data-use-vue-component-wrap=""
-                    style="all: unset;"
+                    data-testid="Footer (optional)"
                   >
                     <div
-                      class="unnnic-input size-sm"
-                      data-passed-props="[object Object]"
-                      data-testid="Footer (optional)"
-                      data-v-79844726=""
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
                     >
-                      <!---->
                       <div
-                        class="input-container"
-                        data-v-79844726=""
+                        class="unnnic-form sm"
+                        data-passed-props="[object Object]"
+                        data-v-48c0c241=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
-                          data-v-79844726=""
-                          placeholder="Ex: Footer"
-                          type="text"
-                        />
-                        <!---->
+                        <div
+                          class="unnnic-form-input text-input size--sm"
+                          data-v-400546b3=""
+                          data-v-48c0c241=""
+                          mask=""
+                          v-bind="[object Object]"
+                        >
+                          <input
+                            class="input-itself input size-sm normal"
+                            data-passed-props="[object Object]"
+                            data-v-400546b3=""
+                            data-v-97b44e8c=""
+                            placeholder="Ex: Footer"
+                            size="0"
+                            type="text"
+                            v-bind="[object Object]"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
                   </div>
                   <div
@@ -1847,31 +1936,40 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   class="completion_wrapper"
                 >
                   <div
-                    data-use-vue-component-wrap=""
-                    style="all: unset;"
+                    data-testid="Action"
                   >
                     <div
-                      class="unnnic-input size-sm"
-                      data-passed-props="[object Object]"
-                      data-testid="Action"
-                      data-v-79844726=""
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
                     >
-                      <!---->
                       <div
-                        class="input-container"
-                        data-v-79844726=""
+                        class="unnnic-form sm"
+                        data-passed-props="[object Object]"
+                        data-v-48c0c241=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
-                          data-v-79844726=""
-                          placeholder="Ex: Buy now"
-                          type="text"
-                        />
-                        <!---->
+                        <div
+                          class="unnnic-form-input text-input size--sm"
+                          data-v-400546b3=""
+                          data-v-48c0c241=""
+                          mask=""
+                          v-bind="[object Object]"
+                        >
+                          <input
+                            class="input-itself input size-sm normal"
+                            data-passed-props="[object Object]"
+                            data-v-400546b3=""
+                            data-v-97b44e8c=""
+                            placeholder="Ex: Buy now"
+                            size="0"
+                            type="text"
+                            v-bind="[object Object]"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
                   </div>
                   <div
@@ -1893,38 +1991,48 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -2115,27 +2223,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Send a WhatsApp product"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -2149,7 +2266,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -2603,27 +2719,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_manually_select_products"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_manually_select_products"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Select existing manually select products or enter a new one"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -2637,7 +2762,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -2833,38 +2957,48 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -2985,27 +3119,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Send a WhatsApp product"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -3019,7 +3162,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -3366,31 +3508,40 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
               class="completion_wrapper"
             >
               <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
+                data-testid="Product Search"
               >
                 <div
-                  class="unnnic-input size-sm"
-                  data-passed-props="[object Object]"
-                  data-testid="Product Search"
-                  data-v-79844726=""
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form sm"
+                    data-passed-props="[object Object]"
+                    data-v-48c0c241=""
                   >
                     <!---->
-                    <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
-                      placeholder="Ex: @input.text"
-                      type="text"
-                    />
-                    <!---->
+                    <div
+                      class="unnnic-form-input text-input size--sm"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        placeholder="Ex: @input.text"
+                        size="0"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
@@ -3437,38 +3588,48 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -3589,27 +3750,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Send a WhatsApp product"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -3623,7 +3793,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -4077,27 +4246,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_manually_select_products"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_manually_select_products"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Select existing manually select products or enter a new one"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -4111,7 +4289,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -4307,38 +4484,48 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -4459,27 +4646,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Send a WhatsApp product"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -4493,7 +4689,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -4947,27 +5142,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_manually_select_products"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_manually_select_products"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Select existing manually select products or enter a new one"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -4981,7 +5185,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -5177,38 +5380,48 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -5329,27 +5542,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Send a WhatsApp product"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -5363,7 +5585,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -5817,27 +6038,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_manually_select_products"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_manually_select_products"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Select existing manually select products or enter a new one"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -5851,7 +6081,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -6090,32 +6319,42 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                     class="completion_wrapper"
                   >
                     <div
-                      data-use-vue-component-wrap=""
-                      style="all: unset;"
+                      data-testid="Header"
                     >
                       <div
-                        class="unnnic-input size-sm"
-                        data-passed-props="[object Object]"
-                        data-testid="Header"
-                        data-v-79844726=""
+                        data-use-vue-component-wrap=""
+                        style="all: unset;"
                       >
-                        <!---->
                         <div
-                          class="input-container"
-                          data-v-79844726=""
+                          class="unnnic-form sm"
+                          data-passed-props="[object Object]"
+                          data-v-48c0c241=""
+                          disabled="disabled"
                         >
                           <!---->
-                          <input
-                            class="unnnic-font secondary"
-                            data-v-79844726=""
-                            disabled="disabled"
-                            placeholder="Ex: Offers"
-                            type="text"
-                          />
-                          <!---->
+                          <div
+                            class="unnnic-form-input text-input size--sm"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
+                          >
+                            <input
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
+                              disabled="disabled"
+                              placeholder="Ex: Offers"
+                              size="0"
+                              type="text"
+                              v-bind="[object Object]"
+                            />
+                            <!---->
+                            <!---->
+                          </div>
                           <!---->
                         </div>
-                        <!---->
                       </div>
                     </div>
                     <div
@@ -6177,31 +6416,40 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   class="completion_wrapper"
                 >
                   <div
-                    data-use-vue-component-wrap=""
-                    style="all: unset;"
+                    data-testid="Footer (optional)"
                   >
                     <div
-                      class="unnnic-input size-sm"
-                      data-passed-props="[object Object]"
-                      data-testid="Footer (optional)"
-                      data-v-79844726=""
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
                     >
-                      <!---->
                       <div
-                        class="input-container"
-                        data-v-79844726=""
+                        class="unnnic-form sm"
+                        data-passed-props="[object Object]"
+                        data-v-48c0c241=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
-                          data-v-79844726=""
-                          placeholder="Ex: Footer"
-                          type="text"
-                        />
-                        <!---->
+                        <div
+                          class="unnnic-form-input text-input size--sm"
+                          data-v-400546b3=""
+                          data-v-48c0c241=""
+                          mask=""
+                          v-bind="[object Object]"
+                        >
+                          <input
+                            class="input-itself input size-sm normal"
+                            data-passed-props="[object Object]"
+                            data-v-400546b3=""
+                            data-v-97b44e8c=""
+                            placeholder="Ex: Footer"
+                            size="0"
+                            type="text"
+                            v-bind="[object Object]"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
                   </div>
                   <div
@@ -6221,31 +6469,40 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   class="completion_wrapper"
                 >
                   <div
-                    data-use-vue-component-wrap=""
-                    style="all: unset;"
+                    data-testid="Action"
                   >
                     <div
-                      class="unnnic-input size-sm"
-                      data-passed-props="[object Object]"
-                      data-testid="Action"
-                      data-v-79844726=""
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
                     >
-                      <!---->
                       <div
-                        class="input-container"
-                        data-v-79844726=""
+                        class="unnnic-form sm"
+                        data-passed-props="[object Object]"
+                        data-v-48c0c241=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
-                          data-v-79844726=""
-                          placeholder="Ex: Buy now"
-                          type="text"
-                        />
-                        <!---->
+                        <div
+                          class="unnnic-form-input text-input size--sm"
+                          data-v-400546b3=""
+                          data-v-48c0c241=""
+                          mask=""
+                          v-bind="[object Object]"
+                        >
+                          <input
+                            class="input-itself input size-sm normal"
+                            data-passed-props="[object Object]"
+                            data-v-400546b3=""
+                            data-v-97b44e8c=""
+                            placeholder="Ex: Buy now"
+                            size="0"
+                            type="text"
+                            v-bind="[object Object]"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
                   </div>
                   <div
@@ -6267,38 +6524,48 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -6419,27 +6686,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Send a WhatsApp product"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -6453,7 +6729,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -6803,7 +7078,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 data-v-c0c803b4=""
               >
                 <span
-                  class="unnnic-radio unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-soft"
+                  class="unnnic-radio unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--brand-weni"
                   data-v-59b073b4=""
                   data-v-c0c803b4=""
                 >
@@ -6813,11 +7088,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <circle
-                      class="primary-stroke"
+                      class="primary"
                       cx="20"
                       cy="20.0005"
-                      r="14.5"
-                      stroke="#3B414D"
+                      fill="#3B414D"
+                      r="15"
+                    />
+                    <circle
+                      cx="20"
+                      cy="20.0005"
+                      fill="white"
+                      r="6.66667"
                     />
                   </svg>
                 </span>
@@ -6848,7 +7129,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 data-v-c0c803b4=""
               >
                 <span
-                  class="unnnic-radio unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--brand-weni"
+                  class="unnnic-radio unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-soft"
                   data-v-59b073b4=""
                   data-v-c0c803b4=""
                 >
@@ -6858,17 +7139,11 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <circle
-                      class="primary"
+                      class="primary-stroke"
                       cx="20"
                       cy="20.0005"
-                      fill="#3B414D"
-                      r="15"
-                    />
-                    <circle
-                      cx="20"
-                      cy="20.0005"
-                      fill="white"
-                      r="6.66667"
+                      r="14.5"
+                      stroke="#3B414D"
                     />
                   </svg>
                 </span>
@@ -6914,7 +7189,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   >
                     <path
                       class="primary"
-                      d="M14.0093 34.6856L29.5962 20.9572C29.726 20.8328 29.8292 20.6835 29.8997 20.5182C29.9702 20.3529 30.0066 20.1751 30.0066 19.9954C30.0066 19.8157 29.9702 19.6379 29.8997 19.4726C29.8292 19.3073 29.726 19.158 29.5962 19.0336L14.0093 5.31149C13.8857 5.20174 13.7412 5.11796 13.5845 5.06514C13.4279 5.01232 13.2622 4.99153 13.0973 5.00401C12.9325 5.01648 12.7718 5.06197 12.6249 5.13776C12.4779 5.21356 12.3477 5.31812 12.242 5.44522L10.296 7.75745C10.0786 8.0153 9.97133 8.34827 9.99728 8.68451C10.0232 9.02076 10.1804 9.33332 10.4347 9.55474L22.2496 19.7598C22.2837 19.7891 22.311 19.8255 22.3298 19.8664C22.3486 19.9072 22.3583 19.9517 22.3583 19.9967C22.3583 20.0416 22.3486 20.0861 22.3298 20.1269C22.311 20.1678 22.2837 20.2042 22.2496 20.2335L10.4385 30.4423C10.3118 30.5523 10.2081 30.6862 10.1333 30.8363C10.0584 30.9865 10.0139 31.1499 10.0023 31.3172C9.98744 31.4836 10.0061 31.6513 10.0572 31.8104C10.1083 31.9695 10.1908 32.1167 10.2997 32.2434L12.247 34.5568C12.3529 34.6836 12.4832 34.7879 12.6301 34.8635C12.7771 34.9391 12.9377 34.9845 13.1024 34.997C13.2672 35.0094 13.4328 34.9887 13.5894 34.9361C13.746 34.8835 13.8905 34.8 14.0143 34.6906L14.0093 34.6856Z"
+                      d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
                       fill="#3B414D"
                     />
                   </svg>
@@ -6951,6 +7226,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                       <span
                         class="unnnic-tooltip-label unnnic-tooltip-label-right"
                         data-v-49d78ffa=""
+                        style="left: 8px; top: 0px;"
                       >
                          It is only possible to send a personalized header when  
                         <br
@@ -6970,32 +7246,42 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                     class="completion_wrapper"
                   >
                     <div
-                      data-use-vue-component-wrap=""
-                      style="all: unset;"
+                      data-testid="Header"
                     >
                       <div
-                        class="unnnic-input size-sm"
-                        data-passed-props="[object Object]"
-                        data-testid="Header"
-                        data-v-79844726=""
+                        data-use-vue-component-wrap=""
+                        style="all: unset;"
                       >
-                        <!---->
                         <div
-                          class="input-container"
-                          data-v-79844726=""
+                          class="unnnic-form sm"
+                          data-passed-props="[object Object]"
+                          data-v-48c0c241=""
+                          disabled="disabled"
                         >
                           <!---->
-                          <input
-                            class="unnnic-font secondary"
-                            data-v-79844726=""
-                            disabled="disabled"
-                            placeholder="Ex: Offers"
-                            type="text"
-                          />
-                          <!---->
+                          <div
+                            class="unnnic-form-input text-input size--sm"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
+                          >
+                            <input
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
+                              disabled="disabled"
+                              placeholder="Ex: Offers"
+                              size="0"
+                              type="text"
+                              v-bind="[object Object]"
+                            />
+                            <!---->
+                            <!---->
+                          </div>
                           <!---->
                         </div>
-                        <!---->
                       </div>
                     </div>
                     <div
@@ -7057,31 +7343,40 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   class="completion_wrapper"
                 >
                   <div
-                    data-use-vue-component-wrap=""
-                    style="all: unset;"
+                    data-testid="Footer (optional)"
                   >
                     <div
-                      class="unnnic-input size-sm"
-                      data-passed-props="[object Object]"
-                      data-testid="Footer (optional)"
-                      data-v-79844726=""
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
                     >
-                      <!---->
                       <div
-                        class="input-container"
-                        data-v-79844726=""
+                        class="unnnic-form sm"
+                        data-passed-props="[object Object]"
+                        data-v-48c0c241=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
-                          data-v-79844726=""
-                          placeholder="Ex: Footer"
-                          type="text"
-                        />
-                        <!---->
+                        <div
+                          class="unnnic-form-input text-input size--sm"
+                          data-v-400546b3=""
+                          data-v-48c0c241=""
+                          mask=""
+                          v-bind="[object Object]"
+                        >
+                          <input
+                            class="input-itself input size-sm normal"
+                            data-passed-props="[object Object]"
+                            data-v-400546b3=""
+                            data-v-97b44e8c=""
+                            placeholder="Ex: Footer"
+                            size="0"
+                            type="text"
+                            v-bind="[object Object]"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
                   </div>
                   <div
@@ -7101,31 +7396,40 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   class="completion_wrapper"
                 >
                   <div
-                    data-use-vue-component-wrap=""
-                    style="all: unset;"
+                    data-testid="Action"
                   >
                     <div
-                      class="unnnic-input size-sm"
-                      data-passed-props="[object Object]"
-                      data-testid="Action"
-                      data-v-79844726=""
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
                     >
-                      <!---->
                       <div
-                        class="input-container"
-                        data-v-79844726=""
+                        class="unnnic-form sm"
+                        data-passed-props="[object Object]"
+                        data-v-48c0c241=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
-                          data-v-79844726=""
-                          placeholder="Ex: Buy now"
-                          type="text"
-                        />
-                        <!---->
+                        <div
+                          class="unnnic-form-input text-input size--sm"
+                          data-v-400546b3=""
+                          data-v-48c0c241=""
+                          mask=""
+                          v-bind="[object Object]"
+                        >
+                          <input
+                            class="input-itself input size-sm normal"
+                            data-passed-props="[object Object]"
+                            data-v-400546b3=""
+                            data-v-97b44e8c=""
+                            placeholder="Ex: Buy now"
+                            size="0"
+                            type="text"
+                            v-bind="[object Object]"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
                   </div>
                   <div
@@ -7147,38 +7451,50 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                error="Result Name is required"
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    error="Result Name is required"
+                    maxlength="64"
+                    placeholder="Result"
+                    size="0"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -7369,27 +7685,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Send a WhatsApp product"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -7403,7 +7728,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -7857,27 +8181,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_manually_select_products"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_manually_select_products"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Select existing manually select products or enter a new one"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -7891,7 +8224,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -8087,38 +8419,48 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -8239,27 +8581,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Send a WhatsApp product"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -8273,7 +8624,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -8727,27 +9077,36 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_manually_select_products"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_manually_select_products"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Select existing manually select products or enter a new one"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -8761,7 +9120,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -9000,32 +9358,42 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                     class="completion_wrapper"
                   >
                     <div
-                      data-use-vue-component-wrap=""
-                      style="all: unset;"
+                      data-testid="Header"
                     >
                       <div
-                        class="unnnic-input size-sm"
-                        data-passed-props="[object Object]"
-                        data-testid="Header"
-                        data-v-79844726=""
+                        data-use-vue-component-wrap=""
+                        style="all: unset;"
                       >
-                        <!---->
                         <div
-                          class="input-container"
-                          data-v-79844726=""
+                          class="unnnic-form sm"
+                          data-passed-props="[object Object]"
+                          data-v-48c0c241=""
+                          disabled="disabled"
                         >
                           <!---->
-                          <input
-                            class="unnnic-font secondary"
-                            data-v-79844726=""
-                            disabled="disabled"
-                            placeholder="Ex: Offers"
-                            type="text"
-                          />
-                          <!---->
+                          <div
+                            class="unnnic-form-input text-input size--sm"
+                            data-v-400546b3=""
+                            data-v-48c0c241=""
+                            mask=""
+                            v-bind="[object Object]"
+                          >
+                            <input
+                              class="input-itself input size-sm normal"
+                              data-passed-props="[object Object]"
+                              data-v-400546b3=""
+                              data-v-97b44e8c=""
+                              disabled="disabled"
+                              placeholder="Ex: Offers"
+                              size="0"
+                              type="text"
+                              v-bind="[object Object]"
+                            />
+                            <!---->
+                            <!---->
+                          </div>
                           <!---->
                         </div>
-                        <!---->
                       </div>
                     </div>
                     <div
@@ -9087,31 +9455,40 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   class="completion_wrapper"
                 >
                   <div
-                    data-use-vue-component-wrap=""
-                    style="all: unset;"
+                    data-testid="Footer (optional)"
                   >
                     <div
-                      class="unnnic-input size-sm"
-                      data-passed-props="[object Object]"
-                      data-testid="Footer (optional)"
-                      data-v-79844726=""
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
                     >
-                      <!---->
                       <div
-                        class="input-container"
-                        data-v-79844726=""
+                        class="unnnic-form sm"
+                        data-passed-props="[object Object]"
+                        data-v-48c0c241=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
-                          data-v-79844726=""
-                          placeholder="Ex: Footer"
-                          type="text"
-                        />
-                        <!---->
+                        <div
+                          class="unnnic-form-input text-input size--sm"
+                          data-v-400546b3=""
+                          data-v-48c0c241=""
+                          mask=""
+                          v-bind="[object Object]"
+                        >
+                          <input
+                            class="input-itself input size-sm normal"
+                            data-passed-props="[object Object]"
+                            data-v-400546b3=""
+                            data-v-97b44e8c=""
+                            placeholder="Ex: Footer"
+                            size="0"
+                            type="text"
+                            v-bind="[object Object]"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
                   </div>
                   <div
@@ -9131,31 +9508,40 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   class="completion_wrapper"
                 >
                   <div
-                    data-use-vue-component-wrap=""
-                    style="all: unset;"
+                    data-testid="Action"
                   >
                     <div
-                      class="unnnic-input size-sm"
-                      data-passed-props="[object Object]"
-                      data-testid="Action"
-                      data-v-79844726=""
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
                     >
-                      <!---->
                       <div
-                        class="input-container"
-                        data-v-79844726=""
+                        class="unnnic-form sm"
+                        data-passed-props="[object Object]"
+                        data-v-48c0c241=""
                       >
                         <!---->
-                        <input
-                          class="unnnic-font secondary"
-                          data-v-79844726=""
-                          placeholder="Ex: Buy now"
-                          type="text"
-                        />
-                        <!---->
+                        <div
+                          class="unnnic-form-input text-input size--sm"
+                          data-v-400546b3=""
+                          data-v-48c0c241=""
+                          mask=""
+                          v-bind="[object Object]"
+                        >
+                          <input
+                            class="input-itself input size-sm normal"
+                            data-passed-props="[object Object]"
+                            data-v-400546b3=""
+                            data-v-97b44e8c=""
+                            placeholder="Ex: Buy now"
+                            size="0"
+                            type="text"
+                            v-bind="[object Object]"
+                          />
+                          <!---->
+                          <!---->
+                        </div>
                         <!---->
                       </div>
-                      <!---->
                     </div>
                   </div>
                   <div
@@ -9177,38 +9563,48 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
           class="optional_text_input "
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Save as result"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Save as result"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <span
-                class="label unnnic-font secondary color-neutral-cloudy body-md"
-                data-v-79844726=""
-              >
-                 Save as result 
-              </span>
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="64"
               >
-                <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="64"
-                  placeholder="Result"
-                  type="text"
-                />
-                <!---->
+                <p
+                  class="unnnic-form__label"
+                  data-v-48c0c241=""
+                >
+                  Save as result
+                </p>
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="64"
+                    placeholder="Result"
+                    size="6"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>

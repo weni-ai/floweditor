@@ -11,7 +11,8 @@ import {
   fireUnnnicInputChangeText,
   wait,
   fireUnnnicTextAreaChangeText,
-  fireUnnnicSwitch
+  fireUnnnicSwitch,
+  act
 } from 'test/utils';
 import userEvent from '@testing-library/user-event';
 import { WhatsAppProduct } from 'flowTypes';
@@ -99,7 +100,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       const resultName = getByTestId('Save as result');
 
       // our products, productViewSettings and result name are required
-      fireUnnnicInputChangeText(resultName, '');
+      await act(async () => {
+        fireUnnnicInputChangeText(resultName, '');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
@@ -115,29 +118,42 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       const action = getByTestId('Action');
 
       // still requires body and action
-      fireUnnnicInputChangeText(header, 'header text');
+      await act(async () => {
+        fireUnnnicInputChangeText(header, 'header text');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
       // still requires action and result
-      fireUnnnicTextAreaChangeText(body, 'body text');
+      await act(async () => {
+        fireUnnnicTextAreaChangeText(body, 'body text');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
       // still requires action and result
-      fireUnnnicInputChangeText(footer, 'footer text');
+      await act(async () => {
+        fireUnnnicInputChangeText(footer, 'footer text');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
       // still requires result
-      fireUnnnicInputChangeText(action, 'action text');
+      await act(async () => {
+        fireUnnnicInputChangeText(action, 'action text');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
-      fireUnnnicInputChangeText(resultName, 'ResultName');
+      await act(async () => {
+        fireUnnnicInputChangeText(resultName, 'ResultName');
+      });
 
       // now it should save
       fireEvent.click(okButton);
+
+      await wait();
+
       expect(props.updateRouter).toBeCalled();
       expect(props.updateRouter).toMatchCallSnapshot();
     });
@@ -162,7 +178,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       userEvent.click(getByText('Send complete catalog'));
 
       // productViewSettings and result name are required
-      fireUnnnicInputChangeText(resultName, '');
+      await act(async () => {
+        fireUnnnicInputChangeText(resultName, '');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
@@ -176,24 +194,35 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       const action = getByTestId('Action');
 
       // still requires action and result
-      fireUnnnicTextAreaChangeText(body, 'body text');
+      await act(async () => {
+        fireUnnnicTextAreaChangeText(body, 'body text');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
       // still requires action and result
-      fireUnnnicInputChangeText(footer, 'footer text');
+      await act(async () => {
+        fireUnnnicInputChangeText(footer, 'footer text');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
       // still requires result
-      fireUnnnicInputChangeText(action, 'action text');
+      await act(async () => {
+        fireUnnnicInputChangeText(action, 'action text');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
-      fireUnnnicInputChangeText(resultName, 'ResultName');
+      await act(async () => {
+        fireUnnnicInputChangeText(resultName, 'ResultName');
+      });
 
       // now it should save
       fireEvent.click(okButton);
+
+      await wait();
+
       expect(props.updateRouter).toBeCalled();
       expect(props.updateRouter).toMatchCallSnapshot();
     });
@@ -227,7 +256,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       const resultName = getByTestId('Save as result');
 
       // productSearch, productViewSettings and result name are required
-      fireUnnnicInputChangeText(resultName, '');
+      await act(async () => {
+        fireUnnnicInputChangeText(resultName, '');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
@@ -238,34 +269,49 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       const action = getByTestId('Action');
 
       // still requires header, body and action
-      fireUnnnicInputChangeText(productSearch, '@results.result');
+      await act(async () => {
+        fireUnnnicInputChangeText(productSearch, '@results.result');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
       // still requires body and action
-      fireUnnnicInputChangeText(header, 'header text');
+      await act(async () => {
+        fireUnnnicInputChangeText(header, 'header text');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
       // still requires action and result
-      fireUnnnicTextAreaChangeText(body, 'body text');
+      await act(async () => {
+        fireUnnnicTextAreaChangeText(body, 'body text');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
       // still requires action and result
-      fireUnnnicInputChangeText(footer, 'footer text');
+      await act(async () => {
+        fireUnnnicInputChangeText(footer, 'footer text');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
       // still requires result
-      fireUnnnicInputChangeText(action, 'action text');
+      await act(async () => {
+        fireUnnnicInputChangeText(action, 'action text');
+      });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
-      fireUnnnicInputChangeText(resultName, 'ResultName');
+      await act(async () => {
+        fireUnnnicInputChangeText(resultName, 'ResultName');
+      });
 
       // now it should save
       fireEvent.click(okButton);
+
+      await wait();
+
       expect(props.updateRouter).toBeCalled();
       expect(props.updateRouter).toMatchCallSnapshot();
     });
