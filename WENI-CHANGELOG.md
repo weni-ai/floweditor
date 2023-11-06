@@ -1,3 +1,7 @@
+2.8.1
+----------
+Chore: Bump version
+
 2.8.0
 ----------
 Feat: Send product/catalog card
