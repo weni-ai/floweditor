@@ -264,7 +264,7 @@ export const typeConfigList: Type[] = [
     form: SendWhatsAppProductRouterForm,
     component: SendWhatsAppProductComp,
     aliases: [Types.split_by_whatsapp_product],
-    filter: FeatureFilter.HAS_WHATSAPP,
+    filter: FeatureFilter.HAS_WHATSAPP_CATALOG,
     new: true
   },
   {

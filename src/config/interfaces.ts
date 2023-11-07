@@ -113,7 +113,7 @@ export enum FeatureFilter {
   HAS_FACEBOOK = 'facebook',
   HAS_LOCATIONS = 'locations',
   HAS_EXTERNAL_SERVICE = 'external_service',
-  HAS_WHATSAPP_PRODUCTS = 'whatsapp_products'
+  HAS_WHATSAPP_CATALOG = 'whatsapp_catalog'
 }
 
 export interface FlowTypeVisibility {
