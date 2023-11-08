@@ -1,3 +1,8 @@
+2.8.2
+----------
+Fix: Catalog translations 
+Feat: Use whatsapp_catalog feature filter on send catalog card
+
 2.8.1
 ----------
 Chore: Bump version
