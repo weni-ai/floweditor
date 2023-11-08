@@ -115,7 +115,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       const header = getByTestId('Header');
       const body = getByTestId('Body');
       const footer = getByTestId('Footer (optional)');
-      const action = getByTestId('Action');
+      const action = getByTestId('Action button title');
 
       // still requires body and action
       await act(async () => {
@@ -191,7 +191,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
       const body = getByTestId('Body');
       const footer = getByTestId('Footer (optional)');
-      const action = getByTestId('Action');
+      const action = getByTestId('Action button title');
 
       // still requires action and result
       await act(async () => {
@@ -266,7 +266,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       const header = getByTestId('Header');
       const body = getByTestId('Body');
       const footer = getByTestId('Footer (optional)');
-      const action = getByTestId('Action');
+      const action = getByTestId('Action button title');
 
       // still requires header, body and action
       await act(async () => {

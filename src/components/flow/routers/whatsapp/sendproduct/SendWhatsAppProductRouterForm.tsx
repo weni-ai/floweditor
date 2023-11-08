@@ -412,7 +412,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
                 />
 
                 <TextInputElement
-                  name={i18n.t('forms.action', 'Action')}
+                  name={i18n.t('forms.action', 'Action button title')}
                   placeholder={i18n.t('forms.ex_products_action', 'Ex: Buy now')}
                   onChange={value => this.handleProductViewSettingsChange(value, 'action')}
                   entry={this.state.productViewSettings.value.action}

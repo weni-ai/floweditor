@@ -1900,13 +1900,13 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                 <span
                   class="label"
                 >
-                  Action
+                  Action button title
                 </span>
                 <div
                   class="completion_wrapper"
                 >
                   <div
-                    data-testid="Action"
+                    data-testid="Action button title"
                   >
                     <div
                       data-use-vue-component-wrap=""
@@ -1944,7 +1944,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   </div>
                   <div
                     class="options_wrapper"
-                    data-testid="temba_completion_options_Action"
+                    data-testid="temba_completion_options_Action button title"
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -6383,13 +6383,13 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 <span
                   class="label"
                 >
-                  Action
+                  Action button title
                 </span>
                 <div
                   class="completion_wrapper"
                 >
                   <div
-                    data-testid="Action"
+                    data-testid="Action button title"
                   >
                     <div
                       data-use-vue-component-wrap=""
@@ -6427,7 +6427,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   </div>
                   <div
                     class="options_wrapper"
-                    data-testid="temba_completion_options_Action"
+                    data-testid="temba_completion_options_Action button title"
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -7300,13 +7300,13 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 <span
                   class="label"
                 >
-                  Action
+                  Action button title
                 </span>
                 <div
                   class="completion_wrapper"
                 >
                   <div
-                    data-testid="Action"
+                    data-testid="Action button title"
                   >
                     <div
                       data-use-vue-component-wrap=""
@@ -7344,7 +7344,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   </div>
                   <div
                     class="options_wrapper"
-                    data-testid="temba_completion_options_Action"
+                    data-testid="temba_completion_options_Action button title"
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -9392,13 +9392,13 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                 <span
                   class="label"
                 >
-                  Action
+                  Action button title
                 </span>
                 <div
                   class="completion_wrapper"
                 >
                   <div
-                    data-testid="Action"
+                    data-testid="Action button title"
                   >
                     <div
                       data-use-vue-component-wrap=""
@@ -9436,7 +9436,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   </div>
                   <div
                     class="options_wrapper"
-                    data-testid="temba_completion_options_Action"
+                    data-testid="temba_completion_options_Action button title"
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
