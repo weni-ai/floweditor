@@ -25,8 +25,8 @@ jobs:
         yarn test
       env:
         CI: true
-    - name: Publish
-      run: Publish package on NPM 📦
+    - name: Publish package on NPM 📦
+      run: npm publish
       env:
         CI: true
         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
