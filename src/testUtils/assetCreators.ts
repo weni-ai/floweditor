@@ -62,7 +62,10 @@ import { assetListToMap } from 'store/helpers';
 import { EMPTY_TEST_ASSETS } from 'test/utils';
 import { mock } from 'testUtils';
 import * as utils from 'utils';
-import { ProductViewSettings } from '../components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+import {
+  ProductSearchType,
+  ProductViewSettings
+} from '../components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 
 const { results: groupsResults } = require('test/assets/groups.json');
 const languagesResults = require('test/assets/languages.json');
@@ -429,6 +432,8 @@ export const createSendWhatsAppProductNode = (
   products?: any[],
   automaticProductSearch?: boolean,
   sendCatalog?: boolean,
+  search_type: ProductSearchType = ProductSearchType.Default,
+  search_url?: string,
   productSearch?: string
 ): FlowNode => {
   const action: SendWhatsAppProduct = {
@@ -438,6 +443,8 @@ export const createSendWhatsAppProductNode = (
     products,
     automaticProductSearch,
     sendCatalog,
+    search_type,
+    search_url,
     productSearch,
     result_name: 'Result'
   };

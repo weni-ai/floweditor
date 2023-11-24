@@ -262,7 +262,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
-      const productSearch = getByTestId('Product Search');
+      const productSearch = getByTestId('Enter an expression to be used as input');
       const header = getByTestId('Header');
       const body = getByTestId('Body');
       const footer = getByTestId('Footer (optional)');

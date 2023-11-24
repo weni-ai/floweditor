@@ -457,7 +457,8 @@
     "ex_offers": "Ofertas",
     "ex_footer": "Ex: Rodapé",
     "ex_products_action": "Ex: Compre agora",
-    "no_products": "Você não possui produtos"
+    "no_products": "Você não possui produtos",
+    "product_search_label": "Insira uma expressão para usar como entrada"
   },
   "issues": {
     "header": "Problemas no Fluxo",
