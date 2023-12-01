@@ -17,6 +17,7 @@ import {
   Alphanumeric,
   Required,
   StartIsNonNumeric,
+  ValidURL,
   shouldRequireIf,
   validate
 } from 'store/validators';
@@ -57,6 +58,11 @@ const UnnnicRadio = applyVueInReact(unnnicRadio, {
   }
 });
 
+export enum ProductSearchType {
+  Default = 'default',
+  Vtex = 'vtex'
+}
+
 export interface ProductViewSettings {
   header: string;
   body: string;
@@ -76,6 +82,8 @@ export interface ProductViewSettingsEntry extends FormEntry {
 export interface SendWhatsAppProductRouterFormState extends FormState {
   automaticProductSearch: boolean;
   sendCatalog: boolean;
+  searchType: ProductSearchType;
+  searchUrl: StringEntry;
   products: FormEntry;
   productSearch: StringEntry;
   showProductViewSettings?: boolean;
@@ -86,6 +94,8 @@ export interface SendWhatsAppProductRouterFormState extends FormState {
 interface UpdateKeys {
   automaticProductSearch?: boolean;
   sendCatalog?: boolean;
+  searchType?: ProductSearchType;
+  searchUrl?: string;
   productSearch?: string;
   products?: WhatsAppProduct[];
   productViewSettings?: ProductViewSettings;
@@ -115,6 +125,25 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
 
     if (keys.hasOwnProperty('sendCatalog')) {
       updates.sendCatalog = keys.sendCatalog;
+    }
+
+    if (keys.hasOwnProperty('searchType')) {
+      updates.searchType = keys.searchType;
+    }
+
+    if (keys.hasOwnProperty('searchUrl')) {
+      updates.searchUrl = validate(
+        i18n.t('forms.custom_search', 'Custom Search URL'),
+        keys.searchUrl,
+        [
+          shouldRequireIf(
+            submitting &&
+              this.state.automaticProductSearch &&
+              this.state.searchType !== ProductSearchType.Default
+          ),
+          ValidURL
+        ]
+      );
     }
 
     if (keys.hasOwnProperty('productSearch')) {
@@ -248,13 +277,31 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
     });
   }
 
+  private handleSearchTypeUpdate(newValue: ProductSearchType) {
+    return this.handleUpdate({
+      searchType: newValue
+    });
+  }
+
+  public handleSearchUrlChange(searchUrl: string, name: string, submitting = false): boolean {
+    return this.handleUpdate({ searchUrl }, submitting);
+  }
+
   private handleSave(): void {
-    // make sure we validate untouched text fields and contact fields
-    let valid = this.handleProductSearchChange(this.state.productSearch.value, null, true);
+    // make sure we validate untouched text fields
+    let valid = true;
+    let currentCheck = this.handleProductSearchChange(this.state.productSearch.value, null, true);
 
-    valid = valid && this.handleUpdate({ products: this.state.products.value }, true);
+    currentCheck = this.handleUpdate({ products: this.state.products.value }, true);
+    valid = valid && currentCheck;
 
-    this.handleUpdate(
+    currentCheck = this.handleSearchTypeUpdate(this.state.searchType);
+    valid = valid && currentCheck;
+
+    currentCheck = this.handleSearchUrlChange(this.state.searchUrl.value, null, true);
+    valid = valid && currentCheck;
+
+    currentCheck = this.handleUpdate(
       {
         productViewSettings: {
           header: this.state.productViewSettings.value.header.value,
@@ -265,20 +312,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
       },
       true
     );
-
-    valid =
-      valid &&
-      this.handleUpdate(
-        {
-          productViewSettings: {
-            header: this.state.productViewSettings.value.header.value,
-            body: this.state.productViewSettings.value.body.value,
-            footer: this.state.productViewSettings.value.footer.value,
-            action: this.state.productViewSettings.value.action.value
-          }
-        },
-        true
-      );
+    valid = valid && currentCheck;
 
     let validProductViewSettings = true;
     if (
@@ -454,15 +488,56 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
 
   private renderAutomaticProductSearchForm() {
     return (
-      <TextInputElement
-        name={i18n.t('forms.product_search', 'Product Search')}
-        placeholder={i18n.t('forms.product_search_placeholder', 'Ex: @input.text')}
-        onChange={this.handleProductSearchChange}
-        entry={this.state.productSearch}
-        showLabel
-        autocomplete
-        size={TextInputSizes.sm}
-      />
+      <>
+        <div className={`${styles.search_type_radio}`}>
+          <UnnnicRadio
+            $model={{
+              value: String(this.state.searchType),
+              setter: this.handleSearchTypeUpdate
+            }}
+            value="default"
+            size="sm"
+          >
+            <span className="color-neutral-cloudy">
+              {i18n.t('forms.default_search', 'Default search')}
+            </span>
+          </UnnnicRadio>
+          <UnnnicRadio
+            $model={{
+              value: String(this.state.searchType),
+              setter: this.handleSearchTypeUpdate
+            }}
+            value="vtex"
+            size="sm"
+          >
+            <span className="color-neutral-cloudy">
+              {i18n.t('forms.vtex_search', 'VTEX Search')}
+            </span>
+          </UnnnicRadio>
+        </div>
+
+        {this.state.searchType === ProductSearchType.Vtex ? (
+          <TextInputElement
+            name={i18n.t('forms.custom_search', 'Custom Search URL')}
+            placeholder={i18n.t('forms.custom_search_api_url', 'Custom Search API URL')}
+            onChange={this.handleSearchUrlChange}
+            entry={this.state.searchUrl}
+            showLabel
+            autocomplete
+            size={TextInputSizes.sm}
+          />
+        ) : null}
+
+        <TextInputElement
+          name={i18n.t('forms.product_search_label', 'Enter an expression to be used as input')}
+          placeholder={i18n.t('forms.product_search_placeholder', 'Ex: @input.text')}
+          onChange={this.handleProductSearchChange}
+          entry={this.state.productSearch}
+          showLabel
+          autocomplete
+          size={TextInputSizes.sm}
+        />
+      </>
     );
   }
 

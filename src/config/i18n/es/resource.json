@@ -456,7 +456,8 @@
     "ex_products_body": "Ej: las ofertas son válidas por 5 días",
     "ex_footer": "Ej: Pie de página",
     "ex_products_action": "Ej: Comprar ahora",
-    "no_products": "No tienes productos"
+    "no_products": "No tienes productos",
+    "product_search_label": "Ingrese una expresión para usar como entrada"
   },
   "issues": {
     "header": "Problemas de Flujo",

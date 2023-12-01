@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { getActionUUID } from 'components/flow/actions/helpers';
 import {
+  ProductSearchType,
   ProductViewSettings,
   ProductViewSettingsEntry,
   SendWhatsAppProductRouterFormState
@@ -50,6 +51,8 @@ export const nodeToState = (settings: NodeEditorSettings): SendWhatsAppProductRo
       products: { value: action.products },
       automaticProductSearch: action.automaticProductSearch,
       sendCatalog: action.sendCatalog,
+      searchType: action.search_type || ProductSearchType.Default,
+      searchUrl: { value: action.search_url },
       productSearch: { value: action.productSearch },
       productViewSettings: productViewSettings,
       resultName: { value: action.result_name },
@@ -61,6 +64,8 @@ export const nodeToState = (settings: NodeEditorSettings): SendWhatsAppProductRo
     products: { value: [] },
     automaticProductSearch: false,
     sendCatalog: true,
+    searchType: ProductSearchType.Default,
+    searchUrl: { value: '' },
     productSearch: { value: '' },
     productViewSettings: productViewSettings,
     resultName: { value: 'Result' },
@@ -84,6 +89,8 @@ export const stateToNode = (
     products: state.products.value,
     automaticProductSearch: state.automaticProductSearch,
     sendCatalog: state.sendCatalog,
+    search_type: state.searchType,
+    search_url: state.searchUrl.value,
     productSearch: state.productSearch.value,
     productViewSettings,
     result_name: state.resultName.value,

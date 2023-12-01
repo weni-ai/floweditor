@@ -1,6 +1,9 @@
 import { Methods } from 'components/flow/routers/webhook/helpers';
 import { FlowTypes, Operators, Types, ContactStatus, ServiceCall } from 'config/interfaces';
-import { ProductViewSettings } from './components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+import {
+  ProductSearchType,
+  ProductViewSettings
+} from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 
 // we don't concern ourselves with patch versions
 export const SPEC_VERSION = '13.1';
@@ -377,6 +380,8 @@ export interface SendWhatsAppProduct extends Action {
   products?: WhatsAppProduct[];
   automaticProductSearch?: boolean;
   sendCatalog: boolean;
+  search_type: ProductSearchType;
+  search_url?: string;
   productSearch?: string;
   productViewSettings: ProductViewSettings;
   result_name: string;
