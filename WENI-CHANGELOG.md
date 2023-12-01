@@ -1,3 +1,9 @@
+2.9.0
+----------
+Feat: VTEX Product Search
+Feat: Change node colors
+Fix: Width for send_catalog card
+
 2.8.2
 ----------
 Fix: Catalog translations 
