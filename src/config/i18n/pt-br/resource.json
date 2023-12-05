@@ -458,7 +458,10 @@
     "ex_footer": "Ex: Rodapé",
     "ex_products_action": "Ex: Compre agora",
     "no_products": "Você não possui produtos",
-    "product_search_label": "Insira uma expressão para usar como entrada"
+    "product_search_label": "Insira uma expressão para usar como entrada",
+    "custom_search": "Busca personalizada",
+    "custom_search_api_url": "URL da API de busca personalizada",
+    "seller_id": "ID do vendedor (opcional)"
   },
   "issues": {
     "header": "Problemas no Fluxo",

@@ -552,7 +552,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
 
             <div className={`${styles.seller_id}`}>
               <TextInputElement
-                name={i18n.t('forms.seller_id', 'Seller ID')}
+                name={i18n.t('forms.seller_id', 'Seller ID (optional)')}
                 placeholder={i18n.t('forms.ex_results', 'Ex: @results.seller_id')}
                 onChange={this.handleSellerIdChange}
                 entry={this.state.sellerId}

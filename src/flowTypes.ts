@@ -449,8 +449,9 @@ export interface Ticketer {
 }
 
 export interface WhatsAppProduct {
-  uuid: string;
+  facebook_product_id: string;
   title: string;
+  created_on: string;
 }
 
 export interface TransferAirtime extends Action {
