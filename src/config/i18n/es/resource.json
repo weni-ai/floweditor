@@ -427,7 +427,9 @@
       "words_title": "Palabras",
       "words_description": "Palabras únicas relacionadas con la categoría.",
       "category_title": "Categorizar cómo",
-      "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto."
+      "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto.",
+      "command_phrases_description": "Escribir frases de comando relacionadas con la categoría.",
+      "command_phrases_title": "Frases de comando"
     },
     "automatic_classify": {
       "words_title": "Palabras",
@@ -436,8 +438,8 @@
       "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto"
     },
     "category_required": "Categoría",
-    "ex_smart_argument": "Ej: bueno si positivo",
-    "ex_smart_category": "Positivo",
+    "ex_smart_argument": "Ej: cuando el usuario te saluda",
+    "ex_smart_category": "Ej: Saludo",
     "search_and_send_products_automatically": "Buscar y enviar productos automáticamente",
     "product_view_settings": "Ajustes de visualización (obligatorios)",
     "product_help_text": "Los campos tienen limitaciones de caracteres, con encabezado y pie de página de 60 caracteres, cuerpo de 1024 y título del botón de acción de 20 caracteres.",
