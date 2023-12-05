@@ -2,7 +2,7 @@ import { mock } from 'testUtils';
 import { createSendWhatsAppProductNode, getRouterFormProps } from 'testUtils/assetCreators';
 import { Types } from 'config/interfaces';
 import { AssetMap, AssetType, RenderNode } from 'store/flowContext';
-import SendWhatsAppProductRouterForm from './SendWhatsAppProductRouterForm';
+import SendWhatsAppProductRouterForm, { ProductSearchType } from './SendWhatsAppProductRouterForm';
 import * as utils from 'utils';
 import * as React from 'react';
 import {
@@ -33,6 +33,9 @@ function getProps(automatic = false) {
     [],
     automatic,
     false,
+    ProductSearchType.Default,
+    '',
+    '',
     ''
   );
 
@@ -44,7 +47,11 @@ function getProps(automatic = false) {
 
   const productsAssets: AssetMap = {};
   whatsappProducts.results.forEach((product: WhatsAppProduct) => {
-    productsAssets[product.uuid] = resultToAsset(product, AssetType.WhatsAppProduct, 'uuid');
+    productsAssets[product.facebook_product_id] = resultToAsset(
+      product,
+      AssetType.WhatsAppProduct,
+      'facebook_product_id'
+    );
   });
   sendWhatsAppProductForm.assetStore.whatsapp_products = {
     type: AssetType.WhatsAppProduct,
@@ -271,6 +278,103 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       // still requires header, body and action
       await act(async () => {
         fireUnnnicInputChangeText(productSearch, '@results.result');
+      });
+      fireEvent.click(okButton);
+      expect(props.updateRouter).not.toBeCalled();
+
+      // still requires body and action
+      await act(async () => {
+        fireUnnnicInputChangeText(header, 'header text');
+      });
+      fireEvent.click(okButton);
+      expect(props.updateRouter).not.toBeCalled();
+
+      // still requires action and result
+      await act(async () => {
+        fireUnnnicTextAreaChangeText(body, 'body text');
+      });
+      fireEvent.click(okButton);
+      expect(props.updateRouter).not.toBeCalled();
+
+      // still requires action and result
+      await act(async () => {
+        fireUnnnicInputChangeText(footer, 'footer text');
+      });
+      fireEvent.click(okButton);
+      expect(props.updateRouter).not.toBeCalled();
+
+      // still requires result
+      await act(async () => {
+        fireUnnnicInputChangeText(action, 'action text');
+      });
+      fireEvent.click(okButton);
+      expect(props.updateRouter).not.toBeCalled();
+
+      await act(async () => {
+        fireUnnnicInputChangeText(resultName, 'ResultName');
+      });
+
+      // now it should save
+      fireEvent.click(okButton);
+
+      await wait();
+
+      expect(props.updateRouter).toBeCalled();
+      expect(props.updateRouter).toMatchCallSnapshot();
+    });
+
+    it('should save an automatic product sending with vtex search', async () => {
+      const props = getProps(true);
+      const { baseElement, getByText, getByTestId } = render(
+        <SendWhatsAppProductRouterForm {...props} />
+      );
+
+      await wait();
+
+      expect(baseElement).toMatchSnapshot();
+
+      // change to VTEX search
+      userEvent.click(getByText('VTEX Search'));
+
+      // open the view settings inputs
+      userEvent.click(getByTestId('ViewSettings'));
+      expect(baseElement).toMatchSnapshot();
+
+      const okButton = getByText('Confirm');
+      const resultName = getByTestId('Save as result');
+
+      // productSearch, searchUrl, productViewSettings and result name are required
+      await act(async () => {
+        fireUnnnicInputChangeText(resultName, '');
+      });
+      fireEvent.click(okButton);
+      expect(props.updateRouter).not.toBeCalled();
+
+      const productSearch = getByTestId('Enter an expression to be used as input');
+      const searchUrl = getByTestId('Custom Search URL');
+      const sellerId = getByTestId('Seller ID (optional)');
+      const header = getByTestId('Header');
+      const body = getByTestId('Body');
+      const footer = getByTestId('Footer (optional)');
+      const action = getByTestId('Action button title');
+
+      // still requires searchUrl, header, body and action
+      await act(async () => {
+        fireUnnnicInputChangeText(productSearch, '@results.result');
+      });
+      fireEvent.click(okButton);
+      expect(props.updateRouter).not.toBeCalled();
+
+      // still requires header, body and action
+      await act(async () => {
+        fireUnnnicInputChangeText(searchUrl, 'https://weni.ai');
+      });
+      fireEvent.click(okButton);
+      expect(props.updateRouter).not.toBeCalled();
+
+      // still requires header, body and action
+      await act(async () => {
+        fireUnnnicInputChangeText(sellerId, 'seller123');
       });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
