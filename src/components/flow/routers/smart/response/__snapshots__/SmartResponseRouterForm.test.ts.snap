@@ -59,12 +59,12 @@ exports[`SmartResponseRouterForm initializes case config 1`] = `
         <span
           className="title"
         >
-          Words
+          Command phrases
         </span>
         <span
           className="description"
         >
-          Unique words that are related with the Category.
+          Write command phrases related to the category
         </span>
       </div>
     </div>
@@ -195,12 +195,12 @@ exports[`SmartResponseRouterForm should render 1`] = `
         <span
           className="title"
         >
-          Words
+          Command phrases
         </span>
         <span
           className="description"
         >
-          Unique words that are related with the Category.
+          Write command phrases related to the category
         </span>
       </div>
     </div>
