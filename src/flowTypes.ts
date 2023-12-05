@@ -382,6 +382,7 @@ export interface SendWhatsAppProduct extends Action {
   sendCatalog: boolean;
   search_type: ProductSearchType;
   search_url?: string;
+  seller_id?: string;
   productSearch?: string;
   productViewSettings: ProductViewSettings;
   result_name: string;
