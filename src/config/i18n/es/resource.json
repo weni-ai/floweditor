@@ -457,7 +457,10 @@
     "ex_footer": "Ej: Pie de página",
     "ex_products_action": "Ej: Comprar ahora",
     "no_products": "No tienes productos",
-    "product_search_label": "Ingrese una expresión para usar como entrada"
+    "product_search_label": "Ingrese una expresión para usar como entrada",
+    "custom_search": "Búsqueda personalizada",
+    "custom_search_api_url": "URL de API de búsqueda personalizada",
+    "seller_id": "ID de vendedor (opcional)"
   },
   "issues": {
     "header": "Problemas de Flujo",

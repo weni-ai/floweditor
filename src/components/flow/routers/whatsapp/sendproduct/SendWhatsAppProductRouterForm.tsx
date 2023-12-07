@@ -84,6 +84,7 @@ export interface SendWhatsAppProductRouterFormState extends FormState {
   sendCatalog: boolean;
   searchType: ProductSearchType;
   searchUrl: StringEntry;
+  sellerId: StringEntry;
   products: FormEntry;
   productSearch: StringEntry;
   showProductViewSettings?: boolean;
@@ -96,6 +97,7 @@ interface UpdateKeys {
   sendCatalog?: boolean;
   searchType?: ProductSearchType;
   searchUrl?: string;
+  sellerId?: string;
   productSearch?: string;
   products?: WhatsAppProduct[];
   productViewSettings?: ProductViewSettings;
@@ -144,6 +146,10 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           ValidURL
         ]
       );
+    }
+
+    if (keys.hasOwnProperty('sellerId')) {
+      updates.sellerId = validate(i18n.t('forms.seller_id', 'Seller ID'), keys.sellerId, []);
     }
 
     if (keys.hasOwnProperty('productSearch')) {
@@ -250,6 +256,10 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
     submitting = false
   ): boolean {
     return this.handleUpdate({ productSearch }, submitting);
+  }
+
+  public handleSellerIdChange(sellerId: string, name: string, submitting = false): boolean {
+    return this.handleUpdate({ sellerId }, submitting);
   }
 
   private handleProductsChanged(products: any[]) {
@@ -516,18 +526,6 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           </UnnnicRadio>
         </div>
 
-        {this.state.searchType === ProductSearchType.Vtex ? (
-          <TextInputElement
-            name={i18n.t('forms.custom_search', 'Custom Search URL')}
-            placeholder={i18n.t('forms.custom_search_api_url', 'Custom Search API URL')}
-            onChange={this.handleSearchUrlChange}
-            entry={this.state.searchUrl}
-            showLabel
-            autocomplete
-            size={TextInputSizes.sm}
-          />
-        ) : null}
-
         <TextInputElement
           name={i18n.t('forms.product_search_label', 'Enter an expression to be used as input')}
           placeholder={i18n.t('forms.product_search_placeholder', 'Ex: @input.text')}
@@ -537,6 +535,34 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           autocomplete
           size={TextInputSizes.sm}
         />
+
+        {this.state.searchType === ProductSearchType.Vtex ? (
+          <div className={`${styles.vtex_fields}`}>
+            <div className={`${styles.search_url}`}>
+              <TextInputElement
+                name={i18n.t('forms.custom_search', 'Custom Search URL')}
+                placeholder={i18n.t('forms.custom_search_api_url', 'Custom Search API URL')}
+                onChange={this.handleSearchUrlChange}
+                entry={this.state.searchUrl}
+                showLabel
+                autocomplete
+                size={TextInputSizes.sm}
+              />
+            </div>
+
+            <div className={`${styles.seller_id}`}>
+              <TextInputElement
+                name={i18n.t('forms.seller_id', 'Seller ID (optional)')}
+                placeholder={i18n.t('forms.ex_results', 'Ex: @results.seller_id')}
+                onChange={this.handleSellerIdChange}
+                entry={this.state.sellerId}
+                showLabel
+                autocomplete
+                size={TextInputSizes.sm}
+              />
+            </div>
+          </div>
+        ) : null}
       </>
     );
   }

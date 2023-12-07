@@ -382,6 +382,7 @@ export interface SendWhatsAppProduct extends Action {
   sendCatalog: boolean;
   search_type: ProductSearchType;
   search_url?: string;
+  seller_id?: string;
   productSearch?: string;
   productViewSettings: ProductViewSettings;
   result_name: string;
@@ -448,8 +449,9 @@ export interface Ticketer {
 }
 
 export interface WhatsAppProduct {
-  uuid: string;
+  facebook_product_id: string;
   title: string;
+  created_on: string;
 }
 
 export interface TransferAirtime extends Action {

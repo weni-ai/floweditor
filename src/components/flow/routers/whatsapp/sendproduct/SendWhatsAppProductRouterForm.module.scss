@@ -67,4 +67,17 @@
       line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
     }
   }
+
+  .vtex_fields {
+    display: flex;
+    gap: $unnnic-spacing-sm;
+
+    .search_url {
+      flex: 5;
+    }
+
+    .seller_id {
+      flex: 2;
+    }
+  }
 }

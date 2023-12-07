@@ -434,7 +434,8 @@ export const createSendWhatsAppProductNode = (
   sendCatalog?: boolean,
   search_type: ProductSearchType = ProductSearchType.Default,
   search_url?: string,
-  productSearch?: string
+  productSearch?: string,
+  seller_id?: string
 ): FlowNode => {
   const action: SendWhatsAppProduct = {
     uuid: utils.createUUID(),
@@ -445,6 +446,7 @@ export const createSendWhatsAppProductNode = (
     sendCatalog,
     search_type,
     search_url,
+    seller_id,
     productSearch,
     result_name: 'Result'
   };
