@@ -428,7 +428,9 @@
       "words_title": "Palavras",
       "words_description": "Palavras únicas relacionadas com a categoria.",
       "category_title": "Categorize como",
-      "category_description": "Defina a Categoria que deseja classificar a resposta do Contato."
+      "category_description": "Defina a Categoria que deseja classificar a resposta do Contato.",
+      "command_phrases_title": "Frases de comando",
+      "command_phrases_description": "Escreva frases de comando relacionadas com a categoria"
     },
     "automatic_classify": {
       "words_title": "Palavras",
@@ -437,8 +439,8 @@
       "category_description": "Defina a Categoria que deseja classificar a resposta do Contato"
     },
     "category_required": "Categoria",
-    "ex_smart_argument": "Ex: bom sim positivo",
-    "ex_smart_category": "Positivo",
+    "ex_smart_argument": "Ex: quando o usuário cumprimenta você",
+    "ex_smart_category": "Ex: Saudação",
     "search_and_send_products_automatically": "Buscar e enviar produtos automaticamente",
     "product_view_settings": "Configurações de visualização (obrigatório)",
     "product_help_text": "Os campos tem limitações de caracteres, sendo header e footer 60 caracteres, body 1024 e título do botão de ação 20 caracteres.",
