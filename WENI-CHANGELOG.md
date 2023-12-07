@@ -1,3 +1,8 @@
+2.9.1
+----------
+Feat: Smart routers phrases text
+Feat: Vtex seller id search
+
 2.9.0
 ----------
 Feat: VTEX Product Search
