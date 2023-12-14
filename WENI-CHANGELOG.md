@@ -1,3 +1,7 @@
+2.9.2
+----------
+Feat: Add localization support into smart routers
+
 2.9.1
 ----------
 Feat: Smart routers phrases text
