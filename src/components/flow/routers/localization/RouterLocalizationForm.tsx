@@ -17,6 +17,7 @@ import {
 import styles from './RouterLocalizationForm.module.scss';
 import i18n from 'config/i18n';
 import { renderIssues } from 'components/flow/actions/helpers';
+import { Types } from '../../../../config/interfaces';
 
 export interface RouterLocalizationFormState extends FormState {
   categories: Category[];
@@ -113,12 +114,17 @@ export default class RouterLocalizationForm extends React.Component<
   }
 
   public renderCases(): JSX.Element[] {
+    const typeConfig = determineTypeConfig(this.props.nodeSettings);
+    const isSmart = [Types.automatic_classify, Types.smart_wait_for_response].includes(
+      typeConfig.type
+    );
+
     return this.state.cases.map((kase: Case) => {
       const originalCase = getOriginalCase(this.props.nodeSettings, kase.uuid) as Case;
 
       const { verboseName } = getOperatorConfig(originalCase.type);
 
-      if (originalCase.arguments) {
+      if (originalCase.arguments && originalCase.arguments.length > 0) {
         const [orginalArgument] = originalCase.arguments;
 
         let argument = '';
@@ -133,9 +139,11 @@ export default class RouterLocalizationForm extends React.Component<
             data-spec="operator-field"
             className={styles.translating_operator_container}
           >
-            <div data-spec="verbose-name" className={styles.translating_operator}>
-              {verboseName}
-            </div>
+            {!isSmart && (
+              <div data-spec="verbose-name" className={styles.translating_operator}>
+                {verboseName}
+              </div>
+            )}
             <div data-spec="argument-to-translate" className={styles.translating_from}>
               {orginalArgument}
             </div>
