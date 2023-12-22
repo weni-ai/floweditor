@@ -1,5 +1,9 @@
 import { Methods } from 'components/flow/routers/webhook/helpers';
 import { FlowTypes, Operators, Types, ContactStatus, ServiceCall } from 'config/interfaces';
+import {
+  ProductSearchType,
+  ProductViewSettings
+} from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 
 // we don't concern ourselves with patch versions
 export const SPEC_VERSION = '13.1';
@@ -49,6 +53,7 @@ export interface Endpoints {
   external_services_calls_base: string;
   completion: string;
   knowledgeBases: string;
+  whatsapp_products: string;
 }
 
 export interface FlowEditorConfig {
@@ -76,6 +81,7 @@ export interface FlowEditorConfig {
   filters?: string[];
 
   showNewUpdates?: boolean;
+  initialGuide?: string;
 }
 
 export interface LocalizationMap {
@@ -371,6 +377,18 @@ export interface SendMsg extends Action {
   templating?: MsgTemplating;
 }
 
+export interface SendWhatsAppProduct extends Action {
+  products?: WhatsAppProduct[];
+  automaticProductSearch?: boolean;
+  sendCatalog: boolean;
+  search_type: ProductSearchType;
+  search_url?: string;
+  seller_id?: string;
+  productSearch?: string;
+  productViewSettings: ProductViewSettings;
+  result_name: string;
+}
+
 export interface SayMsg extends Action {
   text: string;
   audio_url?: string;
@@ -429,6 +447,12 @@ export interface ExternalService {
 export interface Ticketer {
   uuid: string;
   name: string;
+}
+
+export interface WhatsAppProduct {
+  facebook_product_id: string;
+  title: string;
+  created_on: string;
 }
 
 export interface TransferAirtime extends Action {

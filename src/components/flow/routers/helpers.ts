@@ -18,7 +18,8 @@ import {
   WebhookExitNames,
   CallClassifier,
   OpenTicket,
-  CallWeniGPT
+  CallWeniGPT,
+  SendWhatsAppProduct
 } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { createUUID, snakify } from 'utils';
@@ -343,7 +344,8 @@ export const createWebhookBasedNode = (
     | OpenTicket
     | TransferAirtime
     | CallExternalService
-    | CallWeniGPT,
+    | CallWeniGPT
+    | SendWhatsAppProduct,
   originalNode: RenderNode,
   useCategoryTest: boolean,
   hasOtherExit: boolean = false
@@ -443,6 +445,8 @@ export const createWebhookBasedNode = (
     splitType = Types.split_by_external_service;
   } else if (action.type === Types.call_wenigpt) {
     splitType = Types.split_by_wenigpt;
+  } else if (action.type === Types.send_msg_catalog) {
+    splitType = Types.split_by_whatsapp_product;
   }
 
   return createRenderNode(originalNode.node.uuid, router, exits, splitType, [action]);

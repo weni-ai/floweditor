@@ -7,7 +7,7 @@ import { Assets } from 'store/flowContext';
 
 import {
   unnnicTag,
-  unnnicInputNext
+  unnnicInput
   // @ts-ignore
 } from '@weni/unnnic-system';
 import { applyVueInReact } from 'vuereact-combined';
@@ -24,7 +24,7 @@ import i18n from 'config/i18n';
 import SelectOptions from './SelectOptions';
 
 const ElUnnnicTag = applyVueInReact(unnnicTag);
-const UnnnicInputNext = applyVueInReact(unnnicInputNext);
+const UnnnicInput = applyVueInReact(unnnicInput);
 
 export enum TembaSelectStyle {
   small = 'sm',
@@ -599,7 +599,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
           className={styles.select_wrapper}
           data-testid={`temba_select_${snakify(this.props.name)}`}
         >
-          <UnnnicInputNext
+          <UnnnicInput
             ref={(ele: any) => {
               this.selectInputRef = ele;
             }}

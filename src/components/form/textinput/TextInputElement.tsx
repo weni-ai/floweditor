@@ -7,7 +7,7 @@ import { count as SmsCount } from 'sms-length';
 import i18n from 'config/i18n';
 
 // @ts-ignore
-import { unnnicTextArea, unnnicInputNext, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
+import { unnnicTextArea, unnnicInput, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
 
 import styles from './TextInputElement.module.scss';
 import TembaCompletion from '../../../temba/TembaCompletion';
@@ -42,6 +42,7 @@ export interface TextInputProps extends FormElementProps {
   style?: TextInputStyle;
   size?: TextInputSizes;
   iconRight?: string;
+  disabled?: boolean;
   onChange?: (value: string, name?: string) => void;
   onBlur?: (event: React.ChangeEvent) => void;
   onKeyPressEnter?: () => void;
@@ -49,7 +50,7 @@ export interface TextInputProps extends FormElementProps {
 }
 
 const UnnnicTextArea = applyVueInReact(unnnicTextArea);
-const UnnnicInputNext = applyVueInReact(unnnicInputNext, {
+const UnnnicInput = applyVueInReact(unnnicInput, {
   vue: {
     componentWrapAttrs: {
       'unnnic-input': 'true'
@@ -140,6 +141,8 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             type="textarea"
             session={true}
             errors={errorList}
+            maxLength={this.props.counter ? null : this.props.maxLength}
+            disabled={this.props.disabled}
           />
         ) : (
           <UnnnicTextArea
@@ -154,6 +157,8 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             size={this.props.size || TextInputSizes.sm}
             type={hasError ? 'error' : 'normal'}
             errors={errorList}
+            maxLength={this.props.counter ? null : this.props.maxLength}
+            disabled={this.props.disabled}
           />
         )}
 
@@ -188,22 +193,25 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             size={this.props.size || TextInputSizes.sm}
             session={true}
             errors={errorList}
+            disabled={this.props.disabled}
           />
         ) : (
-          <UnnnicInputNext
-            data-testid={this.props.name}
-            value={this.props.entry.value}
-            on={{
-              input: (value: string) => this.handleChange({ currentTarget: { value } })
-            }}
-            label={this.props.showLabel ? this.props.name : null}
-            placeholder={this.props.placeholder}
-            size={this.props.size || TextInputSizes.sm}
-            ref={this.inputItem}
-            error={hasError ? errorList[0] : null}
-            maxlength={this.props.maxLength}
-            iconRight={this.props.iconRight}
-          />
+          <div data-testid={this.props.name}>
+            <UnnnicInput
+              value={this.props.entry.value}
+              on={{
+                input: (value: string) => this.handleChange({ currentTarget: { value } })
+              }}
+              label={this.props.showLabel ? this.props.name : null}
+              placeholder={this.props.placeholder}
+              size={this.props.size || TextInputSizes.sm}
+              ref={this.inputItem}
+              error={hasError ? errorList[0] : null}
+              maxlength={this.props.maxLength}
+              iconRight={this.props.iconRight}
+              disabled={this.props.disabled}
+            />
+          </div>
         )}
         {this.props.helpText && typeof this.props.helpText === 'string' ? (
           <div className={`${styles.help} u font secondary body-md color-neutral-cleanest`}>

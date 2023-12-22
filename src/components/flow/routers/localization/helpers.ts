@@ -22,7 +22,12 @@ export const getOriginalCategory = (nodeSettings: NodeEditorSettings, uuid: stri
 
 export const hasLocalizableCases = (renderNode: RenderNode) => {
   const type = getType(renderNode);
-  return type === Types.wait_for_response || type === Types.split_by_expression;
+  return [
+    Types.wait_for_response,
+    Types.split_by_expression,
+    Types.smart_wait_for_response,
+    Types.automatic_classify
+  ].includes(type);
 };
 
 export const getLocalizedObjects = (
@@ -45,7 +50,7 @@ export const getLocalizedObjects = (
       (localizedObject: LocalizedObject) => localizedObject.getObject().uuid === original.uuid
     );
 
-    if (localized.isLocalized()) {
+    if (localized && localized.isLocalized()) {
       filtered.push(localized.getObject());
     } else {
       filtered.push({ uuid: original.uuid });

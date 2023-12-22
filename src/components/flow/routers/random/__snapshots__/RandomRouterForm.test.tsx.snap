@@ -256,27 +256,36 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Split randomly"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -290,7 +299,6 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -592,28 +600,38 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                   style="all: unset;"
                 >
                   <div
-                    class="unnnic-input size-sm bold_placeholder"
+                    class="unnnic-form sm bold_placeholder"
                     data-passed-props="[object Object]"
                     data-testid="temba_select_input_buckets"
-                    data-v-79844726=""
+                    data-v-48c0c241=""
+                    readonly="readonly"
                   >
                     <!---->
                     <div
-                      class="input-container"
-                      data-v-79844726=""
+                      class="unnnic-form-input text-input size--sm has-icon-right"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
                     >
-                      <!---->
                       <input
-                        class="unnnic-font secondary"
-                        data-v-79844726=""
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_input_buckets"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        iconright="arrow-button-down-1"
                         placeholder="5 buckets"
                         readonly="readonly"
+                        size="0"
                         type="text"
+                        v-bind="[object Object]"
                       />
+                      <!---->
                       <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-400546b3=""
                         data-v-59b073b4=""
-                        data-v-79844726=""
                       >
                         <svg
                           fill="none"
@@ -627,7 +645,6 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                           />
                         </svg>
                       </span>
-                      <!---->
                     </div>
                     <!---->
                   </div>
@@ -741,143 +758,193 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
           class="bucket_list"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="e67ce051-f3e4-4c42-807b-e393df5fa382"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="e67ce051-f3e4-4c42-807b-e393df5fa382"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    placeholder=""
+                    size="8"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="e0bc3776-792f-49d2-b4be-48be2cf8159a"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="e0bc3776-792f-49d2-b4be-48be2cf8159a"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    placeholder=""
+                    size="8"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="6c22884b-0e35-4206-982e-18320691eda9"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="6c22884b-0e35-4206-982e-18320691eda9"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    placeholder=""
+                    size="8"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="a62e8284-49f8-4292-adbc-d5f6607f85c5"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="a62e8284-49f8-4292-adbc-d5f6607f85c5"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    placeholder=""
+                    size="8"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="0c8c9239-9b59-473a-a229-d8a9693be270"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="0c8c9239-9b59-473a-a229-d8a9693be270"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    placeholder=""
+                    size="8"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -1021,27 +1088,36 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-input size-sm bold_placeholder"
+                  class="unnnic-form sm bold_placeholder"
                   data-passed-props="[object Object]"
                   data-testid="temba_select_input_type"
-                  data-v-79844726=""
+                  data-v-48c0c241=""
                 >
                   <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form-input text-input size--sm has-icon-right"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
                   >
-                    <!---->
                     <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
+                      class="input-itself input size-sm normal"
+                      data-passed-props="[object Object]"
+                      data-testid="temba_select_input_type"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      iconright="arrow-button-down-1"
                       placeholder="Split randomly"
+                      size="0"
                       type="text"
+                      v-bind="[object Object]"
                     />
+                    <!---->
                     <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-400546b3=""
                       data-v-59b073b4=""
-                      data-v-79844726=""
                     >
                       <svg
                         fill="none"
@@ -1055,7 +1131,6 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                         />
                       </svg>
                     </span>
-                    <!---->
                   </div>
                   <!---->
                 </div>
@@ -1357,28 +1432,38 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                   style="all: unset;"
                 >
                   <div
-                    class="unnnic-input size-sm bold_placeholder"
+                    class="unnnic-form sm bold_placeholder"
                     data-passed-props="[object Object]"
                     data-testid="temba_select_input_buckets"
-                    data-v-79844726=""
+                    data-v-48c0c241=""
+                    readonly="readonly"
                   >
                     <!---->
                     <div
-                      class="input-container"
-                      data-v-79844726=""
+                      class="unnnic-form-input text-input size--sm has-icon-right"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
                     >
-                      <!---->
                       <input
-                        class="unnnic-font secondary"
-                        data-v-79844726=""
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-testid="temba_select_input_buckets"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        iconright="arrow-button-down-1"
                         placeholder="5 buckets"
                         readonly="readonly"
+                        size="0"
                         type="text"
+                        v-bind="[object Object]"
                       />
+                      <!---->
                       <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-400546b3=""
                         data-v-59b073b4=""
-                        data-v-79844726=""
                       >
                         <svg
                           fill="none"
@@ -1392,7 +1477,6 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                           />
                         </svg>
                       </span>
-                      <!---->
                     </div>
                     <!---->
                   </div>
@@ -1516,87 +1600,117 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
           class="bucket_list"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="e81b3f1a-0863-4418-8a72-9c9f8aa72b7c"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="e81b3f1a-0863-4418-8a72-9c9f8aa72b7c"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    placeholder=""
+                    size="8"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="1888ae1f-2518-4727-98e2-731674e1760e"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="1888ae1f-2518-4727-98e2-731674e1760e"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    placeholder=""
+                    size="8"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="dd57500e-a8e8-4a98-8b5b-a33637523a8d"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="dd57500e-a8e8-4a98-8b5b-a33637523a8d"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    placeholder=""
+                    size="8"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>

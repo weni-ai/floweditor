@@ -140,6 +140,14 @@
     "smart_wait_for_response": {
       "name": "Esperar por respuesta inteligente",
       "description": "Espere inteligentemente la respuesta"
+    },
+    "send_msg_catalog": {
+      "automatic_sending": "Envío automático",
+      "manual_sending": "[[count]] producto",
+      "manual_sending_plural": "[[count]] productos",
+      "manual_sending_multiple": "+3 productos",
+      "name": "Enviar producto por WhatsApp",
+      "description": "Enviar un producto de WhatsApp"
     }
   },
   "add": "Añadir",
@@ -419,7 +427,9 @@
       "words_title": "Palabras",
       "words_description": "Palabras únicas relacionadas con la categoría.",
       "category_title": "Categorizar cómo",
-      "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto."
+      "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto.",
+      "command_phrases_description": "Escribir frases de comando relacionadas con la categoría.",
+      "command_phrases_title": "Frases de comando"
     },
     "automatic_classify": {
       "words_title": "Palabras",
@@ -428,15 +438,38 @@
       "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto"
     },
     "category_required": "Categoría",
-    "ex_smart_argument": "Ej: bueno si positivo",
-    "ex_smart_category": "Positivo",
     "knowledge_base": "Base de conocimientos",
     "expression": "Expresión",
     "knowledge_base_placeholder": "Seleccione una base de conocimientos",
     "knowledge_base_message": "¿Aún no tienes ninguna base de conocimientos para tu IA?",
     "knowledge_base_click": "Haga clic aquí",
     "expression_input": "Insertar una expresión para usar como entrada",
-    "expression_input_placeholder": "Ej: @results.result"
+    "expression_input_placeholder": "Ej: @results.result",
+    "ex_smart_argument": "Ej: cuando el usuario te saluda",
+    "ex_smart_category": "Ej: Saludo",
+    "search_and_send_products_automatically": "Buscar y enviar productos automáticamente",
+    "product_view_settings": "Ajustes de visualización (obligatorios)",
+    "product_help_text": "Los campos tienen limitaciones de caracteres, con encabezado y pie de página de 60 caracteres, cuerpo de 1024 y título del botón de acción de 20 caracteres.",
+    "send_product": {
+      "header_info": "Sólo es posible enviar un encabezado personalizado cuando \nse seleccionan varios productos."
+    },
+    "product_search": "Búsqueda de Producto",
+    "products": "Productos",
+    "header": "Encabezamiento",
+    "footer": "Pie de página (opcional)",
+    "action": "Título del botón de acción",
+    "send_complete_catalog": "Enviar catálogo completo",
+    "select_products_to_send": "Seleccionar productos para enviar",
+    "manually_select_products": "Seleccionar productos manualmente",
+    "ex_offers": "Ofertas",
+    "ex_products_body": "Ej: las ofertas son válidas por 5 días",
+    "ex_footer": "Ej: Pie de página",
+    "ex_products_action": "Ej: Comprar ahora",
+    "no_products": "No tienes productos",
+    "product_search_label": "Ingrese una expresión para usar como entrada",
+    "custom_search": "Búsqueda personalizada",
+    "custom_search_api_url": "URL de API de búsqueda personalizada",
+    "seller_id": "ID de vendedor (opcional)"
   },
   "issues": {
     "header": "Problemas de Flujo",
@@ -605,17 +638,17 @@
     "title": "¡Novedades en la zona!",
     "description": "¿Qué hay de nuevo?",
     "news": {
-      "first": "El editor es más rápido",
-      "second": "Dos nuevas tarjetas para procesar respuestas de forma 100% inteligente",
-      "third": "Copia y pega cualquier tipo de tarjeta sin preocuparte",
-      "fourth": "Errores solucionados en el componente de selección de tarjetas.",
-      "fifth": "Máscara de WhatsApp en el simulador."
+      "first": "Ahora puedes usar tu “pequeña mano” para navegar tu flujo",
+      "second": "Herramienta de zoom",
+      "third": "Es más fácil saber hacia dónde va tu flujo con los nuevos colores en las flechas que conectan los bloques",
+      "fourth": "El modo de evaluación es diferente y ocupa menos espacio en tu pantalla",
+      "fifth": "Ahora es más fácil encontrar el inicio de tu flujo"
     },
     "buttons": {
       "first": "Fechar",
       "second": "Muestrame todo"
     },
-    "footer": "No dudes en enviarnos comentarios sobre tu experiencia haciendo clic en el detective"
+    "footer": "No dudes en enviarnos comentarios sobre tu experiencia"
   },
   "guiding": {
     "close_tour": "Cerrar guía",
@@ -635,9 +668,24 @@
         "description": "Ahora el simulador se parece a Whatsapp\npara que puedas predecir con mayor fidelidad cómo se verá tu flujo.",
         "button": "Lo tengo 3/3"
       }
+    },
+    "control_tools": {
+      "0": {
+        "title": "Seleccionar y arrastrar",
+        "description": "Haz clic aquí, usa el atajo “V” o mantén presionada la barra espaciadora para usar la herramienta “manita”, con ella podrás navegar por todo tu flujo con solo hacer clic y arrastrar en la pantalla."
+      },
+      "1": {
+        "title": "Herramienta de zoom",
+        "description": "Ahora puedes acercar y alejar de forma nativa, sin tener que acercar todo el navegador, lo que también ayuda con la navegabilidad de las tarjetas."
+      },
+      "2": {
+        "title": "Inicio del flujo",
+        "description": "¿Tu flujo es demasiado grande y a veces te pierdes? Tus problemas terminaron, simplemente haz clic aquí o usa el atajo Ctrl + Enter para volver al comienzo de tu flujo."
+      }
     }
   },
   "you_can_also_delete_cards_pressing_the_keys": "También puedes eliminar bloques usando las teclas",
   "or": "o",
-  "new": "Nuevo"
+  "new": "Nuevo",
+  "to_flow_start": "Inicio del flujo"
 }
