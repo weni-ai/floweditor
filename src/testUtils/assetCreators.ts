@@ -54,7 +54,8 @@ import {
   HintTypes,
   CallClassifier,
   CallExternalService,
-  CallWeniGPT
+  CallWeniGPT,
+  SendWhatsAppProduct
 } from 'flowTypes';
 import Localization from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
@@ -62,6 +63,10 @@ import { assetListToMap } from 'store/helpers';
 import { EMPTY_TEST_ASSETS } from 'test/utils';
 import { mock } from 'testUtils';
 import * as utils from 'utils';
+import {
+  ProductSearchType,
+  ProductViewSettings
+} from '../components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 
 const { results: groupsResults } = require('test/assets/groups.json');
 const languagesResults = require('test/assets/languages.json');
@@ -377,7 +382,8 @@ export const createWebhookNode = (
     | OpenTicket
     | TransferAirtime
     | CallClassifier
-    | CallExternalService,
+    | CallExternalService
+    | SendWhatsAppProduct,
   useCategoryTest: boolean
 ) => {
   const { categories, exits } = createCategories([
@@ -435,6 +441,32 @@ export const createOpenTicketNode = (subject: string, body: string): FlowNode =>
     },
     subject: subject,
     body: body,
+    result_name: 'Result'
+  };
+  return createWebhookNode(action, true);
+};
+
+export const createSendWhatsAppProductNode = (
+  productViewSettings: ProductViewSettings,
+  products?: any[],
+  automaticProductSearch?: boolean,
+  sendCatalog?: boolean,
+  search_type: ProductSearchType = ProductSearchType.Default,
+  search_url?: string,
+  productSearch?: string,
+  seller_id?: string
+): FlowNode => {
+  const action: SendWhatsAppProduct = {
+    uuid: utils.createUUID(),
+    type: Types.send_msg_catalog,
+    productViewSettings,
+    products,
+    automaticProductSearch,
+    sendCatalog,
+    search_type,
+    search_url,
+    seller_id,
+    productSearch,
     result_name: 'Result'
   };
   return createWebhookNode(action, true);

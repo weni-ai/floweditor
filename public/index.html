@@ -181,7 +181,7 @@
       flowType: 'message',
       localStorage: true,
       mutable: true,
-      filters: ['facebook', 'whatsapp', 'airtime', 'resthook', 'classifier', 'ticketer', 'external_service'],
+      filters: ['facebook', 'whatsapp', 'airtime', 'resthook', 'classifier', 'ticketer', 'external_service', 'whatsapp_catalog'],
       help: {
         legacy_extra: 'help.html',
         missing_dependency: 'help.html',
@@ -212,6 +212,7 @@
         ticketer_queues: base + 'ticketer_queues',
         external_services: base + 'external_services',
         knowledgeBases: base + 'knowledge_bases',
+        whatsapp_products: base + 'whatsapp_products',
 
         editor: '/',
 
@@ -219,6 +220,7 @@
         simulateResume: null
       },
       showNewUpdates: false,
+      initialGuide: 'v2'
     };
     showFlowEditor(document.getElementById('floweditor'), config);
   </script>

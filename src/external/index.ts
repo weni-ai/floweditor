@@ -209,7 +209,7 @@ export const resultToAsset = (result: any, type: AssetType, id: string): Asset =
   }
 
   const asset: Asset = {
-    name: result.name || result.text || result.label || result[idKey],
+    name: result.name || result.text || result.label || result.title || result[idKey],
     id: result[idKey],
     type: assetType
   };
@@ -362,6 +362,11 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
         type: AssetType.KnowledgeBase,
         items: {},
         id: 'id'
+      },
+      whatsapp_products: {
+        endpoint: getURL(endpoints.whatsapp_products),
+        type: AssetType.WhatsAppProduct,
+        items: {}
       }
     };
 
@@ -376,7 +381,8 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
       'classifiers',
       'ticketers',
       'externalServices',
-      'knowledgeBases'
+      'knowledgeBases',
+      'whatsapp_products'
     ].forEach((storeId: string) => {
       const store = assetStore[storeId];
       fetches.push(

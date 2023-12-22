@@ -24,6 +24,7 @@ input:focus {
   box-sizing: unset !important;
   display: flex;
   user-select: none;
+  flex: 1;
 
   display: flex;
   column-gap: $unnnic-spacing-inline-xs;
@@ -85,6 +86,7 @@ input:focus {
   .category {
     position: relative;
     padding: 1px 0;
+    flex: 1;
   }
 
   .category_wrapper {

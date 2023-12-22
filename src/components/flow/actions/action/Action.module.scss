@@ -52,7 +52,8 @@
   &.missing,
   &.enter_flow,
   &.call_external_service,
-  &.call_wenigpt {
+  &.call_wenigpt,
+  &.send_msg_catalog {
     font-family: $unnnic-font-family-secondary;
     font-size: $unnnic-font-size-body-md;
     line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
@@ -74,6 +75,10 @@
   &.call_classifier {
     padding: $action_padding;
     width: inherit;
+  }
+
+  &.send_msg_catalog {
+    width: auto;
   }
 
   &.send_broadcast,

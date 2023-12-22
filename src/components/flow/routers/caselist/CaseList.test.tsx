@@ -71,8 +71,7 @@ describe(CaseList.name, () => {
 
       userEvent.type(getAllByTestId('arguments')[0].querySelector('input'), 'Purple, p');
 
-      // TODO: REDUCE THESE CALLED TIMES TO 4/5
-      expect(onCasesUpdated).toHaveBeenCalledTimes(12);
+      expect(onCasesUpdated).toHaveBeenCalledTimes(3);
       expect(baseElement).toMatchSnapshot();
     });
 
@@ -99,7 +98,7 @@ describe(CaseList.name, () => {
       expect(getAllByTestId('temba_select_operator').length).toBe(2);
 
       // our new default operator should match the last one we entered
-      const newOperator = getAllByTestId('temba_select_input_operator')[1];
+      const newOperator = getAllByTestId('temba_select_operator')[1];
       expect(newOperator.querySelector('input').placeholder).toBe('has a number above');
 
       expect(baseElement).toMatchSnapshot();
