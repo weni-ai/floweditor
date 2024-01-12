@@ -128,6 +128,8 @@ export default class WeniGPTRouterForm extends React.Component<
               entry={this.state.knowledgeBase}
               onChange={this.handleKnowledgeBaseUpdate}
               options={this.state.knowledgeBases}
+              nameKey="label"
+              valueKey="id"
             />
 
             <div className={styles.message}>

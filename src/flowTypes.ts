@@ -456,8 +456,8 @@ export interface CallWebhook extends Action {
 }
 
 export interface CallWeniGPT extends Action {
-  knowledge_base_id: number;
-  expression: string;
+  knowledge_base: number;
+  input: string;
   result_name: string;
 }
 

@@ -40,11 +40,11 @@ export const nodeToState = (
     const action = getOriginalAction(settings) as CallWeniGPT;
 
     const selectedKnowledgeBase = knowledgeBases.find(
-      kb => kb.id === action.knowledge_base_id.toString()
+      kb => kb.id === action.knowledge_base.toString()
     );
 
     state.knowledgeBase = { value: selectedKnowledgeBase };
-    state.expression = { value: action.expression };
+    state.expression = { value: action.input };
     state.resultName = { value: action.result_name };
     state.valid = true;
   }
@@ -66,8 +66,8 @@ export const stateToNode = (
   const newAction: CallWeniGPT = {
     uuid,
     type: Types.call_wenigpt,
-    knowledge_base_id: state.knowledgeBase.value.id,
-    expression: state.expression.value,
+    knowledge_base: state.knowledgeBase.value.id,
+    input: state.expression.value,
     result_name: state.resultName.value
   };
 

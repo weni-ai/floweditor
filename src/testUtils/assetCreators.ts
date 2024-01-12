@@ -354,19 +354,19 @@ export const createSetRunResultAction = ({
 
 export const createCallWeniGPTAction = ({
   uuid = utils.createUUID(),
-  expression = 'Hello',
-  knowledge_base_id = 1,
+  input = 'Hello',
+  knowledge_base = 1,
   result_name = 'Result'
 }: {
   uuid?: string;
-  expression?: string;
-  knowledge_base_id?: number;
+  input?: string;
+  knowledge_base?: number;
   result_name?: string;
 } = {}): CallWeniGPT => ({
   uuid: uuid,
   type: Types.call_wenigpt,
-  expression,
-  knowledge_base_id,
+  input,
+  knowledge_base,
   result_name
 });
 
