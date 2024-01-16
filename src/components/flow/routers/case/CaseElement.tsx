@@ -499,7 +499,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
             : i18n.t('forms.ex_cart', 'Ex: cart');
 
         if (this.props.type === CaseElementType.smart) {
-          placeholder = i18n.t('forms.ex_smart_argument', 'Ex: good yes positive');
+          placeholder = i18n.t('forms.ex_smart_argument', 'Ex: when the user greets you');
         }
 
         return (
@@ -577,7 +577,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
               showInvalid={hasErrorType(this.state.errors, [/category/])}
               placeholder={
                 this.props.type === CaseElementType.smart
-                  ? i18n.t('forms.ex_smart_category', 'Ex: Positive')
+                  ? i18n.t('forms.ex_smart_category', 'Ex: Greeting')
                   : i18n.t('forms.ex_shop', 'Ex: shopping')
               }
             />

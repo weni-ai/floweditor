@@ -69,6 +69,8 @@ import TicketRouterForm from 'components/flow/routers/ticket/TicketRouterForm';
 import OpenTicketComp from 'components/flow/actions/openticket/OpenTicket';
 import ExternalServiceRouterForm from 'components/flow/routers/externalservice/ExternalServiceRouterForm';
 import CallExternalServiceComp from 'components/flow/actions/callexternalservice/CallExternalService';
+import SendWhatsAppProductComp from 'components/flow/actions/whatsapp/sendproduct/SendWhatsAppProduct';
+import SendWhatsAppProductRouterForm from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 
 const dedupeTypeConfigs = (typeConfigs: Type[]) => {
   const map: any = {};
@@ -256,6 +258,16 @@ export const typeConfigList: Type[] = [
       // at least an empty array so the localization has a proper cue
       action.quick_replies = action.quick_replies || [];
     }
+  },
+  {
+    type: Types.send_msg_catalog,
+    name: i18n.t('actions.send_msg_catalog.name', 'Send WhatsApp Product'),
+    description: i18n.t('actions.send_msg_catalog.description', 'Send a WhatsApp product'),
+    form: SendWhatsAppProductRouterForm,
+    component: SendWhatsAppProductComp,
+    aliases: [Types.split_by_whatsapp_product],
+    filter: FeatureFilter.HAS_WHATSAPP_CATALOG,
+    new: true
   },
   {
     type: Types.wait_for_response,

@@ -43,28 +43,38 @@ exports[`CaseElement operator changes should handle updates 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_operator"
-                data-v-79844726=""
+                data-v-48c0c241=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_operator"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="has a phone number"
                     readonly="readonly"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -78,7 +88,6 @@ exports[`CaseElement operator changes should handle updates 1`] = `
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -319,33 +328,43 @@ exports[`CaseElement operator changes should handle updates 1`] = `
           class="category"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Exit Name"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Exit Name"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="36"
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="36"
-                  placeholder="Ex: shopping"
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="36"
+                    placeholder="Ex: shopping"
+                    size="9"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -431,28 +450,38 @@ exports[`CaseElement operator changes should not update exit if it has been edit
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_operator"
-                data-v-79844726=""
+                data-v-48c0c241=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_operator"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="has a number"
                     readonly="readonly"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -466,7 +495,6 @@ exports[`CaseElement operator changes should not update exit if it has been edit
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -707,33 +735,43 @@ exports[`CaseElement operator changes should not update exit if it has been edit
           class="category"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Exit Name"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Exit Name"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="36"
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="36"
-                  placeholder="Ex: shopping"
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="36"
+                    placeholder="Ex: shopping"
+                    size="12"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -819,28 +857,38 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_operator"
-                data-v-79844726=""
+                data-v-48c0c241=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_operator"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="has a number between"
                     readonly="readonly"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -854,7 +902,6 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -1090,31 +1137,40 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
               class="completion_wrapper"
             >
               <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
+                data-testid="arguments"
               >
                 <div
-                  class="unnnic-input size-sm"
-                  data-passed-props="[object Object]"
-                  data-testid="arguments"
-                  data-v-79844726=""
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form sm"
+                    data-passed-props="[object Object]"
+                    data-v-48c0c241=""
                   >
                     <!---->
-                    <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
-                      placeholder="0"
-                      type="text"
-                    />
-                    <!---->
+                    <div
+                      class="unnnic-form-input text-input size--sm"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        placeholder="0"
+                        size="0"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
@@ -1135,31 +1191,40 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
               class="completion_wrapper"
             >
               <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
+                data-testid="arguments"
               >
                 <div
-                  class="unnnic-input size-sm"
-                  data-passed-props="[object Object]"
-                  data-testid="arguments"
-                  data-v-79844726=""
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form sm"
+                    data-passed-props="[object Object]"
+                    data-v-48c0c241=""
                   >
                     <!---->
-                    <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
-                      placeholder="100"
-                      type="text"
-                    />
-                    <!---->
+                    <div
+                      class="unnnic-form-input text-input size--sm"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        placeholder="100"
+                        size="0"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
@@ -1180,33 +1245,43 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
           class="category"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Exit Name"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Exit Name"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="36"
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="36"
-                  placeholder="Ex: shopping"
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="36"
+                    placeholder="Ex: shopping"
+                    size="0"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -1292,28 +1367,38 @@ exports[`CaseElement render renders no argument rules 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_operator"
-                data-v-79844726=""
+                data-v-48c0c241=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_operator"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="has a number"
                     readonly="readonly"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -1327,7 +1412,6 @@ exports[`CaseElement render renders no argument rules 1`] = `
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -1568,33 +1652,43 @@ exports[`CaseElement render renders no argument rules 1`] = `
           class="category"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Exit Name"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Exit Name"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="36"
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="36"
-                  placeholder="Ex: shopping"
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="36"
+                    placeholder="Ex: shopping"
+                    size="0"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -1680,28 +1774,38 @@ exports[`CaseElement render should render empty case 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_operator"
-                data-v-79844726=""
+                data-v-48c0c241=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_operator"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="has any of the words"
                     readonly="readonly"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -1715,7 +1819,6 @@ exports[`CaseElement render should render empty case 1`] = `
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -1951,31 +2054,40 @@ exports[`CaseElement render should render empty case 1`] = `
               class="completion_wrapper"
             >
               <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
+                data-testid="arguments"
               >
                 <div
-                  class="unnnic-input size-sm"
-                  data-passed-props="[object Object]"
-                  data-testid="arguments"
-                  data-v-79844726=""
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form sm"
+                    data-passed-props="[object Object]"
+                    data-v-48c0c241=""
                   >
                     <!---->
-                    <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
-                      placeholder="Ex: cart"
-                      type="text"
-                    />
-                    <!---->
+                    <div
+                      class="unnnic-form-input text-input size--sm"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        placeholder="Ex: cart"
+                        size="0"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
@@ -1996,33 +2108,43 @@ exports[`CaseElement render should render empty case 1`] = `
           class="category"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Exit Name"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Exit Name"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="36"
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="36"
-                  placeholder="Ex: shopping"
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="36"
+                    placeholder="Ex: shopping"
+                    size="0"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -2108,28 +2230,38 @@ exports[`CaseElement update handles argument change 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_operator"
-                data-v-79844726=""
+                data-v-48c0c241=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_operator"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="has any of the words"
                     readonly="readonly"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -2143,7 +2275,6 @@ exports[`CaseElement update handles argument change 1`] = `
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -2379,37 +2510,46 @@ exports[`CaseElement update handles argument change 1`] = `
               class="completion_wrapper"
             >
               <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
+                data-testid="arguments"
               >
                 <div
-                  class="unnnic-input size-sm"
-                  data-passed-props="[object Object]"
-                  data-testid="arguments"
-                  data-v-79844726=""
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form sm"
+                    data-passed-props="[object Object]"
+                    data-v-48c0c241=""
                   >
                     <!---->
-                    <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
-                      placeholder="Ex: cart"
-                      type="text"
-                    />
-                    <!---->
+                    <div
+                      class="unnnic-form-input text-input size--sm"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        placeholder="Ex: cart"
+                        size="0"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_arguments"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
@@ -2424,33 +2564,43 @@ exports[`CaseElement update handles argument change 1`] = `
           class="category"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Exit Name"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Exit Name"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="36"
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="36"
-                  placeholder="Ex: shopping"
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="36"
+                    placeholder="Ex: shopping"
+                    size="0"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>
@@ -2536,28 +2686,38 @@ exports[`CaseElement update handles multiple argument change 1`] = `
               style="all: unset;"
             >
               <div
-                class="unnnic-input size-sm bold_placeholder"
+                class="unnnic-form sm bold_placeholder"
                 data-passed-props="[object Object]"
                 data-testid="temba_select_input_operator"
-                data-v-79844726=""
+                data-v-48c0c241=""
+                readonly="readonly"
               >
                 <!---->
                 <div
-                  class="input-container"
-                  data-v-79844726=""
+                  class="unnnic-form-input text-input size--sm has-icon-right"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
                 >
-                  <!---->
                   <input
-                    class="unnnic-font secondary"
-                    data-v-79844726=""
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-testid="temba_select_input_operator"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    iconright="arrow-button-down-1"
                     placeholder="has a number between"
                     readonly="readonly"
+                    size="0"
                     type="text"
+                    v-bind="[object Object]"
                   />
+                  <!---->
                   <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy"
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-400546b3=""
                     data-v-59b073b4=""
-                    data-v-79844726=""
                   >
                     <svg
                       fill="none"
@@ -2571,7 +2731,6 @@ exports[`CaseElement update handles multiple argument change 1`] = `
                       />
                     </svg>
                   </span>
-                  <!---->
                 </div>
                 <!---->
               </div>
@@ -2807,31 +2966,40 @@ exports[`CaseElement update handles multiple argument change 1`] = `
               class="completion_wrapper"
             >
               <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
+                data-testid="arguments"
               >
                 <div
-                  class="unnnic-input size-sm"
-                  data-passed-props="[object Object]"
-                  data-testid="arguments"
-                  data-v-79844726=""
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form sm"
+                    data-passed-props="[object Object]"
+                    data-v-48c0c241=""
                   >
                     <!---->
-                    <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
-                      placeholder="0"
-                      type="text"
-                    />
-                    <!---->
+                    <div
+                      class="unnnic-form-input text-input size--sm"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        placeholder="0"
+                        size="0"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
@@ -2852,37 +3020,46 @@ exports[`CaseElement update handles multiple argument change 1`] = `
               class="completion_wrapper"
             >
               <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
+                data-testid="arguments"
               >
                 <div
-                  class="unnnic-input size-sm"
-                  data-passed-props="[object Object]"
-                  data-testid="arguments"
-                  data-v-79844726=""
+                  data-use-vue-component-wrap=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="input-container"
-                    data-v-79844726=""
+                    class="unnnic-form sm"
+                    data-passed-props="[object Object]"
+                    data-v-48c0c241=""
                   >
                     <!---->
-                    <input
-                      class="unnnic-font secondary"
-                      data-v-79844726=""
-                      placeholder="100"
-                      type="text"
-                    />
-                    <!---->
+                    <div
+                      class="unnnic-form-input text-input size--sm"
+                      data-v-400546b3=""
+                      data-v-48c0c241=""
+                      mask=""
+                      v-bind="[object Object]"
+                    >
+                      <input
+                        class="input-itself input size-sm normal"
+                        data-passed-props="[object Object]"
+                        data-v-400546b3=""
+                        data-v-97b44e8c=""
+                        placeholder="100"
+                        size="0"
+                        type="text"
+                        v-bind="[object Object]"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
                     <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_arguments"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
@@ -2897,33 +3074,43 @@ exports[`CaseElement update handles multiple argument change 1`] = `
           class="category"
         >
           <div
-            data-use-vue-component-wrap=""
-            style="all: unset;"
-            unnnic-input="true"
+            data-testid="Exit Name"
           >
             <div
-              class="unnnic-input size-sm"
-              data-passed-props="[object Object]"
-              data-testid="Exit Name"
-              data-v-79844726=""
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+              unnnic-input="true"
             >
-              <!---->
               <div
-                class="input-container"
-                data-v-79844726=""
+                class="unnnic-form sm"
+                data-passed-props="[object Object]"
+                data-v-48c0c241=""
+                maxlength="36"
               >
                 <!---->
-                <input
-                  class="unnnic-font secondary"
-                  data-v-79844726=""
-                  maxlength="36"
-                  placeholder="Ex: shopping"
-                  type="text"
-                />
-                <!---->
+                <div
+                  class="unnnic-form-input text-input size--sm"
+                  data-v-400546b3=""
+                  data-v-48c0c241=""
+                  mask=""
+                  v-bind="[object Object]"
+                >
+                  <input
+                    class="input-itself input size-sm normal"
+                    data-passed-props="[object Object]"
+                    data-v-400546b3=""
+                    data-v-97b44e8c=""
+                    maxlength="36"
+                    placeholder="Ex: shopping"
+                    size="0"
+                    type="text"
+                    v-bind="[object Object]"
+                  />
+                  <!---->
+                  <!---->
+                </div>
                 <!---->
               </div>
-              <!---->
             </div>
           </div>
         </div>

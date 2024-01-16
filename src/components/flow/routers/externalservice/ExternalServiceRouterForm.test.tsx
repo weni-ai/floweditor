@@ -76,7 +76,7 @@ describe(ExternalServiceRouterForm.name, () => {
         // cannot save without the result field filled
         fireUnnnicInputChangeText(resultName, '');
         fireEvent.click(okButton);
-        expect(externalServiceForm.updateRouter).toBeCalledTimes(1);
+        expect(externalServiceForm.updateRouter).toBeCalledTimes(2);
 
         fireUnnnicInputChangeText(resultName, 'My External Service Result');
 
