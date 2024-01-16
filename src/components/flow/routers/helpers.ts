@@ -345,8 +345,7 @@ export const createWebhookBasedNode = (
     | CallExternalService
     | CallWeniGPT,
   originalNode: RenderNode,
-  useCategoryTest: boolean,
-  hasOtherExit: boolean = false
+  useCategoryTest: boolean
 ): RenderNode => {
   const exits: Exit[] = [];
   let cases: Case[] = [];
@@ -396,27 +395,6 @@ export const createWebhookBasedNode = (
         category_uuid: categories[0].uuid
       }
     ];
-
-    // add in our other exit if we need it in between success and failure
-    if (hasOtherExit) {
-      exits.splice(1, 0, {
-        uuid: createUUID(),
-        destination_uuid: null
-      });
-
-      categories.splice(1, 0, {
-        uuid: createUUID(),
-        name: WebhookExitNames.Other,
-        exit_uuid: exits[1].uuid
-      });
-
-      cases.push({
-        uuid: createUUID(),
-        type: Operators.has_category,
-        arguments: [WebhookExitNames.Other],
-        category_uuid: categories[1].uuid
-      });
-    }
   }
 
   let operand = '@results.' + snakify(action.result_name);
