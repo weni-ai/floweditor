@@ -56,6 +56,7 @@ exports[`WeniGPTRouterForm should render 1`] = `
         }
         key="knowledge_base_select"
         name="Knowledge Base"
+        nameKey="label"
         onChange={[Function]}
         options={
           Array [
@@ -99,6 +100,7 @@ exports[`WeniGPTRouterForm should render 1`] = `
         }
         placeholder="Select a knowledge base"
         showLabel={true}
+        valueKey="id"
       />
       <div
         className="message"
@@ -149,8 +151,8 @@ Array [
     "node": Object {
       "actions": Array [
         Object {
-          "expression": "Updated expression input data",
-          "knowledge_base_id": "3",
+          "input": "Updated expression input data",
+          "knowledge_base": "3",
           "result_name": "My Webhook Result",
           "type": "call_wenigpt",
           "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
@@ -160,10 +162,6 @@ Array [
         Object {
           "destination_uuid": null,
           "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
-        },
-        Object {
-          "destination_uuid": null,
-          "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
         },
         Object {
           "destination_uuid": null,
@@ -180,25 +178,12 @@ Array [
             "type": "has_only_text",
             "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
           },
-          Object {
-            "arguments": Array [
-              "Other",
-            ],
-            "category_uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
-            "type": "has_category",
-            "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
-          },
         ],
         "categories": Array [
           Object {
             "exit_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
             "name": "Success",
             "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
-          },
-          Object {
-            "exit_uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
-            "name": "Other",
-            "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
           },
           Object {
             "exit_uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
