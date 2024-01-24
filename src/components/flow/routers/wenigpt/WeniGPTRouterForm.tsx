@@ -83,7 +83,7 @@ export default class WeniGPTRouterForm extends React.Component<
   }
 
   private handleRedirectClick(): void {
-    window.parent.postMessage({ event: 'redirect', path: 'intelligences:bothub/new' }, '*');
+    window.parent.postMessage({ event: 'redirect', path: 'intelligences:init/force' }, '*');
   }
 
   private handleSave(): void {
