@@ -148,6 +148,10 @@
       "manual_sending_multiple": "+3 produtos",
       "name": "Enviar produto pelo WhatsApp",
       "description": "Enviar um produto por WhatsApp"
+    },
+    "call_wenigpt": {
+      "name": "Consultar WeniGPT",
+      "description": "Consultar WeniGPT"
     }
   },
   "add": "Adicione",
