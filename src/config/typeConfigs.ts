@@ -71,6 +71,7 @@ import ExternalServiceRouterForm from 'components/flow/routers/externalservice/E
 import CallExternalServiceComp from 'components/flow/actions/callexternalservice/CallExternalService';
 import SendWhatsAppProductComp from 'components/flow/actions/whatsapp/sendproduct/SendWhatsAppProduct';
 import SendWhatsAppProductRouterForm from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+import WeniGPTLocalizationForm from '../components/flow/actions/localization/WeniGPTLocalizationForm';
 
 const dedupeTypeConfigs = (typeConfigs: Type[]) => {
   const map: any = {};
@@ -295,8 +296,8 @@ export const typeConfigList: Type[] = [
     name: i18n.t('actions.call_wenigpt.name', 'Call WeniGPT'),
     description: i18n.t('actions.call_wenigpt.description', 'Call WeniGPT'),
     form: WeniGPTRouterForm,
-    localization: RouterLocalizationForm,
-    localizeableKeys: ['exits'],
+    localization: WeniGPTLocalizationForm,
+    localizeableKeys: ['input'],
     component: CallWeniGPTComp,
     aliases: [Types.split_by_wenigpt],
     new: true

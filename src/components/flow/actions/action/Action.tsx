@@ -127,6 +127,10 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
         localizedKeys.push('subject');
       }
 
+      if (this.props.action.type === Types.call_wenigpt) {
+        localizedKeys.push('input');
+      }
+
       if (localizedKeys.length !== 0) {
         const localization = getLocalization(
           this.props.action,
