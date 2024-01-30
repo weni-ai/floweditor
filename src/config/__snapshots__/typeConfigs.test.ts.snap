@@ -148,7 +148,7 @@ Array [
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
-      "exits",
+      "input",
     ],
     "name": "Call WeniGPT",
     "new": true,
@@ -643,7 +643,7 @@ Object {
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
-      "exits",
+      "input",
     ],
     "name": "Call WeniGPT",
     "new": true,
@@ -1096,7 +1096,7 @@ Object {
     "form": [Function],
     "localization": [Function],
     "localizeableKeys": Array [
-      "exits",
+      "input",
     ],
     "name": "Call WeniGPT",
     "new": true,
