@@ -173,7 +173,7 @@ export const getLocalizations = (
   const localizations: LocalizedObject[] = [];
 
   // Account for localized cases
-  if (node.router && node.router.type === RouterTypes.switch) {
+  if (node.router && [RouterTypes.switch, RouterTypes.smart].includes(node.router.type)) {
     const router = node.router as SwitchRouter;
 
     router.cases.forEach(kase =>
