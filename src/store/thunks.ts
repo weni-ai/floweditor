@@ -1085,10 +1085,14 @@ export const onOpenNodeEditor = (settings: NodeEditorSettings) => (
     // if they clicked just below the actions, treat it as the last action
     if (!actionToTranslate && node.actions.length > 0) {
       actionToTranslate = node.actions[node.actions.length - 1];
-      if (
-        actionToTranslate.type !== Types.send_msg &&
-        actionToTranslate.type !== Types.send_broadcast
-      ) {
+
+      const ACTIONS_AVAILABLE_TO_TRANSLATE = [
+        Types.send_msg,
+        Types.send_broadcast,
+        Types.call_wenigpt
+      ];
+
+      if (!ACTIONS_AVAILABLE_TO_TRANSLATE.includes(actionToTranslate.type)) {
         return;
       }
     }

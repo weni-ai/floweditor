@@ -140,6 +140,21 @@ Array [
     ],
   },
   Object {
+    "aliases": Array [
+      "split_by_wenigpt",
+    ],
+    "component": [Function],
+    "description": "Call WeniGPT",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "input",
+    ],
+    "name": "Call WeniGPT",
+    "new": true,
+    "type": "call_wenigpt",
+  },
+  Object {
     "component": [Function],
     "description": "Send somebody else a message",
     "form": [Function],
@@ -619,6 +634,21 @@ Object {
       "voice",
     ],
   },
+  "call_wenigpt": Object {
+    "aliases": Array [
+      "split_by_wenigpt",
+    ],
+    "component": [Function],
+    "description": "Call WeniGPT",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "input",
+    ],
+    "name": "Call WeniGPT",
+    "new": true,
+    "type": "call_wenigpt",
+  },
   "enter_flow": Object {
     "aliases": Array [
       "split_by_subflow",
@@ -1056,6 +1086,21 @@ Object {
       "messaging_background",
       "voice",
     ],
+  },
+  "split_by_wenigpt": Object {
+    "aliases": Array [
+      "split_by_wenigpt",
+    ],
+    "component": [Function],
+    "description": "Call WeniGPT",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "input",
+    ],
+    "name": "Call WeniGPT",
+    "new": true,
+    "type": "call_wenigpt",
   },
   "split_by_whatsapp_product": Object {
     "aliases": Array [
