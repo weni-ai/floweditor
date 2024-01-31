@@ -137,7 +137,7 @@ export const initialState: EditorState = {
   currentGuide: null,
   guidingStep: -1,
 
-  mouseState: MouseState.DRAG
+  mouseState: MouseState.SELECT
 };
 
 // Action Creator
