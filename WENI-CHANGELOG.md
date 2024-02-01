@@ -1,3 +1,7 @@
+2.10.1
+----------
+Fix: Change default wenigpt input value
+
 2.10.0
 ----------
 Update README.md
