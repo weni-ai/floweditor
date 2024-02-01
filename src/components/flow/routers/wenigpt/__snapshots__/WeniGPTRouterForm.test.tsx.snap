@@ -125,7 +125,7 @@ exports[`WeniGPTRouterForm should render 1`] = `
       }
       name="Insert an expression to be used as input"
       onChange={[Function]}
-      placeholder="Ex: @results.result"
+      placeholder="Ex: @input.text"
       showLabel={true}
       textarea={true}
     />
