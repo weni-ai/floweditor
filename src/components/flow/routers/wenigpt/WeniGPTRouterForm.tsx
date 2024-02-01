@@ -148,7 +148,7 @@ export default class WeniGPTRouterForm extends React.Component<
           <TextInputElement
             name={i18n.t('forms.expression_input', 'Insert an expression to be used as input')}
             showLabel={true}
-            placeholder={i18n.t('forms.expression_input_placeholder', 'Ex: @results.result')}
+            placeholder={i18n.t('forms.expression_input_placeholder', 'Ex: @input.text')}
             entry={this.state.expression}
             onChange={this.handleExpressionUpdate}
             autocomplete={true}
