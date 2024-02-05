@@ -120,7 +120,7 @@ exports[`WeniGPTRouterForm should render 1`] = `
       autocomplete={true}
       entry={
         Object {
-          "value": "",
+          "value": "@input.text",
         }
       }
       name="Insert an expression to be used as input"
