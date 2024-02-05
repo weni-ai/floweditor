@@ -11,7 +11,8 @@ import {
   Action,
   AnyAction,
   FlowIssue,
-  CallExternalService
+  CallExternalService,
+  CallWeniGPT
 } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { getType } from 'config/typeConfigs';
@@ -53,13 +54,15 @@ export const getResultName = (node: FlowNode) => {
       action.type === Types.call_resthook ||
       action.type === Types.open_ticket ||
       action.type === Types.transfer_airtime ||
-      action.type === Types.call_external_service
+      action.type === Types.call_external_service ||
+      action.type === Types.call_wenigpt
     ) {
       const resultAction = action as
         | CallWebhook
         | CallResthook
         | TransferAirtime
-        | CallExternalService;
+        | CallExternalService
+        | CallWeniGPT;
       return resultAction.result_name;
     }
   }
