@@ -1,3 +1,7 @@
+2.10.4
+----------
+Fix: Add wenigpt action to result listing condition
+
 2.10.3
 ----------
 Feat: Add default wenigpt input
