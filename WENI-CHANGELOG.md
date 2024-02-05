@@ -1,3 +1,7 @@
+2.10.3
+----------
+Feat: Add default wenigpt input
+
 2.10.2
 ----------
 Fix: Change default wenigpt input value translations
