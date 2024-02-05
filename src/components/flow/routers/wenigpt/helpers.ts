@@ -30,7 +30,7 @@ export const nodeToState = (
 
   const state: WeniGPTRouterFormState = {
     knowledgeBase: { value: null },
-    expression: { value: '' },
+    expression: { value: '@input.text' },
     knowledgeBases,
     resultName,
     valid: false
