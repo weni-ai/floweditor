@@ -51,12 +51,10 @@ export const handleUploadFile = (
 
   const data = new FormData();
   data.append('file', files[0]);
-  console.log('CALLING POST');
   axios
     .post(endpoint, data, { headers })
     .then(onSuccess)
     .catch(error => {
-      console.log('ERROR');
       console.log(error);
     });
 };
@@ -89,7 +87,6 @@ export const renderUploadButton = (
         }}
         type="file"
         onChange={e => {
-          console.log('ON CHANGE', onAttachmentUploaded);
           return handleUploadFile(attachmentEndpoint, e.target.files, onAttachmentUploaded);
         }}
       />

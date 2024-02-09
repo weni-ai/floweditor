@@ -206,7 +206,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
               placeholder={this.props.placeholder}
               size={this.props.size || TextInputSizes.sm}
               ref={this.inputItem}
-              error={hasError ? errorList[0] : null}
+              message={hasError ? errorList[0] : null}
               maxlength={this.props.maxLength}
               iconRight={this.props.iconRight}
               disabled={this.props.disabled}

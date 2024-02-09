@@ -611,7 +611,7 @@ export class TembaSelect extends React.Component<TembaSelectProps, TembaSelectSt
             size={this.props.style || TembaSelectStyle.small}
             disabled={this.props.disabled}
             type={hasErrors ? 'error' : 'normal'}
-            error={this.props.errors && this.props.errors[0]}
+            message={this.props.errors && this.props.errors[0]}
             onClick={this.handleInputFocus}
             iconRight={inputIcon}
             readonly={!this.props.searchable}
