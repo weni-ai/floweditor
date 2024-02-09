@@ -29,7 +29,7 @@ export default class DescriptionAlert extends React.Component<DescriptionAlertPr
         />
         <span className={styles.alert_text}>
           <Trans i18nKey="forms.smart_wait.description_alert">
-            <b>Important:</b> Edit your project, <a>add a description</a> and make your AI even more
+            <b>Important:</b>Edit your project, <u>add a description</u> and make your AI even more
             powerful.
           </Trans>
         </span>

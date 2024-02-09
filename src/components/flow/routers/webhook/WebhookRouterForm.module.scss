@@ -13,7 +13,7 @@
 .url_container {
   display: flex;
   gap: $unnnic-spacing-inline-sm;
-  align-items: start;
+  align-items: flex-start;
   margin: $unnnic-spacing-stack-sm 0;
   margin-top: $unnnic-spacing-stack-md;
 }
