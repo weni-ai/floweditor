@@ -72,7 +72,7 @@ exports[`StartSessionForm render should render 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -408,7 +408,7 @@ exports[`StartSessionForm render should render 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -522,7 +522,7 @@ exports[`StartSessionForm render should render 1`] = `
                       <span
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                         data-v-400546b3=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -578,7 +578,7 @@ exports[`StartSessionForm render should render 1`] = `
                     <span
                       class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
                       data-v-32b4068e=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -618,7 +618,7 @@ exports[`StartSessionForm render should render 1`] = `
                     <span
                       class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
                       data-v-32b4068e=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -658,7 +658,7 @@ exports[`StartSessionForm render should render 1`] = `
                     <span
                       class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
                       data-v-32b4068e=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -723,7 +723,7 @@ exports[`StartSessionForm render should render 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -1030,7 +1030,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -1366,7 +1366,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -1534,7 +1534,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -1719,7 +1719,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -2055,7 +2055,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -2165,7 +2165,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -2472,7 +2472,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -2808,7 +2808,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -2976,7 +2976,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"

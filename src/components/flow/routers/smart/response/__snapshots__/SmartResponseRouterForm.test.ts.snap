@@ -47,6 +47,9 @@ exports[`SmartResponseRouterForm initializes case config 1`] = `
     }
     onChange={[MockFunction]}
   />
+  <DescriptionAlert
+    openDescriptionEdit={[Function]}
+  />
   <div
     className="content"
   >
@@ -182,6 +185,9 @@ exports[`SmartResponseRouterForm should render 1`] = `
       }
     }
     onChange={[MockFunction]}
+  />
+  <DescriptionAlert
+    openDescriptionEdit={[Function]}
   />
   <div
     className="content"
