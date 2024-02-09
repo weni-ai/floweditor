@@ -1,0 +1,22 @@
+@import 'variables.module.scss';
+
+.collapse {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-sm;
+  border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+  border-radius: $unnnic-border-radius-sm;
+  padding: $unnnic-spacing-sm;
+}
+
+.error {
+  border-color: $unnnic-color-feedback-red;
+}
+
+.collapse_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
