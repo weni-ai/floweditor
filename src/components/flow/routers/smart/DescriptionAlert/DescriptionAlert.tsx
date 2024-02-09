@@ -17,10 +17,6 @@ export interface DescriptionAlertProps {
 }
 
 export default class DescriptionAlert extends React.Component<DescriptionAlertProps> {
-  constructor(props: DescriptionAlertProps) {
-    super(props);
-  }
-
   public render(): JSX.Element {
     return (
       <div className={styles.alert} onClick={this.props.openDescriptionEdit}>
