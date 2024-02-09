@@ -79,6 +79,7 @@ export enum AssetType {
   Ticketer = 'ticketer',
   URN = 'urn',
   ExternalService = 'external_service',
+  KnowledgeBase = 'knowledge_base',
   WhatsAppProduct = 'whatsapp_product'
 }
 

@@ -142,7 +142,7 @@ exports[`StartSessionForm render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -152,7 +152,7 @@ exports[`StartSessionForm render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -162,7 +162,7 @@ exports[`StartSessionForm render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -172,7 +172,7 @@ exports[`StartSessionForm render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -182,7 +182,7 @@ exports[`StartSessionForm render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -192,7 +192,7 @@ exports[`StartSessionForm render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -202,7 +202,7 @@ exports[`StartSessionForm render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -212,7 +212,7 @@ exports[`StartSessionForm render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -222,7 +222,7 @@ exports[`StartSessionForm render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -232,7 +232,7 @@ exports[`StartSessionForm render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -242,12 +242,22 @@ exports[`StartSessionForm render should render 1`] = `
                   <span
                     class="name"
                   >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="name"
+                  >
                     Enter another flow
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -257,7 +267,7 @@ exports[`StartSessionForm render should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -267,7 +277,7 @@ exports[`StartSessionForm render should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="name"
@@ -277,7 +287,7 @@ exports[`StartSessionForm render should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="name"
@@ -287,7 +297,7 @@ exports[`StartSessionForm render should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="name"
@@ -297,7 +307,7 @@ exports[`StartSessionForm render should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -307,7 +317,7 @@ exports[`StartSessionForm render should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -317,7 +327,7 @@ exports[`StartSessionForm render should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -327,7 +337,7 @@ exports[`StartSessionForm render should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -337,7 +347,7 @@ exports[`StartSessionForm render should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -347,7 +357,7 @@ exports[`StartSessionForm render should render 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -1100,7 +1110,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -1110,7 +1120,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -1120,7 +1130,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -1130,7 +1140,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -1140,7 +1150,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -1150,7 +1160,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -1160,7 +1170,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -1170,7 +1180,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -1180,7 +1190,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -1190,7 +1200,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -1200,12 +1210,22 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   <span
                     class="name"
                   >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="name"
+                  >
                     Enter another flow
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -1215,7 +1235,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -1225,7 +1245,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="name"
@@ -1235,7 +1255,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="name"
@@ -1245,7 +1265,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="name"
@@ -1255,7 +1275,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -1265,7 +1285,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -1275,7 +1295,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -1285,7 +1305,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -1295,7 +1315,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -1305,7 +1325,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -1789,7 +1809,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -1799,7 +1819,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -1809,7 +1829,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -1819,7 +1839,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -1829,7 +1849,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -1839,7 +1859,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -1849,7 +1869,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -1859,7 +1879,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -1869,7 +1889,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -1879,7 +1899,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -1889,12 +1909,22 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   <span
                     class="name"
                   >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="name"
+                  >
                     Enter another flow
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -1904,7 +1934,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -1914,7 +1944,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="name"
@@ -1924,7 +1954,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="name"
@@ -1934,7 +1964,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="name"
@@ -1944,7 +1974,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -1954,7 +1984,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -1964,7 +1994,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -1974,7 +2004,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -1984,7 +2014,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -1994,7 +2024,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -2542,7 +2572,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -2552,7 +2582,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -2562,7 +2592,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -2572,7 +2602,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -2582,7 +2612,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -2592,7 +2622,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -2602,7 +2632,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -2612,7 +2642,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -2622,7 +2652,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -2632,7 +2662,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -2642,12 +2672,22 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   <span
                     class="name"
                   >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="name"
+                  >
                     Enter another flow
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -2657,7 +2697,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -2667,7 +2707,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="name"
@@ -2677,7 +2717,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                 </div>
                 <div
                   class="option  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="name"
@@ -2687,7 +2727,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                 </div>
                 <div
                   class="option  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="name"
@@ -2697,7 +2737,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                 </div>
                 <div
                   class="option  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -2707,7 +2747,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -2717,7 +2757,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -2727,7 +2767,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -2737,7 +2777,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -2747,7 +2787,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                 </div>
                 <div
                   class="option  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="name"

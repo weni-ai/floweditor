@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CallWeniGPTComp should render save placeholder when result prop passed 1`] = `
+<div>
+  Save
+   
+  as
+   
+  <span
+    className="emphasize"
+  >
+    Result
+  </span>
+</div>
+`;

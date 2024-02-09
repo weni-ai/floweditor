@@ -55,7 +55,8 @@ import {
   CallClassifier,
   CallExternalService,
   SendWhatsAppProduct,
-  SendWhatsAppMsg
+  SendWhatsAppMsg,
+  CallWeniGPT
 } from 'flowTypes';
 import Localization from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
@@ -399,6 +400,24 @@ export const createSendWhatsAppMsgAction = ({
   list_footer,
   list_items,
   quick_replies
+});
+
+export const createCallWeniGPTAction = ({
+  uuid = utils.createUUID(),
+  input = 'Hello',
+  knowledge_base = 1,
+  result_name = 'Result'
+}: {
+  uuid?: string;
+  input?: string;
+  knowledge_base?: number;
+  result_name?: string;
+} = {}): CallWeniGPT => ({
+  uuid: uuid,
+  type: Types.call_wenigpt,
+  input,
+  knowledge_base,
+  result_name
 });
 
 export const createWebhookNode = (

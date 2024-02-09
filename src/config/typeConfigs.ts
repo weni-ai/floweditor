@@ -4,6 +4,7 @@ import AddURNComp from 'components/flow/actions/addurn/AddURN';
 import AddURNForm from 'components/flow/actions/addurn/AddURNForm';
 import CallResthookComp from 'components/flow/actions/callresthook/CallResthook';
 import CallWebhookComp from 'components/flow/actions/callwebhook/CallWebhook';
+import CallWeniGPTComp from 'components/flow/actions/callwenigpt/CallWeniGPT';
 import AddGroupsForm from 'components/flow/actions/changegroups/addgroups/AddGroupsForm';
 import ChangeGroupsComp from 'components/flow/actions/changegroups/ChangeGroups';
 import RemoveGroupsForm from 'components/flow/actions/changegroups/removegroups/RemoveGroupsForm';
@@ -46,6 +47,7 @@ import ResultRouterForm from 'components/flow/routers/result/ResultRouterForm';
 import SubflowRouterForm from 'components/flow/routers/subflow/SubflowRouterForm';
 import WaitRouterForm from 'components/flow/routers/wait/WaitRouterForm';
 import WebhookRouterForm from 'components/flow/routers/webhook/WebhookRouterForm';
+import WeniGPTRouterForm from 'components/flow/routers/wenigpt/WeniGPTRouterForm';
 import {
   FeatureFilter,
   FlowTypes,
@@ -71,6 +73,7 @@ import ExternalServiceRouterForm from 'components/flow/routers/externalservice/E
 import CallExternalServiceComp from 'components/flow/actions/callexternalservice/CallExternalService';
 import SendWhatsAppProductComp from 'components/flow/actions/whatsapp/sendproduct/SendWhatsAppProduct';
 import SendWhatsAppProductRouterForm from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+import WeniGPTLocalizationForm from '../components/flow/actions/localization/WeniGPTLocalizationForm';
 
 const dedupeTypeConfigs = (typeConfigs: Type[]) => {
   const map: any = {};
@@ -304,6 +307,17 @@ export const typeConfigList: Type[] = [
     localizeableKeys: ['categories', 'cases'],
     aliases: [RouterTypes.smart],
     visibility: VISIBILITY_MESSAGING_INTERACTIVE,
+    new: true
+  },
+  {
+    type: Types.call_wenigpt,
+    name: i18n.t('actions.call_wenigpt.name', 'Call WeniGPT'),
+    description: i18n.t('actions.call_wenigpt.description', 'Call WeniGPT'),
+    form: WeniGPTRouterForm,
+    localization: WeniGPTLocalizationForm,
+    localizeableKeys: ['input'],
+    component: CallWeniGPTComp,
+    aliases: [Types.split_by_wenigpt],
     new: true
   },
   {

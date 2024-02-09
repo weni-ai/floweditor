@@ -357,6 +357,12 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
         type: AssetType.Expression,
         items: {}
       },
+      knowledgeBases: {
+        endpoint: getURL(endpoints.knowledgeBases),
+        type: AssetType.KnowledgeBase,
+        items: {},
+        id: 'id'
+      },
       whatsapp_products: {
         endpoint: getURL(endpoints.whatsapp_products),
         type: AssetType.WhatsAppProduct,
@@ -375,6 +381,7 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
       'classifiers',
       'ticketers',
       'externalServices',
+      'knowledgeBases',
       'whatsapp_products'
     ].forEach((storeId: string) => {
       const store = assetStore[storeId];

@@ -57,6 +57,7 @@ export interface Endpoints {
   external_services_calls: string;
   external_services_calls_base: string;
   completion: string;
+  knowledgeBases: string;
   whatsapp_products: string;
 }
 
@@ -496,6 +497,12 @@ export interface CallWebhook extends Action {
   headers?: Headers;
 }
 
+export interface CallWeniGPT extends Action {
+  knowledge_base: number;
+  input: string;
+  result_name: string;
+}
+
 export interface CallExternalService extends Action {
   external_service: ExternalService;
   call: ServiceCall;
@@ -623,7 +630,8 @@ export enum StartFlowExitNames {
 
 export enum WebhookExitNames {
   Success = 'Success',
-  Failure = 'Failure'
+  Failure = 'Failure',
+  Other = 'Other'
 }
 
 export enum TransferAirtimeExitNames {
