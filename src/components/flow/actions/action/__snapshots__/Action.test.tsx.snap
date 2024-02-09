@@ -43,7 +43,7 @@ exports[`ActionWrapper can have localized quick replies when empty on default la
                 <span
                   class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-59b073b4=""
+                  data-v-ab84ef7c=""
                 >
                   <svg
                     fill="none"
@@ -155,7 +155,7 @@ exports[`ActionWrapper renders a base language 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-59b073b4=""
+                  data-v-ab84ef7c=""
                 >
                   <svg
                     fill="none"

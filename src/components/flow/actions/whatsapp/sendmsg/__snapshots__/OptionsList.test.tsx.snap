@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OptionsList should render 1`] = `
+<body>
+  <div>
+    <div
+      class="list_wrapper"
+    >
+      <div
+        class="list_inputs"
+      >
+        <div>
+          <span
+            class="label"
+          >
+            List title (optional)
+          </span>
+          <div
+            class="completion_wrapper"
+          >
+            <div
+              data-testid="List title (optional)"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                style="all: unset;"
+              >
+                <div
+                  class="unnnic-form md"
+                  data-passed-props="[object Object]"
+                  data-v-48c0c241=""
+                >
+                  <!---->
+                  <div
+                    class="unnnic-form-input text-input size--md"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
+                  >
+                    <input
+                      class="input-itself input size-md normal"
+                      data-passed-props="[object Object]"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      placeholder="Title"
+                      size="10"
+                      type="text"
+                      v-bind="[object Object]"
+                    />
+                    <!---->
+                    <!---->
+                  </div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_completion_options_List title (optional)"
+              style="margin-top: 0px; width: -24px; display: none;"
+            />
+          </div>
+        </div>
+        <div>
+          <span
+            class="label"
+          >
+            Footer (optional)
+          </span>
+          <div
+            class="completion_wrapper"
+          >
+            <div
+              data-testid="Footer (optional)"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                style="all: unset;"
+              >
+                <div
+                  class="unnnic-form md"
+                  data-passed-props="[object Object]"
+                  data-v-48c0c241=""
+                >
+                  <!---->
+                  <div
+                    class="unnnic-form-input text-input size--md"
+                    data-v-400546b3=""
+                    data-v-48c0c241=""
+                    mask=""
+                    v-bind="[object Object]"
+                  >
+                    <input
+                      class="input-itself input size-md normal"
+                      data-passed-props="[object Object]"
+                      data-v-400546b3=""
+                      data-v-97b44e8c=""
+                      placeholder="Footer text"
+                      size="11"
+                      type="text"
+                      v-bind="[object Object]"
+                    />
+                    <!---->
+                    <!---->
+                  </div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <div
+              class="options_wrapper"
+              data-testid="temba_completion_options_Footer (optional)"
+              style="margin-top: 0px; width: -24px; display: none;"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="collapse "
+        >
+          <div
+            class="collapse_header"
+            data-testid="List options"
+          >
+            <span>
+              List options
+            </span>
+            <div
+              data-use-vue-component-wrap=""
+              style="all: unset;"
+            >
+              <span
+                class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                data-passed-props="[object Object]"
+                data-v-ab84ef7c=""
+              >
+                 expand_more 
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

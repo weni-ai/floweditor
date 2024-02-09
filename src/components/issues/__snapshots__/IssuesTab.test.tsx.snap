@@ -30,7 +30,7 @@ exports[`IssuesTab renders 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-59b073b4=""
+                  data-v-ab84ef7c=""
                 >
                   <svg
                     fill="none"
@@ -120,7 +120,7 @@ exports[`IssuesTab renders missing dependencies 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-59b073b4=""
+                  data-v-ab84ef7c=""
                 >
                   <svg
                     fill="none"

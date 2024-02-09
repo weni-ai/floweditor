@@ -27,7 +27,7 @@ exports[`TranslatorTab finds email translations 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-59b073b4=""
+                  data-v-ab84ef7c=""
                 >
                   <svg
                     fill="none"
@@ -243,7 +243,7 @@ exports[`TranslatorTab finds message translations 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-59b073b4=""
+                  data-v-ab84ef7c=""
                 >
                   <svg
                     fill="none"
@@ -473,7 +473,7 @@ exports[`TranslatorTab finds split translations 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-59b073b4=""
+                  data-v-ab84ef7c=""
                 >
                   <svg
                     fill="none"
@@ -689,7 +689,7 @@ exports[`TranslatorTab handles partial category translation 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-59b073b4=""
+                  data-v-ab84ef7c=""
                 >
                   <svg
                     fill="none"
@@ -905,7 +905,7 @@ exports[`TranslatorTab hides completed translations 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-59b073b4=""
+                  data-v-ab84ef7c=""
                 >
                   <svg
                     fill="none"
@@ -1107,7 +1107,7 @@ exports[`TranslatorTab renders 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
                   data-passed-props="[object Object]"
-                  data-v-59b073b4=""
+                  data-v-ab84ef7c=""
                 >
                   <svg
                     fill="none"

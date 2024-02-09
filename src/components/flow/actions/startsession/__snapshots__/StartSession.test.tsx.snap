@@ -19,7 +19,7 @@ exports[`StartSessionComp render should render a long list of both contacts and 
             <span
               class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark icon"
               data-passed-props="[object Object]"
-              data-v-59b073b4=""
+              data-v-ab84ef7c=""
             >
               <svg
                 fill="none"
@@ -55,7 +55,7 @@ exports[`StartSessionComp render should render a long list of both contacts and 
             <span
               class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark icon"
               data-passed-props="[object Object]"
-              data-v-59b073b4=""
+              data-v-ab84ef7c=""
             >
               <svg
                 fill="none"
@@ -91,7 +91,7 @@ exports[`StartSessionComp render should render a long list of both contacts and 
             <span
               class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark icon"
               data-passed-props="[object Object]"
-              data-v-59b073b4=""
+              data-v-ab84ef7c=""
             >
               <svg
                 fill="none"
@@ -127,7 +127,7 @@ exports[`StartSessionComp render should render a long list of both contacts and 
             <span
               class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark icon"
               data-passed-props="[object Object]"
-              data-v-59b073b4=""
+              data-v-ab84ef7c=""
             >
               <svg
                 fill="none"
@@ -172,7 +172,7 @@ exports[`StartSessionComp render should render a long list of both contacts and 
             <span
               class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark icon"
               data-passed-props="[object Object]"
-              data-v-59b073b4=""
+              data-v-ab84ef7c=""
             >
               <svg
                 fill="none"
@@ -221,7 +221,7 @@ exports[`StartSessionComp render should render all props 1`] = `
             <span
               class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark icon"
               data-passed-props="[object Object]"
-              data-v-59b073b4=""
+              data-v-ab84ef7c=""
             >
               <svg
                 fill="none"
@@ -257,7 +257,7 @@ exports[`StartSessionComp render should render all props 1`] = `
             <span
               class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark icon"
               data-passed-props="[object Object]"
-              data-v-59b073b4=""
+              data-v-ab84ef7c=""
             >
               <svg
                 fill="none"
@@ -293,7 +293,7 @@ exports[`StartSessionComp render should render all props 1`] = `
             <span
               class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark icon"
               data-passed-props="[object Object]"
-              data-v-59b073b4=""
+              data-v-ab84ef7c=""
             >
               <svg
                 fill="none"
@@ -333,7 +333,7 @@ exports[`StartSessionComp render should render all props 1`] = `
             <span
               class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark icon"
               data-passed-props="[object Object]"
-              data-v-59b073b4=""
+              data-v-ab84ef7c=""
             >
               <svg
                 fill="none"
@@ -387,7 +387,7 @@ exports[`StartSessionComp render should render creating a new contact 1`] = `
             <span
               class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark icon"
               data-passed-props="[object Object]"
-              data-v-59b073b4=""
+              data-v-ab84ef7c=""
             >
               <svg
                 fill="none"

@@ -54,7 +54,8 @@ import {
   HintTypes,
   CallClassifier,
   CallExternalService,
-  SendWhatsAppProduct
+  SendWhatsAppProduct,
+  SendWhatsAppMsg
 } from 'flowTypes';
 import Localization from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
@@ -66,6 +67,11 @@ import {
   ProductSearchType,
   ProductViewSettings
 } from '../components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+import {
+  WhatsAppHeaderType,
+  WhatsAppInteractionType,
+  WhatsAppListItem
+} from '../components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 const { results: groupsResults } = require('test/assets/groups.json');
 const languagesResults = require('test/assets/languages.json');
@@ -354,6 +360,45 @@ export const createSetRunResultAction = ({
   value,
   category,
   type: Types.set_run_result
+});
+
+export const createSendWhatsAppMsgAction = ({
+  uuid = utils.createUUID(),
+  text = '',
+  attachment = null,
+  header_type = WhatsAppHeaderType.MEDIA,
+  header_text = '',
+  footer = '',
+  interaction_type = WhatsAppInteractionType.LIST,
+  list_title = '',
+  list_footer = '',
+  list_items = [],
+  quick_replies = []
+}: {
+  uuid?: string;
+  text?: string;
+  attachment?: string;
+  header_type?: WhatsAppHeaderType;
+  header_text?: string;
+  footer?: string;
+  interaction_type?: WhatsAppInteractionType;
+  list_title?: string;
+  list_footer?: string;
+  list_items?: WhatsAppListItem[];
+  quick_replies?: string[];
+} = {}): SendWhatsAppMsg => ({
+  type: Types.send_msg,
+  uuid,
+  text,
+  attachment,
+  header_type,
+  header_text,
+  footer,
+  interaction_type,
+  list_title,
+  list_footer,
+  list_items,
+  quick_replies
 });
 
 export const createWebhookNode = (
