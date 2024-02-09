@@ -4,6 +4,11 @@ import {
   ProductSearchType,
   ProductViewSettings
 } from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+import {
+  WhatsAppHeaderType,
+  WhatsAppInteractionType,
+  WhatsAppListItem
+} from './components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 // we don't concern ourselves with patch versions
 export const SPEC_VERSION = '13.1';
@@ -374,6 +379,19 @@ export interface SendMsg extends Action {
   attachments?: string[];
   topic?: string;
   templating?: MsgTemplating;
+}
+
+export interface SendWhatsAppMsg extends Action {
+  text: string;
+  header_type: WhatsAppHeaderType;
+  header_text: string;
+  attachment: string;
+  footer: string;
+  interaction_type: WhatsAppInteractionType;
+  list_title: string;
+  list_footer: string;
+  list_items: WhatsAppListItem[];
+  quick_replies: string[];
 }
 
 export interface SendWhatsAppProduct extends Action {

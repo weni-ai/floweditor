@@ -23,9 +23,9 @@ interface SelectElementProps extends FormElementProps {
   disabled?: boolean;
 }
 
-export interface SelectOption {
+export interface SelectOption<T = string> {
   name: string;
-  value: string;
+  value: T;
 }
 
 export default class SelectElement extends React.Component<SelectElementProps> {

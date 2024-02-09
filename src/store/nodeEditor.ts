@@ -19,13 +19,13 @@ export interface ValidationFailure {
   message: string;
 }
 
-export interface FormEntry {
-  value: any;
+export interface FormEntry<T = any> {
+  value: T;
   validationFailures?: ValidationFailure[];
 }
 
-export interface SelectOptionEntry extends FormEntry {
-  value: SelectOption;
+export interface SelectOptionEntry<T = any> extends FormEntry {
+  value: SelectOption<T>;
 }
 
 export interface NumberEntry extends FormEntry {
