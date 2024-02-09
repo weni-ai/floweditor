@@ -1,0 +1,71 @@
+@import 'variables.module.scss';
+
+.list_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-md;
+}
+
+.list_inputs {
+  display: flex;
+  flex-direction: row;
+  gap: $unnnic-spacing-xs;
+
+  * {
+    flex: 1;
+  }
+}
+
+.list_items {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-stack-sm;
+  max-height: 260px;
+  overflow: auto;
+  padding-right: $unnnic-spacing-stack-nano;
+}
+
+.list_item_wrapper {
+  display: flex;
+  flex: 1;
+  gap: $unnnic-spacing-xs;
+  padding: $unnnic-spacing-stack-xs $unnnic-spacing-stack-sm;
+  align-self: stretch;
+  border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+  border-radius: $unnnic-border-radius-sm;
+  background: $unnnic-color-background-carpet;
+
+  .list_item_inputs {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+.list_item_enter, .reply_item_enter {
+  opacity: 0.0;
+}
+
+.list_item_enter_active, .reply_item_enter_active {
+  opacity: 1;
+  transition: opacity 250ms ease-in
+}
+
+.list_item_exit, .reply_item_exit {
+  opacity: 1;
+}
+
+.list_item_exit_active, .reply_item_exit_active {
+  opacity: 0;
+  transition: opacity 250ms ease-in
+}
+
+.item_z_index {
+  z-index: 99999;
+  box-shadow: $unnnic-shadow-level-near;
+}
+
+.error_message {
+  color: $unnnic-color-feedback-red;
+  margin-top: $unnnic-spacing-stack-nano;
+}
