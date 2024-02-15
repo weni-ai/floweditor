@@ -7,7 +7,8 @@ import ActionTypes, {
   UpdateDefinitionAction,
   UpdateNodesAction,
   UpdateMetadataAction,
-  UpdateIssuesAction
+  UpdateIssuesAction,
+  UpdateSearchAction
 } from 'store/actionTypes';
 import Constants from 'store/constants';
 import { Type } from 'config/interfaces';
@@ -53,11 +54,6 @@ export interface CompletionOption {
 
 export interface ContactFields {
   [snakedFieldName: string]: string;
-}
-
-export interface SearchBar {
-  active: boolean;
-  value: string;
 }
 
 export enum AssetType {
@@ -106,6 +102,11 @@ export interface Asset {
   key?: string;
 }
 
+export interface Search {
+  active: boolean;
+  value?: string;
+}
+
 export const REMOVE_VALUE_ASSET = {
   id: AssetType.Remove,
   name: i18n.t('forms.remove_value', 'Remove Value'),
@@ -150,7 +151,7 @@ export interface FlowContext {
   nodes: { [uuid: string]: RenderNode };
   issues: FlowIssueMap;
   assetStore: AssetStore;
-  searchBar: boolean;
+  search: Search;
 }
 
 // Initial state
@@ -167,7 +168,9 @@ export const initialState: FlowContext = {
   nodes: {},
   issues: {},
   assetStore: {},
-  searchBar: false
+  search: {
+    active: false
+  }
 };
 
 // Action Creators
@@ -208,6 +211,13 @@ export const updateBaseLanguage = (baseLanguage: Asset): UpdateBaseLanguageActio
   }
 });
 
+export const updateSearch = (search: Search): UpdateSearchAction => ({
+  type: Constants.UPDATE_SEARCH,
+  payload: {
+    search
+  }
+});
+
 export const updateContactFields = (contactFields: ContactFields): UpdateContactFieldsAction => ({
   type: Constants.UPDATE_CONTACT_FIELDS,
   payload: {
@@ -228,13 +238,6 @@ export const updateAssets = (assets: AssetStore): UpdateAssetsAction => {
     }
   };
 };
-
-export const updateSearchBar = (contactFields: ContactFields): UpdateContactFieldsAction => ({
-  type: Constants.UPDATE_CONTACT_FIELDS,
-  payload: {
-    contactFields
-  }
-});
 
 // Reducers
 export const definition = (
@@ -294,6 +297,15 @@ export const baseLanguage = (state: Asset = initialState.baseLanguage, action: A
   }
 };
 
+export const search = (state: Search = initialState.search, action: ActionTypes) => {
+  switch (action.type) {
+    case Constants.UPDATE_SEARCH:
+      return action.payload.search;
+    default:
+      return state;
+  }
+};
+
 export const contactFields = (
   state: ContactFields = initialState.contactFields,
   action: ActionTypes
@@ -314,5 +326,6 @@ export default combineReducers({
   metadata,
   assetStore,
   baseLanguage,
-  contactFields
+  contactFields,
+  search
 });

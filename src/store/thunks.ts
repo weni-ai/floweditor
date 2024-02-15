@@ -62,6 +62,7 @@ import { createUUID, hasString, NODE_SPACING, timeEnd, timeStart, ACTIVITY_INTER
 import { AxiosError } from 'axios';
 import i18n from 'config/i18n';
 import { TembaStore } from 'temba-components';
+import { Search } from 'components/search/search';
 
 // TODO: Remove use of Function
 // tslint:disable:ban-types
@@ -129,6 +130,8 @@ export type ActionAC = (nodeUUID: string, action: AnyAction) => Thunk<RenderNode
 export type DisconnectExit = (nodeUUID: string, exitUUID: string) => Thunk<RenderNodeMap>;
 
 export type HandleLanguageChange = (language: Asset) => Thunk<void>;
+
+export type HandleSearchChange = (search: Search) => Thunk<void>;
 
 export type MergeEditorState = (state: Partial<EditorState>) => Thunk<EditorState>;
 

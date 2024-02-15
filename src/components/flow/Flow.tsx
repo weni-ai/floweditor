@@ -92,6 +92,7 @@ export interface FlowStoreProps {
   popped: string;
   dragActive: boolean;
   mouseState: MouseState;
+  active: boolean;
 
   mergeEditorState: MergeEditorState;
 
@@ -532,7 +533,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
         />
 
-        <Search />
+        {this.props.active && <Search />}
 
         <Canvas
           ref={this.canvas}
@@ -562,7 +563,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
 /* istanbul ignore next */
 const mapStateToProps = ({
-  flowContext: { definition, nodes, searchBar },
+  flowContext: { definition, nodes, search },
   editorState: { ghostNode, debug, translating, popped, dragActive, mouseState },
   nodeEditor: { settings }
 }: AppState) => {
@@ -575,7 +576,8 @@ const mapStateToProps = ({
     translating,
     popped,
     dragActive,
-    mouseState
+    mouseState,
+    active: search.active
   };
 };
 
