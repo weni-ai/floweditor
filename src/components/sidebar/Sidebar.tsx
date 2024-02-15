@@ -221,6 +221,26 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             </div>
           </UnnnicTooltip>
         </GuidingSteps>
+
+        {/* search button */}
+        <GuidingSteps
+          guide="v2"
+          step={2}
+          title={'Search term'}
+          description={'Search'}
+          buttonText={'Search'}
+        >
+          <UnnnicTooltip
+            className={styles.left_aligned}
+            text={'Search'}
+            side="right"
+            shortcutText={this.props.selectionActive ? 'Ctrl C' : null}
+          >
+            <div className={styles.option} onClick={() => {}}>
+              <span className="material-symbols-rounded">search</span>
+            </div>
+          </UnnnicTooltip>
+        </GuidingSteps>
       </div>
     );
   }

@@ -1,0 +1,12 @@
+@import 'variables.module.scss';
+@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
+
+.search_card{
+    display: flex;
+    width: 200px;
+    height: 50px;
+    position: fixed;
+    z-index: 99;
+    top: 5vh;
+    left: 25vh;
+}

@@ -55,6 +55,11 @@ export interface ContactFields {
   [snakedFieldName: string]: string;
 }
 
+export interface SearchBar {
+  active: boolean;
+  value: string;
+}
+
 export enum AssetType {
   Channel = 'channel',
   Classifier = 'classifier',
@@ -145,6 +150,7 @@ export interface FlowContext {
   nodes: { [uuid: string]: RenderNode };
   issues: FlowIssueMap;
   assetStore: AssetStore;
+  searchBar: boolean;
 }
 
 // Initial state
@@ -160,7 +166,8 @@ export const initialState: FlowContext = {
   contactFields: {},
   nodes: {},
   issues: {},
-  assetStore: {}
+  assetStore: {},
+  searchBar: false
 };
 
 // Action Creators
@@ -221,6 +228,13 @@ export const updateAssets = (assets: AssetStore): UpdateAssetsAction => {
     }
   };
 };
+
+export const updateSearchBar = (contactFields: ContactFields): UpdateContactFieldsAction => ({
+  type: Constants.UPDATE_CONTACT_FIELDS,
+  payload: {
+    contactFields
+  }
+});
 
 // Reducers
 export const definition = (
