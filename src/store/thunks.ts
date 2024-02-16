@@ -36,7 +36,9 @@ import {
   updateDefinition,
   updateNodes,
   updateMetadata,
-  updateIssues
+  updateIssues,
+  Search,
+  updateSearch
 } from 'store/flowContext';
 import {
   createEmptyNode,
@@ -62,7 +64,6 @@ import { createUUID, hasString, NODE_SPACING, timeEnd, timeStart, ACTIVITY_INTER
 import { AxiosError } from 'axios';
 import i18n from 'config/i18n';
 import { TembaStore } from 'temba-components';
-import { Search } from 'components/search/search';
 
 // TODO: Remove use of Function
 // tslint:disable:ban-types
@@ -482,6 +483,19 @@ export const handleLanguageChange: HandleLanguageChange = language => (dispatch,
   // update language
   if (!isEqual(language, currentLanguage)) {
     dispatch(mergeEditorState({ language }));
+  }
+};
+
+export const handleSearchChange: HandleSearchChange = (search: Search) => (dispatch, getState) => {
+  console.log('entrou');
+  const {
+    flowContext: { search: currentSearch }
+  } = getState();
+  console.log(search);
+
+  // update language
+  if (!isEqual(search, currentSearch)) {
+    dispatch(updateSearch(search));
   }
 };
 

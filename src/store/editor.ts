@@ -1,7 +1,7 @@
 import { FlowPosition } from 'flowTypes';
 import ActionTypes, { UpdateEditorState } from 'store/actionTypes';
 import Constants from 'store/constants';
-import { Asset, RenderNode } from 'store/flowContext';
+import { Asset, RenderNode, Search } from 'store/flowContext';
 
 // tslint:disable:no-shadowed-variable
 export interface DragSelection {
@@ -84,6 +84,8 @@ export interface EditorState {
   guidingStep: number;
 
   mouseState: MouseState;
+
+  search?: Search;
 }
 
 export interface ModalMessage {
@@ -137,7 +139,11 @@ export const initialState: EditorState = {
   currentGuide: null,
   guidingStep: -1,
 
-  mouseState: MouseState.SELECT
+  mouseState: MouseState.SELECT,
+
+  search: {
+    active: false
+  }
 };
 
 // Action Creator

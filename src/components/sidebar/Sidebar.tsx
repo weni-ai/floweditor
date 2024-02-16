@@ -3,7 +3,7 @@ import { fakePropType } from 'config/ConfigProvider';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { RenderNode } from 'store/flowContext';
+import { RenderNode, Search } from 'store/flowContext';
 import { createEmptyNode } from 'store/helpers';
 import AppState from 'store/state';
 import {
@@ -11,7 +11,9 @@ import {
   OnOpenNodeEditor,
   onOpenNodeEditor,
   mergeEditorState,
-  MergeEditorState
+  MergeEditorState,
+  handleSearchChange,
+  HandleSearchChange
 } from 'store/thunks';
 
 import i18n from 'config/i18n';
@@ -49,12 +51,18 @@ export interface SidebarStoreProps {
   currentGuide: string;
   mergeEditorState: MergeEditorState;
   mouseState: MouseState;
+  handleSearchChange: HandleSearchChange;
 }
 
 export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   public static contextTypes = {
     config: fakePropType
   };
+
+  public handleSearchChanged(search: Search): void {
+    console.log(search);
+    this.props.handleSearchChange(search);
+  }
 
   private createSendMessageNode(): void {
     if (this.props.guidingStep === 0 && this.props.currentGuide === 'v2') {
@@ -236,7 +244,10 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             side="right"
             shortcutText={this.props.selectionActive ? 'Ctrl C' : null}
           >
-            <div className={styles.option} onClick={() => {}}>
+            <div
+              className={styles.option}
+              onClick={() => this.handleSearchChanged({ active: true })}
+            >
               <span className="material-symbols-rounded">search</span>
             </div>
           </UnnnicTooltip>
@@ -248,20 +259,21 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 
 /* istanbul ignore next */
 const mapStateToProps = ({
-  flowContext: { nodes },
+  flowContext: { nodes, search },
   editorState: { selectionActive, guidingStep, currentGuide }
 }: AppState) => {
   return {
     nodes,
     selectionActive,
     guidingStep,
-    currentGuide
+    currentGuide,
+    search
   };
 };
 
 /* istanbul ignore next */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
-  bindActionCreators({ onOpenNodeEditor, mergeEditorState }, dispatch);
+  bindActionCreators({ onOpenNodeEditor, mergeEditorState, handleSearchChange }, dispatch);
 
 export default connect(
   mapStateToProps,
