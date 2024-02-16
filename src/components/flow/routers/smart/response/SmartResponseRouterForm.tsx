@@ -13,6 +13,9 @@ import { Alphanumeric, StartIsNonNumeric, validate } from 'store/validators';
 import styles from './ResponseRouterForm.module.scss';
 import i18n from 'config/i18n';
 
+import DescriptionAlert from '../DescriptionAlert/DescriptionAlert';
+import { renderIf } from '../../../../../utils';
+
 export const leadInSpecId = 'lead-in';
 
 export interface SmartResponseRouterFormState extends FormState {
@@ -20,6 +23,7 @@ export interface SmartResponseRouterFormState extends FormState {
   hiddenCases: CaseProps[];
   resultName: StringEntry;
   timeout: number;
+  hasDescription?: boolean;
 }
 
 export default class SmartResponseRouterForm extends React.Component<
@@ -34,6 +38,18 @@ export default class SmartResponseRouterForm extends React.Component<
     bindCallbacks(this, {
       include: [/^on/, /^handle/]
     });
+  }
+
+  public componentDidMount() {
+    window.addEventListener('message', (event: any) => {
+      if (event && event.data && event.data.event === 'setConnectProjectDescription') {
+        if (event.data.connectProjectDescription.trim().length > 0) {
+          this.setState({ hasDescription: true });
+        }
+      }
+    });
+
+    window.parent.postMessage({ event: 'getConnectProjectDescription' }, '*');
   }
 
   private handleUpdateResultName(value: string): void {
@@ -78,6 +94,10 @@ export default class SmartResponseRouterForm extends React.Component<
     };
   }
 
+  private openDescriptionEdit(): void {
+    window.parent.postMessage({ event: 'openConnectEditProject' }, '*');
+  }
+
   public renderEdit(): JSX.Element {
     const typeConfig = this.props.typeConfig;
 
@@ -92,6 +112,11 @@ export default class SmartResponseRouterForm extends React.Component<
         new={typeConfig.new}
       >
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+
+        {renderIf(!this.state.hasDescription)(
+          <DescriptionAlert openDescriptionEdit={() => this.openDescriptionEdit()} />
+        )}
+
         <div className={styles.content}>
           <div className={styles.phrases}>
             <div className={styles.header}>

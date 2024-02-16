@@ -72,7 +72,7 @@ exports[`SchemeRouterForm should render 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -417,7 +417,7 @@ exports[`SchemeRouterForm should render 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -459,7 +459,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--brand-weni"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -512,7 +512,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--brand-weni"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -565,7 +565,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--brand-weni"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -618,7 +618,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -665,7 +665,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -712,7 +712,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -759,7 +759,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -806,7 +806,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -853,7 +853,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -900,7 +900,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -947,7 +947,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -994,7 +994,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -1041,7 +1041,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -1088,7 +1088,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -1135,7 +1135,7 @@ exports[`SchemeRouterForm should render 1`] = `
                       <span
                         class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                         data-v-25f7146e=""
-                        data-v-59b073b4=""
+                        data-v-4ce83152=""
                       >
                         <svg
                           fill="none"
@@ -1197,7 +1197,7 @@ exports[`SchemeRouterForm should render 1`] = `
                 <span
                   class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
                   data-v-32b4068e=""
-                  data-v-59b073b4=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"
@@ -1237,7 +1237,7 @@ exports[`SchemeRouterForm should render 1`] = `
                 <span
                   class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
                   data-v-32b4068e=""
-                  data-v-59b073b4=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"
@@ -1277,7 +1277,7 @@ exports[`SchemeRouterForm should render 1`] = `
                 <span
                   class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
                   data-v-32b4068e=""
-                  data-v-59b073b4=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"
@@ -1311,7 +1311,7 @@ exports[`SchemeRouterForm should render 1`] = `
               <span
                 class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cleanest"
                 data-passed-props="[object Object]"
-                data-v-59b073b4=""
+                data-v-4ce83152=""
               >
                 <svg
                   fill="none"
