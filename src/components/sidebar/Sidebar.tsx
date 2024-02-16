@@ -52,6 +52,7 @@ export interface SidebarStoreProps {
   mergeEditorState: MergeEditorState;
   mouseState: MouseState;
   handleSearchChange: HandleSearchChange;
+  search: Search;
 }
 
 export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
@@ -59,9 +60,11 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
     config: fakePropType
   };
 
-  public handleSearchChanged(search: Search): void {
-    console.log(search);
-    this.props.handleSearchChange(search);
+  public handleSearchChanged(): void {
+    const change = {
+      active: !this.props.search.active
+    };
+    this.props.handleSearchChange(change);
   }
 
   private createSendMessageNode(): void {
@@ -244,10 +247,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             side="right"
             shortcutText={this.props.selectionActive ? 'Ctrl C' : null}
           >
-            <div
-              className={styles.option}
-              onClick={() => this.handleSearchChanged({ active: true })}
-            >
+            <div className={styles.option} onClick={() => this.handleSearchChanged()}>
               <span className="material-symbols-rounded">search</span>
             </div>
           </UnnnicTooltip>

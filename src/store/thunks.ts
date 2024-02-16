@@ -302,7 +302,7 @@ export const loadFlowDefinition = (details: FlowDetails, assetStore: AssetStore)
   dispatch: DispatchWithState,
   getState: GetState
 ): void => {
-  // first see if we need our asset store initialized
+  // first see if we need our asset store initialized (JSON.parse(details.definition as any).definition;)
 
   const definition = details.definition;
 

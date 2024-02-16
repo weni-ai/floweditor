@@ -390,6 +390,9 @@ Array [
         "popped": null,
         "scrollToAction": null,
         "scrollToNode": null,
+        "search": Object {
+          "active": false,
+        },
         "selectionActive": false,
         "simulating": false,
         "translating": false,
@@ -433,6 +436,9 @@ Array [
         "popped": null,
         "scrollToAction": null,
         "scrollToNode": null,
+        "search": Object {
+          "active": false,
+        },
         "selectionActive": false,
         "simulating": false,
         "translating": false,
@@ -1200,6 +1206,9 @@ Array [
         "popped": null,
         "scrollToAction": null,
         "scrollToNode": null,
+        "search": Object {
+          "active": false,
+        },
         "selectionActive": false,
         "simulating": false,
         "translating": false,
