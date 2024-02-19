@@ -487,11 +487,9 @@ export const handleLanguageChange: HandleLanguageChange = language => (dispatch,
 };
 
 export const handleSearchChange: HandleSearchChange = (search: Search) => (dispatch, getState) => {
-  console.log('entrou');
   const {
     flowContext: { search: currentSearch }
   } = getState();
-  console.log(search);
 
   // update language
   if (!isEqual(search, currentSearch)) {

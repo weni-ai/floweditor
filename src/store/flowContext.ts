@@ -105,6 +105,7 @@ export interface Asset {
 export interface Search {
   active: boolean;
   value?: string;
+  nodes?: RenderNodeMap;
 }
 
 export const REMOVE_VALUE_ASSET = {
