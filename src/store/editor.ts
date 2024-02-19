@@ -142,7 +142,8 @@ export const initialState: EditorState = {
   mouseState: MouseState.SELECT,
 
   search: {
-    active: false
+    active: false,
+    value: ''
   }
 };
 

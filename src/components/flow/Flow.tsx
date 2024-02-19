@@ -52,7 +52,7 @@ import { applyVueInReact } from 'vuereact-combined';
 import { unnnicModalNext, unnnicButtonNext } from '@weni/unnnic-system';
 import { WeniLoveIcon } from './WeniLoveIcon';
 import i18n from '../../config/i18n';
-import { Search } from 'components/search/search';
+import SearchBar from 'components/search/SearchBar';
 
 const UnnnicButton = applyVueInReact(unnnicButtonNext, {
   vue: {
@@ -533,7 +533,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
         />
 
-        {this.props.active && <Search />}
+        {this.props.active && <SearchBar />}
 
         <Canvas
           ref={this.canvas}

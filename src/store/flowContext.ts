@@ -169,7 +169,8 @@ export const initialState: FlowContext = {
   issues: {},
   assetStore: {},
   search: {
-    active: false
+    active: false,
+    value: ''
   }
 };
 

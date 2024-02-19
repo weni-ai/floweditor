@@ -392,6 +392,7 @@ Array [
         "scrollToNode": null,
         "search": Object {
           "active": false,
+          "value": "",
         },
         "selectionActive": false,
         "simulating": false,
@@ -438,6 +439,7 @@ Array [
         "scrollToNode": null,
         "search": Object {
           "active": false,
+          "value": "",
         },
         "selectionActive": false,
         "simulating": false,
@@ -1208,6 +1210,7 @@ Array [
         "scrollToNode": null,
         "search": Object {
           "active": false,
+          "value": "",
         },
         "selectionActive": false,
         "simulating": false,
