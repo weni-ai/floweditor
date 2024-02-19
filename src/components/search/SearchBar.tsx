@@ -24,11 +24,12 @@ export interface SearchStoreProps {
 
 export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   private handleInput(value: string) {
+    const nodes = this.findNodes();
     this.props.handleSearchChange({
       active: true,
-      value: value
+      value: value,
+      nodes: nodes
     });
-    this.findNodes();
   }
 
   private getAllNodes() {
