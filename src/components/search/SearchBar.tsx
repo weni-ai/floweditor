@@ -6,20 +6,21 @@ import { applyVueInReact } from 'vuereact-combined';
 import AppState from 'store/state';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { DispatchWithState, HandleSearchChange, handleSearchChange } from 'store/thunks';
+import {
+  DispatchWithState,
+  HandleSearchChange,
+  OnUpdateCanvasPositions,
+  handleSearchChange,
+  onUpdateCanvasPositions
+} from 'store/thunks';
 import { RenderNodeMap, Search } from 'store/flowContext';
+import { getOS } from 'utils';
+import panzoom from 'panzoom';
 
 const UnnnicInput = applyVueInReact(unnnicInput, {
   vue: {
     componentWrapAttrs: {
       'unnnic-input': 'true'
-    }
-  }
-});
-const UnnnicButtonIcon = applyVueInReact(unnnicButtonIcon, {
-  vue: {
-    componentWrapAttrs: {
-      'unnnic-button-icon': 'true'
     }
   }
 });
@@ -34,9 +35,11 @@ export interface SearchStoreProps {
   search?: Search;
   nodes?: RenderNodeMap;
   handleSearchChange?: HandleSearchChange;
+  onUpdateCanvasPositions: OnUpdateCanvasPositions;
 }
 
 export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
+  private canvasBg!: HTMLDivElement;
   private handleInput(value: string) {
     const nodes = this.findNodes(value);
     this.props.handleSearchChange({
@@ -58,7 +61,6 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   }
   private findNodes(value: string) {
     const nodes = this.getAllNodes();
-    console.log(nodes);
     return nodes.filter(item => {
       if (item.data.node.actions[0].type === 'send_msg') {
         return item.data.node.actions[0].text.includes(value);
@@ -68,8 +70,10 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   }
 
   private dragBackground() {
-    const ui = this.props.search.nodes[this.props.search.selected].data.ui;
+    const canvasBg = document.getElementById('panzoom');
+    const ui = this.props.search.nodes[this.props.search.selected].data.ui.position;
     console.log(ui);
+    canvasBg.style.transform = `matrix(1, 0, 0, 1, -${ui.left}, -${ui.top})`;
   }
 
   private toggleMoveSelected(type: 'up' | 'down') {
@@ -150,7 +154,7 @@ const mapStateToProps = ({ flowContext: { search, nodes } }: AppState) => {
 
 /* istanbul ignore next */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
-  bindActionCreators({ handleSearchChange }, dispatch);
+  bindActionCreators({ handleSearchChange, onUpdateCanvasPositions }, dispatch);
 
 export default connect(
   mapStateToProps,

@@ -266,6 +266,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           }
         });
 
+        console.log(nodesPositions);
         this.props.onUpdatePositions(nodesPositions);
       }
     });
