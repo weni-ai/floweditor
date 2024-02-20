@@ -9,6 +9,7 @@ exports[`Canvas adjusts the height when updating dimensions 1`] = `
     >
       <div
         class="canvas_background"
+        id="canvas_background"
       >
         <div
           class="canvas"
@@ -159,6 +160,7 @@ exports[`Canvas initializes the height to the lowest draggable 1`] = `
     >
       <div
         class="canvas_background"
+        id="canvas_background"
       >
         <div
           class="canvas"
@@ -317,6 +319,7 @@ exports[`Canvas render default 1`] = `
     >
       <div
         class="canvas_background"
+        id="canvas_background"
       >
         <div
           class="canvas"

@@ -1,13 +1,13 @@
 import * as React from 'react';
 import styles from './Search.module.scss';
 // @ts-ignore
-import { unnnicInput, unnnicButtonIcon } from '@weni/unnnic-system';
+import { unnnicInput, unnnicButtonIcon, unnnicButton } from '@weni/unnnic-system';
 import { applyVueInReact } from 'vuereact-combined';
 import AppState from 'store/state';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { DispatchWithState, HandleSearchChange, handleSearchChange } from 'store/thunks';
-import { RenderNode, RenderNodeMap, Search } from 'store/flowContext';
+import { RenderNodeMap, Search } from 'store/flowContext';
 
 const UnnnicInput = applyVueInReact(unnnicInput, {
   vue: {
@@ -23,7 +23,13 @@ const UnnnicButtonIcon = applyVueInReact(unnnicButtonIcon, {
     }
   }
 });
-
+const UnnnicButton = applyVueInReact(unnnicButton, {
+  vue: {
+    componentWrapAttrs: {
+      'unnnic-button': 'true'
+    }
+  }
+});
 export interface SearchStoreProps {
   search?: Search;
   nodes?: RenderNodeMap;
@@ -36,8 +42,10 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     this.props.handleSearchChange({
       active: true,
       value: value,
-      nodes: nodes
+      nodes: nodes,
+      selected: 0
     });
+    this.dragBackground();
   }
 
   private getAllNodes() {
@@ -53,6 +61,39 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     return nodes.filter(item => item.data.node.actions[0].text.includes(value));
   }
 
+  private dragBackground() {
+    const element: HTMLElement | null = document.getElementById('canvas_background');
+    element.style.backgroundPosition = '5000px 60px';
+  }
+
+  private toggleMoveSelected(type: 'up' | 'down') {
+    switch (type) {
+      case 'up':
+        this.props.handleSearchChange({
+          active: true,
+          value: this.props.search.value,
+          nodes: this.props.search.nodes,
+          selected: this.props.search.selected - 1 < 0 ? 0 : this.props.search.selected - 1
+        });
+        break;
+      case 'down':
+        var down = this.props.search.selected - 1;
+        if (down < 0) {
+          down = 0;
+        }
+        this.props.handleSearchChange({
+          active: true,
+          value: this.props.search.value,
+          nodes: this.props.search.nodes,
+          selected:
+            this.props.search.selected + 1 < this.props.search.nodes.length
+              ? this.props.search.selected + 1
+              : this.props.search.nodes.length
+        });
+        break;
+    }
+  }
+
   public render(): JSX.Element {
     return (
       <div className={styles.search_card}>
@@ -63,9 +104,25 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
         />
         {this.props.search.nodes ? (
           <>
-            <span className={styles.number}>1 of {this.props.search.nodes.length}</span>
-            <UnnnicButtonIcon icon="arrow-button-down-1" size="small" className={styles.button} />
-            <UnnnicButtonIcon icon="arrow-button-up-1" size="small" className={styles.button} />
+            <span className={styles.number}>
+              {this.props.search.selected + 1} of {this.props.search.nodes.length}
+            </span>
+            <UnnnicButton
+              iconLeft="arrow-button-down-1"
+              size="small"
+              className={styles.button}
+              text=""
+              type="primary"
+              on={{ click: () => this.toggleMoveSelected('down') }}
+            />
+            <UnnnicButton
+              iconLeft="arrow-button-up-1"
+              size="small"
+              className={styles.button}
+              text=""
+              type="primary"
+              on={{ click: () => this.toggleMoveSelected('up') }}
+            />
           </>
         ) : (
           <></>

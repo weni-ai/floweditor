@@ -109,6 +109,7 @@ export interface Search {
     uuid: string;
     data: RenderNode;
   }[];
+  selected?: number;
 }
 
 export const REMOVE_VALUE_ASSET = {
@@ -174,7 +175,8 @@ export const initialState: FlowContext = {
   assetStore: {},
   search: {
     active: false,
-    value: ''
+    value: '',
+    selected: 0
   }
 };
 

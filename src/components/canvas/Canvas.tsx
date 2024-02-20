@@ -1031,6 +1031,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
             this.canvasBg = ele;
           }}
           className={styles.canvas_background}
+          id="canvas_background"
         >
           <div
             data-testid="canvas"

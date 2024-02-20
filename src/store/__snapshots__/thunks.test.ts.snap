@@ -390,10 +390,6 @@ Array [
         "popped": null,
         "scrollToAction": null,
         "scrollToNode": null,
-        "search": Object {
-          "active": false,
-          "value": "",
-        },
         "selectionActive": false,
         "simulating": false,
         "translating": false,
@@ -437,10 +433,6 @@ Array [
         "popped": null,
         "scrollToAction": null,
         "scrollToNode": null,
-        "search": Object {
-          "active": false,
-          "value": "",
-        },
         "selectionActive": false,
         "simulating": false,
         "translating": false,
@@ -1208,10 +1200,6 @@ Array [
         "popped": null,
         "scrollToAction": null,
         "scrollToNode": null,
-        "search": Object {
-          "active": false,
-          "value": "",
-        },
         "selectionActive": false,
         "simulating": false,
         "translating": false,
