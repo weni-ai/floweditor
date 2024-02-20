@@ -92,9 +92,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           value: this.props.search.value,
           nodes: this.props.search.nodes,
           selected:
-            this.props.search.selected + 1 < this.props.search.nodes.length
+            this.props.search.selected < this.props.search.nodes.length - 1
               ? this.props.search.selected + 1
-              : this.props.search.nodes.length
+              : this.props.search.nodes.length - 1
         });
         break;
     }
