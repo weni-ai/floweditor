@@ -3,10 +3,23 @@
 
 .search_card{
     display: flex;
-    width: 200px;
+    width: 300px;
     height: 50px;
     position: fixed;
     z-index: 99;
     top: 5vh;
     left: 25vh;
+
+    .number{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 90%;
+        background-color: beige;
+    }
+
+    .button{
+        height: 90%;
+    }
 }

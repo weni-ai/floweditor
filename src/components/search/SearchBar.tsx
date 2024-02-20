@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from './Search.module.scss';
 // @ts-ignore
-import { unnnicInput } from '@weni/unnnic-system';
+import { unnnicInput, unnnicButtonIcon } from '@weni/unnnic-system';
 import { applyVueInReact } from 'vuereact-combined';
 import AppState from 'store/state';
 import { connect } from 'react-redux';
@@ -16,6 +16,14 @@ const UnnnicInput = applyVueInReact(unnnicInput, {
     }
   }
 });
+const UnnnicButtonIcon = applyVueInReact(unnnicButtonIcon, {
+  vue: {
+    componentWrapAttrs: {
+      'unnnic-button-icon': 'true'
+    }
+  }
+});
+
 export interface SearchStoreProps {
   search?: Search;
   nodes?: RenderNodeMap;
@@ -24,7 +32,7 @@ export interface SearchStoreProps {
 
 export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   private handleInput(value: string) {
-    const nodes = this.findNodes();
+    const nodes = this.findNodes(value);
     this.props.handleSearchChange({
       active: true,
       value: value,
@@ -40,9 +48,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       };
     });
   }
-  private findNodes() {
+  private findNodes(value: string) {
     const nodes = this.getAllNodes();
-    return nodes.filter(item => item.data.node.actions[0].text.includes(this.props.search.value));
+    return nodes.filter(item => item.data.node.actions[0].text.includes(value));
   }
 
   public render(): JSX.Element {
@@ -53,6 +61,15 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           value={this.props.search.value}
           on={{ input: (value: string) => this.handleInput(value) }}
         />
+        {this.props.search.nodes ? (
+          <>
+            <span className={styles.number}>1 of {this.props.search.nodes.length}</span>
+            <UnnnicButtonIcon icon="arrow-button-down-1" size="small" className={styles.button} />
+            <UnnnicButtonIcon icon="arrow-button-up-1" size="small" className={styles.button} />
+          </>
+        ) : (
+          <></>
+        )}
       </div>
     );
   }
