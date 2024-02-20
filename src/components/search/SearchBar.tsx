@@ -72,8 +72,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   private dragBackground() {
     const canvasBg = document.getElementById('panzoom');
     const ui = this.props.search.nodes[this.props.search.selected].data.ui.position;
-    console.log(ui);
-    canvasBg.style.transform = `matrix(1, 0, 0, 1, -${ui.left}, -${ui.top})`;
+    const width = window.innerWidth / 2;
+    const height = window.innerHeight / 2;
+    canvasBg.style.transform = `matrix(1, 0, 0, 1, ${width - ui.left}, ${height - ui.top})`;
   }
 
   private toggleMoveSelected(type: 'up' | 'down') {
@@ -85,6 +86,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           nodes: this.props.search.nodes,
           selected: this.props.search.selected - 1 < 0 ? 0 : this.props.search.selected - 1
         });
+        this.dragBackground();
         break;
       case 'down':
         var down = this.props.search.selected - 1;
