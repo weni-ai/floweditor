@@ -3,27 +3,36 @@
 
 .search_card{
     display: flex;
-    width: 300px;
-    height: 50px;
+    width: auto;
+    height: 46px;
     position: fixed;
     z-index: 99;
     top: 5vh;
     left: 25vh;
+
+    .input{
+        width: 200px;
+    }
 
     .number{
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100px;
-        height: 90%;
-        background-color: beige;
+        background-color: rgba(208,211,217,.16);
     }
 
     .button{
-        height: 90%;
+        width: 5px;
+        height: 100%;
+        
     }
 }
 
+:global .unnnic-button--secondary:after{
+    border: none;
+    position: static;
+}
 .highlight{
     display: flex;
     width: 250px;

@@ -115,6 +115,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
             iconLeft="search-1"
             value={this.props.search.value}
             on={{ input: (value: string) => this.handleInput(value) }}
+            className={styles.input}
           />
           {this.props.search.nodes ? (
             <>
@@ -126,7 +127,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
                 size="small"
                 className={styles.button}
                 text=""
-                type="primary"
+                type="secondary"
                 on={{ click: () => this.toggleMoveSelected('down') }}
               />
               <UnnnicButton
@@ -134,7 +135,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
                 size="small"
                 className={styles.button}
                 text=""
-                type="primary"
+                type="secondary"
                 on={{ click: () => this.toggleMoveSelected('up') }}
               />
             </>
