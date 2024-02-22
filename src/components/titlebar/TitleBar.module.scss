@@ -76,3 +76,19 @@
     color: $unnnic-color-neutral-dark;
   }
 }
+
+
+.removal_modal {
+  div[class="unnnic-modal-container-background-body-description-container"] {
+    padding-bottom: unset;
+  }
+}
+
+.removal_buttons {
+  display: flex;
+  gap: $unnnic-spacing-lg;
+
+  button {
+    flex: 1;
+  }
+}
