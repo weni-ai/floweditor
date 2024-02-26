@@ -9,7 +9,6 @@ import { bindActionCreators } from 'redux';
 import {
   DispatchWithState,
   HandleSearchChange,
-  OnUpdateCanvasPositions,
   handleSearchChange,
   onUpdateCanvasPositions
 } from 'store/thunks';
@@ -35,7 +34,6 @@ export interface SearchStoreProps {
   search?: Search;
   nodes?: RenderNodeMap;
   handleSearchChange?: HandleSearchChange;
-  onUpdateCanvasPositions: OnUpdateCanvasPositions;
 }
 
 export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
