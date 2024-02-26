@@ -3,32 +3,55 @@
 
 .search_card{
     display: flex;
-    width: auto;
-    height: 46px;
+    align-items: center;
+    width: 400px;
+    height: 53px;
     position: fixed;
     z-index: 99;
-    top: 5vh;
-    left: 25vh;
-
+    top: 135px;
+    left: 439px;
+    border: solid 1px #e2e6ed;
+    border-radius: 4px;
+    background-color: rgb(255,255,255);
+    font-family: $unnnic-font-family-secondary, sans-serif;
+    font-size: $unnnic-font-size-body-md;
+    font-weight: $unnnic-font-weight-regular;
+    color: $unnnic-color-neutral-dark;
+    
     .input{
-        width: 200px;
-    }
-
-    .number{
         display: flex;
+        width: 248px;
+    }
+    
+    .number{
+        background-color: rgb(255,255,255);
+        padding-left: 8px ;
+    }
+    
+    .button{
+        display: flex;
+        width: 20px;
+        height: 100%;
         align-items: center;
-        justify-content: center;
-        width: 100px;
-        background-color: rgba(208,211,217,.16);
+        border: none;
+        background-color: rgb(255,255,255);
     }
 
-    .button{
-        width: 5px;
+    .icon{
+        display: flex;
         height: 100%;
-        
+        align-items: center;
+    }
+
+    .close{
+        background-color: rgb(255,255,255);
+        padding-left: 18px;
     }
 }
 
+:global .input[data-v-97b44e8c]{
+    outline-style: none;
+}
 :global .unnnic-button--secondary:after{
     border: none;
     position: static;

@@ -63,7 +63,9 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   public handleSearchChanged(): void {
     const change = {
       active: !this.props.search.active,
-      value: this.props.search.value
+      value: this.props.search.value,
+      nodes: [{}],
+      selected: 0
     };
     this.props.handleSearchChange(change);
   }

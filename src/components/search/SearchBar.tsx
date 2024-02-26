@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from './Search.module.scss';
 // @ts-ignore
-import { unnnicInput, unnnicButtonIcon, unnnicButton } from '@weni/unnnic-system';
+import { unnnicInput, unnnicButton } from '@weni/unnnic-system';
 import { applyVueInReact } from 'vuereact-combined';
 import AppState from 'store/state';
 import { connect } from 'react-redux';
@@ -14,8 +14,8 @@ import {
   onUpdateCanvasPositions
 } from 'store/thunks';
 import { RenderNodeMap, Search } from 'store/flowContext';
-import { getOS } from 'utils';
-import panzoom from 'panzoom';
+import { DownIcon } from 'pureIcons/DownIcon';
+import { UpIcon } from 'pureIcons/UpIcon';
 
 const UnnnicInput = applyVueInReact(unnnicInput, {
   vue: {
@@ -107,43 +107,58 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     this.dragBackground();
   }
 
+  private closeSearch() {
+    this.props.handleSearchChange({
+      active: false,
+      value: this.props.search.value,
+      nodes: this.props.search.nodes,
+      selected: 0
+    });
+  }
+
   public render(): JSX.Element {
     return (
-      <>
-        <div className={styles.search_card}>
-          <UnnnicInput
-            iconLeft="search-1"
-            value={this.props.search.value}
-            on={{ input: (value: string) => this.handleInput(value) }}
-            className={styles.input}
-          />
-          {this.props.search.nodes ? (
-            <>
-              <span className={styles.number}>
-                {this.props.search.selected + 1} of {this.props.search.nodes.length}
-              </span>
-              <UnnnicButton
-                iconLeft="arrow-button-down-1"
-                size="small"
-                className={styles.button}
-                text=""
-                type="secondary"
-                on={{ click: () => this.toggleMoveSelected('down') }}
-              />
-              <UnnnicButton
-                iconLeft="arrow-button-up-1"
-                size="small"
-                className={styles.button}
-                text=""
-                type="secondary"
-                on={{ click: () => this.toggleMoveSelected('up') }}
-              />
-            </>
-          ) : (
-            <></>
-          )}
-        </div>
-      </>
+      <div className={styles.search_card}>
+        <UnnnicInput
+          iconLeft="search-1"
+          value={this.props.search.value}
+          on={{ input: (value: string) => this.handleInput(value) }}
+          className={styles.input}
+        />
+        <UnnnicButton
+          size="small"
+          className={styles.button}
+          text=""
+          type="secondary"
+          on={{ click: () => this.toggleMoveSelected('down') }}
+        >
+          <div className={styles.icon}>
+            <DownIcon disabled={this.props.search.selected == this.props.search.nodes.length} />
+          </div>
+        </UnnnicButton>
+        <UnnnicButton
+          size="small"
+          className={styles.button}
+          text=""
+          type="secondary"
+          on={{ click: () => this.toggleMoveSelected('up') }}
+        >
+          <div className={styles.icon}>
+            <UpIcon disabled={this.props.search.selected == 0} />
+          </div>
+        </UnnnicButton>
+        <span className={styles.number}>
+          {this.props.search.selected + 1}/{this.props.search.nodes.length}
+        </span>
+        <UnnnicButton
+          iconLeft="close-1"
+          size="small"
+          className={styles.close}
+          text=""
+          type="secondary"
+          on={{ click: () => this.closeSearch() }}
+        />
+      </div>
     );
   }
 }

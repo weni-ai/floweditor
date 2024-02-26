@@ -106,8 +106,8 @@ export interface Search {
   active: boolean;
   value?: string;
   nodes?: {
-    uuid: string;
-    data: RenderNode;
+    uuid?: string;
+    data?: RenderNode;
   }[];
   selected?: number;
 }
@@ -176,7 +176,8 @@ export const initialState: FlowContext = {
   search: {
     active: false,
     value: '',
-    selected: 0
+    selected: 0,
+    nodes: []
   }
 };
 
