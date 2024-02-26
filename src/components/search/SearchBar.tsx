@@ -37,7 +37,6 @@ export interface SearchStoreProps {
 }
 
 export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
-  private canvasBg!: HTMLDivElement;
   private handleInput(value: string) {
     const nodes = this.findNodes(value);
     this.props.handleSearchChange({
@@ -47,6 +46,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       selected: 0
     });
     this.dragBackground();
+    console.log(this.props.nodes);
   }
 
   private getAllNodes() {
@@ -62,6 +62,8 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     return nodes.filter(item => {
       if (item.data.node.actions[0].type === 'send_msg') {
         return item.data.node.actions[0].text.includes(value);
+      } else {
+        return false;
       }
     });
   }
@@ -71,7 +73,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     const ui = this.props.search.nodes[this.props.search.selected].data.ui.position;
     const width = window.innerWidth / 2;
     const height = window.innerHeight / 2;
-    canvasBg.style.transform = `matrix(1, 0, 0, 1, ${width - ui.left}, ${height - ui.top})`;
+    if (canvasBg) {
+      canvasBg.style.transform = `matrix(1, 0, 0, 1, ${width - ui.left}, ${height - ui.top})`;
+    }
   }
 
   private toggleMoveSelected(type: 'up' | 'down') {

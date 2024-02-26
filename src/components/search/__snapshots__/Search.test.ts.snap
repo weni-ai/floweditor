@@ -3,13 +3,108 @@
 exports[`SearchBar render should render timeout control 1`] = `
 <SearchBar
   handleSearchChange={[MockFunction]}
-  nodes={Object {}}
+  nodes={
+    Object {
+      "11f18b66-37ce-43f0-a74e-4638eb7e5921": Object {
+        "inboundConnections": Object {},
+        "node": Object {
+          "actions": Array [
+            Object {
+              "attachments": Array [],
+              "quick_replies": Array [],
+              "text": "teste",
+              "type": "send_msg",
+              "uuid": "bbb43f9d-d254-44ef-a9d1-7a3e392f972c",
+            },
+          ],
+          "exits": Array [
+            Object {
+              "destination_uuid": "f5804ae2-2103-4b55-b17a-129b359d39a2",
+              "uuid": "07e2e3d2-d7cb-4905-93b8-50598ec4fdf3",
+            },
+          ],
+          "uuid": "11f18b66-37ce-43f0-a74e-4638eb7e5921",
+        },
+        "ui": Object {
+          "position": Object {
+            "left": 160,
+            "top": 100,
+          },
+          "type": "execute_actions",
+        },
+      },
+      "f5804ae2-2103-4b55-b17a-129b359d39a2": Object {
+        "inboundConnections": Object {
+          "07e2e3d2-d7cb-4905-93b8-50598ec4fdf3": "11f18b66-37ce-43f0-a74e-4638eb7e5921",
+        },
+        "node": Object {
+          "actions": Array [
+            Object {
+              "attachments": Array [],
+              "quick_replies": Array [],
+              "text": "teste",
+              "type": "send_msg",
+              "uuid": "77e4f770-42ad-4573-95cf-f7d96a020dd9",
+            },
+          ],
+          "exits": Array [
+            Object {
+              "destination_uuid": null,
+              "uuid": "72e44e5c-777e-41de-a35c-c52f418d6c6c",
+            },
+          ],
+          "uuid": "f5804ae2-2103-4b55-b17a-129b359d39a2",
+        },
+        "ui": Object {
+          "position": Object {
+            "left": 129,
+            "top": 409,
+          },
+          "type": "execute_actions",
+        },
+      },
+    }
+  }
   search={
     Object {
-      "active": false,
-      "nodes": Array [],
+      "active": true,
+      "nodes": Array [
+        Object {
+          "data": Object {
+            "inboundConnections": Object {
+              "07e2e3d2-d7cb-4905-93b8-50598ec4fdf3": "11f18b66-37ce-43f0-a74e-4638eb7e5921",
+            },
+            "node": Object {
+              "actions": Array [
+                Object {
+                  "attachments": Array [],
+                  "quick_replies": Array [],
+                  "text": "teste",
+                  "type": "send_msg",
+                  "uuid": "77e4f770-42ad-4573-95cf-f7d96a020dd9",
+                },
+              ],
+              "exits": Array [
+                Object {
+                  "destination_uuid": null,
+                  "uuid": "72e44e5c-777e-41de-a35c-c52f418d6c6c",
+                },
+              ],
+              "uuid": "f5804ae2-2103-4b55-b17a-129b359d39a2",
+            },
+            "ui": Object {
+              "position": Object {
+                "left": 129,
+                "top": 409,
+              },
+              "type": "execute_actions",
+            },
+          },
+          "uuid": "f5804ae2-2103-4b55-b17a-129b359d39a2",
+        },
+      ],
       "selected": 0,
-      "value": "",
+      "value": "teste",
     }
   }
 >
@@ -24,7 +119,7 @@ exports[`SearchBar render should render timeout control 1`] = `
           "input": [Function],
         }
       }
-      value=""
+      value="teste"
     >
       <ForwardRef
         className="input"
@@ -281,7 +376,7 @@ exports[`SearchBar render should render timeout control 1`] = `
             "input": [Function],
           }
         }
-        value=""
+        value="teste"
         vuereact-combined-options={
           Object {
             "react": Object {},
@@ -548,7 +643,7 @@ exports[`SearchBar render should render timeout control 1`] = `
               "input": [Function],
             }
           }
-          value=""
+          value="teste"
           vuereact-combined-options={
             Object {
               "react": Object {
@@ -947,7 +1042,7 @@ exports[`SearchBar render should render timeout control 1`] = `
                           >
                             <path
                               d="M9.99593 13.0098C9.90661 13.0098 9.82355 12.9938 9.74674 12.9617C9.66992 12.9297 9.59946 12.8816 9.53537 12.8175L5.67222 8.95433C5.55214 8.83426 5.49423 8.70425 5.49851 8.56429C5.50278 8.42433 5.56528 8.29399 5.68601 8.17327C5.80673 8.05255 5.93573 7.99219 6.07301 7.99219C6.21029 7.99219 6.33929 8.05255 6.46001 8.17327L10.0001 11.7342L13.561 8.17327C13.6764 8.05789 13.8041 8.00234 13.944 8.0066C14.084 8.01088 14.2143 8.07338 14.335 8.1941C14.4557 8.31483 14.5161 8.44383 14.5161 8.58112C14.5161 8.7184 14.4534 8.84936 14.328 8.974L10.4648 12.8175C10.3952 12.8816 10.3219 12.9297 10.2451 12.9617C10.1683 12.9938 10.0852 13.0098 9.99593 13.0098Z"
-                              fill="#D0D3D9"
+                              fill="#1C1B1F"
                             />
                           </g>
                         </svg>
@@ -971,7 +1066,7 @@ exports[`SearchBar render should render timeout control 1`] = `
                       className="icon"
                     >
                       <DownIcon
-                        disabled={true}
+                        disabled={false}
                       >
                         <svg
                           fill="none"
@@ -1000,7 +1095,7 @@ exports[`SearchBar render should render timeout control 1`] = `
                           >
                             <path
                               d="M9.99593 13.0098C9.90661 13.0098 9.82355 12.9938 9.74674 12.9617C9.66992 12.9297 9.59946 12.8816 9.53537 12.8175L5.67222 8.95433C5.55214 8.83426 5.49423 8.70425 5.49851 8.56429C5.50278 8.42433 5.56528 8.29399 5.68601 8.17327C5.80673 8.05255 5.93573 7.99219 6.07301 7.99219C6.21029 7.99219 6.33929 8.05255 6.46001 8.17327L10.0001 11.7342L13.561 8.17327C13.6764 8.05789 13.8041 8.00234 13.944 8.0066C14.084 8.01088 14.2143 8.07338 14.335 8.1941C14.4557 8.31483 14.5161 8.44383 14.5161 8.58112C14.5161 8.7184 14.4534 8.84936 14.328 8.974L10.4648 12.8175C10.3952 12.8816 10.3219 12.9297 10.2451 12.9617C10.1683 12.9938 10.0852 13.0098 9.99593 13.0098Z"
-                              fill="#D0D3D9"
+                              fill="#1C1B1F"
                             />
                           </g>
                         </svg>
@@ -1439,7 +1534,7 @@ exports[`SearchBar render should render timeout control 1`] = `
     >
       1
       /
-      0
+      1
     </span>
     <ForwardRef
       className="close"
