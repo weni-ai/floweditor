@@ -63,7 +63,6 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       if (item.data.node.actions[0].type === 'send_msg') {
         return item.data.node.actions[0].text.includes(value);
       }
-      return;
     });
   }
 
@@ -131,7 +130,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           on={{ click: () => this.toggleMoveSelected('down') }}
         >
           <div className={styles.icon}>
-            <DownIcon disabled={this.props.search.selected == this.props.search.nodes.length} />
+            <DownIcon disabled={this.props.search.selected === this.props.search.nodes.length} />
           </div>
         </UnnnicButton>
         <UnnnicButton
@@ -142,7 +141,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           on={{ click: () => this.toggleMoveSelected('up') }}
         >
           <div className={styles.icon}>
-            <UpIcon disabled={this.props.search.selected == 0} />
+            <UpIcon disabled={this.props.search.selected === 0} />
           </div>
         </UnnnicButton>
         <span className={styles.number}>
