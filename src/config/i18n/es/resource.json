@@ -433,7 +433,8 @@
       "category_title": "Categorizar cómo",
       "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto.",
       "command_phrases_description": "Escribir frases de comando relacionadas con la categoría.",
-      "command_phrases_title": "Frases de comando"
+      "command_phrases_title": "Frases de comando",
+      "description_alert": "<0>Importante:</0>Edita tu proyecto, <2>agrega una descripción</2> y haz que la IA sea aún más poderosa."
     },
     "automatic_classify": {
       "words_title": "Palabras",

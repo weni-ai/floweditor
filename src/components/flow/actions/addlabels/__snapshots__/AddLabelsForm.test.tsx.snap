@@ -72,7 +72,7 @@ exports[`AddLabelsForm render allows expressions 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -410,7 +410,7 @@ exports[`AddLabelsForm render allows expressions 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-dark icon-right"
                     data-v-400546b3=""
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -466,7 +466,7 @@ exports[`AddLabelsForm render allows expressions 1`] = `
                 <span
                   class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
                   data-v-32b4068e=""
-                  data-v-59b073b4=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"
@@ -634,7 +634,7 @@ exports[`AddLabelsForm render should render 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -972,7 +972,7 @@ exports[`AddLabelsForm render should render 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -1028,7 +1028,7 @@ exports[`AddLabelsForm render should render 1`] = `
                 <span
                   class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
                   data-v-32b4068e=""
-                  data-v-59b073b4=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"

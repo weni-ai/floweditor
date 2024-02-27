@@ -1,3 +1,7 @@
+2.11.0
+----------
+Feat: Zeroshot description alert
+
 2.10.4
 ----------
 Fix: Add wenigpt action to result listing condition
