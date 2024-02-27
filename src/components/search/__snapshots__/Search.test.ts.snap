@@ -119,6 +119,7 @@ exports[`SearchBar render should render timeout control 1`] = `
           "input": [Function],
         }
       }
+      placeholder="..."
       value="teste"
     >
       <ForwardRef
@@ -191,8 +192,9 @@ exports[`SearchBar render should render timeout control 1`] = `
                       "0": [Function],
                     },
                     "_compiled": true,
-                    "_scopeId": "data-v-59b073b4",
+                    "_scopeId": "data-v-4ce83152",
                     "computed": Object {
+                      "materialSymbolsName": [Function],
                       "svg": [Function],
                     },
                     "methods": Object {
@@ -205,6 +207,9 @@ exports[`SearchBar render should render timeout control 1`] = `
                         "default": false,
                         "type": [Function],
                       },
+                      "filled": Object {
+                        "type": [Function],
+                      },
                       "icon": Object {
                         "default": null,
                         "type": [Function],
@@ -214,8 +219,11 @@ exports[`SearchBar render should render timeout control 1`] = `
                         "type": [Function],
                         "validator": [Function],
                       },
+                      "next": Object {
+                        "type": [Function],
+                      },
                       "scheme": Object {
-                        "default": "",
+                        "default": "neutral-darkest",
                         "type": [Function],
                       },
                       "size": Object {
@@ -376,6 +384,7 @@ exports[`SearchBar render should render timeout control 1`] = `
             "input": [Function],
           }
         }
+        placeholder="..."
         value="teste"
         vuereact-combined-options={
           Object {
@@ -458,8 +467,9 @@ exports[`SearchBar render should render timeout control 1`] = `
                         "0": [Function],
                       },
                       "_compiled": true,
-                      "_scopeId": "data-v-59b073b4",
+                      "_scopeId": "data-v-4ce83152",
                       "computed": Object {
+                        "materialSymbolsName": [Function],
                         "svg": [Function],
                       },
                       "methods": Object {
@@ -472,6 +482,9 @@ exports[`SearchBar render should render timeout control 1`] = `
                           "default": false,
                           "type": [Function],
                         },
+                        "filled": Object {
+                          "type": [Function],
+                        },
                         "icon": Object {
                           "default": null,
                           "type": [Function],
@@ -481,8 +494,11 @@ exports[`SearchBar render should render timeout control 1`] = `
                           "type": [Function],
                           "validator": [Function],
                         },
+                        "next": Object {
+                          "type": [Function],
+                        },
                         "scheme": Object {
-                          "default": "",
+                          "default": "neutral-darkest",
                           "type": [Function],
                         },
                         "size": Object {
@@ -643,6 +659,7 @@ exports[`SearchBar render should render timeout control 1`] = `
               "input": [Function],
             }
           }
+          placeholder="..."
           value="teste"
           vuereact-combined-options={
             Object {
@@ -720,15 +737,16 @@ exports[`SearchBar render should render timeout control 1`] = `
               "0": [Function],
             },
             "_compiled": true,
-            "_scopeId": "data-v-bcdcecac",
+            "_scopeId": "data-v-2d9f2cbf",
             "components": Object {
               "UnnnicIconSvg": Object {
                 "_Ctor": Object {
                   "0": [Function],
                 },
                 "_compiled": true,
-                "_scopeId": "data-v-59b073b4",
+                "_scopeId": "data-v-4ce83152",
                 "computed": Object {
+                  "materialSymbolsName": [Function],
                   "svg": [Function],
                 },
                 "methods": Object {
@@ -741,6 +759,9 @@ exports[`SearchBar render should render timeout control 1`] = `
                     "default": false,
                     "type": [Function],
                   },
+                  "filled": Object {
+                    "type": [Function],
+                  },
                   "icon": Object {
                     "default": null,
                     "type": [Function],
@@ -750,8 +771,11 @@ exports[`SearchBar render should render timeout control 1`] = `
                     "type": [Function],
                     "validator": [Function],
                   },
+                  "next": Object {
+                    "type": [Function],
+                  },
                   "scheme": Object {
-                    "default": "",
+                    "default": "neutral-darkest",
                     "type": [Function],
                   },
                   "size": Object {
@@ -766,18 +790,21 @@ exports[`SearchBar render should render timeout control 1`] = `
             },
             "computed": Object {
               "buttonDisabled": [Function],
-              "buttonScheme": [Function],
               "hasText": [Function],
               "iconScheme": [Function],
               "iconSize": [Function],
             },
-            "name": "unnnic-button",
+            "name": "unnnicButton",
             "props": Object {
               "disabled": Object {
                 "type": [Function],
               },
               "iconCenter": Object {
                 "default": null,
+                "type": [Function],
+              },
+              "iconFilled": Object {
+                "default": false,
                 "type": [Function],
               },
               "iconLeft": Object {
@@ -791,9 +818,8 @@ exports[`SearchBar render should render timeout control 1`] = `
               "loading": Object {
                 "type": [Function],
               },
-              "scheme": Object {
+              "next": Object {
                 "type": [Function],
-                "validator": [Function],
               },
               "size": Object {
                 "default": "large",
@@ -841,15 +867,16 @@ exports[`SearchBar render should render timeout control 1`] = `
                 "0": [Function],
               },
               "_compiled": true,
-              "_scopeId": "data-v-bcdcecac",
+              "_scopeId": "data-v-2d9f2cbf",
               "components": Object {
                 "UnnnicIconSvg": Object {
                   "_Ctor": Object {
                     "0": [Function],
                   },
                   "_compiled": true,
-                  "_scopeId": "data-v-59b073b4",
+                  "_scopeId": "data-v-4ce83152",
                   "computed": Object {
+                    "materialSymbolsName": [Function],
                     "svg": [Function],
                   },
                   "methods": Object {
@@ -862,6 +889,9 @@ exports[`SearchBar render should render timeout control 1`] = `
                       "default": false,
                       "type": [Function],
                     },
+                    "filled": Object {
+                      "type": [Function],
+                    },
                     "icon": Object {
                       "default": null,
                       "type": [Function],
@@ -871,8 +901,11 @@ exports[`SearchBar render should render timeout control 1`] = `
                       "type": [Function],
                       "validator": [Function],
                     },
+                    "next": Object {
+                      "type": [Function],
+                    },
                     "scheme": Object {
-                      "default": "",
+                      "default": "neutral-darkest",
                       "type": [Function],
                     },
                     "size": Object {
@@ -887,18 +920,21 @@ exports[`SearchBar render should render timeout control 1`] = `
               },
               "computed": Object {
                 "buttonDisabled": [Function],
-                "buttonScheme": [Function],
                 "hasText": [Function],
                 "iconScheme": [Function],
                 "iconSize": [Function],
               },
-              "name": "unnnic-button",
+              "name": "unnnicButton",
               "props": Object {
                 "disabled": Object {
                   "type": [Function],
                 },
                 "iconCenter": Object {
                   "default": null,
+                  "type": [Function],
+                },
+                "iconFilled": Object {
+                  "default": false,
                   "type": [Function],
                 },
                 "iconLeft": Object {
@@ -912,9 +948,8 @@ exports[`SearchBar render should render timeout control 1`] = `
                 "loading": Object {
                   "type": [Function],
                 },
-                "scheme": Object {
+                "next": Object {
                   "type": [Function],
-                  "validator": [Function],
                 },
                 "size": Object {
                   "default": "large",
@@ -1009,7 +1044,7 @@ exports[`SearchBar render should render timeout control 1`] = `
                   containerInfo={
                     <div
                       __use_react_component_wrap=""
-                      data-v-bcdcecac=""
+                      data-v-2d9f2cbf=""
                       style="all: unset;"
                     >
                       <div
@@ -1128,15 +1163,16 @@ exports[`SearchBar render should render timeout control 1`] = `
               "0": [Function],
             },
             "_compiled": true,
-            "_scopeId": "data-v-bcdcecac",
+            "_scopeId": "data-v-2d9f2cbf",
             "components": Object {
               "UnnnicIconSvg": Object {
                 "_Ctor": Object {
                   "0": [Function],
                 },
                 "_compiled": true,
-                "_scopeId": "data-v-59b073b4",
+                "_scopeId": "data-v-4ce83152",
                 "computed": Object {
+                  "materialSymbolsName": [Function],
                   "svg": [Function],
                 },
                 "methods": Object {
@@ -1149,6 +1185,9 @@ exports[`SearchBar render should render timeout control 1`] = `
                     "default": false,
                     "type": [Function],
                   },
+                  "filled": Object {
+                    "type": [Function],
+                  },
                   "icon": Object {
                     "default": null,
                     "type": [Function],
@@ -1158,8 +1197,11 @@ exports[`SearchBar render should render timeout control 1`] = `
                     "type": [Function],
                     "validator": [Function],
                   },
+                  "next": Object {
+                    "type": [Function],
+                  },
                   "scheme": Object {
-                    "default": "",
+                    "default": "neutral-darkest",
                     "type": [Function],
                   },
                   "size": Object {
@@ -1174,18 +1216,21 @@ exports[`SearchBar render should render timeout control 1`] = `
             },
             "computed": Object {
               "buttonDisabled": [Function],
-              "buttonScheme": [Function],
               "hasText": [Function],
               "iconScheme": [Function],
               "iconSize": [Function],
             },
-            "name": "unnnic-button",
+            "name": "unnnicButton",
             "props": Object {
               "disabled": Object {
                 "type": [Function],
               },
               "iconCenter": Object {
                 "default": null,
+                "type": [Function],
+              },
+              "iconFilled": Object {
+                "default": false,
                 "type": [Function],
               },
               "iconLeft": Object {
@@ -1199,9 +1244,8 @@ exports[`SearchBar render should render timeout control 1`] = `
               "loading": Object {
                 "type": [Function],
               },
-              "scheme": Object {
+              "next": Object {
                 "type": [Function],
-                "validator": [Function],
               },
               "size": Object {
                 "default": "large",
@@ -1249,15 +1293,16 @@ exports[`SearchBar render should render timeout control 1`] = `
                 "0": [Function],
               },
               "_compiled": true,
-              "_scopeId": "data-v-bcdcecac",
+              "_scopeId": "data-v-2d9f2cbf",
               "components": Object {
                 "UnnnicIconSvg": Object {
                   "_Ctor": Object {
                     "0": [Function],
                   },
                   "_compiled": true,
-                  "_scopeId": "data-v-59b073b4",
+                  "_scopeId": "data-v-4ce83152",
                   "computed": Object {
+                    "materialSymbolsName": [Function],
                     "svg": [Function],
                   },
                   "methods": Object {
@@ -1270,6 +1315,9 @@ exports[`SearchBar render should render timeout control 1`] = `
                       "default": false,
                       "type": [Function],
                     },
+                    "filled": Object {
+                      "type": [Function],
+                    },
                     "icon": Object {
                       "default": null,
                       "type": [Function],
@@ -1279,8 +1327,11 @@ exports[`SearchBar render should render timeout control 1`] = `
                       "type": [Function],
                       "validator": [Function],
                     },
+                    "next": Object {
+                      "type": [Function],
+                    },
                     "scheme": Object {
-                      "default": "",
+                      "default": "neutral-darkest",
                       "type": [Function],
                     },
                     "size": Object {
@@ -1295,18 +1346,21 @@ exports[`SearchBar render should render timeout control 1`] = `
               },
               "computed": Object {
                 "buttonDisabled": [Function],
-                "buttonScheme": [Function],
                 "hasText": [Function],
                 "iconScheme": [Function],
                 "iconSize": [Function],
               },
-              "name": "unnnic-button",
+              "name": "unnnicButton",
               "props": Object {
                 "disabled": Object {
                   "type": [Function],
                 },
                 "iconCenter": Object {
                   "default": null,
+                  "type": [Function],
+                },
+                "iconFilled": Object {
+                  "default": false,
                   "type": [Function],
                 },
                 "iconLeft": Object {
@@ -1320,9 +1374,8 @@ exports[`SearchBar render should render timeout control 1`] = `
                 "loading": Object {
                   "type": [Function],
                 },
-                "scheme": Object {
+                "next": Object {
                   "type": [Function],
-                  "validator": [Function],
                 },
                 "size": Object {
                   "default": "large",
@@ -1417,7 +1470,7 @@ exports[`SearchBar render should render timeout control 1`] = `
                   containerInfo={
                     <div
                       __use_react_component_wrap=""
-                      data-v-bcdcecac=""
+                      data-v-2d9f2cbf=""
                       style="all: unset;"
                     >
                       <div
@@ -1556,15 +1609,16 @@ exports[`SearchBar render should render timeout control 1`] = `
               "0": [Function],
             },
             "_compiled": true,
-            "_scopeId": "data-v-bcdcecac",
+            "_scopeId": "data-v-2d9f2cbf",
             "components": Object {
               "UnnnicIconSvg": Object {
                 "_Ctor": Object {
                   "0": [Function],
                 },
                 "_compiled": true,
-                "_scopeId": "data-v-59b073b4",
+                "_scopeId": "data-v-4ce83152",
                 "computed": Object {
+                  "materialSymbolsName": [Function],
                   "svg": [Function],
                 },
                 "methods": Object {
@@ -1577,6 +1631,9 @@ exports[`SearchBar render should render timeout control 1`] = `
                     "default": false,
                     "type": [Function],
                   },
+                  "filled": Object {
+                    "type": [Function],
+                  },
                   "icon": Object {
                     "default": null,
                     "type": [Function],
@@ -1586,8 +1643,11 @@ exports[`SearchBar render should render timeout control 1`] = `
                     "type": [Function],
                     "validator": [Function],
                   },
+                  "next": Object {
+                    "type": [Function],
+                  },
                   "scheme": Object {
-                    "default": "",
+                    "default": "neutral-darkest",
                     "type": [Function],
                   },
                   "size": Object {
@@ -1602,18 +1662,21 @@ exports[`SearchBar render should render timeout control 1`] = `
             },
             "computed": Object {
               "buttonDisabled": [Function],
-              "buttonScheme": [Function],
               "hasText": [Function],
               "iconScheme": [Function],
               "iconSize": [Function],
             },
-            "name": "unnnic-button",
+            "name": "unnnicButton",
             "props": Object {
               "disabled": Object {
                 "type": [Function],
               },
               "iconCenter": Object {
                 "default": null,
+                "type": [Function],
+              },
+              "iconFilled": Object {
+                "default": false,
                 "type": [Function],
               },
               "iconLeft": Object {
@@ -1627,9 +1690,8 @@ exports[`SearchBar render should render timeout control 1`] = `
               "loading": Object {
                 "type": [Function],
               },
-              "scheme": Object {
+              "next": Object {
                 "type": [Function],
-                "validator": [Function],
               },
               "size": Object {
                 "default": "large",
@@ -1678,15 +1740,16 @@ exports[`SearchBar render should render timeout control 1`] = `
                 "0": [Function],
               },
               "_compiled": true,
-              "_scopeId": "data-v-bcdcecac",
+              "_scopeId": "data-v-2d9f2cbf",
               "components": Object {
                 "UnnnicIconSvg": Object {
                   "_Ctor": Object {
                     "0": [Function],
                   },
                   "_compiled": true,
-                  "_scopeId": "data-v-59b073b4",
+                  "_scopeId": "data-v-4ce83152",
                   "computed": Object {
+                    "materialSymbolsName": [Function],
                     "svg": [Function],
                   },
                   "methods": Object {
@@ -1699,6 +1762,9 @@ exports[`SearchBar render should render timeout control 1`] = `
                       "default": false,
                       "type": [Function],
                     },
+                    "filled": Object {
+                      "type": [Function],
+                    },
                     "icon": Object {
                       "default": null,
                       "type": [Function],
@@ -1708,8 +1774,11 @@ exports[`SearchBar render should render timeout control 1`] = `
                       "type": [Function],
                       "validator": [Function],
                     },
+                    "next": Object {
+                      "type": [Function],
+                    },
                     "scheme": Object {
-                      "default": "",
+                      "default": "neutral-darkest",
                       "type": [Function],
                     },
                     "size": Object {
@@ -1724,18 +1793,21 @@ exports[`SearchBar render should render timeout control 1`] = `
               },
               "computed": Object {
                 "buttonDisabled": [Function],
-                "buttonScheme": [Function],
                 "hasText": [Function],
                 "iconScheme": [Function],
                 "iconSize": [Function],
               },
-              "name": "unnnic-button",
+              "name": "unnnicButton",
               "props": Object {
                 "disabled": Object {
                   "type": [Function],
                 },
                 "iconCenter": Object {
                   "default": null,
+                  "type": [Function],
+                },
+                "iconFilled": Object {
+                  "default": false,
                   "type": [Function],
                 },
                 "iconLeft": Object {
@@ -1749,9 +1821,8 @@ exports[`SearchBar render should render timeout control 1`] = `
                 "loading": Object {
                   "type": [Function],
                 },
-                "scheme": Object {
+                "next": Object {
                   "type": [Function],
-                  "validator": [Function],
                 },
                 "size": Object {
                   "default": "large",

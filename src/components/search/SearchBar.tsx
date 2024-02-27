@@ -124,6 +124,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           value={this.props.search.value}
           on={{ input: (value: string) => this.handleInput(value) }}
           className={styles.input}
+          placeholder="..."
         />
         <UnnnicButton
           size="small"
