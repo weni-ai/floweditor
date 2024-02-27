@@ -1,8 +1,7 @@
-import { apply } from 'core-js/fn/reflect';
 import { SearchBar, SearchStoreProps } from './SearchBar';
 import { composeComponentTestUtils } from 'testUtils';
 
-const nodes: any = {
+const nodes = {
   '11f18b66-37ce-43f0-a74e-4638eb7e5921': {
     node: {
       uuid: '11f18b66-37ce-43f0-a74e-4638eb7e5921',
@@ -205,6 +204,59 @@ describe(SearchBar.name, () => {
       const { instance } = setup(true);
       const response = instance.getAllNodes();
       expect(response).toEqual(filteredNode);
+    });
+  });
+  describe('findNodes()', () => {
+    it('should call findNodes', () => {
+      const { instance } = setup(true);
+      const spy = spyOn('findNodes');
+      expect(spy).not.toHaveBeenCalled();
+      instance.findNodes('teste');
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+    it('should return found nodes', () => {
+      const { instance } = setup(true);
+      const response = instance.findNodes('teste');
+      expect(response).toEqual(filteredNode);
+    });
+  });
+  describe('dragBackground()', () => {
+    it('should call dragBackground', () => {
+      const { instance } = setup(true);
+      const spy = spyOn('dragBackground');
+      expect(spy).not.toHaveBeenCalled();
+      instance.dragBackground();
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+  });
+  describe('toggleMoveSelected()', () => {
+    it('should call toggleMoveSelected', () => {
+      const { instance } = setup(true);
+      const spy = spyOn('toggleMoveSelected');
+      expect(spy).not.toHaveBeenCalled();
+      instance.toggleMoveSelected('up');
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+    it('should call dragBackground', () => {
+      const { instance } = setup(true);
+      const spy = spyOn('dragBackground');
+      expect(spy).toHaveBeenCalledTimes(2);
+      instance.toggleMoveSelected('up');
+      expect(spy).toHaveBeenCalledTimes(3);
+    });
+    it('should set search', () => {
+      const { instance, props } = setup(true);
+      instance.toggleMoveSelected('down');
+      expect(props.search).not.toEqual({});
+    });
+  });
+  describe('closeSearch()', () => {
+    it('should call closeSearch', () => {
+      const { instance } = setup(true);
+      const spy = spyOn('closeSearch');
+      expect(spy).not.toHaveBeenCalled();
+      instance.closeSearch();
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });

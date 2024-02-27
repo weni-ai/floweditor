@@ -87,7 +87,6 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           nodes: this.props.search.nodes,
           selected: this.props.search.selected - 1 < 0 ? 0 : this.props.search.selected - 1
         });
-        this.dragBackground();
         break;
       case 'down':
         var down = this.props.search.selected - 1;
