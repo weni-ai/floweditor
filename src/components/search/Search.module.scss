@@ -56,6 +56,9 @@
     border: none;
     position: static;
 }
+:global .unnnic-button--secondary[data-v-2d9f2cbf]{
+    box-shadow: none;
+}
 .highlight{
     display: flex;
     width: 250px;

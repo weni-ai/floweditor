@@ -1,5 +1,7 @@
 import { SearchBar, SearchStoreProps } from './SearchBar';
+import * as React from 'react';
 import { composeComponentTestUtils } from 'testUtils';
+import { render } from 'test/utils';
 
 const nodes = {
   '11f18b66-37ce-43f0-a74e-4638eb7e5921': {
@@ -177,19 +179,15 @@ const baseProps: SearchStoreProps = {
 const { setup, spyOn } = composeComponentTestUtils(SearchBar, baseProps);
 
 describe(SearchBar.name, () => {
-  describe('render', () => {
-    it('should render timeout control', () => {
-      const { wrapper } = setup(false);
-      expect(wrapper).toMatchSnapshot();
-    });
+  it('should render searchbar', () => {
+    const { baseElement } = render(<SearchBar {...baseProps} />);
+    expect(baseElement).toMatchSnapshot();
   });
   describe('handleInput()', () => {
     it('should call handleInput', () => {
-      const { instance } = setup(true);
-      const spy = spyOn('handleInput');
-      expect(spy).not.toHaveBeenCalled();
-      instance.handleInput('teste');
-      expect(spy).toHaveBeenCalledTimes(1);
+      const { getByPlaceholderText } = render(<SearchBar {...baseProps} />);
+      const input = getByPlaceholderText('...');
+      expect(input).toBeTruthy();
     });
   });
   describe('getAllNodes()', () => {

@@ -15,6 +15,7 @@ import {
 import { RenderNodeMap, Search } from 'store/flowContext';
 import { DownIcon } from 'pureIcons/DownIcon';
 import { UpIcon } from 'pureIcons/UpIcon';
+import i18n from 'config/i18n';
 
 const UnnnicInput = applyVueInReact(unnnicInput, {
   vue: {
@@ -46,7 +47,6 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       selected: 0
     });
     this.dragBackground();
-    console.log(this.props.nodes);
   }
 
   private getAllNodes() {
@@ -60,8 +60,21 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   private findNodes(value: string) {
     const nodes = this.getAllNodes();
     return nodes.filter(item => {
-      if (item.data.node.actions[0].type === 'send_msg') {
-        return item.data.node.actions[0].text.includes(value);
+      const nodeItem: any = item.data.node.actions;
+      if (nodeItem.length > 0) {
+        //find by type
+        const foundTitle = i18n
+          .t(`actions.${nodeItem[0].type}.name`)
+          .toLocaleLowerCase()
+          .includes(value.toLocaleLowerCase());
+        //find by content
+        const foundContent = nodeItem[0].hasOwnProperty('text')
+          ? item.data.node.actions[0].text.includes(value)
+          : nodeItem[0].hasOwnProperty('result_name')
+          ? item.data.node.actions[0].result_name.includes(value)
+          : false;
+
+        return foundTitle || foundContent;
       } else {
         return false;
       }
@@ -70,11 +83,13 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
 
   private dragBackground() {
     const canvasBg = document.getElementById('panzoom');
-    const ui = this.props.search.nodes[this.props.search.selected].data.ui.position;
-    const width = window.innerWidth / 2;
-    const height = window.innerHeight / 2;
-    if (canvasBg) {
-      canvasBg.style.transform = `matrix(1, 0, 0, 1, ${width - ui.left}, ${height - ui.top})`;
+    if (this.props.search.nodes[this.props.search.selected]) {
+      const ui = this.props.search.nodes[this.props.search.selected].data.ui.position;
+      const width = window.innerWidth / 2;
+      const height = window.innerHeight / 2;
+      if (canvasBg) {
+        canvasBg.style.transform = `matrix(1, 0, 0, 1, ${width - ui.left}, ${height - ui.top})`;
+      }
     }
   }
 
@@ -124,6 +139,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           value={this.props.search.value}
           on={{ input: (value: string) => this.handleInput(value) }}
           className={styles.input}
+          placeholder="..."
         />
         <UnnnicButton
           size="small"

@@ -299,6 +299,7 @@ export interface Flow {
 }
 
 export interface Action {
+  [x: string]: any;
   type: Types;
   uuid: string;
   text?: string;
