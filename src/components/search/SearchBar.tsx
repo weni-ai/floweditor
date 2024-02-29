@@ -16,6 +16,7 @@ import { RenderNodeMap, Search } from 'store/flowContext';
 import { DownIcon } from 'pureIcons/DownIcon';
 import { UpIcon } from 'pureIcons/UpIcon';
 import i18n from 'config/i18n';
+import { CloseIcon } from 'pureIcons/CloseIcon';
 
 const UnnnicInput = applyVueInReact(unnnicInput, {
   vue: {
@@ -166,14 +167,19 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
         <span className={styles.number}>
           {this.props.search.selected + 1}/{this.props.search.nodes.length}
         </span>
-        <UnnnicButton
+        <button onClick={() => this.closeSearch()} className={styles.close}>
+          <div className={styles.icon}>
+            <CloseIcon />
+          </div>
+        </button>
+        {/* <UnnnicButton
           iconLeft="close-1"
           size="small"
           className={styles.close}
           text=""
           type="secondary"
           on={{ click: () => this.closeSearch() }}
-        />
+        /> */}
       </div>
     );
   }
