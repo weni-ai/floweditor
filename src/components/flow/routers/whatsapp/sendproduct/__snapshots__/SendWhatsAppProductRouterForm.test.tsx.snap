@@ -2412,6 +2412,7 @@ Array [
       "actions": Array [
         Object {
           "automaticProductSearch": true,
+          "postal_code": "",
           "productSearch": "@results.result",
           "productViewSettings": Object {
             "action": "action text",
@@ -2423,7 +2424,6 @@ Array [
           "result_name": "ResultName",
           "search_type": "default",
           "search_url": "",
-          "seller_id": "",
           "sendCatalog": false,
           "type": "send_msg_catalog",
           "uuid": "679d32c1-9996-48b4-9691-e869507b9e46",
@@ -3850,19 +3850,19 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               </div>
             </div>
             <div
-              class="seller_id"
+              class="postal_code"
             >
               <div>
                 <span
                   class="label"
                 >
-                  Seller ID (optional)
+                  Postal Code (optional)
                 </span>
                 <div
                   class="completion_wrapper"
                 >
                   <div
-                    data-testid="Seller ID (optional)"
+                    data-testid="Postal Code (optional)"
                   >
                     <div
                       data-use-vue-component-wrap=""
@@ -3886,7 +3886,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                             data-passed-props="[object Object]"
                             data-v-400546b3=""
                             data-v-97b44e8c=""
-                            placeholder="Ex: @results.seller_id"
+                            placeholder="Ex: @results.postal_code"
                             size="0"
                             type="text"
                             v-bind="[object Object]"
@@ -3900,7 +3900,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   </div>
                   <div
                     class="options_wrapper"
-                    data-testid="temba_completion_options_Seller ID (optional)"
+                    data-testid="temba_completion_options_Postal Code (optional)"
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -4276,6 +4276,7 @@ Array [
       "actions": Array [
         Object {
           "automaticProductSearch": true,
+          "postal_code": "cep123",
           "productSearch": "@results.result",
           "productViewSettings": Object {
             "action": "action text",
@@ -4287,7 +4288,6 @@ Array [
           "result_name": "ResultName",
           "search_type": "vtex",
           "search_url": "https://weni.ai",
-          "seller_id": "seller123",
           "sendCatalog": false,
           "type": "send_msg_catalog",
           "uuid": "6b121177-6eef-48b3-8f6d-eef2154a0e10",
@@ -9841,6 +9841,7 @@ Array [
       "actions": Array [
         Object {
           "automaticProductSearch": false,
+          "postal_code": "",
           "productSearch": "",
           "productViewSettings": Object {
             "action": "action text",
@@ -9852,7 +9853,6 @@ Array [
           "result_name": "ResultName",
           "search_type": "default",
           "search_url": "",
-          "seller_id": "",
           "sendCatalog": true,
           "type": "send_msg_catalog",
           "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
@@ -11954,6 +11954,7 @@ Array [
       "actions": Array [
         Object {
           "automaticProductSearch": false,
+          "postal_code": "",
           "productSearch": "",
           "productViewSettings": Object {
             "action": "action text",
@@ -11978,7 +11979,6 @@ Array [
           "result_name": "ResultName",
           "search_type": "default",
           "search_url": "",
-          "seller_id": "",
           "sendCatalog": false,
           "type": "send_msg_catalog",
           "uuid": "e81b3f1a-0863-4418-8a72-9c9f8aa72b7c",
