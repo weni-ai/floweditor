@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from './Search.module.scss';
 // @ts-ignore
-import { unnnicInput, unnnicButton } from '@weni/unnnic-system';
+import { unnnicInput } from '@weni/unnnic-system';
 import { applyVueInReact } from 'vuereact-combined';
 import AppState from 'store/state';
 import { connect } from 'react-redux';
@@ -13,22 +13,13 @@ import {
   onUpdateCanvasPositions
 } from 'store/thunks';
 import { RenderNodeMap, Search } from 'store/flowContext';
-import { DownIcon } from 'pureIcons/DownIcon';
-import { UpIcon } from 'pureIcons/UpIcon';
 import i18n from 'config/i18n';
-import { CloseIcon } from 'pureIcons/CloseIcon';
+import Button, { ButtonTypes } from 'components/button/Button';
 
 const UnnnicInput = applyVueInReact(unnnicInput, {
   vue: {
     componentWrapAttrs: {
       'unnnic-input': 'true'
-    }
-  }
-});
-const UnnnicButton = applyVueInReact(unnnicButton, {
-  vue: {
-    componentWrapAttrs: {
-      'unnnic-button': 'true'
     }
   }
 });
@@ -142,44 +133,31 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           className={styles.input}
           placeholder="..."
         />
-        <UnnnicButton
+        <Button
+          name={''}
+          onClick={() => this.toggleMoveSelected('down')}
+          type={ButtonTypes.ghost}
+          iconName="arrow-button-down-1"
           size="small"
-          className={styles.button}
-          text=""
-          type="secondary"
-          on={{ click: () => this.toggleMoveSelected('down') }}
-        >
-          <div className={styles.icon}>
-            <DownIcon disabled={this.props.search.selected === this.props.search.nodes.length} />
-          </div>
-        </UnnnicButton>
-        <UnnnicButton
+        />
+        <Button
+          name={''}
+          onClick={() => this.toggleMoveSelected('up')}
+          type={ButtonTypes.ghost}
+          iconName="arrow-button-up-1"
           size="small"
-          className={styles.button}
-          text=""
-          type="secondary"
-          on={{ click: () => this.toggleMoveSelected('up') }}
-        >
-          <div className={styles.icon}>
-            <UpIcon disabled={this.props.search.selected === 0} />
-          </div>
-        </UnnnicButton>
+        />
         <span className={styles.number}>
           {this.props.search.selected + 1}/{this.props.search.nodes.length}
         </span>
-        <button onClick={() => this.closeSearch()} className={styles.close}>
-          <div className={styles.icon}>
-            <CloseIcon />
-          </div>
-        </button>
-        {/* <UnnnicButton
-          iconLeft="close-1"
+        <Button
+          name={''}
+          onClick={() => this.closeSearch()}
+          type={ButtonTypes.ghost}
+          iconName="close-1"
           size="small"
-          className={styles.close}
-          text=""
-          type="secondary"
-          on={{ click: () => this.closeSearch() }}
-        /> */}
+          leftSpacing={true}
+        />
       </div>
     );
   }
