@@ -352,7 +352,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
       const productSearch = getByTestId('Enter an expression to be used as input');
       const searchUrl = getByTestId('Custom Search URL');
-      const sellerId = getByTestId('Seller ID (optional)');
+      const postalCode = getByTestId('Postal Code (optional)');
       const header = getByTestId('Header');
       const body = getByTestId('Body');
       const footer = getByTestId('Footer (optional)');
@@ -374,7 +374,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
       // still requires header, body and action
       await act(async () => {
-        fireUnnnicInputChangeText(sellerId, 'seller123');
+        fireUnnnicInputChangeText(postalCode, 'cep123');
       });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();

@@ -84,7 +84,7 @@ export interface SendWhatsAppProductRouterFormState extends FormState {
   sendCatalog: boolean;
   searchType: ProductSearchType;
   searchUrl: StringEntry;
-  sellerId: StringEntry;
+  postalCode: StringEntry;
   products: FormEntry;
   productSearch: StringEntry;
   showProductViewSettings?: boolean;
@@ -97,7 +97,7 @@ interface UpdateKeys {
   sendCatalog?: boolean;
   searchType?: ProductSearchType;
   searchUrl?: string;
-  sellerId?: string;
+  postalCode?: string;
   productSearch?: string;
   products?: WhatsAppProduct[];
   productViewSettings?: ProductViewSettings;
@@ -148,8 +148,12 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
       );
     }
 
-    if (keys.hasOwnProperty('sellerId')) {
-      updates.sellerId = validate(i18n.t('forms.seller_id', 'Seller ID'), keys.sellerId, []);
+    if (keys.hasOwnProperty('postalCode')) {
+      updates.postalCode = validate(
+        i18n.t('forms.postal_code', 'Postal Code'),
+        keys.postalCode,
+        []
+      );
     }
 
     if (keys.hasOwnProperty('productSearch')) {
@@ -258,8 +262,8 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
     return this.handleUpdate({ productSearch }, submitting);
   }
 
-  public handleSellerIdChange(sellerId: string, name: string, submitting = false): boolean {
-    return this.handleUpdate({ sellerId }, submitting);
+  public handlePostalCodeChange(postalCode: string, name: string, submitting = false): boolean {
+    return this.handleUpdate({ postalCode }, submitting);
   }
 
   private handleProductsChanged(products: any[]) {
@@ -550,12 +554,12 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
               />
             </div>
 
-            <div className={`${styles.seller_id}`}>
+            <div className={`${styles.postal_code}`}>
               <TextInputElement
-                name={i18n.t('forms.seller_id', 'Seller ID (optional)')}
-                placeholder={i18n.t('forms.ex_results', 'Ex: @results.seller_id')}
-                onChange={this.handleSellerIdChange}
-                entry={this.state.sellerId}
+                name={i18n.t('forms.postal_code', 'Postal Code (optional)')}
+                placeholder={i18n.t('forms.ex_results', 'Ex: @results.postal_code')}
+                onChange={this.handlePostalCodeChange}
+                entry={this.state.postalCode}
                 showLabel
                 autocomplete
                 size={TextInputSizes.sm}
