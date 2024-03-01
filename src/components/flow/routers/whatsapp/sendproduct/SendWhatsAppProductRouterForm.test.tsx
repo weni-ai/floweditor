@@ -36,6 +36,7 @@ function getProps(automatic = false) {
     ProductSearchType.Default,
     '',
     '',
+    '',
     ''
   );
 
