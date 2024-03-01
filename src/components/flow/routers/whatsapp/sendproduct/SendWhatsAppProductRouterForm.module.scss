@@ -70,14 +70,20 @@
 
   .vtex_fields {
     display: flex;
+    flex-direction: column;
     gap: $unnnic-spacing-sm;
 
     .search_url {
       flex: 5;
     }
 
-    .postal_code {
-      flex: 2;
+    .optional {
+      display: flex;
+      gap: $unnnic-spacing-sm;
+      
+      .postal_code, .seller_id {
+        flex: 1;
+      }
     }
   }
 }

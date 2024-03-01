@@ -84,6 +84,7 @@ export interface SendWhatsAppProductRouterFormState extends FormState {
   sendCatalog: boolean;
   searchType: ProductSearchType;
   searchUrl: StringEntry;
+  sellerId: StringEntry;
   postalCode: StringEntry;
   products: FormEntry;
   productSearch: StringEntry;
@@ -97,6 +98,7 @@ interface UpdateKeys {
   sendCatalog?: boolean;
   searchType?: ProductSearchType;
   searchUrl?: string;
+  sellerId?: string;
   postalCode?: string;
   productSearch?: string;
   products?: WhatsAppProduct[];
@@ -146,6 +148,10 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           ValidURL
         ]
       );
+    }
+
+    if (keys.hasOwnProperty('sellerId')) {
+      updates.sellerId = validate(i18n.t('forms.seller_id', 'Seller ID'), keys.sellerId, []);
     }
 
     if (keys.hasOwnProperty('postalCode')) {
@@ -260,6 +266,10 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
     submitting = false
   ): boolean {
     return this.handleUpdate({ productSearch }, submitting);
+  }
+
+  public handleSellerIdChange(sellerId: string, name: string, submitting = false): boolean {
+    return this.handleUpdate({ sellerId }, submitting);
   }
 
   public handlePostalCodeChange(postalCode: string, name: string, submitting = false): boolean {
@@ -398,7 +408,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
 
             <UnnnicIcon
               icon={
-                this.state.showProductViewSettings ? 'arrow-button-down-1' : 'arrow-button-right-1'
+                this.state.showProductViewSettings ? 'arrow-button-right-1' : 'arrow-button-down-1'
               }
               size="xs"
               scheme="neutral-cleanest"
@@ -503,7 +513,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
   private renderAutomaticProductSearchForm() {
     return (
       <>
-        <div className={`${styles.search_type_radio}`}>
+        <div className={styles.search_type_radio}>
           <UnnnicRadio
             $model={{
               value: String(this.state.searchType),
@@ -541,8 +551,8 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
         />
 
         {this.state.searchType === ProductSearchType.Vtex ? (
-          <div className={`${styles.vtex_fields}`}>
-            <div className={`${styles.search_url}`}>
+          <div className={styles.vtex_fields}>
+            <div className={styles.search_url}>
               <TextInputElement
                 name={i18n.t('forms.custom_search', 'Custom Search URL')}
                 placeholder={i18n.t('forms.custom_search_api_url', 'Custom Search API URL')}
@@ -554,16 +564,30 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
               />
             </div>
 
-            <div className={`${styles.postal_code}`}>
-              <TextInputElement
-                name={i18n.t('forms.postal_code', 'Postal Code (optional)')}
-                placeholder={i18n.t('forms.ex_results', 'Ex: @results.postal_code')}
-                onChange={this.handlePostalCodeChange}
-                entry={this.state.postalCode}
-                showLabel
-                autocomplete
-                size={TextInputSizes.sm}
-              />
+            <div className={styles.optional}>
+              <div className={styles.seller_id}>
+                <TextInputElement
+                  name={i18n.t('forms.seller_id', 'Seller ID (optional)')}
+                  placeholder={i18n.t('forms.ex_results', 'Ex: @results.seller_id')}
+                  onChange={this.handleSellerIdChange}
+                  entry={this.state.sellerId}
+                  showLabel
+                  autocomplete
+                  size={TextInputSizes.sm}
+                />
+              </div>
+
+              <div className={styles.postal_code}>
+                <TextInputElement
+                  name={i18n.t('forms.postal_code', 'Postal Code (optional)')}
+                  placeholder={i18n.t('forms.ex_results', 'Ex: @results.postal_code')}
+                  onChange={this.handlePostalCodeChange}
+                  entry={this.state.postalCode}
+                  showLabel
+                  autocomplete
+                  size={TextInputSizes.sm}
+                />
+              </div>
             </div>
           </div>
         ) : null}

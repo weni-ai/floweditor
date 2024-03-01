@@ -352,6 +352,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
       const productSearch = getByTestId('Enter an expression to be used as input');
       const searchUrl = getByTestId('Custom Search URL');
+      const sellerId = getByTestId('Seller ID (optional)');
       const postalCode = getByTestId('Postal Code (optional)');
       const header = getByTestId('Header');
       const body = getByTestId('Body');
@@ -368,6 +369,13 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       // still requires header, body and action
       await act(async () => {
         fireUnnnicInputChangeText(searchUrl, 'https://weni.ai');
+      });
+      fireEvent.click(okButton);
+      expect(props.updateRouter).not.toBeCalled();
+
+      // still requires header, body and action
+      await act(async () => {
+        fireUnnnicInputChangeText(sellerId, 'seller123');
       });
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
