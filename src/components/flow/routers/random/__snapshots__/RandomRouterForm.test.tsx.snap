@@ -1000,7 +1000,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-2d9f2cbf=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
@@ -1008,7 +1008,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-2d9f2cbf=""
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -1021,7 +1021,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-2d9f2cbf=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
@@ -1029,7 +1029,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-2d9f2cbf=""
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -1766,7 +1766,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-2d9f2cbf=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
@@ -1774,7 +1774,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-2d9f2cbf=""
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -1787,7 +1787,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-2d9f2cbf=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
@@ -1795,7 +1795,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-2d9f2cbf=""
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>

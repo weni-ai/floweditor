@@ -155,7 +155,7 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-2d9f2cbf=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
@@ -163,7 +163,7 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-2d9f2cbf=""
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -176,7 +176,7 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-2d9f2cbf=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
@@ -184,7 +184,7 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-2d9f2cbf=""
+                    data-v-3b3aa28c=""
                   >
                      Ok 
                   </span>
@@ -352,7 +352,7 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-2d9f2cbf=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
@@ -360,7 +360,7 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-2d9f2cbf=""
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -373,7 +373,7 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-2d9f2cbf=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
@@ -381,7 +381,7 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-2d9f2cbf=""
+                    data-v-3b3aa28c=""
                   >
                      Ok 
                   </span>
