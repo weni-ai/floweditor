@@ -74,6 +74,14 @@
     }
 }
 
+.remove-grayscale::after{
+    filter: none; /* grayscale filter */
+}
+
+.grayscale::after{
+    filter: grayscale(1);
+}
+
 :global .input[data-v-97b44e8c]{
     outline-style: none;
 }

@@ -16,6 +16,7 @@ import { RenderNodeMap, Search } from 'store/flowContext';
 import i18n from 'config/i18n';
 import Button, { ButtonTypes } from 'components/button/Button';
 import TextInputElement from 'components/form/textinput/TextInputElement';
+import { forEach } from 'core-js/core/array';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -81,14 +82,26 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
 
   private dragBackground() {
     const canvasBg = document.getElementById('panzoom');
-    if (this.props.search.nodes[this.props.search.selected]) {
+    if (this.props.search.nodes[this.props.search.selected] && canvasBg) {
+      const uuid = this.props.search.nodes[this.props.search.selected].uuid;
       const ui = this.props.search.nodes[this.props.search.selected].data.ui.position;
       const width = window.innerWidth / 2;
       const height = window.innerHeight / 2;
-      if (canvasBg) {
-        canvasBg.style.transform = `matrix(1, 0, 0, 1, ${width - ui.left}, ${height - ui.top})`;
-      }
+      canvasBg.style.transform = `matrix(1, 0, 0, 1, ${width - ui.left}, ${height - ui.top})`;
+      this.applyFilter(uuid);
     }
+  }
+
+  private applyFilter(uuid: string) {
+    this.props.search.nodes.forEach(item => {
+      const node = document.getElementById(item.uuid);
+      if (node) {
+        node.style.filter = 'none';
+        if (item.uuid != uuid && uuid != 'remove') {
+          node.style.filter = 'grayscale(1)';
+        }
+      }
+    });
   }
 
   private toggleMoveSelected(type: 'up' | 'down') {
@@ -127,6 +140,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       nodes: this.props.search.nodes,
       selected: 0
     });
+    this.applyFilter('remove');
   }
 
   public render(): JSX.Element {
