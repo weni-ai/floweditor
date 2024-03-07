@@ -51,24 +51,12 @@ import { PopTabType } from 'config/interfaces';
 import styles from './Flow.module.scss';
 import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
-import { unnnicModalNext, unnnicButtonNext } from '@weni/unnnic-system';
+import { unnnicModal, unnnicButton } from '@weni/unnnic-system';
 import { WeniLoveIcon } from './WeniLoveIcon';
 import i18n from '../../config/i18n';
 import SearchBar from 'components/search/SearchBar';
 
-const UnnnicButton = applyVueInReact(unnnicButtonNext, {
-  vue: {
-    componentWrap: 'div',
-    slotWrap: 'div',
-    componentWrapAttrs: {
-      style: {
-        all: ''
-      }
-    }
-  }
-});
-
-const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
+const UnnnicModal = applyVueInReact(unnnicModal, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -77,6 +65,29 @@ const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
         all: '',
         position: 'relative',
         zIndex: 10e2
+      }
+    }
+  },
+  react: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      __use_react_component_wrap: '',
+      style: {
+        all: ''
+      }
+    }
+  }
+});
+
+const UnnnicButton = applyVueInReact(unnnicButton, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        display: 'flex',
+        flex: 1
       }
     }
   }
@@ -446,7 +457,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     }
 
     ReactDOM.render(
-      <UnnnicModalNext className={styles.new_updates}>
+      <UnnnicModal className={styles.new_updates} closeIcon={false}>
         <div className={styles.content}>
           <WeniLoveIcon />
           <span className={styles.title}>{i18n.t('new_updates.title', 'News in the area!')}</span>
@@ -492,7 +503,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
         <div className={styles.buttons}>
           <UnnnicButton
-            type="ghost"
+            type="tertiary"
             text={i18n.t('new_updates.buttons.first', 'Close')}
             onClick={() => {
               ReactDOM.unmountComponentAtNode(newUpdatesModalEl);
@@ -508,7 +519,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
             }}
           />
         </div>
-      </UnnnicModalNext>,
+      </UnnnicModal>,
       newUpdatesModalEl
     );
   }

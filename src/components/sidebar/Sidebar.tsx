@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom';
 import { fakePropType } from 'config/ConfigProvider';
 import * as React from 'react';
 import { connect } from 'react-redux';
@@ -20,25 +19,11 @@ import i18n from 'config/i18n';
 import { applyVueInReact } from 'vuereact-combined';
 import styles from './Sidebar.module.scss';
 // @ts-ignore
-import { unnnicModalNext, unnnicToolTip } from '@weni/unnnic-system';
+import { unnnicToolTip } from '@weni/unnnic-system';
 import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 import { MouseState } from 'store/editor';
 
 const UnnnicTooltip = applyVueInReact(unnnicToolTip);
-
-const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
-  vue: {
-    componentWrap: 'div',
-    slotWrap: 'div',
-    componentWrapAttrs: {
-      style: {
-        all: '',
-        position: 'relative',
-        zIndex: 10e2
-      }
-    }
-  }
-});
 
 export interface SidebarStoreProps {
   onCopyClick: () => void;
@@ -78,49 +63,6 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
     const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
 
     this.props.onCreateNode(emptyNode);
-  }
-
-  public componentDidMount(): void {
-    if (Object.keys(this.props.nodes).length === 0) {
-      // this.showGetStartedModal();
-    }
-  }
-
-  private showGetStartedModal(): void {
-    let getStartedModalEl: HTMLDivElement = document.querySelector('#get-started-modal');
-
-    if (!getStartedModalEl) {
-      getStartedModalEl = document.createElement('div');
-      getStartedModalEl.setAttribute('id', 'get-started-modal');
-      document.body.appendChild(getStartedModalEl);
-    }
-
-    if (getStartedModalEl.hasChildNodes()) {
-      return;
-    }
-
-    ReactDOM.render(
-      <UnnnicModalNext
-        type="alert"
-        scheme="feedback-yellow"
-        title={i18n.t('empty_flow_message_title')}
-        description={i18n.t('empty_flow_message_description')}
-        actionPrimaryLabel={i18n.t('buttons.create_message')}
-        actionPrimaryButtonType="secondary"
-        on={{
-          'click-action-primary': () => {
-            this.createSendMessageNode();
-
-            ReactDOM.unmountComponentAtNode(getStartedModalEl);
-          },
-          'click-action-secondary': () => {
-            ReactDOM.unmountComponentAtNode(getStartedModalEl);
-          }
-        }}
-        actionSecondaryLabel={i18n.t('buttons.later')}
-      />,
-      getStartedModalEl
-    );
   }
 
   private getCopyTooltip(): string {

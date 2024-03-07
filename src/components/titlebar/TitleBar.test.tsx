@@ -1,11 +1,10 @@
 import TitleBar, {
-  confirmRemovalSpecId,
   moveIconSpecId,
   removeIconSpecId,
   TitleBarProps
 } from 'components/titlebar/TitleBar';
 import React from 'react';
-import { fireEvent, render } from 'test/utils';
+import { act, fireEvent, render } from 'test/utils';
 
 const baseProps: TitleBarProps = {
   title: 'Send Message',
@@ -53,7 +52,7 @@ describe(TitleBar.name, () => {
     });
 
     describe('confirmation', () => {
-      it('should render confirmation markup and call onRemoval prop', () => {
+      it('should render confirmation markup and call onRemoval prop', async () => {
         const handleRemoveClicked = jest.fn();
         const { baseElement, getByTestId, getByText } = render(
           <TitleBar
@@ -66,7 +65,9 @@ describe(TitleBar.name, () => {
 
         expect(baseElement).toMatchSnapshot();
 
-        fireEvent.mouseUp(getByTestId(removeIconSpecId));
+        await act(async () => {
+          fireEvent.mouseUp(getByTestId(removeIconSpecId));
+        });
         fireEvent.click(getByText('Confirm'));
         expect(handleRemoveClicked).toHaveBeenCalledTimes(1);
       });
