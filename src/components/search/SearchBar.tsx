@@ -16,7 +16,6 @@ import { RenderNodeMap, Search } from 'store/flowContext';
 import i18n from 'config/i18n';
 import Button, { ButtonTypes } from 'components/button/Button';
 import TextInputElement from 'components/form/textinput/TextInputElement';
-import { forEach } from 'core-js/core/array';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -97,7 +96,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       const node = document.getElementById(item.uuid);
       if (node) {
         node.style.filter = 'none';
-        if (item.uuid != uuid && uuid != 'remove') {
+        if (item.uuid !== uuid && uuid !== 'remove') {
           node.style.filter = 'grayscale(1)';
         }
       }
