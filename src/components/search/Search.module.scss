@@ -9,7 +9,7 @@
     position: fixed;
     z-index: 99;
     top: 135px;
-    left: 439px;
+    left: calc(50vw - 200px);
     border: solid 1px #e2e6ed;
     border-radius: 4px;
     background-color: rgb(255,255,255);
@@ -17,35 +17,42 @@
     font-size: $unnnic-font-size-body-md;
     font-weight: $unnnic-font-weight-regular;
     color: $unnnic-color-neutral-dark;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
     
     .input{
         display: flex;
-        width: 248px;
+        width: 220px;
     }
     
     .number{
         background-color: rgb(255,255,255);
         padding-left: 8px ;
     }
-    
-    .button{
-        display: flex;
-        width: 20px;
-        height: 100%;
-        align-items: center;
-        border: none;
-        background-color: rgb(255,255,255);
-        cursor: pointer;
-    }
 
-    .button:hover{
-        background-color: $unnnic-color-neutral-lightest;
+    .buttons{
+        display: flex;
+        gap: 10px;
+
+        .button{
+            width: 20px;
+            height: 100%;
+            align-items: center;
+            border: none;
+            background-color: rgb(255,255,255);
+            cursor: pointer;
+        }
+    
+        .button:hover{
+            background-color: $unnnic-color-neutral-lightest;
+        }
     }
+    
 
     .icon{
         display: flex;
         height: 100%;
         align-items: center;
+        margin: 16px;
     }
 
     .close{

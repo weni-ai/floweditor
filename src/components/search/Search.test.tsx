@@ -183,13 +183,6 @@ describe(SearchBar.name, () => {
     const { baseElement } = render(<SearchBar {...baseProps} />);
     expect(baseElement).toMatchSnapshot();
   });
-  describe('handleInput()', () => {
-    it('should call handleInput', () => {
-      const { getByPlaceholderText } = render(<SearchBar {...baseProps} />);
-      const input = getByPlaceholderText('...');
-      expect(input).toBeTruthy();
-    });
-  });
   describe('getAllNodes()', () => {
     it('should call getAllNodes', () => {
       const { instance } = setup(true);

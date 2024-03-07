@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from './Search.module.scss';
 // @ts-ignore
-import { unnnicInput } from '@weni/unnnic-system';
+import { unnnicIcon } from '@weni/unnnic-system';
 import { applyVueInReact } from 'vuereact-combined';
 import AppState from 'store/state';
 import { connect } from 'react-redux';
@@ -15,11 +15,24 @@ import {
 import { RenderNodeMap, Search } from 'store/flowContext';
 import i18n from 'config/i18n';
 import Button, { ButtonTypes } from 'components/button/Button';
+import TextInputElement from 'components/form/textinput/TextInputElement';
 
-const UnnnicInput = applyVueInReact(unnnicInput, {
+// const UnnnicInput = applyVueInReact(unnnicInput, {
+//   vue: {
+//     componentWrapAttrs: {
+//       'unnnic-input': 'true'
+//     }
+//   }
+// });
+const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
     componentWrapAttrs: {
-      'unnnic-input': 'true'
+      style: {
+        all: '',
+        display: 'inline-block'
+      }
     }
   }
 });
@@ -126,27 +139,39 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   public render(): JSX.Element {
     return (
       <div className={styles.search_card}>
-        <UnnnicInput
-          iconLeft="search-1"
-          value={this.props.search.value}
-          on={{ input: (value: string) => this.handleInput(value) }}
-          className={styles.input}
-          placeholder="..."
-        />
-        <Button
-          name={''}
-          onClick={() => this.toggleMoveSelected('down')}
-          type={ButtonTypes.ghost}
-          iconName="arrow-button-down-1"
-          size="small"
-        />
-        <Button
-          name={''}
-          onClick={() => this.toggleMoveSelected('up')}
-          type={ButtonTypes.ghost}
-          iconName="arrow-button-up-1"
-          size="small"
-        />
+        <div className={styles.icon}>
+          <UnnnicIcon icon="search-1" size="avatar-nano" scheme="neutral-dark" />
+        </div>
+
+        <div className={styles.input}>
+          <TextInputElement
+            name={''}
+            placeholder={''}
+            entry={{ value: this.props.search.value }}
+            onChange={value => this.handleInput(value)}
+            autocomplete={true}
+          />
+        </div>
+        <div className={styles.buttons}>
+          <div className={styles.button}>
+            <Button
+              name={''}
+              onClick={() => this.toggleMoveSelected('down')}
+              type={ButtonTypes.ghost}
+              iconName="arrow-button-down-1"
+              size="small"
+            />
+          </div>
+          <div>
+            <Button
+              name={''}
+              onClick={() => this.toggleMoveSelected('up')}
+              type={ButtonTypes.ghost}
+              iconName="arrow-button-up-1"
+              size="small"
+            />
+          </div>
+        </div>
         <span className={styles.number}>
           {this.props.search.selected + 1}/{this.props.search.nodes.length}
         </span>
