@@ -17,13 +17,6 @@ import i18n from 'config/i18n';
 import Button, { ButtonTypes } from 'components/button/Button';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 
-// const UnnnicInput = applyVueInReact(unnnicInput, {
-//   vue: {
-//     componentWrapAttrs: {
-//       'unnnic-input': 'true'
-//     }
-//   }
-// });
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
     componentWrap: 'div',

@@ -39,7 +39,9 @@ import {
   UpdateNodesEditor,
   updateNodesEditor,
   updateSticky,
-  UpdateSticky
+  UpdateSticky,
+  handleSearchChange,
+  HandleSearchChange
 } from 'store/thunks';
 import { createUUID, isRealValue, NODE_PADDING, renderIf, timeEnd, timeStart } from 'utils';
 import Debug from 'utils/debug';
@@ -109,6 +111,7 @@ export interface FlowStoreProps {
   updateSticky: UpdateSticky;
 
   updateNodesEditor?: UpdateNodesEditor;
+  handleSearchChange: HandleSearchChange;
 }
 
 export interface Translations {
@@ -554,6 +557,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           onZoom={this.handleZoom}
           mouseState={this.props.mouseState}
           onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
+          handleSearchChange={value => this.props.handleSearchChange(value)}
         ></Canvas>
         <div id="activity_recent_messages"></div>
       </>
@@ -593,7 +597,8 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
       onRemoveNodes,
       updateConnection,
       updateSticky,
-      updateNodesEditor
+      updateNodesEditor,
+      handleSearchChange
     },
     dispatch
   );

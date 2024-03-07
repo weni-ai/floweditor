@@ -10,7 +10,7 @@ import React from 'react';
 import i18n from 'config/i18n';
 import { CanvasPositions, DragSelection, MouseState } from 'store/editor';
 import { addPosition } from 'store/helpers';
-import { MergeEditorState } from 'store/thunks';
+import { HandleSearchChange, MergeEditorState } from 'store/thunks';
 import { COLLISION_FUDGE, getOS, throttle } from 'utils';
 
 import styles from './Canvas.module.scss';
@@ -55,6 +55,7 @@ export interface CanvasProps {
   mergeEditorState: MergeEditorState;
   nodes: any;
   updateNodesEditor: any;
+  handleSearchChange?: HandleSearchChange;
 }
 
 interface CanvasState {
@@ -265,8 +266,6 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
             nodesPositions[uuid] = node.ui.position;
           }
         });
-
-        console.log(nodesPositions);
         this.props.onUpdatePositions(nodesPositions);
       }
     });
@@ -439,6 +438,16 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       event.preventDefault();
       event.stopPropagation();
       this.moveToStart();
+    }
+
+    if (event.key === 'f' && event.ctrlKey) {
+      console.log('oi');
+      this.props.handleSearchChange({
+        active: true,
+        nodes: [],
+        value: null,
+        selected: 0
+      });
     }
   }
 
