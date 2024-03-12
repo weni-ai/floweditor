@@ -84,33 +84,10 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     this.props.search.nodes.forEach(item => {
       const node = document.getElementById(item.uuid);
       if (node) node.style.filter = 'none';
-      this.removeFilter(uuid);
-      var overlay = document.createElement('div');
-      overlay.style.position = 'absolute';
-      overlay.style.top = '0';
-      overlay.style.left = '0';
-      overlay.style.width = '100%';
-      overlay.style.height = '100%';
-      overlay.style.borderRadius = '8px;';
-      overlay.style.backgroundColor = 'rgba(208, 211, 217, 0.4)';
-      overlay.style.zIndex = '1';
-      if (item.uuid !== uuid && uuid !== 'remove') {
-        overlay.id = `overlay-${item.uuid}`;
-        node.style.filter = 'grayscale(1)';
-        node.appendChild(overlay);
+      if (item.uuid !== uuid && node) {
+        node.style.filter = 'opacity(.4)';
       }
     });
-  }
-
-  private removeFilter(uuid: string) {
-    do {
-      var existingOverlay = document.getElementById(`overlay-${uuid}`);
-      if (existingOverlay) {
-        var parent = existingOverlay.parentElement;
-        parent.removeChild(existingOverlay);
-        console.log('overlay no node ', uuid, ' removido');
-      }
-    } while (existingOverlay);
   }
 
   private toggleMoveSelected(type: 'up' | 'down') {
