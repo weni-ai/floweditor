@@ -60,19 +60,8 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     return nodes.filter(item => {
       const nodeItem: any = item.data.node.actions;
       if (nodeItem.length > 0) {
-        //find by type
-        const foundTitle = i18n
-          .t(`actions.${nodeItem[0].type}.name`)
-          .toLocaleLowerCase()
-          .includes(value.toLocaleLowerCase());
-        //find by content
-        const foundContent = nodeItem[0].hasOwnProperty('text')
-          ? item.data.node.actions[0].text.includes(value)
-          : nodeItem[0].hasOwnProperty('result_name')
-          ? item.data.node.actions[0].result_name.includes(value)
-          : false;
-
-        return foundTitle || foundContent;
+        const selectedNode = document.getElementById(item.uuid);
+        return selectedNode ? selectedNode.innerText.includes(value) : false;
       } else {
         return false;
       }
@@ -94,13 +83,34 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   private applyFilter(uuid: string) {
     this.props.search.nodes.forEach(item => {
       const node = document.getElementById(item.uuid);
-      if (node) {
-        node.style.filter = 'none';
-        if (item.uuid !== uuid && uuid !== 'remove') {
-          node.style.filter = 'grayscale(1)';
-        }
+      if (node) node.style.filter = 'none';
+      this.removeFilter(uuid);
+      var overlay = document.createElement('div');
+      overlay.style.position = 'absolute';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.borderRadius = '8px;';
+      overlay.style.backgroundColor = 'rgba(208, 211, 217, 0.4)';
+      overlay.style.zIndex = '1';
+      if (item.uuid !== uuid && uuid !== 'remove') {
+        overlay.id = `overlay-${item.uuid}`;
+        node.style.filter = 'grayscale(1)';
+        node.appendChild(overlay);
       }
     });
+  }
+
+  private removeFilter(uuid: string) {
+    do {
+      var existingOverlay = document.getElementById(`overlay-${uuid}`);
+      if (existingOverlay) {
+        var parent = existingOverlay.parentElement;
+        parent.removeChild(existingOverlay);
+        console.log('overlay no node ', uuid, ' removido');
+      }
+    } while (existingOverlay);
   }
 
   private toggleMoveSelected(type: 'up' | 'down') {

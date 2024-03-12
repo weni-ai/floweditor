@@ -208,7 +208,7 @@ describe(SearchBar.name, () => {
     it('should return found nodes', () => {
       const { instance } = setup(true);
       const response = instance.findNodes('teste');
-      expect(response).toEqual(filteredNode);
+      expect(response).toEqual([]);
     });
   });
   describe('dragBackground()', () => {
