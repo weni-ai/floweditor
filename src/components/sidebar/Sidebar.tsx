@@ -165,7 +165,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             text={this.getCopyTooltip()}
             enabled={this.props.guidingStep !== 1}
             side="right"
-            shortcutText={this.props.selectionActive ? 'Ctrl C' : null}
+            shortcutText={this.props.selectionActive ? 'Ctrl C | Cmd C' : null}
           >
             <div
               className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
@@ -183,14 +183,15 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
           guide="v2"
           step={2}
           title={'Search term'}
-          description={'Search'}
-          buttonText={'Search'}
+          description={i18n.t('search_in_nodes')}
+          buttonText={i18n.t('search_in_nodes')}
         >
           <UnnnicTooltip
             className={styles.left_aligned}
-            text={'Search'}
+            text={i18n.t('search_in_nodes')}
+            enabled={this.props.guidingStep !== 2}
             side="right"
-            shortcutText={this.props.selectionActive ? 'Ctrl C' : null}
+            shortcutText={'Ctrl F | Cmd F'}
           >
             <div className={styles.option} onClick={() => this.handleSearchChanged()}>
               <span className="material-symbols-rounded">search</span>

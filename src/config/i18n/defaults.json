@@ -176,6 +176,7 @@
     "show_empty": "Showing all keys"
   },
   "create_block": "Create block",
+  "search_in_nodes": "Search block",
   "create_label": "Create label",
   "disabled_copy_tooltip": "Select one or more blocks to copy",
   "copy_tooltip": "Copy block(s)",

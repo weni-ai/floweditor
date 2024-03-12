@@ -189,6 +189,7 @@
     "show_empty": "Mostrando todas as chaves"
   },
   "create_block": "Criar bloco",
+  "search_in_nodes": "Buscar bloco",
   "create_label": "Criar etiqueta",
   "disabled_copy_tooltip": "Selecione um ou mais blocos para copiar",
   "copy_tooltip": "Copiar bloco(s)",
