@@ -440,12 +440,11 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       this.moveToStart();
     }
 
-    if (event.key === 'f' && event.ctrlKey) {
-      console.log('oi');
+    if (event.key === 'f' && (event.ctrlKey || event.metaKey)) {
       this.props.handleSearchChange({
         active: true,
         nodes: [],
-        value: null,
+        value: '',
         selected: 0
       });
     }

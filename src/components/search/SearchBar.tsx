@@ -81,10 +81,13 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   }
 
   private applyFilter(uuid: string) {
-    this.props.search.nodes.forEach(item => {
+    const allNodes = this.getAllNodes();
+    allNodes.forEach(item => {
       const node = document.getElementById(item.uuid);
       if (node) node.style.filter = 'none';
-      if (item.uuid !== uuid && node) {
+      console.log(item.uuid);
+      if (item.uuid !== uuid && node && uuid !== 'remove') {
+        console.log('entrou');
         node.style.filter = 'opacity(.4)';
       }
     });
@@ -153,6 +156,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
               type={ButtonTypes.ghost}
               iconName="arrow-button-down-1"
               size="small"
+              disabled={!this.props.search.value.length}
             />
           </div>
           <div>
@@ -162,11 +166,18 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
               type={ButtonTypes.ghost}
               iconName="arrow-button-up-1"
               size="small"
+              disabled={!this.props.search.value.length}
             />
           </div>
         </div>
         <span className={styles.number}>
-          {this.props.search.selected + 1}/{this.props.search.nodes.length}
+          {this.props.search.value.length && this.props.search.nodes.length ? (
+            <>
+              {this.props.search.selected + 1}/{this.props.search.nodes.length}
+            </>
+          ) : (
+            <>0/0</>
+          )}
         </span>
         <Button
           name={''}
