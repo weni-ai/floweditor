@@ -10,7 +10,6 @@
     z-index: 99;
     top: 135px;
     left: calc(50vw - 200px);
-    border: solid 1px #e2e6ed;
     border-radius: 4px;
     background-color: rgb(255,255,255);
     font-family: $unnnic-font-family-secondary, sans-serif;
@@ -26,7 +25,7 @@
     
     .number{
         background-color: rgb(255,255,255);
-        padding-left: 8px ;
+        padding: 0px 8px ;
     }
 
     .buttons{
@@ -56,11 +55,9 @@
     }
 
     .close{
-        display: inline-flex;
+        display: flex;
         width: 32px;
         height: 32px;
-        padding: 4px;
-        margin-left: 18px;
         justify-content: center;
         align-items: center;
         gap: 10px;

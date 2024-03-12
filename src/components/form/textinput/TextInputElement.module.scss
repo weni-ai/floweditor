@@ -64,6 +64,7 @@
 }
 
 .textarea {
+  border: none;
   textarea {
     resize: none !important;
   }
@@ -184,7 +185,6 @@
   font-family: 'Roboto', sans-serif;
   font-size: 14px !important;
   font-weight: 300 !important;
-  border: 1px solid $light_gray;
   box-sizing: border-box !important;
   width: 100%;
   letter-spacing: 0.03em !important;
