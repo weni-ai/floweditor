@@ -71,10 +71,10 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
 }
 
 .zoom_control {
+  display: flex;
   position: fixed;
   bottom: $unnnic-spacing-giant;
   left: 36px; 
-  display: inline-flex;
   align-items: center;
 
   border-radius: $unnnic-border-radius-sm;
