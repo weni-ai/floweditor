@@ -71,12 +71,8 @@
     }
 }
 
-.remove-grayscale::after{
-    filter: none; /* grayscale filter */
-}
-
-.grayscale::after{
-    filter: grayscale(1);
+:global .Titlebar__filter{
+    background: $unnnic-color-neutral-cleanest !important;
 }
 
 :global .input[data-v-97b44e8c]{

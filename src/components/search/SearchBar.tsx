@@ -83,11 +83,15 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     const allNodes = this.getAllNodes();
     allNodes.forEach(item => {
       const node = document.getElementById(item.uuid);
-      if (node) node.style.filter = 'none';
-      console.log(item.uuid);
-      if (item.uuid !== uuid && node && uuid !== 'remove') {
-        console.log('entrou');
-        node.style.filter = 'opacity(.4)';
+      if (node) {
+        const titlebar = node.querySelector("[data-spec='titlebar'");
+        node.style.filter = 'none';
+        titlebar.classList.remove('Titlebar__filter');
+        if (item.uuid !== uuid && uuid !== 'remove') {
+          node.style.filter = 'opacity(.4)';
+          titlebar.classList.remove(null);
+          titlebar.classList.add('Titlebar__filter');
+        }
       }
     });
   }
