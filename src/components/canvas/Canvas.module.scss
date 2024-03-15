@@ -85,7 +85,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
 
   .zoom_tooltip {
     display: flex !important;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     gap: $unnnic-spacing-xs;
 
@@ -114,7 +114,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
     width: $unnnic-spacing-xl;
     height: $unnnic-spacing-xl;
     flex-direction: column;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     gap: $unnnic-spacing-xs;
     background: #FFF;
@@ -136,7 +136,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
 
   .start {
     display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     gap: $unnnic-spacing-nano;
     padding: $unnnic-spacing-xs;
