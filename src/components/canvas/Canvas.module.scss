@@ -84,12 +84,15 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   box-shadow: $unnnic-shadow-level-near;
 
   .zoom_tooltip {
-    display: inline-flex !important;
+    display: flex !important;
+    justify-items: center;
     align-items: center;
     gap: $unnnic-spacing-xs;
 
     :first-child {
-      display: inline-flex !important;
+      display: flex !important;
+      justify-items: center;
+      align-items: center;
     }
   }
 
@@ -111,7 +114,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
     width: $unnnic-spacing-xl;
     height: $unnnic-spacing-xl;
     flex-direction: column;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
     gap: $unnnic-spacing-xs;
     background: #FFF;
@@ -132,7 +135,9 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   }
 
   .start {
-    display: inline-flex;
+    display: flex;
+    justify-items: center;
+    align-items: center;
     gap: $unnnic-spacing-nano;
     padding: $unnnic-spacing-xs;
     box-sizing: content-box;
