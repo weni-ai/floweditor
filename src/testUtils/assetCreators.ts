@@ -54,6 +54,7 @@ import {
   HintTypes,
   CallClassifier,
   CallExternalService,
+  CallWeniGPT,
   SendWhatsAppProduct
 } from 'flowTypes';
 import Localization from 'services/Localization';
@@ -354,6 +355,24 @@ export const createSetRunResultAction = ({
   value,
   category,
   type: Types.set_run_result
+});
+
+export const createCallWeniGPTAction = ({
+  uuid = utils.createUUID(),
+  input = 'Hello',
+  knowledge_base = 1,
+  result_name = 'Result'
+}: {
+  uuid?: string;
+  input?: string;
+  knowledge_base?: number;
+  result_name?: string;
+} = {}): CallWeniGPT => ({
+  uuid: uuid,
+  type: Types.call_wenigpt,
+  input,
+  knowledge_base,
+  result_name
 });
 
 export const createWebhookNode = (

@@ -148,6 +148,10 @@
       "manual_sending_multiple": "+3 productos",
       "name": "Enviar producto por WhatsApp",
       "description": "Enviar un producto de WhatsApp"
+    },
+    "call_wenigpt": {
+      "name": "Llame a WeniGPT",
+      "description": "Llamar a WeniGPT"
     }
   },
   "add": "Añadir",
@@ -429,7 +433,8 @@
       "category_title": "Categorizar cómo",
       "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto.",
       "command_phrases_description": "Escribir frases de comando relacionadas con la categoría.",
-      "command_phrases_title": "Frases de comando"
+      "command_phrases_title": "Frases de comando",
+      "description_alert": "<0>Importante:</0>Edita tu proyecto, <2>agrega una descripción</2> y haz que la IA sea aún más poderosa."
     },
     "automatic_classify": {
       "words_title": "Palabras",
@@ -438,6 +443,13 @@
       "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto"
     },
     "category_required": "Categoría",
+    "knowledge_base": "Base de conocimientos",
+    "expression": "Expresión",
+    "knowledge_base_placeholder": "Seleccione una base de conocimientos",
+    "knowledge_base_message": "¿Aún no tienes ninguna base de conocimientos para tu IA?",
+    "knowledge_base_click": "Haga clic aquí",
+    "expression_input": "Insertar una expresión para usar como entrada",
+    "expression_input_placeholder": "Ej: @input.text",
     "ex_smart_argument": "Ej: cuando el usuario te saluda",
     "ex_smart_category": "Ej: Saludo",
     "search_and_send_products_automatically": "Buscar y enviar productos automáticamente",

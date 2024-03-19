@@ -278,6 +278,8 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   private loadPanZoom() {
     const canvas = document.getElementById('panzoom');
 
+    const canvasComponent = this;
+
     const panzoomInstance = panzoom(canvas, {
       maxZoom: 1,
       minZoom: 0.15,
@@ -296,6 +298,13 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         }
 
         return shouldIgnore;
+      },
+      filterKey: function(...args: any) {
+        const event = args[0];
+        if (event.target !== canvasComponent.ele) {
+          return true;
+        }
+        return false;
       },
       zoomDoubleClickSpeed: 1
     });

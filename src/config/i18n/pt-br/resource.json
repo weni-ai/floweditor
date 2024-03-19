@@ -148,6 +148,10 @@
       "manual_sending_multiple": "+3 produtos",
       "name": "Enviar produto pelo WhatsApp",
       "description": "Enviar um produto por WhatsApp"
+    },
+    "call_wenigpt": {
+      "name": "Consultar WeniGPT",
+      "description": "Consultar WeniGPT"
     }
   },
   "add": "Adicione",
@@ -430,7 +434,8 @@
       "category_title": "Categorize como",
       "category_description": "Defina a Categoria que deseja classificar a resposta do Contato.",
       "command_phrases_title": "Frases de comando",
-      "command_phrases_description": "Escreva frases de comando relacionadas com a categoria"
+      "command_phrases_description": "Escreva frases de comando relacionadas com a categoria",
+      "description_alert": "<0>Importante:</0>Edite seu projeto, <2>adicione uma descrição</2> e torne a IA ainda mais poderosa."
     },
     "automatic_classify": {
       "words_title": "Palavras",
@@ -439,6 +444,13 @@
       "category_description": "Defina a Categoria que deseja classificar a resposta do Contato"
     },
     "category_required": "Categoria",
+    "knowledge_base": "Base de conhecimento",
+    "expression": "Expressão",
+    "knowledge_base_placeholder": "Escolha uma base de conhecimento",
+    "knowledge_base_message": "Ainda não tem nenhuma base de conhecimento para sua IA?",
+    "knowledge_base_click": "Clique aqui",
+    "expression_input": "Insira uma expressão para usar como entrada",
+    "expression_input_placeholder": "Ex: @input.text",
     "ex_smart_argument": "Ex: quando o usuário cumprimenta você",
     "ex_smart_category": "Ex: Saudação",
     "search_and_send_products_automatically": "Buscar e enviar produtos automaticamente",

@@ -1,9 +1,10 @@
 import { KeyLocalizationFormState } from 'components/flow/actions/localization/KeyLocalizationForm';
 import { MsgLocalizationFormState } from 'components/flow/actions/localization/MsgLocalizationForm';
+import { WeniGPTLocalizationFormState } from 'components/flow/actions/localization/WeniGPTLocalizationForm';
 import { Types } from 'config/interfaces';
 import { getTypeConfig } from 'config/typeConfigs';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
-import { SendMsg, MsgTemplating, SayMsg } from 'flowTypes';
+import { SendMsg, MsgTemplating, SayMsg, CallWeniGPT } from 'flowTypes';
 import { Attachment } from '../sendmsg/attachments';
 
 export const initializeLocalizedKeyForm = (
@@ -93,6 +94,39 @@ export const initializeLocalizedForm = (settings: NodeEditorSettings): MsgLocali
               value: 'variables' in localized.localizedKeys ? value : ''
             };
           });
+          state.valid = true;
+        }
+      }
+    }
+  }
+  return state;
+};
+
+export const initializeWeniGPTLocalizedForm = (
+  settings: NodeEditorSettings
+): WeniGPTLocalizationFormState => {
+  const state: WeniGPTLocalizationFormState = {
+    expression: { value: '' },
+    valid: true
+  };
+
+  const weniGPTAction =
+    settings.originalNode.node.actions[settings.originalNode.node.actions.length - 1];
+
+  // check if our form should use a localized action
+  if (
+    weniGPTAction &&
+    weniGPTAction.type === Types.call_wenigpt &&
+    settings.localizations &&
+    settings.localizations.length > 0
+  ) {
+    for (const localized of settings.localizations) {
+      if (localized.isLocalized()) {
+        const localizedObject = localized.getObject() as any;
+
+        if (localizedObject.input) {
+          const action = localizedObject as CallWeniGPT;
+          state.expression.value = 'input' in localized.localizedKeys ? action.input : '';
           state.valid = true;
         }
       }

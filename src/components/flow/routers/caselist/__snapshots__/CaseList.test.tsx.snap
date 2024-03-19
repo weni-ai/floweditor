@@ -84,7 +84,7 @@ exports[`CaseList render should render empty list 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-59b073b4=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -439,7 +439,7 @@ exports[`CaseList render should render empty list 1`] = `
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                     data-passed-props="[object Object]"
                     data-testid="remove-case-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -553,7 +553,7 @@ exports[`CaseList render should render list of cases 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-59b073b4=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -908,7 +908,7 @@ exports[`CaseList render should render list of cases 1`] = `
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                     data-passed-props="[object Object]"
                     data-testid="remove-case-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -1006,7 +1006,7 @@ exports[`CaseList render should render list of cases 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-59b073b4=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -1361,7 +1361,7 @@ exports[`CaseList render should render list of cases 1`] = `
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                     data-passed-props="[object Object]"
                     data-testid="remove-case-061fc171-8b79-4636-b892-bd0ea5aa9b42"
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -1459,7 +1459,7 @@ exports[`CaseList render should render list of cases 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-59b073b4=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -1814,7 +1814,7 @@ exports[`CaseList render should render list of cases 1`] = `
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                     data-passed-props="[object Object]"
                     data-testid="remove-case-1e47a1e1-3c67-4df5-adf1-da542c789adb"
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -1928,7 +1928,7 @@ exports[`CaseList updates changes default operator on add 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-59b073b4=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -2283,7 +2283,7 @@ exports[`CaseList updates changes default operator on add 1`] = `
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                     data-passed-props="[object Object]"
                     data-testid="remove-case-132de855-4042-4dc1-a18f-cc2e6a8f790a"
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -2381,7 +2381,7 @@ exports[`CaseList updates changes default operator on add 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-59b073b4=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -2736,7 +2736,7 @@ exports[`CaseList updates changes default operator on add 1`] = `
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                     data-passed-props="[object Object]"
                     data-testid="remove-case-2dc85899-0577-4f1b-a620-f12094e34b5e"
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -2850,7 +2850,7 @@ exports[`CaseList updates should remove cases 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-59b073b4=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -3205,7 +3205,7 @@ exports[`CaseList updates should remove cases 1`] = `
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                     data-passed-props="[object Object]"
                     data-testid="remove-case-061fc171-8b79-4636-b892-bd0ea5aa9b42"
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -3303,7 +3303,7 @@ exports[`CaseList updates should remove cases 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-59b073b4=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -3658,7 +3658,7 @@ exports[`CaseList updates should remove cases 1`] = `
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                     data-passed-props="[object Object]"
                     data-testid="remove-case-1e47a1e1-3c67-4df5-adf1-da542c789adb"
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -3772,7 +3772,7 @@ exports[`CaseList updates should update cases 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-59b073b4=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -4127,7 +4127,7 @@ exports[`CaseList updates should update cases 1`] = `
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                     data-passed-props="[object Object]"
                     data-testid="remove-case-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -4225,7 +4225,7 @@ exports[`CaseList updates should update cases 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-59b073b4=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -4580,7 +4580,7 @@ exports[`CaseList updates should update cases 1`] = `
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                     data-passed-props="[object Object]"
                     data-testid="remove-case-061fc171-8b79-4636-b892-bd0ea5aa9b42"
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -4678,7 +4678,7 @@ exports[`CaseList updates should update cases 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-59b073b4=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -5033,7 +5033,7 @@ exports[`CaseList updates should update cases 1`] = `
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                     data-passed-props="[object Object]"
                     data-testid="remove-case-1e47a1e1-3c67-4df5-adf1-da542c789adb"
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"

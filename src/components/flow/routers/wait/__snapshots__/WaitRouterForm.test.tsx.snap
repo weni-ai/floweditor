@@ -112,7 +112,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -172,7 +172,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -182,7 +182,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -192,7 +192,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -202,7 +202,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -212,7 +212,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -222,7 +222,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -232,7 +232,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -242,7 +242,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -252,7 +252,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -262,7 +262,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -272,7 +272,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -282,7 +282,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -292,7 +292,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -302,7 +302,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -312,7 +312,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -322,7 +322,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -332,7 +332,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -342,7 +342,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -352,7 +352,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -362,7 +362,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -372,12 +372,22 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="24"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -413,7 +423,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 <span
                   class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cleanest"
                   data-passed-props="[object Object]"
-                  data-v-59b073b4=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"
@@ -567,7 +577,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -627,7 +637,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -637,7 +647,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -647,7 +657,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -657,7 +667,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -667,7 +677,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -677,7 +687,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -687,7 +697,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -697,7 +707,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -707,7 +717,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -717,7 +727,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -727,7 +737,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -737,7 +747,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -747,7 +757,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -757,7 +767,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -767,7 +777,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -777,7 +787,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -787,7 +797,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -797,7 +807,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -807,7 +817,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -817,7 +827,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -827,12 +837,22 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="24"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="25"
                 >
                   <span
                     class="name"

@@ -72,7 +72,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -132,7 +132,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -142,7 +142,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -152,7 +152,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -162,7 +162,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -172,7 +172,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -182,7 +182,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -192,7 +192,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -202,7 +202,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -212,7 +212,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -222,7 +222,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -232,7 +232,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -242,7 +242,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -252,7 +252,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -262,7 +262,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -272,7 +272,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -282,7 +282,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -292,7 +292,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -302,7 +302,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -312,7 +312,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -322,7 +322,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -332,12 +332,22 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="24"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -403,7 +413,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -501,7 +511,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -724,7 +734,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -784,7 +794,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -794,7 +804,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -804,7 +814,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -814,7 +824,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -824,7 +834,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -834,7 +844,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -844,7 +854,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -854,7 +864,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -864,7 +874,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -874,7 +884,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -884,7 +894,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -894,7 +904,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -904,7 +914,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -914,7 +924,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -924,7 +934,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -934,7 +944,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -944,7 +954,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -954,7 +964,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -964,7 +974,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -974,7 +984,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -984,12 +994,22 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="24"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -1055,7 +1075,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -1153,7 +1173,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -1257,7 +1277,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                             <span
                               class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                               data-v-400546b3=""
-                              data-v-59b073b4=""
+                              data-v-4ce83152=""
                             >
                               <svg
                                 fill="none"
@@ -1299,7 +1319,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                                 <span
                                   class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                                   data-v-25f7146e=""
-                                  data-v-59b073b4=""
+                                  data-v-4ce83152=""
                                 >
                                   <svg
                                     fill="none"
@@ -1346,7 +1366,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                                 <span
                                   class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                                   data-v-25f7146e=""
-                                  data-v-59b073b4=""
+                                  data-v-4ce83152=""
                                 >
                                   <svg
                                     fill="none"
@@ -1393,7 +1413,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                                 <span
                                   class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
                                   data-v-25f7146e=""
-                                  data-v-59b073b4=""
+                                  data-v-4ce83152=""
                                 >
                                   <svg
                                     fill="none"
@@ -1450,13 +1470,13 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                       class="unnnic-switch"
                       data-passed-props="[object Object]"
                       data-testid="switch"
-                      data-v-5be79627=""
+                      data-v-facf064c=""
                     >
                       <!---->
                       <span
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon__line-height--sm unnnic-icon-scheme--brand-weni unnnic-switch__icon active"
-                        data-v-59b073b4=""
-                        data-v-5be79627=""
+                        data-v-4ce83152=""
+                        data-v-facf064c=""
                       >
                         <svg
                           id="default"
@@ -1487,7 +1507,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                       </span>
                       <div
                         class="unnnic-switch__label unnnic-switch__label__right unnnic-switch__label__small"
-                        data-v-5be79627=""
+                        data-v-facf064c=""
                       >
                          Send complete messages history as context 
                       </div>
@@ -1989,7 +2009,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -2049,7 +2069,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -2059,7 +2079,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -2069,7 +2089,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -2079,7 +2099,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -2089,7 +2109,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -2099,7 +2119,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -2109,7 +2129,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -2119,7 +2139,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -2129,7 +2149,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -2139,7 +2159,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -2149,7 +2169,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -2159,7 +2179,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -2169,7 +2189,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -2179,7 +2199,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -2189,7 +2209,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -2199,7 +2219,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -2209,7 +2229,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -2219,7 +2239,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -2229,7 +2249,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -2239,7 +2259,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -2249,12 +2269,22 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="24"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -2320,7 +2350,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -2418,7 +2448,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -2529,7 +2559,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                             <span
                               class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                               data-v-400546b3=""
-                              data-v-59b073b4=""
+                              data-v-4ce83152=""
                             >
                               <svg
                                 fill="none"
@@ -2643,7 +2673,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                             <span
                               class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                               data-v-400546b3=""
-                              data-v-59b073b4=""
+                              data-v-4ce83152=""
                             >
                               <svg
                                 fill="none"
@@ -2814,7 +2844,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                       class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                       data-passed-props="[object Object]"
                       data-testid="remove-param-7663e5a1-6a46-4b0d-af01-b2262a6ad4b5"
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -3024,7 +3054,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -3084,7 +3114,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -3094,7 +3124,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -3104,7 +3134,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -3114,7 +3144,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -3124,7 +3154,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -3134,7 +3164,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -3144,7 +3174,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -3154,7 +3184,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -3164,7 +3194,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -3174,7 +3204,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -3184,7 +3214,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -3194,7 +3224,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -3204,7 +3234,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -3214,7 +3244,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -3224,7 +3254,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -3234,7 +3264,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -3244,7 +3274,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -3254,7 +3284,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -3264,7 +3294,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -3274,7 +3304,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -3284,12 +3314,22 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="24"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -3355,7 +3395,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                     <span
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                       data-v-400546b3=""
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -3453,7 +3493,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-59b073b4=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -3627,7 +3667,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                             <span
                               class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                               data-v-400546b3=""
-                              data-v-59b073b4=""
+                              data-v-4ce83152=""
                             >
                               <svg
                                 fill="none"
@@ -3743,7 +3783,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                             <span
                               class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                               data-v-400546b3=""
-                              data-v-59b073b4=""
+                              data-v-4ce83152=""
                             >
                               <svg
                                 fill="none"
@@ -3904,7 +3944,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                       class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-clean remove_icon"
                       data-passed-props="[object Object]"
                       data-testid="remove-param-a0bf60d1-2333-41a5-9bcb-7c56cc5e969e"
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"
@@ -4003,7 +4043,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                             <span
                               class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                               data-v-400546b3=""
-                              data-v-59b073b4=""
+                              data-v-4ce83152=""
                             >
                               <svg
                                 fill="none"
@@ -4119,7 +4159,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                             <span
                               class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                               data-v-400546b3=""
-                              data-v-59b073b4=""
+                              data-v-4ce83152=""
                             >
                               <svg
                                 fill="none"
@@ -4280,7 +4320,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                       class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-clean remove_icon"
                       data-passed-props="[object Object]"
                       data-testid="remove-param-87c8708e-6839-44ce-b80a-c1d133a3a0c6"
-                      data-v-59b073b4=""
+                      data-v-4ce83152=""
                     >
                       <svg
                         fill="none"

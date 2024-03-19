@@ -1,3 +1,31 @@
+2.11.0
+----------
+Feat: Zeroshot description alert
+
+2.10.4
+----------
+Fix: Add wenigpt action to result listing condition
+
+2.10.3
+----------
+Feat: Add default wenigpt input
+
+2.10.2
+----------
+Fix: Change default wenigpt input value translations
+
+2.10.1
+----------
+Fix: Change default wenigpt input value
+
+2.10.0
+----------
+Update README.md
+Fix: Include smart router in case localization condition
+Fix: Keys affecting canvas on non canvas inputs
+Feat: Change default mouse state to select
+Feat: WeniGPT Router
+
 2.9.2
 ----------
 Feat: Add localization support into smart routers
