@@ -1,3 +1,8 @@
+2.11.1
+----------
+- Fix: Remove external service empty parameters
+- Feat: Update smart argument and category validations
+
 2.11.0
 ----------
 Feat: Zeroshot description alert
