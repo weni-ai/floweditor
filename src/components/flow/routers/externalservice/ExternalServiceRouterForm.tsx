@@ -94,7 +94,7 @@ export default class ExternalServiceRouterForm extends React.Component<
         // TODO: Check if it is necessary to validate the param if it is not a string
         if (typeof param.data.value === 'string' || param.data.value instanceof String) {
           const missingFilter =
-            param.filter.value === null && param.filters && param.filters.length > 0;
+            param.filter && param.filter.value == null && param.filters && param.filters.length > 0;
 
           if (!param.valid || param.data.value.trim().length === 0 || missingFilter) {
             valid = false;
