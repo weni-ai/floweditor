@@ -199,6 +199,15 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
         </div>
       );
     } else {
+      const filterError =
+        showFilter &&
+        paramFilters &&
+        paramFilters.length > 0 &&
+        !this.state.currentFilter &&
+        this.state.data.value
+          ? [i18n.t('forms.required', 'Required')]
+          : [];
+
       return (
         <>
           <div
@@ -229,6 +238,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
                 onChange={this.handleFilterChange}
                 value={this.state.currentFilter}
                 disabled={disableFilter}
+                errors={filterError}
               />
             </div>
           ) : (
