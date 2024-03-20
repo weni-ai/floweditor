@@ -38,6 +38,9 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
 
 const noArgumentList = ['has_text', 'has_number', 'has_date', 'has_time', 'has_phone', 'has_email'];
 
+const SMART_CATEGORY_REGEX = /[^\p{Letter}\p{Number}~'^`´.,()\- ]+/gu;
+const SMART_ARGUMENT_REGEX = /[^\p{Letter}\p{Number}~'^@`´.,()\- ]+/gu;
+
 export enum CaseElementType {
   smart = 'smart',
   default = 'default'
@@ -186,6 +189,10 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
   }
 
   private handleArgumentChanged(value: string): void {
+    if (this.props.type === CaseElementType.smart) {
+      value = value.replace(SMART_ARGUMENT_REGEX, '');
+    }
+
     const updates = validateCase({
       operatorConfig: this.state.operatorConfig,
       argument: value,
@@ -281,6 +288,10 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
   }
 
   private handleExitChanged(value: string): void {
+    if (this.props.type === CaseElementType.smart) {
+      value = value.replace(SMART_CATEGORY_REGEX, '');
+    }
+
     const updates = validateCase({
       operatorConfig: this.state.operatorConfig,
       state: this.state.state.value,
