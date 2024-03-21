@@ -9,7 +9,7 @@ import i18n from 'config/i18n';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
-import { unnnicIcon, unnnicModalNext } from '@weni/unnnic-system';
+import { unnnicIcon, unnnicModal, unnnicButton } from '@weni/unnnic-system';
 
 export interface TitleBarProps {
   title: string;
@@ -37,7 +37,7 @@ export const confirmRemovalSpecId = 'confirm-removal';
  */
 
 const UnnnicIcon = applyVueInReact(unnnicIcon);
-const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
+const UnnnicModal = applyVueInReact(unnnicModal, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -46,6 +46,29 @@ const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
         all: '',
         position: 'relative',
         zIndex: 10e2
+      }
+    }
+  },
+  react: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      __use_react_component_wrap: '',
+      style: {
+        all: ''
+      }
+    }
+  }
+});
+
+const UnnnicButton = applyVueInReact(unnnicButton, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        display: 'flex',
+        flex: 1
       }
     }
   }
@@ -81,18 +104,14 @@ export default class TitleBar extends React.Component<TitleBarProps> {
     const { onRemoval } = this.props;
 
     ReactDOM.render(
-      <UnnnicModalNext
+      <UnnnicModal
+        className={styles.removal_modal}
         data-testid={confirmRemovalSpecId}
-        type="alert"
-        icon="alert-circle-1"
+        modalIcon="alert-circle-1"
         scheme="feedback-yellow"
-        title={i18n.t('removal_confirmation', 'Do you want to delete the card?')}
-        actionPrimaryLabel={i18n.t('buttons.confirm', 'Confirm')}
-        actionSecondaryLabel={i18n.t('buttons.cancel', 'Cancel')}
-        actionPrimaryButtonType="primary"
-        showCloseButton
+        text={i18n.t('removal_confirmation', 'Do you want to delete the card?')}
         $slots={{
-          description: (
+          message: (
             <>
               {i18n.t(
                 'removal_confirmation_description',
@@ -108,14 +127,27 @@ export default class TitleBar extends React.Component<TitleBarProps> {
               )}{' '}
               <b>delete</b> {i18n.t('or', 'or')} <b>backspace</b>.
             </>
+          ),
+          options: (
+            <div className={styles.removal_buttons}>
+              <UnnnicButton
+                text={i18n.t('buttons.cancel', 'Cancel')}
+                type="tertiary"
+                onClick={() => ReactDOM.unmountComponentAtNode(div)}
+              />
+              <UnnnicButton
+                text={i18n.t('buttons.confirm', 'Confirm')}
+                type="attention"
+                onClick={() => {
+                  onRemoval();
+                  ReactDOM.unmountComponentAtNode(div);
+                }}
+              />
+            </div>
           )
         }}
         on={{
           close() {
-            ReactDOM.unmountComponentAtNode(div);
-          },
-          'click-action-primary': () => {
-            onRemoval();
             ReactDOM.unmountComponentAtNode(div);
           }
         }}
