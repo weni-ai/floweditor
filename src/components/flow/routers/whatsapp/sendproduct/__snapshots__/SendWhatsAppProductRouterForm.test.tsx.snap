@@ -680,17 +680,17 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -705,17 +705,17 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -1411,17 +1411,17 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -1436,17 +1436,17 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -2353,17 +2353,17 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -2378,17 +2378,17 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -3157,17 +3157,17 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -3182,17 +3182,17 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -4217,17 +4217,17 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -4242,17 +4242,17 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -5186,17 +5186,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -5211,17 +5211,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -5917,17 +5917,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -5942,17 +5942,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -6813,17 +6813,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -6838,17 +6838,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -7709,17 +7709,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -7734,17 +7734,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -8853,17 +8853,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -8878,17 +8878,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -9782,17 +9782,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -9807,17 +9807,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -10751,17 +10751,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -10776,17 +10776,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
@@ -11895,17 +11895,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--ghost unnnic-button-next-scheme--"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-left: 0px; margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Cancel 
                   </span>
@@ -11920,17 +11920,17 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                 data-use-vue-component-wrap=""
               >
                 <button
-                  class="unnnic-button-next unnnic-button-next--size-large unnnic-button-next--primary unnnic-button-next-scheme--undefined"
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
-                  data-v-1eef067c=""
+                  data-v-3b3aa28c=""
                   style="margin-top: 0px;"
                 >
                   <!---->
                   <!---->
                   <!---->
                   <span
-                    class="unnnic-button-next__label"
-                    data-v-1eef067c=""
+                    class="unnnic-button__label"
+                    data-v-3b3aa28c=""
                   >
                      Confirm 
                   </span>
