@@ -1,3 +1,8 @@
+2.12.0
+----------
+- Refactor: Remove unnnic button next usage
+- Feat: VTEX search with postal code
+
 2.11.1
 ----------
 - Fix: Remove external service empty parameters
