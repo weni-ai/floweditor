@@ -476,7 +476,8 @@
     "product_search_label": "Insira uma expressão para usar como entrada",
     "custom_search": "Busca personalizada",
     "custom_search_api_url": "URL da API de busca personalizada",
-    "seller_id": "ID do vendedor (opcional)"
+    "seller_id": "ID do vendedor (opcional)",
+    "postal_code": "CEP (opcional)"
   },
   "issues": {
     "header": "Problemas no Fluxo",

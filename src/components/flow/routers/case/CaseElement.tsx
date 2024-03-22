@@ -38,8 +38,8 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
 
 const noArgumentList = ['has_text', 'has_number', 'has_date', 'has_time', 'has_phone', 'has_email'];
 
-const SMART_CATEGORY_REGEX = /[^\p{Letter}~'^`´]+/gu;
-const SMART_ARGUMENT_REGEX = /[^\p{Letter}~'^@`´., ]+/gu;
+const SMART_CATEGORY_REGEX = /[^\p{Letter}\p{Number}~'^`´.,()\- ]+/gu;
+const SMART_ARGUMENT_REGEX = /[^\p{Letter}\p{Number}~'^@`´.,()\- ]+/gu;
 
 export enum CaseElementType {
   smart = 'smart',
@@ -573,7 +573,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
               style={TextInputStyle.small}
               onChange={this.handleExitChanged}
               entry={this.state.categoryName}
-              maxLength={this.props.type === CaseElementType.smart ? 20 : 36}
+              maxLength={this.props.type === CaseElementType.smart ? 50 : 36}
               showInvalid={hasErrorType(this.state.errors, [/category/])}
               placeholder={
                 this.props.type === CaseElementType.smart
