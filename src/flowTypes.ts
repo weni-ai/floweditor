@@ -384,6 +384,7 @@ export interface SendWhatsAppProduct extends Action {
   search_type: ProductSearchType;
   search_url?: string;
   seller_id?: string;
+  postal_code?: string;
   productSearch?: string;
   productViewSettings: ProductViewSettings;
   result_name: string;
