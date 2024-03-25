@@ -9,18 +9,15 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   height: 100%;
 }
 
-
-
 .canvas_background {
   height: 100%;
-  background-color: $unnnic-color-neutral-lightest;
   background-position: 0px 0px;
   background-image: radial-gradient(
     circle at center,
-    $unnnic-color-neutral-soft 0,
-    $unnnic-color-neutral-soft 1px,
-    $unnnic-color-background-snow 2px,
-    $unnnic-color-background-snow 100%);
+    #D0D3D9 0,
+    #D0D3D9 1px,
+    $unnnic-color-neutral-lightest 2px,
+    $unnnic-color-neutral-lightest 100%);
   background-size: 40px 40px;
 }
 .grayscale::after{
@@ -76,6 +73,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   bottom: $unnnic-spacing-giant;
   left: 36px; 
   align-items: center;
+  justify-content: center;
 
   border-radius: $unnnic-border-radius-sm;
   background: #FFF;
