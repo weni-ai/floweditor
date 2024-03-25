@@ -96,6 +96,15 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
     this.props.onMouseStateChange(mouseState);
   }
 
+  private detectOS() {
+    const userAgent = window.navigator.userAgent;
+    // Check for macOS
+    if (userAgent.indexOf('Macintosh') !== -1) {
+      return 'Cmd';
+    }
+    return 'Ctrl';
+  }
+
   public render(): JSX.Element {
     return (
       <div className={styles.sidebar}>
@@ -165,7 +174,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             text={this.getCopyTooltip()}
             enabled={this.props.guidingStep !== 1}
             side="right"
-            shortcutText={this.props.selectionActive ? 'Ctrl C | Cmd C' : null}
+            shortcutText={this.props.selectionActive ? `${this.detectOS()} + C` : null}
           >
             <div
               className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
@@ -191,7 +200,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             text={i18n.t('search_in_nodes')}
             enabled={this.props.guidingStep !== 2}
             side="right"
-            shortcutText={'Ctrl F | Cmd F'}
+            shortcutText={`${this.detectOS()} + F`}
           >
             <div className={styles.option} onClick={() => this.handleSearchChanged()}>
               <span className="material-symbols-rounded">search</span>
