@@ -15,6 +15,7 @@ import {
 import { RenderNodeMap, Search } from 'store/flowContext';
 import Button, { ButtonTypes } from 'components/button/Button';
 import TextInputElement from 'components/form/textinput/TextInputElement';
+import i18n from 'config/i18n';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -145,7 +146,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
         <div className={styles.input}>
           <TextInputElement
             name={''}
-            placeholder={''}
+            placeholder={i18n.t('actions.search')}
             entry={{ value: this.props.search.value }}
             onChange={value => this.handleInput(value)}
             autocomplete={true}
