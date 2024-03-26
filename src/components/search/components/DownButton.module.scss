@@ -1,0 +1,14 @@
+.button{
+    display: flex;
+    width: 20px;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+
+    .icon{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        margin-top: 1px;
+    }
+}

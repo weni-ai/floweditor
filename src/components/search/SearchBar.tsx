@@ -13,9 +13,10 @@ import {
   onUpdateCanvasPositions
 } from 'store/thunks';
 import { RenderNodeMap, Search } from 'store/flowContext';
-import Button, { ButtonTypes } from 'components/button/Button';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import i18n from 'config/i18n';
+import DownButton from './components/DownButton';
+import CloseButton from './components/CloseButton';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -61,7 +62,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       const nodeItem: any = item.data.node.actions;
       if (nodeItem.length > 0) {
         const selectedNode = document.getElementById(item.uuid);
-        return selectedNode ? selectedNode.innerText.includes(value) : false;
+        return selectedNode
+          ? selectedNode.innerText.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+          : false;
       } else {
         return false;
       }
@@ -153,26 +156,29 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           />
         </div>
         <div className={styles.buttons}>
-          <div className={styles.button}>
-            <Button
-              name={''}
-              onClick={() => this.toggleMoveSelected('down')}
-              type={ButtonTypes.ghost}
-              iconName="arrow-button-down-1"
-              size="small"
-              disabled={!this.props.search.value.length}
-            />
-          </div>
-          <div>
-            <Button
-              name={''}
-              onClick={() => this.toggleMoveSelected('up')}
-              type={ButtonTypes.ghost}
-              iconName="arrow-button-up-1"
-              size="small"
-              disabled={!this.props.search.value.length}
-            />
-          </div>
+          <DownButton
+            disabled={
+              !this.props.search.value.length ||
+              !this.props.search.nodes.length ||
+              this.props.search.selected === this.props.search.nodes.length - 1
+            }
+            name={''}
+            onClick={() => this.toggleMoveSelected('down')}
+            size="sm"
+            iconName="down"
+          />
+
+          <DownButton
+            disabled={
+              !this.props.search.value.length ||
+              !this.props.search.nodes.length ||
+              this.props.search.selected === 0
+            }
+            name={''}
+            onClick={() => this.toggleMoveSelected('up')}
+            size="sm"
+            iconName="up"
+          />
         </div>
         <span className={styles.number}>
           {this.props.search.value.length && this.props.search.nodes.length ? (
@@ -183,14 +189,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
             <>0/0</>
           )}
         </span>
-        <Button
-          name={''}
-          onClick={() => this.closeSearch()}
-          type={ButtonTypes.ghost}
-          iconName="close-1"
-          size="small"
-          leftSpacing={true}
-        />
+        <div className={styles.close}>
+          <CloseButton name={''} onClick={() => this.closeSearch()} size="sm" />
+        </div>
       </div>
     );
   }

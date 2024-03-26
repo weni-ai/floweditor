@@ -21,29 +21,20 @@
     .input{
         display: flex;
         width: 220px;
+        padding-right: 8px;
     }
     
     .number{
+        display: flex;
+        justify-content: center;
+        align-content: center;
         background-color: rgb(255,255,255);
-        padding: 0px 8px ;
     }
 
     .buttons{
         display: flex;
-        gap: 10px;
-
-        .button{
-            width: 20px;
-            height: 100%;
-            align-items: center;
-            border: none;
-            background-color: rgb(255,255,255);
-            cursor: pointer;
-        }
-    
-        .button:hover{
-            background-color: $unnnic-color-neutral-lightest;
-        }
+        gap: 4px;
+        padding-right: 8px;
     }
     
 
@@ -51,23 +42,16 @@
         display: flex;
         height: 100%;
         align-items: center;
-        margin: 16px;
+        padding-left: 16px;
     }
 
     .close{
         display: flex;
-        width: 32px;
-        height: 32px;
+        align-content: center;
         justify-content: center;
-        align-items: center;
-        gap: 10px;
-        flex-shrink: 0;
-        border: none;
-        background-color: rgb(255,255,255);
+        width: 32px;
+        padding: 0 8px;
         cursor: pointer;
-    }
-    .close:hover{
-        background-color: $unnnic-color-neutral-lightest;
     }
 }
 
