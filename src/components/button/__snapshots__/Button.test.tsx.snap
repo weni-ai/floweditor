@@ -10,7 +10,7 @@ exports[`Button render should render self, children with base props 1`] = `
         class="unnnic-button unnnic-button--size-large unnnic-button--primary"
         data-passed-props="[object Object]"
         data-v-3b3aa28c=""
-        style="margin-left: 0px; margin-top: 0px;"
+        style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
       >
         <!---->
         <!---->
