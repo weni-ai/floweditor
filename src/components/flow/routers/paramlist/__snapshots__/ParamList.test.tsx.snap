@@ -993,7 +993,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_options_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
                       class="option active "
@@ -1079,7 +1079,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_expressions_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
               </div>
@@ -1391,7 +1391,7 @@ exports[`ParamList Omie render should render list with an empty param 1`] = `
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_options_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
                       class="option active "
@@ -1477,7 +1477,7 @@ exports[`ParamList Omie render should render list with an empty param 1`] = `
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_expressions_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
               </div>
@@ -1789,7 +1789,7 @@ exports[`ParamList Omie updates should remove param and ensure empty param exist
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_options_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
                       class="option active "
@@ -1875,7 +1875,7 @@ exports[`ParamList Omie updates should remove param and ensure empty param exist
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_expressions_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
               </div>
@@ -2139,6 +2139,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                       data-passed-props="[object Object]"
                       data-testid="temba_select_input_service_call_param_filter"
                       data-v-48c0c241=""
+                      error="Required"
                       readonly="readonly"
                     >
                       <!---->
@@ -2150,11 +2151,12 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                         v-bind="[object Object]"
                       >
                         <input
-                          class="input-itself input size-sm normal"
+                          class="input-itself input size-sm error"
                           data-passed-props="[object Object]"
                           data-testid="temba_select_input_service_call_param_filter"
                           data-v-400546b3=""
                           data-v-97b44e8c=""
+                          error="Required"
                           iconright="arrow-button-down-1"
                           placeholder="Filter"
                           readonly="readonly"
@@ -2164,7 +2166,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                         />
                         <!---->
                         <span
-                          class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                          class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--feedback-red icon-right"
                           data-v-400546b3=""
                           data-v-4ce83152=""
                         >
@@ -2187,7 +2189,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_options_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
                       class="option active "
@@ -2273,7 +2275,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_expressions_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
               </div>
@@ -2569,7 +2571,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_options_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
                       class="option active "
@@ -2655,7 +2657,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_expressions_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
               </div>

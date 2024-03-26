@@ -90,6 +90,11 @@ export const stateToNode = (
     uuid = originalAction.uuid;
   }
 
+  const validParams = state.params.value.filter(
+    (param: any) =>
+      param.valid === true && param.data.value && param.data.validationFailures.length === 0
+  );
+
   const newAction: CallExternalService = {
     uuid,
     type: Types.call_external_service,
@@ -101,7 +106,7 @@ export const stateToNode = (
       actions: state.externalService.value.actions
     },
     call: state.call.value,
-    params: state.params.value,
+    params: validParams,
     result_name: state.resultName.value
   };
 
