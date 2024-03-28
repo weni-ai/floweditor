@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { TextInputProps } from './TextInputElement';
 
-export const createTextInput = (props: TextInputProps, handleChange: any, optional: any) => {
+export const createTextInput = (
+  props: TextInputProps,
+  handleChange: any,
+  optional: any,
+) => {
   return props.autocomplete ? (
     <temba-completion
       name={props.name}

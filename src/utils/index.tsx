@@ -4,7 +4,7 @@ import {
   Category,
   ContactProperties,
   FlowPosition,
-  LocalizationMap
+  LocalizationMap,
 } from 'flowTypes';
 import { Query } from 'immutability-helper';
 import * as React from 'react';
@@ -39,14 +39,21 @@ interface Bounds {
   bottom: number;
 }
 
-export type LabelIdCb = (label?: string, labelKey?: string, valueKey?: string) => string;
+export type LabelIdCb = (
+  label?: string,
+  labelKey?: string,
+  valueKey?: string,
+) => string;
 
 /**
  * Adjusts the left and top offsets to a grid
  * @param left horizontal offset
  * @param top vertical offset
  */
-export const snapToGrid = (left: number, top: number): { left: number; top: number } => {
+export const snapToGrid = (
+  left: number,
+  top: number,
+): { left: number; top: number } => {
   let leftAdjust = left % GRID_SIZE;
   let topAdjust = top % GRID_SIZE;
 
@@ -64,7 +71,7 @@ export const snapToGrid = (left: number, top: number): { left: number; top: numb
 
   return {
     left: Math.max(left + leftAdjust, 0),
-    top: Math.max(top + topAdjust, 0)
+    top: Math.max(top + topAdjust, 0),
   };
 };
 
@@ -96,7 +103,7 @@ export const snapPositionToGrid = (position: FlowPosition): FlowPosition => {
     left,
     top,
     right,
-    bottom
+    bottom,
   };
 };
 
@@ -109,9 +116,9 @@ export const toBoolMap = (array: string[]): BoolMap =>
   array.reduce(
     (map: BoolMap, item: string) => ({
       ...map,
-      [item]: true
+      [item]: true,
     }),
-    {}
+    {},
   );
 
 /**
@@ -145,10 +152,17 @@ export const validUUID = (uuid: string): boolean => V4_UUID.test(uuid);
  * @returns {string} Title-cased string
  */
 export const titleCase = (str: string): string =>
-  str.replace(/\b\w+/g, s => s.charAt(0).toUpperCase() + s.substr(1).toLowerCase());
+  str.replace(
+    /\b\w+/g,
+    s => s.charAt(0).toUpperCase() + s.substr(1).toLowerCase(),
+  );
 
 export const getSelectClassForEntry = (entry: FormEntry): string => {
-  if (entry && entry.validationFailures && entry.validationFailures.length > 0) {
+  if (
+    entry &&
+    entry.validationFailures &&
+    entry.validationFailures.length > 0
+  ) {
     return 'select-invalid';
   }
   return '';
@@ -162,7 +176,11 @@ export const getSelectClass = (errors: number): string => {
   return 'react-select select-base select-invalid';
 };
 
-export const reorderList = (list: any[], startIndex: number, endIndex: number): any[] => {
+export const reorderList = (
+  list: any[],
+  startIndex: number,
+  endIndex: number,
+): any[] => {
   const [removed] = list.splice(startIndex, 1);
 
   list.splice(endIndex, 0, removed);
@@ -217,7 +235,7 @@ export interface ClickHandler {
 export const createClickHandler = (
   onClick: (event: React.MouseEvent<HTMLElement>) => void,
   shouldCancelClick: () => boolean = null,
-  onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+  onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void,
 ): any => {
   return {
     onMouseDown: (event: React.MouseEvent<HTMLElement>) => {
@@ -229,14 +247,14 @@ export const createClickHandler = (
       if (!shouldCancelClick || !shouldCancelClick()) {
         onClick(event);
       }
-    }
+    },
   };
 };
 
 export const getLocalization = (
   obj: Action | Category | Case,
   localization: LocalizationMap,
-  language: Asset
+  language: Asset,
 ) => Localization.translate(obj, language, localization[language.id]);
 
 /** istanbul ignore next */
@@ -245,7 +263,9 @@ export const dump = (thing: any) => console.log(JSON.stringify(thing, null, 4));
 /**
  * Apply emphasis style
  */
-export const emphasize = (text: string) => <span className="emphasize">{text}</span>;
+export const emphasize = (text: string) => (
+  <span className="emphasize">{text}</span>
+);
 export const ellipsize = (text: string, max: number = 250) => {
   if (text.length > max) {
     return text.substr(0, max) + '...';
@@ -269,8 +289,10 @@ export const propertyExists = (propertyToCheck: string) => {
 /**
  * Should x element be rendered?
  */
-export const renderIf = (predicate: boolean) => (then: JSX.Element, otherwise?: JSX.Element) =>
-  predicate ? then : otherwise ? otherwise : null;
+export const renderIf = (predicate: boolean) => (
+  then: JSX.Element,
+  otherwise?: JSX.Element,
+) => (predicate ? then : otherwise ? otherwise : null);
 
 /**
  * Does the label meet our length requirements?
@@ -283,7 +305,8 @@ export const properLabelLength = (label: string = '') =>
  * Does the label meet our character requirements?
  * @param {string} label
  */
-export const containsOnlyLabelChars = (label: string = '') => LABEL_CHARS.test(label);
+export const containsOnlyLabelChars = (label: string = '') =>
+  LABEL_CHARS.test(label);
 
 /**
  * Does the label meet our length, character requirements?
@@ -326,11 +349,13 @@ export const push = (arr: any[]): Query<any[]> => ({ $push: arr });
 
 // tslint:disable-next-line:array-type
 export const splice = (arr: any[][]): Query<any[][]> => ({
-  $splice: arr
+  $splice: arr,
 });
 
 export const optionExists = (newOptName: string, options: any[]) =>
-  options.find(({ name }) => name.toLowerCase().trim() === newOptName.toLowerCase().trim())
+  options.find(
+    ({ name }) => name.toLowerCase().trim() === newOptName.toLowerCase().trim(),
+  )
     ? true
     : false;
 
@@ -366,7 +391,8 @@ export const uniqueBy = (a: any[], key: string): any[] => {
 
 export const downloadJSON = (obj: any, name: string): void => {
   const dataStr =
-    'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(obj, null, 2));
+    'data:text/json;charset=utf-8,' +
+    encodeURIComponent(JSON.stringify(obj, null, 2));
   const downloadAnchorNode = document.createElement('a');
   downloadAnchorNode.setAttribute('href', dataStr);
   downloadAnchorNode.setAttribute('download', name + '.json');
@@ -375,7 +401,10 @@ export const downloadJSON = (obj: any, name: string): void => {
   downloadAnchorNode.remove();
 };
 
-export const fetchAsset = (asset: Asset) => (assets: Assets, id: string): Promise<Asset> => {
+export const fetchAsset = (asset: Asset) => (
+  assets: Assets,
+  id: string,
+): Promise<Asset> => {
   return new Promise<Asset>((resolve, reject) => {
     resolve(asset);
   });
@@ -408,8 +437,11 @@ export const seededUUIDs = (seed: number = 1): any => {
 export const range = (start: number, end: number) =>
   Array.from({ length: end - start }, (v: number, k: number) => k + start);
 
-export const pluralize = (count: number, noun: string, suffix: string = 's'): string =>
-  `${noun}${count !== 1 ? suffix : ''}`;
+export const pluralize = (
+  count: number,
+  noun: string,
+  suffix: string = 's',
+): string => `${noun}${count !== 1 ? suffix : ''}`;
 
 export const hasString = (names: string[], key: string): boolean =>
   !!names.find((item: string) => item === key);
@@ -441,14 +473,20 @@ export const throttle = (func: any, timeout: any) => {
   };
 };
 
-export const traceUpdate = (component: any, prevProps: any, prevState?: any) => {
+export const traceUpdate = (
+  component: any,
+  prevProps: any,
+  prevState?: any,
+) => {
   const messages: string[] = [];
   Object.entries(component.props).forEach(
-    ([key, val]) => prevProps[key] !== val && messages.push(`Prop: '${key}' changed`)
+    ([key, val]) =>
+      prevProps[key] !== val && messages.push(`Prop: '${key}' changed`),
   );
   if (prevState && component.state) {
     Object.entries(component.state).forEach(
-      ([key, val]) => prevState[key] !== val && messages.push(`State: '${key}' changed`)
+      ([key, val]) =>
+        prevState[key] !== val && messages.push(`State: '${key}' changed`),
     );
   }
 

@@ -7,8 +7,8 @@ module.exports = function(app) {
     proxy('/.netlify/functions/', {
       target: 'http://localhost:6000/',
       pathRewrite: {
-        '^/\\.netlify/functions': ''
-      }
-    })
+        '^/\\.netlify/functions': '',
+      },
+    }),
   );
 };

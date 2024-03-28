@@ -36,7 +36,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom-sixteen",
     "tester": "react-scripts test --env=jest-environment-happy-dom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint -c .eslintrc.json src/**/*.{ts,tsx,js} --fix"
   },
   "browserslist": {
     "production": [
@@ -65,8 +66,8 @@
     ]
   },
   "lint-staged": {
-    "*.{ts,tsx,js,css,md}": [
-      "prettier --write",
+    "*.{ts,tsx,js}": [
+      "eslint -c .eslintrc.json",
       "git add"
     ]
   },

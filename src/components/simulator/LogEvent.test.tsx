@@ -5,12 +5,12 @@ import LogEvent, { EventProps } from './LogEvent';
 const commonEventProps: EventProps = {
   uuid: '51e6f864-a16f-4be7-839f-945afc857559',
   step_uuid: '6de81ff6-f541-4099-8ad7-03214d15b07d',
-  created_on: '2020-01-29T10:43:30.123456789Z'
+  created_on: '2020-01-29T10:43:30.123456789Z',
 };
 
 const testEventRender = (eventProps: EventProps) => {
   const props: EventProps = {
-    ...eventProps
+    ...eventProps,
   };
   const { baseElement } = render(<LogEvent {...props} />);
 
@@ -21,17 +21,19 @@ describe(LogEvent.name, () => {
   it('should render broadcast_created event', () => {
     testEventRender({
       type: 'broadcast_created',
-      groups: [{ uuid: '3a3e061e-dad5-4454-88e4-ccbd0ef0e475', name: 'U-Reporters' }],
+      groups: [
+        { uuid: '3a3e061e-dad5-4454-88e4-ccbd0ef0e475', name: 'U-Reporters' },
+      ],
       translations: {
         eng: {
-          text: 'Hi there'
+          text: 'Hi there',
         },
         spa: {
-          text: 'Hola'
-        }
+          text: 'Hola',
+        },
       },
       base_language: 'eng',
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render contact_field_changed event', () => {
@@ -39,7 +41,7 @@ describe(LogEvent.name, () => {
       type: 'contact_field_changed',
       field: { key: 'age', name: 'Age' },
       value: { text: '38' },
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render contact_field_changed event with null value', () => {
@@ -47,7 +49,7 @@ describe(LogEvent.name, () => {
       type: 'contact_field_changed',
       field: { key: 'age', name: 'Age' },
       value: null,
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render contact_groups_changed event', () => {
@@ -55,41 +57,41 @@ describe(LogEvent.name, () => {
       type: 'contact_groups_changed',
       groups_added: [
         { uuid: '3a3e061e-dad5-4454-88e4-ccbd0ef0e475', name: 'U-Reporters' },
-        { uuid: 'd749781c-bb3a-4894-81fb-683b6368b29c', name: 'Youth' }
+        { uuid: 'd749781c-bb3a-4894-81fb-683b6368b29c', name: 'Youth' },
       ],
       groups_removed: [
         { uuid: '669ce0aa-0444-4597-87a0-feb82401a31d', name: 'Unregistered' },
-        { uuid: '58d99177-15f4-4a25-9b35-222e09252387', name: 'Missing Name' }
+        { uuid: '58d99177-15f4-4a25-9b35-222e09252387', name: 'Missing Name' },
       ],
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render contact_name_changed event', () => {
     testEventRender({
       type: 'contact_name_changed',
       name: 'Bobby',
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render contact_language_changed event', () => {
     testEventRender({
       type: 'contact_language_changed',
       language: 'eng',
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render contact_status_changed event', () => {
     testEventRender({
       type: 'contact_status_changed',
       status: 'blocked',
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render contact_urns_changed event', () => {
     testEventRender({
       type: 'contact_urns_changed',
       urns: ['tel:+1234567890', 'twitter:bobby'],
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render email_sent event', () => {
@@ -98,21 +100,21 @@ describe(LogEvent.name, () => {
       subject: 'Party time',
       body: 'Dear Sir/Madam',
       to: ['fun@temba.io', 'events@temba.io'],
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render error event', () => {
     testEventRender({
       type: 'error',
       text: "I'm an error",
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render failure event', () => {
     testEventRender({
       type: 'failure',
       text: "I'm a failure",
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render input_labels_added event', () => {
@@ -120,9 +122,9 @@ describe(LogEvent.name, () => {
       type: 'input_labels_added',
       labels: [
         { uuid: '3a3e061e-dad5-4454-88e4-ccbd0ef0e475', name: 'Spam' },
-        { uuid: 'd749781c-bb3a-4894-81fb-683b6368b29c', name: 'Important' }
+        { uuid: 'd749781c-bb3a-4894-81fb-683b6368b29c', name: 'Important' },
       ],
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render ivr_created event', () => {
@@ -132,9 +134,9 @@ describe(LogEvent.name, () => {
         uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
         urn: 'tel:+1123456789',
         text: 'Thanks for getting in touch',
-        attachments: ['image/jpeg:http://temba.io/test.wav']
+        attachments: ['image/jpeg:http://temba.io/test.wav'],
       },
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render msg_created event', () => {
@@ -144,9 +146,9 @@ describe(LogEvent.name, () => {
         uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
         urn: 'tel:+1123456789',
         text: 'Hi there',
-        attachments: ['image/jpeg:http://temba.io/test.jpg']
+        attachments: ['image/jpeg:http://temba.io/test.jpg'],
       },
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render msg_received event', () => {
@@ -156,22 +158,22 @@ describe(LogEvent.name, () => {
         uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
         urn: 'tel:+1123456789',
         text: 'Thanks for getting in touch',
-        attachments: ['image/jpeg:http://temba.io/test.jpg']
+        attachments: ['image/jpeg:http://temba.io/test.jpg'],
       },
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render msg_wait event', () => {
     testEventRender({
       type: 'msg_wait',
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render resthook_called event', () => {
     testEventRender({
       type: 'resthook_called',
       resthook: 'new-registration',
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render run_result_changed event', () => {
@@ -179,36 +181,45 @@ describe(LogEvent.name, () => {
       type: 'run_result_changed',
       name: 'Response 1',
       value: 'yes',
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render service_called event', () => {
     testEventRender({
       type: 'service_called',
       service: 'classifier',
-      classifier: { uuid: 'a67d9cc0-15bb-4a92-b387-554e28726472', name: 'Booking (Wit)' },
+      classifier: {
+        uuid: 'a67d9cc0-15bb-4a92-b387-554e28726472',
+        name: 'Booking (Wit)',
+      },
       http_logs: [
         {
           url: 'https://api.wit.ai/message?v=20170307&q=Hi+everybody',
           request:
             'GET /message?v=20170307&q=Hi+everybody HTTP/1.1\r\nHost: api.wit.ai\r\nUser-Agent: Go-http-client/1.1\r\nAuthorization: Bearer 123456789\r\nAccept-Encoding: gzip\r\n\r\n',
           response:
-            'HTTP/1.0 200 OK\r\nContent-Length: 127\r\n\r\n{"_text":"Hi everyone","entities":{"intent":[{"confidence":0.84709152161066,"value":"greeting"}]},"msg_id":"1M7fAcDWag76OmgDI"}'
-        }
+            'HTTP/1.0 200 OK\r\nContent-Length: 127\r\n\r\n{"_text":"Hi everyone","entities":{"intent":[{"confidence":0.84709152161066,"value":"greeting"}]},"msg_id":"1M7fAcDWag76OmgDI"}',
+        },
       ],
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
   it('should render ticket_opened event', () => {
     testEventRender({
       type: 'ticket_opened',
-      ticketer: { uuid: '15892014-144c-4721-a611-c80b38481055', name: 'Email Support' },
+      ticketer: {
+        uuid: '15892014-144c-4721-a611-c80b38481055',
+        name: 'Email Support',
+      },
       ticket: {
-        topic: { uuid: 'ee1e36a8-dd42-4464-b6b2-37418a26db1f', name: 'Support' },
-        body: 'Where are my cookies?'
+        topic: {
+          uuid: 'ee1e36a8-dd42-4464-b6b2-37418a26db1f',
+          name: 'Support',
+        },
+        body: 'Where are my cookies?',
       },
       result_name: 'Ticket',
-      ...commonEventProps
+      ...commonEventProps,
     });
   });
 });

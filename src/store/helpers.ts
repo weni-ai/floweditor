@@ -25,7 +25,7 @@ import {
   WaitTypes,
   SendMsg,
   FlowIssue,
-  FlowIssueType
+  FlowIssueType,
 } from 'flowTypes';
 import Localization, { LocalizedObject } from 'services/Localization';
 import { Activity, EditorState, Warnings } from 'store/editor';
@@ -35,7 +35,7 @@ import {
   AssetType,
   RenderNode,
   RenderNodeMap,
-  FlowIssueMap
+  FlowIssueMap,
 } from 'store/flowContext';
 import { addResult } from 'store/mutators';
 import { DispatchWithState, GetState, mergeEditorState } from 'store/thunks';
@@ -56,7 +56,10 @@ interface Reflow {
 // track if we have an active timeout before issuing a new one
 let activityTimeout: any = null;
 
-export const getNodeWithAction = (nodes: RenderNodeMap, actionUUID: string): RenderNode => {
+export const getNodeWithAction = (
+  nodes: RenderNodeMap,
+  actionUUID: string,
+): RenderNode => {
   for (const nodeUUID of Object.keys(nodes)) {
     const renderNode = nodes[nodeUUID];
     for (const action of renderNode.node.actions) {
@@ -107,7 +110,9 @@ export const hasLoopSplit = (renderNode: RenderNode): boolean => {
   const type = getType(renderNode);
 
   return (
-    hasWait(renderNode) || type === Types.split_by_expression || type === Types.split_by_subflow
+    hasWait(renderNode) ||
+    type === Types.split_by_expression ||
+    type === Types.split_by_subflow
   );
 };
 
@@ -123,7 +128,7 @@ export const detectLoops = (
   nodes: RenderNodeMap,
   fromNodeUUID: string,
   toNodeUUID: string,
-  path: string[] = []
+  path: string[] = [],
 ): void => {
   const fromNode = nodes[fromNodeUUID];
   const toNode = nodes[toNodeUUID];
@@ -168,16 +173,19 @@ export const getLocalizations = (
   node: FlowNode,
   action: AnyAction,
   language: Asset,
-  translations?: { [uuid: string]: any }
+  translations?: { [uuid: string]: any },
 ): LocalizedObject[] => {
   const localizations: LocalizedObject[] = [];
 
   // Account for localized cases
-  if (node.router && [RouterTypes.switch, RouterTypes.smart].includes(node.router.type)) {
+  if (
+    node.router &&
+    [RouterTypes.switch, RouterTypes.smart].includes(node.router.type)
+  ) {
     const router = node.router as SwitchRouter;
 
     router.cases.forEach(kase =>
-      localizations.push(Localization.translate(kase, language, translations))
+      localizations.push(Localization.translate(kase, language, translations)),
     );
   }
 
@@ -188,7 +196,11 @@ export const getLocalizations = (
       const sendMsgAction = action as SendMsg;
       if (sendMsgAction.templating) {
         localizations.push(
-          Localization.translate(sendMsgAction.templating, language, translations)
+          Localization.translate(
+            sendMsgAction.templating,
+            language,
+            translations,
+          ),
         );
       }
     }
@@ -198,7 +210,9 @@ export const getLocalizations = (
   if (node.router) {
     node.router.categories.forEach(category => {
       if (category.name) {
-        localizations.push(Localization.translate(category, language, translations));
+        localizations.push(
+          Localization.translate(category, language, translations),
+        );
       }
     });
   }
@@ -219,7 +233,7 @@ export const getUniqueDestinations = (node: FlowNode): string[] => {
 export const getCurrentDefinition = (
   definition: FlowDefinition,
   nodeMap: RenderNodeMap,
-  includeUI: boolean = true
+  includeUI: boolean = true,
 ): FlowDefinition => {
   const renderNodes = getOrderedNodes(nodeMap);
   const nodes: FlowNode[] = [];
@@ -233,7 +247,7 @@ export const getCurrentDefinition = (
 
   const result = {
     ...definition,
-    nodes
+    nodes,
   };
 
   if (includeUI) {
@@ -242,7 +256,7 @@ export const getCurrentDefinition = (
       nodes: uiNodes,
       stickies: definition._ui.stickies,
       languages: definition._ui.languages,
-      translation_filters: definition._ui.translation_filters
+      translation_filters: definition._ui.translation_filters,
     } as UIMetaData;
   }
 
@@ -266,14 +280,17 @@ export const addPosition = (a: FlowPosition, b: FlowPosition): FlowPosition => {
       left,
       top,
       right: left + width,
-      bottom: top + height
+      bottom: top + height,
     };
   }
 
   return { top, left };
 };
 
-export const subtractPosition = (a: FlowPosition, b: FlowPosition): FlowPosition => {
+export const subtractPosition = (
+  a: FlowPosition,
+  b: FlowPosition,
+): FlowPosition => {
   return { left: a.left - b.left, top: a.top - b.top };
 };
 
@@ -294,7 +311,7 @@ export const getOrderedNodes = (nodes: RenderNodeMap): RenderNode[] => {
 export const getCollisions = (
   nodes: RenderNodeMap,
   stickies: { [key: string]: StickyNote },
-  box: FlowPosition
+  box: FlowPosition,
 ): { [uuid: string]: FlowPosition } => {
   const collisions: any = {};
   for (const nodeUUID of Object.keys(nodes)) {
@@ -321,7 +338,12 @@ export const collides = (a: FlowPosition, b: FlowPosition) => {
     return false;
   }
 
-  return !(b.left > a.right || b.right < a.left || b.top > a.bottom || b.bottom < a.top);
+  return !(
+    b.left > a.right ||
+    b.right < a.left ||
+    b.top > a.bottom ||
+    b.bottom < a.top
+  );
 };
 
 /**
@@ -360,7 +382,7 @@ export const createEmptyNode = (
   fromNode: RenderNode,
   fromExitUUID: string,
   suggestedResultNameCount: number,
-  flowType: FlowTypes
+  flowType: FlowTypes,
 ): RenderNode => {
   const emptyNode: FlowNode = {
     uuid: createUUID(),
@@ -368,20 +390,25 @@ export const createEmptyNode = (
     exits: [
       {
         uuid: createUUID(),
-        destination_uuid: null
-      }
-    ]
+        destination_uuid: null,
+      },
+    ],
   };
 
   let type = Types.execute_actions;
 
   // Add an action next if 1) this is first node, 2) we are coming from a router or 3) this is a background flow
-  if (!fromNode || hasRouter(fromNode) || flowType === FlowTypes.MESSAGING_BACKGROUND) {
-    const replyType = flowType === FlowTypes.VOICE ? Types.say_msg : Types.send_msg;
+  if (
+    !fromNode ||
+    hasRouter(fromNode) ||
+    flowType === FlowTypes.MESSAGING_BACKGROUND
+  ) {
+    const replyType =
+      flowType === FlowTypes.VOICE ? Types.say_msg : Types.send_msg;
     const replyAction = {
       uuid: createUUID(),
       text: '',
-      type: replyType
+      type: replyType,
     };
 
     emptyNode.actions.push(replyAction);
@@ -391,8 +418,8 @@ export const createEmptyNode = (
       {
         uuid: createUUID(),
         name: DefaultExitNames.All_Responses,
-        exit_uuid: emptyNode.exits[0].uuid
-      }
+        exit_uuid: emptyNode.exits[0].uuid,
+      },
     ];
 
     const wait: Wait = { type: WaitTypes.msg };
@@ -407,7 +434,7 @@ export const createEmptyNode = (
       default_category_uuid: categories[0].uuid,
       categories,
       wait,
-      cases: []
+      cases: [],
     } as SwitchRouter;
   }
 
@@ -420,7 +447,7 @@ export const createEmptyNode = (
     node: emptyNode,
     ui: { position: { left: 0, top: 0 }, type },
     inboundConnections,
-    ghost: true
+    ghost: true,
   };
 };
 
@@ -489,7 +516,8 @@ export const guessNodeType = (node: FlowNode) => {
   return Types.execute_actions;
 };
 
-export const generateResultQuery = (resultName: string) => `@run.results.${snakify(resultName)}`;
+export const generateResultQuery = (resultName: string) =>
+  `@run.results.${snakify(resultName)}`;
 
 /**
  * Converts a list of assets to a map keyed by their id
@@ -512,7 +540,9 @@ export const assetMapToList = (assets: AssetMap): any[] => {
 /**
  * Processes an initial FlowDefinition for details necessary for the editor
  */
-export const getFlowComponents = (definition: FlowDefinition): FlowComponents => {
+export const getFlowComponents = (
+  definition: FlowDefinition,
+): FlowComponents => {
   const renderNodeMap: RenderNodeMap = {};
   const warnings: Warnings = {};
   const { nodes, _ui } = definition;
@@ -534,7 +564,7 @@ export const getFlowComponents = (definition: FlowDefinition): FlowComponents =>
     const renderNode: RenderNode = {
       node,
       ui,
-      inboundConnections: {}
+      inboundConnections: {},
     };
 
     renderNodeMap[node.uuid] = renderNode;
@@ -562,7 +592,7 @@ export const getFlowComponents = (definition: FlowDefinition): FlowComponents =>
             groups[groupUUID] = {
               name: category.name,
               id: groupUUID,
-              type: AssetType.Group
+              type: AssetType.Group,
             };
           }
         }
@@ -578,7 +608,7 @@ export const getFlowComponents = (definition: FlowDefinition): FlowComponents =>
               groups[group.uuid] = {
                 name: group.name,
                 id: group.uuid,
-                type: AssetType.Group
+                type: AssetType.Group,
               };
             }
           }
@@ -588,14 +618,14 @@ export const getFlowComponents = (definition: FlowDefinition): FlowComponents =>
         fields[fieldAction.field.key] = {
           name: fieldAction.field.name,
           id: fieldAction.field.key,
-          type: AssetType.Field
+          type: AssetType.Field,
         };
       } else if (action.type === Types.add_input_labels) {
         for (const label of (action as AddLabels).labels) {
           labels[label.uuid] = {
             name: label.name,
             id: label.uuid,
-            type: AssetType.Label
+            type: AssetType.Label,
           };
         }
       } else if (action.type === Types.set_run_result) {
@@ -605,14 +635,14 @@ export const getFlowComponents = (definition: FlowDefinition): FlowComponents =>
         if (key in results) {
           results[key].references.push({
             nodeUUID: node.uuid,
-            actionUUID: action.uuid
+            actionUUID: action.uuid,
           });
         } else {
           results[key] = {
             name: resultAction.name,
             id: key,
             type: AssetType.Result,
-            references: [{ nodeUUID: node.uuid, actionUUID: action.uuid }]
+            references: [{ nodeUUID: node.uuid, actionUUID: action.uuid }],
           };
         }
       }
@@ -620,7 +650,8 @@ export const getFlowComponents = (definition: FlowDefinition): FlowComponents =>
 
     for (const exit of node.exits) {
       if (exit.destination_uuid) {
-        let pointers: { [uuid: string]: string } = pointerMap[exit.destination_uuid];
+        let pointers: { [uuid: string]: string } =
+          pointerMap[exit.destination_uuid];
 
         if (!pointers) {
           pointers = {};
@@ -662,7 +693,7 @@ export const mergeAssetMaps = (assets: AssetMap, toAdd: AssetMap): void => {
 
 export const createFlowIssueMap = (
   previousIssues: FlowIssueMap,
-  issues: FlowIssue[]
+  issues: FlowIssue[],
 ): FlowIssueMap => {
   const issueMap: FlowIssueMap = (issues || [])
     .filter((issue: FlowIssue) => issue.type !== FlowIssueType.LEGACY_EXTRA)
@@ -675,7 +706,9 @@ export const createFlowIssueMap = (
 
   for (const [nodeUUID, nodeIssues] of Object.entries(issueMap)) {
     // would be nice not to use stringify as a deepequals here
-    if (JSON.stringify(previousIssues[nodeUUID]) === JSON.stringify(nodeIssues)) {
+    if (
+      JSON.stringify(previousIssues[nodeUUID]) === JSON.stringify(nodeIssues)
+    ) {
       issueMap[nodeUUID] = previousIssues[nodeUUID];
     }
   }
@@ -686,10 +719,10 @@ export const fetchFlowActivity = (
   endpoint: string,
   dispatch: DispatchWithState,
   getState: GetState,
-  uuid: string
+  uuid: string,
 ): void => {
   const {
-    editorState: { simulating, activityInterval, visible }
+    editorState: { simulating, activityInterval, visible },
   } = getState();
 
   if (visible) {
@@ -698,7 +731,7 @@ export const fetchFlowActivity = (
       if (activity) {
         const updates: Partial<EditorState> = {
           liveActivity: activity,
-          activityInterval: Math.min(60000 * 5, activityInterval + 200)
+          activityInterval: Math.min(60000 * 5, activityInterval + 200),
         };
 
         if (!simulating) {

@@ -16,7 +16,7 @@ export const MAX_TO_SHOW = 5;
 export const getRemoveAllMarkup = (
   key = removeAllSpecId,
   specId = removeAllSpecId,
-  text = removeAllText
+  text = removeAllText,
 ) => (
   <div key={key} data-spec={specId}>
     {text}
@@ -25,7 +25,7 @@ export const getRemoveAllMarkup = (
 
 export const getContentMarkup = (
   { type, groups }: ChangeGroups,
-  endpoints?: Endpoints
+  endpoints?: Endpoints,
 ): JSX.Element[] => {
   const content = [];
 
@@ -38,17 +38,17 @@ export const getContentMarkup = (
           return {
             id: group.name_match,
             name: group.name_match,
-            type: AssetType.NameMatch
+            type: AssetType.NameMatch,
           };
         }
         return {
           id: group.uuid,
           name: group.name,
-          type: AssetType.Group
+          type: AssetType.Group,
         };
       }),
       MAX_TO_SHOW,
-      endpoints!
+      endpoints!,
     );
   }
 
@@ -58,19 +58,22 @@ export const getContentMarkup = (
 export const getChangeGroupsMarkup = (
   action: ChangeGroups,
   endpoints?: Endpoints,
-  specId = contentSpecId
+  specId = contentSpecId,
 ) => (
   <div data-spec={specId} className={styles.groups_container}>
     {getContentMarkup(action, endpoints)}
   </div>
 );
 
-const ChangeGroupsComp: React.SFC<ChangeGroups> = (props: any, context: any): JSX.Element => {
+const ChangeGroupsComp: React.SFC<ChangeGroups> = (
+  props: any,
+  context: any,
+): JSX.Element => {
   return getChangeGroupsMarkup(props, context.config.endpoints);
 };
 
 ChangeGroupsComp.contextTypes = {
-  config: fakePropType
+  config: fakePropType,
 };
 
 export default ChangeGroupsComp;

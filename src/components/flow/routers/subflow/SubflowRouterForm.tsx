@@ -1,7 +1,10 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet, Tab } from 'components/dialog/Dialog';
 import { RouterFormProps } from 'components/flow/props';
-import { nodeToState, stateToNode } from 'components/flow/routers/subflow/helpers';
+import {
+  nodeToState,
+  stateToNode,
+} from 'components/flow/routers/subflow/helpers';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
 import TypeList from 'components/nodeeditor/TypeList';
 import { fakePropType } from 'config/ConfigProvider';
@@ -27,7 +30,7 @@ export default class SubflowRouterForm extends React.PureComponent<
   SubflowRouterFormState
 > {
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: RouterFormProps) {
@@ -36,7 +39,7 @@ export default class SubflowRouterForm extends React.PureComponent<
     this.state = nodeToState(props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
@@ -44,13 +47,19 @@ export default class SubflowRouterForm extends React.PureComponent<
     // we need to resolve our flow for it's parent refs
     // todo: just fetch this is a plan flow result without the asset translation
     if (this.state.flow.value) {
-      fetchAsset(this.props.assetStore.flows, this.state.flow.value.uuid).then((flow: Asset) => {
-        if (flow) {
-          this.handleFlowChanged([
-            { name: flow.name, uuid: flow.id, parent_refs: flow.content.parent_refs }
-          ]);
-        }
-      });
+      fetchAsset(this.props.assetStore.flows, this.state.flow.value.uuid).then(
+        (flow: Asset) => {
+          if (flow) {
+            this.handleFlowChanged([
+              {
+                name: flow.name,
+                uuid: flow.id,
+                parent_refs: flow.content.parent_refs,
+              },
+            ]);
+          }
+        },
+      );
     }
   }
 
@@ -58,7 +67,9 @@ export default class SubflowRouterForm extends React.PureComponent<
     const flow = flows[0];
 
     const updates: Partial<SubflowRouterFormState> = {
-      flow: validate(i18n.t('forms.flow', 'Flow'), flow, [shouldRequireIf(submitting)])
+      flow: validate(i18n.t('forms.flow', 'Flow'), flow, [
+        shouldRequireIf(submitting),
+      ]),
     };
 
     const params: { [key: string]: StringEntry } = {};
@@ -85,7 +96,7 @@ export default class SubflowRouterForm extends React.PureComponent<
     this.handleFlowChanged([this.state.flow.value], true);
 
     const hasFieldErrors = Object.keys(this.state.params).find((key: string) =>
-      hasErrors(this.state.params[key])
+      hasErrors(this.state.params[key]),
     );
 
     if (this.state.valid && !hasFieldErrors) {
@@ -99,8 +110,8 @@ export default class SubflowRouterForm extends React.PureComponent<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -121,8 +132,8 @@ export default class SubflowRouterForm extends React.PureComponent<
     const tabs: Tab[] = [];
     const flow = this.state.flow.value;
 
-    const hasFieldErrors = !!Object.keys(this.state.params).find((key: string) =>
-      hasErrors(this.state.params[key])
+    const hasFieldErrors = !!Object.keys(this.state.params).find(
+      (key: string) => hasErrors(this.state.params[key]),
     );
 
     if (flow && flow.parent_refs && flow.parent_refs.length > 0) {
@@ -135,17 +146,25 @@ export default class SubflowRouterForm extends React.PureComponent<
                 i18nKey="forms.enter_flow_parameters_summary"
                 values={{
                   flow: this.state.flow.value.name,
-                  url: this.context.config.endpoints.editor + '/' + this.state.flow.value.id
+                  url:
+                    this.context.config.endpoints.editor +
+                    '/' +
+                    this.state.flow.value.id,
                 }}
               >
                 <a
                   target="_"
-                  href={this.context.config.endpoints.editor + '/' + this.state.flow.value.id}
+                  href={
+                    this.context.config.endpoints.editor +
+                    '/' +
+                    this.state.flow.value.id
+                  }
                 >
                   [[flow]]
                 </a>{' '}
-                expects the following parameters to be set by this flow. These can be set using a{' '}
-                <span>Save Flow Result</span> action or directly below.
+                expects the following parameters to be set by this flow. These
+                can be set using a <span>Save Flow Result</span> action or
+                directly below.
               </Trans>
             </p>
             <table className={styles.params}>
@@ -175,8 +194,10 @@ export default class SubflowRouterForm extends React.PureComponent<
         ),
         hasErrors: hasFieldErrors,
         checked: !!Object.keys(this.state.params).find(
-          (key: string) => this.state.params[key] && this.state.params[key].value.trim().length > 0
-        )
+          (key: string) =>
+            this.state.params[key] &&
+            this.state.params[key].value.trim().length > 0,
+        ),
       });
     }
 
@@ -188,7 +209,11 @@ export default class SubflowRouterForm extends React.PureComponent<
         tabs={tabs}
         className={styles.dialog}
       >
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <AssetSelector
           name={i18n.t('forms.flow_to_start')}
           showLabel={true}

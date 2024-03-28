@@ -1,8 +1,19 @@
 import { CaseProps } from 'components/flow/routers/caselist/CaseList';
-import { createRenderNode, resolveRoutes } from 'components/flow/routers/helpers';
+import {
+  createRenderNode,
+  resolveRoutes,
+} from 'components/flow/routers/helpers';
 import { Operators, Types } from 'config/interfaces';
 import { getType } from 'config/typeConfigs';
-import { Case, Category, HintTypes, Router, RouterTypes, SwitchRouter, WaitTypes } from 'flowTypes';
+import {
+  Case,
+  Category,
+  HintTypes,
+  Router,
+  RouterTypes,
+  SwitchRouter,
+  WaitTypes,
+} from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
 import { createUUID } from 'utils';
@@ -10,7 +21,9 @@ import { createUUID } from 'utils';
 import { MenuRouterFormState } from './MenuRouterForm';
 import { MENU_OPERAND } from 'components/nodeeditor/constants';
 
-export const nodeToState = (settings: NodeEditorSettings): MenuRouterFormState => {
+export const nodeToState = (
+  settings: NodeEditorSettings,
+): MenuRouterFormState => {
   let resultName: StringEntry = { value: '' };
 
   const menu: string[] = [];
@@ -27,7 +40,7 @@ export const nodeToState = (settings: NodeEditorSettings): MenuRouterFormState =
       }
 
       menu[idx] = settings.originalNode.node.router.categories.find(
-        (category: Category) => category.uuid === kase.category_uuid
+        (category: Category) => category.uuid === kase.category_uuid,
       ).name;
     }
     resultName = { value: router.result_name || '' };
@@ -36,13 +49,13 @@ export const nodeToState = (settings: NodeEditorSettings): MenuRouterFormState =
   return {
     resultName,
     menu,
-    valid: true
+    valid: true,
   };
 };
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: MenuRouterFormState
+  state: MenuRouterFormState,
 ): RenderNode => {
   const optionalRouter: Pick<Router, 'result_name'> = {};
   if (state.resultName.value) {
@@ -55,11 +68,13 @@ export const stateToNode = (
   }
 
   const caseProps = menuToCases(state.menu, originalCases);
-  const { cases, exits, defaultCategory: defaultExit, caseConfig, categories } = resolveRoutes(
-    caseProps,
-    false,
-    settings.originalNode.node
-  );
+  const {
+    cases,
+    exits,
+    defaultCategory: defaultExit,
+    caseConfig,
+    categories,
+  } = resolveRoutes(caseProps, false, settings.originalNode.node);
 
   const router: SwitchRouter = {
     type: RouterTypes.switch,
@@ -68,7 +83,7 @@ export const stateToNode = (
     cases,
     categories,
     wait: { type: WaitTypes.msg, hint: { type: HintTypes.digits, count: 1 } },
-    ...optionalRouter
+    ...optionalRouter,
   };
 
   const newRenderNode = createRenderNode(
@@ -77,13 +92,16 @@ export const stateToNode = (
     exits,
     Types.wait_for_response,
     [],
-    { cases: caseConfig }
+    { cases: caseConfig },
   );
 
   return newRenderNode;
 };
 
-export const menuToCases = (menu: string[] = [], previousCases: Case[]): CaseProps[] =>
+export const menuToCases = (
+  menu: string[] = [],
+  previousCases: Case[],
+): CaseProps[] =>
   menu
     .map((categoryName: string, index: number) => {
       const idx = index === 9 ? 0 : index + 1;
@@ -94,14 +112,14 @@ export const menuToCases = (menu: string[] = [], previousCases: Case[]): CasePro
           uuid: createUUID(),
           arguments: ['' + idx],
           type: Operators.has_number_eq,
-          category_uuid: ''
+          category_uuid: '',
         } as Case);
 
       return {
         uuid: kase.uuid,
         kase,
         categoryName,
-        valid: true
+        valid: true,
       };
     })
     .filter((caseProps: CaseProps) => caseProps.categoryName.trim().length > 0);

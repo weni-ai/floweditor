@@ -45,9 +45,9 @@ const UnnnicModal = applyVueInReact(unnnicModal, {
       style: {
         all: '',
         position: 'relative',
-        zIndex: 10e2
-      }
-    }
+        zIndex: 10e2,
+      },
+    },
   },
   react: {
     componentWrap: 'div',
@@ -55,10 +55,10 @@ const UnnnicModal = applyVueInReact(unnnicModal, {
     componentWrapAttrs: {
       __use_react_component_wrap: '',
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 const UnnnicButton = applyVueInReact(unnnicButton, {
@@ -68,15 +68,15 @@ const UnnnicButton = applyVueInReact(unnnicButton, {
     componentWrapAttrs: {
       style: {
         display: 'flex',
-        flex: 1
-      }
-    }
-  }
+        flex: 1,
+      },
+    },
+  },
 });
 
 export default class TitleBar extends React.Component<TitleBarProps> {
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: TitleBarProps) {
@@ -115,15 +115,20 @@ export default class TitleBar extends React.Component<TitleBarProps> {
             <>
               {i18n.t(
                 'removal_confirmation_description',
-                'Are you sure you want to delete the card?'
+                'Are you sure you want to delete the card?',
               )}
               <br />
-              <b>{i18n.t('action_cannot_be_reversed', 'This action cannot be reversed.')}</b>
+              <b>
+                {i18n.t(
+                  'action_cannot_be_reversed',
+                  'This action cannot be reversed.',
+                )}
+              </b>
               <br />
               <br />
               {i18n.t(
                 'you_can_also_delete_cards_pressing_the_keys',
-                'You can also delete cards by pressing'
+                'You can also delete cards by pressing',
               )}{' '}
               <b>delete</b> {i18n.t('or', 'or')} <b>backspace</b>.
             </>
@@ -144,15 +149,15 @@ export default class TitleBar extends React.Component<TitleBarProps> {
                 }}
               />
             </div>
-          )
+          ),
         }}
         on={{
           close() {
             ReactDOM.unmountComponentAtNode(div);
-          }
+          },
         }}
       />,
-      div
+      div,
     );
   }
 
@@ -166,7 +171,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
           {...createClickHandler(
             this.props.onMoveUp,
             this.props.shouldCancelClick,
-            this.handleMouseUpCapture
+            this.handleMouseUpCapture,
           )}
           data-testid={moveIconSpecId}
         >
@@ -193,7 +198,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
         {...createClickHandler(
           this.handleConfirmRemoval,
           this.props.shouldCancelClick,
-          this.handleMouseUpCapture
+          this.handleMouseUpCapture,
         )}
         data-testid={removeIconSpecId}
       >
@@ -213,7 +218,9 @@ export default class TitleBar extends React.Component<TitleBarProps> {
     const remove: JSX.Element = this.getRemove();
     return (
       <div
-        className={`${styles.titlebar} ${this.props.hasIssues ? shared.missing : null}`}
+        className={`${styles.titlebar} ${
+          this.props.hasIssues ? shared.missing : null
+        }`}
         data-spec={titlebarContainerSpecId}
       >
         <div
@@ -226,7 +233,9 @@ export default class TitleBar extends React.Component<TitleBarProps> {
           <div className={`${styles.titletext} u font secondary body-md bold`}>
             {this.props.title}
 
-            {this.props.new && <span className={styles.new}>{i18n.t('new', 'New')}!</span>}
+            {this.props.new && (
+              <span className={styles.new}>{i18n.t('new', 'New')}!</span>
+            )}
           </div>
           {remove}
         </div>

@@ -11,9 +11,9 @@ const baseProps: DialogProps = {
   buttons: {
     primary: { name: 'Ok', onClick: jest.fn() },
     secondary: { name: 'Cancel', onClick: jest.fn() },
-    tertiary: { name: 'Other', onClick: jest.fn() }
+    tertiary: { name: 'Other', onClick: jest.fn() },
   },
-  gutter: <div>The Gutter</div>
+  gutter: <div>The Gutter</div>,
 };
 
 describe(Dialog.name, () => {

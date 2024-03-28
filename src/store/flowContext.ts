@@ -1,4 +1,10 @@
-import { FlowDefinition, FlowNode, UINode, FlowMetadata, FlowIssue } from 'flowTypes';
+import {
+  FlowDefinition,
+  FlowNode,
+  UINode,
+  FlowMetadata,
+  FlowIssue,
+} from 'flowTypes';
 import { combineReducers, Action } from 'redux';
 import ActionTypes, {
   UpdateAssetsAction,
@@ -7,7 +13,7 @@ import ActionTypes, {
   UpdateDefinitionAction,
   UpdateNodesAction,
   UpdateMetadataAction,
-  UpdateIssuesAction
+  UpdateIssuesAction,
 } from 'store/actionTypes';
 import Constants from 'store/constants';
 import { Type } from 'config/interfaces';
@@ -80,7 +86,7 @@ export enum AssetType {
   URN = 'urn',
   ExternalService = 'external_service',
   KnowledgeBase = 'knowledge_base',
-  WhatsAppProduct = 'whatsapp_product'
+  WhatsAppProduct = 'whatsapp_product',
 }
 
 export interface Reference {
@@ -104,13 +110,13 @@ export interface Asset {
 export const REMOVE_VALUE_ASSET = {
   id: AssetType.Remove,
   name: i18n.t('forms.remove_value', 'Remove Value'),
-  type: AssetType.Remove
+  type: AssetType.Remove,
 };
 
 export const DEFAULT_LANGUAGE = {
   id: 'base',
   name: 'Default',
-  type: AssetType.Language
+  type: AssetType.Language,
 };
 
 export interface AssetStore {
@@ -155,57 +161,65 @@ export const initialState: FlowContext = {
     dependencies: [],
     results: [],
     waiting_exit_uuids: [],
-    parent_refs: []
+    parent_refs: [],
   },
   contactFields: {},
   nodes: {},
   issues: {},
-  assetStore: {}
+  assetStore: {},
 };
 
 // Action Creators
-export const updateDefinition = (definition: FlowDefinition): UpdateDefinitionAction => ({
+export const updateDefinition = (
+  definition: FlowDefinition,
+): UpdateDefinitionAction => ({
   type: Constants.UPDATE_DEFINITION,
   payload: {
-    definition
-  }
+    definition,
+  },
 });
 
 export const updateNodes = (nodes: RenderNodeMap): UpdateNodesAction => ({
   type: Constants.UPDATE_NODES,
   payload: {
-    nodes
-  }
+    nodes,
+  },
 });
 
 export const updateIssues = (issues: FlowIssueMap): UpdateIssuesAction => ({
   type: Constants.UPDATE_ISSUES,
   payload: {
-    issues
-  }
+    issues,
+  },
 });
 
-export const updateMetadata = (metadata: FlowMetadata): UpdateMetadataAction => {
+export const updateMetadata = (
+  metadata: FlowMetadata,
+): UpdateMetadataAction => {
   return {
     type: Constants.UPDATE_METADATA,
     payload: {
-      metadata
-    }
+      metadata,
+    },
   };
 };
 
-export const updateBaseLanguage = (baseLanguage: Asset): UpdateBaseLanguageAction => ({
+export const updateBaseLanguage = (
+  baseLanguage: Asset,
+): UpdateBaseLanguageAction => ({
   type: Constants.UPDATE_BASE_LANGUAGE,
   payload: {
-    baseLanguage
-  }
+    baseLanguage,
+  },
 });
 
-export const updateContactFields = (contactFields: ContactFields): UpdateContactFieldsAction => ({
+export const updateContactFields = (
+  contactFields: ContactFields,
+): UpdateContactFieldsAction => ({
   type: Constants.UPDATE_CONTACT_FIELDS,
   payload: {
-    contactFields
-  }
+    contactFields,
+  },
 });
 
 export const updateAssets = (assets: AssetStore): UpdateAssetsAction => {
@@ -217,15 +231,15 @@ export const updateAssets = (assets: AssetStore): UpdateAssetsAction => {
   return {
     type: Constants.UPDATE_ASSET_MAP,
     payload: {
-      assets
-    }
+      assets,
+    },
   };
 };
 
 // Reducers
 export const definition = (
   state: FlowDefinition = initialState.definition,
-  action: ActionTypes
+  action: ActionTypes,
 ) => {
   switch (action.type) {
     case Constants.UPDATE_DEFINITION:
@@ -244,7 +258,10 @@ export const nodes = (state: {} = initialState.nodes, action: ActionTypes) => {
   }
 };
 
-export const issues = (state: {} = initialState.issues, action: ActionTypes) => {
+export const issues = (
+  state: {} = initialState.issues,
+  action: ActionTypes,
+) => {
   switch (action.type) {
     case Constants.UPDATE_ISSUES:
       return action.payload.issues;
@@ -253,7 +270,10 @@ export const issues = (state: {} = initialState.issues, action: ActionTypes) => 
   }
 };
 
-export const metadata = (state: FlowMetadata = initialState.metadata, action: ActionTypes) => {
+export const metadata = (
+  state: FlowMetadata = initialState.metadata,
+  action: ActionTypes,
+) => {
   switch (action.type) {
     case Constants.UPDATE_METADATA:
       return action.payload.metadata;
@@ -262,7 +282,10 @@ export const metadata = (state: FlowMetadata = initialState.metadata, action: Ac
   }
 };
 
-export const assetStore = (state: AssetStore = initialState.assetStore, action: ActionTypes) => {
+export const assetStore = (
+  state: AssetStore = initialState.assetStore,
+  action: ActionTypes,
+) => {
   switch (action.type) {
     case Constants.UPDATE_ASSET_MAP:
       return action.payload.assets;
@@ -271,7 +294,10 @@ export const assetStore = (state: AssetStore = initialState.assetStore, action: 
   }
 };
 
-export const baseLanguage = (state: Asset = initialState.baseLanguage, action: ActionTypes) => {
+export const baseLanguage = (
+  state: Asset = initialState.baseLanguage,
+  action: ActionTypes,
+) => {
   switch (action.type) {
     case Constants.UPDATE_BASE_LANGUAGE:
       return action.payload.baseLanguage;
@@ -282,7 +308,7 @@ export const baseLanguage = (state: Asset = initialState.baseLanguage, action: A
 
 export const contactFields = (
   state: ContactFields = initialState.contactFields,
-  action: ActionTypes
+  action: ActionTypes,
 ) => {
   switch (action.type) {
     case Constants.UPDATE_CONTACT_FIELDS:
@@ -300,5 +326,5 @@ export default combineReducers({
   metadata,
   assetStore,
   baseLanguage,
-  contactFields
+  contactFields,
 });

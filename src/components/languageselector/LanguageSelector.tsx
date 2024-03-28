@@ -5,7 +5,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Asset, Assets } from 'store/flowContext';
 import AppState from 'store/state';
-import { DispatchWithState, HandleLanguageChange, handleLanguageChange } from 'store/thunks';
+import {
+  DispatchWithState,
+  HandleLanguageChange,
+  handleLanguageChange,
+} from 'store/thunks';
 
 import styles from './LanguageSelector.module.scss';
 
@@ -21,7 +25,7 @@ export class LanguageSelector extends React.Component<LanguageSelectorProps> {
   constructor(props: LanguageSelectorProps, context: ConfigProviderContext) {
     super(props, context);
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -85,21 +89,24 @@ export class LanguageSelector extends React.Component<LanguageSelectorProps> {
 }
 
 /* istanbul ignore next */
-const mapStateToProps = ({ flowContext: { assetStore }, editorState: { language } }: AppState) => ({
+const mapStateToProps = ({
+  flowContext: { assetStore },
+  editorState: { language },
+}: AppState) => ({
   languages: assetStore.languages,
-  language
+  language,
 });
 
 /* istanbul ignore next */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
   bindActionCreators(
     {
-      handleLanguageChange
+      handleLanguageChange,
     },
-    dispatch
+    dispatch,
   );
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(LanguageSelector);

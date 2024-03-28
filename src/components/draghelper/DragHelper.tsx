@@ -11,7 +11,7 @@ export default class DragHelper extends React.Component<{}, DragHelperState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      visible: false
+      visible: false,
     };
   }
 
@@ -25,14 +25,19 @@ export default class DragHelper extends React.Component<{}, DragHelperState> {
 
   public render(): JSX.Element {
     return (
-      <div className={styles.drag_helper + ' ' + (this.state.visible ? styles.visible : '')}>
+      <div
+        className={
+          styles.drag_helper + ' ' + (this.state.visible ? styles.visible : '')
+        }
+      >
         <div className={styles.arrow}>
           <div className={styles.tail} />
           <div className={styles.head} />
         </div>
         <div className={styles.help_text}>
           <Trans i18nKey="drag_helper">
-            To connect nodes, <span className={styles.bold}>drag</span> from the red circle.
+            To connect nodes, <span className={styles.bold}>drag</span> from the
+            red circle.
           </Trans>
         </div>
       </div>

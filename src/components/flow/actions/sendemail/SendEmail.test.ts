@@ -5,7 +5,10 @@ import SendEmailComp from 'components/flow/actions/sendemail/SendEmail';
 
 const sendEmailAction = createSendEmailAction();
 
-const { setup } = composeComponentTestUtils<SendEmail>(SendEmailComp, sendEmailAction);
+const { setup } = composeComponentTestUtils<SendEmail>(
+  SendEmailComp,
+  sendEmailAction,
+);
 
 describe(SendEmailComp.name, () => {
   describe('render', () => {

@@ -1,8 +1,15 @@
 import * as React from 'react';
 import { AssetType } from 'store/flowContext';
-import { render, fireUnnnicInputChangeText, getUnnnicInputValue } from 'test/utils';
+import {
+  render,
+  fireUnnnicInputChangeText,
+  getUnnnicInputValue,
+} from 'test/utils';
 import { mock } from 'testUtils';
-import { createClassifyRouter, getRouterFormProps } from 'testUtils/assetCreators';
+import {
+  createClassifyRouter,
+  getRouterFormProps,
+} from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import ClassifyRouterForm from './ClassifyRouterForm';
 import * as external from 'external';
@@ -15,9 +22,9 @@ mock(
     name: 'Purrington',
     type: AssetType.Classifier,
     content: {
-      intents: ['fact', 'opinion']
-    }
-  })
+      intents: ['fact', 'opinion'],
+    },
+  }),
 );
 
 mock(utils, 'createUUID', utils.seededUUIDs());
@@ -26,14 +33,17 @@ const routerNode = createClassifyRouter();
 
 const getProps = () => {
   const formProps = getRouterFormProps(routerNode);
-  formProps.assetStore = { classifiers: { items: {}, type: AssetType.Classifier } };
+  formProps.assetStore = {
+    classifiers: { items: {}, type: AssetType.Classifier },
+  };
   return formProps;
 };
 
 describe(ClassifyRouterForm.name, () => {
   it('defaults to correct result name', () => {
     const props = getProps();
-    props.nodeSettings.originalNode.node.router.result_name = 'Initial Result Name';
+    props.nodeSettings.originalNode.node.router.result_name =
+      'Initial Result Name';
     const { getByTestId } = render(<ClassifyRouterForm {...props} />);
     const result = getByTestId('Save as result');
     expect(getUnnnicInputValue(result)).toEqual('Initial Result Name');

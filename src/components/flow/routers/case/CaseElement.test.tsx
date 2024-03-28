@@ -1,4 +1,6 @@
-import CaseElement, { CaseElementProps } from 'components/flow/routers/case/CaseElement';
+import CaseElement, {
+  CaseElementProps,
+} from 'components/flow/routers/case/CaseElement';
 import { Operators } from 'config/interfaces';
 import * as React from 'react';
 import {
@@ -7,7 +9,7 @@ import {
   fireUnnnicSelect,
   fireUnnnicInputChangeText,
   getUnnnicInputValue,
-  wait
+  wait,
 } from 'test/utils';
 import { createUUID } from 'utils';
 import userEvent from '@testing-library/user-event';
@@ -20,11 +22,11 @@ const caseProps: CaseElementProps = {
     uuid: caseUUID,
     type: Operators.has_any_word,
     arguments: [''],
-    category_uuid: createUUID()
+    category_uuid: createUUID(),
   },
   categoryName: null,
   onRemove: jest.fn(),
-  onChange: jest.fn()
+  onChange: jest.fn(),
 };
 
 describe(CaseElement.name, () => {
@@ -38,10 +40,12 @@ describe(CaseElement.name, () => {
       const kase = {
         uuid: caseUUID,
         type: Operators.has_number,
-        category_uuid: createUUID()
+        category_uuid: createUUID(),
       };
 
-      const { baseElement } = render(<CaseElement {...caseProps} kase={kase} />);
+      const { baseElement } = render(
+        <CaseElement {...caseProps} kase={kase} />,
+      );
       expect(baseElement).toMatchSnapshot();
     });
   });
@@ -67,9 +71,12 @@ describe(CaseElement.name, () => {
     });
 
     it('should not update exit if it has been edited', async () => {
-      const { baseElement, queryByDisplayValue, getByTestId, getByText } = render(
-        <CaseElement {...caseProps} />
-      );
+      const {
+        baseElement,
+        queryByDisplayValue,
+        getByTestId,
+        getByText,
+      } = render(<CaseElement {...caseProps} />);
 
       // make us a has phone so we can look up our category by value
       userEvent.click(getByText('has a phone number'));
@@ -93,7 +100,9 @@ describe(CaseElement.name, () => {
   describe('update', () => {
     it('handles removes', () => {
       const onRemove = jest.fn();
-      const { getByTestId } = render(<CaseElement {...caseProps} onRemove={onRemove} />);
+      const { getByTestId } = render(
+        <CaseElement {...caseProps} onRemove={onRemove} />,
+      );
 
       fireEvent.click(getByTestId(`remove-case-${caseProps.kase.uuid}`));
       expect(onRemove).toHaveBeenCalled();
@@ -102,7 +111,7 @@ describe(CaseElement.name, () => {
     it('handles argument change', () => {
       const onRemove = jest.fn();
       const { baseElement, getAllByTestId } = render(
-        <CaseElement {...caseProps} onRemove={onRemove} />
+        <CaseElement {...caseProps} onRemove={onRemove} />,
       );
       const args = getAllByTestId('arguments');
       fireUnnnicInputChangeText(args[0], 'Purple, p');
@@ -113,7 +122,7 @@ describe(CaseElement.name, () => {
     it('handles multiple argument change', async () => {
       const onRemove = jest.fn();
       const { baseElement, getByText, getAllByTestId } = render(
-        <CaseElement {...caseProps} onRemove={onRemove} />
+        <CaseElement {...caseProps} onRemove={onRemove} />,
       );
 
       userEvent.click(getByText('has a number between'));

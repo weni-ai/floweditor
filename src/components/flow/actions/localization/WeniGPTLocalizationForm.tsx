@@ -27,12 +27,12 @@ export default class WeniGPTLocalizationForm extends React.Component<
     super(props);
     this.state = initializeWeniGPTLocalizedForm(this.props.nodeSettings);
     bindCallbacks(this, {
-      include: [/^handle/, /^on/]
+      include: [/^handle/, /^on/],
     });
   }
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   private getAction(): CallWeniGPT {
@@ -48,7 +48,11 @@ export default class WeniGPTLocalizationForm extends React.Component<
     const updates: Partial<WeniGPTLocalizationFormState> = {};
 
     if (keys.hasOwnProperty('input')) {
-      updates.expression = validate(i18n.t('forms.message', 'Expression'), keys.input, []);
+      updates.expression = validate(
+        i18n.t('forms.message', 'Expression'),
+        keys.input,
+        [],
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -68,8 +72,8 @@ export default class WeniGPTLocalizationForm extends React.Component<
     const localizations = [
       {
         uuid: this.getAction().uuid,
-        translations
-      }
+        translations,
+      },
     ];
 
     this.props.updateLocalizations(this.props.language.id, localizations);
@@ -82,8 +86,8 @@ export default class WeniGPTLocalizationForm extends React.Component<
       primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -93,7 +97,11 @@ export default class WeniGPTLocalizationForm extends React.Component<
     const action = this.getAction();
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
         <div data-spec="translation-container">
           <div data-spec="text-to-translate" className={styles.translate_from}>
             {action.input}

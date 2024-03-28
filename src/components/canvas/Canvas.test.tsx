@@ -18,7 +18,7 @@ const baseProps: CanvasProps = {
   onLoaded: jest.fn(),
   draggables: [],
   newDragElement: <div></div>,
-  mutable: true
+  mutable: true,
 };
 
 describe(Canvas.name, () => {
@@ -32,9 +32,11 @@ describe(Canvas.name, () => {
       elementCreator: jest.fn(),
       uuid: createUUID(),
       position: { top: 1200, left: 100, bottom: 1290, right: 300 },
-      idx: 0
+      idx: 0,
     };
-    const { baseElement } = render(<Canvas {...baseProps} draggables={[lowest]} />);
+    const { baseElement } = render(
+      <Canvas {...baseProps} draggables={[lowest]} />,
+    );
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -44,10 +46,12 @@ describe(Canvas.name, () => {
       elementCreator: jest.fn(),
       uuid,
       position: { top: 1200, left: 100, right: 200, bottom: 1400 },
-      idx: 0
+      idx: 0,
     };
 
-    const { baseElement, getByTestId } = render(<Canvas {...baseProps} draggables={[lowest]} />);
+    const { baseElement, getByTestId } = render(
+      <Canvas {...baseProps} draggables={[lowest]} />,
+    );
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -58,20 +62,24 @@ describe(Canvas.name, () => {
       elementCreator: jest.fn(),
       uuid: createUUID(),
       position: { top: 100, bottom: 200, left: 100, right: 200 },
-      idx: 0
+      idx: 0,
     };
 
     const second: CanvasDraggableProps = {
       elementCreator: jest.fn(),
       uuid: createUUID(),
       position: { top: 150, left: 100, bottom: 250, right: 200 },
-      idx: 0
+      idx: 0,
     };
 
     const onDragging = jest.fn();
 
     const { getByTestId } = render(
-      <Canvas {...baseProps} draggables={[first, second]} onDragging={onDragging} />
+      <Canvas
+        {...baseProps}
+        draggables={[first, second]}
+        onDragging={onDragging}
+      />,
     );
 
     // trigger reflow by simulating a drag event

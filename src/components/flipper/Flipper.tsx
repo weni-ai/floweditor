@@ -15,11 +15,14 @@ interface FlipperState {
 /**
  * A component that has a front and back and can flip back and forth between them
  */
-export default class Flipper extends React.Component<FlipperProps, FlipperState> {
+export default class Flipper extends React.Component<
+  FlipperProps,
+  FlipperState
+> {
   constructor(props: FlipperProps) {
     super(props);
     this.state = {
-      flipped: this.props.flipped!
+      flipped: this.props.flipped!,
     };
 
     this.handleFlip = this.handleFlip.bind(this);
@@ -46,7 +49,10 @@ export default class Flipper extends React.Component<FlipperProps, FlipperState>
           {this.props.front}
         </div>
         <div className={`${styles.side} ${styles.back}`}>
-          <span className={`${styles.toggle_button} fe-back`} onClick={this.handleFlip} />
+          <span
+            className={`${styles.toggle_button} fe-back`}
+            onClick={this.handleFlip}
+          />
           {this.props.back}
         </div>
       </div>

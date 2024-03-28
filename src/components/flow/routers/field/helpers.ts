@@ -5,7 +5,7 @@ import {
   createCaseProps,
   createRenderNode,
   hasCases,
-  resolveRoutes
+  resolveRoutes,
 } from 'components/flow/routers/helpers';
 import { getContactProperties } from 'components/helpers';
 import { DEFAULT_OPERAND } from 'components/nodeeditor/constants';
@@ -21,14 +21,14 @@ export const getRoutableFields = (flowType: FlowTypes = null): Asset[] => {
     ...SCHEMES.map((scheme: Scheme) => ({
       name: scheme.path,
       id: scheme.scheme,
-      type: AssetType.Scheme
-    }))
+      type: AssetType.Scheme,
+    })),
   ];
 };
 
 export const nodeToState = (
   settings: NodeEditorSettings,
-  assetStore: AssetStore
+  assetStore: AssetStore,
 ): FieldRouterFormState => {
   let initialCases: CaseProps[] = [];
 
@@ -60,7 +60,9 @@ export const nodeToState = (
 
     // couldn't find the asset, check our routable fields
     if (!field) {
-      field = getRoutableFields().find((asset: Asset) => asset.id === operand.id);
+      field = getRoutableFields().find(
+        (asset: Asset) => asset.id === operand.id,
+      );
     }
   }
 
@@ -73,19 +75,21 @@ export const nodeToState = (
     cases: initialCases,
     resultName,
     field: { value: field },
-    valid: true
+    valid: true,
   };
 };
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: FieldRouterFormState
+  state: FieldRouterFormState,
 ): RenderNode => {
-  const { cases, exits, defaultCategory: defaultExit, caseConfig, categories } = resolveRoutes(
-    state.cases,
-    false,
-    settings.originalNode.node
-  );
+  const {
+    cases,
+    exits,
+    defaultCategory: defaultExit,
+    caseConfig,
+    categories,
+  } = resolveRoutes(state.cases, false, settings.originalNode.node);
 
   const optionalRouter: Pick<Router, 'result_name'> = {};
   if (state.resultName.value) {
@@ -99,7 +103,7 @@ export const stateToNode = (
   let operandConfig = {
     id: asset.id,
     type: asset.type,
-    name: asset.name
+    name: asset.name,
   };
 
   if (asset.type === AssetType.Scheme) {
@@ -111,7 +115,7 @@ export const stateToNode = (
     operandConfig = {
       id: asset.key,
       name: asset.label,
-      type: AssetType.Field
+      type: AssetType.Field,
     };
   }
 
@@ -121,7 +125,7 @@ export const stateToNode = (
     cases,
     categories,
     operand,
-    ...optionalRouter
+    ...optionalRouter,
   };
 
   const newRenderNode = createRenderNode(
@@ -132,8 +136,8 @@ export const stateToNode = (
     [],
     {
       operand: operandConfig,
-      cases: caseConfig
-    }
+      cases: caseConfig,
+    },
   );
 
   return newRenderNode;

@@ -30,25 +30,27 @@ export default class DigitsRouterForm extends React.Component<
     this.state = nodeToState(this.props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
   private getOperators(): Operator[] {
     return operatorConfigList.filter(
       operator =>
-        operator.type === Operators.has_beginning || operator.type.indexOf('has_number') === 0
+        operator.type === Operators.has_beginning ||
+        operator.type.indexOf('has_number') === 0,
     );
   }
 
   private handleUpdateResultName(value: string): void {
-    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), value, [
-      Alphanumeric,
-      StartIsNonNumeric
-    ]);
+    const resultName = validate(
+      i18n.t('forms.result_name', 'Result Name'),
+      value,
+      [Alphanumeric, StartIsNonNumeric],
+    );
     this.setState({
       resultName,
-      valid: this.state.valid && !hasErrors(resultName)
+      valid: this.state.valid && !hasErrors(resultName),
     });
   }
 
@@ -68,8 +70,8 @@ export default class DigitsRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -77,16 +79,29 @@ export default class DigitsRouterForm extends React.Component<
     const typeConfig = this.props.typeConfig;
     const operators = this.getOperators();
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <p className={styles.lead_in}>If the keypad entry before the # symbol..</p>
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
+        <p className={styles.lead_in}>
+          If the keypad entry before the # symbol..
+        </p>
         <CaseList
           data-spec="cases"
           cases={this.state.cases}
           onCasesUpdated={this.handleCasesUpdated}
           operators={operators}
         />
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

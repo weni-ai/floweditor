@@ -42,14 +42,20 @@ export const removeIcoSpecId = 'remove-icon';
 
 export const HEADER_NAME_ERROR = i18n.t(
   'errors.http_header_missing_name',
-  'HTTP headers must have a name'
+  'HTTP headers must have a name',
 );
 export const NAME_PLACEHOLDER = i18n.t('forms.ex_accept', 'Ex: Accept');
-export const VALUE_PLACEHOLDER = i18n.t('forms.ex_application_json', 'Ex: application/json');
+export const VALUE_PLACEHOLDER = i18n.t(
+  'forms.ex_application_json',
+  'Ex: application/json',
+);
 
 const UnnnicIcon = applyVueInReact(unnnicIcon);
 
-export default class HeaderElement extends React.Component<HeaderElementProps, HeaderElementState> {
+export default class HeaderElement extends React.Component<
+  HeaderElementProps,
+  HeaderElementState
+> {
   constructor(props: HeaderElementProps) {
     super(props);
 
@@ -60,11 +66,11 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
     this.state = {
       name: { value: name },
       value: { value },
-      errors: []
+      errors: [],
     };
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
@@ -72,12 +78,14 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
     return {
       name: this.state.name.value,
       value: this.state.value.value,
-      uuid: this.props.entry.value.uuid
+      uuid: this.props.entry.value.uuid,
     };
   }
 
   private handleChangeName(value: string): void {
-    const name = validate(i18n.t('forms.header_name', 'Header name'), value, [HeaderName]);
+    const name = validate(i18n.t('forms.header_name', 'Header name'), value, [
+      HeaderName,
+    ]);
 
     const errors = getAllErrors(this.state.value)
       .concat(getAllErrors(name))
@@ -86,19 +94,21 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
     this.setState({ name: { value: name.value }, errors }, () =>
       this.props.onChange(
         this.getHeader(),
-        getAllErrors(this.state.value).concat(getAllErrors(name))
-      )
+        getAllErrors(this.state.value).concat(getAllErrors(name)),
+      ),
     );
   }
 
   private handleChangeValue(value: string): void {
     this.setState({ value: { value } }, () => {
-      const name = validate(i18n.t('forms.header_name', 'Header name'), this.state.name.value, [
-        HeaderName
-      ]);
+      const name = validate(
+        i18n.t('forms.header_name', 'Header name'),
+        this.state.name.value,
+        [HeaderName],
+      );
       this.props.onChange(
         this.getHeader(),
-        getAllErrors(this.state.value).concat(getAllErrors(name))
+        getAllErrors(this.state.value).concat(getAllErrors(name)),
       );
     });
   }
@@ -127,7 +137,10 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
   public render(): JSX.Element {
     const removeIco: JSX.Element = this.getRemoveIco();
     return (
-      <FormElement name={i18n.t('forms.webhook_header', 'Header')} entry={this.props.entry}>
+      <FormElement
+        name={i18n.t('forms.webhook_header', 'Header')}
+        entry={this.props.entry}
+      >
         <div className={styles.header} data-spec={headerContainerSpecId}>
           <div className={styles.header_name} data-spec={nameContainerSpecId}>
             <TextInputElement
@@ -135,10 +148,17 @@ export default class HeaderElement extends React.Component<HeaderElementProps, H
               name={NAME_PLACEHOLDER}
               onChange={this.handleChangeName}
               entry={this.state.name}
-              error={this.state.errors.length ? this.state.errors.join(', ') : undefined}
+              error={
+                this.state.errors.length
+                  ? this.state.errors.join(', ')
+                  : undefined
+              }
             />
           </div>
-          <div className={styles.header_value} data-spec={valueConatainerSpecId}>
+          <div
+            className={styles.header_value}
+            data-spec={valueConatainerSpecId}
+          >
             <TextInputElement
               placeholder={VALUE_PLACEHOLDER}
               name={VALUE_PLACEHOLDER}

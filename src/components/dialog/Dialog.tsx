@@ -16,7 +16,7 @@ import i18n from 'config/i18n';
 
 export enum HeaderStyle {
   NORMAL = 'normal',
-  BARBER = 'barber'
+  BARBER = 'barber',
 }
 
 export interface ButtonSet {
@@ -69,11 +69,11 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
   constructor(props: DialogProps) {
     super(props);
     this.state = {
-      activeTab: -1
+      activeTab: -1,
     };
 
     bindCallbacks(this, {
-      include: [/^handle/, /^get/]
+      include: [/^handle/, /^get/],
     });
   }
 
@@ -118,14 +118,14 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
 
   public componentDidMount(): void {
     window.document.addEventListener('keydown', this.handleKey, {
-      capture: true
+      capture: true,
     });
   }
 
   public componentWillUnmount(): void {
     window.clearTimeout(this.tabFocus);
     window.document.removeEventListener('keydown', this.handleKey, {
-      capture: true
+      capture: true,
     });
   }
 
@@ -134,11 +134,13 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
     const buttons = this.props.buttons || {
       primary: null,
       secondary: null,
-      tertiary: null
+      tertiary: null,
     };
 
     if (buttons.secondary) {
-      rightButtons.push(<Button key={0} type={ButtonTypes.tertiary} {...buttons.secondary} />);
+      rightButtons.push(
+        <Button key={0} type={ButtonTypes.tertiary} {...buttons.secondary} />,
+      );
     }
 
     if (buttons.primary) {
@@ -157,7 +159,7 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
           name={buttons.primary.name}
           disabled={buttons.primary.disabled}
           type={ButtonTypes.primary}
-        />
+        />,
       );
     }
 
@@ -165,12 +167,14 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
 
     // Our left most button if we have one
     if (buttons.tertiary) {
-      leftButtons.push(<Button key={0} type={ButtonTypes.tertiary} {...buttons.tertiary} />);
+      leftButtons.push(
+        <Button key={0} type={ButtonTypes.tertiary} {...buttons.tertiary} />,
+      );
     }
 
     return {
       leftButtons,
-      rightButtons
+      rightButtons,
     };
   }
 
@@ -199,9 +203,13 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
     return (
       <div className={activeClasses.join(' ')}>
         <div className={headerClasses.join(' ')}>
-          {this.state.activeTab > -1 ? <div className={styles.header_overlay} /> : null}
+          {this.state.activeTab > -1 ? (
+            <div className={styles.header_overlay} />
+          ) : null}
           {renderIf(this.props.headerIcon !== undefined)(
-            <span className={`${styles.header_icon} ${this.props.headerIcon}`} />
+            <span
+              className={`${styles.header_icon} ${this.props.headerIcon}`}
+            />,
           )}
           <div
             onClick={() => {
@@ -212,7 +220,9 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
             <div className={`${styles.title} u font secondary title-sm black`}>
               {this.props.title}
 
-              {this.props.new && <span className={styles.new}>{i18n.t('new', 'New')}!</span>}
+              {this.props.new && (
+                <span className={styles.new}>{i18n.t('new', 'New')}!</span>
+              )}
             </div>
             <div className={styles.subtitle}>{this.props.subtitle}</div>
           </div>
@@ -224,7 +234,9 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
               initialTab={String(this.state.activeTab + 1)}
               tabs={[
                 '0',
-                ...(this.props.tabs || []).map((tab: Tab, index: number) => String(index + 1))
+                ...(this.props.tabs || []).map((tab: Tab, index: number) =>
+                  String(index + 1),
+                ),
               ]}
               $slots={(this.props.tabs || []).reduce(
                 (tabs, currentTab: Tab, index: number) => ({
@@ -237,28 +249,34 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
                           icon="check-square-1"
                           size="sm"
                           scheme={
-                            this.state.activeTab + 1 === index ? 'neutral-clean' : 'neutral-darkest'
+                            this.state.activeTab + 1 === index
+                              ? 'neutral-clean'
+                              : 'neutral-darkest'
                           }
                           className={styles.icon}
                         />
                       ) : null}
                     </>
-                  )
+                  ),
                 }),
                 {
-                  'tab-head-0': i18n.t('forms.general', 'General')
-                }
+                  'tab-head-0': i18n.t('forms.general', 'General'),
+                },
               )}
               $model={{
                 value: String(this.state.activeTab + 1),
                 setter: (index: string) => {
                   this.setState({ activeTab: Number(index) - 1 });
-                }
+                },
               }}
             />
           ) : null}
         </div>
-        <div className={this.props.noPadding ? styles.content_no_padding : styles.content}>
+        <div
+          className={
+            this.props.noPadding ? styles.content_no_padding : styles.content
+          }
+        >
           {this.state.activeTab > -1
             ? this.props.tabs![this.state.activeTab].body
             : this.props.children}
@@ -267,11 +285,11 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
         <div className={styles.footer}>
           <div className={styles.buttons}>
             {renderIf(this.props.gutter != null)(
-              <div className={styles.gutter}>{this.props.gutter}</div>
+              <div className={styles.gutter}>{this.props.gutter}</div>,
             )}
             <div className={styles.buttons_wrapper}>
               {renderIf(leftButtons.length > 0)(
-                <div className={styles.left_buttons}>{leftButtons}</div>
+                <div className={styles.left_buttons}>{leftButtons}</div>,
               )}
               <div className={styles.right_buttons}>{rightButtons}</div>
             </div>

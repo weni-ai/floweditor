@@ -5,13 +5,22 @@ import { RouterFormProps } from 'components/flow/props';
 import CaseList, { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
-import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
-import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
+import SelectElement, {
+  SelectOption,
+} from 'components/form/select/SelectElement';
+import SwitchElement, {
+  SwitchSizes,
+} from 'components/form/switch/SwitchElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import * as React from 'react';
 import { Asset } from 'store/flowContext';
 import { FormEntry, FormState, mergeForm, StringEntry } from 'store/nodeEditor';
-import { Alphanumeric, shouldRequireIf, StartIsNonNumeric, validate } from 'store/validators';
+import {
+  Alphanumeric,
+  shouldRequireIf,
+  StartIsNonNumeric,
+  validate,
+} from 'store/validators';
 
 import {
   DELIMITER_OPTIONS,
@@ -19,7 +28,7 @@ import {
   getDelimiterOption,
   getFieldOption,
   nodeToState,
-  stateToNode
+  stateToNode,
 } from './helpers';
 import styles from './ResultRouterForm.module.scss';
 import i18n from 'config/i18n';
@@ -49,7 +58,7 @@ export default class ResultRouterForm extends React.Component<
     this.state = nodeToState(this.props.nodeSettings, this.props.assetStore);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
@@ -60,7 +69,10 @@ export default class ResultRouterForm extends React.Component<
     });
   }
 
-  private handleUpdate(keys: { resultName?: string; cases?: CaseProps[] }): boolean {
+  private handleUpdate(keys: {
+    resultName?: string;
+    cases?: CaseProps[];
+  }): boolean {
     const updates: Partial<ResultRouterFormState> = {};
 
     if (keys.hasOwnProperty('cases')) {
@@ -68,10 +80,11 @@ export default class ResultRouterForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('resultName')) {
-      updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
-        Alphanumeric,
-        StartIsNonNumeric
-      ]);
+      updates.resultName = validate(
+        i18n.t('forms.result_name', 'Result Name'),
+        keys.resultName,
+        [Alphanumeric, StartIsNonNumeric],
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -91,9 +104,11 @@ export default class ResultRouterForm extends React.Component<
 
   private handleResultChanged(selected: Asset[], submitting = false): boolean {
     const updates: Partial<ResultRouterFormState> = {
-      result: validate(i18n.t('forms.result_to_split_on', 'Result to split on'), selected[0], [
-        shouldRequireIf(submitting)
-      ])
+      result: validate(
+        i18n.t('forms.result_to_split_on', 'Result to split on'),
+        selected[0],
+        [shouldRequireIf(submitting)],
+      ),
     };
 
     const updated = mergeForm(this.state, updates);
@@ -103,7 +118,9 @@ export default class ResultRouterForm extends React.Component<
 
   private handleSave(): void {
     // if we still have invalid cases, don't move forward
-    const invalidCase = this.state.cases.find((caseProps: CaseProps) => !caseProps.valid);
+    const invalidCase = this.state.cases.find(
+      (caseProps: CaseProps) => !caseProps.valid,
+    );
     if (invalidCase) {
       return;
     }
@@ -120,8 +137,8 @@ export default class ResultRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -211,14 +228,14 @@ export default class ResultRouterForm extends React.Component<
             checked={this.state.shouldDelimit}
             description={i18n.t(
               'forms.delimit_result_description',
-              'Evaluate your rules against a delimited part of your result'
+              'Evaluate your rules against a delimited part of your result',
             )}
             onChange={this.handleShouldDelimitChanged}
             size={SwitchSizes.small}
           />
         </div>
       ),
-      checked: this.state.shouldDelimit
+      checked: this.state.shouldDelimit,
     };
 
     return (
@@ -228,9 +245,15 @@ export default class ResultRouterForm extends React.Component<
         buttons={this.getButtons()}
         tabs={[advanced]}
       >
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
 
-        {this.state.shouldDelimit ? this.renderFieldDelimited() : this.renderField()}
+        {this.state.shouldDelimit
+          ? this.renderFieldDelimited()
+          : this.renderField()}
 
         <div className="u font secondary body-md color-neutral-cloudy">
           {i18n.t('forms.message_label')}
@@ -241,7 +264,10 @@ export default class ResultRouterForm extends React.Component<
           cases={this.state.cases}
           onCasesUpdated={this.handleCasesUpdated}
         />
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

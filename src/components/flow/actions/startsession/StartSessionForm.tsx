@@ -11,11 +11,13 @@ import {
   mergeForm,
   StringEntry,
   SelectOptionEntry,
-  FormEntry
+  FormEntry,
 } from 'store/nodeEditor';
 import { shouldRequireIf, validate } from 'store/validators';
 import { renderIf } from 'utils';
-import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
+import SelectElement, {
+  SelectOption,
+} from 'components/form/select/SelectElement';
 import { initializeForm, stateToAction } from './helpers';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import i18n from 'config/i18n';
@@ -25,18 +27,22 @@ import styles from './StartSession.module.scss';
 
 export const START_TYPE_ASSETS: SelectOption = {
   name: i18n.t('forms.start_type_manual', 'Select recipients manually'),
-  value: 'assets'
+  value: 'assets',
 };
 export const START_TYPE_CREATE: SelectOption = {
   name: i18n.t('forms.start_type_create', 'Create a new contact'),
-  value: 'create_contact'
+  value: 'create_contact',
 };
 export const START_TYPE_QUERY: SelectOption = {
   name: i18n.t('forms.start_type_query', 'Select recipients from a query'),
-  value: 'contact_query'
+  value: 'contact_query',
 };
 
-const START_TYPE_OPTIONS = [START_TYPE_ASSETS, START_TYPE_QUERY, START_TYPE_CREATE];
+const START_TYPE_OPTIONS = [
+  START_TYPE_ASSETS,
+  START_TYPE_QUERY,
+  START_TYPE_CREATE,
+];
 
 export interface StartSessionFormState extends FormState {
   recipients: AssetArrayEntry;
@@ -45,14 +51,17 @@ export interface StartSessionFormState extends FormState {
   contactQuery: StringEntry;
 }
 
-export class StartSessionForm extends React.Component<ActionFormProps, StartSessionFormState> {
+export class StartSessionForm extends React.Component<
+  ActionFormProps,
+  StartSessionFormState
+> {
   constructor(props: ActionFormProps) {
     super(props);
 
     this.state = initializeForm(this.props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
@@ -77,8 +86,13 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
   }
 
   private handleUpdate(
-    keys: { flow?: Asset; recipients?: Asset[]; startType?: SelectOption; contactQuery?: string },
-    submitting = false
+    keys: {
+      flow?: Asset;
+      recipients?: Asset[];
+      startType?: SelectOption;
+      contactQuery?: string;
+    },
+    submitting = false,
   ): boolean {
     const updates: Partial<StartSessionFormState> = {};
 
@@ -97,19 +111,31 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
       updates.contactQuery = validate(
         i18n.t('forms.contact_query', 'Contact Query'),
         keys.contactQuery,
-        [shouldRequireIf(submitting && this.state.startType.value.value === START_TYPE_QUERY.value)]
+        [
+          shouldRequireIf(
+            submitting &&
+              this.state.startType.value.value === START_TYPE_QUERY.value,
+          ),
+        ],
       );
     }
 
     if (keys.hasOwnProperty('recipients')) {
-      updates.recipients = validate(i18n.t('forms.recipients', 'Recipients'), keys.recipients, [
-        shouldRequireIf(submitting && this.state.startType.value.value === START_TYPE_ASSETS.value)
-      ]);
+      updates.recipients = validate(
+        i18n.t('forms.recipients', 'Recipients'),
+        keys.recipients,
+        [
+          shouldRequireIf(
+            submitting &&
+              this.state.startType.value.value === START_TYPE_ASSETS.value,
+          ),
+        ],
+      );
     }
 
     if (keys.hasOwnProperty('flow')) {
       updates.flow = validate(i18n.t('forms.flow', 'Flow'), keys.flow, [
-        shouldRequireIf(submitting)
+        shouldRequireIf(submitting),
       ]);
     }
 
@@ -124,13 +150,15 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
       {
         recipients: this.state.recipients.value,
         flow: this.state.flow.value,
-        contactQuery: this.state.contactQuery.value
+        contactQuery: this.state.contactQuery.value,
       },
-      true
+      true,
     );
 
     if (valid) {
-      this.props.updateAction(stateToAction(this.props.nodeSettings, this.state));
+      this.props.updateAction(
+        stateToAction(this.props.nodeSettings, this.state),
+      );
 
       // notify our modal we are done
       this.props.onClose(false);
@@ -142,8 +170,8 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -151,8 +179,16 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
     const typeConfig = this.props.typeConfig;
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <div>
           <SelectElement
             key="start_type_select"
@@ -164,13 +200,15 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
         </div>
         <p />
         <div>
-          {renderIf(this.state.startType.value.value === START_TYPE_ASSETS.value)(
+          {renderIf(
+            this.state.startType.value.value === START_TYPE_ASSETS.value,
+          )(
             <div data-testid="recipients" className={styles.form_element}>
               <AssetSelector
                 name={i18n.t('forms.contacts')}
                 placeholder={i18n.t(
                   'forms.select_who_to_start',
-                  'Select who should be started in the flow'
+                  'Select who should be started in the flow',
                 )}
                 showLabel={true}
                 assets={this.props.assetStore.recipients}
@@ -180,10 +218,12 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
                 expressions={true}
                 onChange={this.handleRecipientsChanged}
               />
-            </div>
+            </div>,
           )}
 
-          {renderIf(this.state.startType.value.value === START_TYPE_QUERY.value)(
+          {renderIf(
+            this.state.startType.value.value === START_TYPE_QUERY.value,
+          )(
             <div data-testid="contact_query" className={styles.form_element}>
               <TextInputElement
                 name={i18n.t('forms.contact_query', 'Contact Query')}
@@ -194,13 +234,16 @@ export class StartSessionForm extends React.Component<ActionFormProps, StartSess
                 autocomplete={true}
                 focus={true}
               />
-            </div>
+            </div>,
           )}
 
           <AssetSelector
             name={i18n.t('forms.flow', 'Flow')}
             showLabel={true}
-            placeholder={i18n.t('forms.select_flow', 'Select the flow to start')}
+            placeholder={i18n.t(
+              'forms.select_flow',
+              'Select the flow to start',
+            )}
             assets={this.props.assetStore.flows}
             entry={this.state.flow}
             searchable={true}

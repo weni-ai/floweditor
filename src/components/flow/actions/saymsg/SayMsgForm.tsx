@@ -18,26 +18,31 @@ export interface SayMsgFormState extends FormState {
   audio: StringEntry;
 }
 
-export default class SayMsgForm extends React.Component<ActionFormProps, SayMsgFormState> {
+export default class SayMsgForm extends React.Component<
+  ActionFormProps,
+  SayMsgFormState
+> {
   constructor(props: ActionFormProps) {
     super(props);
     this.state = initializeForm(this.props.nodeSettings);
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   private handleUpdate(keys: { text?: string }, submitting = false): boolean {
     const updates: Partial<SayMsgFormState> = {};
 
     if (keys.hasOwnProperty('text')) {
-      updates.message = validate(i18n.t('forms.message', 'Message'), keys.text!, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.message = validate(
+        i18n.t('forms.message', 'Message'),
+        keys.text!,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -45,7 +50,11 @@ export default class SayMsgForm extends React.Component<ActionFormProps, SayMsgF
     return updated.valid;
   }
 
-  public handleMessageUpdate(text: string, name: string, submitting = false): boolean {
+  public handleMessageUpdate(
+    text: string,
+    name: string,
+    submitting = false,
+  ): boolean {
     return this.handleUpdate({ text }, submitting);
   }
 
@@ -54,7 +63,9 @@ export default class SayMsgForm extends React.Component<ActionFormProps, SayMsgF
     const valid = this.handleUpdate({ text: this.state.message.value }, true);
 
     if (valid) {
-      this.props.updateAction(stateToAction(this.props.nodeSettings, this.state));
+      this.props.updateAction(
+        stateToAction(this.props.nodeSettings, this.state),
+      );
 
       // notify our modal we are done
       this.props.onClose(false);
@@ -66,8 +77,8 @@ export default class SayMsgForm extends React.Component<ActionFormProps, SayMsgF
       primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -79,8 +90,16 @@ export default class SayMsgForm extends React.Component<ActionFormProps, SayMsgF
     const typeConfig = this.props.typeConfig;
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <TextInputElement
           name={i18n.t('forms.message', 'Message')}
           showLabel={false}

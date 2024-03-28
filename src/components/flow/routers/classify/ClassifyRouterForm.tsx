@@ -12,7 +12,7 @@ import {
   Required,
   shouldRequireIf,
   StartIsNonNumeric,
-  validate
+  validate,
 } from 'store/validators';
 import CaseList, { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
@@ -42,21 +42,25 @@ export default class ClassifyRouterForm extends React.Component<
 
     this.state = nodeToState(this.props.nodeSettings);
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
 
     // we need to resolve our classifier for intent selection
     if (this.state.classifier.value) {
       // TODO: don't use asset as intermediary now that AssetSelector deals in native options
-      fetchAsset(this.props.assetStore.classifiers, this.state.classifier.value.uuid).then(
-        (classifier: Asset) => {
-          if (classifier) {
-            this.handleUpdate({
-              classifier: { ...this.state.classifier.value, ...classifier.content }
-            });
-          }
+      fetchAsset(
+        this.props.assetStore.classifiers,
+        this.state.classifier.value.uuid,
+      ).then((classifier: Asset) => {
+        if (classifier) {
+          this.handleUpdate({
+            classifier: {
+              ...this.state.classifier.value,
+              ...classifier.content,
+            },
+          });
         }
-      );
+      });
     }
   }
 
@@ -65,23 +69,29 @@ export default class ClassifyRouterForm extends React.Component<
       resultName?: string;
       classifier?: any;
     },
-    submitting = false
+    submitting = false,
   ): boolean {
     const updates: Partial<ClassifyRouterFormState> = {};
 
     if (keys.hasOwnProperty('resultName')) {
-      updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
-        shouldRequireIf(submitting),
-        Required,
-        Alphanumeric,
-        StartIsNonNumeric
-      ]);
+      updates.resultName = validate(
+        i18n.t('forms.result_name', 'Result Name'),
+        keys.resultName,
+        [
+          shouldRequireIf(submitting),
+          Required,
+          Alphanumeric,
+          StartIsNonNumeric,
+        ],
+      );
     }
 
     if (keys.hasOwnProperty('classifier')) {
-      updates.classifier = validate(i18n.t('forms.classifier', 'Classifier'), keys.classifier, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.classifier = validate(
+        i18n.t('forms.classifier', 'Classifier'),
+        keys.classifier,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -102,7 +112,9 @@ export default class ClassifyRouterForm extends React.Component<
 
   private handleSave(): void {
     // if we still have invalid cases, don't move forward
-    const invalidCase = this.state.cases.find((caseProps: CaseProps) => !caseProps.valid);
+    const invalidCase = this.state.cases.find(
+      (caseProps: CaseProps) => !caseProps.valid,
+    );
     if (invalidCase) {
       return;
     }
@@ -111,9 +123,9 @@ export default class ClassifyRouterForm extends React.Component<
     const valid = this.handleUpdate(
       {
         resultName: this.state.resultName.value,
-        classifier: this.state.classifier.value
+        classifier: this.state.classifier.value,
       },
-      true
+      true,
     );
 
     if (valid) {
@@ -128,7 +140,7 @@ export default class ClassifyRouterForm extends React.Component<
 
   private handleOperandUpdated(value: string): void {
     this.setState({
-      operand: validate(i18n.t('forms.operand', 'Operand'), value, [Required])
+      operand: validate(i18n.t('forms.operand', 'Operand'), value, [Required]),
     });
   }
 
@@ -137,8 +149,8 @@ export default class ClassifyRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -153,8 +165,11 @@ export default class ClassifyRouterForm extends React.Component<
         checked: this.state.operand.value !== DEFAULT_OPERAND,
         body: (
           <>
-            <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
-              {i18n.t('forms.classifier_input_description')} <code>{DEFAULT_OPERAND}</code>.
+            <div
+              className={`${styles.label} u font secondary body-md color-neutral-cloudy`}
+            >
+              {i18n.t('forms.classifier_input_description')}{' '}
+              <code>{DEFAULT_OPERAND}</code>.
             </div>
 
             <TextInputElement
@@ -165,8 +180,8 @@ export default class ClassifyRouterForm extends React.Component<
               entry={this.state.operand}
             />
           </>
-        )
-      }
+        ),
+      },
     ];
 
     return (
@@ -179,10 +194,16 @@ export default class ClassifyRouterForm extends React.Component<
           this.dialog = ele;
         }}
       >
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
 
         <div className={styles.form_element}>
-          <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+          <div
+            className={`${styles.label} u font secondary body-md color-neutral-cloudy`}
+          >
             <span>{i18n.t('forms.execute')}</span>
             <span
               className={styles.link}
@@ -220,10 +241,13 @@ export default class ClassifyRouterForm extends React.Component<
               operators={intentOperatorList}
               classifier={this.state.classifier.value}
             />
-          </>
+          </>,
         )}
 
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

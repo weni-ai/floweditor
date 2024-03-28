@@ -22,9 +22,9 @@ describe('StartSessionComp', () => {
             { uuid: 'contact-2', name: 'Kellan Alexander' },
             { uuid: 'contact-3', name: 'Rowan Seymour' },
             { uuid: 'contact-4', name: 'Leah Burgerbuns' },
-            { uuid: 'contact-5', name: 'Nic Pottier' }
+            { uuid: 'contact-5', name: 'Nic Pottier' },
           ]}
-        />
+        />,
       );
 
       expect(baseElement).toMatchSnapshot();
@@ -33,7 +33,12 @@ describe('StartSessionComp', () => {
 
     it('should render creating a new contact', () => {
       const { baseElement, getByText } = render(
-        <StartSessionComp {...baseProps} contacts={[]} groups={[]} create_contact={true} />
+        <StartSessionComp
+          {...baseProps}
+          contacts={[]}
+          groups={[]}
+          create_contact={true}
+        />,
       );
       expect(baseElement).toMatchSnapshot();
       getByText('Create a new contact');

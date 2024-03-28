@@ -3,16 +3,28 @@ import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import { createResultNameInput } from 'components/flow/routers/widgets';
-import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
+import SelectElement, {
+  SelectOption,
+} from 'components/form/select/SelectElement';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import { fakePropType } from 'config/ConfigProvider';
 import { Category } from 'flowTypes';
 import * as React from 'react';
-import { FormState, mergeForm, SelectOptionEntry, StringEntry } from 'store/nodeEditor';
+import {
+  FormState,
+  mergeForm,
+  SelectOptionEntry,
+  StringEntry,
+} from 'store/nodeEditor';
 import { Alphanumeric, StartIsNonNumeric, validate } from 'store/validators';
 
-import { BUCKET_OPTIONS, fillOutCategories, nodeToState, stateToNode } from './helpers';
+import {
+  BUCKET_OPTIONS,
+  fillOutCategories,
+  nodeToState,
+  stateToNode,
+} from './helpers';
 import styles from './RandomRouterForm.module.scss';
 import i18n from 'config/i18n';
 import { TembaSelectStyle } from 'temba/TembaSelect';
@@ -23,7 +35,7 @@ export enum InputToFocus {
   args = 'args',
   min = 'min',
   max = 'max',
-  exit = 'exit'
+  exit = 'exit',
 }
 
 export interface RandomRouterFormState extends FormState {
@@ -44,22 +56,23 @@ export default class RandomRouterForm extends React.Component<
     this.state = nodeToState(this.props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
   public static contextTypes = {
-    assetService: fakePropType
+    assetService: fakePropType,
   };
 
   private handleUpdateResultName(value: string): void {
-    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), value, [
-      Alphanumeric,
-      StartIsNonNumeric
-    ]);
+    const resultName = validate(
+      i18n.t('forms.result_name', 'Result Name'),
+      value,
+      [Alphanumeric, StartIsNonNumeric],
+    );
     this.setState({
       resultName,
-      valid: this.state.valid && !hasErrors(resultName)
+      valid: this.state.valid && !hasErrors(resultName),
     });
   }
 
@@ -77,7 +90,7 @@ export default class RandomRouterForm extends React.Component<
     categories = fillOutCategories(categories, count);
 
     const updates: Partial<RandomRouterFormState> = {
-      bucketChoice: { value: selected }
+      bucketChoice: { value: selected },
     };
 
     const updated = mergeForm(this.state, updates);
@@ -101,8 +114,8 @@ export default class RandomRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -121,7 +134,9 @@ export default class RandomRouterForm extends React.Component<
         entry={{
           value: cat.name,
           validationFailures:
-            cat.name.trim().length === 0 ? [{ message: 'Bucket name is required' }] : []
+            cat.name.trim().length === 0
+              ? [{ message: 'Bucket name is required' }]
+              : [],
         }}
         onChange={(value: string) => {
           this.handleBucketNameChanged(cat, value);
@@ -139,10 +154,20 @@ export default class RandomRouterForm extends React.Component<
     }
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <div className={styles.options}>
-          <div className={`${styles.lead_in} u font secondary body-md color-neutral-cloudy`}>
+          <div
+            className={`${styles.lead_in} u font secondary body-md color-neutral-cloudy`}
+          >
             {i18n.t('forms.select_quantity_of_buckets_label')}
           </div>
           <div className={styles.bucket_select}>
@@ -157,7 +182,10 @@ export default class RandomRouterForm extends React.Component<
           </div>
         </div>
         <div className={styles.bucket_list}>{this.renderBucketNames()}</div>
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

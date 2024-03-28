@@ -21,10 +21,10 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
     slotWrap: 'div',
     componentWrapAttrs: {
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 interface MsgProps {
@@ -111,7 +111,7 @@ interface LogEventState {
 
 export enum Direction {
   MT,
-  MO
+  MO,
 }
 
 const getStyleForDirection = (direction: Direction): string => {
@@ -162,7 +162,7 @@ const renderAttachment = (attachment: string): JSX.Element => {
             textDecoration: 'none',
             padding: '10px 12px',
             background: '#e6e6e6',
-            color: '#666'
+            color: '#666',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -170,7 +170,7 @@ const renderAttachment = (attachment: string): JSX.Element => {
               className="fe-document-file-pdf"
               style={{
                 textDecoration: 'none',
-                fontSize: '20px'
+                fontSize: '20px',
               }}
             />
             <div style={{ marginLeft: '5px', lineHeight: '16px' }}>
@@ -196,7 +196,7 @@ const renderMessage = (
   text: string,
   attachments: string[],
   direction: Direction,
-  style?: string
+  style?: string,
 ): JSX.Element => {
   const attaches = attachments || [];
 
@@ -236,11 +236,14 @@ const renderMessage = (
 /**
  * Viewer for log events
  */
-export default class LogEvent extends React.Component<EventProps, LogEventState> {
+export default class LogEvent extends React.Component<
+  EventProps,
+  LogEventState
+> {
   constructor(props: EventProps) {
     super(props);
     this.state = {
-      detailsVisible: false
+      detailsVisible: false,
     };
 
     this.showDetails = this.showDetails.bind(this);
@@ -253,8 +256,8 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
         name: 'Ok',
         onClick: () => {
           this.setState({ detailsVisible: false });
-        }
-      }
+        },
+      },
     };
   }
 
@@ -280,13 +283,21 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
     if (this.props.groups_added) {
       const info = i18n.t('simulator.added_to_group', 'Added to');
       parts.push(
-        info + ' ' + this.renderValueList(this.props.groups_added.map(group => group.name))
+        info +
+          ' ' +
+          this.renderValueList(
+            this.props.groups_added.map(group => group.name),
+          ),
       );
     }
     if (this.props.groups_removed) {
       const info = i18n.t('simulator.removed_from_group', 'Removed from');
       parts.push(
-        info + ' ' + this.renderValueList(this.props.groups_removed.map(group => group.name))
+        info +
+          ' ' +
+          this.renderValueList(
+            this.props.groups_removed.map(group => group.name),
+          ),
       );
     }
 
@@ -297,8 +308,10 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
     let info = i18n.t('simulator.input_labels_added', 'Message labeled with');
 
     return renderInfo(
-      info + ' ' + this.renderValueList(this.props.labels.map(label => label.name)),
-      this.props.style
+      info +
+        ' ' +
+        this.renderValueList(this.props.labels.map(label => label.name)),
+      this.props.style,
     );
   }
 
@@ -308,7 +321,10 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
       <div className={styles.info + ' ' + styles.email}>
         <Trans
           i18nKey="simulator.sent_email.summary"
-          values={{ recipients: this.renderValueList(recipients), subject: this.props.subject }}
+          values={{
+            recipients: this.renderValueList(recipients),
+            subject: this.props.subject,
+          }}
         >
           Sent email to [[recipients]] with subject "[[subject]]"
         </Trans>
@@ -328,11 +344,15 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
           </div>
           <div className={styles.body}>{this.props.body}</div>
         </div>
-      </Dialog>
+      </Dialog>,
     );
   }
 
-  private renderHTTPRequest(headerClass: Types, log: WebRequestLog, style?: string): JSX.Element {
+  private renderHTTPRequest(
+    headerClass: Types,
+    log: WebRequestLog,
+    style?: string,
+  ): JSX.Element {
     return this.renderClickable(
       <div className={styles.info + ' ' + styles.webhook + ' ' + style}>
         <span>Called {log.url}</span>
@@ -347,7 +367,7 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
           <div className={''}>{this.renderFilteredRequest(log.request)}</div>
           <div className={styles.response}>{log.response}</div>
         </div>
-      </Dialog>
+      </Dialog>,
     );
   }
 
@@ -362,14 +382,25 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
       );
     }
     if (this.props.url) {
-      return this.renderHTTPRequest(headerClass, this.props as WebRequestLog, style);
+      return this.renderHTTPRequest(
+        headerClass,
+        this.props as WebRequestLog,
+        style,
+      );
     }
   }
 
-  private renderClickable(element: JSX.Element, details: JSX.Element): JSX.Element {
+  private renderClickable(
+    element: JSX.Element,
+    details: JSX.Element,
+  ): JSX.Element {
     return (
       <>
-        <div className={styles.has_detail} onClick={this.showDetails} key={this.props.step_uuid}>
+        <div
+          className={styles.has_detail}
+          onClick={this.showDetails}
+          key={this.props.step_uuid}
+        >
           {element}
         </div>
         <Modal show={this.state.detailsVisible}>
@@ -400,7 +431,7 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
                   <td>{key}</td>
                   <td>{entity.confidence.toFixed(3)}</td>
                 </tr>
-              ) : null
+              ) : null,
             );
           })}
         </tbody>
@@ -420,28 +451,31 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
           this.props.msg.text,
           this.props.msg.attachments,
           Direction.MO,
-          logStyle
+          logStyle,
         );
       case 'msg_created':
         return renderMessage(
           this.props.msg.text,
           this.props.msg.attachments,
           Direction.MT,
-          logStyle
+          logStyle,
         );
       case 'ivr_created':
         return renderMessage(
           this.props.msg.text,
           this.props.msg.attachments,
           Direction.MT,
-          logStyle
+          logStyle,
         );
       case 'error':
         return renderError(this.props.text, logStyle);
       case 'failure':
         return renderError(this.props.text, logStyle);
       case 'msg_wait':
-        return renderInfo(i18n.t('simulator.msg_wait', 'Waiting for reply'), logStyle);
+        return renderInfo(
+          i18n.t('simulator.msg_wait', 'Waiting for reply'),
+          logStyle,
+        );
       case 'contact_groups_changed':
         return this.renderGroupsChanged();
       case 'contact_urns_changed':
@@ -450,34 +484,50 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
         const value = this.getValue(this.props.value);
         if (value !== '') {
           return renderInfo(
-            i18n.t('simulator.contact_field_changed', 'Set contact "[[field]]" to "[[value]]"', {
-              field: this.props.field.name,
-              value: this.getValue(this.props.value)
-            }),
-            logStyle
+            i18n.t(
+              'simulator.contact_field_changed',
+              'Set contact "[[field]]" to "[[value]]"',
+              {
+                field: this.props.field.name,
+                value: this.getValue(this.props.value),
+              },
+            ),
+            logStyle,
           );
         } else {
           return renderInfo(
-            i18n.t('simulator.contact_field_cleared', 'Cleared contact "[[field]]"', {
-              field: this.props.field.name
-            }),
-            logStyle
+            i18n.t(
+              'simulator.contact_field_cleared',
+              'Cleared contact "[[field]]"',
+              {
+                field: this.props.field.name,
+              },
+            ),
+            logStyle,
           );
         }
       case 'run_result_changed':
         return renderInfo(
-          i18n.t('simulator.run_result_changed', 'Set result "[[field]]" to "[[value]]"', {
-            field: this.props.name,
-            value: this.getValue(this.props.value)
-          }),
-          logStyle
+          i18n.t(
+            'simulator.run_result_changed',
+            'Set result "[[field]]" to "[[value]]"',
+            {
+              field: this.props.name,
+              value: this.getValue(this.props.value),
+            },
+          ),
+          logStyle,
         );
       case 'contact_name_changed':
         return renderInfo(
-          i18n.t('simulator.contact_name_changed', 'Set contact name to "[[name]]"', {
-            name: this.props.name
-          }),
-          logStyle
+          i18n.t(
+            'simulator.contact_name_changed',
+            'Set contact name to "[[name]]"',
+            {
+              name: this.props.name,
+            },
+          ),
+          logStyle,
         );
       case 'email_created':
       case 'email_sent':
@@ -487,14 +537,18 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
           this.props.translations[this.props.base_language].text,
           this.props.msg ? this.props.msg.attachments : [],
           Direction.MT,
-          logStyle
+          logStyle,
         );
       case 'resthook_called':
         return renderInfo(
-          i18n.t('simulator.resthook_called', 'Triggered flow event "[[resthook]]"', {
-            resthook: this.props.resthook
-          }),
-          logStyle
+          i18n.t(
+            'simulator.resthook_called',
+            'Triggered flow event "[[resthook]]"',
+            {
+              resthook: this.props.resthook,
+            },
+          ),
+          logStyle,
         );
       case 'service_called':
         if (this.props.service === 'classifier') {
@@ -506,30 +560,42 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
       case 'flow_entered':
         return renderInfo(
           i18n.t('simulator.flow_entered', 'Entered flow "[[flow]]"', {
-            flow: this.props.flow.name
+            flow: this.props.flow.name,
           }),
-          logStyle
+          logStyle,
         );
       case 'session_triggered':
         return renderInfo(
-          i18n.t('simulator.session_triggered', 'Started somebody else in "[[flow]]"', {
-            flow: this.props.flow.name
-          }),
-          logStyle
+          i18n.t(
+            'simulator.session_triggered',
+            'Started somebody else in "[[flow]]"',
+            {
+              flow: this.props.flow.name,
+            },
+          ),
+          logStyle,
         );
       case 'contact_language_changed':
         return renderInfo(
-          i18n.t('simulator.contact_language_changed', 'Set preferred language to "[[language]]"', {
-            language: this.props.language
-          }),
-          logStyle
+          i18n.t(
+            'simulator.contact_language_changed',
+            'Set preferred language to "[[language]]"',
+            {
+              language: this.props.language,
+            },
+          ),
+          logStyle,
         );
       case 'contact_status_changed':
         return renderInfo(
-          i18n.t('simulator.contact_status_changed', 'Set status to "[[status]]"', {
-            status: this.props.status
-          }),
-          logStyle
+          i18n.t(
+            'simulator.contact_status_changed',
+            'Set status to "[[status]]"',
+            {
+              status: this.props.status,
+            },
+          ),
+          logStyle,
         );
       case 'info':
         return renderInfo(this.props.text, logStyle);
@@ -539,10 +605,14 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
         return null;
       case 'ticket_opened':
         return renderInfo(
-          i18n.t('simulator.ticket_opened', 'Ticket opened with topic "[[topic]]"', {
-            topic: this.props.ticket.topic.name
-          }),
-          logStyle
+          i18n.t(
+            'simulator.ticket_opened',
+            'Ticket opened with topic "[[topic]]"',
+            {
+              topic: this.props.ticket.topic.name,
+            },
+          ),
+          logStyle,
         );
       case 'airtime_transferred':
         const event = this.props as AirtimeTransferEvent;
@@ -557,10 +627,10 @@ export default class LogEvent extends React.Component<EventProps, LogEventState>
                 {
                   amount: event.actual_amount,
                   currency: event.currency,
-                  recipient: getURNPath(event.recipient)
-                }
+                  recipient: getURNPath(event.recipient),
+                },
               ),
-              logStyle
+              logStyle,
             )}
           </>
         );

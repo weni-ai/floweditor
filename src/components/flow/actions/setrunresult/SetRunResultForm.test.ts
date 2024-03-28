@@ -2,12 +2,15 @@ import SetRunResultForm from 'components/flow/actions/setrunresult/SetRunResultF
 import { ActionFormProps } from 'components/flow/props';
 import { Asset, AssetType } from 'store/flowContext';
 import { composeComponentTestUtils, mock } from 'testUtils';
-import { createSetRunResultAction, getActionFormProps } from 'testUtils/assetCreators';
+import {
+  createSetRunResultAction,
+  getActionFormProps,
+} from 'testUtils/assetCreators';
 import * as utils from 'utils';
 
 const { setup } = composeComponentTestUtils<ActionFormProps>(
   SetRunResultForm,
-  getActionFormProps(createSetRunResultAction())
+  getActionFormProps(createSetRunResultAction()),
 );
 
 mock(utils, 'createUUID', utils.seededUUIDs());
@@ -15,7 +18,7 @@ mock(utils, 'createUUID', utils.seededUUIDs());
 const resultName: Asset = {
   name: 'Result Name',
   id: utils.snakify('Result Name'),
-  type: AssetType.Result
+  type: AssetType.Result,
 };
 
 describe(SetRunResultForm.name, () => {
@@ -44,7 +47,7 @@ describe(SetRunResultForm.name, () => {
     it('should allow switching from router', () => {
       const { instance, props } = setup(true, {
         $merge: { updateAction: jest.fn() },
-        nodeSettings: { $merge: { originalAction: null } }
+        nodeSettings: { $merge: { originalAction: null } },
       });
 
       instance.handleNameUpdate([resultName]);
@@ -59,7 +62,7 @@ describe(SetRunResultForm.name, () => {
   describe('cancel', () => {
     it('should cancel without changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateAction: jest.fn() }
+        $merge: { onClose: jest.fn(), updateAction: jest.fn() },
       });
 
       instance.handleNameUpdate([resultName]);

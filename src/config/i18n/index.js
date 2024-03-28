@@ -20,7 +20,7 @@ i18n
   .init({
     compatibilityJSON: 'v3',
     detection: {
-      order: ['querystring', 'htmlTag']
+      order: ['querystring', 'htmlTag'],
     },
     resources: {
       defaults: { translation: defaults },
@@ -28,14 +28,14 @@ i18n
       es: { translation: es },
       fr: { translation: fr },
       mn: { translation: mn },
-      'pt-br': { translation: ptBR }
+      'pt-br': { translation: ptBR },
     },
     fallbackLng: ['defaults'],
     interpolation: {
       prefix: '[[',
-      suffix: ']]'
+      suffix: ']]',
     },
-    lowerCaseLng: true
+    lowerCaseLng: true,
   });
 
 export default i18n;

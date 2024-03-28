@@ -7,7 +7,7 @@ const callWebhookAction = createCallWebhookAction();
 
 const { setup } = composeComponentTestUtils<CallWebhook>(
   CallWebhookComp,
-  callWebhookAction as CallWebhook
+  callWebhookAction as CallWebhook,
 );
 
 describe(CallWebhookComp.name, () => {

@@ -10,7 +10,7 @@ import {
   OnOpenNodeEditor,
   onOpenNodeEditor,
   mergeEditorState,
-  MergeEditorState
+  MergeEditorState,
 } from 'store/thunks';
 
 import i18n from 'config/i18n';
@@ -38,7 +38,7 @@ export interface SidebarStoreProps {
 
 export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   private createSendMessageNode(): void {
@@ -46,7 +46,12 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
       this.props.mergeEditorState({ guidingStep: 1 });
     }
 
-    const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
+    const emptyNode = createEmptyNode(
+      null,
+      null,
+      1,
+      this.context.config.flowType,
+    );
 
     this.props.onCreateNode(emptyNode);
   }
@@ -77,7 +82,9 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 
   private toggleMouseState(): void {
     const mouseState =
-      this.props.mouseState === MouseState.SELECT ? MouseState.DRAG : MouseState.SELECT;
+      this.props.mouseState === MouseState.SELECT
+        ? MouseState.DRAG
+        : MouseState.SELECT;
 
     this.props.onMouseStateChange(mouseState);
   }
@@ -91,7 +98,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
           title={i18n.t('guiding.control_tools.0.title', 'Select and drag')}
           description={i18n.t(
             'guiding.control_tools.0.description',
-            `Click here, use the “V” shortcut or hold down the space bar to use the “little hand” tool, with it you will be able to navigate through your entire flow just by clicking and dragging on the screen`
+            `Click here, use the “V” shortcut or hold down the space bar to use the “little hand” tool, with it you will be able to navigate through your entire flow just by clicking and dragging on the screen`,
           )}
           buttonText={i18n.t('guiding.v2.0.button', 'Got it 1/3')}
         >
@@ -105,7 +112,10 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             }
             shortcutText={'V'}
           >
-            <div className={styles.option} onClick={() => this.toggleMouseState()}>
+            <div
+              className={styles.option}
+              onClick={() => this.toggleMouseState()}
+            >
               {this.props.mouseState === MouseState.SELECT ? (
                 <span className="material-symbols-rounded">near_me</span>
               ) : (
@@ -121,7 +131,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
           title={i18n.t('guiding.v2.0.title', 'New block')}
           description={i18n.t(
             'guiding.v2.0.description',
-            `Now just click on this button to create a new block.`
+            `Now just click on this button to create a new block.`,
           )}
           buttonText={i18n.t('guiding.v2.0.button', 'Got it 1/3')}
         >
@@ -130,7 +140,10 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             enabled={this.props.guidingStep !== 0}
             side="right"
           >
-            <div className={styles.option} onClick={() => this.createSendMessageNode()}>
+            <div
+              className={styles.option}
+              onClick={() => this.createSendMessageNode()}
+            >
               <span className="material-symbols-rounded">add_circle</span>
             </div>
           </UnnnicTooltip>
@@ -142,7 +155,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
           title={i18n.t('guiding.v2.1.title', 'Copy and paste')}
           description={i18n.t(
             'guiding.v2.1.description',
-            `Finally, you can copy and paste the blocks wherever you want, including in\nanother flow. Click the button or use the shortcut Ctrl C + Ctrl V.`
+            `Finally, you can copy and paste the blocks wherever you want, including in\nanother flow. Click the button or use the shortcut Ctrl C + Ctrl V.`,
           )}
           buttonText={i18n.t('guiding.v2.1.button', 'Got it 2/3')}
         >
@@ -154,10 +167,16 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             shortcutText={this.props.selectionActive ? 'Ctrl C' : null}
           >
             <div
-              className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
+              className={`${styles.option} ${
+                !this.props.selectionActive ? styles.disabled : ''
+              }`}
               onClick={() => this.handleCopyClick()}
             >
-              <span className={'material-symbols-rounded ' + this.getCopyIconScheme()}>
+              <span
+                className={
+                  'material-symbols-rounded ' + this.getCopyIconScheme()
+                }
+              >
                 content_copy
               </span>
             </div>
@@ -171,13 +190,13 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 /* istanbul ignore next */
 const mapStateToProps = ({
   flowContext: { nodes },
-  editorState: { selectionActive, guidingStep, currentGuide }
+  editorState: { selectionActive, guidingStep, currentGuide },
 }: AppState) => {
   return {
     nodes,
     selectionActive,
     guidingStep,
-    currentGuide
+    currentGuide,
   };
 };
 
@@ -187,5 +206,5 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Sidebar);

@@ -13,7 +13,7 @@ const routerNode = createMatchRouter(['Red']);
 
 const { setup } = composeComponentTestUtils<RouterFormProps>(
   SmartResponseRouterForm,
-  getRouterFormProps(routerNode)
+  getRouterFormProps(routerNode),
 );
 
 describe(SmartResponseRouterForm.name, () => {
@@ -35,21 +35,21 @@ describe(SmartResponseRouterForm.name, () => {
       uuid: baseCase,
       type: Operators.has_any_word,
       arguments: ['not blue'],
-      category_uuid: router.categories[0].uuid
+      category_uuid: router.categories[0].uuid,
     });
 
     baseNode.ui = {
       position: { left: 0, top: 0 },
       type: Types.smart_wait_for_response,
-      config: { cases: { [baseCase]: { arguments: ['not blue'] } } }
+      config: { cases: { [baseCase]: { arguments: ['not blue'] } } },
     };
 
     const { wrapper } = setup(true, {
       nodeSettings: {
         $set: {
-          originalNode: baseNode
-        }
-      }
+          originalNode: baseNode,
+        },
+      },
     });
 
     expect(wrapper).toMatchSnapshot();
@@ -58,7 +58,7 @@ describe(SmartResponseRouterForm.name, () => {
   describe('updates', () => {
     it('should save changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() }
+        $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
       });
 
       instance.handleUpdateTimeout(180);
@@ -68,20 +68,20 @@ describe(SmartResponseRouterForm.name, () => {
           uuid: createUUID(),
           kase: { type: Operators.has_any_word, arguments: ['red'] },
           categoryName: 'Red',
-          valid: true
+          valid: true,
         },
         {
           uuid: createUUID(),
           kase: { type: Operators.has_any_word, arguments: ['maroon'] },
           categoryName: 'Red',
-          valid: true
+          valid: true,
         },
         {
           uuid: createUUID(),
           kase: { type: Operators.has_any_word, arguments: ['green'] },
           categoryName: 'Green',
-          valid: true
-        }
+          valid: true,
+        },
       ] as CaseProps[]);
 
       expect(instance.state).toMatchSnapshot();
@@ -94,7 +94,7 @@ describe(SmartResponseRouterForm.name, () => {
 
     it('should cancel', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() }
+        $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
       });
       instance.handleUpdateTimeout(180);
       instance.getButtons().secondary.onClick();

@@ -8,7 +8,12 @@ import { createResultNameInput } from 'components/flow/routers/widgets';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import { FormState, StringEntry } from 'store/nodeEditor';
-import { Alphanumeric, Required, StartIsNonNumeric, validate } from 'store/validators';
+import {
+  Alphanumeric,
+  Required,
+  StartIsNonNumeric,
+  validate,
+} from 'store/validators';
 import i18n from 'config/i18n';
 
 export interface DialRouterFormState extends FormState {
@@ -16,14 +21,17 @@ export interface DialRouterFormState extends FormState {
   resultName: StringEntry;
 }
 
-export default class DialRouterForm extends React.Component<RouterFormProps, DialRouterFormState> {
+export default class DialRouterForm extends React.Component<
+  RouterFormProps,
+  DialRouterFormState
+> {
   constructor(props: RouterFormProps) {
     super(props);
 
     this.state = nodeToState(this.props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
@@ -31,18 +39,19 @@ export default class DialRouterForm extends React.Component<RouterFormProps, Dia
     const phone = validate(i18n.t('forms.phone_number'), value, [Required]);
     this.setState({
       phone: phone,
-      valid: this.state.valid && !hasErrors(phone)
+      valid: this.state.valid && !hasErrors(phone),
     });
   }
 
   private handleUpdateResultName(value: string): void {
-    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), value, [
-      Alphanumeric,
-      StartIsNonNumeric
-    ]);
+    const resultName = validate(
+      i18n.t('forms.result_name', 'Result Name'),
+      value,
+      [Alphanumeric, StartIsNonNumeric],
+    );
     this.setState({
       resultName,
-      valid: this.state.valid && !hasErrors(resultName)
+      valid: this.state.valid && !hasErrors(resultName),
     });
   }
 
@@ -58,8 +67,8 @@ export default class DialRouterForm extends React.Component<RouterFormProps, Dia
       primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -67,8 +76,16 @@ export default class DialRouterForm extends React.Component<RouterFormProps, Dia
     const typeConfig = this.props.typeConfig;
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <p>Enter the phone number to dial</p>
         <TextInputElement
           name="phone"
@@ -78,7 +95,10 @@ export default class DialRouterForm extends React.Component<RouterFormProps, Dia
           onChange={this.handlePhoneUpdated}
           entry={this.state.phone}
         />
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

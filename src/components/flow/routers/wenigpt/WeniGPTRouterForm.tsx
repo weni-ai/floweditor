@@ -2,7 +2,10 @@ import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
-import { nodeToState, stateToNode } from 'components/flow/routers/wenigpt/helpers';
+import {
+  nodeToState,
+  stateToNode,
+} from 'components/flow/routers/wenigpt/helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import SelectElement from 'components/form/select/SelectElement';
 import TextInputElement from 'components/form/textinput/TextInputElement';
@@ -29,7 +32,7 @@ export default class WeniGPTRouterForm extends React.Component<
     super(props);
     this.state = nodeToState(this.props.nodeSettings, this.props.assetStore);
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -39,7 +42,7 @@ export default class WeniGPTRouterForm extends React.Component<
       expression?: string;
       resultName?: string;
     },
-    submitting = false
+    submitting = false,
   ): boolean {
     const updates: Partial<WeniGPTRouterFormState> = {};
 
@@ -47,20 +50,24 @@ export default class WeniGPTRouterForm extends React.Component<
       updates.knowledgeBase = validate(
         i18n.t('forms.knowledge_base', 'Knowledge Base'),
         keys.knowledgeBase,
-        [shouldRequireIf(submitting)]
+        [shouldRequireIf(submitting)],
       );
     }
 
     if (keys.hasOwnProperty('expression')) {
-      updates.expression = validate(i18n.t('forms.expression', 'Expression'), keys.expression, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.expression = validate(
+        i18n.t('forms.expression', 'Expression'),
+        keys.expression,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     if (keys.hasOwnProperty('resultName')) {
-      updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.resultName = validate(
+        i18n.t('forms.result_name', 'Result Name'),
+        keys.resultName,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -83,7 +90,10 @@ export default class WeniGPTRouterForm extends React.Component<
   }
 
   private handleRedirectClick(): void {
-    window.parent.postMessage({ event: 'redirect', path: 'intelligences:init/force' }, '*');
+    window.parent.postMessage(
+      { event: 'redirect', path: 'intelligences:init/force' },
+      '*',
+    );
   }
 
   private handleSave(): void {
@@ -91,9 +101,9 @@ export default class WeniGPTRouterForm extends React.Component<
       {
         knowledgeBase: this.state.knowledgeBase.value,
         expression: this.state.expression.value,
-        resultName: this.state.resultName.value
+        resultName: this.state.resultName.value,
       },
-      true
+      true,
     );
 
     if (valid) {
@@ -107,8 +117,8 @@ export default class WeniGPTRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.save'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -116,14 +126,25 @@ export default class WeniGPTRouterForm extends React.Component<
     const typeConfig = this.props.typeConfig;
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <div className={styles.content}>
           <div className={styles.knowledge_base}>
             <SelectElement
               key="knowledge_base_select"
               name={i18n.t('forms.knowledge_base', 'Knowledge Base')}
-              placeholder={i18n.t('forms.knowledge_base_placeholder', 'Select a knowledge base')}
+              placeholder={i18n.t(
+                'forms.knowledge_base_placeholder',
+                'Select a knowledge base',
+              )}
               showLabel={true}
               entry={this.state.knowledgeBase}
               onChange={this.handleKnowledgeBaseUpdate}
@@ -136,7 +157,7 @@ export default class WeniGPTRouterForm extends React.Component<
               <span>
                 {i18n.t(
                   'forms.knowledge_base_message',
-                  "Don't have any knowledge base for your AI yet?"
+                  "Don't have any knowledge base for your AI yet?",
                 )}
               </span>
               <span className={styles.link} onClick={this.handleRedirectClick}>
@@ -146,16 +167,25 @@ export default class WeniGPTRouterForm extends React.Component<
           </div>
 
           <TextInputElement
-            name={i18n.t('forms.expression_input', 'Insert an expression to be used as input')}
+            name={i18n.t(
+              'forms.expression_input',
+              'Insert an expression to be used as input',
+            )}
             showLabel={true}
-            placeholder={i18n.t('forms.expression_input_placeholder', 'Ex: @input.text')}
+            placeholder={i18n.t(
+              'forms.expression_input_placeholder',
+              'Ex: @input.text',
+            )}
             entry={this.state.expression}
             onChange={this.handleExpressionUpdate}
             autocomplete={true}
             textarea={true}
           />
         </div>
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

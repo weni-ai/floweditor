@@ -1,6 +1,12 @@
 import ParamList from 'components/flow/routers/paramlist/ParamList';
 import React from 'react';
-import { fireEvent, fireChangeText, render, fireUnnnicInputChangeText, act } from 'test/utils';
+import {
+  fireEvent,
+  fireChangeText,
+  render,
+  fireUnnnicInputChangeText,
+  act,
+} from 'test/utils';
 import { mock } from 'testUtils';
 import * as utils from 'utils';
 
@@ -18,15 +24,15 @@ const omieParams = [
     uuid: paramUUID1,
     filter: { value: services.results[1].actions[0].params[0].filters[0] },
     data: { value: 'data 1' },
-    valid: true
+    valid: true,
   },
   {
     ...services.results[1].actions[0].params[1],
     uuid: paramUUID2,
     filter: { value: services.results[1].actions[0].params[1].filters[0] },
     data: { value: 'data 2' },
-    valid: true
-  }
+    valid: true,
+  },
 ];
 
 describe(ParamList.name, () => {
@@ -39,7 +45,7 @@ describe(ParamList.name, () => {
             params={[]}
             onParamsUpdated={jest.fn()}
             shouldCreateEmptyParam={true}
-          />
+          />,
         );
         expect(baseElement).toMatchSnapshot();
       });
@@ -50,7 +56,7 @@ describe(ParamList.name, () => {
             params={omieParams}
             onParamsUpdated={jest.fn()}
             shouldCreateEmptyParam={true}
-          />
+          />,
         );
         expect(baseElement).toMatchSnapshot();
       });
@@ -64,7 +70,7 @@ describe(ParamList.name, () => {
             params={[omieParams[0]]}
             onParamsUpdated={jest.fn()}
             shouldCreateEmptyParam={true}
-          />
+          />,
         );
 
         const removeParam = `remove-param-${omieParams[0].uuid}`;
@@ -83,11 +89,14 @@ describe(ParamList.name, () => {
             params={[]}
             onParamsUpdated={onParamsUpdated}
             shouldCreateEmptyParam={true}
-          />
+          />,
         );
 
         await act(async () => {
-          fireUnnnicInputChangeText(getByTestId('Service Call Param Data'), 'data 1');
+          fireUnnnicInputChangeText(
+            getByTestId('Service Call Param Data'),
+            'data 1',
+          );
         });
 
         expect(onParamsUpdated).toHaveBeenCalled();

@@ -15,13 +15,13 @@ const baseProps: LocalizationFormProps = {
   onClose: jest.fn(),
   nodeSettings: {
     originalNode: null,
-    originalAction: action
-  }
+    originalAction: action,
+  },
 };
 
 const { setup } = composeComponentTestUtils<LocalizationFormProps>(
   SendMsgLocalizationForm,
-  baseProps
+  baseProps,
 );
 
 describe(SendMsgLocalizationForm.name, () => {
@@ -37,7 +37,7 @@ describe(SendMsgLocalizationForm.name, () => {
       const localizedObject = new LocalizedObject(action, Spanish);
       localizedObject.addTranslation('text', ['¡hola!']);
       const { wrapper } = setup(true, {
-        nodeSettings: { $merge: { localizations: [localizedObject] } }
+        nodeSettings: { $merge: { localizations: [localizedObject] } },
       });
 
       expect(wrapper).toMatchSnapshot();
@@ -47,7 +47,7 @@ describe(SendMsgLocalizationForm.name, () => {
   describe('updates', () => {
     it('should save changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateLocalizations: jest.fn(), onClose: jest.fn() }
+        $merge: { updateLocalizations: jest.fn(), onClose: jest.fn() },
       });
 
       instance.handleMessageUpdate('What is your favorite color?');
@@ -62,7 +62,7 @@ describe(SendMsgLocalizationForm.name, () => {
 
     it('should ignore empty quick replies', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateLocalizations: jest.fn(), onClose: jest.fn() }
+        $merge: { updateLocalizations: jest.fn(), onClose: jest.fn() },
       });
 
       instance.handleQuickRepliesUpdate([]);
@@ -78,7 +78,7 @@ describe(SendMsgLocalizationForm.name, () => {
   describe('cancel', () => {
     it('should cancel without changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateLocalizations: jest.fn(), onClose: jest.fn() }
+        $merge: { updateLocalizations: jest.fn(), onClose: jest.fn() },
       });
       instance.handleMessageUpdate("Don't save me bro");
       instance.getButtons().secondary.onClick();

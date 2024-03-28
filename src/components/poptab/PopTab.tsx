@@ -34,7 +34,7 @@ export class PopTab extends React.Component<PopTabProps, PopTabState> {
     this.state = { width: 250 };
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -59,11 +59,14 @@ export class PopTab extends React.Component<PopTabProps, PopTabState> {
     return (
       <div
         className={
-          'pop_wrapper ' + styles.pop_wrapper + ' ' + (this.props.visible ? styles.visible : '')
+          'pop_wrapper ' +
+          styles.pop_wrapper +
+          ' ' +
+          (this.props.visible ? styles.visible : '')
         }
         style={{
           right: -this.state.width,
-          top: this.props.top
+          top: this.props.top,
         }}
       >
         <div className={styles.tab_wrapper}>
@@ -73,7 +76,11 @@ export class PopTab extends React.Component<PopTabProps, PopTabState> {
             onClick={this.handleTabClick}
           >
             <div className={styles.icon}>
-              <UnnnicIcon icon={this.props.icon} size="lg" scheme="neutral-snow" />
+              <UnnnicIcon
+                icon={this.props.icon}
+                size="lg"
+                scheme="neutral-snow"
+              />
             </div>
             <div className={styles.label}>{this.props.label}</div>
           </div>
@@ -84,11 +91,17 @@ export class PopTab extends React.Component<PopTabProps, PopTabState> {
           style={{
             borderColor: this.props.type !== 'revisions' && this.props.color,
             right: this.props.visible ? 15 + this.state.width : 0,
-            top: -100
+            top: -100,
           }}
         >
-          <div className={styles.header} style={{ background: this.props.color }}>
-            <div className={styles.close + ' fe-x'} onClick={this.handleClose} />
+          <div
+            className={styles.header}
+            style={{ background: this.props.color }}
+          >
+            <div
+              className={styles.close + ' fe-x'}
+              onClick={this.handleClose}
+            />
           </div>
           <div
             className={styles.body}
@@ -97,7 +110,10 @@ export class PopTab extends React.Component<PopTabProps, PopTabState> {
             {this.props.children}
           </div>
           {this.props.type === 'revisions' && (
-            <div className={styles.footer} style={{ background: this.props.color }} />
+            <div
+              className={styles.footer}
+              style={{ background: this.props.color }}
+            />
           )}
         </div>
       </div>

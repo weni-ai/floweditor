@@ -18,7 +18,7 @@ export const large = {
       marginBottom: '0px',
       boxShadow: 'none',
       border: 'none',
-      fontSize: '13px'
+      fontSize: '13px',
     };
   },
   control: (styles: StylesConfig, state: any) => {
@@ -29,14 +29,14 @@ export const large = {
       fontSize: '13px',
       transition: 'all 0.3s ease-in-out',
       '&:hover': {
-        borderColor: '#e6e6e6'
+        borderColor: '#e6e6e6',
       },
       '&:focus-within': {
         boxShadow: 'var(--widget-box-shadow-focused) !important',
-        border: '1px solid #a4cafe !important'
-      }
+        border: '1px solid #a4cafe !important',
+      },
     };
-  }
+  },
 };
 
 export const messageStyle = {
@@ -49,10 +49,10 @@ export const messageStyle = {
       borderBottomRightRadius: '0px',
       borderBottomLeftRadius: '0px',
       '&:hover': {
-        borderColor: '#e6e6e6'
-      }
+        borderColor: '#e6e6e6',
+      },
     };
-  }
+  },
 };
 
 export const getErroredSelect = (baseControl: any): any => {
@@ -63,9 +63,9 @@ export const getErroredSelect = (baseControl: any): any => {
       borderColor: 'tomato',
       boxShadow: '0 0 0 3px rgba(255,196,186,0.5) !important;',
       '&:hover': {
-        borderColor: 'tomato'
-      }
-    })
+        borderColor: 'tomato',
+      },
+    }),
   };
 };
 
@@ -75,7 +75,7 @@ export const small = {
     borderColor: '#e6e6e6',
     boxShadow: 'none',
     '&:hover': {
-      borderColor: '#e6e6e6'
+      borderColor: '#e6e6e6',
     },
     maxHeight: '28px',
     minHeight: '28px',
@@ -84,31 +84,31 @@ export const small = {
     marginBottom: '-10px',
     '&:focus-within': {
       boxShadow: 'var(--widget-box-shadow-focused) !important',
-      border: '1px solid #a4cafe !important'
-    }
+      border: '1px solid #a4cafe !important',
+    },
   }),
   menuList: (styles: StylesConfig) => ({
     ...styles,
-    maxHeight: 200
+    maxHeight: 200,
   }),
   option: (styles: StylesConfig) => ({
     ...styles,
-    fontSize: 12
+    fontSize: 12,
   }),
   singleValue: (styles: StylesConfig) => ({
     ...styles,
     maxHeight: 28,
-    lineHeight: '13px'
+    lineHeight: '13px',
   }),
   indicatorsContainer: (styles: StylesConfig) => ({
     ...styles,
     height: 28,
-    maxHeight: 28
+    maxHeight: 28,
   }),
   valueContainer: (styles: StylesConfig) => ({
     ...styles,
     height: 28,
-    maxHeight: 28
+    maxHeight: 28,
   }),
   input: (styles: StylesConfig) => ({
     ...styles,
@@ -119,8 +119,8 @@ export const small = {
     border: 'none',
     maxHeight: '20px',
     minHeight: '20px',
-    lineHeight: '12px'
-  })
+    lineHeight: '12px',
+  }),
 };
 
 export const tagging = {
@@ -131,12 +131,12 @@ export const tagging = {
       boxShadow: 'none',
       transition: 'all 0.3s ease-in-out',
       '&:hover': {
-        borderColor: '#e6e6e6'
+        borderColor: '#e6e6e6',
       },
       '&:focus-within': {
         boxShadow: 'var(--widget-box-shadow-focused) !important',
-        border: '1px solid #a4cafe !important'
-      }
+        border: '1px solid #a4cafe !important',
+      },
     };
   },
   input: (styles: StylesConfig, state: any) => {
@@ -146,7 +146,7 @@ export const tagging = {
       caretColor: '#999',
       marginBottom: '0px',
       boxShadow: 'none',
-      border: 'none'
+      border: 'none',
     };
   },
   multiValue: (styles: StylesConfig) => {
@@ -156,7 +156,7 @@ export const tagging = {
       minHeight: 24,
       lineHeight: '17px',
       backgroundColor: 'hsl(0, 0%, 94%)',
-      border: '1px solid hsl(0, 0%, 85%)'
+      border: '1px solid hsl(0, 0%, 85%)',
     };
-  }
+  },
 };

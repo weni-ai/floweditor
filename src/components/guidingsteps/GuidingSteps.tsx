@@ -3,7 +3,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import AppState from 'store/state';
 
-import { DispatchWithState, mergeEditorState, MergeEditorState } from 'store/thunks';
+import {
+  DispatchWithState,
+  mergeEditorState,
+  MergeEditorState,
+} from 'store/thunks';
 
 import { applyVueInReact } from 'vuereact-combined';
 import styles from './GuidingSteps.module.scss';
@@ -17,10 +21,10 @@ const UnnnicButton = applyVueInReact(unnnicButton, {
     slotWrap: 'div',
     componentWrapAttrs: {
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 export interface GuidingStepsProps {
@@ -56,13 +60,18 @@ export class GuidingSteps extends React.Component<
 
   private shouldRenderGuide(): boolean {
     return (
-      this.props.currentGuide === this.props.guide && this.props.guidingStep === this.props.step
+      this.props.currentGuide === this.props.guide &&
+      this.props.guidingStep === this.props.step
     );
   }
 
   public render(): JSX.Element {
-    const directionStyle = this.props.side ? styles[this.props.side] : styles.right;
-    const arrowAlign = this.props.align ? styles[this.props.align] : styles.arrow_center;
+    const directionStyle = this.props.side
+      ? styles[this.props.side]
+      : styles.right;
+    const arrowAlign = this.props.align
+      ? styles[this.props.align]
+      : styles.arrow_center;
 
     return (
       <div className={styles.guiding_wrapper}>
@@ -79,7 +88,10 @@ export class GuidingSteps extends React.Component<
               </span>
             </div>
 
-            <span className={styles.description}> {this.props.description}</span>
+            <span className={styles.description}>
+              {' '}
+              {this.props.description}
+            </span>
 
             <UnnnicButton
               className={styles.button}
@@ -95,10 +107,12 @@ export class GuidingSteps extends React.Component<
 }
 
 /* istanbul ignore next */
-const mapStateToProps = ({ editorState: { currentGuide, guidingStep } }: AppState) => {
+const mapStateToProps = ({
+  editorState: { currentGuide, guidingStep },
+}: AppState) => {
   return {
     currentGuide,
-    guidingStep
+    guidingStep,
   };
 };
 /* istanbul ignore next */
@@ -107,5 +121,5 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(GuidingSteps);

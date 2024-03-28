@@ -94,7 +94,7 @@ export interface ModalMessage {
 export enum MouseState {
   SELECT = 'select',
   DRAG = 'drag',
-  DRAGGING = 'dragging'
+  DRAGGING = 'dragging',
 }
 
 export const EMPTY_DRAG_STATE: any = {
@@ -103,7 +103,7 @@ export const EMPTY_DRAG_STATE: any = {
   dragActive: false,
   dragNodeUUID: null,
   dragGroup: false,
-  dragSelection: null
+  dragSelection: null,
 };
 
 // Initial state
@@ -137,19 +137,24 @@ export const initialState: EditorState = {
   currentGuide: null,
   guidingStep: -1,
 
-  mouseState: MouseState.SELECT
+  mouseState: MouseState.SELECT,
 };
 
 // Action Creator
-export const updateEditorState = (editorState: EditorState): UpdateEditorState => ({
+export const updateEditorState = (
+  editorState: EditorState,
+): UpdateEditorState => ({
   type: Constants.UPDATE_EDITOR_STATE,
   payload: {
-    editorState
-  }
+    editorState,
+  },
 });
 
 /* Reducer */
-export const editorState = (editorState: EditorState = initialState, action: ActionTypes) => {
+export const editorState = (
+  editorState: EditorState = initialState,
+  action: ActionTypes,
+) => {
   switch (action.type) {
     case Constants.UPDATE_EDITOR_STATE:
       return action.payload!.editorState;

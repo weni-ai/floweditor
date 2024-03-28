@@ -1,10 +1,22 @@
 /* istanbul ignore file */
 import axios, { AxiosResponse } from 'axios';
 import { SaveResult } from 'components/revisions/RevisionExplorer';
-import { Endpoints, Exit, FlowDefinition, SPEC_VERSION, FlowDetails } from 'flowTypes';
+import {
+  Endpoints,
+  Exit,
+  FlowDefinition,
+  SPEC_VERSION,
+  FlowDetails,
+} from 'flowTypes';
 import { currencies } from 'store/currencies';
 import { Activity, RecentMessage } from 'store/editor';
-import { Asset, AssetMap, Assets, AssetStore, AssetType } from 'store/flowContext';
+import {
+  Asset,
+  AssetMap,
+  Assets,
+  AssetStore,
+  AssetType,
+} from 'store/flowContext';
 import { assetListToMap } from 'store/helpers';
 import { FlowTypes } from 'config/interfaces';
 
@@ -26,20 +38,23 @@ export const setHTTPTimeout = (millis: number) => {
 export const getActivity = (
   activityEndpoint: string,
   flowUUID: string,
-  headers = {}
+  headers = {},
 ): Promise<Activity> =>
   new Promise<Activity>((resolve, reject) =>
     axios
       .get(`${activityEndpoint}?flow=${flowUUID}`, { headers })
       .then((response: AxiosResponse) => resolve(response.data as Activity))
-      .catch((error: any) => reject(error))
+      .catch((error: any) => reject(error)),
   );
 
 export interface Cancel {
   reject?: () => void;
 }
 
-export const saveRevision = (endpoint: string, definition: FlowDefinition): Promise<SaveResult> => {
+export const saveRevision = (
+  endpoint: string,
+  definition: FlowDefinition,
+): Promise<SaveResult> => {
   const csrf = getCookie('csrftoken');
   const headers = csrf ? { 'X-CSRFToken': csrf } : {};
 
@@ -71,7 +86,7 @@ export const saveRevision = (endpoint: string, definition: FlowDefinition): Prom
 export const getRecentMessages = (
   recentsEndpoint: string,
   exit: Exit,
-  cancel: Cancel
+  cancel: Cancel,
 ): Promise<RecentMessage[]> =>
   new Promise<RecentMessage[]>((resolve, reject) => {
     cancel.reject = reject;
@@ -123,9 +138,11 @@ export const postNewAsset = (assets: Assets, payload: any): Promise<Asset> => {
 
 export const fetchAsset = (assets: Assets, id: string): Promise<Asset> => {
   return new Promise<Asset>((resolve, reject) => {
-    getAssets(assets.endpoint, assets.type, assets.id).then((results: Asset[]) => {
-      resolve(results.find((asset: Asset) => asset.id === id));
-    });
+    getAssets(assets.endpoint, assets.type, assets.id).then(
+      (results: Asset[]) => {
+        resolve(results.find((asset: Asset) => asset.id === id));
+      },
+    );
   });
 };
 
@@ -134,23 +151,33 @@ interface AssetPage {
   next: string;
 }
 
-export const getAssetPage = (url: string, type: AssetType, id: string): Promise<AssetPage> => {
+export const getAssetPage = (
+  url: string,
+  type: AssetType,
+  id: string,
+): Promise<AssetPage> => {
   return new Promise<AssetPage>((resolve, reject) => {
     axios
       .get(url)
       .then((response: AxiosResponse) => {
-        const assets: Asset[] = response.data.results.map((result: any, idx: number) => {
-          const asset = resultToAsset(result, type, id);
-          asset.order = idx;
-          return asset;
-        });
+        const assets: Asset[] = response.data.results.map(
+          (result: any, idx: number) => {
+            const asset = resultToAsset(result, type, id);
+            asset.order = idx;
+            return asset;
+          },
+        );
         resolve({ assets, next: response.data.next });
       })
       .catch(error => reject(error));
   });
 };
 
-export const getAssets = async (url: string, type: AssetType, id: string): Promise<Asset[]> => {
+export const getAssets = async (
+  url: string,
+  type: AssetType,
+  id: string,
+): Promise<Asset[]> => {
   if (!url) {
     return new Promise<Asset[]>((resolve, reject) => resolve([]));
   }
@@ -178,7 +205,11 @@ export const getFlowType = (flow: any) => {
   }
 };
 
-export const resultToAsset = (result: any, type: AssetType, id: string): Asset => {
+export const resultToAsset = (
+  result: any,
+  type: AssetType,
+  id: string,
+): Asset => {
   const idKey = id || 'uuid';
 
   let assetType = type;
@@ -209,9 +240,14 @@ export const resultToAsset = (result: any, type: AssetType, id: string): Asset =
   }
 
   const asset: Asset = {
-    name: result.name || result.text || result.label || result.title || result[idKey],
+    name:
+      result.name ||
+      result.text ||
+      result.label ||
+      result.title ||
+      result[idKey],
     id: result[idKey],
-    type: assetType
+    type: assetType,
   };
 
   delete result[idKey];
@@ -225,7 +261,7 @@ export const resultToAsset = (result: any, type: AssetType, id: string): Asset =
 export const isMatch = (
   input: string,
   asset: Asset,
-  shouldExclude: (asset: Asset) => boolean
+  shouldExclude: (asset: Asset) => boolean,
 ): boolean => {
   if (shouldExclude && shouldExclude(asset)) {
     return false;
@@ -248,7 +284,7 @@ export const searchAssetMap = (
   query: string,
   assets: AssetMap,
   additionalOptions?: Asset[],
-  shouldExclude?: (asset: Asset) => boolean
+  shouldExclude?: (asset: Asset) => boolean,
 ): Asset[] => {
   const search = query.toLowerCase();
   let matches = Object.keys(assets)
@@ -269,105 +305,105 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
       channels: {
         endpoint: getURL(endpoints.channels),
         type: AssetType.Channel,
-        items: {}
+        items: {},
       },
       classifiers: {
         endpoint: getURL(endpoints.classifiers),
         type: AssetType.Classifier,
-        items: {}
+        items: {},
       },
       languages: {
         endpoint: getURL(endpoints.languages),
         type: AssetType.Language,
         items: {},
-        id: 'iso'
+        id: 'iso',
       },
       flows: {
         endpoint: getURL(endpoints.flows),
         type: AssetType.Flow,
-        items: {}
+        items: {},
       },
       fields: {
         endpoint: getURL(endpoints.fields),
         type: AssetType.Field,
         id: 'key',
-        items: {}
+        items: {},
       },
       globals: {
         endpoint: getURL(endpoints.globals),
         type: AssetType.Global,
         id: 'key',
-        items: {}
+        items: {},
       },
       groups: {
         endpoint: getURL(endpoints.groups),
         type: AssetType.Group,
-        items: {}
+        items: {},
       },
       revisions: {
         endpoint: getURL(endpoints.revisions),
         type: AssetType.Revision,
         id: 'id',
-        items: {}
+        items: {},
       },
       labels: {
         endpoint: getURL(endpoints.labels),
         type: AssetType.Label,
-        items: {}
+        items: {},
       },
       results: {
         type: AssetType.Result,
-        items: {}
+        items: {},
       },
       recipients: {
         endpoint: getURL(endpoints.recipients),
         type: AssetType.Contact || AssetType.Group || AssetType.URN,
         items: {},
-        id: 'id'
+        id: 'id',
       },
       resthooks: {
         endpoint: getURL(endpoints.resthooks),
         type: AssetType.Resthook,
         id: 'resthook',
-        items: {}
+        items: {},
       },
       templates: {
         endpoint: getURL(endpoints.templates),
         type: AssetType.Template,
-        items: {}
+        items: {},
       },
       ticketers: {
         endpoint: getURL(endpoints.ticketers),
         type: AssetType.Ticketer,
-        items: {}
+        items: {},
       },
       currencies: {
         type: AssetType.Currency,
         id: 'id',
         items: currencies,
-        prefetched: true
+        prefetched: true,
       },
       externalServices: {
         endpoint: getURL(endpoints.external_services),
         type: AssetType.ExternalService,
-        items: {}
+        items: {},
       },
       completion: {
         endpoint: getURL(endpoints.completion),
         type: AssetType.Expression,
-        items: {}
+        items: {},
       },
       knowledgeBases: {
         endpoint: getURL(endpoints.knowledgeBases),
         type: AssetType.KnowledgeBase,
         items: {},
-        id: 'id'
+        id: 'id',
       },
       whatsapp_products: {
         endpoint: getURL(endpoints.whatsapp_products),
         type: AssetType.WhatsAppProduct,
-        items: {}
-      }
+        items: {},
+      },
     };
 
     // prefetch some of our assets
@@ -382,23 +418,27 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
       'ticketers',
       'externalServices',
       'knowledgeBases',
-      'whatsapp_products'
+      'whatsapp_products',
     ].forEach((storeId: string) => {
       const store = assetStore[storeId];
       fetches.push(
-        getAssets(store.endpoint, store.type, store.id || 'uuid').then((assets: Asset[]) => {
-          store.items = assetListToMap(assets);
-          store.prefetched = true;
-        })
+        getAssets(store.endpoint, store.type, store.id || 'uuid').then(
+          (assets: Asset[]) => {
+            store.items = assetListToMap(assets);
+            store.prefetched = true;
+          },
+        ),
       );
     });
 
     // prefetch our non asset-like completions
     fetches.push(
-      axios.get(assetStore.completion.endpoint).then((response: AxiosResponse) => {
-        assetStore.completion.items = response.data;
-        assetStore.completion.prefetched = true;
-      })
+      axios
+        .get(assetStore.completion.endpoint)
+        .then((response: AxiosResponse) => {
+          assetStore.completion.items = response.data;
+          assetStore.completion.prefetched = true;
+        }),
     );
 
     // wait for our prefetches to finish
@@ -408,13 +448,18 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
   });
 };
 
-export const getFlowDetails = (revisions: Assets, id: string = null): Promise<FlowDetails> => {
+export const getFlowDetails = (
+  revisions: Assets,
+  id: string = null,
+): Promise<FlowDetails> => {
   return new Promise<FlowDetails>((resolve, reject) => {
     (async () => {
       let revisionToLoad = id;
       if (!revisionToLoad) {
         try {
-          const response = await axios.get(`${revisions.endpoint}?version=${SPEC_VERSION}`);
+          const response = await axios.get(
+            `${revisions.endpoint}?version=${SPEC_VERSION}`,
+          );
           if (response.data.results.length > 0) {
             revisionToLoad = response.data.results[0].id;
           }
@@ -441,12 +486,21 @@ export const getFlowDetails = (revisions: Assets, id: string = null): Promise<Fl
 
 export const getBaseURL = (): string => {
   const location = window.location;
-  return location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '');
+  return (
+    location.protocol +
+    '//' +
+    location.hostname +
+    (location.port ? ':' + location.port : '')
+  );
 };
 
 export const getURL = (path: string): string => {
   let url = path;
-  if (!url.endsWith('/') && url.indexOf('?') === -1 && url.indexOf('groups') === -1) {
+  if (
+    !url.endsWith('/') &&
+    url.indexOf('?') === -1 &&
+    url.indexOf('groups') === -1
+  ) {
     url += '/';
   }
 

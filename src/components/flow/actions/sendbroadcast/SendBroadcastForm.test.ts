@@ -1,7 +1,10 @@
 import SendBroadcastForm from 'components/flow/actions/sendbroadcast/SendBroadcastForm';
 import { ActionFormProps } from 'components/flow/props';
 import { composeComponentTestUtils, mock } from 'testUtils';
-import { createBroadcastMsgAction, getActionFormProps } from 'testUtils/assetCreators';
+import {
+  createBroadcastMsgAction,
+  getActionFormProps,
+} from 'testUtils/assetCreators';
 import * as utils from 'utils';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
@@ -9,7 +12,7 @@ mock(utils, 'createUUID', utils.seededUUIDs());
 const action = createBroadcastMsgAction();
 const { setup } = composeComponentTestUtils<ActionFormProps>(
   SendBroadcastForm,
-  getActionFormProps(action)
+  getActionFormProps(action),
 );
 
 describe(SendBroadcastForm.name, () => {
@@ -22,8 +25,8 @@ describe(SendBroadcastForm.name, () => {
     it('should render an empty form with no action', () => {
       const { wrapper, instance } = setup(true, {
         $merge: {
-          nodeSettings: { originalNode: null }
-        }
+          nodeSettings: { originalNode: null },
+        },
       });
 
       expect(instance.state).toMatchSnapshot();
@@ -34,7 +37,7 @@ describe(SendBroadcastForm.name, () => {
   describe('updates', () => {
     it('handles recipent change', () => {
       const { instance } = setup(true, {
-        $merge: { updateSendBroadcastForm: jest.fn().mockReturnValue(true) }
+        $merge: { updateSendBroadcastForm: jest.fn().mockReturnValue(true) },
       });
       instance.handleRecipientsChanged([{ id: 'group-0', name: 'My Group' }]);
       expect(instance.state).toMatchSnapshot();
@@ -42,7 +45,7 @@ describe(SendBroadcastForm.name, () => {
 
     it('handles text change', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateSendBroadcastForm: jest.fn().mockReturnValue(true) }
+        $merge: { updateSendBroadcastForm: jest.fn().mockReturnValue(true) },
       });
       instance.handleMessageUpdate('Message to Group');
       expect(instance.state).toMatchSnapshot();
@@ -51,7 +54,7 @@ describe(SendBroadcastForm.name, () => {
     it('should allow switching from router', () => {
       const { instance, props } = setup(true, {
         $merge: { updateAction: jest.fn() },
-        nodeSettings: { $merge: { originalAction: null } }
+        nodeSettings: { $merge: { originalAction: null } },
       });
 
       instance.handleRecipientsChanged([{ id: 'group-0', name: 'My Group' }]);

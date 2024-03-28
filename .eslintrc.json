@@ -3,14 +3,26 @@
     "@weni/eslint-config/react16"
   ],
   "env": {
+    "node": true,
     "browser": true,
-    "jest": true
+    "jest": true,
+    "es6" :true
   },
   "rules": {
     "no-prototype-builtins": 0,
+    "no-case-declarations": 1,
+    "no-empty": 1,
+    "react/no-unescaped-entities": 1,
+    "react/display-name": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/camelcase": 0,
-    "@typescript-eslint/explicit-member-accessibility": 0
+    "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/no-namespace": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/no-object-literal-type-assertion": 0,
+    "@typescript-eslint/no-empty-interface": 1,
+    "@typescript-eslint/no-non-null-assertion": 0
   },
   "settings": {
     "react": {

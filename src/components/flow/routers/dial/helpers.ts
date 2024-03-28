@@ -1,5 +1,8 @@
 import { DialRouterFormState } from 'components/flow/routers/dial/DialRouterForm';
-import { createRenderNode, getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
+import {
+  createRenderNode,
+  getSmartOrSwitchRouter,
+} from 'components/flow/routers/helpers';
 import { DIAL_OPERAND } from 'components/nodeeditor/constants';
 import { Operators, Types } from 'config/interfaces';
 import { getType } from 'config/typeConfigs';
@@ -13,17 +16,22 @@ import {
   RouterTypes,
   SwitchRouter,
   Wait,
-  WaitTypes
+  WaitTypes,
 } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
 import { createUUID } from 'utils';
 
-export const nodeToState = (settings: NodeEditorSettings): DialRouterFormState => {
+export const nodeToState = (
+  settings: NodeEditorSettings,
+): DialRouterFormState => {
   let phone = '';
   let resultName: StringEntry = { value: '' };
 
-  if (settings.originalNode && getType(settings.originalNode) === Types.wait_for_dial) {
+  if (
+    settings.originalNode &&
+    getType(settings.originalNode) === Types.wait_for_dial
+  ) {
     const router = settings.originalNode.node.router as SwitchRouter;
     if (router) {
       phone = router.wait.phone;
@@ -34,13 +42,13 @@ export const nodeToState = (settings: NodeEditorSettings): DialRouterFormState =
   return {
     phone: { value: phone },
     resultName,
-    valid: true
+    valid: true,
   };
 };
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: DialRouterFormState
+  state: DialRouterFormState,
 ): RenderNode => {
   let categories: Category[] = [];
   let cases: Case[] = [];
@@ -51,7 +59,11 @@ export const stateToNode = (
     : null;
 
   // see if we are editing an existing dial router so we reuse exits
-  if (previousRouter && previousRouter.wait && previousRouter.wait.type === WaitTypes.dial) {
+  if (
+    previousRouter &&
+    previousRouter.wait &&
+    previousRouter.wait.type === WaitTypes.dial
+  ) {
     previousRouter.cases.forEach(kase => cases.push(kase));
     previousRouter.categories.forEach(category => categories.push(category));
     settings.originalNode.node.exits.forEach((exit: any) => exits.push(exit));
@@ -60,43 +72,43 @@ export const stateToNode = (
     exits = [
       {
         uuid: createUUID(),
-        destination_uuid: null
+        destination_uuid: null,
       },
       {
         uuid: createUUID(),
-        destination_uuid: null
+        destination_uuid: null,
       },
       {
         uuid: createUUID(),
-        destination_uuid: null
+        destination_uuid: null,
       },
       {
         uuid: createUUID(),
-        destination_uuid: null
-      }
+        destination_uuid: null,
+      },
     ];
 
     categories = [
       {
         uuid: createUUID(),
         name: DialCategoryNames.Answered,
-        exit_uuid: exits[0].uuid
+        exit_uuid: exits[0].uuid,
       },
       {
         uuid: createUUID(),
         name: DialCategoryNames.NoAnswer,
-        exit_uuid: exits[1].uuid
+        exit_uuid: exits[1].uuid,
       },
       {
         uuid: createUUID(),
         name: DialCategoryNames.Busy,
-        exit_uuid: exits[2].uuid
+        exit_uuid: exits[2].uuid,
       },
       {
         uuid: createUUID(),
         name: DialCategoryNames.Failure,
-        exit_uuid: exits[3].uuid
-      }
+        exit_uuid: exits[3].uuid,
+      },
     ];
 
     cases = [
@@ -104,20 +116,20 @@ export const stateToNode = (
         uuid: createUUID(),
         type: Operators.has_only_text,
         arguments: [DialStatus.answered],
-        category_uuid: categories[0].uuid
+        category_uuid: categories[0].uuid,
       },
       {
         uuid: createUUID(),
         type: Operators.has_only_text,
         arguments: [DialStatus.noAnswer],
-        category_uuid: categories[1].uuid
+        category_uuid: categories[1].uuid,
       },
       {
         uuid: createUUID(),
         type: Operators.has_only_text,
         arguments: [DialStatus.busy],
-        category_uuid: categories[2].uuid
-      }
+        category_uuid: categories[2].uuid,
+      },
     ];
   }
 
@@ -135,7 +147,7 @@ export const stateToNode = (
     categories,
     cases,
     operand: DIAL_OPERAND,
-    ...optionalRouter
+    ...optionalRouter,
   };
 
   const newRenderNode = createRenderNode(
@@ -143,7 +155,7 @@ export const stateToNode = (
     router,
     exits,
     Types.wait_for_dial,
-    []
+    [],
   );
 
   return newRenderNode;

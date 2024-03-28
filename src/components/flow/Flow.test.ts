@@ -1,8 +1,18 @@
-import { Flow, FlowStoreProps, getDragStyle, isDraggingBack } from 'components/flow/Flow';
+import {
+  Flow,
+  FlowStoreProps,
+  getDragStyle,
+  isDraggingBack,
+} from 'components/flow/Flow';
 import { FlowTypes } from 'config/interfaces';
 import { createEmptyNode, getFlowComponents } from 'store/helpers';
 import { ConnectionEvent } from 'store/thunks';
-import { composeComponentTestUtils, composeDuxState, mock, setMock } from 'testUtils';
+import {
+  composeComponentTestUtils,
+  composeDuxState,
+  mock,
+  setMock,
+} from 'testUtils';
 import { createUUID, merge, set } from 'utils';
 import * as utils from 'utils';
 
@@ -12,7 +22,7 @@ jest.useFakeTimers();
 mock(utils, 'createUUID', utils.seededUUIDs());
 
 const {
-  flowContext: { definition }
+  flowContext: { definition },
 } = composeDuxState();
 
 const { renderNodeMap: initialNodes } = getFlowComponents(definition);
@@ -33,7 +43,7 @@ const baseProps: FlowStoreProps = {
   onUpdateCanvasPositions: jest.fn(),
   resetNodeEditingState: jest.fn(),
   onConnectionDrag: jest.fn(),
-  updateSticky: jest.fn()
+  updateSticky: jest.fn(),
 };
 
 const { setup, spyOn } = composeComponentTestUtils(Flow, baseProps);
@@ -53,7 +63,7 @@ describe(Flow.name, () => {
       waitNode,
       waitNode.node.exits[0].uuid,
       1,
-      FlowTypes.MESSAGING
+      FlowTypes.MESSAGING,
     );
 
     const actionNode = nodes[nodeMapKeys[0]];
@@ -61,14 +71,14 @@ describe(Flow.name, () => {
       actionNode,
       actionNode.node.exits[0].uuid,
       1,
-      FlowTypes.MESSAGING
+      FlowTypes.MESSAGING,
     );
 
     mockConnectionEvent = {
       sourceId: `${createUUID()}:${createUUID()}`,
       targetId: createUUID(),
       suspendedElementId: createUUID(),
-      source: null
+      source: null,
     };
 
     // Clear instance mocks
@@ -82,14 +92,16 @@ describe(Flow.name, () => {
     currentY: 302,
     selected: {
       '46e8d603-8e5d-4435-97dd-1333291aafca': { left: 500, top: 300 },
-      'bc978e00-2f3d-41f2-87c1-26b3f14e5925': { left: 300, top: 200 }
-    }
+      'bc978e00-2f3d-41f2-87c1-26b3f14e5925': { left: 300, top: 200 },
+    },
   };
 
   describe('helpers', () => {
     describe('isDraggingBack', () => {
       it('should return false if event indicates user is not returning to drag origin', () => {
-        expect(isDraggingBack(mockConnectionEvent as ConnectionEvent)).toBeFalsy();
+        expect(
+          isDraggingBack(mockConnectionEvent as ConnectionEvent),
+        ).toBeFalsy();
       });
 
       it('should return true if event indicates user is returning to drag origin', () => {
@@ -100,8 +112,8 @@ describe(Flow.name, () => {
             ...mockConnectionEvent,
             source: document.createElement('div'),
             suspendedElementId,
-            targetId: suspendedElementId
-          } as ConnectionEvent)
+            targetId: suspendedElementId,
+          } as ConnectionEvent),
         ).toBeTruthy();
       });
     });
@@ -117,7 +129,7 @@ describe(Flow.name, () => {
     it('should render NodeEditor', () => {
       const { wrapper } = setup(true, {
         mergeEditorState: set(jest.fn()),
-        nodeEditorSettings: { $set: { originalNode: null } }
+        nodeEditorSettings: { $set: { originalNode: null } },
       });
 
       expect(wrapper.find('Connect(NodeEditor)').props()).toMatchSnapshot();
@@ -129,8 +141,8 @@ describe(Flow.name, () => {
         { mergeEditorState: set(jest.fn()) },
         {},
         {
-          config: { endpoints: merge({ simulateStart: 'startMeUp' }) }
-        }
+          config: { endpoints: merge({ simulateStart: 'startMeUp' }) },
+        },
       );
 
       expect(wrapper.find('Connect(Simulator)').props()).toMatchSnapshot();
@@ -147,16 +159,34 @@ describe(Flow.name, () => {
       expect(componentDidMountSpy).toHaveBeenCalledTimes(1);
 
       expect(instance.Plumber.bind).toHaveBeenCalledTimes(7);
-      expect(instance.Plumber.bind).toHaveBeenCalledWith('connection', expect.any(Function));
-      expect(instance.Plumber.bind).toHaveBeenCalledWith('connection', expect.any(Function));
-      expect(instance.Plumber.bind).toHaveBeenCalledWith('connectionDrag', expect.any(Function));
+      expect(instance.Plumber.bind).toHaveBeenCalledWith(
+        'connection',
+        expect.any(Function),
+      );
+      expect(instance.Plumber.bind).toHaveBeenCalledWith(
+        'connection',
+        expect.any(Function),
+      );
+      expect(instance.Plumber.bind).toHaveBeenCalledWith(
+        'connectionDrag',
+        expect.any(Function),
+      );
       expect(instance.Plumber.bind).toHaveBeenCalledWith(
         'connectionDragStop',
-        expect.any(Function)
+        expect.any(Function),
       );
-      expect(instance.Plumber.bind).toHaveBeenCalledWith('beforeStartDetach', expect.any(Function));
-      expect(instance.Plumber.bind).toHaveBeenCalledWith('beforeDetach', expect.any(Function));
-      expect(instance.Plumber.bind).toHaveBeenCalledWith('beforeDrop', expect.any(Function));
+      expect(instance.Plumber.bind).toHaveBeenCalledWith(
+        'beforeStartDetach',
+        expect.any(Function),
+      );
+      expect(instance.Plumber.bind).toHaveBeenCalledWith(
+        'beforeDetach',
+        expect.any(Function),
+      );
+      expect(instance.Plumber.bind).toHaveBeenCalledWith(
+        'beforeDrop',
+        expect.any(Function),
+      );
       componentDidMountSpy.mockRestore();
     });
 
@@ -175,7 +205,7 @@ describe(Flow.name, () => {
     describe('onBeforeConnectorDrop', () => {
       it('should call resetNodeEditingState prop', () => {
         const { wrapper, instance, props } = setup(true, {
-          resetNodeEditingState: setMock()
+          resetNodeEditingState: setMock(),
         });
 
         instance.onBeforeConnectorDrop(mockConnectionEvent);
@@ -191,8 +221,8 @@ describe(Flow.name, () => {
           instance.onBeforeConnectorDrop({
             ...mockConnectionEvent,
             sourceId: `${sourceId}:${createUUID()}`,
-            targetId: sourceId
-          })
+            targetId: sourceId,
+          }),
         ).toBeFalsy();
       });
 
@@ -203,7 +233,7 @@ describe(Flow.name, () => {
           sourceId: `${uuids[0]}:${props.nodes[uuids[0]].node.exits[0].uuid}`,
           targetId: uuids[1],
           suspendedElementId: uuids[0],
-          source: null as any
+          source: null as any,
         };
 
         expect(instance.onBeforeConnectorDrop(connectionEvent)).toBeTruthy();
@@ -213,7 +243,7 @@ describe(Flow.name, () => {
     describe('onConnectorDrop', () => {
       it('should not do NodeEditor work if the user is dragging back', () => {
         const { instance, props } = setup(true, {
-          onOpenNodeEditor: setMock()
+          onOpenNodeEditor: setMock(),
         });
 
         jest.runAllTimers();
@@ -229,18 +259,20 @@ describe(Flow.name, () => {
         // tslint:disable-next-line:no-shadowed-variable
         const { instance, props } = setup(true, {
           onOpenNodeEditor: setMock(),
-          ghostNode: set(ghostNodeFromWait)
+          ghostNode: set(ghostNodeFromWait),
         });
 
         instance.onConnectorDrop({
           ...mockConnectionEvent,
-          source: document.createElement('div')
+          source: document.createElement('div'),
         });
 
         jest.runAllTimers();
 
         expect(instance.Plumber.recalculate).toHaveBeenCalledTimes(1);
-        expect(instance.Plumber.recalculate).toHaveBeenCalledWith(props.ghostNode.node.uuid);
+        expect(instance.Plumber.recalculate).toHaveBeenCalledWith(
+          props.ghostNode.node.uuid,
+        );
         expect(instance.Plumber.connect).toHaveBeenCalledTimes(1);
         expect(instance.Plumber.connect).toMatchCallSnapshot();
 
@@ -253,7 +285,9 @@ describe(Flow.name, () => {
       it('should return reversse of translating prop', () => {
         const { wrapper, instance, props } = setup();
 
-        expect(instance.beforeConnectionDrag(mockConnectionEvent)).toBe(!props.translating);
+        expect(instance.beforeConnectionDrag(mockConnectionEvent)).toBe(
+          !props.translating,
+        );
       });
     });
   });

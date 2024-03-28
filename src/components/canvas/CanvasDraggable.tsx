@@ -29,13 +29,16 @@ export interface CanvasDraggableState {
   height?: number;
 }
 
-export class CanvasDraggable extends React.Component<CanvasDraggableProps, CanvasDraggableState> {
+export class CanvasDraggable extends React.Component<
+  CanvasDraggableProps,
+  CanvasDraggableState
+> {
   private ele!: HTMLDivElement;
 
   constructor(props: CanvasDraggableProps) {
     super(props);
     bindCallbacks(this, {
-      include: [/^handle/, 'ref']
+      include: [/^handle/, 'ref'],
     });
 
     this.state = {};
@@ -48,13 +51,16 @@ export class CanvasDraggable extends React.Component<CanvasDraggableProps, Canva
   public componentDidMount(): void {
     if (this.ele) {
       if (this.props.updateDimensions) {
-        const width = this.ele.clientWidth || this.props.position.right - this.props.position.left;
+        const width =
+          this.ele.clientWidth ||
+          this.props.position.right - this.props.position.left;
         const height =
-          this.ele.clientHeight || this.props.position.bottom - this.props.position.top;
+          this.ele.clientHeight ||
+          this.props.position.bottom - this.props.position.top;
         this.setState({ width, height }, () => {
           this.props.updateDimensions(this.props.uuid, {
             width,
-            height
+            height,
           });
         });
 
@@ -65,7 +71,7 @@ export class CanvasDraggable extends React.Component<CanvasDraggableProps, Canva
               this.setState({ width, height }, () => {
                 this.props.updateDimensions(this.props.uuid, {
                   width,
-                  height
+                  height,
                 });
               });
             }
@@ -77,7 +83,11 @@ export class CanvasDraggable extends React.Component<CanvasDraggableProps, Canva
     }
   }
 
-  public shouldComponentUpdate(nextProps: CanvasDraggableProps, state: any, context: any): boolean {
+  public shouldComponentUpdate(
+    nextProps: CanvasDraggableProps,
+    state: any,
+    context: any,
+  ): boolean {
     return (
       nextProps.position.left !== this.props.position.left ||
       nextProps.position.top !== this.props.position.top ||
@@ -91,7 +101,7 @@ export class CanvasDraggable extends React.Component<CanvasDraggableProps, Canva
 
   public componentDidUpdate(
     prevProps: CanvasDraggableProps,
-    prevState: CanvasDraggableState
+    prevState: CanvasDraggableState,
   ): void {
     // traceUpdate(this, prevProps, prevState);
 
@@ -128,7 +138,10 @@ export class CanvasDraggable extends React.Component<CanvasDraggableProps, Canva
 
   private handleMouseDown(event: React.MouseEvent<HTMLDivElement>) {
     // ignore clicks in textareas
-    if (!this.props.selected && (event.target as any).tagName.toUpperCase() === 'TEXTAREA') {
+    if (
+      !this.props.selected &&
+      (event.target as any).tagName.toUpperCase() === 'TEXTAREA'
+    ) {
       return;
     }
 
@@ -139,7 +152,10 @@ export class CanvasDraggable extends React.Component<CanvasDraggableProps, Canva
     if (this.props.onDragStart) {
       this.props.onDragStart(
         this.props.uuid,
-        newPosition(event.pageX - this.props.position.left, event.pageY - this.props.position.top)
+        newPosition(
+          event.pageX - this.props.position.left,
+          event.pageY - this.props.position.top,
+        ),
       );
     }
   }
@@ -165,7 +181,7 @@ export class CanvasDraggable extends React.Component<CanvasDraggableProps, Canva
         className={classes.join(' ')}
         style={{
           left: this.props.position.left,
-          top: this.props.position.top
+          top: this.props.position.top,
         }}
         onMouseDown={this.handleMouseDown}
         onMouseUp={this.handleMouseUp}

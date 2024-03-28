@@ -5,7 +5,10 @@ import * as React from 'react';
 import styles from './SayMsg.module.scss';
 import i18n from 'config/i18n';
 
-export const PLACEHOLDER = i18n.t('actions.say_msg.placeholder', 'Send a message to the contact');
+export const PLACEHOLDER = i18n.t(
+  'actions.say_msg.placeholder',
+  'Send a message to the contact',
+);
 
 const SayMsgComp: React.SFC<SayMsg> = (action: SayMsg): JSX.Element => {
   if (action.text) {

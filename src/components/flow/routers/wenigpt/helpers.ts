@@ -7,10 +7,13 @@ import { AssetStore, RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
 import { createUUID } from 'utils';
 
-export const getOriginalAction = (settings: NodeEditorSettings): CallWeniGPT => {
+export const getOriginalAction = (
+  settings: NodeEditorSettings,
+): CallWeniGPT => {
   const action =
     settings.originalAction ||
-    (settings.originalNode.node.actions.length > 0 && settings.originalNode.node.actions[0]);
+    (settings.originalNode.node.actions.length > 0 &&
+      settings.originalNode.node.actions[0]);
 
   if (action.type === Types.call_wenigpt) {
     return action as CallWeniGPT;
@@ -19,28 +22,30 @@ export const getOriginalAction = (settings: NodeEditorSettings): CallWeniGPT => 
 
 export const nodeToState = (
   settings: NodeEditorSettings,
-  assetStore: AssetStore
+  assetStore: AssetStore,
 ): WeniGPTRouterFormState => {
   // TODO: work out an incremental result name
   const resultName: StringEntry = { value: 'Result' };
 
-  const knowledgeBases = Object.values(assetStore.knowledgeBases.items).map(kb => {
-    return { ...kb, label: kb.content.intelligence + ' - ' + kb.name };
-  });
+  const knowledgeBases = Object.values(assetStore.knowledgeBases.items).map(
+    kb => {
+      return { ...kb, label: kb.content.intelligence + ' - ' + kb.name };
+    },
+  );
 
   const state: WeniGPTRouterFormState = {
     knowledgeBase: { value: null },
     expression: { value: '@input.text' },
     knowledgeBases,
     resultName,
-    valid: false
+    valid: false,
   };
 
   if (getType(settings.originalNode) === Types.split_by_wenigpt) {
     const action = getOriginalAction(settings) as CallWeniGPT;
 
     const selectedKnowledgeBase = knowledgeBases.find(
-      kb => kb.id === action.knowledge_base.toString()
+      kb => kb.id === action.knowledge_base.toString(),
     );
 
     state.knowledgeBase = { value: selectedKnowledgeBase };
@@ -54,7 +59,7 @@ export const nodeToState = (
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: WeniGPTRouterFormState
+  state: WeniGPTRouterFormState,
 ): RenderNode => {
   let uuid = createUUID();
 
@@ -68,7 +73,7 @@ export const stateToNode = (
     type: Types.call_wenigpt,
     knowledge_base: state.knowledgeBase.value.id,
     input: state.expression.value,
-    result_name: state.resultName.value
+    result_name: state.resultName.value,
   };
 
   return createWebhookBasedNode(newAction, settings.originalNode, false);

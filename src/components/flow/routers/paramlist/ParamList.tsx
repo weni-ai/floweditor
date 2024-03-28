@@ -3,7 +3,12 @@ import { FormEntry, FormState, mergeForm } from 'store/nodeEditor';
 import * as React from 'react';
 import styles from './ParamList.module.scss';
 import { ServiceCallParam } from 'config/interfaces';
-import { SortEnd, SortableContainer, SortableElement, arrayMove } from 'react-sortable-hoc';
+import {
+  SortEnd,
+  SortableContainer,
+  SortableElement,
+  arrayMove,
+} from 'react-sortable-hoc';
 import ParamElement from 'components/flow/routers/param/ParamElement';
 import { createEmptyParam } from './helpers';
 
@@ -41,7 +46,10 @@ const SortableItem = SortableElement(({ value: row }: any) => {
   );
 });
 
-export default class ParamList extends React.Component<ParamListProps, ParamListState> {
+export default class ParamList extends React.Component<
+  ParamListProps,
+  ParamListState
+> {
   private sortableList = SortableContainer(({ items }: any) => {
     return (
       <div className={styles.param_list}>
@@ -51,12 +59,14 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
             index={index}
             value={{
               item: { ...value, availableParams: this.props.availableParams },
-              list: this
+              list: this,
             }}
             disabled={
               index === this.state.currentParams.length - 1 ||
               (value.required ||
-                (value.filter && value.filter.value && value.filter.value.required))
+                (value.filter &&
+                  value.filter.value &&
+                  value.filter.value.required))
             }
             shouldCancelStart={(e: any) => {
               console.log(e);
@@ -72,7 +82,7 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
     super(props);
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
 
     const paramProps = this.props.params;
@@ -83,7 +93,7 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
 
     this.state = {
       currentParams: paramProps,
-      valid: true
+      valid: true,
     };
   }
 
@@ -106,7 +116,10 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
 
   private hasEmptyParam(params: ParamProps[]): boolean {
     const emptyParam = params.find((paramProps: ParamProps) => {
-      if (typeof paramProps.data.value === 'string' || paramProps.data.value instanceof String) {
+      if (
+        typeof paramProps.data.value === 'string' ||
+        paramProps.data.value instanceof String
+      ) {
         return paramProps.data.value.trim().length === 0;
       }
 
@@ -155,7 +168,7 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
 
   private handleRemoveParam(uuid: string) {
     return this.handleUpdate({
-      removeParam: { uuid }
+      removeParam: { uuid },
     });
   }
 
@@ -169,12 +182,14 @@ export default class ParamList extends React.Component<ParamListProps, ParamList
         currentParams: arrayMove(
           currentParams,
           oldIndex,
-          newIndex === this.state.currentParams.length - 1 ? newIndex - 1 : newIndex
-        )
+          newIndex === this.state.currentParams.length - 1
+            ? newIndex - 1
+            : newIndex,
+        ),
       }),
       () => {
         this.props.onParamsUpdated(this.state.currentParams);
-      }
+      },
     );
   }
 

@@ -6,7 +6,10 @@ import { setEmpty } from 'utils';
 
 const playAudioAction = createPlayAudioAction();
 
-const { setup } = composeComponentTestUtils<PlayAudio>(PlayAudioComp, playAudioAction);
+const { setup } = composeComponentTestUtils<PlayAudio>(
+  PlayAudioComp,
+  playAudioAction,
+);
 
 describe(PlayAudioComp.name, () => {
   describe('render', () => {

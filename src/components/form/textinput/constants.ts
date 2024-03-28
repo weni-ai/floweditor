@@ -13,7 +13,7 @@ export enum KeyValues {
   KEY_N = 'n',
   KEY_P = 'p',
   KEY_F = 'f',
-  KEY_B = 'b'
+  KEY_B = 'b',
 }
 
 export const MAX_GSM_SINGLE = 160;
@@ -161,5 +161,5 @@ export const GSM: { [key: string]: number } = {
   Φ: 934,
   Ψ: 936,
   Ω: 937,
-  '€': 8364
+  '€': 8364,
 };

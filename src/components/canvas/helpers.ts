@@ -1,6 +1,12 @@
 import { FlowPosition } from 'flowTypes';
 import { CanvasPositions } from 'store/editor';
-import { MAX_REFLOW_ATTEMPTS, NODE_SPACING, set, timeEnd, timeStart } from 'utils';
+import {
+  MAX_REFLOW_ATTEMPTS,
+  NODE_SPACING,
+  set,
+  timeEnd,
+  timeStart,
+} from 'utils';
 
 const mutate = require('immutability-helper');
 
@@ -13,12 +19,17 @@ export const collides = (a: FlowPosition, b: FlowPosition, fudge: number) => {
 
   a.bottom += fudge;
 
-  return !(b.left > a.right! || b.right! < a.left || b.top > a.bottom || b.bottom < a.top);
+  return !(
+    b.left > a.right! ||
+    b.right! < a.left ||
+    b.top > a.bottom ||
+    b.bottom < a.top
+  );
 };
 
 export const getDraggablesInBox = (
   positions: CanvasPositions,
-  box: FlowPosition
+  box: FlowPosition,
 ): { [uuid: string]: FlowPosition } => {
   const collisions: any = {};
   for (const nodeUUID of Object.keys(positions)) {
@@ -34,7 +45,9 @@ interface DraggablePosition extends FlowPosition {
   uuid: string;
 }
 
-export const getOrderedDraggables = (positions: CanvasPositions): DraggablePosition[] => {
+export const getOrderedDraggables = (
+  positions: CanvasPositions,
+): DraggablePosition[] => {
   const sorted: DraggablePosition[] = [];
   Object.keys(positions).forEach((uuid: string) => {
     sorted.push({ ...positions[uuid], uuid });
@@ -58,7 +71,7 @@ export const getOrderedDraggables = (positions: CanvasPositions): DraggablePosit
 const getFirstCollision = (
   positions: CanvasPositions,
   changed: string[],
-  fudge: number
+  fudge: number,
 ): DraggablePosition[] => {
   const sortedDraggables = getOrderedDraggables(positions);
 
@@ -82,7 +95,7 @@ const getFirstCollision = (
 
           if (
             !!changed.find((uuid: string) => other.uuid === uuid) &&
-            !!!changed.find((uuid: string) => current.uuid === uuid)
+            !changed.find((uuid: string) => current.uuid === uuid)
           ) {
             return [other, current];
           }
@@ -100,7 +113,7 @@ const setTop = (position: FlowPosition, newTop: number) => {
     top: newTop,
     left: position.left,
     bottom: newTop + (position.bottom! - position.top),
-    right: position.right
+    right: position.right,
   };
 };
 
@@ -111,7 +124,7 @@ const setTop = (position: FlowPosition, newTop: number) => {
 export const reflow = (
   positions: CanvasPositions,
   fudge: number,
-  startingNodeUuid: string
+  startingNodeUuid: string,
 ): { positions: CanvasPositions; changed: string[] } => {
   let newPositions = positions;
   const changed: string[] = [];
@@ -128,12 +141,12 @@ export const reflow = (
       const [top, bottom, cascade] = collision;
       if (bottom.uuid !== startingNodeUuid) {
         newPositions = mutate(newPositions, {
-          [bottom.uuid]: set(setTop(bottom, top.bottom! + NODE_SPACING))
+          [bottom.uuid]: set(setTop(bottom, top.bottom! + NODE_SPACING)),
         });
         changed.push(bottom.uuid);
       } else {
         newPositions = mutate(newPositions, {
-          [top.uuid]: set(setTop(top, bottom.top! + NODE_SPACING))
+          [top.uuid]: set(setTop(top, bottom.top! + NODE_SPACING)),
         });
         changed.push(top.uuid);
       }
@@ -145,7 +158,7 @@ export const reflow = (
         // and add its height
         cascadeTop += bottom.bottom! - bottom.top;
         newPositions = mutate(newPositions, {
-          [cascade.uuid]: set(setTop(cascade, cascadeTop))
+          [cascade.uuid]: set(setTop(cascade, cascadeTop)),
         });
 
         changed.push(cascade.uuid);

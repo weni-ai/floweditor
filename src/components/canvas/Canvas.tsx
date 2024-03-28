@@ -1,6 +1,9 @@
 import { react as bindCallbacks } from 'auto-bind';
 import panzoom, { PanZoom } from 'panzoom';
-import { CanvasDraggable, CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
+import {
+  CanvasDraggable,
+  CanvasDraggableProps,
+} from 'components/canvas/CanvasDraggable';
 import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 import { getDraggablesInBox, reflow } from 'components/canvas/helpers';
 import { DRAG_THRESHOLD } from 'components/flow/Flow';
@@ -26,10 +29,10 @@ const UnnnicTooltip = applyVueInReact(unnnicToolTip, {
     slotWrap: 'div',
     componentWrapAttrs: {
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 export const CANVAS_PADDING = 300;
@@ -90,16 +93,22 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   // did we just select something
   private justSelected = false;
 
-  private onDragThrottled: (uuids: string[]) => void = throttle(this.props.onDragging, 15);
-  private onMouseThrottled: (event: any) => void = throttle(this.handleMouseMove.bind(this), 15);
+  private onDragThrottled: (uuids: string[]) => void = throttle(
+    this.props.onDragging,
+    15,
+  );
+  private onMouseThrottled: (event: any) => void = throttle(
+    this.handleMouseMove.bind(this),
+    15,
+  );
   private onMouseCanvasThrottled: (event: any) => void = throttle(
     this.handleMouseMoveCanvas.bind(this),
-    30
+    30,
   );
   private updatePositionsThrottled: (
     pageX: number,
     pageY: number,
-    clientY: number
+    clientY: number,
   ) => void = throttle(this.updatePositions.bind(this), 15);
 
   constructor(props: CanvasProps) {
@@ -119,11 +128,11 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       selected: {},
       positions,
       currentZoom: 100,
-      panzoomInstance: null
+      panzoomInstance: null,
     };
 
     bindCallbacks(this, {
-      include: [/^handle/, /^render/, /^mark/, /^do/, /^ensure/]
+      include: [/^handle/, /^render/, /^mark/, /^do/, /^ensure/],
     });
   }
 
@@ -137,7 +146,11 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   }
 
   private getNewNodePosition(): FlowPosition {
-    const { transformOffsetX, transformOffsetY, transformScale } = this.getTransformOffsets();
+    const {
+      transformOffsetX,
+      transformOffsetY,
+      transformScale,
+    } = this.getTransformOffsets();
 
     let left = (-transformOffsetX + TRANSFORM_START_X) * (1 / transformScale);
     let top = (-transformOffsetY + TRANSFORM_START_Y) * (1 / transformScale);
@@ -152,7 +165,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     window.addEventListener('keydown', this.handleWindowKeyDown);
     this.ele.addEventListener('keydown', this.handleCanvasKeyDown);
     this.ele.addEventListener('wheel', this.handleMouseWheel, {
-      passive: true
+      passive: true,
     });
 
     window.document.addEventListener('copy', event => {
@@ -164,11 +177,11 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
       const edgeCorner: any = {
         left: null,
-        top: null
+        top: null,
       };
 
       const selectedNodes = this.props.draggables.filter(({ uuid }) =>
-        Object.keys(this.state.selected).includes(uuid)
+        Object.keys(this.state.selected).includes(uuid),
       );
 
       const staticUuids = instance.getStaticUuids(selectedNodes);
@@ -178,10 +191,10 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           .map(({ config }) => ({
             node: config.node,
             ui: config.ui,
-            inboundConnections: config.inboundConnections
+            inboundConnections: config.inboundConnections,
           }))
           .map(node => JSON.parse(JSON.stringify(node))),
-        staticUuids
+        staticUuids,
       );
 
       nodes.forEach((node: any) => {
@@ -189,7 +202,10 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           return;
         }
 
-        if (edgeCorner.left === null || node.ui.position.left < edgeCorner.left) {
+        if (
+          edgeCorner.left === null ||
+          node.ui.position.left < edgeCorner.left
+        ) {
           edgeCorner.left = node.ui.position.left;
         }
 
@@ -204,9 +220,9 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           ...node.ui,
           position: {
             left: node.ui.position.left - edgeCorner.left,
-            top: node.ui.position.top - edgeCorner.top
-          }
-        }
+            top: node.ui.position.top - edgeCorner.top,
+          },
+        },
       }));
 
       event.clipboardData.setData('application/json', JSON.stringify(nodes));
@@ -214,20 +230,23 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
       unnnicCallAlert({
         props: {
-          text: nodes.length > 1 ? i18n.t('copy.multiple') : i18n.t('copy.single'),
+          text:
+            nodes.length > 1 ? i18n.t('copy.multiple') : i18n.t('copy.single'),
           title: i18n.t('forms.Success'),
           icon: 'check-circle-1-1-1',
           scheme: 'feedback-green',
           position: 'bottom-right',
-          closeText: i18n.t('buttons.close')
+          closeText: i18n.t('buttons.close'),
         },
-        seconds: 6
+        seconds: 6,
       });
     });
 
     window.document.addEventListener('paste', event => {
       if (event.clipboardData.getData('application/json')) {
-        const nodes = JSON.parse(event.clipboardData.getData('application/json'));
+        const nodes = JSON.parse(
+          event.clipboardData.getData('application/json'),
+        );
 
         const instance = new nodesCopy();
 
@@ -237,22 +256,32 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         const scaleInverse = parseFloat((1 / transform.scale).toPrecision(16));
 
         nodesPasted.forEach((item: RenderNode) => {
-          const filteredInboundConnections = this.filterExistingInbounds(nodesPasted, item);
-          const filteredExits = this.filterExistingExits(nodesPasted, item.node);
+          const filteredInboundConnections = this.filterExistingInbounds(
+            nodesPasted,
+            item,
+          );
+          const filteredExits = this.filterExistingExits(
+            nodesPasted,
+            item.node,
+          );
           this.props.nodes[item.node.uuid] = {
             ...item,
             node: {
               ...item.node,
-              exits: filteredExits
+              exits: filteredExits,
             },
             inboundConnections: filteredInboundConnections,
             ui: {
               ...item.ui,
               position: {
-                left: item.ui.position.left + (this.mouseX - transform.x) * scaleInverse,
-                top: item.ui.position.top + (this.mouseY - transform.y) * scaleInverse
-              }
-            }
+                left:
+                  item.ui.position.left +
+                  (this.mouseX - transform.x) * scaleInverse,
+                top:
+                  item.ui.position.top +
+                  (this.mouseY - transform.y) * scaleInverse,
+              },
+            },
           };
         });
 
@@ -306,13 +335,14 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         }
         return false;
       },
-      zoomDoubleClickSpeed: 1
+      zoomDoubleClickSpeed: 1,
     });
 
     panzoomInstance.on('zoom', (e: PanZoom) => {
       const transform = e.getTransform();
       this.props.onZoom(transform.scale);
-      this.canvasBg.style.backgroundSize = `${transform.scale * 40}px ${transform.scale * 40}px`;
+      this.canvasBg.style.backgroundSize = `${transform.scale *
+        40}px ${transform.scale * 40}px`;
       this.setState({ currentZoom: Math.round(transform.scale * 100) });
     });
 
@@ -334,7 +364,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       const viewportWidth = document.documentElement.clientWidth;
       panzoomInstance.moveTo(
         viewportWidth / 2 - startingNode.position.left,
-        TRANSFORM_START_Y - startingNode.position.top
+        TRANSFORM_START_Y - startingNode.position.top,
       );
     }
 
@@ -374,9 +404,10 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
   private filterExistingInbounds(
     nodeList: RenderNode[],
-    node: RenderNode
+    node: RenderNode,
   ): { [nodeUUID: string]: string } {
-    const inboundConnections: { [nodeUUID: string]: string } = node.inboundConnections || {};
+    const inboundConnections: { [nodeUUID: string]: string } =
+      node.inboundConnections || {};
     const filteredInboundConnections: { [nodeUUID: string]: string } = {};
 
     for (const key of Object.keys(inboundConnections)) {
@@ -401,14 +432,23 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     const transforms = this.state.panzoomInstance.getTransform();
 
     if (event.shiftKey) {
-      this.state.panzoomInstance.moveTo(transforms.x - event.deltaY, transforms.y - event.deltaX);
+      this.state.panzoomInstance.moveTo(
+        transforms.x - event.deltaY,
+        transforms.y - event.deltaX,
+      );
     } else {
-      this.state.panzoomInstance.moveTo(transforms.x - event.deltaX, transforms.y - event.deltaY);
+      this.state.panzoomInstance.moveTo(
+        transforms.x - event.deltaX,
+        transforms.y - event.deltaY,
+      );
     }
   }
 
   private handleKeyDown(event: any): void {
-    if (this.state.selected && (event.key === 'Backspace' || event.key === 'Delete')) {
+    if (
+      this.state.selected &&
+      (event.key === 'Backspace' || event.key === 'Delete')
+    ) {
       const nodeUUIDs = Object.keys(this.state.selected);
       if (nodeUUIDs.length > 0) {
         this.props.onRemoveNodes(Object.keys(this.state.selected));
@@ -463,7 +503,10 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     this.ele.removeEventListener('wheel', this.handleMouseWheel);
   }
 
-  public componentDidUpdate(prevProps: CanvasProps, prevState: CanvasState): void {
+  public componentDidUpdate(
+    prevProps: CanvasProps,
+    prevState: CanvasState,
+  ): void {
     // traceUpdate(this, prevProps, prevState);
 
     let updated = false;
@@ -473,7 +516,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     this.props.draggables.forEach((draggable: CanvasDraggableProps) => {
       if (!this.state.positions[draggable.uuid]) {
         updatedPositions = mutate(updatedPositions, {
-          $merge: { [draggable.uuid]: draggable.position }
+          $merge: { [draggable.uuid]: draggable.position },
         });
         updated = true;
       }
@@ -482,9 +525,13 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     // have we removed something
     Object.keys(updatedPositions).forEach((uuid: string) => {
       if (
-        !this.props.draggables.find((draggable: CanvasDraggableProps) => draggable.uuid === uuid)
+        !this.props.draggables.find(
+          (draggable: CanvasDraggableProps) => draggable.uuid === uuid,
+        )
       ) {
-        updatedPositions = mutate(updatedPositions, { $unset: [[uuid]] } as any);
+        updatedPositions = mutate(updatedPositions, {
+          $unset: [[uuid]],
+        } as any);
         updated = true;
       }
     });
@@ -499,7 +546,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     }
 
     this.props.mergeEditorState({
-      selectionActive
+      selectionActive,
     });
   }
 
@@ -513,7 +560,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       const height = Math.max(drag.startY, drag.currentY) - top;
 
       if (this.state.dragSelection && this.state.dragSelection.startX) {
-        return <div className={styles.drag_selection} style={{ left, top, width, height }} />;
+        return (
+          <div
+            className={styles.drag_selection}
+            style={{ left, top, width, height }}
+          />
+        );
       }
     }
 
@@ -550,14 +602,20 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
       this.justSelected = false;
       if (this.isClickOnCanvas(event)) {
-        const { transformOffsetX, transformOffsetY, transformScale } = this.getTransformOffsets();
+        const {
+          transformOffsetX,
+          transformOffsetY,
+          transformScale,
+        } = this.getTransformOffsets();
 
-        const startX = (event.pageX - offset.left - transformOffsetX) * (1 / transformScale);
+        const startX =
+          (event.pageX - offset.left - transformOffsetX) * (1 / transformScale);
         const startY =
-          (event.pageY - offset.top - window.scrollY - transformOffsetY) * (1 / transformScale);
+          (event.pageY - offset.top - window.scrollY - transformOffsetY) *
+          (1 / transformScale);
 
         this.setState({
-          dragSelection: { startX, startY, currentX: startX, currentY: startY }
+          dragSelection: { startX, startY, currentX: startX, currentY: startY },
         });
       }
     }
@@ -578,7 +636,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       this.lastY = event.pageY;
       this.updateStateWithScroll(event.clientX, event.clientY);
       if (this.state.dragUUID) {
-        this.updatePositions(event.pageX, event.pageY, event.clientX, event.clientY);
+        this.updatePositions(
+          event.pageX,
+          event.pageY,
+          event.clientX,
+          event.clientY,
+        );
       }
       return;
     }
@@ -587,7 +650,13 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       if (this.state.dragSelection && this.state.dragSelection.startX) {
         const drag = this.state.dragSelection;
 
-        if (drag && drag.startX && drag.startY && drag.currentX && drag.currentY) {
+        if (
+          drag &&
+          drag.startX &&
+          drag.startY &&
+          drag.currentX &&
+          drag.currentY
+        ) {
           const left = Math.min(drag.startX, drag.currentX);
           const top = Math.min(drag.startY, drag.currentY);
           const right = Math.max(drag.startX, drag.currentX);
@@ -597,21 +666,27 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
             left,
             top,
             right,
-            bottom
+            bottom,
           });
 
           const offset = this.ele.getBoundingClientRect();
-          const { transformOffsetX, transformOffsetY, transformScale } = this.getTransformOffsets();
+          const {
+            transformOffsetX,
+            transformOffsetY,
+            transformScale,
+          } = this.getTransformOffsets();
 
           this.setState({
             dragSelection: {
               startX: drag.startX,
               startY: drag.startY,
-              currentX: (event.pageX - offset.left - transformOffsetX) * (1 / transformScale),
+              currentX:
+                (event.pageX - offset.left - transformOffsetX) *
+                (1 / transformScale),
               currentY:
                 (event.pageY - offset.top - window.scrollY - transformOffsetY) *
-                (1 / transformScale)
-            }
+                (1 / transformScale),
+            },
           });
 
           this.setState({ selected });
@@ -623,7 +698,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       }
 
       if (this.state.dragUUID) {
-        this.updatePositions(event.pageX, event.pageY, event.clientX, event.clientY);
+        this.updatePositions(
+          event.pageX,
+          event.pageY,
+          event.clientX,
+          event.clientY,
+        );
       }
     }
   }
@@ -672,13 +752,13 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       this.setState({
         dragDownPosition: null,
         dragSelection: null,
-        dragUUID: null
+        dragUUID: null,
       });
     }
 
     if (!this.justSelected) {
       this.props.mergeEditorState({
-        dragActive: false
+        dragActive: false,
       });
 
       this.setState({ selected: {} });
@@ -690,8 +770,8 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           startX: undefined,
           startY: undefined,
           currentX: undefined,
-          currentY: undefined
-        }
+          currentY: undefined,
+        },
       });
     }
 
@@ -702,27 +782,31 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     if (dimensions.width && dimensions.height) {
       let pos = this.state.positions[uuid];
       if (!pos) {
-        pos = this.props.draggables.find((item: CanvasDraggableProps) => item.uuid === uuid)!
-          .position;
+        pos = this.props.draggables.find(
+          (item: CanvasDraggableProps) => item.uuid === uuid,
+        )!.position;
       }
 
       const newPosition = {
         left: pos.left,
         top: pos.top,
         right: pos.left + dimensions.width,
-        bottom: pos.top + dimensions.height
+        bottom: pos.top + dimensions.height,
       };
 
-      if (newPosition.bottom !== pos.bottom || newPosition.right !== pos.right) {
+      if (
+        newPosition.bottom !== pos.bottom ||
+        newPosition.right !== pos.right
+      ) {
         this.setState((prevState: CanvasState) => {
           const newPositions = mutate(prevState.positions, {
             $merge: {
-              [uuid]: newPosition
-            }
+              [uuid]: newPosition,
+            },
           });
 
           return {
-            positions: newPositions
+            positions: newPositions,
           };
         }, this.markReflow);
       }
@@ -752,7 +836,11 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     delete reflowPositions[this.state.dragUUID];
 
     const { uuid: startingNodeUuid } = this.getStartingNode();
-    const { positions, changed } = reflow(reflowPositions, COLLISION_FUDGE, startingNodeUuid);
+    const { positions, changed } = reflow(
+      reflowPositions,
+      COLLISION_FUDGE,
+      startingNodeUuid,
+    );
 
     if (changed) {
       this.setState({ positions });
@@ -762,7 +850,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           changed.reduce((results: CanvasPositions, uuid: string) => {
             results[uuid] = positions[uuid];
             return results;
-          }, {})
+          }, {}),
         );
       }
     }
@@ -792,7 +880,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   private updateStateWithScroll(
     windowX: number,
     windowY: number,
-    otherState: Partial<CanvasState> = {}
+    otherState: Partial<CanvasState> = {},
   ): void {
     const viewportHeight = document.documentElement.clientHeight;
     const viewportWidth = document.documentElement.clientWidth;
@@ -800,7 +888,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
     this.setState(
       {
-        ...(otherState as CanvasState)
+        ...(otherState as CanvasState),
       },
       () => {
         // check if we need to scroll our canvas
@@ -813,7 +901,10 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           }
         }
         // if we are scrolling but given a clientY then user is mousing
-        else if (windowY !== 0 && (windowY > MARGIN && windowY + MARGIN < viewportHeight)) {
+        else if (
+          windowY !== 0 &&
+          (windowY > MARGIN && windowY + MARGIN < viewportHeight)
+        ) {
           window.clearInterval(this.isScrollingY);
           this.isScrollingY = null;
         }
@@ -826,15 +917,23 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           }
         }
         // if we are scrolling but given a clientX then user is mousing
-        else if (windowX !== 0 && (windowX > MARGIN && windowX + MARGIN < viewportWidth)) {
+        else if (
+          windowX !== 0 &&
+          (windowX > MARGIN && windowX + MARGIN < viewportWidth)
+        ) {
           window.clearInterval(this.isScrollingX);
           this.isScrollingX = null;
         }
-      }
+      },
     );
   }
 
-  private updatePositions(pageX: number, pageY: number, clientX: number, clientY: number): void {
+  private updatePositions(
+    pageX: number,
+    pageY: number,
+    clientX: number,
+    clientY: number,
+  ): void {
     if (this.state.dragUUID) {
       const { dragUUID } = this.state;
 
@@ -847,10 +946,14 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         : this.state.positions[dragUUID];
 
       const offset = this.ele.getBoundingClientRect();
-      const { transformOffsetX, transformOffsetY, transformScale } = this.getTransformOffsets();
+      const {
+        transformOffsetX,
+        transformOffsetY,
+        transformScale,
+      } = this.getTransformOffsets();
       const [canvasDiffX, canvasDiffY] = [
         this.lastCanvasX - transformOffsetX,
-        this.lastCanvasY - transformOffsetY
+        this.lastCanvasY - transformOffsetY,
       ];
 
       if (this.state.dragDownPosition) {
@@ -888,11 +991,11 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           });
 
           newPositions = mutate(prevState.positions, {
-            $merge: newPositions
+            $merge: newPositions,
           });
 
           this.updateStateWithScroll(clientX, clientY, {
-            positions: newPositions
+            positions: newPositions,
           });
 
           if (uuids.length <= 5) {
@@ -908,7 +1011,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
             }
 
             this.props.mergeEditorState({
-              dragActive: true
+              dragActive: true,
             });
 
             this.setState({ selected });
@@ -925,8 +1028,8 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       dragUUID: uuid,
       dragDownPosition: {
         left: position.left - offset.left,
-        top: position.top - offset.top - window.scrollY
-      }
+        top: position.top - offset.top - window.scrollY,
+      },
     });
 
     const { transformOffsetX, transformOffsetY } = this.getTransformOffsets();
@@ -936,10 +1039,13 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
   /** Gets all the positions for nodes that were dragged */
   private getSelectedPositions(): CanvasPositions {
-    return Object.keys(this.state.selected).reduce((result: CanvasPositions, uuid: string) => {
-      result[uuid] = this.state.positions[uuid];
-      return result;
-    }, {});
+    return Object.keys(this.state.selected).reduce(
+      (result: CanvasPositions, uuid: string) => {
+        result[uuid] = this.state.positions[uuid];
+        return result;
+      },
+      {},
+    );
   }
 
   private handleDragStop(): void {
@@ -954,13 +1060,13 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     this.setState({
       dragUUID: null,
       dragDownPosition: null,
-      dragSelection: null
+      dragSelection: null,
     });
 
     this.markReflow();
 
     this.props.mergeEditorState({
-      dragActive: false
+      dragActive: false,
     });
   }
 
@@ -971,10 +1077,17 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   private handleDoubleClick(event: React.MouseEvent<HTMLDivElement>): void {
     if (this.isClickOnCanvas(event)) {
       const offset = this.ele.getBoundingClientRect();
-      const { transformOffsetX, transformOffsetY, transformScale } = this.getTransformOffsets();
+      const {
+        transformOffsetX,
+        transformOffsetY,
+        transformScale,
+      } = this.getTransformOffsets();
       this.props.onDoubleClick({
-        left: (event.pageX - offset.left - transformOffsetX) * (1 / transformScale),
-        top: (event.pageY - offset.top - window.scrollY - transformOffsetY) * (1 / transformScale)
+        left:
+          (event.pageX - offset.left - transformOffsetX) * (1 / transformScale),
+        top:
+          (event.pageY - offset.top - window.scrollY - transformOffsetY) *
+          (1 / transformScale),
       });
     }
   }
@@ -997,7 +1110,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
       this.state.panzoomInstance.smoothMoveTo(
         viewportWidth / 2 - position.left * scale,
-        TRANSFORM_START_Y - position.top * scale
+        TRANSFORM_START_Y - position.top * scale,
       );
     }
   }
@@ -1043,25 +1156,28 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           >
             <div id="panzoom" className={styles.panzoom}>
               {this.props.newDragElement}
-              {this.props.draggables.map((draggable: CanvasDraggableProps, idx: number) => {
-                const pos = this.state.positions[draggable.uuid] || draggable.position;
-                return (
-                  <CanvasDraggable
-                    onAnimated={this.handleAnimated}
-                    key={'draggable_' + draggable.uuid}
-                    uuid={draggable.uuid}
-                    updateDimensions={this.handleUpdateDimensions}
-                    position={pos}
-                    idx={draggable.idx}
-                    selected={!!this.state.selected[draggable.uuid]}
-                    elementCreator={draggable.elementCreator}
-                    onDragStart={this.handleDragStart}
-                    onDragStop={this.handleDragStop}
-                    dragOnAdd={draggable.dragOnAdd}
-                    config={draggable.config}
-                  />
-                );
-              })}
+              {this.props.draggables.map(
+                (draggable: CanvasDraggableProps, idx: number) => {
+                  const pos =
+                    this.state.positions[draggable.uuid] || draggable.position;
+                  return (
+                    <CanvasDraggable
+                      onAnimated={this.handleAnimated}
+                      key={'draggable_' + draggable.uuid}
+                      uuid={draggable.uuid}
+                      updateDimensions={this.handleUpdateDimensions}
+                      position={pos}
+                      idx={draggable.idx}
+                      selected={!!this.state.selected[draggable.uuid]}
+                      elementCreator={draggable.elementCreator}
+                      onDragStart={this.handleDragStart}
+                      onDragStop={this.handleDragStop}
+                      dragOnAdd={draggable.dragOnAdd}
+                      config={draggable.config}
+                    />
+                  );
+                },
+              )}
               {this.renderSelectionBox()}
             </div>
 
@@ -1073,7 +1189,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                   title={i18n.t('guiding.control_tools.1.title', 'Zoom tool')}
                   description={i18n.t(
                     'guiding.control_tools.1.description',
-                    `Now you can zoom in and zoom out natively, without having to zoom in on the entire browser, which also helps with the navigability of cards.`
+                    `Now you can zoom in and zoom out natively, without having to zoom in on the entire browser, which also helps with the navigability of cards.`,
                   )}
                   buttonText={i18n.t('guiding.v2.1.button', 'Got it 2/3')}
                   side="top"
@@ -1084,16 +1200,24 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                     text="Zoom"
                     enabled={true}
                     side="top"
-                    shortcutText={(getOS() === 'Macintosh' ? 'Cmd' : 'Ctrl') + ' + Scroll'}
+                    shortcutText={
+                      (getOS() === 'Macintosh' ? 'Cmd' : 'Ctrl') + ' + Scroll'
+                    }
                   >
-                    <div className={styles.out} onClick={() => this.handleZoomClick(0)}>
+                    <div
+                      className={styles.out}
+                      onClick={() => this.handleZoomClick(0)}
+                    >
                       <span className="material-symbols-rounded">remove</span>
                     </div>
                     <div className={styles.percentage}>
                       {this.state.currentZoom}
                       <span className="material-symbols-rounded">percent</span>
                     </div>
-                    <div className={styles.in} onClick={() => this.handleZoomClick(1)}>
+                    <div
+                      className={styles.in}
+                      onClick={() => this.handleZoomClick(1)}
+                    >
                       <span className="material-symbols-rounded">add</span>
                     </div>
                   </UnnnicTooltip>
@@ -1102,10 +1226,13 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                 <GuidingSteps
                   guide="control_tools"
                   step={2}
-                  title={i18n.t('guiding.control_tools.2.title', 'Start of flow')}
+                  title={i18n.t(
+                    'guiding.control_tools.2.title',
+                    'Start of flow',
+                  )}
                   description={i18n.t(
                     'guiding.control_tools.2.description',
-                    `Your flow is too big and sometimes you get lost? Your problems are over, just click here or use the shortcut Ctrl + Enter to go back to the beginning of your flow.`
+                    `Your flow is too big and sometimes you get lost? Your problems are over, just click here or use the shortcut Ctrl + Enter to go back to the beginning of your flow.`,
                   )}
                   buttonText={i18n.t('guiding.v2.2.button', 'Got it 3/3')}
                   side="top"
@@ -1116,13 +1243,20 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                     text=""
                     enabled={true}
                     side="right"
-                    shortcutText={(getOS() === 'Macintosh' ? 'Cmd' : 'Ctrl') + ' + Enter'}
+                    shortcutText={
+                      (getOS() === 'Macintosh' ? 'Cmd' : 'Ctrl') + ' + Enter'
+                    }
                   >
-                    <div className={styles.start} onClick={() => this.moveToStart()}>
+                    <div
+                      className={styles.start}
+                      onClick={() => this.moveToStart()}
+                    >
                       <span className={styles.hide}>
                         {i18n.t('to_flow_start', 'Start of flow')}
                       </span>
-                      <span className="material-symbols-rounded">arrow_upward</span>
+                      <span className="material-symbols-rounded">
+                        arrow_upward
+                      </span>
                     </div>
                   </UnnnicTooltip>
                 </GuidingSteps>

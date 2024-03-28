@@ -4,7 +4,12 @@ import { ActionFormProps } from 'components/flow/props';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import * as React from 'react';
-import { FormState, mergeForm, StringArrayEntry, StringEntry } from 'store/nodeEditor';
+import {
+  FormState,
+  mergeForm,
+  StringArrayEntry,
+  StringEntry,
+} from 'store/nodeEditor';
 import { shouldRequireIf, validate } from 'store/validators';
 
 import { initializeForm, stateToAction } from './helpers';
@@ -28,40 +33,54 @@ export interface SendEmailFormState extends FormState {
 
 const UnnnicIcon = applyVueInReact(unnnicIcon);
 
-export default class SendEmailForm extends React.Component<ActionFormProps, SendEmailFormState> {
+export default class SendEmailForm extends React.Component<
+  ActionFormProps,
+  SendEmailFormState
+> {
   constructor(props: ActionFormProps) {
     super(props);
 
     this.state = initializeForm(this.props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
   public onAddRecipient(): void {
     if (!this.handleCheckValid(this.state.recipient.value)) {
       this.setState({
-        recipientError: i18n.t('forms.email_recipient_prompt', 'Enter email address')
+        recipientError: i18n.t(
+          'forms.email_recipient_prompt',
+          'Enter email address',
+        ),
       });
       return;
     }
 
-    if (this.state.recipients.value.find(email => email === this.state.recipient.value)) {
+    if (
+      this.state.recipients.value.find(
+        email => email === this.state.recipient.value,
+      )
+    ) {
       return;
     }
 
     this.setState({
       recipient: { value: '' },
-      recipients: { value: [...this.state.recipients.value, this.state.recipient.value] }
+      recipients: {
+        value: [...this.state.recipients.value, this.state.recipient.value],
+      },
     });
   }
 
   public onRemoveRecipient(indexToRemove: number): void {
     this.setState({
       recipients: {
-        value: this.state.recipients.value.filter((recipient, index) => index !== indexToRemove)
-      }
+        value: this.state.recipients.value.filter(
+          (recipient, index) => index !== indexToRemove,
+        ),
+      },
     });
   }
 
@@ -79,29 +98,35 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
 
   private handleUpdate(
     keys: { recipients?: string[]; subject?: string; body?: string },
-    submitting = false
+    submitting = false,
   ): boolean {
     const updates: Partial<SendEmailFormState> = {};
 
     if (keys.hasOwnProperty('recipients')) {
-      updates.recipients = validate(i18n.t('forms.recipients', 'Recipients'), keys.recipients!, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.recipients = validate(
+        i18n.t('forms.recipients', 'Recipients'),
+        keys.recipients!,
+        [shouldRequireIf(submitting)],
+      );
 
       if (updates.recipients.validationFailures.length > 0) {
-        this.setState({ recipientError: updates.recipients.validationFailures[0].message });
+        this.setState({
+          recipientError: updates.recipients.validationFailures[0].message,
+        });
       }
     }
 
     if (keys.hasOwnProperty('subject')) {
-      updates.subject = validate(i18n.t('forms.subject', 'Subject'), keys.subject!, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.subject = validate(
+        i18n.t('forms.subject', 'Subject'),
+        keys.subject!,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     if (keys.hasOwnProperty('body')) {
       updates.body = validate(i18n.t('forms.body', 'Body'), keys.body!, [
-        shouldRequireIf(submitting)
+        shouldRequireIf(submitting),
       ]);
     }
 
@@ -116,13 +141,15 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
       {
         recipients: this.state.recipients.value,
         subject: this.state.subject.value,
-        body: this.state.body.value
+        body: this.state.body.value,
       },
-      true
+      true,
     );
 
     if (valid) {
-      this.props.updateAction(stateToAction(this.props.nodeSettings, this.state));
+      this.props.updateAction(
+        stateToAction(this.props.nodeSettings, this.state),
+      );
 
       // notify our modal we are done
       this.props.onClose(false);
@@ -134,8 +161,8 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -146,20 +173,31 @@ export default class SendEmailForm extends React.Component<ActionFormProps, Send
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <div className={styles.ele}>
           <TextInputElement
             __className={styles.subject}
             name={i18n.t('forms.email_recipient_name', 'Recipient')}
-            placeholder={i18n.t('forms.email_recipient_placeholder', 'Add Email and press Enter')}
+            placeholder={i18n.t(
+              'forms.email_recipient_placeholder',
+              'Add Email and press Enter',
+            )}
             onChange={value => this.setState({ recipient: { value } })}
             iconRight="keyboard-return-1"
             entry={this.state.recipient}
             showLabel
             onKeyDown={() =>
               this.setState({
-                recipientError: undefined
+                recipientError: undefined,
               })
             }
             onKeyPressEnter={this.onAddRecipient}

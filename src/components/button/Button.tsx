@@ -8,7 +8,7 @@ import { unnnicButton } from '@weni/unnnic-system';
 export enum ButtonTypes {
   primary = 'primary',
   secondary = 'secondary',
-  tertiary = 'tertiary'
+  tertiary = 'tertiary',
 }
 export interface ButtonProps {
   name: string;
@@ -28,10 +28,10 @@ const UnnnicButton = applyVueInReact(unnnicButton, {
     slotWrap: 'div',
     componentWrapAttrs: {
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 export default class Button extends React.Component<ButtonProps> {
@@ -39,19 +39,28 @@ export default class Button extends React.Component<ButtonProps> {
     super(props);
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
   public render(): JSX.Element {
-    const { onRef, name, onClick, type, disabled, leftSpacing, topSpacing, iconName } = this.props;
+    const {
+      onRef,
+      name,
+      onClick,
+      type,
+      disabled,
+      leftSpacing,
+      topSpacing,
+      iconName,
+    } = this.props;
 
     return (
       <UnnnicButton
         ref={onRef}
         style={{
           marginLeft: leftSpacing ? 10 : 0,
-          marginTop: topSpacing ? 10 : 0
+          marginTop: topSpacing ? 10 : 0,
         }}
         onClick={onClick}
         type={type}

@@ -3,14 +3,27 @@ import * as React from 'react';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { RouterFormProps } from 'components/flow/props';
 import { GROUP_LABEL } from 'components/flow/routers/constants';
-import { nodeToState, stateToNode } from 'components/flow/routers/groups/helpers';
+import {
+  nodeToState,
+  stateToNode,
+} from 'components/flow/routers/groups/helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
 import TypeList from 'components/nodeeditor/TypeList';
 import { fakePropType } from 'config/ConfigProvider';
 import { Asset } from 'store/flowContext';
-import { AssetArrayEntry, FormState, mergeForm, StringEntry } from 'store/nodeEditor';
-import { Alphanumeric, Required, StartIsNonNumeric, validate } from 'store/validators';
+import {
+  AssetArrayEntry,
+  FormState,
+  mergeForm,
+  StringEntry,
+} from 'store/nodeEditor';
+import {
+  Alphanumeric,
+  Required,
+  StartIsNonNumeric,
+  validate,
+} from 'store/validators';
 import i18n from 'config/i18n';
 import { renderIssues } from 'components/flow/actions/helpers';
 
@@ -27,7 +40,7 @@ export default class GroupsRouterForm extends React.Component<
 > {
   public static contextTypes = {
     endpoints: fakePropType,
-    assetService: fakePropType
+    assetService: fakePropType,
   };
 
   constructor(props: RouterFormProps) {
@@ -35,7 +48,7 @@ export default class GroupsRouterForm extends React.Component<
     this.state = nodeToState(this.props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -47,18 +60,24 @@ export default class GroupsRouterForm extends React.Component<
     this.handleUpdate({ resultName });
   }
 
-  private handleUpdate(keys: { groups?: Asset[]; resultName?: string }): boolean {
+  private handleUpdate(keys: {
+    groups?: Asset[];
+    resultName?: string;
+  }): boolean {
     const updates: Partial<GroupsRouterFormState> = {};
 
     if (keys.hasOwnProperty('groups')) {
-      updates.groups = validate(i18n.t('forms.groups', 'Groups'), keys.groups, [Required]);
+      updates.groups = validate(i18n.t('forms.groups', 'Groups'), keys.groups, [
+        Required,
+      ]);
     }
 
     if (keys.hasOwnProperty('resultName')) {
-      updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
-        Alphanumeric,
-        StartIsNonNumeric
-      ]);
+      updates.resultName = validate(
+        i18n.t('forms.result_name', 'Result Name'),
+        keys.resultName,
+        [Alphanumeric, StartIsNonNumeric],
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -78,8 +97,8 @@ export default class GroupsRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -87,8 +106,16 @@ export default class GroupsRouterForm extends React.Component<
     const typeConfig = this.props.typeConfig;
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
 
         <AssetSelector
           name={GROUP_LABEL}
@@ -100,7 +127,10 @@ export default class GroupsRouterForm extends React.Component<
           onChange={this.handleGroupsChanged}
           multi={true}
         />
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

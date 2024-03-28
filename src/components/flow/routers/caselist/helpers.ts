@@ -10,9 +10,9 @@ export const createEmptyCase = (operator: Operator): CaseProps => {
       uuid,
       type: operator.type,
       arguments: [''],
-      category_uuid: null
+      category_uuid: null,
     },
     categoryName: '',
-    valid: true
+    valid: true,
   };
 };

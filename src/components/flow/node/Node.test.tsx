@@ -27,16 +27,16 @@ const baseProps: NodeProps = {
     node: TEST_NODE,
     ui: {
       position: { left: 0, top: 0 },
-      type: Types.execute_actions
+      type: Types.execute_actions,
     },
-    inboundConnections: {}
+    inboundConnections: {},
   },
   definition: TEST_DEFINITION,
   onAddToNode: jest.fn(),
   onOpenNodeEditor: jest.fn(),
   removeNode: jest.fn(),
   mergeEditorState: jest.fn(),
-  issues: []
+  issues: [],
 };
 
 describe(NodeComp.name, () => {
@@ -48,7 +48,9 @@ describe(NodeComp.name, () => {
   it('renders a named random split', () => {
     const randomSplit = createRandomNode(3);
     randomSplit.node.router.result_name = 'My Random Split';
-    const { baseElement } = render(<NodeComp {...baseProps} renderNode={randomSplit} />);
+    const { baseElement } = render(
+      <NodeComp {...baseProps} renderNode={randomSplit} />,
+    );
     expect(baseElement).toMatchSnapshot();
   });
 });

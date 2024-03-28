@@ -1,3 +1,5 @@
+/* eslint-disable no-redeclare */
+/* eslint-disable no-undef */
 import '@testing-library/react/cleanup-after-each';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -43,17 +45,21 @@ configure(config);
 };
 
 // no support for lit-elements in RTL, mock in vanilla inputs
-mock(TextInput, 'createTextInput', (props: TextInputProps, handleChange, optional) => {
-  return (
-    <input
-      data-testid={props.name}
-      name={props.name}
-      placeholder={props.placeholder}
-      value={props.entry.value}
-      onChange={handleChange}
-    ></input>
-  );
-});
+mock(
+  TextInput,
+  'createTextInput',
+  (props: TextInputProps, handleChange, optional) => {
+    return (
+      <input
+        data-testid={props.name}
+        name={props.name}
+        placeholder={props.placeholder}
+        value={props.entry.value}
+        onChange={handleChange}
+      ></input>
+    );
+  },
+);
 
 // we mock react-select to look like a normal select widget, this makes
 // testing much easier since we can use the standard event model
@@ -66,7 +72,7 @@ jest.mock(
     getOptionLabel,
     getOptionValue,
     isMulti,
-    isValidNewOption
+    isValidNewOption,
   }: {
     options: any;
     value: any;
@@ -107,7 +113,7 @@ jest.mock(
         })}
       </select>
     );
-  }
+  },
 );
 
 // In Node v7 unhandled promise rejections will terminate the process

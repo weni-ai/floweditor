@@ -4,12 +4,20 @@ import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import CaseList, { CaseProps } from 'components/flow/routers/caselist/CaseList';
-import { nodeToState, stateToNode } from 'components/flow/routers/expression/helpers';
+import {
+  nodeToState,
+  stateToNode,
+} from 'components/flow/routers/expression/helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import { FormState, mergeForm, StringEntry } from 'store/nodeEditor';
-import { Alphanumeric, Required, StartIsNonNumeric, validate } from 'store/validators';
+import {
+  Alphanumeric,
+  Required,
+  StartIsNonNumeric,
+  validate,
+} from 'store/validators';
 import i18n from 'config/i18n';
 
 import styles from './ExpressionRouterForm.module.scss';
@@ -20,7 +28,7 @@ export enum InputToFocus {
   args = 'args',
   min = 'min',
   max = 'max',
-  exit = 'exit'
+  exit = 'exit',
 }
 
 export interface ExpressionRouterFormState extends FormState {
@@ -41,7 +49,7 @@ export default class ExpressionRouterForm extends React.Component<
     this.state = nodeToState(this.props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
@@ -53,7 +61,11 @@ export default class ExpressionRouterForm extends React.Component<
     const updates: Partial<ExpressionRouterFormState> = {};
 
     if (keys.hasOwnProperty('operand')) {
-      updates.operand = validate(i18n.t('forms.operand', 'Operand'), keys.operand, [Required]);
+      updates.operand = validate(
+        i18n.t('forms.operand', 'Operand'),
+        keys.operand,
+        [Required],
+      );
     }
 
     if (keys.hasOwnProperty('cases')) {
@@ -61,10 +73,11 @@ export default class ExpressionRouterForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('resultName')) {
-      updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
-        Alphanumeric,
-        StartIsNonNumeric
-      ]);
+      updates.resultName = validate(
+        i18n.t('forms.result_name', 'Result Name'),
+        keys.resultName,
+        [Alphanumeric, StartIsNonNumeric],
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -88,7 +101,9 @@ export default class ExpressionRouterForm extends React.Component<
 
   private handleSave(): void {
     // if we still have invalid cases, don't move forward
-    const invalidCase = this.state.cases.find((caseProps: CaseProps) => !caseProps.valid);
+    const invalidCase = this.state.cases.find(
+      (caseProps: CaseProps) => !caseProps.valid,
+    );
     if (invalidCase) {
       return;
     }
@@ -96,7 +111,7 @@ export default class ExpressionRouterForm extends React.Component<
     // validate our result name in case they haven't interacted
     const valid = this.handleUpdate({
       resultName: this.state.resultName.value,
-      operand: this.state.operand.value
+      operand: this.state.operand.value,
     });
 
     if (valid) {
@@ -110,8 +125,8 @@ export default class ExpressionRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -119,8 +134,16 @@ export default class ExpressionRouterForm extends React.Component<
     const typeConfig = this.props.typeConfig;
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
 
         <div className={styles.form_element}>
           <TextInputElement
@@ -141,7 +164,10 @@ export default class ExpressionRouterForm extends React.Component<
           cases={this.state.cases}
           onCasesUpdated={this.handleCasesUpdated}
         />
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

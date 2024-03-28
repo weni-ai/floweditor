@@ -25,7 +25,7 @@ export default class AddLabelsForm extends React.PureComponent<
   AddLabelsFormState
 > {
   public static contextTypes = {
-    assetService: fakePropType
+    assetService: fakePropType,
   };
 
   constructor(props: ActionFormProps) {
@@ -33,7 +33,7 @@ export default class AddLabelsForm extends React.PureComponent<
 
     this.state = initializeForm(this.props.nodeSettings);
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
@@ -47,9 +47,14 @@ export default class AddLabelsForm extends React.PureComponent<
     }
   }
 
-  public handleLabelsChanged(selected: Asset[], submitting: boolean = false): boolean {
+  public handleLabelsChanged(
+    selected: Asset[],
+    submitting: boolean = false,
+  ): boolean {
     const updates: Partial<AddLabelsFormState> = {
-      labels: validate(i18n.t('forms.labels', 'Labels'), selected, [shouldRequireIf(submitting)])
+      labels: validate(i18n.t('forms.labels', 'Labels'), selected, [
+        shouldRequireIf(submitting),
+      ]),
     };
 
     const updated = mergeForm(this.state, updates);
@@ -62,8 +67,8 @@ export default class AddLabelsForm extends React.PureComponent<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -87,17 +92,21 @@ export default class AddLabelsForm extends React.PureComponent<
         headerClass={typeConfig.type}
         buttons={this.getButtons()}
       >
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
 
         <AssetSelector
           name={i18n.t('forms.labels', 'Labels')}
           namePure={i18n.t(
             'forms.add_labels_summary',
-            'Select the labels to apply to the incoming message'
+            'Select the labels to apply to the incoming message',
           )}
           placeholder={i18n.t(
             'enter_to_create_label',
-            'Enter the name of an existing label or create a new one'
+            'Enter the name of an existing label or create a new one',
           )}
           showLabel={true}
           assets={this.props.assetStore.labels}

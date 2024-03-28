@@ -7,16 +7,16 @@ describe('utils', () => {
       excludeDynamicGroups({
         id: 'dynamic_id',
         name: 'Dynamic',
-        query: 'some query'
-      })
+        query: 'some query',
+      }),
     ).toBeTruthy();
 
     expect(
       excludeDynamicGroups({
         id: 'static_id',
         name: 'Static',
-        query: null
-      })
+        query: null,
+      }),
     ).toBeFalsy();
   });
 });

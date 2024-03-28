@@ -23,12 +23,12 @@ export default class KeyLocalizationForm extends React.Component<
     super(props);
     this.state = initializeLocalizedKeyForm(this.props.nodeSettings);
     bindCallbacks(this, {
-      include: [/^handle/, /^on/]
+      include: [/^handle/, /^on/],
     });
   }
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   public handleKeyUpdate(text: string, name: string): boolean {
@@ -53,8 +53,8 @@ export default class KeyLocalizationForm extends React.Component<
     this.props.updateLocalizations(this.props.language.id, [
       {
         uuid: this.props.nodeSettings.originalAction!.uuid,
-        translations
-      }
+        translations,
+      },
     ]);
 
     // notify our modal we are done
@@ -66,8 +66,8 @@ export default class KeyLocalizationForm extends React.Component<
       primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -85,7 +85,10 @@ export default class KeyLocalizationForm extends React.Component<
       const form = (
         <div key={`localize_form_${key}`}>
           <div data-spec="translation-container">
-            <div data-spec="text-to-translate" className={styles.translate_from}>
+            <div
+              data-spec="text-to-translate"
+              className={styles.translate_from}
+            >
               {(this.props.nodeSettings.originalAction as any)[key]}
             </div>
           </div>
@@ -109,7 +112,7 @@ export default class KeyLocalizationForm extends React.Component<
         tabs.push({
           name: name + ' ' + translation,
           body: form,
-          checked: !!this.state.keyValues[key].value
+          checked: !!this.state.keyValues[key].value,
         });
       }
     });

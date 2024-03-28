@@ -13,7 +13,7 @@ const routerNode = createMatchRouter(['Red']);
 
 const { setup } = composeComponentTestUtils<RouterFormProps>(
   ResponseRouterForm,
-  getRouterFormProps(routerNode)
+  getRouterFormProps(routerNode),
 );
 
 describe(ResponseRouterForm.name, () => {
@@ -35,21 +35,21 @@ describe(ResponseRouterForm.name, () => {
       uuid: dateCase,
       type: Operators.has_date_eq,
       arguments: ['@(datetime_add(today(), 5, "D"))'],
-      category_uuid: router.categories[0].uuid
+      category_uuid: router.categories[0].uuid,
     });
 
     dateNode.ui = {
       position: { left: 0, top: 0 },
       type: Types.wait_for_response,
-      config: { cases: { [dateCase]: { arguments: ['5'] } } }
+      config: { cases: { [dateCase]: { arguments: ['5'] } } },
     };
 
     const { wrapper } = setup(true, {
       nodeSettings: {
         $set: {
-          originalNode: dateNode
-        }
-      }
+          originalNode: dateNode,
+        },
+      },
     });
 
     expect(wrapper).toMatchSnapshot();
@@ -58,7 +58,7 @@ describe(ResponseRouterForm.name, () => {
   describe('updates', () => {
     it('should save changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() }
+        $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
       });
 
       instance.handleUpdateTimeout(180);
@@ -68,20 +68,20 @@ describe(ResponseRouterForm.name, () => {
           uuid: createUUID(),
           kase: { type: Operators.has_any_word, arguments: ['red'] },
           categoryName: 'Red',
-          valid: true
+          valid: true,
         },
         {
           uuid: createUUID(),
           kase: { type: Operators.has_any_word, arguments: ['maroon'] },
           categoryName: 'Red',
-          valid: true
+          valid: true,
         },
         {
           uuid: createUUID(),
           kase: { type: Operators.has_any_word, arguments: ['green'] },
           categoryName: 'Green',
-          valid: true
-        }
+          valid: true,
+        },
       ] as CaseProps[]);
 
       expect(instance.state).toMatchSnapshot();
@@ -94,7 +94,7 @@ describe(ResponseRouterForm.name, () => {
 
     it('should save save config for relative dates', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() }
+        $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
       });
 
       instance.handleCasesUpdated([
@@ -102,8 +102,8 @@ describe(ResponseRouterForm.name, () => {
           uuid: createUUID(),
           kase: { type: Operators.has_date_gt, arguments: ['5'] },
           categoryName: 'In the Zone',
-          valid: true
-        }
+          valid: true,
+        },
       ] as CaseProps[]);
 
       expect(instance.state).toMatchSnapshot();
@@ -116,7 +116,7 @@ describe(ResponseRouterForm.name, () => {
 
     it('should cancel', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() }
+        $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
       });
       instance.handleUpdateTimeout(180);
       instance.getButtons().secondary.onClick();

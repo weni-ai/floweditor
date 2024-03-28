@@ -7,7 +7,7 @@ const callResthookAction = createCallResthookAction();
 
 const { setup } = composeComponentTestUtils<CallResthook>(
   CallResthookComp,
-  callResthookAction as CallResthook
+  callResthookAction as CallResthook,
 );
 
 describe(CallResthookComp.name, () => {

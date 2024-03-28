@@ -5,14 +5,14 @@ import { setEmpty } from 'utils';
 
 import SetRunResultComp, {
   getClearPlaceholder,
-  getSavePlaceholder
+  getSavePlaceholder,
 } from 'components/flow/actions/setrunresult/SetRunResult';
 
 const setRunResultAction = createSetRunResultAction();
 
 const { setup } = composeComponentTestUtils<SetRunResult>(
   SetRunResultComp,
-  setRunResultAction as SetRunResult
+  setRunResultAction as SetRunResult,
 );
 
 describe(SetRunResultComp.name, () => {
@@ -20,7 +20,9 @@ describe(SetRunResultComp.name, () => {
     const { wrapper, props } = setup();
 
     expect(
-      wrapper.containsMatchingElement(getSavePlaceholder(props.value, props.name))
+      wrapper.containsMatchingElement(
+        getSavePlaceholder(props.value, props.name),
+      ),
     ).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
   });
@@ -28,7 +30,9 @@ describe(SetRunResultComp.name, () => {
   it("should render with clear placholder when value prop isn't passed", () => {
     const { wrapper, props } = setup(true, { value: setEmpty() });
 
-    expect(wrapper.containsMatchingElement(getClearPlaceholder(props.name))).toBeTruthy();
+    expect(
+      wrapper.containsMatchingElement(getClearPlaceholder(props.name)),
+    ).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
   });
 });

@@ -1,4 +1,9 @@
-import { editorContainerSpecId, editorSpecId, FlowEditor, FlowEditorStoreProps } from 'components';
+import {
+  editorContainerSpecId,
+  editorSpecId,
+  FlowEditor,
+  FlowEditorStoreProps,
+} from 'components';
 import { composeComponentTestUtils, getSpecWrapper, setMock } from 'testUtils';
 import { English, languages } from 'testUtils/assetCreators';
 import { set, setTrue } from 'utils';
@@ -25,7 +30,7 @@ const baseProps: FlowEditorStoreProps = {
   scrollToNode: null,
   popped: null,
   issues: {},
-  updateTranslationFilters: jest.fn()
+  updateTranslationFilters: jest.fn(),
 };
 
 const { setup, spyOn } = composeComponentTestUtils(FlowEditor, baseProps);
@@ -56,7 +61,7 @@ describe('Root', () => {
     it('should render flow if passed a definition, language', () => {
       const { wrapper } = setup(true, {
         language: set(English),
-        definition: set(colorsFlow)
+        definition: set(colorsFlow),
       });
 
       expect(wrapper.find('Connect(Flow)').exists()).toBeTruthy();
@@ -79,7 +84,7 @@ describe('Root', () => {
         const { props } = setup(true, {
           updateLanguage: setMock(),
           fetchFlow: setMock(),
-          fetchFlows: setMock()
+          fetchFlows: setMock(),
         });
 
         expect(props.fetchFlow).toHaveBeenCalledTimes(1);

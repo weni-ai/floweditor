@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { fireEvent, render, fireUnnnicTextAreaChangeText } from 'test/utils';
-import { createSendEmailAction, getLocalizationFormProps, Spanish } from 'testUtils/assetCreators';
+import {
+  createSendEmailAction,
+  getLocalizationFormProps,
+  Spanish,
+} from 'testUtils/assetCreators';
 
 import KeyLocalizationForm from './KeyLocalizationForm';
 
@@ -13,7 +17,9 @@ describe(KeyLocalizationForm.name, () => {
 
   it('handles changes', () => {
     const props = getLocalizationFormProps(createSendEmailAction());
-    const { getByTestId, getByText } = render(<KeyLocalizationForm {...props} />);
+    const { getByTestId, getByText } = render(
+      <KeyLocalizationForm {...props} />,
+    );
 
     // modify the subject
     fireUnnnicTextAreaChangeText(getByTestId('Subject'), 'translated subject');
@@ -30,11 +36,13 @@ describe(KeyLocalizationForm.name, () => {
   it('removes translations', () => {
     const action = createSendEmailAction();
     const props = getLocalizationFormProps(action, Spanish, {
-      [action.uuid]: { subject: ['hola'] }
+      [action.uuid]: { subject: ['hola'] },
     });
 
     // show that we initialized with hola
-    const { baseElement, getByTestId, getByText } = render(<KeyLocalizationForm {...props} />);
+    const { baseElement, getByTestId, getByText } = render(
+      <KeyLocalizationForm {...props} />,
+    );
     expect(baseElement).toMatchSnapshot();
 
     // clear the translation

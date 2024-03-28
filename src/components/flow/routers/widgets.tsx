@@ -5,7 +5,7 @@ import i18n from 'config/i18n';
 
 export const createResultNameInput = (
   value: StringEntry,
-  onChange: (value: string) => void
+  onChange: (value: string) => void,
 ): JSX.Element => {
   return (
     <OptionalTextInput

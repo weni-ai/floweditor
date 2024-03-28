@@ -16,7 +16,7 @@ const completionResp = require('test/assets/completion.json');
 export const TEST_NODE: FlowNode = {
   uuid: createUUID(),
   actions: [],
-  exits: [{ uuid: createUUID() }]
+  exits: [{ uuid: createUUID() }],
 };
 
 export const TEST_DEFINITION: FlowDefinition = {
@@ -27,7 +27,7 @@ export const TEST_DEFINITION: FlowDefinition = {
   nodes: [TEST_NODE],
   localization: {},
   revision: 1,
-  _ui: null
+  _ui: null,
 };
 
 export const EMPTY_TEST_ASSETS = {
@@ -37,10 +37,13 @@ export const EMPTY_TEST_ASSETS = {
   labels: { items: {}, type: AssetType.Label },
   results: { items: {}, type: AssetType.Result },
   flows: { items: {}, type: AssetType.Flow },
-  recipients: { items: {}, type: AssetType.Contact || AssetType.Group || AssetType.URN },
+  recipients: {
+    items: {},
+    type: AssetType.Contact || AssetType.Group || AssetType.URN,
+  },
   ticketers: { items: {}, type: AssetType.Ticketer },
   externalServices: { items: {}, type: AssetType.ExternalService },
-  completion: { items: completionResp, type: AssetType.Expression }
+  completion: { items: completionResp, type: AssetType.Expression },
 };
 
 const initial = initialState;
@@ -81,14 +84,14 @@ export const fireChangeText = (ele: any, value: string): void => {
 export const fireUnnnicInputChangeText = (ele: any, value: string): void => {
   fireEvent.input(ele.querySelector('input'), {
     currentTarget: { value },
-    target: { value }
+    target: { value },
   });
 };
 
 export const fireUnnnicTextAreaChangeText = (ele: any, value: string): void => {
   fireEvent.input(ele.querySelector('textarea'), {
     currentTarget: { value },
-    target: { value }
+    target: { value },
   });
 };
 
@@ -99,7 +102,11 @@ export const fireUnnnicSelect = (ele: any, value: any, valueKey: string) => {
   ele.__vue__.reactWrapperRef.vueRef.onSelectOption(result);
 };
 
-export const fireUnnnicAutocompleteSelect = (ele: any, value: any, valueKey: string) => {
+export const fireUnnnicAutocompleteSelect = (
+  ele: any,
+  value: any,
+  valueKey: string,
+) => {
   const result: any = value;
   result.value = value[valueKey];
 
@@ -126,7 +133,11 @@ export const fireTembaSelect = (ele: HTMLElement, value: any) => {
   ele.dispatchEvent(evt);
 };
 
-export const mock = <T extends {}, K extends keyof T>(object: T, property: K, value: T[K]) => {
+export const mock = <T extends {}, K extends keyof T>(
+  object: T,
+  property: K,
+  value: T[K],
+) => {
   Object.defineProperty(object, property, { get: () => value });
 };
 

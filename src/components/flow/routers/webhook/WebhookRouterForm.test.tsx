@@ -5,7 +5,10 @@ import WebhookRouterForm from 'components/flow/routers/webhook/WebhookRouterForm
 import { Types } from 'config/interfaces';
 import { RenderNode } from 'store/flowContext';
 import { composeComponentTestUtils, mock } from 'testUtils';
-import { createWebhookRouterNode, getRouterFormProps } from 'testUtils/assetCreators';
+import {
+  createWebhookRouterNode,
+  getRouterFormProps,
+} from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import * as React from 'react';
 import {
@@ -13,7 +16,7 @@ import {
   fireEvent,
   fireUnnnicInputChangeText,
   act,
-  fireUnnnicTextAreaChangeText
+  fireUnnnicTextAreaChangeText,
 } from 'test/utils';
 import userEvent from '@testing-library/user-event';
 
@@ -21,10 +24,13 @@ mock(utils, 'createUUID', utils.seededUUIDs());
 
 const webhookForm = getRouterFormProps({
   node: createWebhookRouterNode(),
-  ui: { type: Types.call_webhook }
+  ui: { type: Types.call_webhook },
 } as RenderNode);
 
-const { setup } = composeComponentTestUtils<RouterFormProps>(WebhookRouterForm, webhookForm);
+const { setup } = composeComponentTestUtils<RouterFormProps>(
+  WebhookRouterForm,
+  webhookForm,
+);
 
 describe(WebhookRouterForm.name, () => {
   it('should render', () => {
@@ -35,7 +41,7 @@ describe(WebhookRouterForm.name, () => {
   describe('updates', () => {
     it('should save changes', async () => {
       const { getByText, getByTestId, getAllByTestId } = render(
-        <WebhookRouterForm {...webhookForm} />
+        <WebhookRouterForm {...webhookForm} />,
       );
 
       const okButton = getByText('Confirm');
@@ -78,7 +84,7 @@ describe(WebhookRouterForm.name, () => {
 
     it('should repopulate post body', () => {
       const { instance } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() }
+        $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
       });
 
       instance.handleMethodUpdate({ value: 'GET' });
@@ -91,7 +97,7 @@ describe(WebhookRouterForm.name, () => {
 
     it('should cancel', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() }
+        $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
       });
       instance.getButtons().secondary.onClick();
       instance.handleUrlUpdate('http://domain.com/');
@@ -101,7 +107,9 @@ describe(WebhookRouterForm.name, () => {
 
     it('should validate urls', async () => {
       webhookForm.updateRouter = jest.fn();
-      const { getByText, getByTestId } = render(<WebhookRouterForm {...webhookForm} />);
+      const { getByText, getByTestId } = render(
+        <WebhookRouterForm {...webhookForm} />,
+      );
 
       // set our url and name
       const url = getByTestId('URL');

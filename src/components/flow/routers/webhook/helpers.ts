@@ -14,7 +14,7 @@ export enum Methods {
   PUT = 'PUT',
   DELETE = 'DELETE',
   HEAD = 'HEAD',
-  PATCH = 'PATCH'
+  PATCH = 'PATCH',
 }
 
 export interface MethodOption {
@@ -28,7 +28,7 @@ interface HeaderMap {
 
 export const GET_METHOD: MethodOption = {
   value: Methods.GET,
-  name: Methods.GET
+  name: Methods.GET,
 };
 
 export const METHOD_OPTIONS: MethodOption[] = [
@@ -37,20 +37,25 @@ export const METHOD_OPTIONS: MethodOption[] = [
   { value: Methods.PUT, name: Methods.PUT },
   { value: Methods.DELETE, name: Methods.DELETE },
   { value: Methods.HEAD, name: Methods.HEAD },
-  { value: Methods.PATCH, name: Methods.PATCH }
+  { value: Methods.PATCH, name: Methods.PATCH },
 ];
 
-export const getOriginalAction = (settings: NodeEditorSettings): CallWebhook => {
+export const getOriginalAction = (
+  settings: NodeEditorSettings,
+): CallWebhook => {
   const action =
     settings.originalAction ||
-    (settings.originalNode.node.actions.length > 0 && settings.originalNode.node.actions[0]);
+    (settings.originalNode.node.actions.length > 0 &&
+      settings.originalNode.node.actions[0]);
 
   if (action.type === Types.call_webhook) {
     return action as CallWebhook;
   }
 };
 
-export const nodeToState = (settings: NodeEditorSettings): WebhookRouterFormState => {
+export const nodeToState = (
+  settings: NodeEditorSettings,
+): WebhookRouterFormState => {
   // TODO: work out an incremental result name
   const resultName: StringEntry = { value: 'Result' };
 
@@ -60,7 +65,7 @@ export const nodeToState = (settings: NodeEditorSettings): WebhookRouterFormStat
     method: { value: GET_METHOD },
     url: { value: '' },
     body: { value: getDefaultBody(Methods.GET) },
-    valid: false
+    valid: false,
   };
 
   if (getType(settings.originalNode) === Types.split_by_webhook) {
@@ -72,8 +77,8 @@ export const nodeToState = (settings: NodeEditorSettings): WebhookRouterFormStat
         value: {
           uuid: createUUID(),
           value: action.headers[name],
-          name
-        }
+          name,
+        },
       });
     }
 
@@ -87,8 +92,8 @@ export const nodeToState = (settings: NodeEditorSettings): WebhookRouterFormStat
       value: {
         uuid: createUUID(),
         name: 'Accept',
-        value: 'application/json'
-      }
+        value: 'application/json',
+      },
     });
   }
 
@@ -97,8 +102,8 @@ export const nodeToState = (settings: NodeEditorSettings): WebhookRouterFormStat
     value: {
       uuid: createUUID(),
       name: '',
-      value: ''
-    }
+      value: '',
+    },
   });
 
   return state;
@@ -106,7 +111,7 @@ export const nodeToState = (settings: NodeEditorSettings): WebhookRouterFormStat
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: WebhookRouterFormState
+  state: WebhookRouterFormState,
 ): RenderNode => {
   const headers: HeaderMap = {};
 
@@ -130,7 +135,7 @@ export const stateToNode = (
     url: state.url.value,
     body: state.body.value,
     method: state.method.value.value as Methods,
-    result_name: state.resultName.value
+    result_name: state.resultName.value,
   };
 
   return createWebhookBasedNode(newAction, settings.originalNode, false);

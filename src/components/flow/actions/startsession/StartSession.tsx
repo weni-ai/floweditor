@@ -1,4 +1,8 @@
-import { getRecipients, renderAssetList, renderAsset } from 'components/flow/actions/helpers';
+import {
+  getRecipients,
+  renderAssetList,
+  renderAsset,
+} from 'components/flow/actions/helpers';
 import { fakePropType } from 'config/ConfigProvider';
 import { StartSession } from 'flowTypes';
 import * as React from 'react';
@@ -10,7 +14,7 @@ const MAX_TO_SHOW = 5;
 
 export const StartSessionComp: React.SFC<StartSession> = (
   action: StartSession,
-  context: any
+  context: any,
 ): JSX.Element => {
   const recipients = getRecipients(action);
   return (
@@ -27,9 +31,9 @@ export const StartSessionComp: React.SFC<StartSession> = (
           {
             name: action.flow.name,
             id: action.flow.uuid,
-            type: AssetType.Flow
+            type: AssetType.Flow,
           },
-          context.config.endpoints
+          context.config.endpoints,
         )}
       </div>
     </div>
@@ -37,7 +41,7 @@ export const StartSessionComp: React.SFC<StartSession> = (
 };
 
 StartSessionComp.contextTypes = {
-  config: fakePropType
+  config: fakePropType,
 };
 
 export default StartSessionComp;

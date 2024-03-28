@@ -21,7 +21,7 @@ export interface ActionFormProps extends IssueProps {
   // update handlers
   updateAction(
     action: AnyAction,
-    onUpdated?: (dispatch: DispatchWithState, getState: GetState) => void
+    onUpdated?: (dispatch: DispatchWithState, getState: GetState) => void,
   ): void;
 
   // modal notifiers
@@ -55,26 +55,26 @@ export const NAME_PROPERTY: Asset = {
   name: titleCase(ContactProperties.Name),
   id: ContactProperties.Name,
   type: AssetType.ContactProperty,
-  key: ContactProperties.Name
+  key: ContactProperties.Name,
 };
 
 export const CHANNEL_PROPERTY: Asset = {
   name: titleCase(ContactProperties.Channel),
   id: ContactProperties.Channel,
   type: AssetType.ContactProperty,
-  key: ContactProperties.Channel
+  key: ContactProperties.Channel,
 };
 
 export const LANGUAGE_PROPERTY: Asset = {
   name: titleCase(ContactProperties.Language),
   id: ContactProperties.Language,
   type: AssetType.ContactProperty,
-  key: ContactProperties.Language
+  key: ContactProperties.Language,
 };
 
 export const STATUS_PROPERTY: Asset = {
   name: titleCase(ContactProperties.Status),
   id: ContactProperties.Status,
   type: AssetType.ContactProperty,
-  key: ContactProperties.Status
+  key: ContactProperties.Status,
 };

@@ -19,7 +19,7 @@ import {
   CallClassifier,
   OpenTicket,
   CallWeniGPT,
-  SendWhatsAppProduct
+  SendWhatsAppProduct,
 } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { createUUID, snakify } from 'utils';
@@ -41,21 +41,21 @@ export const createRenderNode = (
   exits: Exit[],
   type: Types,
   actions: Action[] = [],
-  uiConfig: { [key: string]: any } = {}
+  uiConfig: { [key: string]: any } = {},
 ): RenderNode => {
   const renderNode: RenderNode = {
     node: {
       uuid,
       actions,
       router,
-      exits
+      exits,
     },
     ui: {
       type,
       position: null,
-      config: uiConfig
+      config: uiConfig,
     },
-    inboundConnections: {}
+    inboundConnections: {},
   };
   return renderNode;
 };
@@ -78,14 +78,17 @@ export const getCategories = (renderNode: RenderNode): Category[] => {
   return [];
 };
 
-export const createCaseProps = (cases: Case[], renderNode: RenderNode): CaseProps[] => {
+export const createCaseProps = (
+  cases: Case[],
+  renderNode: RenderNode,
+): CaseProps[] => {
   const categories: Category[] = getCategories(renderNode);
 
   // make sure we don't mutate the in memory version of our cases
   const newCases = JSON.parse(JSON.stringify(cases));
   return newCases.map((kase: Case) => {
     const matchingCategory = categories.find(
-      (category: Category) => category.uuid === kase.category_uuid
+      (category: Category) => category.uuid === kase.category_uuid,
     );
 
     if (isRelativeDate(kase.type)) {
@@ -101,15 +104,17 @@ export const createCaseProps = (cases: Case[], renderNode: RenderNode): CaseProp
       uuid: kase.uuid,
       kase,
       categoryName: matchingCategory ? matchingCategory.name : null,
-      valid: true
+      valid: true,
     };
   });
 };
 
 export const isRelativeDate = (operatorType: Operators): boolean => {
-  return !![Operators.has_date_eq, Operators.has_date_gt, Operators.has_date_lt].find(
-    (type: string) => operatorType === type
-  );
+  return !![
+    Operators.has_date_eq,
+    Operators.has_date_gt,
+    Operators.has_date_lt,
+  ].find((type: string) => operatorType === type);
 };
 
 const isCategoryMatch = (cat: Category, kase: CaseProps) => {
@@ -123,7 +128,7 @@ const isCategoryMatch = (cat: Category, kase: CaseProps) => {
  */
 export const categorizeCases = (
   newCases: CaseProps[],
-  originalNode: FlowNode
+  originalNode: FlowNode,
 ): CategorizedCases => {
   const categories: Category[] = [];
   const cases: Case[] = [];
@@ -131,7 +136,8 @@ export const categorizeCases = (
   const caseConfig: UIConfig = {};
 
   const originalRouter = originalNode && originalNode.router;
-  const previousCategories = (originalRouter && originalRouter.categories) || [];
+  const previousCategories =
+    (originalRouter && originalRouter.categories) || [];
 
   // look over the new cases and match up categories and exits
   for (const newCase of newCases) {
@@ -143,24 +149,32 @@ export const categorizeCases = (
     // convert relative dates to expressions with configs
     if (isRelativeDate(newCase.kase.type)) {
       caseConfig[newCase.uuid] = { arguments: newCase.kase.arguments };
-      newCase.kase.arguments = [`@(datetime_add(today(), ${newCase.kase.arguments[0]}, "D"))`];
+      newCase.kase.arguments = [
+        `@(datetime_add(today(), ${newCase.kase.arguments[0]}, "D"))`,
+      ];
     }
 
     //  see if it exists on a previous case
-    let category = categories.find((cat: Category) => isCategoryMatch(cat, newCase));
+    let category = categories.find((cat: Category) =>
+      isCategoryMatch(cat, newCase),
+    );
 
     // if not, see if that category exists on our old node
     if (!category) {
-      category = previousCategories.find((cat: Category) => isCategoryMatch(cat, newCase));
+      category = previousCategories.find((cat: Category) =>
+        isCategoryMatch(cat, newCase),
+      );
 
       // still no category, lets see if we can find a case uuid match
       if (!category) {
         const router = getSmartOrSwitchRouter(originalNode);
         if (router) {
-          const previousCase = router.cases.find((kase: Case) => kase.uuid === newCase.uuid);
+          const previousCase = router.cases.find(
+            (kase: Case) => kase.uuid === newCase.uuid,
+          );
           if (previousCase) {
             const previousCategory = previousCategories.find(
-              (cat: Category) => cat.uuid === previousCase.category_uuid
+              (cat: Category) => cat.uuid === previousCase.category_uuid,
             );
 
             if (previousCategory) {
@@ -171,7 +185,10 @@ export const categorizeCases = (
       }
 
       // don't pull over an old category more than once
-      if (category && categories.find((cat: Category) => cat.uuid === category.uuid)) {
+      if (
+        category &&
+        categories.find((cat: Category) => cat.uuid === category.uuid)
+      ) {
         category = null;
       }
 
@@ -179,7 +196,7 @@ export const categorizeCases = (
       if (category) {
         categories.push(category);
         const previousExit = originalNode.exits.find(
-          (exit: Exit) => category.exit_uuid === exit.uuid
+          (exit: Exit) => category.exit_uuid === exit.uuid,
         );
         exits.push(previousExit);
       }
@@ -188,7 +205,7 @@ export const categorizeCases = (
     // if still no category, finally lets just create a new one
     if (!category) {
       const exit: Exit = {
-        uuid: createUUID()
+        uuid: createUUID(),
       };
 
       exits.push(exit);
@@ -196,7 +213,7 @@ export const categorizeCases = (
       category = {
         uuid: createUUID(),
         name: newCase.categoryName,
-        exit_uuid: exit.uuid
+        exit_uuid: exit.uuid,
       };
 
       categories.push(category);
@@ -205,7 +222,7 @@ export const categorizeCases = (
     // lastly, add our case
     cases.push({
       ...newCase.kase,
-      category_uuid: category.uuid
+      category_uuid: category.uuid,
     });
   }
 
@@ -216,7 +233,8 @@ export const getSmartOrSwitchRouter = (node: FlowNode): SwitchRouter => {
   if (
     node &&
     node.router &&
-    (node.router.type === RouterTypes.switch || node.router.type === RouterTypes.smart)
+    (node.router.type === RouterTypes.switch ||
+      node.router.type === RouterTypes.smart)
   ) {
     return node.router as SwitchRouter;
   }
@@ -229,17 +247,19 @@ export const getSmartOrSwitchRouter = (node: FlowNode): SwitchRouter => {
  */
 export const getDefaultRoute = (
   defaultCategoryName: string,
-  originalNode: FlowNode
+  originalNode: FlowNode,
 ): { defaultCategory: Category; defaultExit: Exit } => {
   const originalRouter = getSmartOrSwitchRouter(originalNode);
 
   // use the previous default if it had one
   if (originalRouter) {
     const defaultCategory = originalRouter.categories.find(
-      (cat: Category) => cat.uuid === originalRouter.default_category_uuid
+      (cat: Category) => cat.uuid === originalRouter.default_category_uuid,
     );
 
-    const defaultExit = originalNode.exits.find((e: Exit) => e.uuid === defaultCategory.exit_uuid);
+    const defaultExit = originalNode.exits.find(
+      (e: Exit) => e.uuid === defaultCategory.exit_uuid,
+    );
 
     defaultCategory.name = defaultCategoryName;
 
@@ -248,13 +268,13 @@ export const getDefaultRoute = (
   // otherwise, create a new exit and category
   else {
     const defaultExit: Exit = {
-      uuid: createUUID()
+      uuid: createUUID(),
     };
 
     const defaultCategory = {
       uuid: createUUID(),
       name: defaultCategoryName,
-      exit_uuid: defaultExit.uuid
+      exit_uuid: defaultExit.uuid,
     };
 
     return { defaultCategory, defaultExit };
@@ -262,7 +282,7 @@ export const getDefaultRoute = (
 };
 
 const getTimeoutRoute = (
-  originalNode: FlowNode
+  originalNode: FlowNode,
 ): { timeoutCategory: Category; timeoutExit: Exit } => {
   let timeoutCategory: Category = null;
   let timeoutExit: Exit = null;
@@ -274,10 +294,10 @@ const getTimeoutRoute = (
     if (originalRouter.wait && originalRouter.wait.timeout) {
       const previousCategory = originalRouter.wait.timeout.category_uuid;
       timeoutCategory = originalRouter.categories.find(
-        (cat: Category) => cat.uuid === previousCategory
+        (cat: Category) => cat.uuid === previousCategory,
       );
       timeoutExit = originalNode.exits.find(
-        (exit: Exit) => exit.uuid === timeoutCategory.exit_uuid
+        (exit: Exit) => exit.uuid === timeoutCategory.exit_uuid,
       );
     }
   }
@@ -285,13 +305,13 @@ const getTimeoutRoute = (
   if (!timeoutCategory) {
     // create a new route
     timeoutExit = {
-      uuid: createUUID()
+      uuid: createUUID(),
     };
 
     timeoutCategory = {
       uuid: createUUID(),
       name: DefaultExitNames.No_Response,
-      exit_uuid: timeoutExit.uuid
+      exit_uuid: timeoutExit.uuid,
     };
   }
 
@@ -306,24 +326,29 @@ export const resolveRoutes = (
   newCases: CaseProps[],
   hasTimeout: boolean,
   originalNode: FlowNode,
-  defaultCategoryName: string = null
+  defaultCategoryName: string = null,
 ): ResolvedRoutes => {
   const resolved = categorizeCases(newCases, originalNode);
 
   let resolvedDefaultCategory = defaultCategoryName;
   if (!resolvedDefaultCategory) {
     resolvedDefaultCategory =
-      resolved.categories.length > 0 ? DefaultExitNames.Other : DefaultExitNames.All_Responses;
+      resolved.categories.length > 0
+        ? DefaultExitNames.Other
+        : DefaultExitNames.All_Responses;
   }
 
   // tack on our other category
-  const { defaultCategory, defaultExit } = getDefaultRoute(resolvedDefaultCategory, originalNode);
+  const { defaultCategory, defaultExit } = getDefaultRoute(
+    resolvedDefaultCategory,
+    originalNode,
+  );
   resolved.categories.push(defaultCategory);
   resolved.exits.push(defaultExit);
 
   const results: ResolvedRoutes = {
     ...resolved,
-    defaultCategory: defaultCategory.uuid
+    defaultCategory: defaultCategory.uuid,
   };
 
   // add in a timeout route if we need one
@@ -347,7 +372,7 @@ export const createWebhookBasedNode = (
     | CallWeniGPT
     | SendWhatsAppProduct,
   originalNode: RenderNode,
-  useCategoryTest: boolean
+  useCategoryTest: boolean,
 ): RenderNode => {
   const exits: Exit[] = [];
   let cases: Case[] = [];
@@ -362,40 +387,44 @@ export const createWebhookBasedNode = (
     const previousRouter = getSmartOrSwitchRouter(originalNode.node);
     originalNode.node.exits.forEach((exit: any) => exits.push(exit));
     previousRouter.cases.forEach(kase => cases.push(kase));
-    originalNode.node.router.categories.forEach(category => categories.push(category));
+    originalNode.node.router.categories.forEach(category =>
+      categories.push(category),
+    );
   } else {
     // Otherwise, let's create some new ones
     exits.push(
       {
         uuid: createUUID(),
-        destination_uuid: null
+        destination_uuid: null,
       },
       {
         uuid: createUUID(),
-        destination_uuid: null
-      }
+        destination_uuid: null,
+      },
     );
 
     categories = [
       {
         uuid: createUUID(),
         name: WebhookExitNames.Success,
-        exit_uuid: exits[0].uuid
+        exit_uuid: exits[0].uuid,
       },
       {
         uuid: createUUID(),
         name: WebhookExitNames.Failure,
-        exit_uuid: exits[1].uuid
-      }
+        exit_uuid: exits[1].uuid,
+      },
     ];
 
     cases = [
       {
         uuid: createUUID(),
-        type: useCategoryTest ? Operators.has_category : Operators.has_only_text,
+        type: useCategoryTest
+          ? Operators.has_category
+          : Operators.has_only_text,
         arguments: [WebhookExitNames.Success],
-        category_uuid: categories[0].uuid
-      }
+        category_uuid: categories[0].uuid,
+      },
     ];
   }
 
@@ -409,7 +438,7 @@ export const createWebhookBasedNode = (
     operand: operand,
     cases,
     categories,
-    default_category_uuid: categories[categories.length - 1].uuid
+    default_category_uuid: categories[categories.length - 1].uuid,
   };
 
   let splitType = Types.split_by_webhook;
@@ -427,12 +456,14 @@ export const createWebhookBasedNode = (
     splitType = Types.split_by_whatsapp_product;
   }
 
-  return createRenderNode(originalNode.node.uuid, router, exits, splitType, [action]);
+  return createRenderNode(originalNode.node.uuid, router, exits, splitType, [
+    action,
+  ]);
 };
 
 export const createSplitOnActionResultNode = (
   action: CallClassifier,
-  originalNode: RenderNode
+  originalNode: RenderNode,
 ): RenderNode => {
   const splitType = Types.split_by_intent;
   const exits: Exit[] = [];
@@ -441,8 +472,10 @@ export const createSplitOnActionResultNode = (
     operand: '',
     categories: [],
     type: RouterTypes.switch,
-    default_category_uuid: null
+    default_category_uuid: null,
   };
 
-  return createRenderNode(originalNode.node.uuid, router, exits, splitType, [action]);
+  return createRenderNode(originalNode.node.uuid, router, exits, splitType, [
+    action,
+  ]);
 };

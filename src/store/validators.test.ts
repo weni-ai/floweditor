@@ -9,7 +9,7 @@ import {
   Required,
   StartIsNonNumeric,
   validate,
-  ValidURL
+  ValidURL,
 } from 'store/validators';
 
 describe('validators', () => {
@@ -31,7 +31,9 @@ describe('validators', () => {
     expect(Numeric('arg', '1.5').failures.length).toEqual(0);
     expect(Numeric('arg', '1.5 goats').failures.length).toEqual(1);
     expect(Numeric('arg', 'not a number').failures.length).toEqual(1);
-    expect(Numeric('arg', '@expressions_not_allowed').failures.length).toEqual(1);
+    expect(Numeric('arg', '@expressions_not_allowed').failures.length).toEqual(
+      1,
+    );
   });
 
   it('validates urls', () => {

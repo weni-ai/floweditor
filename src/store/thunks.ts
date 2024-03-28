@@ -19,11 +19,16 @@ import {
   SetContactField,
   SetRunResult,
   StickyNote,
-  FlowDetails
+  FlowDetails,
 } from 'flowTypes';
 import mutate from 'immutability-helper';
 import { Dispatch } from 'redux';
-import { CanvasPositions, EditorState, EMPTY_DRAG_STATE, updateEditorState } from 'store/editor';
+import {
+  CanvasPositions,
+  EditorState,
+  EMPTY_DRAG_STATE,
+  updateEditorState,
+} from 'store/editor';
 import {
   Asset,
   AssetStore,
@@ -36,7 +41,7 @@ import {
   updateDefinition,
   updateNodes,
   updateMetadata,
-  updateIssues
+  updateIssues,
 } from 'store/flowContext';
 import {
   createEmptyNode,
@@ -48,17 +53,24 @@ import {
   getNode,
   guessNodeType,
   mergeAssetMaps,
-  createFlowIssueMap
+  createFlowIssueMap,
 } from 'store/helpers';
 import * as mutators from 'store/mutators';
 import {
   NodeEditorSettings,
   updateNodeEditorSettings,
   updateTypeConfig,
-  updateUserAddingAction
+  updateUserAddingAction,
 } from 'store/nodeEditor';
 import AppState from 'store/state';
-import { createUUID, hasString, NODE_SPACING, timeEnd, timeStart, ACTIVITY_INTERVAL } from 'utils';
+import {
+  createUUID,
+  hasString,
+  NODE_SPACING,
+  timeEnd,
+  timeStart,
+  ACTIVITY_INTERVAL,
+} from 'utils';
 import { AxiosError } from 'axios';
 import i18n from 'config/i18n';
 import { TembaStore } from 'temba-components';
@@ -86,7 +98,9 @@ export type OnOpenNodeEditor = (settings: NodeEditorSettings) => Thunk<void>;
 
 export type UpdateNodesEditor = (nodes: any) => Thunk<void>;
 
-export type OnUpdateCanvasPositions = (positions: CanvasPositions) => Thunk<RenderNodeMap>;
+export type OnUpdateCanvasPositions = (
+  positions: CanvasPositions,
+) => Thunk<RenderNodeMap>;
 
 export type OnRemoveNodes = (nodeUUIDs: string[]) => Thunk<RenderNodeMap>;
 
@@ -94,43 +108,66 @@ export type AddAsset = (assetType: string, asset: Asset) => Thunk<void>;
 
 export type RemoveNode = (nodeToRemove: FlowNode) => Thunk<RenderNodeMap>;
 
-export type UpdateDimensions = (uuid: string, dimensions: Dimensions) => Thunk<void>;
+export type UpdateDimensions = (
+  uuid: string,
+  dimensions: Dimensions,
+) => Thunk<void>;
 
 export type FetchFlow = (
   endpoints: Endpoints,
   uuid: string,
-  forceSave: boolean
+  forceSave: boolean,
 ) => Thunk<Promise<void>>;
 
-export type LoadFlowDefinition = (details: FlowDetails, assetStore: AssetStore) => Thunk<void>;
+export type LoadFlowDefinition = (
+  details: FlowDetails,
+  assetStore: AssetStore,
+) => Thunk<void>;
 
 export type CreateNewRevision = () => Thunk<void>;
 
 export type NoParamsAC = () => Thunk<void>;
 
-export type UpdateConnection = (source: string, target: string) => Thunk<RenderNodeMap>;
+export type UpdateConnection = (
+  source: string,
+  target: string,
+) => Thunk<RenderNodeMap>;
 
-export type OnConnectionDrag = (event: ConnectionEvent, flowType: FlowTypes) => Thunk<void>;
+export type OnConnectionDrag = (
+  event: ConnectionEvent,
+  flowType: FlowTypes,
+) => Thunk<void>;
 
 export type OnUpdateLocalizations = (
   language: string,
-  changes: LocalizationUpdates
+  changes: LocalizationUpdates,
 ) => Thunk<FlowDefinition>;
 
-export type UpdateSticky = (stickyUUID: string, sticky: StickyNote) => Thunk<void>;
+export type UpdateSticky = (
+  stickyUUID: string,
+  sticky: StickyNote,
+) => Thunk<void>;
 
 export type OnUpdateAction = (
   action: AnyAction,
-  onUpdated?: (dispatch: DispatchWithState, getState: GetState) => void
+  onUpdated?: (dispatch: DispatchWithState, getState: GetState) => void,
 ) => Thunk<RenderNodeMap>;
 
-export type ActionAC = (nodeUUID: string, action: AnyAction) => Thunk<RenderNodeMap>;
+export type ActionAC = (
+  nodeUUID: string,
+  action: AnyAction,
+) => Thunk<RenderNodeMap>;
 
-export type DisconnectExit = (nodeUUID: string, exitUUID: string) => Thunk<RenderNodeMap>;
+export type DisconnectExit = (
+  nodeUUID: string,
+  exitUUID: string,
+) => Thunk<RenderNodeMap>;
 
 export type HandleLanguageChange = (language: Asset) => Thunk<void>;
 
-export type MergeEditorState = (state: Partial<EditorState>) => Thunk<EditorState>;
+export type MergeEditorState = (
+  state: Partial<EditorState>,
+) => Thunk<EditorState>;
 
 export interface ReplaceAction {
   nodeUUID: string;
@@ -171,12 +208,12 @@ let lastSuccessfulMillis = 0;
 
 const NETWORK_ERROR = i18n.t(
   'errors.network',
-  'Hmm, we ran into a problem trying to save your changes. It could just be that your internet connection is not working well at the moment. Please wait a minute or so and try again.'
+  'Hmm, we ran into a problem trying to save your changes. It could just be that your internet connection is not working well at the moment. Please wait a minute or so and try again.',
 );
 
 const SERVER_ERROR = i18n.t(
   'errors.server',
-  'Hmm, we ran into a problem trying to save your changes. If this problem persists, take note of the change you are trying to make and contact support.'
+  'Hmm, we ran into a problem trying to save your changes. If this problem persists, take note of the change you are trying to make and contact support.',
 );
 
 export const createSaveMonitor = (dispatch: DispatchWithState) => {
@@ -189,10 +226,10 @@ export const createSaveMonitor = (dispatch: DispatchWithState) => {
         mergeEditorState({
           modalMessage: {
             title: "Uh oh, we couldn't save your changes",
-            body: NETWORK_ERROR
+            body: NETWORK_ERROR,
           },
-          saving: false
-        })
+          saving: false,
+        }),
       );
     }
   }, 5000);
@@ -201,7 +238,7 @@ export const createSaveMonitor = (dispatch: DispatchWithState) => {
 export const createDirty = (
   revisionsEndpoint: string,
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ) => (quiet: number = QUIET_SAVE) => {
   lastDirtyMillis = new Date().getTime();
 
@@ -211,7 +248,7 @@ export const createDirty = (
 
   const {
     flowContext: { definition, nodes, assetStore, issues },
-    editorState: { currentRevision }
+    editorState: { currentRevision },
   } = getState();
 
   dispatch(mergeEditorState({ saving: true }));
@@ -246,8 +283,8 @@ export const createDirty = (
           mergeEditorState({
             currentRevision: revision.revision,
             saving: false,
-            activityInterval: ACTIVITY_INTERVAL
-          })
+            activityInterval: ACTIVITY_INTERVAL,
+          }),
         );
 
         lastSuccessfulMillis = new Date().getTime();
@@ -260,7 +297,11 @@ export const createDirty = (
           body = SERVER_ERROR;
         }
 
-        if (error.response && error.response.data && error.response.data.description) {
+        if (
+          error.response &&
+          error.response.data &&
+          error.response.data.description
+        ) {
           body = error.response.data.description;
         }
 
@@ -268,20 +309,20 @@ export const createDirty = (
           mergeEditorState({
             modalMessage: {
               title: "Uh oh, we couldn't save your changes",
-              body
+              body,
             },
-            saving: false
-          })
+            saving: false,
+          }),
         );
         postingRevision = false;
-      }
+      },
     );
   }, quiet);
 };
 
 export const mergeEditorState = (changes: Partial<EditorState>) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ): EditorState => {
   const { editorState } = getState();
   const updated = mutate(editorState, { $merge: changes });
@@ -289,22 +330,25 @@ export const mergeEditorState = (changes: Partial<EditorState>) => (
   return updated;
 };
 
-export const createNewRevision = () => (dispatch: DispatchWithState, getState: GetState): void => {
+export const createNewRevision = () => (
+  dispatch: DispatchWithState,
+  getState: GetState,
+): void => {
   // mark us dirty with no quiet period
   markDirty(0);
 };
 
-export const loadFlowDefinition = (details: FlowDetails, assetStore: AssetStore) => (
-  dispatch: DispatchWithState,
-  getState: GetState
-): void => {
+export const loadFlowDefinition = (
+  details: FlowDetails,
+  assetStore: AssetStore,
+) => (dispatch: DispatchWithState, getState: GetState): void => {
   // first see if we need our asset store initialized
 
   const definition = details.definition;
 
   const {
     flowContext: { issues },
-    editorState: { fetchingFlow }
+    editorState: { fetchingFlow },
   } = getState();
 
   if (!fetchingFlow) {
@@ -323,13 +367,13 @@ export const loadFlowDefinition = (details: FlowDetails, assetStore: AssetStore)
     if (!definition._ui.nodes[node.uuid]) {
       definition._ui.nodes[node.uuid] = {
         position: { left: 0, top: currentTop },
-        type: guessNodeType(node)
+        type: guessNodeType(node),
       };
       currentTop += 150;
     } else {
       definition._ui.nodes[node.uuid].position = {
         left: parseFloat(definition._ui.nodes[node.uuid].position.left as any),
-        top: parseFloat(definition._ui.nodes[node.uuid].position.top as any)
+        top: parseFloat(definition._ui.nodes[node.uuid].position.top as any),
       };
     }
   }
@@ -337,8 +381,10 @@ export const loadFlowDefinition = (details: FlowDetails, assetStore: AssetStore)
   if (definition._ui.stickies) {
     for (const stickyUuid of Object.keys(definition._ui.stickies)) {
       definition._ui.stickies[stickyUuid].position = {
-        left: parseFloat(definition._ui.stickies[stickyUuid].position.left as any),
-        top: parseFloat(definition._ui.stickies[stickyUuid].position.top as any)
+        left: parseFloat(definition._ui.stickies[stickyUuid].position
+          .left as any),
+        top: parseFloat(definition._ui.stickies[stickyUuid].position
+          .top as any),
       };
     }
   }
@@ -390,16 +436,17 @@ export const loadFlowDefinition = (details: FlowDetails, assetStore: AssetStore)
  * @param endpoints where our assets live
  * @param uuid the uuid for the flow to fetch
  */
-export const fetchFlow = (endpoints: Endpoints, uuid: string, forceSave = false) => async (
-  dispatch: DispatchWithState,
-  getState: GetState
-) => {
+export const fetchFlow = (
+  endpoints: Endpoints,
+  uuid: string,
+  forceSave = false,
+) => async (dispatch: DispatchWithState, getState: GetState) => {
   // mark us as underway
   dispatch(mergeEditorState({ fetchingFlow: true }));
 
   // first see if we need our asset store initialized
   let {
-    flowContext: { assetStore }
+    flowContext: { assetStore },
   } = getState();
 
   if (!Object.keys(assetStore).length) {
@@ -421,11 +468,15 @@ export const fetchFlow = (endpoints: Endpoints, uuid: string, forceSave = false)
       dispatch(loadFlowDefinition(details, assetStore));
       dispatch(
         mergeEditorState({
-          currentRevision: details.definition.revision
-        })
+          currentRevision: details.definition.revision,
+        }),
       );
 
-      markDirty = createDirty(assetStore.revisions.endpoint, dispatch, getState);
+      markDirty = createDirty(
+        assetStore.revisions.endpoint,
+        dispatch,
+        getState,
+      );
       if (forceSave) {
         markDirty(0);
       }
@@ -442,14 +493,14 @@ export const fetchFlow = (endpoints: Endpoints, uuid: string, forceSave = false)
 
 export const addAsset: AddAsset = (assetType: string, asset: Asset) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ): void => {
   const {
-    flowContext: { assetStore }
+    flowContext: { assetStore },
   } = getState();
 
   const updated = mutate(assetStore, {
-    [assetType]: { items: { $merge: { [asset.id]: asset } } }
+    [assetType]: { items: { $merge: { [asset.id]: asset } } },
   });
 
   // update our temba store if we have one
@@ -461,10 +512,13 @@ export const addAsset: AddAsset = (assetType: string, asset: Asset) => (
   dispatch(updateAssets(updated));
 };
 
-export const handleLanguageChange: HandleLanguageChange = language => (dispatch, getState) => {
+export const handleLanguageChange: HandleLanguageChange = language => (
+  dispatch,
+  getState,
+) => {
   const {
     flowContext: { baseLanguage },
-    editorState: { translating, language: currentLanguage }
+    editorState: { translating, language: currentLanguage },
   } = getState();
 
   // determine translating state
@@ -482,12 +536,12 @@ export const handleLanguageChange: HandleLanguageChange = language => (dispatch,
   }
 };
 
-export const onUpdateLocalizations = (language: string, changes: LocalizationUpdates) => (
-  dispatch: DispatchWithState,
-  getState: GetState
-): FlowDefinition => {
+export const onUpdateLocalizations = (
+  language: string,
+  changes: LocalizationUpdates,
+) => (dispatch: DispatchWithState, getState: GetState): FlowDefinition => {
   const {
-    flowContext: { definition }
+    flowContext: { definition },
   } = getState();
   const updated = mutators.updateLocalization(definition, language, changes);
   dispatch(updateDefinition(updated));
@@ -496,14 +550,20 @@ export const onUpdateLocalizations = (language: string, changes: LocalizationUpd
   return updated;
 };
 
-export const updateExitDestination = (nodeUUID: string, exitUUID: string, destination: string) => (
-  dispatch: DispatchWithState,
-  getState: GetState
-): RenderNodeMap => {
+export const updateExitDestination = (
+  nodeUUID: string,
+  exitUUID: string,
+  destination: string,
+) => (dispatch: DispatchWithState, getState: GetState): RenderNodeMap => {
   const {
-    flowContext: { nodes }
+    flowContext: { nodes },
   } = getState();
-  const updated = mutators.updateConnection(nodes, nodeUUID, exitUUID, destination);
+  const updated = mutators.updateConnection(
+    nodes,
+    nodeUUID,
+    exitUUID,
+    destination,
+  );
   dispatch(updateNodes(updated));
   markDirty();
   return updated;
@@ -511,12 +571,12 @@ export const updateExitDestination = (nodeUUID: string, exitUUID: string, destin
 
 export const disconnectExit = (nodeUUID: string, exitUUID: string) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ): RenderNodeMap => dispatch(updateExitDestination(nodeUUID, exitUUID, null));
 
 export const updateConnection = (source: string, target: string) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ): RenderNodeMap => {
   const [nodeUUID, exitUUID] = source.split(':');
   return dispatch(updateExitDestination(nodeUUID, exitUUID, target));
@@ -524,18 +584,22 @@ export const updateConnection = (source: string, target: string) => (
 
 export const removeNode = (node: FlowNode) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ): RenderNodeMap => {
   // Remove result name if node has one
   const {
-    flowContext: { nodes, assetStore }
+    flowContext: { nodes, assetStore },
   } = getState();
 
   // update asset store to remove results that no longer exist
   if (node.router && node.router.result_name) {
-    const updatedAssets = mutators.removeResultFromStore(node.router.result_name, assetStore, {
-      nodeUUID: node.uuid
-    });
+    const updatedAssets = mutators.removeResultFromStore(
+      node.router.result_name,
+      assetStore,
+      {
+        nodeUUID: node.uuid,
+      },
+    );
     dispatch(updateAssets(updatedAssets));
   }
 
@@ -547,20 +611,24 @@ export const removeNode = (node: FlowNode) => (
 
 export const removeAction = (nodeUUID: string, action: AnyAction) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ): RenderNodeMap => {
   const {
-    flowContext: { nodes, assetStore }
+    flowContext: { nodes, assetStore },
   } = getState();
   const renderNode = nodes[nodeUUID];
 
   // update asset store to remove results that no longer exist
   if (action.type === Types.set_run_result) {
     const resultAction = action as SetRunResult;
-    const updatedAssets = mutators.removeResultFromStore(resultAction.name, assetStore, {
-      nodeUUID,
-      actionUUID: action.uuid
-    });
+    const updatedAssets = mutators.removeResultFromStore(
+      resultAction.name,
+      assetStore,
+      {
+        nodeUUID,
+        actionUUID: action.uuid,
+      },
+    );
     dispatch(updateAssets(updatedAssets));
   }
 
@@ -580,10 +648,10 @@ export const removeAction = (nodeUUID: string, action: AnyAction) => (
 
 export const moveActionUp = (nodeUUID: string, action: AnyAction) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ): RenderNodeMap => {
   const {
-    flowContext: { nodes }
+    flowContext: { nodes },
   } = getState();
   const updated = mutators.moveActionUp(nodes, nodeUUID, action.uuid);
   dispatch(updateNodes(updated));
@@ -602,27 +670,34 @@ export const moveActionUp = (nodeUUID: string, action: AnyAction) => (
  */
 export const spliceInRouter = (
   newRouterNode: RenderNode,
-  previousAction: { nodeUUID: string; actionUUID: string }
+  previousAction: { nodeUUID: string; actionUUID: string },
 ) => (dispatch: DispatchWithState, getState: GetState): RenderNodeMap => {
   const {
-    flowContext: { nodes }
+    flowContext: { nodes },
   } = getState();
   const previousNode = nodes[previousAction.nodeUUID];
 
   // remove our old node, we'll make new ones
   let updatedNodes = nodes;
-  updatedNodes = mutators.removeNode(updatedNodes, previousNode.node.uuid, false);
+  updatedNodes = mutators.removeNode(
+    updatedNodes,
+    previousNode.node.uuid,
+    false,
+  );
 
   newRouterNode.node = mutators.uniquifyNode(newRouterNode.node);
 
-  const actionIdx = getActionIndex(previousNode.node, previousAction.actionUUID);
+  const actionIdx = getActionIndex(
+    previousNode.node,
+    previousAction.actionUUID,
+  );
 
   // we need to splice a wait node where our previousAction was
   const topActions: Action[] =
     actionIdx > 0 ? [...previousNode.node.actions.slice(0, actionIdx)] : [];
   const bottomActions: Action[] = previousNode.node.actions.slice(
     actionIdx + 1,
-    previousNode.node.actions.length
+    previousNode.node.actions.length,
   );
 
   // tslint:disable-next-line:prefer-const
@@ -640,12 +715,12 @@ export const spliceInRouter = (
         exits: [
           {
             uuid: createUUID(),
-            destination_uuid: null
-          }
-        ]
+            destination_uuid: null,
+          },
+        ],
       },
       ui: { position: { left, top } },
-      inboundConnections: { ...previousNode.inboundConnections }
+      inboundConnections: { ...previousNode.inboundConnections },
     };
 
     updatedNodes = mutators.mergeNode(updatedNodes, topNode);
@@ -653,7 +728,7 @@ export const spliceInRouter = (
 
     // update our routerNode for the presence of a top node
     newRouterNode.inboundConnections = {
-      [topNode.node.exits[0].uuid]: topNode.node.uuid
+      [topNode.node.exits[0].uuid]: topNode.node.uuid,
     };
     newRouterNode.ui.position.top += NODE_SPACING;
   } else {
@@ -672,16 +747,16 @@ export const spliceInRouter = (
         exits: [
           {
             uuid: createUUID(),
-            destination_uuid: previousNode.node.exits[0].destination_uuid
-          }
-        ]
+            destination_uuid: previousNode.node.exits[0].destination_uuid,
+          },
+        ],
       },
       ui: {
-        position: { left, top }
+        position: { left, top },
       },
       inboundConnections: {
-        [newRouterNode.node.exits[0].uuid]: newRouterNode.node.uuid
-      }
+        [newRouterNode.node.exits[0].uuid]: newRouterNode.node.uuid,
+      },
     };
     updatedNodes = mutators.mergeNode(updatedNodes, bottomNode);
   } else {
@@ -690,7 +765,7 @@ export const spliceInRouter = (
       updatedNodes,
       newRouterNode.node.uuid,
       newRouterNode.node.exits[0].uuid,
-      previousNode.node.exits[0].destination_uuid
+      previousNode.node.exits[0].destination_uuid,
     );
   }
 
@@ -700,30 +775,37 @@ export const spliceInRouter = (
   return updatedNodes;
 };
 
-export const handleTypeConfigChange = (typeConfig: Type) => (dispatch: DispatchWithState) => {
+export const handleTypeConfigChange = (typeConfig: Type) => (
+  dispatch: DispatchWithState,
+) => {
   // TODO: Generate suggested result name if user is changing to a `wait_for_response` router.
   dispatch(updateTypeConfig(typeConfig));
 };
 
-export const resetNodeEditingState = () => (dispatch: DispatchWithState, getState: GetState) => {
+export const resetNodeEditingState = () => (
+  dispatch: DispatchWithState,
+  getState: GetState,
+) => {
   dispatch(mergeEditorState({ ghostNode: null }));
   dispatch(updateNodeEditorSettings(null));
 };
 
-export const updateNodesEditor = (nodes: any) => (dispatch: DispatchWithState) => {
+export const updateNodesEditor = (nodes: any) => (
+  dispatch: DispatchWithState,
+) => {
   dispatch(updateNodes(nodes));
   markDirty(0);
 };
 
 export const onUpdateAction = (
   action: AnyAction,
-  onUpdated?: (dispatch: DispatchWithState, getState: GetState) => void
+  onUpdated?: (dispatch: DispatchWithState, getState: GetState) => void,
 ) => (dispatch: DispatchWithState, getState: GetState) => {
   timeStart('onUpdateAction');
 
   const {
     nodeEditor: { userAddingAction, settings },
-    flowContext: { nodes, contactFields, assetStore }
+    flowContext: { nodes, contactFields, assetStore },
   } = getState();
 
   if (settings == null || settings.originalNode == null) {
@@ -738,7 +820,7 @@ export const onUpdateAction = (
     const { name: resultName } = originalAction as SetRunResult;
     updatedAssets = mutators.removeResultFromStore(resultName, updatedAssets, {
       nodeUUID: originalNode.node.uuid,
-      actionUUID: action.uuid
+      actionUUID: action.uuid,
     });
   }
 
@@ -752,10 +834,10 @@ export const onUpdateAction = (
       node: {
         uuid: createUUID(),
         actions: [action],
-        exits: [{ uuid: createUUID(), destination_uuid: null }]
+        exits: [{ uuid: createUUID(), destination_uuid: null }],
       },
       ui: { position: originalNode.ui.position, type: Types.execute_actions },
-      inboundConnections: originalNode.inboundConnections
+      inboundConnections: originalNode.inboundConnections,
     };
     updatedNodes = mutators.mergeNode(nodes, newNode);
 
@@ -766,9 +848,18 @@ export const onUpdateAction = (
     if (userAddingAction) {
       updatedNodes = mutators.addAction(nodes, originalNode.node.uuid, action);
     } else if (originalNode.node.hasOwnProperty('router')) {
-      updatedNodes = mutators.spliceInAction(nodes, originalNode.node.uuid, action);
+      updatedNodes = mutators.spliceInAction(
+        nodes,
+        originalNode.node.uuid,
+        action,
+      );
     } else {
-      updatedNodes = mutators.updateAction(nodes, originalNode.node.uuid, action, originalAction);
+      updatedNodes = mutators.updateAction(
+        nodes,
+        originalNode.node.uuid,
+        action,
+        originalAction,
+      );
     }
   }
 
@@ -780,7 +871,7 @@ export const onUpdateAction = (
     const { name: resultName } = action as SetRunResult;
     updatedAssets = mutators.addResultToStore(resultName, updatedAssets, {
       nodeUUID,
-      actionUUID: action.uuid
+      actionUUID: action.uuid,
     });
     dispatch(updateAssets(updatedAssets));
   }
@@ -788,7 +879,9 @@ export const onUpdateAction = (
   // Add contact field to our store.
   if (action.type === Types.set_contact_field) {
     const { field } = action as SetContactField;
-    dispatch(updateContactFields({ ...contactFields, [field.key]: field.name }));
+    dispatch(
+      updateContactFields({ ...contactFields, [field.key]: field.name }),
+    );
   }
 
   markDirty(0);
@@ -807,25 +900,25 @@ export const onUpdateAction = (
  */
 export const onAddToNode = (node: FlowNode) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ) => {
   const {
-    flowContext: { nodes }
+    flowContext: { nodes },
   } = getState();
 
   // TODO: remove the need for this once we all have formHelpers
   const newAction: SendMsg = {
     uuid: createUUID(),
     type: Types.send_msg,
-    text: ''
+    text: '',
   };
 
   dispatch(
     updateNodeEditorSettings({
       originalNode: getNode(nodes, node.uuid),
       originalAction: newAction,
-      showAdvanced: false
-    })
+      showAdvanced: false,
+    }),
   );
 
   markDirty();
@@ -836,10 +929,10 @@ export const onAddToNode = (node: FlowNode) => (
 
 export const onRemoveNodes = (uuids: string[]) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ): RenderNodeMap => {
   const {
-    flowContext: { nodes, definition }
+    flowContext: { nodes, definition },
   } = getState();
 
   let updatedNodes = nodes;
@@ -852,7 +945,11 @@ export const onRemoveNodes = (uuids: string[]) => (
       updatedNodes = mutators.removeNode(updatedNodes, uuid, true);
       didNodes = true;
     } else if (uuid in updatedDefinition._ui.stickies) {
-      updatedDefinition = mutators.updateStickyNote(updatedDefinition, uuid, null);
+      updatedDefinition = mutators.updateStickyNote(
+        updatedDefinition,
+        uuid,
+        null,
+      );
       didDef = true;
     }
   });
@@ -874,10 +971,10 @@ export const onRemoveNodes = (uuids: string[]) => (
 
 export const onUpdateCanvasPositions = (positions: CanvasPositions) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ): RenderNodeMap => {
   const {
-    flowContext: { nodes, definition }
+    flowContext: { nodes, definition },
   } = getState();
 
   let updatedDefinition = definition;
@@ -888,13 +985,17 @@ export const onUpdateCanvasPositions = (positions: CanvasPositions) => (
 
   for (const uuid in positions) {
     if (updatedNodes[uuid]) {
-      updatedNodes = mutators.updatePosition(updatedNodes, uuid, positions[uuid]);
+      updatedNodes = mutators.updatePosition(
+        updatedNodes,
+        uuid,
+        positions[uuid],
+      );
       updatedNodePosition = true;
     } else if (updatedDefinition._ui.stickies[uuid]) {
       updatedDefinition = mutators.updateStickyNotePosition(
         updatedDefinition,
         uuid,
-        positions[uuid]
+        positions[uuid],
       );
       updatedStickyPosition = true;
     }
@@ -924,12 +1025,12 @@ export const onUpdateCanvasPositions = (positions: CanvasPositions) => (
  * when a new connection is desired or when an existing one is being moved.
  * @param event
  */
-export const onConnectionDrag = (event: ConnectionEvent, flowType: FlowTypes) => (
-  dispatch: DispatchWithState,
-  getState: GetState
-) => {
+export const onConnectionDrag = (
+  event: ConnectionEvent,
+  flowType: FlowTypes,
+) => (dispatch: DispatchWithState, getState: GetState) => {
   const {
-    flowContext: { nodes, assetStore }
+    flowContext: { nodes, assetStore },
   } = getState();
 
   // We finished dragging a ghost node, create the spec for our new ghost component
@@ -948,17 +1049,22 @@ export const onConnectionDrag = (event: ConnectionEvent, flowType: FlowTypes) =>
   }
 
   // set our ghost node
-  const ghostNode = createEmptyNode(fromNode, fromExitUUID, resultCount, flowType);
+  const ghostNode = createEmptyNode(
+    fromNode,
+    fromExitUUID,
+    resultCount,
+    flowType,
+  );
   ghostNode.inboundConnections = { [fromExitUUID]: fromNodeUUID };
   dispatch(mergeEditorState({ ghostNode }));
 };
 
 export const updateSticky = (uuid: string, sticky: StickyNote) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ): void => {
   const {
-    flowContext: { definition }
+    flowContext: { definition },
   } = getState();
 
   const updated = mutators.updateStickyNote(definition, uuid, sticky);
@@ -968,13 +1074,13 @@ export const updateSticky = (uuid: string, sticky: StickyNote) => (
 
 export const onUpdateRouter = (renderNode: RenderNode) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ): RenderNodeMap => {
   const {
     flowContext: { nodes, assetStore },
     nodeEditor: {
-      settings: { originalNode, originalAction }
-    }
+      settings: { originalNode, originalAction },
+    },
   } = getState();
 
   let updated = nodes;
@@ -999,9 +1105,13 @@ export const onUpdateRouter = (renderNode: RenderNode) => (
     // remove our original result name
     const originalResultName = getResultName(originalNode.node);
     if (originalResultName) {
-      updatedAssets = mutators.removeResultFromStore(originalResultName, updatedAssets, {
-        nodeUUID: originalNode.node.uuid
-      });
+      updatedAssets = mutators.removeResultFromStore(
+        originalResultName,
+        updatedAssets,
+        {
+          nodeUUID: originalNode.node.uuid,
+        },
+      );
     }
 
     updatedAssets = mutators.addFlowResult(updatedAssets, renderNode.node);
@@ -1015,7 +1125,7 @@ export const onUpdateRouter = (renderNode: RenderNode) => (
     !getSmartOrSwitchRouter(originalNode.node)
   ) {
     const actionToSplice = originalNode.node.actions.find(
-      (action: Action) => action.uuid === originalAction.uuid
+      (action: Action) => action.uuid === originalAction.uuid,
     );
 
     if (actionToSplice) {
@@ -1025,8 +1135,8 @@ export const onUpdateRouter = (renderNode: RenderNode) => (
       return dispatch(
         spliceInRouter(renderNode, {
           nodeUUID: originalNode.node.uuid,
-          actionUUID: actionToSplice.uuid
-        })
+          actionUUID: actionToSplice.uuid,
+        }),
       );
     }
 
@@ -1035,17 +1145,18 @@ export const onUpdateRouter = (renderNode: RenderNode) => (
     const switchRouter = getSmartOrSwitchRouter(renderNode.node);
     if (switchRouter) {
       const defaultCategory = switchRouter.categories.find(
-        (cat: Category) => cat.uuid === switchRouter.default_category_uuid
+        (cat: Category) => cat.uuid === switchRouter.default_category_uuid,
       );
       const exitToUpdate = renderNode.node.exits.find(
-        (exit: Exit) => exit.uuid === defaultCategory.exit_uuid
+        (exit: Exit) => exit.uuid === defaultCategory.exit_uuid,
       );
 
-      exitToUpdate.destination_uuid = originalNode.node.exits[0].destination_uuid;
+      exitToUpdate.destination_uuid =
+        originalNode.node.exits[0].destination_uuid;
     }
 
     renderNode.inboundConnections = {
-      [originalNode.node.exits[0].uuid]: originalNode.node.uuid
+      [originalNode.node.exits[0].uuid]: originalNode.node.uuid,
     };
     renderNode.node = mutators.uniquifyNode(renderNode.node);
     renderNode.ui.position.top += NODE_SPACING;
@@ -1062,13 +1173,13 @@ export const onUpdateRouter = (renderNode: RenderNode) => (
 
 export const onOpenNodeEditor = (settings: NodeEditorSettings) => (
   dispatch: DispatchWithState,
-  getState: GetState
+  getState: GetState,
 ) => {
   const {
     flowContext: {
-      definition: { localization }
+      definition: { localization },
     },
-    editorState: { language, translating }
+    editorState: { language, translating },
   } = getState();
 
   const { originalNode: renderNode } = settings;
@@ -1089,7 +1200,7 @@ export const onOpenNodeEditor = (settings: NodeEditorSettings) => (
       const ACTIONS_AVAILABLE_TO_TRANSLATE = [
         Types.send_msg,
         Types.send_broadcast,
-        Types.call_wenigpt
+        Types.call_wenigpt,
       ];
 
       if (!ACTIONS_AVAILABLE_TO_TRANSLATE.includes(actionToTranslate.type)) {
@@ -1099,7 +1210,7 @@ export const onOpenNodeEditor = (settings: NodeEditorSettings) => (
 
     const translations = localization[language.id];
     settings.localizations.push(
-      ...getLocalizations(node, actionToTranslate, language, translations)
+      ...getLocalizations(node, actionToTranslate, language, translations),
     );
   }
 
@@ -1119,7 +1230,7 @@ export const updateTranslationFilters = (translationFilters: {
   rules: boolean;
 }) => (dispatch: DispatchWithState, getState: GetState): void => {
   const {
-    flowContext: { definition }
+    flowContext: { definition },
   } = getState();
 
   definition._ui.translation_filters = translationFilters;
