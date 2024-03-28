@@ -164,7 +164,6 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
             }
             name={''}
             onClick={() => this.toggleMoveSelected('down')}
-            size="sm"
             iconName="down"
           />
 
@@ -176,7 +175,6 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
             }
             name={''}
             onClick={() => this.toggleMoveSelected('up')}
-            size="sm"
             iconName="up"
           />
         </div>
