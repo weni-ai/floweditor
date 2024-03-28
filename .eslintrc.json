@@ -1,18 +1,12 @@
 {
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "@weni/eslint-config/react16"
   ],
-  "plugins": ["prettier"],
   "env": {
     "browser": true,
     "jest": true
   },
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true }],
     "no-prototype-builtins": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/camelcase": 0,
@@ -23,6 +17,5 @@
       "pragma": "React",
       "version": "detect"
     }
-  },
-  "parser": "@typescript-eslint/parser"
+  }
 }
