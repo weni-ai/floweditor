@@ -50,7 +50,7 @@
         align-content: center;
         justify-content: center;
         width: 32px;
-        padding: 0 8px;
+        padding: 6px;
         cursor: pointer;
     }
 }
@@ -59,9 +59,6 @@
     background: $unnnic-color-neutral-cleanest !important;
 }
 
-:global .input[data-v-97b44e8c]{
-    outline-style: none;
-}
 :global .unnnic-button--secondary:after{
     border: none;
     position: static;

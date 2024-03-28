@@ -235,8 +235,12 @@ textarea.textinput {
 
   &:focus {
     outline: none;
-    outline: none;
     border: 1px solid rgb(164, 202, 254) !important;
     box-shadow: var(--widget-box-shadow-focused) !important;
   }
+}
+
+:global .input[data-v-97b44e8c]{
+  outline: none;
+  outline-style: none;
 }
