@@ -466,6 +466,91 @@ export default class SendWhatsAppMsgForm extends React.Component<
     };
   }
 
+  private renderHeaderSection(): JSX.Element {
+    const attachment = this.state.attachment.value;
+    const headerType = this.state.headerType.value;
+
+    return (
+      <>
+        <div className={styles.header}>
+          <div className={styles.inputs}>
+            <div className={styles.header_type}>
+              <span className={`u font secondary body-md color-neutral-cloudy`}>
+                {i18n.t('forms.header_optional', 'Header (optional)')}
+              </span>
+
+              <TembaSelect
+                name={i18n.t('forms.header_optional', 'Header (optional)')}
+                style={TembaSelectStyle.normal}
+                options={WHATSAPP_HEADER_TYPE_OPTIONS}
+                nameKey="name"
+                valueKey="value"
+                onChange={this.handleHeaderTypeChange}
+                value={headerType}
+              />
+            </div>
+
+            {headerType.value === WhatsAppHeaderType.TEXT && (
+              <div className={styles.header_text}>
+                <TextInputElement
+                  name={i18n.t('forms.header', 'Header')}
+                  entry={this.state.header_text}
+                  onChange={this.handleHeaderTextUpdate}
+                  placeholder={i18n.t('forms.header_text', 'Header text')}
+                  size={TextInputSizes.md}
+                  autocomplete={true}
+                />
+              </div>
+            )}
+
+            {headerType.value === WhatsAppHeaderType.MEDIA && (
+              <>
+                <div className={styles.attachment_url}>
+                  <TextInputElement
+                    placeholder={i18n.t('forms.ex_weni', 'Ex: weni.ai')}
+                    name={i18n.t('forms.url', 'URL')}
+                    size={TextInputSizes.md}
+                    onChange={this.handleAttachmentUrlChange}
+                    entry={{
+                      value: attachment && !attachment.uploaded ? attachment.url : ''
+                    }}
+                    error={
+                      this.state.attachment.validationFailures.length > 0
+                        ? this.state.attachment.validationFailures[0].message
+                        : null
+                    }
+                    autocomplete={true}
+                    showLabel={true}
+                  />
+                </div>
+
+                {renderUploadButton(
+                  this.context.config.endpoints.attachments,
+                  this.handleAttachmentUploaded
+                )}
+              </>
+            )}
+          </div>
+          {attachment && attachment.uploaded && (
+            <div className={styles.attachment}>
+              {attachment.url.substring(attachment.url.lastIndexOf('/') + 1)}
+
+              <div className={styles.remove}>
+                <UnnnicIcon
+                  icon="close"
+                  size="sm"
+                  scheme="neutral-cloudy"
+                  clickable
+                  onClick={() => this.handleAttachmentRemoved()}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      </>
+    );
+  }
+
   private renderInteractionsTab(): Tab {
     const interactionType = this.state.interactionType.value.value;
     const isChecked =
@@ -478,8 +563,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
         ? i18n.t('forms.interactions', 'Interactions')
         : i18n.t('forms.add_interactions', 'Add Interactions'),
       body: (
-        <div>
-          <div className={`${styles.interaction_type}`}>
+        <div className={styles.interactions_tab}>
+          <div className={styles.interaction_type}>
             <UnnnicRadio
               $model={{
                 value: interactionType,
@@ -546,6 +631,18 @@ export default class SendWhatsAppMsgForm extends React.Component<
               />
             </div>
           )}
+
+          {this.renderHeaderSection()}
+
+          <TextInputElement
+            placeholder={i18n.t('forms.ex_footer', 'Ex: Footer')}
+            name={i18n.t('forms.footer', 'Footer (optional)')}
+            size={TextInputSizes.md}
+            onChange={this.handleFooterUpdate}
+            entry={this.state.footer}
+            autocomplete={true}
+            showLabel={true}
+          />
         </div>
       ),
       checked: isChecked,
@@ -556,8 +653,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
     const tabs = [this.renderInteractionsTab()];
-    const attachment = this.state.attachment.value;
-    const headerType = this.state.headerType.value;
 
     return (
       <Dialog
@@ -569,81 +664,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
         <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
 
         <div className={styles.content}>
-          <div className={styles.header}>
-            <div className={styles.header_type}>
-              <span className={`u font secondary body-md color-neutral-cloudy`}>
-                {i18n.t('forms.header_optional', 'Header (optional)')}
-              </span>
-
-              <TembaSelect
-                name={i18n.t('forms.header_optional', 'Header (optional)')}
-                style={TembaSelectStyle.normal}
-                options={WHATSAPP_HEADER_TYPE_OPTIONS}
-                nameKey="name"
-                valueKey="value"
-                onChange={this.handleHeaderTypeChange}
-                value={headerType}
-              />
-            </div>
-
-            {headerType.value === WhatsAppHeaderType.TEXT && (
-              <div className={styles.header_text}>
-                <TextInputElement
-                  name={i18n.t('forms.header', 'Header')}
-                  entry={this.state.header_text}
-                  onChange={this.handleHeaderTextUpdate}
-                  placeholder={i18n.t('forms.header_text', 'Header text')}
-                  size={TextInputSizes.md}
-                  autocomplete={true}
-                />
-              </div>
-            )}
-
-            {headerType.value === WhatsAppHeaderType.MEDIA && (
-              <>
-                <div className={styles.attachment_url}>
-                  <TextInputElement
-                    placeholder={i18n.t('forms.ex_weni', 'Ex: weni.ai')}
-                    name={i18n.t('forms.url', 'URL')}
-                    size={TextInputSizes.md}
-                    onChange={this.handleAttachmentUrlChange}
-                    entry={{
-                      value: attachment && !attachment.uploaded ? attachment.url : ''
-                    }}
-                    error={
-                      this.state.attachment.validationFailures.length > 0
-                        ? this.state.attachment.validationFailures[0].message
-                        : null
-                    }
-                    autocomplete={true}
-                    showLabel={true}
-                  />
-                </div>
-
-                {renderUploadButton(
-                  this.context.config.endpoints.attachments,
-                  this.handleAttachmentUploaded
-                )}
-              </>
-            )}
-          </div>
-
-          {attachment && attachment.uploaded && (
-            <div className={styles.attachment}>
-              {attachment.url.substring(attachment.url.lastIndexOf('/') + 1)}
-
-              <div className={styles.remove}>
-                <UnnnicIcon
-                  icon="close"
-                  size="sm"
-                  scheme="neutral-cloudy"
-                  clickable
-                  onClick={() => this.handleAttachmentRemoved()}
-                />
-              </div>
-            </div>
-          )}
-
           <TextEditorElement
             name={i18n.t('forms.message', 'Message')}
             showLabel={true}
@@ -652,16 +672,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
             autocomplete={true}
             placeholder={i18n.t('forms.type_here', 'Type here...')}
             maxLength={4096}
-          />
-
-          <TextInputElement
-            placeholder={i18n.t('forms.ex_footer', 'Ex: Footer')}
-            name={i18n.t('forms.footer', 'Footer (optional)')}
-            size={TextInputSizes.md}
-            onChange={this.handleFooterUpdate}
-            entry={this.state.footer}
-            autocomplete={true}
-            showLabel={true}
           />
         </div>
       </Dialog>

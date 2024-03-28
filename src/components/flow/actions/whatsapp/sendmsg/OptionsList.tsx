@@ -214,8 +214,8 @@ export default class OptionsList extends React.Component<OptionsListProps> {
           />
 
           <TextInputElement
-            placeholder={i18n.t('forms.footer_text', 'Footer text')}
-            name={i18n.t('forms.footer', 'Footer (optional)')}
+            placeholder={i18n.t('forms.list_footer_text', 'List Footer text')}
+            name={i18n.t('forms.list_footer', 'List Footer (optional)')}
             size={TextInputSizes.md}
             onChange={this.handleListFooterUpdate}
             entry={this.props.listFooter}

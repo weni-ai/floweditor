@@ -263,16 +263,6 @@ export const typeConfigList: Type[] = [
     }
   },
   {
-    type: Types.send_msg_catalog,
-    name: i18n.t('actions.send_msg_catalog.name', 'Send WhatsApp Product'),
-    description: i18n.t('actions.send_msg_catalog.description', 'Send a WhatsApp product'),
-    form: SendWhatsAppProductRouterForm,
-    component: SendWhatsAppProductComp,
-    aliases: [Types.split_by_whatsapp_product],
-    filter: FeatureFilter.HAS_WHATSAPP_CATALOG,
-    new: true
-  },
-  {
     type: Types.send_whatsapp_msg,
     name: i18n.t('actions.send_whatsapp_msg.name', 'Send WhatsApp Message'),
     description: i18n.t('actions.send_whatsapp_msg.description', 'Send a WhatsApp message'),
@@ -286,6 +276,16 @@ export const typeConfigList: Type[] = [
     //   action.quick_replies = action.quick_replies || [];
     // },
     filter: FeatureFilter.HAS_WHATSAPP,
+    new: true
+  },
+  {
+    type: Types.send_msg_catalog,
+    name: i18n.t('actions.send_msg_catalog.name', 'Send WhatsApp Product'),
+    description: i18n.t('actions.send_msg_catalog.description', 'Send a WhatsApp product'),
+    form: SendWhatsAppProductRouterForm,
+    component: SendWhatsAppProductComp,
+    aliases: [Types.split_by_whatsapp_product],
+    filter: FeatureFilter.HAS_WHATSAPP_CATALOG,
     new: true
   },
   {
