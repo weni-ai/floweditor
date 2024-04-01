@@ -14,8 +14,8 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   background-position: 0px 0px;
   background-image: radial-gradient(
     circle at center,
-    #D0D3D9 0,
-    #D0D3D9 1px,
+    $unnnic-color-neutral-cleanest 0,
+    $unnnic-color-neutral-cleanest 1px,
     $unnnic-color-neutral-lightest 2px,
     $unnnic-color-neutral-lightest 100%);
   background-size: 40px 40px;
