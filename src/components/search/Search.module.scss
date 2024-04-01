@@ -10,7 +10,7 @@
     z-index: 99;
     top: 135px;
     left: calc(50vw - 200px);
-    border-radius: 4px;
+    border-radius: $unnnic-border-radius-sm;
     background-color: rgb(255,255,255);
     font-family: $unnnic-font-family-secondary, sans-serif;
     font-size: $unnnic-font-size-body-md;
@@ -21,7 +21,7 @@
     .input{
         display: flex;
         width: 220px;
-        padding-right: 8px;
+        padding-right: $unnnic-spacing-xs;
         outline: none;
     }
     
@@ -34,8 +34,8 @@
 
     .buttons{
         display: flex;
-        gap: 4px;
-        padding-right: 8px;
+        gap: $unnnic-spacing-nano;
+        padding-right: $unnnic-spacing-xs;
     }
     
 
@@ -43,7 +43,7 @@
         display: flex;
         height: 100%;
         align-items: center;
-        padding-left: 16px;
+        padding-left: $unnnic-spacing-sm;
     }
 
     .close{
