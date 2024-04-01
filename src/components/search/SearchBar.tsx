@@ -72,10 +72,11 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   }
 
   private dragBackground() {
+    const { nodes, selected } = this.props.search;
     const canvasBg = document.getElementById('panzoom');
-    if (this.props.search.nodes[this.props.search.selected] && canvasBg) {
-      const uuid = this.props.search.nodes[this.props.search.selected].uuid;
-      const ui = this.props.search.nodes[this.props.search.selected].data.ui.position;
+    if (nodes[selected] && canvasBg) {
+      const uuid = nodes[selected].uuid;
+      const ui = nodes[selected].data.ui.position;
       const width = window.innerWidth / 2;
       const height = window.innerHeight / 2;
       canvasBg.style.transform = `matrix(1, 0, 0, 1, ${width - ui.left}, ${height - ui.top})`;
@@ -101,28 +102,26 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   }
 
   private toggleMoveSelected(type: 'up' | 'down') {
+    const { value, nodes, selected } = this.props.search;
     switch (type) {
       case 'up':
         this.props.handleSearchChange({
           openModal: true,
-          value: this.props.search.value,
-          nodes: this.props.search.nodes,
-          selected: this.props.search.selected - 1 < 0 ? 0 : this.props.search.selected - 1
+          value: value,
+          nodes: nodes,
+          selected: selected - 1 < 0 ? 0 : selected - 1
         });
         break;
       case 'down':
-        var down = this.props.search.selected - 1;
+        var down = selected - 1;
         if (down < 0) {
           down = 0;
         }
         this.props.handleSearchChange({
           openModal: true,
-          value: this.props.search.value,
-          nodes: this.props.search.nodes,
-          selected:
-            this.props.search.selected < this.props.search.nodes.length - 1
-              ? this.props.search.selected + 1
-              : this.props.search.nodes.length - 1
+          value: value,
+          nodes: nodes,
+          selected: selected < nodes.length - 1 ? selected + 1 : nodes.length - 1
         });
         break;
     }
@@ -130,16 +129,18 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   }
 
   private closeSearch() {
+    const { value, nodes } = this.props.search;
     this.props.handleSearchChange({
       openModal: false,
-      value: this.props.search.value,
-      nodes: this.props.search.nodes,
+      value: value,
+      nodes: nodes,
       selected: 0
     });
     this.applyFilter('remove');
   }
 
   public render(): JSX.Element {
+    const { value, nodes, selected } = this.props.search;
     return (
       <div className={styles.search_card}>
         <div className={styles.icon}>
@@ -150,18 +151,14 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           <TextInputElement
             name={''}
             placeholder={i18n.t('actions.search')}
-            entry={{ value: this.props.search.value }}
+            entry={{ value: value }}
             onChange={value => this.handleInput(value)}
             autocomplete={true}
           />
         </div>
         <div className={styles.buttons}>
           <DownButton
-            disabled={
-              !this.props.search.value.length ||
-              !this.props.search.nodes.length ||
-              this.props.search.selected === this.props.search.nodes.length - 1
-            }
+            disabled={!value.length || !nodes.length || selected === nodes.length - 1}
             name={''}
             onClick={() => this.toggleMoveSelected('down')}
             iconName="down"
@@ -169,11 +166,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           />
 
           <DownButton
-            disabled={
-              !this.props.search.value.length ||
-              !this.props.search.nodes.length ||
-              this.props.search.selected === 0
-            }
+            disabled={!value.length || !nodes.length || selected === 0}
             name={''}
             onClick={() => this.toggleMoveSelected('up')}
             iconName="up"
@@ -181,9 +174,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           />
         </div>
         <span className={styles.number}>
-          {this.props.search.value.length && this.props.search.nodes.length ? (
+          {value.length && nodes.length ? (
             <>
-              {this.props.search.selected + 1}/{this.props.search.nodes.length}
+              {selected + 1}/{nodes.length}
             </>
           ) : (
             <>0/0</>

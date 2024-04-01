@@ -183,6 +183,7 @@ describe(SearchBar.name, () => {
     const { baseElement } = render(<SearchBar {...baseProps} />);
     expect(baseElement).toMatchSnapshot();
   });
+
   describe('getAllNodes()', () => {
     it('should call getAllNodes', () => {
       const { instance } = setup(true);
@@ -197,6 +198,7 @@ describe(SearchBar.name, () => {
       expect(response).toEqual(filteredNode);
     });
   });
+
   describe('findNodes()', () => {
     it('should call findNodes', () => {
       const { instance } = setup(true);
@@ -205,12 +207,14 @@ describe(SearchBar.name, () => {
       instance.findNodes('teste');
       expect(spy).toHaveBeenCalledTimes(1);
     });
+
     it('should return found nodes', () => {
       const { instance } = setup(true);
       const response = instance.findNodes('teste');
       expect(response).toEqual([]);
     });
   });
+
   describe('dragBackground()', () => {
     it('should call dragBackground', () => {
       const { instance } = setup(true);
@@ -220,6 +224,7 @@ describe(SearchBar.name, () => {
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
+
   describe('toggleMoveSelected()', () => {
     it('should call toggleMoveSelected', () => {
       const { instance } = setup(true);
@@ -228,6 +233,7 @@ describe(SearchBar.name, () => {
       instance.toggleMoveSelected('up');
       expect(spy).toHaveBeenCalledTimes(1);
     });
+
     it('should call dragBackground', () => {
       const { instance } = setup(true);
       const spy = spyOn('dragBackground');
@@ -235,12 +241,14 @@ describe(SearchBar.name, () => {
       instance.toggleMoveSelected('up');
       expect(spy).toHaveBeenCalledTimes(3);
     });
+
     it('should set search', () => {
       const { instance, props } = setup(true);
       instance.toggleMoveSelected('down');
       expect(props.search).not.toEqual({});
     });
   });
+
   describe('closeSearch()', () => {
     it('should call closeSearch', () => {
       const { instance } = setup(true);
