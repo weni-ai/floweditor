@@ -441,6 +441,9 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
     }
 
     if (event.key === 'f' && (event.ctrlKey || event.metaKey)) {
+      if (event.target === document.body) {
+        event.preventDefault();
+      }
       this.props.handleSearchChange({
         openModal: true,
         nodes: [],
