@@ -1,10 +1,10 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
 import { applyVueInReact } from 'vuereact-combined';
-import styles from './DownButton.module.scss';
+import styles from './ArrowButton.module.scss';
 
 // @ts-ignore
-import { unnnicButtonNext } from '@weni/unnnic-system';
+import { unnnicButton } from '@weni/unnnic-system';
 import { DownIcon } from 'pureIcons/DownIcon';
 import { UpIcon } from 'pureIcons/UpIcon';
 
@@ -24,7 +24,7 @@ export interface ButtonProps {
   onRef?: (ele: any) => void;
 }
 
-const UnnnicButton = applyVueInReact(unnnicButtonNext, {
+const UnnnicButton = applyVueInReact(unnnicButton, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -36,7 +36,7 @@ const UnnnicButton = applyVueInReact(unnnicButtonNext, {
   }
 });
 
-export default class DownButton extends React.Component<ButtonProps> {
+export default class ArrowButton extends React.Component<ButtonProps> {
   constructor(props: ButtonProps) {
     super(props);
 

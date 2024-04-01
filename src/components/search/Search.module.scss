@@ -60,11 +60,12 @@
     background: $unnnic-color-neutral-cleanest !important;
 }
 
-:global .unnnic-button--secondary:after{
-    border: none;
-    position: static;
-}
-:global .unnnic-button--secondary[data-v-2d9f2cbf]{
-    box-shadow: none;
-}
+:global{
+    .unnnic-button{
+        background: none;
+    }
 
+    .unnnic-button:hover{
+        background: $unnnic-color-neutral-light;
+    }
+}

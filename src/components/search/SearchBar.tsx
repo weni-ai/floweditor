@@ -15,7 +15,7 @@ import {
 import { RenderNodeMap, Search } from 'store/flowContext';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import i18n from 'config/i18n';
-import DownButton from './components/DownButton';
+import ArrowButton from './components/ArrowButton';
 import CloseButton from './components/CloseButton';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
@@ -157,7 +157,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           />
         </div>
         <div className={styles.buttons}>
-          <DownButton
+          <ArrowButton
             disabled={!value.length || !nodes.length || selected === nodes.length - 1}
             name={''}
             onClick={() => this.toggleMoveSelected('down')}
@@ -165,7 +165,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
             size="sm"
           />
 
-          <DownButton
+          <ArrowButton
             disabled={!value.length || !nodes.length || selected === 0}
             name={''}
             onClick={() => this.toggleMoveSelected('up')}

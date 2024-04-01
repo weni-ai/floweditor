@@ -4,7 +4,7 @@ import { applyVueInReact } from 'vuereact-combined';
 import styles from './CloseButton.module.scss';
 
 // @ts-ignore
-import { unnnicButtonNext } from '@weni/unnnic-system';
+import { unnnicButton } from '@weni/unnnic-system';
 import { CloseIcon } from 'pureIcons/CloseIcon';
 
 export enum ButtonTypes {
@@ -21,7 +21,7 @@ export interface ButtonProps {
   onRef?: (ele: any) => void;
 }
 
-const UnnnicButton = applyVueInReact(unnnicButtonNext, {
+const UnnnicButton = applyVueInReact(unnnicButton, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
