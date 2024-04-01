@@ -22,6 +22,7 @@ import styles from './Sidebar.module.scss';
 import { unnnicToolTip } from '@weni/unnnic-system';
 import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 import { MouseState } from 'store/editor';
+import SearchButton from './components/SearchButton';
 
 const UnnnicTooltip = applyVueInReact(unnnicToolTip);
 
@@ -188,25 +189,16 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
         </GuidingSteps>
 
         {/* search button */}
-        <GuidingSteps
-          guide="v2"
-          step={2}
-          title={'Search term'}
-          description={i18n.t('search_in_nodes')}
-          buttonText={i18n.t('search_in_nodes')}
+        <UnnnicTooltip
+          className={styles.left_aligned}
+          text={i18n.t('search_in_nodes')}
+          side="right"
+          shortcutText={`${this.detectOS()} + F`}
         >
-          <UnnnicTooltip
-            className={styles.left_aligned}
-            text={i18n.t('search_in_nodes')}
-            enabled={this.props.guidingStep !== 2}
-            side="right"
-            shortcutText={`${this.detectOS()} + F`}
-          >
-            <div className={styles.option} onClick={() => this.handleSearchChanged()}>
-              <span className="material-symbols-rounded">search</span>
-            </div>
-          </UnnnicTooltip>
-        </GuidingSteps>
+          <div className={styles.option}>
+            <SearchButton name="" onClick={() => this.handleSearchChanged()} />
+          </div>
+        </UnnnicTooltip>
       </div>
     );
   }
