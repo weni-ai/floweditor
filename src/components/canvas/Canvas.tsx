@@ -442,7 +442,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
 
     if (event.key === 'f' && (event.ctrlKey || event.metaKey)) {
       this.props.handleSearchChange({
-        active: true,
+        openModal: true,
         nodes: [],
         value: '',
         selected: 0
