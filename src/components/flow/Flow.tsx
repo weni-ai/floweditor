@@ -105,7 +105,7 @@ export interface FlowStoreProps {
   popped: string;
   dragActive: boolean;
   mouseState: MouseState;
-  openModal: boolean;
+  isSearchOpen: boolean;
 
   mergeEditorState: MergeEditorState;
 
@@ -547,7 +547,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
         />
 
-        {this.props.openModal && <SearchBar />}
+        {this.props.isSearchOpen && <SearchBar />}
 
         <Canvas
           ref={this.canvas}
@@ -592,7 +592,7 @@ const mapStateToProps = ({
     popped,
     dragActive,
     mouseState,
-    openModal: search.openModal
+    isSearchOpen: search.isSearchOpen
   };
 };
 

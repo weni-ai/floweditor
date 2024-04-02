@@ -445,7 +445,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         event.preventDefault();
       }
       this.props.handleSearchChange({
-        openModal: true,
+        isSearchOpen: true,
         nodes: [],
         value: '',
         selected: 0
@@ -1043,7 +1043,6 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
             this.canvasBg = ele;
           }}
           className={styles.canvas_background}
-          id="canvas_background"
         >
           <div
             data-testid="canvas"

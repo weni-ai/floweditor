@@ -103,7 +103,7 @@ export interface Asset {
 }
 
 export interface Search {
-  openModal: boolean;
+  isSearchOpen: boolean;
   value?: string;
   nodes?: {
     uuid?: string;
@@ -174,7 +174,7 @@ export const initialState: FlowContext = {
   issues: {},
   assetStore: {},
   search: {
-    openModal: false,
+    isSearchOpen: false,
     value: '',
     selected: 0,
     nodes: []

@@ -135,7 +135,7 @@
       "name": "Wait for Video"
     },
     "send_msg_catalog": {
-      "name": "Send Whatsapp Product",
+      "name": "Send WhatsApp Product",
       "automatic_sending": "Automatic sending",
       "manual_sending": "[[count]] product",
       "manual_sending_plural": "[[count]] products",

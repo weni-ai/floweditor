@@ -56,7 +56,7 @@ export default class ArrowButton extends React.Component<ButtonProps> {
           type={'ghost'}
           disabled={disabled}
           text={name}
-          size={this.props.size || undefined}
+          size={this.props.size || 'small'}
         >
           <div className={styles.icon}>
             {this.props.iconName === 'down' ? (

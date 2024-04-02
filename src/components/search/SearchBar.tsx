@@ -40,7 +40,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   private handleInput(value: string) {
     const nodes = this.findNodes(value);
     this.props.handleSearchChange({
-      openModal: true,
+      isSearchOpen: true,
       value: value,
       nodes: nodes,
       selected: 0
@@ -106,7 +106,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     switch (type) {
       case 'up':
         this.props.handleSearchChange({
-          openModal: true,
+          isSearchOpen: true,
           value: value,
           nodes: nodes,
           selected: selected - 1 < 0 ? 0 : selected - 1
@@ -118,7 +118,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           down = 0;
         }
         this.props.handleSearchChange({
-          openModal: true,
+          isSearchOpen: true,
           value: value,
           nodes: nodes,
           selected: selected < nodes.length - 1 ? selected + 1 : nodes.length - 1
@@ -131,7 +131,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   private closeSearch() {
     const { value, nodes } = this.props.search;
     this.props.handleSearchChange({
-      openModal: false,
+      isSearchOpen: false,
       value: value,
       nodes: nodes,
       selected: 0

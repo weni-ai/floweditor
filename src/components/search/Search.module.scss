@@ -11,7 +11,7 @@
     top: 135px;
     left: calc(50vw - 200px);
     border-radius: $unnnic-border-radius-sm;
-    background-color: rgb(255,255,255);
+    background-color: $unnnic-color-neutral-white;
     font-family: $unnnic-font-family-secondary, sans-serif;
     font-size: $unnnic-font-size-body-md;
     font-weight: $unnnic-font-weight-regular;
@@ -29,7 +29,7 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        background-color: rgb(255,255,255);
+        background-color: $unnnic-color-neutral-white;
     }
 
     .buttons{

@@ -596,7 +596,7 @@
     },
     "whatsapp": {
       "name": "WhatsApp",
-      "path": "Número de Whatsapp"
+      "path": "Número de WhatsApp"
     }
   },
   "simulator": {
@@ -672,8 +672,8 @@
         "button": "Lo tengo 2/3"
       },
       "2": {
-        "title": "Máscara de Whatsapp en el simulador.",
-        "description": "Ahora el simulador se parece a Whatsapp\npara que puedas predecir con mayor fidelidad cómo se verá tu flujo.",
+        "title": "Máscara de WhatsApp en el simulador.",
+        "description": "Ahora el simulador se parece a WhatsApp\npara que puedas predecir con mayor fidelidad cómo se verá tu flujo.",
         "button": "Lo tengo 3/3"
       }
     },
