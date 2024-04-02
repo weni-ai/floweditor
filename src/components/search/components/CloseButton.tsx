@@ -1,24 +1,22 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
 import { applyVueInReact } from 'vuereact-combined';
+import styles from './CloseButton.module.scss';
 
 // @ts-ignore
 import { unnnicButton } from '@weni/unnnic-system';
+import { CloseIcon } from 'pureIcons/CloseIcon';
 
 export enum ButtonTypes {
   primary = 'primary',
   secondary = 'secondary',
-  tertiary = 'tertiary'
+  tertiary = 'terciary',
+  ghost = 'ghost'
 }
 export interface ButtonProps {
   name: string;
   onClick: any;
   disabled?: boolean;
-  type?: ButtonTypes;
-  leftSpacing?: boolean;
-  rightSpacing?: boolean;
-  topSpacing?: boolean;
-  iconName?: string;
   size?: string;
   onRef?: (ele: any) => void;
 }
@@ -35,7 +33,7 @@ const UnnnicButton = applyVueInReact(unnnicButton, {
   }
 });
 
-export default class Button extends React.Component<ButtonProps> {
+export default class CloseButton extends React.Component<ButtonProps> {
   constructor(props: ButtonProps) {
     super(props);
 
@@ -45,33 +43,23 @@ export default class Button extends React.Component<ButtonProps> {
   }
 
   public render(): JSX.Element {
-    const {
-      onRef,
-      name,
-      onClick,
-      type,
-      disabled,
-      leftSpacing,
-      topSpacing,
-      rightSpacing,
-      iconName
-    } = this.props;
+    const { onRef, name, onClick, disabled } = this.props;
 
     return (
-      <UnnnicButton
-        ref={onRef}
-        style={{
-          marginLeft: leftSpacing ? 10 : 0,
-          marginTop: topSpacing ? 10 : 0,
-          marginRight: rightSpacing ? 8 : 0
-        }}
-        onClick={onClick}
-        type={type}
-        disabled={disabled}
-        iconLeft={iconName}
-        text={name}
-        size={this.props.size || undefined}
-      />
+      <div className={styles.closeButton}>
+        <UnnnicButton
+          ref={onRef}
+          onClick={onClick}
+          type={'ghost'}
+          disabled={disabled}
+          text={name}
+          size={this.props.size || undefined}
+        >
+          <div className={styles.closeIcon}>
+            <CloseIcon />
+          </div>
+        </UnnnicButton>
+      </div>
     );
   }
 }

@@ -42,6 +42,7 @@ export interface TextInputProps extends FormElementProps {
   style?: TextInputStyle;
   size?: TextInputSizes;
   iconRight?: string;
+  iconLeft?: string;
   disabled?: boolean;
   onChange?: (value: string, name?: string) => void;
   onBlur?: (event: React.ChangeEvent) => void;
@@ -209,6 +210,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
               error={hasError ? errorList[0] : null}
               maxlength={this.props.maxLength}
               iconRight={this.props.iconRight}
+              iconLeft={this.props.iconLeft}
               disabled={this.props.disabled}
             />
           </div>

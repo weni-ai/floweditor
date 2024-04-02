@@ -39,7 +39,9 @@ import {
   UpdateNodesEditor,
   updateNodesEditor,
   updateSticky,
-  UpdateSticky
+  UpdateSticky,
+  handleSearchChange,
+  HandleSearchChange
 } from 'store/thunks';
 import { createUUID, isRealValue, NODE_PADDING, renderIf, timeEnd, timeStart } from 'utils';
 import Debug from 'utils/debug';
@@ -52,6 +54,7 @@ import { applyVueInReact } from 'vuereact-combined';
 import { unnnicModal, unnnicButton } from '@weni/unnnic-system';
 import { WeniLoveIcon } from './WeniLoveIcon';
 import i18n from '../../config/i18n';
+import SearchBar from 'components/search/SearchBar';
 
 const UnnnicModal = applyVueInReact(unnnicModal, {
   vue: {
@@ -102,6 +105,7 @@ export interface FlowStoreProps {
   popped: string;
   dragActive: boolean;
   mouseState: MouseState;
+  isSearchOpen: boolean;
 
   mergeEditorState: MergeEditorState;
 
@@ -118,6 +122,7 @@ export interface FlowStoreProps {
   updateSticky: UpdateSticky;
 
   updateNodesEditor?: UpdateNodesEditor;
+  handleSearchChange: HandleSearchChange;
 }
 
 export interface Translations {
@@ -542,6 +547,8 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
         />
 
+        {this.props.isSearchOpen && <SearchBar />}
+
         <Canvas
           ref={this.canvas}
           mutable={this.context.config.mutable}
@@ -561,6 +568,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           onZoom={this.handleZoom}
           mouseState={this.props.mouseState}
           onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
+          handleSearchChange={value => this.props.handleSearchChange(value)}
         ></Canvas>
         <div id="activity_recent_messages"></div>
       </>
@@ -570,7 +578,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
 /* istanbul ignore next */
 const mapStateToProps = ({
-  flowContext: { definition, nodes },
+  flowContext: { definition, nodes, search },
   editorState: { ghostNode, debug, translating, popped, dragActive, mouseState },
   nodeEditor: { settings }
 }: AppState) => {
@@ -583,7 +591,8 @@ const mapStateToProps = ({
     translating,
     popped,
     dragActive,
-    mouseState
+    mouseState,
+    isSearchOpen: search.isSearchOpen
   };
 };
 
@@ -599,7 +608,8 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
       onRemoveNodes,
       updateConnection,
       updateSticky,
-      updateNodesEditor
+      updateNodesEditor,
+      handleSearchChange
     },
     dispatch
   );

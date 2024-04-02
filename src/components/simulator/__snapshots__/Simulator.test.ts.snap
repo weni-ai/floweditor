@@ -156,7 +156,7 @@ exports[`Simulator renders 1`] = `
     action={[Function]}
     buttonText="Got it 3/3"
     className="guiding_steps"
-    description="Now the simulator looks like Whatsapp
+    description="Now the simulator looks like WhatsApp
 so you can more faithfully predict how your flow will look."
     guide="v2"
     side="left"

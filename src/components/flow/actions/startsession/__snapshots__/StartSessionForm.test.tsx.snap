@@ -774,7 +774,7 @@ exports[`StartSessionForm render should render 1`] = `
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-left: 0px; margin-top: 0px;"
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->
@@ -795,7 +795,7 @@ exports[`StartSessionForm render should render 1`] = `
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-top: 0px;"
+                  style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->
@@ -1585,7 +1585,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-left: 0px; margin-top: 0px;"
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->
@@ -1606,7 +1606,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-top: 0px;"
+                  style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->
@@ -2216,7 +2216,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-left: 0px; margin-top: 0px;"
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->
@@ -2237,7 +2237,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-top: 0px;"
+                  style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->
@@ -3027,7 +3027,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-left: 0px; margin-top: 0px;"
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->
@@ -3048,7 +3048,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-top: 0px;"
+                  style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->

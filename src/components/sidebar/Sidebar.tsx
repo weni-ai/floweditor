@@ -2,7 +2,7 @@ import { fakePropType } from 'config/ConfigProvider';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { RenderNode } from 'store/flowContext';
+import { RenderNode, Search } from 'store/flowContext';
 import { createEmptyNode } from 'store/helpers';
 import AppState from 'store/state';
 import {
@@ -10,7 +10,9 @@ import {
   OnOpenNodeEditor,
   onOpenNodeEditor,
   mergeEditorState,
-  MergeEditorState
+  MergeEditorState,
+  handleSearchChange,
+  HandleSearchChange
 } from 'store/thunks';
 
 import i18n from 'config/i18n';
@@ -20,6 +22,7 @@ import styles from './Sidebar.module.scss';
 import { unnnicToolTip } from '@weni/unnnic-system';
 import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 import { MouseState } from 'store/editor';
+import SearchButton from './components/SearchButton';
 
 const UnnnicTooltip = applyVueInReact(unnnicToolTip);
 
@@ -34,12 +37,25 @@ export interface SidebarStoreProps {
   currentGuide: string;
   mergeEditorState: MergeEditorState;
   mouseState: MouseState;
+  handleSearchChange: HandleSearchChange;
+  search: Search;
 }
 
 export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   public static contextTypes = {
     config: fakePropType
   };
+
+  public handleSearchChanged(): void {
+    const { isSearchOpen, value } = this.props.search;
+    const change = {
+      isSearchOpen: !isSearchOpen,
+      value: value,
+      nodes: [{}],
+      selected: 0
+    };
+    this.props.handleSearchChange(change);
+  }
 
   private createSendMessageNode(): void {
     if (this.props.guidingStep === 0 && this.props.currentGuide === 'v2') {
@@ -80,6 +96,15 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
       this.props.mouseState === MouseState.SELECT ? MouseState.DRAG : MouseState.SELECT;
 
     this.props.onMouseStateChange(mouseState);
+  }
+
+  private detectOS() {
+    const userAgent = window.navigator.userAgent;
+    // Check for macOS
+    if (userAgent.indexOf('Macintosh') !== -1) {
+      return 'Cmd';
+    }
+    return 'Ctrl';
   }
 
   public render(): JSX.Element {
@@ -151,7 +176,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             text={this.getCopyTooltip()}
             enabled={this.props.guidingStep !== 1}
             side="right"
-            shortcutText={this.props.selectionActive ? 'Ctrl C' : null}
+            shortcutText={this.props.selectionActive ? `${this.detectOS()} + C` : null}
           >
             <div
               className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
@@ -163,6 +188,18 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             </div>
           </UnnnicTooltip>
         </GuidingSteps>
+
+        {/* search button */}
+        <UnnnicTooltip
+          className={styles.left_aligned}
+          text={i18n.t('search_in_nodes')}
+          side="right"
+          shortcutText={`${this.detectOS()} + F`}
+        >
+          <div className={styles.option}>
+            <SearchButton name="" onClick={() => this.handleSearchChanged()} />
+          </div>
+        </UnnnicTooltip>
       </div>
     );
   }
@@ -170,20 +207,21 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 
 /* istanbul ignore next */
 const mapStateToProps = ({
-  flowContext: { nodes },
+  flowContext: { nodes, search },
   editorState: { selectionActive, guidingStep, currentGuide }
 }: AppState) => {
   return {
     nodes,
     selectionActive,
     guidingStep,
-    currentGuide
+    currentGuide,
+    search
   };
 };
 
 /* istanbul ignore next */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
-  bindActionCreators({ onOpenNodeEditor, mergeEditorState }, dispatch);
+  bindActionCreators({ onOpenNodeEditor, mergeEditorState, handleSearchChange }, dispatch);
 
 export default connect(
   mapStateToProps,

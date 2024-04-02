@@ -1,5 +1,6 @@
 {
   "actions": {
+    "search": "Buscar...",
     "add_contact_groups": {
       "description": "Añadir el contacto a un grupo",
       "name": "Añadir a grupo"
@@ -189,6 +190,7 @@
     "show_empty": "Mostrando todas las claves"
   },
   "create_block": "Crear bloque",
+  "search_in_nodes": "Buscar bloque",
   "create_label": "Crear etiqueta",
   "disabled_copy_tooltip": "Seleccione uno o varios bloques para copiar",
   "copy_tooltip": "Copiar bloque(s)",
@@ -594,7 +596,7 @@
     },
     "whatsapp": {
       "name": "WhatsApp",
-      "path": "Número de Whatsapp"
+      "path": "Número de WhatsApp"
     }
   },
   "simulator": {
@@ -670,8 +672,8 @@
         "button": "Lo tengo 2/3"
       },
       "2": {
-        "title": "Máscara de Whatsapp en el simulador.",
-        "description": "Ahora el simulador se parece a Whatsapp\npara que puedas predecir con mayor fidelidad cómo se verá tu flujo.",
+        "title": "Máscara de WhatsApp en el simulador.",
+        "description": "Ahora el simulador se parece a WhatsApp\npara que puedas predecir con mayor fidelidad cómo se verá tu flujo.",
         "button": "Lo tengo 3/3"
       }
     },

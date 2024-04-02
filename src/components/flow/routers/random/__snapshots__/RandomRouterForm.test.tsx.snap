@@ -1001,7 +1001,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-left: 0px; margin-top: 0px;"
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->
@@ -1022,7 +1022,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-top: 0px;"
+                  style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->
@@ -1767,7 +1767,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-left: 0px; margin-top: 0px;"
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->
@@ -1788,7 +1788,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
                   data-passed-props="[object Object]"
                   data-v-3b3aa28c=""
-                  style="margin-top: 0px;"
+                  style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
                   <!---->

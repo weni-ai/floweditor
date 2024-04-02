@@ -11,15 +11,17 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
 
 .canvas_background {
   height: 100%;
-  background-color: $unnnic-color-background-snow;
   background-position: 0px 0px;
   background-image: radial-gradient(
     circle at center,
-    $unnnic-color-neutral-soft 0,
-    $unnnic-color-neutral-soft 1px,
-    $unnnic-color-background-snow 2px,
-    $unnnic-color-background-snow 100%);
+    $unnnic-color-neutral-cleanest 0,
+    $unnnic-color-neutral-cleanest 1px,
+    $unnnic-color-neutral-lightest 2px,
+    $unnnic-color-neutral-lightest 100%);
   background-size: 40px 40px;
+}
+.grayscale::after{
+  filter: grayscale(1);
 }
 .canvas {
   position: relative;
@@ -66,11 +68,12 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
 }
 
 .zoom_control {
+  display: flex;
   position: fixed;
   bottom: $unnnic-spacing-giant;
   left: 36px; 
-  display: inline-flex;
   align-items: center;
+  justify-content: center;
 
   border-radius: $unnnic-border-radius-sm;
   background: #FFF;
@@ -79,12 +82,15 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   box-shadow: $unnnic-shadow-level-near;
 
   .zoom_tooltip {
-    display: inline-flex !important;
+    display: flex !important;
+    justify-content: center;
     align-items: center;
     gap: $unnnic-spacing-xs;
 
     :first-child {
-      display: inline-flex !important;
+      display: flex !important;
+      justify-items: center;
+      align-items: center;
     }
   }
 
@@ -127,7 +133,9 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   }
 
   .start {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: $unnnic-spacing-nano;
     padding: $unnnic-spacing-xs;
     box-sizing: content-box;

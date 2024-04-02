@@ -36,7 +36,9 @@ import {
   updateDefinition,
   updateNodes,
   updateMetadata,
-  updateIssues
+  updateIssues,
+  Search,
+  updateSearch
 } from 'store/flowContext';
 import {
   createEmptyNode,
@@ -129,6 +131,8 @@ export type ActionAC = (nodeUUID: string, action: AnyAction) => Thunk<RenderNode
 export type DisconnectExit = (nodeUUID: string, exitUUID: string) => Thunk<RenderNodeMap>;
 
 export type HandleLanguageChange = (language: Asset) => Thunk<void>;
+
+export type HandleSearchChange = (search: Search) => Thunk<void>;
 
 export type MergeEditorState = (state: Partial<EditorState>) => Thunk<EditorState>;
 
@@ -479,6 +483,17 @@ export const handleLanguageChange: HandleLanguageChange = language => (dispatch,
   // update language
   if (!isEqual(language, currentLanguage)) {
     dispatch(mergeEditorState({ language }));
+  }
+};
+
+export const handleSearchChange: HandleSearchChange = (search: Search) => (dispatch, getState) => {
+  const {
+    flowContext: { search: currentSearch }
+  } = getState();
+
+  // update language
+  if (!isEqual(search, currentSearch)) {
+    dispatch(updateSearch(search));
   }
 };
 

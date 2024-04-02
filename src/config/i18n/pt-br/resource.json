@@ -1,5 +1,6 @@
 {
   "actions": {
+    "search": "Buscar...",
     "add_contact_groups": {
       "description": "Adicione o contato a um grupo",
       "name": "Adicione a um grupo"
@@ -189,6 +190,7 @@
     "show_empty": "Mostrando todas as chaves"
   },
   "create_block": "Criar bloco",
+  "search_in_nodes": "Buscar bloco",
   "create_label": "Criar etiqueta",
   "disabled_copy_tooltip": "Selecione um ou mais blocos para copiar",
   "copy_tooltip": "Copiar bloco(s)",
@@ -672,7 +674,7 @@
       },
       "2": {
         "title": "Skin do WhatsApp no simulador",
-        "description": "Agora o simulador ta com a aparência do Whatsapp,\nassim você consegue prever com mais fidelidade como seu fluxo vai ficar.",
+        "description": "Agora o simulador ta com a aparência do WhatsApp,\nassim você consegue prever com mais fidelidade como seu fluxo vai ficar.",
         "button": "Entendi 3/3"
       }
     },

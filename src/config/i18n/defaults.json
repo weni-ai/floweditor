@@ -1,5 +1,6 @@
 {
   "actions": {
+    "search": "Search...",
     "add_contact_groups": {
       "description": "Add the contact to a group",
       "name": "Add to group"
@@ -134,6 +135,7 @@
       "name": "Wait for Video"
     },
     "send_msg_catalog": {
+      "name": "Send WhatsApp Product",
       "automatic_sending": "Automatic sending",
       "manual_sending": "[[count]] product",
       "manual_sending_plural": "[[count]] products",
@@ -175,6 +177,7 @@
     "show_empty": "Showing all keys"
   },
   "create_block": "Create block",
+  "search_in_nodes": "Search block",
   "create_label": "Create label",
   "disabled_copy_tooltip": "Select one or more blocks to copy",
   "copy_tooltip": "Copy block(s)",

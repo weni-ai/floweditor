@@ -7,7 +7,6 @@
   font-weight: $unnnic-font-weight-regular;
   color: $unnnic-color-neutral-dark; 
   height: 100%;
-  // width: 100%;
   font-size: $unnnic-font-size-body-md;
   line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
   margin: 0;
@@ -24,7 +23,7 @@
       $color_1 3px,
       $color_2 3px,
       $color_2 6px
-    ); // background: rgba(200, 200, 200, .3);
+    ); 
   }
   :global {
     svg path {

@@ -1,3 +1,7 @@
+2.13.0
+----------
+- Feat: Search Bar
+
 2.12.0
 ----------
 - Refactor: Remove unnnic button next usage
