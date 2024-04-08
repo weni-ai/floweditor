@@ -86,6 +86,7 @@ exports[`SearchBar should render searchbar 1`] = `
       </div>
       <div
         class="buttons"
+        id="buttons"
       >
         <div
           class="button"
