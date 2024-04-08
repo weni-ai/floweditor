@@ -440,16 +440,19 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       this.moveToStart();
     }
 
-    if (event.key === 'f' && (event.ctrlKey || event.metaKey)) {
-      if (event.target === document.body) {
-        event.preventDefault();
-      }
+    if (event.key.toLowerCase() === 'f' && (event.ctrlKey || event.metaKey)) {
+      event.preventDefault();
       this.props.handleSearchChange({
         isSearchOpen: true,
         nodes: [],
         value: '',
         selected: 0
       });
+
+      var input = (document.getElementsByClassName(
+        'input-itself'
+      )[0] as unknown) as HTMLTextAreaElement;
+      input.focus();
     }
   }
 
