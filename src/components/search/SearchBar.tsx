@@ -43,7 +43,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
 
   private handleWindowKeyDown(event: any): void {
     if (event.key === 'Enter') {
-      var down = document.querySelector('#buttons button') as HTMLButtonElement;
+      const down = document.querySelector('#buttons button') as HTMLButtonElement;
       down.click();
     }
   }

@@ -449,7 +449,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         selected: 0
       });
 
-      var input = (document.getElementsByClassName(
+      const input = (document.getElementsByClassName(
         'input-itself'
       )[0] as unknown) as HTMLTextAreaElement;
       input.focus();
