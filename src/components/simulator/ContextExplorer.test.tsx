@@ -8,13 +8,15 @@ const props: ContextExplorerProps = {
   contents: {
     day: '020120',
     temperatures: [23.2, 21.2, 20.3, 20.5, 20.11, 21.3],
-    location: 'A1B2C3'
-  }
+    location: 'A1B2C3',
+  },
 };
 
 describe(ContextExplorer.name, () => {
   it('should render', () => {
-    const { baseElement, queryAllByText } = render(<ContextExplorer {...props} />);
+    const { baseElement, queryAllByText } = render(
+      <ContextExplorer {...props} />,
+    );
 
     // root values should be visible
     expect(queryAllByText('020120').length).toBe(1);
@@ -28,7 +30,9 @@ describe(ContextExplorer.name, () => {
   });
 
   it('should expand and collapse', () => {
-    const { queryAllByText, getByText, baseElement } = render(<ContextExplorer {...props} />);
+    const { queryAllByText, getByText, baseElement } = render(
+      <ContextExplorer {...props} />,
+    );
 
     // our array values shouldn't be visible
     expect(queryAllByText('0').length).toBe(0);

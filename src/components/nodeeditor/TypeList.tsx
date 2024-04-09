@@ -17,21 +17,24 @@ export interface TypeListState {
   config: Type;
 }
 
-export default class TypeList extends React.PureComponent<TypeListProps, TypeListState> {
+export default class TypeList extends React.PureComponent<
+  TypeListProps,
+  TypeListState
+> {
   private typeConfigs: Type[];
 
   constructor(props: TypeListProps) {
     super(props);
 
     this.state = {
-      config: this.props.initialType
+      config: this.props.initialType,
     };
 
     this.handleChangeType = this.handleChangeType.bind(this);
   }
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   private handleChangeType(config: Type): void {
@@ -40,7 +43,10 @@ export default class TypeList extends React.PureComponent<TypeListProps, TypeLis
 
   private getTypeConfigs(): Type[] {
     if (this.typeConfigs === undefined) {
-      this.typeConfigs = filterTypeConfigs(configsToDisplay, this.context.config);
+      this.typeConfigs = filterTypeConfigs(
+        configsToDisplay,
+        this.context.config,
+      );
     }
     return this.typeConfigs;
   }
@@ -49,7 +55,10 @@ export default class TypeList extends React.PureComponent<TypeListProps, TypeLis
     return (
       <div className={`${this.props.__className} ${styles.type_list}`}>
         <div className="color-neutral-cloudy">
-          {i18n.t('forms.type_label', 'When a contact arrives at this point in your flow...')}
+          {i18n.t(
+            'forms.type_label',
+            'When a contact arrives at this point in your flow...',
+          )}
         </div>
 
         <div>

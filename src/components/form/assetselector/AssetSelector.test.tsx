@@ -14,10 +14,10 @@ const assets: Assets = {
     [group_uuid]: {
       id: group_uuid,
       name: 'My Test Group',
-      type: AssetType.Group
-    }
+      type: AssetType.Group,
+    },
   },
-  type: AssetType.Contact || AssetType.Group
+  type: AssetType.Contact || AssetType.Group,
 };
 
 describe(AssetSelector.name, () => {
@@ -29,7 +29,7 @@ describe(AssetSelector.name, () => {
         assets={assets}
         createAssetFromInput={jest.fn()}
         entry={{ value: null }}
-      />
+      />,
     );
     expect(baseElement).toMatchSnapshot();
   });

@@ -7,7 +7,7 @@ import {
   createSendMsgAction,
   createExit,
   createMatchRouter,
-  createSendEmailAction
+  createSendEmailAction,
 } from 'testUtils/assetCreators';
 import { RenderNodeMap } from 'store/flowContext';
 import { createUUID } from 'utils';
@@ -28,18 +28,18 @@ const translatorProps: TranslatorTabProps = {
 
   translationFilters: {
     categories: true,
-    rules: true
+    rules: true,
   },
 
   // translation
-  language: Spanish
+  language: Spanish,
 };
 
 const createMessageNode = (
   message: string,
   quick_replies: string[] = [],
   variables: string[] = [],
-  translation?: string
+  translation?: string,
 ): { nodes: RenderNodeMap; localization: { [uuid: string]: any } } => {
   const nodes: RenderNodeMap = {};
   const localization: { [uuid: string]: any } = {};
@@ -51,13 +51,13 @@ const createMessageNode = (
     sendMsg.templating = {
       uuid: createUUID(),
       template: { uuid: createUUID(), name: 'My Template' },
-      variables
+      variables,
     };
   }
 
   const renderNode = createRenderNode({
     actions: [sendMsg],
-    exits: [createExit()]
+    exits: [createExit()],
   });
 
   nodes[renderNode.node.uuid] = renderNode;
@@ -71,7 +71,7 @@ const createMessageNode = (
 
 const createRouterNode = (
   categories: string[],
-  translations?: string[]
+  translations?: string[],
 ): { nodes: RenderNodeMap; localization: { [uuid: string]: any } } => {
   const nodes: RenderNodeMap = {};
   const localization: { [uuid: string]: any } = {};
@@ -96,9 +96,15 @@ describe(TranslatorTab.name, () => {
   });
 
   it('finds message translations', () => {
-    const { baseElement, getByText, rerender } = render(<TranslatorTab {...translatorProps} />);
+    const { baseElement, getByText, rerender } = render(
+      <TranslatorTab {...translatorProps} />,
+    );
 
-    const updates = createMessageNode('Hello World!', ['yes', 'no'], ['var1', 'var2']);
+    const updates = createMessageNode(
+      'Hello World!',
+      ['yes', 'no'],
+      ['var1', 'var2'],
+    );
     rerender(<TranslatorTab {...translatorProps} {...updates} />);
 
     // we pulled out all the localizable bits
@@ -111,14 +117,26 @@ describe(TranslatorTab.name, () => {
   });
 
   it('finds email translations', () => {
-    const { baseElement, getByText, rerender } = render(<TranslatorTab {...translatorProps} />);
+    const { baseElement, getByText, rerender } = render(
+      <TranslatorTab {...translatorProps} />,
+    );
 
     const renderNode = createRenderNode({
-      actions: [createSendEmailAction({ subject: 'Urgent!', body: 'I need this yesterday' })],
-      exits: [createExit()]
+      actions: [
+        createSendEmailAction({
+          subject: 'Urgent!',
+          body: 'I need this yesterday',
+        }),
+      ],
+      exits: [createExit()],
     });
 
-    rerender(<TranslatorTab {...translatorProps} nodes={{ [renderNode.node.uuid]: renderNode }} />);
+    rerender(
+      <TranslatorTab
+        {...translatorProps}
+        nodes={{ [renderNode.node.uuid]: renderNode }}
+      />,
+    );
 
     // we pulled out all the localizable bits
     getByText('Subject');
@@ -130,7 +148,7 @@ describe(TranslatorTab.name, () => {
 
   it('finds split translations', () => {
     const { baseElement, getByText, rerender, queryByText } = render(
-      <TranslatorTab {...translatorProps} />
+      <TranslatorTab {...translatorProps} />,
     );
 
     let updates = createRouterNode(['Red', 'Green', 'Blue']);
@@ -147,11 +165,14 @@ describe(TranslatorTab.name, () => {
 
   it('handles partial category translation', () => {
     const { baseElement, getByText, rerender, queryByText } = render(
-      <TranslatorTab {...translatorProps} />
+      <TranslatorTab {...translatorProps} />,
     );
 
     // partial translation
-    const updates = createRouterNode(['Red', 'Green', 'Blue'], ['Rojo', 'Verde']);
+    const updates = createRouterNode(
+      ['Red', 'Green', 'Blue'],
+      ['Rojo', 'Verde'],
+    );
     rerender(<TranslatorTab {...translatorProps} {...updates} />);
 
     // category list
@@ -163,10 +184,15 @@ describe(TranslatorTab.name, () => {
 
   it('hides completed translations', () => {
     const { baseElement, getByText, rerender, queryByText } = render(
-      <TranslatorTab {...translatorProps} />
+      <TranslatorTab {...translatorProps} />,
     );
 
-    const updates = createMessageNode('Hello World!', ['yes', 'no'], [], 'Hola Mundo!');
+    const updates = createMessageNode(
+      'Hello World!',
+      ['yes', 'no'],
+      [],
+      'Hola Mundo!',
+    );
 
     rerender(<TranslatorTab {...translatorProps} {...updates} />);
     expect(queryByText('Hello World!')).toBeNull();

@@ -4,7 +4,7 @@ import { fireEvent, render } from 'test/utils';
 
 const baseProps: FlipperProps = {
   front: <div>Front</div>,
-  back: <div>Back</div>
+  back: <div>Back</div>,
 };
 
 describe(Flipper.name, () => {

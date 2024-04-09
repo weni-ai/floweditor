@@ -20,7 +20,7 @@ export default class Counter extends React.Component<CounterProps> {
     super(props);
 
     bindCallbacks(this, {
-      include: [/^handle/, /^get/]
+      include: [/^handle/, /^get/],
     });
   }
 
@@ -35,19 +35,22 @@ export default class Counter extends React.Component<CounterProps> {
   }
 
   private handleScrollIntoView(): void {
-    if (!!this.ele) {
+    if (this.ele) {
       if (this.props.count > 0 && this.props.keepVisible) {
         window.setTimeout(() => {
           window.scrollTo({
             top: this.ele.getBoundingClientRect().top - 200 + window.scrollY,
-            behavior: 'smooth'
+            behavior: 'smooth',
           });
         }, 200);
       }
     }
   }
 
-  private handleMouseEvent(event: React.MouseEvent<HTMLDivElement>, callback: () => void): void {
+  private handleMouseEvent(
+    event: React.MouseEvent<HTMLDivElement>,
+    callback: () => void,
+  ): void {
     event.preventDefault();
     event.stopPropagation();
     if (callback) {

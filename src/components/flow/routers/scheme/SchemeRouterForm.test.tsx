@@ -2,7 +2,10 @@ import { render, mock, fireEvent, getUpdatedNode, act } from 'test/utils';
 import * as React from 'react';
 import * as utils from 'utils';
 import SchemeRouterForm from './SchemeRouterForm';
-import { createSchemeRouter, getRouterFormProps } from 'testUtils/assetCreators';
+import {
+  createSchemeRouter,
+  getRouterFormProps,
+} from 'testUtils/assetCreators';
 import { SCHEMES } from 'config/typeConfigs';
 import { getSmartOrSwitchRouter } from '../helpers';
 import { Operators } from 'config/interfaces';
@@ -22,7 +25,9 @@ describe(SchemeRouterForm.name, () => {
     const { getByText } = render(<SchemeRouterForm {...routerProps} />);
     fireEvent.click(getByText('Confirm'));
 
-    expect(getUpdatedNode(routerProps).node).toEqual(routerProps.nodeSettings.originalNode.node);
+    expect(getUpdatedNode(routerProps).node).toEqual(
+      routerProps.nodeSettings.originalNode.node,
+    );
   });
 
   it('should select schemes', async () => {

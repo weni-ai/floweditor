@@ -5,7 +5,7 @@ import {
   initializeForm,
   sortFieldsAndProperties,
   stateToAction,
-  UpdateContactFormState
+  UpdateContactFormState,
 } from 'components/flow/actions/updatecontact/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
@@ -25,32 +25,40 @@ import { shouldRequireIf, validate } from 'store/validators';
 import styles from './UpdateContactForm.module.scss';
 import i18n from 'config/i18n';
 import { renderIssues } from '../helpers';
-import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
+import SelectElement, {
+  SelectOption,
+} from 'components/form/select/SelectElement';
 
 export const CONTACT_STATUS_ACTIVE: SelectOption = {
   name: i18n.t('contact_statuses.active', 'Active'),
-  value: ContactStatus.ACTIVE
+  value: ContactStatus.ACTIVE,
 };
 export const CONTACT_STATUS_BLOCKED: SelectOption = {
-  name: i18n.t('contact_statuses.blocked', 'Blocked - remove from groups, ignore forever'),
-  value: ContactStatus.BLOCKED
+  name: i18n.t(
+    'contact_statuses.blocked',
+    'Blocked - remove from groups, ignore forever',
+  ),
+  value: ContactStatus.BLOCKED,
 };
 export const CONTACT_STATUS_STOPPED: SelectOption = {
   name: i18n.t(
     'contact_statuses.stopped',
-    'Stopped - remove from groups, ignore until they message again'
+    'Stopped - remove from groups, ignore until they message again',
   ),
-  value: ContactStatus.STOPPED
+  value: ContactStatus.STOPPED,
 };
 export const CONTACT_STATUS_ARCHIVED: SelectOption = {
-  name: i18n.t('contact_statuses.archived', 'Archived - remove from groups, ignore forever'),
-  value: ContactStatus.ARCHIVED
+  name: i18n.t(
+    'contact_statuses.archived',
+    'Archived - remove from groups, ignore forever',
+  ),
+  value: ContactStatus.ARCHIVED,
 };
 export const CONTACT_STATUS_OPTIONS: SelectOption[] = [
   CONTACT_STATUS_ACTIVE,
   CONTACT_STATUS_BLOCKED,
   CONTACT_STATUS_STOPPED,
-  CONTACT_STATUS_ARCHIVED
+  CONTACT_STATUS_ARCHIVED,
 ];
 
 export default class UpdateContactForm extends React.Component<
@@ -58,7 +66,7 @@ export default class UpdateContactForm extends React.Component<
   UpdateContactFormState
 > {
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: ActionFormProps) {
@@ -67,7 +75,7 @@ export default class UpdateContactForm extends React.Component<
     this.state = initializeForm(this.props.nodeSettings, this.props.assetStore);
 
     bindCallbacks(this, {
-      include: [/^get/, /^on/, /^handle/]
+      include: [/^get/, /^on/, /^handle/],
     });
   }
 
@@ -81,7 +89,7 @@ export default class UpdateContactForm extends React.Component<
       field?: Asset;
       fieldValue?: string;
     },
-    submitting = false
+    submitting = false,
   ): boolean {
     const updates: Partial<UpdateContactFormState> = {};
 
@@ -94,15 +102,19 @@ export default class UpdateContactForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('channel')) {
-      updates.channel = validate(i18n.t('forms.channel', 'Channel'), keys.channel, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.channel = validate(
+        i18n.t('forms.channel', 'Channel'),
+        keys.channel,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     if (keys.hasOwnProperty('language')) {
-      updates.language = validate(i18n.t('forms.language', 'Language'), keys.language, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.language = validate(
+        i18n.t('forms.language', 'Language'),
+        keys.language,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     if (keys.hasOwnProperty('status')) {
@@ -131,29 +143,29 @@ export default class UpdateContactForm extends React.Component<
             return this.handleUpdate({
               field: selection,
               type: Types.set_contact_name,
-              name: ''
+              name: '',
             });
           case ContactProperties.Language:
             return this.handleUpdate({
               field: selection,
-              type: Types.set_contact_language
+              type: Types.set_contact_language,
             });
           case ContactProperties.Status:
             return this.handleUpdate({
               field: selection,
-              type: Types.set_contact_status
+              type: Types.set_contact_status,
             });
           case ContactProperties.Channel:
             return this.handleUpdate({
               field: selection,
-              type: Types.set_contact_channel
+              type: Types.set_contact_channel,
             });
         }
       }
       return this.handleUpdate({
         type: Types.set_contact_field,
         field: selection,
-        fieldValue: ''
+        fieldValue: '',
       });
     }
   }
@@ -180,11 +192,15 @@ export default class UpdateContactForm extends React.Component<
 
   private onUpdated(dispatch: DispatchWithState, getState: GetState): void {
     const {
-      flowContext: { assetStore }
+      flowContext: { assetStore },
     } = getState();
 
     if (this.state.field.value.type === AssetType.Field) {
-      dispatch(updateAssets(mutators.addAssets('fields', assetStore, [this.state.field.value])));
+      dispatch(
+        updateAssets(
+          mutators.addAssets('fields', assetStore, [this.state.field.value]),
+        ),
+      );
     }
   }
 
@@ -199,17 +215,22 @@ export default class UpdateContactForm extends React.Component<
 
     // check if language required
     if (this.state.type === Types.set_contact_language) {
-      valid = this.handleLanguageUpdate([this.state.language.value], true) && valid;
+      valid =
+        this.handleLanguageUpdate([this.state.language.value], true) && valid;
     }
 
     // check if channel required
     if (this.state.type === Types.set_contact_channel) {
-      valid = this.handleChannelUpdate([this.state.channel.value], true) && valid;
+      valid =
+        this.handleChannelUpdate([this.state.channel.value], true) && valid;
     }
 
     if (valid) {
       // do the saving!
-      this.props.updateAction(stateToAction(this.props.nodeSettings, this.state), this.onUpdated);
+      this.props.updateAction(
+        stateToAction(this.props.nodeSettings, this.state),
+        this.onUpdated,
+      );
       this.props.onClose(true);
     }
   }
@@ -219,8 +240,8 @@ export default class UpdateContactForm extends React.Component<
       primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -233,9 +254,15 @@ export default class UpdateContactForm extends React.Component<
         <AssetSelector
           key="select_channel"
           name={i18n.t('forms.channel', 'Channel')}
-          namePure={i18n.t('forms.select_channel', 'Select the channel to use for this contact')}
+          namePure={i18n.t(
+            'forms.select_channel',
+            'Select the channel to use for this contact',
+          )}
           showLabel={true}
-          placeholder={i18n.t('forms.select_channel', 'Select the channel to use for this contact')}
+          placeholder={i18n.t(
+            'forms.select_channel',
+            'Select the channel to use for this contact',
+          )}
           assets={this.props.assetStore.channels}
           entry={this.state.channel}
           searchable={true}
@@ -250,11 +277,14 @@ export default class UpdateContactForm extends React.Component<
         <AssetSelector
           key="select_language"
           name={i18n.t('forms.language', 'Language')}
-          namePure={i18n.t('forms.select_language', 'Select the language to use for this contact')}
+          namePure={i18n.t(
+            'forms.select_language',
+            'Select the language to use for this contact',
+          )}
           showLabel={true}
           placeholder={i18n.t(
             'forms.select_language',
-            'Select the language to use for this contact'
+            'Select the language to use for this contact',
           )}
           assets={this.props.assetStore.languages}
           entry={this.state.language}
@@ -268,7 +298,9 @@ export default class UpdateContactForm extends React.Component<
     } else if (this.state.type === Types.set_contact_status) {
       return (
         <>
-          <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+          <div
+            className={`${styles.label} u font secondary body-md color-neutral-cloudy`}
+          >
             {i18n.t('forms.status', 'Status')}
           </div>
 
@@ -284,9 +316,15 @@ export default class UpdateContactForm extends React.Component<
     } else if (this.state.type === Types.set_contact_name) {
       return (
         <TextInputElement
-          name={i18n.t('forms.enter_new_name', 'Enter a new name for the contact')}
+          name={i18n.t(
+            'forms.enter_new_name',
+            'Enter a new name for the contact',
+          )}
           showLabel={true}
-          placeholder={i18n.t('forms.enter_new_name', 'Enter a new name for the contact')}
+          placeholder={i18n.t(
+            'forms.enter_new_name',
+            'Enter a new name for the contact',
+          )}
           onChange={this.handleNameUpdate}
           entry={this.state.name}
           autocomplete={true}
@@ -298,7 +336,9 @@ export default class UpdateContactForm extends React.Component<
         <TextInputElement
           name={i18n.t('forms.field_value', 'Field Value')}
           showLabel={true}
-          placeholder={i18n.t('forms.enter_field_value', { field: this.state.field.value.label })}
+          placeholder={i18n.t('forms.enter_field_value', {
+            field: this.state.field.value.label,
+          })}
           onChange={this.handleFieldValueUpdate}
           entry={this.state.fieldValue}
           autocomplete={true}
@@ -322,7 +362,11 @@ export default class UpdateContactForm extends React.Component<
         headerClass={typeConfig.type}
         buttons={this.getButtons()}
       >
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
 
         <AssetSelector
           name={i18n.t('forms.select_what_to_update', 'Select what to update')}

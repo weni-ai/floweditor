@@ -25,16 +25,16 @@ import {
   titleCase,
   toBoolMap,
   unset,
-  validUUID
+  validUUID,
 } from 'utils';
 
 const {
   localization,
   nodes: [
     {
-      actions: [sendMsgAction]
-    }
-  ]
+      actions: [sendMsgAction],
+    },
+  ],
 } = require('test/flows/customer_service.json');
 
 describe('utils', () => {
@@ -56,7 +56,7 @@ describe('utils', () => {
         'org',
         'is',
         'has',
-        'tel'
+        'tel',
       ];
       const expected: { [key: string]: boolean } = {
         'created by': true,
@@ -74,7 +74,7 @@ describe('utils', () => {
         phone: true,
         tel: true,
         telegram: true,
-        uuid: true
+        uuid: true,
       };
 
       expect(toBoolMap(strArr)).toEqual(expected);
@@ -122,13 +122,15 @@ describe('utils', () => {
       expect(getSelectClass(0)).toEqual('react-select select-base'));
 
     it("should return an array containing react-select's invalid class", () =>
-      expect(getSelectClass(1)).toEqual('react-select select-base select-invalid'));
+      expect(getSelectClass(1)).toEqual(
+        'react-select select-base select-invalid',
+      ));
   });
 
   describe('titleCase', () => {
     it('should apply title case to each word in a given string', () =>
       ['one', 'one two', 'one two three', 'one,two', 'one, two'].forEach(str =>
-        expect(titleCase(str)).toMatchSnapshot()
+        expect(titleCase(str)).toMatchSnapshot(),
       ));
   });
 
@@ -167,11 +169,11 @@ describe('utils', () => {
             sendMsgAction,
             {
               spa: {
-                send_msg_action: { text: ['¿Cuál es tu color favorito?'] }
-              }
+                send_msg_action: { text: ['¿Cuál es tu color favorito?'] },
+              },
             },
-            languageAsset
-          )
+            languageAsset,
+          ),
         ).toMatchSnapshot();
       });
     });
@@ -186,7 +188,7 @@ describe('utils', () => {
   describe('propertyExists', () => {
     it('should return true if property exists on ContactProperties enum', () => {
       Object.keys(ContactProperties).forEach(property =>
-        expect(propertyExists(property)).toBeTruthy()
+        expect(propertyExists(property)).toBeTruthy(),
       );
     });
 
@@ -211,7 +213,9 @@ describe('utils', () => {
     });
 
     it('should return false if label does not meet our length requirements', () => {
-      expect(properLabelLength('pneumonoultramicroscopicsilicovolcanoconiosis')).toBeFalsy();
+      expect(
+        properLabelLength('pneumonoultramicroscopicsilicovolcanoconiosis'),
+      ).toBeFalsy();
     });
   });
 
@@ -279,12 +283,14 @@ describe('utils', () => {
       {
         name: 'Expected Delivery Date',
         id: 'expected_delivery_date',
-        type: 'field'
-      }
+        type: 'field',
+      },
     ];
 
     it('should return true if option exists', () => {
-      expect(optionExists('expected delivery date', matchingOptions)).toBeTruthy();
+      expect(
+        optionExists('expected delivery date', matchingOptions),
+      ).toBeTruthy();
     });
 
     it('should return false if option does not exist', () => {
@@ -297,7 +303,7 @@ describe('utils', () => {
     const isOptionUniqueSignature = {
       labelKey: 'name',
       valueKey: 'id',
-      options: [] as any[]
+      options: [] as any[],
     };
   });
 });

@@ -13,7 +13,11 @@ import { bindActionCreators } from 'redux';
 import { RecentMessage } from 'store/editor';
 import { Asset } from 'store/flowContext';
 import AppState from 'store/state';
-import { DisconnectExit, disconnectExit, DispatchWithState } from 'store/thunks';
+import {
+  DisconnectExit,
+  disconnectExit,
+  DispatchWithState,
+} from 'store/thunks';
 import { createClickHandler, getLocalization, renderIf } from 'utils';
 
 import * as moment from 'moment';
@@ -37,7 +41,7 @@ export interface ExitPassedProps {
     node: FlowNode,
     exit: Exit,
     className: string,
-    confirmDelete: boolean
+    confirmDelete: boolean,
   ) => void;
   hasBackground?: boolean;
   selected?: boolean;
@@ -76,16 +80,16 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
       confirmDelete: false,
       recentMessages: null,
       fetchingRecentMessages: false,
-      showDragHelper: props.showDragHelper
+      showDragHelper: props.showDragHelper,
     };
 
     bindCallbacks(this, {
-      include: [/^on/, /^get/, /^handle/, /^connect/]
+      include: [/^on/, /^get/, /^handle/, /^connect/],
     });
   }
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   public getSourceId(): string {
@@ -116,7 +120,11 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
       }
     }
 
-    if (this.state.showDragHelper && prevProps.showDragHelper && !this.props.showDragHelper) {
+    if (
+      this.state.showDragHelper &&
+      prevProps.showDragHelper &&
+      !this.props.showDragHelper
+    ) {
       this.setState({ showDragHelper: false });
     }
 
@@ -124,7 +132,7 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
       this.props.node,
       this.props.exit,
       'confirm-delete',
-      this.state.confirmDelete
+      this.state.confirmDelete,
     );
   }
 
@@ -150,15 +158,15 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
         event.stopPropagation();
         this.setState(
           {
-            confirmDelete: true
+            confirmDelete: true,
           },
           () => {
             this.timeout = window.setTimeout(() => {
               this.setState({
-                confirmDelete: false
+                confirmDelete: false,
               });
             }, 2000);
-          }
+          },
         );
       } else {
         event.preventDefault();
@@ -203,7 +211,7 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
       getRecentMessages(
         this.context.config.endpoints.recents,
         this.props.exit,
-        this.pendingMessageFetch
+        this.pendingMessageFetch,
       )
         .then((recentMessages: RecentMessage[]) => {
           this.setState({ recentMessages, fetchingRecentMessages: false });
@@ -254,7 +262,7 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
         const localization = getLocalization(
           category,
           this.props.localization,
-          this.props.language
+          this.props.language,
         );
 
         localized = localized || 'name' in localization.localizedKeys;
@@ -271,13 +279,16 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
       });
 
       return {
-        name: names.join(', ')
+        name: names.join(', '),
       };
     }
   }
 
   private getRecentMessages(): JSX.Element {
-    if (this.state.fetchingRecentMessages || this.state.recentMessages !== null) {
+    if (
+      this.state.fetchingRecentMessages ||
+      this.state.recentMessages !== null
+    ) {
       const recentMessages = this.state.recentMessages || [];
       const hasRecents = recentMessages.length !== 0;
 
@@ -303,12 +314,17 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
 
       return (
         <Portal id="activity_recent_messages">
-          <div className={recentStyles.join(' ')} style={{ position: 'absolute', left, top }}>
+          <div
+            className={recentStyles.join(' ')}
+            style={{ position: 'absolute', left, top }}
+          >
             <div className={styles.title}>{title}</div>
             {recentMessages.map((recentMessage: RecentMessage, idx: number) => (
               <div key={'recent_' + idx} className={styles.message}>
                 <div className={styles.text}>{recentMessage.text}</div>
-                <div className={styles.sent}>{moment.utc(recentMessage.sent).fromNow()}</div>
+                <div className={styles.sent}>
+                  {moment.utc(recentMessage.sent).fromNow()}
+                </div>
               </div>
             ))}
             {this.state.recentMessages === null ? (
@@ -330,7 +346,8 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
     const connected = this.props.exit.destination_uuid ? ' jtk-connected' : '';
     const dragNodeClasses = cx(styles.endpoint, connected);
     const confirmDelete =
-      this.state.confirmDelete && this.props.exit.hasOwnProperty('destination_uuid');
+      this.state.confirmDelete &&
+      this.props.exit.hasOwnProperty('destination_uuid');
     const confirm: JSX.Element =
       confirmDelete && this.context.config.mutable ? (
         <div
@@ -343,8 +360,9 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
       'plumb-exit': true,
       [styles.translating]: this.props.translating,
       [styles.unnamed_exit]: name == null,
-      [styles.missing_localization]: name && this.props.translating && !localized,
-      [styles.confirm_delete]: confirmDelete
+      [styles.missing_localization]:
+        name && this.props.translating && !localized,
+      [styles.confirm_delete]: confirmDelete,
     });
 
     const activity = this.getSegmentCount();
@@ -356,7 +374,7 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
           () => {
             return this.props.dragging;
           },
-          this.handleMouseDown
+          this.handleMouseDown,
         )
       : {};
 
@@ -368,7 +386,9 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
           ${this.props.selected ? styles['selected'] : null} 
         `}
       >
-        {name ? <div className={`${nameStyle} u font secondary body-md`}>{name}</div> : null}
+        {name ? (
+          <div className={`${nameStyle} u font secondary body-md`}>{name}</div>
+        ) : null}
         <div
           ref={(ref: HTMLDivElement) => (this.ele = ref)}
           {...events}
@@ -388,11 +408,11 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
 const mapStateToProps = (
   {
     flowContext: {
-      definition: { localization }
+      definition: { localization },
     },
-    editorState: { translating, language, dragActive, activity }
+    editorState: { translating, language, dragActive, activity },
   }: AppState,
-  props: ExitPassedProps
+  props: ExitPassedProps,
 ) => {
   // see if we have some passed in (simulated) messages
   let recentMessages: RecentMessage[] = null;
@@ -408,7 +428,7 @@ const mapStateToProps = (
     translating,
     language,
     localization,
-    recentMessages
+    recentMessages,
   };
 };
 
@@ -417,7 +437,7 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
 
 const ConnectedExit = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ExitComp);
 
 export default ConnectedExit;

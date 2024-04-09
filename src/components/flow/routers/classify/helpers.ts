@@ -3,12 +3,19 @@ import {
   createCaseProps,
   resolveRoutes,
   ResolvedRoutes,
-  createRenderNode
+  createRenderNode,
 } from 'components/flow/routers/helpers';
 import { DEFAULT_OPERAND } from 'components/nodeeditor/constants';
 import { Types, Operators, VISIBILITY_HIDDEN } from 'config/interfaces';
 import { getType } from 'config/typeConfigs';
-import { CallClassifier, SwitchRouter, Case, Exit, Category, RouterTypes } from 'flowTypes';
+import {
+  CallClassifier,
+  SwitchRouter,
+  Case,
+  Exit,
+  Category,
+  RouterTypes,
+} from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, StringEntry, FormEntry } from 'store/nodeEditor';
 import { createUUID, scalarArrayEquals, snakify } from 'utils';
@@ -16,17 +23,22 @@ import { ClassifyRouterFormState } from 'components/flow/routers/classify/Classi
 import { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import { getOperatorConfig } from 'config';
 
-export const getOriginalAction = (settings: NodeEditorSettings): CallClassifier => {
+export const getOriginalAction = (
+  settings: NodeEditorSettings,
+): CallClassifier => {
   const action =
     settings.originalAction ||
-    (settings.originalNode.node.actions.length > 0 && settings.originalNode.node.actions[0]);
+    (settings.originalNode.node.actions.length > 0 &&
+      settings.originalNode.node.actions[0]);
 
   if (action.type === Types.call_classifier) {
     return action as CallClassifier;
   }
 };
 
-export const nodeToState = (settings: NodeEditorSettings): ClassifyRouterFormState => {
+export const nodeToState = (
+  settings: NodeEditorSettings,
+): ClassifyRouterFormState => {
   // TODO: work out an incremental result name
   let resultName: StringEntry = { value: 'Result' };
   let initialCases: CaseProps[] = [];
@@ -43,11 +55,13 @@ export const nodeToState = (settings: NodeEditorSettings): ClassifyRouterFormSta
       initialCases = createCaseProps(router.cases, settings.originalNode);
 
       hiddenCases = initialCases.filter(
-        (kase: CaseProps) => getOperatorConfig(kase.kase.type).visibility === VISIBILITY_HIDDEN
+        (kase: CaseProps) =>
+          getOperatorConfig(kase.kase.type).visibility === VISIBILITY_HIDDEN,
       );
 
       initialCases = initialCases.filter(
-        (kase: CaseProps) => getOperatorConfig(kase.kase.type).visibility !== VISIBILITY_HIDDEN
+        (kase: CaseProps) =>
+          getOperatorConfig(kase.kase.type).visibility !== VISIBILITY_HIDDEN,
       );
     }
 
@@ -63,7 +77,7 @@ export const nodeToState = (settings: NodeEditorSettings): ClassifyRouterFormSta
     classifier,
     operand: { value: operand },
     cases: initialCases,
-    valid: true
+    valid: true,
   };
 
   return state;
@@ -77,7 +91,9 @@ export interface Route {
 
 export const ensureRoute = (routes: ResolvedRoutes, route: Route) => {
   const existingCasePosition = routes.cases.findIndex(
-    kase => kase.type === route.type && scalarArrayEquals(kase.arguments, route.arguments)
+    kase =>
+      kase.type === route.type &&
+      scalarArrayEquals(kase.arguments, route.arguments),
   );
 
   // if it already exists, make sure it's at the end
@@ -94,13 +110,13 @@ export const ensureRoute = (routes: ResolvedRoutes, route: Route) => {
   }
 
   const exit: Exit = {
-    uuid: createUUID()
+    uuid: createUUID(),
   };
 
   const category: Category = {
     uuid: createUUID(),
     name: route.name,
-    exit_uuid: exit.uuid
+    exit_uuid: exit.uuid,
   };
 
   // otherwise let's add it
@@ -108,7 +124,7 @@ export const ensureRoute = (routes: ResolvedRoutes, route: Route) => {
     uuid: createUUID(),
     type: route.type,
     arguments: route.arguments,
-    category_uuid: category.uuid
+    category_uuid: category.uuid,
   };
 
   routes.categories.push(category);
@@ -120,7 +136,7 @@ export const ensureRoute = (routes: ResolvedRoutes, route: Route) => {
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: ClassifyRouterFormState
+  state: ClassifyRouterFormState,
 ): RenderNode => {
   let uuid = createUUID();
 
@@ -128,14 +144,14 @@ export const stateToNode = (
     [...state.cases, ...state.hiddenCases],
     false,
     settings.originalNode.node,
-    'Failure'
+    'Failure',
   );
 
   // make sure we have an other route since failure is our default
   ensureRoute(routes, {
     type: Operators.has_category,
     arguments: ['Success', 'Skipped'],
-    name: 'Other'
+    name: 'Other',
   });
 
   const originalAction = getOriginalAction(settings);
@@ -153,8 +169,8 @@ export const stateToNode = (
     input: state.operand.value,
     classifier: {
       uuid: state.classifier.value.uuid,
-      name: state.classifier.value.name
-    }
+      name: state.classifier.value.name,
+    },
   };
 
   const router: SwitchRouter = {
@@ -163,7 +179,7 @@ export const stateToNode = (
     categories: routes.categories,
     type: RouterTypes.switch,
     default_category_uuid: routes.defaultCategory,
-    result_name: routerResultName
+    result_name: routerResultName,
   };
 
   return createRenderNode(
@@ -171,6 +187,6 @@ export const stateToNode = (
     router,
     routes.exits,
     Types.split_by_intent,
-    [newAction]
+    [newAction],
   );
 };

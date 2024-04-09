@@ -39,9 +39,9 @@ export const config: FlowEditorConfig = {
     external_services_calls_base: '',
     completion: '/assets/completion.json',
     knowledgeBases: '/assets/knowledge_bases.json',
-    whatsapp_products: '/assets/whatsapp_products.json'
+    whatsapp_products: '/assets/whatsapp_products.json',
   },
-  onChangeLanguage: (code: string, name: string) => {}
+  onChangeLanguage: (code: string, name: string) => {},
 };
 
 export default config;

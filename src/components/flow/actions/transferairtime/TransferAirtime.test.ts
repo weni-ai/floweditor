@@ -7,7 +7,7 @@ const action = createTransferAirtimeAction();
 
 const { setup } = composeComponentTestUtils<TransferAirtime>(
   TransferAirtimeComp,
-  action as TransferAirtime
+  action as TransferAirtime,
 );
 
 describe(TransferAirtimeComp.name, () => {

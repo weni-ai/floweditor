@@ -6,23 +6,25 @@ import {
   SetContactChannel,
   SetContactLanguage,
   SetContactName,
-  SetContactStatus
+  SetContactStatus,
 } from 'flowTypes';
 import * as React from 'react';
 import { emphasize } from 'utils';
 const styles = require('components/shared.module.scss');
 
-const withEmph = (text: string, emph: boolean) => (emph ? emphasize(text) : text);
+const withEmph = (text: string, emph: boolean) =>
+  emph ? emphasize(text) : text;
 
 export const renderSetText = (
   name: string,
   value: string,
-  emphasizeName: boolean = false
+  emphasizeName: boolean = false,
 ): JSX.Element => {
   if (value) {
     return (
       <div className={`${styles.node_asset}`}>
-        {i18n.t('set')} {withEmph(name, emphasizeName)} {i18n.t('to')} {emphasize(value)}.
+        {i18n.t('set')} {withEmph(name, emphasizeName)} {i18n.t('to')}{' '}
+        {emphasize(value)}.
       </div>
     );
   } else {
@@ -35,7 +37,7 @@ export const renderSetText = (
 };
 
 const UpdateContactComp: React.SFC<SetContactAttribute> = (
-  action: SetContactAttribute
+  action: SetContactAttribute,
 ): JSX.Element => {
   if (action.type === Types.set_contact_field) {
     return renderSetText(action.field.name, action.value, true);
@@ -46,7 +48,7 @@ const UpdateContactComp: React.SFC<SetContactAttribute> = (
     return renderSetText(
       'channel',
       setContactAction.channel ? setContactAction.channel.name : null,
-      false
+      false,
     );
   }
 
@@ -55,7 +57,7 @@ const UpdateContactComp: React.SFC<SetContactAttribute> = (
     return renderSetText(
       'language',
       getLanguageForCode(setLanguageAction.language, (action as any).languages),
-      false
+      false,
     );
   }
 

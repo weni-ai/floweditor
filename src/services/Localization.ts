@@ -10,7 +10,10 @@ export class LocalizedObject {
   private name: string;
   private language: Language;
 
-  constructor(object: Action | Category | Case | MsgTemplating, { id, name }: Asset) {
+  constructor(
+    object: Action | Category | Case | MsgTemplating,
+    { id, name }: Asset,
+  ) {
     this.localizedObject = object;
     this.iso = id;
     this.language = { iso: this.iso, name };
@@ -64,7 +67,7 @@ export default class Localization {
   public static translate(
     object: Action | Category | Case | MsgTemplating,
     language: Asset,
-    translations?: { [uuid: string]: any }
+    translations?: { [uuid: string]: any },
   ): LocalizedObject {
     const localized: LocalizedObject = new LocalizedObject(object, language);
 

@@ -12,7 +12,7 @@ import {
   Asset,
   RenderNodeMap,
   RenderAction,
-  FlowIssueMap
+  FlowIssueMap,
 } from 'store/flowContext';
 import { getTypeConfig } from 'config';
 import { getType } from 'config/typeConfigs';
@@ -55,13 +55,18 @@ const getIssueKey = (issue: FlowIssue) => {
   return (issue.action_uuid || issue.node_uuid) + (issue.language || '');
 };
 
-const getRenderObjects = (issue: FlowIssue, nodes: RenderNodeMap): RenderObjects => {
+const getRenderObjects = (
+  issue: FlowIssue,
+  nodes: RenderNodeMap,
+): RenderObjects => {
   const renderNode = nodes[issue.node_uuid];
   let renderAction: RenderAction = null;
 
   if (issue.action_uuid && renderNode) {
     const actionIdx = issue.action_uuid
-      ? renderNode.node.actions.findIndex((action: Action) => action.uuid === issue.action_uuid)
+      ? renderNode.node.actions.findIndex(
+          (action: Action) => action.uuid === issue.action_uuid,
+        )
       : null;
 
     if (actionIdx > -1) {
@@ -69,14 +74,14 @@ const getRenderObjects = (issue: FlowIssue, nodes: RenderNodeMap): RenderObjects
       renderAction = {
         action,
         config: getTypeConfig(action.type),
-        index: actionIdx
+        index: actionIdx,
       };
     }
   }
 
   return {
     renderNode,
-    renderAction
+    renderAction,
   };
 };
 
@@ -87,11 +92,11 @@ export class IssuesTab extends React.Component<IssuesTabProps, IssuesTabState> {
     this.state = {
       visible: false,
       selectedIssue: null,
-      issueDetails: this.buildIssueDetails()
+      issueDetails: this.buildIssueDetails(),
     };
 
     bindCallbacks(this, {
-      include: [/^handle/, /^render/]
+      include: [/^handle/, /^render/],
     });
   }
 
@@ -119,11 +124,14 @@ export class IssuesTab extends React.Component<IssuesTabProps, IssuesTabState> {
             }
 
             const renderObjects = getRenderObjects(issue, this.props.nodes);
-            if (renderObjects.renderNode && (!issue.action_uuid || renderObjects.renderAction)) {
+            if (
+              renderObjects.renderNode &&
+              (!issue.action_uuid || renderObjects.renderAction)
+            ) {
               issueDetail = {
                 issues: [issue],
                 renderObjects: renderObjects,
-                language
+                language,
               };
             }
           } else {
@@ -151,16 +159,23 @@ export class IssuesTab extends React.Component<IssuesTabProps, IssuesTabState> {
       }
 
       const nodeDifference =
-        a.renderObjects.renderNode.ui.position.top - b.renderObjects.renderNode.ui.position.top;
+        a.renderObjects.renderNode.ui.position.top -
+        b.renderObjects.renderNode.ui.position.top;
 
       if (nodeDifference !== 0) {
         return nodeDifference;
       }
 
       // if we are the same node and have actions sort by those
-      if (a.renderObjects.renderNode.node.uuid === b.renderObjects.renderNode.node.uuid) {
+      if (
+        a.renderObjects.renderNode.node.uuid ===
+        b.renderObjects.renderNode.node.uuid
+      ) {
         if (a.renderObjects.renderAction && b.renderObjects.renderAction) {
-          return a.renderObjects.renderAction.index - b.renderObjects.renderAction.index;
+          return (
+            a.renderObjects.renderAction.index -
+            b.renderObjects.renderAction.index
+          );
         }
       }
       return 0;
@@ -194,7 +209,9 @@ export class IssuesTab extends React.Component<IssuesTabProps, IssuesTabState> {
       let languageHeader: JSX.Element = null;
 
       if (details.language && details.language !== lastLanguage) {
-        languageHeader = <div className={styles.language}>{details.language.name}</div>;
+        languageHeader = (
+          <div className={styles.language}>{details.language.name}</div>
+        );
       }
 
       lastLanguage = details.language;
@@ -214,14 +231,18 @@ export class IssuesTab extends React.Component<IssuesTabProps, IssuesTabState> {
       const locationHeader: JSX.Element = null;
       const issues = details.issues.map((issue: FlowIssue, num: number) => (
         <div key={getIssueKey(issue) + num} className={styles.message}>
-          <div className={styles.header}>{typeConfig.name}:</div> {renderIssue(issue)}
+          <div className={styles.header}>{typeConfig.name}:</div>{' '}
+          {renderIssue(issue)}
         </div>
       ));
 
       return (
         <div key={getIssueKey(details.issues[0]) + '_detail'}>
           {languageHeader}
-          <div className={styles.details} onClick={() => this.handleIssueClicked(details)}>
+          <div
+            className={styles.details}
+            onClick={() => this.handleIssueClicked(details)}
+          >
             {locationHeader}
             <div className={styles.issues_code}>{issues}</div>
           </div>
@@ -231,7 +252,8 @@ export class IssuesTab extends React.Component<IssuesTabProps, IssuesTabState> {
 
     const classes = cx({
       [styles.visible]: this.state.visible,
-      [styles.hidden]: this.props.popped && this.props.popped !== PopTabType.ISSUES_TAB
+      [styles.hidden]:
+        this.props.popped && this.props.popped !== PopTabType.ISSUES_TAB,
     });
 
     return (

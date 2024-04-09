@@ -3,7 +3,7 @@ import {
   createCaseProps,
   createRenderNode,
   hasCases,
-  resolveRoutes
+  resolveRoutes,
 } from 'components/flow/routers/helpers';
 import { SelectOption } from 'components/form/select/SelectElement';
 import { Types } from 'config/interfaces';
@@ -34,26 +34,30 @@ export const FIELD_NUMBER_OPTIONS: SelectOption[] = [
   { value: '16', name: '17th' },
   { value: '17', name: '18th' },
   { value: '18', name: '19th' },
-  { value: '19', name: '20th' }
+  { value: '19', name: '20th' },
 ];
 
 export const getFieldOption = (value: number): SelectOption => {
-  return FIELD_NUMBER_OPTIONS.find((option: SelectOption) => option.value === '' + value);
+  return FIELD_NUMBER_OPTIONS.find(
+    (option: SelectOption) => option.value === '' + value,
+  );
 };
 
 export const DELIMITER_OPTIONS: SelectOption[] = [
   { value: ' ', name: 'spaces' },
   { value: '.', name: 'periods' },
-  { value: '+', name: 'plusses' }
+  { value: '+', name: 'plusses' },
 ];
 
 export const getDelimiterOption = (value: string): SelectOption => {
-  return DELIMITER_OPTIONS.find((option: SelectOption) => option.value === value);
+  return DELIMITER_OPTIONS.find(
+    (option: SelectOption) => option.value === value,
+  );
 };
 
 export const nodeToState = (
   settings: NodeEditorSettings,
-  assetStore: AssetStore
+  assetStore: AssetStore,
 ): ResultRouterFormState => {
   let initialCases: CaseProps[] = [];
 
@@ -104,19 +108,21 @@ export const nodeToState = (
     shouldDelimit,
     fieldNumber,
     delimiter,
-    valid: true
+    valid: true,
   };
 };
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: ResultRouterFormState
+  state: ResultRouterFormState,
 ): RenderNode => {
-  const { cases, exits, defaultCategory: defaultExit, caseConfig, categories } = resolveRoutes(
-    state.cases,
-    false,
-    settings.originalNode.node
-  );
+  const {
+    cases,
+    exits,
+    defaultCategory: defaultExit,
+    caseConfig,
+    categories,
+  } = resolveRoutes(state.cases, false, settings.originalNode.node);
 
   const optionalRouter: Pick<Router, 'result_name'> = {};
   if (state.resultName.value) {
@@ -132,9 +138,9 @@ export const stateToNode = (
     operand: {
       name: result.name,
       id: result.id,
-      type: AssetType.Result
+      type: AssetType.Result,
     },
-    cases: caseConfig
+    cases: caseConfig,
   };
 
   if (state.shouldDelimit) {
@@ -150,7 +156,7 @@ export const stateToNode = (
     categories,
     cases,
     operand,
-    ...optionalRouter
+    ...optionalRouter,
   };
 
   const newRenderNode = createRenderNode(
@@ -159,7 +165,7 @@ export const stateToNode = (
     exits,
     nodeType,
     [],
-    config
+    config,
   );
 
   return newRenderNode;

@@ -18,9 +18,20 @@ export class WeniLoveIcon extends React.PureComponent {
           stroke="#00DED2"
           strokeWidth="23.5723"
         />
-        <rect x="0.414307" y="5.45435" width="85.1713" height="85.1713" fill="url(#pattern0)" />
+        <rect
+          x="0.414307"
+          y="5.45435"
+          width="85.1713"
+          height="85.1713"
+          fill="url(#pattern0)"
+        />
         <defs>
-          <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <pattern
+            id="pattern0"
+            patternContentUnits="objectBoundingBox"
+            width="1"
+            height="1"
+          >
             <use href="#image0_4005_29639" transform="scale(0.00238095)" />
           </pattern>
           <image

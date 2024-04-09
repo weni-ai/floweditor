@@ -9,7 +9,7 @@ const baseProps: PopTabProps = {
   icon: 'fe-history',
   header: 'Revisions',
   onShow: jest.fn(),
-  onHide: jest.fn()
+  onHide: jest.fn(),
 };
 
 const { setup } = composeComponentTestUtils(PopTab, baseProps);

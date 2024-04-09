@@ -44,7 +44,7 @@ const COLOR_OPTIONS: any = {
   blue: styles.blue,
   green: styles.green,
   purple: styles.purple,
-  gray: styles.gray
+  gray: styles.gray,
 };
 
 export class Sticky extends React.Component<StickyProps, StickyState> {
@@ -59,14 +59,14 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
   constructor(props: StickyProps & StickyStoreProps) {
     super(props);
     bindCallbacks(this, {
-      include: [/^on/, /^get/, /^is/, /^handle/]
+      include: [/^on/, /^get/, /^is/, /^handle/],
     });
 
     this.state = {
       title: this.props.sticky.title,
       body: this.props.sticky.body,
       color: this.props.sticky.color,
-      showConfirmation: false
+      showConfirmation: false,
     };
   }
 
@@ -143,7 +143,10 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
     this.setState({ color });
   }
 
-  private handleSelectForValue(element: HTMLTextAreaElement, text: string): void {
+  private handleSelectForValue(
+    element: HTMLTextAreaElement,
+    text: string,
+  ): void {
     if (element.value === text) {
       window.setTimeout(() => {
         element.select();
@@ -212,7 +215,10 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
       >
         <div className={stickyClasses.join(' ')}>
           <div className={titleClasses.join(' ')}>
-            <div className={styles.remove_button} onClick={this.handleClickRemove}>
+            <div
+              className={styles.remove_button}
+              onClick={this.handleClickRemove}
+            >
               <span className="fe-x" />
             </div>
             <div className={styles.confirmation}>Remove?</div>
@@ -250,5 +256,5 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
   null,
-  { forwardRef: false }
+  { forwardRef: false },
 )(Sticky);

@@ -12,7 +12,7 @@ const clearTimeoutMock = clearTimeout as jest.Mock;
 const sticky: StickyNote = {
   title: 'Sticky Title',
   body: 'Sticky Body',
-  position: { left: 100, top: 200 }
+  position: { left: 100, top: 200 },
 };
 
 const baseProps: StickyProps = {
@@ -20,13 +20,13 @@ const baseProps: StickyProps = {
   sticky,
   definition,
   selected: false,
-  updateSticky: jest.fn()
+  updateSticky: jest.fn(),
 };
 
 const { setup } = composeComponentTestUtils(
   Sticky,
   baseProps,
-  composeDuxState({ flowContext: { definition: set(definition) } })
+  composeDuxState({ flowContext: { definition: set(definition) } }),
 );
 
 describe(Sticky.name, () => {
@@ -55,7 +55,7 @@ describe(Sticky.name, () => {
     const updateText = (name: string, value: string) => {
       const selector = `textarea.${name}`;
       wrapper.find(selector).prop('onChange')({
-        currentTarget: { value }
+        currentTarget: { value },
       });
       expect(wrapper.find(selector).text()).toBe(value);
     };
@@ -110,7 +110,7 @@ describe(Sticky.name, () => {
         wrapper
           .render()
           .find('.title_wrapper')
-          .hasClass('removal')
+          .hasClass('removal'),
       ).toBeFalsy();
     });
 

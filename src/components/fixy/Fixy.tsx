@@ -16,11 +16,11 @@ export class Fixy extends React.PureComponent<FixyProps, FixyState> {
     super(props);
     this.state = {
       top: 0,
-      fixed: false
+      fixed: false,
     };
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -45,7 +45,7 @@ export class Fixy extends React.PureComponent<FixyProps, FixyState> {
     if (this.state.fixed) {
       styles = {
         position: 'fixed',
-        top: 0
+        top: 0,
       };
     }
 

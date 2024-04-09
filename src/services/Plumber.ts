@@ -4,7 +4,7 @@ import { GRID_SIZE, timeStart, timeEnd, debounce } from 'utils';
 // TODO: Remove use of Function
 // tslint:disable:ban-types
 const {
-  jsPlumb: { importDefaults }
+  jsPlumb: { importDefaults },
 } = require('../../node_modules/jsplumb/dist/js/jsplumb');
 export interface DragEvent {
   el: Element;
@@ -29,24 +29,27 @@ export interface PendingConnections {
 export const REPAINT_DURATION = 600;
 
 export const TARGET_DEFAULTS = {
-  anchor: ['Continuous', { shape: 'Rectangle', faces: ['top', 'left', 'right'] }],
+  anchor: [
+    'Continuous',
+    { shape: 'Rectangle', faces: ['top', 'left', 'right'] },
+  ],
   endpoint: [
     'Rectangle',
     {
       width: 23,
       height: 23,
       cssClass: 'plumb-endpoint',
-      hoverClass: 'plumb-endpoint-hover'
-    }
+      hoverClass: 'plumb-endpoint-hover',
+    },
   ],
   dropOptions: {
     tolerance: 'touch',
     hoverClass: 'plumb-drop-hover',
-    isTarget: false
+    isTarget: false,
   },
   dragAllowedWhenFull: false,
   deleteEndpointsOnEmpty: true,
-  isTarget: false
+  isTarget: false,
 };
 
 export const SOURCE_DEFAULTS = {
@@ -54,7 +57,7 @@ export const SOURCE_DEFAULTS = {
   maxConnections: 1,
   dragAllowedWhenFull: false,
   deleteEndpointsOnEmpty: true,
-  isSource: true
+  isSource: true,
 };
 
 export const getAnchor = (sourceEle: any, targetEle: any): any[] => {
@@ -66,8 +69,8 @@ export const getAnchor = (sourceEle: any, targetEle: any): any[] => {
         sourceEle.getBoundingClientRect().bottom + GRID_SIZE / 3 <
         targetEle.getBoundingClientRect().top
           ? ['top']
-          : ['right', 'left']
-    }
+          : ['right', 'left'],
+    },
   ];
 };
 
@@ -78,8 +81,8 @@ const defaultConnector = [
     midpoint: 0.75,
     alwaysRespectStubs: false,
     gap: [0, 5],
-    cornerRadius: 3
-  }
+    cornerRadius: 3,
+  },
 ];
 
 /* istanbul ignore next */
@@ -110,10 +113,10 @@ export default class Plumber {
             location: 0.999,
             width: 11.5,
             length: 10,
-            cssClass: 'jtk-arrow'
-          }
-        ]
-      ]
+            cssClass: 'jtk-arrow',
+          },
+        ],
+      ],
     });
 
     this.debug = this.debug.bind(this);
@@ -127,7 +130,9 @@ export default class Plumber {
     this.cancelDurationRepaint = this.cancelDurationRepaint.bind(this);
     this.remove = this.remove.bind(this);
     this.handlePendingConnections = this.handlePendingConnections.bind(this);
-    this.checkForPendingConnections = this.checkForPendingConnections.bind(this);
+    this.checkForPendingConnections = this.checkForPendingConnections.bind(
+      this,
+    );
     this.connect = this.connect.bind(this);
     this.bind = this.bind.bind(this);
     this.repaint = this.repaint.bind(this);
@@ -161,17 +166,26 @@ export default class Plumber {
     this.jsPlumb.makeTarget(uuid, TARGET_DEFAULTS);
   }
 
-  public connectExit(node: FlowNode, exit: Exit, className: string = null): void {
+  public connectExit(
+    node: FlowNode,
+    exit: Exit,
+    className: string = null,
+  ): void {
     this.connect(
       `${node.uuid}:${exit.uuid}`,
       exit.destination_uuid,
       className,
       node.exits.findIndex((e: Exit) => e.uuid === exit.uuid),
-      node.exits.length
+      node.exits.length,
     );
   }
 
-  public updateClass(node: FlowNode, exit: Exit, className: string, add: boolean): void {
+  public updateClass(
+    node: FlowNode,
+    exit: Exit,
+    className: string,
+    add: boolean,
+  ): void {
     const source = `${node.uuid}:${exit.uuid}`;
     const connection = this.jsPlumb.select({ source });
     if (add) {
@@ -189,7 +203,9 @@ export default class Plumber {
     this.cancelDurationRepaint();
     this.jsPlumb.clearDragSelection();
 
-    Object.keys(selected).forEach(uuid => this.jsPlumb.addToDragSelection(uuid));
+    Object.keys(selected).forEach(uuid =>
+      this.jsPlumb.addToDragSelection(uuid),
+    );
   }
 
   public clearDragSelection(): void {
@@ -220,7 +236,10 @@ export default class Plumber {
           const anchors = target
             ? [
                 'Bottom',
-                getAnchor(document.getElementById(source), document.getElementById(target))
+                getAnchor(
+                  document.getElementById(source),
+                  document.getElementById(target),
+                ),
               ]
             : [];
 
@@ -250,7 +269,7 @@ export default class Plumber {
                 fireEvent: false,
                 cssClass: className,
                 detachable: !className,
-                connector
+                connector,
               });
             }
           }
@@ -299,14 +318,14 @@ export default class Plumber {
     target: string,
     className: string = null,
     slot: number = 0,
-    totalSlots: number = 0
+    totalSlots: number = 0,
   ): void {
     this.pendingConnections[`${source}:${target}:${className}`] = {
       source,
       target,
       className,
       slot,
-      totalSlots
+      totalSlots,
     };
     this.checkForPendingConnections();
   }
@@ -347,7 +366,9 @@ export default class Plumber {
         .getConnections({ target: uuid })
         .concat(this.jsPlumb.getConnections({ source: uuid }));
       for (const c of connections) {
-        c.endpoints[1].setAnchor(getAnchor(c.endpoints[0].element, c.endpoints[1].element));
+        c.endpoints[1].setAnchor(
+          getAnchor(c.endpoints[0].element, c.endpoints[1].element),
+        );
       }
     });
   }

@@ -26,16 +26,16 @@ export default class MultiChoiceInput extends React.Component<
 
     if (this.props.entry) {
       this.state = {
-        currentInput: this.props.entry
+        currentInput: this.props.entry,
       };
     } else {
       this.state = {
-        currentInput: { value: '' }
+        currentInput: { value: '' },
       };
     }
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -60,7 +60,9 @@ export default class MultiChoiceInput extends React.Component<
     return (
       <>
         {this.props.helpText ? (
-          <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+          <div
+            className={`${styles.label} u font secondary body-md color-neutral-cloudy`}
+          >
             {this.props.helpText}
           </div>
         ) : (

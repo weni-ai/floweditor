@@ -7,10 +7,13 @@ import { NodeEditorSettings, FormEntry } from 'store/nodeEditor';
 import { createUUID } from 'utils';
 import { ExternalServiceRouterFormState } from 'components/flow/routers/externalservice/ExternalServiceRouterForm';
 
-export const getOriginalAction = (settings: NodeEditorSettings): CallExternalService => {
+export const getOriginalAction = (
+  settings: NodeEditorSettings,
+): CallExternalService => {
   const action =
     settings.originalAction ||
-    (settings.originalNode.node.actions.length > 0 && settings.originalNode.node.actions[0]);
+    (settings.originalNode.node.actions.length > 0 &&
+      settings.originalNode.node.actions[0]);
 
   if (action.type === Types.call_external_service) {
     return action as CallExternalService;
@@ -20,7 +23,7 @@ export const getOriginalAction = (settings: NodeEditorSettings): CallExternalSer
 export const nodeToState = (
   settings: NodeEditorSettings,
   existingServices: AssetMap,
-  initialExternalService: any
+  initialExternalService: any,
 ): ExternalServiceRouterFormState => {
   let resultName = { value: 'Result' };
 
@@ -28,7 +31,10 @@ export const nodeToState = (
   let initialCall: FormEntry = null;
   let initialParams: any[] = [];
 
-  if (settings.originalNode && getType(settings.originalNode) === Types.split_by_external_service) {
+  if (
+    settings.originalNode &&
+    getType(settings.originalNode) === Types.split_by_external_service
+  ) {
     const action = getOriginalAction(settings) as CallExternalService;
     const service = existingServices[action.external_service.uuid];
 
@@ -38,8 +44,8 @@ export const nodeToState = (
           ...service.content,
           name: service.name,
           external_service_type: service.type,
-          uuid: service.id
-        }
+          uuid: service.id,
+        },
       };
     } else {
       externalService = { value: action.external_service };
@@ -52,7 +58,9 @@ export const nodeToState = (
       }).params;
 
     initialCall = {
-      value: existingCallParams ? { ...action.call, params: existingCallParams } : action.call
+      value: existingCallParams
+        ? { ...action.call, params: existingCallParams }
+        : action.call,
     };
     initialParams = action.params;
     resultName = { value: action.result_name };
@@ -63,8 +71,8 @@ export const nodeToState = (
             uuid: initialExternalService.id,
             name: initialExternalService.name,
             type: initialExternalService.type,
-            actions: initialExternalService.content.actions
-          }
+            actions: initialExternalService.content.actions,
+          },
         }
       : { value: null };
   }
@@ -74,7 +82,7 @@ export const nodeToState = (
     call: initialCall,
     resultName,
     params: { value: initialParams },
-    valid: true
+    valid: true,
   };
 
   return state;
@@ -82,7 +90,7 @@ export const nodeToState = (
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: ExternalServiceRouterFormState
+  state: ExternalServiceRouterFormState,
 ): RenderNode => {
   let uuid = createUUID();
   const originalAction = getOriginalAction(settings);
@@ -92,7 +100,9 @@ export const stateToNode = (
 
   const validParams = state.params.value.filter(
     (param: any) =>
-      param.valid === true && param.data.value && param.data.validationFailures.length === 0
+      param.valid === true &&
+      param.data.value &&
+      param.data.validationFailures.length === 0,
   );
 
   const newAction: CallExternalService = {
@@ -102,12 +112,13 @@ export const stateToNode = (
       uuid: state.externalService.value.uuid,
       name: state.externalService.value.name,
       external_service_type:
-        state.externalService.value.external_service_type || state.externalService.value.type,
-      actions: state.externalService.value.actions
+        state.externalService.value.external_service_type ||
+        state.externalService.value.type,
+      actions: state.externalService.value.actions,
     },
     call: state.call.value,
     params: validParams,
-    result_name: state.resultName.value
+    result_name: state.resultName.value,
   };
 
   return createWebhookBasedNode(newAction, settings.originalNode, true);

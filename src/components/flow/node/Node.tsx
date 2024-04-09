@@ -7,7 +7,7 @@ import {
   getCategoriesForExit,
   getResultName,
   getVisibleActions,
-  filterIssuesForAction
+  filterIssuesForAction,
 } from 'components/flow/node/helpers';
 import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 import shared from 'components/shared.module.scss';
@@ -32,7 +32,7 @@ import {
   OnOpenNodeEditor,
   onOpenNodeEditor,
   RemoveNode,
-  removeNode
+  removeNode,
 } from 'store/thunks';
 import { ClickHandler, createClickHandler } from 'utils';
 import { applyVueInReact } from 'vuereact-combined';
@@ -56,7 +56,7 @@ export interface NodePassedProps {
     node: FlowNode,
     exit: Exit,
     className: string,
-    confirmDelete: boolean
+    confirmDelete: boolean,
   ) => void;
   startingNode: boolean;
   onlyNode: boolean;
@@ -102,14 +102,14 @@ export class NodeComp extends React.PureComponent<NodeProps> {
   private events: ClickHandler;
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: NodeProps, context: any) {
     super(props);
 
     bindCallbacks(this, {
-      include: [/Ref$/, /^on/, /^get/, /^handle/]
+      include: [/Ref$/, /^on/, /^get/, /^handle/],
     });
 
     this.events = context.config.mutable
@@ -138,14 +138,17 @@ export class NodeComp extends React.PureComponent<NodeProps> {
 
         // move our ghost node into position
         const width = this.ele.getBoundingClientRect().width;
-        const left = (e.pageX - width / 2 - 15 - canvasBounds.left) * (1 / scale);
+        const left =
+          (e.pageX - width / 2 - 15 - canvasBounds.left) * (1 / scale);
         const top = (e.pageY - canvasBounds.top - window.scrollY) * (1 / scale);
         const style = this.ele.style;
         style.left = left + 'px';
         style.top = top + 'px';
 
         // Hide ourselves if there's a drop target
-        style.visibility = document.querySelector('.plumb-drop-hover') ? 'hidden' : 'visible';
+        style.visibility = document.querySelector('.plumb-drop-hover')
+          ? 'hidden'
+          : 'visible';
       }
     };
   }
@@ -173,7 +176,9 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       try {
         this.props.plumberRecalculate(this.props.renderNode.node.uuid);
         for (const exit of this.props.renderNode.node.exits) {
-          this.props.plumberRecalculate(this.props.renderNode.node.uuid + ':' + exit.uuid);
+          this.props.plumberRecalculate(
+            this.props.renderNode.node.uuid + ':' + exit.uuid,
+          );
         }
       } catch (error) {
         // console.log(error);
@@ -206,7 +211,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
   private onClick(event: React.MouseEvent<HTMLElement>): void {
     if (this.props.mouseState !== MouseState.DRAGGING) {
       this.props.onOpenNodeEditor({
-        originalNode: this.props.renderNode
+        originalNode: this.props.renderNode,
       });
     }
   }
@@ -221,10 +226,12 @@ export class NodeComp extends React.PureComponent<NodeProps> {
         <ExitComp
           key={exit.uuid}
           node={this.props.renderNode.node}
-          categories={getCategoriesForExit(this.props.renderNode, exit).map(item => ({
-            ...item,
-            name: i18n.t(`forms.${item.name}`, item.name)
-          }))}
+          categories={getCategoriesForExit(this.props.renderNode, exit).map(
+            item => ({
+              ...item,
+              name: i18n.t(`forms.${item.name}`, item.name),
+            }),
+          )}
           exit={exit}
           showDragHelper={this.props.onlyNode && idx === 0}
           plumberMakeSource={this.props.plumberMakeSource}
@@ -271,52 +278,62 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     if (this.props.renderNode.node.actions) {
       // Save the first reference off to manage our clicks
       let firstRef: { ref: (ref: any) => any } | {} = {
-        ref: (ref: any) => (this.firstAction = ref)
+        ref: (ref: any) => (this.firstAction = ref),
       };
 
-      getVisibleActions(this.props.renderNode).forEach((action: AnyAction, idx: number) => {
-        const actionConfig = getTypeConfig(action.type);
+      getVisibleActions(this.props.renderNode).forEach(
+        (action: AnyAction, idx: number) => {
+          const actionConfig = getTypeConfig(action.type);
 
-        const issues: FlowIssue[] = filterIssuesForAction(
-          this.props.nodeUUID,
-          action,
-          this.props.issues
-        );
+          const issues: FlowIssue[] = filterIssuesForAction(
+            this.props.nodeUUID,
+            action,
+            this.props.issues,
+          );
 
-        if (actionConfig.hasOwnProperty('component') && actionConfig.component) {
-          const { component: ActionComponent } = actionConfig;
-          if (actionConfig.massageForDisplay) {
-            actionConfig.massageForDisplay(action);
+          if (
+            actionConfig.hasOwnProperty('component') &&
+            actionConfig.component
+          ) {
+            const { component: ActionComponent } = actionConfig;
+            if (actionConfig.massageForDisplay) {
+              actionConfig.massageForDisplay(action);
+            }
+
+            actions.push(
+              <ActionWrapper
+                {...firstRef}
+                key={action.uuid}
+                renderNode={this.props.renderNode}
+                selected={this.props.selected}
+                action={action}
+                first={idx === 0}
+                issues={issues}
+                render={(anyAction: AnyAction) => {
+                  return (
+                    <ActionComponent
+                      {...anyAction}
+                      languages={this.props.languages}
+                      issues={issues}
+                    />
+                  );
+                }}
+              />,
+            );
           }
 
-          actions.push(
-            <ActionWrapper
-              {...firstRef}
-              key={action.uuid}
-              renderNode={this.props.renderNode}
-              selected={this.props.selected}
-              action={action}
-              first={idx === 0}
-              issues={issues}
-              render={(anyAction: AnyAction) => {
-                return (
-                  <ActionComponent
-                    {...anyAction}
-                    languages={this.props.languages}
-                    issues={issues}
-                  />
-                );
-              }}
-            />
-          );
-        }
-
-        firstRef = {};
-      });
+          firstRef = {};
+        },
+      );
 
       actionList =
         actions.length > 0 ? (
-          <FlipMove enterAnimation="fade" leaveAnimation="fade" duration={300} easing="ease-out">
+          <FlipMove
+            enterAnimation="fade"
+            leaveAnimation="fade"
+            duration={300}
+            easing="ease-out"
+          >
             {actions}
           </FlipMove>
         ) : null;
@@ -334,7 +351,10 @@ export class NodeComp extends React.PureComponent<NodeProps> {
 
       const switchRouter = getSmartOrSwitchRouter(this.props.renderNode.node);
       if (switchRouter) {
-        if (type === Types.split_by_contact_field && this.props.renderNode.ui.config.operand.name) {
+        if (
+          type === Types.split_by_contact_field &&
+          this.props.renderNode.ui.config.operand.name
+        ) {
           title =
             i18n.t('forms.split_by') +
             ` ${this.props.renderNode.ui.config.operand.name.toLowerCase()}`;
@@ -352,7 +372,9 @@ export class NodeComp extends React.PureComponent<NodeProps> {
               ${this.props.selected && styles.selected}
             `}
           >
-            <div className={styles.save_as}>{i18n.t('forms.save_as', 'Save as')} </div>
+            <div className={styles.save_as}>
+              {i18n.t('forms.save_as', 'Save as')}{' '}
+            </div>
             <div className={styles.result_name}>{resultName}</div>
           </div>
         );
@@ -360,18 +382,24 @@ export class NodeComp extends React.PureComponent<NodeProps> {
 
       if (
         title === null &&
-        (type === Types.split_by_run_result || type === Types.split_by_run_result_delimited)
+        (type === Types.split_by_run_result ||
+          type === Types.split_by_run_result_delimited)
       ) {
         title =
           i18n.t('forms.split_by') +
-          ` ${this.props.results[this.props.renderNode.ui.config.operand.id].name.toLowerCase()}`;
+          ` ${this.props.results[
+            this.props.renderNode.ui.config.operand.id
+          ].name.toLowerCase()}`;
       }
 
       if (title === null) {
         title = config.name;
       }
 
-      if (!this.props.renderNode.node.actions || !this.props.renderNode.node.actions.length) {
+      if (
+        !this.props.renderNode.node.actions ||
+        !this.props.renderNode.node.actions.length
+      ) {
         // Router headers are introduced here while action headers are introduced in ./Action/Action
         header = (
           // Wrap in a relative parent so it honors node clipping
@@ -380,7 +408,11 @@ export class NodeComp extends React.PureComponent<NodeProps> {
               <TitleBar
                 __className={`${
                   (shared as any)[
-                    hasIssues(this.props.issues, this.props.translating, this.props.language)
+                    hasIssues(
+                      this.props.issues,
+                      this.props.translating,
+                      this.props.language,
+                    )
                       ? shared.missing
                       : config.type
                   ]
@@ -402,7 +434,10 @@ export class NodeComp extends React.PureComponent<NodeProps> {
         addActions = (
           <div
             className={styles.add}
-            {...createClickHandler(this.handleAddToNode, this.handleShouldCancelClick)}
+            {...createClickHandler(
+              this.handleAddToNode,
+              this.handleShouldCancelClick,
+            )}
           >
             <UnnnicIcon icon="add-1" size="sm" scheme="neutral-darkest" />
           </div>
@@ -417,7 +452,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       [styles.ghost]: this.props.ghost,
       [styles.flow_start]: this.isStartNodeVisible(),
       [styles.selected]: this.isSelected(),
-      [styles.immutable]: !this.context.config.mutable
+      [styles.immutable]: !this.context.config.mutable,
     });
 
     const uuid: JSX.Element = this.renderDebug();
@@ -432,7 +467,10 @@ export class NodeComp extends React.PureComponent<NodeProps> {
           keepVisible={this.props.simulating}
           onClick={() => {
             if (this.context.config.onActivityClicked) {
-              this.context.config.onActivityClicked(this.props.nodeUUID, this.props.activeCount);
+              this.context.config.onActivityClicked(
+                this.props.nodeUUID,
+                this.props.activeCount,
+              );
             }
           }}
         />
@@ -486,8 +524,8 @@ const mapStateToProps = (
       issues,
       assetStore: {
         results: { items: results },
-        languages: { items: languages }
-      }
+        languages: { items: languages },
+      },
     },
     editorState: {
       translating,
@@ -498,10 +536,10 @@ const mapStateToProps = (
       language,
       scrollToAction,
       scrollToNode,
-      mouseState
-    }
+      mouseState,
+    },
   }: AppState,
-  props: NodePassedProps
+  props: NodePassedProps,
 ) => {
   let renderNode: RenderNode = null;
 
@@ -522,7 +560,8 @@ const mapStateToProps = (
   const activeCount = activity.nodes[props.nodeUUID] || 0;
 
   // only set our scroll flags if they affect us
-  const scrollNode = scrollToNode && scrollToNode === props.nodeUUID ? scrollToNode : null;
+  const scrollNode =
+    scrollToNode && scrollToNode === props.nodeUUID ? scrollToNode : null;
   const scrollAction = scrollToAction && scrollNode ? scrollToAction : null;
 
   return {
@@ -537,7 +576,7 @@ const mapStateToProps = (
     simulating,
     scrollToNode: scrollNode,
     scrollToAction: scrollAction,
-    mouseState
+    mouseState,
   };
 };
 
@@ -547,14 +586,14 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
       onAddToNode,
       onOpenNodeEditor,
       removeNode,
-      mergeEditorState
+      mergeEditorState,
     },
-    dispatch
+    dispatch,
   );
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
   null,
-  { forwardRef: true }
+  { forwardRef: true },
 )(NodeComp);

@@ -10,7 +10,7 @@ import {
   DispatchWithState,
   HandleSearchChange,
   handleSearchChange,
-  onUpdateCanvasPositions
+  onUpdateCanvasPositions,
 } from 'store/thunks';
 import { RenderNodeMap, Search } from 'store/flowContext';
 import TextInputElement from 'components/form/textinput/TextInputElement';
@@ -25,10 +25,10 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
     componentWrapAttrs: {
       style: {
         all: '',
-        display: 'inline-block'
-      }
-    }
-  }
+        display: 'inline-block',
+      },
+    },
+  },
 });
 export interface SearchStoreProps {
   search?: Search;
@@ -43,7 +43,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       isSearchOpen: true,
       value: value,
       nodes: nodes,
-      selected: 0
+      selected: 0,
     });
     this.dragBackground();
   }
@@ -52,7 +52,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     return Object.entries(this.props.nodes).map(item => {
       return {
         uuid: item[0],
-        data: item[1]
+        data: item[1],
       };
     });
   }
@@ -63,7 +63,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       if (nodeItem.length > 0) {
         const selectedNode = document.getElementById(item.uuid);
         return selectedNode
-          ? selectedNode.innerText.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+          ? selectedNode.innerText
+              .toLocaleLowerCase()
+              .includes(value.toLocaleLowerCase())
           : false;
       } else {
         return false;
@@ -79,7 +81,8 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       const ui = nodes[selected].data.ui.position;
       const width = window.innerWidth / 2;
       const height = window.innerHeight / 2;
-      canvasBg.style.transform = `matrix(1, 0, 0, 1, ${width - ui.left}, ${height - ui.top})`;
+      canvasBg.style.transform = `matrix(1, 0, 0, 1, ${width -
+        ui.left}, ${height - ui.top})`;
       this.applyFilter(uuid);
     }
   }
@@ -109,7 +112,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           isSearchOpen: true,
           value: value,
           nodes: nodes,
-          selected: selected - 1 < 0 ? 0 : selected - 1
+          selected: selected - 1 < 0 ? 0 : selected - 1,
         });
         break;
       case 'down':
@@ -121,7 +124,8 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           isSearchOpen: true,
           value: value,
           nodes: nodes,
-          selected: selected < nodes.length - 1 ? selected + 1 : nodes.length - 1
+          selected:
+            selected < nodes.length - 1 ? selected + 1 : nodes.length - 1,
         });
         break;
     }
@@ -134,7 +138,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       isSearchOpen: false,
       value: value,
       nodes: nodes,
-      selected: 0
+      selected: 0,
     });
     this.applyFilter('remove');
   }
@@ -144,7 +148,11 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     return (
       <div className={styles.search_card}>
         <div className={styles.icon}>
-          <UnnnicIcon icon="search-1" size="avatar-nano" scheme="neutral-dark" />
+          <UnnnicIcon
+            icon="search-1"
+            size="avatar-nano"
+            scheme="neutral-dark"
+          />
         </div>
 
         <div className={styles.input}>
@@ -158,7 +166,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
         </div>
         <div className={styles.buttons}>
           <ArrowButton
-            disabled={!value.length || !nodes.length || selected === nodes.length - 1}
+            disabled={
+              !value.length || !nodes.length || selected === nodes.length - 1
+            }
             name={''}
             onClick={() => this.toggleMoveSelected('down')}
             iconName="down"
@@ -193,7 +203,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
 const mapStateToProps = ({ flowContext: { search, nodes } }: AppState) => {
   return {
     search,
-    nodes
+    nodes,
   };
 };
 
@@ -203,5 +213,5 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(SearchBar);

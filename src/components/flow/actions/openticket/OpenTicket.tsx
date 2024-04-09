@@ -3,8 +3,8 @@ import { OpenTicket } from 'flowTypes';
 import { fakePropType } from 'config/ConfigProvider';
 
 const OpenTicketComp: React.SFC<OpenTicket> = (
-  { ticketer, subject, topic },
-  context: any
+  { ticketer, subject, topic }: OpenTicket,
+  context: any,
 ): JSX.Element => {
   const showTicketer = ticketer.name.indexOf(context.config.brand) === -1;
   return (
@@ -20,7 +20,7 @@ const OpenTicketComp: React.SFC<OpenTicket> = (
 };
 
 OpenTicketComp.contextTypes = {
-  config: fakePropType
+  config: fakePropType,
 };
 
 export default OpenTicketComp;

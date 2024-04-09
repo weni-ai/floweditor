@@ -7,8 +7,18 @@ import TextInputElement from 'components/form/textinput/TextInputElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import * as React from 'react';
 import { Asset, AssetType } from 'store/flowContext';
-import { AssetEntry, FormState, mergeForm, StringEntry } from 'store/nodeEditor';
-import { Alphanumeric, shouldRequireIf, StartIsNonNumeric, validate } from 'store/validators';
+import {
+  AssetEntry,
+  FormState,
+  mergeForm,
+  StringEntry,
+} from 'store/nodeEditor';
+import {
+  Alphanumeric,
+  shouldRequireIf,
+  StartIsNonNumeric,
+  validate,
+} from 'store/validators';
 import { snakify } from 'utils';
 
 import { initializeForm, stateToAction } from './helpers';
@@ -35,7 +45,7 @@ export default class SetRunResultForm extends React.PureComponent<
     this.state = initializeForm(this.props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^handle/, /^on/]
+      include: [/^handle/, /^on/],
     });
   }
 
@@ -64,7 +74,7 @@ export default class SetRunResultForm extends React.PureComponent<
 
   private handleUpdate(
     keys: { name?: Asset; value?: string; category?: string },
-    submitting: boolean = false
+    submitting: boolean = false,
   ): boolean {
     const updates: Partial<SetRunResultFormState> = {};
 
@@ -72,7 +82,7 @@ export default class SetRunResultForm extends React.PureComponent<
       updates.name = validate(i18n.t('forms.name', 'Name'), keys.name, [
         shouldRequireIf(submitting),
         Alphanumeric,
-        StartIsNonNumeric
+        StartIsNonNumeric,
       ]);
     }
 
@@ -81,7 +91,11 @@ export default class SetRunResultForm extends React.PureComponent<
     }
 
     if (keys.hasOwnProperty('category')) {
-      updates.category = validate(i18n.t('forms.category', 'Category'), keys.category, []);
+      updates.category = validate(
+        i18n.t('forms.category', 'Category'),
+        keys.category,
+        [],
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -94,7 +108,9 @@ export default class SetRunResultForm extends React.PureComponent<
     const valid = this.handleUpdate({ name: this.state.name.value }, true);
 
     if (valid) {
-      this.props.updateAction(stateToAction(this.props.nodeSettings, this.state));
+      this.props.updateAction(
+        stateToAction(this.props.nodeSettings, this.state),
+      );
 
       // notify our modal we are done
       this.props.onClose(false);
@@ -106,8 +122,8 @@ export default class SetRunResultForm extends React.PureComponent<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -115,7 +131,7 @@ export default class SetRunResultForm extends React.PureComponent<
     return {
       id: snakify(input),
       name: input,
-      type: AssetType.Result
+      type: AssetType.Result,
     };
   }
 
@@ -127,8 +143,16 @@ export default class SetRunResultForm extends React.PureComponent<
         : '';
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <div className={styles.form}>
           <AssetSelector
             name={i18n.t('forms.result', 'Result')}
@@ -148,7 +172,8 @@ export default class SetRunResultForm extends React.PureComponent<
                 i18nKey="forms.result_name_help"
                 values={{ resultFormat: `@results${snaked}` }}
               >
-                By naming the result, you can reference it later using [[resultFormat]]
+                By naming the result, you can reference it later using
+                [[resultFormat]]
               </Trans>
             }
           />
@@ -162,7 +187,7 @@ export default class SetRunResultForm extends React.PureComponent<
               autocomplete={true}
               helpText={i18n.t(
                 'forms.result_value_help',
-                'The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))'
+                'The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))',
               )}
             />
           </div>

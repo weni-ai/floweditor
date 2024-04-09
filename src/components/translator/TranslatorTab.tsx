@@ -13,7 +13,7 @@ import {
   getMergedByType,
   TranslationState,
   getFriendlyAttribute,
-  getBundleKey
+  getBundleKey,
 } from './helpers';
 import CheckboxElement from 'components/form/checkbox/CheckboxElement';
 import { UpdateTranslationFilters } from 'store/thunks';
@@ -26,7 +26,7 @@ const cx: any = classNames.bind(styles);
 export enum TranslationType {
   PROPERTY = 'property',
   CATEGORY = 'category',
-  CASE = 'case'
+  CASE = 'case',
 }
 
 export interface TranslationBundle {
@@ -68,9 +68,12 @@ export interface TranslatorTabState {
   translationFilters: { categories: boolean; rules: boolean };
 }
 
-export class TranslatorTab extends React.Component<TranslatorTabProps, TranslatorTabState> {
+export class TranslatorTab extends React.Component<
+  TranslatorTabProps,
+  TranslatorTabState
+> {
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: TranslatorTabProps, context: any) {
@@ -82,11 +85,14 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
       translationBundles: [],
       optionsVisible: false,
       pctComplete: 0,
-      translationFilters: props.translationFilters || { categories: true, rules: true }
+      translationFilters: props.translationFilters || {
+        categories: true,
+        rules: true,
+      },
     };
 
     bindCallbacks(this, {
-      include: [/^handle/, /^render/, /^toggle/]
+      include: [/^handle/, /^render/, /^toggle/],
     });
   }
 
@@ -96,7 +102,10 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
     }
   }
 
-  public componentDidUpdate(prevProps: TranslatorTabProps, prevState: TranslatorTabState): void {
+  public componentDidUpdate(
+    prevProps: TranslatorTabProps,
+    prevState: TranslatorTabState,
+  ): void {
     // traceUpdate(this, prevProps, prevState);
     if (
       prevProps.translationFilters !== this.props.translationFilters ||
@@ -117,7 +126,8 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
       // check for router level translations
       if (
         renderNode.node.router &&
-        (this.state.translationFilters.categories || this.state.translationFilters.rules)
+        (this.state.translationFilters.categories ||
+          this.state.translationFilters.rules)
       ) {
         const typeConfig = getTypeConfig(getType(renderNode));
 
@@ -130,8 +140,8 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
                 TranslationType.CATEGORY,
                 localizeableKeys,
                 category,
-                this.props.localization
-              )
+                this.props.localization,
+              ),
             );
           });
         }
@@ -146,8 +156,8 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
                   TranslationType.CASE,
                   localizeableKeys,
                   kase,
-                  this.props.localization
-                )
+                  this.props.localization,
+                ),
               );
             });
           }
@@ -158,7 +168,9 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
             typeConfig,
             node_uuid,
             translations,
-            translated: translations.filter((translation: Translation) => !!translation.to).length
+            translated: translations.filter(
+              (translation: Translation) => !!translation.to,
+            ).length,
           });
         }
       } else {
@@ -169,7 +181,7 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
             TranslationType.PROPERTY,
             typeConfig.localizeableKeys || [],
             action,
-            this.props.localization
+            this.props.localization,
           );
 
           if (translations.length > 0) {
@@ -178,7 +190,9 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
               node_uuid,
               action_uuid: action.uuid,
               translations,
-              translated: translations.filter((translation: Translation) => !!translation.to).length
+              translated: translations.filter(
+                (translation: Translation) => !!translation.to,
+              ).length,
             });
           }
         });
@@ -192,12 +206,20 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
       return counts;
     }, counts);
 
-    const pctComplete = counts.total > 0 ? Math.round((counts.complete / counts.total) * 100) : 0;
+    const pctComplete =
+      counts.total > 0 ? Math.round((counts.complete / counts.total) * 100) : 0;
 
     const bundles = translationBundles
-      .filter((bundle: TranslationBundle) => bundle.translated < bundle.translations.length)
+      .filter(
+        (bundle: TranslationBundle) =>
+          bundle.translated < bundle.translations.length,
+      )
       .sort((a: TranslationBundle, b: TranslationBundle) => {
-        return b.translations.length - b.translated - (a.translations.length - a.translated);
+        return (
+          b.translations.length -
+          b.translated -
+          (a.translations.length - a.translated)
+        );
       });
 
     if (
@@ -206,7 +228,7 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
     ) {
       this.setState({
         pctComplete,
-        translationBundles: bundles
+        translationBundles: bundles,
       });
     }
   }
@@ -224,18 +246,28 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
 
   private toggleCategories(categories: boolean): void {
     this.setState(
-      { translationFilters: { categories, rules: this.state.translationFilters.rules } },
+      {
+        translationFilters: {
+          categories,
+          rules: this.state.translationFilters.rules,
+        },
+      },
       () => {
         this.props.onTranslationFilterChanged(this.state.translationFilters);
-      }
+      },
     );
   }
   private toggleRules(rules: boolean): void {
     this.setState(
-      { translationFilters: { rules, categories: this.state.translationFilters.categories } },
+      {
+        translationFilters: {
+          rules,
+          categories: this.state.translationFilters.categories,
+        },
+      },
       () => {
         this.props.onTranslationFilterChanged(this.state.translationFilters);
-      }
+      },
     );
   }
 
@@ -260,40 +292,48 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
   }
 
   private handleChangeLanguageClick(e: any): void {
-    this.context.config.onChangeLanguage(this.props.language.id, this.props.language.name);
+    this.context.config.onChangeLanguage(
+      this.props.language.id,
+      this.props.language.name,
+    );
     e.preventDefault();
     e.stopPropagation();
   }
 
   public render(): JSX.Element {
     // only show change button if container set up to handle it
-    const showChangeButton = this.state.optionsVisible && this.context.config.onChangeLanguage;
+    const showChangeButton =
+      this.state.optionsVisible && this.context.config.onChangeLanguage;
 
     const classes = cx({
       [styles.visible]: this.state.visible,
-      [styles.hidden]: this.props.popped && this.props.popped !== PopTabType.TRANSLATOR_TAB
+      [styles.hidden]:
+        this.props.popped && this.props.popped !== PopTabType.TRANSLATOR_TAB,
     });
 
     const optionsClasses = cx({
       [styles.options]: true,
       [styles.options_visible]: this.state.optionsVisible,
-      [styles.change_visible]: showChangeButton
+      [styles.change_visible]: showChangeButton,
     });
 
     const filledClasses = cx({
       [styles.filled]: true,
-      [styles.hundredpct]: this.state.pctComplete === 100
+      [styles.hundredpct]: this.state.pctComplete === 100,
     });
 
     const wrapperClasses = cx({
       [styles.translations_wrapper]: true,
-      [styles.complete]: this.state.translationBundles.length === 0
+      [styles.complete]: this.state.translationBundles.length === 0,
     });
 
     return (
       <div className={classes}>
         <PopTab
-          header={`${this.props.language.name} ${i18n.t('translation.label', 'Translations')}`}
+          header={`${this.props.language.name} ${i18n.t(
+            'translation.label',
+            'Translations',
+          )}`}
           label={i18n.t('translation.header', 'Flow Translation')}
           color="#67738B"
           icon="translate-1"
@@ -313,30 +353,41 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
                   }}
                 >
                   <div className={styles.needs_translation}>
-                    <div className={styles.type_name}>{bundle.typeConfig.name}</div>
+                    <div className={styles.type_name}>
+                      {bundle.typeConfig.name}
+                    </div>
                     {this.renderMissing(
                       getBundleKey(bundle) + 'categories',
-                      getMergedByType(bundle, TranslationState.MISSING, TranslationType.CATEGORY),
-                      getFriendlyAttribute('categories')
+                      getMergedByType(
+                        bundle,
+                        TranslationState.MISSING,
+                        TranslationType.CATEGORY,
+                      ),
+                      getFriendlyAttribute('categories'),
                     )}
 
                     {this.renderMissing(
                       getBundleKey(bundle) + 'rules',
 
-                      getMergedByType(bundle, TranslationState.MISSING, TranslationType.CASE),
-                      getFriendlyAttribute('cases')
+                      getMergedByType(
+                        bundle,
+                        TranslationState.MISSING,
+                        TranslationType.CASE,
+                      ),
+                      getFriendlyAttribute('cases'),
                     )}
                     {bundle.translations
                       .filter(
                         translation =>
-                          !translation.to && translation.type === TranslationType.PROPERTY
+                          !translation.to &&
+                          translation.type === TranslationType.PROPERTY,
                       )
                       .map(translation =>
                         this.renderMissing(
                           getBundleKey(bundle) + translation.from,
                           translation.from,
-                          getFriendlyAttribute(translation.attribute)
-                        )
+                          getFriendlyAttribute(translation.attribute),
+                        ),
                       )}
                   </div>
                 </div>
@@ -377,12 +428,17 @@ export class TranslatorTab extends React.Component<TranslatorTabProps, Translato
                   />
                 </div>
               </div>
-              <div className={styles.pct_complete}>{this.state.pctComplete}%</div>
+              <div className={styles.pct_complete}>
+                {this.state.pctComplete}%
+              </div>
             </div>
             <div className={styles.changeLanguage}>
               {showChangeButton && (
                 <button onClick={this.handleChangeLanguageClick}>
-                  {i18n.t('forms.use_as_default_language', 'Use as default language')}
+                  {i18n.t(
+                    'forms.use_as_default_language',
+                    'Use as default language',
+                  )}
                 </button>
               )}
             </div>

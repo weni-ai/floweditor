@@ -19,7 +19,7 @@ export type FormInput =
   | WhatsAppProduct[];
 export type ValidatorFunc = (
   name: string,
-  input: FormInput
+  input: FormInput,
 ) => { failures: ValidationFailure[]; value: FormInput };
 
 // Courtesy of @diegoperini: https://gist.github.com/dperini/729294
@@ -59,7 +59,7 @@ const REGEX_URL = new RegExp(
     // resource path
     '(?:[/?#]\\S*)?' +
     '$',
-  'i'
+  'i',
 );
 
 const inputAsString = (input: FormInput): string => {
@@ -76,13 +76,16 @@ const inputAsString = (input: FormInput): string => {
   return value ? value + '' : null;
 };
 
-const fromMaxItems = (max: number): ValidatorFunc => (name: string, input: FormInput) => {
+const fromMaxItems = (max: number): ValidatorFunc => (
+  name: string,
+  input: FormInput,
+) => {
   if (Array.isArray(input)) {
     const items = input as string[];
     if (items.length > max) {
       return {
         value: input,
-        failures: [{ message: `${name} cannot have more than ${max} entries` }]
+        failures: [{ message: `${name} cannot have more than ${max} entries` }],
       };
     }
   }
@@ -91,14 +94,14 @@ const fromMaxItems = (max: number): ValidatorFunc => (name: string, input: FormI
 
 const fromRegex = (regex: RegExp, message: string): ValidatorFunc => (
   name: string,
-  input: FormInput
+  input: FormInput,
 ) => {
   const value = inputAsString(input);
   if (value) {
     if (!regex.test(value)) {
       return {
         value: input,
-        failures: [{ message: `${name} ${message}` }]
+        failures: [{ message: `${name} ${message}` }],
       };
     }
   }
@@ -108,7 +111,7 @@ const fromRegex = (regex: RegExp, message: string): ValidatorFunc => (
 export const validate = (
   name: string,
   input: FormInput,
-  validators: ValidatorFunc[]
+  validators: ValidatorFunc[],
 ): FormEntry => {
   let allFailures: ValidationFailure[] = [];
   let value = input;
@@ -125,21 +128,24 @@ export const Empty: ValidatorFunc = (name: string, input: FormInput) => {
   const isNotFinished = i18n.t('forms.is_not_finished', 'is not finished');
 
   if (input) {
-    return { value: input, failures: [{ message: `${name} ${isNotFinished}` }] };
+    return {
+      value: input,
+      failures: [{ message: `${name} ${isNotFinished}` }],
+    };
   }
 
   if (typeof input === 'string') {
     if ((input as string).trim().length !== 0) {
       return {
         value: input,
-        failures: [{ message: `${name} ${isNotFinished}` }]
+        failures: [{ message: `${name} ${isNotFinished}` }],
       };
     }
   } else if (Array.isArray(input)) {
     if (input.length !== 0) {
       return {
         value: input,
-        failures: [{ message: `${name} ${isNotFinished}` }]
+        failures: [{ message: `${name} ${isNotFinished}` }],
       };
     }
   }
@@ -161,7 +167,11 @@ export const Required: ValidatorFunc = (name: string, input: FormInput) => {
     if (input.length === 0) {
       return {
         value: input,
-        failures: [{ message: `${name} ${i18n.t('forms.are_required', 'are required')}` }]
+        failures: [
+          {
+            message: `${name} ${i18n.t('forms.are_required', 'are required')}`,
+          },
+        ],
       };
     }
   }
@@ -184,9 +194,12 @@ export const Regex: ValidatorFunc = (name: string, input: FormInput) => {
         value: input,
         failures: [
           {
-            message: `${name} ${i18n.t('forms.is_not_a_valid_regex', 'is not a valid regex')}`
-          }
-        ]
+            message: `${name} ${i18n.t(
+              'forms.is_not_a_valid_regex',
+              'is not a valid regex',
+            )}`,
+          },
+        ],
       };
     }
   }
@@ -196,7 +209,7 @@ export const Regex: ValidatorFunc = (name: string, input: FormInput) => {
 
 export const LessThan = (amount: number, checkName: string): ValidatorFunc => (
   name: string,
-  input: FormInput
+  input: FormInput,
 ) => {
   if (typeof input === 'string') {
     if (parseFloat(input as string) >= amount) {
@@ -206,10 +219,10 @@ export const LessThan = (amount: number, checkName: string): ValidatorFunc => (
           {
             message: `${name} ${i18n.t(
               'forms.must_be_less_than',
-              'must be less than'
-            )} ${checkName}`
-          }
-        ]
+              'must be less than',
+            )} ${checkName}`,
+          },
+        ],
       };
     }
 
@@ -220,13 +233,13 @@ export const LessThan = (amount: number, checkName: string): ValidatorFunc => (
 
 export const MoreThan = (amount: number, checkName: string): ValidatorFunc => (
   name: string,
-  input: FormInput
+  input: FormInput,
 ) => {
   if (typeof input === 'string') {
     if (parseFloat(input as string) <= amount) {
       return {
         value: input,
-        failures: [{ message: `${name} must be a more than ${checkName}` }]
+        failures: [{ message: `${name} must be a more than ${checkName}` }],
       };
     }
 
@@ -237,7 +250,7 @@ export const MoreThan = (amount: number, checkName: string): ValidatorFunc => (
 
 export const shouldRequireIf = (required: boolean): ValidatorFunc => (
   name: string,
-  input: FormInput
+  input: FormInput,
 ) => {
   if (required) {
     return Required(name, input);
@@ -245,10 +258,10 @@ export const shouldRequireIf = (required: boolean): ValidatorFunc => (
   return { failures: [], value: input };
 };
 
-export const validateIf = (func: ValidatorFunc, predicate: boolean): ValidatorFunc => (
-  name: string,
-  input: FormInput
-) => {
+export const validateIf = (
+  func: ValidatorFunc,
+  predicate: boolean,
+): ValidatorFunc => (name: string, input: FormInput) => {
   if (predicate) {
     return func(name, input);
   }
@@ -266,17 +279,23 @@ export const HeaderName: ValidatorFunc = (name: string, input: FormInput) => {
 
 export const IsValidIntent = (classifier: Asset): ValidatorFunc => (
   name: string,
-  input: FormInput
+  input: FormInput,
 ) => {
   if (typeof input === 'object') {
     const option = input as SelectOption;
 
     if (option && classifier && classifier.content) {
-      const exists = !!classifier.content.intents.find((intent: string) => intent === option.value);
+      const exists = !!classifier.content.intents.find(
+        (intent: string) => intent === option.value,
+      );
       if (!exists) {
         return {
           value: input,
-          failures: [{ message: `${option.value} is not a valid intent for ${classifier.name}` }]
+          failures: [
+            {
+              message: `${option.value} is not a valid intent for ${classifier.name}`,
+            },
+          ],
         };
       }
     }
@@ -286,8 +305,20 @@ export const IsValidIntent = (classifier: Asset): ValidatorFunc => (
 };
 
 export const MaxOfTenItems = fromMaxItems(10);
-export const StartIsNonNumeric = fromRegex(/^(?!\d)/, "can't start with a number");
+export const StartIsNonNumeric = fromRegex(
+  /^(?!\d)/,
+  "can't start with a number",
+);
 export const ValidURL = fromRegex(REGEX_URL, 'is not a valid URL');
-export const Numeric = fromRegex(/^([-+]?((\.\d+)|(\d+)(\.\d+)?)$)/, 'must be a number');
-export const Alphanumeric = fromRegex(/^[a-z\d\-_\s]+$/i, 'can only have letters and numbers');
-export const NumOrExp = fromRegex(/^@.*$|^([-+]?((\.\d+)|(\d+)(\.\d+)?)$)/, 'must be a number');
+export const Numeric = fromRegex(
+  /^([-+]?((\.\d+)|(\d+)(\.\d+)?)$)/,
+  'must be a number',
+);
+export const Alphanumeric = fromRegex(
+  /^[a-z\d\-_\s]+$/i,
+  'can only have letters and numbers',
+);
+export const NumOrExp = fromRegex(
+  /^@.*$|^([-+]?((\.\d+)|(\d+)(\.\d+)?)$)/,
+  'must be a number',
+);

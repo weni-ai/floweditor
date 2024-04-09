@@ -1,13 +1,16 @@
 import TimeoutControl, {
   TIMEOUT_OPTIONS,
-  TimeoutControlProps
+  TimeoutControlProps,
 } from 'components/form/timeout/TimeoutControl';
 import { composeComponentTestUtils, setMock } from 'testUtils';
 
-const { setup } = composeComponentTestUtils<TimeoutControlProps>(TimeoutControl, {
-  timeout: 0,
-  onChanged: jest.fn()
-});
+const { setup } = composeComponentTestUtils<TimeoutControlProps>(
+  TimeoutControl,
+  {
+    timeout: 0,
+    onChanged: jest.fn(),
+  },
+);
 
 describe(TimeoutControl.name, () => {
   it('renders', () => {
@@ -27,7 +30,7 @@ describe(TimeoutControl.name, () => {
   it('handles initial values', () => {
     const { wrapper, instance } = setup(true, {
       timeout: { $set: 15 },
-      onChanged: setMock()
+      onChanged: setMock(),
     });
 
     instance.handleChecked();

@@ -32,7 +32,9 @@ export class Portal extends React.Component<PortalProps> {
   componentDidUpdate(prevProps: PortalProps) {
     if (this.props.id && prevProps.id !== this.props.id) {
       window.setTimeout(() => {
-        this.portalRoot = document.getElementById(this.props.id || 'portal-root');
+        this.portalRoot = document.getElementById(
+          this.props.id || 'portal-root',
+        );
         this.portalRoot.appendChild(this.el);
       }, 100);
     }

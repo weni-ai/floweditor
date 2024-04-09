@@ -7,14 +7,18 @@ import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import {
   initializeForm as stateToForm,
   stateToAction,
-  TOPIC_OPTIONS
+  TOPIC_OPTIONS,
 } from 'components/flow/actions/sendmsg/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
 import { hasUseableTranslation } from 'components/form/assetselector/helpers';
-import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
+import SwitchElement, {
+  SwitchSizes,
+} from 'components/form/switch/SwitchElement';
 import MultiChoiceInput from 'components/form/multichoice/MultiChoice';
-import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
+import SelectElement, {
+  SelectOption,
+} from 'components/form/select/SelectElement';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import { fakePropType } from 'config/ConfigProvider';
@@ -29,9 +33,14 @@ import {
   StringArrayEntry,
   StringEntry,
   SelectOptionEntry,
-  FormEntry
+  FormEntry,
 } from 'store/nodeEditor';
-import { MaxOfTenItems, Required, shouldRequireIf, validate } from 'store/validators';
+import {
+  MaxOfTenItems,
+  Required,
+  shouldRequireIf,
+  validate,
+} from 'store/validators';
 import { range } from 'utils';
 
 import styles from './SendMsgForm.module.scss';
@@ -54,30 +63,36 @@ export interface SendMsgFormState extends FormState {
   templateTranslation?: TemplateTranslation;
 }
 
-export default class SendMsgForm extends React.Component<ActionFormProps, SendMsgFormState> {
+export default class SendMsgForm extends React.Component<
+  ActionFormProps,
+  SendMsgFormState
+> {
   private filePicker: any;
 
   constructor(props: ActionFormProps) {
     super(props);
     this.state = stateToForm(this.props.nodeSettings, this.props.assetStore);
     bindCallbacks(this, {
-      include: [/^handle/, /^on/]
+      include: [/^handle/, /^on/],
     });
 
     // intialize our templates if we have them
     if (this.state.template.value !== null) {
-      fetchAsset(this.props.assetStore.templates, this.state.template.value.uuid).then(
-        (asset: Asset) => {
-          if (asset !== null) {
-            this.handleTemplateChanged([{ ...this.state.template.value, ...asset.content }]);
-          }
+      fetchAsset(
+        this.props.assetStore.templates,
+        this.state.template.value.uuid,
+      ).then((asset: Asset) => {
+        if (asset !== null) {
+          this.handleTemplateChanged([
+            { ...this.state.template.value, ...asset.content },
+          ]);
         }
-      );
+      });
     }
   }
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   private handleUpdate(
@@ -86,13 +101,15 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
       sendAll?: boolean;
       quickReplies?: string[];
     },
-    submitting = false
+    submitting = false,
   ): boolean {
     const updates: Partial<SendMsgFormState> = {};
     if (keys.hasOwnProperty('text')) {
-      updates.message = validate(i18n.t('forms.message', 'Message'), keys.text, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.message = validate(
+        i18n.t('forms.message', 'Message'),
+        keys.text,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     if (keys.hasOwnProperty('sendAll')) {
@@ -103,7 +120,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
       updates.quickReplies = validate(
         i18n.t('forms.quick_replies', 'Quick Replies'),
         keys.quickReplies,
-        [MaxOfTenItems]
+        [MaxOfTenItems],
       );
     }
 
@@ -117,7 +134,11 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     return this.handleUpdate({ text: (event.target as any).value }, false);
   }
 
-  public handleMessageUpdate(message: string, name: string, submitting = false): boolean {
+  public handleMessageUpdate(
+    message: string,
+    name: string,
+    submitting = false,
+  ): boolean {
     return this.handleUpdate({ text: message }, submitting);
   }
 
@@ -140,18 +161,24 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
 
     let templateVariables = this.state.templateVariables;
     // make sure we don't have untouched template variables
-    this.state.templateVariables.forEach((variable: StringEntry, num: number) => {
-      const updated = validate(`Variable ${num + 1}`, variable.value, [Required]);
-      templateVariables = mutate(templateVariables, {
-        [num]: { $merge: updated }
-      }) as StringEntry[];
-      valid = valid && !hasErrors(updated);
-    });
+    this.state.templateVariables.forEach(
+      (variable: StringEntry, num: number) => {
+        const updated = validate(`Variable ${num + 1}`, variable.value, [
+          Required,
+        ]);
+        templateVariables = mutate(templateVariables, {
+          [num]: { $merge: updated },
+        }) as StringEntry[];
+        valid = valid && !hasErrors(updated);
+      },
+    );
 
     valid = valid && !hasErrors(this.state.quickReplyEntry);
 
     if (valid) {
-      this.props.updateAction(stateToAction(this.props.nodeSettings, this.state));
+      this.props.updateAction(
+        stateToAction(this.props.nodeSettings, this.state),
+      );
       // notify our modal we are done
       this.props.onClose(false);
     } else {
@@ -164,8 +191,8 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       tertiary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -176,17 +203,18 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
       this.setState({
         template: { value: null },
         templateTranslation: null,
-        templateVariables: []
+        templateVariables: [],
       });
     } else {
       const templateTranslation = template.translations[0];
 
       const templateVariables =
         this.state.templateVariables.length === 0 ||
-        (this.state.template.value && this.state.template.value.uuid !== template.uuid)
+        (this.state.template.value &&
+          this.state.template.value.uuid !== template.uuid)
           ? range(0, templateTranslation.variable_count).map(() => {
               return {
-                value: ''
+                value: '',
               };
             })
           : this.state.templateVariables;
@@ -194,15 +222,18 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
       this.setState({
         template: { value: template },
         templateTranslation,
-        templateVariables
+        templateVariables,
       });
     }
   }
 
-  private handleTemplateVariableChanged(updatedText: string, num: number): void {
+  private handleTemplateVariableChanged(
+    updatedText: string,
+    num: number,
+  ): void {
     const entry = validate(`Variable ${num + 1}`, updatedText, [Required]);
     const templateVariables = mutate(this.state.templateVariables, {
-      $merge: { [num]: entry }
+      $merge: { [num]: entry },
     }) as StringEntry[];
     this.setState({ templateVariables });
   }
@@ -217,7 +248,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
         <p>
           {i18n.t(
             'forms.send_msg_facebook_warning',
-            'Sending bulk messages over a Facebook channel requires that a topic be specified if the user has not sent a message in the last 24 hours. Setting a topic to use over Facebook is especially important for the first message in your flow.'
+            'Sending bulk messages over a Facebook channel requires that a topic be specified if the user has not sent a message in the last 24 hours. Setting a topic to use over Facebook is especially important for the first message in your flow.',
           )}
         </p>
         <SelectElement
@@ -228,7 +259,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
           options={TOPIC_OPTIONS}
           placeholder={i18n.t(
             'forms.send_msg_facebook_topic_placeholder',
-            'Select a topic to use over Facebook'
+            'Select a topic to use over Facebook',
           )}
           clearable={true}
         />
@@ -246,7 +277,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
         <p>
           {i18n.t(
             'forms.whatsapp_warning',
-            'Sending messages over a WhatsApp channel requires that a template be used if you have not received a message from a contact in the last 24 hours. Setting a template to use over WhatsApp is especially important for the first message in your flow.'
+            'Sending messages over a WhatsApp channel requires that a template be used if you have not received a message from a contact in the last 24 hours. Setting a template to use over WhatsApp is especially important for the first message in your flow.',
           )}
         </p>
         <AssetSelector
@@ -261,23 +292,31 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
         />
         {this.state.templateTranslation ? (
           <>
-            <div className={styles.template_text}>{this.state.templateTranslation.content}</div>
-            {range(0, this.state.templateTranslation.variable_count).map((num: number) => {
-              return (
-                <div className={styles.variable} key={'tr_arg_' + num}>
-                  <TextInputElement
-                    name={`${i18n.t('forms.variable', 'Variable')} ${num + 1}`}
-                    showLabel={false}
-                    placeholder={`${i18n.t('forms.variable', 'Variable')} ${num + 1}`}
-                    onChange={(updatedText: string) => {
-                      this.handleTemplateVariableChanged(updatedText, num);
-                    }}
-                    entry={this.state.templateVariables[num]}
-                    autocomplete={true}
-                  />
-                </div>
-              );
-            })}
+            <div className={styles.template_text}>
+              {this.state.templateTranslation.content}
+            </div>
+            {range(0, this.state.templateTranslation.variable_count).map(
+              (num: number) => {
+                return (
+                  <div className={styles.variable} key={'tr_arg_' + num}>
+                    <TextInputElement
+                      name={`${i18n.t('forms.variable', 'Variable')} ${num +
+                        1}`}
+                      showLabel={false}
+                      placeholder={`${i18n.t(
+                        'forms.variable',
+                        'Variable',
+                      )} ${num + 1}`}
+                      onChange={(updatedText: string) => {
+                        this.handleTemplateVariableChanged(updatedText, num);
+                      }}
+                      entry={this.state.templateVariables[num]}
+                      autocomplete={true}
+                    />
+                  </div>
+                );
+              },
+            )}
           </>
         ) : null}
       </>
@@ -286,7 +325,9 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
 
   private handleAttachmentUploaded(response: AxiosResponse) {
     const attachments: any = mutate(this.state.attachments, {
-      $push: [{ type: response.data.type, url: response.data.url, uploaded: true }]
+      $push: [
+        { type: response.data.type, url: response.data.url, uploaded: true },
+      ],
     });
     this.setState({ attachments });
   }
@@ -295,13 +336,13 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
     let attachments: any = this.state.attachments;
     if (index === -1) {
       attachments = mutate(attachments, {
-        $push: [{ type, url }]
+        $push: [{ type, url }],
       });
     } else {
       attachments = mutate(attachments, {
         [index]: {
-          $set: { type, url }
-        }
+          $set: { type, url },
+        },
       });
     }
 
@@ -310,7 +351,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
 
   private handleAttachmentRemoved(index: number) {
     const attachments: any = mutate(this.state.attachments, {
-      $splice: [[index, 1]]
+      $splice: [[index, 1]],
     });
     this.setState({ attachments });
   }
@@ -327,15 +368,21 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
           >
             {i18n.t(
               'forms.quick_replies_summary',
-              'Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for "Yes" and one for "No".'
+              'Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for "Yes" and one for "No".',
             )}
             <br />
             <br />
-            {i18n.t('forms.quick_replies_limit', 'You can add up to 10 Quick Replies.')}
+            {i18n.t(
+              'forms.quick_replies_limit',
+              'You can add up to 10 Quick Replies.',
+            )}
           </div>
 
           <MultiChoiceInput
-            name={i18n.t('forms.add_quick_reply', 'Add a new Quick Reply and press enter')}
+            name={i18n.t(
+              'forms.add_quick_reply',
+              'Add a new Quick Reply and press enter',
+            )}
             helpText={<Trans i18nKey="forms.quick_replies" />}
             items={this.state.quickReplies}
             entry={this.state.quickReplyEntry}
@@ -344,7 +391,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
         </>
       ),
       checked: this.state.quickReplies.value.length > 0,
-      hasErrors: hasErrors(this.state.quickReplyEntry)
+      hasErrors: hasErrors(this.state.quickReplyEntry),
     };
 
     const attachments: Tab = {
@@ -354,36 +401,44 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
         this.state.attachments,
         this.handleAttachmentUploaded,
         this.handleAttachmentChanged,
-        this.handleAttachmentRemoved
+        this.handleAttachmentRemoved,
       ),
-      checked: this.state.attachments.length > 0
+      checked: this.state.attachments.length > 0,
     };
 
     const advanced: Tab = {
       name: i18n.t('forms.advanced', 'Advanced'),
       body: (
         <>
-          <div className={`u font secondary body-md color-neutral-cloudy ${styles.title}`}>
+          <div
+            className={`u font secondary body-md color-neutral-cloudy ${styles.title}`}
+          >
             {i18n.t(
               'forms.all_destinations_title',
-              'Send a message to all destinations known for this contact.'
+              'Send a message to all destinations known for this contact.',
             )}
           </div>
 
           <SwitchElement
-            name={i18n.t('forms.all_destinations', 'Send a message to all destinations')}
-            title={i18n.t('forms.all_destinations', 'Send a message to all destinations')}
+            name={i18n.t(
+              'forms.all_destinations',
+              'Send a message to all destinations',
+            )}
+            title={i18n.t(
+              'forms.all_destinations',
+              'Send a message to all destinations',
+            )}
             checked={this.state.sendAll}
             description={i18n.t(
               'forms.all_destinations_description',
-              "If you aren't sure what this means, leave it unchecked."
+              "If you aren't sure what this means, leave it unchecked.",
             )}
             onChange={this.handleSendAllUpdate}
             size={SwitchSizes.small}
           />
         </>
       ),
-      checked: this.state.sendAll
+      checked: this.state.sendAll,
     };
 
     const tabs = [quickReplies, attachments, advanced];
@@ -393,7 +448,9 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
         name: 'WhatsApp',
         body: this.renderTemplateConfig(),
         checked: this.state.template.value != null,
-        hasErrors: !!this.state.templateVariables.find((entry: StringEntry) => hasErrors(entry))
+        hasErrors: !!this.state.templateVariables.find((entry: StringEntry) =>
+          hasErrors(entry),
+        ),
       };
       tabs.splice(0, 0, templates);
     }
@@ -402,7 +459,7 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
       const templates: Tab = {
         name: 'Facebook',
         body: this.renderTopicConfig(),
-        checked: this.state.topic.value != null
+        checked: this.state.topic.value != null,
       };
       tabs.splice(0, 0, templates);
     }
@@ -414,7 +471,11 @@ export default class SendMsgForm extends React.Component<ActionFormProps, SendMs
         buttons={this.getButtons()}
         tabs={tabs}
       >
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <TextInputElement
           name={i18n.t('forms.message', 'Message')}
           showLabel={true}

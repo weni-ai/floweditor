@@ -6,7 +6,10 @@ import { AssetType } from 'store/flowContext';
 
 export const MAX_TO_SHOW = 5;
 
-const AddLabelsComp: React.SFC<AddLabels> = ({ labels }, context: any): JSX.Element => {
+const AddLabelsComp: React.SFC<AddLabels> = (
+  { labels }: AddLabels,
+  context: any,
+): JSX.Element => {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
@@ -16,17 +19,17 @@ const AddLabelsComp: React.SFC<AddLabels> = ({ labels }, context: any): JSX.Elem
               return {
                 id: label.name_match,
                 name: label.name_match,
-                type: AssetType.NameMatch
+                type: AssetType.NameMatch,
               };
             }
             return {
               id: label.uuid,
               name: label.name,
-              type: AssetType.Label
+              type: AssetType.Label,
             };
           }),
           MAX_TO_SHOW,
-          context.config.endpoints
+          context.config.endpoints,
         )}
       </div>
     </>
@@ -34,7 +37,7 @@ const AddLabelsComp: React.SFC<AddLabels> = ({ labels }, context: any): JSX.Elem
 };
 
 AddLabelsComp.contextTypes = {
-  config: fakePropType
+  config: fakePropType,
 };
 
 export default AddLabelsComp;

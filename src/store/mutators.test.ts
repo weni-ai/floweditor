@@ -1,5 +1,11 @@
 import { Types } from 'config/interfaces';
-import { Category, Exit, FlowDefinition, RouterTypes, SendMsg } from 'flowTypes';
+import {
+  Category,
+  Exit,
+  FlowDefinition,
+  RouterTypes,
+  SendMsg,
+} from 'flowTypes';
 import { RenderNode, AssetMap, AssetType } from 'store/flowContext';
 import {
   detectLoops,
@@ -7,7 +13,7 @@ import {
   getExitIndex,
   getFlowComponents,
   getNode,
-  newPosition
+  newPosition,
 } from 'store/helpers';
 import {
   addAction,
@@ -22,9 +28,12 @@ import {
   updateNodeDimensions,
   updatePosition,
   removeResultReference,
-  removeResultFromStore
+  removeResultFromStore,
 } from 'store/mutators';
-import { createMatchRouter, createSendMsgAction } from 'testUtils/assetCreators';
+import {
+  createMatchRouter,
+  createSendMsgAction,
+} from 'testUtils/assetCreators';
 import { createUUID } from 'utils';
 
 const mutate = require('immutability-helper');
@@ -81,7 +90,7 @@ describe('mutators', () => {
     const updated = addAction(nodes, 'node0', {
       uuid: 'node0_action4',
       type: Types.send_msg,
-      text: 'Hello World'
+      text: 'Hello World',
     } as SendMsg);
 
     const action = updated.node0.node.actions[5] as SendMsg;
@@ -97,8 +106,8 @@ describe('mutators', () => {
         name: 'Result 1',
         id: 'result_1',
         type: AssetType.Result,
-        references: [{ nodeUUID }]
-      }
+        references: [{ nodeUUID }],
+      },
     };
     const assets = removeResultReference('Result 1', items, { nodeUUID });
     expect(Object.keys(assets).length).toBe(0);
@@ -116,13 +125,13 @@ describe('mutators', () => {
       const originalAction = {
         uuid: 'node0_action3',
         type: Types.send_msg,
-        text: 'Hello World'
+        text: 'Hello World',
       } as SendMsg;
 
       const newAction = {
         uuid: 'node0_action3',
         type: Types.send_msg,
-        text: 'Goodbye World'
+        text: 'Goodbye World',
       } as SendMsg;
 
       let updated = addAction(nodes, 'node0', originalAction);
@@ -145,7 +154,7 @@ describe('mutators', () => {
         nodes,
         'node0',
         newAction,
-        nodes.node0.node.actions[indexToUpdate]
+        nodes.node0.node.actions[indexToUpdate],
       );
 
       expect(updated.node0.node.actions[indexToUpdate]).toEqual(newAction);
@@ -176,7 +185,9 @@ describe('mutators', () => {
     it('should remove action nodes', () => {
       const updated = removeNode(nodes, 'node0');
       expect(updated.node0).toBeUndefined();
-      expect(Object.keys(updated.node1.inboundConnections)).not.toContain('node0_exit0');
+      expect(Object.keys(updated.node1.inboundConnections)).not.toContain(
+        'node0_exit0',
+      );
     });
 
     it('should remove multi-exit router nodes', () => {
@@ -189,12 +200,12 @@ describe('mutators', () => {
     const node = {
       ...nodes.node0.node,
       actions: [] as any[],
-      router: { type: RouterTypes.switch, categories: [] as Category[] }
+      router: { type: RouterTypes.switch, categories: [] as Category[] },
     };
     const updated = mergeNode(nodes, {
       node,
       ui: { type: Types.wait_for_response, position: null },
-      inboundConnections: {}
+      inboundConnections: {},
     });
     expect(updated.node0.node.router.type).toBe('switch');
     expect(updated.node0.node.actions.length).toBe(0);
@@ -205,36 +216,38 @@ describe('mutators', () => {
     const updated = updatePosition(nodes, 'node0', newPosition(500, 1000));
     expect(updated.node0.ui.position).toEqual({
       left: 500,
-      top: 1000
+      top: 1000,
     });
   });
 
   it('should updateDimensions()', () => {
     const updated = updateNodeDimensions(nodes, 'node0', {
       width: 250,
-      height: 350
+      height: 350,
     });
     expect(updated.node0.ui.position).toEqual({
       left: 0,
       top: 0,
       right: 250,
-      bottom: 350
+      bottom: 350,
     });
   });
 
   it('should updateLocalizations', () => {
     let updated = updateLocalization(definition, 'spa', [
-      { uuid: 'node0_action0', translations: { text: 'Hola Mundo!' } }
+      { uuid: 'node0_action0', translations: { text: 'Hola Mundo!' } },
     ]);
 
     expect(Object.keys(updated.localization)).toContain('spa');
     expect(updated.localization.spa).toEqual({
-      node0_action0: { text: ['Hola Mundo!'] }
+      node0_action0: { text: ['Hola Mundo!'] },
     });
     expect(updated).toMatchSnapshot();
 
     // now clear it
-    updated = updateLocalization(updated, 'spa', [{ uuid: 'node0_action0', translations: null }]);
+    updated = updateLocalization(updated, 'spa', [
+      { uuid: 'node0_action0', translations: null },
+    ]);
     expect(updated.localization.spa).toEqual({});
     expect(updated).toMatchSnapshot();
   });
@@ -266,7 +279,11 @@ describe('mutators', () => {
       // point our action to our wait
       connect([actionNode, waitNode]);
 
-      detectLoops(createNodeMap([actionNode, waitNode]), waitNode.node.uuid, actionNode.node.uuid);
+      detectLoops(
+        createNodeMap([actionNode, waitNode]),
+        waitNode.node.uuid,
+        actionNode.node.uuid,
+      );
     });
 
     it('should detect lengthy cycles', () => {
@@ -284,7 +301,7 @@ describe('mutators', () => {
         detectLoops(
           createNodeMap(nodeList),
           nodeList[nodeList.length - 2].node.uuid,
-          nodeList[nodeList.length - 1].node.uuid
+          nodeList[nodeList.length - 1].node.uuid,
         );
       }).not.toThrowError();
 
@@ -293,7 +310,7 @@ describe('mutators', () => {
         detectLoops(
           createNodeMap(nodeList),
           nodeList[nodeList.length - 1].node.uuid,
-          nodeList[0].node.uuid
+          nodeList[0].node.uuid,
         );
       }).toThrowError();
     });
@@ -308,7 +325,7 @@ describe('mutators', () => {
       const updatedNodes = removeNode(
         createNodeMap([expressionA, waitNode, expressionB]),
         waitNode.node.uuid,
-        true
+        true,
       );
 
       // expressionA should no no longer have a
@@ -324,7 +341,8 @@ const connect = (nodes: RenderNode[]): void => {
       const fromNode = nodes[i];
       const toNode = nodes[i + 1];
       fromNode.node.exits[0].destination_uuid = toNode.node.uuid;
-      toNode.inboundConnections[fromNode.node.exits[0].uuid] = fromNode.node.uuid;
+      toNode.inboundConnections[fromNode.node.exits[0].uuid] =
+        fromNode.node.uuid;
     }
   }
 };
@@ -334,9 +352,14 @@ const createNodeMap = (nodes: RenderNode[]): any => {
     .map((node: RenderNode) => {
       return { [node.node.uuid]: node };
     })
-    .reduce((prev: { [uuid: string]: RenderNode }, next: { [uuid: string]: RenderNode }) => {
-      return mutate(prev, { $merge: next });
-    });
+    .reduce(
+      (
+        prev: { [uuid: string]: RenderNode },
+        next: { [uuid: string]: RenderNode },
+      ) => {
+        return mutate(prev, { $merge: next });
+      },
+    );
 };
 
 const createEmptyNode = (exitCount: number = 1): RenderNode => {
@@ -348,7 +371,7 @@ const createEmptyNode = (exitCount: number = 1): RenderNode => {
   const renderNode: RenderNode = {
     node: { uuid: createUUID(), actions: [], exits },
     ui: { position: { left: 0, top: 0 } },
-    inboundConnections: {}
+    inboundConnections: {},
   };
 
   return renderNode;

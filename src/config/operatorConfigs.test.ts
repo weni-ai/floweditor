@@ -1,4 +1,8 @@
-import { getOperatorConfig, operatorConfigList, operatorConfigMap } from 'config/operatorConfigs';
+import {
+  getOperatorConfig,
+  operatorConfigList,
+  operatorConfigMap,
+} from 'config/operatorConfigs';
 
 describe('Providers: ConfigProvider: operatorConfigs', () => {
   it('should provide operator config', () => {
@@ -6,7 +10,7 @@ describe('Providers: ConfigProvider: operatorConfigs', () => {
     expect(operatorConfigMap).toMatchSnapshot();
 
     Object.keys(operatorConfigMap).forEach((key: any) =>
-      expect(getOperatorConfig(key)).toEqual(operatorConfigMap[key])
+      expect(getOperatorConfig(key)).toEqual(operatorConfigMap[key]),
     );
   });
 });

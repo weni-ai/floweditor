@@ -12,7 +12,7 @@ export enum ButtonTypes {
   primary = 'primary',
   secondary = 'secondary',
   tertiary = 'terciary',
-  ghost = 'ghost'
+  ghost = 'ghost',
 }
 export interface ButtonProps {
   name: string;
@@ -30,10 +30,10 @@ const UnnnicButton = applyVueInReact(unnnicButton, {
     slotWrap: 'div',
     componentWrapAttrs: {
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 export default class ArrowButton extends React.Component<ButtonProps> {
@@ -41,7 +41,7 @@ export default class ArrowButton extends React.Component<ButtonProps> {
     super(props);
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 

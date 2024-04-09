@@ -1,8 +1,13 @@
 import { mock } from 'testUtils';
-import { createSendWhatsAppProductNode, getRouterFormProps } from 'testUtils/assetCreators';
+import {
+  createSendWhatsAppProductNode,
+  getRouterFormProps,
+} from 'testUtils/assetCreators';
 import { Types } from 'config/interfaces';
 import { AssetMap, AssetType, RenderNode } from 'store/flowContext';
-import SendWhatsAppProductRouterForm, { ProductSearchType } from './SendWhatsAppProductRouterForm';
+import SendWhatsAppProductRouterForm, {
+  ProductSearchType,
+} from './SendWhatsAppProductRouterForm';
 import * as utils from 'utils';
 import * as React from 'react';
 import {
@@ -12,7 +17,7 @@ import {
   wait,
   fireUnnnicTextAreaChangeText,
   fireUnnnicSwitch,
-  act
+  act,
 } from 'test/utils';
 import userEvent from '@testing-library/user-event';
 import { WhatsAppProduct } from 'flowTypes';
@@ -28,7 +33,7 @@ function getProps(automatic = false) {
       header: '',
       body: '',
       footer: '',
-      action: ''
+      action: '',
     },
     [],
     automatic,
@@ -37,13 +42,13 @@ function getProps(automatic = false) {
     '',
     '',
     '',
-    ''
+    '',
   );
 
   // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
   const sendWhatsAppProductForm = getRouterFormProps({
     node: productNode,
-    ui: { type: Types.split_by_whatsapp_product }
+    ui: { type: Types.split_by_whatsapp_product },
   } as RenderNode);
 
   const productsAssets: AssetMap = {};
@@ -51,13 +56,13 @@ function getProps(automatic = false) {
     productsAssets[product.facebook_product_id] = resultToAsset(
       product,
       AssetType.WhatsAppProduct,
-      'facebook_product_id'
+      'facebook_product_id',
     );
   });
   sendWhatsAppProductForm.assetStore.whatsapp_products = {
     type: AssetType.WhatsAppProduct,
     items: productsAssets,
-    endpoint: '/assets/whatsapp_products.json'
+    endpoint: '/assets/whatsapp_products.json',
   };
 
   return sendWhatsAppProductForm;
@@ -67,7 +72,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
   describe('manual product search', () => {
     it('should render', async () => {
       const props = getProps();
-      const { baseElement } = render(<SendWhatsAppProductRouterForm {...props} />);
+      const { baseElement } = render(
+        <SendWhatsAppProductRouterForm {...props} />,
+      );
 
       await wait();
 
@@ -76,7 +83,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
     it('should change from manual to automatic', async () => {
       const props = getProps();
-      const { baseElement, getByTestId } = render(<SendWhatsAppProductRouterForm {...props} />);
+      const { baseElement, getByTestId } = render(
+        <SendWhatsAppProductRouterForm {...props} />,
+      );
 
       await wait();
 
@@ -93,7 +102,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
     it('should save a manual product sending with header', async () => {
       const props = getProps();
       const { baseElement, getByText, getByTestId } = render(
-        <SendWhatsAppProductRouterForm {...props} />
+        <SendWhatsAppProductRouterForm {...props} />,
       );
 
       await wait();
@@ -169,7 +178,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
     it('should save a catalog sending', async () => {
       const props = getProps();
       const { baseElement, getByText, getByTestId } = render(
-        <SendWhatsAppProductRouterForm {...props} />
+        <SendWhatsAppProductRouterForm {...props} />,
       );
 
       await wait();
@@ -239,7 +248,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
   describe('automatic product search', () => {
     it('should render', async () => {
       const props = getProps(true);
-      const { baseElement } = render(<SendWhatsAppProductRouterForm {...props} />);
+      const { baseElement } = render(
+        <SendWhatsAppProductRouterForm {...props} />,
+      );
 
       await wait();
 
@@ -249,7 +260,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
     it('should save an automatic product sending', async () => {
       const props = getProps(true);
       const { baseElement, getByText, getByTestId } = render(
-        <SendWhatsAppProductRouterForm {...props} />
+        <SendWhatsAppProductRouterForm {...props} />,
       );
 
       await wait();
@@ -270,7 +281,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
-      const productSearch = getByTestId('Enter an expression to be used as input');
+      const productSearch = getByTestId(
+        'Enter an expression to be used as input',
+      );
       const header = getByTestId('Header');
       const body = getByTestId('Body');
       const footer = getByTestId('Footer (optional)');
@@ -327,7 +340,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
     it('should save an automatic product sending with vtex search', async () => {
       const props = getProps(true);
       const { baseElement, getByText, getByTestId } = render(
-        <SendWhatsAppProductRouterForm {...props} />
+        <SendWhatsAppProductRouterForm {...props} />,
       );
 
       await wait();
@@ -351,7 +364,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
-      const productSearch = getByTestId('Enter an expression to be used as input');
+      const productSearch = getByTestId(
+        'Enter an expression to be used as input',
+      );
       const searchUrl = getByTestId('Custom Search URL');
       const sellerId = getByTestId('Seller ID (optional)');
       const postalCode = getByTestId('Postal Code (optional)');

@@ -12,7 +12,10 @@ interface MountScrollState {
   pulse: boolean;
 }
 
-export default class MountScroll extends React.Component<MountScrollProps, MountScrollState> {
+export default class MountScroll extends React.Component<
+  MountScrollProps,
+  MountScrollState
+> {
   private ele!: HTMLDivElement;
   private handleScroll: () => void;
 
@@ -20,7 +23,7 @@ export default class MountScroll extends React.Component<MountScrollProps, Mount
     super(props);
 
     this.state = {
-      pulse: false
+      pulse: false,
     };
   }
 
@@ -51,18 +54,20 @@ export default class MountScroll extends React.Component<MountScrollProps, Mount
   }
 
   private handleScrollIntoView(): void {
-    if (!!this.ele) {
-      const scrollTo = this.ele.getBoundingClientRect().top - 200 + window.scrollY;
+    if (this.ele) {
+      const scrollTo =
+        this.ele.getBoundingClientRect().top - 200 + window.scrollY;
 
       if (scrollTo !== window.scrollY) {
-        const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+        const atBottom =
+          window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
         if (atBottom && scrollTo > window.scrollY) {
           this.handleScrollCompleted();
         } else {
           window.setTimeout(() => {
             window.scrollTo({
               top: scrollTo,
-              behavior: 'smooth'
+              behavior: 'smooth',
             });
           }, 0);
         }
@@ -75,7 +80,7 @@ export default class MountScroll extends React.Component<MountScrollProps, Mount
   public render(): JSX.Element | null {
     const classes = cx({
       [styles.wrapper]: true,
-      [styles.pulse]: this.state.pulse
+      [styles.pulse]: this.state.pulse,
     });
 
     return (

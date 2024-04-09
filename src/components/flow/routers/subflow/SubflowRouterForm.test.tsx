@@ -1,6 +1,9 @@
 import { RouterFormProps } from 'components/flow/props';
 import { Types } from 'config/interfaces';
-import { createSubflowNode, createStartFlowAction } from 'testUtils/assetCreators';
+import {
+  createSubflowNode,
+  createStartFlowAction,
+} from 'testUtils/assetCreators';
 import { getTypeConfig } from 'config';
 import {
   render,
@@ -9,7 +12,7 @@ import {
   wait,
   getUpdatedNode,
   fireUnnnicInputChangeText,
-  act
+  act,
 } from 'test/utils';
 import * as React from 'react';
 import * as utils from 'utils';
@@ -19,22 +22,25 @@ import * as external from 'external';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
-const getRouterFormProps = (type: Types, originalNode: RenderNode): RouterFormProps => {
+const getRouterFormProps = (
+  type: Types,
+  originalNode: RenderNode,
+): RouterFormProps => {
   return {
     nodeSettings: {
-      originalNode
+      originalNode,
     },
     typeConfig: getTypeConfig(type),
     assetStore: { flows: { items: {}, type: AssetType.Flow } },
     updateRouter: jest.fn(),
     onTypeChange: jest.fn(),
-    onClose: jest.fn()
+    onClose: jest.fn(),
   };
 };
 
 const subflowProps = getRouterFormProps(
   Types.split_by_subflow,
-  createSubflowNode(createStartFlowAction())
+  createSubflowNode(createStartFlowAction()),
 );
 
 mock(
@@ -45,9 +51,9 @@ mock(
     name: 'My Subflow Flow',
     type: AssetType.Flow,
     content: {
-      parent_refs: ['max', 'min']
-    }
-  })
+      parent_refs: ['max', 'min'],
+    },
+  }),
 );
 
 describe(SubflowRouterForm.name, () => {
@@ -64,7 +70,9 @@ describe(SubflowRouterForm.name, () => {
   });
 
   it('should create result actions for parameters', async () => {
-    const { getByText, getByTestId } = render(<SubflowRouterForm {...subflowProps} />);
+    const { getByText, getByTestId } = render(
+      <SubflowRouterForm {...subflowProps} />,
+    );
     await wait();
 
     // open the parameter tab

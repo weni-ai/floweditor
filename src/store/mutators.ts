@@ -9,7 +9,7 @@ import {
   FlowPosition,
   RouterTypes,
   StickyNote,
-  SwitchRouter
+  SwitchRouter,
 } from 'flowTypes';
 import {
   Asset,
@@ -18,9 +18,15 @@ import {
   AssetType,
   Reference,
   RenderNode,
-  RenderNodeMap
+  RenderNodeMap,
 } from 'store/flowContext';
-import { assetListToMap, detectLoops, getActionIndex, getExitIndex, getNode } from 'store/helpers';
+import {
+  assetListToMap,
+  detectLoops,
+  getActionIndex,
+  getExitIndex,
+  getNode,
+} from 'store/helpers';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import { LocalizationUpdates } from 'store/thunks';
 import { createUUID, merge, push, set, snakify, splice, unset } from 'utils';
@@ -35,18 +41,24 @@ export const uniquifyNode = (newNode: FlowNode): FlowNode => {
 export const getDefaultExit = (node: FlowNode) => {
   if (node.router.type === RouterTypes.switch) {
     const switchRouter = node.router as SwitchRouter;
-    return node.exits.find(exit => exit.uuid === switchRouter.default_category_uuid);
+    return node.exits.find(
+      exit => exit.uuid === switchRouter.default_category_uuid,
+    );
   }
 };
 
-export const addAssets = (type: string, store: AssetStore, assets: Asset[]): AssetStore => {
+export const addAssets = (
+  type: string,
+  store: AssetStore,
+  assets: Asset[],
+): AssetStore => {
   const assetMap = assetListToMap(assets);
   const updated = mutate(store, {
     [type]: {
       items: {
-        $merge: assetMap
-      }
-    }
+        $merge: assetMap,
+      },
+    },
   });
   return updated;
 };
@@ -54,7 +66,7 @@ export const addAssets = (type: string, store: AssetStore, assets: Asset[]): Ass
 export const removeResultReference = (
   resultName: string,
   items: AssetMap,
-  reference: Reference
+  reference: Reference,
 ): AssetMap => {
   const key = snakify(resultName);
 
@@ -62,7 +74,8 @@ export const removeResultReference = (
     const item = items[key];
     const filteredRefs = item.references.filter(
       (ref: Reference) =>
-        ref.nodeUUID !== reference.nodeUUID || ref.actionUUID !== reference.actionUUID
+        ref.nodeUUID !== reference.nodeUUID ||
+        ref.actionUUID !== reference.actionUUID,
     );
 
     if (filteredRefs.length === 0) {
@@ -77,10 +90,14 @@ export const removeResultReference = (
 export const removeResultFromStore = (
   resultName: string,
   assets: AssetStore,
-  reference: Reference
+  reference: Reference,
 ): AssetStore => {
   if (resultName && assets.results) {
-    const items = removeResultReference(resultName, assets.results.items, reference);
+    const items = removeResultReference(
+      resultName,
+      assets.results.items,
+      reference,
+    );
     return mutate(assets, { results: { items: { $set: items } } });
   }
   return assets;
@@ -89,7 +106,7 @@ export const removeResultFromStore = (
 export const addResultToStore = (
   resultName: string,
   assets: AssetStore,
-  reference: Reference
+  reference: Reference,
 ): AssetStore => {
   if (resultName) {
     const items = addResult(resultName, assets.results.items, reference);
@@ -97,7 +114,11 @@ export const addResultToStore = (
   }
 };
 
-export const addResult = (resultName: string, items: AssetMap, reference: Reference): AssetMap => {
+export const addResult = (
+  resultName: string,
+  items: AssetMap,
+  reference: Reference,
+): AssetMap => {
   const key = snakify(resultName);
   const result =
     key in items
@@ -106,13 +127,14 @@ export const addResult = (resultName: string, items: AssetMap, reference: Refere
           name: resultName,
           id: key,
           type: AssetType.Result,
-          references: []
+          references: [],
         };
 
   if (
     !result.references.find(
       (ref: Reference) =>
-        ref.nodeUUID === reference.nodeUUID && ref.actionUUID === reference.actionUUID
+        ref.nodeUUID === reference.nodeUUID &&
+        ref.actionUUID === reference.actionUUID,
     )
   ) {
     result.references.push(reference);
@@ -121,13 +143,19 @@ export const addResult = (resultName: string, items: AssetMap, reference: Refere
   return mutate(items, { $merge: { [key]: result } });
 };
 
-export const addRevision = (assets: AssetStore, revision: Revision): AssetStore => {
+export const addRevision = (
+  assets: AssetStore,
+  revision: Revision,
+): AssetStore => {
   return mutate(assets, {
-    revisions: { items: { $merge: { [revision.id]: revision } } }
+    revisions: { items: { $merge: { [revision.id]: revision } } },
   });
 };
 
-export const addFlowResult = (assets: AssetStore, node: FlowNode): AssetStore => {
+export const addFlowResult = (
+  assets: AssetStore,
+  node: FlowNode,
+): AssetStore => {
   let updated = assets;
 
   // TODO: initialize these to empties further up to avoid this
@@ -142,7 +170,7 @@ export const addFlowResult = (assets: AssetStore, node: FlowNode): AssetStore =>
   const resultName = getResultName(node);
   if (resultName) {
     const items = addResult(resultName, assets.results.items, {
-      nodeUUID: node.uuid
+      nodeUUID: node.uuid,
     });
     return mutate(assets, { results: { items: { $set: items } } });
   }
@@ -162,7 +190,7 @@ export const updateConnection = (
   nodes: RenderNodeMap,
   fromNodeUUID: string,
   fromExitUUID: string,
-  destinationNodeUUID: string
+  destinationNodeUUID: string,
 ): RenderNodeMap => {
   let updatedNodes = nodes;
   const fromNode = getNode(nodes, fromNodeUUID);
@@ -180,25 +208,25 @@ export const updateConnection = (
       node: {
         exits: {
           [exitIdx]: {
-            destination_uuid: set(destinationNodeUUID)
-          }
-        }
-      }
-    }
+            destination_uuid: set(destinationNodeUUID),
+          },
+        },
+      },
+    },
   });
 
   // update our pointers
   if (destinationNodeUUID) {
     updatedNodes = mutate(updatedNodes, {
       [destinationNodeUUID]: {
-        inboundConnections: merge({ [fromExitUUID]: fromNodeUUID })
-      }
+        inboundConnections: merge({ [fromExitUUID]: fromNodeUUID }),
+      },
     });
   }
 
   if (previousDestination != null) {
     updatedNodes = mutate(updatedNodes, {
-      [previousDestination]: { inboundConnections: unset([[fromExitUUID]]) }
+      [previousDestination]: { inboundConnections: unset([[fromExitUUID]]) },
     });
   }
 
@@ -218,7 +246,7 @@ export const addLanguage = (languages: Asset[], language: Asset): Asset[] => {
 export const removeConnection = (
   nodes: RenderNodeMap,
   fromNodeUUID: string,
-  fromExitUUID: string
+  fromExitUUID: string,
 ): RenderNodeMap => {
   return updateConnection(nodes, fromNodeUUID, fromExitUUID, null);
 };
@@ -230,7 +258,10 @@ export const removeConnection = (
  * @param nodes
  * @param node the node to add, if unique uuid, it will be added
  */
-export const mergeNode = (nodes: RenderNodeMap, node: RenderNode): RenderNodeMap => {
+export const mergeNode = (
+  nodes: RenderNodeMap,
+  node: RenderNode,
+): RenderNodeMap => {
   let updatedNodes = nodes;
 
   // if the node is already there, remove it first
@@ -252,10 +283,10 @@ export const mergeNode = (nodes: RenderNodeMap, node: RenderNode): RenderNodeMap
       [fromNodeUUID]: {
         node: {
           exits: {
-            [exitIdx]: merge({ destination_uuid: node.node.uuid })
-          }
-        }
-      }
+            [exitIdx]: merge({ destination_uuid: node.node.uuid }),
+          },
+        },
+      },
     });
   }
 
@@ -271,7 +302,7 @@ export const mergeNode = (nodes: RenderNodeMap, node: RenderNode): RenderNodeMap
 export const addAction = (
   nodes: RenderNodeMap,
   nodeUUID: string,
-  action: AnyAction
+  action: AnyAction,
 ): RenderNodeMap => {
   // check that our node exists
   getNode(nodes, nodeUUID);
@@ -288,24 +319,26 @@ export const updateAction = (
   nodes: RenderNodeMap,
   nodeUUID: string,
   newAction: AnyAction,
-  originalAction?: AnyAction
+  originalAction?: AnyAction,
 ) => {
   const originalNode = getNode(nodes, nodeUUID);
   // If we have existing actions, find our action and update it
-  const actionIdx = originalAction ? getActionIndex(originalNode.node, originalAction.uuid) : 0;
+  const actionIdx = originalAction
+    ? getActionIndex(originalNode.node, originalAction.uuid)
+    : 0;
   return mutate(nodes, {
     [nodeUUID]: {
       node: {
-        actions: { [actionIdx]: set(newAction) }
-      }
-    }
+        actions: { [actionIdx]: set(newAction) },
+      },
+    },
   });
 };
 
 export const spliceInAction = (
   nodes: RenderNodeMap,
   nodeUUID: string,
-  action: AnyAction
+  action: AnyAction,
 ): RenderNodeMap => {
   const { [nodeUUID]: previousNode } = nodes;
 
@@ -319,10 +352,10 @@ export const spliceInAction = (
     node: {
       uuid: createUUID(),
       actions: [action],
-      exits: [{ uuid: createUUID(), destination_uuid: destination }]
+      exits: [{ uuid: createUUID(), destination_uuid: destination }],
     },
     ui: { position: previousNode.ui.position, type: Types.execute_actions },
-    inboundConnections: previousNode.inboundConnections
+    inboundConnections: previousNode.inboundConnections,
   };
 
   // add our new node
@@ -332,11 +365,15 @@ export const spliceInAction = (
 };
 
 /** Removes a specific action from a node */
-export const removeAction = (nodes: RenderNodeMap, nodeUUID: string, actionUUID: string) => {
+export const removeAction = (
+  nodes: RenderNodeMap,
+  nodeUUID: string,
+  actionUUID: string,
+) => {
   const renderNode = getNode(nodes, nodeUUID);
   const actionIdx = getActionIndex(renderNode.node, actionUUID);
   return mutate(nodes, {
-    [nodeUUID]: { node: { actions: splice([[actionIdx, 1]]) } }
+    [nodeUUID]: { node: { actions: splice([[actionIdx, 1]]) } },
   });
 };
 
@@ -346,7 +383,11 @@ export const removeAction = (nodes: RenderNodeMap, nodeUUID: string, actionUUID:
  * @param nodeUUID
  * @param action
  */
-export const moveActionUp = (nodes: RenderNodeMap, nodeUUID: string, actionUUID: string) => {
+export const moveActionUp = (
+  nodes: RenderNodeMap,
+  nodeUUID: string,
+  actionUUID: string,
+) => {
   const renderNode = getNode(nodes, nodeUUID);
 
   const actions = renderNode.node.actions;
@@ -361,8 +402,8 @@ export const moveActionUp = (nodes: RenderNodeMap, nodeUUID: string, actionUUID:
 
   return mutate(nodes, {
     [nodeUUID]: {
-      node: { actions: splice([[actionIdx - 1, 2, action, actionAbove]]) }
-    }
+      node: { actions: splice([[actionIdx - 1, 2, action, actionAbove]]) },
+    },
   });
 };
 
@@ -376,7 +417,7 @@ export const moveActionUp = (nodes: RenderNodeMap, nodeUUID: string, actionUUID:
 export const removeNode = (
   nodes: RenderNodeMap,
   nodeUUID: string,
-  remap: boolean = true
+  remap: boolean = true,
 ): RenderNodeMap => {
   const nodeToRemove = getNode(nodes, nodeUUID);
   let updatedNodes = nodes;
@@ -386,8 +427,8 @@ export const removeNode = (
     if (exit.destination_uuid) {
       updatedNodes = mutate(updatedNodes, {
         [exit.destination_uuid]: {
-          inboundConnections: unset([exit.uuid])
-        }
+          inboundConnections: unset([exit.uuid]),
+        },
       });
     }
   }
@@ -417,10 +458,10 @@ export const removeNode = (
       [fromNodeUUID]: {
         node: {
           exits: {
-            [exitIdx]: { destination_uuid: set(destination) }
-          }
-        }
-      }
+            [exitIdx]: { destination_uuid: set(destination) },
+          },
+        },
+      },
     });
 
     // if we are setting a new destination, update the inboundConnections
@@ -429,8 +470,8 @@ export const removeNode = (
       getNode(nodes, destination);
       updatedNodes = mutate(updatedNodes, {
         [destination]: {
-          inboundConnections: merge({ [fromExitUUID]: fromNodeUUID })
-        }
+          inboundConnections: merge({ [fromExitUUID]: fromNodeUUID }),
+        },
       });
     }
   }
@@ -450,7 +491,7 @@ export const updatePosition = (
   nodes: RenderNodeMap,
   nodeUUID: string,
   position: FlowPosition,
-  snap: boolean = true
+  snap: boolean = true,
 ): RenderNodeMap => {
   const { left, top } = position;
 
@@ -462,10 +503,10 @@ export const updatePosition = (
       ui: {
         position: set({
           left: adjusted.left,
-          top: adjusted.top
-        })
-      }
-    }
+          top: adjusted.top,
+        }),
+      },
+    },
   });
 };
 
@@ -473,7 +514,7 @@ export const updateStickyNotePosition = (
   definition: FlowDefinition,
   stickyUUID: string,
   position: FlowPosition,
-  snap: boolean = true
+  snap: boolean = true,
 ): FlowDefinition => {
   if (!definition._ui.stickies) {
     definition._ui.stickies = {};
@@ -496,11 +537,11 @@ export const updateStickyNotePosition = (
             left: adjusted.left,
             top: adjusted.top,
             right: adjusted.left + width,
-            bottom: adjusted.top + height
-          })
-        }
-      }
-    }
+            bottom: adjusted.top + height,
+          }),
+        },
+      },
+    },
   });
 };
 
@@ -513,7 +554,7 @@ export const updateStickyNotePosition = (
 export const updateNodeDimensions = (
   nodes: RenderNodeMap,
   nodeUUID: string,
-  dimensions: Dimensions
+  dimensions: Dimensions,
 ): RenderNodeMap => {
   const node = getNode(nodes, nodeUUID);
   return mutate(nodes, {
@@ -521,10 +562,10 @@ export const updateNodeDimensions = (
       ui: {
         position: merge({
           bottom: node.ui.position.top + dimensions.height,
-          right: node.ui.position.left + dimensions.width
-        })
-      }
-    }
+          right: node.ui.position.left + dimensions.width,
+        }),
+      },
+    },
   });
 };
 
@@ -537,7 +578,7 @@ export const updateNodeDimensions = (
 export const updateStickyDimensions = (
   definition: FlowDefinition,
   uuid: string,
-  dimensions: Dimensions
+  dimensions: Dimensions,
 ): FlowDefinition => {
   const position = definition._ui.stickies[uuid].position;
   return mutate(definition, {
@@ -546,25 +587,25 @@ export const updateStickyDimensions = (
         [uuid]: {
           position: merge({
             bottom: position.top + dimensions.height,
-            right: position.left + dimensions.width
-          })
-        }
-      }
-    }
+            right: position.left + dimensions.width,
+          }),
+        },
+      },
+    },
   });
 };
 
 export const updateStickyNote = (
   definition: FlowDefinition,
   stickyUUID: string,
-  sticky: StickyNote
+  sticky: StickyNote,
 ): FlowDefinition => {
   if (!definition._ui.stickies) {
     definition._ui.stickies = {};
   }
   if (sticky) {
     return mutate(definition, {
-      _ui: { stickies: merge({ [stickyUUID]: sticky }) }
+      _ui: { stickies: merge({ [stickyUUID]: sticky }) },
     });
   } else {
     return mutate(definition, { _ui: { stickies: unset([stickyUUID]) } });
@@ -573,7 +614,7 @@ export const updateStickyNote = (
 
 export const mergeNodeEditorSettings = (
   current: NodeEditorSettings,
-  newSettings: NodeEditorSettings
+  newSettings: NodeEditorSettings,
 ) => {
   if (!newSettings) {
     return current;
@@ -602,7 +643,7 @@ export const pruneDefinition = (definition: FlowDefinition): FlowDefinition =>
 export const updateLocalization = (
   definition: FlowDefinition,
   language: string,
-  changes: LocalizationUpdates
+  changes: LocalizationUpdates,
 ) => {
   let newDef = definition;
 
@@ -610,8 +651,8 @@ export const updateLocalization = (
   if (!newDef.localization[language]) {
     newDef = mutate(newDef, {
       localization: {
-        [language]: set({})
-      }
+        [language]: set({}),
+      },
     });
   }
 
@@ -631,12 +672,12 @@ export const updateLocalization = (
 
       // adding localization
       newDef = mutate(newDef, {
-        localization: { [language]: { [uuid]: set(normalizedTranslations) } }
+        localization: { [language]: { [uuid]: set(normalizedTranslations) } },
       });
     } else {
       // removing localization
       newDef = mutate(newDef, {
-        localization: { [language]: unset([uuid]) }
+        localization: { [language]: unset([uuid]) },
       });
     }
   });

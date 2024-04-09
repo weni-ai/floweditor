@@ -2,7 +2,9 @@ import { react as bindCallbacks } from 'auto-bind';
 import { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import { isRelativeDate } from 'components/flow/routers/helpers';
 import FormElement from 'components/form/FormElement';
-import TextInputElement, { TextInputStyle } from 'components/form/textinput/TextInputElement';
+import TextInputElement, {
+  TextInputStyle,
+} from 'components/form/textinput/TextInputElement';
 import { fakePropType } from 'config/ConfigProvider';
 import { filterOperators } from 'config/helpers';
 import { Operator, Operators } from 'config/interfaces';
@@ -14,7 +16,9 @@ import { hasErrorType } from 'utils';
 
 import styles from './CaseElement.module.scss';
 import { initializeForm, validateCase } from './helpers';
-import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
+import SelectElement, {
+  SelectOption,
+} from 'components/form/select/SelectElement';
 import i18n from 'config/i18n';
 import TembaSelect, { TembaSelectStyle } from 'temba/TembaSelect';
 import { applyVueInReact } from 'vuereact-combined';
@@ -30,20 +34,27 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
     componentWrapAttrs: {
       'data-draggable': 'true',
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
-const noArgumentList = ['has_text', 'has_number', 'has_date', 'has_time', 'has_phone', 'has_email'];
+const noArgumentList = [
+  'has_text',
+  'has_number',
+  'has_date',
+  'has_time',
+  'has_phone',
+  'has_email',
+];
 
 const SMART_CATEGORY_REGEX = /[^\p{Letter}\p{Number}~'^`´.,()\- ]+/gu;
 const SMART_ARGUMENT_REGEX = /[^\p{Letter}\p{Number}~'^@`´.,()\- ]+/gu;
 
 export enum CaseElementType {
   smart = 'smart',
-  default = 'default'
+  default = 'default',
 }
 
 export interface CaseElementProps {
@@ -79,21 +90,24 @@ export interface CaseElementState extends FormState {
   district: StringEntry;
 }
 
-export default class CaseElement extends React.Component<CaseElementProps, CaseElementState> {
+export default class CaseElement extends React.Component<
+  CaseElementProps,
+  CaseElementState
+> {
   private operators: Operator[];
 
   constructor(props: CaseElementProps) {
     super(props);
 
     bindCallbacks(this, {
-      include: [/^handle/, /^get/]
+      include: [/^handle/, /^get/],
     });
 
     this.state = initializeForm(props);
   }
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   public componentDidMount() {
@@ -107,7 +121,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
       classifier: this.props.classifier,
-      required: this.props.required
+      required: this.props.required,
     });
 
     this.setState(updates as CaseElementState, this.handleChange);
@@ -128,7 +142,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
         confidence: this.state.confidence.value,
         exitName: this.state.categoryName.value,
         exitEdited: this.state.categoryNameEdited,
-        classifier: this.props.classifier
+        classifier: this.props.classifier,
       });
 
       this.setState(updates as CaseElementState, this.handleChange);
@@ -182,7 +196,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
       classifier: this.props.classifier,
-      required: this.props.required
+      required: this.props.required,
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -198,7 +212,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       argument: value,
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
-      required: this.props.required
+      required: this.props.required,
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -212,7 +226,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       district: value,
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
-      required: this.props.required
+      required: this.props.required,
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -227,7 +241,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       state: value,
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
-      required: this.props.required
+      required: this.props.required,
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -241,7 +255,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
       classifier: this.props.classifier,
-      required: this.props.required
+      required: this.props.required,
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -255,7 +269,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
       classifier: this.props.classifier,
-      required: this.props.required
+      required: this.props.required,
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -268,7 +282,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       max: this.state.max.value,
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
-      required: this.props.required
+      required: this.props.required,
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -281,7 +295,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       max: value,
       exitName: this.state.categoryName.value,
       exitEdited: this.state.categoryNameEdited,
-      required: this.props.required
+      required: this.props.required,
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -304,7 +318,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
       classifier: this.props.classifier,
       exitName: value,
       exitEdited: true,
-      required: this.props.required
+      required: this.props.required,
     });
 
     this.setState(updates as CaseElementState, () => this.handleChange());
@@ -324,9 +338,11 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
         uuid: this.props.kase.uuid,
 
         // if the exit name changed, we'll need to recompute our exit
-        category_uuid: this.state.categoryNameEdited ? null : this.props.kase.category_uuid
+        category_uuid: this.state.categoryNameEdited
+          ? null
+          : this.props.kase.category_uuid,
       },
-      valid: this.state.valid
+      valid: this.state.valid,
     };
 
     return props;
@@ -408,7 +424,7 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
             intents = this.props.classifier.intents.map((intent: string) => {
               const option: SelectOption = {
                 name: intent,
-                value: intent
+                value: intent,
               };
               return option;
             });
@@ -487,7 +503,9 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
               style={TextInputStyle.small}
               autocomplete={false}
             />
-            <span className={`${styles.divider} u font secondary body-md color-neutral-cloudy`}>
+            <span
+              className={`${styles.divider} u font secondary body-md color-neutral-cloudy`}
+            >
               {i18n.t('forms.days')}
             </span>
           </>
@@ -499,7 +517,10 @@ export default class CaseElement extends React.Component<CaseElementProps, CaseE
             : i18n.t('forms.ex_cart', 'Ex: cart');
 
         if (this.props.type === CaseElementType.smart) {
-          placeholder = i18n.t('forms.ex_smart_argument', 'Ex: when the user greets you');
+          placeholder = i18n.t(
+            'forms.ex_smart_argument',
+            'Ex: when the user greets you',
+          );
         }
 
         return (

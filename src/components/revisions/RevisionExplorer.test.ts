@@ -1,4 +1,7 @@
-import { RevisionExplorer, RevisionExplorerProps } from 'components/revisions/RevisionExplorer';
+import {
+  RevisionExplorer,
+  RevisionExplorerProps,
+} from 'components/revisions/RevisionExplorer';
 import { AssetType } from 'store/flowContext';
 import { composeComponentTestUtils } from 'testUtils';
 
@@ -8,22 +11,25 @@ const baseProps: RevisionExplorerProps = {
       id: 'id',
       endpoint: '/assets/revisions.json',
       type: AssetType.Revision,
-      items: {}
+      items: {},
     },
     flows: {
       endpoint: '/assets/flows.json',
       type: AssetType.Flow,
-      items: {}
-    }
+      items: {},
+    },
   },
   createNewRevision: jest.fn(),
   loadFlowDefinition: jest.fn(),
   utc: true,
   onToggled: jest.fn(),
-  popped: ''
+  popped: '',
 };
 
-const { setup } = composeComponentTestUtils<RevisionExplorerProps>(RevisionExplorer, baseProps);
+const { setup } = composeComponentTestUtils<RevisionExplorerProps>(
+  RevisionExplorer,
+  baseProps,
+);
 
 describe(RevisionExplorer.name, () => {
   describe('render', () => {

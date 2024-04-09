@@ -10,7 +10,7 @@ describe('External', () => {
     const group = resultToAsset(
       { uuid: group_uuid, name: 'My Test Group', type: AssetType.Group },
       AssetType.Contact,
-      null
+      null,
     );
 
     expect(group.type).toEqual(AssetType.Group);
@@ -19,15 +19,18 @@ describe('External', () => {
 
   it('converts rp api flow types', () => {
     // message to messaging, survey to messaging_offline, voice stays the same
-    expect(resultToAsset({ type: 'survey' }, AssetType.Flow, 'uuid').content.type).toEqual(
-      'messaging_offline'
-    );
-    expect(resultToAsset({ type: 'message' }, AssetType.Flow, 'uuid').content.type).toEqual(
-      'messaging'
-    );
-    expect(resultToAsset({ type: 'background' }, AssetType.Flow, 'uuid').content.type).toEqual(
-      'messaging_background'
-    );
-    expect(resultToAsset({ type: 'voice' }, AssetType.Flow, 'uuid').content.type).toEqual('voice');
+    expect(
+      resultToAsset({ type: 'survey' }, AssetType.Flow, 'uuid').content.type,
+    ).toEqual('messaging_offline');
+    expect(
+      resultToAsset({ type: 'message' }, AssetType.Flow, 'uuid').content.type,
+    ).toEqual('messaging');
+    expect(
+      resultToAsset({ type: 'background' }, AssetType.Flow, 'uuid').content
+        .type,
+    ).toEqual('messaging_background');
+    expect(
+      resultToAsset({ type: 'voice' }, AssetType.Flow, 'uuid').content.type,
+    ).toEqual('voice');
   });
 });

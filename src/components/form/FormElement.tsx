@@ -26,7 +26,7 @@ export default class FormElement extends React.PureComponent<FormElementProps> {
   constructor(props: FormElementProps) {
     super(props);
     bindCallbacks(this, {
-      include: [/^get/, /^has/]
+      include: [/^get/, /^has/],
     });
   }
   private getName(): JSX.Element {
@@ -34,17 +34,19 @@ export default class FormElement extends React.PureComponent<FormElementProps> {
       this.props.showLabel &&
         this.props.name !== undefined &&
         this.props.name !== null &&
-        this.props.name.length > 0
+        this.props.name.length > 0,
     )(
-      <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+      <div
+        className={`${styles.label} u font secondary body-md color-neutral-cloudy`}
+      >
         {this.props.name}
-      </div>
+      </div>,
     );
   }
 
   private getHelpText(): JSX.Element {
     return renderIf(this.props.helpText != null)(
-      <div className={styles.help_text}>{this.props.helpText}</div>
+      <div className={styles.help_text}>{this.props.helpText}</div>,
     );
   }
 
@@ -64,7 +66,7 @@ export default class FormElement extends React.PureComponent<FormElementProps> {
       const errors = this.getValidationErrors().map((failure, idx) => {
         const className = cx({
           [styles.error]: true,
-          [styles.send_msg_error]: this.props.sendMsgError === true
+          [styles.send_msg_error]: this.props.sendMsgError === true,
         });
         return (
           <div key={idx} className={className}>
@@ -85,7 +87,7 @@ export default class FormElement extends React.PureComponent<FormElementProps> {
     const className = cx({
       [styles.ele]: true,
       [styles.border]: this.props.border,
-      [this.props.__className]: this.props.__className !== undefined
+      [this.props.__className]: this.props.__className !== undefined,
     });
 
     return (

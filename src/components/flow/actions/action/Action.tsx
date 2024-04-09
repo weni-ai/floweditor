@@ -5,7 +5,13 @@ import TitleBar from 'components/titlebar/TitleBar';
 import { fakePropType } from 'config/ConfigProvider';
 import { Types } from 'config/interfaces';
 import { getTypeConfig } from 'config/typeConfigs';
-import { Action, AnyAction, Endpoints, LocalizationMap, FlowIssue } from 'flowTypes';
+import {
+  Action,
+  AnyAction,
+  Endpoints,
+  LocalizationMap,
+  FlowIssue,
+} from 'flowTypes';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -17,7 +23,7 @@ import {
   moveActionUp,
   OnOpenNodeEditor,
   onOpenNodeEditor,
-  removeAction
+  removeAction,
 } from 'store/thunks';
 import { createClickHandler, getLocalization } from 'utils';
 
@@ -46,7 +52,8 @@ export interface ActionWrapperStoreProps {
   mouseState: MouseState;
 }
 
-export type ActionWrapperProps = ActionWrapperPassedProps & ActionWrapperStoreProps;
+export type ActionWrapperProps = ActionWrapperPassedProps &
+  ActionWrapperStoreProps;
 
 export const actionContainerSpecId = 'action-container';
 export const actionOverlaySpecId = 'action-overlay';
@@ -58,14 +65,14 @@ const cx: any = classNames.bind({ ...shared, ...styles });
 // Note: this needs to be a ComponentClass in order to work w/ react-flip-move
 export class ActionWrapper extends React.Component<ActionWrapperProps> {
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: ActionWrapperProps) {
     super(props);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
@@ -74,12 +81,14 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
       const target = event.target as any;
 
       const showAdvanced =
-        target && target.attributes && target.getAttribute('data-advanced') === 'true';
+        target &&
+        target.attributes &&
+        target.getAttribute('data-advanced') === 'true';
 
       this.props.onOpenNodeEditor({
         originalNode: this.props.renderNode,
         originalAction: this.props.action,
-        showAdvanced
+        showAdvanced,
       });
     }
   }
@@ -102,7 +111,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
       const localization = getLocalization(
         this.props.action,
         this.props.localization,
-        this.props.language
+        this.props.language,
       );
       return localization.getObject() as AnyAction;
     }
@@ -135,7 +144,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
         const localization = getLocalization(
           this.props.action,
           this.props.localization,
-          this.props.language
+          this.props.language,
         );
 
         if (localization.isLocalized()) {
@@ -161,7 +170,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
       [styles.translating]: this.props.translating,
       [styles.not_localizable]: notLocalizable,
       [styles.missing_localization]: missingLocalization,
-      [styles.localized]: !notLocalizable && !missingLocalization
+      [styles.localized]: !notLocalizable && !missingLocalization,
     });
   }
 
@@ -171,14 +180,21 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
     const classes = this.getClasses();
     const actionToInject = this.getAction();
 
-    let titleBarClass = (shared as any)[this.props.action.type] || shared.missing;
+    let titleBarClass =
+      (shared as any)[this.props.action.type] || shared.missing;
     let actionClass = (styles as any)[this.props.action.type] || styles.missing;
     const showRemoval = !this.props.translating;
     const showMove = !this.props.first && !this.props.translating;
     const selectedClass = this.props.selected ? styles.selected : '';
-    const issues = hasIssues(this.props.issues, this.props.translating, this.props.language);
+    const issues = hasIssues(
+      this.props.issues,
+      this.props.translating,
+      this.props.language,
+    );
 
-    if (hasIssues(this.props.issues, this.props.translating, this.props.language)) {
+    if (
+      hasIssues(this.props.issues, this.props.translating, this.props.language)
+    ) {
       titleBarClass = shared.missing;
       actionClass = styles.missing;
     }
@@ -217,7 +233,8 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
       >
         <div className={styles.overlay} data-spec={actionOverlaySpecId} />
         <div {...events} data-spec={actionInteractiveDivSpecId}>
-          {this.props.scrollToAction && this.props.scrollToAction === this.props.action.uuid ? (
+          {this.props.scrollToAction &&
+          this.props.scrollToAction === this.props.action.uuid ? (
             <MountScroll pulseAfterScroll={true}>{body}</MountScroll>
           ) : (
             body
@@ -231,15 +248,15 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
 /* istanbul ignore next */
 const mapStateToProps = ({
   flowContext: {
-    definition: { localization }
+    definition: { localization },
   },
-  editorState: { language, translating, scrollToAction, mouseState }
+  editorState: { language, translating, scrollToAction, mouseState },
 }: AppState) => ({
   scrollToAction,
   language,
   translating,
   localization,
-  mouseState
+  mouseState,
 });
 
 /* istanbul ignore next */
@@ -248,16 +265,16 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
     {
       onOpenNodeEditor,
       removeAction,
-      moveActionUp
+      moveActionUp,
     },
-    dispatch
+    dispatch,
   );
 
 const ConnectedActionWrapper = connect(
   mapStateToProps,
   mapDispatchToProps,
   null,
-  { forwardRef: true }
+  { forwardRef: true },
 )(ActionWrapper);
 
 export default ConnectedActionWrapper;

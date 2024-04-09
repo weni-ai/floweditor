@@ -21,12 +21,14 @@ const getEndpoint = (urlStr: string) => {
   const hasQuery = queryIdx > -1;
   return {
     endpoint: hasQuery ? urlStr.slice(0, queryIdx) : urlStr,
-    containsQuery: hasQuery ? true : false
+    containsQuery: hasQuery ? true : false,
   };
 };
 const containsUUIDQuery = (urlStr: string) => urlStr.indexOf('uuid=') > -1;
-const resolvePromise = (data: { [key: string]: any }) => Promise.resolve({ data });
+const resolvePromise = (data: { [key: string]: any }) =>
+  Promise.resolve({ data });
 const getUUIDQuery = (urlStr: string) => {
+  // eslint-disable-next-line no-useless-escape
   for (const param of urlStr.split(/\&|\?/)) {
     const [key, value] = param.split('=');
     if (key === 'uuid') {

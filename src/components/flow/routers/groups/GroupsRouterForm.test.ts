@@ -5,12 +5,15 @@ import { composeComponentTestUtils, mock, setMock } from 'testUtils';
 import {
   createGroupsRouterNode,
   getRouterFormProps,
-  SubscribersGroup
+  SubscribersGroup,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 
 const groupsRouterNode = createGroupsRouterNode();
-const { setup } = composeComponentTestUtils(GroupsRouterForm, getRouterFormProps(groupsRouterNode));
+const { setup } = composeComponentTestUtils(
+  GroupsRouterForm,
+  getRouterFormProps(groupsRouterNode),
+);
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -53,9 +56,12 @@ describe(GroupsRouterForm.name, () => {
     describe('extractGroups', () => {
       it('should extract groups from the exits of a groupsRouter node', () => {
         extractGroups(groupsRouterNode.node).forEach((group, idx) => {
-          expect(group.name).toBe(groupsRouterNode.node.router.categories[idx].name);
+          expect(group.name).toBe(
+            groupsRouterNode.node.router.categories[idx].name,
+          );
           expect(group.uuid).toBe(
-            (groupsRouterNode.node.router as SwitchRouter).cases[idx].arguments[0]
+            (groupsRouterNode.node.router as SwitchRouter).cases[idx]
+              .arguments[0],
           );
           expect(group).toMatchSnapshot();
         });

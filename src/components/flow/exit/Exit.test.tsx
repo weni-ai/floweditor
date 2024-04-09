@@ -7,7 +7,7 @@ import { Spanish } from 'testUtils/assetCreators';
 
 const exit: Exit = {
   uuid: createUUID(),
-  destination_uuid: createUUID()
+  destination_uuid: createUUID(),
 };
 const categories = [{ uuid: createUUID(), name: 'Red', exit_uuid: exit.uuid }];
 
@@ -26,7 +26,7 @@ const exitProps: ExitProps = {
   plumberRemove: jest.fn(),
   plumberMakeSource: jest.fn(),
   plumberUpdateClass: jest.fn(),
-  disconnectExit: jest.fn()
+  disconnectExit: jest.fn(),
 };
 
 jest.useFakeTimers();
@@ -44,10 +44,10 @@ describe(ExitComp.name, () => {
           {...exitProps}
           recentMessages={[
             { text: 'Hi Mom!', sent: new Date().toUTCString() },
-            { text: 'Hi Dad!', sent: new Date().toUTCString() }
+            { text: 'Hi Dad!', sent: new Date().toUTCString() },
           ]}
         />
-      </>
+      </>,
     );
 
     // give our portal a chance to mount
@@ -67,10 +67,10 @@ describe(ExitComp.name, () => {
           {...exitProps}
           recentMessages={[
             { text: 'Hi Mom!', sent: new Date().toUTCString() },
-            { text: 'Hi Dad!', sent: new Date().toUTCString() }
+            { text: 'Hi Dad!', sent: new Date().toUTCString() },
           ]}
         />
-      </>
+      </>,
     );
 
     // give our portal a chance to mount
@@ -91,7 +91,12 @@ describe(ExitComp.name, () => {
 
   it('shows missing localization', () => {
     const { baseElement, container } = render(
-      <ExitComp {...exitProps} translating={true} language={Spanish} localization={{ spa: {} }} />
+      <ExitComp
+        {...exitProps}
+        translating={true}
+        language={Spanish}
+        localization={{ spa: {} }}
+      />,
     );
 
     expect(container.querySelector('.missing_localization')).not.toBe(null);
@@ -105,7 +110,7 @@ describe(ExitComp.name, () => {
         translating={true}
         language={Spanish}
         localization={{ spa: { [categories[0].uuid]: { name: ['Hola!'] } } }}
-      />
+      />,
     );
 
     getByText('Hola!');

@@ -31,7 +31,11 @@ export interface SelectOption {
 export default class SelectElement extends React.Component<SelectElementProps> {
   public render(): JSX.Element {
     return (
-      <FormElement name={this.props.name} showLabel={this.props.showLabel} entry={this.props.entry}>
+      <FormElement
+        name={this.props.name}
+        showLabel={this.props.showLabel}
+        entry={this.props.entry}
+      >
         <TembaSelect
           key={this.props.name + '_select'}
           name={this.props.name}

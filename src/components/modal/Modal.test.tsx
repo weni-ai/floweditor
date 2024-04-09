@@ -6,7 +6,7 @@ const waitForRespTitle = <div key={'front'}>Wait for Response</div>;
 
 const baseProps: ModalProps = {
   show: true,
-  width: '600px'
+  width: '600px',
 };
 
 const { setup, spyOn } = composeComponentTestUtils(Modal, baseProps);

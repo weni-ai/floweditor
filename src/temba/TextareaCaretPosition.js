@@ -51,7 +51,7 @@ var properties = [
   'wordSpacing',
 
   'tabSize',
-  'MozTabSize'
+  'MozTabSize',
 ];
 
 var isBrowser = typeof window !== 'undefined';
@@ -60,13 +60,15 @@ var isFirefox = isBrowser && window.mozInnerScreenX != null;
 function getCaretCoordinates(element, position, options) {
   if (!isBrowser) {
     throw new Error(
-      'textarea-caret-position#getCaretCoordinates should only be called in a browser'
+      'textarea-caret-position#getCaretCoordinates should only be called in a browser',
     );
   }
 
   var debug = (options && options.debug) || false;
   if (debug) {
-    var el = document.querySelector('#input-textarea-caret-position-mirror-div');
+    var el = document.querySelector(
+      '#input-textarea-caret-position-mirror-div',
+    );
     if (el) el.parentNode.removeChild(el);
   }
 
@@ -76,7 +78,9 @@ function getCaretCoordinates(element, position, options) {
   document.body.appendChild(div);
 
   var style = div.style;
-  var computed = window.getComputedStyle ? window.getComputedStyle(element) : element.currentStyle; // currentStyle for IE < 9
+  var computed = window.getComputedStyle
+    ? window.getComputedStyle(element)
+    : element.currentStyle; // currentStyle for IE < 9
   var isInput = element.nodeName === 'INPUT';
 
   // Default textarea styles
@@ -116,7 +120,8 @@ function getCaretCoordinates(element, position, options) {
 
   if (isFirefox) {
     // Firefox lies about the overflow property for textareas: https://bugzilla.mozilla.org/show_bug.cgi?id=984275
-    if (element.scrollHeight > parseInt(computed.height)) style.overflowY = 'scroll';
+    if (element.scrollHeight > parseInt(computed.height))
+      style.overflowY = 'scroll';
   } else {
     style.overflow = 'hidden'; // for Chrome to not render a scrollbar; IE keeps overflowY = 'scroll'
   }
@@ -138,7 +143,7 @@ function getCaretCoordinates(element, position, options) {
   var coordinates = {
     top: span.offsetTop + parseInt(computed['borderTopWidth']),
     left: span.offsetLeft + parseInt(computed['borderLeftWidth']),
-    height: parseInt(computed['lineHeight'])
+    height: parseInt(computed['lineHeight']),
   };
 
   if (debug) {

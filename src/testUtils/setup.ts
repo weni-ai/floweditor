@@ -1,3 +1,4 @@
+/* eslint-disable no-redeclare */
 import { Console } from 'console';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';

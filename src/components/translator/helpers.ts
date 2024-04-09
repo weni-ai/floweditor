@@ -1,16 +1,20 @@
 import { desnake } from 'utils';
 import i18next from 'i18next';
-import { Translation, TranslationType, TranslationBundle } from './TranslatorTab';
+import {
+  Translation,
+  TranslationType,
+  TranslationBundle,
+} from './TranslatorTab';
 
 export enum TranslationState {
   COMPLETE = 'complete',
-  MISSING = 'missing'
+  MISSING = 'missing',
 }
 
 export const getMergedByType = (
   bundle: TranslationBundle,
   state: TranslationState,
-  type: TranslationType
+  type: TranslationType,
 ) => {
   return bundle.translations
     .filter(translation => {
@@ -22,7 +26,12 @@ export const getMergedByType = (
       }
       return true;
     })
-    .map(translation => (translation as any)[state === TranslationState.MISSING ? 'from' : 'to'])
+    .map(
+      translation =>
+        (translation as any)[
+          state === TranslationState.MISSING ? 'from' : 'to'
+        ],
+    )
     .join(', ');
 };
 
@@ -30,7 +39,7 @@ export const findTranslations = (
   type: TranslationType,
   localizeableKeys: string[],
   localizable: any,
-  localization: { [uuid: string]: any }
+  localization: { [uuid: string]: any },
 ): Translation[] => {
   const translations: Translation[] = [];
 
@@ -75,7 +84,7 @@ export const findTranslations = (
           type,
           attribute,
           from,
-          to
+          to,
         });
       }
     }

@@ -8,7 +8,7 @@ import { SendMsg, MsgTemplating, SayMsg, CallWeniGPT } from 'flowTypes';
 import { Attachment } from '../sendmsg/attachments';
 
 export const initializeLocalizedKeyForm = (
-  settings: NodeEditorSettings
+  settings: NodeEditorSettings,
 ): KeyLocalizationFormState => {
   const keyValues: { [key: string]: StringEntry } = {};
   const localized = settings.localizations[0];
@@ -18,16 +18,20 @@ export const initializeLocalizedKeyForm = (
     ? getTypeConfig(settings.originalAction.type).localizeableKeys || []
     : [];
   keys.forEach((key: string) => {
-    keyValues[key] = { value: key in localized.localizedKeys ? action[key] : '' };
+    keyValues[key] = {
+      value: key in localized.localizedKeys ? action[key] : '',
+    };
   });
 
   return {
     keyValues,
-    valid: true
+    valid: true,
   };
 };
 
-export const initializeLocalizedForm = (settings: NodeEditorSettings): MsgLocalizationFormState => {
+export const initializeLocalizedForm = (
+  settings: NodeEditorSettings,
+): MsgLocalizationFormState => {
   const state: MsgLocalizationFormState = {
     message: { value: '' },
     quickReplies: { value: [] },
@@ -35,7 +39,7 @@ export const initializeLocalizedForm = (settings: NodeEditorSettings): MsgLocali
     templating: null,
     audio: { value: null },
     valid: true,
-    attachments: []
+    attachments: [],
   };
 
   // check if our form should use a localized action
@@ -46,13 +50,18 @@ export const initializeLocalizedForm = (settings: NodeEditorSettings): MsgLocali
     settings.localizations &&
     settings.localizations.length > 0
   ) {
-    if (settings.originalAction && (settings.originalAction as any).templating) {
+    if (
+      settings.originalAction &&
+      (settings.originalAction as any).templating
+    ) {
       state.templating = (settings.originalAction as any).templating;
-      state.templateVariables = state.templating.variables.map((value: string) => {
-        return {
-          value: ''
-        };
-      });
+      state.templateVariables = state.templating.variables.map(
+        (value: string) => {
+          return {
+            value: '',
+          };
+        },
+      );
     }
 
     for (const localized of settings.localizations) {
@@ -61,10 +70,14 @@ export const initializeLocalizedForm = (settings: NodeEditorSettings): MsgLocali
 
         if (localizedObject.text) {
           const action = localizedObject as (SendMsg & SayMsg);
-          state.message.value = 'text' in localized.localizedKeys ? action.text : '';
-          state.audio.value = 'audio_url' in localized.localizedKeys ? action.audio_url : null;
+          state.message.value =
+            'text' in localized.localizedKeys ? action.text : '';
+          state.audio.value =
+            'audio_url' in localized.localizedKeys ? action.audio_url : null;
           state.quickReplies.value =
-            'quick_replies' in localized.localizedKeys ? action.quick_replies || [] : [];
+            'quick_replies' in localized.localizedKeys
+              ? action.quick_replies || []
+              : [];
 
           const attachments: Attachment[] = [];
 
@@ -76,7 +89,7 @@ export const initializeLocalizedForm = (settings: NodeEditorSettings): MsgLocali
               const attachment = {
                 type,
                 url: attachmentString.substring(splitPoint + 1),
-                uploaded: type.indexOf('/') > -1
+                uploaded: type.indexOf('/') > -1,
               };
 
               attachments.push(attachment);
@@ -89,11 +102,13 @@ export const initializeLocalizedForm = (settings: NodeEditorSettings): MsgLocali
 
         if (localizedObject.variables) {
           const templating = localizedObject as MsgTemplating;
-          state.templateVariables = templating.variables.map((value: string) => {
-            return {
-              value: 'variables' in localized.localizedKeys ? value : ''
-            };
-          });
+          state.templateVariables = templating.variables.map(
+            (value: string) => {
+              return {
+                value: 'variables' in localized.localizedKeys ? value : '',
+              };
+            },
+          );
           state.valid = true;
         }
       }
@@ -103,15 +118,17 @@ export const initializeLocalizedForm = (settings: NodeEditorSettings): MsgLocali
 };
 
 export const initializeWeniGPTLocalizedForm = (
-  settings: NodeEditorSettings
+  settings: NodeEditorSettings,
 ): WeniGPTLocalizationFormState => {
   const state: WeniGPTLocalizationFormState = {
     expression: { value: '' },
-    valid: true
+    valid: true,
   };
 
   const weniGPTAction =
-    settings.originalNode.node.actions[settings.originalNode.node.actions.length - 1];
+    settings.originalNode.node.actions[
+      settings.originalNode.node.actions.length - 1
+    ];
 
   // check if our form should use a localized action
   if (
@@ -126,7 +143,8 @@ export const initializeWeniGPTLocalizedForm = (
 
         if (localizedObject.input) {
           const action = localizedObject as CallWeniGPT;
-          state.expression.value = 'input' in localized.localizedKeys ? action.input : '';
+          state.expression.value =
+            'input' in localized.localizedKeys ? action.input : '';
           state.valid = true;
         }
       }

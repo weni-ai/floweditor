@@ -28,8 +28,8 @@ export default class Modal extends React.Component<ModalProps> {
         borderRadius: 'none',
         outline: 'none',
         width: this.props.width ? this.props.width : '700px',
-        border: 'none'
-      }
+        border: 'none',
+      },
     };
     return (
       <ReactModal

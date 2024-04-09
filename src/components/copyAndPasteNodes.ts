@@ -16,7 +16,7 @@ export default class {
 
         if (
           /^update:[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/.test(
-            newKey
+            newKey,
           )
         ) {
           // @ts-ignore
@@ -37,7 +37,7 @@ export default class {
     } else if (typeof array === 'string') {
       if (
         /^update:[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/.test(
-          array
+          array,
         )
       ) {
         // @ts-ignore
@@ -57,7 +57,7 @@ export default class {
   replaceUuidsToUpdate(array: any, staticUuids: string[]): any {
     if (array instanceof Array) {
       return array.map((element: any) =>
-        this.replaceUuidsToUpdate.bind(this)(element, staticUuids)
+        this.replaceUuidsToUpdate.bind(this)(element, staticUuids),
       );
     } else if (array instanceof Object) {
       const i = {};
@@ -67,31 +67,34 @@ export default class {
 
         if (
           /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/.test(
-            newKey
+            newKey,
           ) &&
           !staticUuids.includes(newKey)
         ) {
           newKey = newKey.replace(
             /^([0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12})$/,
-            'update:$1'
+            'update:$1',
           );
         }
 
         // @ts-ignore
-        i[newKey] = this.replaceUuidsToUpdate.bind(this)(array[key], staticUuids);
+        i[newKey] = this.replaceUuidsToUpdate.bind(this)(
+          array[key],
+          staticUuids,
+        );
       }
 
       return i;
     } else if (typeof array === 'string') {
       if (
         /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/.test(
-          array
+          array,
         ) &&
         !staticUuids.includes(array)
       ) {
         return array.replace(
           /^([0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12})$/,
-          'update:$1'
+          'update:$1',
         );
       }
     }
@@ -147,7 +150,7 @@ export default class {
 
             if (action.call.name === 'ConsultarChatGPT') {
               const promptParams = action.params.find(
-                (param: any) => param.type === 'AditionalPrompts'
+                (param: any) => param.type === 'AditionalPrompts',
               );
 
               if (promptParams) {
@@ -194,7 +197,7 @@ export default class {
           caseElement.arguments.forEach((argument: any) => {
             if (
               /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/.test(
-                argument
+                argument,
               )
             ) {
               staticUuids.push(argument);

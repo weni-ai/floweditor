@@ -12,7 +12,7 @@ import {
   getLocalizedObjects,
   getOriginalCase,
   getOriginalCategory,
-  LocalizedType
+  LocalizedType,
 } from './helpers';
 import styles from './RouterLocalizationForm.module.scss';
 import i18n from 'config/i18n';
@@ -33,14 +33,17 @@ export default class RouterLocalizationForm extends React.Component<
 
     const categories: Category[] = getLocalizedObjects(
       props.nodeSettings,
-      LocalizedType.Category
+      LocalizedType.Category,
     ) as Category[];
-    const cases: Case[] = getLocalizedObjects(props.nodeSettings, LocalizedType.Case) as Case[];
+    const cases: Case[] = getLocalizedObjects(
+      props.nodeSettings,
+      LocalizedType.Case,
+    ) as Case[];
 
     this.state = { categories, cases, valid: true };
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -77,8 +80,8 @@ export default class RouterLocalizationForm extends React.Component<
         ? {
             uuid: cat.uuid,
             translations: {
-              name: cat.name
-            }
+              name: cat.name,
+            },
           }
         : { uuid: cat.uuid };
     });
@@ -90,11 +93,11 @@ export default class RouterLocalizationForm extends React.Component<
           ? {
               uuid: kase.uuid,
               translations: {
-                arguments: kase.arguments
-              }
+                arguments: kase.arguments,
+              },
             }
           : { uuid: kase.uuid };
-      })
+      }),
     );
 
     this.props.updateLocalizations(this.props.language.id, translations);
@@ -108,19 +111,23 @@ export default class RouterLocalizationForm extends React.Component<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
   public renderCases(): JSX.Element[] {
     const typeConfig = determineTypeConfig(this.props.nodeSettings);
-    const isSmart = [Types.automatic_classify, Types.smart_wait_for_response].includes(
-      typeConfig.type
-    );
+    const isSmart = [
+      Types.automatic_classify,
+      Types.smart_wait_for_response,
+    ].includes(typeConfig.type);
 
     return this.state.cases.map((kase: Case) => {
-      const originalCase = getOriginalCase(this.props.nodeSettings, kase.uuid) as Case;
+      const originalCase = getOriginalCase(
+        this.props.nodeSettings,
+        kase.uuid,
+      ) as Case;
 
       const { verboseName } = getOperatorConfig(originalCase.type);
 
@@ -140,11 +147,17 @@ export default class RouterLocalizationForm extends React.Component<
             className={styles.translating_operator_container}
           >
             {!isSmart && (
-              <div data-spec="verbose-name" className={styles.translating_operator}>
+              <div
+                data-spec="verbose-name"
+                className={styles.translating_operator}
+              >
                 {verboseName}
               </div>
             )}
-            <div data-spec="argument-to-translate" className={styles.translating_from}>
+            <div
+              data-spec="argument-to-translate"
+              className={styles.translating_from}
+            >
               {orginalArgument}
             </div>
             <div className={styles.translating_to}>
@@ -153,7 +166,9 @@ export default class RouterLocalizationForm extends React.Component<
                 name={kase.uuid}
                 placeholder={`${this.props.language.name} ${translation}`}
                 showLabel={false}
-                onChange={(arg: string) => this.handleUpdateCaseArgument(kase, arg)}
+                onChange={(arg: string) =>
+                  this.handleUpdateCaseArgument(kase, arg)
+                }
                 entry={{ value: argument }}
               />
             </div>
@@ -167,7 +182,10 @@ export default class RouterLocalizationForm extends React.Component<
 
   public renderCategories(): JSX.Element[] {
     return this.state.categories.map((cat: Category) => {
-      const originalCategory = getOriginalCategory(this.props.nodeSettings, cat.uuid);
+      const originalCategory = getOriginalCategory(
+        this.props.nodeSettings,
+        cat.uuid,
+      );
 
       const placeholder = `${this.props.language.name} Translation`;
 
@@ -187,7 +205,9 @@ export default class RouterLocalizationForm extends React.Component<
               placeholder={placeholder}
               showLabel={false}
               entry={{ value: cat.name }}
-              onChange={(name: string) => this.handleUpdateCategoryName(cat, name)}
+              onChange={(name: string) =>
+                this.handleUpdateCategoryName(cat, name)
+              }
             />
           </div>
         </div>
@@ -201,7 +221,10 @@ export default class RouterLocalizationForm extends React.Component<
     const tabs: Tab[] = [];
 
     const hasCasesWithArguments = !!this.state.cases.find((kase: Case) => {
-      const orginalCase = getOriginalCase(this.props.nodeSettings, kase.uuid) as Case;
+      const orginalCase = getOriginalCase(
+        this.props.nodeSettings,
+        kase.uuid,
+      ) as Case;
       return orginalCase.arguments && orginalCase.arguments.length > 0;
     });
 
@@ -211,8 +234,8 @@ export default class RouterLocalizationForm extends React.Component<
         body: (
           <>
             <p data-spec="instructions">
-              Sometimes languages need special rules to route things properly. If a translation is
-              not provided, the original rule will be used.
+              Sometimes languages need special rules to route things properly.
+              If a translation is not provided, the original rule will be used.
             </p>
             <div
               className={
@@ -222,10 +245,12 @@ export default class RouterLocalizationForm extends React.Component<
               }
               tabIndex={0}
             >
-              <div className={styles.translating_item_list}>{this.renderCases()}</div>
+              <div className={styles.translating_item_list}>
+                {this.renderCases()}
+              </div>
             </div>
           </>
-        )
+        ),
       });
     }
 
@@ -237,8 +262,9 @@ export default class RouterLocalizationForm extends React.Component<
         tabs={tabs}
       >
         <p data-spec="instructions">
-          When category names are referenced later in the flow, the appropriate language for the
-          category will be used. If no translation is provided, the original text will be used.
+          When category names are referenced later in the flow, the appropriate
+          language for the category will be used. If no translation is provided,
+          the original text will be used.
         </p>
         <div
           className={
@@ -248,7 +274,9 @@ export default class RouterLocalizationForm extends React.Component<
           }
           tabIndex={0}
         >
-          <div className={styles.translating_item_list}>{this.renderCategories()}</div>
+          <div className={styles.translating_item_list}>
+            {this.renderCategories()}
+          </div>
         </div>
         {renderIssues(this.props)}
       </Dialog>

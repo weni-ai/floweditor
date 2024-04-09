@@ -13,24 +13,24 @@ const nodes = {
           text: 'teste',
           type: 'send_msg',
           quick_replies: [],
-          uuid: 'bbb43f9d-d254-44ef-a9d1-7a3e392f972c'
-        }
+          uuid: 'bbb43f9d-d254-44ef-a9d1-7a3e392f972c',
+        },
       ],
       exits: [
         {
           uuid: '07e2e3d2-d7cb-4905-93b8-50598ec4fdf3',
-          destination_uuid: 'f5804ae2-2103-4b55-b17a-129b359d39a2'
-        }
-      ]
+          destination_uuid: 'f5804ae2-2103-4b55-b17a-129b359d39a2',
+        },
+      ],
     },
     ui: {
       position: {
         left: 160,
-        top: 100
+        top: 100,
       },
-      type: 'execute_actions'
+      type: 'execute_actions',
     },
-    inboundConnections: {}
+    inboundConnections: {},
   },
   'f5804ae2-2103-4b55-b17a-129b359d39a2': {
     node: {
@@ -41,27 +41,28 @@ const nodes = {
           text: 'teste',
           type: 'send_msg',
           quick_replies: [],
-          uuid: '77e4f770-42ad-4573-95cf-f7d96a020dd9'
-        }
+          uuid: '77e4f770-42ad-4573-95cf-f7d96a020dd9',
+        },
       ],
       exits: [
         {
           uuid: '72e44e5c-777e-41de-a35c-c52f418d6c6c',
-          destination_uuid: null
-        }
-      ]
+          destination_uuid: null,
+        },
+      ],
     },
     ui: {
       position: {
         left: 129,
-        top: 409
+        top: 409,
       },
-      type: 'execute_actions'
+      type: 'execute_actions',
     },
     inboundConnections: {
-      '07e2e3d2-d7cb-4905-93b8-50598ec4fdf3': '11f18b66-37ce-43f0-a74e-4638eb7e5921'
-    }
-  }
+      '07e2e3d2-d7cb-4905-93b8-50598ec4fdf3':
+        '11f18b66-37ce-43f0-a74e-4638eb7e5921',
+    },
+  },
 };
 
 const filteredNode = [
@@ -75,31 +76,32 @@ const filteredNode = [
             quick_replies: [],
             text: 'teste',
             type: 'send_msg',
-            uuid: 'bbb43f9d-d254-44ef-a9d1-7a3e392f972c'
-          }
+            uuid: 'bbb43f9d-d254-44ef-a9d1-7a3e392f972c',
+          },
         ],
         exits: [
           {
             destination_uuid: 'f5804ae2-2103-4b55-b17a-129b359d39a2',
-            uuid: '07e2e3d2-d7cb-4905-93b8-50598ec4fdf3'
-          }
+            uuid: '07e2e3d2-d7cb-4905-93b8-50598ec4fdf3',
+          },
         ],
-        uuid: '11f18b66-37ce-43f0-a74e-4638eb7e5921'
+        uuid: '11f18b66-37ce-43f0-a74e-4638eb7e5921',
       },
       ui: {
         position: {
           left: 160,
-          top: 100
+          top: 100,
         },
-        type: 'execute_actions'
-      }
+        type: 'execute_actions',
+      },
     },
-    uuid: '11f18b66-37ce-43f0-a74e-4638eb7e5921'
+    uuid: '11f18b66-37ce-43f0-a74e-4638eb7e5921',
   },
   {
     data: {
       inboundConnections: {
-        '07e2e3d2-d7cb-4905-93b8-50598ec4fdf3': '11f18b66-37ce-43f0-a74e-4638eb7e5921'
+        '07e2e3d2-d7cb-4905-93b8-50598ec4fdf3':
+          '11f18b66-37ce-43f0-a74e-4638eb7e5921',
       },
       node: {
         actions: [
@@ -108,27 +110,27 @@ const filteredNode = [
             quick_replies: [],
             text: 'teste',
             type: 'send_msg',
-            uuid: '77e4f770-42ad-4573-95cf-f7d96a020dd9'
-          }
+            uuid: '77e4f770-42ad-4573-95cf-f7d96a020dd9',
+          },
         ],
         exits: [
           {
             destination_uuid: null,
-            uuid: '72e44e5c-777e-41de-a35c-c52f418d6c6c'
-          }
+            uuid: '72e44e5c-777e-41de-a35c-c52f418d6c6c',
+          },
         ],
-        uuid: 'f5804ae2-2103-4b55-b17a-129b359d39a2'
+        uuid: 'f5804ae2-2103-4b55-b17a-129b359d39a2',
       },
       ui: {
         position: {
           left: 129,
-          top: 409
+          top: 409,
         },
-        type: 'execute_actions'
-      }
+        type: 'execute_actions',
+      },
     },
-    uuid: 'f5804ae2-2103-4b55-b17a-129b359d39a2'
-  }
+    uuid: 'f5804ae2-2103-4b55-b17a-129b359d39a2',
+  },
 ];
 
 const baseProps: SearchStoreProps = {
@@ -148,32 +150,33 @@ const baseProps: SearchStoreProps = {
                 text: 'teste',
                 type: 'send_msg',
                 quick_replies: [],
-                uuid: '77e4f770-42ad-4573-95cf-f7d96a020dd9'
-              }
+                uuid: '77e4f770-42ad-4573-95cf-f7d96a020dd9',
+              },
             ],
             exits: [
               {
                 uuid: '72e44e5c-777e-41de-a35c-c52f418d6c6c',
-                destination_uuid: null
-              }
-            ]
+                destination_uuid: null,
+              },
+            ],
           },
           ui: {
             position: {
               left: 129,
-              top: 409
+              top: 409,
             },
-            type: 'execute_actions'
+            type: 'execute_actions',
           },
           inboundConnections: {
-            '07e2e3d2-d7cb-4905-93b8-50598ec4fdf3': '11f18b66-37ce-43f0-a74e-4638eb7e5921'
-          }
-        }
-      }
-    ]
+            '07e2e3d2-d7cb-4905-93b8-50598ec4fdf3':
+              '11f18b66-37ce-43f0-a74e-4638eb7e5921',
+          },
+        },
+      },
+    ],
   },
   nodes: nodes,
-  handleSearchChange: jest.fn()
+  handleSearchChange: jest.fn(),
 };
 
 const { setup, spyOn } = composeComponentTestUtils(SearchBar, baseProps);

@@ -15,7 +15,7 @@ beforeAll(() => {
     keepVisible: false,
     containerStyle: 'style goes here',
     countStyle: 'count style goes here',
-    count: 1000
+    count: 1000,
   };
 
   counter = mount(<Counter {...props} />);

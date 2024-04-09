@@ -3,7 +3,13 @@ import classNames from 'classnames/bind';
 import { PopTab } from 'components/poptab/PopTab';
 import dateFormat from 'dateformat';
 import { getAssets, getFlowDetails } from 'external';
-import { FlowDefinition, SPEC_VERSION, FlowDetails, FlowIssue, FlowMetadata } from 'flowTypes';
+import {
+  FlowDefinition,
+  SPEC_VERSION,
+  FlowDetails,
+  FlowIssue,
+  FlowMetadata,
+} from 'flowTypes';
 import React from 'react';
 import { Asset, AssetStore } from 'store/flowContext';
 import { renderIf } from 'utils';
@@ -63,11 +69,11 @@ export class RevisionExplorer extends React.Component<
       revisions: [],
       revision: null,
       definition: null,
-      visible: false
+      visible: false,
     };
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -77,7 +83,7 @@ export class RevisionExplorer extends React.Component<
       return getAssets(
         assets.endpoint + '?version=' + SPEC_VERSION,
         assets.type,
-        assets.id || 'id'
+        assets.id || 'id',
       ).then((remoteAssets: Asset[]) => {
         if (remoteAssets.length > 0) {
           remoteAssets[0].content.current = true;
@@ -98,34 +104,40 @@ export class RevisionExplorer extends React.Component<
         if (this.state.visible) {
           this.handleUpdateRevisions();
         } else {
-          if (this.state.revision && this.state.revision.id !== this.state.revisions[0].id) {
-            getFlowDetails(this.props.assetStore.revisions, this.state.revisions[0].id).then(
-              (details: FlowDetails) => {
-                this.props.loadFlowDefinition(details, this.props.assetStore);
-                this.setState({ revision: null });
-              }
-            );
+          if (
+            this.state.revision &&
+            this.state.revision.id !== this.state.revisions[0].id
+          ) {
+            getFlowDetails(
+              this.props.assetStore.revisions,
+              this.state.revisions[0].id,
+            ).then((details: FlowDetails) => {
+              this.props.loadFlowDefinition(details, this.props.assetStore);
+              this.setState({ revision: null });
+            });
           }
         }
-      }
+      },
     );
   }
 
   public onRevisionClicked = (
-    revision: Asset
+    revision: Asset,
   ): ((event: React.MouseEvent<HTMLDivElement>) => void) => {
     return (event: React.MouseEvent<HTMLDivElement>) => {
       event.stopPropagation();
       event.preventDefault();
-      getFlowDetails(this.props.assetStore.revisions, revision.id).then((details: FlowDetails) => {
-        this.props.loadFlowDefinition(details, this.props.assetStore);
-        this.setState({ revision });
-      });
+      getFlowDetails(this.props.assetStore.revisions, revision.id).then(
+        (details: FlowDetails) => {
+          this.props.loadFlowDefinition(details, this.props.assetStore);
+          this.setState({ revision });
+        },
+      );
     };
   };
 
   public onRevertClicked = (
-    revision: Asset
+    revision: Asset,
   ): ((event: React.MouseEvent<HTMLDivElement>) => void) => {
     return (event: React.MouseEvent<HTMLDivElement>) => {
       event.stopPropagation();
@@ -138,7 +150,8 @@ export class RevisionExplorer extends React.Component<
   public render(): JSX.Element {
     const classes = cx({
       [styles.visible]: this.state.visible,
-      [styles.hidden]: this.props.popped && this.props.popped !== PopTabType.REVISION_HISTORY
+      [styles.hidden]:
+        this.props.popped && this.props.popped !== PopTabType.REVISION_HISTORY,
     });
 
     return (
@@ -162,9 +175,11 @@ export class RevisionExplorer extends React.Component<
                 {this.state.revisions.map((asset: Asset) => {
                   const revision = asset.content as Revision;
 
-                  const isSelected = this.state.revision && asset.id === this.state.revision.id;
+                  const isSelected =
+                    this.state.revision && asset.id === this.state.revision.id;
 
-                  const selectedClass = revision.current || isSelected ? styles.selected : '';
+                  const selectedClass =
+                    revision.current || isSelected ? styles.selected : '';
 
                   return (
                     <div
@@ -178,7 +193,7 @@ export class RevisionExplorer extends React.Component<
                         {dateFormat(
                           new Date(revision.created_on),
                           'mmmm d, yyyy, h:MM TT',
-                          this.props.utc
+                          this.props.utc,
                         )}
 
                         {renderIf(revision.current)(
@@ -190,7 +205,7 @@ export class RevisionExplorer extends React.Component<
                             }
                           >
                             {i18n.t('revisions.current', 'current')}
-                          </div>
+                          </div>,
                         )}
 
                         {renderIf(isSelected && !revision.current)(
@@ -199,7 +214,7 @@ export class RevisionExplorer extends React.Component<
                             className={`${styles.tag} ${styles.revert} u font secondary body-sm color-neutral-snow`}
                           >
                             {i18n.t('revisions.revert', 'revert')}
-                          </div>
+                          </div>,
                         )}
                       </div>
                       <div className="u font secondary body-md color-neutral-cloudy">
@@ -219,10 +234,10 @@ export class RevisionExplorer extends React.Component<
 
 /* istanbul ignore next */
 const mapStateToProps = ({ flowContext: { assetStore } }: AppState) => ({
-  assetStore: assetStore
+  assetStore: assetStore,
 });
 
 export default connect(
   mapStateToProps,
-  null
+  null,
 )(RevisionExplorer);

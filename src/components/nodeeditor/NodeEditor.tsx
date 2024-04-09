@@ -27,11 +27,14 @@ import {
   onUpdateLocalizations,
   OnUpdateRouter,
   onUpdateRouter,
-  resetNodeEditingState
+  resetNodeEditingState,
 } from 'store/thunks';
 import { LocalizationFormProps } from 'components/flow/props';
 
-export type UpdateLocalizations = (language: string, changes: LocalizationUpdates) => void;
+export type UpdateLocalizations = (
+  language: string,
+  changes: LocalizationUpdates,
+) => void;
 
 // TODO: Remove use of Function
 // tslint:disable:ban-types
@@ -92,7 +95,7 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
     super(props);
 
     bindCallbacks(this, {
-      include: [/^close/, /^update/, /^handle/]
+      include: [/^close/, /^update/, /^handle/],
     });
   }
 
@@ -122,7 +125,7 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
 
   private updateAction(
     action: Action,
-    onUpdated?: (dispatch: DispatchWithState, getState: GetState) => void
+    onUpdated?: (dispatch: DispatchWithState, getState: GetState) => void,
   ): void {
     this.props.onUpdateAction(action, onUpdated);
   }
@@ -151,8 +154,8 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
             language: this.props.language,
             helpArticles: this.props.helpArticles,
             issues: this.props.issues.filter(
-              (issue: FlowIssue) => issue.language === this.props.language.id
-            )
+              (issue: FlowIssue) => issue.language === this.props.language.id,
+            ),
           };
 
           return (
@@ -175,7 +178,7 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
         issues: this.props.issues.filter((issue: FlowIssue) => !issue.language),
         typeConfig: this.props.typeConfig,
         onTypeChange: this.props.handleTypeConfigChange,
-        onClose: this.close
+        onClose: this.close,
       };
 
       return (
@@ -192,11 +195,12 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
 const mapStateToProps = ({
   flowContext: { nodes, assetStore, issues },
   editorState: { language, translating },
-  nodeEditor: { typeConfig, settings }
+  nodeEditor: { typeConfig, settings },
 }: AppState) => {
   const filteredIssues = (issues[settings.originalNode.node.uuid] || []).filter(
     (issue: FlowIssue) =>
-      !settings.originalAction || settings.originalAction.uuid === issue.action_uuid
+      !settings.originalAction ||
+      settings.originalAction.uuid === issue.action_uuid,
   );
 
   return {
@@ -206,7 +210,7 @@ const mapStateToProps = ({
     translating,
     typeConfig,
     settings,
-    assetStore
+    assetStore,
   };
 };
 
@@ -221,12 +225,12 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
       onUpdateLocalizations,
       onUpdateAction,
       onUpdateRouter,
-      updateUserAddingAction
+      updateUserAddingAction,
     },
-    dispatch
+    dispatch,
   );
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(NodeEditor);

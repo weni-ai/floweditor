@@ -1,10 +1,12 @@
-import TextInputElement, { TextInputProps } from 'components/form/textinput/TextInputElement';
+import TextInputElement, {
+  TextInputProps,
+} from 'components/form/textinput/TextInputElement';
 import * as React from 'react';
 import { render } from 'test/utils';
 
 const baseProps: TextInputProps = {
   name: 'Message',
-  entry: { value: '' }
+  entry: { value: '' },
 };
 
 describe(TextInputElement.name, () => {

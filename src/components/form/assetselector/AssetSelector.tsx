@@ -2,7 +2,12 @@ import { react as bindCallbacks } from 'auto-bind';
 import FormElement, { FormElementProps } from 'components/form/FormElement';
 import { postNewAsset, searchAssetMap } from 'external';
 import * as React from 'react';
-import { Asset, Assets, AssetType, REMOVE_VALUE_ASSET } from 'store/flowContext';
+import {
+  Asset,
+  Assets,
+  AssetType,
+  REMOVE_VALUE_ASSET,
+} from 'store/flowContext';
 import { AssetEntry } from 'store/nodeEditor';
 
 import styles from './AssetSelector.module.scss';
@@ -70,7 +75,10 @@ interface AssetSelectorState {
   message?: string;
 }
 
-export default class AssetSelector extends React.Component<AssetSelectorProps, AssetSelectorState> {
+export default class AssetSelector extends React.Component<
+  AssetSelectorProps,
+  AssetSelectorState
+> {
   private lastCreation: number = 0;
 
   private options: any[] = [];
@@ -78,7 +86,7 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
   constructor(props: AssetSelectorProps) {
     super(props);
     bindCallbacks(this, {
-      include: [/^is/, /^handle/, /^get/]
+      include: [/^is/, /^handle/, /^get/],
     });
 
     let defaultOptions: Asset[] = [];
@@ -96,27 +104,31 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
     // if we don't have an endpoint, populate our options with items
     if (this.props.assets && !this.props.assets.endpoint) {
       this.options = this.options.concat(
-        Object.keys(this.props.assets.items).map((id: string) => this.props.assets.items[id])
+        Object.keys(this.props.assets.items).map(
+          (id: string) => this.props.assets.items[id],
+        ),
       );
     }
 
     this.state = {
       defaultOptions,
       entry: this.props.entry,
-      isLoading: false
+      isLoading: false,
     };
   }
 
   public static getDerivedStateFromProps(
     nextProps: AssetSelectorProps,
-    prevState: AssetSelectorState
+    prevState: AssetSelectorState,
   ): Partial<AssetSelectorState> {
     // the default options should be true if there is an endpoint
     let entry = nextProps.entry;
 
     // if we don't know our entry name, look for it
     if (prevState.defaultOptions && entry.value && !entry.value.name) {
-      const existing = prevState.defaultOptions.find((asset: Asset) => asset.id === entry.value.id);
+      const existing = prevState.defaultOptions.find(
+        (asset: Asset) => asset.id === entry.value.id,
+      );
       if (existing) {
         entry = { value: existing };
       }
@@ -180,12 +192,16 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
         })
         .catch(error => {
           let suffix = '';
-          if (error.response && error.response.data && error.response.data.non_field_errors) {
+          if (
+            error.response &&
+            error.response.data &&
+            error.response.data.non_field_errors
+          ) {
             suffix = ' ' + error.response.data.non_field_errors.join(', ');
           }
           this.setState({
             message: `Couldn't create new ${this.props.assets.type} "${input}".${suffix}`,
-            isLoading: false
+            isLoading: false,
           });
         });
     } else {
@@ -207,8 +223,8 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
         name:
           (this.props.namePure && this.props.namePure.toLocaleLowerCase()) ||
           this.props.name.toLocaleLowerCase(),
-        count: this.props.multi ? 1000 : 1
-      }
+        count: this.props.multi ? 1000 : 1,
+      },
     );
 
     return (
@@ -226,7 +242,9 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
           nameKey={this.props.nameKey || 'name'}
           createArbitraryOption={this.handleCreateArbitraryOption}
           valueKey={
-            this.props.valueKey || (this.props.assets ? this.props.assets.id : undefined) || 'uuid'
+            this.props.valueKey ||
+            (this.props.assets ? this.props.assets.id : undefined) ||
+            'uuid'
           }
           getName={this.props.getName}
           createPrefix={this.props.createPrefix}
@@ -242,7 +260,9 @@ export default class AssetSelector extends React.Component<AssetSelectorProps, A
           options={this.options}
           sortFunction={this.props.sortFunction || sortByName}
           queryParam={
-            this.props.assets && this.props.assets.type === AssetType.Contact ? 'search' : null
+            this.props.assets && this.props.assets.type === AssetType.Contact
+              ? 'search'
+              : null
           }
         />
       </FormElement>

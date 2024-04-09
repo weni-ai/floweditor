@@ -6,25 +6,30 @@ import { applyVueInReact } from 'vuereact-combined';
 import { count as SmsCount } from 'sms-length';
 import i18n from 'config/i18n';
 
-// @ts-ignore
-import { unnnicTextArea, unnnicInput, unnnicIcon, unnnicToolTip } from '@weni/unnnic-system';
+import {
+  unnnicTextArea,
+  unnnicInput,
+  unnnicIcon,
+  unnnicToolTip,
+  // @ts-ignore
+} from '@weni/unnnic-system';
 
 import styles from './TextInputElement.module.scss';
 import TembaCompletion from '../../../temba/TembaCompletion';
 
 export enum Count {
-  SMS = 'SMS'
+  SMS = 'SMS',
 }
 
 export enum TextInputStyle {
   small = 'small',
   medium = 'medium',
-  normal = 'normal'
+  normal = 'normal',
 }
 
 export enum TextInputSizes {
   sm = 'sm',
-  md = 'md'
+  md = 'md',
 }
 
 export interface TextInputProps extends FormElementProps {
@@ -54,9 +59,9 @@ const UnnnicTextArea = applyVueInReact(unnnicTextArea);
 const UnnnicInput = applyVueInReact(unnnicInput, {
   vue: {
     componentWrapAttrs: {
-      'unnnic-input': 'true'
-    }
-  }
+      'unnnic-input': 'true',
+    },
+  },
 });
 const UnnnicIcon = applyVueInReact(unnnicIcon);
 const UnnnicToolTip = applyVueInReact(unnnicToolTip);
@@ -73,29 +78,34 @@ export default class TextInputElement extends React.Component<TextInputProps> {
     }
 
     this.state = {
-      value: initial
+      value: initial,
     };
 
     bindCallbacks(this, {
-      include: [/^on/, /Ref$/, 'setSelection', 'validate', /^has/, /^handle/]
+      include: [/^on/, /Ref$/, 'setSelection', 'validate', /^has/, /^handle/],
     });
   }
 
   public componentDidMount(): void {
     if (this.inputItem.current) {
-      this.inputItem.current.vueRef.$el.querySelector('input').addEventListener('keydown', () => {
-        if (this.props.onKeyDown) {
-          this.props.onKeyDown();
-        }
-      });
+      this.inputItem.current.vueRef.$el
+        .querySelector('input')
+        .addEventListener('keydown', () => {
+          if (this.props.onKeyDown) {
+            this.props.onKeyDown();
+          }
+        });
 
       this.inputItem.current.vueRef.$el
         .querySelector('input')
-        .addEventListener('keypress', (event: React.KeyboardEvent<HTMLInputElement>) => {
-          if (event.key === 'Enter' && this.props.onKeyPressEnter) {
-            this.props.onKeyPressEnter();
-          }
-        });
+        .addEventListener(
+          'keypress',
+          (event: React.KeyboardEvent<HTMLInputElement>) => {
+            if (event.key === 'Enter' && this.props.onKeyPressEnter) {
+              this.props.onKeyPressEnter();
+            }
+          },
+        );
     }
   }
 
@@ -121,10 +131,13 @@ export default class TextInputElement extends React.Component<TextInputProps> {
       hasError = true;
       errorList = [this.props.error];
     } else if (this.props.entry) {
-      if (this.props.entry.validationFailures && this.props.entry.validationFailures.length > 0) {
+      if (
+        this.props.entry.validationFailures &&
+        this.props.entry.validationFailures.length > 0
+      ) {
         hasError = true;
         errorList = this.props.entry.validationFailures.map(
-          (error: ValidationFailure) => error.message
+          (error: ValidationFailure) => error.message,
         );
       }
     }
@@ -135,7 +148,9 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           <TembaCompletion
             name={this.props.name}
             value={this.props.entry.value}
-            onInput={(value: string) => this.handleChange({ currentTarget: { value } })}
+            onInput={(value: string) =>
+              this.handleChange({ currentTarget: { value } })
+            }
             label={this.props.showLabel ? this.props.name : null}
             placeholder={this.props.placeholder}
             size={this.props.size || TextInputSizes.sm}
@@ -151,7 +166,8 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             className={styles.textarea}
             value={this.props.entry.value}
             on={{
-              input: (value: string) => this.handleChange({ currentTarget: { value } })
+              input: (value: string) =>
+                this.handleChange({ currentTarget: { value } }),
             }}
             label={this.props.showLabel ? this.props.name : null}
             placeholder={this.props.placeholder}
@@ -166,18 +182,25 @@ export default class TextInputElement extends React.Component<TextInputProps> {
         {this.props.helpText}
 
         {this.props.counter ? (
-          <div className={`${styles.sms_counter} u font secondary body-md color-neutral-cloudy`}>
-            {SmsCount(this.props.entry.value).length} / {SmsCount(this.props.entry.value).messages}
+          <div
+            className={`${styles.sms_counter} u font secondary body-md color-neutral-cloudy`}
+          >
+            {SmsCount(this.props.entry.value).length} /{' '}
+            {SmsCount(this.props.entry.value).messages}
             <UnnnicToolTip
               enabled
               text={i18n.t('forms.sms_counter_info', {
                 characters: SmsCount(this.props.entry.value).length,
-                messages: SmsCount(this.props.entry.value).messages
+                messages: SmsCount(this.props.entry.value).messages,
               })}
               side="top"
               maxWidth="180px"
             >
-              <UnnnicIcon icon="information-circle-4" size="sm" scheme="neutral-soft" />
+              <UnnnicIcon
+                icon="information-circle-4"
+                size="sm"
+                scheme="neutral-soft"
+              />
             </UnnnicToolTip>
           </div>
         ) : null}
@@ -188,7 +211,9 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           <TembaCompletion
             name={this.props.name}
             value={this.props.entry.value}
-            onInput={(value: string) => this.handleChange({ currentTarget: { value } })}
+            onInput={(value: string) =>
+              this.handleChange({ currentTarget: { value } })
+            }
             label={this.props.showLabel ? this.props.name : null}
             placeholder={this.props.placeholder}
             size={this.props.size || TextInputSizes.sm}
@@ -201,7 +226,8 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             <UnnnicInput
               value={this.props.entry.value}
               on={{
-                input: (value: string) => this.handleChange({ currentTarget: { value } })
+                input: (value: string) =>
+                  this.handleChange({ currentTarget: { value } }),
               }}
               label={this.props.showLabel ? this.props.name : null}
               placeholder={this.props.placeholder}
@@ -216,12 +242,16 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           </div>
         )}
         {this.props.helpText && typeof this.props.helpText === 'string' ? (
-          <div className={`${styles.help} u font secondary body-md color-neutral-cleanest`}>
+          <div
+            className={`${styles.help} u font secondary body-md color-neutral-cleanest`}
+          >
             {this.props.helpText}
           </div>
         ) : null}
         {this.props.helpText && typeof this.props.helpText !== 'string' ? (
-          <div className={`${styles.help} u font secondary body-md color-neutral-cleanest`}>
+          <div
+            className={`${styles.help} u font secondary body-md color-neutral-cleanest`}
+          >
             {this.props.helpText}
           </div>
         ) : null}

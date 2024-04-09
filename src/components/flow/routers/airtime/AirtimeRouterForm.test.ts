@@ -3,14 +3,17 @@ import { composeComponentTestUtils, mock, setMock } from 'testUtils';
 import {
   createAirtimeTransferNode,
   createTransferAirtimeAction,
-  getRouterFormProps
+  getRouterFormProps,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
 const routerNode = createAirtimeTransferNode(createTransferAirtimeAction());
-const { setup } = composeComponentTestUtils(AirtimeRouterForm, getRouterFormProps(routerNode));
+const { setup } = composeComponentTestUtils(
+  AirtimeRouterForm,
+  getRouterFormProps(routerNode),
+);
 
 describe(AirtimeRouterForm.name, () => {
   describe('render', () => {
@@ -26,7 +29,7 @@ describe(AirtimeRouterForm.name, () => {
       const instance = components.instance as AirtimeRouterForm;
 
       instance.handleTransferChanged(-1, {
-        value: { code: 'USD', amount: '' }
+        value: { code: 'USD', amount: '' },
       });
       expect(instance.state).toMatchSnapshot();
       instance.getButtons().primary.onClick();
@@ -38,7 +41,7 @@ describe(AirtimeRouterForm.name, () => {
       const instance = components.instance as AirtimeRouterForm;
 
       instance.handleTransferChanged(-1, {
-        value: { code: 'USD', amount: '' }
+        value: { code: 'USD', amount: '' },
       });
       instance.getButtons().secondary.onClick();
       expect(components.props.updateRouter).not.toBeCalled();
@@ -48,13 +51,13 @@ describe(AirtimeRouterForm.name, () => {
       const components = setup(true, {
         updateRouter: setMock(),
         nodeSettings: {
-          originalNode: { ui: { $merge: { type: null } } }
-        }
+          originalNode: { ui: { $merge: { type: null } } },
+        },
       });
 
       const instance = components.instance as AirtimeRouterForm;
       instance.handleTransferChanged(-1, {
-        value: { code: 'USD', amount: '' }
+        value: { code: 'USD', amount: '' },
       });
       instance.getButtons().primary.onClick();
       expect(components.props.updateRouter).toMatchCallSnapshot();
@@ -66,15 +69,15 @@ describe(AirtimeRouterForm.name, () => {
         nodeSettings: {
           originalNode: {
             node: { $merge: { actions: [] } },
-            ui: { $merge: { type: null } }
-          }
-        }
+            ui: { $merge: { type: null } },
+          },
+        },
       });
 
       const instance = components.instance as AirtimeRouterForm;
 
       instance.handleTransferChanged(-1, {
-        value: { code: 'USD', amount: '' }
+        value: { code: 'USD', amount: '' },
       });
       instance.getButtons().primary.onClick();
       expect(components.props.updateRouter).toMatchCallSnapshot();
@@ -86,7 +89,7 @@ describe(AirtimeRouterForm.name, () => {
 
       instance.handleRemoved(0);
       instance.handleTransferChanged(-1, {
-        value: { code: 'USD', amount: '' }
+        value: { code: 'USD', amount: '' },
       });
       instance.getButtons().primary.onClick();
       expect(components.props.updateRouter).not.toBeCalled();

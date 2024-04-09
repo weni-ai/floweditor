@@ -24,11 +24,14 @@ export const sortByName = (a: Asset, b: Asset): number => {
 };
 
 export const hasPendingTranslation = (template: Template) => {
-  return !!template.translations.find(translation => translation.status === 'pending');
+  return !!template.translations.find(
+    translation => translation.status === 'pending',
+  );
 };
 
 export const hasUseableTranslation = (template: Template) => {
   return !!template.translations.find(
-    translation => translation.status === 'pending' || translation.status === 'approved'
+    translation =>
+      translation.status === 'pending' || translation.status === 'approved',
   );
 };

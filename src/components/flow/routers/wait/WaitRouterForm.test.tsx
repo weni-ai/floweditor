@@ -13,27 +13,30 @@ import { MEDIA_OPERAND } from 'components/nodeeditor/constants';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
-const getRouterFormProps = (type: Types, originalNode: RenderNode): RouterFormProps => {
+const getRouterFormProps = (
+  type: Types,
+  originalNode: RenderNode,
+): RouterFormProps => {
   return {
     nodeSettings: {
-      originalNode
+      originalNode,
     },
     typeConfig: getTypeConfig(type),
     assetStore: null,
     updateRouter: jest.fn(),
     onTypeChange: jest.fn(),
-    onClose: jest.fn()
+    onClose: jest.fn(),
   };
 };
 
 const colorsWait = getRouterFormProps(
   Types.wait_for_response,
-  createMatchRouter(['red', 'green', 'blue'])
+  createMatchRouter(['red', 'green', 'blue']),
 );
 
 const audioWait = getRouterFormProps(
   Types.wait_for_audio,
-  createWaitRouter(HintTypes.audio, 'Previous Name')
+  createWaitRouter(HintTypes.audio, 'Previous Name'),
 );
 
 describe(WaitRouterForm.name, () => {
@@ -49,7 +52,9 @@ describe(WaitRouterForm.name, () => {
   });
 
   it('should render wait for audio with previous name', () => {
-    const { baseElement, getByDisplayValue } = render(<WaitRouterForm {...audioWait} />);
+    const { baseElement, getByDisplayValue } = render(
+      <WaitRouterForm {...audioWait} />,
+    );
     getByDisplayValue('Previous Name');
     expect(baseElement).toMatchSnapshot();
   });

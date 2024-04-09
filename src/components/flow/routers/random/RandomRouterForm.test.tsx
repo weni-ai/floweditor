@@ -8,7 +8,7 @@ import {
   createRandomNode,
   createRenderNode,
   createSendMsgAction,
-  getRouterFormProps
+  getRouterFormProps,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import userEvent from '@testing-library/user-event';
@@ -19,7 +19,7 @@ mock(utils, 'createUUID', utils.seededUUIDs());
 
 const { setup } = composeComponentTestUtils<RouterFormProps>(
   RandomRouterForm,
-  getRouterFormProps(createRandomNode(2))
+  getRouterFormProps(createRandomNode(2)),
 );
 
 describe(RandomRouterForm.name, () => {
@@ -31,7 +31,7 @@ describe(RandomRouterForm.name, () => {
   it('should initialize existing random', () => {
     const props: RouterFormProps = {
       nodeSettings: {
-        originalNode: createRandomNode(5)
+        originalNode: createRandomNode(5),
       },
       typeConfig: getTypeConfig(Types.split_by_random),
       assetStore: null,
@@ -39,7 +39,7 @@ describe(RandomRouterForm.name, () => {
       onTypeChange: jest.fn(),
       onClose: jest.fn(),
       issues: [],
-      helpArticles: {}
+      helpArticles: {},
     };
 
     const { baseElement } = render(<RandomRouterForm {...props} />);
@@ -49,7 +49,7 @@ describe(RandomRouterForm.name, () => {
   it('should remove exits when shrinking', async () => {
     const props: RouterFormProps = {
       nodeSettings: {
-        originalNode: createRandomNode(5)
+        originalNode: createRandomNode(5),
       },
       typeConfig: getTypeConfig(Types.split_by_random),
       assetStore: null,
@@ -57,10 +57,12 @@ describe(RandomRouterForm.name, () => {
       onTypeChange: jest.fn(),
       onClose: jest.fn(),
       helpArticles: {},
-      issues: []
+      issues: [],
     };
 
-    const { baseElement, getByText, getByTestId, debug } = render(<RandomRouterForm {...props} />);
+    const { baseElement, getByText, getByTestId, debug } = render(
+      <RandomRouterForm {...props} />,
+    );
 
     // we start off with five input boxes for our buckets plus 2 considering the select elements inputs
     expect(baseElement.querySelectorAll('input').length).toEqual(7);
@@ -88,11 +90,11 @@ describe(RandomRouterForm.name, () => {
             exits: [{ uuid: utils.createUUID() }],
             ui: {
               type: Types.execute_actions,
-              position: { left: 100, top: 100 }
-            }
-          })
-        }
-      }
+              position: { left: 100, top: 100 },
+            },
+          }),
+        },
+      },
     });
 
     instance.handleSave();

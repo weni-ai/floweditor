@@ -4,7 +4,9 @@ import { getTime, isMessage, isMT } from 'components/simulator/helpers';
 import LogEvent, { EventProps } from 'components/simulator/LogEvent';
 import ContextExplorer from './ContextExplorer';
 import styles from 'components/simulator/Simulator.module.scss';
-import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
+import SwitchElement, {
+  SwitchSizes,
+} from 'components/form/switch/SwitchElement';
 import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 import { ConfigProviderContext, fakePropType } from 'config/ConfigProvider';
 import { getURL } from 'external';
@@ -33,21 +35,26 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
     slotWrap: 'div',
     componentWrapAttrs: {
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 const MESSAGE_DELAY_MS = 200;
 
 const MAP_THUMB =
   'https://user-images.githubusercontent.com/30026625/254405938-58f4c526-b06e-4890-b19c-2d3af55b7962.jpg';
-const IMAGE_A = 'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_image_a.jpg';
-const IMAGE_B = 'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_image_b.jpg';
-const IMAGE_C = 'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_image_c.jpg';
-const AUDIO_A = 'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_audio_a.mp3';
-const VIDEO_A = 'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_video_a.mp4';
+const IMAGE_A =
+  'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_image_a.jpg';
+const IMAGE_B =
+  'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_image_b.jpg';
+const IMAGE_C =
+  'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_image_c.jpg';
+const AUDIO_A =
+  'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_audio_a.mp3';
+const VIDEO_A =
+  'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_video_a.mp4';
 
 const VIDEO_A_THUMB =
   'https://s3.amazonaws.com/floweditor-assets.temba.io/simulator/sim_video_a_thumb.jpg';
@@ -91,7 +98,7 @@ enum DrawerType {
   location = 'location',
   digit = 'digit',
   digits = 'digits',
-  quickReplies = 'quickReplies'
+  quickReplies = 'quickReplies',
 }
 
 interface SimulatorState {
@@ -184,7 +191,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   private bottom: any;
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: SimulatorProps, context: ConfigProviderContext) {
@@ -197,7 +204,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         uuid: createUUID(),
         urns: ['tel:+12065551212'],
         fields: {},
-        groups: []
+        groups: [],
       },
       keypadEntry: '',
       drawerHeight: 0,
@@ -208,14 +215,14 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
       attachmentOptionsVisible: false,
       contextExplorerVisible: false,
       sprinting: false,
-      simulatorStyle: 'default'
+      simulatorStyle: 'default',
     };
     this.bottomRef = this.bottomRef.bind(this);
     this.inputBoxRef = this.inputBoxRef.bind(this);
     this.currentFlow = this.props.definition.uuid;
 
     bindCallbacks(this, {
-      include: [/^on/, /^get/, /^handle/]
+      include: [/^on/, /^get/, /^handle/],
     });
   }
 
@@ -227,7 +234,9 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     this.inputBox = ref;
   }
 
-  private updateActivity(recentMessages: { [key: string]: RecentMessage[] } = {}): void {
+  private updateActivity(
+    recentMessages: { [key: string]: RecentMessage[] } = {},
+  ): void {
     if (this.state.session) {
       // if we are resetting, clear our recent messages
 
@@ -291,7 +300,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
       const activity: Activity = {
         segments: paths,
         nodes: active,
-        recentMessages: simulatedMessages
+        recentMessages: simulatedMessages,
       };
 
       this.props.mergeEditorState({ activity });
@@ -305,7 +314,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     events: EventProps[],
     session: Session,
     recentMessages: { [key: string]: RecentMessage[] },
-    callback: () => void
+    callback: () => void,
   ): void {
     if (events && events.length > 0) {
       const toAdd = [];
@@ -340,7 +349,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
               const key = `${fromUUID}:${toUUID}`;
               const msg: RecentMessage = {
                 sent: event.created_on,
-                text: event.msg.text
+                text: event.msg.text,
               };
               if (key in recentMessages) {
                 recentMessages[key].unshift(msg);
@@ -362,7 +371,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
       }
 
       const newEvents = update(this.state.events, {
-        $push: toAdd
+        $push: toAdd,
       }) as EventProps[];
       const newState: Partial<SimulatorState> = { events: newEvents };
 
@@ -387,7 +396,8 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   }
 
   private updateRunContext(runContext: RunContext, msg?: PostMessage): void {
-    const wasJustActive = this.state.active || (runContext.events && runContext.events.length > 0);
+    const wasJustActive =
+      this.state.active || (runContext.events && runContext.events.length > 0);
     this.setState({ quickReplies: [] }, () => {
       if (!runContext.events || (runContext.events.length === 0 && msg)) {
         const runs = runContext.session.runs;
@@ -400,95 +410,100 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
               uuid: createUUID(),
               urn: this.state.contact.urns[0],
               text: msg.text,
-              attachments: msg.attachments
+              attachments: msg.attachments,
             },
             type: 'msg_created',
             created_on: new Date().toISOString(),
-            step_uuid: step.uuid
-          }
+            step_uuid: step.uuid,
+          },
         ];
       }
 
       const newlyRecentMessages = {};
 
-      this.updateEvents(runContext.events, runContext.session, newlyRecentMessages, () => {
-        let active = false;
-        for (const run of runContext.session.runs) {
-          if (run.status === 'waiting') {
-            active = true;
-            break;
+      this.updateEvents(
+        runContext.events,
+        runContext.session,
+        newlyRecentMessages,
+        () => {
+          let active = false;
+          for (const run of runContext.session.runs) {
+            if (run.status === 'waiting') {
+              active = true;
+              break;
+            }
           }
-        }
 
-        let newEvents = this.state.events;
-        if (!active && wasJustActive) {
-          newEvents = update(this.state.events, {
-            $push: [
-              {
-                type: 'info',
-                text: i18n.t('simulator.flow_exited', 'Exited flow'),
-                created_on: new Date()
-              } as any
-            ]
-          }) as EventProps[];
-        }
-
-        const waitingForHint =
-          runContext.session &&
-          runContext.session.wait &&
-          runContext.session.wait.hint !== undefined;
-
-        let drawerType = null;
-        if (waitingForHint) {
-          switch (runContext.session.wait.hint.type) {
-            case 'audio':
-              drawerType = DrawerType.audio;
-              break;
-            case 'video':
-              drawerType = DrawerType.videos;
-              break;
-            case 'image':
-              drawerType = DrawerType.images;
-              break;
-            case 'location':
-              drawerType = DrawerType.location;
-              break;
-            case 'digits':
-              drawerType = DrawerType.digit;
-              if (runContext.session.wait.hint.count !== 1) {
-                drawerType = DrawerType.digits;
-              }
-              break;
-            default:
-              console.log('Unknown hint', runContext.session.wait.hint.type);
+          let newEvents = this.state.events;
+          if (!active && wasJustActive) {
+            newEvents = update(this.state.events, {
+              $push: [
+                {
+                  type: 'info',
+                  text: i18n.t('simulator.flow_exited', 'Exited flow'),
+                  created_on: new Date(),
+                } as any,
+              ],
+            }) as EventProps[];
           }
-        }
 
-        let drawerOpen = waitingForHint;
+          const waitingForHint =
+            runContext.session &&
+            runContext.session.wait &&
+            runContext.session.wait.hint !== undefined;
 
-        // if we have quick replies, open our drawe with attachment options
-        if (!drawerType && this.hasQuickReplies()) {
-          drawerType = DrawerType.quickReplies;
-          drawerOpen = true;
-        }
-
-        this.setState(
-          {
-            active,
-            context: runContext.context,
-            sprinting: false,
-            session: runContext.session,
-            events: newEvents,
-            drawerOpen,
-            drawerType,
-            waitingForHint
-          },
-          () => {
-            this.updateActivity(newlyRecentMessages);
-            this.handleFocusUpdate();
+          let drawerType = null;
+          if (waitingForHint) {
+            switch (runContext.session.wait.hint.type) {
+              case 'audio':
+                drawerType = DrawerType.audio;
+                break;
+              case 'video':
+                drawerType = DrawerType.videos;
+                break;
+              case 'image':
+                drawerType = DrawerType.images;
+                break;
+              case 'location':
+                drawerType = DrawerType.location;
+                break;
+              case 'digits':
+                drawerType = DrawerType.digit;
+                if (runContext.session.wait.hint.count !== 1) {
+                  drawerType = DrawerType.digits;
+                }
+                break;
+              default:
+                console.log('Unknown hint', runContext.session.wait.hint.type);
+            }
           }
-        );
-      });
+
+          let drawerOpen = waitingForHint;
+
+          // if we have quick replies, open our drawe with attachment options
+          if (!drawerType && this.hasQuickReplies()) {
+            drawerType = DrawerType.quickReplies;
+            drawerOpen = true;
+          }
+
+          this.setState(
+            {
+              active,
+              context: runContext.context,
+              sprinting: false,
+              session: runContext.session,
+              events: newEvents,
+              drawerOpen,
+              drawerType,
+              waitingForHint,
+            },
+            () => {
+              this.updateActivity(newlyRecentMessages);
+              this.handleFocusUpdate();
+            },
+          );
+        },
+      );
     });
   }
 
@@ -499,7 +514,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
       urns: ['tel:+12065551212'],
       fields: {},
       groups: [],
-      created_on: now
+      created_on: now,
     };
 
     // use the current displayed language when simulating
@@ -513,36 +528,43 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         sprinting: true,
         drawerOpen: false,
         attachmentOptionsVisible: false,
-        events: []
+        events: [],
       },
       () => {
         const body: any = {
           contact: this.state.contact,
-          flow: getCurrentDefinition(this.props.definition, this.props.nodes, false),
+          flow: getCurrentDefinition(
+            this.props.definition,
+            this.props.nodes,
+            false,
+          ),
           trigger: {
             type: 'manual',
             environment: {
               date_format: 'DD-MM-YYYY',
               time_format: 'hh:mm',
               timezone: 'America/New_York',
-              languages: []
+              languages: [],
             },
             contact,
             flow: {
               uuid: this.props.definition.uuid,
-              name: this.props.definition.name
+              name: this.props.definition.name,
             },
             params: {},
-            triggered_on: now
-          }
+            triggered_on: now,
+          },
         };
 
         axios.default
-          .post(getURL(this.context.config.endpoints.simulateStart), JSON.stringify(body, null, 2))
+          .post(
+            getURL(this.context.config.endpoints.simulateStart),
+            JSON.stringify(body, null, 2),
+          )
           .then((response: axios.AxiosResponse) => {
             this.updateRunContext(response.data as RunContext);
           });
-      }
+      },
     );
   }
 
@@ -562,49 +584,57 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
       return;
     }
 
-    this.setState({ sprinting: true, attachmentOptionsVisible: false, drawerOpen: false }, () => {
-      const now = new Date().toISOString();
+    this.setState(
+      { sprinting: true, attachmentOptionsVisible: false, drawerOpen: false },
+      () => {
+        const now = new Date().toISOString();
 
-      const msg: PostMessage = {
-        text,
-        uuid: createUUID(),
-        urn: this.state.session.contact.urns[0],
-        attachments: attachment ? [attachment] : []
-      };
+        const msg: PostMessage = {
+          text,
+          uuid: createUUID(),
+          urn: this.state.session.contact.urns[0],
+          attachments: attachment ? [attachment] : [],
+        };
 
-      const body: any = {
-        flow: getCurrentDefinition(this.props.definition, this.props.nodes, false),
-        session: this.state.session,
-        resume: {
-          type: 'msg',
-          msg,
-          resumed_on: now,
-          contact: this.state.session.contact
-        }
-      };
+        const body: any = {
+          flow: getCurrentDefinition(
+            this.props.definition,
+            this.props.nodes,
+            false,
+          ),
+          session: this.state.session,
+          resume: {
+            type: 'msg',
+            msg,
+            resumed_on: now,
+            contact: this.state.session.contact,
+          },
+        };
 
-      axios.default
-        .post(getURL(this.context.config.endpoints.simulateResume), JSON.stringify(body, null, 2))
-        .then((response: axios.AxiosResponse) => {
-          this.updateRunContext(response.data as RunContext, msg);
-        })
-        .catch(error => {
-          if (error.response.status) {
-          }
-          const events = update(this.state.events, {
-            $push: [
-              {
-                type: 'error',
-                text:
-                  error.response.status > 499
-                    ? 'Server error, try again later'
-                    : error.response.data.error
-              } as any
-            ]
-          }) as EventProps[];
-          this.setState({ events });
-        });
-    });
+        axios.default
+          .post(
+            getURL(this.context.config.endpoints.simulateResume),
+            JSON.stringify(body, null, 2),
+          )
+          .then((response: axios.AxiosResponse) => {
+            this.updateRunContext(response.data as RunContext, msg);
+          })
+          .catch(error => {
+            const events = update(this.state.events, {
+              $push: [
+                {
+                  type: 'error',
+                  text:
+                    error.response.status > 499
+                      ? 'Server error, try again later'
+                      : error.response.data.error,
+                } as any,
+              ],
+            }) as EventProps[];
+            this.setState({ events });
+          });
+      },
+    );
   }
 
   private onReset(event: any): void {
@@ -622,7 +652,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     }
   }
 
-  public componentDidUpdate(prevProps: SimulatorProps, prevState: SimulatorState): void {
+  public componentDidUpdate(
+    prevProps: SimulatorProps,
+    prevState: SimulatorState,
+  ): void {
     if (this.drawerEle !== null) {
       if (
         prevState.drawerHeight !== this.drawerEle.clientHeight ||
@@ -653,23 +686,26 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
 
     this.props.mergeEditorState({ simulating: newVisible });
 
-    this.setState({ visible: newVisible, contextExplorerVisible: false }, () => {
-      // clear our viewing definition
-      if (!this.state.visible) {
-        window.setTimeout(() => {
-          this.props.mergeEditorState({ activity: this.props.liveActivity });
-        }, 500);
-      } else {
-        this.updateActivity();
+    this.setState(
+      { visible: newVisible, contextExplorerVisible: false },
+      () => {
+        // clear our viewing definition
+        if (!this.state.visible) {
+          window.setTimeout(() => {
+            this.props.mergeEditorState({ activity: this.props.liveActivity });
+          }, 500);
+        } else {
+          this.updateActivity();
 
-        // start our flow if we haven't already
-        if (this.state.events.length === 0) {
-          this.startFlow();
+          // start our flow if we haven't already
+          if (this.state.events.length === 0) {
+            this.startFlow();
+          }
+
+          this.handleFocusUpdate();
         }
-
-        this.handleFocusUpdate();
-      }
-    });
+      },
+    );
   }
 
   private handleFocusUpdate(): void {
@@ -679,11 +715,14 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   }
 
   private sendAttachment(attachment: string): void {
-    this.setState({ drawerOpen: false, attachmentOptionsVisible: false }, () => {
-      window.setTimeout(() => {
-        this.resume(null, attachment);
-      }, 200);
-    });
+    this.setState(
+      { drawerOpen: false, attachmentOptionsVisible: false },
+      () => {
+        window.setTimeout(() => {
+          this.resume(null, attachment);
+        }, 200);
+      },
+    );
   }
 
   private getImageDrawer(): JSX.Element {
@@ -831,7 +870,9 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   private getKeypadDrawer(multiple: boolean): JSX.Element {
     return (
       <div className={styles.keypad}>
-        {multiple ? <div className={styles.keypad_entry}>{this.state.keypadEntry}</div> : null}
+        {multiple ? (
+          <div className={styles.keypad_entry}>{this.state.keypadEntry}</div>
+        ) : null}
         <div className={styles.keys}>
           {this.getKeyRow(['1', '2', '3'], multiple)}
           {this.getKeyRow(['4', '5', '6'], multiple)}
@@ -856,7 +897,9 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         return this.getQuickRepliesDrawer();
       case DrawerType.digits:
       case DrawerType.digit:
-        return this.getKeypadDrawer(this.state.drawerType === DrawerType.digits);
+        return this.getKeypadDrawer(
+          this.state.drawerType === DrawerType.digits,
+        );
     }
     return null;
   }
@@ -906,7 +949,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     this.setState(
       {
         attachmentOptionsVisible: false,
-        drawerOpen: false
+        drawerOpen: false,
       },
       () => {
         if (this.hasQuickReplies()) {
@@ -914,11 +957,15 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
             this.showAttachmentDrawer(DrawerType.quickReplies);
           }, 300);
         }
-      }
+      },
     );
   }
 
-  private getAttachmentButton(icon: string, drawerType: DrawerType, type: string): JSX.Element {
+  private getAttachmentButton(
+    icon: string,
+    drawerType: DrawerType,
+    type: string,
+  ): JSX.Element {
     if (type === 'unnnic') {
       return (
         <UnnnicIcon
@@ -953,11 +1000,23 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         }
       >
         <span className="ml-auto">
-          {this.getAttachmentButton('video-file-mp4-1', DrawerType.videos, 'unnnic')}
+          {this.getAttachmentButton(
+            'video-file-mp4-1',
+            DrawerType.videos,
+            'unnnic',
+          )}
         </span>
-        {this.getAttachmentButton('common-file-horizontal-image-1', DrawerType.images, 'unnnic')}
+        {this.getAttachmentButton(
+          'common-file-horizontal-image-1',
+          DrawerType.images,
+          'unnnic',
+        )}
         {this.getAttachmentButton('microphone', DrawerType.audio, 'unnnic')}
-        {this.getAttachmentButton('fe-map-marker', DrawerType.location, 'default')}
+        {this.getAttachmentButton(
+          'fe-map-marker',
+          DrawerType.location,
+          'default',
+        )}
         <div className="fe-x ml-auto" onClick={this.handleHideAttachments} />
       </div>
     );
@@ -1002,7 +1061,8 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
 
   private handleSimulatorStyleChange() {
     this.setState({
-      simulatorStyle: this.state.simulatorStyle === 'default' ? 'whatsapp' : 'default'
+      simulatorStyle:
+        this.state.simulatorStyle === 'default' ? 'whatsapp' : 'default',
     });
   }
 
@@ -1017,11 +1077,15 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   }
 
   private startNextTour() {
-    this.props.mergeEditorState({ currentGuide: 'control_tools', guidingStep: 0 });
+    this.props.mergeEditorState({
+      currentGuide: 'control_tools',
+      guidingStep: 0,
+    });
   }
 
   public render(): ReactNode {
-    const simStyle = this.state.simulatorStyle === 'whatsapp' ? styles.whatsapp : '';
+    const simStyle =
+      this.state.simulatorStyle === 'whatsapp' ? styles.whatsapp : '';
 
     const messages: JSX.Element[] = [];
     for (const event of this.state.events) {
@@ -1030,16 +1094,17 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           {...event}
           key={event.type + '_' + String(event.created_on)}
           style={this.state.simulatorStyle === 'whatsapp' ? 'whatsapp' : ''}
-        />
+        />,
       );
     }
 
-    const hidden = this.props.popped && this.props.popped !== PopTabType.SIMULATOR;
+    const hidden =
+      this.props.popped && this.props.popped !== PopTabType.SIMULATOR;
     const simHidden = hidden || !this.state.visible ? styles.sim_hidden : '';
     const tabHidden = hidden || this.state.visible ? styles.tab_hidden : '';
 
     const messagesStyle: any = {
-      height: 366 - (this.state.drawerOpen ? this.state.drawerHeight - 20 : 0)
+      height: 366 - (this.state.drawerOpen ? this.state.drawerHeight - 20 : 0),
     };
 
     // if attachments are forced open, account for missing attachment choice panel
@@ -1050,7 +1115,11 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     return (
       <div id="sim_container" className={styles.sim_container}>
         <div>
-          <div id="simulator" className={styles.simulator + ' ' + simHidden} key={'sim'}>
+          <div
+            id="simulator"
+            className={styles.simulator + ' ' + simHidden}
+            key={'sim'}
+          >
             {this.getContextExplorer()}
 
             <div className={styles.screen}>
@@ -1064,9 +1133,15 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                   />
                 </div>
 
-                <div className={styles.close + ' fe-x'} onClick={this.onToggle} />
+                <div
+                  className={styles.close + ' fe-x'}
+                  onClick={this.onToggle}
+                />
               </div>
-              <div className={styles.messages + ' ' + simStyle} style={messagesStyle}>
+              <div
+                className={styles.messages + ' ' + simStyle}
+                style={messagesStyle}
+              >
                 {messages}
                 <div
                   id="bottom"
@@ -1079,11 +1154,17 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                   ref={this.inputBoxRef}
                   type="text"
                   onKeyUp={this.onKeyUp}
-                  disabled={this.state.sprinting || Object.keys(this.props.nodes).length === 0}
+                  disabled={
+                    this.state.sprinting ||
+                    Object.keys(this.props.nodes).length === 0
+                  }
                   placeholder={
                     this.state.active
                       ? i18n.t('simulator.prompt.message', 'Enter message')
-                      : i18n.t('simulator.prompt.restart', 'Press refresh to start again')
+                      : i18n.t(
+                          'simulator.prompt.restart',
+                          'Press refresh to start again',
+                        )
                   }
                 />
                 <div className={styles.show_attachments_button}>
@@ -1094,7 +1175,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                     onClick={() => {
                       this.setState({
                         attachmentOptionsVisible: true,
-                        drawerOpen: false
+                        drawerOpen: false,
                       });
                     }}
                   />
@@ -1109,7 +1190,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                       className="context-button"
                       onClick={() => {
                         this.setState({
-                          contextExplorerVisible: true
+                          contextExplorerVisible: true,
                         });
                       }}
                     >
@@ -1122,7 +1203,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                       className="context-button"
                       onClick={() => {
                         this.setState({
-                          contextExplorerVisible: false
+                          contextExplorerVisible: false,
                         });
                       }}
                     >
@@ -1152,15 +1233,22 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           title={i18n.t('guiding.v2.2.title', 'WhatsApp simulator skin')}
           description={i18n.t(
             'guiding.v2.2.description',
-            'Now the simulator looks like WhatsApp\nso you can more faithfully predict how your flow will look.'
+            'Now the simulator looks like WhatsApp\nso you can more faithfully predict how your flow will look.',
           )}
           buttonText={i18n.t('guiding.v2.2.button', 'Got it 3/3')}
           side="left"
           action={() => this.startNextTour()}
         >
-          <div className={styles.simulator_tab + ' ' + tabHidden} onClick={this.onToggle}>
+          <div
+            className={styles.simulator_tab + ' ' + tabHidden}
+            onClick={this.onToggle}
+          >
             <div className={styles.simulator_tab_icon}>
-              <UnnnicIcon icon="button-play-1" size="lg" scheme="neutral-snow" />
+              <UnnnicIcon
+                icon="button-play-1"
+                size="lg"
+                scheme="neutral-snow"
+              />
             </div>
             <div className={styles.simulator_tab_text}>
               {i18n.t('simulator.label', 'Run in Simulator')}
@@ -1175,19 +1263,20 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
 /* istanbul ignore next */
 const mapStateToProps = ({
   flowContext: { definition, nodes },
-  editorState: { liveActivity, activity, language }
+  editorState: { liveActivity, activity, language },
 }: AppState) => ({
   liveActivity,
   activity,
   definition,
   nodes,
-  language
+  language,
 });
 
 /* istanbul ignore next */
-const mapDispatchToProps = (dispatch: DispatchWithState) => bindActionCreators({}, dispatch);
+const mapDispatchToProps = (dispatch: DispatchWithState) =>
+  bindActionCreators({}, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Simulator);

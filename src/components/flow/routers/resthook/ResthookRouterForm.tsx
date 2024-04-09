@@ -12,7 +12,7 @@ import {
   Required,
   shouldRequireIf,
   StartIsNonNumeric,
-  validate
+  validate,
 } from 'store/validators';
 
 import { nodeToState, stateToNode } from './helpers';
@@ -37,34 +37,36 @@ export default class ResthookRouterForm extends React.PureComponent<
     this.state = nodeToState(props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
   public componentDidMount(): void {
-    const items = this.props.assetStore.resthooks ? this.props.assetStore.resthooks.items : {};
+    const items = this.props.assetStore.resthooks
+      ? this.props.assetStore.resthooks.items
+      : {};
     this.options = Object.keys(items).map((key: string) => {
       return { name: items[key].name, value: key };
     });
   }
 
   private handleUpdateResultName(result: string): void {
-    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), result, [
-      Required,
-      Alphanumeric,
-      StartIsNonNumeric
-    ]);
+    const resultName = validate(
+      i18n.t('forms.result_name', 'Result Name'),
+      result,
+      [Required, Alphanumeric, StartIsNonNumeric],
+    );
     this.setState({
       resultName,
-      valid: this.state.valid && !hasErrors(resultName)
+      valid: this.state.valid && !hasErrors(resultName),
     });
   }
 
   public handleResthookChanged(selected: any[], submitting = false): boolean {
     const updates: Partial<ResthookRouterFormState> = {
       resthook: validate(i18n.t('forms.resthook', 'Resthook'), selected[0], [
-        shouldRequireIf(submitting)
-      ])
+        shouldRequireIf(submitting),
+      ]),
     };
 
     const updated = mergeForm(this.state, updates);
@@ -85,18 +87,29 @@ export default class ResthookRouterForm extends React.PureComponent<
   public getButtons(): ButtonSet {
     return {
       primary: { name: 'Ok', onClick: this.handleSave },
-      secondary: { name: 'Cancel', onClick: () => this.props.onClose(true) }
+      secondary: { name: 'Cancel', onClick: () => this.props.onClose(true) },
     };
   }
 
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <AssetSelector
           name={i18n.t('forms.resthook', 'Resthook')}
-          placeholder={i18n.t('forms.resthook_to_call', 'Select the resthook to call')}
+          placeholder={i18n.t(
+            'forms.resthook_to_call',
+            'Select the resthook to call',
+          )}
           assets={this.props.assetStore.resthooks}
           entry={this.state.resthook}
           searchable={true}
@@ -105,7 +118,10 @@ export default class ResthookRouterForm extends React.PureComponent<
           valueKey="resthook"
         />
         <div className={styles.result_name}>
-          {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+          {createResultNameInput(
+            this.state.resultName,
+            this.handleUpdateResultName,
+          )}
         </div>
         {renderIssues(this.props)}
       </Dialog>

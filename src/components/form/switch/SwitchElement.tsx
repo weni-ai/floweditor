@@ -10,7 +10,7 @@ import styles from './SwitchElement.module.scss';
 
 export enum SwitchSizes {
   medium = 'medium',
-  small = 'small'
+  small = 'small',
 }
 
 export interface SwitchElementProps extends FormElementProps {
@@ -35,12 +35,15 @@ export const descTestId = 'description';
 
 const UnnnicSwitch = applyVueInReact(unnnicSwitch);
 
-export default class SwitchElement extends React.Component<SwitchElementProps, SwitchState> {
+export default class SwitchElement extends React.Component<
+  SwitchElementProps,
+  SwitchState
+> {
   constructor(props: any) {
     super(props);
 
     this.state = {
-      checked: this.props.checked
+      checked: this.props.checked,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -76,7 +79,7 @@ export default class SwitchElement extends React.Component<SwitchElementProps, S
             className={`u font secondary body-md color-neutral-cleanest ${styles.description}`}
           >
             {this.props.description}
-          </div>
+          </div>,
         )}
       </>
     );

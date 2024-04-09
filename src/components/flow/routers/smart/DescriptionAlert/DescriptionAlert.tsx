@@ -16,7 +16,9 @@ export interface DescriptionAlertProps {
   openDescriptionEdit: () => void;
 }
 
-export default class DescriptionAlert extends React.Component<DescriptionAlertProps> {
+export default class DescriptionAlert extends React.Component<
+  DescriptionAlertProps
+> {
   public render(): JSX.Element {
     return (
       <div className={styles.alert} onClick={this.props.openDescriptionEdit}>
@@ -29,8 +31,8 @@ export default class DescriptionAlert extends React.Component<DescriptionAlertPr
         />
         <span className={styles.alert_text}>
           <Trans i18nKey="forms.smart_wait.description_alert">
-            <b>Important:</b>Edit your project, <u>add a description</u> and make your AI even more
-            powerful.
+            <b>Important:</b>Edit your project, <u>add a description</u> and
+            make your AI even more powerful.
           </Trans>
         </span>
       </div>

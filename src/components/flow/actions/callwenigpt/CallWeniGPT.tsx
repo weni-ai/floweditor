@@ -9,7 +9,9 @@ export const getSavePlaceholder = (name: string): JSX.Element => (
   </div>
 );
 
-const CallWeniGPTComp: React.SFC<CallWeniGPT> = ({ result_name }): JSX.Element => {
+const CallWeniGPTComp: React.SFC<CallWeniGPT> = ({
+  result_name,
+}): JSX.Element => {
   return getSavePlaceholder(result_name);
 };
 

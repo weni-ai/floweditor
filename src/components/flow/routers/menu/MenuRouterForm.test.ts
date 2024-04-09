@@ -18,15 +18,15 @@ const { setup } = composeComponentTestUtils<RouterFormProps>(
         categories: [],
         wait: {
           type: WaitTypes.msg,
-          hint: { type: HintTypes.digits, count: 1 }
-        }
+          hint: { type: HintTypes.digits, count: 1 },
+        },
       },
       ui: {
         position: { left: 0, top: 0 },
-        type: Types.wait_for_response
-      }
-    })
-  )
+        type: Types.wait_for_response,
+      },
+    }),
+  ),
 );
 
 mock(utils, 'createUUID', utils.seededUUIDs());

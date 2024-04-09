@@ -1,4 +1,8 @@
-import SwitchElement, { SwitchElementProps, descTestId, SwitchSizes } from './SwitchElement';
+import SwitchElement, {
+  SwitchElementProps,
+  descTestId,
+  SwitchSizes,
+} from './SwitchElement';
 import * as React from 'react';
 import { fireEvent, render } from 'test/utils';
 
@@ -9,12 +13,14 @@ const baseProps: SwitchElementProps = {
   description: 'Switch Description',
   labelClassName: 'label-class',
   switchClassName: 'switch-class',
-  size: SwitchSizes.small
+  size: SwitchSizes.small,
 };
 
 describe(SwitchElement.name, () => {
   it('should render a switch element with description', () => {
-    const { baseElement, getByTestId } = render(<SwitchElement {...baseProps} />);
+    const { baseElement, getByTestId } = render(
+      <SwitchElement {...baseProps} />,
+    );
     expect(baseElement).toMatchSnapshot();
     expect(getByTestId(descTestId)).toHaveTextContent(baseProps.description);
   });
