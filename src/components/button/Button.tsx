@@ -16,6 +16,7 @@ export interface ButtonProps {
   disabled?: boolean;
   type?: ButtonTypes;
   leftSpacing?: boolean;
+  rightSpacing?: boolean;
   topSpacing?: boolean;
   iconName?: string;
   size?: string;
@@ -52,6 +53,7 @@ export default class Button extends React.Component<ButtonProps> {
       disabled,
       leftSpacing,
       topSpacing,
+      rightSpacing,
       iconName,
     } = this.props;
 
@@ -61,6 +63,7 @@ export default class Button extends React.Component<ButtonProps> {
         style={{
           marginLeft: leftSpacing ? 10 : 0,
           marginTop: topSpacing ? 10 : 0,
+          marginRight: rightSpacing ? 8 : 0,
         }}
         onClick={onClick}
         type={type}

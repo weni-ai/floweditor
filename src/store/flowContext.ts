@@ -14,6 +14,7 @@ import ActionTypes, {
   UpdateNodesAction,
   UpdateMetadataAction,
   UpdateIssuesAction,
+  UpdateSearchAction,
 } from 'store/actionTypes';
 import Constants from 'store/constants';
 import { Type } from 'config/interfaces';
@@ -107,6 +108,16 @@ export interface Asset {
   key?: string;
 }
 
+export interface Search {
+  isSearchOpen: boolean;
+  value?: string;
+  nodes?: {
+    uuid?: string;
+    data?: RenderNode;
+  }[];
+  selected?: number;
+}
+
 export const REMOVE_VALUE_ASSET = {
   id: AssetType.Remove,
   name: i18n.t('forms.remove_value', 'Remove Value'),
@@ -151,6 +162,7 @@ export interface FlowContext {
   nodes: { [uuid: string]: RenderNode };
   issues: FlowIssueMap;
   assetStore: AssetStore;
+  search: Search;
 }
 
 // Initial state
@@ -167,6 +179,12 @@ export const initialState: FlowContext = {
   nodes: {},
   issues: {},
   assetStore: {},
+  search: {
+    isSearchOpen: false,
+    value: '',
+    selected: 0,
+    nodes: [],
+  },
 };
 
 // Action Creators
@@ -210,6 +228,13 @@ export const updateBaseLanguage = (
   type: Constants.UPDATE_BASE_LANGUAGE,
   payload: {
     baseLanguage,
+  },
+});
+
+export const updateSearch = (search: Search): UpdateSearchAction => ({
+  type: Constants.UPDATE_SEARCH,
+  payload: {
+    search,
   },
 });
 
@@ -306,6 +331,18 @@ export const baseLanguage = (
   }
 };
 
+export const search = (
+  state: Search = initialState.search,
+  action: ActionTypes,
+) => {
+  switch (action.type) {
+    case Constants.UPDATE_SEARCH:
+      return action.payload.search;
+    default:
+      return state;
+  }
+};
+
 export const contactFields = (
   state: ContactFields = initialState.contactFields,
   action: ActionTypes,
@@ -327,4 +364,5 @@ export default combineReducers({
   assetStore,
   baseLanguage,
   contactFields,
+  search,
 });

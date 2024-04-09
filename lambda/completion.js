@@ -133,7 +133,7 @@ export const completion = {
           },
           {
             key: 'whatsapp',
-            help: 'Whatsapp URN para o contato',
+            help: 'WhatsApp URN para o contato',
             type: 'text'
           }
         ]

@@ -8,6 +8,7 @@ import {
   ContactFields,
   RenderNodeMap,
   FlowIssueMap,
+  Search,
 } from 'store/flowContext';
 import { NodeEditorSettings } from 'store/nodeEditor';
 
@@ -31,6 +32,10 @@ interface DefinitionPayload {
 
 interface BaseLanguagePayload {
   baseLanguage: Asset;
+}
+
+interface SearchPayload {
+  search: Search;
 }
 
 interface UpdateMetadataPayload {
@@ -91,6 +96,11 @@ export type UpdateEditorState = DuxAction<
 export type UpdateBaseLanguageAction = DuxAction<
   Constants.UPDATE_BASE_LANGUAGE,
   BaseLanguagePayload
+>;
+
+export type UpdateSearchAction = DuxAction<
+  Constants.UPDATE_SEARCH,
+  SearchPayload
 >;
 
 export type UpdateLanguagesAction = DuxAction<
@@ -157,6 +167,8 @@ export type UpdateBaseLanguage = (
   baseLanguage: Asset,
 ) => UpdateBaseLanguageAction;
 
+export type UpdateSearch = (search: Search) => UpdateSearch;
+
 export type IncrementSuggestedResultNameCount = () => IncrementSuggestedResultNameCountAction;
 
 type ActionTypes =
@@ -173,7 +185,8 @@ type ActionTypes =
   | UpdateUserAddingActionAction
   | UpdateBaseLanguageAction
   | UpdateLanguagesAction
-  | UpdateContactFieldsAction;
+  | UpdateContactFieldsAction
+  | UpdateSearchAction;
 
 // eslint-disable-next-line no-undef
 export default ActionTypes;

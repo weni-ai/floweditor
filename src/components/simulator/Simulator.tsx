@@ -1233,7 +1233,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           title={i18n.t('guiding.v2.2.title', 'WhatsApp simulator skin')}
           description={i18n.t(
             'guiding.v2.2.description',
-            'Now the simulator looks like Whatsapp\nso you can more faithfully predict how your flow will look.',
+            'Now the simulator looks like WhatsApp\nso you can more faithfully predict how your flow will look.',
           )}
           buttonText={i18n.t('guiding.v2.2.button', 'Got it 3/3')}
           side="left"

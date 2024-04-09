@@ -1,5 +1,6 @@
 {
   "actions": {
+    "search": "Rechercher...",
     "add_contact_groups": {
       "description": "Ajouter le contact à un groupe",
       "name": "Ajouter au groupe"
