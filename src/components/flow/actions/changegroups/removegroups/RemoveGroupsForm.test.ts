@@ -4,7 +4,7 @@ import { composeComponentTestUtils, mock } from 'testUtils';
 import {
   createRemoveGroupsAction,
   getActionFormProps,
-  SubscribersGroup
+  SubscribersGroup,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 
@@ -12,7 +12,7 @@ mock(utils, 'createUUID', utils.seededUUIDs());
 
 const { setup } = composeComponentTestUtils(
   RemoveGroupsForm,
-  getActionFormProps(createRemoveGroupsAction())
+  getActionFormProps(createRemoveGroupsAction()),
 );
 
 describe(RemoveGroupsForm.name, () => {
@@ -53,7 +53,7 @@ describe(RemoveGroupsForm.name, () => {
     it('should allow switching from router', () => {
       const components = setup(true, {
         $merge: { updateAction: jest.fn() },
-        nodeSettings: { $merge: { originalAction: null } }
+        nodeSettings: { $merge: { originalAction: null } },
       });
 
       const instance: RemoveGroupsForm = components.instance;

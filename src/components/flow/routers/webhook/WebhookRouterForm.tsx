@@ -2,28 +2,36 @@ import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet, Tab } from 'components/dialog/Dialog';
 import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
-import HeaderElement, { Header } from 'components/flow/routers/webhook/header/HeaderElement';
+import HeaderElement, {
+  Header,
+} from 'components/flow/routers/webhook/header/HeaderElement';
 import {
   METHOD_OPTIONS,
   MethodOption,
   Methods,
   nodeToState,
   stateToNode,
-  getDefaultBody
+  getDefaultBody,
 } from 'components/flow/routers/webhook/helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import SelectElement from 'components/form/select/SelectElement';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import * as React from 'react';
-import { FormEntry, FormState, mergeForm, StringEntry, ValidationFailure } from 'store/nodeEditor';
+import {
+  FormEntry,
+  FormState,
+  mergeForm,
+  StringEntry,
+  ValidationFailure,
+} from 'store/nodeEditor';
 import {
   Alphanumeric,
   shouldRequireIf,
   StartIsNonNumeric,
   validate,
   ValidURL,
-  validateIf
+  validateIf,
 } from 'store/validators';
 import { createUUID } from 'utils';
 
@@ -55,7 +63,7 @@ export default class WebhookRouterForm extends React.Component<
     super(props);
     this.state = nodeToState(this.props.nodeSettings);
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -69,7 +77,7 @@ export default class WebhookRouterForm extends React.Component<
       validationFailures?: ValidationFailure[];
       resultName?: string;
     },
-    submitting = false
+    submitting = false,
   ): boolean {
     const updates: Partial<WebhookRouterFormState> = {};
 
@@ -84,7 +92,8 @@ export default class WebhookRouterForm extends React.Component<
 
       if (oldMethod !== newMethod) {
         const existingContentTypeHeader = this.state.headers.find(
-          (header: HeaderEntry) => header.value.name.toLowerCase() === 'content-type'
+          (header: HeaderEntry) =>
+            header.value.name.toLowerCase() === 'content-type',
         );
 
         // whenever our method changes, update the default body
@@ -102,12 +111,18 @@ export default class WebhookRouterForm extends React.Component<
             if (lastHeader && !lastHeader.value.name) {
               uuid = lastHeader.value.uuid;
             }
-            keys.header = { uuid, name: 'Content-Type', value: 'application/json' };
+            keys.header = {
+              uuid,
+              name: 'Content-Type',
+              value: 'application/json',
+            };
           }
         } else if (oldMethod !== Methods.GET && newMethod === Methods.GET) {
           // remove content type if switching to a GET
           if (existingContentTypeHeader) {
-            toRemove = [{ headers: [{ value: existingContentTypeHeader.value }] }];
+            toRemove = [
+              { headers: [{ value: existingContentTypeHeader.value }] },
+            ];
           }
         }
       }
@@ -116,16 +131,16 @@ export default class WebhookRouterForm extends React.Component<
     if (keys.hasOwnProperty('url')) {
       updates.url = validate(i18n.t('forms.url', 'URL'), keys.url, [
         shouldRequireIf(submitting),
-        validateIf(ValidURL, keys.url.indexOf('@') === -1)
+        validateIf(ValidURL, keys.url.indexOf('@') === -1),
       ]);
     }
 
     if (keys.hasOwnProperty('resultName')) {
-      updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
-        shouldRequireIf(submitting),
-        Alphanumeric,
-        StartIsNonNumeric
-      ]);
+      updates.resultName = validate(
+        i18n.t('forms.result_name', 'Result Name'),
+        keys.resultName,
+        [shouldRequireIf(submitting), Alphanumeric, StartIsNonNumeric],
+      );
     }
 
     if (keys.hasOwnProperty('body')) {
@@ -133,7 +148,9 @@ export default class WebhookRouterForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('header')) {
-      updates.headers = [{ value: keys.header, validationFailures: keys.validationFailures }];
+      updates.headers = [
+        { value: keys.header, validationFailures: keys.validationFailures },
+      ];
       ensureEmptyHeader = true;
     }
 
@@ -172,7 +189,11 @@ export default class WebhookRouterForm extends React.Component<
     return this.handleUpdate({ method });
   }
 
-  private handleUrlUpdate(url: string, name: string, submitting = false): boolean {
+  private handleUrlUpdate(
+    url: string,
+    name: string,
+    submitting = false,
+  ): boolean {
     return this.handleUpdate({ url }, submitting);
   }
 
@@ -180,7 +201,10 @@ export default class WebhookRouterForm extends React.Component<
     return this.handleUpdate({ removeHeader });
   }
 
-  private handleHeaderUpdated(header: Header, validationFailures: ValidationFailure[]): boolean {
+  private handleHeaderUpdated(
+    header: Header,
+    validationFailures: ValidationFailure[],
+  ): boolean {
     return this.handleUpdate({ header, validationFailures });
   }
 
@@ -189,8 +213,8 @@ export default class WebhookRouterForm extends React.Component<
       header: {
         uuid: createUUID(),
         name: '',
-        value: ''
-      }
+        value: '',
+      },
     });
   }
 
@@ -202,7 +226,7 @@ export default class WebhookRouterForm extends React.Component<
     // validate our url in case they haven't interacted
     const valid = this.handleUpdate(
       { url: this.state.url.value, resultName: this.state.resultName.value },
-      true
+      true,
     );
 
     if (valid) {
@@ -216,8 +240,8 @@ export default class WebhookRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -237,24 +261,29 @@ export default class WebhookRouterForm extends React.Component<
             />
           </div>
         );
-      }
+      },
     );
 
     const tabs: Tab[] = [];
     tabs.push({
       name: i18n.t('forms.http_headers', 'HTTP Headers'),
-      hasErrors: !!this.state.headers.find((header: HeaderEntry) => hasErrors(header)),
+      hasErrors: !!this.state.headers.find((header: HeaderEntry) =>
+        hasErrors(header),
+      ),
       body: (
         <>
-          <div className={`${styles.info} u font secondary body-md color-neutral-cloudy`}>
+          <div
+            className={`${styles.info} u font secondary body-md color-neutral-cloudy`}
+          >
             <Trans i18nKey="forms.webhook_header_summary">
-              Add any additional headers below that you would like to send along with your request.
+              Add any additional headers below that you would like to send along
+              with your request.
             </Trans>
           </div>
           <div className={styles.header_wrapper}>{headerElements}</div>
         </>
       ),
-      checked: this.state.headers.length > 1
+      checked: this.state.headers.length > 1,
     });
 
     const method = this.state.method.value.value;
@@ -271,7 +300,8 @@ export default class WebhookRouterForm extends React.Component<
               i18nKey="forms.webhook_body_summary"
               values={{ method: this.state.method.value.name }}
             >
-              Modify the body of the [[method]] request that will be sent to your webhook
+              Modify the body of the [[method]] request that will be sent to
+              your webhook
             </Trans>
           </div>
           <div className={styles.req_body}>
@@ -287,7 +317,7 @@ export default class WebhookRouterForm extends React.Component<
           </div>
         </div>
       ),
-      checked: this.state.body.value !== getDefaultBody(method)
+      checked: this.state.body.value !== getDefaultBody(method),
     });
 
     return (
@@ -297,7 +327,11 @@ export default class WebhookRouterForm extends React.Component<
         buttons={this.getButtons()}
         tabs={tabs}
       >
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <div className={styles.url_container}>
           <div className={styles.method}>
             <SelectElement
@@ -318,10 +352,13 @@ export default class WebhookRouterForm extends React.Component<
             />
           </div>
         </div>
-        <div className={`${styles.instructions} u font secondary body-md color-neutral-cloudy`}>
+        <div
+          className={`${styles.instructions} u font secondary body-md color-neutral-cloudy`}
+        >
           <div>
             <Trans i18nKey="forms.webhook_help">
-              If your server responds with JSON, each property will be added to the Flow.
+              If your server responds with JSON, each property will be added to
+              the Flow.
             </Trans>
           </div>
           <pre className={styles.code}>
@@ -329,12 +366,17 @@ export default class WebhookRouterForm extends React.Component<
           </pre>
           <div>
             <Trans i18nKey="forms.webhook_example">
-              This response would add <span className={styles.example}>@webhook.product</span> and{' '}
-              <span className={styles.example}>@webhook["stock level"]</span> for use in the flow.
+              This response would add
+              <span className={styles.example}>@webhook.product</span> and{' '}
+              <span className={styles.example}>@webhook["stock level"]</span>
+              for use in the flow.
             </Trans>
           </div>
         </div>
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

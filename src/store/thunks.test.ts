@@ -7,12 +7,21 @@ import {
   RouterTypes,
   SendMsg,
   SwitchRouter,
-  FlowDetails
+  FlowDetails,
 } from 'flowTypes';
 import mutate from 'immutability-helper';
 import Constants from 'store/constants';
-import { AssetStore, AssetType, RenderNode, RenderNodeMap } from 'store/flowContext';
-import { getFlowComponents, getNodeWithAction, getUniqueDestinations } from 'store/helpers';
+import {
+  AssetStore,
+  AssetType,
+  RenderNode,
+  RenderNodeMap,
+} from 'store/flowContext';
+import {
+  getFlowComponents,
+  getNodeWithAction,
+  getUniqueDestinations,
+} from 'store/helpers';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import { initialState } from 'store/state';
 import {
@@ -33,13 +42,13 @@ import {
   spliceInRouter,
   updateConnection,
   updateExitDestination,
-  updateSticky
+  updateSticky,
 } from 'store/thunks';
 import { createMockStore, mock, prepMockDuxState } from 'testUtils';
 import {
   createAddGroupsAction,
   createRandomNode,
-  createSendMsgAction
+  createSendMsgAction,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 
@@ -62,7 +71,7 @@ const emptyAssetStore: AssetStore = {
   groups: { type: AssetType.Group, items: {} },
   labels: { type: AssetType.Label, items: {} },
   results: { type: AssetType.Result, items: {} },
-  languages: { type: AssetType.Language, items: {} }
+  languages: { type: AssetType.Language, items: {} },
 };
 
 const getActionFromStore = (store: any, type: string) => {
@@ -90,28 +99,28 @@ describe('Flow Manipulation', () => {
   describe('init', () => {
     it('should update localizations', () => {
       const updatedStore = createMockStore({
-        flowContext: { definition: boring }
+        flowContext: { definition: boring },
       });
       const localizationUpdates: LocalizationUpdates = [
         {
           uuid: 'node0_action0',
-          translations: { text: ['espanols'] }
-        }
+          translations: { text: ['espanols'] },
+        },
       ];
 
       const updated: FlowDefinition = updatedStore.dispatch(
-        onUpdateLocalizations('spa', localizationUpdates)
+        onUpdateLocalizations('spa', localizationUpdates),
       );
 
       expect(updated.localization.spa.node0_action0).toEqual({
-        text: ['espanols']
+        text: ['espanols'],
       });
     });
 
     it('should gracefully handle missing ui', () => {
       const missingUI: FlowDetails = {
         definition: { ...boring, _ui: undefined as any },
-        metadata: null
+        metadata: null,
       };
       store.dispatch(loadFlowDefinition(missingUI, emptyAssetStore));
       const action = getActionFromStore(store, Constants.UPDATE_NODES);
@@ -126,7 +135,7 @@ describe('Flow Manipulation', () => {
       const newSticky = {
         title: 'Sticky A',
         body: 'The body for sticky A',
-        position: { left: 100, top: 100 }
+        position: { left: 100, top: 100 },
       };
 
       store.dispatch(updateSticky('stickyA', newSticky));
@@ -135,20 +144,20 @@ describe('Flow Manipulation', () => {
       boring._ui.stickies = { stickyA: newSticky };
 
       expect(store).toHavePayload(Constants.UPDATE_DEFINITION, {
-        definition: boring
+        definition: boring,
       });
     });
 
     it('should add stickies to definitions with none', () => {
       delete boring._ui.stickies;
       store = createMockStore({
-        flowContext: { definition: boring }
+        flowContext: { definition: boring },
       });
 
       const newSticky = {
         title: 'sticky0',
         body: 'The body for sticky0',
-        position: { left: 100, top: 100 }
+        position: { left: 100, top: 100 },
       };
 
       store.dispatch(updateSticky('sticky0', newSticky));
@@ -156,7 +165,7 @@ describe('Flow Manipulation', () => {
       // should see our new sticky note
       boring._ui.stickies = { sticky0: newSticky };
       expect(store).toHavePayload(Constants.UPDATE_DEFINITION, {
-        definition: boring
+        definition: boring,
       });
     });
 
@@ -165,12 +174,12 @@ describe('Flow Manipulation', () => {
         sticky0: {
           title: 'sticky0',
           body: 'The body for sticky0',
-          position: { left: 100, top: 100 }
-        }
+          position: { left: 100, top: 100 },
+        },
       };
 
       store = createMockStore({
-        flowContext: { definition: boring }
+        flowContext: { definition: boring },
       });
 
       store.dispatch(updateSticky('sticky0', null));
@@ -178,7 +187,7 @@ describe('Flow Manipulation', () => {
       // should be back to an empty flow
       boring._ui.stickies = {};
       expect(store).toHavePayload(Constants.UPDATE_DEFINITION, {
-        definition: boring
+        definition: boring,
       });
     });
   });
@@ -195,10 +204,10 @@ describe('Flow Manipulation', () => {
             target: null,
             targetId: null,
             source: null,
-            sourceId: 'node0:node0_exit0'
+            sourceId: 'node0:node0_exit0',
           },
-          FlowTypes.MESSAGING
-        )
+          FlowTypes.MESSAGING,
+        ),
       );
       expect(store.getActions()).toMatchSnapshot();
     });
@@ -209,12 +218,12 @@ describe('Flow Manipulation', () => {
           mutate(initialState, {
             flowContext: {
               nodes: { $set: testNodes },
-              assetStore: { $set: { results: { items: {} } } }
+              assetStore: { $set: { results: { items: {} } } },
             },
             nodeEditor: {
-              settings: { $set: { originalNode: testNodes.node1 } }
-            }
-          })
+              settings: { $set: { originalNode: testNodes.node1 } },
+            },
+          }),
         );
       });
 
@@ -257,7 +266,9 @@ describe('Flow Manipulation', () => {
 
   describe('connections', () => {
     it('should updateExitDestination()', () => {
-      const updated = store.dispatch(updateExitDestination('node0', 'node0_exit0', 'node2'));
+      const updated = store.dispatch(
+        updateExitDestination('node0', 'node0_exit0', 'node2'),
+      );
       expect(updated.node0).toHaveExitThatPointsTo(updated.node2);
     });
 
@@ -267,7 +278,9 @@ describe('Flow Manipulation', () => {
     });
 
     it('should updateConnection()', () => {
-      const updated = store.dispatch(updateConnection('node0:node0_exit0', 'node2'));
+      const updated = store.dispatch(
+        updateConnection('node0:node0_exit0', 'node2'),
+      );
       expect(updated.node0).toHaveExitThatPointsTo(updated.node2);
     });
   });
@@ -279,8 +292,8 @@ describe('Flow Manipulation', () => {
         ...store.getState(),
         nodeEditor: {
           userAddingAction: true,
-          settings: { originalNode: testNodes.node0 }
-        }
+          settings: { originalNode: testNodes.node0 },
+        },
       });
 
       // add a new message to the first node
@@ -288,14 +301,16 @@ describe('Flow Manipulation', () => {
         onUpdateAction({
           uuid: 'new_action',
           type: Types.send_msg,
-          text: 'A fifth action for our first node'
-        })
+          text: 'A fifth action for our first node',
+        }),
       );
 
       // we should have a new action
       const actions = nodes.node0.node.actions;
       expect(actions.length).toBe(6);
-      expect((actions[5] as SendMsg).text).toBe('A fifth action for our first node');
+      expect((actions[5] as SendMsg).text).toBe(
+        'A fifth action for our first node',
+      );
     });
 
     it('should replace router node with a single-action node', () => {
@@ -306,19 +321,21 @@ describe('Flow Manipulation', () => {
       store = createMockStore(
         mutate(initialState, {
           flowContext: {
-            nodes: { $set: renderNodeMap }
+            nodes: { $set: renderNodeMap },
           },
           nodeEditor: {
-            settings: { $set: { originalNode: originalRenderNode } }
-          }
-        })
+            settings: { $set: { originalNode: originalRenderNode } },
+          },
+        }),
       );
 
       const updatedNodes = store.dispatch(onUpdateAction(incomingAction));
       const node = getNodeWithAction(updatedNodes, incomingAction.uuid);
 
       // previous nodes should be routed to us
-      expect(updatedNodes.node0.node.exits[0].destination_uuid).toBe(node.node.uuid);
+      expect(updatedNodes.node0.node.exits[0].destination_uuid).toBe(
+        node.node.uuid,
+      );
       expect(node).toMatchSnapshot();
     });
 
@@ -329,8 +346,8 @@ describe('Flow Manipulation', () => {
           onUpdateAction({
             uuid: 'new_action',
             type: Types.send_msg,
-            text: 'A second message for our first node'
-          })
+            text: 'A second message for our first node',
+          }),
         );
       }).toThrowError('Need originalNode in settings to update an action');
     });
@@ -341,8 +358,8 @@ describe('Flow Manipulation', () => {
         ...store.getState(),
         nodeEditor: {
           userAddingAction: false,
-          settings: { originalNode: testNodes.node0 }
-        }
+          settings: { originalNode: testNodes.node0 },
+        },
       });
 
       // add a new message to the first node
@@ -350,8 +367,8 @@ describe('Flow Manipulation', () => {
         onUpdateAction({
           uuid: 'node0_action0',
           type: 'send_msg',
-          text: 'An updated message'
-        } as AnyAction)
+          text: 'An updated message',
+        } as AnyAction),
       );
 
       expect(nodes.node0.node.actions[0].text).toBe('An updated message');
@@ -359,7 +376,9 @@ describe('Flow Manipulation', () => {
 
     it('should remove the node when removing the last action', () => {
       // remove both our actions
-      const updated = store.dispatch(removeAction('node3', testNodes.node3.node.actions[0]));
+      const updated = store.dispatch(
+        removeAction('node3', testNodes.node3.node.actions[0]),
+      );
 
       // removing the last action removes the entire node
       expect(updated.node3).toBeUndefined();
@@ -367,7 +386,9 @@ describe('Flow Manipulation', () => {
 
     it('should remove an action from a list of actions', () => {
       // remove the first action
-      const updated = store.dispatch(removeAction('node0', testNodes.node0.node.actions[0]));
+      const updated = store.dispatch(
+        removeAction('node0', testNodes.node0.node.actions[0]),
+      );
 
       // first one was removed, so now second action is first
       expect(updated.node0.node.actions[0].uuid).toBe('node0_action1');
@@ -375,7 +396,9 @@ describe('Flow Manipulation', () => {
 
     it('should move an action up', () => {
       // add a second action so we can test single action removal
-      const updated = store.dispatch(moveActionUp('node0', testNodes.node0.node.actions[1]));
+      const updated = store.dispatch(
+        moveActionUp('node0', testNodes.node0.node.actions[1]),
+      );
       expect(updated.node0.node.actions[0].uuid).toBe('node0_action1');
     });
 
@@ -390,16 +413,16 @@ describe('Flow Manipulation', () => {
               node: { uuid: utils.createUUID() },
               ui: { position: { left: 500, top: 500 } },
               inboundConnections: { node3_exit0: 'node3' },
-              ghost: true
-            }
-          }
-        }
+              ghost: true,
+            },
+          },
+        },
       });
 
       const newAction = {
         uuid: 'new_action_for_new_node',
         type: Types.send_msg,
-        text: 'An action for a new node'
+        text: 'An action for a new node',
       } as SendMsg;
 
       const updated = updatedStore.dispatch(onUpdateAction(newAction));
@@ -416,7 +439,7 @@ describe('Flow Manipulation', () => {
       const addRouter = (
         currentStore: any,
         renderNode: RenderNode,
-        action: AnyAction
+        action: AnyAction,
       ): RenderNodeMap => {
         const newExitUUID = utils.createUUID();
         const newNode: RenderNode = {
@@ -425,37 +448,43 @@ describe('Flow Manipulation', () => {
             router: {
               type: RouterTypes.switch,
               cases: [],
-              default_category_uuid: newExitUUID
+              default_category_uuid: newExitUUID,
             } as SwitchRouter,
             uuid: utils.createUUID(),
             exits: [
               {
                 uuid: newExitUUID,
-                destination_uuid: null
-              }
-            ]
+                destination_uuid: null,
+              },
+            ],
           },
           ui: {
             position: { left: 100, top: 100 },
-            type: Types.wait_for_response
+            type: Types.wait_for_response,
           },
-          inboundConnections: {}
+          inboundConnections: {},
         };
 
         const previousAction = {
           nodeUUID: renderNode.node.uuid,
-          actionUUID: action.uuid
+          actionUUID: action.uuid,
         };
         return currentStore.dispatch(spliceInRouter(newNode, previousAction));
       };
 
       it('should replace the first action of two', () => {
-        const nodes = addRouter(store, testNodes.node2, testNodes.node2.node.actions[0]);
+        const nodes = addRouter(
+          store,
+          testNodes.node2,
+          testNodes.node2.node.actions[0],
+        );
         const topNode = nodes[nodes.node1.node.exits[0].destination_uuid];
         const bottomNode = nodes[topNode.node.exits[0].destination_uuid];
 
         // top node should point to the middle node, and middle should point back
-        expect(topNode.inboundConnections).toEqual(testNodes.node2.inboundConnections);
+        expect(topNode.inboundConnections).toEqual(
+          testNodes.node2.inboundConnections,
+        );
 
         // bottom node should point back to top node
         expect(bottomNode).toHaveInboundFrom(topNode.node.exits[0]);
@@ -468,7 +497,11 @@ describe('Flow Manipulation', () => {
       });
 
       it('should replace the second action of two', () => {
-        const nodes = addRouter(store, testNodes.node2, testNodes.node2.node.actions[1]);
+        const nodes = addRouter(
+          store,
+          testNodes.node2,
+          testNodes.node2.node.actions[1],
+        );
         const topNode = nodes[nodes.node1.node.exits[0].destination_uuid];
         const bottomNode = nodes[topNode.node.exits[0].destination_uuid];
 
@@ -477,7 +510,11 @@ describe('Flow Manipulation', () => {
       });
 
       it('should replace the second action of three', () => {
-        const nodes = addRouter(store, testNodes.node0, testNodes.node0.node.actions[1]);
+        const nodes = addRouter(
+          store,
+          testNodes.node0,
+          testNodes.node0.node.actions[1],
+        );
 
         // find our top node by position since it's uuid will be different
         const topNodeUUID = Object.keys(nodes).find((key: string) => {
@@ -507,10 +544,10 @@ describe('Flow Manipulation', () => {
         mutate(initialState, {
           flowContext: {
             nodes: { $set: testNodes },
-            definition: { $set: boring }
+            definition: { $set: boring },
           },
-          nodeEditor: { settings: { $set: { originalNode: null } } }
-        })
+          nodeEditor: { settings: { $set: { originalNode: null } } },
+        }),
       );
     });
 
@@ -520,28 +557,28 @@ describe('Flow Manipulation', () => {
           mutate(initialState, {
             flowContext: {
               definition: { $set: boring },
-              nodes: { $set: testNodes }
+              nodes: { $set: testNodes },
             },
             editorState: {
               language: { $set: { iso: 'spa' } },
-              translating: { $set: false }
+              translating: { $set: false },
             },
             nodeEditor: {
               settings: {
                 $set: {
-                  originalNode: null
-                }
-              }
-            }
-          })
+                  originalNode: null,
+                },
+              },
+            },
+          }),
         );
 
         store.dispatch(
           onOpenNodeEditor({
             originalNode: testNodes.node0,
             originalAction: testNodes.node0.node.actions[0],
-            showAdvanced: false
-          })
+            showAdvanced: false,
+          }),
         );
       });
 
@@ -550,21 +587,21 @@ describe('Flow Manipulation', () => {
           mutate(initialState, {
             flowContext: {
               nodes: { $set: testNodes },
-              definition: { $set: boring }
+              definition: { $set: boring },
             },
             editorState: {
               language: { $set: { iso: 'spa' } },
-              translating: { $set: true }
+              translating: { $set: true },
             },
-            nodeEditor: { settings: { $set: { originalNode: null } } }
-          })
+            nodeEditor: { settings: { $set: { originalNode: null } } },
+          }),
         );
 
         store.dispatch(
           onOpenNodeEditor({
             originalNode: testNodes.node3,
-            showAdvanced: false
-          })
+            showAdvanced: false,
+          }),
         );
       });
 
@@ -573,21 +610,21 @@ describe('Flow Manipulation', () => {
           mutate(initialState, {
             flowContext: {
               nodes: { $set: testNodes },
-              definition: { $set: boring }
+              definition: { $set: boring },
             },
             editorState: {
               language: { $set: { iso: 'spa' } },
-              translating: { $set: true }
+              translating: { $set: true },
             },
-            nodeEditor: { settings: { $set: { originalNode: null } } }
-          })
+            nodeEditor: { settings: { $set: { originalNode: null } } },
+          }),
         );
 
         store.dispatch(
           onOpenNodeEditor({
             originalNode: testNodes.node2,
-            showAdvanced: false
-          })
+            showAdvanced: false,
+          }),
         );
         expect(store).not.toHaveReduxActions([Constants.UPDATE_DEFINITION]);
       });
@@ -599,19 +636,19 @@ describe('Flow Manipulation', () => {
         const newActionToEdit = createAddGroupsAction();
         const settings = {
           originalNode: null,
-          originalAction: newActionToEdit
+          originalAction: newActionToEdit,
         } as NodeEditorSettings;
 
         store = createMockStore(
           mutate(initialState, {
-            nodeEditor: { $merge: { settings } }
-          })
+            nodeEditor: { $merge: { settings } },
+          }),
         );
 
         store.dispatch(handleTypeConfigChange(newTypeConfig));
         expect(store).toHaveReduxActions([Constants.UPDATE_TYPE_CONFIG]);
         expect(store).toHavePayload(Constants.UPDATE_TYPE_CONFIG, {
-          typeConfig: newTypeConfig
+          typeConfig: newTypeConfig,
         });
       });
 
@@ -620,8 +657,8 @@ describe('Flow Manipulation', () => {
           onOpenNodeEditor({
             originalNode: testNodes.node0,
             originalAction: testNodes.node0.node.actions[0],
-            showAdvanced: false
-          })
+            showAdvanced: false,
+          }),
         );
       });
 
@@ -629,8 +666,8 @@ describe('Flow Manipulation', () => {
         store.dispatch(
           onOpenNodeEditor({
             originalNode: testNodes.node3,
-            showAdvanced: false
-          })
+            showAdvanced: false,
+          }),
         );
       });
 
@@ -640,8 +677,8 @@ describe('Flow Manipulation', () => {
           store.dispatch(
             onOpenNodeEditor({
               originalNode: testNodes.node0,
-              showAdvanced: false
-            })
+              showAdvanced: false,
+            }),
           );
         }).toThrowError("Couldn't determine type config for: node0");
       });
@@ -650,8 +687,8 @@ describe('Flow Manipulation', () => {
         store.dispatch(
           onOpenNodeEditor({
             originalNode: testNodes.node1,
-            showAdvanced: false
-          })
+            showAdvanced: false,
+          }),
         );
 
         expect(store.getActions()).toMatchSnapshot();
@@ -663,7 +700,7 @@ describe('Flow Manipulation', () => {
         store.dispatch(onAddToNode(testNodes.node0.node));
 
         expect(store).toHavePayload(Constants.UPDATE_USER_ADDING_ACTION, {
-          userAddingAction: true
+          userAddingAction: true,
         });
       });
 
@@ -677,7 +714,7 @@ describe('Flow Manipulation', () => {
         store = createMockStore({
           flowContext: { nodes: testNodes },
           nodeEditor: { settings: {} },
-          editorState: {}
+          editorState: {},
         });
 
         store.dispatch(resetNodeEditingState());
@@ -692,10 +729,10 @@ describe('Flow Manipulation', () => {
         mutate(initialState, {
           flowContext: {
             nodes: { $set: testNodes },
-            assetStore: { $set: { results: { items: {} } } }
+            assetStore: { $set: { results: { items: {} } } },
           },
-          nodeEditor: { settings: { $set: { originalNode: testNodes.node1 } } }
-        })
+          nodeEditor: { settings: { $set: { originalNode: testNodes.node1 } } },
+        }),
       );
 
       const updatedNode = mutate(testNodes.node1, {
@@ -706,11 +743,11 @@ describe('Flow Manipulation', () => {
                 uuid: 'new_case',
                 type: Operators.has_any_word,
                 exit_uuid: 'exitD',
-                arguments: ['anotherrule']
-              }
-            ])
-          }
-        }
+                arguments: ['anotherrule'],
+              },
+            ]),
+          },
+        },
       });
       const previousTop = testNodes.node1.ui.position.top;
       const nodes = store.dispatch(onUpdateRouter(updatedNode));
@@ -724,20 +761,20 @@ describe('Flow Manipulation', () => {
       const node = mutate(testNodes.node3, {
         inboundConnections: { $set: { node2_exit0: 'node2' } },
         ui: { $merge: { position: { left: 500, top: 600 } } },
-        ghost: utils.setTrue()
+        ghost: utils.setTrue(),
       });
 
       store = createMockStore(
         mutate(initialState, {
           flowContext: { nodes: { $set: testNodes } },
-          nodeEditor: { settings: { $set: { originalNode: node } } }
-        })
+          nodeEditor: { settings: { $set: { originalNode: node } } },
+        }),
       );
 
       const newRouter: RenderNode = {
         node: { uuid: 'new_router', actions: [], exits: [] },
         ui: { position: null },
-        inboundConnections: {}
+        inboundConnections: {},
       };
 
       // add our router
@@ -758,11 +795,11 @@ describe('Flow Manipulation', () => {
             settings: {
               $set: {
                 originalAction: testNodes.node3.node.actions[0],
-                originalNode: testNodes.node3
-              }
-            }
-          }
-        })
+                originalNode: testNodes.node3,
+              },
+            },
+          },
+        }),
       );
 
       const newRouter: RenderNode = {
@@ -776,13 +813,13 @@ describe('Flow Manipulation', () => {
               {
                 uuid: utils.createUUID(),
                 name: DefaultExitNames.All_Responses,
-                exit_uuid: 'new_exit'
-              }
-            ]
-          }
+                exit_uuid: 'new_exit',
+              },
+            ],
+          },
         },
         ui: { position: null },
-        inboundConnections: {}
+        inboundConnections: {},
       };
 
       // splice in our new router
@@ -797,9 +834,9 @@ describe('Flow Manipulation', () => {
         mutate(initialState, {
           flowContext: { nodes: { $set: testNodes } },
           nodeEditor: {
-            settings: { $set: { originalNode: testNodes.node0 } }
-          }
-        })
+            settings: { $set: { originalNode: testNodes.node0 } },
+          },
+        }),
       );
 
       const newRouter: RenderNode = {
@@ -807,12 +844,12 @@ describe('Flow Manipulation', () => {
           uuid: 'new_router',
           actions: [],
           router: {
-            default_category_uuid: 'new_exit'
+            default_category_uuid: 'new_exit',
           } as SwitchRouter,
-          exits: [{ uuid: 'new_exit', destination_uuid: null }]
+          exits: [{ uuid: 'new_exit', destination_uuid: null }],
         },
         ui: { position: null },
-        inboundConnections: {}
+        inboundConnections: {},
       };
 
       const previousBottom = testNodes.node0.ui.position.bottom;
@@ -831,11 +868,11 @@ describe('Flow Manipulation', () => {
             settings: {
               $set: {
                 originalNode: testNodes.node0,
-                originalAction: createSendMsgAction()
-              }
-            }
-          }
-        })
+                originalAction: createSendMsgAction(),
+              },
+            },
+          },
+        }),
       );
 
       const newRouter: RenderNode = createRandomNode(2);

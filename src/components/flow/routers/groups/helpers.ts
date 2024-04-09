@@ -3,7 +3,7 @@ import { GroupsRouterFormState } from 'components/flow/routers/groups/GroupsRout
 import {
   createRenderNode,
   getSmartOrSwitchRouter,
-  resolveRoutes
+  resolveRoutes,
 } from 'components/flow/routers/helpers';
 import { GROUPS_OPERAND } from 'components/nodeeditor/constants';
 import { Operators, Types } from 'config/interfaces';
@@ -13,17 +13,20 @@ import { RenderNode } from 'store/flowContext';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import { createUUID } from 'utils';
 
-export const nodeToState = (settings: NodeEditorSettings): GroupsRouterFormState => {
+export const nodeToState = (
+  settings: NodeEditorSettings,
+): GroupsRouterFormState => {
   const state: GroupsRouterFormState = {
     groups: { value: [] },
     resultName: { value: '' },
-    valid: false
+    valid: false,
   };
 
   if (getType(settings.originalNode) === Types.split_by_groups) {
     state.groups.value = extractGroups(settings.originalNode.node);
     state.resultName = {
-      value: (settings.originalNode.node.router as SwitchRouter).result_name || ''
+      value:
+        (settings.originalNode.node.router as SwitchRouter).result_name || '',
     };
     state.valid = true;
   }
@@ -33,14 +36,16 @@ export const nodeToState = (settings: NodeEditorSettings): GroupsRouterFormState
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: GroupsRouterFormState
+  state: GroupsRouterFormState,
 ): RenderNode => {
   const currentCases = groupsToCases(state.groups.value);
-  const { cases, exits, defaultCategory: defaultExit, caseConfig, categories } = resolveRoutes(
-    currentCases,
-    false,
-    settings.originalNode.node
-  );
+  const {
+    cases,
+    exits,
+    defaultCategory: defaultExit,
+    caseConfig,
+    categories,
+  } = resolveRoutes(currentCases, false, settings.originalNode.node);
 
   const router: SwitchRouter = {
     type: RouterTypes.switch,
@@ -48,7 +53,7 @@ export const stateToNode = (
     categories,
     default_category_uuid: defaultExit,
     operand: GROUPS_OPERAND,
-    result_name: state.resultName.value
+    result_name: state.resultName.value,
   };
 
   return createRenderNode(
@@ -57,7 +62,7 @@ export const stateToNode = (
     exits,
     Types.split_by_groups,
     [],
-    { cases: caseConfig }
+    { cases: caseConfig },
   );
 };
 
@@ -66,10 +71,12 @@ export const extractGroups = (node: FlowNode): any[] => {
   const router = getSmartOrSwitchRouter(node);
   if (router) {
     groups = (router as SwitchRouter).cases.map(kase => {
-      const category = router.categories.find((cat: Category) => cat.uuid === kase.category_uuid);
+      const category = router.categories.find(
+        (cat: Category) => cat.uuid === kase.category_uuid,
+      );
       return {
         name: category.name,
-        uuid: kase.arguments[0]
+        uuid: kase.arguments[0],
       };
     });
   }
@@ -82,9 +89,9 @@ export const groupsToCases = (groups: any[] = []): CaseProps[] => {
       uuid: createUUID(),
       type: Operators.has_group,
       arguments: [uuid, name],
-      category_uuid: ''
+      category_uuid: '',
     },
     categoryName: name,
-    valid: true
+    valid: true,
   }));
 };

@@ -10,7 +10,8 @@ import { TicketRouterFormState } from 'components/flow/routers/ticket/TicketRout
 export const getOriginalAction = (settings: NodeEditorSettings): OpenTicket => {
   const action =
     settings.originalAction ||
-    (settings.originalNode.node.actions.length > 0 && settings.originalNode.node.actions[0]);
+    (settings.originalNode.node.actions.length > 0 &&
+      settings.originalNode.node.actions[0]);
 
   if (action.type === Types.open_ticket) {
     return action as OpenTicket;
@@ -19,7 +20,7 @@ export const getOriginalAction = (settings: NodeEditorSettings): OpenTicket => {
 
 export const nodeToState = (
   settings: NodeEditorSettings,
-  initialTicketer: any
+  initialTicketer: any,
 ): TicketRouterFormState => {
   let ticketer: FormEntry = initialTicketer
     ? { value: { uuid: initialTicketer.id, name: initialTicketer.name } }
@@ -53,7 +54,7 @@ export const nodeToState = (
     resultName,
     queues,
     topics,
-    valid: true
+    valid: true,
   };
 
   return state;
@@ -61,7 +62,7 @@ export const nodeToState = (
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: TicketRouterFormState
+  state: TicketRouterFormState,
 ): RenderNode => {
   let uuid = createUUID();
   const originalAction = getOriginalAction(settings);
@@ -74,12 +75,12 @@ export const stateToNode = (
     type: Types.open_ticket,
     ticketer: {
       uuid: state.ticketer.value.uuid,
-      name: state.ticketer.value.name
+      name: state.ticketer.value.name,
     },
     body: state.body.value,
     topic: state.topic.value,
     assignee: state.assignee.value,
-    result_name: state.resultName.value
+    result_name: state.resultName.value,
   };
 
   return createWebhookBasedNode(newAction, settings.originalNode, true);

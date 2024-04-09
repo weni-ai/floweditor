@@ -6,7 +6,7 @@ import reducer, {
   typeConfig as typeConfigReducer,
   updateTypeConfig,
   updateUserAddingAction,
-  userAddingAction as userAddingActionReducer
+  userAddingAction as userAddingActionReducer,
 } from 'store/nodeEditor';
 
 const definition = require('test/flows/boring.json');
@@ -18,8 +18,8 @@ describe('nodeEditor action creators', () => {
       const expectedAction = {
         type: Constants.UPDATE_TYPE_CONFIG,
         payload: {
-          typeConfig
-        }
+          typeConfig,
+        },
       };
       expect(updateTypeConfig(typeConfig)).toEqual(expectedAction);
     });
@@ -31,8 +31,8 @@ describe('nodeEditor action creators', () => {
       const expectedAction = {
         type: Constants.UPDATE_USER_ADDING_ACTION,
         payload: {
-          userAddingAction
-        }
+          userAddingAction,
+        },
       };
       expect(updateUserAddingAction(userAddingAction)).toEqual(expectedAction);
     });

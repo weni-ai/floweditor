@@ -4,7 +4,7 @@ import {
   createCaseProps,
   createRenderNode,
   hasCases,
-  resolveRoutes
+  resolveRoutes,
 } from 'components/flow/routers/helpers';
 import { DEFAULT_OPERAND } from 'components/nodeeditor/constants';
 import { Types } from 'config/interfaces';
@@ -13,7 +13,9 @@ import { Router, RouterTypes, SwitchRouter } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
 
-export const nodeToState = (settings: NodeEditorSettings): ExpressionRouterFormState => {
+export const nodeToState = (
+  settings: NodeEditorSettings,
+): ExpressionRouterFormState => {
   let initialCases: CaseProps[] = [];
 
   // TODO: work out an incremental result name
@@ -21,7 +23,10 @@ export const nodeToState = (settings: NodeEditorSettings): ExpressionRouterFormS
 
   let operand = DEFAULT_OPERAND;
 
-  if (settings.originalNode && getType(settings.originalNode) === Types.split_by_expression) {
+  if (
+    settings.originalNode &&
+    getType(settings.originalNode) === Types.split_by_expression
+  ) {
     const router = settings.originalNode.node.router as SwitchRouter;
     if (router) {
       if (hasCases(settings.originalNode.node)) {
@@ -38,19 +43,21 @@ export const nodeToState = (settings: NodeEditorSettings): ExpressionRouterFormS
     cases: initialCases,
     resultName,
     operand: { value: operand },
-    valid: true
+    valid: true,
   };
 };
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: ExpressionRouterFormState
+  state: ExpressionRouterFormState,
 ): RenderNode => {
-  const { cases, exits, defaultCategory: defaultExit, caseConfig, categories } = resolveRoutes(
-    state.cases,
-    false,
-    settings.originalNode.node
-  );
+  const {
+    cases,
+    exits,
+    defaultCategory: defaultExit,
+    caseConfig,
+    categories,
+  } = resolveRoutes(state.cases, false, settings.originalNode.node);
 
   const optionalRouter: Pick<Router, 'result_name'> = {};
   if (state.resultName.value) {
@@ -63,7 +70,7 @@ export const stateToNode = (
     categories,
     cases,
     operand: state.operand.value,
-    ...optionalRouter
+    ...optionalRouter,
   };
 
   const newRenderNode = createRenderNode(
@@ -72,7 +79,7 @@ export const stateToNode = (
     exits,
     Types.split_by_expression,
     [],
-    { cases: caseConfig }
+    { cases: caseConfig },
   );
 
   return newRenderNode;

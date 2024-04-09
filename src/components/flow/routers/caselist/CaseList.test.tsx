@@ -18,10 +18,10 @@ const cases = [
       uuid: caseUUID1,
       type: Operators.has_any_word,
       arguments: ['Red, r'],
-      category_uuid: utils.createUUID()
+      category_uuid: utils.createUUID(),
     },
     categoryName: 'Red',
-    valid: true
+    valid: true,
   },
   {
     uuid: caseUUID2,
@@ -29,22 +29,26 @@ const cases = [
       uuid: caseUUID2,
       type: Operators.has_any_word,
       arguments: ['Green, g'],
-      category_uuid: utils.createUUID()
+      category_uuid: utils.createUUID(),
     },
     categoryName: 'Green',
-    valid: true
-  }
+    valid: true,
+  },
 ];
 
 describe(CaseList.name, () => {
   describe('render', () => {
     it('should render empty list', () => {
-      const { baseElement } = render(<CaseList cases={[]} onCasesUpdated={jest.fn()} />);
+      const { baseElement } = render(
+        <CaseList cases={[]} onCasesUpdated={jest.fn()} />,
+      );
       expect(baseElement).toMatchSnapshot();
     });
 
     it('should render list of cases', () => {
-      const { baseElement } = render(<CaseList cases={cases} onCasesUpdated={jest.fn()} />);
+      const { baseElement } = render(
+        <CaseList cases={cases} onCasesUpdated={jest.fn()} />,
+      );
       expect(baseElement).toMatchSnapshot();
     });
   });
@@ -52,7 +56,7 @@ describe(CaseList.name, () => {
   describe('updates', () => {
     it('should remove cases', () => {
       const { baseElement, getByTestId, queryByTestId } = render(
-        <CaseList cases={cases} onCasesUpdated={jest.fn()} />
+        <CaseList cases={cases} onCasesUpdated={jest.fn()} />,
       );
 
       const removeCase = `remove-case-${cases[0].uuid}`;
@@ -66,10 +70,13 @@ describe(CaseList.name, () => {
     it('should update cases', async () => {
       const onCasesUpdated = jest.fn();
       const { baseElement, getAllByTestId } = render(
-        <CaseList cases={cases} onCasesUpdated={onCasesUpdated} />
+        <CaseList cases={cases} onCasesUpdated={onCasesUpdated} />,
       );
 
-      userEvent.type(getAllByTestId('arguments')[0].querySelector('input'), 'Purple, p');
+      userEvent.type(
+        getAllByTestId('arguments')[0].querySelector('input'),
+        'Purple, p',
+      );
 
       expect(onCasesUpdated).toHaveBeenCalledTimes(3);
       expect(baseElement).toMatchSnapshot();
@@ -80,7 +87,7 @@ describe(CaseList.name, () => {
 
       // start with an empty list
       const { baseElement, getAllByTestId, getByText } = render(
-        <CaseList cases={[]} onCasesUpdated={onCasesUpdated} />
+        <CaseList cases={[]} onCasesUpdated={onCasesUpdated} />,
       );
 
       // we should have one operator for the default
@@ -99,7 +106,9 @@ describe(CaseList.name, () => {
 
       // our new default operator should match the last one we entered
       const newOperator = getAllByTestId('temba_select_operator')[1];
-      expect(newOperator.querySelector('input').placeholder).toBe('has a number above');
+      expect(newOperator.querySelector('input').placeholder).toBe(
+        'has a number above',
+      );
 
       expect(baseElement).toMatchSnapshot();
     });

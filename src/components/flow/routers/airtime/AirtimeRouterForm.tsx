@@ -3,7 +3,7 @@ import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import CurrencyElement, {
-  AirtimeTransfer
+  AirtimeTransfer,
 } from 'components/flow/routers/airtime/currency/CurrencyElement';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import ValidationFailures from 'components/form/ValidationFailures';
@@ -11,7 +11,12 @@ import TypeList from 'components/nodeeditor/TypeList';
 import mutate from 'immutability-helper';
 import * as React from 'react';
 import { FormEntry, FormState, StringEntry } from 'store/nodeEditor';
-import { Alphanumeric, Required, StartIsNonNumeric, validate } from 'store/validators';
+import {
+  Alphanumeric,
+  Required,
+  StartIsNonNumeric,
+  validate,
+} from 'store/validators';
 
 import styles from './AirtimeRouterForm.module.scss';
 import { nodeToState, stateToNode } from './helpers';
@@ -36,7 +41,7 @@ export default class AirtimeRouterForm extends React.PureComponent<
     this.state = nodeToState(props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
@@ -49,21 +54,24 @@ export default class AirtimeRouterForm extends React.PureComponent<
       }
     });
 
-    let valid: boolean = !!!this.state.amounts.find(
-      (entry: AirtimeTransferEntry) => (entry.validationFailures || []).length > 0
+    let valid = !this.state.amounts.find(
+      (entry: AirtimeTransferEntry) =>
+        (entry.validationFailures || []).length > 0,
     );
 
     // make sure at least one has a value
     if (valid) {
       valid =
         this.state.amounts.find(
-          (entry: AirtimeTransferEntry) => entry.value.amount.trim().length > 0
+          (entry: AirtimeTransferEntry) => entry.value.amount.trim().length > 0,
         ) !== undefined;
 
       if (!valid) {
         this.setState({
           valid: false,
-          validationFailures: [{ message: 'At least one amount to transfer is required' }]
+          validationFailures: [
+            { message: 'At least one amount to transfer is required' },
+          ],
         });
       }
     }
@@ -75,51 +83,57 @@ export default class AirtimeRouterForm extends React.PureComponent<
   }
 
   private handleUpdateResultName(result: string): void {
-    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), result, [
-      Required,
-      Alphanumeric,
-      StartIsNonNumeric
-    ]);
+    const resultName = validate(
+      i18n.t('forms.result_name', 'Result Name'),
+      result,
+      [Required, Alphanumeric, StartIsNonNumeric],
+    );
     this.setState({
       resultName,
-      valid: this.state.valid && !hasErrors(resultName)
+      valid: this.state.valid && !hasErrors(resultName),
     });
   }
 
   public getButtons(): ButtonSet {
     return {
       primary: { name: 'Ok', onClick: this.handleSave },
-      secondary: { name: 'Cancel', onClick: () => this.props.onClose(true) }
+      secondary: { name: 'Cancel', onClick: () => this.props.onClose(true) },
     };
   }
 
   public handleRemoved(index: number): void {
     // we found a match, merge us in
     const updated: any = mutate(this.state.amounts, {
-      $splice: [[index, 1]]
+      $splice: [[index, 1]],
     });
     this.setState({ amounts: updated });
   }
 
-  public handleTransferChanged(idx: number, transfer: AirtimeTransferEntry): void {
+  public handleTransferChanged(
+    idx: number,
+    transfer: AirtimeTransferEntry,
+  ): void {
     let updated: any = this.state.amounts;
 
     if (idx > -1) {
       // we found a match, merge us in
       updated = mutate(this.state.amounts, {
-        $merge: { [idx]: transfer }
+        $merge: { [idx]: transfer },
       });
     } else {
       // otherwise push us on
       updated = mutate(this.state.amounts, {
-        $push: [transfer]
+        $push: [transfer],
       });
     }
 
     this.setState({ amounts: updated, validationFailures: [] });
   }
 
-  private renderAmount(index: number, entry: AirtimeTransferEntry): JSX.Element {
+  private renderAmount(
+    index: number,
+    entry: AirtimeTransferEntry,
+  ): JSX.Element {
     return (
       <CurrencyElement
         key={'currency_' + index}
@@ -134,9 +148,11 @@ export default class AirtimeRouterForm extends React.PureComponent<
   }
 
   private renderAmounts(): JSX.Element {
-    const amounts = this.state.amounts.map((entry: AirtimeTransferEntry, index: number) => {
-      return this.renderAmount(index, entry);
-    });
+    const amounts = this.state.amounts.map(
+      (entry: AirtimeTransferEntry, index: number) => {
+        return this.renderAmount(index, entry);
+      },
+    );
 
     return (
       <div>
@@ -154,12 +170,23 @@ export default class AirtimeRouterForm extends React.PureComponent<
     ) : null;
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         {this.renderAmounts()}
         {errors}
         <div className={styles.result_name}>
-          {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+          {createResultNameInput(
+            this.state.resultName,
+            this.handleUpdateResultName,
+          )}
         </div>
         {renderIssues(this.props)}
       </Dialog>

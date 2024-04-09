@@ -30,12 +30,12 @@ export const mapAssetsToGroups = (searchResults: Asset[] | null): Group[] => {
   const groups = searchResults.map(result => {
     if (!result.id || result.id === result.name) {
       return {
-        name_match: result.name
+        name_match: result.name,
       };
     }
     return {
       uuid: result.id,
-      name: result.name
+      name: result.name,
     };
   });
 

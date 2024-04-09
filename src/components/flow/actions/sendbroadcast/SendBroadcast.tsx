@@ -1,4 +1,7 @@
-import { getRecipients, renderAssetList } from 'components/flow/actions/helpers';
+import {
+  getRecipients,
+  renderAssetList,
+} from 'components/flow/actions/helpers';
 import { fakePropType } from 'config/ConfigProvider';
 import { BroadcastMsg } from 'flowTypes';
 import * as React from 'react';
@@ -8,14 +11,14 @@ import i18n from 'config/i18n';
 
 export const PLACEHOLDER = i18n.t(
   'actions.send_broadcast.placeholder',
-  'Send a message to the contact'
+  'Send a message to the contact',
 );
 
 const MAX_TO_SHOW = 5;
 
 const SendBroadcastComp: React.SFC<BroadcastMsg> = (
   action: BroadcastMsg,
-  context: any
+  context: any,
 ): JSX.Element => {
   const assets = getRecipients(action);
   if (action.text) {
@@ -40,7 +43,7 @@ const SendBroadcastComp: React.SFC<BroadcastMsg> = (
 };
 
 SendBroadcastComp.contextTypes = {
-  config: fakePropType
+  config: fakePropType,
 };
 
 export default SendBroadcastComp;

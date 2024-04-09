@@ -3,7 +3,7 @@ import {
   getRouterFormProps,
   createResthookNode,
   createCallResthookAction,
-  ResthookAsset
+  ResthookAsset,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import ResthookRouterForm from 'components/flow/routers/resthook/ResthookRouterForm';
@@ -11,7 +11,10 @@ import ResthookRouterForm from 'components/flow/routers/resthook/ResthookRouterF
 mock(utils, 'createUUID', utils.seededUUIDs());
 
 const routerNode = createResthookNode(createCallResthookAction());
-const { setup } = composeComponentTestUtils(ResthookRouterForm, getRouterFormProps(routerNode));
+const { setup } = composeComponentTestUtils(
+  ResthookRouterForm,
+  getRouterFormProps(routerNode),
+);
 
 describe(ResthookRouterForm.name, () => {
   describe('render', () => {
@@ -45,8 +48,8 @@ describe(ResthookRouterForm.name, () => {
       const components = setup(true, {
         updateRouter: setMock(),
         nodeSettings: {
-          originalNode: { ui: { $merge: { type: null } } }
-        }
+          originalNode: { ui: { $merge: { type: null } } },
+        },
       });
 
       const instance = components.instance as ResthookRouterForm;
@@ -61,9 +64,9 @@ describe(ResthookRouterForm.name, () => {
         nodeSettings: {
           originalNode: {
             node: { $merge: { actions: [] } },
-            ui: { $merge: { type: null } }
-          }
-        }
+            ui: { $merge: { type: null } },
+          },
+        },
       });
 
       const instance = components.instance as ResthookRouterForm;

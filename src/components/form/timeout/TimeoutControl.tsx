@@ -1,5 +1,7 @@
 import { react as bindCallbacks } from 'auto-bind';
-import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
+import SwitchElement, {
+  SwitchSizes,
+} from 'components/form/switch/SwitchElement';
 import * as React from 'react';
 import { renderIf } from 'utils';
 
@@ -28,7 +30,7 @@ export const TIMEOUT_OPTIONS: SelectOption[] = [
   { value: '86400', name: i18n.t('forms.timeout_1 day', '1 day') },
   { value: '172800', name: i18n.t('forms.timeout_2 days', '2 days') },
   { value: '259200', name: i18n.t('forms.timeout_3 days', '3 days') },
-  { value: '604800', name: i18n.t('forms.timeout_1 week', '1 week') }
+  { value: '604800', name: i18n.t('forms.timeout_1 week', '1 week') },
 ];
 
 export const DEFAULT_TIMEOUT = TIMEOUT_OPTIONS[4];
@@ -38,11 +40,13 @@ export interface TimeoutControlProps {
   onChanged(timeout: number): void;
 }
 
-export default class TimeoutControl extends React.Component<TimeoutControlProps> {
+export default class TimeoutControl extends React.Component<
+  TimeoutControlProps
+> {
   constructor(props: TimeoutControlProps) {
     super(props);
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -89,7 +93,9 @@ export default class TimeoutControl extends React.Component<TimeoutControlProps>
         </div>
         {renderIf(this.isChecked())(
           <div className={styles.drop_down}>
-            <p className={styles.timeout_label}>{i18n.t('forms.wait_response_for')}</p>
+            <p className={styles.timeout_label}>
+              {i18n.t('forms.wait_response_for')}
+            </p>
             <TembaSelect
               name={i18n.t('forms.timeout', 'Timeout')}
               style={TembaSelectStyle.small}
@@ -97,7 +103,7 @@ export default class TimeoutControl extends React.Component<TimeoutControlProps>
               options={TIMEOUT_OPTIONS}
               onChange={this.handleTimeoutChanged}
             />
-          </div>
+          </div>,
         )}
       </div>
     );

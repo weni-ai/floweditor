@@ -36,13 +36,13 @@ export default class OptionalTextInput extends React.Component<
   constructor(props: OptionalTextInputProps) {
     super(props);
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
 
     this.state = {
       showToggle: !(this.props.value.value.trim().length > 0),
       editing: this.props.value.value.trim().length > 0,
-      valid: true
+      valid: true,
     };
   }
 
@@ -57,18 +57,26 @@ export default class OptionalTextInput extends React.Component<
   public render(): JSX.Element {
     return (
       <div
-        className={`${styles.optional_text_input} ${this.state.showToggle ? styles.toggle : ''}`}
+        className={`${styles.optional_text_input} ${
+          this.state.showToggle ? styles.toggle : ''
+        }`}
       >
         {this.state.showToggle ? (
           <span
             data-testid="toggle-link"
             data-spec="toggle-link"
-            className={`${styles.toggle_link} ${this.state.editing ? styles.expanded : ''}`}
+            className={`${styles.toggle_link} ${
+              this.state.editing ? styles.expanded : ''
+            }`}
             onClick={this.handleEditingChanged}
           >
             {this.props.toggleText}
             <UnnnicIcon
-              icon={this.state.editing ? 'arrow-button-down-1' : 'arrow-button-right-1'}
+              icon={
+                this.state.editing
+                  ? 'arrow-button-down-1'
+                  : 'arrow-button-right-1'
+              }
               size="xs"
               scheme="neutral-cleanest"
             />

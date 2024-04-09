@@ -35,7 +35,10 @@ export interface SelectOptionsState {
   topOffset: number;
 }
 
-export default class SelectOptions extends React.Component<SelectOptionsProps, SelectOptionsState> {
+export default class SelectOptions extends React.Component<
+  SelectOptionsProps,
+  SelectOptionsState
+> {
   private optionsRef: React.RefObject<HTMLDivElement>;
 
   constructor(props: SelectOptionsProps) {
@@ -43,56 +46,72 @@ export default class SelectOptions extends React.Component<SelectOptionsProps, S
 
     this.state = {
       optionCursor: 0,
-      topOffset: 0
+      topOffset: 0,
     };
 
     this.optionsRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
   public componentDidMount() {
     if (this.props.inputRef instanceof HTMLTextAreaElement) {
       this.props.inputRef.addEventListener('scroll', () => this.hide());
-      this.props.inputRef.addEventListener('scrollend', () => this.recalculatePosition());
+      this.props.inputRef.addEventListener('scrollend', () =>
+        this.recalculatePosition(),
+      );
     } else {
       const scrollableParent = this.findScrollableParent(this.props.anchorRef);
       scrollableParent.addEventListener('scroll', () => this.hide());
-      scrollableParent.addEventListener('scrollend', () => this.recalculatePosition());
+      scrollableParent.addEventListener('scrollend', () =>
+        this.recalculatePosition(),
+      );
     }
     document.addEventListener('mousedown', this.handleClickOutside);
-    this.props.anchorRef.addEventListener('keydown', this.handleCompletionsKeyDown);
+    this.props.anchorRef.addEventListener(
+      'keydown',
+      this.handleCompletionsKeyDown,
+    );
     this.calculateOptionsOffset(this.props.inputRef);
   }
 
   public componentWillUnmount() {
     if (this.props.inputRef instanceof HTMLTextAreaElement) {
       this.props.inputRef.removeEventListener('scroll', () => this.hide());
-      this.props.inputRef.removeEventListener('scrollend', () => this.recalculatePosition());
+      this.props.inputRef.removeEventListener('scrollend', () =>
+        this.recalculatePosition(),
+      );
     } else {
       const scrollableParent = this.findScrollableParent(this.props.anchorRef);
       scrollableParent.removeEventListener('scroll', () => this.hide());
-      scrollableParent.removeEventListener('scrollend', () => this.recalculatePosition());
+      scrollableParent.removeEventListener('scrollend', () =>
+        this.recalculatePosition(),
+      );
     }
     document.removeEventListener('mousedown', this.handleClickOutside);
-    this.props.anchorRef.removeEventListener('keydown', this.handleCompletionsKeyDown);
+    this.props.anchorRef.removeEventListener(
+      'keydown',
+      this.handleCompletionsKeyDown,
+    );
   }
 
   public componentDidUpdate(
     prevProps: Readonly<SelectOptionsProps>,
-    prevState: Readonly<SelectOptionsState>
+    prevState: Readonly<SelectOptionsState>,
   ): void {
     if (prevState.optionCursor !== this.state.optionCursor) {
       const completionList = this.optionsRef.current;
-      const activeCompletion = completionList.querySelector(`.${styles.active}`);
+      const activeCompletion = completionList.querySelector(
+        `.${styles.active}`,
+      );
       if (activeCompletion) {
         activeCompletion.scrollIntoView({
           behavior: 'smooth',
           block: 'nearest',
-          inline: 'start'
+          inline: 'start',
         });
       }
     }
@@ -105,7 +124,9 @@ export default class SelectOptions extends React.Component<SelectOptionsProps, S
 
   private handleMouseMove(event: any) {
     if (Math.abs(event.movementX) + Math.abs(event.movementY) > 0) {
-      const index = (event.currentTarget as HTMLElement).getAttribute('data-option-index');
+      const index = (event.currentTarget as HTMLElement).getAttribute(
+        'data-option-index',
+      );
       if (parseInt(index) !== this.state.optionCursor) {
         this.setState({ optionCursor: parseInt(index) });
       }
@@ -169,11 +190,14 @@ export default class SelectOptions extends React.Component<SelectOptionsProps, S
 
   private moveFocusedOption(direction: number) {
     const newIndex = Math.max(
-      Math.min(this.state.optionCursor + direction, this.props.options.length - 1),
-      0
+      Math.min(
+        this.state.optionCursor + direction,
+        this.props.options.length - 1,
+      ),
+      0,
     );
     this.setState({
-      optionCursor: newIndex
+      optionCursor: newIndex,
     });
   }
 
@@ -216,11 +240,18 @@ export default class SelectOptions extends React.Component<SelectOptionsProps, S
   };
 
   private calculateOptionsOffset(element: HTMLInputElement) {
-    if (this.props.inputRef instanceof HTMLTextAreaElement && element.tagName === 'TEXTAREA') {
+    if (
+      this.props.inputRef instanceof HTMLTextAreaElement &&
+      element.tagName === 'TEXTAREA'
+    ) {
       const caret = getCaretCoordinates(element, element.selectionEnd);
-      const topOffset = caret.top + (caret.height || 0) - element.scrollTop - element.offsetHeight;
+      const topOffset =
+        caret.top +
+        (caret.height || 0) -
+        element.scrollTop -
+        element.offsetHeight;
       this.setState({
-        topOffset
+        topOffset,
       });
     } else {
       const firstScrollableParent = this.findScrollableParent(element);
@@ -234,7 +265,7 @@ export default class SelectOptions extends React.Component<SelectOptionsProps, S
 
       if (topOffset !== this.state.topOffset) {
         this.setState({
-          topOffset
+          topOffset,
         });
       }
     }
@@ -244,7 +275,9 @@ export default class SelectOptions extends React.Component<SelectOptionsProps, S
     return (
       <>
         <span className={styles.name}>{option.name}</span>
-        {option.summary && <span className={styles.summary}>{option.summary}</span>}
+        {option.summary && (
+          <span className={styles.summary}>{option.summary}</span>
+        )}
       </>
     );
   }
@@ -294,7 +327,10 @@ export default class SelectOptions extends React.Component<SelectOptionsProps, S
         style={{
           marginTop: this.state.topOffset,
           width: this.getOptionWidth(),
-          display: this.props.active && this.props.options.length !== 0 ? 'flex' : 'none'
+          display:
+            this.props.active && this.props.options.length !== 0
+              ? 'flex'
+              : 'none',
         }}
       >
         {this.props.options.map((option: any, index: number) => {

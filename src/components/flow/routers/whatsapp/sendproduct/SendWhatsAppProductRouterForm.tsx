@@ -3,23 +3,36 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
-import { nodeToState, stateToNode } from 'components/flow/routers/whatsapp/sendproduct/helpers';
+import {
+  nodeToState,
+  stateToNode,
+} from 'components/flow/routers/whatsapp/sendproduct/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
-import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
-import TextInputElement, { TextInputSizes } from 'components/form/textinput/TextInputElement';
+import SwitchElement, {
+  SwitchSizes,
+} from 'components/form/switch/SwitchElement';
+import TextInputElement, {
+  TextInputSizes,
+} from 'components/form/textinput/TextInputElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import { fakePropType } from 'config/ConfigProvider';
 import * as React from 'react';
-import { FormState, mergeForm, StringEntry, FormEntry, ValidationFailure } from 'store/nodeEditor';
+import {
+  FormState,
+  mergeForm,
+  StringEntry,
+  FormEntry,
+  ValidationFailure,
+} from 'store/nodeEditor';
 import {
   Alphanumeric,
   Required,
   StartIsNonNumeric,
   ValidURL,
   shouldRequireIf,
-  validate
+  validate,
 } from 'store/validators';
 
 import styles from './SendWhatsAppProductRouterForm.module.scss';
@@ -40,10 +53,10 @@ const UnnnicTooltip = applyVueInReact(unnnicToolTip, {
     slotWrap: 'div',
     componentWrapAttrs: {
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 const UnnnicRadio = applyVueInReact(unnnicRadio, {
@@ -52,15 +65,15 @@ const UnnnicRadio = applyVueInReact(unnnicRadio, {
     slotWrap: 'div',
     componentWrapAttrs: {
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 export enum ProductSearchType {
   Default = 'default',
-  Vtex = 'vtex'
+  Vtex = 'vtex',
 }
 
 export interface ProductViewSettings {
@@ -85,6 +98,7 @@ export interface SendWhatsAppProductRouterFormState extends FormState {
   searchType: ProductSearchType;
   searchUrl: StringEntry;
   sellerId: StringEntry;
+  postalCode: StringEntry;
   products: FormEntry;
   productSearch: StringEntry;
   showProductViewSettings?: boolean;
@@ -98,6 +112,7 @@ interface UpdateKeys {
   searchType?: ProductSearchType;
   searchUrl?: string;
   sellerId?: string;
+  postalCode?: string;
   productSearch?: string;
   products?: WhatsAppProduct[];
   productViewSettings?: ProductViewSettings;
@@ -111,12 +126,12 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
     super(props);
     this.state = nodeToState(this.props.nodeSettings);
     bindCallbacks(this, {
-      include: [/^handle/, /^on/]
+      include: [/^handle/, /^on/],
     });
   }
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   private handleUpdate(keys: UpdateKeys, submitting = false): boolean {
@@ -141,29 +156,49 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           shouldRequireIf(
             submitting &&
               this.state.automaticProductSearch &&
-              this.state.searchType !== ProductSearchType.Default
+              this.state.searchType !== ProductSearchType.Default,
           ),
-          ValidURL
-        ]
+          ValidURL,
+        ],
       );
     }
 
     if (keys.hasOwnProperty('sellerId')) {
-      updates.sellerId = validate(i18n.t('forms.seller_id', 'Seller ID'), keys.sellerId, []);
+      updates.sellerId = validate(
+        i18n.t('forms.seller_id', 'Seller ID'),
+        keys.sellerId,
+        [],
+      );
+    }
+
+    if (keys.hasOwnProperty('postalCode')) {
+      updates.postalCode = validate(
+        i18n.t('forms.postal_code', 'Postal Code'),
+        keys.postalCode,
+        [],
+      );
     }
 
     if (keys.hasOwnProperty('productSearch')) {
       updates.productSearch = validate(
         i18n.t('forms.product_search', 'Product Search'),
         keys.productSearch,
-        [shouldRequireIf(submitting && this.state.automaticProductSearch)]
+        [shouldRequireIf(submitting && this.state.automaticProductSearch)],
       );
     }
 
     if (keys.hasOwnProperty('products')) {
-      updates.products = validate(i18n.t('forms.products', 'Products'), keys.products, [
-        shouldRequireIf(submitting && !this.state.automaticProductSearch && !this.state.sendCatalog)
-      ]);
+      updates.products = validate(
+        i18n.t('forms.products', 'Products'),
+        keys.products,
+        [
+          shouldRequireIf(
+            submitting &&
+              !this.state.automaticProductSearch &&
+              !this.state.sendCatalog,
+          ),
+        ],
+      );
     }
 
     if (keys.hasOwnProperty('productViewSettings')) {
@@ -178,28 +213,31 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
             shouldRequireIf(
               submitting &&
                 (this.state.automaticProductSearch ||
-                  (!this.state.sendCatalog && this.state.products.value.length > 1))
-            )
-          ]
+                  (!this.state.sendCatalog &&
+                    this.state.products.value.length > 1)),
+            ),
+          ],
         );
       }
       if (keys.productViewSettings.hasOwnProperty('body')) {
-        settings.body = validate(i18n.t('forms.body', 'Body'), keys.productViewSettings.body, [
-          shouldRequireIf(submitting)
-        ]);
+        settings.body = validate(
+          i18n.t('forms.body', 'Body'),
+          keys.productViewSettings.body,
+          [shouldRequireIf(submitting)],
+        );
       }
       if (keys.productViewSettings.hasOwnProperty('footer')) {
         settings.footer = validate(
           i18n.t('forms.footer', 'Footer'),
           keys.productViewSettings.footer,
-          []
+          [],
         );
       }
       if (keys.productViewSettings.hasOwnProperty('action')) {
         settings.action = validate(
           i18n.t('forms.action', 'Action'),
           keys.productViewSettings.action,
-          [shouldRequireIf(submitting)]
+          [shouldRequireIf(submitting)],
         );
       }
 
@@ -213,30 +251,38 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
         failures.push(...settings.action.validationFailures);
       }
 
-      updates.productViewSettings = { value: settings, validationFailures: failures };
+      updates.productViewSettings = {
+        value: settings,
+        validationFailures: failures,
+      };
     }
 
-    const updated = mergeForm(this.state, updates) as SendWhatsAppProductRouterFormState;
+    const updated = mergeForm(
+      this.state,
+      updates,
+    ) as SendWhatsAppProductRouterFormState;
 
     this.setState(updated);
     return updated.valid;
   }
 
   private handleResultNameUpdate(value: string): void {
-    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), value, [
-      Required,
-      Alphanumeric,
-      StartIsNonNumeric
-    ]);
+    const resultName = validate(
+      i18n.t('forms.result_name', 'Result Name'),
+      value,
+      [Required, Alphanumeric, StartIsNonNumeric],
+    );
     this.setState({
       resultName,
-      valid: this.state.valid && !hasErrors(resultName)
+      valid: this.state.valid && !hasErrors(resultName),
     });
   }
 
-  public handleAutomaticProductSearchUpdate(automaticProductSearch: boolean): boolean {
+  public handleAutomaticProductSearchUpdate(
+    automaticProductSearch: boolean,
+  ): boolean {
     const toUpdate: Partial<UpdateKeys> = {
-      automaticProductSearch
+      automaticProductSearch,
     };
 
     if (automaticProductSearch) {
@@ -247,19 +293,33 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
   }
 
   public toggleProductViewSettings() {
-    this.setState({ showProductViewSettings: !this.state.showProductViewSettings });
+    this.setState({
+      showProductViewSettings: !this.state.showProductViewSettings,
+    });
   }
 
   public handleProductSearchChange(
     productSearch: string,
     name: string,
-    submitting = false
+    submitting = false,
   ): boolean {
     return this.handleUpdate({ productSearch }, submitting);
   }
 
-  public handleSellerIdChange(sellerId: string, name: string, submitting = false): boolean {
+  public handleSellerIdChange(
+    sellerId: string,
+    name: string,
+    submitting = false,
+  ): boolean {
     return this.handleUpdate({ sellerId }, submitting);
+  }
+
+  public handlePostalCodeChange(
+    postalCode: string,
+    name: string,
+    submitting = false,
+  ): boolean {
+    return this.handleUpdate({ postalCode }, submitting);
   }
 
   private handleProductsChanged(products: any[]) {
@@ -269,7 +329,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
         header: this.state.productViewSettings.value.header.value || '',
         body: this.state.productViewSettings.value.body.value || '',
         footer: this.state.productViewSettings.value.footer.value || '',
-        action: this.state.productViewSettings.value.action.value || ''
+        action: this.state.productViewSettings.value.action.value || '',
       };
     }
     this.handleUpdate(toUpdate);
@@ -277,38 +337,53 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
 
   private handleProductViewSettingsChange(text: string, name: string): boolean {
     return this.handleUpdate({
-      productViewSettings: ({ [name]: text } as unknown) as ProductViewSettings
+      productViewSettings: ({ [name]: text } as unknown) as ProductViewSettings,
     });
   }
 
   private handleSendCatalogUpdate(newValue: string) {
     return this.handleUpdate({
-      sendCatalog: newValue === 'true'
+      sendCatalog: newValue === 'true',
     });
   }
 
   private handleSearchTypeUpdate(newValue: ProductSearchType) {
     return this.handleUpdate({
-      searchType: newValue
+      searchType: newValue,
     });
   }
 
-  public handleSearchUrlChange(searchUrl: string, name: string, submitting = false): boolean {
+  public handleSearchUrlChange(
+    searchUrl: string,
+    name: string,
+    submitting = false,
+  ): boolean {
     return this.handleUpdate({ searchUrl }, submitting);
   }
 
   private handleSave(): void {
     // make sure we validate untouched text fields
     let valid = true;
-    let currentCheck = this.handleProductSearchChange(this.state.productSearch.value, null, true);
+    let currentCheck = this.handleProductSearchChange(
+      this.state.productSearch.value,
+      null,
+      true,
+    );
 
-    currentCheck = this.handleUpdate({ products: this.state.products.value }, true);
+    currentCheck = this.handleUpdate(
+      { products: this.state.products.value },
+      true,
+    );
     valid = valid && currentCheck;
 
     currentCheck = this.handleSearchTypeUpdate(this.state.searchType);
     valid = valid && currentCheck;
 
-    currentCheck = this.handleSearchUrlChange(this.state.searchUrl.value, null, true);
+    currentCheck = this.handleSearchUrlChange(
+      this.state.searchUrl.value,
+      null,
+      true,
+    );
     valid = valid && currentCheck;
 
     currentCheck = this.handleUpdate(
@@ -317,10 +392,10 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           header: this.state.productViewSettings.value.header.value,
           body: this.state.productViewSettings.value.body.value,
           footer: this.state.productViewSettings.value.footer.value,
-          action: this.state.productViewSettings.value.action.value
-        }
+          action: this.state.productViewSettings.value.action.value,
+        },
       },
-      true
+      true,
     );
     valid = valid && currentCheck;
 
@@ -342,7 +417,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
         valid,
         showProductViewSettings: validProductViewSettings
           ? this.state.showProductViewSettings
-          : true
+          : true,
       });
     }
   }
@@ -352,8 +427,8 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       tertiary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -368,11 +443,11 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           <SwitchElement
             name={i18n.t(
               'forms.search_and_send_products_automatically',
-              'Search and send products automatically'
+              'Search and send products automatically',
             )}
             title={i18n.t(
               'forms.search_and_send_products_automatically',
-              'Search and send products automatically'
+              'Search and send products automatically',
             )}
             checked={this.state.automaticProductSearch}
             onChange={this.handleAutomaticProductSearchUpdate}
@@ -394,7 +469,9 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
 
             <UnnnicIcon
               icon={
-                this.state.showProductViewSettings ? 'arrow-button-down-1' : 'arrow-button-right-1'
+                this.state.showProductViewSettings
+                  ? 'arrow-button-right-1'
+                  : 'arrow-button-down-1'
               }
               size="xs"
               scheme="neutral-cleanest"
@@ -411,12 +488,14 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
                       <UnnnicTooltip
                         text={i18n.t(
                           'forms.send_product.header_info',
-                          'It is only possible to send a personalized header when \nmultiple products are selected.'
+                          'It is only possible to send a personalized header when \nmultiple products are selected.',
                         )}
                         side="right"
                         enabled={true}
                       >
-                        <span className={`${styles.info_icon} material-symbols-outlined`}>
+                        <span
+                          className={`${styles.info_icon} material-symbols-outlined`}
+                        >
                           info
                         </span>
                       </UnnnicTooltip>
@@ -425,7 +504,9 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
                   <TextInputElement
                     name={i18n.t('forms.header', 'Header')}
                     placeholder={i18n.t('forms.ex_offers', 'Ex: Offers')}
-                    onChange={value => this.handleProductViewSettingsChange(value, 'header')}
+                    onChange={value =>
+                      this.handleProductViewSettingsChange(value, 'header')
+                    }
                     entry={this.state.productViewSettings.value.header}
                     size={TextInputSizes.sm}
                     autocomplete
@@ -435,8 +516,13 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
 
                 <TextInputElement
                   name={i18n.t('forms.body', 'Body')}
-                  placeholder={i18n.t('forms.ex_products_body', 'Ex: offers are valid for 5 days')}
-                  onChange={value => this.handleProductViewSettingsChange(value, 'body')}
+                  placeholder={i18n.t(
+                    'forms.ex_products_body',
+                    'Ex: offers are valid for 5 days',
+                  )}
+                  onChange={value =>
+                    this.handleProductViewSettingsChange(value, 'body')
+                  }
                   entry={this.state.productViewSettings.value.body}
                   size={TextInputSizes.sm}
                   showLabel
@@ -448,7 +534,9 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
                 <TextInputElement
                   name={i18n.t('forms.footer', 'Footer (optional)')}
                   placeholder={i18n.t('forms.ex_footer', 'Ex: Footer')}
-                  onChange={value => this.handleProductViewSettingsChange(value, 'footer')}
+                  onChange={value =>
+                    this.handleProductViewSettingsChange(value, 'footer')
+                  }
                   entry={this.state.productViewSettings.value.footer}
                   size={TextInputSizes.sm}
                   showLabel
@@ -457,8 +545,13 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
 
                 <TextInputElement
                   name={i18n.t('forms.action', 'Action button title')}
-                  placeholder={i18n.t('forms.ex_products_action', 'Ex: Buy now')}
-                  onChange={value => this.handleProductViewSettingsChange(value, 'action')}
+                  placeholder={i18n.t(
+                    'forms.ex_products_action',
+                    'Ex: Buy now',
+                  )}
+                  onChange={value =>
+                    this.handleProductViewSettingsChange(value, 'action')
+                  }
                   entry={this.state.productViewSettings.value.action}
                   size={TextInputSizes.sm}
                   showLabel
@@ -468,7 +561,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
               <span className={styles.help_text}>
                 {i18n.t(
                   'forms.product_help_text',
-                  'The fields have character limitations, with header and footer 60 characters, body 1024 and action button title 20 characters.'
+                  'The fields have character limitations, with header and footer 60 characters, body 1024 and action button title 20 characters.',
                 )}
               </span>
             </>
@@ -481,8 +574,14 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
   private renderProductSelector() {
     return (
       <AssetSelector
-        name={i18n.t('forms.manually_select_products', 'Manually select products')}
-        noOptionsMessage={i18n.t('forms.no_products', "You don't have any product")}
+        name={i18n.t(
+          'forms.manually_select_products',
+          'Manually select products',
+        )}
+        noOptionsMessage={i18n.t(
+          'forms.no_products',
+          "You don't have any product",
+        )}
         assets={this.props.assetStore.whatsapp_products}
         entry={this.state.products}
         onChange={this.handleProductsChanged}
@@ -499,11 +598,11 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
   private renderAutomaticProductSearchForm() {
     return (
       <>
-        <div className={`${styles.search_type_radio}`}>
+        <div className={styles.search_type_radio}>
           <UnnnicRadio
             $model={{
               value: String(this.state.searchType),
-              setter: this.handleSearchTypeUpdate
+              setter: this.handleSearchTypeUpdate,
             }}
             value="default"
             size="sm"
@@ -515,7 +614,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           <UnnnicRadio
             $model={{
               value: String(this.state.searchType),
-              setter: this.handleSearchTypeUpdate
+              setter: this.handleSearchTypeUpdate,
             }}
             value="vtex"
             size="sm"
@@ -527,8 +626,14 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
         </div>
 
         <TextInputElement
-          name={i18n.t('forms.product_search_label', 'Enter an expression to be used as input')}
-          placeholder={i18n.t('forms.product_search_placeholder', 'Ex: @input.text')}
+          name={i18n.t(
+            'forms.product_search_label',
+            'Enter an expression to be used as input',
+          )}
+          placeholder={i18n.t(
+            'forms.product_search_placeholder',
+            'Ex: @input.text',
+          )}
           onChange={this.handleProductSearchChange}
           entry={this.state.productSearch}
           showLabel
@@ -537,11 +642,14 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
         />
 
         {this.state.searchType === ProductSearchType.Vtex ? (
-          <div className={`${styles.vtex_fields}`}>
-            <div className={`${styles.search_url}`}>
+          <div className={styles.vtex_fields}>
+            <div className={styles.search_url}>
               <TextInputElement
                 name={i18n.t('forms.custom_search', 'Custom Search URL')}
-                placeholder={i18n.t('forms.custom_search_api_url', 'Custom Search API URL')}
+                placeholder={i18n.t(
+                  'forms.custom_search_api_url',
+                  'Custom Search API URL',
+                )}
                 onChange={this.handleSearchUrlChange}
                 entry={this.state.searchUrl}
                 showLabel
@@ -550,16 +658,36 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
               />
             </div>
 
-            <div className={`${styles.seller_id}`}>
-              <TextInputElement
-                name={i18n.t('forms.seller_id', 'Seller ID (optional)')}
-                placeholder={i18n.t('forms.ex_results', 'Ex: @results.seller_id')}
-                onChange={this.handleSellerIdChange}
-                entry={this.state.sellerId}
-                showLabel
-                autocomplete
-                size={TextInputSizes.sm}
-              />
+            <div className={styles.optional}>
+              <div className={styles.seller_id}>
+                <TextInputElement
+                  name={i18n.t('forms.seller_id', 'Seller ID (optional)')}
+                  placeholder={i18n.t(
+                    'forms.ex_results',
+                    'Ex: @results.seller_id',
+                  )}
+                  onChange={this.handleSellerIdChange}
+                  entry={this.state.sellerId}
+                  showLabel
+                  autocomplete
+                  size={TextInputSizes.sm}
+                />
+              </div>
+
+              <div className={styles.postal_code}>
+                <TextInputElement
+                  name={i18n.t('forms.postal_code', 'Postal Code (optional)')}
+                  placeholder={i18n.t(
+                    'forms.ex_results',
+                    'Ex: @results.postal_code',
+                  )}
+                  onChange={this.handlePostalCodeChange}
+                  entry={this.state.postalCode}
+                  showLabel
+                  autocomplete
+                  size={TextInputSizes.sm}
+                />
+              </div>
             </div>
           </div>
         ) : null}
@@ -574,7 +702,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           <UnnnicRadio
             $model={{
               value: String(this.state.sendCatalog),
-              setter: this.handleSendCatalogUpdate
+              setter: this.handleSendCatalogUpdate,
             }}
             value="true"
             size="sm"
@@ -586,13 +714,16 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           <UnnnicRadio
             $model={{
               value: String(this.state.sendCatalog),
-              setter: this.handleSendCatalogUpdate
+              setter: this.handleSendCatalogUpdate,
             }}
             value="false"
             size="sm"
           >
             <span className="color-neutral-cloudy">
-              {i18n.t('forms.select_products_to_send', 'Select products to send')}
+              {i18n.t(
+                'forms.select_products_to_send',
+                'Select products to send',
+              )}
             </span>
           </UnnnicRadio>
         </div>
@@ -612,11 +743,18 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
         buttons={this.getButtons()}
         new={typeConfig.new}
       >
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
 
         {this.renderWhatsappProductsConfig()}
 
-        {createResultNameInput(this.state.resultName, this.handleResultNameUpdate)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleResultNameUpdate,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

@@ -22,12 +22,15 @@ export interface TextEditorState {
   showEmojiPicker: boolean;
 }
 
-export default class TextEditorActions extends React.Component<TextEditorProps, TextEditorState> {
+export default class TextEditorActions extends React.Component<
+  TextEditorProps,
+  TextEditorState
+> {
   constructor(props: TextEditorProps) {
     super(props);
 
     this.state = {
-      showEmojiPicker: false
+      showEmojiPicker: false,
     };
   }
 

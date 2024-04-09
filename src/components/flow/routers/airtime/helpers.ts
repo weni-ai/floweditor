@@ -1,6 +1,6 @@
 import {
   AirtimeRouterFormState,
-  AirtimeTransferEntry
+  AirtimeTransferEntry,
 } from 'components/flow/routers/airtime/AirtimeRouterForm';
 import { createWebhookBasedNode } from 'components/flow/routers/helpers';
 import { Types } from 'config/interfaces';
@@ -9,7 +9,9 @@ import { RenderNode } from 'store/flowContext';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import { createUUID } from 'utils';
 
-export const nodeToState = (settings: NodeEditorSettings): AirtimeRouterFormState => {
+export const nodeToState = (
+  settings: NodeEditorSettings,
+): AirtimeRouterFormState => {
   const originalAction = getOriginalAction(settings);
   let resultName = { value: 'Result' };
   let valid = false;
@@ -18,7 +20,7 @@ export const nodeToState = (settings: NodeEditorSettings): AirtimeRouterFormStat
   if (originalAction && originalAction.type === Types.transfer_airtime) {
     Object.keys(originalAction.amounts).forEach((key: string) => {
       amounts.push({
-        value: { code: key, amount: '' + originalAction.amounts[key] }
+        value: { code: key, amount: '' + originalAction.amounts[key] },
       });
     });
     resultName = { value: originalAction.result_name };
@@ -28,13 +30,13 @@ export const nodeToState = (settings: NodeEditorSettings): AirtimeRouterFormStat
   return {
     valid,
     amounts,
-    resultName
+    resultName,
   };
 };
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: AirtimeRouterFormState
+  state: AirtimeRouterFormState,
 ): RenderNode => {
   let uuid = createUUID();
   const originalAction = getOriginalAction(settings);
@@ -53,16 +55,19 @@ export const stateToNode = (
     uuid,
     type: Types.transfer_airtime,
     amounts,
-    result_name: state.resultName.value
+    result_name: state.resultName.value,
   };
 
   return createWebhookBasedNode(newAction, settings.originalNode, true);
 };
 
-export const getOriginalAction = (settings: NodeEditorSettings): TransferAirtime => {
+export const getOriginalAction = (
+  settings: NodeEditorSettings,
+): TransferAirtime => {
   const action =
     settings.originalAction ||
-    (settings.originalNode.node.actions.length > 0 && settings.originalNode.node.actions[0]);
+    (settings.originalNode.node.actions.length > 0 &&
+      settings.originalNode.node.actions[0]);
 
   if (action.type === Types.transfer_airtime) {
     return action as TransferAirtime;

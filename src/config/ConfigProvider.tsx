@@ -15,14 +15,17 @@ export interface ConfigProviderContext {
 
 // ----------------------------------------------------------------------------------------------
 
-export const SINGLE_CHILD_ERROR = 'ConfigProvider expects only one child component.';
+export const SINGLE_CHILD_ERROR =
+  'ConfigProvider expects only one child component.';
 export const VALID_CHILD_ERROR =
   'ConfigProvider expects a valid React element: https://reactjs.org/docs/react-api.html#isvalidelement';
 
-export default class ConfigProvider extends React.Component<ConfigProviderProps> {
+export default class ConfigProvider extends React.Component<
+  ConfigProviderProps
+> {
   public static childContextTypes = {
     config: fakePropType,
-    assetService: fakePropType
+    assetService: fakePropType,
   };
 
   constructor(props: ConfigProviderProps) {
@@ -37,7 +40,7 @@ export default class ConfigProvider extends React.Component<ConfigProviderProps>
 
   public getChildContext(): ConfigProviderContext {
     return {
-      config: this.props.config
+      config: this.props.config,
     };
   }
 

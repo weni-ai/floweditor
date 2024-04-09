@@ -9,7 +9,7 @@ import {
   createRenderNode,
   Spanish,
   createCategories,
-  createMatchRouter
+  createMatchRouter,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
@@ -26,7 +26,7 @@ const otherCategory = router.categories[router.categories.length - 1];
 const localizations = getLocalizations(responseRenderNode.node, null, Spanish, {
   [redCase.uuid]: { arguments: ['rojo, r'] },
 
-  [otherCategory.uuid]: { name: ['Otro'] }
+  [otherCategory.uuid]: { name: ['Otro'] },
 });
 
 const baseProps: LocalizationFormProps = {
@@ -36,13 +36,13 @@ const baseProps: LocalizationFormProps = {
   nodeSettings: {
     originalNode: responseRenderNode,
     originalAction: null,
-    localizations
-  }
+    localizations,
+  },
 };
 
 const { setup } = composeComponentTestUtils<LocalizationFormProps>(
   RouterLocalizationForm,
-  baseProps
+  baseProps,
 );
 
 describe(RouterLocalizationForm.name, () => {
@@ -60,10 +60,13 @@ describe(RouterLocalizationForm.name, () => {
     it('should save changes', () => {
       const { instance, props } = setup(true);
 
-      instance.handleUpdateCategoryName(responseRenderNode.node.router.categories[0], 'Roooojo!');
+      instance.handleUpdateCategoryName(
+        responseRenderNode.node.router.categories[0],
+        'Roooojo!',
+      );
       instance.handleUpdateCaseArgument(
         (responseRenderNode.node.router as SwitchRouter).cases[0],
-        'Red, r, rolo, maroon'
+        'Red, r, rolo, maroon',
       );
       expect(instance.state).toMatchSnapshot();
 

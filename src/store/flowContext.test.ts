@@ -7,7 +7,7 @@ import reducer, {
   RenderNodeMap,
   updateBaseLanguage,
   updateDefinition,
-  updateNodes
+  updateNodes,
 } from 'store/flowContext';
 import { English } from 'testUtils/assetCreators';
 
@@ -15,7 +15,7 @@ const boringFlow = require('test/flows/boring.json') as FlowDefinition;
 const emptyFlow = require('test/flows/empty.json') as FlowDefinition;
 
 const results = {
-  'ecc70717-dd25-4795-8dc2-0361265a1e29': '@run.results.color'
+  'ecc70717-dd25-4795-8dc2-0361265a1e29': '@run.results.color',
 };
 
 describe('flowContext action creators', () => {
@@ -24,8 +24,8 @@ describe('flowContext action creators', () => {
       const expectedAction = {
         type: Constants.UPDATE_DEFINITION,
         payload: {
-          definition: boringFlow
-        }
+          definition: boringFlow,
+        },
       };
 
       expect(updateDefinition(boringFlow)).toEqual(expectedAction);
@@ -37,8 +37,8 @@ describe('flowContext action creators', () => {
       const expectedAction = {
         type: Constants.UPDATE_BASE_LANGUAGE,
         payload: {
-          baseLanguage: English
-        }
+          baseLanguage: English,
+        },
       };
 
       expect(updateBaseLanguage(English)).toEqual(expectedAction);
@@ -72,8 +72,8 @@ describe('flowContext reducers', () => {
         nodeA: {
           node: { uuid: 'nodeA', actions: [], exits: [] },
           ui: { position: { left: 100, top: 100 } },
-          inboundConnections: {}
-        }
+          inboundConnections: {},
+        },
       };
       const action = updateNodes(nodes);
 

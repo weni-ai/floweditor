@@ -7,7 +7,7 @@ const baseProps: AddURN = {
   type: Types.add_input_labels,
   uuid: `${Types.add_contact_urn}-0`,
   scheme: 'tel',
-  path: '+12065551212'
+  path: '+12065551212',
 };
 
 const { setup } = composeComponentTestUtils(AddURNComp, baseProps);

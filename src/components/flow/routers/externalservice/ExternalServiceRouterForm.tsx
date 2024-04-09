@@ -9,7 +9,7 @@ import {
   Required,
   shouldRequireIf,
   StartIsNonNumeric,
-  validate
+  validate,
 } from 'store/validators';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
 import { Asset } from 'store/flowContext';
@@ -35,21 +35,24 @@ export default class ExternalServiceRouterForm extends React.Component<
   ExternalServiceRouterFormState
 > {
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: RouterFormProps) {
     super(props);
-    const externalServices = Object.values(this.props.assetStore.externalServices.items);
-    const externalService = externalServices.length === 1 ? externalServices[0] : null;
+    const externalServices = Object.values(
+      this.props.assetStore.externalServices.items,
+    );
+    const externalService =
+      externalServices.length === 1 ? externalServices[0] : null;
     this.state = nodeToState(
       this.props.nodeSettings,
       this.props.assetStore.externalServices.items,
-      externalService
+      externalService,
     );
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -61,7 +64,7 @@ export default class ExternalServiceRouterForm extends React.Component<
       params?: any[];
     },
     submitting = false,
-    callback?: () => void
+    callback?: () => void,
   ): boolean {
     const updates: Partial<ExternalServiceRouterFormState> = {};
 
@@ -69,31 +72,50 @@ export default class ExternalServiceRouterForm extends React.Component<
       updates.externalService = validate(
         i18n.t('forms.externalService', 'External Service'),
         keys.externalService,
-        [shouldRequireIf(submitting)]
+        [shouldRequireIf(submitting)],
       );
     }
 
     if (keys.hasOwnProperty('call')) {
       updates.call = validate(i18n.t('forms.call', 'Call'), keys.call, [
-        shouldRequireIf(submitting)
+        shouldRequireIf(submitting),
       ]);
     }
 
     if (keys.hasOwnProperty('resultName')) {
-      updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.resultName = validate(
+        i18n.t('forms.result_name', 'Result Name'),
+        keys.resultName,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     let hasInvalidParam = false;
     if (keys.hasOwnProperty('params')) {
-      updates.params = validate(i18n.t('forms.params', 'Params'), keys.params, []);
+      updates.params = validate(
+        i18n.t('forms.params', 'Params'),
+        keys.params,
+        [],
+      );
 
       updates.params.value = updates.params.value.map((param: any) => {
         let valid = true;
         // TODO: Check if it is necessary to validate the param if it is not a string
-        if (typeof param.data.value === 'string' || param.data.value instanceof String) {
-          if (!param.valid || param.data.value.trim().length === 0) {
+        if (
+          typeof param.data.value === 'string' ||
+          param.data.value instanceof String
+        ) {
+          const missingFilter =
+            param.filter &&
+            param.filter.value == null &&
+            param.filters &&
+            param.filters.length > 0;
+
+          if (
+            !param.valid ||
+            param.data.value.trim().length === 0 ||
+            missingFilter
+          ) {
             valid = false;
             hasInvalidParam = true;
           }
@@ -105,7 +127,7 @@ export default class ExternalServiceRouterForm extends React.Component<
       if (this.state.externalService.value.actions) {
         updates.params.value = this.mapParamOptions(
           updates.params.value,
-          this.state.externalService.value.actions
+          this.state.externalService.value.actions,
         );
       }
     }
@@ -129,9 +151,11 @@ export default class ExternalServiceRouterForm extends React.Component<
       });
 
       if (call && call.params && call.params.length > 0) {
-        const paramWithOptions = call.params.find((callParam: ServiceCallParam) => {
-          return callParam.type === param.type;
-        });
+        const paramWithOptions = call.params.find(
+          (callParam: ServiceCallParam) => {
+            return callParam.type === param.type;
+          },
+        );
 
         if (!paramWithOptions) return param;
         return { ...param, options: paramWithOptions.options };
@@ -162,7 +186,12 @@ export default class ExternalServiceRouterForm extends React.Component<
 
       param.filters.forEach(filter => {
         if (filter.required) {
-          requiredParams.push({ ...param, filter: { value: filter }, data, uuid: createUUID() });
+          requiredParams.push({
+            ...param,
+            filter: { value: filter },
+            data,
+            uuid: createUUID(),
+          });
         }
       });
     });
@@ -175,14 +204,14 @@ export default class ExternalServiceRouterForm extends React.Component<
   }
 
   private handleResultNameUpdate(value: string): void {
-    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), value, [
-      Required,
-      Alphanumeric,
-      StartIsNonNumeric
-    ]);
+    const resultName = validate(
+      i18n.t('forms.result_name', 'Result Name'),
+      value,
+      [Required, Alphanumeric, StartIsNonNumeric],
+    );
     this.setState({
       resultName,
-      valid: this.state.valid && !hasErrors(resultName)
+      valid: this.state.valid && !hasErrors(resultName),
     });
   }
 
@@ -191,13 +220,16 @@ export default class ExternalServiceRouterForm extends React.Component<
     if (!this.state.call.value.disableEmptyParams) {
       try {
         const lastParam =
-          this.state.params.value.length > 0 && this.state.params.value.slice(-1)[0];
+          this.state.params.value.length > 0 &&
+          this.state.params.value.slice(-1)[0];
         if (lastParam && (!lastParam.data || !lastParam.data.value)) {
           const hasFilters = lastParam.required || lastParam.filters;
           const hasSelectedFilter =
-            typeof lastParam.filter.value === 'object' && lastParam.filter.value;
+            typeof lastParam.filter.value === 'object' &&
+            lastParam.filter.value;
           const isRequired =
-            lastParam.required || (lastParam.filter.value && lastParam.filter.value.required);
+            lastParam.required ||
+            (lastParam.filter.value && lastParam.filter.value.required);
 
           if (!hasFilters || !hasSelectedFilter || !isRequired) {
             this.state.params.value.pop();
@@ -211,9 +243,9 @@ export default class ExternalServiceRouterForm extends React.Component<
         externalService: this.state.externalService.value,
         call: this.state.call.value,
         params: this.state.params.value,
-        resultName: this.state.resultName.value
+        resultName: this.state.resultName.value,
       },
-      true
+      true,
     );
 
     if (valid) {
@@ -253,7 +285,9 @@ export default class ExternalServiceRouterForm extends React.Component<
     const filteredParams = paramsWithCleanFilters.filter((param: any) => {
       // simple param, just check if it has been used
       if ((param.filters && !param.filters.length) || !param.filters) {
-        const usedParam = inputParams.find((inputParam: any) => inputParam.type === param.type);
+        const usedParam = inputParams.find(
+          (inputParam: any) => inputParam.type === param.type,
+        );
         return !usedParam;
       } else if (param.filters && param.filters.length) {
         return true;
@@ -270,8 +304,8 @@ export default class ExternalServiceRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.ok', 'ok'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -289,8 +323,16 @@ export default class ExternalServiceRouterForm extends React.Component<
     const availableParams = this.availableParams();
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         {showExternalServices ? (
           <div>
             <p>
@@ -315,7 +357,10 @@ export default class ExternalServiceRouterForm extends React.Component<
             </p>
             <TembaSelect
               key="select_external_service_call"
-              name={i18n.t('forms.external_service_call', 'External Service Call')}
+              name={i18n.t(
+                'forms.external_service_call',
+                'External Service Call',
+              )}
               placeholder="Select the call from external service to do"
               options={this.state.externalService.value.actions}
               nameKey="verboseName"
@@ -338,7 +383,10 @@ export default class ExternalServiceRouterForm extends React.Component<
         ) : (
           <></>
         )}
-        {createResultNameInput(this.state.resultName, this.handleResultNameUpdate)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleResultNameUpdate,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

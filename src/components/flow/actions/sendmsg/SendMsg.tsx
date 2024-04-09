@@ -5,7 +5,10 @@ import * as React from 'react';
 import styles from './SendMsg.module.scss';
 import i18n from 'config/i18n';
 
-export const PLACEHOLDER = i18n.t('actions.send_msg.placeholder', 'Send a message to the contact');
+export const PLACEHOLDER = i18n.t(
+  'actions.send_msg.placeholder',
+  'Send a message to the contact',
+);
 
 const SendMsgComp: React.SFC<SendMsg> = (action: SendMsg): JSX.Element => {
   if (action.text) {
@@ -16,7 +19,13 @@ const SendMsgComp: React.SFC<SendMsg> = (action: SendMsg): JSX.Element => {
       replies = (
         <div className={styles.quick_replies}>
           {quickReplies.map(reply => (
-            <Pill maxLength={20} advanced={true} key={action.uuid + reply} text={reply} disabled />
+            <Pill
+              maxLength={20}
+              advanced={true}
+              key={action.uuid + reply}
+              text={reply}
+              disabled
+            />
           ))}
         </div>
       );
@@ -36,7 +45,9 @@ const SendMsgComp: React.SFC<SendMsg> = (action: SendMsg): JSX.Element => {
           {action.templating && action.templating.template ? (
             <div className={`${styles.whatsapp} fe-whatsapp`} />
           ) : null}
-          {action.topic ? <div className={`${styles.facebook} fe-facebook`} /> : null}
+          {action.topic ? (
+            <div className={`${styles.facebook} fe-facebook`} />
+          ) : null}
         </div>
         <div className={replies ? styles.summary : ''}>{replies}</div>
       </>

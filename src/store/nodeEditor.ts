@@ -9,7 +9,7 @@ import { LocalizedObject } from 'services/Localization';
 import ActionTypes, {
   UpdateNodeEditorSettings,
   UpdateTypeConfigAction,
-  UpdateUserAddingActionAction
+  UpdateUserAddingActionAction,
 } from 'store/actionTypes';
 import Constants from 'store/constants';
 import { Asset, RenderNode } from 'store/flowContext';
@@ -59,7 +59,7 @@ export interface SelectOptionArrayEntry extends FormEntry {
 export const mergeForm = (
   form: FormState,
   toMerge: Partial<FormState>,
-  toRemove: any[] = []
+  toRemove: any[] = [],
 ): FormState => {
   // TODO: deal with explicit array setting
   let updated = form || {};
@@ -69,7 +69,8 @@ export const mergeForm = (
     if (Array.isArray(entry)) {
       for (const item of entry) {
         // we support objects with uuids or FormEntry's with uuids
-        const isEntry = item.hasOwnProperty('value') && typeof item.value === 'object';
+        const isEntry =
+          item.hasOwnProperty('value') && typeof item.value === 'object';
 
         if ((isEntry && item.value.uuid) || item.uuid) {
           const existingIdx = (form as any)[key].findIndex((existing: any) => {
@@ -83,12 +84,12 @@ export const mergeForm = (
           if (existingIdx > -1) {
             // we found a match, merge us in
             updated = mutate(updated, {
-              [key]: { $merge: { [existingIdx]: item } }
+              [key]: { $merge: { [existingIdx]: item } },
             }) as FormState;
           } else {
             // couldn't find it, lets push it on
             updated = mutate(updated, {
-              [key]: { $push: [item] }
+              [key]: { $push: [item] },
             }) as FormState;
           }
         }
@@ -100,13 +101,16 @@ export const mergeForm = (
   }
 
   // removals can be items in an array
-  for (const remove of toRemove.filter((item: any) => typeof item === 'object')) {
+  for (const remove of toRemove.filter(
+    (item: any) => typeof item === 'object',
+  )) {
     for (const key of Object.keys(remove)) {
       const entry: any = remove[key];
       if (Array.isArray(entry)) {
         for (const item of entry) {
           // we support objects with uuids or FormEntry's with uuids
-          const isEntry = item.hasOwnProperty('value') && typeof item.value === 'object';
+          const isEntry =
+            item.hasOwnProperty('value') && typeof item.value === 'object';
           if ((isEntry && item.value.uuid) || item.uuid) {
             updated = mutate(updated, {
               [key]: (items: any) =>
@@ -116,7 +120,7 @@ export const mergeForm = (
                   } else {
                     return existing.uuid !== item.uuid;
                   }
-                })
+                }),
             });
           }
         }
@@ -127,7 +131,7 @@ export const mergeForm = (
   const removeKeys = toRemove.filter((item: any) => typeof item === 'string');
   updated = mutate(updated, {
     $merge: toMerge,
-    $unset: removeKeys
+    $unset: removeKeys,
   }) as FormState;
 
   let valid = true;
@@ -173,37 +177,40 @@ export interface NodeEditor {
 export const initialState: NodeEditor = {
   typeConfig: null,
   userAddingAction: false,
-  settings: null
+  settings: null,
 };
 
 // Action Creators
 export const updateTypeConfig = (typeConfig: Type): UpdateTypeConfigAction => ({
   type: Constants.UPDATE_TYPE_CONFIG,
   payload: {
-    typeConfig
-  }
+    typeConfig,
+  },
 });
 
 export const updateNodeEditorSettings = (
-  settings: NodeEditorSettings
+  settings: NodeEditorSettings,
 ): UpdateNodeEditorSettings => ({
   type: Constants.UPDATE_NODE_EDITOR_SETTINGS,
   payload: {
-    settings
-  }
+    settings,
+  },
 });
 
 export const updateUserAddingAction = (
-  userAddingAction: boolean
+  userAddingAction: boolean,
 ): UpdateUserAddingActionAction => ({
   type: Constants.UPDATE_USER_ADDING_ACTION,
   payload: {
-    userAddingAction
-  }
+    userAddingAction,
+  },
 });
 
 // Reducers
-export const typeConfig = (state: Type | null = initialState.typeConfig, action: ActionTypes) => {
+export const typeConfig = (
+  state: Type | null = initialState.typeConfig,
+  action: ActionTypes,
+) => {
   switch (action.type) {
     case Constants.UPDATE_TYPE_CONFIG:
       return action.payload!.typeConfig;
@@ -214,7 +221,7 @@ export const typeConfig = (state: Type | null = initialState.typeConfig, action:
 
 export const userAddingAction = (
   state: boolean = initialState.userAddingAction,
-  action: ActionTypes
+  action: ActionTypes,
 ) => {
   switch (action.type) {
     case Constants.UPDATE_USER_ADDING_ACTION:
@@ -226,7 +233,7 @@ export const userAddingAction = (
 
 export const settings = (
   state: NodeEditorSettings | null = initialState.settings,
-  action: ActionTypes
+  action: ActionTypes,
 ) => {
   switch (action.type) {
     case Constants.UPDATE_NODE_EDITOR_SETTINGS:
@@ -240,5 +247,5 @@ export const settings = (
 export default combineReducers({
   typeConfig,
   userAddingAction,
-  settings
+  settings,
 });

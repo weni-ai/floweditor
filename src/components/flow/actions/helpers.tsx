@@ -1,7 +1,18 @@
-import { Contact, Endpoints, Group, RecipientsAction, FlowIssue, FlowIssueType } from 'flowTypes';
+import {
+  Contact,
+  Endpoints,
+  Group,
+  RecipientsAction,
+  FlowIssue,
+  FlowIssueType,
+} from 'flowTypes';
 import * as React from 'react';
 import { Asset, AssetType } from 'store/flowContext';
-import { FormEntry, NodeEditorSettings, ValidationFailure } from 'store/nodeEditor';
+import {
+  FormEntry,
+  NodeEditorSettings,
+  ValidationFailure,
+} from 'store/nodeEditor';
 import { createUUID } from 'utils';
 import { Trans } from 'react-i18next';
 import shared from 'components/shared.module.scss';
@@ -21,10 +32,10 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
     componentWrapAttrs: {
       style: {
         all: '',
-        display: 'inline-block'
-      }
-    }
-  }
+        display: 'inline-block',
+      },
+    },
+  },
 });
 
 export const renderIssues = (issueProps: IssueProps): JSX.Element => {
@@ -39,11 +50,20 @@ export const renderIssues = (issueProps: IssueProps): JSX.Element => {
         const key = issue.node_uuid + issue.action_uuid + num;
         return (
           <div
-            style={{ margin: '6px 0px', display: 'flex', fontSize: '14px', color: 'tomato' }}
+            style={{
+              margin: '6px 0px',
+              display: 'flex',
+              fontSize: '14px',
+              color: 'tomato',
+            }}
             key={key}
           >
             <div
-              style={{ marginRight: '8px', marginTop: '-2px', fontSize: '18px' }}
+              style={{
+                marginRight: '8px',
+                marginTop: '-2px',
+                fontSize: '18px',
+              }}
               className={`fe-warning`}
             />
             <div>{renderIssue(issue, helpArticles)}</div>
@@ -56,7 +76,7 @@ export const renderIssues = (issueProps: IssueProps): JSX.Element => {
 
 export const renderIssue = (
   issue: FlowIssue,
-  helpArticles: { [key: string]: string } = {}
+  helpArticles: { [key: string]: string } = {},
 ): JSX.Element => {
   // worst case, defer to the default description
   let message: JSX.Element = <>{issue.description}</>;
@@ -67,7 +87,7 @@ export const renderIssue = (
         i18nKey="issues.missing_dependency"
         values={{
           name: issue.dependency.name || issue.dependency.key,
-          type: issue.dependency.type
+          type: issue.dependency.type,
         }}
       >
         Cannot find a [[type]] for <span className="emphasize">[[name]]</span>
@@ -85,7 +105,9 @@ export const renderIssue = (
 
   if (issue.type === FlowIssueType.LEGACY_EXTRA) {
     message = (
-      <Trans i18nKey="issues.legacy_extra">Expressions should not reference @legacy_extra</Trans>
+      <Trans i18nKey="issues.legacy_extra">
+        Expressions should not reference @legacy_extra
+      </Trans>
     );
   }
 
@@ -106,8 +128,14 @@ export const renderIssue = (
   return message;
 };
 
-export const getActionUUID = (nodeSettings: NodeEditorSettings, currentType: string): string => {
-  if (nodeSettings.originalAction && nodeSettings.originalAction.type === currentType) {
+export const getActionUUID = (
+  nodeSettings: NodeEditorSettings,
+  currentType: string,
+): string => {
+  if (
+    nodeSettings.originalAction &&
+    nodeSettings.originalAction.type === currentType
+  ) {
     return nodeSettings.originalAction.uuid;
   }
   return createUUID();
@@ -118,20 +146,25 @@ export const getRecipients = (action: RecipientsAction): Asset[] => {
     return {
       id: group.uuid,
       name: group.name,
-      type: AssetType.Group
+      type: AssetType.Group,
     };
   });
 
   selected = selected.concat(
     (action.contacts || []).map((contact: Contact) => {
-      return { id: contact.uuid, name: contact.name, type: AssetType.Contact, missing: false };
-    })
+      return {
+        id: contact.uuid,
+        name: contact.name,
+        type: AssetType.Contact,
+        missing: false,
+      };
+    }),
   );
 
   selected = selected.concat(
     (action.legacy_vars || []).map((expression: string) => {
       return { name: expression, value: expression, expression: true };
-    })
+    }),
   );
 
   return selected;
@@ -140,7 +173,7 @@ export const getRecipients = (action: RecipientsAction): Asset[] => {
 export const renderAssetList = (
   assets: Asset[],
   max: number = 10,
-  endpoints: Endpoints
+  endpoints: Endpoints,
 ): JSX.Element[] => {
   // show our missing ones first
   return assets.reduce((elements, asset, idx) => {
@@ -174,7 +207,9 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
             className={styles.icon}
           />
 
-          <span className={styles.link + ' ' + styles.truncated}>{asset.name}</span>
+          <span className={styles.link + ' ' + styles.truncated}>
+            {asset.name}
+          </span>
         </>
       );
       break;
@@ -188,7 +223,9 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
             className={styles.icon}
           />
 
-          <span className={styles.link + ' ' + styles.truncated}>{asset.name}</span>
+          <span className={styles.link + ' ' + styles.truncated}>
+            {asset.name}
+          </span>
         </>
       );
       break;
@@ -248,7 +285,10 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
   }
 
   return (
-    <div className={`${shared.node_asset}`} key={asset.id || (asset as any).value}>
+    <div
+      className={`${shared.node_asset}`}
+      key={asset.id || (asset as any).value}
+    >
       {assetBody}
     </div>
   );
@@ -263,7 +303,9 @@ export const hasErrors = (entry: FormEntry): boolean => {
 };
 
 export const getAllErrorMessages = (entry: FormEntry): string[] => {
-  const errors = getAllErrors(entry).map((failure: ValidationFailure) => failure.message);
+  const errors = getAllErrors(entry).map(
+    (failure: ValidationFailure) => failure.message,
+  );
   return errors;
 };
 
@@ -275,7 +317,10 @@ export const getExpressions = (assets: any[]): any[] => {
     });
 };
 
-export const getRecipientsByAsset = (assets: Asset[], type: AssetType): any[] => {
+export const getRecipientsByAsset = (
+  assets: Asset[],
+  type: AssetType,
+): any[] => {
   return assets
     .filter((asset: Asset) => asset.type === type)
     .map((asset: Asset) => {

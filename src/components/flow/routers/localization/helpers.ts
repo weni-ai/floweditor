@@ -7,15 +7,21 @@ import { NodeEditorSettings } from 'store/nodeEditor';
 
 export enum LocalizedType {
   Category,
-  Case
+  Case,
 }
 
-export const getOriginalCase = (nodeSettings: NodeEditorSettings, uuid: string) => {
+export const getOriginalCase = (
+  nodeSettings: NodeEditorSettings,
+  uuid: string,
+) => {
   const cases = (nodeSettings.originalNode.node.router as SwitchRouter).cases;
   return cases.find((item: any) => item.uuid === uuid);
 };
 
-export const getOriginalCategory = (nodeSettings: NodeEditorSettings, uuid: string) => {
+export const getOriginalCategory = (
+  nodeSettings: NodeEditorSettings,
+  uuid: string,
+) => {
   const items = nodeSettings.originalNode.node.router.categories;
   return items.find((item: any) => item.uuid === uuid);
 };
@@ -26,17 +32,18 @@ export const hasLocalizableCases = (renderNode: RenderNode) => {
     Types.wait_for_response,
     Types.split_by_expression,
     Types.smart_wait_for_response,
-    Types.automatic_classify
+    Types.automatic_classify,
   ].includes(type);
 };
 
 export const getLocalizedObjects = (
   nodeSettings: NodeEditorSettings,
-  localizedType: LocalizedType
+  localizedType: LocalizedType,
 ): Category[] | Case[] => {
   const filtered: any = [];
 
-  let items: Category[] | Case[] = nodeSettings.originalNode.node.router.categories;
+  let items: Category[] | Case[] =
+    nodeSettings.originalNode.node.router.categories;
   if (localizedType === LocalizedType.Case) {
     if (hasLocalizableCases(nodeSettings.originalNode)) {
       items = (nodeSettings.originalNode.node.router as SwitchRouter).cases;
@@ -47,7 +54,8 @@ export const getLocalizedObjects = (
 
   for (const original of items) {
     const [localized] = nodeSettings.localizations.filter(
-      (localizedObject: LocalizedObject) => localizedObject.getObject().uuid === original.uuid
+      (localizedObject: LocalizedObject) =>
+        localizedObject.getObject().uuid === original.uuid,
     );
 
     if (localized && localized.isLocalized()) {

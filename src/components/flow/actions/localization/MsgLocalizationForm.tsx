@@ -10,7 +10,12 @@ import { fakePropType } from 'config/ConfigProvider';
 import { SendMsg, MsgTemplating } from 'flowTypes';
 import * as React from 'react';
 import mutate from 'immutability-helper';
-import { FormState, mergeForm, StringArrayEntry, StringEntry } from 'store/nodeEditor';
+import {
+  FormState,
+  mergeForm,
+  StringArrayEntry,
+  StringEntry,
+} from 'store/nodeEditor';
 import { MaxOfTenItems, validate } from 'store/validators';
 
 import { initializeLocalizedForm } from './helpers';
@@ -38,12 +43,12 @@ export default class MsgLocalizationForm extends React.Component<
     super(props);
     this.state = initializeLocalizedForm(this.props.nodeSettings);
     bindCallbacks(this, {
-      include: [/^handle/, /^on/]
+      include: [/^handle/, /^on/],
     });
   }
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   public handleMessageUpdate(text: string): boolean {
@@ -67,14 +72,18 @@ export default class MsgLocalizationForm extends React.Component<
     const updates: Partial<MsgLocalizationFormState> = {};
 
     if (keys.hasOwnProperty('text')) {
-      updates.message = validate(i18n.t('forms.message', 'Message'), keys.text!, []);
+      updates.message = validate(
+        i18n.t('forms.message', 'Message'),
+        keys.text!,
+        [],
+      );
     }
 
     if (keys.hasOwnProperty('quickReplies')) {
       updates.quickReplies = validate(
         i18n.t('forms.quick_replies', 'Quick Replies'),
         keys.quickReplies!,
-        [MaxOfTenItems]
+        [MaxOfTenItems],
       );
     }
 
@@ -89,7 +98,13 @@ export default class MsgLocalizationForm extends React.Component<
   }
 
   private handleSave(): void {
-    const { message: text, quickReplies, audio, templateVariables, attachments } = this.state;
+    const {
+      message: text,
+      quickReplies,
+      audio,
+      templateVariables,
+      attachments,
+    } = this.state;
 
     // make sure we are valid for saving, only quick replies can be invalid
     const typeConfig = determineTypeConfig(this.props.nodeSettings);
@@ -106,7 +121,9 @@ export default class MsgLocalizationForm extends React.Component<
 
       translations.attachments = attachments
         .filter((attachment: Attachment) => attachment.url.trim().length > 0)
-        .map((attachment: Attachment) => `${attachment.type}:${attachment.url}`);
+        .map(
+          (attachment: Attachment) => `${attachment.type}:${attachment.url}`,
+        );
 
       if (quickReplies.value && quickReplies.value.length > 0) {
         translations.quick_replies = quickReplies.value;
@@ -119,18 +136,22 @@ export default class MsgLocalizationForm extends React.Component<
       const localizations = [
         {
           uuid: this.props.nodeSettings.originalAction!.uuid,
-          translations
-        }
+          translations,
+        },
       ];
 
       // if we have template variables, they show up on their own key
       const hasTemplateVariables = templateVariables.find(
-        (entry: StringEntry) => entry.value.length > 0
+        (entry: StringEntry) => entry.value.length > 0,
       );
       if (hasTemplateVariables) {
         localizations.push({
           uuid: this.state.templating.uuid,
-          translations: { variables: templateVariables.map((entry: StringEntry) => entry.value) }
+          translations: {
+            variables: templateVariables.map(
+              (entry: StringEntry) => entry.value,
+            ),
+          },
         });
       }
 
@@ -146,8 +167,8 @@ export default class MsgLocalizationForm extends React.Component<
       primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -155,11 +176,14 @@ export default class MsgLocalizationForm extends React.Component<
     this.handleUpdate({ quickReplies });
   }
 
-  private handleTemplateVariableChanged(updatedText: string, num: number): void {
+  private handleTemplateVariableChanged(
+    updatedText: string,
+    num: number,
+  ): void {
     const entry = validate(`Variable ${num + 1}`, updatedText, []);
 
     const templateVariables = mutate(this.state.templateVariables, {
-      $merge: { [num]: entry }
+      $merge: { [num]: entry },
     }) as StringEntry[];
 
     this.setState({ templateVariables });
@@ -167,7 +191,9 @@ export default class MsgLocalizationForm extends React.Component<
 
   private handleAttachmentUploaded(response: AxiosResponse) {
     const attachments: any = mutate(this.state.attachments, {
-      $push: [{ type: response.data.type, url: response.data.url, uploaded: true }]
+      $push: [
+        { type: response.data.type, url: response.data.url, uploaded: true },
+      ],
     });
     this.setState({ attachments });
   }
@@ -176,13 +202,13 @@ export default class MsgLocalizationForm extends React.Component<
     let attachments: any = this.state.attachments;
     if (index === -1) {
       attachments = mutate(attachments, {
-        $push: [{ type, url }]
+        $push: [{ type, url }],
       });
     } else {
       attachments = mutate(attachments, {
         [index]: {
-          $set: { type, url }
-        }
+          $set: { type, url },
+        },
       });
     }
 
@@ -191,7 +217,7 @@ export default class MsgLocalizationForm extends React.Component<
 
   private handleAttachmentRemoved(index: number) {
     const attachments: any = mutate(this.state.attachments, {
-      $splice: [[index, 1]]
+      $splice: [[index, 1]],
     });
     this.setState({ attachments });
   }
@@ -205,7 +231,7 @@ export default class MsgLocalizationForm extends React.Component<
       typeConfig.localizeableKeys!.indexOf('templating.variables') > -1
     ) {
       const hasLocalizedValue = !!this.state.templateVariables.find(
-        (entry: StringEntry) => entry.value.length > 0
+        (entry: StringEntry) => entry.value.length > 0,
       );
 
       const variable = i18n.t('forms.variable', 'Variable');
@@ -217,33 +243,44 @@ export default class MsgLocalizationForm extends React.Component<
             <p>
               {i18n.t(
                 'forms.whatsapp_warning',
-                'Sending messages over a WhatsApp channel requires that a template be used if you have not received a message from a contact in the last 24 hours. Setting a template to use over WhatsApp is especially important for the first message in your flow.'
+                'Sending messages over a WhatsApp channel requires that a template be used if you have not received a message from a contact in the last 24 hours. Setting a template to use over WhatsApp is especially important for the first message in your flow.',
               )}
             </p>
-            {this.state.templating && this.state.templating.variables.length > 0 ? (
+            {this.state.templating &&
+            this.state.templating.variables.length > 0 ? (
               <>
-                {range(0, this.state.templating.variables.length).map((num: number) => {
-                  const entry = this.state.templateVariables[num] || { value: '' };
-                  return (
-                    <div className={styles.variable} key={'tr_arg_' + num}>
-                      <TextInputElement
-                        name={`${i18n.t('forms.variable', 'Variable')} ${num + 1}`}
-                        showLabel={false}
-                        placeholder={`${this.props.language.name} ${variable} ${num + 1}`}
-                        onChange={(updatedText: string) => {
-                          this.handleTemplateVariableChanged(updatedText, num);
-                        }}
-                        entry={entry}
-                        autocomplete={true}
-                      />
-                    </div>
-                  );
-                })}
+                {range(0, this.state.templating.variables.length).map(
+                  (num: number) => {
+                    const entry = this.state.templateVariables[num] || {
+                      value: '',
+                    };
+                    return (
+                      <div className={styles.variable} key={'tr_arg_' + num}>
+                        <TextInputElement
+                          name={`${i18n.t('forms.variable', 'Variable')} ${num +
+                            1}`}
+                          showLabel={false}
+                          placeholder={`${
+                            this.props.language.name
+                          } ${variable} ${num + 1}`}
+                          onChange={(updatedText: string) => {
+                            this.handleTemplateVariableChanged(
+                              updatedText,
+                              num,
+                            );
+                          }}
+                          entry={entry}
+                          autocomplete={true}
+                        />
+                      </div>
+                    );
+                  },
+                )}
               </>
             ) : null}
           </>
         ),
-        checked: hasLocalizedValue
+        checked: hasLocalizedValue,
       });
     }
 
@@ -255,9 +292,9 @@ export default class MsgLocalizationForm extends React.Component<
           this.state.attachments,
           this.handleAttachmentUploaded,
           this.handleAttachmentChanged,
-          this.handleAttachmentRemoved
+          this.handleAttachmentRemoved,
         ),
-        checked: this.state.attachments.length > 0
+        checked: this.state.attachments.length > 0,
       });
     }
 
@@ -281,7 +318,7 @@ export default class MsgLocalizationForm extends React.Component<
             />
           </>
         ),
-        checked: this.state.quickReplies.value.length > 0
+        checked: this.state.quickReplies.value.length > 0,
       });
     }
 

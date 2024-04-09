@@ -3,7 +3,7 @@ import {
   createCaseProps,
   createRenderNode,
   hasCases,
-  resolveRoutes
+  resolveRoutes,
 } from 'components/flow/routers/helpers';
 import { ResponseRouterFormState } from 'components/flow/routers/response/ResponseRouterForm';
 import { DEFAULT_OPERAND } from 'components/nodeeditor/constants';
@@ -13,7 +13,9 @@ import { Router, RouterTypes, SwitchRouter, Wait, WaitTypes } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
 
-export const nodeToState = (settings: NodeEditorSettings): ResponseRouterFormState => {
+export const nodeToState = (
+  settings: NodeEditorSettings,
+): ResponseRouterFormState => {
   let initialCases: CaseProps[] = [];
 
   // TODO: work out an incremental result name
@@ -21,7 +23,8 @@ export const nodeToState = (settings: NodeEditorSettings): ResponseRouterFormSta
   let timeout = 0;
 
   if (
-    (settings.originalNode && getType(settings.originalNode) === Types.wait_for_response) ||
+    (settings.originalNode &&
+      getType(settings.originalNode) === Types.wait_for_response) ||
     getType(settings.originalNode) === Types.smart_wait_for_response
   ) {
     const router = settings.originalNode.node.router as SwitchRouter;
@@ -33,7 +36,10 @@ export const nodeToState = (settings: NodeEditorSettings): ResponseRouterFormSta
       resultName = { value: router.result_name || '' };
     }
 
-    if (settings.originalNode.node.router.wait && settings.originalNode.node.router.wait.timeout) {
+    if (
+      settings.originalNode.node.router.wait &&
+      settings.originalNode.node.router.wait.timeout
+    ) {
       timeout = settings.originalNode.node.router.wait.timeout.seconds || 0;
     }
   }
@@ -42,20 +48,23 @@ export const nodeToState = (settings: NodeEditorSettings): ResponseRouterFormSta
     cases: initialCases,
     resultName,
     timeout,
-    valid: true
+    valid: true,
   };
 };
 
 export const stateToNode = (
   settings: NodeEditorSettings,
   typeConfig: Type,
-  state: ResponseRouterFormState
+  state: ResponseRouterFormState,
 ): RenderNode => {
-  const { cases, exits, defaultCategory, timeoutCategory, caseConfig, categories } = resolveRoutes(
-    state.cases,
-    state.timeout > 0,
-    settings.originalNode.node
-  );
+  const {
+    cases,
+    exits,
+    defaultCategory,
+    timeoutCategory,
+    caseConfig,
+    categories,
+  } = resolveRoutes(state.cases, state.timeout > 0, settings.originalNode.node);
 
   const optionalRouter: Pick<Router, 'result_name'> = {};
   if (state.resultName.value) {
@@ -66,19 +75,21 @@ export const stateToNode = (
   if (state.timeout > 0) {
     wait.timeout = {
       seconds: state.timeout,
-      category_uuid: timeoutCategory
+      category_uuid: timeoutCategory,
     };
   }
 
   const router: SwitchRouter = {
     type:
-      typeConfig.type === Types.smart_wait_for_response ? RouterTypes.smart : RouterTypes.switch,
+      typeConfig.type === Types.smart_wait_for_response
+        ? RouterTypes.smart
+        : RouterTypes.switch,
     default_category_uuid: defaultCategory,
     cases,
     categories,
     operand: DEFAULT_OPERAND,
     wait,
-    ...optionalRouter
+    ...optionalRouter,
   };
 
   const newRenderNode = createRenderNode(
@@ -87,7 +98,7 @@ export const stateToNode = (
     exits,
     typeConfig.type,
     [],
-    { cases: caseConfig }
+    { cases: caseConfig },
   );
 
   return newRenderNode;

@@ -1,12 +1,16 @@
 import axios, { AxiosResponse } from 'axios';
-import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
+import SelectElement, {
+  SelectOption,
+} from 'components/form/select/SelectElement';
 import i18n from 'config/i18n';
 import { getCookie } from 'external';
 import React from 'react';
 import { TembaSelectStyle } from 'temba/TembaSelect';
 import { createUUID } from 'utils';
 import styles from './attachments.module.scss';
-import TextInputElement, { TextInputSizes } from 'components/form/textinput/TextInputElement';
+import TextInputElement, {
+  TextInputSizes,
+} from 'components/form/textinput/TextInputElement';
 
 // @ts-ignore
 import { unnnicIcon } from '@weni/unnnic-system';
@@ -26,11 +30,14 @@ const TYPE_OPTIONS: SelectOption[] = [
   { value: 'image', name: i18n.t('forms.image_url', 'Image URL') },
   { value: 'audio', name: i18n.t('forms.audio_url', 'Audio URL') },
   { value: 'video', name: i18n.t('forms.video_url', 'Video URL') },
-  { value: 'application', name: i18n.t('forms.pdf_url', 'PDF Document URL') }
+  { value: 'application', name: i18n.t('forms.pdf_url', 'PDF Document URL') },
 ];
 
 const NEW_TYPE_OPTIONS = TYPE_OPTIONS.concat([
-  { value: 'upload', name: i18n.t('forms.upload_attachment', 'Upload Attachment') }
+  {
+    value: 'upload',
+    name: i18n.t('forms.upload_attachment', 'Upload Attachment'),
+  },
 ]);
 
 // we would prefer that attachmetns be entirely stateless, but we have this
@@ -45,7 +52,7 @@ const getAttachmentTypeOption = (type: string): SelectOption => {
 export const handleUploadFile = (
   endpoint: string,
   files: FileList,
-  onSuccess: (response: AxiosResponse) => void
+  onSuccess: (response: AxiosResponse) => void,
 ): void => {
   // if we have a csrf in our cookie, pass it along as a header
   const csrf = getCookie('csrftoken');
@@ -67,7 +74,9 @@ export const handleUploadFile = (
 const renderWithLabel = (index: number, children: JSX.Element): JSX.Element => {
   return (
     <div key={index} className={styles.url_attachment_container}>
-      <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+      <div
+        className={`${styles.label} u font secondary body-md color-neutral-cloudy`}
+      >
         {i18n.t('forms.file', 'File')} {index + 1}
       </div>
       {children}
@@ -80,15 +89,20 @@ export const renderAttachments = (
   attachments: Attachment[],
   onUploaded: (response: AxiosResponse) => void,
   onAttachmentChanged: (index: number, value: string, url: string) => void,
-  onAttachmentRemoved: (index: number) => void
+  onAttachmentRemoved: (index: number) => void,
 ): JSX.Element => {
   const renderedAttachments = attachments.map((attachment, index: number) =>
     renderWithLabel(
       index,
       attachment.uploaded
         ? renderUpload(index, attachment, onAttachmentRemoved)
-        : renderAttachment(index, attachment, onAttachmentChanged, onAttachmentRemoved)
-    )
+        : renderAttachment(
+            index,
+            attachment,
+            onAttachmentChanged,
+            onAttachmentRemoved,
+          ),
+    ),
   );
 
   const emptyOption =
@@ -100,8 +114,8 @@ export const renderAttachments = (
             { url: '', type: '' },
 
             onAttachmentChanged,
-            onAttachmentRemoved
-          )
+            onAttachmentRemoved,
+          ),
         )
       : null;
   return (
@@ -110,14 +124,14 @@ export const renderAttachments = (
         {i18n.t(
           'forms.send_msg_summary',
           'Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.',
-          { count: MAX_ATTACHMENTS }
+          { count: MAX_ATTACHMENTS },
         )}
       </div>
       {renderedAttachments}
       {emptyOption}
       <input
         style={{
-          display: 'none'
+          display: 'none',
         }}
         ref={ele => {
           filePicker = ele;
@@ -132,7 +146,7 @@ export const renderAttachments = (
 export const renderUpload = (
   index: number,
   attachment: Attachment,
-  onAttachmentRemoved: (index: number) => void
+  onAttachmentRemoved: (index: number) => void,
 ): JSX.Element => {
   return (
     <div
@@ -145,7 +159,7 @@ export const renderUpload = (
           name={i18n.t('forms.type', 'Type')}
           style={TembaSelectStyle.small}
           entry={{
-            value: { name: attachment.type }
+            value: { name: attachment.type },
           }}
           options={TYPE_OPTIONS}
           disabled={true}
@@ -186,7 +200,7 @@ export const renderAttachment = (
   index: number,
   attachment: Attachment,
   onAttachmentChanged: (index: number, type: string, url: string) => void,
-  onAttachmentRemoved: (index: number) => void
+  onAttachmentRemoved: (index: number) => void,
 ): JSX.Element => {
   return (
     <div
@@ -198,9 +212,12 @@ export const renderAttachment = (
           key={'attachment_type_' + index}
           style={TembaSelectStyle.small}
           name={i18n.t('forms.type_options', 'Type Options')}
-          placeholder={i18n.t('forms.select_the_file_type', 'Select the file type')}
+          placeholder={i18n.t(
+            'forms.select_the_file_type',
+            'Select the file type',
+          )}
           entry={{
-            value: index > -1 ? getAttachmentTypeOption(attachment.type) : null
+            value: index > -1 ? getAttachmentTypeOption(attachment.type) : null,
           }}
           onChange={(option: any) => {
             if (option.value === 'upload') {
@@ -208,7 +225,11 @@ export const renderAttachment = (
                 filePicker.click();
               }, 0);
             } else {
-              onAttachmentChanged(index, option.value, index === -1 ? '' : attachment.url);
+              onAttachmentChanged(
+                index,
+                option.value,
+                index === -1 ? '' : attachment.url,
+              );
             }
           }}
           options={index > -1 ? TYPE_OPTIONS : NEW_TYPE_OPTIONS}

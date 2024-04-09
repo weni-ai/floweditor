@@ -21,14 +21,14 @@ routerNode.ui = {
     operand: {
       id: 'name',
       name: 'Name',
-      type: AssetType.ContactProperty
-    }
-  }
+      type: AssetType.ContactProperty,
+    },
+  },
 };
 
 const { setup } = composeComponentTestUtils<RouterFormProps>(
   FieldRouterForm,
-  getRouterFormProps(routerNode)
+  getRouterFormProps(routerNode),
 );
 
 describe(FieldRouterForm.name, () => {
@@ -41,9 +41,9 @@ describe(FieldRouterForm.name, () => {
     const { wrapper } = setup(true, {
       nodeSettings: {
         $set: {
-          originalNode: routerNode
-        }
-      }
+          originalNode: routerNode,
+        },
+      },
     });
 
     expect(wrapper).toMatchSnapshot();
@@ -52,7 +52,7 @@ describe(FieldRouterForm.name, () => {
   describe('updates', () => {
     it('should save changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateRouter: jest.fn(), onClose: jest.fn() }
+        $merge: { updateRouter: jest.fn(), onClose: jest.fn() },
       });
 
       instance.handleUpdateResultName('Favorite Color');
@@ -60,18 +60,18 @@ describe(FieldRouterForm.name, () => {
         {
           kase: { type: Operators.has_any_word, arguments: ['red'] },
           categoryName: 'Red',
-          valid: true
+          valid: true,
         },
         {
           kase: { type: Operators.has_any_word, arguments: ['maroon'] },
           categoryName: 'Red',
-          valid: true
+          valid: true,
         },
         {
           kase: { type: Operators.has_any_word, arguments: ['green'] },
           categoryName: 'Green',
-          valid: true
-        }
+          valid: true,
+        },
       ] as CaseProps[]);
 
       expect(instance.state).toMatchSnapshot();
@@ -84,15 +84,15 @@ describe(FieldRouterForm.name, () => {
 
     it('should cancel', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateRouter: jest.fn(), onClose: jest.fn() }
+        $merge: { updateRouter: jest.fn(), onClose: jest.fn() },
       });
 
       instance.handleFieldChanged([
         {
           id: 'viber',
           name: 'Viber',
-          type: AssetType.URN
-        }
+          type: AssetType.URN,
+        },
       ]);
       instance.getButtons().secondary.onClick();
       expect(props.onClose).toHaveBeenCalled();
@@ -101,20 +101,22 @@ describe(FieldRouterForm.name, () => {
 
     it('should build expression from a selected field', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateRouter: jest.fn(), onClose: jest.fn() }
+        $merge: { updateRouter: jest.fn(), onClose: jest.fn() },
       });
 
       instance.handleFieldChanged([
         {
           key: 'my_field',
-          label: 'My Field'
-        }
+          label: 'My Field',
+        },
       ]);
 
       instance.handleSave();
 
       const node = getUpdatedNode(instance.props);
-      expect(getSmartOrSwitchRouter(node.node).operand).toEqual('@fields.my_field');
+      expect(getSmartOrSwitchRouter(node.node).operand).toEqual(
+        '@fields.my_field',
+      );
 
       expect(props.updateRouter).toHaveBeenCalled();
       expect(props.updateRouter).toMatchCallSnapshot();

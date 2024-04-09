@@ -11,5 +11,5 @@ export default interface AppState {
 export const initialState: AppState = {
   flowContext,
   editorState,
-  nodeEditor
+  nodeEditor,
 };

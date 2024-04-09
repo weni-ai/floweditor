@@ -5,7 +5,7 @@ import styles from './SendWhatsAppMsg.module.scss';
 import Pill from '../../../../pill/Pill';
 
 const SendWhatsAppMsgComp: React.FunctionComponent<SendWhatsAppMsg> = (
-  action: SendWhatsAppMsg
+  action: SendWhatsAppMsg,
 ): JSX.Element => {
   let replies = null;
   let items = null;
@@ -15,7 +15,13 @@ const SendWhatsAppMsgComp: React.FunctionComponent<SendWhatsAppMsg> = (
     replies = (
       <div className={styles.quick_replies}>
         {quickReplies.map(reply => (
-          <Pill maxLength={20} advanced={true} key={action.uuid + reply} text={reply} disabled />
+          <Pill
+            maxLength={20}
+            advanced={true}
+            key={action.uuid + reply}
+            text={reply}
+            disabled
+          />
         ))}
       </div>
     );
@@ -48,7 +54,9 @@ const SendWhatsAppMsgComp: React.FunctionComponent<SendWhatsAppMsg> = (
             </div>
           ))}
 
-        {action.attachment ? <div className={`${styles.attachment} fe-paperclip`} /> : null}
+        {action.attachment ? (
+          <div className={`${styles.attachment} fe-paperclip`} />
+        ) : null}
       </div>
 
       <div className={replies ? styles.summary : ''}>{replies}</div>

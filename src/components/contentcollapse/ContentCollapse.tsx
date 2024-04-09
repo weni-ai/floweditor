@@ -26,7 +26,7 @@ export default class ContentCollapse extends React.Component<
     super(props);
 
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
 
@@ -36,17 +36,25 @@ export default class ContentCollapse extends React.Component<
 
   public render(): JSX.Element {
     return (
-      <div className={styles.collapse + ' ' + (this.props.hasError ? styles.error : '')}>
+      <div
+        className={
+          styles.collapse + ' ' + (this.props.hasError ? styles.error : '')
+        }
+      >
         <div
           data-testid={this.props.title}
           className={styles.collapse_header}
           onClick={() => this.toggleCollapse()}
         >
           <span>{this.props.title}</span>
-          <UnnnicIcon icon={this.state.isOpen ? 'expand_less' : 'expand_more'} />
+          <UnnnicIcon
+            icon={this.state.isOpen ? 'expand_less' : 'expand_more'}
+          />
         </div>
 
-        {this.state.isOpen && <div className={this.props.wrapper_class}>{this.props.children}</div>}
+        {this.state.isOpen && (
+          <div className={this.props.wrapper_class}>{this.props.children}</div>
+        )}
       </div>
     );
   }

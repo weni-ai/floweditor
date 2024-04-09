@@ -1,11 +1,18 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { ActionFormProps } from 'components/flow/props';
-import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
+import SelectElement, {
+  SelectOption,
+} from 'components/form/select/SelectElement';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import TypeList from 'components/nodeeditor/TypeList';
 import * as React from 'react';
-import { FormState, mergeForm, SelectOptionEntry, StringEntry } from 'store/nodeEditor';
+import {
+  FormState,
+  mergeForm,
+  SelectOptionEntry,
+  StringEntry,
+} from 'store/nodeEditor';
 import { shouldRequireIf, validate } from 'store/validators';
 
 import styles from './AddURNForm.module.scss';
@@ -20,12 +27,15 @@ export interface AddURNFormState extends FormState {
 
 export const controlLabelSpecId = 'label';
 
-export default class AddURNForm extends React.PureComponent<ActionFormProps, AddURNFormState> {
+export default class AddURNForm extends React.PureComponent<
+  ActionFormProps,
+  AddURNFormState
+> {
   constructor(props: ActionFormProps) {
     super(props);
     this.state = initializeForm(this.props.nodeSettings);
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -40,16 +50,20 @@ export default class AddURNForm extends React.PureComponent<ActionFormProps, Add
 
   public handleSchemeChanged(selected: SelectOption): boolean {
     const updates: Partial<AddURNFormState> = {
-      scheme: { value: selected }
+      scheme: { value: selected },
     };
     const updated = mergeForm(this.state, updates);
     this.setState(updated);
     return updated.valid;
   }
 
-  public handlePathChanged(value: string, name: string, submitting: boolean = false): boolean {
+  public handlePathChanged(
+    value: string,
+    name: string,
+    submitting: boolean = false,
+  ): boolean {
     const updates: Partial<AddURNFormState> = {
-      path: validate(i18n.t('forms.urn'), value, [shouldRequireIf(submitting)])
+      path: validate(i18n.t('forms.urn'), value, [shouldRequireIf(submitting)]),
     };
 
     const updated = mergeForm(this.state, updates);
@@ -62,8 +76,8 @@ export default class AddURNForm extends React.PureComponent<ActionFormProps, Add
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -76,13 +90,19 @@ export default class AddURNForm extends React.PureComponent<ActionFormProps, Add
         headerClass={typeConfig.type}
         buttons={this.getButtons()}
       >
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
 
         <div className={styles.scheme_selection}>
-          <div className={`${styles.label} u font secondary body-md color-neutral-cloudy`}>
+          <div
+            className={`${styles.label} u font secondary body-md color-neutral-cloudy`}
+          >
             {i18n.t(
               'forms.add_urn_summary',
-              'Add a new URN to reach the contact such as a phone number'
+              'Add a new URN to reach the contact such as a phone number',
             )}
           </div>
 

@@ -15,7 +15,10 @@ interface MediaPlayerState {
   playing: boolean;
 }
 
-export class MediaPlayer extends React.Component<MediaPlayerProps, MediaPlayerState> {
+export class MediaPlayer extends React.Component<
+  MediaPlayerProps,
+  MediaPlayerState
+> {
   private ele: HTMLAudioElement;
 
   private stroke = 1;
@@ -31,11 +34,11 @@ export class MediaPlayer extends React.Component<MediaPlayerProps, MediaPlayerSt
       durationSeconds: 0,
       currentSeconds: 0,
       playing: false,
-      progress: 0
+      progress: 0,
     };
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -50,13 +53,14 @@ export class MediaPlayer extends React.Component<MediaPlayerProps, MediaPlayerSt
         }, 500);
       }
 
-      const progress = duration > 0 ? Math.floor((currentTime / duration) * 100) : 0;
+      const progress =
+        duration > 0 ? Math.floor((currentTime / duration) * 100) : 0;
 
       return {
         currentSeconds: this.ele.ended || progress === 100 ? 0 : currentTime,
         durationSeconds: duration,
         playing: currentTime > 0 && !this.ele.ended,
-        progress: progress
+        progress: progress,
       };
     });
   }
@@ -92,18 +96,21 @@ export class MediaPlayer extends React.Component<MediaPlayerProps, MediaPlayerSt
         durationSeconds: 0,
         currentSeconds: 0,
         playing: false,
-        progress: 0
+        progress: 0,
       });
     }
   }
 
   public render(): JSX.Element {
     const progress = this.state.progress || 0;
-    const strokeDashoffset = this.circumference - (progress / 100) * this.circumference;
+    const strokeDashoffset =
+      this.circumference - (progress / 100) * this.circumference;
 
     return (
       <div
-        className={styles.player + ' ' + (this.state.playing ? styles.playing : '')}
+        className={
+          styles.player + ' ' + (this.state.playing ? styles.playing : '')
+        }
         style={{ height: this.radius * 2, width: this.radius * 2 }}
         onMouseUp={e => {
           e.preventDefault();
@@ -151,7 +158,13 @@ export class MediaPlayer extends React.Component<MediaPlayerProps, MediaPlayerSt
             />
           </svg>
         </div>
-        <div className={styles.button + ' ' + (this.state.playing ? 'fe-stop' : 'fe-play_arrow')} />
+        <div
+          className={
+            styles.button +
+            ' ' +
+            (this.state.playing ? 'fe-stop' : 'fe-play_arrow')
+          }
+        />
       </div>
     );
   }

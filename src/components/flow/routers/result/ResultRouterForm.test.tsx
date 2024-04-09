@@ -15,15 +15,17 @@ routerNode.ui = {
   type: Types.split_by_run_result,
   config: {
     id: 'favorite_color',
-    type: AssetType.Result
-  }
+    type: AssetType.Result,
+  },
 };
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
 describe(ResultRouterForm.name, () => {
   it('should render', () => {
-    const { baseElement } = render(<ResultRouterForm {...getRouterFormProps(routerNode)} />);
+    const { baseElement } = render(
+      <ResultRouterForm {...getRouterFormProps(routerNode)} />,
+    );
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -50,11 +52,11 @@ describe(ResultRouterForm.name, () => {
     const testResult = {
       id: 'my_test_result',
       name: 'My Test Result',
-      type: AssetType.Result
+      type: AssetType.Result,
     };
 
     props.nodeSettings.originalNode.ui.config = {
-      operand: testResult
+      operand: testResult,
     };
 
     props.assetStore.results.items = { [testResult.id]: testResult };
@@ -76,15 +78,16 @@ describe(ResultRouterForm.name, () => {
     const testResult = {
       id: 'my_test_result',
       name: 'My Test Result',
-      type: AssetType.Result
+      type: AssetType.Result,
     };
 
     props.nodeSettings.originalNode.ui.config = {
-      operand: testResult
+      operand: testResult,
     };
 
     props.assetStore.results.items = { [testResult.id]: testResult };
-    props.nodeSettings.originalNode.ui.type = Types.split_by_run_result_delimited;
+    props.nodeSettings.originalNode.ui.type =
+      Types.split_by_run_result_delimited;
 
     const { getByText } = render(<ResultRouterForm {...props} />);
 

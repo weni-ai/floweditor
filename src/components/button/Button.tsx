@@ -3,13 +3,12 @@ import * as React from 'react';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
-import { unnnicButtonNext } from '@weni/unnnic-system';
+import { unnnicButton } from '@weni/unnnic-system';
 
 export enum ButtonTypes {
   primary = 'primary',
   secondary = 'secondary',
-  tertiary = 'terciary',
-  ghost = 'ghost'
+  tertiary = 'tertiary',
 }
 export interface ButtonProps {
   name: string;
@@ -17,22 +16,23 @@ export interface ButtonProps {
   disabled?: boolean;
   type?: ButtonTypes;
   leftSpacing?: boolean;
+  rightSpacing?: boolean;
   topSpacing?: boolean;
   iconName?: string;
   size?: string;
   onRef?: (ele: any) => void;
 }
 
-const UnnnicButton = applyVueInReact(unnnicButtonNext, {
+const UnnnicButton = applyVueInReact(unnnicButton, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
     componentWrapAttrs: {
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 export default class Button extends React.Component<ButtonProps> {
@@ -40,19 +40,30 @@ export default class Button extends React.Component<ButtonProps> {
     super(props);
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
   public render(): JSX.Element {
-    const { onRef, name, onClick, type, disabled, leftSpacing, topSpacing, iconName } = this.props;
+    const {
+      onRef,
+      name,
+      onClick,
+      type,
+      disabled,
+      leftSpacing,
+      topSpacing,
+      rightSpacing,
+      iconName,
+    } = this.props;
 
     return (
       <UnnnicButton
         ref={onRef}
         style={{
           marginLeft: leftSpacing ? 10 : 0,
-          marginTop: topSpacing ? 10 : 0
+          marginTop: topSpacing ? 10 : 0,
+          marginRight: rightSpacing ? 8 : 0,
         }}
         onClick={onClick}
         type={type}

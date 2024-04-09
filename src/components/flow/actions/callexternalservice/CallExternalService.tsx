@@ -3,8 +3,8 @@ import { CallExternalService } from 'flowTypes';
 import { fakePropType } from 'config/ConfigProvider';
 
 const CallExternalServiceComp: React.SFC<CallExternalService> = (
-  { external_service, call },
-  context: any
+  { external_service, call }: CallExternalService,
+  context: any,
 ): JSX.Element => {
   return (
     <div style={{ fontSize: '80%', textAlign: 'center' }}>
@@ -14,7 +14,7 @@ const CallExternalServiceComp: React.SFC<CallExternalService> = (
 };
 
 CallExternalServiceComp.contextTypes = {
-  config: fakePropType
+  config: fakePropType,
 };
 
 export default CallExternalServiceComp;

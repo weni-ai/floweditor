@@ -6,7 +6,11 @@ import { fakePropType } from 'config/ConfigProvider';
 import { Case } from 'flowTypes';
 import * as React from 'react';
 import { FormState, mergeForm } from 'store/nodeEditor';
-import { SortableElement, SortEnd, SortableContainer } from 'react-sortable-hoc';
+import {
+  SortableElement,
+  SortEnd,
+  SortableContainer,
+} from 'react-sortable-hoc';
 
 import styles from './CaseList.module.scss';
 import { Operator } from 'config/interfaces';
@@ -15,12 +19,12 @@ import { getOperatorConfig, operatorConfigList } from 'config';
 
 export enum DragCursor {
   move = 'move',
-  pointer = 'pointer'
+  pointer = 'pointer',
 }
 
 export enum CaseListType {
   smart = 'smart',
-  default = 'default'
+  default = 'default',
 }
 export interface CaseProps {
   uuid: string;
@@ -66,7 +70,10 @@ const SortableItem = SortableElement(({ value: row }: any) => {
  * CaseList is a component made up of case elements that lets
  * the user configure rules and drag and drop to set their order.
  */
-export default class CaseList extends React.Component<CaseListProps, CaseListState> {
+export default class CaseList extends React.Component<
+  CaseListProps,
+  CaseListState
+> {
   private sortableList = SortableContainer(({ items }: any) => {
     return (
       <div className={styles.case_list}>
@@ -98,14 +105,14 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
   });
 
   public static defaultProps = {
-    type: CaseListType.default
+    type: CaseListType.default,
   };
 
   constructor(props: CaseListProps) {
     super(props);
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
 
     const caseProps = this.props.cases;
@@ -117,7 +124,7 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
     // initialize our cases
     this.state = {
       currentCases: caseProps,
-      valid: true
+      valid: true,
     };
   }
 
@@ -127,9 +134,13 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
     let operator = operators[0];
 
     // if we have cases already, use the last one to determine our default rule
-    if (this.state && this.state.currentCases && this.state.currentCases.length > 0) {
+    if (
+      this.state &&
+      this.state.currentCases &&
+      this.state.currentCases.length > 0
+    ) {
       const lastOperator = getOperatorConfig(
-        this.state.currentCases[this.state.currentCases.length - 1].kase.type
+        this.state.currentCases[this.state.currentCases.length - 1].kase.type,
       );
 
       // use the first rule if the last one had no operands
@@ -141,7 +152,7 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
   }
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   private handleUpdate(keys: { caseProps?: CaseProps; removeCase?: any }) {
@@ -170,7 +181,11 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
     // update our form
     this.setState(
       (prevState: CaseListState) => {
-        const updated = mergeForm(prevState, updates, toRemove) as CaseListState;
+        const updated = mergeForm(
+          prevState,
+          updates,
+          toRemove,
+        ) as CaseListState;
 
         // notify our listener
         this.props.onCasesUpdated(updated.currentCases);
@@ -183,17 +198,21 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
             this.handleUpdate({ caseProps: this.createEmptyCase() });
           }
         }
-      }
+      },
     );
   }
 
   private hasEmptyCase(cases: CaseProps[]): boolean {
-    return cases.find((caseProps: CaseProps) => caseProps.categoryName.trim().length === 0) != null;
+    return (
+      cases.find(
+        (caseProps: CaseProps) => caseProps.categoryName.trim().length === 0,
+      ) != null
+    );
   }
 
   private handleRemoveCase(uuid: string) {
     return this.handleUpdate({
-      removeCase: { uuid }
+      removeCase: { uuid },
     });
   }
 
@@ -207,12 +226,14 @@ export default class CaseList extends React.Component<CaseListProps, CaseListSta
         currentCases: arrayMove(
           currentCases,
           oldIndex,
-          newIndex === this.state.currentCases.length - 1 ? newIndex - 1 : newIndex
-        )
+          newIndex === this.state.currentCases.length - 1
+            ? newIndex - 1
+            : newIndex,
+        ),
       }),
       () => {
         this.props.onCasesUpdated(this.state.currentCases);
-      }
+      },
     );
   }
 

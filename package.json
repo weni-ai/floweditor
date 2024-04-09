@@ -2,7 +2,7 @@
   "name": "@weni/flow-editor",
   "license": "AGPL-3.0",
   "repository": "git://github.com/weni-ai/floweditor.git",
-  "version": "2.11.0-alpha.0",
+  "version": "2.12.0-alpha.21",
   "description": "Standalone flow editing tool designed for use within the RapidPro suite of messaging tools but can be adopted for use outside of that ecosystem.",
   "browser": "umd/flow-editor.min.js",
   "unpkg": "umd/flow-editor.min.js",
@@ -14,7 +14,7 @@
   "private": false,
   "dependencies": {
     "@material-symbols/font-400": "0.13.2",
-    "@weni/unnnic-system": "1.19.0",
+    "@weni/unnnic-system": "1.24.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-transition-group": "4.4.5",
@@ -37,7 +37,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom-sixteen",
     "tester": "react-scripts test --env=jest-environment-happy-dom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint -c .eslintrc.json src/**/*.{ts,tsx,js} --fix"
   },
   "browserslist": {
     "production": [
@@ -66,8 +67,8 @@
     ]
   },
   "lint-staged": {
-    "*.{ts,tsx,js,css,md}": [
-      "prettier --write",
+    "*.{ts,tsx,js}": [
+      "eslint -c .eslintrc.json",
       "git add"
     ]
   },
@@ -100,6 +101,7 @@
     "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/eslint-plugin": "1.12.0",
     "@typescript-eslint/parser": "1.12.0",
+    "@weni/eslint-config": "1.0.2",
     "ajv": "6.5.2",
     "array-move": "2.1.0",
     "auto-bind": "2.1.0",

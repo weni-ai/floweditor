@@ -6,5 +6,5 @@ import nodeEditor from 'store/nodeEditor';
 export default combineReducers({
   flowContext,
   editorState,
-  nodeEditor
+  nodeEditor,
 });

@@ -36,11 +36,11 @@ export default class ContextExplorer extends React.Component<
       expression: null,
       messageVisible: false,
       showEmpty: false,
-      message: null
+      message: null,
     };
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -77,14 +77,19 @@ export default class ContextExplorer extends React.Component<
       ? i18n.t('context_explorer.hide_empty', 'Showing keys with values')
       : i18n.t('context_explorer.show_empty', 'Showing all keys');
     this.setState(
-      { showEmpty: !this.state.showEmpty, message, expression: null, messageVisible: true },
+      {
+        showEmpty: !this.state.showEmpty,
+        message,
+        expression: null,
+        messageVisible: true,
+      },
       () => {
         window.setTimeout(() => {
           if (this.state.message === message) {
             this.setState({ messageVisible: false });
           }
         }, 1000);
-      }
+      },
     );
   }
 
@@ -119,7 +124,11 @@ export default class ContextExplorer extends React.Component<
     this.setState({ opened });
   }
 
-  private renderContextNode(name: string, value: any, path: PathStep[]): JSX.Element {
+  private renderContextNode(
+    name: string,
+    value: any,
+    path: PathStep[],
+  ): JSX.Element {
     if (!name) {
       return null;
     }
@@ -127,7 +136,8 @@ export default class ContextExplorer extends React.Component<
     const newPath = [...path, name];
     const valueType = typeof value;
     let text = valueType !== 'object' ? value : '';
-    let hasChildren = value && valueType === 'object' && Object.keys(value).length > 0;
+    let hasChildren =
+      value && valueType === 'object' && Object.keys(value).length > 0;
 
     if (value && value.hasOwnProperty(DEFAULT_KEY)) {
       text = value[DEFAULT_KEY];
@@ -141,9 +151,12 @@ export default class ContextExplorer extends React.Component<
     const arrowStyles = cx({
       [styles.arrow_right]: true,
       [styles.has_children]: hasChildren,
-      [styles.open]: isOpen
+      [styles.open]: isOpen,
     });
-    const keyStyles = cx({ [styles.key]: true, [styles.has_children]: hasChildren });
+    const keyStyles = cx({
+      [styles.key]: true,
+      [styles.has_children]: hasChildren,
+    });
     const keySummary = Array.isArray(value) ? `[${value.length}]` : null;
 
     const onClick = (evt: React.MouseEvent<HTMLDivElement>) => {
@@ -216,7 +229,8 @@ export default class ContextExplorer extends React.Component<
             i18nKey="context_explorer.copied_expression"
             values={{ expression: this.state.expression }}
           >
-            Copied <span className={styles.expression}>[[expression]]</span> to clipboard
+            Copied <span className={styles.expression}>[[expression]]</span> to
+            clipboard
           </Trans>
         );
       }
@@ -224,11 +238,17 @@ export default class ContextExplorer extends React.Component<
 
     const messageStyle = cx({
       [styles.message]: true,
-      [styles.visible]: this.state.messageVisible
+      [styles.visible]: this.state.messageVisible,
     });
 
     return (
-      <div className={styles.context_explorer + ' ' + (this.props.visible ? styles.visible : '')}>
+      <div
+        className={
+          styles.context_explorer +
+          ' ' +
+          (this.props.visible ? styles.visible : '')
+        }
+      >
         <div className={messageStyle}>{message}</div>
         <div className={styles.panel}>{this.renderProperties(context)}</div>
         <div className={styles.footer}>
@@ -238,7 +258,9 @@ export default class ContextExplorer extends React.Component<
               this.handleToggleHide();
             }}
           >
-            <div className={this.state.showEmpty ? 'fe-eye' : 'fe-eye-crossed'}></div>
+            <div
+              className={this.state.showEmpty ? 'fe-eye' : 'fe-eye-crossed'}
+            ></div>
           </div>
         </div>
       </div>

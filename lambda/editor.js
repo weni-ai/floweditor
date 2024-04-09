@@ -113,7 +113,7 @@ export const completion = {
           },
           {
             key: 'whatsapp',
-            help: 'Whatsapp URN for the contact',
+            help: 'WhatsApp URN for the contact',
             type: 'text'
           }
         ]

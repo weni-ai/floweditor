@@ -16,8 +16,8 @@ const categories = [
   {
     name: DefaultExitNames.All_Responses,
     uuid: utils.createUUID(),
-    exit_uuid: exits[0].uuid
-  }
+    exit_uuid: exits[0].uuid,
+  },
 ];
 const { setup } = composeComponentTestUtils<RouterFormProps>(
   DigitsRouterForm,
@@ -31,13 +31,13 @@ const { setup } = composeComponentTestUtils<RouterFormProps>(
         categories,
         wait: {
           type: WaitTypes.msg,
-          hint: { type: HintTypes.digits }
+          hint: { type: HintTypes.digits },
         },
-        cases: []
+        cases: [],
       },
-      ui: { position: { left: 0, top: 0 }, type: Types.wait_for_response }
-    })
-  )
+      ui: { position: { left: 0, top: 0 }, type: Types.wait_for_response },
+    }),
+  ),
 );
 
 mock(utils, 'createUUID', utils.seededUUIDs());
@@ -63,27 +63,27 @@ describe(DigitsRouterForm.name, () => {
                 {
                   uuid: createUUID(),
                   name: 'Other',
-                  exit_uuid: 'generated_uuid_1'
-                }
+                  exit_uuid: 'generated_uuid_1',
+                },
               ],
               cases: [
                 {
                   uuid: 'generated_uuid_2',
                   type: Operators.has_any_word,
                   arguments: ['red'],
-                  category_uuid: null
-                }
+                  category_uuid: null,
+                },
               ],
               default_category_uuid: 'generated_uuid_1',
-              result_name: 'Color'
+              result_name: 'Color',
             } as SwitchRouter,
             ui: {
               position: { left: 0, top: 0 },
-              type: Types.split_by_expression
-            }
-          })
-        }
-      }
+              type: Types.split_by_expression,
+            },
+          }),
+        },
+      },
     });
 
     expect(wrapper).toMatchSnapshot();
@@ -92,23 +92,23 @@ describe(DigitsRouterForm.name, () => {
   describe('updates', () => {
     it('should save changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateRouter: jest.fn(), onClose: jest.fn() }
+        $merge: { updateRouter: jest.fn(), onClose: jest.fn() },
       });
 
       instance.handleUpdateResultName('Favorite Color');
       instance.handleCasesUpdated([
         {
           kase: { type: Operators.has_any_word, arguments: ['red'] },
-          categoryName: 'Red'
+          categoryName: 'Red',
         },
         {
           kase: { type: Operators.has_any_word, arguments: ['maroon'] },
-          categoryName: 'Red'
+          categoryName: 'Red',
         },
         {
           kase: { type: Operators.has_any_word, arguments: ['green'] },
-          categoryName: 'Green'
-        }
+          categoryName: 'Green',
+        },
       ] as CaseProps[]);
 
       expect(instance.state).toMatchSnapshot();
@@ -121,7 +121,7 @@ describe(DigitsRouterForm.name, () => {
 
     it('should cancel', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateRouter: jest.fn(), onClose: jest.fn() }
+        $merge: { updateRouter: jest.fn(), onClose: jest.fn() },
       });
 
       instance.handleUpdateResultName('Dont save me bro!');

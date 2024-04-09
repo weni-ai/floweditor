@@ -10,7 +10,7 @@ export enum FILE_TYPE {
   AUDIO = 'audio',
   VIDEO = 'video',
   APPLICATION = 'application',
-  UNKNOWN = 'unknown'
+  UNKNOWN = 'unknown',
 }
 export const FILE_TYPE_REGEX = /\/[^/]+\.([0-9a-z]+)(?:[?#]|$)/i;
 export const FILE_TYPE_MAP: Record<string, string> = {
@@ -28,7 +28,7 @@ export const FILE_TYPE_MAP: Record<string, string> = {
   xls: FILE_TYPE.APPLICATION,
   xlsx: FILE_TYPE.APPLICATION,
   ppt: FILE_TYPE.APPLICATION,
-  pptx: FILE_TYPE.APPLICATION
+  pptx: FILE_TYPE.APPLICATION,
 };
 
 export interface Attachment {
@@ -40,7 +40,7 @@ export interface Attachment {
 export const handleUploadFile = (
   endpoint: string,
   files: FileList,
-  onSuccess: (response: AxiosResponse) => void
+  onSuccess: (response: AxiosResponse) => void,
 ): void => {
   // if we have a csrf in our cookie, pass it along as a header
   const csrf = getCookie('csrftoken');
@@ -61,7 +61,7 @@ export const handleUploadFile = (
 
 export const renderUploadButton = (
   attachmentEndpoint: string,
-  onAttachmentUploaded: (response: AxiosResponse) => void
+  onAttachmentUploaded: (response: AxiosResponse) => void,
 ): JSX.Element => {
   let filePicker: any = null;
 
@@ -76,18 +76,23 @@ export const renderUploadButton = (
         name={i18n.t('buttons.upload', 'Upload')}
         onClick={triggerAttachmentUpload}
         iconName={'upload-bottom-1'}
+        size={'sm'}
       />
       <input
         data-testid="upload-input"
         style={{
-          display: 'none'
+          display: 'none',
         }}
         ref={(ele: any) => {
           filePicker = ele;
         }}
         type="file"
         onChange={e => {
-          return handleUploadFile(attachmentEndpoint, e.target.files, onAttachmentUploaded);
+          return handleUploadFile(
+            attachmentEndpoint,
+            e.target.files,
+            onAttachmentUploaded,
+          );
         }}
       />
     </div>

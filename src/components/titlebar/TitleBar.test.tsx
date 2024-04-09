@@ -1,15 +1,14 @@
 import TitleBar, {
-  confirmRemovalSpecId,
   moveIconSpecId,
   removeIconSpecId,
-  TitleBarProps
+  TitleBarProps,
 } from 'components/titlebar/TitleBar';
 import React from 'react';
-import { fireEvent, render } from 'test/utils';
+import { act, fireEvent, render } from 'test/utils';
 
 const baseProps: TitleBarProps = {
   title: 'Send Message',
-  onRemoval: jest.fn()
+  onRemoval: jest.fn(),
 };
 
 describe(TitleBar.name, () => {
@@ -20,20 +19,24 @@ describe(TitleBar.name, () => {
     });
 
     it('should apply _className prop', () => {
-      const { container } = render(<TitleBar {...baseProps} __className="some-classy-class" />);
+      const { container } = render(
+        <TitleBar {...baseProps} __className="some-classy-class" />,
+      );
       expect(container).toMatchSnapshot();
     });
 
     describe('move icon', () => {
       it('should render move icon', () => {
-        const { container } = render(<TitleBar {...baseProps} showMove={true} />);
+        const { container } = render(
+          <TitleBar {...baseProps} showMove={true} />,
+        );
         expect(container).toMatchSnapshot();
       });
 
       it('should call onMoveUp', () => {
         const onMoveUp = jest.fn();
         const { baseElement, getByTestId } = render(
-          <TitleBar {...baseProps} showMove={true} onMoveUp={onMoveUp} />
+          <TitleBar {...baseProps} showMove={true} onMoveUp={onMoveUp} />,
         );
         expect(baseElement).toMatchSnapshot();
 
@@ -46,14 +49,14 @@ describe(TitleBar.name, () => {
     describe('remove icon', () => {
       it('should render remove icon', () => {
         const { baseElement } = render(
-          <TitleBar {...baseProps} showMove={true} showRemoval={true} />
+          <TitleBar {...baseProps} showMove={true} showRemoval={true} />,
         );
         expect(baseElement).toMatchSnapshot();
       });
     });
 
     describe('confirmation', () => {
-      it('should render confirmation markup and call onRemoval prop', () => {
+      it('should render confirmation markup and call onRemoval prop', async () => {
         const handleRemoveClicked = jest.fn();
         const { baseElement, getByTestId, getByText } = render(
           <TitleBar
@@ -61,12 +64,14 @@ describe(TitleBar.name, () => {
             showMove={true}
             showRemoval={true}
             onRemoval={handleRemoveClicked}
-          />
+          />,
         );
 
         expect(baseElement).toMatchSnapshot();
 
-        fireEvent.mouseUp(getByTestId(removeIconSpecId));
+        await act(async () => {
+          fireEvent.mouseUp(getByTestId(removeIconSpecId));
+        });
         fireEvent.click(getByText('Confirm'));
         expect(handleRemoveClicked).toHaveBeenCalledTimes(1);
       });

@@ -1,12 +1,18 @@
 import { ServiceCallParam, ParamFilter } from 'config/interfaces';
 
-import { ParamElementProps, ParamElementState, ParamTypes } from './ParamElement';
+import {
+  ParamElementProps,
+  ParamElementState,
+  ParamTypes,
+} from './ParamElement';
 import { FormEntry, ValidationFailure } from 'store/nodeEditor';
 import { Required, validate } from 'store/validators';
 import i18n from 'config/i18n';
 
 export const initializeForm = (props: ParamElementProps): ParamElementState => {
-  const currentParam = props.initialParam.type ? props.initialParam : props.availableParams[0];
+  const currentParam = props.initialParam.type
+    ? props.initialParam
+    : props.availableParams[0];
 
   let initialData;
   let dataValidationFailures: ValidationFailure[] = [];
@@ -20,14 +26,16 @@ export const initializeForm = (props: ParamElementProps): ParamElementState => {
     initialData = props.initialParam.data.value;
     dataValidationFailures = props.initialParam.data.validationFailures;
   }
-  const initialFilter = props.initialParam.filter ? props.initialParam.filter.value : null;
+  const initialFilter = props.initialParam.filter
+    ? props.initialParam.filter.value
+    : null;
 
   return {
     errors: [],
     currentParam,
     currentFilter: initialFilter,
     data: { value: initialData, validationFailures: dataValidationFailures },
-    valid: true
+    valid: true,
   };
 };
 
@@ -40,7 +48,9 @@ export const validateParam = (keys: {
   const validators =
     (keys.currentParam &&
       keys.currentParam.required &&
-      ![ParamTypes.multiSelect, ParamTypes.boolean].includes(keys.currentParam.paramType)) ||
+      ![ParamTypes.multiSelect, ParamTypes.boolean].includes(
+        keys.currentParam.paramType,
+      )) ||
     (keys.currentFilter && keys.currentFilter.required)
       ? [Required]
       : [];
@@ -48,7 +58,11 @@ export const validateParam = (keys: {
   updates.currentParam = keys.currentParam;
   updates.currentFilter = keys.currentFilter;
 
-  updates.data = validate(i18n.t('forms.parameter', 'Parameter'), keys.data.value, validators);
+  updates.data = validate(
+    i18n.t('forms.parameter', 'Parameter'),
+    keys.data.value,
+    validators,
+  );
 
   updates.valid = updates.data.validationFailures.length === 0;
 

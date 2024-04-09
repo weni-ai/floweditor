@@ -17,7 +17,7 @@
     gap: $unnnic-spacing-inline-xs;
     flex: 1;
   }
-  
+
   .header_type {
     display: flex;
     flex-direction: column;
@@ -32,11 +32,11 @@
     flex: 4;
     margin-top: $unnnic-spacing-md;
   }
-  
+
   .attachment_url {
     flex: 3;
   }
-  
+
   .upload_button {
     margin-top: $unnnic-spacing-md;
   }
@@ -60,7 +60,7 @@
 .interactions_tab {
   display: flex;
   flex-direction: column;
-  gap: $unnnic-spacing-stack-md;
+  gap: $unnnic-spacing-stack-sm;
 }
 
 .interaction_type {

@@ -26,17 +26,20 @@ const hexToRgb = (hex: string): Color => {
     ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
+        b: parseInt(result[3], 16),
       }
     : null;
 };
 
-export default class Loading extends React.Component<LoadingProps, LoadingState> {
+export default class Loading extends React.Component<
+  LoadingProps,
+  LoadingState
+> {
   constructor(props: LoadingProps) {
     super(props);
 
     this.state = {
-      color: hexToRgb(props.color)
+      color: hexToRgb(props.color),
     };
   }
 
@@ -46,7 +49,7 @@ export default class Loading extends React.Component<LoadingProps, LoadingState>
         className={styles.loading}
         style={{
           width: this.props.size * this.props.units * 2,
-          height: this.props.size
+          height: this.props.size,
         }}
       >
         {range(0, this.props.units).map((num: number) => (
@@ -60,7 +63,7 @@ export default class Loading extends React.Component<LoadingProps, LoadingState>
               animationDelay: `-${1 - num * (1 / this.props.units)}s`,
               background: `rgba(${this.state.color.r},${this.state.color.g},${
                 this.state.color.b
-              }, ${1 - num * (1 / this.props.units)})`
+              }, ${1 - num * (1 / this.props.units)})`,
             }}
           />
         ))}

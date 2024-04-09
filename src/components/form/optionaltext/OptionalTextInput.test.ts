@@ -1,14 +1,17 @@
 import OptionalTextInput, {
-  OptionalTextInputProps
+  OptionalTextInputProps,
 } from 'components/form/optionaltext/OptionalTextInput';
 import { composeComponentTestUtils } from 'testUtils';
 
-const { setup } = composeComponentTestUtils<OptionalTextInputProps>(OptionalTextInput, {
-  name: 'Optional Text Name',
-  value: { value: '' },
-  toggleText: 'Click me to show',
-  onChange: jest.fn()
-});
+const { setup } = composeComponentTestUtils<OptionalTextInputProps>(
+  OptionalTextInput,
+  {
+    name: 'Optional Text Name',
+    value: { value: '' },
+    toggleText: 'Click me to show',
+    onChange: jest.fn(),
+  },
+);
 
 describe(OptionalTextInput.name, () => {
   it('renders', () => {

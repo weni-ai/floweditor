@@ -1,5 +1,6 @@
 {
   "actions": {
+    "search": "Buscar...",
     "add_contact_groups": {
       "description": "Adicione o contato a um grupo",
       "name": "Adicione a um grupo"
@@ -189,6 +190,7 @@
     "show_empty": "Mostrando todas as chaves"
   },
   "create_block": "Criar bloco",
+  "search_in_nodes": "Buscar bloco",
   "create_label": "Criar etiqueta",
   "disabled_copy_tooltip": "Selecione um ou mais blocos para copiar",
   "copy_tooltip": "Copiar bloco(s)",
@@ -434,7 +436,8 @@
       "category_title": "Categorize como",
       "category_description": "Defina a Categoria que deseja classificar a resposta do Contato.",
       "command_phrases_title": "Frases de comando",
-      "command_phrases_description": "Escreva frases de comando relacionadas com a categoria"
+      "command_phrases_description": "Escreva frases de comando relacionadas com a categoria",
+      "description_alert": "<0>Importante:</0>Edite seu projeto, <2>adicione uma descrição</2> e torne a IA ainda mais poderosa."
     },
     "automatic_classify": {
       "words_title": "Palavras",
@@ -474,7 +477,8 @@
     "product_search_label": "Insira uma expressão para usar como entrada",
     "custom_search": "Busca personalizada",
     "custom_search_api_url": "URL da API de busca personalizada",
-    "seller_id": "ID do vendedor (opcional)"
+    "seller_id": "ID do vendedor (opcional)",
+    "postal_code": "CEP (opcional)"
   },
   "issues": {
     "header": "Problemas no Fluxo",
@@ -670,7 +674,7 @@
       },
       "2": {
         "title": "Skin do WhatsApp no simulador",
-        "description": "Agora o simulador ta com a aparência do Whatsapp,\nassim você consegue prever com mais fidelidade como seu fluxo vai ficar.",
+        "description": "Agora o simulador ta com a aparência do WhatsApp,\nassim você consegue prever com mais fidelidade como seu fluxo vai ficar.",
         "button": "Entendi 3/3"
       }
     },

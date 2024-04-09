@@ -39,9 +39,18 @@ import {
   UpdateNodesEditor,
   updateNodesEditor,
   updateSticky,
-  UpdateSticky
+  UpdateSticky,
+  handleSearchChange,
+  HandleSearchChange,
 } from 'store/thunks';
-import { createUUID, isRealValue, NODE_PADDING, renderIf, timeEnd, timeStart } from 'utils';
+import {
+  createUUID,
+  isRealValue,
+  NODE_PADDING,
+  renderIf,
+  timeEnd,
+  timeStart,
+} from 'utils';
 import Debug from 'utils/debug';
 
 import { PopTabType } from 'config/interfaces';
@@ -49,23 +58,12 @@ import { PopTabType } from 'config/interfaces';
 import styles from './Flow.module.scss';
 import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
-import { unnnicModalNext, unnnicButtonNext } from '@weni/unnnic-system';
+import { unnnicModal, unnnicButton } from '@weni/unnnic-system';
 import { WeniLoveIcon } from './WeniLoveIcon';
 import i18n from '../../config/i18n';
+import SearchBar from 'components/search/SearchBar';
 
-const UnnnicButton = applyVueInReact(unnnicButtonNext, {
-  vue: {
-    componentWrap: 'div',
-    slotWrap: 'div',
-    componentWrapAttrs: {
-      style: {
-        all: ''
-      }
-    }
-  }
-});
-
-const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
+const UnnnicModal = applyVueInReact(unnnicModal, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -73,10 +71,33 @@ const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
       style: {
         all: '',
         position: 'relative',
-        zIndex: 10e2
-      }
-    }
-  }
+        zIndex: 10e2,
+      },
+    },
+  },
+  react: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      __use_react_component_wrap: '',
+      style: {
+        all: '',
+      },
+    },
+  },
+});
+
+const UnnnicButton = applyVueInReact(unnnicButton, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        display: 'flex',
+        flex: 1,
+      },
+    },
+  },
 });
 
 declare global {
@@ -91,6 +112,7 @@ export interface FlowStoreProps {
   popped: string;
   dragActive: boolean;
   mouseState: MouseState;
+  isSearchOpen: boolean;
 
   mergeEditorState: MergeEditorState;
 
@@ -107,6 +129,7 @@ export interface FlowStoreProps {
   updateSticky: UpdateSticky;
 
   updateNodesEditor?: UpdateNodesEditor;
+  handleSearchChange: HandleSearchChange;
 }
 
 export interface Translations {
@@ -135,7 +158,7 @@ export const getDragStyle = (drag: DragSelection) => {
     left,
     top,
     width,
-    height
+    height,
   };
 };
 
@@ -148,7 +171,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   private ghost: any;
 
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: FlowStoreProps, context: ConfigProviderContext) {
@@ -166,7 +189,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     }
 
     bindCallbacks(this, {
-      include: [/Ref$/, /^on/, /^is/, /^get/, /^handle/]
+      include: [/Ref$/, /^on/, /^is/, /^get/, /^handle/],
     });
 
     timeStart('Loaded Flow');
@@ -190,14 +213,17 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     });
 
     this.Plumber.bind('connectionDragStop', (event: ConnectionEvent) =>
-      this.onConnectorDrop(event)
+      this.onConnectorDrop(event),
     );
     this.Plumber.bind(
       'beforeStartDetach',
-      (event: ConnectionEvent) => !this.props.translating && this.context.config.mutable
+      (event: ConnectionEvent) =>
+        !this.props.translating && this.context.config.mutable,
     );
     this.Plumber.bind('beforeDetach', (event: ConnectionEvent) => true);
-    this.Plumber.bind('beforeDrop', (event: ConnectionEvent) => this.onBeforeConnectorDrop(event));
+    this.Plumber.bind('beforeDrop', (event: ConnectionEvent) =>
+      this.onBeforeConnectorDrop(event),
+    );
     this.Plumber.triggerLoaded(this.context.config.onLoad);
 
     this.checkToShowNewUpdates();
@@ -236,12 +262,15 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
       const dragPoint = getDraggedFrom(ghostNode);
 
-      this.Plumber.connect(dragPoint.nodeUUID + ':' + dragPoint.exitUUID, ghostNode.node.uuid);
+      this.Plumber.connect(
+        dragPoint.nodeUUID + ':' + dragPoint.exitUUID,
+        ghostNode.node.uuid,
+      );
 
       // Save our position for later
       const { left, top } = (this.ghost && {
         left: this.ghost.ele.offsetLeft,
-        top: this.ghost.ele.offsetTop
+        top: this.ghost.ele.offsetTop,
       }) || { left: 0, top: 0 };
 
       this.props.ghostNode.ui.position = { left, top };
@@ -254,7 +283,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
       // Bring up the node editor
       this.props.onOpenNodeEditor({
         originalNode: ghostNode,
-        originalAction
+        originalAction,
       });
     }
 
@@ -278,7 +307,14 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   private handleStickyCreation(props: CanvasDraggableProps) {
     const stickyMap = this.props.stickyMap || {};
     const uuid = props.uuid;
-    return <Sticky key={uuid} uuid={uuid} sticky={stickyMap[uuid]} selected={props.selected} />;
+    return (
+      <Sticky
+        key={uuid}
+        uuid={uuid}
+        sticky={stickyMap[uuid]}
+        selected={props.selected}
+      />
+    );
   }
 
   private handleNodeCreation(props: CanvasDraggableProps) {
@@ -302,15 +338,17 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   }
 
   private getNodes(): CanvasDraggableProps[] {
-    return getOrderedNodes(this.props.nodes).map((renderNode: RenderNode, idx: number) => {
-      return {
-        uuid: renderNode.node.uuid,
-        position: renderNode.ui.position,
-        elementCreator: this.handleNodeCreation,
-        config: renderNode,
-        idx
-      };
-    });
+    return getOrderedNodes(this.props.nodes).map(
+      (renderNode: RenderNode, idx: number) => {
+        return {
+          uuid: renderNode.node.uuid,
+          position: renderNode.ui.position,
+          elementCreator: this.handleNodeCreation,
+          config: renderNode,
+          idx,
+        };
+      },
+    );
   }
 
   private getStickies(): CanvasDraggableProps[] {
@@ -320,7 +358,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
         uuid,
         elementCreator: this.handleStickyCreation,
         position: stickyMap[uuid].position,
-        idx
+        idx,
       };
     });
   }
@@ -351,17 +389,20 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   }
 
   private getSimulator(): JSX.Element {
-    return renderIf(this.context.config.endpoints && this.context.config.endpoints.simulateStart)(
+    return renderIf(
+      this.context.config.endpoints &&
+        this.context.config.endpoints.simulateStart,
+    )(
       <Simulator
         key="simulator"
         popped={this.props.popped}
         mergeEditorState={this.props.mergeEditorState}
         onToggled={(visible: boolean, tab: PopTabType) => {
           this.props.mergeEditorState({
-            popped: visible ? tab : null
+            popped: visible ? tab : null,
           });
         }}
-      />
+      />,
     );
   }
 
@@ -371,7 +412,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
         key="node-editor"
         helpArticles={this.context.config.help}
         plumberConnectExit={this.Plumber.connectExit}
-      />
+      />,
     );
   }
 
@@ -381,7 +422,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     this.props.updateSticky(createUUID(), {
       position: { left: left - 90 + NODE_PADDING, top: top - 40 },
       title: STICKY_TITLE,
-      body: STICKY_BODY
+      body: STICKY_BODY,
     });
   }
 
@@ -407,7 +448,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     this.canvas.current.manuallyCreateNode(node, (newNode: RenderNode) => {
       this.props.onOpenNodeEditor({
         originalNode: newNode,
-        originalAction: newNode.node.actions[0]
+        originalAction: newNode.node.actions[0],
       });
     });
   }
@@ -423,12 +464,17 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   private startGuiding() {
     const initialGuide = this.context.config.initialGuide;
     if (initialGuide) {
-      this.props.mergeEditorState({ currentGuide: initialGuide, guidingStep: 0 });
+      this.props.mergeEditorState({
+        currentGuide: initialGuide,
+        guidingStep: 0,
+      });
     }
   }
 
   private showNewUpdatesModal(): void {
-    let newUpdatesModalEl: HTMLDivElement = document.querySelector('#new-updates-modal');
+    let newUpdatesModalEl: HTMLDivElement = document.querySelector(
+      '#new-updates-modal',
+    );
 
     if (!newUpdatesModalEl) {
       newUpdatesModalEl = document.createElement('div');
@@ -441,10 +487,12 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
     }
 
     ReactDOM.render(
-      <UnnnicModalNext className={styles.new_updates}>
+      <UnnnicModal className={styles.new_updates} closeIcon={false}>
         <div className={styles.content}>
           <WeniLoveIcon />
-          <span className={styles.title}>{i18n.t('new_updates.title', 'News in the area!')}</span>
+          <span className={styles.title}>
+            {i18n.t('new_updates.title', 'News in the area!')}
+          </span>
           {/* <span className={styles.description}>
             {i18n.t('new_updates.description', 'Whats new?')}
           </span> */}
@@ -454,40 +502,48 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
               •&nbsp;{' '}
               {i18n.t(
                 'new_updates.news.first',
-                'Now you can use your “little hand” to navigate in your flow'
+                'Now you can use your “little hand” to navigate in your flow',
               )}
             </span>
-            <span>•&nbsp; {i18n.t('new_updates.news.second', 'Zoom tool')}</span>
+            <span>
+              •&nbsp; {i18n.t('new_updates.news.second', 'Zoom tool')}
+            </span>
             <span>
               •&nbsp;{' '}
               {i18n.t(
                 'new_updates.news.third',
-                "It's easier to know where your flow is going with the new colors on the arrows that connect the blocks"
+                "It's easier to know where your flow is going with the new colors on the arrows that connect the blocks",
               )}
             </span>
             <span>
               •&nbsp;{' '}
               {i18n.t(
                 'new_updates.news.fourth',
-                'The feedback modal is different and takes up less space on your screen'
+                'The feedback modal is different and takes up less space on your screen',
               )}
             </span>
             <span>
               •&nbsp;{' '}
-              {i18n.t('new_updates.news.fifth', "Now it's easier to find the start of your flow")}
+              {i18n.t(
+                'new_updates.news.fifth',
+                "Now it's easier to find the start of your flow",
+              )}
             </span>
           </div>
 
           <div className={styles.footer}>
             <span>
-              {i18n.t('new_updates.footer', 'Feel free to send feedbacks about your experience')}
+              {i18n.t(
+                'new_updates.footer',
+                'Feel free to send feedbacks about your experience',
+              )}
             </span>
           </div>
         </div>
 
         <div className={styles.buttons}>
           <UnnnicButton
-            type="ghost"
+            type="tertiary"
             text={i18n.t('new_updates.buttons.first', 'Close')}
             onClick={() => {
               ReactDOM.unmountComponentAtNode(newUpdatesModalEl);
@@ -503,8 +559,8 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
             }}
           />
         </div>
-      </UnnnicModalNext>,
-      newUpdatesModalEl
+      </UnnnicModal>,
+      newUpdatesModalEl,
     );
   }
 
@@ -528,8 +584,12 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           mouseState={this.props.mouseState}
           onCopyClick={() => this.callCanvasCopy()}
           onCreateNode={(node: RenderNode) => this.callCanvasCreateNode(node)}
-          onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
+          onMouseStateChange={(mouseState: MouseState) =>
+            this.handleMouseStateChange(mouseState)
+          }
         />
+
+        {this.props.isSearchOpen && <SearchBar />}
 
         <Canvas
           ref={this.canvas}
@@ -549,7 +609,10 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
           updateNodesEditor={this.props.updateNodesEditor}
           onZoom={this.handleZoom}
           mouseState={this.props.mouseState}
-          onMouseStateChange={(mouseState: MouseState) => this.handleMouseStateChange(mouseState)}
+          onMouseStateChange={(mouseState: MouseState) =>
+            this.handleMouseStateChange(mouseState)
+          }
+          handleSearchChange={value => this.props.handleSearchChange(value)}
         ></Canvas>
         <div id="activity_recent_messages"></div>
       </>
@@ -559,9 +622,16 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
 /* istanbul ignore next */
 const mapStateToProps = ({
-  flowContext: { definition, nodes },
-  editorState: { ghostNode, debug, translating, popped, dragActive, mouseState },
-  nodeEditor: { settings }
+  flowContext: { definition, nodes, search },
+  editorState: {
+    ghostNode,
+    debug,
+    translating,
+    popped,
+    dragActive,
+    mouseState,
+  },
+  nodeEditor: { settings },
 }: AppState) => {
   return {
     nodeEditorSettings: settings,
@@ -572,7 +642,8 @@ const mapStateToProps = ({
     translating,
     popped,
     dragActive,
-    mouseState
+    mouseState,
+    isSearchOpen: search.isSearchOpen,
   };
 };
 
@@ -588,12 +659,13 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
       onRemoveNodes,
       updateConnection,
       updateSticky,
-      updateNodesEditor
+      updateNodesEditor,
+      handleSearchChange,
     },
-    dispatch
+    dispatch,
   );
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Flow);

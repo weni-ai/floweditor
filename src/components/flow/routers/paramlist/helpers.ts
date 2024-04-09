@@ -10,6 +10,6 @@ export const createEmptyParam = (): ParamProps => {
     filters: [],
     filter: { value: null },
     data: { value: '' },
-    valid: true
+    valid: true,
   };
 };

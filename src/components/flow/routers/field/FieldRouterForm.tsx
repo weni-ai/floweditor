@@ -1,7 +1,10 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { renderIssues } from 'components/flow/actions/helpers';
-import { getName, sortFieldsAndProperties } from 'components/flow/actions/updatecontact/helpers';
+import {
+  getName,
+  sortFieldsAndProperties,
+} from 'components/flow/actions/updatecontact/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import CaseList, { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import { createResultNameInput } from 'components/flow/routers/widgets';
@@ -10,7 +13,12 @@ import TypeList from 'components/nodeeditor/TypeList';
 import { fakePropType } from 'config/ConfigProvider';
 import * as React from 'react';
 import { FormEntry, FormState, mergeForm, StringEntry } from 'store/nodeEditor';
-import { Alphanumeric, Required, StartIsNonNumeric, validate } from 'store/validators';
+import {
+  Alphanumeric,
+  Required,
+  StartIsNonNumeric,
+  validate,
+} from 'store/validators';
 
 import styles from './FieldRouterForm.module.scss';
 import { getRoutableFields, nodeToState, stateToNode } from './helpers';
@@ -23,7 +31,7 @@ export enum InputToFocus {
   args = 'args',
   min = 'min',
   max = 'max',
-  exit = 'exit'
+  exit = 'exit',
 }
 
 export interface FieldRouterFormState extends FormState {
@@ -40,7 +48,7 @@ export default class FieldRouterForm extends React.Component<
 > {
   public static contextTypes = {
     assetService: fakePropType,
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: RouterFormProps) {
@@ -48,7 +56,7 @@ export default class FieldRouterForm extends React.Component<
     this.state = nodeToState(this.props.nodeSettings, this.props.assetStore);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
@@ -60,7 +68,9 @@ export default class FieldRouterForm extends React.Component<
     const updates: Partial<FieldRouterFormState> = {};
 
     if (keys.hasOwnProperty('field')) {
-      updates.field = validate(i18n.t('forms.field', 'Field'), keys.field, [Required]);
+      updates.field = validate(i18n.t('forms.field', 'Field'), keys.field, [
+        Required,
+      ]);
     }
 
     if (keys.hasOwnProperty('cases')) {
@@ -68,10 +78,11 @@ export default class FieldRouterForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('resultName')) {
-      updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
-        Alphanumeric,
-        StartIsNonNumeric
-      ]);
+      updates.resultName = validate(
+        i18n.t('forms.result_name', 'Result Name'),
+        keys.resultName,
+        [Alphanumeric, StartIsNonNumeric],
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -95,7 +106,9 @@ export default class FieldRouterForm extends React.Component<
 
   private handleSave(): void {
     // if we still have invalid cases, don't move forward
-    const invalidCase = this.state.cases.find((caseProps: CaseProps) => !caseProps.valid);
+    const invalidCase = this.state.cases.find(
+      (caseProps: CaseProps) => !caseProps.valid,
+    );
     if (invalidCase) {
       return;
     }
@@ -111,8 +124,8 @@ export default class FieldRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -120,8 +133,16 @@ export default class FieldRouterForm extends React.Component<
     const typeConfig = this.props.typeConfig;
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         <div className={styles.lead_in}>
           <AssetSelector
             name={i18n.t('forms.select_contact_field_label')}
@@ -147,7 +168,10 @@ export default class FieldRouterForm extends React.Component<
           cases={this.state.cases}
           onCasesUpdated={this.handleCasesUpdated}
         />
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

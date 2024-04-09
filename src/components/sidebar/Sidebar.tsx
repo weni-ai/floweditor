@@ -1,9 +1,8 @@
-import ReactDOM from 'react-dom';
 import { fakePropType } from 'config/ConfigProvider';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { RenderNode } from 'store/flowContext';
+import { RenderNode, Search } from 'store/flowContext';
 import { createEmptyNode } from 'store/helpers';
 import AppState from 'store/state';
 import {
@@ -11,32 +10,21 @@ import {
   OnOpenNodeEditor,
   onOpenNodeEditor,
   mergeEditorState,
-  MergeEditorState
+  MergeEditorState,
+  handleSearchChange,
+  HandleSearchChange,
 } from 'store/thunks';
 
 import i18n from 'config/i18n';
 import { applyVueInReact } from 'vuereact-combined';
 import styles from './Sidebar.module.scss';
 // @ts-ignore
-import { unnnicModalNext, unnnicToolTip } from '@weni/unnnic-system';
+import { unnnicToolTip } from '@weni/unnnic-system';
 import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 import { MouseState } from 'store/editor';
+import SearchButton from './components/SearchButton';
 
 const UnnnicTooltip = applyVueInReact(unnnicToolTip);
-
-const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
-  vue: {
-    componentWrap: 'div',
-    slotWrap: 'div',
-    componentWrapAttrs: {
-      style: {
-        all: '',
-        position: 'relative',
-        zIndex: 10e2
-      }
-    }
-  }
-});
 
 export interface SidebarStoreProps {
   onCopyClick: () => void;
@@ -49,64 +37,39 @@ export interface SidebarStoreProps {
   currentGuide: string;
   mergeEditorState: MergeEditorState;
   mouseState: MouseState;
+  handleSearchChange: HandleSearchChange;
+  search: Search;
 }
 
 export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
+
+  public handleSearchChanged(): void {
+    const { isSearchOpen, value } = this.props.search;
+    const change = {
+      isSearchOpen: !isSearchOpen,
+      value: value,
+      nodes: [{}],
+      selected: 0,
+    };
+    this.props.handleSearchChange(change);
+  }
 
   private createSendMessageNode(): void {
     if (this.props.guidingStep === 0 && this.props.currentGuide === 'v2') {
       this.props.mergeEditorState({ guidingStep: 1 });
     }
 
-    const emptyNode = createEmptyNode(null, null, 1, this.context.config.flowType);
+    const emptyNode = createEmptyNode(
+      null,
+      null,
+      1,
+      this.context.config.flowType,
+    );
 
     this.props.onCreateNode(emptyNode);
-  }
-
-  public componentDidMount(): void {
-    if (Object.keys(this.props.nodes).length === 0) {
-      // this.showGetStartedModal();
-    }
-  }
-
-  private showGetStartedModal(): void {
-    let getStartedModalEl: HTMLDivElement = document.querySelector('#get-started-modal');
-
-    if (!getStartedModalEl) {
-      getStartedModalEl = document.createElement('div');
-      getStartedModalEl.setAttribute('id', 'get-started-modal');
-      document.body.appendChild(getStartedModalEl);
-    }
-
-    if (getStartedModalEl.hasChildNodes()) {
-      return;
-    }
-
-    ReactDOM.render(
-      <UnnnicModalNext
-        type="alert"
-        scheme="feedback-yellow"
-        title={i18n.t('empty_flow_message_title')}
-        description={i18n.t('empty_flow_message_description')}
-        actionPrimaryLabel={i18n.t('buttons.create_message')}
-        actionPrimaryButtonType="secondary"
-        on={{
-          'click-action-primary': () => {
-            this.createSendMessageNode();
-
-            ReactDOM.unmountComponentAtNode(getStartedModalEl);
-          },
-          'click-action-secondary': () => {
-            ReactDOM.unmountComponentAtNode(getStartedModalEl);
-          }
-        }}
-        actionSecondaryLabel={i18n.t('buttons.later')}
-      />,
-      getStartedModalEl
-    );
   }
 
   private getCopyTooltip(): string {
@@ -135,9 +98,20 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 
   private toggleMouseState(): void {
     const mouseState =
-      this.props.mouseState === MouseState.SELECT ? MouseState.DRAG : MouseState.SELECT;
+      this.props.mouseState === MouseState.SELECT
+        ? MouseState.DRAG
+        : MouseState.SELECT;
 
     this.props.onMouseStateChange(mouseState);
+  }
+
+  private detectOS() {
+    const userAgent = window.navigator.userAgent;
+    // Check for macOS
+    if (userAgent.indexOf('Macintosh') !== -1) {
+      return 'Cmd';
+    }
+    return 'Ctrl';
   }
 
   public render(): JSX.Element {
@@ -149,7 +123,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
           title={i18n.t('guiding.control_tools.0.title', 'Select and drag')}
           description={i18n.t(
             'guiding.control_tools.0.description',
-            `Click here, use the “V” shortcut or hold down the space bar to use the “little hand” tool, with it you will be able to navigate through your entire flow just by clicking and dragging on the screen`
+            `Click here, use the “V” shortcut or hold down the space bar to use the “little hand” tool, with it you will be able to navigate through your entire flow just by clicking and dragging on the screen`,
           )}
           buttonText={i18n.t('guiding.v2.0.button', 'Got it 1/3')}
         >
@@ -163,7 +137,10 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             }
             shortcutText={'V'}
           >
-            <div className={styles.option} onClick={() => this.toggleMouseState()}>
+            <div
+              className={styles.option}
+              onClick={() => this.toggleMouseState()}
+            >
               {this.props.mouseState === MouseState.SELECT ? (
                 <span className="material-symbols-rounded">near_me</span>
               ) : (
@@ -179,7 +156,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
           title={i18n.t('guiding.v2.0.title', 'New block')}
           description={i18n.t(
             'guiding.v2.0.description',
-            `Now just click on this button to create a new block.`
+            `Now just click on this button to create a new block.`,
           )}
           buttonText={i18n.t('guiding.v2.0.button', 'Got it 1/3')}
         >
@@ -188,7 +165,10 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             enabled={this.props.guidingStep !== 0}
             side="right"
           >
-            <div className={styles.option} onClick={() => this.createSendMessageNode()}>
+            <div
+              className={styles.option}
+              onClick={() => this.createSendMessageNode()}
+            >
               <span className="material-symbols-rounded">add_circle</span>
             </div>
           </UnnnicTooltip>
@@ -200,7 +180,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
           title={i18n.t('guiding.v2.1.title', 'Copy and paste')}
           description={i18n.t(
             'guiding.v2.1.description',
-            `Finally, you can copy and paste the blocks wherever you want, including in\nanother flow. Click the button or use the shortcut Ctrl C + Ctrl V.`
+            `Finally, you can copy and paste the blocks wherever you want, including in\nanother flow. Click the button or use the shortcut Ctrl C + Ctrl V.`,
           )}
           buttonText={i18n.t('guiding.v2.1.button', 'Got it 2/3')}
         >
@@ -209,18 +189,38 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             text={this.getCopyTooltip()}
             enabled={this.props.guidingStep !== 1}
             side="right"
-            shortcutText={this.props.selectionActive ? 'Ctrl C' : null}
+            shortcutText={
+              this.props.selectionActive ? `${this.detectOS()} + C` : null
+            }
           >
             <div
-              className={`${styles.option} ${!this.props.selectionActive ? styles.disabled : ''}`}
+              className={`${styles.option} ${
+                !this.props.selectionActive ? styles.disabled : ''
+              }`}
               onClick={() => this.handleCopyClick()}
             >
-              <span className={'material-symbols-rounded ' + this.getCopyIconScheme()}>
+              <span
+                className={
+                  'material-symbols-rounded ' + this.getCopyIconScheme()
+                }
+              >
                 content_copy
               </span>
             </div>
           </UnnnicTooltip>
         </GuidingSteps>
+
+        {/* search button */}
+        <UnnnicTooltip
+          className={styles.left_aligned}
+          text={i18n.t('search_in_nodes')}
+          side="right"
+          shortcutText={`${this.detectOS()} + F`}
+        >
+          <div className={styles.option}>
+            <SearchButton name="" onClick={() => this.handleSearchChanged()} />
+          </div>
+        </UnnnicTooltip>
       </div>
     );
   }
@@ -228,22 +228,26 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
 
 /* istanbul ignore next */
 const mapStateToProps = ({
-  flowContext: { nodes },
-  editorState: { selectionActive, guidingStep, currentGuide }
+  flowContext: { nodes, search },
+  editorState: { selectionActive, guidingStep, currentGuide },
 }: AppState) => {
   return {
     nodes,
     selectionActive,
     guidingStep,
-    currentGuide
+    currentGuide,
+    search,
   };
 };
 
 /* istanbul ignore next */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
-  bindActionCreators({ onOpenNodeEditor, mergeEditorState }, dispatch);
+  bindActionCreators(
+    { onOpenNodeEditor, mergeEditorState, handleSearchChange },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Sidebar);

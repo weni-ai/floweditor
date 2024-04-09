@@ -15,7 +15,7 @@ const UnnnicTextArea = applyVueInReact(unnnicTextArea);
 
 export enum TextEditorSizes {
   sm = 'sm',
-  md = 'md'
+  md = 'md',
 }
 
 export interface TextEditorProps extends FormElementProps {
@@ -29,14 +29,16 @@ export interface TextEditorProps extends FormElementProps {
   onChange?: (value: string, name?: string) => void;
 }
 
-export default class TextEditorElement extends React.Component<TextEditorProps> {
+export default class TextEditorElement extends React.Component<
+  TextEditorProps
+> {
   private refTextEditor: HTMLElement;
 
   constructor(props: TextEditorProps) {
     super(props);
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -79,14 +81,20 @@ export default class TextEditorElement extends React.Component<TextEditorProps> 
 
   public render(): JSX.Element {
     const hasError =
-      this.props.entry.validationFailures && this.props.entry.validationFailures.length > 0;
+      this.props.entry.validationFailures &&
+      this.props.entry.validationFailures.length > 0;
     let errors: string[] = [];
     if (hasError) {
-      errors = this.props.entry.validationFailures.map((error: any) => error.message);
+      errors = this.props.entry.validationFailures.map(
+        (error: any) => error.message,
+      );
     }
 
     return (
-      <div ref={(ref: HTMLElement) => (this.refTextEditor = ref)} className={styles.texteditor}>
+      <div
+        ref={(ref: HTMLElement) => (this.refTextEditor = ref)}
+        className={styles.texteditor}
+      >
         {!this.props.autocomplete ? (
           <TembaCompletion
             name={this.props.name}
@@ -106,7 +114,7 @@ export default class TextEditorElement extends React.Component<TextEditorProps> 
             data-testid={this.props.name}
             value={this.props.entry.value}
             on={{
-              input: (value: string) => this.handleChange(value)
+              input: (value: string) => this.handleChange(value),
             }}
             label={this.props.showLabel ? this.props.name : null}
             placeholder={this.props.placeholder}

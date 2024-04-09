@@ -3,7 +3,7 @@ import {
   createCaseProps,
   createRenderNode,
   hasCases,
-  resolveRoutes
+  resolveRoutes,
 } from 'components/flow/routers/helpers';
 import { AutomaticClassifyRouterFormState } from 'components/flow/routers/smart/classify/AutomaticClassifyRouterForm';
 import { DEFAULT_OPERAND } from 'components/nodeeditor/constants';
@@ -15,7 +15,9 @@ import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
 import { ensureRoute } from '../../classify/helpers';
 import { getOperatorConfig } from 'config';
 
-export const nodeToState = (settings: NodeEditorSettings): AutomaticClassifyRouterFormState => {
+export const nodeToState = (
+  settings: NodeEditorSettings,
+): AutomaticClassifyRouterFormState => {
   let initialCases: CaseProps[] = [];
 
   // TODO: work out an incremental result name
@@ -24,18 +26,23 @@ export const nodeToState = (settings: NodeEditorSettings): AutomaticClassifyRout
 
   let hiddenCases: CaseProps[] = [];
 
-  if (settings.originalNode && getType(settings.originalNode) === Types.automatic_classify) {
+  if (
+    settings.originalNode &&
+    getType(settings.originalNode) === Types.automatic_classify
+  ) {
     const router = settings.originalNode.node.router as SwitchRouter;
     if (router) {
       if (hasCases(settings.originalNode.node)) {
         initialCases = createCaseProps(router.cases, settings.originalNode);
 
         hiddenCases = initialCases.filter(
-          (kase: CaseProps) => getOperatorConfig(kase.kase.type).visibility === VISIBILITY_HIDDEN
+          (kase: CaseProps) =>
+            getOperatorConfig(kase.kase.type).visibility === VISIBILITY_HIDDEN,
         );
 
         initialCases = initialCases.filter(
-          (kase: CaseProps) => getOperatorConfig(kase.kase.type).visibility !== VISIBILITY_HIDDEN
+          (kase: CaseProps) =>
+            getOperatorConfig(kase.kase.type).visibility !== VISIBILITY_HIDDEN,
         );
       }
 
@@ -49,27 +56,27 @@ export const nodeToState = (settings: NodeEditorSettings): AutomaticClassifyRout
     hiddenCases,
     resultName,
     valid: true,
-    operand: { value: operand }
+    operand: { value: operand },
   };
 };
 
 export const stateToNode = (
   settings: NodeEditorSettings,
   typeConfig: Type,
-  state: AutomaticClassifyRouterFormState
+  state: AutomaticClassifyRouterFormState,
 ): RenderNode => {
   const routes = resolveRoutes(
     [...state.cases, ...state.hiddenCases],
     false,
     settings.originalNode.node,
-    'Failure'
+    'Failure',
   );
 
   // make sure we have an other route since failure is our default
   ensureRoute(routes, {
     type: Operators.has_category,
     arguments: [],
-    name: 'Other'
+    name: 'Other',
   });
 
   const optionalRouter: Pick<Router, 'result_name'> = {};
@@ -86,7 +93,7 @@ export const stateToNode = (
     categories: routes.categories,
     operand: state.operand.value,
     result_name: routerResultName,
-    ...optionalRouter
+    ...optionalRouter,
   };
 
   const newRenderNode = createRenderNode(
@@ -95,7 +102,7 @@ export const stateToNode = (
     routes.exits,
     typeConfig.type,
     [],
-    { cases: routes.caseConfig }
+    { cases: routes.caseConfig },
   );
 
   return newRenderNode;

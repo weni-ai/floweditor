@@ -15,14 +15,17 @@ export interface UploadButtonProps {
   onUploadChanged: (url: string) => void;
 }
 
-export default class UploadButton extends React.Component<UploadButtonProps, UploadButtonState> {
+export default class UploadButton extends React.Component<
+  UploadButtonProps,
+  UploadButtonState
+> {
   private filePicker: any;
 
   constructor(props: UploadButtonProps) {
     super(props);
     this.state = {};
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -53,7 +56,7 @@ export default class UploadButton extends React.Component<UploadButtonProps, Upl
       <>
         <input
           style={{
-            display: 'none'
+            display: 'none',
           }}
           ref={ele => {
             this.filePicker = ele;
@@ -67,7 +70,7 @@ export default class UploadButton extends React.Component<UploadButtonProps, Upl
             name={this.props.removeText}
             topSpacing={true}
             onClick={this.handleRemoveUpload}
-            type={ButtonTypes.ghost}
+            type={ButtonTypes.tertiary}
           />
         ) : (
           <Button
@@ -77,7 +80,7 @@ export default class UploadButton extends React.Component<UploadButtonProps, Upl
             onClick={() => {
               this.filePicker.click();
             }}
-            type={ButtonTypes.ghost}
+            type={ButtonTypes.tertiary}
           />
         )}
       </>

@@ -1,6 +1,10 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
-import { getAllErrorMessages, hasErrors, renderIssues } from 'components/flow/actions/helpers';
+import {
+  getAllErrorMessages,
+  hasErrors,
+  renderIssues,
+} from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
 import { nodeToState, stateToNode } from './helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
@@ -12,7 +16,7 @@ import {
   Required,
   shouldRequireIf,
   StartIsNonNumeric,
-  validate
+  validate,
 } from 'store/validators';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
 import { Asset } from 'store/flowContext';
@@ -40,7 +44,7 @@ export default class TicketRouterForm extends React.Component<
   TicketRouterFormState
 > {
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: RouterFormProps) {
@@ -53,13 +57,14 @@ export default class TicketRouterForm extends React.Component<
 
     if (this.state.ticketer.value) {
       try {
-        let stateTicketer = props.assetStore.ticketers.items[this.state.ticketer.value.uuid];
+        let stateTicketer =
+          props.assetStore.ticketers.items[this.state.ticketer.value.uuid];
         this.handleTopicsOptionsUpdateByTicketerType(stateTicketer, false);
       } catch (e) {}
     }
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
   private handleUpdate(
@@ -73,42 +78,52 @@ export default class TicketRouterForm extends React.Component<
       queues?: any[];
       topics?: any[];
     },
-    submitting = false
+    submitting = false,
   ): boolean {
     const updates: Partial<TicketRouterFormState> = {};
 
     if (keys.hasOwnProperty('assignee')) {
-      updates.assignee = validate(i18n.t('forms.assignee', 'Assignee'), keys.assignee, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.assignee = validate(
+        i18n.t('forms.assignee', 'Assignee'),
+        keys.assignee,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     if (keys.hasOwnProperty('topic')) {
       updates.topic = validate(i18n.t('forms.topic', 'Topic'), keys.topic, [
-        shouldRequireIf(submitting)
+        shouldRequireIf(submitting),
       ]);
     }
 
     if (keys.hasOwnProperty('ticketer')) {
-      updates.ticketer = validate(i18n.t('forms.ticketer', 'Ticketer'), keys.ticketer, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.ticketer = validate(
+        i18n.t('forms.ticketer', 'Ticketer'),
+        keys.ticketer,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     if (keys.hasOwnProperty('subject')) {
-      updates.subject = validate(i18n.t('forms.subject', 'Subject'), keys.subject, []);
+      updates.subject = validate(
+        i18n.t('forms.subject', 'Subject'),
+        keys.subject,
+        [],
+      );
     }
 
     if (keys.hasOwnProperty('body')) {
       updates.body = validate(i18n.t('forms.body', 'Body'), keys.body, [
-        shouldRequireIf(submitting)
+        shouldRequireIf(submitting),
       ]);
     }
 
     if (keys.hasOwnProperty('resultName')) {
-      updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
-        shouldRequireIf(submitting)
-      ]);
+      updates.resultName = validate(
+        i18n.t('forms.result_name', 'Result Name'),
+        keys.resultName,
+        [shouldRequireIf(submitting)],
+      );
     }
 
     if (keys.hasOwnProperty('queues')) {
@@ -133,7 +148,9 @@ export default class TicketRouterForm extends React.Component<
 
   private handleQueuesUpdate(ticketer: Asset): void {
     const isWenichatsType =
-      ticketer && ticketer.hasOwnProperty('type') && (ticketer['type'] as string) === 'wenichats';
+      ticketer &&
+      ticketer.hasOwnProperty('type') &&
+      (ticketer['type'] as string) === 'wenichats';
     if (isWenichatsType) {
       let ticketerQueuesEndpoint =
         this.context.config.endpoints.ticketer_queues +
@@ -142,7 +159,9 @@ export default class TicketRouterForm extends React.Component<
         const topics = response.data;
         let toUpdateTopic = topics.length > 0 ? topics[0] : {};
         if (this.state.topic.value) {
-          toUpdateTopic = topics.find((to: any) => to === this.state.topic.value);
+          toUpdateTopic = topics.find(
+            (to: any) => to === this.state.topic.value,
+          );
         }
         const toUpdate = { queues: topics, topic: toUpdateTopic as Topic };
         this.handleUpdate(toUpdate);
@@ -150,16 +169,25 @@ export default class TicketRouterForm extends React.Component<
     }
   }
 
-  private handleTopicsOptionsUpdateByTicketerType(ticketer: any, hasContext: boolean): void {
+  private handleTopicsOptionsUpdateByTicketerType(
+    ticketer: any,
+    hasContext: boolean,
+  ): void {
     const isWenichatsType =
-      ticketer && ticketer.hasOwnProperty('type') && (ticketer['type'] as string) === 'wenichats';
+      ticketer &&
+      ticketer.hasOwnProperty('type') &&
+      (ticketer['type'] as string) === 'wenichats';
 
     let ticketerQueuesEndpoint = hasContext
       ? this.context.config.endpoints.ticketer_queues
-      : this.props.assetStore.ticketers.endpoint.replace('ticketers', 'ticketer_queues');
+      : this.props.assetStore.ticketers.endpoint.replace(
+          'ticketers',
+          'ticketer_queues',
+        );
 
     const url = isWenichatsType
-      ? ticketerQueuesEndpoint + `?ticketer_uuid=${ticketer.uuid || ticketer.id}`
+      ? ticketerQueuesEndpoint +
+        `?ticketer_uuid=${ticketer.uuid || ticketer.id}`
       : hasContext
       ? this.context.config.endpoints.topics
       : this.props.assetStore.ticketers.endpoint.replace('ticketers', 'topics');
@@ -169,7 +197,9 @@ export default class TicketRouterForm extends React.Component<
 
       let toUpdateTopic = topics.length > 0 ? topics[0] : {};
       if (this.state.topic.value) {
-        toUpdateTopic = topics.find((to: any) => to.uuid === this.state.topic.value.uuid);
+        toUpdateTopic = topics.find(
+          (to: any) => to.uuid === this.state.topic.value.uuid,
+        );
       }
       const toUpdate = isWenichatsType
         ? { queues: topics, topic: toUpdateTopic as Topic }
@@ -180,18 +210,22 @@ export default class TicketRouterForm extends React.Component<
 
   private handleQueuesUpdateWithoutContext(ticketer: any): void {
     const isWenichatsType =
-      ticketer && ticketer.hasOwnProperty('type') && (ticketer['type'] as string) === 'wenichats';
+      ticketer &&
+      ticketer.hasOwnProperty('type') &&
+      (ticketer['type'] as string) === 'wenichats';
     if (isWenichatsType) {
       let ticketerQueuesEndpoint = this.props.assetStore.ticketers.endpoint.replace(
         'ticketers',
-        'ticketer_queues'
+        'ticketer_queues',
       );
       ticketerQueuesEndpoint += `?ticketer_uuid=${ticketer.uuid}`;
       axios.get(ticketerQueuesEndpoint).then(response => {
         const topics = response.data;
         let toUpdateTopic = topics.length > 0 ? topics[0] : {};
         if (this.state.topic.value) {
-          toUpdateTopic = topics.find((to: any) => to.uuid === this.state.topic.value.uuid);
+          toUpdateTopic = topics.find(
+            (to: any) => to.uuid === this.state.topic.value.uuid,
+          );
         }
         const toUpdate = { queues: topics, topic: toUpdateTopic as Topic };
         this.handleUpdate(toUpdate);
@@ -207,7 +241,11 @@ export default class TicketRouterForm extends React.Component<
     this.handleUpdate({ topic });
   }
 
-  private handleSubjectUpdate(subject: string, name: string, submitting = false): boolean {
+  private handleSubjectUpdate(
+    subject: string,
+    name: string,
+    submitting = false,
+  ): boolean {
     return this.handleUpdate({ subject }, submitting);
   }
 
@@ -216,14 +254,14 @@ export default class TicketRouterForm extends React.Component<
   }
 
   private handleResultNameUpdate(value: string): void {
-    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), value, [
-      Required,
-      Alphanumeric,
-      StartIsNonNumeric
-    ]);
+    const resultName = validate(
+      i18n.t('forms.result_name', 'Result Name'),
+      value,
+      [Required, Alphanumeric, StartIsNonNumeric],
+    );
     this.setState({
       resultName,
-      valid: this.state.valid && !hasErrors(resultName)
+      valid: this.state.valid && !hasErrors(resultName),
     });
   }
 
@@ -234,9 +272,9 @@ export default class TicketRouterForm extends React.Component<
         ticketer: this.state.ticketer.value,
         subject: this.state.subject.value,
         body: this.state.body.value,
-        resultName: this.state.resultName.value
+        resultName: this.state.resultName.value,
       },
-      true
+      true,
     );
 
     if (valid) {
@@ -250,8 +288,8 @@ export default class TicketRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -260,21 +298,33 @@ export default class TicketRouterForm extends React.Component<
 
     // if we only have one ticketer or we have issues, show the ticket chooser
     const showTicketers =
-      Object.keys(this.props.assetStore.ticketers.items).length > 1 || this.props.issues.length > 0;
+      Object.keys(this.props.assetStore.ticketers.items).length > 1 ||
+      this.props.issues.length > 0;
 
     let currentTicketer = null;
     if (Object.keys(this.props.assetStore.ticketers.items).length > 0) {
       try {
         let currentTicketerUUID = this.state.ticketer.value.uuid;
-        currentTicketer = this.props.assetStore.ticketers.items[currentTicketerUUID];
+        currentTicketer = this.props.assetStore.ticketers.items[
+          currentTicketerUUID
+        ];
       } catch (e) {}
     }
 
-    const isWenichatsType = currentTicketer && (currentTicketer.type as string) === 'wenichats';
+    const isWenichatsType =
+      currentTicketer && (currentTicketer.type as string) === 'wenichats';
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
         {showTicketers ? (
           <div>
             <p>
@@ -298,7 +348,10 @@ export default class TicketRouterForm extends React.Component<
             <TembaSelect
               name={i18n.t('forms.topic', 'Topic')}
               options={isWenichatsType ? this.state.queues : this.state.topics}
-              placeholder={i18n.t('forms.topic_placeholder', 'Select the topic to use')}
+              placeholder={i18n.t(
+                'forms.topic_placeholder',
+                'Select the topic to use',
+              )}
               onChange={this.handleTopicUpdate}
               value={this.state.topic.value}
               createPrefix={i18n.t('forms.topic_prefix', 'Create Topic: ')}
@@ -339,7 +392,10 @@ export default class TicketRouterForm extends React.Component<
           />
         </div>
 
-        {createResultNameInput(this.state.resultName, this.handleResultNameUpdate)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleResultNameUpdate,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

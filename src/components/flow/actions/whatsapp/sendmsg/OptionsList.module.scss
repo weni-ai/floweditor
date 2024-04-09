@@ -3,7 +3,7 @@
 .list_wrapper {
   display: flex;
   flex-direction: column;
-  gap: $unnnic-spacing-md;
+  gap: $unnnic-spacing-sm;
 }
 
 .list_inputs {
@@ -42,20 +42,24 @@
   }
 }
 
-.list_item_enter, .reply_item_enter {
+.list_item_enter,
+.reply_item_enter {
   opacity: 0.0;
 }
 
-.list_item_enter_active, .reply_item_enter_active {
+.list_item_enter_active,
+.reply_item_enter_active {
   opacity: 1;
   transition: opacity 250ms ease-in
 }
 
-.list_item_exit, .reply_item_exit {
+.list_item_exit,
+.reply_item_exit {
   opacity: 1;
 }
 
-.list_item_exit_active, .reply_item_exit_active {
+.list_item_exit_active,
+.reply_item_exit_active {
   opacity: 0;
   transition: opacity 250ms ease-in
 }

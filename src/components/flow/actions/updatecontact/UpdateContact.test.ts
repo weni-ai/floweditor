@@ -6,7 +6,7 @@ import {
   createSetContactFieldAction,
   createSetContactLanguageAction,
   createSetContactNameAction,
-  createSetContactStatusAction
+  createSetContactStatusAction,
 } from 'testUtils/assetCreators';
 
 describe(UpdateContactComp.name, () => {
@@ -21,7 +21,7 @@ describe(UpdateContactComp.name, () => {
 
     it('should render set channel', () => {
       const { wrapper } = setup(true, {
-        $set: createSetContactChannelAction()
+        $set: createSetContactChannelAction(),
       });
       expect(wrapper).toMatchSnapshot();
     });
@@ -33,14 +33,14 @@ describe(UpdateContactComp.name, () => {
 
     it('should render set language', () => {
       const { wrapper } = setup(true, {
-        $set: createSetContactLanguageAction()
+        $set: createSetContactLanguageAction(),
       });
       expect(wrapper).toMatchSnapshot();
     });
 
     it('should render set status', () => {
       const { wrapper } = setup(true, {
-        $set: createSetContactStatusAction()
+        $set: createSetContactStatusAction(),
       });
       expect(wrapper).toMatchSnapshot();
     });

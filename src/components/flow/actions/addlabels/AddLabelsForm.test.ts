@@ -2,7 +2,11 @@ import AddLabelsForm from 'components/flow/actions/addlabels/AddLabelsForm';
 import { ActionFormProps } from 'components/flow/props';
 import { Label } from 'flowTypes';
 import { composeComponentTestUtils, mock } from 'testUtils';
-import { createAddLabelsAction, FeedbackLabel, getActionFormProps } from 'testUtils/assetCreators';
+import {
+  createAddLabelsAction,
+  FeedbackLabel,
+  getActionFormProps,
+} from 'testUtils/assetCreators';
 import * as utils from 'utils';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
@@ -13,7 +17,7 @@ const { results: labels } = require('test/assets/labels.json') as {
 
 const { setup } = composeComponentTestUtils(
   AddLabelsForm,
-  getActionFormProps(createAddLabelsAction(labels))
+  getActionFormProps(createAddLabelsAction(labels)),
 );
 
 describe(AddLabelsForm.name, () => {
@@ -41,7 +45,7 @@ describe(AddLabelsForm.name, () => {
     it('should allow switching from router', () => {
       const component = setup(true, {
         $merge: { updateAction: jest.fn() },
-        nodeSettings: { $merge: { originalAction: null } }
+        nodeSettings: { $merge: { originalAction: null } },
       });
 
       const instance: AddLabelsForm = component.instance;

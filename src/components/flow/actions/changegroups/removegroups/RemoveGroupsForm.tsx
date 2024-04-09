@@ -2,7 +2,7 @@ import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import {
   ChangeGroupsFormState,
-  excludeDynamicGroups
+  excludeDynamicGroups,
 } from 'components/flow/actions/changegroups/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
@@ -30,25 +30,31 @@ const UnnnicRadio = applyVueInReact(unnnicRadio, {
     slotWrap: 'div',
     componentWrapAttrs: {
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 export const LABEL = i18n.t(
   'forms.remove_groups_summary',
-  'Select the groups to remove the contact from.'
+  'Select the groups to remove the contact from.',
 );
-export const NOT_FOUND = i18n.t('errors.group_not_found', 'Enter the name of an existing group');
+export const NOT_FOUND = i18n.t(
+  'errors.group_not_found',
+  'Enter the name of an existing group',
+);
 export const PLACEHOLDER = i18n.t(
   'forms.remove_groups_placeholder',
-  'Enter the name of an existing group'
+  'Enter the name of an existing group',
 );
-export const REMOVE_FROM_ALL = i18n.t('forms.remove_from_all_label', 'Remove from all');
+export const REMOVE_FROM_ALL = i18n.t(
+  'forms.remove_from_all_label',
+  'Remove from all',
+);
 export const REMOVE_FROM_ALL_DESC = i18n.t(
   'forms.remove_from_all_summary',
-  "Remove the active contact from all groups they're a member of."
+  "Remove the active contact from all groups they're a member of.",
 );
 
 export const labelSpecId = 'label';
@@ -59,14 +65,16 @@ export default class RemoveGroupsForm extends React.Component<
   ChangeGroupsFormState
 > {
   public static contextTypes = {
-    assetService: fakePropType
+    assetService: fakePropType,
   };
 
   constructor(props: ActionFormProps) {
     super(props);
-    this.state = initializeForm(this.props.nodeSettings) as ChangeGroupsFormState;
+    this.state = initializeForm(
+      this.props.nodeSettings,
+    ) as ChangeGroupsFormState;
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
@@ -81,12 +89,14 @@ export default class RemoveGroupsForm extends React.Component<
 
   private handleUpdate(
     keys: { groups?: Asset[]; removeAll?: boolean },
-    submitting: boolean = false
+    submitting: boolean = false,
   ): boolean {
     const updates: Partial<ChangeGroupsFormState> = {};
 
     // we only require groups if removeAll isn't checked
-    let groupValidators = this.state.removeAll ? [] : [shouldRequireIf(submitting)];
+    let groupValidators = this.state.removeAll
+      ? []
+      : [shouldRequireIf(submitting)];
 
     if (keys.hasOwnProperty('removeAll')) {
       updates.removeAll = keys.removeAll;
@@ -96,7 +106,11 @@ export default class RemoveGroupsForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('groups')) {
-      updates.groups = validate(i18n.t('forms.groups', 'Groups'), keys.groups!, groupValidators);
+      updates.groups = validate(
+        i18n.t('forms.groups', 'Groups'),
+        keys.groups!,
+        groupValidators,
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -104,7 +118,10 @@ export default class RemoveGroupsForm extends React.Component<
     return updated.valid;
   }
 
-  public handleGroupsChanged(groups: Asset[], submitting: boolean = false): boolean {
+  public handleGroupsChanged(
+    groups: Asset[],
+    submitting: boolean = false,
+  ): boolean {
     return this.handleUpdate({ groups }, submitting);
   }
 
@@ -117,8 +134,8 @@ export default class RemoveGroupsForm extends React.Component<
       primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -131,25 +148,37 @@ export default class RemoveGroupsForm extends React.Component<
         headerClass={typeConfig.type}
         buttons={this.getButtons()}
       >
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
-        <div className={`${styles.form_element} u font secondary body-md color-neutral-cloudy`}>
-          {i18n.t('forms.remove_groups_type_label', 'Groups that the contact will be removed:')}
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
+        <div
+          className={`${styles.form_element} u font secondary body-md color-neutral-cloudy`}
+        >
+          {i18n.t(
+            'forms.remove_groups_type_label',
+            'Groups that the contact will be removed:',
+          )}
           <UnnnicRadio
             $model={{
               value: String(this.state.removeAll),
-              setter: this.handleRemoveAllUpdate
+              setter: this.handleRemoveAllUpdate,
             }}
             value="false"
             size="sm"
           >
             <span className="color-neutral-cloudy">
-              {i18n.t('forms.remove_groups_type_values_selected_label', 'Selected')}
+              {i18n.t(
+                'forms.remove_groups_type_values_selected_label',
+                'Selected',
+              )}
             </span>
           </UnnnicRadio>
           <UnnnicRadio
             $model={{
               value: String(this.state.removeAll),
-              setter: this.handleRemoveAllUpdate
+              setter: this.handleRemoveAllUpdate,
             }}
             value="true"
             size="sm"
@@ -171,7 +200,7 @@ export default class RemoveGroupsForm extends React.Component<
               onChange={this.handleGroupsChanged}
               multi={true}
             />
-          </div>
+          </div>,
         )}
         {renderIssues(this.props)}
       </Dialog>

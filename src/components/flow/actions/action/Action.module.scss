@@ -22,6 +22,7 @@
       border-bottom-left-radius: 0;
     }
   }
+
   clear: both;
 }
 
@@ -69,7 +70,10 @@
     text-underline-offset: 0.1875 * $unnnic-font-size; // 3px
   }
 
-  &.add_contact_groups, &.remove_contact_groups, &.call_classifier, &.call_wenigpt {
+  &.add_contact_groups,
+  &.remove_contact_groups,
+  &.call_classifier,
+  &.call_wenigpt {
     text-align: center;
   }
 
@@ -78,7 +82,8 @@
     width: inherit;
   }
 
-  &.send_msg_catalog {
+  &.send_msg_catalog,
+  &.send_whatsapp_msg {
     width: auto;
   }
 
@@ -93,6 +98,7 @@
   .overlay {
     display: block;
   }
+
   .body {
     background: #fff;
   }
@@ -140,10 +146,10 @@
 .selected {
   background: #EEFFFC !important;
 
-  > div {
+  >div {
     background: #EEFFFC !important;
 
-    > div {
+    >div {
       background: #EEFFFC !important;
     }
   }

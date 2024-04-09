@@ -2,7 +2,9 @@ import { react as bindCallbacks } from 'auto-bind';
 import { AirtimeTransferEntry } from 'components/flow/routers/airtime/AirtimeRouterForm';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
 import FormElement from 'components/form/FormElement';
-import TextInputElement, { TextInputStyle } from 'components/form/textinput/TextInputElement';
+import TextInputElement, {
+  TextInputStyle,
+} from 'components/form/textinput/TextInputElement';
 import * as React from 'react';
 import { Asset, Assets } from 'store/flowContext';
 import { ValidationFailure } from 'store/nodeEditor';
@@ -25,19 +27,21 @@ export interface CurrencyElementProps {
   onRemove(index: number): void;
 }
 
-export default class CurrencyElement extends React.Component<CurrencyElementProps> {
+export default class CurrencyElement extends React.Component<
+  CurrencyElementProps
+> {
   constructor(props: CurrencyElementProps) {
     super(props);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
   private handleCurrencyChanged(selected: any[]): void {
     this.props.onChange(this.props.index, {
       value: { amount: this.props.transfer.value.amount, code: selected[0].id },
-      validationFailures: this.props.transfer.validationFailures
+      validationFailures: this.props.transfer.validationFailures,
     });
   }
 
@@ -45,12 +49,12 @@ export default class CurrencyElement extends React.Component<CurrencyElementProp
     const validationFailures: ValidationFailure[] = [];
     if (isNaN(Number(value))) {
       validationFailures.push({
-        message: 'Invalid amount, please enter a number'
+        message: 'Invalid amount, please enter a number',
       });
     }
     this.props.onChange(this.props.index, {
       value: { amount: value, code: this.props.transfer.value.code },
-      validationFailures
+      validationFailures,
     });
   }
 
@@ -98,7 +102,7 @@ export default class CurrencyElement extends React.Component<CurrencyElementProp
     const shouldExclude = (asset: Asset): boolean => {
       return (
         this.props.exclude.filter(
-          (airtime: AirtimeTransferEntry) => airtime.value.code === asset.id
+          (airtime: AirtimeTransferEntry) => airtime.value.code === asset.id,
         ).length > 1
       );
     };

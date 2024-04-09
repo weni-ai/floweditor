@@ -4,7 +4,10 @@ import WeniGPTRouterForm from 'components/flow/routers/wenigpt/WeniGPTRouterForm
 import { Types } from 'config/interfaces';
 import { AssetType, RenderNode } from 'store/flowContext';
 import { composeComponentTestUtils, mock } from 'testUtils';
-import { createWebhookRouterNode, getRouterFormProps } from 'testUtils/assetCreators';
+import {
+  createWebhookRouterNode,
+  getRouterFormProps,
+} from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import * as React from 'react';
 import {
@@ -12,7 +15,7 @@ import {
   fireEvent,
   fireUnnnicInputChangeText,
   fireUnnnicTextAreaChangeText,
-  act
+  act,
 } from 'test/utils';
 import userEvent from '@testing-library/user-event';
 let mockedKnowledgeBases = require('test/assets/knowledge_bases.json');
@@ -24,15 +27,18 @@ mock(utils, 'createUUID', utils.seededUUIDs());
 
 const weniGPTForm = getRouterFormProps({
   node: createWebhookRouterNode(),
-  ui: { type: Types.call_wenigpt }
+  ui: { type: Types.call_wenigpt },
 } as RenderNode);
 
 weniGPTForm.assetStore.knowledgeBases = {
   type: AssetType.KnowledgeBase,
-  items: mockedKnowledgeBases
+  items: mockedKnowledgeBases,
 };
 
-const { setup } = composeComponentTestUtils<RouterFormProps>(WeniGPTRouterForm, weniGPTForm);
+const { setup } = composeComponentTestUtils<RouterFormProps>(
+  WeniGPTRouterForm,
+  weniGPTForm,
+);
 
 describe(WeniGPTRouterForm.name, () => {
   it('should render', () => {
@@ -42,7 +48,9 @@ describe(WeniGPTRouterForm.name, () => {
 
   describe('updates', () => {
     it('should save changes', async () => {
-      const { getByText, getByTestId } = render(<WeniGPTRouterForm {...weniGPTForm} />);
+      const { getByText, getByTestId } = render(
+        <WeniGPTRouterForm {...weniGPTForm} />,
+      );
 
       const okButton = getByText('Save');
 
@@ -60,9 +68,14 @@ describe(WeniGPTRouterForm.name, () => {
       userEvent.click(getByText('Intelligence 2 - Base 1'));
 
       // set our expression input
-      const expressionInput = getByTestId('Insert an expression to be used as input');
+      const expressionInput = getByTestId(
+        'Insert an expression to be used as input',
+      );
       await act(async () => {
-        fireUnnnicTextAreaChangeText(expressionInput, 'Updated expression input data');
+        fireUnnnicTextAreaChangeText(
+          expressionInput,
+          'Updated expression input data',
+        );
       });
 
       userEvent.click(okButton);
@@ -73,7 +86,7 @@ describe(WeniGPTRouterForm.name, () => {
 
   it('should cancel', () => {
     const { instance, props } = setup(true, {
-      $merge: { onClose: jest.fn(), updateRouter: jest.fn() }
+      $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
     });
     instance.getButtons().secondary.onClick();
     expect(props.onClose).toHaveBeenCalled();

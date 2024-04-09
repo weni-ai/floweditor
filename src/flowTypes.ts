@@ -1,13 +1,19 @@
 import { Methods } from 'components/flow/routers/webhook/helpers';
-import { FlowTypes, Operators, Types, ContactStatus, ServiceCall } from 'config/interfaces';
+import {
+  FlowTypes,
+  Operators,
+  Types,
+  ContactStatus,
+  ServiceCall,
+} from 'config/interfaces';
 import {
   ProductSearchType,
-  ProductViewSettings
+  ProductViewSettings,
 } from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 import {
   WhatsAppHeaderType,
   WhatsAppInteractionType,
-  WhatsAppListItem
+  WhatsAppListItem,
 } from './components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 // we don't concern ourselves with patch versions
@@ -110,7 +116,7 @@ export enum DependencyType {
   flow = 'flow',
   group = 'group',
   label = 'label',
-  template = 'template'
+  template = 'template',
 }
 
 export interface Dependency {
@@ -132,7 +138,7 @@ export interface FlowMetadata {
 export enum FlowIssueType {
   MISSING_DEPENDENCY = 'missing_dependency',
   LEGACY_EXTRA = 'legacy_extra',
-  INVALID_REGEX = 'invalid_regex'
+  INVALID_REGEX = 'invalid_regex',
 }
 
 export interface User {
@@ -191,7 +197,7 @@ export interface Exit {
 export enum RouterTypes {
   switch = 'switch',
   random = 'random',
-  smart = 'smart'
+  smart = 'smart',
 }
 
 export interface Router {
@@ -240,7 +246,7 @@ export interface SwitchRouter extends Router {
 
 export enum WaitTypes {
   msg = 'msg',
-  dial = 'dial'
+  dial = 'dial',
 }
 
 export enum HintTypes {
@@ -248,7 +254,7 @@ export enum HintTypes {
   audio = 'audio',
   image = 'image',
   video = 'video',
-  location = 'location'
+  location = 'location',
 }
 
 export interface Hint {
@@ -389,8 +395,7 @@ export interface SendWhatsAppMsg extends Action {
   attachment: string;
   footer: string;
   interaction_type: WhatsAppInteractionType;
-  list_title: string;
-  list_footer: string;
+  button_text: string;
   list_items: WhatsAppListItem[];
   quick_replies: string[];
 }
@@ -402,6 +407,7 @@ export interface SendWhatsAppProduct extends Action {
   search_type: ProductSearchType;
   search_url?: string;
   seller_id?: string;
+  postal_code?: string;
   productSearch?: string;
   productViewSettings: ProductViewSettings;
   result_name: string;
@@ -597,7 +603,7 @@ export enum ContactProperties {
   Email = 'email',
   Mailto = 'mailto',
   Phone = 'phone',
-  Groups = 'groups'
+  Groups = 'groups',
 }
 
 export enum ValueType {
@@ -606,7 +612,7 @@ export enum ValueType {
   datetime = 'datetime',
   state = 'state',
   district = 'district',
-  ward = 'ward'
+  ward = 'ward',
 }
 
 export interface CreateOptions {
@@ -620,35 +626,35 @@ export interface CreateOptions {
 
 export enum StartFlowArgs {
   Complete = 'C',
-  Expired = 'E'
+  Expired = 'E',
 }
 
 export enum StartFlowExitNames {
   Complete = 'Complete',
-  Expired = 'Expired'
+  Expired = 'Expired',
 }
 
 export enum WebhookExitNames {
   Success = 'Success',
   Failure = 'Failure',
-  Other = 'Other'
+  Other = 'Other',
 }
 
 export enum TransferAirtimeExitNames {
   Success = 'Success',
-  Failure = 'Failed'
+  Failure = 'Failed',
 }
 
 export enum DialCategoryNames {
   Answered = 'Answered',
   NoAnswer = 'No Answer',
   Busy = 'Busy',
-  Failure = 'Failed'
+  Failure = 'Failed',
 }
 
 export enum DialStatus {
   answered = 'answered',
   noAnswer = 'no_answer',
   busy = 'busy',
-  failure = 'failed'
+  failure = 'failed',
 }

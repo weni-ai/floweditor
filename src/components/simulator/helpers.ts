@@ -11,7 +11,7 @@ const SIMULATOR_CHANNEL = {
   name: 'Simulator',
   address: '+12065550000',
   schemes: ['tel'],
-  roles: ['send', 'receive']
+  roles: ['send', 'receive'],
 };
 
 interface SimAsset {
@@ -30,41 +30,44 @@ export const getTime = (): string => {
   return Math.abs(12 - now.getHours()) + ':' + minStr;
 };
 
-export const getSimulationAssets = (assets: AssetStore, flow: FlowDefinition): any => {
+export const getSimulationAssets = (
+  assets: AssetStore,
+  flow: FlowDefinition,
+): any => {
   const simAssets: SimAsset[] = [];
 
   // our group set asset
   simAssets.push({
     type: AssetType.Group,
     url: assets.groups.endpoint,
-    content: assetMapToList(assets.groups.items)
+    content: assetMapToList(assets.groups.items),
   });
 
   // our fields
   simAssets.push({
     type: AssetType.Field,
     url: assets.fields.endpoint,
-    content: assetMapToList(assets.fields.items)
+    content: assetMapToList(assets.fields.items),
   });
 
   // our labels
   simAssets.push({
     type: AssetType.Label,
     url: assets.labels.endpoint,
-    content: assetMapToList(assets.labels.items)
+    content: assetMapToList(assets.labels.items),
   });
 
   // our channels
   simAssets.push({
     type: AssetType.Channel,
     url: assets.channels.endpoint,
-    content: [SIMULATOR_CHANNEL]
+    content: [SIMULATOR_CHANNEL],
   });
 
   simAssets.push({
     type: AssetType.Flow,
     url: assets.flows.endpoint + `${flow.uuid}/`,
-    content: flow
+    content: flow,
   });
 
   const payload = {
@@ -75,16 +78,18 @@ export const getSimulationAssets = (assets: AssetStore, flow: FlowDefinition): a
         [AssetType.Field]: assets.fields.endpoint,
         [AssetType.Channel]: assets.channels.endpoint,
         [AssetType.Group]: assets.groups.endpoint,
-        [AssetType.Label]: assets.labels.endpoint
-      }
-    }
+        [AssetType.Label]: assets.labels.endpoint,
+      },
+    },
   };
 
   return payload;
 };
 
 export const isMessage = (event: EventProps): boolean => {
-  return !!['msg_created', 'msg_received', 'ivr_created'].find(type => type === event.type);
+  return !!['msg_created', 'msg_received', 'ivr_created'].find(
+    type => type === event.type,
+  );
 };
 
 export const isMT = (event: EventProps): boolean => {
@@ -105,7 +110,8 @@ export const pruneEmpty = (obj: any): any => {
     Object.keys(obj).forEach((key: string) => {
       if (
         !obj[key] ||
-        (Object.keys(obj[key]).length === 1 && obj[key].hasOwnProperty(DEFAULT_KEY))
+        (Object.keys(obj[key]).length === 1 &&
+          obj[key].hasOwnProperty(DEFAULT_KEY))
       ) {
         delete obj[key];
       } else {

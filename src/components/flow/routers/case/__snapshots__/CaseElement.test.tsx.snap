@@ -74,7 +74,7 @@ exports[`CaseElement operator changes should handle updates 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-ab84ef7c=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -380,7 +380,7 @@ exports[`CaseElement operator changes should handle updates 1`] = `
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
               data-passed-props="[object Object]"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-ab84ef7c=""
+              data-v-4ce83152=""
             >
               <svg
                 fill="none"
@@ -481,7 +481,7 @@ exports[`CaseElement operator changes should not update exit if it has been edit
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-ab84ef7c=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -787,7 +787,7 @@ exports[`CaseElement operator changes should not update exit if it has been edit
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
               data-passed-props="[object Object]"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-ab84ef7c=""
+              data-v-4ce83152=""
             >
               <svg
                 fill="none"
@@ -888,7 +888,7 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-ab84ef7c=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -1297,7 +1297,7 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
               data-passed-props="[object Object]"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-ab84ef7c=""
+              data-v-4ce83152=""
             >
               <svg
                 fill="none"
@@ -1398,7 +1398,7 @@ exports[`CaseElement render renders no argument rules 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-ab84ef7c=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -1704,7 +1704,7 @@ exports[`CaseElement render renders no argument rules 1`] = `
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
               data-passed-props="[object Object]"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-ab84ef7c=""
+              data-v-4ce83152=""
             >
               <svg
                 fill="none"
@@ -1805,7 +1805,7 @@ exports[`CaseElement render should render empty case 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-ab84ef7c=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -2160,7 +2160,7 @@ exports[`CaseElement render should render empty case 1`] = `
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
               data-passed-props="[object Object]"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-ab84ef7c=""
+              data-v-4ce83152=""
             >
               <svg
                 fill="none"
@@ -2261,7 +2261,7 @@ exports[`CaseElement update handles argument change 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-ab84ef7c=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -2616,7 +2616,7 @@ exports[`CaseElement update handles argument change 1`] = `
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
               data-passed-props="[object Object]"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-ab84ef7c=""
+              data-v-4ce83152=""
             >
               <svg
                 fill="none"
@@ -2717,7 +2717,7 @@ exports[`CaseElement update handles multiple argument change 1`] = `
                   <span
                     class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                     data-v-400546b3=""
-                    data-v-ab84ef7c=""
+                    data-v-4ce83152=""
                   >
                     <svg
                       fill="none"
@@ -3126,7 +3126,7 @@ exports[`CaseElement update handles multiple argument change 1`] = `
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
               data-passed-props="[object Object]"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-ab84ef7c=""
+              data-v-4ce83152=""
             >
               <svg
                 fill="none"

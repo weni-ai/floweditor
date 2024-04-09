@@ -1,7 +1,14 @@
-import ExcellentParser, { Expression } from '../../components/form/textinput/ExcellentParser';
+import ExcellentParser, {
+  Expression,
+} from '../../components/form/textinput/ExcellentParser';
 import { TembaStore } from '../../temba-components';
 
-const messageParser = new ExcellentParser('@', ['contact', 'fields', 'globals', 'urns']);
+const messageParser = new ExcellentParser('@', [
+  'contact',
+  'fields',
+  'globals',
+  'urns',
+]);
 
 const sessionParser = new ExcellentParser('@', [
   'contact',
@@ -17,7 +24,7 @@ const sessionParser = new ExcellentParser('@', [
   'webhook',
   'ticket',
   'trigger',
-  'resume'
+  'resume',
 ]);
 
 export interface Position {
@@ -71,7 +78,10 @@ export interface KeyedAssets {
   [assetType: string]: string[];
 }
 
-export const getFunctions = (functions: CompletionOption[], query: string): CompletionOption[] => {
+export const getFunctions = (
+  functions: CompletionOption[],
+  query: string,
+): CompletionOption[] => {
   if (!query) {
     return functions;
   }
@@ -91,10 +101,12 @@ export const getCompletions = (
   schema: CompletionSchema,
   dotQuery: string,
   keyedAssets: KeyedAssets = {},
-  session: boolean
+  session: boolean,
 ): CompletionOption[] => {
   const parts = (dotQuery || '').split('.');
-  let currentProps: CompletionProperty[] = session ? schema.root : schema.root_no_session;
+  let currentProps: CompletionProperty[] = session
+    ? schema.root
+    : schema.root_no_session;
 
   if (!currentProps) {
     return [];
@@ -120,7 +132,7 @@ export const getCompletions = (
             currentProps = keyedAssets[nextType.name].map((key: string) => ({
               key: template.key.replace('{key}', key),
               help: template.help.replace('{key}', key),
-              type: template.type
+              type: template.type,
             }));
           } else {
             currentProps = [];
@@ -128,14 +140,14 @@ export const getCompletions = (
         } else {
           // eslint-disable-next-line
           currentProps = currentProps.filter((prop: CompletionProperty) =>
-            prop.key.startsWith(part.toLowerCase())
+            prop.key.startsWith(part.toLowerCase()),
           );
           break;
         }
       } else {
         // eslint-disable-next-line
         currentProps = currentProps.filter((prop: CompletionProperty) =>
-          prop.key.startsWith(part.toLowerCase())
+          prop.key.startsWith(part.toLowerCase()),
         );
         break;
       }
@@ -144,7 +156,9 @@ export const getCompletions = (
 
   return currentProps.map((prop: CompletionProperty) => {
     const name =
-      prop.key === '__default__' ? prefix.substr(0, prefix.length - 1) : prefix + prop.key;
+      prop.key === '__default__'
+        ? prefix.substr(0, prefix.length - 1)
+        : prefix + prop.key;
     return { name, summary: prop.help };
   });
 };
@@ -152,7 +166,7 @@ export const getCompletions = (
 export const updateInputElementWithCompletion = (
   currentQuery: string,
   ele: HTMLInputElement,
-  option: CompletionOption
+  option: CompletionOption,
 ) => {
   let insertText = '';
 
@@ -188,12 +202,12 @@ export const executeCompletionQuery = (
   store: TembaStore,
   session: boolean,
   functions: CompletionOption[],
-  context: CompletionSchema
+  context: CompletionSchema,
 ): CompletionResult => {
   const result: CompletionResult = {
     currentFunction: null,
     options: [],
-    query: null
+    query: null,
   };
 
   if (!ele) {
@@ -207,7 +221,8 @@ export const executeCompletionQuery = (
   const expressions = parser.findExpressions(input);
   const currentExpression = expressions.find(
     (expr: Expression) =>
-      expr.start <= cursor && (expr.end > cursor || (expr.end === cursor && !expr.closed))
+      expr.start <= cursor &&
+      (expr.end > cursor || (expr.end === cursor && !expr.closed)),
   );
   if (currentExpression) {
     const includeFunctions = currentExpression.text.indexOf('(') > -1;
@@ -223,18 +238,34 @@ export const executeCompletionQuery = (
 
     for (let i = currentExpression.text.length; i >= 0; i--) {
       const curr = currentExpression.text[i];
-      if (curr === '@' || curr === '(' || curr === ' ' || curr === ',' || curr === ')' || i === 0) {
+      if (
+        curr === '@' ||
+        curr === '(' ||
+        curr === ' ' ||
+        curr === ',' ||
+        curr === ')' ||
+        i === 0
+      ) {
         // don't include non-expression chars
-        if (curr === '(' || curr === ' ' || curr === ',' || curr === ')' || curr === '@') {
+        if (
+          curr === '(' ||
+          curr === ' ' ||
+          curr === ',' ||
+          curr === ')' ||
+          curr === '@'
+        ) {
           i++;
         }
 
-        result.query = currentExpression.text.substr(i, currentExpression.text.length - i);
+        result.query = currentExpression.text.substr(
+          i,
+          currentExpression.text.length - i,
+        );
 
         const keyedAssets: KeyedAssets = store ? store.getKeyedAssets() : {};
         result.options = [
           ...getCompletions(context, result.query, keyedAssets, session),
-          ...(includeFunctions ? getFunctions(functions, result.query) : [])
+          ...(includeFunctions ? getFunctions(functions, result.query) : []),
         ];
 
         return result;

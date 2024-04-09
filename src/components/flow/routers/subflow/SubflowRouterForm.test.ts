@@ -4,12 +4,15 @@ import {
   ColorFlowAsset,
   createStartFlowAction,
   createSubflowNode,
-  getRouterFormProps
+  getRouterFormProps,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 
 const routerNode = createSubflowNode(createStartFlowAction());
-const { setup } = composeComponentTestUtils(SubflowRouterForm, getRouterFormProps(routerNode));
+const { setup } = composeComponentTestUtils(
+  SubflowRouterForm,
+  getRouterFormProps(routerNode),
+);
 mock(utils, 'createUUID', utils.seededUUIDs());
 
 describe(SubflowRouterForm.name, () => {
@@ -40,8 +43,8 @@ describe(SubflowRouterForm.name, () => {
       const { instance, props } = setup(true, {
         updateRouter: setMock(),
         nodeSettings: {
-          originalNode: { ui: { $merge: { type: null } } }
-        }
+          originalNode: { ui: { $merge: { type: null } } },
+        },
       });
 
       instance.handleFlowChanged([ColorFlowAsset]);
@@ -55,9 +58,9 @@ describe(SubflowRouterForm.name, () => {
         nodeSettings: {
           originalNode: {
             node: { $merge: { actions: [] } },
-            ui: { $merge: { type: null } }
-          }
-        }
+            ui: { $merge: { type: null } },
+          },
+        },
       });
 
       instance.handleFlowChanged([ColorFlowAsset]);

@@ -1,6 +1,14 @@
-import ParamElement, { ParamElementProps } from 'components/flow/routers/param/ParamElement';
+import ParamElement, {
+  ParamElementProps,
+} from 'components/flow/routers/param/ParamElement';
 import * as React from 'react';
-import { fireEvent, render, fireTembaSelect, fireUnnnicInputChangeText, act } from 'test/utils';
+import {
+  fireEvent,
+  render,
+  fireTembaSelect,
+  fireUnnnicInputChangeText,
+  act,
+} from 'test/utils';
 import { createUUID } from 'utils';
 import userEvent from '@testing-library/user-event';
 
@@ -19,17 +27,19 @@ describe(ParamElement.name, () => {
           uuid: paramUUID,
           filter: { value: null },
           data: { value: null },
-          valid: true
+          valid: true,
         },
         availableParams: chatGPTParams,
         onRemove: jest.fn(),
         onChange: jest.fn(),
-        hasArrangeFunctionality: false
+        hasArrangeFunctionality: false,
       };
 
       describe('render', () => {
         it('should render param', () => {
-          const { baseElement } = render(<ParamElement {...chatGPTParamProps} />);
+          const { baseElement } = render(
+            <ParamElement {...chatGPTParamProps} />,
+          );
           expect(baseElement).toMatchSnapshot();
         });
       });
@@ -37,18 +47,18 @@ describe(ParamElement.name, () => {
       describe('update', () => {
         it('handles data change', () => {
           const { baseElement, getByTestId } = render(
-            <ParamElement {...chatGPTParamProps} onRemove={jest.fn()} />
+            <ParamElement {...chatGPTParamProps} onRemove={jest.fn()} />,
           );
 
           fireTembaSelect(getByTestId('temba_select_aditional_prompts'), [
             {
               text: 'Aditional Prompt 1 content',
-              uuid: 'ab154b06-5ecd-43d9-afca-39738e6859d7'
+              uuid: 'ab154b06-5ecd-43d9-afca-39738e6859d7',
             },
             {
               text: 'Aditional Prompt 2 content',
-              uuid: 'ac154b06-5ecd-43d9-afca-39738e6859d7'
-            }
+              uuid: 'ac154b06-5ecd-43d9-afca-39738e6859d7',
+            },
           ]);
 
           expect(baseElement).toMatchSnapshot();
@@ -64,17 +74,19 @@ describe(ParamElement.name, () => {
           uuid: paramUUID,
           filter: { value: null },
           data: { value: false },
-          valid: true
+          valid: true,
         },
         availableParams: chatGPTParams,
         onRemove: jest.fn(),
         onChange: jest.fn(),
-        hasArrangeFunctionality: false
+        hasArrangeFunctionality: false,
       };
 
       describe('render', () => {
         it('should render param', () => {
-          const { baseElement } = render(<ParamElement {...chatGPTParamProps} />);
+          const { baseElement } = render(
+            <ParamElement {...chatGPTParamProps} />,
+          );
           expect(baseElement).toMatchSnapshot();
         });
       });
@@ -88,17 +100,19 @@ describe(ParamElement.name, () => {
           uuid: paramUUID,
           filter: { value: null },
           data: { value: null },
-          valid: true
+          valid: true,
         },
         availableParams: chatGPTParams,
         onRemove: jest.fn(),
         onChange: jest.fn(),
-        hasArrangeFunctionality: false
+        hasArrangeFunctionality: false,
       };
 
       describe('render', () => {
         it('should render param', () => {
-          const { baseElement } = render(<ParamElement {...chatGPTParamProps} />);
+          const { baseElement } = render(
+            <ParamElement {...chatGPTParamProps} />,
+          );
           expect(baseElement).toMatchSnapshot();
         });
       });
@@ -118,12 +132,12 @@ describe(ParamElement.name, () => {
         uuid: paramUUID,
         filter: { value: omieParams[0].filters[0] },
         data: { value: '' },
-        valid: true
+        valid: true,
       },
       availableParams: omieParams,
       onRemove: jest.fn(),
       onChange: jest.fn(),
-      hasArrangeFunctionality: true
+      hasArrangeFunctionality: true,
     };
 
     describe('render', () => {
@@ -136,25 +150,32 @@ describe(ParamElement.name, () => {
     describe('update', () => {
       it('handles removes', () => {
         const onRemove = jest.fn();
-        const { getByTestId } = render(<ParamElement {...omieParamProps} onRemove={onRemove} />);
+        const { getByTestId } = render(
+          <ParamElement {...omieParamProps} onRemove={onRemove} />,
+        );
 
-        fireEvent.click(getByTestId(`remove-param-${omieParamProps.initialParam.uuid}`));
+        fireEvent.click(
+          getByTestId(`remove-param-${omieParamProps.initialParam.uuid}`),
+        );
         expect(onRemove).toHaveBeenCalled();
       });
 
       it('handles data change', async () => {
         const { baseElement, getByTestId } = render(
-          <ParamElement {...omieParamProps} onRemove={jest.fn()} />
+          <ParamElement {...omieParamProps} onRemove={jest.fn()} />,
         );
         await act(async () => {
-          fireUnnnicInputChangeText(getByTestId('Service Call Param Data'), 'new data');
+          fireUnnnicInputChangeText(
+            getByTestId('Service Call Param Data'),
+            'new data',
+          );
         });
         expect(baseElement).toMatchSnapshot();
       });
 
       it('handles filter change', async () => {
         const { baseElement, getByText } = render(
-          <ParamElement {...omieParamProps} onRemove={jest.fn()} />
+          <ParamElement {...omieParamProps} onRemove={jest.fn()} />,
         );
 
         userEvent.click(getByText('Código da Conta'));
@@ -163,7 +184,7 @@ describe(ParamElement.name, () => {
 
       it('handles param change', async () => {
         const { baseElement, getByText } = render(
-          <ParamElement {...omieParamProps} onRemove={jest.fn()} />
+          <ParamElement {...omieParamProps} onRemove={jest.fn()} />,
         );
 
         userEvent.click(getByText('Telefone e Email'));
@@ -172,14 +193,17 @@ describe(ParamElement.name, () => {
 
       it('handles filter change from correct param after param change', async () => {
         const { baseElement, getByTestId, getByText } = render(
-          <ParamElement {...omieParamProps} onRemove={jest.fn()} />
+          <ParamElement {...omieParamProps} onRemove={jest.fn()} />,
         );
 
         userEvent.click(getByText('Telefone e Email'));
         userEvent.click(getByText('DDD do Celular 2'));
 
         await act(async () => {
-          fireUnnnicInputChangeText(getByTestId('Service Call Param Data'), 'new data');
+          fireUnnnicInputChangeText(
+            getByTestId('Service Call Param Data'),
+            'new data',
+          );
         });
 
         expect(baseElement).toMatchSnapshot();

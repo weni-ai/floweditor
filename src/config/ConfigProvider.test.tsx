@@ -1,7 +1,7 @@
 import ConfigProvider, {
   fakePropType,
   SINGLE_CHILD_ERROR,
-  VALID_CHILD_ERROR
+  VALID_CHILD_ERROR,
 } from 'config/ConfigProvider';
 import { shallow } from 'enzyme';
 import * as React from 'react';
@@ -11,7 +11,7 @@ describe('ConfigProvider >', () => {
   const createChild = () => {
     class Child extends React.Component<{}> {
       public static contextTypes = {
-        config: fakePropType
+        config: fakePropType,
       };
       public render(): JSX.Element {
         return <div />;
@@ -26,8 +26,8 @@ describe('ConfigProvider >', () => {
         <ConfigProvider config={config}>
           <div />
           <div />
-        </ConfigProvider>
-      )
+        </ConfigProvider>,
+      ),
     ).toThrowError(SINGLE_CHILD_ERROR);
   });
 
@@ -38,8 +38,8 @@ describe('ConfigProvider >', () => {
           {() => {
             return;
           }}
-        </ConfigProvider>
-      )
+        </ConfigProvider>,
+      ),
     ).toThrowError(VALID_CHILD_ERROR);
   });
 });

@@ -84,7 +84,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -198,7 +198,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -379,7 +379,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                   data-passed-props="[object Object]"
                   data-testid="remove-param-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
-                  data-v-ab84ef7c=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"
@@ -476,7 +476,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -590,7 +590,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -761,7 +761,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                   data-passed-props="[object Object]"
                   data-testid="remove-param-061fc171-8b79-4636-b892-bd0ea5aa9b42"
-                  data-v-ab84ef7c=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"
@@ -858,7 +858,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -972,7 +972,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -993,7 +993,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_options_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
                       class="option active "
@@ -1079,7 +1079,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_expressions_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
               </div>
@@ -1143,7 +1143,7 @@ exports[`ParamList Omie render should render list of params 1`] = `
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                   data-passed-props="[object Object]"
                   data-testid="remove-param-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-                  data-v-ab84ef7c=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"
@@ -1256,7 +1256,7 @@ exports[`ParamList Omie render should render list with an empty param 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -1370,7 +1370,7 @@ exports[`ParamList Omie render should render list with an empty param 1`] = `
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -1391,7 +1391,7 @@ exports[`ParamList Omie render should render list with an empty param 1`] = `
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_options_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
                       class="option active "
@@ -1477,7 +1477,7 @@ exports[`ParamList Omie render should render list with an empty param 1`] = `
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_expressions_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
               </div>
@@ -1541,7 +1541,7 @@ exports[`ParamList Omie render should render list with an empty param 1`] = `
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                   data-passed-props="[object Object]"
                   data-testid="remove-param-1dce2b34-9aab-4e20-81c4-3f0408dcb671"
-                  data-v-ab84ef7c=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"
@@ -1654,7 +1654,7 @@ exports[`ParamList Omie updates should remove param and ensure empty param exist
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -1768,7 +1768,7 @@ exports[`ParamList Omie updates should remove param and ensure empty param exist
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -1789,7 +1789,7 @@ exports[`ParamList Omie updates should remove param and ensure empty param exist
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_options_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
                       class="option active "
@@ -1875,7 +1875,7 @@ exports[`ParamList Omie updates should remove param and ensure empty param exist
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_expressions_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
               </div>
@@ -1939,7 +1939,7 @@ exports[`ParamList Omie updates should remove param and ensure empty param exist
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                   data-passed-props="[object Object]"
                   data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-                  data-v-ab84ef7c=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"
@@ -2052,7 +2052,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -2139,6 +2139,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                       data-passed-props="[object Object]"
                       data-testid="temba_select_input_service_call_param_filter"
                       data-v-48c0c241=""
+                      error="Required"
                       readonly="readonly"
                     >
                       <!---->
@@ -2150,11 +2151,12 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                         v-bind="[object Object]"
                       >
                         <input
-                          class="input-itself input size-sm normal"
+                          class="input-itself input size-sm error"
                           data-passed-props="[object Object]"
                           data-testid="temba_select_input_service_call_param_filter"
                           data-v-400546b3=""
                           data-v-97b44e8c=""
+                          error="Required"
                           iconright="arrow-button-down-1"
                           placeholder="Filter"
                           readonly="readonly"
@@ -2164,9 +2166,9 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                         />
                         <!---->
                         <span
-                          class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                          class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--feedback-red icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -2187,7 +2189,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_options_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
                       class="option active "
@@ -2273,7 +2275,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_expressions_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
               </div>
@@ -2337,7 +2339,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                   data-passed-props="[object Object]"
                   data-testid="remove-param-1e47a1e1-3c67-4df5-adf1-da542c789adb"
-                  data-v-ab84ef7c=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"
@@ -2434,7 +2436,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -2548,7 +2550,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                         <span
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
                           data-v-400546b3=""
-                          data-v-ab84ef7c=""
+                          data-v-4ce83152=""
                         >
                           <svg
                             fill="none"
@@ -2569,7 +2571,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_options_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
                       class="option active "
@@ -2655,7 +2657,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                   <div
                     class="options_wrapper"
                     data-testid="temba_select_expressions_service_call_param_filter"
-                    style="margin-top: 0px; width: 0px; display: none;"
+                    style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
               </div>
@@ -2719,7 +2721,7 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
                   data-passed-props="[object Object]"
                   data-testid="remove-param-132de855-4042-4dc1-a18f-cc2e6a8f790a"
-                  data-v-ab84ef7c=""
+                  data-v-4ce83152=""
                 >
                   <svg
                     fill="none"

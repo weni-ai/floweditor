@@ -31,7 +31,11 @@ export const determineTypeConfig = (nodeSettings: NodeEditorSettings): Type => {
   throw new Error(`Couldn't determine type config for: ${node.uuid}`);
 };
 
-export const hasIssues = (issues: FlowIssue[], translating: boolean, language: Asset): boolean => {
+export const hasIssues = (
+  issues: FlowIssue[],
+  translating: boolean,
+  language: Asset,
+): boolean => {
   if (!issues || issues.length === 0) {
     return false;
   }

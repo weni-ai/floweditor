@@ -1,16 +1,34 @@
-import { createRenderNode, resolveRoutes } from 'components/flow/routers/helpers';
+import {
+  createRenderNode,
+  resolveRoutes,
+} from 'components/flow/routers/helpers';
 import { WaitRouterFormState } from 'components/flow/routers/wait/WaitRouterForm';
-import { DEFAULT_OPERAND, MEDIA_OPERAND } from 'components/nodeeditor/constants';
+import {
+  DEFAULT_OPERAND,
+  MEDIA_OPERAND,
+} from 'components/nodeeditor/constants';
 import { Type, Types } from 'config/interfaces';
-import { HintTypes, Router, RouterTypes, SwitchRouter, Wait, WaitTypes } from 'flowTypes';
+import {
+  HintTypes,
+  Router,
+  RouterTypes,
+  SwitchRouter,
+  Wait,
+  WaitTypes,
+} from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
 
-export const nodeToState = (settings: NodeEditorSettings): WaitRouterFormState => {
+export const nodeToState = (
+  settings: NodeEditorSettings,
+): WaitRouterFormState => {
   let resultName: StringEntry = { value: 'Result' };
 
   // look at the actual ui type instead of the hint here, we want results for any kind of wait
-  if (settings.originalNode && settings.originalNode.ui.type === Types.wait_for_response) {
+  if (
+    settings.originalNode &&
+    settings.originalNode.ui.type === Types.wait_for_response
+  ) {
     const router = settings.originalNode.node.router as SwitchRouter;
     if (router) {
       resultName = { value: router.result_name || '' };
@@ -19,20 +37,21 @@ export const nodeToState = (settings: NodeEditorSettings): WaitRouterFormState =
 
   return {
     resultName,
-    valid: true
+    valid: true,
   };
 };
 
 export const stateToNode = (
   settings: NodeEditorSettings,
   state: WaitRouterFormState,
-  typeConfig: Type
+  typeConfig: Type,
 ): RenderNode => {
-  const { exits, defaultCategory: defaultExit, caseConfig, categories } = resolveRoutes(
-    [],
-    false,
-    settings.originalNode.node
-  );
+  const {
+    exits,
+    defaultCategory: defaultExit,
+    caseConfig,
+    categories,
+  } = resolveRoutes([], false, settings.originalNode.node);
 
   const optionalRouter: Pick<Router, 'result_name'> = {};
   if (state.resultName.value) {
@@ -67,7 +86,7 @@ export const stateToNode = (
     categories,
     wait,
     operand,
-    ...optionalRouter
+    ...optionalRouter,
   };
 
   const newRenderNode = createRenderNode(
@@ -76,7 +95,7 @@ export const stateToNode = (
     exits,
     Types.wait_for_response,
     [],
-    { cases: caseConfig }
+    { cases: caseConfig },
   );
 
   return newRenderNode;

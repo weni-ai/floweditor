@@ -3,8 +3,14 @@ import * as React from 'react';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import { hasErrors, renderIssues } from 'components/flow/actions/helpers';
 import { RouterFormProps } from 'components/flow/props';
-import CaseList, { CaseListType, CaseProps } from 'components/flow/routers/caselist/CaseList';
-import { nodeToState, stateToNode } from 'components/flow/routers/smart/response/helpers';
+import CaseList, {
+  CaseListType,
+  CaseProps,
+} from 'components/flow/routers/caselist/CaseList';
+import {
+  nodeToState,
+  stateToNode,
+} from 'components/flow/routers/smart/response/helpers';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import TimeoutControl from 'components/form/timeout/TimeoutControl';
 import TypeList from 'components/nodeeditor/TypeList';
@@ -13,6 +19,9 @@ import { Alphanumeric, StartIsNonNumeric, validate } from 'store/validators';
 import styles from './ResponseRouterForm.module.scss';
 import i18n from 'config/i18n';
 
+import DescriptionAlert from '../DescriptionAlert/DescriptionAlert';
+import { renderIf } from '../../../../../utils';
+
 export const leadInSpecId = 'lead-in';
 
 export interface SmartResponseRouterFormState extends FormState {
@@ -20,6 +29,7 @@ export interface SmartResponseRouterFormState extends FormState {
   hiddenCases: CaseProps[];
   resultName: StringEntry;
   timeout: number;
+  hasDescription?: boolean;
 }
 
 export default class SmartResponseRouterForm extends React.Component<
@@ -32,20 +42,39 @@ export default class SmartResponseRouterForm extends React.Component<
     this.state = nodeToState(this.props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^on/, /^handle/]
+      include: [/^on/, /^handle/],
     });
   }
 
-  private handleUpdateResultName(value: string): void {
-    const resultName = validate(i18n.t('forms.result_name', 'Result Name'), value, [
-      Alphanumeric,
-      StartIsNonNumeric
-    ]);
+  public componentDidMount() {
+    window.addEventListener('message', (event: any) => {
+      if (
+        event &&
+        event.data &&
+        event.data.event === 'setConnectProjectDescription'
+      ) {
+        if (event.data.connectProjectDescription.trim().length > 0) {
+          this.setState({ hasDescription: true });
+        }
+      }
+    });
 
-    const invalidCase = !!this.state.cases.find((caseProps: CaseProps) => !caseProps.valid);
+    window.parent.postMessage({ event: 'getConnectProjectDescription' }, '*');
+  }
+
+  private handleUpdateResultName(value: string): void {
+    const resultName = validate(
+      i18n.t('forms.result_name', 'Result Name'),
+      value,
+      [Alphanumeric, StartIsNonNumeric],
+    );
+
+    const invalidCase = !!this.state.cases.find(
+      (caseProps: CaseProps) => !caseProps.valid,
+    );
     this.setState({
       resultName,
-      valid: !invalidCase && !hasErrors(resultName)
+      valid: !invalidCase && !hasErrors(resultName),
     });
   }
 
@@ -62,7 +91,7 @@ export default class SmartResponseRouterForm extends React.Component<
   private handleSave(): void {
     if (this.state.valid) {
       this.props.updateRouter(
-        stateToNode(this.props.nodeSettings, this.props.typeConfig, this.state)
+        stateToNode(this.props.nodeSettings, this.props.typeConfig, this.state),
       );
       this.props.onClose(false);
     }
@@ -73,9 +102,13 @@ export default class SmartResponseRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
+  }
+
+  private openDescriptionEdit(): void {
+    window.parent.postMessage({ event: 'openConnectEditProject' }, '*');
   }
 
   public renderEdit(): JSX.Element {
@@ -87,21 +120,38 @@ export default class SmartResponseRouterForm extends React.Component<
         headerClass={typeConfig.type}
         buttons={this.getButtons()}
         gutter={
-          <TimeoutControl timeout={this.state.timeout} onChanged={this.handleUpdateTimeout} />
+          <TimeoutControl
+            timeout={this.state.timeout}
+            onChanged={this.handleUpdateTimeout}
+          />
         }
         new={typeConfig.new}
       >
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
+
+        {renderIf(!this.state.hasDescription)(
+          <DescriptionAlert
+            openDescriptionEdit={() => this.openDescriptionEdit()}
+          />,
+        )}
+
         <div className={styles.content}>
           <div className={styles.phrases}>
             <div className={styles.header}>
               <span className={styles.title}>
-                {i18n.t('forms.smart_wait.command_phrases_title', 'Command phrases')}
+                {i18n.t(
+                  'forms.smart_wait.command_phrases_title',
+                  'Command phrases',
+                )}
               </span>
               <span className={styles.description}>
                 {i18n.t(
                   'forms.smart_wait.command_phrases_description',
-                  'Write command phrases related to the category'
+                  'Write command phrases related to the category',
                 )}
               </span>
             </div>
@@ -114,7 +164,7 @@ export default class SmartResponseRouterForm extends React.Component<
               <span className={styles.description}>
                 {i18n.t(
                   'forms.smart_wait.category_description',
-                  "Define the Category you want to classify the Contact's response."
+                  "Define the Category you want to classify the Contact's response.",
                 )}
               </span>
             </div>
@@ -126,7 +176,10 @@ export default class SmartResponseRouterForm extends React.Component<
           onCasesUpdated={this.handleCasesUpdated}
           type={CaseListType.smart}
         />
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );

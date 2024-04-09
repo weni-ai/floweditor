@@ -1,4 +1,7 @@
-import { createCallExternalServiceNode, getRouterFormProps } from 'testUtils/assetCreators';
+import {
+  createCallExternalServiceNode,
+  getRouterFormProps,
+} from 'testUtils/assetCreators';
 import { Types } from 'config/interfaces';
 import { RenderNode } from 'store/flowContext';
 import ExternalServiceRouterForm from './ExternalServiceRouterForm';
@@ -20,9 +23,9 @@ describe(ExternalServiceRouterForm.name, () => {
           'chatgpt',
           externalServiceAsset.results[0].actions,
           externalServiceAsset.results[0].uuid,
-          externalServiceAsset.results[0].actions[0]
+          externalServiceAsset.results[0].actions[0],
         ),
-        ui: { type: Types.split_by_external_service }
+        ui: { type: Types.split_by_external_service },
       } as RenderNode);
     });
 
@@ -30,15 +33,17 @@ describe(ExternalServiceRouterForm.name, () => {
       it('should render', async () => {
         externalServiceForm.assetStore.externalServices.items = {
           [externalServiceAsset.results[0].uuid]: {
-            ...externalServiceAsset.results[0]
+            ...externalServiceAsset.results[0],
           },
           [externalServiceAsset.results[1].uuid]: {
-            ...externalServiceAsset.results[1]
-          }
+            ...externalServiceAsset.results[1],
+          },
         };
         let rendered: any;
         await act(async () => {
-          rendered = render(<ExternalServiceRouterForm {...externalServiceForm} />);
+          rendered = render(
+            <ExternalServiceRouterForm {...externalServiceForm} />,
+          );
           return undefined;
         });
         expect(rendered.baseElement).toMatchSnapshot();
@@ -49,16 +54,18 @@ describe(ExternalServiceRouterForm.name, () => {
       it('should save changes', async () => {
         externalServiceForm.assetStore.externalServices.items = {
           [externalServiceAsset.results[0].uuid]: {
-            ...externalServiceAsset.results[0]
+            ...externalServiceAsset.results[0],
           },
           [externalServiceAsset.results[1].uuid]: {
-            ...externalServiceAsset.results[1]
-          }
+            ...externalServiceAsset.results[1],
+          },
         };
         let rendered: any;
 
         await act(async () => {
-          rendered = render(<ExternalServiceRouterForm {...externalServiceForm} />);
+          rendered = render(
+            <ExternalServiceRouterForm {...externalServiceForm} />,
+          );
           return undefined;
         });
 
@@ -99,15 +106,17 @@ describe(ExternalServiceRouterForm.name, () => {
           'omie',
           externalServiceAsset.results[1].actions,
           externalServiceAsset.results[1].uuid,
-          externalServiceAsset.results[1].actions[0]
+          externalServiceAsset.results[1].actions[0],
         ),
-        ui: { type: Types.split_by_external_service }
+        ui: { type: Types.split_by_external_service },
       } as RenderNode);
     });
 
     describe('render', () => {
       it('should render', async () => {
-        const { baseElement } = render(<ExternalServiceRouterForm {...externalServiceForm} />);
+        const { baseElement } = render(
+          <ExternalServiceRouterForm {...externalServiceForm} />,
+        );
         await wait();
         expect(baseElement).toMatchSnapshot();
       });
@@ -117,15 +126,15 @@ describe(ExternalServiceRouterForm.name, () => {
       it('should save changes', async () => {
         externalServiceForm.assetStore.externalServices.items = {
           [externalServiceAsset.results[0].uuid]: {
-            ...externalServiceAsset.results[0]
+            ...externalServiceAsset.results[0],
           },
           [externalServiceAsset.results[1].uuid]: {
-            ...externalServiceAsset.results[1]
-          }
+            ...externalServiceAsset.results[1],
+          },
         };
 
         const { baseElement, getByTestId, getAllByTestId, getByText } = render(
-          <ExternalServiceRouterForm {...externalServiceForm} />
+          <ExternalServiceRouterForm {...externalServiceForm} />,
         );
 
         await wait();
@@ -148,7 +157,10 @@ describe(ExternalServiceRouterForm.name, () => {
         });
 
         await act(async () => {
-          fireUnnnicInputChangeText(getAllByTestId('Service Call Param Data')[0], 'data 1');
+          fireUnnnicInputChangeText(
+            getAllByTestId('Service Call Param Data')[0],
+            'data 1',
+          );
         });
 
         fireEvent.click(okButton);
@@ -156,7 +168,10 @@ describe(ExternalServiceRouterForm.name, () => {
         expect(externalServiceForm.updateRouter).not.toBeCalled();
 
         await act(async () => {
-          fireUnnnicInputChangeText(getAllByTestId('Service Call Param Data')[1], 'data 2');
+          fireUnnnicInputChangeText(
+            getAllByTestId('Service Call Param Data')[1],
+            'data 2',
+          );
         });
 
         fireEvent.click(okButton);

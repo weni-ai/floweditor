@@ -6,7 +6,7 @@ import {
   parseNum,
   prefix,
   strContainsNum,
-  validateCase
+  validateCase,
 } from 'components/flow/routers/case/helpers';
 import { Operators } from 'config/interfaces';
 import { getOperatorConfig, operatorConfigList } from 'config/operatorConfigs';
@@ -18,24 +18,24 @@ describe('helpers', () => {
         validateCase({
           operatorConfig: getOperatorConfig(Operators.has_any_word),
           exitName: 'My Exit',
-          exitEdited: true
-        })
+          exitEdited: true,
+        }),
       ).toMatchSnapshot();
     });
 
     it('does not require arguments without an exit', () => {
       expect(
         validateCase({
-          operatorConfig: getOperatorConfig(Operators.has_any_word)
-        })
+          operatorConfig: getOperatorConfig(Operators.has_any_word),
+        }),
       ).toMatchSnapshot();
     });
 
     it('suggests operator exit names for no operands', () => {
       expect(
         validateCase({
-          operatorConfig: getOperatorConfig(Operators.has_text)
-        })
+          operatorConfig: getOperatorConfig(Operators.has_text),
+        }),
       ).toMatchSnapshot();
     });
 
@@ -44,8 +44,8 @@ describe('helpers', () => {
         validateCase({
           operatorConfig: getOperatorConfig(Operators.has_number_between),
           min: '5',
-          max: '40'
-        })
+          max: '40',
+        }),
       ).toMatchSnapshot();
     });
 
@@ -54,22 +54,22 @@ describe('helpers', () => {
         validateCase({
           operatorConfig: getOperatorConfig(Operators.has_number_between),
           min: '50',
-          max: '3'
-        })
+          max: '3',
+        }),
       ).toMatchSnapshot();
     });
 
     it('does not suggest an empty range for exit name, ie " - "', () => {
       expect(
         validateCase({
-          operatorConfig: getOperatorConfig(Operators.has_number_between)
-        }).categoryName.value
+          operatorConfig: getOperatorConfig(Operators.has_number_between),
+        }).categoryName.value,
       ).toEqual('');
 
       expect(
         validateCase({
-          operatorConfig: getOperatorConfig(Operators.has_number_between)
-        })
+          operatorConfig: getOperatorConfig(Operators.has_number_between),
+        }),
       ).toMatchSnapshot();
     });
   });
@@ -80,7 +80,7 @@ describe('helpers', () => {
         if (verboseName) {
           expect(prefix(type)).toMatchSnapshot();
         }
-      })
+      }),
     ));
 
   describe('getExitName', () => {
@@ -89,8 +89,8 @@ describe('helpers', () => {
         getCategoryName({
           operatorConfig: getOperatorConfig(Operators.has_number_between),
           min: { value: '5' },
-          max: { value: '10' }
-        })
+          max: { value: '10' },
+        }),
       ).toBe('5 - 10');
     });
 
@@ -101,24 +101,24 @@ describe('helpers', () => {
           min: { value: '5' },
           max: { value: '10' },
           categoryName: { value: 'My Exit' },
-          categoryNameEdited: true
-        })
+          categoryNameEdited: true,
+        }),
       ).toBe('My Exit');
 
       expect(
         getCategoryName({
           operatorConfig: getOperatorConfig(Operators.has_number),
           categoryName: { value: 'My Exit' },
-          categoryNameEdited: true
-        })
+          categoryNameEdited: true,
+        }),
       ).toBe('My Exit');
     });
 
     it('should use operator names as necessary', () => {
       expect(
         getCategoryName({
-          operatorConfig: getOperatorConfig(Operators.has_number)
-        })
+          operatorConfig: getOperatorConfig(Operators.has_number),
+        }),
       ).toBe('Has Number');
     });
 
@@ -126,18 +126,22 @@ describe('helpers', () => {
       expect(
         getCategoryName({
           operatorConfig: getOperatorConfig(Operators.has_any_word),
-          argument: { value: 'color red green blue' }
-        })
+          argument: { value: 'color red green blue' },
+        }),
       ).toBe('Color');
     });
 
     it('it should generate exits for relative dates', () => {
-      const testRelativeDateExit = (op: Operators, value: number, exitName: string): void => {
+      const testRelativeDateExit = (
+        op: Operators,
+        value: number,
+        exitName: string,
+      ): void => {
         expect(
           getCategoryName({
             operatorConfig: getOperatorConfig(op),
-            argument: { value: value + '' }
-          })
+            argument: { value: value + '' },
+          }),
         ).toBe(exitName);
       };
 
@@ -157,8 +161,8 @@ describe('helpers', () => {
     it('should have empty categories without argument', () => {
       expect(
         getCategoryName({
-          operatorConfig: getOperatorConfig(Operators.has_any_word)
-        })
+          operatorConfig: getOperatorConfig(Operators.has_any_word),
+        }),
       ).toBe('');
     });
 
@@ -166,8 +170,8 @@ describe('helpers', () => {
       expect(
         getCategoryName({
           operatorConfig: getOperatorConfig(Operators.has_any_word),
-          argument: { value: '' }
-        })
+          argument: { value: '' },
+        }),
       ).toBe('');
     });
   });
@@ -195,12 +199,14 @@ describe('helpers', () => {
   describe('isFloat', () => {
     it('should return true if argument is string containing a float', () => {
       ['0.2', '.2', '+.2', '+0.2', '-.2', '-0.2', '2', '2.'].forEach(arg =>
-        expect(isFloat(arg as any)).toBeTruthy()
+        expect(isFloat(arg as any)).toBeTruthy(),
       );
     });
 
     it('should return false if argument is not a string containing a float', () => {
-      ['u.2', '0.2u', 'a'].forEach(arg => expect(isFloat(arg as any)).toBeFalsy());
+      ['u.2', '0.2u', 'a'].forEach(arg =>
+        expect(isFloat(arg as any)).toBeFalsy(),
+      );
     });
   });
 
@@ -210,20 +216,32 @@ describe('helpers', () => {
     });
 
     it('should return false if argument is not a string containing an int', () => {
-      ['0.1', 'e24', '-.3', '5+', '5-', 'a'].forEach(arg => expect(isInt(arg)).toBeFalsy());
+      ['0.1', 'e24', '-.3', '5+', '5-', 'a'].forEach(arg =>
+        expect(isInt(arg)).toBeFalsy(),
+      );
     });
   });
 
   describe('strContainsNum', () => {
     it('should return true if string contains only a float or int', () => {
-      ['0.2', '.2', '+.2', '+0.2', '-.2', '-0.2', '2', '2.', '1', '+1', '-1'].forEach(arg =>
-        expect(strContainsNum(arg)).toBeTruthy()
-      );
+      [
+        '0.2',
+        '.2',
+        '+.2',
+        '+0.2',
+        '-.2',
+        '-0.2',
+        '2',
+        '2.',
+        '1',
+        '+1',
+        '-1',
+      ].forEach(arg => expect(strContainsNum(arg)).toBeTruthy());
     });
 
     it('should return false if string does not contain only a float or int', () => {
       ['a', 'e24', '2a', '0.2u', 'u.2', 'u0.2'].forEach(arg =>
-        expect(strContainsNum(arg)).toBeFalsy()
+        expect(strContainsNum(arg)).toBeFalsy(),
       );
     });
   });

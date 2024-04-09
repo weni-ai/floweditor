@@ -8,7 +8,7 @@ import {
   NumOrExp,
   Required,
   validate,
-  IsValidIntent
+  IsValidIntent,
 } from 'store/validators';
 import { titleCase } from 'utils';
 
@@ -19,9 +19,13 @@ import i18n from 'config/i18n';
 
 export const initializeForm = (props: CaseElementProps): CaseElementState => {
   const arg1 =
-    props.kase.arguments && props.kase.arguments.length >= 1 ? props.kase.arguments[0] : '';
+    props.kase.arguments && props.kase.arguments.length >= 1
+      ? props.kase.arguments[0]
+      : '';
   const arg2 =
-    props.kase.arguments && props.kase.arguments.length === 2 ? props.kase.arguments[1] : '';
+    props.kase.arguments && props.kase.arguments.length === 2
+      ? props.kase.arguments[1]
+      : '';
 
   return {
     errors: [],
@@ -35,7 +39,7 @@ export const initializeForm = (props: CaseElementProps): CaseElementState => {
     confidence: { value: arg2 },
     categoryName: { value: props.categoryName || '' },
     categoryNameEdited: !!props.categoryName,
-    valid: true
+    valid: true,
   };
 };
 /**
@@ -72,7 +76,9 @@ export const prefix = (operatorType: string): string => {
 /**
  * Returns min, max values for Operators.has_number_between case
  */
-export const getMinMax = (args: string[] = []): { min: string; max: string } => {
+export const getMinMax = (
+  args: string[] = [],
+): { min: string; max: string } => {
   let min = '';
   let max = '';
   if (args.length) {
@@ -87,11 +93,12 @@ export const getMinMax = (args: string[] = []): { min: string; max: string } => 
   }
   return {
     min,
-    max
+    max,
   };
 };
 
-export const isFloat = (val: string): boolean => /^[+-]?\d?(\.\d*)?$/.test(val.trim());
+export const isFloat = (val: string): boolean =>
+  /^[+-]?\d?(\.\d*)?$/.test(val.trim());
 
 export const isInt = (val: string): boolean => /^[+-]?\d+$/.test(val.trim());
 
@@ -130,10 +137,11 @@ export const validateCase = (keys: {
   required?: boolean;
 }): Partial<CaseElementState> => {
   // when the exit is set, our arguments become required
-  const validators = (keys.exitEdited && keys.exitName) || keys.required ? [Required] : [];
+  const validators =
+    (keys.exitEdited && keys.exitName) || keys.required ? [Required] : [];
 
   const updates: Partial<CaseElementState> = {
-    operatorConfig: keys.operatorConfig
+    operatorConfig: keys.operatorConfig,
   };
 
   updates.district = { value: '', validationFailures: [] };
@@ -177,9 +185,14 @@ export const validateCase = (keys: {
           .concat(!minExpression ? numeric : [])
           .concat(
             !hasExpression
-              ? [LessThan(parseFloat(keys.max), i18n.t('forms.the_maximum', 'the maximum'))]
-              : []
-          )
+              ? [
+                  LessThan(
+                    parseFloat(keys.max),
+                    i18n.t('forms.the_maximum', 'the maximum'),
+                  ),
+                ]
+              : [],
+          ),
       );
 
       updates.max = validate(
@@ -189,26 +202,31 @@ export const validateCase = (keys: {
           .concat(!maxExpression ? numeric : [])
           .concat(
             !hasExpression
-              ? [MoreThan(parseFloat(keys.min), i18n.t('forms.the_minimum', 'the minimum'))]
-              : []
-          )
+              ? [
+                  MoreThan(
+                    parseFloat(keys.min),
+                    i18n.t('forms.the_minimum', 'the minimum'),
+                  ),
+                ]
+              : [],
+          ),
       );
     } else if (keys.operatorConfig.type === Operators.has_district) {
       updates.argument = validate(
         i18n.t('forms.state', 'State'),
         keys.argument || '',
-        validators.concat([])
+        validators.concat([]),
       );
     } else if (keys.operatorConfig.type === Operators.has_ward) {
       updates.state = validate(
         i18n.t('forms.state', 'State'),
         keys.state || '',
-        validators.concat([])
+        validators.concat([]),
       );
       updates.district = validate(
         i18n.t('forms.district', 'District'),
         keys.district || '',
-        validators.concat([])
+        validators.concat([]),
       );
     } else if (
       keys.operatorConfig.type === Operators.has_top_intent ||
@@ -218,11 +236,15 @@ export const validateCase = (keys: {
       if (keys.confidence) {
         intentValidators.push(Required);
       }
-      updates.intent = validate(i18n.t('forms.intent', 'Intent'), keys.intent, intentValidators);
+      updates.intent = validate(
+        i18n.t('forms.intent', 'Intent'),
+        keys.intent,
+        intentValidators,
+      );
       updates.confidence = validate(
         i18n.t('forms.confidence', 'Confidence'),
         keys.confidence || '',
-        validators.concat(keys.intent ? [Numeric, Required] : [Numeric])
+        validators.concat(keys.intent ? [Numeric, Required] : [Numeric]),
       );
     } else {
       updates.argument = validate('Value', keys.argument || '', validators);
@@ -238,7 +260,7 @@ export const validateCase = (keys: {
       (updates.state.value && updates.district.value) ||
       keys.required
       ? [Required]
-      : []
+      : [],
   );
 
   updates.valid =
@@ -289,8 +311,17 @@ export const getCategoryName = (state: Partial<CaseElementState>): string => {
           : i18n.t('forms.today', 'today');
       const op = count < 0 ? ' - ' : ' + ';
       const inDays =
-        ' ' + (Math.abs(count) === 1 ? i18n.t('forms.day', 'day') : i18n.t('forms.days', 'days'));
-      return prefix(state.operatorConfig.type) + today + op + Math.abs(count) + inDays;
+        ' ' +
+        (Math.abs(count) === 1
+          ? i18n.t('forms.day', 'day')
+          : i18n.t('forms.days', 'days'));
+      return (
+        prefix(state.operatorConfig.type) +
+        today +
+        op +
+        Math.abs(count) +
+        inDays
+      );
     }
   }
 

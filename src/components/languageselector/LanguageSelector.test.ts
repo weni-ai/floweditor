@@ -1,7 +1,7 @@
 import {
   containerClasses,
   LanguageSelector,
-  LanguageSelectorProps
+  LanguageSelectorProps,
 } from 'components/languageselector/LanguageSelector';
 import { composeComponentTestUtils, getSpecWrapper, setMock } from 'testUtils';
 import { English, languages, Spanish } from 'testUtils/assetCreators';
@@ -9,7 +9,7 @@ import { English, languages, Spanish } from 'testUtils/assetCreators';
 const baseProps: LanguageSelectorProps = {
   language: English,
   languages,
-  handleLanguageChange: jest.fn()
+  handleLanguageChange: jest.fn(),
 };
 
 const { setup } = composeComponentTestUtils(LanguageSelector, baseProps);
@@ -19,7 +19,7 @@ describe(LanguageSelector.name, () => {
     describe('onChange', () => {
       it('should call action creators that update language, translating state', () => {
         const component = setup(true, {
-          handleLanguageChanged: setMock()
+          handleLanguageChanged: setMock(),
         });
 
         const instance: LanguageSelector = component.instance;

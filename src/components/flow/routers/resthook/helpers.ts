@@ -7,7 +7,9 @@ import { createUUID } from 'utils';
 
 import { ResthookRouterFormState } from './ResthookRouterForm';
 
-export const nodeToState = (settings: NodeEditorSettings): ResthookRouterFormState => {
+export const nodeToState = (
+  settings: NodeEditorSettings,
+): ResthookRouterFormState => {
   let resthookAsset: FormEntry = { value: null };
   let resultName = { value: 'Result' };
   let valid = false;
@@ -16,7 +18,7 @@ export const nodeToState = (settings: NodeEditorSettings): ResthookRouterFormSta
   if (originalAction && originalAction.type === Types.call_resthook) {
     const resthook = originalAction.resthook;
     resthookAsset = {
-      value: { resthook }
+      value: { resthook },
     };
     resultName = { value: originalAction.result_name };
     valid = true;
@@ -25,13 +27,13 @@ export const nodeToState = (settings: NodeEditorSettings): ResthookRouterFormSta
   return {
     resthook: resthookAsset,
     resultName,
-    valid
+    valid,
   };
 };
 
 export const stateToNode = (
   settings: NodeEditorSettings,
-  state: ResthookRouterFormState
+  state: ResthookRouterFormState,
 ): RenderNode => {
   let uuid = createUUID();
   const originalAction = getOriginalAction(settings);
@@ -43,16 +45,19 @@ export const stateToNode = (
     uuid,
     resthook: state.resthook.value.resthook,
     type: Types.call_resthook,
-    result_name: state.resultName.value
+    result_name: state.resultName.value,
   };
 
   return createWebhookBasedNode(newAction, settings.originalNode, false);
 };
 
-export const getOriginalAction = (settings: NodeEditorSettings): CallResthook => {
+export const getOriginalAction = (
+  settings: NodeEditorSettings,
+): CallResthook => {
   const action =
     settings.originalAction ||
-    (settings.originalNode.node.actions.length > 0 && settings.originalNode.node.actions[0]);
+    (settings.originalNode.node.actions.length > 0 &&
+      settings.originalNode.node.actions[0]);
 
   if (action.type === Types.call_resthook) {
     return action as CallResthook;

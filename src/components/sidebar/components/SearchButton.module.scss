@@ -1,0 +1,26 @@
+@import 'variables.module.scss';
+@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
+
+.searchButton{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+
+    .searchIcon{
+        border-radius: $unnnic-border-radius-sm;;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        margin: $unnnic-spacing-stack-sm 0px;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+        color: $unnnic-color-neutral-cloudy;
+    }
+    .searchIcon:hover{
+        background-color: $unnnic-color-neutral-soft;
+    }
+}

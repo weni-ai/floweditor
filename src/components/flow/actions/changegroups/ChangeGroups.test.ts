@@ -3,7 +3,7 @@ import ChangeGroupsComp, {
   getChangeGroupsMarkup,
   getContentMarkup,
   getRemoveAllMarkup,
-  MAX_TO_SHOW
+  MAX_TO_SHOW,
 } from 'components/flow/actions/changegroups/ChangeGroups';
 import { Types } from 'config/interfaces';
 import { ChangeGroups } from 'flowTypes';
@@ -13,9 +13,14 @@ import { set } from 'utils';
 
 const { results: groups } = require('test/assets/groups.json');
 
-const addGroupsAction: ChangeGroups = createAddGroupsAction({ groups: groups.slice(2) });
+const addGroupsAction: ChangeGroups = createAddGroupsAction({
+  groups: groups.slice(2),
+});
 
-const { setup } = composeComponentTestUtils<ChangeGroups>(ChangeGroupsComp, addGroupsAction);
+const { setup } = composeComponentTestUtils<ChangeGroups>(
+  ChangeGroupsComp,
+  addGroupsAction,
+);
 
 describe(ChangeGroupsComp.name, () => {
   describe('helpers', () => {
@@ -29,7 +34,7 @@ describe(ChangeGroupsComp.name, () => {
       it('should return list of elements that contains remove-all markup', () => {
         const markup = getContentMarkup({
           type: Types.remove_contact_groups,
-          groups: []
+          groups: [],
         } as ChangeGroups);
 
         expect(markup.length).toBe(1);
@@ -69,11 +74,13 @@ describe(ChangeGroupsComp.name, () => {
     it("should render 'remove from all' markup when passed group action of type Types.remove_contact_groups", () => {
       const { wrapper } = setup(true, {
         groups: set([]),
-        type: set(Types.remove_contact_groups)
+        type: set(Types.remove_contact_groups),
       });
 
       expect(wrapper.children().length).toBe(1);
-      expect(wrapper.containsMatchingElement(getRemoveAllMarkup())).toBeTruthy();
+      expect(
+        wrapper.containsMatchingElement(getRemoveAllMarkup()),
+      ).toBeTruthy();
       expect(wrapper).toMatchSnapshot();
     });
   });

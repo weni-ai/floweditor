@@ -11,7 +11,7 @@ export default (state: AppState = initialState) => {
   const store = createStore(
     rootReducer,
     state,
-    composeWithDevTools(applyMiddleware(...middlewares))
+    composeWithDevTools(applyMiddleware(...middlewares)),
   );
 
   /* istanbul ignore next */

@@ -9,7 +9,7 @@ import i18n from 'config/i18n';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
-import { unnnicIcon, unnnicModalNext } from '@weni/unnnic-system';
+import { unnnicIcon, unnnicModal, unnnicButton } from '@weni/unnnic-system';
 
 export interface TitleBarProps {
   title: string;
@@ -37,7 +37,7 @@ export const confirmRemovalSpecId = 'confirm-removal';
  */
 
 const UnnnicIcon = applyVueInReact(unnnicIcon);
-const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
+const UnnnicModal = applyVueInReact(unnnicModal, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -45,15 +45,38 @@ const UnnnicModalNext = applyVueInReact(unnnicModalNext, {
       style: {
         all: '',
         position: 'relative',
-        zIndex: 10e2
-      }
-    }
-  }
+        zIndex: 10e2,
+      },
+    },
+  },
+  react: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      __use_react_component_wrap: '',
+      style: {
+        all: '',
+      },
+    },
+  },
+});
+
+const UnnnicButton = applyVueInReact(unnnicButton, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        display: 'flex',
+        flex: 1,
+      },
+    },
+  },
 });
 
 export default class TitleBar extends React.Component<TitleBarProps> {
   public static contextTypes = {
-    config: fakePropType
+    config: fakePropType,
   };
 
   constructor(props: TitleBarProps) {
@@ -81,46 +104,60 @@ export default class TitleBar extends React.Component<TitleBarProps> {
     const { onRemoval } = this.props;
 
     ReactDOM.render(
-      <UnnnicModalNext
+      <UnnnicModal
+        className={styles.removal_modal}
         data-testid={confirmRemovalSpecId}
-        type="alert"
-        icon="alert-circle-1"
+        modalIcon="alert-circle-1"
         scheme="feedback-yellow"
-        title={i18n.t('removal_confirmation', 'Do you want to delete the card?')}
-        actionPrimaryLabel={i18n.t('buttons.confirm', 'Confirm')}
-        actionSecondaryLabel={i18n.t('buttons.cancel', 'Cancel')}
-        actionPrimaryButtonType="primary"
-        showCloseButton
+        text={i18n.t('removal_confirmation', 'Do you want to delete the card?')}
         $slots={{
-          description: (
+          message: (
             <>
               {i18n.t(
                 'removal_confirmation_description',
-                'Are you sure you want to delete the card?'
+                'Are you sure you want to delete the card?',
               )}
               <br />
-              <b>{i18n.t('action_cannot_be_reversed', 'This action cannot be reversed.')}</b>
+              <b>
+                {i18n.t(
+                  'action_cannot_be_reversed',
+                  'This action cannot be reversed.',
+                )}
+              </b>
               <br />
               <br />
               {i18n.t(
                 'you_can_also_delete_cards_pressing_the_keys',
-                'You can also delete cards by pressing'
+                'You can also delete cards by pressing',
               )}{' '}
               <b>delete</b> {i18n.t('or', 'or')} <b>backspace</b>.
             </>
-          )
+          ),
+          options: (
+            <div className={styles.removal_buttons}>
+              <UnnnicButton
+                text={i18n.t('buttons.cancel', 'Cancel')}
+                type="tertiary"
+                onClick={() => ReactDOM.unmountComponentAtNode(div)}
+              />
+              <UnnnicButton
+                text={i18n.t('buttons.confirm', 'Confirm')}
+                type="attention"
+                onClick={() => {
+                  onRemoval();
+                  ReactDOM.unmountComponentAtNode(div);
+                }}
+              />
+            </div>
+          ),
         }}
         on={{
           close() {
             ReactDOM.unmountComponentAtNode(div);
           },
-          'click-action-primary': () => {
-            onRemoval();
-            ReactDOM.unmountComponentAtNode(div);
-          }
         }}
       />,
-      div
+      div,
     );
   }
 
@@ -134,7 +171,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
           {...createClickHandler(
             this.props.onMoveUp,
             this.props.shouldCancelClick,
-            this.handleMouseUpCapture
+            this.handleMouseUpCapture,
           )}
           data-testid={moveIconSpecId}
         >
@@ -161,7 +198,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
         {...createClickHandler(
           this.handleConfirmRemoval,
           this.props.shouldCancelClick,
-          this.handleMouseUpCapture
+          this.handleMouseUpCapture,
         )}
         data-testid={removeIconSpecId}
       >
@@ -181,7 +218,9 @@ export default class TitleBar extends React.Component<TitleBarProps> {
     const remove: JSX.Element = this.getRemove();
     return (
       <div
-        className={`${styles.titlebar} ${this.props.hasIssues ? shared.missing : null}`}
+        className={`${styles.titlebar} ${
+          this.props.hasIssues ? shared.missing : null
+        }`}
         data-spec={titlebarContainerSpecId}
       >
         <div
@@ -194,7 +233,9 @@ export default class TitleBar extends React.Component<TitleBarProps> {
           <div className={`${styles.titletext} u font secondary body-md bold`}>
             {this.props.title}
 
-            {this.props.new && <span className={styles.new}>{i18n.t('new', 'New')}!</span>}
+            {this.props.new && (
+              <span className={styles.new}>{i18n.t('new', 'New')}!</span>
+            )}
           </div>
           {remove}
         </div>

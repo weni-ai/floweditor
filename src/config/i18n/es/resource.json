@@ -1,5 +1,6 @@
 {
   "actions": {
+    "search": "Buscar...",
     "add_contact_groups": {
       "description": "Añadir el contacto a un grupo",
       "name": "Añadir a grupo"
@@ -189,6 +190,7 @@
     "show_empty": "Mostrando todas las claves"
   },
   "create_block": "Crear bloque",
+  "search_in_nodes": "Buscar bloque",
   "create_label": "Crear etiqueta",
   "disabled_copy_tooltip": "Seleccione uno o varios bloques para copiar",
   "copy_tooltip": "Copiar bloque(s)",
@@ -433,7 +435,8 @@
       "category_title": "Categorizar cómo",
       "category_description": "Defina la Categoría en la que desea clasificar la respuesta del Contacto.",
       "command_phrases_description": "Escribir frases de comando relacionadas con la categoría.",
-      "command_phrases_title": "Frases de comando"
+      "command_phrases_title": "Frases de comando",
+      "description_alert": "<0>Importante:</0>Edita tu proyecto, <2>agrega una descripción</2> y haz que la IA sea aún más poderosa."
     },
     "automatic_classify": {
       "words_title": "Palabras",
@@ -473,7 +476,8 @@
     "product_search_label": "Ingrese una expresión para usar como entrada",
     "custom_search": "Búsqueda personalizada",
     "custom_search_api_url": "URL de API de búsqueda personalizada",
-    "seller_id": "ID de vendedor (opcional)"
+    "seller_id": "ID de vendedor (opcional)",
+    "postal_code": "Código postal (opcional)"
   },
   "issues": {
     "header": "Problemas de Flujo",
@@ -592,7 +596,7 @@
     },
     "whatsapp": {
       "name": "WhatsApp",
-      "path": "Número de Whatsapp"
+      "path": "Número de WhatsApp"
     }
   },
   "simulator": {
@@ -668,8 +672,8 @@
         "button": "Lo tengo 2/3"
       },
       "2": {
-        "title": "Máscara de Whatsapp en el simulador.",
-        "description": "Ahora el simulador se parece a Whatsapp\npara que puedas predecir con mayor fidelidad cómo se verá tu flujo.",
+        "title": "Máscara de WhatsApp en el simulador.",
+        "description": "Ahora el simulador se parece a WhatsApp\npara que puedas predecir con mayor fidelidad cómo se verá tu flujo.",
         "button": "Lo tengo 3/3"
       }
     },

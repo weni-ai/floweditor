@@ -1,14 +1,17 @@
 import SendEmailForm from 'components/flow/actions/sendemail/SendEmailForm';
 import { ActionFormProps } from 'components/flow/props';
 import { composeComponentTestUtils, mock } from 'testUtils';
-import { createSendEmailAction, getActionFormProps } from 'testUtils/assetCreators';
+import {
+  createSendEmailAction,
+  getActionFormProps,
+} from 'testUtils/assetCreators';
 import * as utils from 'utils';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
 const { setup } = composeComponentTestUtils<ActionFormProps>(
   SendEmailForm,
-  getActionFormProps(createSendEmailAction())
+  getActionFormProps(createSendEmailAction()),
 );
 
 describe(SendEmailForm.name, () => {
@@ -48,7 +51,7 @@ describe(SendEmailForm.name, () => {
     it('should allow switching from router', () => {
       const component = setup(true, {
         $merge: { updateAction: jest.fn() },
-        nodeSettings: { $merge: { originalAction: null } }
+        nodeSettings: { $merge: { originalAction: null } },
       });
 
       const instance: SendEmailForm = component.instance;
@@ -66,7 +69,7 @@ describe(SendEmailForm.name, () => {
   describe('cancel', () => {
     it('should cancel without changes', () => {
       const component = setup(true, {
-        $merge: { onClose: jest.fn(), updateAction: jest.fn() }
+        $merge: { onClose: jest.fn(), updateAction: jest.fn() },
       });
 
       const instance: SendEmailForm = component.instance;

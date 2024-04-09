@@ -6,20 +6,20 @@ import { fakePropType } from 'config/ConfigProvider';
 
 const CallClassifierComp: React.SFC<CallClassifier> = (
   { classifier },
-  context: any
+  context: any,
 ): JSX.Element => {
   return renderAsset(
     {
       id: classifier.uuid,
       name: classifier.name,
-      type: AssetType.Classifier
+      type: AssetType.Classifier,
     },
-    context.config.endpoints
+    context.config.endpoints,
   );
 };
 
 CallClassifierComp.contextTypes = {
-  config: fakePropType
+  config: fakePropType,
 };
 
 export default CallClassifierComp;

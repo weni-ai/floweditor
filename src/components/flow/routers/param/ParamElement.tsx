@@ -1,7 +1,11 @@
 import { react as bindCallbacks } from 'auto-bind';
 import FormElement from 'components/form/FormElement';
-import TextInputElement, { TextInputStyle } from 'components/form/textinput/TextInputElement';
-import SwitchElement, { SwitchSizes } from 'components/form/switch/SwitchElement';
+import TextInputElement, {
+  TextInputStyle,
+} from 'components/form/textinput/TextInputElement';
+import SwitchElement, {
+  SwitchSizes,
+} from 'components/form/switch/SwitchElement';
 import { ServiceCallParam, ParamFilter } from 'config/interfaces';
 import * as React from 'react';
 import { FormEntry, FormState } from 'store/nodeEditor';
@@ -25,23 +29,23 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
     componentWrapAttrs: {
       'data-draggable': 'true',
       style: {
-        all: ''
-      }
+        all: '',
+      },
     },
 
     slotWrapAttrs: {
       'data-draggable': 'true',
       style: {
-        all: ''
-      }
-    }
-  }
+        all: '',
+      },
+    },
+  },
 });
 
 export enum ParamTypes {
   multiSelect = 'multiSelect',
   boolean = 'boolean',
-  expressionInput = 'expressionInput'
+  expressionInput = 'expressionInput',
 }
 
 export interface ParamElementProps {
@@ -60,12 +64,15 @@ export interface ParamElementState extends FormState {
   data: FormEntry;
 }
 
-export default class ParamElement extends React.Component<ParamElementProps, ParamElementState> {
+export default class ParamElement extends React.Component<
+  ParamElementProps,
+  ParamElementState
+> {
   constructor(props: ParamElementProps) {
     super(props);
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
 
     this.state = initializeForm(props);
@@ -75,19 +82,21 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     const updates = validateParam({
       currentParam: this.state.currentParam,
       currentFilter: this.state.currentFilter,
-      data: this.state.data
+      data: this.state.data,
     });
     this.setState(updates as ParamElementState, () => this.handleChange());
   }
 
   // eslint-disable-next-line react/no-deprecated
-  public componentWillReceiveProps(nextProps: Readonly<ParamElementProps>): void {
+  public componentWillReceiveProps(
+    nextProps: Readonly<ParamElementProps>,
+  ): void {
     if (nextProps.initialParam !== this.props.initialParam) {
       this.setState(initializeForm(nextProps), () => {
         const updates = validateParam({
           currentParam: this.state.currentParam,
           currentFilter: this.state.currentFilter,
-          data: this.state.data
+          data: this.state.data,
         });
         this.setState(updates as ParamElementState);
       });
@@ -97,8 +106,11 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
   private handleParamChange(newParam: ServiceCallParam): void {
     const updates = validateParam({
       currentParam: newParam,
-      currentFilter: newParam.filters && newParam.filters.length >= 1 ? newParam.filters[0] : null,
-      data: this.state.data
+      currentFilter:
+        newParam.filters && newParam.filters.length >= 1
+          ? newParam.filters[0]
+          : null,
+      data: this.state.data,
     });
     this.setState(updates as ParamElementState, () => this.handleChange());
   }
@@ -107,7 +119,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     const updates = validateParam({
       currentParam: this.state.currentParam,
       currentFilter: newFilter,
-      data: this.state.data
+      data: this.state.data,
     });
     this.setState(updates as ParamElementState, () => this.handleChange());
   }
@@ -116,7 +128,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     const updates = validateParam({
       currentParam: this.state.currentParam,
       currentFilter: this.state.currentFilter,
-      data: { value: newData }
+      data: { value: newData },
     });
     this.setState(updates as ParamElementState, () => this.handleChange());
   }
@@ -139,7 +151,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
       nameKey: this.state.currentParam.nameKey,
       valueKey: this.state.currentParam.valueKey,
       data: this.state.data,
-      valid: this.state.valid
+      valid: this.state.valid,
     };
   }
 
@@ -153,7 +165,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
     disableFilter: boolean,
     showFilter: boolean | number,
     paramFilters: ParamFilter[],
-    paramOptions: ServiceCallParam[]
+    paramOptions: ServiceCallParam[],
   ): JSX.Element {
     if (!param) return null;
 
@@ -199,10 +211,21 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
         </div>
       );
     } else {
+      const filterError =
+        showFilter &&
+        paramFilters &&
+        paramFilters.length > 0 &&
+        !this.state.currentFilter &&
+        this.state.data.value
+          ? [i18n.t('forms.required', 'Required')]
+          : [];
+
       return (
         <>
           <div
-            className={`${styles.choice} ${disableFilter ? styles.disabled : ''}`}
+            className={`${styles.choice} ${
+              disableFilter ? styles.disabled : ''
+            }`}
             style={{ flex: showFilter ? 1 : 2 }}
           >
             <TembaSelect
@@ -218,9 +241,16 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
             />
           </div>
           {showFilter ? (
-            <div className={`${styles.choice} ${disableFilter ? styles.disabled : ''}`}>
+            <div
+              className={`${styles.choice} ${
+                disableFilter ? styles.disabled : ''
+              }`}
+            >
               <TembaSelect
-                name={i18n.t('forms.service_call_param_filter', 'Service Call Param Filter')}
+                name={i18n.t(
+                  'forms.service_call_param_filter',
+                  'Service Call Param Filter',
+                )}
                 placeholder={i18n.t('forms.filter', 'Filter')}
                 style={TembaSelectStyle.small}
                 options={paramFilters}
@@ -229,6 +259,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
                 onChange={this.handleFilterChange}
                 value={this.state.currentFilter}
                 disabled={disableFilter}
+                errors={filterError}
               />
             </div>
           ) : (
@@ -236,7 +267,10 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
           )}
           <div className={styles.data}>
             <TextInputElement
-              name={i18n.t('forms.service_call_param_data', 'Service Call Param Data')}
+              name={i18n.t(
+                'forms.service_call_param_data',
+                'Service Call Param Data',
+              )}
               onChange={this.handleDataChange}
               entry={this.state.data}
               autocomplete={true}
@@ -248,9 +282,12 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
   }
 
   public render(): JSX.Element {
-    const disableParam = this.state.currentParam && this.state.currentParam.required ? true : null;
+    const disableParam =
+      this.state.currentParam && this.state.currentParam.required ? true : null;
     const disableFilter =
-      this.state.currentFilter && this.state.currentFilter.required ? true : null;
+      this.state.currentFilter && this.state.currentFilter.required
+        ? true
+        : null;
     const canArrange = !disableParam && !disableFilter;
 
     const showFilter =
@@ -259,7 +296,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
       this.state.currentParam.filters.length;
 
     const rawParam = this.props.availableParams.find(
-      param => param.type === this.state.currentParam.type
+      param => param.type === this.state.currentParam.type,
     );
     let paramFilters = rawParam ? rawParam.filters : [];
     paramFilters = this.state.currentFilter
@@ -267,7 +304,9 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
       : paramFilters;
     const paramOptions =
       this.state.currentParam &&
-      !this.props.availableParams.find(p => p.type === this.state.currentParam.type)
+      !this.props.availableParams.find(
+        p => p.type === this.state.currentParam.type,
+      )
         ? [this.state.currentParam].concat(this.props.availableParams)
         : this.props.availableParams;
 
@@ -277,7 +316,7 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
       disableFilter,
       showFilter,
       paramFilters,
-      paramOptions
+      paramOptions,
     );
 
     return (
@@ -302,8 +341,16 @@ export default class ParamElement extends React.Component<ParamElementProps, Par
               data-testid={'remove-param-' + this.props.initialParam.uuid}
               icon="delete-1-1"
               size="sm"
-              scheme={!disableParam && !disableFilter ? 'neutral-cloudy' : 'neutral-clean'}
-              onClick={!disableParam && !disableFilter ? this.handleRemoveClicked : () => {}}
+              scheme={
+                !disableParam && !disableFilter
+                  ? 'neutral-cloudy'
+                  : 'neutral-clean'
+              }
+              onClick={
+                !disableParam && !disableFilter
+                  ? this.handleRemoveClicked
+                  : () => {}
+              }
               clickable
             />
           )}

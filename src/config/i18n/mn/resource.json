@@ -1,5 +1,6 @@
 {
   "actions": {
+    "search": "Хайх...",
     "add_contact_groups": {
       "description": "Харилцагчийг бүлэгт нэмэх",
       "name": "Бүлэгт нэмэх"

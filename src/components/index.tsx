@@ -35,7 +35,7 @@ import {
   handleLanguageChange,
   HandleLanguageChange,
   UpdateTranslationFilters,
-  updateTranslationFilters
+  updateTranslationFilters,
 } from 'store/thunks';
 import { ACTIVITY_INTERVAL, downloadJSON, renderIf, onNextRender } from 'utils';
 import { PopTabType } from 'config/interfaces';
@@ -78,7 +78,9 @@ export const getLabel = (): JSX.Element => {
 };
 
 // Root container, wires up context-providers
-export const FlowEditorContainer: React.SFC<FlowEditorContainerProps> = ({ config }) => {
+export const FlowEditorContainer: React.SFC<FlowEditorContainerProps> = ({
+  config,
+}: FlowEditorContainerProps) => {
   return (
     <ConfigProvider config={{ ...config }}>
       <ReduxProvider store={hotStore as any}>
@@ -89,7 +91,7 @@ export const FlowEditorContainer: React.SFC<FlowEditorContainerProps> = ({ confi
 };
 
 export const contextTypes = {
-  config: fakePropType
+  config: fakePropType,
 };
 
 export const editorContainerSpecId = 'editor-container';
@@ -104,7 +106,7 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
   constructor(props: FlowEditorStoreProps) {
     super(props);
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -114,13 +116,16 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
   }
 
   private handleDownloadClicked(): void {
-    downloadJSON(getCurrentDefinition(this.props.definition, this.props.nodes), 'definition');
+    downloadJSON(
+      getCurrentDefinition(this.props.definition, this.props.nodes),
+      'definition',
+    );
   }
 
   private handleVisibilityChanged(visible: boolean): void {
     this.props.mergeEditorState({
       visible,
-      activityInterval: ACTIVITY_INTERVAL
+      activityInterval: ACTIVITY_INTERVAL,
     });
   }
 
@@ -140,11 +145,13 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
               name: 'Ok',
               onClick: () => {
                 this.props.mergeEditorState({ modalMessage: null });
-              }
-            }
+              },
+            },
           }}
         >
-          <div className={styles.alert_body}>{this.props.modalMessage.body}</div>
+          <div className={styles.alert_body}>
+            {this.props.modalMessage.body}
+          </div>
         </Dialog>
       </Modal>
     );
@@ -192,22 +199,25 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
       originalNode: issueDetail.renderObjects.renderNode,
       originalAction: issueDetail.renderObjects.renderAction
         ? (issueDetail.renderObjects.renderAction.action as AnyAction)
-        : null
+        : null,
     });
   }
 
   private handleScrollToNode(node_uuid: string, action_uuid: string): void {
-    if (this.props.scrollToNode === node_uuid && this.props.scrollToAction === action_uuid) {
+    if (
+      this.props.scrollToNode === node_uuid &&
+      this.props.scrollToAction === action_uuid
+    ) {
       this.props.mergeEditorState({
         scrollToNode: null,
-        scrollToAction: null
+        scrollToAction: null,
       });
     }
 
     onNextRender(() => {
       this.props.mergeEditorState({
         scrollToNode: node_uuid,
-        scrollToAction: action_uuid
+        scrollToAction: action_uuid,
       });
     });
   }
@@ -219,12 +229,14 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
   private handleOpenTranslation(translation: TranslationBundle): void {
     const renderNode = this.props.nodes[translation.node_uuid];
     const action = translation.action_uuid
-      ? renderNode.node.actions.find(action => action.uuid === translation.action_uuid)
+      ? renderNode.node.actions.find(
+          action => action.uuid === translation.action_uuid,
+        )
       : null;
 
     this.props.onOpenNodeEditor({
       originalNode: renderNode,
-      originalAction: action
+      originalAction: action,
     });
   }
 
@@ -260,19 +272,27 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
             {renderIf(
               Object.keys(this.props.nodes || {}).length > 0 &&
                 this.props.languages &&
-                Object.keys(this.props.languages.items).length > 0
+                Object.keys(this.props.languages.items).length > 0,
             )(<ConnectedLanguageSelector />)}
 
             {this.getSavingIndicator()}
 
-            {renderIf(this.props.definition && this.props.language && !this.props.fetchingFlow)(
-              <ConnectedFlow />
-            )}
+            {renderIf(
+              this.props.definition &&
+                this.props.language &&
+                !this.props.fetchingFlow,
+            )(<ConnectedFlow />)}
 
-            {renderIf(this.props.definition && this.props.translating && !this.props.fetchingFlow)(
+            {renderIf(
+              this.props.definition &&
+                this.props.translating &&
+                !this.props.fetchingFlow,
+            )(
               <TranslatorTab
                 language={this.props.language}
-                languages={this.props.languages ? this.props.languages.items : {}}
+                languages={
+                  this.props.languages ? this.props.languages.items : {}
+                }
                 localization={
                   this.props.definition && this.props.language
                     ? this.props.definition.localization[this.props.language.id]
@@ -282,12 +302,14 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
                 onTranslationOpened={this.handleOpenTranslation}
                 onTranslationFilterChanged={this.props.updateTranslationFilters}
                 translationFilters={
-                  this.props.definition ? this.props.definition._ui.translation_filters : null
+                  this.props.definition
+                    ? this.props.definition._ui.translation_filters
+                    : null
                 }
                 nodes={this.props.nodes}
                 onToggled={this.handleTabPopped}
                 popped={this.props.popped}
-              />
+              />,
             )}
 
             <RevisionExplorer
@@ -302,11 +324,13 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
                 issues={this.props.issues}
                 onIssueClicked={this.handleScrollToIssue}
                 onIssueOpened={this.handleOpenIssue}
-                languages={this.props.languages ? this.props.languages.items : {}}
+                languages={
+                  this.props.languages ? this.props.languages.items : {}
+                }
                 nodes={this.props.nodes}
                 onToggled={this.handleTabPopped}
                 popped={this.props.popped}
-              />
+              />,
             )}
             <div id="portal-root" />
             <div id="canvas-portal" />
@@ -327,8 +351,8 @@ const mapStateToProps = ({
     saving,
     scrollToAction,
     scrollToNode,
-    popped
-  }
+    popped,
+  },
 }: AppState) => {
   const languages = assetStore ? assetStore.languages : null;
 
@@ -345,7 +369,7 @@ const mapStateToProps = ({
     nodes,
     languages,
     scrollToAction,
-    scrollToNode
+    scrollToNode,
   };
 };
 
@@ -358,14 +382,14 @@ const mapDispatchToProps = (dispatch: DispatchWithState) =>
       mergeEditorState,
       onOpenNodeEditor,
       handleLanguageChange,
-      updateTranslationFilters
+      updateTranslationFilters,
     },
-    dispatch
+    dispatch,
   );
 
 export const ConnectedFlowEditor = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(FlowEditor);
 
 export default FlowEditorContainer;

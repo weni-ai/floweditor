@@ -16,7 +16,7 @@ exports[`StartFlowComp render should render flow name 1`] = `
           <span
             class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark icon"
             data-passed-props="[object Object]"
-            data-v-ab84ef7c=""
+            data-v-4ce83152=""
           >
             <svg
               fill="none"

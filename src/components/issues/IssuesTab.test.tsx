@@ -16,7 +16,7 @@ const issuesProps: IssuesTabProps = {
   // callbacks
   onToggled: jest.fn(),
   onIssueClicked: jest.fn(),
-  onIssueOpened: jest.fn()
+  onIssueOpened: jest.fn(),
 };
 
 const createNodes = (issues: FlowIssue[]): RenderNodeMap => {
@@ -26,8 +26,8 @@ const createNodes = (issues: FlowIssue[]): RenderNodeMap => {
       ? [
           {
             type: Types.send_msg,
-            uuid: issue.action_uuid
-          }
+            uuid: issue.action_uuid,
+          },
         ]
       : [];
 
@@ -35,22 +35,25 @@ const createNodes = (issues: FlowIssue[]): RenderNodeMap => {
       node: {
         uuid: issue.node_uuid,
         exits: [],
-        actions
+        actions,
       },
       ui: {
         position: {
           top: 0,
-          left: 0
-        }
+          left: 0,
+        },
       },
-      inboundConnections: {}
+      inboundConnections: {},
     };
     nodes[node.node.uuid] = node;
   });
   return nodes;
 };
 
-const createMissingDependency = (name: string, type: DependencyType): FlowIssue => {
+const createMissingDependency = (
+  name: string,
+  type: DependencyType,
+): FlowIssue => {
   return {
     node_uuid: createUUID(),
     action_uuid: createUUID(),
@@ -60,8 +63,8 @@ const createMissingDependency = (name: string, type: DependencyType): FlowIssue 
       name,
       key: name,
       type,
-      nodes: {}
-    }
+      nodes: {},
+    },
   };
 };
 
@@ -76,7 +79,7 @@ describe(IssuesTab.name, () => {
     const issues = [
       createMissingDependency('My Missing Group', DependencyType.group),
       createMissingDependency('My Missing Field', DependencyType.field),
-      createMissingDependency('My Missing Flow', DependencyType.flow)
+      createMissingDependency('My Missing Flow', DependencyType.flow),
     ];
 
     const { baseElement, getByText, getAllByText } = render(
@@ -84,7 +87,7 @@ describe(IssuesTab.name, () => {
         {...issuesProps}
         issues={createFlowIssueMap({}, issues)}
         nodes={createNodes(issues)}
-      />
+      />,
     );
 
     expect(getAllByText('Send message:').length).toBe(3);

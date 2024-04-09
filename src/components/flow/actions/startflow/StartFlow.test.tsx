@@ -8,7 +8,9 @@ const startFlowAction = createStartFlowAction();
 describe(StartFlowComp.name, () => {
   describe('render', () => {
     it('should render flow name', () => {
-      const { baseElement, getByText } = render(<StartFlowComp {...startFlowAction} />);
+      const { baseElement, getByText } = render(
+        <StartFlowComp {...startFlowAction} />,
+      );
       getByText(startFlowAction.flow.name);
       expect(baseElement).toMatchSnapshot();
     });

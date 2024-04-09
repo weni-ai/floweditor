@@ -8,7 +8,7 @@ import { getActionFormProps } from 'testUtils/assetCreators';
 const props = getActionFormProps({
   scheme: 'tel',
   path: '+12065551212',
-  type: Types.add_contact_urn
+  type: Types.add_contact_urn,
 } as AddURN);
 
 describe(AddURNForm.name, () => {

@@ -12,11 +12,11 @@ const { setup } = composeComponentTestUtils<SimulatorProps>(Simulator, {
     revision: 1,
     localization: {},
     language: null,
-    _ui: null
+    _ui: null,
   },
   liveActivity: null,
   mergeEditorState: jest.fn(),
-  language: null
+  language: null,
 });
 
 describe(Simulator.name, () => {

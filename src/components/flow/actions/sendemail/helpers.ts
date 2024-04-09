@@ -4,8 +4,13 @@ import { Types } from 'config/interfaces';
 import { SendEmail } from 'flowTypes';
 import { NodeEditorSettings } from 'store/nodeEditor';
 
-export const initializeForm = (settings: NodeEditorSettings): SendEmailFormState => {
-  if (settings.originalAction && settings.originalAction.type === Types.send_email) {
+export const initializeForm = (
+  settings: NodeEditorSettings,
+): SendEmailFormState => {
+  if (
+    settings.originalAction &&
+    settings.originalAction.type === Types.send_email
+  ) {
     const action = settings.originalAction as SendEmail;
     return {
       body: { value: action.body },
@@ -13,7 +18,7 @@ export const initializeForm = (settings: NodeEditorSettings): SendEmailFormState
       recipients: { value: action.addresses },
       recipient: { value: '' },
       recipientError: undefined,
-      valid: true
+      valid: true,
     };
   }
 
@@ -23,19 +28,19 @@ export const initializeForm = (settings: NodeEditorSettings): SendEmailFormState
     recipients: { value: [] },
     recipient: { value: '' },
     recipientError: undefined,
-    valid: true
+    valid: true,
   };
 };
 
 export const stateToAction = (
   settings: NodeEditorSettings,
-  formState: SendEmailFormState
+  formState: SendEmailFormState,
 ): SendEmail => {
   return {
     addresses: formState.recipients.value,
     subject: formState.subject.value,
     body: formState.body.value,
     type: Types.send_email,
-    uuid: getActionUUID(settings, Types.send_email)
+    uuid: getActionUUID(settings, Types.send_email),
   };
 };

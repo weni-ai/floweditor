@@ -14,9 +14,9 @@ describe('SendBroadcastComp', () => {
           groups: [],
           contacts: [
             { uuid: 'contact-1', name: 'Norbert Kwizera' },
-            { uuid: 'contact-2', name: 'Kellan Alexander' }
-          ]
-        }
+            { uuid: 'contact-2', name: 'Kellan Alexander' },
+          ],
+        },
       });
       expect(wrapper.html()).toContain('Kellan Alexander');
       expect(wrapper.html()).toMatchSnapshot('contacts');
@@ -28,9 +28,9 @@ describe('SendBroadcastComp', () => {
           contacts: [],
           groups: [
             { uuid: 'group-1', name: 'Cat Facts' },
-            { uuid: 'group-2', name: 'Cat Fanciers' }
-          ]
-        }
+            { uuid: 'group-2', name: 'Cat Fanciers' },
+          ],
+        },
       });
       expect(wrapper.html()).toContain('Cat Fanciers');
       expect(wrapper.html()).toMatchSnapshot('groups');
@@ -42,14 +42,14 @@ describe('SendBroadcastComp', () => {
           contacts: [
             { uuid: 'contact-1', name: 'Norbert Kwizera' },
             { uuid: 'contact-2', name: 'Kellan Alexander' },
-            { uuid: 'contact-3', name: 'Rowan Seymour' }
+            { uuid: 'contact-3', name: 'Rowan Seymour' },
           ],
           groups: [
             { uuid: 'group-1', name: 'Cat Facts' },
             { uuid: 'group-2', name: 'Cat Fanciers' },
-            { uuid: 'group-3', name: 'Cat Tattoos' }
-          ]
-        }
+            { uuid: 'group-3', name: 'Cat Tattoos' },
+          ],
+        },
       });
       expect(wrapper.html()).toContain('+2 more');
       expect(wrapper.html()).toMatchSnapshot('elided');
@@ -58,8 +58,8 @@ describe('SendBroadcastComp', () => {
     it('should render placeholder if missing text', () => {
       const { wrapper } = setup(true, {
         $merge: {
-          text: null
-        }
+          text: null,
+        },
       });
       expect(wrapper.html()).toContain('Send a message to the contact');
       expect(wrapper.html()).toMatchSnapshot('placeholder text');

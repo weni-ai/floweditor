@@ -5,11 +5,23 @@ import { RouterFormProps } from 'components/flow/props';
 import { createResultNameInput } from 'components/flow/routers/widgets';
 import TypeList from 'components/nodeeditor/TypeList';
 import { fakePropType } from 'config/ConfigProvider';
-import { FormState, mergeForm, StringEntry, SelectOptionArrayEntry } from 'store/nodeEditor';
-import { Alphanumeric, Required, StartIsNonNumeric, validate } from 'store/validators';
+import {
+  FormState,
+  mergeForm,
+  StringEntry,
+  SelectOptionArrayEntry,
+} from 'store/nodeEditor';
+import {
+  Alphanumeric,
+  Required,
+  StartIsNonNumeric,
+  validate,
+} from 'store/validators';
 import i18n from 'config/i18n';
 import { getChannelTypeOptions, nodeToState, stateToNode } from './helpers';
-import SelectElement, { SelectOption } from 'components/form/select/SelectElement';
+import SelectElement, {
+  SelectOption,
+} from 'components/form/select/SelectElement';
 import { renderIssues } from 'components/flow/actions/helpers';
 
 import styles from './SchemeRouterForm.module.scss';
@@ -25,7 +37,7 @@ export default class SchemeRouterForm extends React.Component<
 > {
   public static contextTypes = {
     endpoints: fakePropType,
-    assetService: fakePropType
+    assetService: fakePropType,
   };
 
   constructor(props: RouterFormProps) {
@@ -33,7 +45,7 @@ export default class SchemeRouterForm extends React.Component<
     this.state = nodeToState(this.props.nodeSettings);
 
     bindCallbacks(this, {
-      include: [/^handle/]
+      include: [/^handle/],
     });
   }
 
@@ -45,20 +57,26 @@ export default class SchemeRouterForm extends React.Component<
     this.handleUpdate({ resultName });
   }
 
-  private handleUpdate(keys: { schemes?: SelectOption[]; resultName?: string }): boolean {
+  private handleUpdate(keys: {
+    schemes?: SelectOption[];
+    resultName?: string;
+  }): boolean {
     const updates: Partial<SchemeRouterFormState> = {};
 
     if (keys.hasOwnProperty('schemes')) {
-      updates.schemes = validate(i18n.t('forms.split_by_scheme', 'Channel types'), keys.schemes, [
-        Required
-      ]);
+      updates.schemes = validate(
+        i18n.t('forms.split_by_scheme', 'Channel types'),
+        keys.schemes,
+        [Required],
+      );
     }
 
     if (keys.hasOwnProperty('resultName')) {
-      updates.resultName = validate(i18n.t('forms.result_name', 'Result Name'), keys.resultName, [
-        Alphanumeric,
-        StartIsNonNumeric
-      ]);
+      updates.resultName = validate(
+        i18n.t('forms.result_name', 'Result Name'),
+        keys.resultName,
+        [Alphanumeric, StartIsNonNumeric],
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -79,8 +97,8 @@ export default class SchemeRouterForm extends React.Component<
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
-        onClick: () => this.props.onClose(true)
-      }
+        onClick: () => this.props.onClose(true),
+      },
     };
   }
 
@@ -88,13 +106,23 @@ export default class SchemeRouterForm extends React.Component<
     const typeConfig = this.props.typeConfig;
 
     return (
-      <Dialog title={typeConfig.name} headerClass={typeConfig.type} buttons={this.getButtons()}>
-        <TypeList __className="" initialType={typeConfig} onChange={this.props.onTypeChange} />
+      <Dialog
+        title={typeConfig.name}
+        headerClass={typeConfig.type}
+        buttons={this.getButtons()}
+      >
+        <TypeList
+          __className=""
+          initialType={typeConfig}
+          onChange={this.props.onTypeChange}
+        />
 
-        <div className={`${styles.info} u font secondary body-md color-neutral-cloudy`}>
+        <div
+          className={`${styles.info} u font secondary body-md color-neutral-cloudy`}
+        >
           {i18n.t(
             'forms.split_by_scheme_summary',
-            "The contact's URN is the address they used to reach you such as their phone number or a Facebook ID. Select which URN types to split by below."
+            "The contact's URN is the address they used to reach you such as their phone number or a Facebook ID. Select which URN types to split by below.",
           )}
         </div>
 
@@ -104,7 +132,7 @@ export default class SchemeRouterForm extends React.Component<
           showLabel={true}
           placeholder={i18n.t(
             'forms.split_by_channel_placeholder',
-            'Select the channels to split by'
+            'Select the channels to split by',
           )}
           entry={this.state.schemes}
           onChange={this.handleSchemesChanged}
@@ -112,7 +140,10 @@ export default class SchemeRouterForm extends React.Component<
           multi={true}
           hideError={true}
         />
-        {createResultNameInput(this.state.resultName, this.handleUpdateResultName)}
+        {createResultNameInput(
+          this.state.resultName,
+          this.handleUpdateResultName,
+        )}
         {renderIssues(this.props)}
       </Dialog>
     );
