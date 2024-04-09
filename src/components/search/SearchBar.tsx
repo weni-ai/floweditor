@@ -39,7 +39,6 @@ export interface SearchStoreProps {
 export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   public componentDidMount(): void {
     document.addEventListener('keydown', this.handleWindowKeyDown);
-    // window.addEventListener('keydown', this.handleWindowKeyDown);
   }
 
   private handleWindowKeyDown(event: any): void {
