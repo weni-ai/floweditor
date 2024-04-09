@@ -10,7 +10,14 @@ export class SearchIcon extends React.PureComponent<{}> {
         viewBox="0 0 24 24"
         fill="none"
       >
-        <mask id="mask0_4467_5704" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+        <mask
+          id="mask0_4467_5704"
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="24"
+          height="24"
+        >
           <rect width="24" height="24" fill="#D9D9D9" />
         </mask>
         <g mask="url(#mask0_4467_5704)">

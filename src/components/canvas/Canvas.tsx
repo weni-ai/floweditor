@@ -488,7 +488,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         isSearchOpen: true,
         nodes: [],
         value: '',
-        selected: 0
+        selected: 0,
       });
     }
   }

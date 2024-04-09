@@ -12,8 +12,21 @@ export class UpIcon extends React.PureComponent<DownIconProps> {
         xmlns="http://www.w3.org/2000/svg"
       >
         <g id="expand_less">
-          <mask id="mask0_4498_1608" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="21">
-            <rect id="Bounding box" y="0.5" width="20" height="20" fill="#D9D9D9" />
+          <mask
+            id="mask0_4498_1608"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="20"
+            height="21"
+          >
+            <rect
+              id="Bounding box"
+              y="0.5"
+              width="20"
+              height="20"
+              fill="#D9D9D9"
+            />
           </mask>
           <g mask="url(#mask0_4498_1608)">
             <path
