@@ -38,13 +38,12 @@ export interface SearchStoreProps {
 
 export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   public componentDidMount(): void {
-    document.addEventListener('keydown', this.handleWindowKeyDown);
+    document.addEventListener('keydown', (e: KeyboardEvent) => this.handleWindowKeyDown(e));
   }
 
-  private handleWindowKeyDown(event: any): void {
+  private handleWindowKeyDown(event: KeyboardEvent): void {
     if (event.key === 'Enter') {
-      const down = document.querySelector('#buttons button') as HTMLButtonElement;
-      down.click();
+      this.toggleMoveSelected('down');
     }
   }
 
@@ -159,7 +158,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           <UnnnicIcon icon="search-1" size="avatar-nano" scheme="neutral-dark" />
         </div>
 
-        <div className={styles.input}>
+        <div className={styles.input} id="searchBarInputElementDiv">
           <TextInputElement
             name={''}
             placeholder={i18n.t('actions.search')}
@@ -168,7 +167,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
             autocomplete={true}
           />
         </div>
-        <div className={styles.buttons} id="buttons">
+        <div className={styles.buttons}>
           <ArrowButton
             disabled={!value.length || !nodes.length || selected === nodes.length - 1}
             name={''}
