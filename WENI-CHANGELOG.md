@@ -1,3 +1,9 @@
+2.13.1
+----------
+- Fix: Set focus in text input
+- Fix: Remove browser default search card
+- Feat: Navigation through cards using the enter key
+
 2.13.0
 ----------
 - Feat: Search Bar
