@@ -37,8 +37,19 @@ export interface SearchStoreProps {
 }
 
 export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
+  public componentDidMount(): void {
+    document.addEventListener('keydown', (e: KeyboardEvent) => this.handleWindowKeyDown(e));
+  }
+
+  private handleWindowKeyDown(event: KeyboardEvent): void {
+    if (event.key === 'Enter') {
+      this.toggleMoveSelected('down');
+    }
+  }
+
   private handleInput(value: string) {
     const nodes = this.findNodes(value);
+
     this.props.handleSearchChange({
       isSearchOpen: true,
       value: value,
@@ -155,7 +166,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           />
         </div>
 
-        <div className={styles.input}>
+        <div className={styles.input} id="searchBarInputElementDiv">
           <TextInputElement
             name={''}
             placeholder={i18n.t('actions.search')}
