@@ -42,7 +42,7 @@ export const initializeForm = (
           o => o.value === action.header_type,
         ),
       },
-      header_text: { value: action.header_text || '' },
+      headerText: { value: action.header_text || '' },
       attachment: { value: attachment, validationFailures: [] },
       footer: { value: action.footer || '' },
       interactionType: {
@@ -64,7 +64,7 @@ export const initializeForm = (
   return {
     headerType: { value: WHATSAPP_HEADER_TYPE_MEDIA },
     message: { value: '' },
-    header_text: { value: '' },
+    headerText: { value: '' },
     attachment: { value: null, validationFailures: [] },
     footer: { value: '' },
     interactionType: { value: WHATSAPP_INTERACTION_TYPE_REPLIES },
@@ -113,7 +113,7 @@ export const stateToAction = (
     type: Types.send_whatsapp_msg,
     text: state.message.value,
     header_type: state.headerType.value.value,
-    header_text: state.header_text.value,
+    header_text: state.headerText.value,
     footer: state.footer.value,
     interaction_type: state.interactionType.value.value,
     button_text: state.buttonText.value,

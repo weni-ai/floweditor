@@ -13,11 +13,12 @@ import {
 
 import TextInputElement, {
   TextInputSizes,
-} from '../../../../form/textinput/TextInputElement';
+} from 'components/form/textinput/TextInputElement';
 import update from 'immutability-helper';
 import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
 import { unnnicIcon, unnnicButton } from '@weni/unnnic-system';
+import { FormEntry, ValidationFailure } from 'store/nodeEditor';
 
 const UnnnicButton = applyVueInReact(unnnicButton);
 
@@ -37,7 +38,7 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
 });
 
 export interface QuickRepliesListProps {
-  quickReplies: string[];
+  quickReplies: FormEntry<string[]>;
   onQuickRepliesUpdated(quickReplies: string[]): void;
 }
 
@@ -99,7 +100,7 @@ export default class QuickRepliesList extends React.Component<
   }
 
   private handleReplyUpdate(value: string, name: string, index: number): void {
-    const quickReplies = update(this.props.quickReplies, {
+    const quickReplies = update(this.props.quickReplies.value, {
       [index]: {
         $set: value,
       },
@@ -109,7 +110,7 @@ export default class QuickRepliesList extends React.Component<
   }
 
   private handleReplyRemoval(index: number): void {
-    const quickReplies = this.props.quickReplies.filter(
+    const quickReplies = this.props.quickReplies.value.filter(
       (item, i) => i !== index,
     );
     this.props.onQuickRepliesUpdated(quickReplies);
@@ -117,7 +118,11 @@ export default class QuickRepliesList extends React.Component<
 
   /* istanbul ignore next */
   private handleRepliesSortEnd({ oldIndex, newIndex }: SortEnd): void {
-    const quickReplies = arrayMove(this.props.quickReplies, oldIndex, newIndex);
+    const quickReplies = arrayMove(
+      this.props.quickReplies.value,
+      oldIndex,
+      newIndex,
+    );
 
     this.props.onQuickRepliesUpdated(quickReplies);
   }
@@ -143,8 +148,8 @@ export default class QuickRepliesList extends React.Component<
                   index={index}
                   value={{ item: value, list: this }}
                   disabled={
-                    index === this.props.quickReplies.length - 1 &&
-                    hasEmptyReply(this.props.quickReplies)
+                    index === this.props.quickReplies.value.length - 1 &&
+                    hasEmptyReply(this.props.quickReplies.value)
                   }
                   shouldCancelStart={
                     /* istanbul ignore next */
@@ -163,6 +168,10 @@ export default class QuickRepliesList extends React.Component<
   );
 
   public render(): JSX.Element {
+    const hasError =
+      this.props.quickReplies.validationFailures &&
+      this.props.quickReplies.validationFailures.length > 0;
+
     return (
       <div>
         <span className={styles.replies_label}>
@@ -170,7 +179,7 @@ export default class QuickRepliesList extends React.Component<
         </span>
 
         <this.sortableReplies
-          items={this.props.quickReplies}
+          items={this.props.quickReplies.value}
           onSortEnd={this.handleRepliesSortEnd}
           helperClass={styles.item_z_index}
           shouldCancelStart={
@@ -188,6 +197,14 @@ export default class QuickRepliesList extends React.Component<
           }
           lockAxis="y"
         />
+
+        {hasError ? (
+          <div data-testid="Error message" className={styles.error_message}>
+            {this.props.quickReplies.validationFailures.map(
+              (error: ValidationFailure) => error.message,
+            )}
+          </div>
+        ) : null}
       </div>
     );
   }

@@ -68,3 +68,8 @@
   opacity: 0;
   transition: opacity 250ms ease-in
 }
+
+.error_message {
+  color: $unnnic-color-feedback-red;
+  margin-top: $unnnic-spacing-stack-nano;
+}

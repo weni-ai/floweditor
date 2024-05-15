@@ -140,7 +140,7 @@ export interface SendWhatsAppMsgFormState extends FormState {
   message: StringEntry;
 
   headerType: SelectOptionEntry<WhatsAppHeaderType>;
-  header_text: StringEntry;
+  headerText: StringEntry;
   attachment: FormEntry<Attachment>;
 
   footer: StringEntry;
@@ -154,6 +154,19 @@ export interface SendWhatsAppMsgFormState extends FormState {
 
   quickReplies: StringArrayEntry;
   quickReplyEntry: StringEntry;
+}
+
+interface UpdateKeys {
+  message?: string;
+  headerType?: SelectOption<WhatsAppHeaderType>;
+  headerText?: string;
+  attachment?: Attachment;
+  footer?: string;
+  interactionType?: SelectOption<WhatsAppInteractionType>;
+  buttonText?: string;
+  listItems?: WhatsAppListItem[];
+  removeListItem?: WhatsAppListItem;
+  quickReplies?: string[];
 }
 
 export default class SendWhatsAppMsgForm extends React.Component<
@@ -210,7 +223,9 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return (
       this.state.interactionType.value.value ===
         WHATSAPP_INTERACTION_TYPE_LIST.value &&
-      this.state.buttonText.value.trim().length > 0
+      (this.state.buttonText.value.trim().length > 0 ||
+        this.state.headerText.value.trim().length > 0 ||
+        this.state.footer.value.trim().length > 0)
     );
   }
 
@@ -222,6 +237,15 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return validItems.length > 0;
   }
 
+  private hasRequiredReplies(): boolean {
+    return (
+      this.state.interactionType.value.value ===
+        WHATSAPP_INTERACTION_TYPE_REPLIES.value &&
+      (this.state.headerText.value.trim().length > 0 ||
+        this.state.footer.value.trim().length > 0)
+    );
+  }
+
   private hasValidReply(replies: string[]): boolean {
     const validReplies = replies.filter(
       (reply: string) => reply.trim().length > 0,
@@ -230,21 +254,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return validReplies.length > 0;
   }
 
-  private handleUpdate(
-    keys: {
-      message?: string;
-      headerType?: SelectOption<WhatsAppHeaderType>;
-      header_text?: string;
-      attachment?: Attachment;
-      footer?: string;
-      interactionType?: SelectOption<WhatsAppInteractionType>;
-      buttonText?: string;
-      listItems?: WhatsAppListItem[];
-      removeListItem?: WhatsAppListItem;
-      quickReplies?: string[];
-    },
-    submitting = false,
-  ): boolean {
+  private handleUpdate(keys: UpdateKeys, submitting = false): boolean {
     const updates: Partial<SendWhatsAppMsgFormState> = {};
 
     if (keys.hasOwnProperty('message')) {
@@ -265,10 +275,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
       updates.headerType = { value: keys.headerType };
     }
 
-    if (keys.hasOwnProperty('header_text')) {
-      updates.header_text = validate(
+    if (keys.hasOwnProperty('headerText')) {
+      updates.headerText = validate(
         i18n.t('forms.header_text', 'Header text'),
-        keys.header_text,
+        keys.headerText,
         [],
       );
     }
@@ -316,14 +326,14 @@ export default class SendWhatsAppMsgForm extends React.Component<
     if (keys.hasOwnProperty('listItems')) {
       updates.listItems = { value: keys.listItems };
 
-      if (submitting && this.hasRequiredListItems()) {
+      if (this.hasRequiredListItems()) {
         const hasValidItem = this.hasRequiredListItem(keys.listItems);
         if (!hasValidItem) {
           updates.listItems.validationFailures = [
             {
               message: i18n.t(
                 'whatsapp_msg.list_items_required',
-                'At least one list option is required if action button is set',
+                'At least one list option is required if Action Button Text, Header or Footer is set',
               ),
             },
           ];
@@ -347,11 +357,21 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
     let ensureEmptyReply = false;
     if (keys.hasOwnProperty('quickReplies')) {
-      updates.quickReplies = validate(
-        i18n.t('forms.quick_replies', 'Quick Replies'),
-        keys.quickReplies,
-        [],
-      );
+      updates.quickReplies = { value: keys.quickReplies };
+
+      if (this.hasRequiredReplies()) {
+        const hasValidReply = this.hasValidReply(keys.quickReplies);
+        if (!hasValidReply) {
+          updates.quickReplies.validationFailures = [
+            {
+              message: i18n.t(
+                'whatsapp_msg.replies_required',
+                'At least one quick reply is required if Header or Footer is set',
+              ),
+            },
+          ];
+        }
+      }
       ensureEmptyReply = true;
     }
 
@@ -400,17 +420,26 @@ export default class SendWhatsAppMsgForm extends React.Component<
     submitting = false,
   ): boolean {
     return this.handleUpdate(
-      { headerType: headerType, attachment: null, header_text: '' },
+      { headerType: headerType, attachment: null, headerText: '' },
       submitting,
     );
   }
 
   private handleHeaderTextUpdate(
-    header_text: string,
+    headerText: string,
     name: string,
     submitting = false,
   ): boolean {
-    return this.handleUpdate({ header_text }, submitting);
+    // We add quick replies and list items to ensure theirs validation with the current header
+    const validHeader = this.handleUpdate({ headerText }, submitting);
+    const validInteractions = this.handleUpdate(
+      {
+        listItems: this.state.listItems.value,
+        quickReplies: this.state.quickReplies.value,
+      },
+      submitting,
+    );
+    return validHeader && validInteractions;
   }
 
   private handleAttachmentUrlChange(
@@ -461,7 +490,16 @@ export default class SendWhatsAppMsgForm extends React.Component<
     name: string,
     submitting = false,
   ): boolean {
-    return this.handleUpdate({ footer }, submitting);
+    // We add quick replies and list items to ensure theirs validation with the current footer
+    const validFooter = this.handleUpdate({ footer }, submitting);
+    const validInteractions = this.handleUpdate(
+      {
+        listItems: this.state.listItems.value,
+        quickReplies: this.state.quickReplies.value,
+      },
+      submitting,
+    );
+    return validFooter && validInteractions;
   }
 
   private handleInteractionTypeUpdate(newValue: string) {
@@ -469,7 +507,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
       option => option.value === newValue,
     );
 
-    const toUpdate: any = {
+    const toUpdate: UpdateKeys = {
       interactionType,
       listItems: [],
       quickReplies: [],
@@ -477,7 +515,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
     };
 
     if (interactionType.value === WhatsAppInteractionType.LOCATION) {
-      toUpdate.header_text = '';
+      toUpdate.headerText = '';
       toUpdate.attachment = null;
       toUpdate.footer = '';
     }
@@ -485,8 +523,11 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate(toUpdate);
   }
 
-  private handleQuickRepliesUpdate(quickReplies: string[]): boolean {
-    return this.handleUpdate({ quickReplies });
+  private handleQuickRepliesUpdate(
+    quickReplies: string[],
+    submitting = false,
+  ): boolean {
+    return this.handleUpdate({ quickReplies }, submitting);
   }
 
   private handleListItemsUpdate(
@@ -523,6 +564,12 @@ export default class SendWhatsAppMsgForm extends React.Component<
     currentCheck = this.handleListItemsUpdate(this.state.listItems.value, true);
     valid = valid && currentCheck;
 
+    currentCheck = this.handleQuickRepliesUpdate(
+      this.state.quickReplies.value,
+      true,
+    );
+    valid = valid && currentCheck;
+
     if (valid) {
       this.props.updateAction(
         stateToAction(this.props.nodeSettings, this.state),
@@ -544,9 +591,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
   private renderHeaderSection(): JSX.Element {
     const attachment = this.state.attachment.value;
     const headerType = this.state.headerType.value;
-    const hasValidReplyOrListItem =
-      this.hasValidReply(this.state.quickReplies.value) ||
-      this.hasRequiredListItem(this.state.listItems.value);
 
     return (
       <>
@@ -565,7 +609,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 valueKey="value"
                 onChange={this.handleHeaderTypeChange}
                 value={headerType}
-                disabled={!hasValidReplyOrListItem}
               />
             </div>
 
@@ -573,12 +616,11 @@ export default class SendWhatsAppMsgForm extends React.Component<
               <div className={styles.header_text}>
                 <TextInputElement
                   name={i18n.t('forms.header', 'Header')}
-                  entry={this.state.header_text}
+                  entry={this.state.headerText}
                   onChange={this.handleHeaderTextUpdate}
                   placeholder={i18n.t('forms.header_text', 'Header text')}
                   size={TextInputSizes.sm}
                   autocomplete={true}
-                  disabled={!hasValidReplyOrListItem}
                 />
               </div>
             )}
@@ -697,7 +739,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 entry={this.state.footer}
                 autocomplete={true}
                 showLabel={true}
-                disabled={!isChecked}
               />
             </>
           )}
@@ -714,7 +755,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
           {interactionType === WhatsAppInteractionType.REPLIES && (
             <QuickRepliesList
-              quickReplies={this.state.quickReplies.value}
+              quickReplies={this.state.quickReplies}
               onQuickRepliesUpdated={this.handleQuickRepliesUpdate}
             />
           )}
@@ -735,7 +776,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
         </div>
       ),
       checked: isChecked,
-      hasErrors: hasErrors(this.state.listItems),
+      hasErrors:
+        hasErrors(this.state.listItems) || hasErrors(this.state.quickReplies),
     };
   }
 
