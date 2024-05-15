@@ -2139,7 +2139,6 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                       data-passed-props="[object Object]"
                       data-testid="temba_select_input_service_call_param_filter"
                       data-v-48c0c241=""
-                      error="Required"
                       readonly="readonly"
                     >
                       <!---->
@@ -2156,7 +2155,6 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                           data-testid="temba_select_input_service_call_param_filter"
                           data-v-400546b3=""
                           data-v-97b44e8c=""
-                          error="Required"
                           iconright="arrow-button-down-1"
                           placeholder="Filter"
                           readonly="readonly"
@@ -2183,7 +2181,12 @@ exports[`ParamList Omie updates should update params and call the callback 1`] =
                           </svg>
                         </span>
                       </div>
-                      <!---->
+                      <p
+                        class="unnnic-form__message"
+                        data-v-48c0c241=""
+                      >
+                        Required
+                      </p>
                     </div>
                   </div>
                   <div

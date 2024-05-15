@@ -3,11 +3,11 @@
 exports[`SendWhatsAppMsgComp render should render list items when passed 1`] = `
 <SendWhatsAppMsgComp
   attachment={null}
+  button_text=""
   footer=""
   header_text=""
   header_type="media"
   interaction_type="list"
-  list_footer=""
   list_items={
     Array [
       Object {
@@ -16,7 +16,6 @@ exports[`SendWhatsAppMsgComp render should render list items when passed 1`] = `
       },
     ]
   }
-  list_title=""
   quick_replies={Array []}
   text=""
   type="send_msg"
@@ -248,13 +247,12 @@ exports[`SendWhatsAppMsgComp render should render list items when passed 1`] = `
 exports[`SendWhatsAppMsgComp render should render quick replies list when passed 1`] = `
 <SendWhatsAppMsgComp
   attachment={null}
+  button_text=""
   footer=""
   header_text=""
   header_type="media"
   interaction_type="list"
-  list_footer=""
   list_items={Array []}
-  list_title=""
   quick_replies={
     Array [
       "Quick Reply 1",
@@ -490,13 +488,12 @@ exports[`SendWhatsAppMsgComp render should render quick replies list when passed
 exports[`SendWhatsAppMsgComp render should render text prop when passed 1`] = `
 <SendWhatsAppMsgComp
   attachment={null}
+  button_text=""
   footer=""
   header_text=""
   header_type="media"
   interaction_type="list"
-  list_footer=""
   list_items={Array []}
-  list_title=""
   quick_replies={Array []}
   text="Text"
   type="send_msg"

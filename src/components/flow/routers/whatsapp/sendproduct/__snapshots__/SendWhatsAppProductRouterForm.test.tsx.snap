@@ -118,7 +118,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -128,7 +128,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -138,7 +138,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -148,7 +148,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -158,7 +158,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -168,7 +168,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -178,7 +178,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -188,7 +188,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -198,7 +198,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -208,7 +208,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -218,7 +218,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -228,7 +228,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -238,7 +238,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -248,7 +248,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -258,7 +258,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -268,7 +268,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -278,7 +278,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -288,7 +288,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -298,7 +298,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -308,7 +308,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -318,7 +318,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -328,7 +328,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -338,7 +338,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -348,12 +348,22 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -849,7 +859,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -859,7 +869,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -869,7 +879,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -879,7 +889,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -889,7 +899,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -899,7 +909,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -909,7 +919,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -919,7 +929,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -929,7 +939,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -939,7 +949,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -949,7 +959,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -959,7 +969,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -969,7 +979,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -979,7 +989,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -989,7 +999,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -999,7 +1009,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -1009,7 +1019,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -1019,7 +1029,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -1029,7 +1039,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -1039,7 +1049,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -1049,7 +1059,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -1059,7 +1069,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -1069,7 +1079,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -1079,12 +1089,22 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -1580,7 +1600,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -1590,7 +1610,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -1600,7 +1620,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -1610,7 +1630,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -1620,7 +1640,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -1630,7 +1650,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -1640,7 +1660,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -1650,7 +1670,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -1660,7 +1680,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -1670,7 +1690,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -1680,7 +1700,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -1690,7 +1710,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -1700,7 +1720,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -1710,7 +1730,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -1720,7 +1740,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -1730,7 +1750,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -1740,7 +1760,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -1750,7 +1770,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -1760,7 +1780,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -1770,7 +1790,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -1780,7 +1800,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -1790,7 +1810,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -1800,7 +1820,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -1810,12 +1830,22 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -2596,7 +2626,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -2606,7 +2636,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -2616,7 +2646,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -2626,7 +2656,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -2636,7 +2666,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -2646,7 +2676,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -2656,7 +2686,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -2666,7 +2696,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -2676,7 +2706,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -2686,7 +2716,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -2696,7 +2726,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -2706,7 +2736,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -2716,7 +2746,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -2726,7 +2756,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -2736,7 +2766,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -2746,7 +2776,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -2756,7 +2786,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -2766,7 +2796,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -2776,7 +2806,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -2786,7 +2816,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -2796,7 +2826,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -2806,7 +2836,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -2816,7 +2846,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -2826,12 +2856,22 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -3327,7 +3367,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -3337,7 +3377,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -3347,7 +3387,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -3357,7 +3397,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -3367,7 +3407,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -3377,7 +3417,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -3387,7 +3427,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -3397,7 +3437,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -3407,7 +3447,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -3417,7 +3457,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -3427,7 +3467,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -3437,7 +3477,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -3447,7 +3487,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -3457,7 +3497,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -3467,7 +3507,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -3477,7 +3517,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -3487,7 +3527,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -3497,7 +3537,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -3507,7 +3547,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -3517,7 +3557,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -3527,7 +3567,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -3537,7 +3577,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -3547,7 +3587,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -3557,12 +3597,22 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -4522,7 +4572,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -4532,7 +4582,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -4542,7 +4592,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -4552,7 +4602,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -4562,7 +4612,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -4572,7 +4622,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -4582,7 +4632,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -4592,7 +4642,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -4602,7 +4652,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -4612,7 +4662,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -4622,7 +4672,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -4632,7 +4682,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -4642,7 +4692,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -4652,7 +4702,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -4662,7 +4712,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -4672,7 +4722,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -4682,7 +4732,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -4692,7 +4742,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -4702,7 +4752,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -4712,7 +4762,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -4722,7 +4772,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -4732,7 +4782,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -4742,7 +4792,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -4752,12 +4802,22 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -5418,7 +5478,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -5428,7 +5488,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -5438,7 +5498,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -5448,7 +5508,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -5458,7 +5518,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -5468,7 +5528,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -5478,7 +5538,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -5488,7 +5548,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -5498,7 +5558,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -5508,7 +5568,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -5518,7 +5578,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -5528,7 +5588,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -5538,7 +5598,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -5548,7 +5608,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -5558,7 +5618,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -5568,7 +5628,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -5578,7 +5638,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -5588,7 +5648,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -5598,7 +5658,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -5608,7 +5668,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -5618,7 +5678,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -5628,7 +5688,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -5638,7 +5698,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -5648,12 +5708,22 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -6149,7 +6219,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -6159,7 +6229,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -6169,7 +6239,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -6179,7 +6249,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -6189,7 +6259,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -6199,7 +6269,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -6209,7 +6279,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -6219,7 +6289,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -6229,7 +6299,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -6239,7 +6309,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -6249,7 +6319,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -6259,7 +6329,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -6269,7 +6339,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -6279,7 +6349,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -6289,7 +6359,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -6299,7 +6369,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -6309,7 +6379,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -6319,7 +6389,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -6329,7 +6399,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -6339,7 +6409,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -6349,7 +6419,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -6359,7 +6429,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -6369,7 +6439,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -6379,12 +6449,22 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -7045,7 +7125,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -7055,7 +7135,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -7065,7 +7145,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -7075,7 +7155,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -7085,7 +7165,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -7095,7 +7175,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -7105,7 +7185,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -7115,7 +7195,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -7125,7 +7205,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -7135,7 +7215,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -7145,7 +7225,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -7155,7 +7235,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -7165,7 +7245,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -7175,7 +7255,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -7185,7 +7265,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -7195,7 +7275,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -7205,7 +7285,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -7215,7 +7295,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -7225,7 +7305,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -7235,7 +7315,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -7245,7 +7325,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -7255,7 +7335,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -7265,7 +7345,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -7275,12 +7355,22 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -7941,7 +8031,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -7951,7 +8041,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -7961,7 +8051,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -7971,7 +8061,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -7981,7 +8071,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -7991,7 +8081,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -8001,7 +8091,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -8011,7 +8101,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -8021,7 +8111,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -8031,7 +8121,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -8041,7 +8131,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -8051,7 +8141,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -8061,7 +8151,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -8071,7 +8161,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -8081,7 +8171,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -8091,7 +8181,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -8101,7 +8191,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -8111,7 +8201,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -8121,7 +8211,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -8131,7 +8221,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -8141,7 +8231,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -8151,7 +8241,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -8161,7 +8251,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -8171,12 +8261,22 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -9085,7 +9185,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -9095,7 +9195,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -9105,7 +9205,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -9115,7 +9215,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -9125,7 +9225,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -9135,7 +9235,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -9145,7 +9245,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -9155,7 +9255,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -9165,7 +9265,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -9175,7 +9275,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -9185,7 +9285,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -9195,7 +9295,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -9205,7 +9305,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -9215,7 +9315,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -9225,7 +9325,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -9235,7 +9335,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -9245,7 +9345,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -9255,7 +9355,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -9265,7 +9365,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -9275,7 +9375,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -9285,7 +9385,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -9295,7 +9395,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -9305,7 +9405,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -9315,12 +9415,22 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -9792,7 +9902,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 class="unnnic-form sm"
                 data-passed-props="[object Object]"
                 data-v-48c0c241=""
-                error="Result Name is required"
                 maxlength="64"
               >
                 <p
@@ -9813,7 +9922,6 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                     data-passed-props="[object Object]"
                     data-v-400546b3=""
                     data-v-97b44e8c=""
-                    error="Result Name is required"
                     maxlength="64"
                     placeholder="Result"
                     size="0"
@@ -9823,7 +9931,12 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <!---->
                   <!---->
                 </div>
-                <!---->
+                <p
+                  class="unnnic-form__message"
+                  data-v-48c0c241=""
+                >
+                  Result Name is required
+                </p>
               </div>
             </div>
           </div>
@@ -10088,7 +10201,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -10098,7 +10211,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -10108,7 +10221,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -10118,7 +10231,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -10128,7 +10241,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -10138,7 +10251,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -10148,7 +10261,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -10158,7 +10271,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -10168,7 +10281,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -10178,7 +10291,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -10188,7 +10301,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -10198,7 +10311,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -10208,7 +10321,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -10218,7 +10331,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -10228,7 +10341,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -10238,7 +10351,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -10248,7 +10361,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -10258,7 +10371,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -10268,7 +10381,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -10278,7 +10391,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -10288,7 +10401,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -10298,7 +10411,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -10308,7 +10421,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -10318,12 +10431,22 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -10984,7 +11107,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -10994,7 +11117,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -11004,7 +11127,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -11014,7 +11137,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -11024,7 +11147,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -11034,7 +11157,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -11044,7 +11167,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -11054,7 +11177,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -11064,7 +11187,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -11074,7 +11197,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -11084,7 +11207,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -11094,7 +11217,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -11104,7 +11227,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -11114,7 +11237,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -11124,7 +11247,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -11134,7 +11257,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -11144,7 +11267,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -11154,7 +11277,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -11164,7 +11287,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -11174,7 +11297,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -11184,7 +11307,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -11194,7 +11317,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -11204,7 +11327,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -11214,12 +11337,22 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"

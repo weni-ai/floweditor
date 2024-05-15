@@ -94,7 +94,7 @@ exports[`SearchBar should render searchbar 1`] = `
             data-use-vue-component-wrap=""
           >
             <button
-              class="unnnic-button unnnic-button--size-sm unnnic-button--ghost"
+              class="unnnic-button unnnic-button--size-small unnnic-button--tertiary"
               data-passed-props="[object Object]"
               data-v-3b3aa28c=""
               disabled="disabled"
@@ -160,7 +160,7 @@ exports[`SearchBar should render searchbar 1`] = `
             data-use-vue-component-wrap=""
           >
             <button
-              class="unnnic-button unnnic-button--size-sm unnnic-button--ghost"
+              class="unnnic-button unnnic-button--size-small unnnic-button--tertiary"
               data-passed-props="[object Object]"
               data-v-3b3aa28c=""
               disabled="disabled"
@@ -243,7 +243,7 @@ exports[`SearchBar should render searchbar 1`] = `
             data-use-vue-component-wrap=""
           >
             <button
-              class="unnnic-button unnnic-button--size-sm unnnic-button--ghost"
+              class="unnnic-button unnnic-button--size-small unnnic-button--tertiary"
               data-passed-props="[object Object]"
               data-v-3b3aa28c=""
             >

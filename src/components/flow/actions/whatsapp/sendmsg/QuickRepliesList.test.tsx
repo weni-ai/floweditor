@@ -3,13 +3,17 @@ import QuickRepliesList, { hasEmptyReply } from './QuickRepliesList';
 import * as utils from 'utils';
 import * as React from 'react';
 import { act, fireUnnnicInputChangeText, render, wait } from 'test/utils';
+import { ValidationFailure } from 'store/nodeEditor';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
 function getProps() {
   return {
-    quickReplies: ['reply 1', 'reply 2'],
-    onQuickRepliesUpdated: jest.fn()
+    quickReplies: {
+      value: ['reply 1', 'reply 2'],
+      validationFailures: [] as ValidationFailure[],
+    },
+    onQuickRepliesUpdated: jest.fn(),
   };
 }
 
@@ -34,7 +38,10 @@ describe(QuickRepliesList.name, () => {
       fireUnnnicInputChangeText(quickRepliesInput, 'new reply 2');
     });
 
-    expect(props.onQuickRepliesUpdated).toHaveBeenCalledWith(['reply 1', 'new reply 2']);
+    expect(props.onQuickRepliesUpdated).toHaveBeenCalledWith([
+      'reply 1',
+      'new reply 2',
+    ]);
   });
 
   it('should remove quick reply', async () => {
@@ -57,5 +64,15 @@ describe(QuickRepliesList.name, () => {
 
     const replies2 = ['reply 1', 'reply 2'];
     expect(hasEmptyReply(replies2)).toBe(false);
+  });
+
+  it('should show error message', () => {
+    const props = getProps();
+    props.quickReplies.validationFailures = [{ message: 'error message text' }];
+    const { getByTestId } = render(<QuickRepliesList {...props} />);
+
+    const errorMessage = getByTestId('Error message');
+
+    expect(errorMessage).toBeInTheDocument();
   });
 });

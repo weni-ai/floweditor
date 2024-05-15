@@ -18,7 +18,9 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
   tabs={
     Array [
       Object {
-        "body": <div>
+        "body": <div
+          className="interactions_tab"
+        >
           <div
             className="interaction_type"
           >
@@ -26,23 +28,7 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
               $model={
                 Object {
                   "setter": [Function],
-                  "value": "list",
-                }
-              }
-              size="sm"
-              value="list"
-            >
-              <span
-                className="color-neutral-cloudy"
-              >
-                Option list
-              </span>
-            </ForwardRef>
-            <ForwardRef
-              $model={
-                Object {
-                  "setter": [Function],
-                  "value": "list",
+                  "value": "replies",
                 }
               }
               size="sm"
@@ -58,7 +44,23 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
               $model={
                 Object {
                   "setter": [Function],
-                  "value": "list",
+                  "value": "replies",
+                }
+              }
+              size="sm"
+              value="list"
+            >
+              <span
+                className="color-neutral-cloudy"
+              >
+                Option list
+              </span>
+            </ForwardRef>
+            <ForwardRef
+              $model={
+                Object {
+                  "setter": [Function],
+                  "value": "replies",
                 }
               }
               size="sm"
@@ -71,29 +73,112 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
               </span>
             </ForwardRef>
           </div>
-          <OptionsList
-            listFooter={
-              Object {
-                "value": "",
+          <React.Fragment>
+            <React.Fragment>
+              <div
+                className="header"
+              >
+                <div
+                  className="inputs"
+                >
+                  <div
+                    className="header_type"
+                  >
+                    <span
+                      className="u font secondary body-md color-neutral-cloudy"
+                    >
+                      Header (optional)
+                    </span>
+                    <UNDEFINED
+                      name="Header (optional)"
+                      nameKey="name"
+                      onChange={[Function]}
+                      options={
+                        Array [
+                          Object {
+                            "name": "Media",
+                            "value": "media",
+                          },
+                          Object {
+                            "name": "Text",
+                            "value": "text",
+                          },
+                        ]
+                      }
+                      style="sm"
+                      value={
+                        Object {
+                          "name": "Media",
+                          "value": "media",
+                        }
+                      }
+                      valueKey="value"
+                    />
+                  </div>
+                  <React.Fragment>
+                    <div
+                      className="attachment_url"
+                    >
+                      <TextInputElement
+                        autocomplete={true}
+                        entry={
+                          Object {
+                            "value": "",
+                          }
+                        }
+                        error={null}
+                        name="URL"
+                        onChange={[Function]}
+                        placeholder="Ex: weni.ai"
+                        showLabel={true}
+                        size="sm"
+                      />
+                    </div>
+                    <div
+                      className="upload_button"
+                    >
+                      <Button
+                        iconName="upload-bottom-1"
+                        name="Upload"
+                        onClick={[Function]}
+                        size="sm"
+                        type="tertiary"
+                      />
+                      <input
+                        data-testid="upload-input"
+                        onChange={[Function]}
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                        type="file"
+                      />
+                    </div>
+                  </React.Fragment>
+                </div>
+              </div>
+            </React.Fragment>
+            <TextInputElement
+              autocomplete={true}
+              entry={
+                Object {
+                  "value": "",
+                }
               }
-            }
-            listTitle={
-              Object {
-                "value": "",
-              }
-            }
-            onListFooterUpdated={[Function]}
-            onListTitleUpdated={[Function]}
-            onOptionRemoval={[Function]}
-            onOptionsUpdated={[Function]}
-            options={
+              name="Footer (optional)"
+              onChange={[Function]}
+              placeholder="Ex: Footer"
+              showLabel={true}
+              size="sm"
+            />
+          </React.Fragment>
+          <QuickRepliesList
+            onQuickRepliesUpdated={[Function]}
+            quickReplies={
               Object {
                 "value": Array [
-                  Object {
-                    "description": "",
-                    "title": "",
-                    "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-                  },
+                  "",
                 ],
               }
             }
@@ -130,82 +215,6 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
   <div
     className="content"
   >
-    <div
-      className="header"
-    >
-      <div
-        className="header_type"
-      >
-        <span
-          className="u font secondary body-md color-neutral-cloudy"
-        >
-          Header (optional)
-        </span>
-        <Connect(TembaSelect)
-          name="Header (optional)"
-          nameKey="name"
-          onChange={[Function]}
-          options={
-            Array [
-              Object {
-                "name": "Media",
-                "value": "media",
-              },
-              Object {
-                "name": "Text",
-                "value": "text",
-              },
-            ]
-          }
-          style="md"
-          value={
-            Object {
-              "name": "Media",
-              "value": "media",
-            }
-          }
-          valueKey="value"
-        />
-      </div>
-      <div
-        className="attachment_url"
-      >
-        <TextInputElement
-          autocomplete={true}
-          entry={
-            Object {
-              "value": "",
-            }
-          }
-          error={null}
-          name="URL"
-          onChange={[Function]}
-          placeholder="Ex: weni.ai"
-          showLabel={true}
-          size="md"
-        />
-      </div>
-      <div
-        className="upload_button"
-      >
-        <Button
-          iconName="upload-bottom-1"
-          name="Upload"
-          onClick={[Function]}
-          type="terciary"
-        />
-        <input
-          data-testid="upload-input"
-          onChange={[Function]}
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-          type="file"
-        />
-      </div>
-    </div>
     <TextEditorElement
       autocomplete={true}
       entry={
@@ -219,30 +228,24 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
       placeholder="Type here..."
       showLabel={true}
     />
-    <TextInputElement
-      autocomplete={true}
-      entry={
-        Object {
-          "value": "",
-        }
-      }
-      name="Footer (optional)"
-      onChange={[Function]}
-      placeholder="Ex: Footer"
-      showLabel={true}
-      size="md"
-    />
   </div>
 </Dialog>
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save changes with updated list footer if no list items are provided 1`] = `
+exports[`SendWhatsAppMsgForm updates should not save changes if footer is filled but there are no replies or list items 1`] = `
 Object {
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
+  "buttonText": Object {
+    "value": "",
+  },
   "footer": Object {
+    "validationFailures": Array [],
+    "value": "new footer",
+  },
+  "headerText": Object {
     "value": "",
   },
   "headerType": Object {
@@ -251,18 +254,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
-      "value": "list",
+      "name": "Quick replies",
+      "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "validationFailures": Array [],
-    "value": "new list footer",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -275,85 +271,20 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "e81b3f1a-0863-4418-8a72-9c9f8aa72b7c",
+        "uuid": "f05fa107-03db-4315-a211-53da63603e6f",
       },
     ],
-  },
-  "listTitle": Object {
-    "value": "",
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
   },
   "quickReplies": Object {
-    "value": Array [
-      "",
-    ],
-  },
-  "quickReplyEntry": Object {
-    "value": "",
-  },
-  "valid": true,
-}
-`;
-
-exports[`SendWhatsAppMsgForm updates should not save changes with updated list footer if no list items are provided 2`] = `
-Object {
-  "attachment": Object {
-    "validationFailures": Array [],
-    "value": null,
-  },
-  "footer": Object {
-    "value": "",
-  },
-  "headerType": Object {
-    "value": Object {
-      "name": "Media",
-      "value": "media",
-    },
-  },
-  "header_text": Object {
-    "value": "",
-  },
-  "interactionType": Object {
-    "value": Object {
-      "name": "Option list",
-      "value": "list",
-    },
-  },
-  "listFooter": Object {
-    "validationFailures": Array [],
-    "value": "new list footer",
-  },
-  "listItemDescriptionEntry": Object {
-    "value": "",
-  },
-  "listItemTitleEntry": Object {
-    "value": "",
-  },
-  "listItems": Object {
     "validationFailures": Array [
       Object {
-        "message": "At least one list option is required if list title or footer is set",
+        "message": "At least one quick reply is required if Header or Footer is set",
       },
     ],
-    "value": Array [
-      Object {
-        "description": "",
-        "title": "",
-        "uuid": "e81b3f1a-0863-4418-8a72-9c9f8aa72b7c",
-      },
-    ],
-  },
-  "listTitle": Object {
-    "value": "",
-  },
-  "message": Object {
-    "validationFailures": Array [],
-    "value": "new msg",
-  },
-  "quickReplies": Object {
     "value": Array [
       "",
     ],
@@ -365,32 +296,33 @@ Object {
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save changes with updated list title if no list items are provided 1`] = `
+exports[`SendWhatsAppMsgForm updates should not save changes if header is set to text and filled but there are no replies or list items 1`] = `
 Object {
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
+  "buttonText": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
   },
+  "headerText": Object {
+    "validationFailures": Array [],
+    "value": "new header",
+  },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
-      "value": "media",
+      "name": "Text",
+      "value": "text",
     },
-  },
-  "header_text": Object {
-    "value": "",
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
-      "value": "list",
+      "name": "Quick replies",
+      "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -403,13 +335,73 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "141e0356-9fdd-47d3-a12d-16efc5b45276",
+        "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
       },
     ],
   },
-  "listTitle": Object {
+  "message": Object {
     "validationFailures": Array [],
-    "value": "new list title",
+    "value": "new msg",
+  },
+  "quickReplies": Object {
+    "validationFailures": Array [
+      Object {
+        "message": "At least one quick reply is required if Header or Footer is set",
+      },
+    ],
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": false,
+}
+`;
+
+exports[`SendWhatsAppMsgForm updates should not save changes with updated button text if no list items are provided 1`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "new button text",
+  },
+  "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "name": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "name": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "value": Array [
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
+      },
+    ],
   },
   "message": Object {
     "validationFailures": Array [],
@@ -427,13 +419,20 @@ Object {
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save changes with updated list title if no list items are provided 2`] = `
+exports[`SendWhatsAppMsgForm updates should not save changes with updated button text if no list items are provided 2`] = `
 Object {
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "new button text",
+  },
   "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
     "value": "",
   },
   "headerType": Object {
@@ -442,17 +441,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
       "name": "Option list",
       "value": "list",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -463,20 +456,16 @@ Object {
   "listItems": Object {
     "validationFailures": Array [
       Object {
-        "message": "At least one list option is required if list title or footer is set",
+        "message": "At least one list option is required if Action Button Text, Header or Footer is set",
       },
     ],
     "value": Array [
       Object {
         "description": "",
         "title": "",
-        "uuid": "141e0356-9fdd-47d3-a12d-16efc5b45276",
+        "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
       },
     ],
-  },
-  "listTitle": Object {
-    "validationFailures": Array [],
-    "value": "new list title",
   },
   "message": Object {
     "validationFailures": Array [],
@@ -500,7 +489,13 @@ Object {
     "validationFailures": Array [],
     "value": null,
   },
+  "buttonText": Object {
+    "value": "",
+  },
   "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
     "value": "",
   },
   "headerType": Object {
@@ -509,17 +504,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
-      "value": "list",
+      "name": "Quick replies",
+      "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -535,9 +524,6 @@ Object {
         "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
       },
     ],
-  },
-  "listTitle": Object {
-    "value": "",
   },
   "message": Object {
     "validationFailures": Array [
@@ -569,7 +555,13 @@ Object {
       "url": "http://weni.ai/image.png",
     },
   },
+  "buttonText": Object {
+    "value": "",
+  },
   "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
     "value": "",
   },
   "headerType": Object {
@@ -578,17 +570,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
-      "value": "list",
+      "name": "Quick replies",
+      "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -604,9 +590,6 @@ Object {
         "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
       },
     ],
-  },
-  "listTitle": Object {
-    "value": "",
   },
   "message": Object {
     "validationFailures": Array [],
@@ -630,7 +613,13 @@ Object {
     "validationFailures": Array [],
     "value": null,
   },
+  "buttonText": Object {
+    "value": "",
+  },
   "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
     "value": "",
   },
   "headerType": Object {
@@ -639,17 +628,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
-      "value": "list",
+      "name": "Quick replies",
+      "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -665,9 +648,6 @@ Object {
         "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
       },
     ],
-  },
-  "listTitle": Object {
-    "value": "",
   },
   "message": Object {
     "validationFailures": Array [],
@@ -688,15 +668,8 @@ Object {
 exports[`SendWhatsAppMsgForm updates should save changes after remove attachment 3`] = `
 Array [
   Object {
-    "attachment": null,
-    "footer": "",
-    "header_text": "",
     "header_type": "media",
-    "interaction_type": "list",
-    "list_footer": "",
-    "list_items": Array [],
-    "list_title": "",
-    "quick_replies": Array [],
+    "interaction_type": "replies",
     "text": "new msg",
     "type": "send_whatsapp_msg",
     "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
@@ -704,13 +677,24 @@ Array [
 ]
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes when interaction type is location 1`] = `
+exports[`SendWhatsAppMsgForm updates should save changes if header is set to media and filled, and there are no replies or list items 1`] = `
 Object {
   "attachment": Object {
     "validationFailures": Array [],
-    "value": null,
+    "value": Object {
+      "type": "image",
+      "uploaded": true,
+      "url": "http://weni.ai/image.png",
+    },
+  },
+  "buttonText": Object {
+    "value": "",
   },
   "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
+    "validationFailures": Array [],
     "value": "",
   },
   "headerType": Object {
@@ -719,17 +703,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
-      "name": "Request location",
-      "value": "location",
+      "name": "Quick replies",
+      "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -742,19 +720,163 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "90e20a49-6ecc-4b0b-97bf-bcbd37069b63",
+        "uuid": "6b59e863-2e14-442b-9987-aaa284871b8e",
       },
     ],
-  },
-  "listTitle": Object {
-    "value": "",
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
   },
   "quickReplies": Object {
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": true,
+}
+`;
+
+exports[`SendWhatsAppMsgForm updates should save changes if header is set to media and filled, and there are no replies or list items 2`] = `
+Array [
+  Object {
+    "attachment": "image:http://weni.ai/image.png",
+    "header_type": "media",
+    "interaction_type": "replies",
+    "text": "new msg",
+    "type": "send_whatsapp_msg",
+    "uuid": "00dd2423-0a34-4ee2-b97d-839fb2d593ef",
+  },
+]
+`;
+
+exports[`SendWhatsAppMsgForm updates should save changes if header is set to media and filled, and there is no message 1`] = `
+Object {
+  "attachment": Object {
     "validationFailures": Array [],
+    "value": Object {
+      "type": "image",
+      "uploaded": true,
+      "url": "http://weni.ai/image.png",
+    },
+  },
+  "buttonText": Object {
+    "value": "",
+  },
+  "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "name": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "name": "Quick replies",
+      "value": "replies",
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "value": Array [
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
+      },
+    ],
+  },
+  "message": Object {
+    "value": "",
+  },
+  "quickReplies": Object {
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": true,
+}
+`;
+
+exports[`SendWhatsAppMsgForm updates should save changes if header is set to media and filled, and there is no message 2`] = `
+Array [
+  Object {
+    "attachment": "image:http://weni.ai/image.png",
+    "header_type": "media",
+    "interaction_type": "replies",
+    "type": "send_whatsapp_msg",
+    "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
+  },
+]
+`;
+
+exports[`SendWhatsAppMsgForm updates should save changes when interaction type is location 1`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "footer": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "headerText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "name": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "name": "Request location",
+      "value": "location",
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "value": Array [
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "452c1751-5b03-4d1a-8346-83be999a8258",
+      },
+    ],
+  },
+  "message": Object {
+    "validationFailures": Array [],
+    "value": "new msg",
+  },
+  "quickReplies": Object {
     "value": Array [
       "",
     ],
@@ -769,18 +891,11 @@ Object {
 exports[`SendWhatsAppMsgForm updates should save changes when interaction type is location 2`] = `
 Array [
   Object {
-    "attachment": null,
-    "footer": "",
-    "header_text": "",
     "header_type": "media",
     "interaction_type": "location",
-    "list_footer": "",
-    "list_items": Array [],
-    "list_title": "",
-    "quick_replies": Array [],
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
+    "uuid": "28ab7e47-57cc-42ae-8269-5d8d442d4276",
   },
 ]
 `;
@@ -795,7 +910,13 @@ Object {
       "url": "http://weni.ai/image.png",
     },
   },
+  "buttonText": Object {
+    "value": "",
+  },
   "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
     "value": "",
   },
   "headerType": Object {
@@ -804,17 +925,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
-      "value": "list",
+      "name": "Quick replies",
+      "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -830,9 +945,6 @@ Object {
         "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
       },
     ],
-  },
-  "listTitle": Object {
-    "value": "",
   },
   "message": Object {
     "value": "",
@@ -853,17 +965,104 @@ exports[`SendWhatsAppMsgForm updates should save changes with updated attachment
 Array [
   Object {
     "attachment": "image:http://weni.ai/image.png",
-    "footer": "",
-    "header_text": "",
     "header_type": "media",
-    "interaction_type": "list",
-    "list_footer": "",
-    "list_items": Array [],
-    "list_title": "",
-    "quick_replies": Array [],
-    "text": "",
+    "interaction_type": "replies",
     "type": "send_whatsapp_msg",
     "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+  },
+]
+`;
+
+exports[`SendWhatsAppMsgForm updates should save changes with updated button text 1`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "new button text",
+  },
+  "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "name": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "name": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "value": Array [
+      Object {
+        "description": "description 1",
+        "title": "title 1",
+        "uuid": "1",
+      },
+      Object {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "90e20a49-6ecc-4b0b-97bf-bcbd37069b63",
+      },
+    ],
+  },
+  "message": Object {
+    "validationFailures": Array [],
+    "value": "new msg",
+  },
+  "quickReplies": Object {
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": true,
+}
+`;
+
+exports[`SendWhatsAppMsgForm updates should save changes with updated button text 2`] = `
+Array [
+  Object {
+    "button_text": "new button text",
+    "header_type": "media",
+    "interaction_type": "list",
+    "list_items": Array [
+      Object {
+        "description": "description 1",
+        "title": "title 1",
+        "uuid": "1",
+      },
+      Object {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+    ],
+    "text": "new msg",
+    "type": "send_whatsapp_msg",
+    "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
   },
 ]
 `;
@@ -874,9 +1073,15 @@ Object {
     "validationFailures": Array [],
     "value": null,
   },
+  "buttonText": Object {
+    "value": "",
+  },
   "footer": Object {
     "validationFailures": Array [],
     "value": "new footer",
+  },
+  "headerText": Object {
+    "value": "",
   },
   "headerType": Object {
     "value": Object {
@@ -884,17 +1089,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
-      "value": "list",
+      "name": "Quick replies",
+      "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -911,15 +1110,13 @@ Object {
       },
     ],
   },
-  "listTitle": Object {
-    "value": "",
-  },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
   },
   "quickReplies": Object {
     "value": Array [
+      "reply 1",
       "",
     ],
   },
@@ -933,15 +1130,12 @@ Object {
 exports[`SendWhatsAppMsgForm updates should save changes with updated footer 2`] = `
 Array [
   Object {
-    "attachment": null,
     "footer": "new footer",
-    "header_text": "",
     "header_type": "media",
-    "interaction_type": "list",
-    "list_footer": "",
-    "list_items": Array [],
-    "list_title": "",
-    "quick_replies": Array [],
+    "interaction_type": "replies",
+    "quick_replies": Array [
+      "reply 1",
+    ],
     "text": "new msg",
     "type": "send_whatsapp_msg",
     "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
@@ -955,8 +1149,15 @@ Object {
     "validationFailures": Array [],
     "value": null,
   },
+  "buttonText": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
+  },
+  "headerText": Object {
+    "validationFailures": Array [],
+    "value": "new header",
   },
   "headerType": Object {
     "value": Object {
@@ -964,18 +1165,11 @@ Object {
       "value": "text",
     },
   },
-  "header_text": Object {
-    "validationFailures": Array [],
-    "value": "new header",
-  },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
-      "value": "list",
+      "name": "Quick replies",
+      "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -992,8 +1186,91 @@ Object {
       },
     ],
   },
-  "listTitle": Object {
+  "message": Object {
+    "validationFailures": Array [],
+    "value": "new msg",
+  },
+  "quickReplies": Object {
+    "value": Array [
+      "reply 1",
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
     "value": "",
+  },
+  "valid": true,
+}
+`;
+
+exports[`SendWhatsAppMsgForm updates should save changes with updated header 2`] = `
+Array [
+  Object {
+    "header_text": "new header",
+    "header_type": "text",
+    "interaction_type": "replies",
+    "quick_replies": Array [
+      "reply 1",
+    ],
+    "text": "new msg",
+    "type": "send_whatsapp_msg",
+    "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
+  },
+]
+`;
+
+exports[`SendWhatsAppMsgForm updates should save changes with updated list items 1`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "name": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "name": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "value": Array [
+      Object {
+        "description": "description 1",
+        "title": "title 1",
+        "uuid": "1",
+      },
+      Object {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "1888ae1f-2518-4727-98e2-731674e1760e",
+      },
+    ],
   },
   "message": Object {
     "validationFailures": Array [],
@@ -1011,32 +1288,44 @@ Object {
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated header 2`] = `
+exports[`SendWhatsAppMsgForm updates should save changes with updated list items 2`] = `
 Array [
   Object {
-    "attachment": null,
-    "footer": "",
-    "header_text": "new header",
-    "header_type": "text",
+    "header_type": "media",
     "interaction_type": "list",
-    "list_footer": "",
-    "list_items": Array [],
-    "list_title": "",
-    "quick_replies": Array [],
+    "list_items": Array [
+      Object {
+        "description": "description 1",
+        "title": "title 1",
+        "uuid": "1",
+      },
+      Object {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+    ],
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
+    "uuid": "dd57500e-a8e8-4a98-8b5b-a33637523a8d",
   },
 ]
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated list footer 1`] = `
+exports[`SendWhatsAppMsgForm updates should save changes with updated list items after a removal 1`] = `
 Object {
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
   "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
     "value": "",
   },
   "headerType": Object {
@@ -1045,18 +1334,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
       "name": "Option list",
       "value": "list",
     },
-  },
-  "listFooter": Object {
-    "validationFailures": Array [],
-    "value": "new list footer",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -1083,211 +1365,6 @@ Object {
       },
     ],
   },
-  "listTitle": Object {
-    "value": "",
-  },
-  "message": Object {
-    "validationFailures": Array [],
-    "value": "new msg",
-  },
-  "quickReplies": Object {
-    "value": Array [
-      "",
-    ],
-  },
-  "quickReplyEntry": Object {
-    "value": "",
-  },
-  "valid": true,
-}
-`;
-
-exports[`SendWhatsAppMsgForm updates should save changes with updated list footer 2`] = `
-Array [
-  Object {
-    "attachment": null,
-    "footer": "",
-    "header_text": "",
-    "header_type": "media",
-    "interaction_type": "list",
-    "list_footer": "new list footer",
-    "list_items": Array [
-      Object {
-        "description": "description 1",
-        "title": "title 1",
-        "uuid": "1",
-      },
-      Object {
-        "description": "description 2",
-        "title": "title 2",
-        "uuid": "2",
-      },
-    ],
-    "list_title": "",
-    "quick_replies": Array [],
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "7663e5a1-6a46-4b0d-af01-b2262a6ad4b5",
-  },
-]
-`;
-
-exports[`SendWhatsAppMsgForm updates should save changes with updated list items 1`] = `
-Object {
-  "attachment": Object {
-    "validationFailures": Array [],
-    "value": null,
-  },
-  "footer": Object {
-    "value": "",
-  },
-  "headerType": Object {
-    "value": Object {
-      "name": "Media",
-      "value": "media",
-    },
-  },
-  "header_text": Object {
-    "value": "",
-  },
-  "interactionType": Object {
-    "value": Object {
-      "name": "Option list",
-      "value": "list",
-    },
-  },
-  "listFooter": Object {
-    "value": "",
-  },
-  "listItemDescriptionEntry": Object {
-    "value": "",
-  },
-  "listItemTitleEntry": Object {
-    "value": "",
-  },
-  "listItems": Object {
-    "value": Array [
-      Object {
-        "description": "description 1",
-        "title": "title 1",
-        "uuid": "1",
-      },
-      Object {
-        "description": "description 2",
-        "title": "title 2",
-        "uuid": "2",
-      },
-      Object {
-        "description": "",
-        "title": "",
-        "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
-      },
-    ],
-  },
-  "listTitle": Object {
-    "value": "",
-  },
-  "message": Object {
-    "validationFailures": Array [],
-    "value": "new msg",
-  },
-  "quickReplies": Object {
-    "value": Array [
-      "",
-    ],
-  },
-  "quickReplyEntry": Object {
-    "value": "",
-  },
-  "valid": true,
-}
-`;
-
-exports[`SendWhatsAppMsgForm updates should save changes with updated list items 2`] = `
-Array [
-  Object {
-    "attachment": null,
-    "footer": "",
-    "header_text": "",
-    "header_type": "media",
-    "interaction_type": "list",
-    "list_footer": "",
-    "list_items": Array [
-      Object {
-        "description": "description 1",
-        "title": "title 1",
-        "uuid": "1",
-      },
-      Object {
-        "description": "description 2",
-        "title": "title 2",
-        "uuid": "2",
-      },
-    ],
-    "list_title": "",
-    "quick_replies": Array [],
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "6b59e863-2e14-442b-9987-aaa284871b8e",
-  },
-]
-`;
-
-exports[`SendWhatsAppMsgForm updates should save changes with updated list items after a removal 1`] = `
-Object {
-  "attachment": Object {
-    "validationFailures": Array [],
-    "value": null,
-  },
-  "footer": Object {
-    "value": "",
-  },
-  "headerType": Object {
-    "value": Object {
-      "name": "Media",
-      "value": "media",
-    },
-  },
-  "header_text": Object {
-    "value": "",
-  },
-  "interactionType": Object {
-    "value": Object {
-      "name": "Option list",
-      "value": "list",
-    },
-  },
-  "listFooter": Object {
-    "value": "",
-  },
-  "listItemDescriptionEntry": Object {
-    "value": "",
-  },
-  "listItemTitleEntry": Object {
-    "value": "",
-  },
-  "listItems": Object {
-    "value": Array [
-      Object {
-        "description": "description 1",
-        "title": "title 1",
-        "uuid": "1",
-      },
-      Object {
-        "description": "description 2",
-        "title": "title 2",
-        "uuid": "2",
-      },
-      Object {
-        "description": "",
-        "title": "",
-        "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
-      },
-    ],
-  },
-  "listTitle": Object {
-    "value": "",
-  },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
@@ -1310,7 +1387,14 @@ Object {
     "validationFailures": Array [],
     "value": null,
   },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
   "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
     "value": "",
   },
   "headerType": Object {
@@ -1319,17 +1403,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
       "name": "Option list",
       "value": "list",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -1348,12 +1426,9 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
+        "uuid": "96249bdc-cb58-4489-a188-0eeb6686a8c9",
       },
     ],
-  },
-  "listTitle": Object {
-    "value": "",
   },
   "message": Object {
     "validationFailures": Array [],
@@ -1374,12 +1449,8 @@ Object {
 exports[`SendWhatsAppMsgForm updates should save changes with updated list items after a removal 3`] = `
 Array [
   Object {
-    "attachment": null,
-    "footer": "",
-    "header_text": "",
     "header_type": "media",
     "interaction_type": "list",
-    "list_footer": "",
     "list_items": Array [
       Object {
         "description": "description 2",
@@ -1387,113 +1458,9 @@ Array [
         "uuid": "2",
       },
     ],
-    "list_title": "",
-    "quick_replies": Array [],
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "f05fa107-03db-4315-a211-53da63603e6f",
-  },
-]
-`;
-
-exports[`SendWhatsAppMsgForm updates should save changes with updated list title 1`] = `
-Object {
-  "attachment": Object {
-    "validationFailures": Array [],
-    "value": null,
-  },
-  "footer": Object {
-    "value": "",
-  },
-  "headerType": Object {
-    "value": Object {
-      "name": "Media",
-      "value": "media",
-    },
-  },
-  "header_text": Object {
-    "value": "",
-  },
-  "interactionType": Object {
-    "value": Object {
-      "name": "Option list",
-      "value": "list",
-    },
-  },
-  "listFooter": Object {
-    "value": "",
-  },
-  "listItemDescriptionEntry": Object {
-    "value": "",
-  },
-  "listItemTitleEntry": Object {
-    "value": "",
-  },
-  "listItems": Object {
-    "value": Array [
-      Object {
-        "description": "description 1",
-        "title": "title 1",
-        "uuid": "1",
-      },
-      Object {
-        "description": "description 2",
-        "title": "title 2",
-        "uuid": "2",
-      },
-      Object {
-        "description": "",
-        "title": "",
-        "uuid": "dd57500e-a8e8-4a98-8b5b-a33637523a8d",
-      },
-    ],
-  },
-  "listTitle": Object {
-    "validationFailures": Array [],
-    "value": "new list title",
-  },
-  "message": Object {
-    "validationFailures": Array [],
-    "value": "new msg",
-  },
-  "quickReplies": Object {
-    "value": Array [
-      "",
-    ],
-  },
-  "quickReplyEntry": Object {
-    "value": "",
-  },
-  "valid": true,
-}
-`;
-
-exports[`SendWhatsAppMsgForm updates should save changes with updated list title 2`] = `
-Array [
-  Object {
-    "attachment": null,
-    "footer": "",
-    "header_text": "",
-    "header_type": "media",
-    "interaction_type": "list",
-    "list_footer": "",
-    "list_items": Array [
-      Object {
-        "description": "description 1",
-        "title": "title 1",
-        "uuid": "1",
-      },
-      Object {
-        "description": "description 2",
-        "title": "title 2",
-        "uuid": "2",
-      },
-    ],
-    "list_title": "new list title",
-    "quick_replies": Array [],
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "431978dd-6b18-4e25-86f1-11835491a9c9",
+    "uuid": "7663e5a1-6a46-4b0d-af01-b2262a6ad4b5",
   },
 ]
 `;
@@ -1504,7 +1471,13 @@ Object {
     "validationFailures": Array [],
     "value": null,
   },
+  "buttonText": Object {
+    "value": "",
+  },
   "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
     "value": "",
   },
   "headerType": Object {
@@ -1513,17 +1486,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
-      "value": "list",
+      "name": "Quick replies",
+      "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -1539,9 +1506,6 @@ Object {
         "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
       },
     ],
-  },
-  "listTitle": Object {
-    "value": "",
   },
   "message": Object {
     "validationFailures": Array [],
@@ -1562,15 +1526,8 @@ Object {
 exports[`SendWhatsAppMsgForm updates should save changes with updated message 2`] = `
 Array [
   Object {
-    "attachment": null,
-    "footer": "",
-    "header_text": "",
     "header_type": "media",
-    "interaction_type": "list",
-    "list_footer": "",
-    "list_items": Array [],
-    "list_title": "",
-    "quick_replies": Array [],
+    "interaction_type": "replies",
     "text": "new msg",
     "type": "send_whatsapp_msg",
     "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
@@ -1584,7 +1541,14 @@ Object {
     "validationFailures": Array [],
     "value": null,
   },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
   "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
     "value": "",
   },
   "headerType": Object {
@@ -1593,17 +1557,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
       "name": "Quick replies",
       "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -1616,19 +1574,15 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
+        "uuid": "57bf1459-14b9-4a73-b579-9d1b56f0b276",
       },
     ],
-  },
-  "listTitle": Object {
-    "value": "",
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
   },
   "quickReplies": Object {
-    "validationFailures": Array [],
     "value": Array [
       "reply 1",
       "reply 2",
@@ -1645,21 +1599,15 @@ Object {
 exports[`SendWhatsAppMsgForm updates should save changes with updated quick replies 2`] = `
 Array [
   Object {
-    "attachment": null,
-    "footer": "",
-    "header_text": "",
     "header_type": "media",
     "interaction_type": "replies",
-    "list_footer": "",
-    "list_items": Array [],
-    "list_title": "",
     "quick_replies": Array [
       "reply 1",
       "reply 2",
     ],
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
+    "uuid": "a0bf60d1-2333-41a5-9bcb-7c56cc5e969e",
   },
 ]
 `;
@@ -1674,7 +1622,13 @@ Object {
       "url": "http://weni.ai/image.png",
     },
   },
+  "buttonText": Object {
+    "value": "",
+  },
   "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
     "value": "",
   },
   "headerType": Object {
@@ -1683,17 +1637,11 @@ Object {
       "value": "media",
     },
   },
-  "header_text": Object {
-    "value": "",
-  },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
-      "value": "list",
+      "name": "Quick replies",
+      "value": "replies",
     },
-  },
-  "listFooter": Object {
-    "value": "",
   },
   "listItemDescriptionEntry": Object {
     "value": "",
@@ -1709,9 +1657,6 @@ Object {
         "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
       },
     ],
-  },
-  "listTitle": Object {
-    "value": "",
   },
   "message": Object {
     "value": "",
@@ -1732,15 +1677,8 @@ exports[`SendWhatsAppMsgForm updates should save changes with updated upload att
 Array [
   Object {
     "attachment": "image:http://weni.ai/image.png",
-    "footer": "",
-    "header_text": "",
     "header_type": "media",
-    "interaction_type": "list",
-    "list_footer": "",
-    "list_items": Array [],
-    "list_title": "",
-    "quick_replies": Array [],
-    "text": "",
+    "interaction_type": "replies",
     "type": "send_whatsapp_msg",
     "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
   },

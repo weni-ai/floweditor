@@ -3,28 +3,25 @@ import OptionsList from './OptionsList';
 import * as utils from 'utils';
 import * as React from 'react';
 import { act, fireUnnnicInputChangeText, render, wait } from 'test/utils';
+import { ValidationFailure } from 'store/nodeEditor';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
 function getProps() {
   return {
-    listTitle: {
-      value: 'list title'
-    },
-    listFooter: {
-      value: 'list footer'
+    buttonText: {
+      value: 'button text',
     },
     options: {
       value: [
         { uuid: '1', title: 'title 1', description: 'description 1' },
-        { uuid: '2', title: 'title 2', description: 'description 2' }
+        { uuid: '2', title: 'title 2', description: 'description 2' },
       ],
-      validationFailures: [] as any[]
+      validationFailures: [] as ValidationFailure[],
     },
     onOptionsUpdated: jest.fn(),
-    onListTitleUpdated: jest.fn(),
-    onListFooterUpdated: jest.fn(),
-    onOptionRemoval: jest.fn()
+    onOptionRemoval: jest.fn(),
+    onButtonTextUpdated: jest.fn(),
   };
 }
 
@@ -38,32 +35,18 @@ describe(OptionsList.name, () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('should update list title', async () => {
+  it('should update button text', async () => {
     const props = getProps();
     const { getByTestId } = render(<OptionsList {...props} />);
 
     await wait();
 
-    const listTitleInput = getByTestId('List title (optional)');
+    const buttonTextInput = getByTestId('Action Button Text (optional)');
     await act(async () => {
-      fireUnnnicInputChangeText(listTitleInput, 'new list title');
+      fireUnnnicInputChangeText(buttonTextInput, 'new button text');
     });
 
-    expect(props.onListTitleUpdated).toHaveBeenCalledWith('new list title');
-  });
-
-  it('should update list footer', async () => {
-    const props = getProps();
-    const { getByTestId } = render(<OptionsList {...props} />);
-
-    await wait();
-
-    const listFooterInput = getByTestId('Footer (optional)');
-    await act(async () => {
-      fireUnnnicInputChangeText(listFooterInput, 'new list footer');
-    });
-
-    expect(props.onListFooterUpdated).toHaveBeenCalledWith('new list footer');
+    expect(props.onButtonTextUpdated).toHaveBeenCalledWith('new button text');
   });
 
   it('should update list item title', async () => {
@@ -85,7 +68,7 @@ describe(OptionsList.name, () => {
 
     expect(props.onOptionsUpdated).toHaveBeenCalledWith([
       { uuid: '1', title: 'title 1', description: 'description 1' },
-      { uuid: '2', title: 'new title 2', description: 'description 2' }
+      { uuid: '2', title: 'new title 2', description: 'description 2' },
     ]);
   });
 
@@ -101,14 +84,16 @@ describe(OptionsList.name, () => {
       expandCollapseButton.click();
     });
 
-    const listItemDescriptionInput = getAllByTestId('Description (Optional)')[1];
+    const listItemDescriptionInput = getAllByTestId(
+      'Description (Optional)',
+    )[1];
     await act(async () => {
       fireUnnnicInputChangeText(listItemDescriptionInput, 'new description 2');
     });
 
     expect(props.onOptionsUpdated).toHaveBeenCalledWith([
       { uuid: '1', title: 'title 1', description: 'description 1' },
-      { uuid: '2', title: 'title 2', description: 'new description 2' }
+      { uuid: '2', title: 'title 2', description: 'new description 2' },
     ]);
   });
 
@@ -132,7 +117,7 @@ describe(OptionsList.name, () => {
     expect(props.onOptionRemoval).toHaveBeenCalledWith({
       uuid: '2',
       title: 'title 2',
-      description: 'description 2'
+      description: 'description 2',
     });
   });
 
