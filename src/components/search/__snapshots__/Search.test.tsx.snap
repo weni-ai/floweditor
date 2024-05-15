@@ -34,6 +34,7 @@ exports[`SearchBar should render searchbar 1`] = `
       </div>
       <div
         class="input"
+        id="searchBarInputElementDiv"
       >
         <div>
           <div
