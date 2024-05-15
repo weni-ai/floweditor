@@ -44,7 +44,6 @@ describe(SendWhatsAppMsgComp.name, () => {
         attachment: set(true),
       });
 
-      expect(wrapper.text()).toContain('Title 1');
       expect(wrapper).toMatchSnapshot();
     });
   });

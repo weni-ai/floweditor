@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SendWhatsAppMsgComp render should render attachment items when passed 1`] = `
+<SendWhatsAppMsgComp
+  attachment={true}
+  button_text=""
+  footer=""
+  header_text=""
+  header_type="media"
+  interaction_type="list"
+  list_items={Array []}
+  quick_replies={Array []}
+  text=""
+  type="send_msg"
+  uuid="b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+>
+  <div>
+    <div
+      className="attachment fe-paperclip"
+    />
+  </div>
+  <div
+    className=""
+  />
+  <div
+    className=""
+  />
+</SendWhatsAppMsgComp>
+`;
+
 exports[`SendWhatsAppMsgComp render should render list items when passed 1`] = `
 <SendWhatsAppMsgComp
   attachment={null}
