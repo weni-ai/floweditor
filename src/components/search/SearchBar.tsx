@@ -172,7 +172,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
             name={''}
             onClick={() => this.toggleMoveSelected('down')}
             iconName="down"
-            size="sm"
+            size="small"
           />
 
           <ArrowButton
@@ -180,7 +180,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
             name={''}
             onClick={() => this.toggleMoveSelected('up')}
             iconName="up"
-            size="sm"
+            size="small"
           />
         </div>
         <span className={styles.number}>
@@ -193,7 +193,11 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           )}
         </span>
         <div className={styles.close}>
-          <CloseButton name={''} onClick={() => this.closeSearch()} size="sm" />
+          <CloseButton
+            name={''}
+            onClick={() => this.closeSearch()}
+            size="small"
+          />
         </div>
       </div>
     );
