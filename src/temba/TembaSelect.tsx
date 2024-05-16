@@ -235,6 +235,10 @@ export class TembaSelect extends React.Component<
           url += this.props.queryParam + '=' + encodeURIComponent(query || '');
         }
 
+        if (this.props.assets.type === 'whatsapp_product' && query.length < 3) {
+          return;
+        }
+
         let options: any[] = [];
         let pageUrl = url;
         while (pageUrl) {
