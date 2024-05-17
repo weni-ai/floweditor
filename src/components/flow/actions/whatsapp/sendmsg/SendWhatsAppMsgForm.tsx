@@ -459,7 +459,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
       ],
     );
 
-    const match = attachmentUrl.value.match(FILE_TYPE_REGEX);
+    const match = attachmentUrl.value.toLowerCase().match(FILE_TYPE_REGEX);
     const fileType = match ? match[1] : null;
     const attachmentType = FILE_TYPE_MAP[fileType] || 'unknown';
 
