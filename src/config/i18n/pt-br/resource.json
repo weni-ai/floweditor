@@ -153,6 +153,9 @@
     "call_wenigpt": {
       "name": "Consultar WeniGPT",
       "description": "Consultar WeniGPT"
+    },
+    "send_whatsapp_msg": {
+      "name": "Enviar mensagem do WhatsApp"
     }
   },
   "add": "Adicione",
@@ -478,7 +481,10 @@
     "custom_search": "Busca personalizada",
     "custom_search_api_url": "URL da API de busca personalizada",
     "seller_id": "ID do vendedor (opcional)",
-    "postal_code": "CEP (opcional)"
+    "postal_code": "CEP (opcional)",
+    "header_optional": "Cabeçalho (opcional)",
+    "replies_label": "Adicione até 3 respostas rápidas",
+    "reply": "Resposta"
   },
   "issues": {
     "header": "Problemas no Fluxo",

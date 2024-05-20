@@ -62,6 +62,7 @@ export const handleUploadFile = (
 export const renderUploadButton = (
   attachmentEndpoint: string,
   onAttachmentUploaded: (response: AxiosResponse) => void,
+  disabled: boolean = false,
 ): JSX.Element => {
   let filePicker: any = null;
 
@@ -76,7 +77,8 @@ export const renderUploadButton = (
         name={i18n.t('buttons.upload', 'Upload')}
         onClick={triggerAttachmentUpload}
         iconName={'upload-bottom-1'}
-        size={'sm'}
+        size={'small'}
+        disabled={disabled}
       />
       <input
         data-testid="upload-input"

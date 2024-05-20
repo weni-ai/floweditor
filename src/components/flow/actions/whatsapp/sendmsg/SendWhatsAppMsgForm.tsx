@@ -46,6 +46,7 @@ import { AxiosResponse } from 'axios';
 import TextEditorElement from '../../../../form/texteditor/TextEditorElement';
 import QuickRepliesList, { hasEmptyReply } from './QuickRepliesList';
 import OptionsList, { hasEmptyListItem } from './OptionsList';
+import LocationAlert from './LocationAlert';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -63,7 +64,7 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
 });
 
 const UnnnicRadio = applyVueInReact(unnnicRadio, {
-  react: {
+  vue: {
     componentWrap: 'div',
     slotWrap: 'div',
     componentWrapAttrs: {
@@ -646,12 +647,14 @@ export default class SendWhatsAppMsgForm extends React.Component<
                     }
                     autocomplete={true}
                     showLabel={true}
+                    disabled={!!attachment}
                   />
                 </div>
 
                 {renderUploadButton(
                   this.context.config.endpoints.attachments,
                   this.handleAttachmentUploaded,
+                  !!attachment,
                 )}
               </>
             )}
@@ -761,17 +764,19 @@ export default class SendWhatsAppMsgForm extends React.Component<
           )}
 
           {interactionType === WhatsAppInteractionType.LOCATION && (
-            // TODO: Add tooltip to indicate that the message will be sent when requesting the user location
-            <div className={styles.location_message}>
-              <TextInputElement
-                name={i18n.t('forms.message', 'Message')}
-                showLabel={true}
-                entry={this.state.message}
-                placeholder={i18n.t('forms.type_here', 'Type here...')}
-                disabled={true}
-                textarea={true}
-              />
-            </div>
+            <>
+              <LocationAlert />
+              <div className={styles.location_message}>
+                <TextInputElement
+                  name={i18n.t('forms.message', 'Message')}
+                  showLabel={true}
+                  entry={this.state.message}
+                  placeholder={i18n.t('forms.type_here', 'Type here...')}
+                  disabled={true}
+                  textarea={true}
+                />
+              </div>
+            </>
           )}
         </div>
       ),
@@ -791,6 +796,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
         headerClass={typeConfig.type}
         buttons={this.getButtons()}
         tabs={tabs}
+        new={typeConfig.new}
       >
         <TypeList
           __className=""

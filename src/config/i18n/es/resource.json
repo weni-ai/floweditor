@@ -153,6 +153,9 @@
     "call_wenigpt": {
       "name": "Llame a WeniGPT",
       "description": "Llamar a WeniGPT"
+    },
+    "send_whatsapp_msg": {
+      "name": "Enviar mensaje de WhatsApp"
     }
   },
   "add": "Añadir",
@@ -477,7 +480,10 @@
     "custom_search": "Búsqueda personalizada",
     "custom_search_api_url": "URL de API de búsqueda personalizada",
     "seller_id": "ID de vendedor (opcional)",
-    "postal_code": "Código postal (opcional)"
+    "postal_code": "Código postal (opcional)",
+    "header_optional": "Encabezado (opcional)",
+    "replies_label": "Añade hasta 3 respuestas rápidas",
+    "reply": "Respuesta"
   },
   "issues": {
     "header": "Problemas de Flujo",
