@@ -142,6 +142,7 @@ export default class FieldRouterForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <div className={styles.lead_in}>
           <AssetSelector

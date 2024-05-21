@@ -131,6 +131,7 @@ export default class SmartResponseRouterForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
 
         {renderIf(!this.state.hasDescription)(

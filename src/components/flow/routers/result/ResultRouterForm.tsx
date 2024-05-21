@@ -249,6 +249,7 @@ export default class ResultRouterForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
 
         {this.state.shouldDelimit

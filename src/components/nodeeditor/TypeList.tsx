@@ -6,10 +6,12 @@ import * as React from 'react';
 import i18n from 'config/i18n';
 import styles from './TypeList.module.scss';
 import TembaSelect from 'temba/TembaSelect';
+import { NodeEditorSettings } from '../../store/nodeEditor';
 
 export interface TypeListProps {
   __className: string;
   initialType: Type;
+  nodeSettings: NodeEditorSettings;
   onChange(config: Type): void;
 }
 
@@ -46,6 +48,7 @@ export default class TypeList extends React.PureComponent<
       this.typeConfigs = filterTypeConfigs(
         configsToDisplay,
         this.context.config,
+        this.props.nodeSettings,
       );
     }
     return this.typeConfigs;

@@ -152,6 +152,7 @@ export default class SetRunResultForm extends React.PureComponent<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <div className={styles.form}>
           <AssetSelector

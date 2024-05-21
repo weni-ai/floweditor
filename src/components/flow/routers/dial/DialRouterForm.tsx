@@ -85,6 +85,7 @@ export default class DialRouterForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <p>Enter the phone number to dial</p>
         <TextInputElement

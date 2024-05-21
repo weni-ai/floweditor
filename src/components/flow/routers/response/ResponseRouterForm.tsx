@@ -114,6 +114,7 @@ export default class ResponseRouterForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <div>{WAIT_LABEL}</div>
         <CaseList

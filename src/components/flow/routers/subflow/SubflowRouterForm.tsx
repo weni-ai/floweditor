@@ -213,6 +213,7 @@ export default class SubflowRouterForm extends React.PureComponent<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <AssetSelector
           name={i18n.t('forms.flow_to_start')}
