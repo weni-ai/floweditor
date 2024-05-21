@@ -33,6 +33,7 @@ export enum Types {
   call_resthook = 'call_resthook',
   call_webhook = 'call_webhook',
   call_wenigpt = 'call_wenigpt',
+  call_brain = 'call_brain',
   open_ticket = 'open_ticket',
   send_msg = 'send_msg',
   send_msg_catalog = 'send_msg_catalog',
@@ -116,6 +117,7 @@ export enum FeatureFilter {
   HAS_LOCATIONS = 'locations',
   HAS_EXTERNAL_SERVICE = 'external_service',
   HAS_WHATSAPP_CATALOG = 'whatsapp_catalog',
+  HAS_BRAIN = 'brain',
 }
 
 export interface FlowTypeVisibility {

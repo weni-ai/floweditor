@@ -11,6 +11,7 @@ import {
   StickyNote,
   SwitchRouter,
 } from 'flowTypes';
+import { Query } from 'immutability-helper';
 import {
   Asset,
   AssetMap,
@@ -28,7 +29,7 @@ import {
   getNode,
 } from 'store/helpers';
 import { NodeEditorSettings } from 'store/nodeEditor';
-import { LocalizationUpdates } from 'store/thunks';
+import { ACTIONS_WITHOUT_EXIT, LocalizationUpdates } from 'store/thunks';
 import { createUUID, merge, push, set, snakify, splice, unset } from 'utils';
 
 const mutate = require('immutability-helper');
@@ -306,7 +307,18 @@ export const addAction = (
 ): RenderNodeMap => {
   // check that our node exists
   getNode(nodes, nodeUUID);
-  return mutate(nodes, { [nodeUUID]: { node: { actions: push([action]) } } });
+  const commands: Query<any> = {
+    [nodeUUID]: { node: { actions: push([action]) } },
+  };
+
+  if (ACTIONS_WITHOUT_EXIT.includes(action.type)) {
+    commands[nodeUUID].node.exits = set([]);
+  } else if (nodes[nodeUUID].node.exits.length === 0) {
+    commands[nodeUUID].node.exits = push([
+      { uuid: createUUID(), destination_uuid: null },
+    ]);
+  }
+  return mutate(nodes, commands);
 };
 
 /**
@@ -326,13 +338,25 @@ export const updateAction = (
   const actionIdx = originalAction
     ? getActionIndex(originalNode.node, originalAction.uuid)
     : 0;
-  return mutate(nodes, {
+
+  const commands: Query<any> = {
     [nodeUUID]: {
       node: {
         actions: { [actionIdx]: set(newAction) },
       },
     },
-  });
+  };
+
+  // if we are adding the call_brain action, we should remove any exits
+  if (ACTIONS_WITHOUT_EXIT.includes(newAction.type)) {
+    commands[nodeUUID].node.exits = set([]);
+    // if we are removing the call_brain action, we should add an exit
+  } else if (originalNode.node.exits.length === 0) {
+    commands[nodeUUID].node.exits = push([
+      { uuid: createUUID(), destination_uuid: null },
+    ]);
+  }
+  return mutate(nodes, commands);
 };
 
 export const spliceInAction = (
@@ -358,6 +382,10 @@ export const spliceInAction = (
     inboundConnections: previousNode.inboundConnections,
   };
 
+  if (ACTIONS_WITHOUT_EXIT.includes(action.type)) {
+    newNode.node.exits = [];
+  }
+
   // add our new node
   updatedNodes = mergeNode(updatedNodes, newNode);
 
@@ -372,9 +400,20 @@ export const removeAction = (
 ) => {
   const renderNode = getNode(nodes, nodeUUID);
   const actionIdx = getActionIndex(renderNode.node, actionUUID);
-  return mutate(nodes, {
+
+  const commands: Query<any> = {
     [nodeUUID]: { node: { actions: splice([[actionIdx, 1]]) } },
-  });
+  };
+
+  //check if removed action is the call_brain, if so we should readd an exit
+  const action = renderNode.node.actions[actionIdx];
+  if (ACTIONS_WITHOUT_EXIT.includes(action.type)) {
+    commands[nodeUUID].node.exits = push([
+      { uuid: createUUID(), destination_uuid: null },
+    ]);
+  }
+
+  return mutate(nodes, commands);
 };
 
 /**

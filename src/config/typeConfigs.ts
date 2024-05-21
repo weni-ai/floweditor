@@ -5,6 +5,7 @@ import AddURNForm from 'components/flow/actions/addurn/AddURNForm';
 import CallResthookComp from 'components/flow/actions/callresthook/CallResthook';
 import CallWebhookComp from 'components/flow/actions/callwebhook/CallWebhook';
 import CallWeniGPTComp from 'components/flow/actions/callwenigpt/CallWeniGPT';
+import CallBrainComp from 'components/flow/actions/callbrain/CallBrain';
 import AddGroupsForm from 'components/flow/actions/changegroups/addgroups/AddGroupsForm';
 import ChangeGroupsComp from 'components/flow/actions/changegroups/ChangeGroups';
 import RemoveGroupsForm from 'components/flow/actions/changegroups/removegroups/RemoveGroupsForm';
@@ -46,6 +47,7 @@ import SubflowRouterForm from 'components/flow/routers/subflow/SubflowRouterForm
 import WaitRouterForm from 'components/flow/routers/wait/WaitRouterForm';
 import WebhookRouterForm from 'components/flow/routers/webhook/WebhookRouterForm';
 import WeniGPTRouterForm from 'components/flow/routers/wenigpt/WeniGPTRouterForm';
+import CallBrainForm from 'components/flow/actions/callbrain/CallBrainForm';
 import {
   FeatureFilter,
   FlowTypes,
@@ -313,6 +315,16 @@ export const typeConfigList: Type[] = [
     localizeableKeys: ['categories', 'cases'],
     aliases: [RouterTypes.smart],
     visibility: VISIBILITY_MESSAGING_INTERACTIVE,
+    new: true,
+  },
+  {
+    type: Types.call_brain,
+    name: i18n.t('actions.call_brain.name', 'Call Weni Brain'),
+    description: i18n.t('actions.call_brain.description', 'Call Weni Brain'),
+    form: CallBrainForm,
+    component: CallBrainComp,
+    aliases: [Types.call_brain],
+    filter: FeatureFilter.HAS_BRAIN,
     new: true,
   },
   {

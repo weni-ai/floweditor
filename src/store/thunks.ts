@@ -4,7 +4,12 @@ import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 import { SaveResult } from 'components/revisions/RevisionExplorer';
 import { FlowTypes, Type, Types } from 'config/interfaces';
 import { getTypeConfig } from 'config/typeConfigs';
-import { createAssetStore, getFlowDetails, saveRevision } from 'external';
+import {
+  createAssetStore,
+  getBrainInfo,
+  getFlowDetails,
+  saveRevision,
+} from 'external';
 import isEqual from 'fast-deep-equal';
 import {
   Action,
@@ -44,6 +49,7 @@ import {
   updateIssues,
   Search,
   updateSearch,
+  updateBrainInfo,
 } from 'store/flowContext';
 import {
   createEmptyNode,
@@ -219,6 +225,8 @@ const SERVER_ERROR = i18n.t(
   'errors.server',
   'Hmm, we ran into a problem trying to save your changes. If this problem persists, take note of the change you are trying to make and contact support.',
 );
+
+export const ACTIONS_WITHOUT_EXIT = [Types.call_brain];
 
 export const createSaveMonitor = (dispatch: DispatchWithState) => {
   window.setInterval(() => {
@@ -461,6 +469,9 @@ export const fetchFlow = (
   (window as any).triggerActivityUpdate = () => {
     fetchFlowActivity(endpoints.activity, dispatch, getState, uuid);
   };
+
+  const brainInfo = await getBrainInfo(endpoints.brain);
+  dispatch(updateBrainInfo(brainInfo));
 
   getFlowDetails(assetStore.revisions)
     .then((response: any) => {
@@ -779,6 +790,17 @@ export const spliceInRouter = (
     updatedNodes = mutators.mergeNode(updatedNodes, bottomNode);
   } else {
     // if we don't have a bottom, route our routerNode to the previous destination
+    if (
+      ACTIONS_WITHOUT_EXIT.includes(previousNode.node.actions[actionIdx].type)
+    ) {
+      previousNode.node.exits = [
+        {
+          uuid: createUUID(),
+          destination_uuid: null,
+        },
+      ];
+    }
+
     updatedNodes = mutators.updateConnection(
       updatedNodes,
       newRouterNode.node.uuid,
@@ -857,6 +879,11 @@ export const onUpdateAction = (
       ui: { position: originalNode.ui.position, type: Types.execute_actions },
       inboundConnections: originalNode.inboundConnections,
     };
+
+    if (ACTIONS_WITHOUT_EXIT.includes(action.type)) {
+      newNode.node.exits = [];
+    }
+
     updatedNodes = mutators.mergeNode(nodes, newNode);
 
     nodeUUID = newNode.node.uuid;

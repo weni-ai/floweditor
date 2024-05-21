@@ -16,6 +16,7 @@ import {
   Assets,
   AssetStore,
   AssetType,
+  BrainInfo,
 } from 'store/flowContext';
 import { assetListToMap } from 'store/helpers';
 import { FlowTypes } from 'config/interfaces';
@@ -519,4 +520,15 @@ export const getURL = (path: string): string => {
 
 export const showHelpArticle = (link: string) => {
   window.open(link, 'floweditor_help');
+};
+
+export const getBrainInfo = (endpoint: string): Promise<BrainInfo> => {
+  return new Promise<BrainInfo>((resolve, reject) => {
+    axios
+      .get(endpoint)
+      .then((response: AxiosResponse) => {
+        resolve(response.data as BrainInfo);
+      })
+      .catch(error => reject(error));
+  });
 };

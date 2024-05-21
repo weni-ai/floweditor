@@ -1,0 +1,23 @@
+@import 'variables.module.scss';
+
+.content {
+  display: flex;
+  gap: $unnnic-spacing-xs;
+  align-items: center;
+  align-self: stretch;
+  // padding: $unnnic-spacing-sm;
+  font-family: $unnnic-font-family-secondary;
+
+  [data-use-vue-component-wrap] {
+    span {
+      margin-top: 6px;
+    }
+  }
+
+  .brain_info {
+    // max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
