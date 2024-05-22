@@ -37,6 +37,7 @@ exports[`AddURNForm renders 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -93,6 +94,7 @@ exports[`AddURNForm renders 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -359,6 +361,7 @@ exports[`AddURNForm renders 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -378,6 +381,7 @@ exports[`AddURNForm renders 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_urn_type"
+              id="temba_select_urn_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -436,6 +440,7 @@ exports[`AddURNForm renders 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_urn_type"
+                id="temba_select_options_urn_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -612,6 +617,7 @@ exports[`AddURNForm renders 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_urn_type"
+                id="temba_select_expressions_urn_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -666,6 +672,7 @@ exports[`AddURNForm renders 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_completion_options_Value of URN"
+              id=""
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>

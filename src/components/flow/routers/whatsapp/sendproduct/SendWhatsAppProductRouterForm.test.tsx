@@ -99,7 +99,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    fit('should save a manual product sending with header', async () => {
+    it('should save a manual product sending with header', async () => {
       const props = getProps();
       const {
         baseElement,

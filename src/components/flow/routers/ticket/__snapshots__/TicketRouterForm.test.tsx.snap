@@ -37,6 +37,7 @@ exports[`TicketRouterForm render should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -93,6 +94,7 @@ exports[`TicketRouterForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -359,6 +361,7 @@ exports[`TicketRouterForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -374,6 +377,7 @@ exports[`TicketRouterForm render should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_topic"
+              id="temba_select_topic"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -430,6 +434,7 @@ exports[`TicketRouterForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_topic"
+                id="temba_select_options_topic"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -446,6 +451,7 @@ exports[`TicketRouterForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_topic"
+                id="temba_select_expressions_topic"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -456,6 +462,7 @@ exports[`TicketRouterForm render should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_assignee"
+              id="temba_select_assignee"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -514,6 +521,7 @@ exports[`TicketRouterForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_assignee"
+                id="temba_select_options_assignee"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -560,6 +568,7 @@ exports[`TicketRouterForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_assignee"
+                id="temba_select_expressions_assignee"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -594,6 +603,7 @@ exports[`TicketRouterForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Body"
+                id=""
                 style="margin-top: 1px; width: -24px; display: none;"
               />
             </div>
@@ -749,6 +759,7 @@ exports[`TicketRouterForm updates should save changes 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -805,6 +816,7 @@ exports[`TicketRouterForm updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -1071,6 +1083,7 @@ exports[`TicketRouterForm updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1086,6 +1099,7 @@ exports[`TicketRouterForm updates should save changes 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_topic"
+              id="temba_select_topic"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1142,6 +1156,7 @@ exports[`TicketRouterForm updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_topic"
+                id="temba_select_options_topic"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1158,6 +1173,7 @@ exports[`TicketRouterForm updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_topic"
+                id="temba_select_expressions_topic"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1168,6 +1184,7 @@ exports[`TicketRouterForm updates should save changes 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_assignee"
+              id="temba_select_assignee"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1226,6 +1243,7 @@ exports[`TicketRouterForm updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_assignee"
+                id="temba_select_options_assignee"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1272,6 +1290,7 @@ exports[`TicketRouterForm updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_assignee"
+                id="temba_select_expressions_assignee"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1306,6 +1325,7 @@ exports[`TicketRouterForm updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Body"
+                id=""
                 style="margin-top: 1px; width: -24px; display: none;"
               />
             </div>

@@ -348,7 +348,7 @@ export const loadFlowDefinition = (
 ) => (dispatch: DispatchWithState, getState: GetState): void => {
   // first see if we need our asset store initialized
 
-  const definition = JSON.parse(details.definition as any).definition;
+  const definition = details.definition;
 
   const {
     flowContext: { issues },

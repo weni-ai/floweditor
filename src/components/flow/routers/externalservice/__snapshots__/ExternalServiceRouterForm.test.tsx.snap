@@ -37,6 +37,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -93,6 +94,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -359,6 +361,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -376,6 +379,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_external_service"
+              id="temba_select_external_service"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -434,6 +438,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_external_service"
+                id="temba_select_options_external_service"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -460,6 +465,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_external_service"
+                id="temba_select_expressions_external_service"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -474,6 +480,7 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_external_service_call"
+            id="temba_select_external_service_call"
           >
             <div
               data-use-vue-component-wrap=""
@@ -532,11 +539,13 @@ exports[`ExternalServiceRouterForm ChatGPT render should render 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_external_service_call"
+              id="temba_select_options_external_service_call"
               style="margin-top: 0px; width: 0px; display: none;"
             />
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_external_service_call"
+              id="temba_select_expressions_external_service_call"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -699,6 +708,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -755,6 +765,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1021,6 +1032,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1038,6 +1050,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_external_service"
+              id="temba_select_external_service"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1096,6 +1109,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_external_service"
+                id="temba_select_options_external_service"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1122,6 +1136,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_external_service"
+                id="temba_select_expressions_external_service"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1136,6 +1151,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_external_service_call"
+            id="temba_select_external_service_call"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1194,6 +1210,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_external_service_call"
+              id="temba_select_options_external_service_call"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -1210,6 +1227,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_external_service_call"
+              id="temba_select_expressions_external_service_call"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -1240,6 +1258,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                     <div
                       class="select_wrapper"
                       data-testid="temba_select_aditional_prompts"
+                      id="temba_select_aditional_prompts"
                     >
                       <div
                         data-use-vue-component-wrap=""
@@ -1298,6 +1317,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_options_aditional_prompts"
+                        id="temba_select_options_aditional_prompts"
                         style="margin-top: 0px; width: 0px; display: none;"
                       >
                         <div
@@ -1445,6 +1465,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_expressions_aditional_prompts"
+                        id="temba_select_expressions_aditional_prompts"
                         style="margin-top: 0px; width: 0px; display: none;"
                       />
                     </div>
@@ -1576,6 +1597,7 @@ exports[`ExternalServiceRouterForm ChatGPT updates should save changes 1`] = `
                         <div
                           class="options_wrapper"
                           data-testid="temba_completion_options_User Input"
+                          id=""
                           style="margin-top: 0px; width: -24px; display: none;"
                         />
                       </div>
@@ -1974,6 +1996,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -2030,6 +2053,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -2296,6 +2320,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -2313,6 +2338,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_external_service"
+              id="temba_select_external_service"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -2371,6 +2397,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_external_service"
+                id="temba_select_options_external_service"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -2397,6 +2424,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_external_service"
+                id="temba_select_expressions_external_service"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2411,6 +2439,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_external_service_call"
+            id="temba_select_external_service_call"
           >
             <div
               data-use-vue-component-wrap=""
@@ -2469,11 +2498,13 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_external_service_call"
+              id="temba_select_options_external_service_call"
               style="margin-top: 0px; width: 0px; display: none;"
             />
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_external_service_call"
+              id="temba_select_expressions_external_service_call"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -2522,6 +2553,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                     <div
                       class="select_wrapper"
                       data-testid="temba_select_service_call_param"
+                      id="temba_select_service_call_param"
                     >
                       <div
                         data-use-vue-component-wrap=""
@@ -2580,6 +2612,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_options_service_call_param"
+                        id="temba_select_options_service_call_param"
                         style="margin-top: 0px; width: -24px; display: none;"
                       >
                         <div
@@ -2626,6 +2659,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_expressions_service_call_param"
+                        id="temba_select_expressions_service_call_param"
                         style="margin-top: 0px; width: -24px; display: none;"
                       />
                     </div>
@@ -2636,6 +2670,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                     <div
                       class="select_wrapper"
                       data-testid="temba_select_service_call_param_filter"
+                      id="temba_select_service_call_param_filter"
                     >
                       <div
                         data-use-vue-component-wrap=""
@@ -2694,6 +2729,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_options_service_call_param_filter"
+                        id="temba_select_options_service_call_param_filter"
                         style="margin-top: 0px; width: -24px; display: none;"
                       >
                         <div
@@ -2780,6 +2816,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_expressions_service_call_param_filter"
+                        id="temba_select_expressions_service_call_param_filter"
                         style="margin-top: 0px; width: -24px; display: none;"
                       />
                     </div>
@@ -2831,6 +2868,7 @@ exports[`ExternalServiceRouterForm Omie render should render 1`] = `
                         <div
                           class="options_wrapper"
                           data-testid="temba_completion_options_Service Call Param Data"
+                          id=""
                           style="margin-top: 0px; width: -24px; display: none;"
                         />
                       </div>
@@ -3019,6 +3057,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -3075,6 +3114,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -3341,6 +3381,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -3358,6 +3399,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_external_service"
+              id="temba_select_external_service"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -3416,6 +3458,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_external_service"
+                id="temba_select_options_external_service"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -3442,6 +3485,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_external_service"
+                id="temba_select_expressions_external_service"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -3456,6 +3500,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_external_service_call"
+            id="temba_select_external_service_call"
           >
             <div
               data-use-vue-component-wrap=""
@@ -3514,6 +3559,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_external_service_call"
+              id="temba_select_options_external_service_call"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -3580,6 +3626,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_external_service_call"
+              id="temba_select_expressions_external_service_call"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -3628,6 +3675,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                     <div
                       class="select_wrapper"
                       data-testid="temba_select_service_call_param"
+                      id="temba_select_service_call_param"
                     >
                       <div
                         data-use-vue-component-wrap=""
@@ -3688,6 +3736,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_options_service_call_param"
+                        id="temba_select_options_service_call_param"
                         style="margin-top: 0px; width: -24px; display: none;"
                       >
                         <div
@@ -3734,6 +3783,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_expressions_service_call_param"
+                        id="temba_select_expressions_service_call_param"
                         style="margin-top: 0px; width: -24px; display: none;"
                       />
                     </div>
@@ -3744,6 +3794,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                     <div
                       class="select_wrapper"
                       data-testid="temba_select_service_call_param_filter"
+                      id="temba_select_service_call_param_filter"
                     >
                       <div
                         data-use-vue-component-wrap=""
@@ -3804,6 +3855,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_options_service_call_param_filter"
+                        id="temba_select_options_service_call_param_filter"
                         style="margin-top: 0px; width: -24px; display: none;"
                       >
                         <div
@@ -3880,6 +3932,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_expressions_service_call_param_filter"
+                        id="temba_select_expressions_service_call_param_filter"
                         style="margin-top: 0px; width: -24px; display: none;"
                       />
                     </div>
@@ -3931,6 +3984,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                         <div
                           class="options_wrapper"
                           data-testid="temba_completion_options_Service Call Param Data"
+                          id=""
                           style="margin-top: 0px; width: -24px; display: none;"
                         />
                       </div>
@@ -4004,6 +4058,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                     <div
                       class="select_wrapper"
                       data-testid="temba_select_service_call_param"
+                      id="temba_select_service_call_param"
                     >
                       <div
                         data-use-vue-component-wrap=""
@@ -4064,6 +4119,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_options_service_call_param"
+                        id="temba_select_options_service_call_param"
                         style="margin-top: 0px; width: -24px; display: none;"
                       >
                         <div
@@ -4110,6 +4166,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_expressions_service_call_param"
+                        id="temba_select_expressions_service_call_param"
                         style="margin-top: 0px; width: -24px; display: none;"
                       />
                     </div>
@@ -4120,6 +4177,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                     <div
                       class="select_wrapper"
                       data-testid="temba_select_service_call_param_filter"
+                      id="temba_select_service_call_param_filter"
                     >
                       <div
                         data-use-vue-component-wrap=""
@@ -4180,6 +4238,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_options_service_call_param_filter"
+                        id="temba_select_options_service_call_param_filter"
                         style="margin-top: 0px; width: -24px; display: none;"
                       >
                         <div
@@ -4256,6 +4315,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_expressions_service_call_param_filter"
+                        id="temba_select_expressions_service_call_param_filter"
                         style="margin-top: 0px; width: -24px; display: none;"
                       />
                     </div>
@@ -4307,6 +4367,7 @@ exports[`ExternalServiceRouterForm Omie updates should save changes 1`] = `
                         <div
                           class="options_wrapper"
                           data-testid="temba_completion_options_Service Call Param Data"
+                          id=""
                           style="margin-top: 0px; width: -24px; display: none;"
                         />
                       </div>

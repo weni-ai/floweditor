@@ -174,6 +174,7 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -230,6 +231,7 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -496,6 +498,7 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -512,6 +515,7 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_flow_to_start"
+            id="temba_select_flow_to_start"
           >
             <div
               data-use-vue-component-wrap=""
@@ -568,11 +572,13 @@ exports[`SubflowRouterForm should init parameter tab 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_flow_to_start"
+              id="temba_select_options_flow_to_start"
               style="margin-top: 0px; width: -24px; display: none;"
             />
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_flow_to_start"
+              id="temba_select_expressions_flow_to_start"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -678,6 +684,7 @@ exports[`SubflowRouterForm should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -734,6 +741,7 @@ exports[`SubflowRouterForm should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -1000,6 +1008,7 @@ exports[`SubflowRouterForm should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1016,6 +1025,7 @@ exports[`SubflowRouterForm should render 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_flow_to_start"
+            id="temba_select_flow_to_start"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1072,11 +1082,13 @@ exports[`SubflowRouterForm should render 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_flow_to_start"
+              id="temba_select_options_flow_to_start"
               style="margin-top: 0px; width: 0px; display: none;"
             />
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_flow_to_start"
+              id="temba_select_expressions_flow_to_start"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>

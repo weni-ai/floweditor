@@ -177,6 +177,7 @@ exports[`ResultRouterForm should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -233,6 +234,7 @@ exports[`ResultRouterForm should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -499,6 +501,7 @@ exports[`ResultRouterForm should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -521,6 +524,7 @@ exports[`ResultRouterForm should render 1`] = `
               <div
                 class="select_wrapper"
                 data-testid="temba_select_if_the_result"
+                id="temba_select_if_the_result"
               >
                 <div
                   data-use-vue-component-wrap=""
@@ -579,11 +583,13 @@ exports[`ResultRouterForm should render 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_options_if_the_result"
+                  id="temba_select_options_if_the_result"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_expressions_if_the_result"
+                  id="temba_select_expressions_if_the_result"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
               </div>
@@ -639,6 +645,7 @@ exports[`ResultRouterForm should render 1`] = `
                     <div
                       class="select_wrapper"
                       data-testid="temba_select_operator"
+                      id="temba_select_operator"
                     >
                       <div
                         data-use-vue-component-wrap=""
@@ -697,6 +704,7 @@ exports[`ResultRouterForm should render 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_options_operator"
+                        id="temba_select_options_operator"
                         style="margin-top: 0px; width: 0px; display: none;"
                       >
                         <div
@@ -913,6 +921,7 @@ exports[`ResultRouterForm should render 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_expressions_operator"
+                        id="temba_select_expressions_operator"
                         style="margin-top: 0px; width: 0px; display: none;"
                       />
                     </div>
@@ -964,6 +973,7 @@ exports[`ResultRouterForm should render 1`] = `
                         <div
                           class="options_wrapper"
                           data-testid="temba_completion_options_arguments"
+                          id=""
                           style="margin-top: 0px; width: -24px; display: none;"
                         />
                       </div>
@@ -1245,6 +1255,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1301,6 +1312,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -1567,6 +1579,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1589,6 +1602,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
               <div
                 class="select_wrapper"
                 data-testid="temba_select_field_number"
+                id="temba_select_field_number"
               >
                 <div
                   data-use-vue-component-wrap=""
@@ -1647,6 +1661,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_options_field_number"
+                  id="temba_select_options_field_number"
                   style="margin-top: 0px; width: -24px; display: none;"
                 >
                   <div
@@ -1853,6 +1868,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_expressions_field_number"
+                  id="temba_select_expressions_field_number"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
               </div>
@@ -1872,6 +1888,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
               <div
                 class="select_wrapper"
                 data-testid="temba_select_flow_result"
+                id="temba_select_flow_result"
               >
                 <div
                   data-use-vue-component-wrap=""
@@ -1930,11 +1947,13 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_options_flow_result"
+                  id="temba_select_options_flow_result"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_expressions_flow_result"
+                  id="temba_select_expressions_flow_result"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
               </div>
@@ -1954,6 +1973,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
               <div
                 class="select_wrapper"
                 data-testid="temba_select_delimiter"
+                id="temba_select_delimiter"
               >
                 <div
                   data-use-vue-component-wrap=""
@@ -2012,6 +2032,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_options_delimiter"
+                  id="temba_select_options_delimiter"
                   style="margin-top: 0px; width: -24px; display: none;"
                 >
                   <div
@@ -2048,6 +2069,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_expressions_delimiter"
+                  id="temba_select_expressions_delimiter"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
               </div>
@@ -2103,6 +2125,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                     <div
                       class="select_wrapper"
                       data-testid="temba_select_operator"
+                      id="temba_select_operator"
                     >
                       <div
                         data-use-vue-component-wrap=""
@@ -2161,6 +2184,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_options_operator"
+                        id="temba_select_options_operator"
                         style="margin-top: 0px; width: 0px; display: none;"
                       >
                         <div
@@ -2377,6 +2401,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                       <div
                         class="options_wrapper"
                         data-testid="temba_select_expressions_operator"
+                        id="temba_select_expressions_operator"
                         style="margin-top: 0px; width: 0px; display: none;"
                       />
                     </div>
@@ -2428,6 +2453,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                         <div
                           class="options_wrapper"
                           data-testid="temba_completion_options_arguments"
+                          id=""
                           style="margin-top: 0px; width: -24px; display: none;"
                         />
                       </div>

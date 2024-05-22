@@ -127,6 +127,7 @@ exports[`ParamElement ChatGPT params expressionInput render should render param 
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_User Input"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -157,6 +158,7 @@ exports[`ParamElement ChatGPT params multiselect render should render param 1`] 
           <div
             class="select_wrapper"
             data-testid="temba_select_aditional_prompts"
+            id="temba_select_aditional_prompts"
           >
             <div
               data-use-vue-component-wrap=""
@@ -215,6 +217,7 @@ exports[`ParamElement ChatGPT params multiselect render should render param 1`] 
             <div
               class="options_wrapper"
               data-testid="temba_select_options_aditional_prompts"
+              id="temba_select_options_aditional_prompts"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -362,6 +365,7 @@ exports[`ParamElement ChatGPT params multiselect render should render param 1`] 
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_aditional_prompts"
+              id="temba_select_expressions_aditional_prompts"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -391,6 +395,7 @@ exports[`ParamElement ChatGPT params multiselect update handles data change 1`] 
           <div
             class="select_wrapper"
             data-testid="temba_select_aditional_prompts"
+            id="temba_select_aditional_prompts"
           >
             <div
               data-use-vue-component-wrap=""
@@ -449,6 +454,7 @@ exports[`ParamElement ChatGPT params multiselect update handles data change 1`] 
             <div
               class="options_wrapper"
               data-testid="temba_select_options_aditional_prompts"
+              id="temba_select_options_aditional_prompts"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -596,6 +602,7 @@ exports[`ParamElement ChatGPT params multiselect update handles data change 1`] 
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_aditional_prompts"
+              id="temba_select_expressions_aditional_prompts"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -643,6 +650,7 @@ exports[`ParamElement Omie params render should render param 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_service_call_param"
+            id="temba_select_service_call_param"
           >
             <div
               data-use-vue-component-wrap=""
@@ -701,6 +709,7 @@ exports[`ParamElement Omie params render should render param 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_service_call_param"
+              id="temba_select_options_service_call_param"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -747,6 +756,7 @@ exports[`ParamElement Omie params render should render param 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_service_call_param"
+              id="temba_select_expressions_service_call_param"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -757,6 +767,7 @@ exports[`ParamElement Omie params render should render param 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_service_call_param_filter"
+            id="temba_select_service_call_param_filter"
           >
             <div
               data-use-vue-component-wrap=""
@@ -815,6 +826,7 @@ exports[`ParamElement Omie params render should render param 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_service_call_param_filter"
+              id="temba_select_options_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -911,6 +923,7 @@ exports[`ParamElement Omie params render should render param 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_service_call_param_filter"
+              id="temba_select_expressions_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -962,6 +975,7 @@ exports[`ParamElement Omie params render should render param 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Service Call Param Data"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1038,6 +1052,7 @@ exports[`ParamElement Omie params update handles data change 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_service_call_param"
+            id="temba_select_service_call_param"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1096,6 +1111,7 @@ exports[`ParamElement Omie params update handles data change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_service_call_param"
+              id="temba_select_options_service_call_param"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -1142,6 +1158,7 @@ exports[`ParamElement Omie params update handles data change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_service_call_param"
+              id="temba_select_expressions_service_call_param"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -1152,6 +1169,7 @@ exports[`ParamElement Omie params update handles data change 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_service_call_param_filter"
+            id="temba_select_service_call_param_filter"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1210,6 +1228,7 @@ exports[`ParamElement Omie params update handles data change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_service_call_param_filter"
+              id="temba_select_options_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -1306,6 +1325,7 @@ exports[`ParamElement Omie params update handles data change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_service_call_param_filter"
+              id="temba_select_expressions_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -1357,6 +1377,7 @@ exports[`ParamElement Omie params update handles data change 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Service Call Param Data"
+                id=""
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1433,6 +1454,7 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_service_call_param"
+            id="temba_select_service_call_param"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1491,6 +1513,7 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_service_call_param"
+              id="temba_select_options_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -1537,6 +1560,7 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_service_call_param"
+              id="temba_select_expressions_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -1547,6 +1571,7 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_service_call_param_filter"
+            id="temba_select_service_call_param_filter"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1605,6 +1630,7 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_service_call_param_filter"
+              id="temba_select_options_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -1701,6 +1727,7 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_service_call_param_filter"
+              id="temba_select_expressions_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -1752,6 +1779,7 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Service Call Param Data"
+                id=""
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1828,6 +1856,7 @@ exports[`ParamElement Omie params update handles filter change from correct para
           <div
             class="select_wrapper"
             data-testid="temba_select_service_call_param"
+            id="temba_select_service_call_param"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1886,6 +1915,7 @@ exports[`ParamElement Omie params update handles filter change from correct para
             <div
               class="options_wrapper"
               data-testid="temba_select_options_service_call_param"
+              id="temba_select_options_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -1932,6 +1962,7 @@ exports[`ParamElement Omie params update handles filter change from correct para
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_service_call_param"
+              id="temba_select_expressions_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -1942,6 +1973,7 @@ exports[`ParamElement Omie params update handles filter change from correct para
           <div
             class="select_wrapper"
             data-testid="temba_select_service_call_param_filter"
+            id="temba_select_service_call_param_filter"
           >
             <div
               data-use-vue-component-wrap=""
@@ -2000,6 +2032,7 @@ exports[`ParamElement Omie params update handles filter change from correct para
             <div
               class="options_wrapper"
               data-testid="temba_select_options_service_call_param_filter"
+              id="temba_select_options_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -2116,6 +2149,7 @@ exports[`ParamElement Omie params update handles filter change from correct para
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_service_call_param_filter"
+              id="temba_select_expressions_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -2167,6 +2201,7 @@ exports[`ParamElement Omie params update handles filter change from correct para
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Service Call Param Data"
+                id=""
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2243,6 +2278,7 @@ exports[`ParamElement Omie params update handles param change 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_service_call_param"
+            id="temba_select_service_call_param"
           >
             <div
               data-use-vue-component-wrap=""
@@ -2301,6 +2337,7 @@ exports[`ParamElement Omie params update handles param change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_service_call_param"
+              id="temba_select_options_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -2347,6 +2384,7 @@ exports[`ParamElement Omie params update handles param change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_service_call_param"
+              id="temba_select_expressions_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -2357,6 +2395,7 @@ exports[`ParamElement Omie params update handles param change 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_service_call_param_filter"
+            id="temba_select_service_call_param_filter"
           >
             <div
               data-use-vue-component-wrap=""
@@ -2415,6 +2454,7 @@ exports[`ParamElement Omie params update handles param change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_service_call_param_filter"
+              id="temba_select_options_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -2531,6 +2571,7 @@ exports[`ParamElement Omie params update handles param change 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_service_call_param_filter"
+              id="temba_select_expressions_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -2582,6 +2623,7 @@ exports[`ParamElement Omie params update handles param change 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Service Call Param Data"
+                id=""
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
