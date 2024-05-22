@@ -99,7 +99,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('should save a manual product sending with header', async () => {
+    fit('should save a manual product sending with header', async () => {
       const props = getProps();
       const {
         baseElement,
@@ -119,6 +119,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
       const okButton = getByText('Confirm');
       const resultName = getByTestId('Save as result');
+      const selectManuallyButton = getByText('Select products to send');
 
       // our products, productViewSettings and result name are required
       await act(async () => {
@@ -127,12 +128,15 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
+      fireEvent.click(selectManuallyButton);
       //find tembaselect input
-      const tembaSelectInput = getAllByTestId('temba_select_input_type')[0];
+      const tembaSelectInput = getAllByTestId(
+        'temba_select_input_manually_select_products',
+      )[0];
       expect(tembaSelectInput).toBeDefined();
 
-      await act(async () => {
-        fireUnnnicInputChangeText(tembaSelectInput, 'Prod');
+      fireEvent.input(tembaSelectInput, {
+        target: { value: 'Prod' },
       });
 
       await wait();

@@ -40,6 +40,7 @@ export const config: FlowEditorConfig = {
     completion: '/assets/completion.json',
     knowledgeBases: '/assets/knowledge_bases.json',
     whatsapp_products: '/assets/whatsapp_products.json',
+    whatsapp_products2: '/assets/whatsapp_products.json',
   },
   onChangeLanguage: (code: string, name: string) => {},
 };

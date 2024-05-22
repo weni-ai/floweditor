@@ -83,8 +83,10 @@ interface TembaSelectState {
   currentQuery?: string;
   selectKey: number;
   showOptions: boolean;
-  input: string;
+  input: string | any;
   fetchOnOpen?: boolean;
+  wppUrl?: string;
+  wppQuery?: string;
 }
 
 export class TembaSelect extends React.Component<
@@ -104,6 +106,8 @@ export class TembaSelect extends React.Component<
       availableExpressions: [],
       selectKey: 0,
       showOptions: false,
+      wppUrl: '',
+      wppQuery: '',
       currentQuery: '',
     };
 
@@ -130,6 +134,12 @@ export class TembaSelect extends React.Component<
     if (this.props.options !== prevProps.options) {
       this.setAvailableOptions(this.props.options || []);
     }
+    const element = document.getElementById(
+      'temba_select_options_manually_select_products',
+    );
+    if (element) {
+      element.addEventListener('scroll', this.handleScroll);
+    }
 
     if (
       this.state.showOptions &&
@@ -138,6 +148,28 @@ export class TembaSelect extends React.Component<
     ) {
       this.fetchOptions();
       this.setState({ fetchOnOpen: false });
+    }
+  }
+
+  handleScroll = () => {
+    const element = document.getElementById(
+      'temba_select_options_manually_select_products',
+    );
+    if (element) {
+      if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+        this.fetchWppProducts(this.state.wppUrl);
+      }
+    }
+  };
+
+  private async fetchWppProducts(url: string) {
+    let options: any[] = [];
+    if (url) {
+      const { data } = await axios.get(url);
+      options = options.concat(data.results || []);
+      this.setState({ wppUrl: data.next });
+      options = (this.props.options || []).concat(options || []);
+      this.setAvailableOptions(options, this.state.wppQuery);
     }
   }
 
@@ -219,6 +251,9 @@ export class TembaSelect extends React.Component<
   }
 
   private async fetchOptions(query?: string) {
+    if (this.props.assets && this.props.assets.type === 'whatsapp_product') {
+      this.setState({ wppQuery: query });
+    }
     let url = this.props.assets
       ? this.props.assets.endpoint
       : this.props.endpoint;
@@ -245,6 +280,7 @@ export class TembaSelect extends React.Component<
 
         let options: any[] = [];
         let pageUrl = url;
+
         while (pageUrl) {
           const { data } = await axios.get(pageUrl);
           options = options.concat(data.results || []);
@@ -642,6 +678,7 @@ export class TembaSelect extends React.Component<
           }}
           className={styles.select_wrapper}
           data-testid={`temba_select_${snakify(this.props.name)}`}
+          id={`temba_select_${snakify(this.props.name)}`}
         >
           <UnnnicInput
             ref={(ele: any) => {
@@ -665,6 +702,7 @@ export class TembaSelect extends React.Component<
             <>
               <SelectOptions
                 testId={`temba_select_options_${snakify(this.props.name)}`}
+                id={`temba_select_options_${snakify(this.props.name)}`}
                 options={this.state.availableOptions}
                 selected={selectedArray}
                 onBlur={() => this.setState({ showOptions: false })}
@@ -680,6 +718,7 @@ export class TembaSelect extends React.Component<
 
               <SelectOptions
                 testId={`temba_select_expressions_${snakify(this.props.name)}`}
+                id={`temba_select_expressions_${snakify(this.props.name)}`}
                 options={this.state.availableExpressions}
                 onBlur={() => this.setState({ availableExpressions: [] })}
                 onSelect={option => this.selectExpression(option)}
