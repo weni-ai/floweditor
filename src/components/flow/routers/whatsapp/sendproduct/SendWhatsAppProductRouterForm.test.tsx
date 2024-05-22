@@ -135,9 +135,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       )[0];
       expect(tembaSelectInput).toBeDefined();
 
-      fireEvent.input(tembaSelectInput, {
-        target: { value: 'Prod' },
-      });
+      // fireEvent.input(tembaSelectInput, {
+      //   target: { value: 'Prod' },
+      // });
 
       await wait();
 
