@@ -5,13 +5,27 @@ import styles from './ContentCollapse.module.scss';
 // @ts-ignore
 import { unnnicIcon } from '@weni/unnnic-system';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicIcon = applyVueInReact(unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+        display: 'flex',
+      },
+    },
+  },
+});
 
 interface ContentCollapseProps {
   title: string;
   children: React.ReactNode;
   hasError?: boolean;
   wrapper_class?: string;
+  open?: boolean;
+  titleIcon?: string;
+  titleIconScheme?: string;
 }
 
 interface ContentCollapseState {
@@ -26,7 +40,7 @@ export default class ContentCollapse extends React.Component<
     super(props);
 
     this.state = {
-      isOpen: false,
+      isOpen: this.props.open,
     };
   }
 
@@ -46,10 +60,19 @@ export default class ContentCollapse extends React.Component<
           className={styles.collapse_header}
           onClick={() => this.toggleCollapse()}
         >
+          {this.props.titleIcon && (
+            <UnnnicIcon
+              icon={this.props.titleIcon}
+              scheme={this.props.titleIconScheme}
+              filled={true}
+            />
+          )}
           <span>{this.props.title}</span>
-          <UnnnicIcon
-            icon={this.state.isOpen ? 'expand_less' : 'expand_more'}
-          />
+          <div className={styles.collapse_icon}>
+            <UnnnicIcon
+              icon={this.state.isOpen ? 'expand_less' : 'expand_more'}
+            />
+          </div>
         </div>
 
         {this.state.isOpen && (
