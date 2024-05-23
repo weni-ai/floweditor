@@ -263,7 +263,7 @@ export default class OptionsList extends React.Component<OptionsListProps> {
               'Action Button Text',
             )}
             name={i18n.t(
-              'forms.list_button_text',
+              'forms.list_button_text_optional',
               'Action Button Text (optional)',
             )}
             size={TextInputSizes.sm}

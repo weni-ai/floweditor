@@ -1,5 +1,5 @@
 import { react as bindCallbacks } from 'auto-bind';
-import Dialog, { ButtonSet, Tab } from 'components/dialog/Dialog';
+import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import {
   initializeForm as stateToForm,
   stateToAction,
@@ -153,7 +153,7 @@ export const WHATSAPP_INTERACTION_TYPE_LOCATION: UnnnicSelectOption<
   WhatsAppInteractionType
 > = {
   value: WhatsAppInteractionType.LOCATION,
-  label: i18n.t('whatsapp_interactions.location', 'Request location'),
+  label: i18n.t('whatsapp_interactions.location', 'Location'),
   description: i18n.t(
     'whatsapp_interactions.location_description',
     'Ask users for their location to facilitate service',
@@ -317,7 +317,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('messageType')) {
-      console.log('updating message type');
       updates.messageType = { value: keys.messageType };
     }
 
@@ -710,7 +709,11 @@ export default class SendWhatsAppMsgForm extends React.Component<
           {renderIf(headerType.value === WhatsAppHeaderType.TEXT)(
             <div className={styles.header_text}>
               <TextInputElement
-                name={i18n.t('forms.header_optional', 'Header (optional) ')}
+                name={
+                  interactionType === WhatsAppInteractionType.REPLIES
+                    ? i18n.t('forms.header_text', 'Header text')
+                    : i18n.t('forms.header_optional', 'Header (optional)')
+                }
                 showLabel={true}
                 entry={this.state.headerText}
                 onChange={this.handleHeaderTextUpdate}
@@ -730,7 +733,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
                     'forms.attachment_placeholder',
                     'Paste an URL or send a file',
                   )}
-                  name={i18n.t('forms.attachment', 'Media (optional)')}
+                  name={i18n.t('forms.attachment_optional', 'Media (optional)')}
                   size={TextInputSizes.sm}
                   onChange={this.handleAttachmentUrlChange}
                   entry={{

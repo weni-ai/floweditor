@@ -484,7 +484,21 @@
     "postal_code": "CEP (opcional)",
     "header_optional": "Cabeçalho (opcional)",
     "replies_label": "Adicione até 3 respostas rápidas",
-    "reply": "Resposta"
+    "reply": "Resposta",
+    "list_items": "Lista de opções",
+    "header_text": "Texto do cabeçalho",
+    "attachment_placeholder": "Cole uma URL ou envie um arquivo",
+    "attachment_optional": "Mídia (opcional)",
+    "message_type": "Tipo da mensagem",
+    "interactions": "Interações",
+    "list_option": "Opção",
+    "title": "Título",
+    "description": "Descrição",
+    "description_optional": "Descrição (opcional)",
+    "remove": "Remover",
+    "options_label": "Adicione até 10 opções",
+    "list_button_text_placeholder": "Texto do botão de ação",
+    "list_button_text_optional": "Texto do botão de ação (opcional)"
   },
   "issues": {
     "header": "Problemas no Fluxo",
@@ -702,5 +716,28 @@
   "you_can_also_delete_cards_pressing_the_keys": "Você também pode excluir blocos utilizando as teclas",
   "or": "ou",
   "new": "Novo",
-  "to_flow_start": "Início do fluxo"
+  "to_flow_start": "Início do fluxo",
+  "whatsapp_messages": {
+    "simple_message": "Mensagem simples",
+    "interactive_message": "Mensagem interativa"
+  },
+  "whatsapp_headers": {
+    "text": "Texto",
+    "media": "Mídia"
+  },
+  "whatsapp_interactions": {
+    "list": "Lista de opções",
+    "list_description": "Facilite as escolhas com uma lista de até 10 opções interativas",
+    "none": "Nenhuma interação selecionada",
+    "replies": "Respostas rápidas",
+    "replies_description": "Crie até 3 respostas rápidas com mensagens predefinidas",
+    "location": "Localização",
+    "location_description": "Peça aos usuários sua localização para facilitar o atendimento"
+  },
+  "whatsapp_msg": {
+    "list_items_required": "Pelo menos uma opção da lista deve ser preenchida",
+    "replies_required": "Pelo menos uma resposta rápida deve ser preenchida",
+    "attachment_url": "URL do anexo",
+    "configure_your_message": "Configure sua mensagem"
+  }
 }
