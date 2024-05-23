@@ -1,6 +1,5 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet, Tab } from 'components/dialog/Dialog';
-import { hasErrors } from 'components/flow/actions/helpers';
 import {
   initializeForm as stateToForm,
   stateToAction,
@@ -18,8 +17,8 @@ import {
   mergeForm,
   StringEntry,
   FormEntry,
-  SelectOptionEntry,
   StringArrayEntry,
+  UnnnicSelectOptionEntry,
 } from 'store/nodeEditor';
 import { ValidURL, shouldRequireIf, validate } from 'store/validators';
 
@@ -28,11 +27,11 @@ import styles from './SendWhatsAppMsgForm.module.scss';
 import i18n from 'config/i18n';
 
 import { applyVueInReact } from 'vuereact-combined';
-// @ts-ignore
-import { unnnicIcon, unnnicRadio } from '@weni/unnnic-system';
-import TembaSelect, {
-  TembaSelectStyle,
-} from '../../../../../temba/TembaSelect';
+import {
+  unnnicIcon,
+  unnnicSelectSmart,
+  // @ts-ignore
+} from '@weni/unnnic-system';
 import {
   Attachment,
   FILE_TYPE,
@@ -40,13 +39,13 @@ import {
   FILE_TYPE_REGEX,
   renderUploadButton,
 } from './attachments';
-import { SelectOption } from '../../../../form/select/SelectElement';
+import { UnnnicSelectOption } from 'components/form/select/SelectElement';
 import update from 'immutability-helper';
 import { AxiosResponse } from 'axios';
 import TextEditorElement from '../../../../form/texteditor/TextEditorElement';
 import QuickRepliesList, { hasEmptyReply } from './QuickRepliesList';
 import OptionsList, { hasEmptyListItem } from './OptionsList';
-import LocationAlert from './LocationAlert';
+import { renderIf } from '../../../../../utils';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -63,7 +62,7 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
   },
 });
 
-const UnnnicRadio = applyVueInReact(unnnicRadio, {
+const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -75,8 +74,13 @@ const UnnnicRadio = applyVueInReact(unnnicRadio, {
   },
 });
 
-const MAX_LIST_ITEMS_COUNT = 10;
+export const MAX_LIST_ITEMS_COUNT = 10;
 const MAX_REPLIES_COUNT = 3;
+
+export enum WhatsAppMessageType {
+  SIMPLE = 'simple',
+  INTERACTIVE = 'interactive',
+}
 
 export enum WhatsAppHeaderType {
   MEDIA = 'media',
@@ -89,45 +93,87 @@ export enum WhatsAppInteractionType {
   LOCATION = 'location',
 }
 
-export const WHATSAPP_HEADER_TYPE_TEXT: SelectOption<WhatsAppHeaderType> = {
-  name: i18n.t('whatsapp_headers.text', 'Text'),
+export const WHATSAPP_MESSAGE_TYPE_SIMPLE: UnnnicSelectOption<
+  WhatsAppMessageType
+> = {
+  label: i18n.t('whatsapp_messages.simple_message', 'Simple message'),
+  value: WhatsAppMessageType.SIMPLE,
+};
+
+export const WHATSAPP_MESSAGE_TYPE_INTERACTIVE: UnnnicSelectOption<
+  WhatsAppMessageType
+> = {
+  label: i18n.t('whatsapp_messages.interactive_message', 'Interactive message'),
+  value: WhatsAppMessageType.INTERACTIVE,
+};
+
+export const WHATSAPP_HEADER_TYPE_TEXT: UnnnicSelectOption<
+  WhatsAppHeaderType
+> = {
+  label: i18n.t('whatsapp_headers.text', 'Text'),
   value: WhatsAppHeaderType.TEXT,
 };
-export const WHATSAPP_HEADER_TYPE_MEDIA: SelectOption<WhatsAppHeaderType> = {
-  name: i18n.t('whatsapp_headers.media', 'Media'),
+export const WHATSAPP_HEADER_TYPE_MEDIA: UnnnicSelectOption<
+  WhatsAppHeaderType
+> = {
+  label: i18n.t('whatsapp_headers.media', 'Media'),
   value: WhatsAppHeaderType.MEDIA,
 };
 
-export const WHATSAPP_INTERACTION_TYPE_LIST: SelectOption<
+export const WHATSAPP_INTERACTION_TYPE_LIST: UnnnicSelectOption<
   WhatsAppInteractionType
 > = {
-  name: i18n.t('whatsapp_interactions.list', 'Option list'),
   value: WhatsAppInteractionType.LIST,
+  label: i18n.t('whatsapp_interactions.list', 'Option list'),
+  description: i18n.t(
+    'whatsapp_interactions.list_description',
+    'Make choices easier with a list of up to 10 interactive options',
+  ),
 };
 
-export const WHATSAPP_INTERACTION_TYPE_REPLIES: SelectOption<
+export const WHATSAPP_INTERACTION_TYPE_NONE: UnnnicSelectOption<
   WhatsAppInteractionType
 > = {
-  name: i18n.t('whatsapp_interactions.replies', 'Quick replies'),
+  value: null,
+  label: i18n.t('whatsapp_interactions.none', 'No interactions selected'),
+};
+
+export const WHATSAPP_INTERACTION_TYPE_REPLIES: UnnnicSelectOption<
+  WhatsAppInteractionType
+> = {
   value: WhatsAppInteractionType.REPLIES,
+  label: i18n.t('whatsapp_interactions.replies', 'Quick replies'),
+  description: i18n.t(
+    'whatsapp_interactions.replies_description',
+    'Create up to 3 quick replies with predefined messages',
+  ),
 };
 
-export const WHATSAPP_INTERACTION_TYPE_LOCATION: SelectOption<
+export const WHATSAPP_INTERACTION_TYPE_LOCATION: UnnnicSelectOption<
   WhatsAppInteractionType
 > = {
-  name: i18n.t('whatsapp_interactions.location', 'Request location'),
   value: WhatsAppInteractionType.LOCATION,
+  label: i18n.t('whatsapp_interactions.location', 'Request location'),
+  description: i18n.t(
+    'whatsapp_interactions.location_description',
+    'Ask users for their location to facilitate service',
+  ),
 };
 
-export const WHATSAPP_HEADER_TYPE_OPTIONS: SelectOption<
+export const WHATSAPP_MESSAGE_TYPE_OPTIONS: UnnnicSelectOption<
+  WhatsAppMessageType
+>[] = [WHATSAPP_MESSAGE_TYPE_SIMPLE, WHATSAPP_MESSAGE_TYPE_INTERACTIVE];
+
+export const WHATSAPP_HEADER_TYPE_OPTIONS: UnnnicSelectOption<
   WhatsAppHeaderType
 >[] = [WHATSAPP_HEADER_TYPE_MEDIA, WHATSAPP_HEADER_TYPE_TEXT];
 
-export const WHATSAPP_INTERACTION_TYPE_OPTIONS: SelectOption<
+export const WHATSAPP_INTERACTION_TYPE_OPTIONS: UnnnicSelectOption<
   WhatsAppInteractionType
 >[] = [
-  WHATSAPP_INTERACTION_TYPE_LIST,
+  WHATSAPP_INTERACTION_TYPE_NONE,
   WHATSAPP_INTERACTION_TYPE_REPLIES,
+  WHATSAPP_INTERACTION_TYPE_LIST,
   WHATSAPP_INTERACTION_TYPE_LOCATION,
 ];
 
@@ -140,13 +186,15 @@ export interface WhatsAppListItem {
 export interface SendWhatsAppMsgFormState extends FormState {
   message: StringEntry;
 
-  headerType: SelectOptionEntry<WhatsAppHeaderType>;
+  messageType: UnnnicSelectOptionEntry<WhatsAppMessageType>;
+
+  headerType: UnnnicSelectOptionEntry<WhatsAppHeaderType>;
   headerText: StringEntry;
   attachment: FormEntry<Attachment>;
 
   footer: StringEntry;
 
-  interactionType: SelectOptionEntry<WhatsAppInteractionType>;
+  interactionType: UnnnicSelectOptionEntry<WhatsAppInteractionType>;
 
   buttonText: StringEntry;
   listItems: FormEntry<WhatsAppListItem[]>;
@@ -159,11 +207,12 @@ export interface SendWhatsAppMsgFormState extends FormState {
 
 interface UpdateKeys {
   message?: string;
-  headerType?: SelectOption<WhatsAppHeaderType>;
+  messageType?: UnnnicSelectOption<WhatsAppMessageType>;
+  headerType?: UnnnicSelectOption<WhatsAppHeaderType>;
   headerText?: string;
   attachment?: Attachment;
   footer?: string;
-  interactionType?: SelectOption<WhatsAppInteractionType>;
+  interactionType?: UnnnicSelectOption<WhatsAppInteractionType>;
   buttonText?: string;
   listItems?: WhatsAppListItem[];
   removeListItem?: WhatsAppListItem;
@@ -223,10 +272,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
   private hasRequiredListItems(): boolean {
     return (
       this.state.interactionType.value.value ===
-        WHATSAPP_INTERACTION_TYPE_LIST.value &&
-      (this.state.buttonText.value.trim().length > 0 ||
-        this.state.headerText.value.trim().length > 0 ||
-        this.state.footer.value.trim().length > 0)
+      WHATSAPP_INTERACTION_TYPE_LIST.value
     );
   }
 
@@ -241,9 +287,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
   private hasRequiredReplies(): boolean {
     return (
       this.state.interactionType.value.value ===
-        WHATSAPP_INTERACTION_TYPE_REPLIES.value &&
-      (this.state.headerText.value.trim().length > 0 ||
-        this.state.footer.value.trim().length > 0)
+      WHATSAPP_INTERACTION_TYPE_REPLIES.value
     );
   }
 
@@ -270,6 +314,11 @@ export default class SendWhatsAppMsgForm extends React.Component<
           ),
         ],
       );
+    }
+
+    if (keys.hasOwnProperty('messageType')) {
+      console.log('updating message type');
+      updates.messageType = { value: keys.messageType };
     }
 
     if (keys.hasOwnProperty('headerType')) {
@@ -334,7 +383,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
             {
               message: i18n.t(
                 'whatsapp_msg.list_items_required',
-                'At least one list option is required if Action Button Text, Header or Footer is set',
+                'At least one list option must be filled',
               ),
             },
           ];
@@ -367,7 +416,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
             {
               message: i18n.t(
                 'whatsapp_msg.replies_required',
-                'At least one quick reply is required if Header or Footer is set',
+                'At least one quick reply must be filled',
               ),
             },
           ];
@@ -408,6 +457,34 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return updated.valid;
   }
 
+  private handleMessageTypeUpdate(
+    event: UnnnicSelectOption<WhatsAppMessageType>[],
+    submitting = false,
+  ) {
+    const messageType = event[0];
+
+    if (messageType.value === this.state.messageType.value.value) {
+      return false;
+    }
+
+    const toUpdate: Partial<UpdateKeys> = {
+      messageType,
+    };
+
+    if (messageType.value === WhatsAppMessageType.SIMPLE) {
+      toUpdate.interactionType = WHATSAPP_INTERACTION_TYPE_NONE;
+      toUpdate.headerType = WHATSAPP_HEADER_TYPE_MEDIA;
+      toUpdate.headerText = '';
+      toUpdate.footer = '';
+      toUpdate.listItems = [];
+      toUpdate.quickReplies = [];
+    } else if (messageType.value === WhatsAppMessageType.INTERACTIVE) {
+      toUpdate.interactionType = WHATSAPP_INTERACTION_TYPE_REPLIES;
+    }
+
+    return this.handleUpdate(toUpdate, submitting);
+  }
+
   private handleMessageUpdate(
     message: string,
     name: string,
@@ -417,9 +494,15 @@ export default class SendWhatsAppMsgForm extends React.Component<
   }
 
   private handleHeaderTypeChange(
-    headerType: SelectOption<WhatsAppHeaderType>,
+    event: UnnnicSelectOption<WhatsAppHeaderType>[],
     submitting = false,
   ): boolean {
+    const headerType = event[0];
+
+    if (headerType.value === this.state.headerType.value.value) {
+      return false;
+    }
+
     return this.handleUpdate(
       { headerType: headerType, attachment: null, headerText: '' },
       submitting,
@@ -503,10 +586,15 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return validFooter && validInteractions;
   }
 
-  private handleInteractionTypeUpdate(newValue: string) {
-    const interactionType = WHATSAPP_INTERACTION_TYPE_OPTIONS.find(
-      option => option.value === newValue,
-    );
+  private handleInteractionTypeUpdate(
+    event: UnnnicSelectOption<WhatsAppInteractionType>[],
+    submitting = false,
+  ) {
+    const interactionType = event[0];
+
+    if (interactionType.value === this.state.interactionType.value.value) {
+      return false;
+    }
 
     const toUpdate: UpdateKeys = {
       interactionType,
@@ -519,6 +607,9 @@ export default class SendWhatsAppMsgForm extends React.Component<
       toUpdate.headerText = '';
       toUpdate.attachment = null;
       toUpdate.footer = '';
+    } else if (interactionType.value === WhatsAppInteractionType.LIST) {
+      toUpdate.attachment = null;
+      toUpdate.headerType = WHATSAPP_HEADER_TYPE_TEXT;
     }
 
     return this.handleUpdate(toUpdate);
@@ -592,210 +683,149 @@ export default class SendWhatsAppMsgForm extends React.Component<
   private renderHeaderSection(): JSX.Element {
     const attachment = this.state.attachment.value;
     const headerType = this.state.headerType.value;
+    const interactionType =
+      this.state.interactionType.value &&
+      this.state.interactionType.value.value;
 
-    return (
-      <>
-        <div className={styles.header}>
-          <div className={styles.inputs}>
+    return renderIf(interactionType !== WhatsAppInteractionType.LOCATION)(
+      <div className={styles.header}>
+        <div className={styles.inputs}>
+          {renderIf(interactionType === WhatsAppInteractionType.REPLIES)(
             <div className={styles.header_type}>
               <span className={`u font secondary body-md color-neutral-cloudy`}>
                 {i18n.t('forms.header_optional', 'Header (optional)')}
               </span>
-
-              <TembaSelect
-                name={i18n.t('forms.header_optional', 'Header (optional)')}
-                style={TembaSelectStyle.small}
+              <UnnnicSelectSmart
+                $model={{
+                  value: [headerType],
+                  setter: this.handleHeaderTypeChange,
+                }}
                 options={WHATSAPP_HEADER_TYPE_OPTIONS}
-                nameKey="name"
-                valueKey="value"
-                onChange={this.handleHeaderTypeChange}
-                value={headerType}
+                size="sm"
+                orderedByIndex={true}
               />
-            </div>
+            </div>,
+          )}
 
-            {headerType.value === WhatsAppHeaderType.TEXT && (
-              <div className={styles.header_text}>
+          {renderIf(headerType.value === WhatsAppHeaderType.TEXT)(
+            <div className={styles.header_text}>
+              <TextInputElement
+                name={i18n.t('forms.header_optional', 'Header (optional) ')}
+                showLabel={true}
+                entry={this.state.headerText}
+                onChange={this.handleHeaderTextUpdate}
+                placeholder={i18n.t('forms.header_text', 'Header text')}
+                size={TextInputSizes.sm}
+                autocomplete={true}
+                maxLength={60}
+              />
+            </div>,
+          )}
+
+          {renderIf(headerType.value === WhatsAppHeaderType.MEDIA)(
+            <>
+              <div className={styles.attachment_url}>
                 <TextInputElement
-                  name={i18n.t('forms.header', 'Header')}
-                  entry={this.state.headerText}
-                  onChange={this.handleHeaderTextUpdate}
-                  placeholder={i18n.t('forms.header_text', 'Header text')}
+                  placeholder={i18n.t(
+                    'forms.attachment_placeholder',
+                    'Paste an URL or send a file',
+                  )}
+                  name={i18n.t('forms.attachment', 'Media (optional)')}
                   size={TextInputSizes.sm}
+                  onChange={this.handleAttachmentUrlChange}
+                  entry={{
+                    value:
+                      attachment && !attachment.uploaded ? attachment.url : '',
+                  }}
+                  error={
+                    this.state.attachment.validationFailures.length > 0
+                      ? this.state.attachment.validationFailures[0].message
+                      : null
+                  }
                   autocomplete={true}
+                  showLabel={true}
+                  disabled={!!attachment}
                 />
               </div>
-            )}
 
-            {headerType.value === WhatsAppHeaderType.MEDIA && (
-              <>
-                <div className={styles.attachment_url}>
-                  <TextInputElement
-                    placeholder={i18n.t('forms.ex_weni', 'Ex: weni.ai')}
-                    name={i18n.t('forms.url', 'URL')}
-                    size={TextInputSizes.sm}
-                    onChange={this.handleAttachmentUrlChange}
-                    entry={{
-                      value:
-                        attachment && !attachment.uploaded
-                          ? attachment.url
-                          : '',
-                    }}
-                    error={
-                      this.state.attachment.validationFailures.length > 0
-                        ? this.state.attachment.validationFailures[0].message
-                        : null
-                    }
-                    autocomplete={true}
-                    showLabel={true}
-                    disabled={!!attachment}
-                  />
-                </div>
-
-                {renderUploadButton(
-                  this.context.config.endpoints.attachments,
-                  this.handleAttachmentUploaded,
-                  !!attachment,
-                )}
-              </>
-            )}
-          </div>
-          {attachment && attachment.uploaded && (
-            <div className={styles.attachment}>
-              {attachment.url.substring(attachment.url.lastIndexOf('/') + 1)}
-
-              <div className={styles.remove}>
-                <UnnnicIcon
-                  icon="close"
-                  size="sm"
-                  scheme="neutral-cloudy"
-                  clickable
-                  onClick={() => this.handleAttachmentRemoved()}
-                />
-              </div>
-            </div>
+              {renderUploadButton(
+                this.context.config.endpoints.attachments,
+                this.handleAttachmentUploaded,
+                !!attachment,
+              )}
+            </>,
           )}
         </div>
-      </>
+        {attachment && attachment.uploaded && (
+          <div className={styles.attachment}>
+            {attachment.url.substring(attachment.url.lastIndexOf('/') + 1)}
+
+            <div className={styles.remove}>
+              <UnnnicIcon
+                icon="close"
+                size="sm"
+                scheme="neutral-cloudy"
+                clickable
+                onClick={() => this.handleAttachmentRemoved()}
+              />
+            </div>
+          </div>
+        )}
+      </div>,
     );
   }
 
-  private renderInteractionsTab(): Tab {
-    const interactionType = this.state.interactionType.value.value;
-    const isChecked =
-      this.hasRequiredListItem(this.state.listItems.value) ||
-      this.hasValidReply(this.state.quickReplies.value) ||
-      interactionType === WHATSAPP_INTERACTION_TYPE_LOCATION.value;
+  private renderInteractions(): JSX.Element {
+    const interactionType =
+      this.state.interactionType.value &&
+      this.state.interactionType.value.value;
+    const messageType = this.state.messageType.value.value;
 
-    return {
-      name: isChecked
-        ? i18n.t('forms.interactions', 'Interactions')
-        : i18n.t('forms.add_interactions', 'Add Interactions'),
-      body: (
-        <div className={styles.interactions_tab}>
-          <div className={styles.interaction_type}>
-            <UnnnicRadio
-              $model={{
-                value: interactionType,
-                setter: this.handleInteractionTypeUpdate,
-              }}
-              value={WHATSAPP_INTERACTION_TYPE_REPLIES.value}
-              size="sm"
-            >
-              <span className="color-neutral-cloudy">
-                {WHATSAPP_INTERACTION_TYPE_REPLIES.name}
-              </span>
-            </UnnnicRadio>
-            <UnnnicRadio
-              $model={{
-                value: interactionType,
-                setter: this.handleInteractionTypeUpdate,
-              }}
-              value={WHATSAPP_INTERACTION_TYPE_LIST.value}
-              size="sm"
-            >
-              <span className="color-neutral-cloudy">
-                {WHATSAPP_INTERACTION_TYPE_LIST.name}
-              </span>
-            </UnnnicRadio>
-            <UnnnicRadio
-              $model={{
-                value: interactionType,
-                setter: this.handleInteractionTypeUpdate,
-              }}
-              value={WHATSAPP_INTERACTION_TYPE_LOCATION.value}
-              size="sm"
-            >
-              <span className="color-neutral-cloudy">
-                {WHATSAPP_INTERACTION_TYPE_LOCATION.name}
-              </span>
-            </UnnnicRadio>
-          </div>
+    return (
+      <div className={styles.interactions_tab}>
+        {renderIf(
+          messageType !== WhatsAppMessageType.SIMPLE &&
+            interactionType !== WhatsAppInteractionType.LOCATION,
+        )(
+          <TextInputElement
+            placeholder={i18n.t('forms.ex_footer', 'Ex: Footer')}
+            name={i18n.t('forms.footer', 'Footer (optional)')}
+            size={TextInputSizes.sm}
+            onChange={this.handleFooterUpdate}
+            entry={this.state.footer}
+            autocomplete={true}
+            showLabel={true}
+          />,
+        )}
 
-          {interactionType !== WhatsAppInteractionType.LOCATION && (
-            <>
-              {this.renderHeaderSection()}
-              <TextInputElement
-                placeholder={i18n.t('forms.ex_footer', 'Ex: Footer')}
-                name={i18n.t('forms.footer', 'Footer (optional)')}
-                size={TextInputSizes.sm}
-                onChange={this.handleFooterUpdate}
-                entry={this.state.footer}
-                autocomplete={true}
-                showLabel={true}
-              />
-            </>
-          )}
+        {interactionType === WhatsAppInteractionType.LIST && (
+          <OptionsList
+            buttonText={this.state.buttonText}
+            options={this.state.listItems}
+            onOptionsUpdated={this.handleListItemsUpdate}
+            onOptionRemoval={this.handleListItemRemoval}
+            onButtonTextUpdated={this.handleButtonTextUpdate}
+          />
+        )}
 
-          {interactionType === WhatsAppInteractionType.LIST && (
-            <OptionsList
-              buttonText={this.state.buttonText}
-              options={this.state.listItems}
-              onOptionsUpdated={this.handleListItemsUpdate}
-              onOptionRemoval={this.handleListItemRemoval}
-              onButtonTextUpdated={this.handleButtonTextUpdate}
-            />
-          )}
-
-          {interactionType === WhatsAppInteractionType.REPLIES && (
-            <QuickRepliesList
-              quickReplies={this.state.quickReplies}
-              onQuickRepliesUpdated={this.handleQuickRepliesUpdate}
-            />
-          )}
-
-          {interactionType === WhatsAppInteractionType.LOCATION && (
-            <>
-              <LocationAlert />
-              <div className={styles.location_message}>
-                <TextInputElement
-                  name={i18n.t('forms.message', 'Message')}
-                  showLabel={true}
-                  entry={this.state.message}
-                  placeholder={i18n.t('forms.type_here', 'Type here...')}
-                  disabled={true}
-                  textarea={true}
-                />
-              </div>
-            </>
-          )}
-        </div>
-      ),
-      checked: isChecked,
-      hasErrors:
-        hasErrors(this.state.listItems) || hasErrors(this.state.quickReplies),
-    };
+        {interactionType === WhatsAppInteractionType.REPLIES && (
+          <QuickRepliesList
+            quickReplies={this.state.quickReplies}
+            onQuickRepliesUpdated={this.handleQuickRepliesUpdate}
+          />
+        )}
+      </div>
+    );
   }
 
   public render(): JSX.Element {
     const typeConfig = this.props.typeConfig;
-    const tabs = [this.renderInteractionsTab()];
 
     return (
       <Dialog
         title={typeConfig.name}
         headerClass={typeConfig.type}
         buttons={this.getButtons()}
-        tabs={tabs}
         new={typeConfig.new}
       >
         <TypeList
@@ -804,7 +834,52 @@ export default class SendWhatsAppMsgForm extends React.Component<
           onChange={this.props.onTypeChange}
         />
 
-        <div className={styles.content}>
+        <section className={styles.content}>
+          <header className={styles.header}>
+            {i18n.t(
+              'whatsapp_msg.configure_your_message',
+              'Configure your message',
+            )}
+          </header>
+
+          <div className={styles.selectors}>
+            <div>
+              <span className={styles.label}>
+                {i18n.t('forms.message_type', 'Message type')}
+              </span>
+              <UnnnicSelectSmart
+                $model={{
+                  value: [this.state.messageType.value],
+                  setter: this.handleMessageTypeUpdate,
+                }}
+                options={WHATSAPP_MESSAGE_TYPE_OPTIONS}
+                size="sm"
+                orderedByIndex={true}
+              />
+            </div>
+
+            <div>
+              <span className={styles.label}>
+                {i18n.t('forms.interactions', 'Interactions')}
+              </span>
+              <UnnnicSelectSmart
+                $model={{
+                  value: [this.state.interactionType.value],
+                  setter: this.handleInteractionTypeUpdate,
+                }}
+                options={WHATSAPP_INTERACTION_TYPE_OPTIONS}
+                size="sm"
+                orderedByIndex={true}
+                disabled={
+                  this.state.messageType.value.value ===
+                  WhatsAppMessageType.SIMPLE
+                }
+              />
+            </div>
+          </div>
+
+          {this.renderHeaderSection()}
+
           <TextEditorElement
             name={i18n.t('forms.message', 'Message')}
             showLabel={true}
@@ -814,7 +889,9 @@ export default class SendWhatsAppMsgForm extends React.Component<
             placeholder={i18n.t('forms.type_here', 'Type here...')}
             maxLength={4096}
           />
-        </div>
+
+          {this.renderInteractions()}
+        </section>
       </Dialog>
     );
   }

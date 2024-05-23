@@ -14,6 +14,7 @@ import {
   WhatsAppHeaderType,
   WhatsAppInteractionType,
   WhatsAppListItem,
+  WhatsAppMessageType,
 } from './components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 // we don't concern ourselves with patch versions
@@ -390,6 +391,7 @@ export interface SendMsg extends Action {
 
 export interface SendWhatsAppMsg extends Action {
   text: string;
+  messageType: WhatsAppMessageType;
   header_type: WhatsAppHeaderType;
   header_text: string;
   attachment: string;

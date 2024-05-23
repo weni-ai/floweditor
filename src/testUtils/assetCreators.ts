@@ -81,6 +81,7 @@ import {
   WhatsAppHeaderType,
   WhatsAppInteractionType,
   WhatsAppListItem,
+  WhatsAppMessageType,
 } from '../components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 const { results: groupsResults } = require('test/assets/groups.json');
@@ -376,6 +377,7 @@ export const createSendWhatsAppMsgAction = ({
   uuid = utils.createUUID(),
   text = '',
   attachment = null,
+  messageType = WhatsAppMessageType.SIMPLE,
   header_type = WhatsAppHeaderType.MEDIA,
   header_text = '',
   footer = '',
@@ -387,6 +389,7 @@ export const createSendWhatsAppMsgAction = ({
   uuid?: string;
   text?: string;
   attachment?: string;
+  messageType?: WhatsAppMessageType;
   header_type?: WhatsAppHeaderType;
   header_text?: string;
   footer?: string;
@@ -398,6 +401,7 @@ export const createSendWhatsAppMsgAction = ({
   type: Types.send_msg,
   uuid,
   text,
+  messageType,
   attachment,
   header_type,
   header_text,

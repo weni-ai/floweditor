@@ -3,8 +3,10 @@ import {
   SendWhatsAppMsgFormState,
   WHATSAPP_HEADER_TYPE_MEDIA,
   WHATSAPP_HEADER_TYPE_OPTIONS,
+  WHATSAPP_INTERACTION_TYPE_NONE,
   WHATSAPP_INTERACTION_TYPE_OPTIONS,
-  WHATSAPP_INTERACTION_TYPE_REPLIES,
+  WHATSAPP_MESSAGE_TYPE_OPTIONS,
+  WHATSAPP_MESSAGE_TYPE_SIMPLE,
   WhatsAppListItem,
 } from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 import { Types } from 'config/interfaces';
@@ -37,6 +39,11 @@ export const initializeForm = (
 
     return {
       message: { value: action.text || '' },
+      messageType: {
+        value: WHATSAPP_MESSAGE_TYPE_OPTIONS.find(
+          o => o.value === action.messageType,
+        ),
+      },
       headerType: {
         value: WHATSAPP_HEADER_TYPE_OPTIONS.find(
           o => o.value === action.header_type,
@@ -46,9 +53,10 @@ export const initializeForm = (
       attachment: { value: attachment, validationFailures: [] },
       footer: { value: action.footer || '' },
       interactionType: {
-        value: WHATSAPP_INTERACTION_TYPE_OPTIONS.find(
-          o => o.value === action.interaction_type,
-        ),
+        value:
+          WHATSAPP_INTERACTION_TYPE_OPTIONS.find(
+            o => o.value === action.interaction_type,
+          ) || WHATSAPP_INTERACTION_TYPE_NONE,
       },
       buttonText: { value: action.button_text || '' },
       listItems: { value: action.list_items || [] },
@@ -64,10 +72,11 @@ export const initializeForm = (
   return {
     headerType: { value: WHATSAPP_HEADER_TYPE_MEDIA },
     message: { value: '' },
+    messageType: { value: WHATSAPP_MESSAGE_TYPE_SIMPLE },
     headerText: { value: '' },
     attachment: { value: null, validationFailures: [] },
     footer: { value: '' },
-    interactionType: { value: WHATSAPP_INTERACTION_TYPE_REPLIES },
+    interactionType: { value: WHATSAPP_INTERACTION_TYPE_NONE },
     buttonText: { value: '' },
     listItems: { value: [] },
     quickReplies: { value: [] },
@@ -112,6 +121,7 @@ export const stateToAction = (
     attachment,
     type: Types.send_whatsapp_msg,
     text: state.message.value,
+    messageType: state.messageType.value.value,
     header_type: state.headerType.value.value,
     header_text: state.headerText.value,
     footer: state.footer.value,

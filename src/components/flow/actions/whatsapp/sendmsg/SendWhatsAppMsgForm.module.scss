@@ -3,7 +3,23 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: $unnnic-spacing-xs;
+  gap: $unnnic-spacing-md;  
+}
+
+.selectors {
+  display: flex;
+  width: 100%;
+  gap: $unnnic-spacing-inline-xs;
+
+  >div {
+    flex: 1;
+  }
+
+  .label {
+    font-family: $unnnic-font-family-secondary;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-line-height-md + $unnnic-font-size-body-md; 
+  }
 }
 
 .header {
@@ -30,16 +46,12 @@
 
   .header_text {
     flex: 4;
-    margin-top: $unnnic-spacing-md;
   }
 
   .attachment_url {
     flex: 3;
   }
 
-  .upload_button {
-    margin-top: $unnnic-spacing-md;
-  }
 }
 
 .attachment {
@@ -60,7 +72,7 @@
 .interactions_tab {
   display: flex;
   flex-direction: column;
-  gap: $unnnic-spacing-stack-sm;
+  gap: $unnnic-spacing-stack-md;
 }
 
 .interaction_type {

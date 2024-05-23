@@ -67,13 +67,14 @@ export const renderUploadButton = (
   let filePicker: any = null;
 
   const triggerAttachmentUpload = (): void => {
+    filePicker.value = null;
     filePicker.click();
   };
 
   return (
     <div className={styles.upload_button}>
       <Button
-        type={ButtonTypes.tertiary}
+        type={ButtonTypes.secondary}
         name={i18n.t('buttons.upload', 'Upload')}
         onClick={triggerAttachmentUpload}
         iconName={'upload-bottom-1'}

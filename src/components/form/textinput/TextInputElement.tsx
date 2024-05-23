@@ -220,6 +220,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             session={true}
             errors={errorList}
             disabled={this.props.disabled}
+            maxLength={this.props.maxLength}
           />
         ) : (
           <div data-testid={this.props.name}>

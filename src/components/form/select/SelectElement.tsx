@@ -23,6 +23,12 @@ interface SelectElementProps extends FormElementProps {
   disabled?: boolean;
 }
 
+export interface UnnnicSelectOption<T = string> {
+  label: string;
+  value: T;
+  description?: string;
+}
+
 export interface SelectOption<T = string> {
   name: string;
   value: T;

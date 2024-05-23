@@ -1,5 +1,8 @@
 import { hasErrors } from 'components/flow/actions/helpers';
-import { SelectOption } from 'components/form/select/SelectElement';
+import {
+  SelectOption,
+  UnnnicSelectOption,
+} from 'components/form/select/SelectElement';
 import { Type } from 'config/interfaces';
 import { Scheme } from 'config/typeConfigs';
 import { AnyAction } from 'flowTypes';
@@ -22,6 +25,10 @@ export interface ValidationFailure {
 export interface FormEntry<T = any> {
   value: T;
   validationFailures?: ValidationFailure[];
+}
+
+export interface UnnnicSelectOptionEntry<T = any> extends FormEntry {
+  value: UnnnicSelectOption<T>;
 }
 
 export interface SelectOptionEntry<T = any> extends FormEntry {
