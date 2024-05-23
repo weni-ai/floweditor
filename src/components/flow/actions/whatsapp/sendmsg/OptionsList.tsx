@@ -10,14 +10,14 @@ import ContentCollapse from '../../../../contentcollapse/ContentCollapse';
 
 import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
-import { unnnicIcon, unnnicButton } from '@weni/unnnic-system';
+import { unnnicButton } from '@weni/unnnic-system';
 import {
   SortEnd,
   SortableContainer,
   SortableElement,
   arrayMove,
 } from 'react-sortable-hoc';
-import { WhatsAppListItem } from './SendWhatsAppMsgForm';
+import { MAX_LIST_ITEMS_COUNT, WhatsAppListItem } from './SendWhatsAppMsgForm';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import update from 'immutability-helper';
 import {
@@ -26,18 +26,13 @@ import {
   ValidationFailure,
 } from '../../../../../store/nodeEditor';
 
-const UnnnicButton = applyVueInReact(unnnicButton);
-
-const UnnnicIcon = applyVueInReact(unnnicIcon, {
+const UnnnicButton = applyVueInReact(unnnicButton, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
     componentWrapAttrs: {
-      'data-draggable': 'true',
       style: {
         all: '',
-        height: '20px',
-        padding: '4px',
       },
     },
   },
@@ -62,17 +57,16 @@ export function hasEmptyListItem(listItems: WhatsAppListItem[]): boolean {
 const SortableListItem = SortableElement(({ value: row, index }: any) => {
   const listItem = row.item as WhatsAppListItem;
   return (
-    <div className={styles.list_item_wrapper} key={listItem.uuid}>
-      <UnnnicIcon
-        className={styles.drag_handle}
-        icon="drag_indicator"
-        size="sm"
-        scheme="neutral-cloudy"
-        clickable
-        data-draggable={true}
-      />
-
-      <div className={styles.list_item_inputs}>
+    <ContentCollapse
+      title={`${i18n.t('forms.list_option', 'Option')} ${index +
+        1}/${MAX_LIST_ITEMS_COUNT}`}
+      open={index === 0 && row.length === 1}
+      titleIcon="check_circle"
+      titleIconScheme={
+        listItem.title.trim().length > 0 ? 'weni-600' : 'neutral-soft'
+      }
+    >
+      <div className={styles.list_item_wrapper}>
         <TextInputElement
           placeholder={i18n.t('forms.title', 'Title')}
           name={i18n.t('forms.title', 'Title')}
@@ -83,7 +77,7 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
           entry={{ value: listItem.title }}
           autocomplete={true}
           showLabel={true}
-          maxLength={72}
+          maxLength={24}
         />
 
         <TextInputElement
@@ -98,16 +92,18 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
           showLabel={true}
           maxLength={72}
         />
-      </div>
 
-      <UnnnicButton
-        data-testid="Remove"
-        iconCenter="delete"
-        size="small"
-        type="tertiary"
-        onClick={() => row.list.handleListItemRemoval(listItem)}
-      />
-    </div>
+        <UnnnicButton
+          className={styles.list_item_remove}
+          data-testid="Remove"
+          iconLeft="do_not_disturb_on"
+          text={i18n.t('forms.remove', 'Remove')}
+          size="small"
+          type="tertiary"
+          onClick={() => row.list.handleListItemRemoval(listItem)}
+        />
+      </div>
+    </ContentCollapse>
   );
 });
 
@@ -201,7 +197,7 @@ export default class OptionsList extends React.Component<OptionsListProps> {
                 <SortableListItem
                   key={value.uuid}
                   index={index}
-                  value={{ item: value, list: this }}
+                  value={{ item: value, list: this, length: items.length }}
                   disabled={index === this.props.options.value.length - 1}
                   shouldCancelStart={
                     /* istanbul ignore next */
@@ -227,30 +223,29 @@ export default class OptionsList extends React.Component<OptionsListProps> {
     return (
       <div className={styles.list_wrapper}>
         <div>
-          <ContentCollapse
-            title={i18n.t('forms.list_options', 'List options')}
-            hasError={hasError}
-          >
-            <this.sortableListOptions
-              items={this.props.options.value}
-              onSortEnd={this.handleListItemsSortEnd}
-              helperClass={styles.item_z_index}
-              shouldCancelStart={
-                /* istanbul ignore next */
-                (e: React.MouseEvent<HTMLDivElement>) => {
-                  if (e.target.constructor.name === 'SVGSVGElement') {
-                    return !(e.target as any).dataset.draggable;
-                  }
+          <span className={styles.options_label}>
+            {i18n.t('forms.options_label', 'Add up to 10 options')}
+          </span>
 
-                  if (!(e.target instanceof HTMLElement)) {
-                    return true;
-                  }
-                  return !e.target.dataset.draggable;
+          <this.sortableListOptions
+            items={this.props.options.value}
+            onSortEnd={this.handleListItemsSortEnd}
+            helperClass={styles.item_z_index}
+            shouldCancelStart={
+              /* istanbul ignore next */
+              (e: React.MouseEvent<HTMLDivElement>) => {
+                if (e.target.constructor.name === 'SVGSVGElement') {
+                  return !(e.target as any).dataset.draggable;
                 }
+
+                if (!(e.target instanceof HTMLElement)) {
+                  return true;
+                }
+                return !e.target.dataset.draggable;
               }
-              lockAxis="y"
-            />
-          </ContentCollapse>
+            }
+            lockAxis="y"
+          />
 
           {hasError ? (
             <div data-testid="Error message" className={styles.error_message}>
