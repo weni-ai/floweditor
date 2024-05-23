@@ -38,7 +38,9 @@ export interface SearchStoreProps {
 
 export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   public componentDidMount(): void {
-    document.addEventListener('keydown', (e: KeyboardEvent) => this.handleWindowKeyDown(e));
+    document.addEventListener('keydown', (e: KeyboardEvent) =>
+      this.handleWindowKeyDown(e),
+    );
   }
 
   private handleWindowKeyDown(event: KeyboardEvent): void {
@@ -119,25 +121,43 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     const { value, nodes, selected } = this.props.search;
     switch (type) {
       case 'up':
-        this.props.handleSearchChange({
-          isSearchOpen: true,
-          value: value,
-          nodes: nodes,
-          selected: selected - 1 < 0 ? 0 : selected - 1,
-        });
+        if (selected === 0) {
+          this.props.handleSearchChange({
+            isSearchOpen: true,
+            value: value,
+            nodes: nodes,
+            selected: nodes.length - 1,
+          });
+        } else {
+          this.props.handleSearchChange({
+            isSearchOpen: true,
+            value: value,
+            nodes: nodes,
+            selected: selected - 1 < 0 ? 0 : selected - 1,
+          });
+        }
         break;
       case 'down':
         var down = selected - 1;
         if (down < 0) {
           down = 0;
         }
-        this.props.handleSearchChange({
-          isSearchOpen: true,
-          value: value,
-          nodes: nodes,
-          selected:
-            selected < nodes.length - 1 ? selected + 1 : nodes.length - 1,
-        });
+        if (selected + 1 === nodes.length) {
+          this.props.handleSearchChange({
+            isSearchOpen: true,
+            value: value,
+            nodes: nodes,
+            selected: 0,
+          });
+        } else {
+          this.props.handleSearchChange({
+            isSearchOpen: true,
+            value: value,
+            nodes: nodes,
+            selected:
+              selected < nodes.length - 1 ? selected + 1 : nodes.length - 1,
+          });
+        }
         break;
     }
     this.dragBackground();
@@ -177,9 +197,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
         </div>
         <div className={styles.buttons}>
           <ArrowButton
-            disabled={
-              !value.length || !nodes.length || selected === nodes.length - 1
-            }
+            disabled={!nodes.length || !value.length}
             name={''}
             onClick={() => this.toggleMoveSelected('down')}
             iconName="down"
@@ -187,8 +205,8 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           />
 
           <ArrowButton
-            disabled={!value.length || !nodes.length || selected === 0}
             name={''}
+            disabled={!nodes.length || !value.length}
             onClick={() => this.toggleMoveSelected('up')}
             iconName="up"
             size="sm"
