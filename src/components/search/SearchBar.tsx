@@ -97,7 +97,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       NodeFilter.SHOW_TEXT,
       {
         acceptNode: function(node) {
-          if (new RegExp(`\\b${searchWord}\\b`, 'gi').test(node.nodeValue)) {
+          if (new RegExp(searchWord, 'gi').test(node.nodeValue)) {
             return NodeFilter.FILTER_ACCEPT;
           }
           return NodeFilter.FILTER_REJECT;
@@ -107,6 +107,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
 
     let node;
     const parentElements: HTMLElement[] = [];
+    const foundWords: string[] = [];
 
     while ((node = walker.nextNode())) {
       const parent = node.parentNode as HTMLElement;
@@ -114,11 +115,18 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
         parentElements.push(parent);
       }
 
-      const regex = new RegExp(`(\\b${searchWord}\\b)`, 'gi');
+      const regex = new RegExp(`(${searchWord})`, 'gi');
       const highlightedText = node.nodeValue.replace(
         regex,
         '<span class="highlight">$1</span>',
       );
+
+      const words = node.nodeValue.split(/\s+/);
+      words.forEach(word => {
+        if (word.toLowerCase().includes(searchWord.toLowerCase())) {
+          foundWords.push(word);
+        }
+      });
 
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = highlightedText;
@@ -129,15 +137,13 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       parent.removeChild(node);
     }
 
-    return parentElements;
+    return { parentElements, foundWords };
   }
 
   private highlightText(rootElement: HTMLElement, searchWord: string) {
-    // Remove existing highlights
     this.removeHighlights(rootElement);
 
-    // Add new highlights
-    this.findParentsAndHighlightWord(rootElement, searchWord);
+    const result = this.findParentsAndHighlightWord(rootElement, searchWord);
 
     const style = document.createElement('style');
     style.innerHTML = `
@@ -146,6 +152,8 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     }
     `;
     document.head.appendChild(style);
+
+    return result.foundWords;
   }
 
   private removeHighlights(rootElement: HTMLElement) {
@@ -239,6 +247,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
 
   private closeSearch() {
     const { value, nodes } = this.props.search;
+    this.removeHighlights(document.querySelector('*'));
     this.props.handleSearchChange({
       isSearchOpen: false,
       value: value,
