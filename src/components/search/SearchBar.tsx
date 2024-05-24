@@ -75,6 +75,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       const nodeItem: any = item.data.node.actions;
       if (nodeItem.length > 0) {
         const selectedNode = document.getElementById(item.uuid);
+        if (selectedNode) {
+          this.highlightText(selectedNode, value);
+        }
         return selectedNode
           ? selectedNode.innerText
               .toLocaleLowerCase()
@@ -83,6 +86,71 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       } else {
         return false;
       }
+    });
+  }
+
+  private findParentsAndHighlightWord(
+    rootElement: HTMLElement,
+    searchWord: string,
+  ) {
+    const walker = document.createTreeWalker(
+      rootElement,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: function(node) {
+          if (node.nodeValue.includes(searchWord)) {
+            return NodeFilter.FILTER_ACCEPT;
+          }
+          return NodeFilter.FILTER_REJECT;
+        },
+      },
+    );
+
+    let node;
+    const parentElements = [];
+
+    while ((node = walker.nextNode())) {
+      const parent = node.parentNode as HTMLElement;
+      parentElements.push(parent);
+
+      const regex = new RegExp(`(${searchWord})`, 'gi');
+      const highlightedText = node.nodeValue.replace(
+        regex,
+        '<span class="highlight">$1</span>',
+      );
+
+      parent.innerHTML = parent.innerHTML.replace(
+        node.nodeValue,
+        highlightedText,
+      );
+    }
+
+    return parentElements;
+  }
+
+  private highlightText(node: HTMLElement, texto: string) {
+    texto.split('').forEach(char => {
+      console.log(char);
+      this.findParentsAndHighlightWord(node, char);
+    });
+    const style = document.createElement('style');
+    style.innerHTML = `
+    .highlight {
+        background-color: yellow; /* Change this to your desired highlight color */
+    }
+`;
+    document.head.appendChild(style);
+  }
+
+  private removeHighlights() {
+    const highlightedElements = document.querySelectorAll('.highlight');
+    highlightedElements.forEach(element => {
+      const parent = element.parentNode;
+      parent.replaceChild(
+        document.createTextNode(element.textContent),
+        element,
+      );
+      parent.normalize(); // Combine adjacent text nodes
     });
   }
 
