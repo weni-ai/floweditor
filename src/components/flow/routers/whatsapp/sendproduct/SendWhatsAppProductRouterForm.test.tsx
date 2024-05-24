@@ -35,7 +35,7 @@ function getProps(automatic = false) {
       footer: '',
       action: '',
     },
-    [],
+    whatsappProducts.results,
     automatic,
     false,
     ProductSearchType.Default,
@@ -134,10 +134,6 @@ describe(SendWhatsAppProductRouterForm.name, () => {
         'temba_select_input_manually_select_products',
       )[0];
       expect(tembaSelectInput).toBeDefined();
-
-      // fireEvent.input(tembaSelectInput, {
-      //   target: { value: 'Prod' },
-      // });
 
       await wait();
 
