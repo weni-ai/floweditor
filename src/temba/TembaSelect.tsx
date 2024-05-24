@@ -87,6 +87,7 @@ interface TembaSelectState {
   fetchOnOpen?: boolean;
   wppUrl?: string;
   wppQuery?: string;
+  wppOptions: any[];
 }
 
 export class TembaSelect extends React.Component<
@@ -108,6 +109,7 @@ export class TembaSelect extends React.Component<
       showOptions: false,
       wppUrl: '',
       wppQuery: '',
+      wppOptions: [],
       currentQuery: '',
     };
 
@@ -163,13 +165,14 @@ export class TembaSelect extends React.Component<
   };
 
   private async fetchWppProducts(url: string) {
-    let options: any[] = [];
+    const { wppOptions, wppQuery } = this.state;
+    let options: any[] = wppOptions || [];
     if (url) {
       const { data } = await axios.get(url);
       options = options.concat(data.results || []);
       this.setState({ wppUrl: data.next });
-      options = (this.props.options || []).concat(options || []);
-      this.setAvailableOptions(options, this.state.wppQuery);
+      this.setState({ wppOptions: options });
+      this.setAvailableOptions(options, wppQuery);
     }
   }
 
@@ -253,6 +256,7 @@ export class TembaSelect extends React.Component<
   private async fetchOptions(query?: string) {
     if (this.props.assets && this.props.assets.type === 'whatsapp_product') {
       this.setState({ wppQuery: query });
+      this.setState({ wppOptions: [] });
     }
     let url = this.props.assets
       ? this.props.assets.endpoint

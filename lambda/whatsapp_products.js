@@ -36,7 +36,7 @@ exports.handler = (evt, ctx, cb) =>
     null,
     getOpts({
       body: JSON.stringify({
-        next: '/assets/whatsapp_products2/',
+        next: null,
         results: whatsapp_products2,
       }),
     }),
