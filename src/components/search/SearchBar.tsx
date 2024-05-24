@@ -51,7 +51,6 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
 
   private handleInput(value: string) {
     const nodes = this.findNodes(value);
-
     this.props.handleSearchChange({
       isSearchOpen: true,
       value: value,
@@ -98,7 +97,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       NodeFilter.SHOW_TEXT,
       {
         acceptNode: function(node) {
-          if (node.nodeValue.includes(searchWord)) {
+          if (new RegExp(`\\b${searchWord}\\b`, 'gi').test(node.nodeValue)) {
             return NodeFilter.FILTER_ACCEPT;
           }
           return NodeFilter.FILTER_REJECT;
@@ -107,50 +106,57 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     );
 
     let node;
-    const parentElements = [];
+    const parentElements: HTMLElement[] = [];
 
     while ((node = walker.nextNode())) {
       const parent = node.parentNode as HTMLElement;
-      parentElements.push(parent);
+      if (!parentElements.includes(parent)) {
+        parentElements.push(parent);
+      }
 
-      const regex = new RegExp(`(${searchWord})`, 'gi');
+      const regex = new RegExp(`(\\b${searchWord}\\b)`, 'gi');
       const highlightedText = node.nodeValue.replace(
         regex,
         '<span class="highlight">$1</span>',
       );
 
-      parent.innerHTML = parent.innerHTML.replace(
-        node.nodeValue,
-        highlightedText,
-      );
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = highlightedText;
+
+      while (tempDiv.firstChild) {
+        parent.insertBefore(tempDiv.firstChild, node);
+      }
+      parent.removeChild(node);
     }
 
     return parentElements;
   }
 
-  private highlightText(node: HTMLElement, texto: string) {
-    texto.split('').forEach(char => {
-      console.log(char);
-      this.findParentsAndHighlightWord(node, char);
-    });
+  private highlightText(rootElement: HTMLElement, searchWord: string) {
+    // Remove existing highlights
+    this.removeHighlights(rootElement);
+
+    // Add new highlights
+    this.findParentsAndHighlightWord(rootElement, searchWord);
+
     const style = document.createElement('style');
     style.innerHTML = `
     .highlight {
         background-color: yellow; /* Change this to your desired highlight color */
     }
-`;
+    `;
     document.head.appendChild(style);
   }
 
-  private removeHighlights() {
-    const highlightedElements = document.querySelectorAll('.highlight');
+  private removeHighlights(rootElement: HTMLElement) {
+    const highlightedElements = rootElement.querySelectorAll('.highlight');
     highlightedElements.forEach(element => {
       const parent = element.parentNode;
       parent.replaceChild(
         document.createTextNode(element.textContent),
         element,
       );
-      parent.normalize(); // Combine adjacent text nodes
+      parent.normalize();
     });
   }
 
