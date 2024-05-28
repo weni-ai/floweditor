@@ -256,30 +256,27 @@ export class TembaSelect extends React.Component<
   }
 
   private async fetchOptions(query?: string) {
-    if (this.props.assets && this.props.assets.type === 'whatsapp_product') {
+    const { assets, endpoint, queryParam } = this.props;
+
+    if (assets && assets.type === 'whatsapp_product') {
       this.setState({ wppQuery: query });
       this.setState({ wppOptions: [] });
     }
-    let url = this.props.assets
-      ? this.props.assets.endpoint
-      : this.props.endpoint;
+    let url = assets ? assets.endpoint : endpoint;
 
     try {
       if (url) {
-        if (this.props.queryParam) {
+        if (queryParam) {
           if (url.indexOf('?') > -1) {
             url += '&';
           } else {
             url += '?';
           }
 
-          url += this.props.queryParam + '=' + encodeURIComponent(query || '');
+          url += queryParam + '=' + encodeURIComponent(query || '');
         }
 
-        if (
-          this.props.assets &&
-          this.props.assets.type === 'whatsapp_product'
-        ) {
+        if (assets && assets.type === 'whatsapp_product') {
           if (this.state.wppInitialFetch) {
             this.fetchWppProducts(url);
             this.setState({ wppInitialFetch: false });
