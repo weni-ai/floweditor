@@ -148,7 +148,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     const style = document.createElement('style');
     style.innerHTML = `
     .highlight {
-        background-color: yellow; /* Change this to your desired highlight color */
+        background-color: yellow; 
+        color: #1d2025
+
     }
     `;
     document.head.appendChild(style);
