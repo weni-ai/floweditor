@@ -456,7 +456,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return updated.valid;
   }
 
-  private handleMessageTypeUpdate(
+  public handleMessageTypeUpdate(
     event: UnnnicSelectOption<WhatsAppMessageType>[],
     submitting = false,
   ) {
@@ -484,7 +484,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate(toUpdate, submitting);
   }
 
-  private handleMessageUpdate(
+  public handleMessageUpdate(
     message: string,
     name: string,
     submitting = false,
@@ -492,7 +492,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ message }, submitting);
   }
 
-  private handleHeaderTypeChange(
+  public handleHeaderTypeChange(
     event: UnnnicSelectOption<WhatsAppHeaderType>[],
     submitting = false,
   ): boolean {
@@ -508,7 +508,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
     );
   }
 
-  private handleHeaderTextUpdate(
+  public handleHeaderTextUpdate(
     headerText: string,
     name: string,
     submitting = false,
@@ -525,7 +525,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return validHeader && validInteractions;
   }
 
-  private handleAttachmentUrlChange(
+  public handleAttachmentUrlChange(
     value: string,
     name: string,
     submitting = false,
@@ -555,7 +555,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ attachment }, submitting);
   }
 
-  private handleAttachmentUploaded(response: AxiosResponse) {
+  public handleAttachmentUploaded(response: AxiosResponse) {
     const attachment: Attachment = {
       type: response.data.type,
       url: response.data.url,
@@ -564,11 +564,11 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ attachment }, false);
   }
 
-  private handleAttachmentRemoved() {
+  public handleAttachmentRemoved() {
     return this.handleUpdate({ attachment: null });
   }
 
-  private handleFooterUpdate(
+  public handleFooterUpdate(
     footer: string,
     name: string,
     submitting = false,
@@ -585,7 +585,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return validFooter && validInteractions;
   }
 
-  private handleInteractionTypeUpdate(
+  public handleInteractionTypeUpdate(
     event: UnnnicSelectOption<WhatsAppInteractionType>[],
     submitting = false,
   ) {
@@ -596,6 +596,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
     }
 
     const toUpdate: UpdateKeys = {
+      messageType: WHATSAPP_MESSAGE_TYPE_INTERACTIVE,
       interactionType,
       listItems: [],
       quickReplies: [],
@@ -614,29 +615,29 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate(toUpdate);
   }
 
-  private handleQuickRepliesUpdate(
+  public handleQuickRepliesUpdate(
     quickReplies: string[],
     submitting = false,
   ): boolean {
     return this.handleUpdate({ quickReplies }, submitting);
   }
 
-  private handleListItemsUpdate(
+  public handleListItemsUpdate(
     options: WhatsAppListItem[],
     submitting = false,
   ): boolean {
     return this.handleUpdate({ listItems: options }, submitting);
   }
 
-  private handleListItemRemoval(item: WhatsAppListItem): boolean {
+  public handleListItemRemoval(item: WhatsAppListItem): boolean {
     return this.handleUpdate({ removeListItem: item });
   }
 
-  private handleButtonTextUpdate(buttonText: string): boolean {
+  public handleButtonTextUpdate(buttonText: string): boolean {
     return this.handleUpdate({ buttonText });
   }
 
-  private handleSave(): void {
+  public handleSave(): void {
     let valid = true;
 
     let currentCheck = this.handleMessageUpdate(
@@ -802,13 +803,31 @@ export default class SendWhatsAppMsgForm extends React.Component<
         )}
 
         {interactionType === WhatsAppInteractionType.LIST && (
-          <OptionsList
-            buttonText={this.state.buttonText}
-            options={this.state.listItems}
-            onOptionsUpdated={this.handleListItemsUpdate}
-            onOptionRemoval={this.handleListItemRemoval}
-            onButtonTextUpdated={this.handleButtonTextUpdate}
-          />
+          <>
+            <OptionsList
+              options={this.state.listItems}
+              onOptionsUpdated={this.handleListItemsUpdate}
+              onOptionRemoval={this.handleListItemRemoval}
+            />
+            <div className={styles.action_button_text}>
+              <TextInputElement
+                placeholder={i18n.t(
+                  'forms.list_button_text_placeholder',
+                  'Action Button Text',
+                )}
+                name={i18n.t(
+                  'forms.list_button_text_optional',
+                  'Action Button Text (optional)',
+                )}
+                size={TextInputSizes.sm}
+                onChange={this.handleButtonTextUpdate}
+                entry={this.state.buttonText}
+                autocomplete={true}
+                showLabel={true}
+                maxLength={20}
+              />
+            </div>
+          </>
         )}
 
         {interactionType === WhatsAppInteractionType.REPLIES && (
@@ -893,7 +912,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
             maxLength={4096}
           />
 
-          {this.renderInteractions()}
+          {renderIf(
+            this.state.messageType.value.value ===
+              WhatsAppMessageType.INTERACTIVE,
+          )(this.renderInteractions())}
         </section>
       </Dialog>
     );

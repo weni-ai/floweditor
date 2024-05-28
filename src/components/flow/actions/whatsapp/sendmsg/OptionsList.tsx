@@ -39,11 +39,9 @@ const UnnnicButton = applyVueInReact(unnnicButton, {
 });
 
 export interface OptionsListProps {
-  buttonText: StringEntry;
   options: FormEntry<WhatsAppListItem[]>;
   onOptionsUpdated(options: WhatsAppListItem[]): void;
   onOptionRemoval(option: WhatsAppListItem): void;
-  onButtonTextUpdated(buttonText: string): void;
 }
 
 export function hasEmptyListItem(listItems: WhatsAppListItem[]): boolean {
@@ -114,10 +112,6 @@ export default class OptionsList extends React.Component<OptionsListProps> {
     bindCallbacks(this, {
       include: [/^on/, /^handle/],
     });
-  }
-
-  private handleButtonTextUpdate(buttonText: string): void {
-    this.props.onButtonTextUpdated(buttonText);
   }
 
   private handleListItemTitleUpdate(
@@ -254,25 +248,6 @@ export default class OptionsList extends React.Component<OptionsListProps> {
               )}
             </div>
           ) : null}
-        </div>
-
-        <div className={styles.list_inputs}>
-          <TextInputElement
-            placeholder={i18n.t(
-              'forms.list_button_text_placeholder',
-              'Action Button Text',
-            )}
-            name={i18n.t(
-              'forms.list_button_text_optional',
-              'Action Button Text (optional)',
-            )}
-            size={TextInputSizes.sm}
-            onChange={this.handleButtonTextUpdate}
-            entry={this.props.buttonText}
-            autocomplete={true}
-            showLabel={true}
-            maxLength={20}
-          />
         </div>
       </div>
     );
