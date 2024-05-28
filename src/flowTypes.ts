@@ -60,7 +60,6 @@ export interface Endpoints {
   completion: string;
   knowledgeBases: string;
   whatsapp_products: string;
-  whatsapp_products2: string;
 }
 
 export interface FlowEditorConfig {

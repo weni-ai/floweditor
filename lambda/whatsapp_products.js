@@ -22,13 +22,6 @@ const whatsapp_products = [
   },
 ];
 
-const whatsapp_products2 = [];
-whatsapp_products.forEach(item => {
-  for (let index = 0; index < 25; index++) {
-    whatsapp_products2.push(item);
-  }
-});
-
 const { getOpts } = require('./utils');
 
 exports.handler = (evt, ctx, cb) =>
@@ -37,7 +30,7 @@ exports.handler = (evt, ctx, cb) =>
     getOpts({
       body: JSON.stringify({
         next: null,
-        results: whatsapp_products2,
+        results: whatsapp_products,
       }),
     }),
   );

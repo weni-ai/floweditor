@@ -75,8 +75,6 @@ axios.get = jest.fn((url: string) => {
       return resolvePromise(knowledgeBasesResp);
     case endpoints.whatsapp_products:
       return resolvePromise(whatsappProductsResp);
-    case endpoints.whatsapp_products2:
-      return resolvePromise(whatsappProductsResp);
     default:
       throw new Error('Axios mock: url not passed. Passed: ' + url);
   }
