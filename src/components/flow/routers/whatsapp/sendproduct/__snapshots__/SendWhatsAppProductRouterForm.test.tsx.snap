@@ -43,6 +43,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -99,6 +100,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -365,6 +367,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -577,6 +580,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should render 1`
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -774,6 +778,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -830,6 +835,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -1096,6 +1102,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1308,6 +1315,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1505,6 +1513,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1561,6 +1570,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1827,6 +1837,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2039,6 +2050,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2127,6 +2139,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                     <div
                       class="options_wrapper"
                       data-testid="temba_completion_options_Header"
+                      id=""
                       style="margin-top: 0px; width: 0px; display: none;"
                     />
                   </div>
@@ -2169,6 +2182,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Body"
+                    id=""
                     style="margin-top: 1px; width: -24px; display: none;"
                   />
                 </div>
@@ -2222,6 +2236,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Footer (optional)"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -2275,6 +2290,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Action button title"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -2521,6 +2537,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -2577,6 +2594,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -2843,6 +2861,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -3055,6 +3074,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -3252,6 +3272,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -3308,6 +3329,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -3574,6 +3596,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -3786,6 +3809,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -3845,6 +3869,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Custom Search URL"
+                    id=""
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -3905,6 +3930,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                     <div
                       class="options_wrapper"
                       data-testid="temba_completion_options_Seller ID (optional)"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -3962,6 +3988,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                     <div
                       class="options_wrapper"
                       data-testid="temba_completion_options_Postal Code (optional)"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -4053,6 +4080,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                     <div
                       class="options_wrapper"
                       data-testid="temba_completion_options_Header"
+                      id=""
                       style="margin-top: 0px; width: 0px; display: none;"
                     />
                   </div>
@@ -4095,6 +4123,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Body"
+                    id=""
                     style="margin-top: 1px; width: -24px; display: none;"
                   />
                 </div>
@@ -4148,6 +4177,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Footer (optional)"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -4201,6 +4231,7 @@ exports[`SendWhatsAppProductRouterForm automatic product search should save an a
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Action button title"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -4447,6 +4478,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -4503,6 +4535,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -4769,6 +4802,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -4943,6 +4977,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
             <div
               class="select_wrapper"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -4999,7 +5034,8 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_options_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
                   class="option active "
@@ -5146,7 +5182,8 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_expressions_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -5343,6 +5380,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -5399,6 +5437,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -5665,6 +5704,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -5877,6 +5917,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -6074,6 +6115,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -6130,6 +6172,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -6396,6 +6439,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -6570,6 +6614,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
             <div
               class="select_wrapper"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -6626,7 +6671,8 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_options_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
                   class="option active "
@@ -6773,7 +6819,8 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_expressions_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -6970,6 +7017,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -7026,6 +7074,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -7292,6 +7341,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -7466,6 +7516,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
             <div
               class="select_wrapper"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -7522,7 +7573,8 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_options_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
                   class="option active "
@@ -7669,7 +7721,8 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_expressions_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -7866,6 +7919,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -7922,6 +7976,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -8188,6 +8243,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -8362,6 +8418,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
             <div
               class="select_wrapper"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -8418,6 +8475,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_manually_select_products"
+                id="temba_select_options_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -8565,6 +8623,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
+                id="temba_select_expressions_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -8690,6 +8749,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                     <div
                       class="options_wrapper"
                       data-testid="temba_completion_options_Header"
+                      id=""
                       style="margin-top: 0px; width: 0px; display: none;"
                     />
                   </div>
@@ -8732,6 +8792,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Body"
+                    id=""
                     style="margin-top: 1px; width: -24px; display: none;"
                   />
                 </div>
@@ -8785,6 +8846,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Footer (optional)"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -8838,6 +8900,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Action button title"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -9010,6 +9073,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -9066,6 +9130,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -9332,6 +9397,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -9617,6 +9683,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                     <div
                       class="options_wrapper"
                       data-testid="temba_completion_options_Header"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -9659,6 +9726,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Body"
+                    id=""
                     style="margin-top: 1px; width: -24px; display: none;"
                   />
                 </div>
@@ -9712,6 +9780,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Footer (optional)"
+                    id=""
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -9765,6 +9834,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Action button title"
+                    id=""
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -10013,6 +10083,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -10069,6 +10140,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -10335,6 +10407,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -10509,6 +10582,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
             <div
               class="select_wrapper"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -10565,7 +10639,8 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_options_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
                   class="option active "
@@ -10712,7 +10787,8 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_expressions_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -10909,6 +10985,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -10965,6 +11042,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -11231,6 +11309,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -11405,6 +11484,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
             <div
               class="select_wrapper"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -11461,6 +11541,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_manually_select_products"
+                id="temba_select_options_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -11608,6 +11689,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
+                id="temba_select_expressions_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -11733,6 +11815,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                     <div
                       class="options_wrapper"
                       data-testid="temba_completion_options_Header"
+                      id=""
                       style="margin-top: 0px; width: 0px; display: none;"
                     />
                   </div>
@@ -11775,6 +11858,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Body"
+                    id=""
                     style="margin-top: 1px; width: -24px; display: none;"
                   />
                 </div>
@@ -11828,6 +11912,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Footer (optional)"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -11881,6 +11966,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   <div
                     class="options_wrapper"
                     data-testid="temba_completion_options_Action button title"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>

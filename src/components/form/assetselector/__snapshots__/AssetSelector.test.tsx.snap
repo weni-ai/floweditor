@@ -9,6 +9,7 @@ exports[`AssetSelector renders 1`] = `
       <div
         class="select_wrapper"
         data-testid="temba_select_recipients"
+        id="temba_select_recipients"
       >
         <div
           data-use-vue-component-wrap=""
@@ -67,6 +68,7 @@ exports[`AssetSelector renders 1`] = `
         <div
           class="options_wrapper"
           data-testid="temba_select_options_recipients"
+          id="temba_select_options_recipients"
           style="margin-top: 0px; width: 0px; display: none;"
         >
           <div
@@ -83,6 +85,7 @@ exports[`AssetSelector renders 1`] = `
         <div
           class="options_wrapper"
           data-testid="temba_select_expressions_recipients"
+          id="temba_select_expressions_recipients"
           style="margin-top: 0px; width: 0px; display: none;"
         />
       </div>
