@@ -588,7 +588,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
         nameKey="title"
         valueKey="facebook_product_id"
         style={TembaSelectStyle.small}
-        queryParam="input"
+        queryParam="name"
         multi
         searchable
         showLabel
