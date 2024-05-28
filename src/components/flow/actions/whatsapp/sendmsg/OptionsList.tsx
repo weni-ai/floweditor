@@ -20,11 +20,7 @@ import {
 import { MAX_LIST_ITEMS_COUNT, WhatsAppListItem } from './SendWhatsAppMsgForm';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import update from 'immutability-helper';
-import {
-  FormEntry,
-  StringEntry,
-  ValidationFailure,
-} from '../../../../../store/nodeEditor';
+import { FormEntry, ValidationFailure } from '../../../../../store/nodeEditor';
 
 const UnnnicButton = applyVueInReact(unnnicButton, {
   vue: {
