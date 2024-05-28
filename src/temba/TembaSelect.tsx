@@ -83,7 +83,7 @@ interface TembaSelectState {
   currentQuery?: string;
   selectKey: number;
   showOptions: boolean;
-  input: string | any;
+  input: string;
   fetchOnOpen?: boolean;
   wppUrl?: string;
   wppQuery?: string;
