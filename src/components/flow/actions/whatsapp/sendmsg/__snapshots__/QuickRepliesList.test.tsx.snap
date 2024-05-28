@@ -52,6 +52,7 @@ exports[`QuickRepliesList should render 1`] = `
                       class="unnnic-form md"
                       data-passed-props="[object Object]"
                       data-v-48c0c241=""
+                      maxlength="20"
                     >
                       <!---->
                       <div
@@ -66,6 +67,7 @@ exports[`QuickRepliesList should render 1`] = `
                           data-passed-props="[object Object]"
                           data-v-400546b3=""
                           data-v-97b44e8c=""
+                          maxlength="20"
                           placeholder="Reply"
                           size="7"
                           type="text"
@@ -155,6 +157,7 @@ exports[`QuickRepliesList should render 1`] = `
                       class="unnnic-form md"
                       data-passed-props="[object Object]"
                       data-v-48c0c241=""
+                      maxlength="20"
                     >
                       <!---->
                       <div
@@ -169,6 +172,7 @@ exports[`QuickRepliesList should render 1`] = `
                           data-passed-props="[object Object]"
                           data-v-400546b3=""
                           data-v-97b44e8c=""
+                          maxlength="20"
                           placeholder="Reply"
                           size="7"
                           type="text"

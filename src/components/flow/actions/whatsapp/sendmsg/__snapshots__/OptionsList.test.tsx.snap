@@ -7,85 +7,93 @@ exports[`OptionsList should render 1`] = `
       class="list_wrapper"
     >
       <div>
+        <span
+          class="options_label"
+        >
+          Add up to 10 options
+        </span>
         <div
-          class="collapse "
+          class="list_items"
         >
           <div
-            class="collapse_header"
-            data-testid="List options"
-          >
-            <span>
-              List options
-            </span>
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
-              <span
-                class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                data-passed-props="[object Object]"
-                data-v-4ce83152=""
-              >
-                 expand_more 
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="list_inputs"
-      >
-        <div>
-          <span
-            class="label"
-          >
-            Action Button Text (optional)
-          </span>
-          <div
-            class="completion_wrapper"
+            class="collapse "
           >
             <div
-              data-testid="Action Button Text (optional)"
+              class="collapse_header"
+              data-testid="Option 1/10"
             >
               <div
                 data-use-vue-component-wrap=""
-                style="all: unset;"
+                style="display: flex;"
+              >
+                <span
+                  class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
+                  data-passed-props="[object Object]"
+                  data-v-4ce83152=""
+                >
+                   check_circle 
+                </span>
+              </div>
+              <span>
+                Option 1/10
+              </span>
+              <div
+                class="collapse_icon"
               >
                 <div
-                  class="unnnic-form sm"
-                  data-passed-props="[object Object]"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  style="display: flex;"
                 >
-                  <!---->
-                  <div
-                    class="unnnic-form-input text-input size--sm"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                    data-passed-props="[object Object]"
+                    data-v-4ce83152=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      placeholder="Action Button Text"
-                      size="11"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
-                    <!---->
-                    <!---->
-                  </div>
-                  <!---->
+                     expand_more 
+                  </span>
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="collapse "
+          >
             <div
-              class="options_wrapper"
-              data-testid="temba_completion_options_Action Button Text (optional)"
-              style="margin-top: 0px; width: -24px; display: none;"
-            />
+              class="collapse_header"
+              data-testid="Option 2/10"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                style="display: flex;"
+              >
+                <span
+                  class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
+                  data-passed-props="[object Object]"
+                  data-v-4ce83152=""
+                >
+                   check_circle 
+                </span>
+              </div>
+              <span>
+                Option 2/10
+              </span>
+              <div
+                class="collapse_icon"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  style="display: flex;"
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                    data-passed-props="[object Object]"
+                    data-v-4ce83152=""
+                  >
+                     expand_more 
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

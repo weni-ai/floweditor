@@ -15,181 +15,6 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
     }
   }
   headerClass="send_msg"
-  tabs={
-    Array [
-      Object {
-        "body": <div
-          className="interactions_tab"
-        >
-          <div
-            className="interaction_type"
-          >
-            <ForwardRef
-              $model={
-                Object {
-                  "setter": [Function],
-                  "value": "replies",
-                }
-              }
-              size="sm"
-              value="replies"
-            >
-              <span
-                className="color-neutral-cloudy"
-              >
-                Quick replies
-              </span>
-            </ForwardRef>
-            <ForwardRef
-              $model={
-                Object {
-                  "setter": [Function],
-                  "value": "replies",
-                }
-              }
-              size="sm"
-              value="list"
-            >
-              <span
-                className="color-neutral-cloudy"
-              >
-                Option list
-              </span>
-            </ForwardRef>
-            <ForwardRef
-              $model={
-                Object {
-                  "setter": [Function],
-                  "value": "replies",
-                }
-              }
-              size="sm"
-              value="location"
-            >
-              <span
-                className="color-neutral-cloudy"
-              >
-                Request location
-              </span>
-            </ForwardRef>
-          </div>
-          <React.Fragment>
-            <React.Fragment>
-              <div
-                className="header"
-              >
-                <div
-                  className="inputs"
-                >
-                  <div
-                    className="header_type"
-                  >
-                    <span
-                      className="u font secondary body-md color-neutral-cloudy"
-                    >
-                      Header (optional)
-                    </span>
-                    <UNDEFINED
-                      name="Header (optional)"
-                      nameKey="name"
-                      onChange={[Function]}
-                      options={
-                        Array [
-                          Object {
-                            "name": "Media",
-                            "value": "media",
-                          },
-                          Object {
-                            "name": "Text",
-                            "value": "text",
-                          },
-                        ]
-                      }
-                      style="sm"
-                      value={
-                        Object {
-                          "name": "Media",
-                          "value": "media",
-                        }
-                      }
-                      valueKey="value"
-                    />
-                  </div>
-                  <React.Fragment>
-                    <div
-                      className="attachment_url"
-                    >
-                      <TextInputElement
-                        autocomplete={true}
-                        entry={
-                          Object {
-                            "value": "",
-                          }
-                        }
-                        error={null}
-                        name="URL"
-                        onChange={[Function]}
-                        placeholder="Ex: weni.ai"
-                        showLabel={true}
-                        size="sm"
-                      />
-                    </div>
-                    <div
-                      className="upload_button"
-                    >
-                      <Button
-                        iconName="upload-bottom-1"
-                        name="Upload"
-                        onClick={[Function]}
-                        size="sm"
-                        type="tertiary"
-                      />
-                      <input
-                        data-testid="upload-input"
-                        onChange={[Function]}
-                        style={
-                          Object {
-                            "display": "none",
-                          }
-                        }
-                        type="file"
-                      />
-                    </div>
-                  </React.Fragment>
-                </div>
-              </div>
-            </React.Fragment>
-            <TextInputElement
-              autocomplete={true}
-              entry={
-                Object {
-                  "value": "",
-                }
-              }
-              name="Footer (optional)"
-              onChange={[Function]}
-              placeholder="Ex: Footer"
-              showLabel={true}
-              size="sm"
-            />
-          </React.Fragment>
-          <QuickRepliesList
-            onQuickRepliesUpdated={[Function]}
-            quickReplies={
-              Object {
-                "value": Array [
-                  "",
-                ],
-              }
-            }
-          />
-        </div>,
-        "checked": false,
-        "hasErrors": false,
-        "name": "Add Interactions",
-      },
-    ]
-  }
   title="Send message"
 >
   <TypeList
@@ -212,9 +37,147 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
     }
     onChange={[MockFunction]}
   />
-  <div
+  <section
     className="content"
   >
+    <header
+      className="header"
+    >
+      Configure your message
+    </header>
+    <div
+      className="selectors"
+    >
+      <div>
+        <span
+          className="label"
+        >
+          Message type
+        </span>
+        <ForwardRef
+          $model={
+            Object {
+              "setter": [Function],
+              "value": Array [
+                Object {
+                  "label": "Simple message",
+                  "value": "simple",
+                },
+              ],
+            }
+          }
+          options={
+            Array [
+              Object {
+                "label": "Simple message",
+                "value": "simple",
+              },
+              Object {
+                "label": "Interactive message",
+                "value": "interactive",
+              },
+            ]
+          }
+          orderedByIndex={true}
+          size="sm"
+        />
+      </div>
+      <div>
+        <span
+          className="label"
+        >
+          Interactions
+        </span>
+        <ForwardRef
+          $model={
+            Object {
+              "setter": [Function],
+              "value": Array [
+                Object {
+                  "label": "No interactions selected",
+                  "value": null,
+                },
+              ],
+            }
+          }
+          disabled={true}
+          options={
+            Array [
+              Object {
+                "label": "No interactions selected",
+                "value": null,
+              },
+              Object {
+                "description": "Create up to 3 quick replies with predefined messages",
+                "label": "Quick replies",
+                "value": "replies",
+              },
+              Object {
+                "description": "Make choices easier with a list of up to 10 interactive options",
+                "label": "Option list",
+                "value": "list",
+              },
+              Object {
+                "description": "Ask users for their location to facilitate service",
+                "label": "Location",
+                "value": "location",
+              },
+            ]
+          }
+          orderedByIndex={true}
+          size="sm"
+        />
+      </div>
+    </div>
+    <div
+      className="header"
+    >
+      <div
+        className="inputs"
+      >
+        <div
+          className="attachment_url"
+        >
+          <TextInputElement
+            autocomplete={true}
+            disabled={false}
+            entry={
+              Object {
+                "value": "",
+              }
+            }
+            error={null}
+            name="Media (optional)"
+            onChange={[Function]}
+            placeholder="Paste an URL or send a file"
+            showLabel={true}
+            size="sm"
+          />
+        </div>
+        <div
+          className="upload_button"
+        >
+          <Button
+            disabled={false}
+            iconName="upload-bottom-1"
+            name="Upload"
+            onClick={[Function]}
+            size="small"
+            type="secondary"
+          />
+          <input
+            data-testid="upload-input"
+            onChange={[Function]}
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+            type="file"
+          />
+        </div>
+      </div>
+    </div>
     <TextEditorElement
       autocomplete={true}
       entry={
@@ -228,7 +191,7 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
       placeholder="Type here..."
       showLabel={true}
     />
-  </div>
+  </section>
 </Dialog>
 `;
 
@@ -239,6 +202,7 @@ Object {
     "value": null,
   },
   "buttonText": Object {
+    "validationFailures": Array [],
     "value": "",
   },
   "footer": Object {
@@ -250,13 +214,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
       "value": "replies",
     },
   },
@@ -271,7 +236,7 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "f05fa107-03db-4315-a211-53da63603e6f",
+        "uuid": "3d8db86c-7279-4106-a388-3f143bd5623f",
       },
     ],
   },
@@ -279,12 +244,90 @@ Object {
     "validationFailures": Array [],
     "value": "new msg",
   },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
   "quickReplies": Object {
     "validationFailures": Array [
       Object {
-        "message": "At least one quick reply is required if Header or Footer is set",
+        "message": "At least one quick reply must be filled",
       },
     ],
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": false,
+}
+`;
+
+exports[`SendWhatsAppMsgForm updates should not save changes if footer is filled but there are no replies or list items 2`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "footer": Object {
+    "validationFailures": Array [],
+    "value": "new footer",
+  },
+  "headerText": Object {
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "validationFailures": Array [
+      Object {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": Array [
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "96249bdc-cb58-4489-a188-0eeb6686a8c9",
+      },
+    ],
+  },
+  "message": Object {
+    "validationFailures": Array [],
+    "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": Object {
     "value": Array [
       "",
     ],
@@ -314,13 +357,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Text",
+      "label": "Text",
       "value": "text",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
       "value": "replies",
     },
   },
@@ -335,7 +379,7 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
+        "uuid": "1888ae1f-2518-4727-98e2-731674e1760e",
       },
     ],
   },
@@ -343,12 +387,90 @@ Object {
     "validationFailures": Array [],
     "value": "new msg",
   },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
   "quickReplies": Object {
     "validationFailures": Array [
       Object {
-        "message": "At least one quick reply is required if Header or Footer is set",
+        "message": "At least one quick reply must be filled",
       },
     ],
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": false,
+}
+`;
+
+exports[`SendWhatsAppMsgForm updates should not save changes if header is set to text and filled but there are no replies or list items 2`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
+    "validationFailures": Array [],
+    "value": "new header",
+  },
+  "headerType": Object {
+    "value": Object {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "validationFailures": Array [
+      Object {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": Array [
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "dd57500e-a8e8-4a98-8b5b-a33637523a8d",
+      },
+    ],
+  },
+  "message": Object {
+    "validationFailures": Array [],
+    "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": Object {
     "value": Array [
       "",
     ],
@@ -378,13 +500,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
-      "value": "media",
+      "label": "Text",
+      "value": "text",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
       "value": "list",
     },
   },
@@ -395,17 +518,28 @@ Object {
     "value": "",
   },
   "listItems": Object {
+    "validationFailures": Array [
+      Object {
+        "message": "At least one list option must be filled",
+      },
+    ],
     "value": Array [
       Object {
         "description": "",
         "title": "",
-        "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
+        "uuid": "a0bf60d1-2333-41a5-9bcb-7c56cc5e969e",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -415,7 +549,7 @@ Object {
   "quickReplyEntry": Object {
     "value": "",
   },
-  "valid": true,
+  "valid": false,
 }
 `;
 
@@ -437,13 +571,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
-      "value": "media",
+      "label": "Text",
+      "value": "text",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
       "value": "list",
     },
   },
@@ -456,20 +591,26 @@ Object {
   "listItems": Object {
     "validationFailures": Array [
       Object {
-        "message": "At least one list option is required if Action Button Text, Header or Footer is set",
+        "message": "At least one list option must be filled",
       },
     ],
     "value": Array [
       Object {
         "description": "",
         "title": "",
-        "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
+        "uuid": "a0bf60d1-2333-41a5-9bcb-7c56cc5e969e",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -500,14 +641,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
-      "value": "replies",
+      "label": "No interactions selected",
+      "value": null,
     },
   },
   "listItemDescriptionEntry": Object {
@@ -532,6 +673,12 @@ Object {
       },
     ],
     "value": "",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Simple message",
+      "value": "simple",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -566,14 +713,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
-      "value": "replies",
+      "label": "No interactions selected",
+      "value": null,
     },
   },
   "listItemDescriptionEntry": Object {
@@ -587,13 +734,19 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+        "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Simple message",
+      "value": "simple",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -624,14 +777,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
-      "value": "replies",
+      "label": "No interactions selected",
+      "value": null,
     },
   },
   "listItemDescriptionEntry": Object {
@@ -645,13 +798,19 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+        "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Simple message",
+      "value": "simple",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -669,10 +828,10 @@ exports[`SendWhatsAppMsgForm updates should save changes after remove attachment
 Array [
   Object {
     "header_type": "media",
-    "interaction_type": "replies",
+    "messageType": "simple",
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+    "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
   },
 ]
 `;
@@ -694,19 +853,18 @@ Object {
     "value": "",
   },
   "headerText": Object {
-    "validationFailures": Array [],
     "value": "",
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
-      "value": "replies",
+      "label": "No interactions selected",
+      "value": null,
     },
   },
   "listItemDescriptionEntry": Object {
@@ -720,13 +878,19 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "6b59e863-2e14-442b-9987-aaa284871b8e",
+        "uuid": "141e0356-9fdd-47d3-a12d-16efc5b45276",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Simple message",
+      "value": "simple",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -745,10 +909,10 @@ Array [
   Object {
     "attachment": "image:http://weni.ai/image.png",
     "header_type": "media",
-    "interaction_type": "replies",
+    "messageType": "simple",
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "00dd2423-0a34-4ee2-b97d-839fb2d593ef",
+    "uuid": "e81b3f1a-0863-4418-8a72-9c9f8aa72b7c",
   },
 ]
 `;
@@ -770,19 +934,18 @@ Object {
     "value": "",
   },
   "headerText": Object {
-    "validationFailures": Array [],
     "value": "",
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
-      "value": "replies",
+      "label": "No interactions selected",
+      "value": null,
     },
   },
   "listItemDescriptionEntry": Object {
@@ -796,12 +959,18 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
+        "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
       },
     ],
   },
   "message": Object {
     "value": "",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Simple message",
+      "value": "simple",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -820,9 +989,9 @@ Array [
   Object {
     "attachment": "image:http://weni.ai/image.png",
     "header_type": "media",
-    "interaction_type": "replies",
+    "messageType": "simple",
     "type": "send_whatsapp_msg",
-    "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
+    "uuid": "f05fa107-03db-4315-a211-53da63603e6f",
   },
 ]
 `;
@@ -847,13 +1016,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Request location",
+      "description": "Ask users for their location to facilitate service",
+      "label": "Location",
       "value": "location",
     },
   },
@@ -868,13 +1038,19 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "452c1751-5b03-4d1a-8346-83be999a8258",
+        "uuid": "19c23626-6961-4683-9cae-38dd767614f3",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -893,9 +1069,10 @@ Array [
   Object {
     "header_type": "media",
     "interaction_type": "location",
+    "messageType": "interactive",
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "28ab7e47-57cc-42ae-8269-5d8d442d4276",
+    "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
   },
 ]
 `;
@@ -921,14 +1098,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
-      "value": "replies",
+      "label": "No interactions selected",
+      "value": null,
     },
   },
   "listItemDescriptionEntry": Object {
@@ -942,12 +1119,18 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+        "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
       },
     ],
   },
   "message": Object {
     "value": "",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Simple message",
+      "value": "simple",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -966,9 +1149,9 @@ Array [
   Object {
     "attachment": "image:http://weni.ai/image.png",
     "header_type": "media",
-    "interaction_type": "replies",
+    "messageType": "simple",
     "type": "send_whatsapp_msg",
-    "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+    "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
   },
 ]
 `;
@@ -991,13 +1174,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
-      "value": "media",
+      "label": "Text",
+      "value": "text",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
       "value": "list",
     },
   },
@@ -1022,13 +1206,19 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "90e20a49-6ecc-4b0b-97bf-bcbd37069b63",
+        "uuid": "28ab7e47-57cc-42ae-8269-5d8d442d4276",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -1046,7 +1236,7 @@ exports[`SendWhatsAppMsgForm updates should save changes with updated button tex
 Array [
   Object {
     "button_text": "new button text",
-    "header_type": "media",
+    "header_type": "text",
     "interaction_type": "list",
     "list_items": Array [
       Object {
@@ -1060,9 +1250,10 @@ Array [
         "uuid": "2",
       },
     ],
+    "messageType": "interactive",
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
+    "uuid": "6f87dde3-5df3-4935-8585-2656df068d61",
   },
 ]
 `;
@@ -1074,6 +1265,7 @@ Object {
     "value": null,
   },
   "buttonText": Object {
+    "validationFailures": Array [],
     "value": "",
   },
   "footer": Object {
@@ -1085,13 +1277,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
       "value": "replies",
     },
   },
@@ -1106,13 +1299,19 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+        "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -1133,12 +1332,13 @@ Array [
     "footer": "new footer",
     "header_type": "media",
     "interaction_type": "replies",
+    "messageType": "interactive",
     "quick_replies": Array [
       "reply 1",
     ],
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+    "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
   },
 ]
 `;
@@ -1150,6 +1350,7 @@ Object {
     "value": null,
   },
   "buttonText": Object {
+    "validationFailures": Array [],
     "value": "",
   },
   "footer": Object {
@@ -1161,13 +1362,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Text",
+      "label": "Text",
       "value": "text",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
       "value": "replies",
     },
   },
@@ -1182,13 +1384,19 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+        "uuid": "6b59e863-2e14-442b-9987-aaa284871b8e",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -1209,12 +1417,13 @@ Array [
     "header_text": "new header",
     "header_type": "text",
     "interaction_type": "replies",
+    "messageType": "interactive",
     "quick_replies": Array [
       "reply 1",
     ],
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
+    "uuid": "00dd2423-0a34-4ee2-b97d-839fb2d593ef",
   },
 ]
 `;
@@ -1237,13 +1446,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
-      "value": "media",
+      "label": "Text",
+      "value": "text",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
       "value": "list",
     },
   },
@@ -1268,13 +1478,19 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "1888ae1f-2518-4727-98e2-731674e1760e",
+        "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -1291,7 +1507,7 @@ Object {
 exports[`SendWhatsAppMsgForm updates should save changes with updated list items 2`] = `
 Array [
   Object {
-    "header_type": "media",
+    "header_type": "text",
     "interaction_type": "list",
     "list_items": Array [
       Object {
@@ -1305,9 +1521,10 @@ Array [
         "uuid": "2",
       },
     ],
+    "messageType": "interactive",
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "dd57500e-a8e8-4a98-8b5b-a33637523a8d",
+    "uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
   },
 ]
 `;
@@ -1330,13 +1547,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
-      "value": "media",
+      "label": "Text",
+      "value": "text",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
       "value": "list",
     },
   },
@@ -1361,13 +1579,19 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "96249bdc-cb58-4489-a188-0eeb6686a8c9",
+        "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -1399,13 +1623,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
-      "value": "media",
+      "label": "Text",
+      "value": "text",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Option list",
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
       "value": "list",
     },
   },
@@ -1426,13 +1651,19 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "96249bdc-cb58-4489-a188-0eeb6686a8c9",
+        "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -1449,7 +1680,7 @@ Object {
 exports[`SendWhatsAppMsgForm updates should save changes with updated list items after a removal 3`] = `
 Array [
   Object {
-    "header_type": "media",
+    "header_type": "text",
     "interaction_type": "list",
     "list_items": Array [
       Object {
@@ -1458,9 +1689,10 @@ Array [
         "uuid": "2",
       },
     ],
+    "messageType": "interactive",
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "7663e5a1-6a46-4b0d-af01-b2262a6ad4b5",
+    "uuid": "f627a69c-a227-451f-9520-ce969f02162e",
   },
 ]
 `;
@@ -1482,14 +1714,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
-      "value": "replies",
+      "label": "No interactions selected",
+      "value": null,
     },
   },
   "listItemDescriptionEntry": Object {
@@ -1511,6 +1743,12 @@ Object {
     "validationFailures": Array [],
     "value": "new msg",
   },
+  "messageType": Object {
+    "value": Object {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
   "quickReplies": Object {
     "value": Array [
       "",
@@ -1527,7 +1765,7 @@ exports[`SendWhatsAppMsgForm updates should save changes with updated message 2`
 Array [
   Object {
     "header_type": "media",
-    "interaction_type": "replies",
+    "messageType": "simple",
     "text": "new msg",
     "type": "send_whatsapp_msg",
     "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
@@ -1553,13 +1791,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
       "value": "replies",
     },
   },
@@ -1574,13 +1813,19 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "57bf1459-14b9-4a73-b579-9d1b56f0b276",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
       },
     ],
   },
   "message": Object {
     "validationFailures": Array [],
     "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -1601,13 +1846,14 @@ Array [
   Object {
     "header_type": "media",
     "interaction_type": "replies",
+    "messageType": "interactive",
     "quick_replies": Array [
       "reply 1",
       "reply 2",
     ],
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "a0bf60d1-2333-41a5-9bcb-7c56cc5e969e",
+    "uuid": "1cc6cd43-ca71-4502-9b3b-e2b0425293b7",
   },
 ]
 `;
@@ -1633,14 +1879,14 @@ Object {
   },
   "headerType": Object {
     "value": Object {
-      "name": "Media",
+      "label": "Media",
       "value": "media",
     },
   },
   "interactionType": Object {
     "value": Object {
-      "name": "Quick replies",
-      "value": "replies",
+      "label": "No interactions selected",
+      "value": null,
     },
   },
   "listItemDescriptionEntry": Object {
@@ -1654,12 +1900,18 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
       },
     ],
   },
   "message": Object {
     "value": "",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Simple message",
+      "value": "simple",
+    },
   },
   "quickReplies": Object {
     "value": Array [
@@ -1678,9 +1930,204 @@ Array [
   Object {
     "attachment": "image:http://weni.ai/image.png",
     "header_type": "media",
-    "interaction_type": "replies",
+    "messageType": "simple",
     "type": "send_whatsapp_msg",
-    "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+    "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
   },
 ]
+`;
+
+exports[`SendWhatsAppMsgForm updates should switch message type to interactive and go back to simple if desired 1`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "value": "",
+  },
+  "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "value": Array [
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+      },
+    ],
+  },
+  "message": Object {
+    "validationFailures": Array [],
+    "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "quickReplies": Object {
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": true,
+}
+`;
+
+exports[`SendWhatsAppMsgForm updates should switch message type to interactive and go back to simple if desired 2`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "value": "",
+  },
+  "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
+      "value": "replies",
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "value": Array [
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+      },
+    ],
+  },
+  "message": Object {
+    "validationFailures": Array [],
+    "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": Object {
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": true,
+}
+`;
+
+exports[`SendWhatsAppMsgForm updates should switch message type to interactive and go back to simple if desired 3`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "value": "",
+  },
+  "footer": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "headerText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "value": Array [
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+      },
+    ],
+  },
+  "message": Object {
+    "validationFailures": Array [],
+    "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "quickReplies": Object {
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": true,
+}
 `;

@@ -35,20 +35,6 @@ describe(OptionsList.name, () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('should update button text', async () => {
-    const props = getProps();
-    const { getByTestId } = render(<OptionsList {...props} />);
-
-    await wait();
-
-    const buttonTextInput = getByTestId('Action Button Text (optional)');
-    await act(async () => {
-      fireUnnnicInputChangeText(buttonTextInput, 'new button text');
-    });
-
-    expect(props.onButtonTextUpdated).toHaveBeenCalledWith('new button text');
-  });
-
   it('should update list item title', async () => {
     const props = getProps();
     const { getByTestId, getAllByTestId } = render(<OptionsList {...props} />);
@@ -56,12 +42,12 @@ describe(OptionsList.name, () => {
     await wait();
 
     // expand collapse
-    const expandCollapseButton = getByTestId('List options');
+    const expandCollapseButton = getByTestId('Option 2/10');
     await act(async () => {
       expandCollapseButton.click();
     });
 
-    const listItemTitleInput = getAllByTestId('Title')[1];
+    const listItemTitleInput = getByTestId('Title');
     await act(async () => {
       fireUnnnicInputChangeText(listItemTitleInput, 'new title 2');
     });
@@ -79,14 +65,12 @@ describe(OptionsList.name, () => {
     await wait();
 
     // expand collapse
-    const expandCollapseButton = getByTestId('List options');
+    const expandCollapseButton = getByTestId('Option 2/10');
     await act(async () => {
       expandCollapseButton.click();
     });
 
-    const listItemDescriptionInput = getAllByTestId(
-      'Description (Optional)',
-    )[1];
+    const listItemDescriptionInput = getByTestId('Description (Optional)');
     await act(async () => {
       fireUnnnicInputChangeText(listItemDescriptionInput, 'new description 2');
     });
@@ -104,12 +88,12 @@ describe(OptionsList.name, () => {
     await wait();
 
     // expand collapse
-    const expandCollapseButton = getByTestId('List options');
+    const expandCollapseButton = getByTestId('Option 2/10');
     await act(async () => {
       expandCollapseButton.click();
     });
 
-    const listItemRemoveButton = getAllByTestId('Remove')[1];
+    const listItemRemoveButton = getByTestId('Remove');
     await act(async () => {
       listItemRemoveButton.click();
     });
@@ -128,13 +112,7 @@ describe(OptionsList.name, () => {
 
     await wait();
 
-    // expand collapse
-    const expandCollapseButton = getByTestId('List options');
-    await act(async () => {
-      expandCollapseButton.click();
-    });
-
-    const listItemRemoveButton = getAllByTestId('Remove')[0];
+    const listItemRemoveButton = getByTestId('Remove');
     await act(async () => {
       listItemRemoveButton.click();
     });
