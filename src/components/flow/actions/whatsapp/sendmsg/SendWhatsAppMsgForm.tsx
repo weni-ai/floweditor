@@ -686,6 +686,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
     const interactionType =
       this.state.interactionType.value &&
       this.state.interactionType.value.value;
+    const hasUploadedAttachment =
+      !!attachment && (attachment && attachment.uploaded);
 
     return renderIf(interactionType !== WhatsAppInteractionType.LOCATION)(
       <div className={styles.header}>
@@ -748,14 +750,14 @@ export default class SendWhatsAppMsgForm extends React.Component<
                   }
                   autocomplete={true}
                   showLabel={true}
-                  disabled={!!attachment}
+                  disabled={hasUploadedAttachment}
                 />
               </div>
 
               {renderUploadButton(
                 this.context.config.endpoints.attachments,
                 this.handleAttachmentUploaded,
-                !!attachment,
+                hasUploadedAttachment,
               )}
             </>,
           )}
