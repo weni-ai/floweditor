@@ -87,7 +87,8 @@ interface TembaSelectState {
   fetchOnOpen?: boolean;
   wppUrl?: string;
   wppQuery?: string;
-  wppOptions: any[];
+  wppOptions?: any[];
+  wppInitialFetch?: boolean;
 }
 
 export class TembaSelect extends React.Component<
@@ -110,6 +111,7 @@ export class TembaSelect extends React.Component<
       wppUrl: '',
       wppQuery: '',
       wppOptions: [],
+      wppInitialFetch: true,
       currentQuery: '',
     };
 
@@ -278,7 +280,10 @@ export class TembaSelect extends React.Component<
           this.props.assets &&
           this.props.assets.type === 'whatsapp_product'
         ) {
-          if (query && query.length > 2) {
+          if (this.state.wppInitialFetch) {
+            this.fetchWppProducts(url);
+            this.setState({ wppInitialFetch: false });
+          } else if (query && query.length > 2) {
             this.fetchWppProducts(url);
           }
           return;

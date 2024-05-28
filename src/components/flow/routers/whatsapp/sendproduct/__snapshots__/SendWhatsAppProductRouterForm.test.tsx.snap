@@ -2436,20 +2436,7 @@ Array [
             "footer": "footer text",
             "header": "header text",
           },
-          "products": Array [
-            Object {
-              "created_on": "2021-09-01T01:06:39.178493Z",
-              "title": "Product 1",
-            },
-            Object {
-              "created_on": "2021-09-01T01:06:39.178493Z",
-              "title": "Product 2",
-            },
-            Object {
-              "created_on": "2021-09-01T01:06:39.178493Z",
-              "title": "Product 3",
-            },
-          ],
+          "products": Array [],
           "result_name": "ResultName",
           "search_type": "default",
           "search_url": "",
@@ -4390,20 +4377,7 @@ Array [
             "footer": "footer text",
             "header": "header text",
           },
-          "products": Array [
-            Object {
-              "created_on": "2021-09-01T01:06:39.178493Z",
-              "title": "Product 1",
-            },
-            Object {
-              "created_on": "2021-09-01T01:06:39.178493Z",
-              "title": "Product 2",
-            },
-            Object {
-              "created_on": "2021-09-01T01:06:39.178493Z",
-              "title": "Product 3",
-            },
-          ],
+          "products": Array [],
           "result_name": "ResultName",
           "search_type": "vtex",
           "search_url": "https://weni.ai",
@@ -5061,138 +5035,156 @@ exports[`SendWhatsAppProductRouterForm manual product search should change from 
                 class="options_wrapper"
                 data-testid="temba_select_options_manually_select_products"
                 id="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
-              />
+                style="margin-top: 0px; width: -24px; display: none;"
+              >
+                <div
+                  class="option active "
+                  data-option-index="0"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 1
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="1"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 2
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="2"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 3
+                    </span>
+                  </div>
+                </div>
+              </div>
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
                 id="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
-            </div>
-            <div
-              class="selected-list-container"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 1
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 2
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 3
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
           <div
@@ -6680,138 +6672,156 @@ exports[`SendWhatsAppProductRouterForm manual product search should render 1`] =
                 class="options_wrapper"
                 data-testid="temba_select_options_manually_select_products"
                 id="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
-              />
+                style="margin-top: 0px; width: -24px; display: none;"
+              >
+                <div
+                  class="option active "
+                  data-option-index="0"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 1
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="1"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 2
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="2"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 3
+                    </span>
+                  </div>
+                </div>
+              </div>
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
                 id="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
-            </div>
-            <div
-              class="selected-list-container"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 1
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 2
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 3
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
           <div
@@ -7564,138 +7574,156 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 class="options_wrapper"
                 data-testid="temba_select_options_manually_select_products"
                 id="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
-              />
+                style="margin-top: 0px; width: -24px; display: none;"
+              >
+                <div
+                  class="option active "
+                  data-option-index="0"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 1
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="1"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 2
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="2"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 3
+                    </span>
+                  </div>
+                </div>
+              </div>
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
                 id="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
-            </div>
-            <div
-              class="selected-list-container"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 1
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 2
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 3
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
           <div
@@ -8449,137 +8477,155 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                 data-testid="temba_select_options_manually_select_products"
                 id="temba_select_options_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
-              />
+              >
+                <div
+                  class="option active "
+                  data-option-index="0"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 1
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="1"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 2
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="2"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 3
+                    </span>
+                  </div>
+                </div>
+              </div>
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
                 id="temba_select_expressions_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
-            </div>
-            <div
-              class="selected-list-container"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 1
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 2
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 3
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
           <div
@@ -8621,6 +8667,41 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                   class="label"
                 >
                   Header
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-tooltip"
+                      data-passed-props="[object Object]"
+                      data-v-49d78ffa=""
+                    >
+                      <div
+                        __use_react_component_wrap=""
+                        data-v-49d78ffa=""
+                      >
+                        <span
+                          class="info_icon material-symbols-outlined"
+                        >
+                          info
+                        </span>
+                      </div>
+                      <span
+                        class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                        data-v-49d78ffa=""
+                      >
+                         It is only possible to send a personalized header when  
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                         multiple products are selected. 
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                        <!---->
+                      </span>
+                    </div>
+                  </div>
                 </span>
                 <div>
                   <div
@@ -8637,6 +8718,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                           class="unnnic-form sm"
                           data-passed-props="[object Object]"
                           data-v-48c0c241=""
+                          disabled="disabled"
                         >
                           <!---->
                           <div
@@ -8651,6 +8733,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a catal
                               data-passed-props="[object Object]"
                               data-v-400546b3=""
                               data-v-97b44e8c=""
+                              disabled="disabled"
                               placeholder="Ex: Offers"
                               size="0"
                               type="text"
@@ -9899,20 +9982,7 @@ Array [
             "footer": "footer text",
             "header": "",
           },
-          "products": Array [
-            Object {
-              "created_on": "2021-09-01T01:06:39.178493Z",
-              "title": "Product 1",
-            },
-            Object {
-              "created_on": "2021-09-01T01:06:39.178493Z",
-              "title": "Product 2",
-            },
-            Object {
-              "created_on": "2021-09-01T01:06:39.178493Z",
-              "title": "Product 3",
-            },
-          ],
+          "products": Array [],
           "result_name": "ResultName",
           "search_type": "default",
           "search_url": "",
@@ -10570,138 +10640,156 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                 class="options_wrapper"
                 data-testid="temba_select_options_manually_select_products"
                 id="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
-              />
+                style="margin-top: 0px; width: -24px; display: none;"
+              >
+                <div
+                  class="option active "
+                  data-option-index="0"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 1
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="1"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 2
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="2"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 3
+                    </span>
+                  </div>
+                </div>
+              </div>
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
                 id="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
-            </div>
-            <div
-              class="selected-list-container"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 1
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 2
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 3
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
           <div
@@ -11455,137 +11543,155 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                 data-testid="temba_select_options_manually_select_products"
                 id="temba_select_options_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
-              />
+              >
+                <div
+                  class="option active "
+                  data-option-index="0"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 1
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="1"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 2
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="2"
+                >
+                  <div
+                    class="multi_wrapper"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      style="all: unset;"
+                    >
+                      <div
+                        class="unnnic-checkbox-wrapper checkbox"
+                        data-passed-props="[object Object]"
+                        data-v-25f7146e=""
+                      >
+                        <span
+                          class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
+                          data-v-25f7146e=""
+                          data-v-4ce83152=""
+                        >
+                          <svg
+                            fill="none"
+                            viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              class="primary-stroke"
+                              height="29"
+                              rx="3.5"
+                              stroke="#3B414D"
+                              width="29"
+                              x="5.5"
+                              y="5.50049"
+                            />
+                          </svg>
+                        </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <span
+                      class="name"
+                    >
+                      Product 3
+                    </span>
+                  </div>
+                </div>
+              </div>
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_manually_select_products"
                 id="temba_select_expressions_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
-            </div>
-            <div
-              class="selected-list-container"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 1
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 2
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
-                <div
-                  class="unnnic-tag-content unnnic-tag
-      unnnic-tag-scheme--neutral-dark
-      "
-                  count="0"
-                  data-passed-props="[object Object]"
-                  data-v-32b4068e=""
-                  v-bind="[object Object]"
-                >
-                  <span
-                    class="unnnic-tag__label
-    unnnic-tag__label--hasIcon
-    "
-                    data-v-32b4068e=""
-                  >
-                    Product 3
-                  </span>
-                  <span
-                    class="unnnic-tag__icon unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
-                    data-v-32b4068e=""
-                    data-v-4ce83152=""
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="primary"
-                        d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                        fill="#3B414D"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
           <div
@@ -11627,6 +11733,41 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                   class="label"
                 >
                   Header
+                  <div
+                    data-use-vue-component-wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-tooltip"
+                      data-passed-props="[object Object]"
+                      data-v-49d78ffa=""
+                    >
+                      <div
+                        __use_react_component_wrap=""
+                        data-v-49d78ffa=""
+                      >
+                        <span
+                          class="info_icon material-symbols-outlined"
+                        >
+                          info
+                        </span>
+                      </div>
+                      <span
+                        class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                        data-v-49d78ffa=""
+                      >
+                         It is only possible to send a personalized header when  
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                         multiple products are selected. 
+                        <br
+                          data-v-49d78ffa=""
+                        />
+                        <!---->
+                      </span>
+                    </div>
+                  </div>
                 </span>
                 <div>
                   <div
@@ -11643,6 +11784,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                           class="unnnic-form sm"
                           data-passed-props="[object Object]"
                           data-v-48c0c241=""
+                          disabled="disabled"
                         >
                           <!---->
                           <div
@@ -11657,6 +11799,7 @@ exports[`SendWhatsAppProductRouterForm manual product search should save a manua
                               data-passed-props="[object Object]"
                               data-v-400546b3=""
                               data-v-97b44e8c=""
+                              disabled="disabled"
                               placeholder="Ex: Offers"
                               size="0"
                               type="text"
@@ -11972,15 +12115,15 @@ Array [
           "products": Array [
             Object {
               "created_on": "2021-09-01T01:06:39.178493Z",
+              "facebook_product_id": "Product 1",
               "title": "Product 1",
+              "value": "Product 1",
             },
             Object {
               "created_on": "2021-09-01T01:06:39.178493Z",
-              "title": "Product 2",
-            },
-            Object {
-              "created_on": "2021-09-01T01:06:39.178493Z",
+              "facebook_product_id": "Product 3",
               "title": "Product 3",
+              "value": "Product 3",
             },
           ],
           "result_name": "ResultName",

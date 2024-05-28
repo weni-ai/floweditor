@@ -35,7 +35,7 @@ function getProps(automatic = false) {
       footer: '',
       action: '',
     },
-    whatsappProducts.results,
+    [],
     automatic,
     false,
     ProductSearchType.Default,
