@@ -3,7 +3,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: $unnnic-spacing-md;  
+  gap: $unnnic-spacing-sm;  
 }
 
 .selectors {
@@ -18,7 +18,8 @@
   .label {
     font-family: $unnnic-font-family-secondary;
     font-size: $unnnic-font-size-body-md;
-    line-height: $unnnic-line-height-md + $unnnic-font-size-body-md; 
+    line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+    color: $unnnic-color-neutral-cloudy;
   }
 }
 
@@ -72,7 +73,7 @@
 .interactions_tab {
   display: flex;
   flex-direction: column;
-  gap: $unnnic-spacing-stack-md;
+  gap: $unnnic-spacing-stack-sm;
 }
 
 .interaction_type {

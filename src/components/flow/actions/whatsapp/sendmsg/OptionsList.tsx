@@ -62,8 +62,8 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
     >
       <div className={styles.list_item_wrapper}>
         <TextInputElement
-          placeholder={i18n.t('forms.title', 'Title')}
           name={i18n.t('forms.title', 'Title')}
+          placeholder={i18n.t('forms.ex_orange', 'Ex: Orange')}
           size={TextInputSizes.sm}
           onChange={(value, name) =>
             row.list.handleListItemTitleUpdate(value, name, index)
@@ -75,8 +75,11 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
         />
 
         <TextInputElement
-          placeholder={i18n.t('forms.description', 'Description')}
           name={i18n.t('forms.description_optional', 'Description (Optional)')}
+          placeholder={i18n.t(
+            'forms.ex_citrus_and_sweet',
+            'Ex: Citrus and sweet',
+          )}
           size={TextInputSizes.sm}
           onChange={(value, name) =>
             row.list.handleListItemDescriptionUpdate(value, name, index)

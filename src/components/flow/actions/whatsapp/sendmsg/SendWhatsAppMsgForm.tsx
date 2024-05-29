@@ -153,7 +153,7 @@ export const WHATSAPP_INTERACTION_TYPE_LOCATION: UnnnicSelectOption<
   WhatsAppInteractionType
 > = {
   value: WhatsAppInteractionType.LOCATION,
-  label: i18n.t('whatsapp_interactions.location', 'Location'),
+  label: i18n.t('whatsapp_interactions.request_location', 'Request Location'),
   description: i18n.t(
     'whatsapp_interactions.location_description',
     'Ask users for their location to facilitate service',
@@ -421,6 +421,20 @@ export default class SendWhatsAppMsgForm extends React.Component<
           ];
         }
       }
+
+      // check if we have duplicates
+      const uniqueReplies = Array.from(new Set(keys.quickReplies));
+      if (uniqueReplies.length < keys.quickReplies.length) {
+        updates.quickReplies.validationFailures = [
+          {
+            message: i18n.t(
+              'whatsapp_msg.replies_unique',
+              'Quick replies must be unique',
+            ),
+          },
+        ];
+      }
+
       ensureEmptyReply = true;
     }
 

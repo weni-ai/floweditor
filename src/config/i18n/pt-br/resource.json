@@ -155,7 +155,8 @@
       "description": "Consultar WeniGPT"
     },
     "send_whatsapp_msg": {
-      "name": "Enviar mensagem do WhatsApp"
+      "name": "Enviar mensagem do WhatsApp",
+      "description": "Enviar uma mensagem do WhatsApp"
     }
   },
   "add": "Adicione",
@@ -498,7 +499,9 @@
     "remove": "Remover",
     "options_label": "Adicione até 10 opções",
     "list_button_text_placeholder": "Texto do botão de ação",
-    "list_button_text_optional": "Texto do botão de ação (opcional)"
+    "list_button_text_optional": "Texto do botão de ação (opcional)",
+    "ex_citrus_and_sweet": "Ex: Cítrica e doce",
+    "ex_orange": "Ex: Laranja"
   },
   "issues": {
     "header": "Problemas no Fluxo",
@@ -732,7 +735,8 @@
     "replies": "Respostas rápidas",
     "replies_description": "Crie até 3 respostas rápidas com mensagens predefinidas",
     "location": "Localização",
-    "location_description": "Peça aos usuários sua localização para facilitar o atendimento"
+    "location_description": "Peça aos usuários sua localização para facilitar o atendimento",
+    "request_location": "Solicitar localização"
   },
   "whatsapp_msg": {
     "list_items_required": "Pelo menos uma opção da lista deve ser preenchida",

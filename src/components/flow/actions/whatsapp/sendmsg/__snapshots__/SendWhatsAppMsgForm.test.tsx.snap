@@ -119,7 +119,7 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
               },
               Object {
                 "description": "Ask users for their location to facilitate service",
-                "label": "Location",
+                "label": "Request Location",
                 "value": "location",
               },
             ]
@@ -1023,7 +1023,7 @@ Object {
   "interactionType": Object {
     "value": Object {
       "description": "Ask users for their location to facilitate service",
-      "label": "Location",
+      "label": "Request Location",
       "value": "location",
     },
   },
