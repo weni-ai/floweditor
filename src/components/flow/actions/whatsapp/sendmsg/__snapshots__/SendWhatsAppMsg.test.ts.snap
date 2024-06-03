@@ -17,8 +17,12 @@ exports[`SendWhatsAppMsgComp render should render attachment items when passed 1
 >
   <div>
     <div
-      className="attachment fe-paperclip"
-    />
+      className="icons"
+    >
+      <div
+        className="attachment fe-paperclip"
+      />
+    </div>
   </div>
   <div
     className=""
@@ -51,7 +55,11 @@ exports[`SendWhatsAppMsgComp render should render list items when passed 1`] = `
   type="send_msg"
   uuid="b1f332f3-bdd3-4891-aec5-1843a712dbf1"
 >
-  <div />
+  <div>
+    <div
+      className="icons"
+    />
+  </div>
   <div
     className=""
   />
@@ -293,7 +301,11 @@ exports[`SendWhatsAppMsgComp render should render quick replies list when passed
   type="send_msg"
   uuid="b1f332f3-bdd3-4891-aec5-1843a712dbf1"
 >
-  <div />
+  <div>
+    <div
+      className="icons"
+    />
+  </div>
   <div
     className="summary"
   >
@@ -538,6 +550,9 @@ exports[`SendWhatsAppMsgComp render should render text prop when passed 1`] = `
     >
       Text
     </div>
+    <div
+      className="icons"
+    />
   </div>
   <div
     className=""
