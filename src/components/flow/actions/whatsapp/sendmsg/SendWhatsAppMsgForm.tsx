@@ -827,10 +827,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
             />
             <div className={styles.action_button_text}>
               <TextInputElement
-                placeholder={i18n.t(
-                  'forms.list_button_text_placeholder',
-                  'Action Button Text',
-                )}
+                placeholder={i18n.t('forms.ex_menu', 'Ex: Menu')}
                 name={i18n.t(
                   'forms.list_button_text_optional',
                   'Action Button Text (optional)',

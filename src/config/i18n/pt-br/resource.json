@@ -155,7 +155,7 @@
       "description": "Consultar WeniGPT"
     },
     "send_whatsapp_msg": {
-      "name": "Enviar mensagem do WhatsApp",
+      "name": "Mensagem do WhatsApp",
       "description": "Enviar uma mensagem do WhatsApp"
     }
   },
@@ -501,7 +501,8 @@
     "list_button_text_placeholder": "Texto do botão de ação",
     "list_button_text_optional": "Texto do botão de ação (opcional)",
     "ex_citrus_and_sweet": "Ex: Cítrica e doce",
-    "ex_orange": "Ex: Laranja"
+    "ex_orange": "Ex: Laranja",
+    "ex_menu": "Ex: Menu"
   },
   "issues": {
     "header": "Problemas no Fluxo",

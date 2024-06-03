@@ -500,7 +500,8 @@
     "list_button_text_placeholder": "Texto del botón de acción",
     "list_button_text_optional": "Texto del botón de acción (opcional)",
     "ex_citrus_and_sweet": "Ej: Cítricos y dulces",
-    "ex_orange": "Ej: Naranja"
+    "ex_orange": "Ej: Naranja",
+    "ex_menu": "Ej: Menú"
   },
   "issues": {
     "header": "Problemas de Flujo",

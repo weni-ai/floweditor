@@ -54,7 +54,9 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
     <ContentCollapse
       title={`${i18n.t('forms.list_option', 'Option')} ${index +
         1}/${MAX_LIST_ITEMS_COUNT}`}
-      open={index === 0 && row.length === 1}
+      open={
+        (index === 0 && row.length === 1) || listItem.title.trim().length === 0
+      }
       titleIcon="check_circle"
       titleIconScheme={
         listItem.title.trim().length > 0 ? 'weni-600' : 'neutral-soft'

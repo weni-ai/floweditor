@@ -6,6 +6,12 @@
   gap: $unnnic-spacing-stack-xs $unnnic-spacing-inline-xs;
 }
 
+.icons {
+  display: flex;
+  gap: $unnnic-spacing-inline-xs;
+  margin-top: $unnnic-spacing-stack-xs;
+}
+
 .attachment {
   padding-left: 5px;
   color: $gray;
