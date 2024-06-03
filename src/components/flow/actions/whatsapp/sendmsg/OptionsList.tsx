@@ -98,6 +98,9 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
           size="small"
           type="tertiary"
           onClick={() => row.list.handleListItemRemoval(listItem)}
+          disabled={
+            index === row.length - 1 && listItem.title.trim().length === 0
+          }
         />
       </div>
     </ContentCollapse>

@@ -925,7 +925,11 @@ export default class SendWhatsAppMsgForm extends React.Component<
             entry={this.state.message}
             autocomplete={true}
             placeholder={i18n.t('forms.type_here', 'Type here...')}
-            maxLength={4096}
+            maxLength={
+              this.state.messageType.value === WHATSAPP_MESSAGE_TYPE_SIMPLE
+                ? 4096
+                : 1024
+            }
           />
 
           {renderIf(

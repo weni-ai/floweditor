@@ -21,6 +21,17 @@
     line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
     color: $unnnic-color-neutral-cloudy;
   }
+
+  [class*=unnnic-select-smart__options__scroll-area] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+
+  [class*=unnnic-select-smart-option__description] {
+    font-size: 11px !important;
+    margin-top: 4px !important;
+  }
 }
 
 .header {
@@ -28,6 +39,7 @@
   flex-direction: column;
   gap: $unnnic-spacing-inline-xs;
   width: 100%;
+  color: $unnnic-color-neutral-dark;
 
   .inputs {
     display: flex;
