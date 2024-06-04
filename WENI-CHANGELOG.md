@@ -1,3 +1,7 @@
+2.15.0
+----------
+- Feat: Send WhatsApp Message card
+
 2.14.0
 ----------
 - Feat: Search whatsapp product by title
