@@ -37,6 +37,7 @@ exports[`StartSessionForm render should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -93,6 +94,7 @@ exports[`StartSessionForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -369,6 +371,7 @@ exports[`StartSessionForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -381,6 +384,7 @@ exports[`StartSessionForm render should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_start_type"
+              id="temba_select_start_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -439,6 +443,7 @@ exports[`StartSessionForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_start_type"
+                id="temba_select_options_start_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -475,6 +480,7 @@ exports[`StartSessionForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_start_type"
+                id="temba_select_expressions_start_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -497,6 +503,7 @@ exports[`StartSessionForm render should render 1`] = `
               <div
                 class="select_wrapper"
                 data-testid="temba_select_contacts"
+                id="temba_select_contacts"
               >
                 <div
                   data-use-vue-component-wrap=""
@@ -553,11 +560,13 @@ exports[`StartSessionForm render should render 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_options_contacts"
+                  id="temba_select_options_contacts"
                   style="margin-top: 0px; width: 0px; display: none;"
                 />
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_expressions_contacts"
+                  id="temba_select_expressions_contacts"
                   style="margin-top: 0px; width: 0px; display: none;"
                 />
               </div>
@@ -698,6 +707,7 @@ exports[`StartSessionForm render should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_flow"
+              id="temba_select_flow"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -754,11 +764,13 @@ exports[`StartSessionForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_flow"
+                id="temba_select_options_flow"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_flow"
+                id="temba_select_expressions_flow"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1005,6 +1017,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1061,6 +1074,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1337,6 +1351,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1349,6 +1364,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_start_type"
+              id="temba_select_start_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1407,6 +1423,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_start_type"
+                id="temba_select_options_start_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1443,6 +1460,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_start_type"
+                id="temba_select_expressions_start_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1503,6 +1521,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_completion_options_Contact Query"
+                  id=""
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
               </div>
@@ -1519,6 +1538,7 @@ exports[`StartSessionForm render should render contact query 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_flow"
+              id="temba_select_flow"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1575,11 +1595,13 @@ exports[`StartSessionForm render should render contact query 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_flow"
+                id="temba_select_options_flow"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_flow"
+                id="temba_select_expressions_flow"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1704,6 +1726,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1760,6 +1783,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -2036,6 +2060,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2048,6 +2073,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_start_type"
+              id="temba_select_start_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -2106,6 +2132,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_start_type"
+                id="temba_select_options_start_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -2142,6 +2169,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_start_type"
+                id="temba_select_expressions_start_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2160,6 +2188,7 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_flow"
+              id="temba_select_flow"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -2216,11 +2245,13 @@ exports[`StartSessionForm render should render create new contacts 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_flow"
+                id="temba_select_options_flow"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_flow"
+                id="temba_select_expressions_flow"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2467,6 +2498,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -2523,6 +2555,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -2799,6 +2832,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2811,6 +2845,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
             <div
               class="select_wrapper"
               data-testid="temba_select_start_type"
+              id="temba_select_start_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -2869,6 +2904,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_start_type"
+                id="temba_select_options_start_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -2905,6 +2941,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_start_type"
+                id="temba_select_expressions_start_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2965,6 +3002,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
                 <div
                   class="options_wrapper"
                   data-testid="temba_completion_options_Contact Query"
+                  id=""
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
               </div>
@@ -2981,6 +3019,7 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
             <div
               class="select_wrapper"
               data-testid="temba_select_flow"
+              id="temba_select_flow"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -3037,11 +3076,13 @@ exports[`StartSessionForm render should warn about invalid fields in contact que
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_flow"
+                id="temba_select_options_flow"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_flow"
+                id="temba_select_expressions_flow"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>

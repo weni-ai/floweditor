@@ -37,6 +37,7 @@ exports[`UpdateContactForm should render channel 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -93,6 +94,7 @@ exports[`UpdateContactForm should render channel 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -369,6 +371,7 @@ exports[`UpdateContactForm should render channel 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -385,6 +388,7 @@ exports[`UpdateContactForm should render channel 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div
               data-use-vue-component-wrap=""
@@ -441,6 +445,7 @@ exports[`UpdateContactForm should render channel 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -487,6 +492,7 @@ exports[`UpdateContactForm should render channel 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -505,6 +511,7 @@ exports[`UpdateContactForm should render channel 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_channel"
+              id="temba_select_channel"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -561,6 +568,7 @@ exports[`UpdateContactForm should render channel 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_channel"
+                id="temba_select_options_channel"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -577,6 +585,7 @@ exports[`UpdateContactForm should render channel 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_channel"
+                id="temba_select_expressions_channel"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -683,6 +692,7 @@ exports[`UpdateContactForm should render field 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -739,6 +749,7 @@ exports[`UpdateContactForm should render field 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -1015,6 +1026,7 @@ exports[`UpdateContactForm should render field 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1031,6 +1043,7 @@ exports[`UpdateContactForm should render field 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1087,6 +1100,7 @@ exports[`UpdateContactForm should render field 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -1133,6 +1147,7 @@ exports[`UpdateContactForm should render field 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -1189,6 +1204,7 @@ exports[`UpdateContactForm should render field 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Field Value"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1295,6 +1311,7 @@ exports[`UpdateContactForm should render language 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1351,6 +1368,7 @@ exports[`UpdateContactForm should render language 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -1627,6 +1645,7 @@ exports[`UpdateContactForm should render language 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1643,6 +1662,7 @@ exports[`UpdateContactForm should render language 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1699,6 +1719,7 @@ exports[`UpdateContactForm should render language 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -1745,6 +1766,7 @@ exports[`UpdateContactForm should render language 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -1763,6 +1785,7 @@ exports[`UpdateContactForm should render language 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_language"
+              id="temba_select_language"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1821,6 +1844,7 @@ exports[`UpdateContactForm should render language 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_language"
+                id="temba_select_options_language"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -1837,6 +1861,7 @@ exports[`UpdateContactForm should render language 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_language"
+                id="temba_select_expressions_language"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1943,6 +1968,7 @@ exports[`UpdateContactForm should render name 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1999,6 +2025,7 @@ exports[`UpdateContactForm should render name 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -2275,6 +2302,7 @@ exports[`UpdateContactForm should render name 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -2291,6 +2319,7 @@ exports[`UpdateContactForm should render name 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div
               data-use-vue-component-wrap=""
@@ -2347,6 +2376,7 @@ exports[`UpdateContactForm should render name 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -2393,6 +2423,7 @@ exports[`UpdateContactForm should render name 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -2449,6 +2480,7 @@ exports[`UpdateContactForm should render name 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Enter a new contact name"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>

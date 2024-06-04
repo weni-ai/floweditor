@@ -37,6 +37,7 @@ exports[`AddLabelsForm render allows expressions 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -93,6 +94,7 @@ exports[`AddLabelsForm render allows expressions 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -369,6 +371,7 @@ exports[`AddLabelsForm render allows expressions 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -385,6 +388,7 @@ exports[`AddLabelsForm render allows expressions 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_labels"
+            id="temba_select_labels"
           >
             <div
               data-use-vue-component-wrap=""
@@ -441,11 +445,13 @@ exports[`AddLabelsForm render allows expressions 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_labels"
+              id="temba_select_options_labels"
               style="margin-top: 0px; width: -24px; display: none;"
             />
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_labels"
+              id="temba_select_expressions_labels"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -609,6 +615,7 @@ exports[`AddLabelsForm render should render 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -665,6 +672,7 @@ exports[`AddLabelsForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -941,6 +949,7 @@ exports[`AddLabelsForm render should render 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -957,6 +966,7 @@ exports[`AddLabelsForm render should render 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_labels"
+            id="temba_select_labels"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1013,11 +1023,13 @@ exports[`AddLabelsForm render should render 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_labels"
+              id="temba_select_options_labels"
               style="margin-top: 0px; width: 0px; display: none;"
             />
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_labels"
+              id="temba_select_expressions_labels"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>

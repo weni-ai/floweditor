@@ -250,6 +250,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -306,6 +307,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -582,6 +584,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -604,6 +607,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
               <div
                 class="select_wrapper"
                 data-testid="temba_select_buckets"
+                id="temba_select_buckets"
               >
                 <div
                   data-use-vue-component-wrap=""
@@ -662,6 +666,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_options_buckets"
+                  id="temba_select_options_buckets"
                   style="margin-top: 0px; width: 0px; display: none;"
                 >
                   <div
@@ -758,6 +763,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_expressions_buckets"
+                  id="temba_select_expressions_buckets"
                   style="margin-top: 0px; width: 0px; display: none;"
                 />
               </div>
@@ -1092,6 +1098,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1148,6 +1155,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1424,6 +1432,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1446,6 +1455,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
               <div
                 class="select_wrapper"
                 data-testid="temba_select_buckets"
+                id="temba_select_buckets"
               >
                 <div
                   data-use-vue-component-wrap=""
@@ -1504,6 +1514,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_options_buckets"
+                  id="temba_select_options_buckets"
                   style="margin-top: 0px; width: -24px; display: none;"
                 >
                   <div
@@ -1610,6 +1621,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                 <div
                   class="options_wrapper"
                   data-testid="temba_select_expressions_buckets"
+                  id="temba_select_expressions_buckets"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
               </div>

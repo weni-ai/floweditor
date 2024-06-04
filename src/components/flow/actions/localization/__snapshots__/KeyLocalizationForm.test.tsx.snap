@@ -131,6 +131,7 @@ exports[`KeyLocalizationForm removes translations 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Subject"
+                id=""
                 style="margin-top: 1px; width: -24px; display: none;"
               />
             </div>
@@ -328,6 +329,7 @@ exports[`KeyLocalizationForm renders send email 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Subject"
+                id=""
                 style="margin-top: 1px; width: -24px; display: none;"
               />
             </div>
