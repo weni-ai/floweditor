@@ -10,8 +10,7 @@ import { SearchIcon } from 'pureIcons/SearchIcon';
 export enum ButtonTypes {
   primary = 'primary',
   secondary = 'secondary',
-  tertiary = 'terciary',
-  ghost = 'ghost',
+  tertiary = 'tertiary',
 }
 export interface ButtonProps {
   name: string;
@@ -50,7 +49,7 @@ export default class SearchButton extends React.Component<ButtonProps> {
         <UnnnicButton
           ref={onRef}
           onClick={onClick}
-          type={'ghost'}
+          type={'tertiary'}
           disabled={disabled}
           text={name}
           size={this.props.size || undefined}
