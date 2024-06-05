@@ -74,7 +74,6 @@ export interface TembaSelectProps {
     context: CompletionSchema;
   };
   pagination?: {
-    type: string;
     selectorName: string;
   };
 }

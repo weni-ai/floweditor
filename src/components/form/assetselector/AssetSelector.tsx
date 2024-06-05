@@ -68,7 +68,6 @@ export interface AssetSelectorProps extends FormElementProps {
   valueKey?: string;
   queryParam?: string;
   pagination?: {
-    type: string;
     selectorName: string;
   };
 }
