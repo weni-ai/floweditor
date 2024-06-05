@@ -67,6 +67,10 @@ export interface AssetSelectorProps extends FormElementProps {
   nameKey?: string;
   valueKey?: string;
   queryParam?: string;
+  pagination?: {
+    type: string;
+    selectorName: string;
+  };
 }
 
 interface AssetSelectorState {
@@ -267,6 +271,7 @@ export default class AssetSelector extends React.Component<
               ? this.props.queryParam
               : null
           }
+          pagination={this.props.pagination || null}
         />
       </FormElement>
     );
