@@ -70,6 +70,7 @@ export enum Types {
   missing = 'missing',
   say_msg = 'say_msg',
   play_audio = 'play_audio',
+  run_code_action = 'run_code_action',
 }
 
 export enum Operators {

@@ -74,6 +74,8 @@ import CallExternalServiceComp from 'components/flow/actions/callexternalservice
 import SendWhatsAppProductComp from 'components/flow/actions/whatsapp/sendproduct/SendWhatsAppProduct';
 import SendWhatsAppProductRouterForm from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 import WeniGPTLocalizationForm from '../components/flow/actions/localization/WeniGPTLocalizationForm';
+import CodeActionRouterForm from 'components/flow/routers/codeaction/CodeActionRouterForm';
+import RunCodeActionComp from 'components/flow/actions/runcodeaction/RunCodeAction';
 
 const dedupeTypeConfigs = (typeConfigs: Type[]) => {
   const map: any = {};
@@ -537,6 +539,16 @@ export const typeConfigList: Type[] = [
     component: CallExternalServiceComp,
     aliases: [Types.split_by_external_service],
     filter: FeatureFilter.HAS_EXTERNAL_SERVICE,
+  },
+  {
+    type: Types.run_code_action,
+    name: i18n.t('actions.codeaction.name', 'Code Action'),
+    description: i18n.t('actions.codeaction.description', 'Run a Code Action'),
+    form: CodeActionRouterForm,
+    localization: RouterLocalizationForm,
+    localizeableKeys: ['exits'],
+    component: RunCodeActionComp,
+    aliases: ['code_action'],
   },
 
   /** Routers */

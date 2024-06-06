@@ -66,6 +66,7 @@ export interface Endpoints {
   completion: string;
   knowledgeBases: string;
   whatsapp_products: string;
+  codeActions: string;
 }
 
 export interface FlowEditorConfig {
@@ -525,6 +526,16 @@ export interface OpenTicket extends Action {
   body: string;
   result_name: string;
   assignee?: User;
+}
+
+export interface CodeAction {
+  id: string;
+  name: string;
+}
+
+export interface RunCodeAction extends Action {
+  codeaction: CodeAction;
+  result_name: string;
 }
 
 export interface StartFlow extends Action {

@@ -88,6 +88,7 @@ export enum AssetType {
   ExternalService = 'external_service',
   KnowledgeBase = 'knowledge_base',
   WhatsAppProduct = 'whatsapp_product',
+  CodeAction = 'code_action',
 }
 
 export interface Reference {

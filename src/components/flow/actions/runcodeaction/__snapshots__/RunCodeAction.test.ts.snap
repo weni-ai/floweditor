@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RunCodeActionComp should render self 1`] = `
+<div
+  style={
+    Object {
+      "fontSize": "80%",
+      "textAlign": "center",
+    }
+  }
+>
+  <div
+    className="node_asset"
+    key="abcdefghijklmn"
+  >
+    <ForwardRef
+      className="icon"
+      icon="typing-1"
+      scheme="neutral-dark"
+      size="avatar-nano"
+    />
+    <span
+      className="link truncated"
+    >
+      code action logic
+    </span>
+  </div>
+</div>
+`;
