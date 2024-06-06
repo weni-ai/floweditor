@@ -15,6 +15,7 @@ const usersResp = require('test/assets/users.json');
 const topicsResp = require('test/assets/topics.json');
 const knowledgeBasesResp = require('test/assets/knowledge_bases.json');
 const whatsappProductsResp = require('test/assets/whatsapp_products.json');
+const codeActionsResp = require('test/assets/code_actions.json');
 
 const getEndpoint = (urlStr: string) => {
   const queryIdx = urlStr.indexOf('?');
@@ -75,6 +76,8 @@ axios.get = jest.fn((url: string) => {
       return resolvePromise(knowledgeBasesResp);
     case endpoints.whatsapp_products:
       return resolvePromise(whatsappProductsResp);
+    case endpoints.codeActions:
+      return resolvePromise(codeActionsResp);
     default:
       throw new Error('Axios mock: url not passed. Passed: ' + url);
   }

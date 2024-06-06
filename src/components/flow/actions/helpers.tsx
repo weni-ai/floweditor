@@ -278,6 +278,21 @@ export const renderAsset = (asset: Asset, endpoints: Endpoints) => {
         </Trans>
       );
       break;
+    case AssetType.CodeAction:
+      assetBody = (
+        <>
+          <UnnnicIcon
+            icon="typing-1"
+            size="avatar-nano"
+            scheme="neutral-dark"
+            className={styles.icon}
+          />
+          <span className={styles.link + ' ' + styles.truncated}>
+            {asset.name}
+          </span>
+        </>
+      );
+      break;
   }
 
   if (!assetBody) {

@@ -66,6 +66,7 @@ import {
   SendWhatsAppProduct,
   SendWhatsAppMsg,
   CallWeniGPT,
+  RunCodeAction,
 } from 'flowTypes';
 import Localization from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
@@ -1074,6 +1075,59 @@ export const createAddLabelsAction = (labels: Label[]) => ({
   uuid: 'aa15ef19-da81-43d0-b6e5-84b47216aeb8',
   labels,
 });
+
+export const createCodeActionRouterNode = (
+  id: string,
+  name: string,
+): FlowNode => {
+  const action: RunCodeAction = {
+    uuid: utils.createUUID(),
+    type: Types.run_code_action,
+    codeaction: {
+      id,
+      name,
+    },
+    result_name: 'Result',
+  };
+
+  let exits: Exit[] = [
+    {
+      uuid: utils.createUUID(),
+      destination_uuid: null,
+    },
+    {
+      uuid: utils.createUUID(),
+      destination_uuid: null,
+    },
+  ];
+
+  let categories: Category[] = [
+    {
+      uuid: utils.createUUID(),
+      name: WebhookExitNames.Success,
+      exit_uuid: exits[0].uuid,
+    },
+    {
+      uuid: utils.createUUID(),
+      name: WebhookExitNames.Failure,
+      exit_uuid: exits[1].uuid,
+    },
+  ];
+  let operand = '@results.' + utils.snakify(action.result_name);
+
+  return {
+    uuid: utils.createUUID(),
+    actions: [action],
+    router: {
+      type: RouterTypes.switch,
+      default_category_uuid: categories[0].uuid,
+      cases: [],
+      categories,
+      operand,
+    } as SwitchRouter,
+    exits,
+  };
+};
 
 export const English = { name: 'English', id: 'eng', type: AssetType.Language };
 
