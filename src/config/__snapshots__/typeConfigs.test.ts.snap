@@ -374,6 +374,20 @@ Array [
     "type": "call_external_service",
   },
   Object {
+    "aliases": Array [
+      "code_action",
+    ],
+    "component": [Function],
+    "description": "Run a Code Action",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "exits",
+    ],
+    "name": "Code Action",
+    "type": "run_code_action",
+  },
+  Object {
     "description": "Wait for an image",
     "form": [Function],
     "localization": [Function],
@@ -658,6 +672,20 @@ Object {
     "new": true,
     "type": "call_wenigpt",
   },
+  "code_action": Object {
+    "aliases": Array [
+      "code_action",
+    ],
+    "component": [Function],
+    "description": "Run a Code Action",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "exits",
+    ],
+    "name": "Code Action",
+    "type": "run_code_action",
+  },
   "enter_flow": Object {
     "aliases": Array [
       "split_by_subflow",
@@ -712,6 +740,20 @@ Object {
     "form": [Function],
     "name": "Remove from group",
     "type": "remove_contact_groups",
+  },
+  "run_code_action": Object {
+    "aliases": Array [
+      "code_action",
+    ],
+    "component": [Function],
+    "description": "Run a Code Action",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": Array [
+      "exits",
+    ],
+    "name": "Code Action",
+    "type": "run_code_action",
   },
   "say_msg": Object {
     "component": [Function],

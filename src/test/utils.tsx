@@ -44,6 +44,7 @@ export const EMPTY_TEST_ASSETS = {
   ticketers: { items: {}, type: AssetType.Ticketer },
   externalServices: { items: {}, type: AssetType.ExternalService },
   completion: { items: completionResp, type: AssetType.Expression },
+  codeActions: { items: {}, type: AssetType.CodeAction },
 };
 
 const initial = initialState;
