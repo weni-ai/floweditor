@@ -507,7 +507,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Run a Code Action
                   </span>
                 </div>
                 <div
@@ -517,7 +517,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -527,7 +527,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -537,7 +537,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -547,12 +547,22 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                   <span
                     class="name"
                   >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="24"
+                >
+                  <span
+                    class="name"
+                  >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -562,7 +572,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -572,7 +582,7 @@ exports[`RandomRouterForm should initialize existing random 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="26"
+                  data-option-index="27"
                 >
                   <span
                     class="name"
@@ -1355,7 +1365,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Run a Code Action
                   </span>
                 </div>
                 <div
@@ -1365,7 +1375,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -1375,7 +1385,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -1385,7 +1395,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -1395,12 +1405,22 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                   <span
                     class="name"
                   >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="24"
+                >
+                  <span
+                    class="name"
+                  >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -1410,7 +1430,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -1420,7 +1440,7 @@ exports[`RandomRouterForm should remove exits when shrinking 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="26"
+                  data-option-index="27"
                 >
                   <span
                     class="name"

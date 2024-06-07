@@ -7,6 +7,7 @@ Array [
     "attachments": "/assets/attachments.json",
     "channels": "/assets/channels.json",
     "classifiers": "/assets/classifiers.json",
+    "codeActions": "/assets/code_actions.json",
     "completion": "/assets/completion.json",
     "editor": "/flow/editor",
     "environment": "/assets/environment.json",

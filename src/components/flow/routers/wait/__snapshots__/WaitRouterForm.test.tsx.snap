@@ -334,7 +334,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Run a Code Action
                   </span>
                 </div>
                 <div
@@ -344,7 +344,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -354,7 +354,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -364,7 +364,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -374,7 +374,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -384,7 +384,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -394,12 +394,22 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="26"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="27"
                 >
                   <span
                     class="name"
@@ -812,7 +822,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Run a Code Action
                   </span>
                 </div>
                 <div
@@ -822,7 +832,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -832,7 +842,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -842,7 +852,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -852,7 +862,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -862,7 +872,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -872,12 +882,22 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="26"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="27"
                 >
                   <span
                     class="name"
