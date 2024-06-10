@@ -20,7 +20,7 @@ export interface CallBrainFormProps extends ActionFormProps {
   brainInfo: BrainInfo;
 }
 
-class BrainForm extends React.Component<CallBrainFormProps> {
+export class BrainForm extends React.Component<CallBrainFormProps> {
   private handleSave(): void {
     this.props.updateAction(propsToAction(this.props.nodeSettings, this.props));
     this.props.onClose(false);
@@ -75,6 +75,7 @@ class BrainForm extends React.Component<CallBrainFormProps> {
   }
 }
 
+/* istanbul ignore next */
 const mapStateToProps = ({ flowContext: { brainInfo } }: AppState) => {
   return {
     brainInfo,

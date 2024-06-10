@@ -435,12 +435,6 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       const hasCallBrainAction = this.props.renderNode.node.actions.some(
         action => action.type === Types.call_brain,
       );
-      console.log(
-        'BOOL',
-        !this.props.translating,
-        this.context.config.mutable,
-        !hasCallBrainAction,
-      );
       if (
         !this.props.translating &&
         this.context.config.mutable &&

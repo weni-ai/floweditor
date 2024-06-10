@@ -5,7 +5,14 @@ import styles from './CallBrain.module.scss';
 import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
 import { unnnicIcon } from '@weni/unnnic-system';
+import { BrainInfo } from '../../../../store/flowContext';
 const UnnnicIcon = applyVueInReact(unnnicIcon);
+
+export const getBrainInfoPlaceholder = (brainInfo: BrainInfo): JSX.Element => (
+  <span className={styles.brain_info}>
+    {brainInfo.name} - {brainInfo.occupation}
+  </span>
+);
 
 const CallBrainComp: React.FunctionComponent<CallBrain> = (
   props: CallBrain,
@@ -13,9 +20,7 @@ const CallBrainComp: React.FunctionComponent<CallBrain> = (
   return (
     <div className={styles.content}>
       <UnnnicIcon icon="hub" size="sm" scheme={'neutral-cloudy'} />
-      <span className={styles.brain_info}>
-        {props.brainInfo.name} - {props.brainInfo.occupation}
-      </span>
+      {getBrainInfoPlaceholder(props.brainInfo)}
     </div>
   );
 };
