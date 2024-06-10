@@ -38,6 +38,48 @@ exports[`SendEmailForm render should render 1`] = `
         ],
       }
     }
+    nodeSettings={
+      Object {
+        "originalAction": Object {
+          "addresses": Array [
+            "jane@example.com",
+          ],
+          "body": "@run.results.name just signed up.",
+          "subject": "New Sign Up",
+          "type": "send_email",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        "originalNode": Object {
+          "inboundConnections": Object {},
+          "node": Object {
+            "actions": Array [
+              Object {
+                "addresses": Array [
+                  "jane@example.com",
+                ],
+                "body": "@run.results.name just signed up.",
+                "subject": "New Sign Up",
+                "type": "send_email",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": Array [
+              Object {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+            ],
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "ui": Object {
+            "position": Object {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
     onChange={[MockFunction]}
   />
   <div

@@ -45,6 +45,80 @@ exports[`SmartResponseRouterForm initializes case config 1`] = `
         ],
       }
     }
+    nodeSettings={
+      Object {
+        "originalNode": Object {
+          "inboundConnections": Object {},
+          "node": Object {
+            "actions": Array [],
+            "exits": Array [
+              Object {
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              Object {
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "router": Object {
+              "cases": Array [
+                Object {
+                  "arguments": Array [
+                    "red",
+                  ],
+                  "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "type": "has_any_word",
+                  "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                },
+                Object {
+                  "arguments": Array [
+                    "not blue",
+                  ],
+                  "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "type": "has_any_word",
+                  "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                },
+              ],
+              "categories": Array [
+                Object {
+                  "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "name": "Red",
+                  "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                },
+                Object {
+                  "exit_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                  "name": "Other",
+                  "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+                },
+              ],
+              "default_category_uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+              "operand": "@input.text",
+              "result_name": "",
+              "type": "switch",
+              "wait": Object {
+                "type": "msg",
+              },
+            },
+            "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+          },
+          "ui": Object {
+            "config": Object {
+              "cases": Object {
+                "b1f332f3-bdd3-4891-aec5-1843a712dbf1": Object {
+                  "arguments": Array [
+                    "not blue",
+                  ],
+                },
+              },
+            },
+            "position": Object {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "smart_wait_for_response",
+          },
+        },
+      }
+    }
     onChange={[MockFunction]}
   />
   <DescriptionAlert
@@ -182,6 +256,64 @@ exports[`SmartResponseRouterForm should render 1`] = `
           "messaging",
           "messaging_offline",
         ],
+      }
+    }
+    nodeSettings={
+      Object {
+        "originalAction": null,
+        "originalNode": Object {
+          "inboundConnections": Object {},
+          "node": Object {
+            "actions": Array [],
+            "exits": Array [
+              Object {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+              Object {
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "router": Object {
+              "cases": Array [
+                Object {
+                  "arguments": Array [
+                    "red",
+                  ],
+                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "type": "has_any_word",
+                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                },
+              ],
+              "categories": Array [
+                Object {
+                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  "name": "Red",
+                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                },
+                Object {
+                  "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "name": "Other",
+                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                },
+              ],
+              "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              "operand": "@input.text",
+              "result_name": "",
+              "type": "switch",
+              "wait": Object {
+                "type": "msg",
+              },
+            },
+            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          },
+          "ui": Object {
+            "position": Object {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "wait_for_response",
+          },
+        },
       }
     }
     onChange={[MockFunction]}

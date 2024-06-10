@@ -44,6 +44,11 @@ exports[`SendBroadcastForm render should render an empty form with no action 2`]
         "type": "send_broadcast",
       }
     }
+    nodeSettings={
+      Object {
+        "originalNode": null,
+      }
+    }
     onChange={[MockFunction]}
   />
   <div
@@ -118,6 +123,88 @@ exports[`SendBroadcastForm render should render self, children with base props 1
         ],
         "name": "Send broadcast",
         "type": "send_broadcast",
+      }
+    }
+    nodeSettings={
+      Object {
+        "originalAction": Object {
+          "contacts": Array [
+            Object {
+              "name": "Kellan Alexander",
+              "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            },
+            Object {
+              "name": "Norbert Kwizera",
+              "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            },
+            Object {
+              "name": "Rowan Seymour",
+              "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            },
+          ],
+          "groups": Array [
+            Object {
+              "name": "Cat Fanciers",
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            Object {
+              "name": "Cat Facts",
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "text": "Hello World",
+          "type": "send_broadcast",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        "originalNode": Object {
+          "inboundConnections": Object {},
+          "node": Object {
+            "actions": Array [
+              Object {
+                "contacts": Array [
+                  Object {
+                    "name": "Kellan Alexander",
+                    "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  },
+                  Object {
+                    "name": "Norbert Kwizera",
+                    "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  },
+                  Object {
+                    "name": "Rowan Seymour",
+                    "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                  },
+                ],
+                "groups": Array [
+                  Object {
+                    "name": "Cat Fanciers",
+                    "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                  },
+                  Object {
+                    "name": "Cat Facts",
+                    "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  },
+                ],
+                "text": "Hello World",
+                "type": "send_broadcast",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": Array [
+              Object {
+                "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+              },
+            ],
+            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          },
+          "ui": Object {
+            "position": Object {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
       }
     }
     onChange={[MockFunction]}

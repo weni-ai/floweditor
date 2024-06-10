@@ -34,6 +34,58 @@ exports[`AddLabelsForm render should render a base action 1`] = `
         ],
       }
     }
+    nodeSettings={
+      Object {
+        "originalAction": Object {
+          "labels": Array [
+            Object {
+              "name": "Help",
+              "uuid": "232b99d1-579f-4d7f-b750-4b034927e9f8",
+            },
+            Object {
+              "name": "Feedback",
+              "uuid": "ab58dffa-98da-40ba-bebc-489ec6ff7170",
+            },
+          ],
+          "type": "add_input_labels",
+          "uuid": "aa15ef19-da81-43d0-b6e5-84b47216aeb8",
+        },
+        "originalNode": Object {
+          "inboundConnections": Object {},
+          "node": Object {
+            "actions": Array [
+              Object {
+                "labels": Array [
+                  Object {
+                    "name": "Help",
+                    "uuid": "232b99d1-579f-4d7f-b750-4b034927e9f8",
+                  },
+                  Object {
+                    "name": "Feedback",
+                    "uuid": "ab58dffa-98da-40ba-bebc-489ec6ff7170",
+                  },
+                ],
+                "type": "add_input_labels",
+                "uuid": "aa15ef19-da81-43d0-b6e5-84b47216aeb8",
+              },
+            ],
+            "exits": Array [
+              Object {
+                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              },
+            ],
+            "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+          },
+          "ui": Object {
+            "position": Object {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
     onChange={[MockFunction]}
   />
   <AssetSelector
