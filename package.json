@@ -2,7 +2,7 @@
   "name": "@weni/flow-editor",
   "license": "AGPL-3.0",
   "repository": "git://github.com/weni-ai/floweditor.git",
-  "version": "2.13.1",
+  "version": "2.15.0",
   "description": "Standalone flow editing tool designed for use within the RapidPro suite of messaging tools but can be adopted for use outside of that ecosystem.",
   "browser": "umd/flow-editor.min.js",
   "unpkg": "umd/flow-editor.min.js",
@@ -17,6 +17,7 @@
     "@weni/unnnic-system": "1.24.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-transition-group": "4.4.5",
     "sms-length": "0.1.2",
     "vuereact-combined": "1.2.11"
   },
@@ -75,6 +76,8 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "7.0.0",
+    "@emoji-mart/data": "1.1.2",
+    "@emoji-mart/react": "1.1.1",
     "@nyaruka/temba-components": "0.18.1",
     "@testing-library/jest-dom": "4.0.0",
     "@testing-library/react": "8.0.1",
@@ -109,6 +112,7 @@
     "common-tags": "1.8.0",
     "core-js": "2.5.7",
     "dateformat": "3.0.3",
+    "emoji-mart": "5.5.2",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "^1.13.0",
     "enzyme-adapter-utils": "1.12.0",
@@ -167,7 +171,7 @@
     "tslint": "5.17.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-plugin-prettier": "2.0.1",
-    "typescript": "3.4.5",
+    "typescript": "3.5.3",
     "uniqid": "5.0.3",
     "uuid": "3.3.2"
   }

@@ -10,6 +10,12 @@ import {
   ProductSearchType,
   ProductViewSettings,
 } from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+import {
+  WhatsAppHeaderType,
+  WhatsAppInteractionType,
+  WhatsAppListItem,
+  WhatsAppMessageType,
+} from './components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 import { BrainInfo } from './store/flowContext';
 
 // we don't concern ourselves with patch versions
@@ -383,6 +389,19 @@ export interface SendMsg extends Action {
   attachments?: string[];
   topic?: string;
   templating?: MsgTemplating;
+}
+
+export interface SendWhatsAppMsg extends Action {
+  text: string;
+  messageType: WhatsAppMessageType;
+  header_type: WhatsAppHeaderType;
+  header_text: string;
+  attachment: string;
+  footer: string;
+  interaction_type: WhatsAppInteractionType;
+  button_text: string;
+  list_items: WhatsAppListItem[];
+  quick_replies: string[];
 }
 
 export interface SendWhatsAppProduct extends Action {

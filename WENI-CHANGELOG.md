@@ -1,3 +1,13 @@
+2.15.0
+----------
+- Feat: Send WhatsApp Message card
+
+2.14.0
+----------
+- Feat: Search whatsapp product by title
+- Feat: Add highlight to searched words
+- Fix: Navigation through cards continuously
+
 2.13.1
 ----------
 - Fix: Set focus in text input

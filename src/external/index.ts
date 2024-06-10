@@ -419,7 +419,6 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
       'ticketers',
       'externalServices',
       'knowledgeBases',
-      'whatsapp_products',
     ].forEach((storeId: string) => {
       const store = assetStore[storeId];
       fetches.push(

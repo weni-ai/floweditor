@@ -1,0 +1,31 @@
+@import 'variables.module.scss';
+
+.collapse {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-sm;
+  border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+  border-radius: $unnnic-border-radius-sm;
+  padding: $unnnic-spacing-xs $unnnic-spacing-ant;
+}
+
+.error {
+  border-color: $unnnic-color-feedback-red;
+}
+
+.collapse_header {
+  display: flex;
+  flex-direction: row;
+  gap: $unnnic-spacing-nano;
+  align-items: center;
+  cursor: pointer;
+
+  font-size: $unnnic-font-size-body-gt;
+  font-weight: $unnnic-font-weight-bold;
+  color: $unnnic-color-neutral-dark;
+  line-height: $unnnic-line-height-md + $unnnic-font-size-body-gt;
+}
+
+.collapse_icon {
+  margin-left: auto;
+}

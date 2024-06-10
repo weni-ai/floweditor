@@ -91,6 +91,15 @@ Array [
     "type": "send_msg",
   },
   Object {
+    "component": [Function],
+    "description": "Send a WhatsApp message",
+    "filter": "whatsapp",
+    "form": [Function],
+    "name": "Send WhatsApp Message",
+    "new": true,
+    "type": "send_whatsapp_msg",
+  },
+  Object {
     "aliases": Array [
       "split_by_whatsapp_product",
     ],
@@ -772,6 +781,15 @@ Object {
     "name": "Send WhatsApp Product",
     "new": true,
     "type": "send_msg_catalog",
+  },
+  "send_whatsapp_msg": Object {
+    "component": [Function],
+    "description": "Send a WhatsApp message",
+    "filter": "whatsapp",
+    "form": [Function],
+    "name": "Send WhatsApp Message",
+    "new": true,
+    "type": "send_whatsapp_msg",
   },
   "set_contact_channel": Object {
     "aliases": Array [

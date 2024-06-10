@@ -22,6 +22,8 @@ import SendEmailComp from 'components/flow/actions/sendemail/SendEmail';
 import SendEmailForm from 'components/flow/actions/sendemail/SendEmailForm';
 import SendMsgComp from 'components/flow/actions/sendmsg/SendMsg';
 import SendMsgForm from 'components/flow/actions/sendmsg/SendMsgForm';
+import SendWhatsAppMsgComp from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsg';
+import SendWhatsAppMsgForm from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 import SetRunResultComp from 'components/flow/actions/setrunresult/SetRunResult';
 import SetRunResultForm from 'components/flow/actions/setrunresult/SetRunResultForm';
 import StartFlowComp from 'components/flow/actions/startflow/StartFlow';
@@ -273,6 +275,25 @@ export const typeConfigList: Type[] = [
       // at least an empty array so the localization has a proper cue
       action.quick_replies = action.quick_replies || [];
     },
+  },
+  {
+    type: Types.send_whatsapp_msg,
+    name: i18n.t('actions.send_whatsapp_msg.name', 'Send WhatsApp Message'),
+    description: i18n.t(
+      'actions.send_whatsapp_msg.description',
+      'Send a WhatsApp message',
+    ),
+    form: SendWhatsAppMsgForm,
+    // localization: MsgLocalizationForm,
+    // localizeableKeys: ['text', 'quick_replies', 'templating.variables'],
+    component: SendWhatsAppMsgComp,
+    // massageForDisplay: (action: SendMsg) => {
+    //   // quick replies are optional in the definition, make sure we have
+    //   // at least an empty array so the localization has a proper cue
+    //   action.quick_replies = action.quick_replies || [];
+    // },
+    filter: FeatureFilter.HAS_WHATSAPP,
+    new: true,
   },
   {
     type: Types.send_msg_catalog,

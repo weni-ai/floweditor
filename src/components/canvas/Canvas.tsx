@@ -489,10 +489,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         selected: 0,
       });
 
-      const searchInputElement = document.getElementById('searchBarInputElementDiv');
+      const searchInputElement = document.getElementById(
+        'searchBarInputElementDiv',
+      );
       if (searchInputElement) {
         const input = (searchInputElement.getElementsByClassName(
-          'input-itself'
+          'input-itself',
         )[0] as unknown) as HTMLTextAreaElement;
         input.focus();
       }

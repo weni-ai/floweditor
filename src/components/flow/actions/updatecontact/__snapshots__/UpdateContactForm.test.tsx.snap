@@ -37,6 +37,7 @@ exports[`UpdateContactForm should render channel 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -93,6 +94,7 @@ exports[`UpdateContactForm should render channel 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -112,7 +114,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -122,7 +124,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -132,7 +134,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -142,7 +144,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -152,7 +154,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -162,7 +164,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -172,7 +174,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -182,12 +184,22 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <span
                     class="name"
                   >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="name"
+                  >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="name"
@@ -197,7 +209,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="name"
@@ -207,7 +219,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="name"
@@ -217,7 +229,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="name"
@@ -227,7 +239,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="name"
@@ -237,7 +249,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="name"
@@ -247,7 +259,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -257,7 +269,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -267,7 +279,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="name"
@@ -277,7 +289,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="name"
@@ -287,7 +299,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="name"
@@ -297,7 +309,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -307,7 +319,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -317,7 +329,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -327,7 +339,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -337,7 +349,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -347,7 +359,7 @@ exports[`UpdateContactForm should render channel 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -359,6 +371,7 @@ exports[`UpdateContactForm should render channel 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -375,6 +388,7 @@ exports[`UpdateContactForm should render channel 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div
               data-use-vue-component-wrap=""
@@ -431,6 +445,7 @@ exports[`UpdateContactForm should render channel 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -477,6 +492,7 @@ exports[`UpdateContactForm should render channel 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -495,6 +511,7 @@ exports[`UpdateContactForm should render channel 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_channel"
+              id="temba_select_channel"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -551,6 +568,7 @@ exports[`UpdateContactForm should render channel 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_channel"
+                id="temba_select_options_channel"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -567,6 +585,7 @@ exports[`UpdateContactForm should render channel 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_channel"
+                id="temba_select_expressions_channel"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -673,6 +692,7 @@ exports[`UpdateContactForm should render field 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -729,6 +749,7 @@ exports[`UpdateContactForm should render field 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -748,7 +769,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -758,7 +779,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -768,7 +789,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -778,7 +799,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -788,7 +809,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -798,7 +819,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -808,7 +829,7 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -818,12 +839,22 @@ exports[`UpdateContactForm should render field 1`] = `
                   <span
                     class="name"
                   >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="name"
+                  >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="name"
@@ -833,7 +864,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="name"
@@ -843,7 +874,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="name"
@@ -853,7 +884,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="name"
@@ -863,7 +894,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="name"
@@ -873,7 +904,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="name"
@@ -883,7 +914,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -893,7 +924,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -903,7 +934,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="name"
@@ -913,7 +944,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="name"
@@ -923,7 +954,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="name"
@@ -933,7 +964,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -943,7 +974,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -953,7 +984,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -963,7 +994,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -973,7 +1004,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -983,7 +1014,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -995,6 +1026,7 @@ exports[`UpdateContactForm should render field 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1011,6 +1043,7 @@ exports[`UpdateContactForm should render field 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1067,6 +1100,7 @@ exports[`UpdateContactForm should render field 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -1113,6 +1147,7 @@ exports[`UpdateContactForm should render field 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -1169,6 +1204,7 @@ exports[`UpdateContactForm should render field 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Field Value"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1275,6 +1311,7 @@ exports[`UpdateContactForm should render language 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1331,6 +1368,7 @@ exports[`UpdateContactForm should render language 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -1350,7 +1388,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -1360,7 +1398,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -1370,7 +1408,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -1380,7 +1418,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -1390,7 +1428,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -1400,7 +1438,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -1410,7 +1448,7 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -1420,12 +1458,22 @@ exports[`UpdateContactForm should render language 1`] = `
                   <span
                     class="name"
                   >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="name"
+                  >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="name"
@@ -1435,7 +1483,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="name"
@@ -1445,7 +1493,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="name"
@@ -1455,7 +1503,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="name"
@@ -1465,7 +1513,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="name"
@@ -1475,7 +1523,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="name"
@@ -1485,7 +1533,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -1495,7 +1543,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -1505,7 +1553,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="name"
@@ -1515,7 +1563,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="name"
@@ -1525,7 +1573,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="name"
@@ -1535,7 +1583,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -1545,7 +1593,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -1555,7 +1603,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -1565,7 +1613,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -1575,7 +1623,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -1585,7 +1633,7 @@ exports[`UpdateContactForm should render language 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -1597,6 +1645,7 @@ exports[`UpdateContactForm should render language 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1613,6 +1662,7 @@ exports[`UpdateContactForm should render language 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div
               data-use-vue-component-wrap=""
@@ -1669,6 +1719,7 @@ exports[`UpdateContactForm should render language 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -1715,6 +1766,7 @@ exports[`UpdateContactForm should render language 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -1733,6 +1785,7 @@ exports[`UpdateContactForm should render language 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_language"
+              id="temba_select_language"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1791,6 +1844,7 @@ exports[`UpdateContactForm should render language 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_language"
+                id="temba_select_options_language"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -1807,6 +1861,7 @@ exports[`UpdateContactForm should render language 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_language"
+                id="temba_select_expressions_language"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1913,6 +1968,7 @@ exports[`UpdateContactForm should render name 1`] = `
             <div
               class="select_wrapper"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div
                 data-use-vue-component-wrap=""
@@ -1969,6 +2025,7 @@ exports[`UpdateContactForm should render name 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
@@ -1988,7 +2045,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -1998,7 +2055,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -2008,7 +2065,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -2018,7 +2075,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -2028,7 +2085,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -2038,7 +2095,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -2048,7 +2105,7 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -2058,12 +2115,22 @@ exports[`UpdateContactForm should render name 1`] = `
                   <span
                     class="name"
                   >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="name"
+                  >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="option  selected"
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="name"
@@ -2073,7 +2140,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="name"
@@ -2083,7 +2150,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="name"
@@ -2093,7 +2160,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="name"
@@ -2103,7 +2170,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="name"
@@ -2113,7 +2180,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="name"
@@ -2123,7 +2190,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -2133,7 +2200,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -2143,7 +2210,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="name"
@@ -2153,7 +2220,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="name"
@@ -2163,7 +2230,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="name"
@@ -2173,7 +2240,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -2183,7 +2250,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -2193,7 +2260,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -2203,7 +2270,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -2213,7 +2280,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -2223,7 +2290,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -2235,6 +2302,7 @@ exports[`UpdateContactForm should render name 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -2251,6 +2319,7 @@ exports[`UpdateContactForm should render name 1`] = `
           <div
             class="select_wrapper"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div
               data-use-vue-component-wrap=""
@@ -2307,6 +2376,7 @@ exports[`UpdateContactForm should render name 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             >
               <div
@@ -2353,6 +2423,7 @@ exports[`UpdateContactForm should render name 1`] = `
             <div
               class="options_wrapper"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
@@ -2409,6 +2480,7 @@ exports[`UpdateContactForm should render name 1`] = `
               <div
                 class="options_wrapper"
                 data-testid="temba_completion_options_Enter a new contact name"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>

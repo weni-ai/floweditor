@@ -5,6 +5,7 @@
   position: relative;
   margin: 0px;
   overflow: hidden;
+  background: white;
 
   &:first-child {
     border-top-right-radius: $unnnic-border-radius-md;
@@ -53,8 +54,9 @@
   &.missing,
   &.enter_flow,
   &.call_external_service,
-  &.call_wenigpt,
   &.send_msg_catalog,
+  &.send_whatsapp_msg,
+  &.call_wenigpt,
   &.call_brain {
     font-family: $unnnic-font-family-secondary;
     font-size: $unnnic-font-size-body-md;
@@ -84,6 +86,11 @@
 
   &.send_msg_catalog {
     width: auto;
+  }
+
+  &.send_whatsapp_msg {
+    width: auto;
+    max-width: 267px;
   }
 
   &.send_broadcast,
