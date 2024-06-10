@@ -21,10 +21,6 @@ export interface CallBrainFormProps extends ActionFormProps {
 }
 
 class BrainForm extends React.Component<CallBrainFormProps> {
-  constructor(props: CallBrainFormProps) {
-    super(props);
-  }
-
   private handleSave(): void {
     this.props.updateAction(propsToAction(this.props.nodeSettings, this.props));
     this.props.onClose(false);
