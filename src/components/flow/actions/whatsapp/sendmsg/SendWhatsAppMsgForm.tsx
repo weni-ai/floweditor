@@ -864,6 +864,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
         new={typeConfig.new}
       >
         <TypeList
+          nodeSettings={this.props.nodeSettings}
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}

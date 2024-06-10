@@ -51,7 +51,7 @@ const filterVisibility = (
       if (typeItem.type === Types.call_brain) {
         // check if we can show the call brain action
         // if we are in a multi action node, we can't show the call brain action
-        if (nodeSettings.originalNode.node.actions.length > 1) {
+        if (nodeSettings.originalNode.node.actions.length >= 1) {
           return false;
         }
       }
