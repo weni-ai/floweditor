@@ -29,7 +29,7 @@ describe(SubflowRouterForm.name, () => {
       instance.handleFlowChanged([ColorFlowAsset]);
       expect(instance.state).toMatchSnapshot();
       instance.getButtons().primary.onClick();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
 
     it('should cancel changes', () => {
@@ -49,7 +49,7 @@ describe(SubflowRouterForm.name, () => {
 
       instance.handleFlowChanged([ColorFlowAsset]);
       instance.getButtons().primary.onClick();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
 
     it('creates its own action uuid if necessary', () => {
@@ -65,7 +65,7 @@ describe(SubflowRouterForm.name, () => {
 
       instance.handleFlowChanged([ColorFlowAsset]);
       instance.getButtons().primary.onClick();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
 
     it('validates before saving', () => {

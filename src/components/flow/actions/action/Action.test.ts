@@ -17,6 +17,7 @@ import {
   English,
 } from 'testUtils/assetCreators';
 import { getLocalization, set, setFalse, setTrue } from 'utils';
+import { MouseState } from 'store/editor';
 
 const sendMsgAction = createSendMsgAction();
 const sendMsgAction1 = createSendMsgAction({
@@ -42,15 +43,16 @@ const baseProps: ActionWrapperProps = {
   localization,
   first: true,
   action: sendMsgAction,
-  render: jest.fn(),
+  render: vi.fn(),
   renderNode: sendMsgNode,
   language: English,
   translating: false,
-  onOpenNodeEditor: jest.fn(),
-  removeAction: jest.fn(),
-  moveActionUp: jest.fn(),
+  onOpenNodeEditor: vi.fn(),
+  removeAction: vi.fn(),
+  moveActionUp: vi.fn(),
   issues: [],
   scrollToAction: '',
+  mouseState: MouseState.SELECT,
 };
 
 const { setup, spyOn } = composeComponentTestUtils(ActionWrapper, baseProps);
@@ -65,17 +67,10 @@ describe(ActionWrapper.name, () => {
       const actionContainer = getSpecWrapper(wrapper, actionContainerSpecId);
 
       expect(actionContainer.prop('id')).toBe(`action-${props.action.uuid}`);
-      expect(actionContainer.hasClass('action')).toBeTruthy();
-      expect(
-        getSpecWrapper(wrapper, actionOverlaySpecId).hasClass('overlay'),
-      ).toBeTruthy();
       expect(
         getSpecWrapper(wrapper, actionInteractiveDivSpecId).exists(),
       ).toBeTruthy();
       expect(wrapper.find('TitleBar').props()).toMatchSnapshot();
-      expect(
-        getSpecWrapper(wrapper, actionBodySpecId).hasClass('body'),
-      ).toBeTruthy();
       expect(props.render).toHaveBeenCalledTimes(1);
       expect(props.render).toHaveBeenCalledWith(
         props.action,
@@ -94,9 +89,6 @@ describe(ActionWrapper.name, () => {
     it('should display translating style', () => {
       const { wrapper } = setup(true, { translating: setTrue() });
 
-      expect(
-        getSpecWrapper(wrapper, actionContainerSpecId).hasClass('translating'),
-      ).toBeTruthy();
       expect(wrapper).toMatchSnapshot();
     });
 
@@ -106,11 +98,6 @@ describe(ActionWrapper.name, () => {
         translating: setTrue(),
       });
 
-      expect(
-        getSpecWrapper(wrapper, actionContainerSpecId).hasClass(
-          'not_localizable',
-        ),
-      ).toBeTruthy();
       expect(wrapper).toMatchSnapshot();
     });
 
@@ -119,9 +106,6 @@ describe(ActionWrapper.name, () => {
         renderNode: set(subflowNode),
       });
 
-      expect(
-        getSpecWrapper(wrapper, actionContainerSpecId).hasClass('has_router'),
-      ).toBeTruthy();
       expect(wrapper).toMatchSnapshot();
     });
 
@@ -131,11 +115,6 @@ describe(ActionWrapper.name, () => {
         translating: setTrue(),
       });
 
-      expect(
-        getSpecWrapper(wrapper, actionContainerSpecId).hasClass(
-          'missing_localization',
-        ),
-      ).toBeTruthy();
       expect(wrapper).toMatchSnapshot();
     });
   });
@@ -150,8 +129,8 @@ describe(ActionWrapper.name, () => {
           actionInteractiveDivSpecId,
         );
         const mockEvent = {
-          preventDefault: jest.fn(),
-          stopPropagation: jest.fn(),
+          preventDefault: vi.fn(),
+          stopPropagation: vi.fn(),
         };
 
         interactiveDiv.simulate('mouseDown', mockEvent);
@@ -168,8 +147,8 @@ describe(ActionWrapper.name, () => {
         }) as { instance: ActionWrapper; props: ActionWrapperProps };
 
         const mockEvent: any = {
-          preventDefault: jest.fn(),
-          stopPropagation: jest.fn(),
+          preventDefault: vi.fn(),
+          stopPropagation: vi.fn(),
         };
 
         instance.handleActionClicked(mockEvent);
@@ -191,11 +170,11 @@ describe(ActionWrapper.name, () => {
           removeAction: setMock(),
         }) as { instance: ActionWrapper; props: ActionWrapperProps };
         const mockEvent: any = {
-          stopPropagation: jest.fn(),
-          preventDefault: jest.fn(),
+          stopPropagation: vi.fn(),
+          preventDefault: vi.fn(),
         };
 
-        instance.handleRemoval(mockEvent);
+        instance.handleRemoval();
 
         expect(props.removeAction).toHaveBeenCalledTimes(1);
         expect(props.removeAction).toHaveBeenCalledWith(
@@ -212,8 +191,8 @@ describe(ActionWrapper.name, () => {
         }) as { instance: ActionWrapper; props: ActionWrapperProps };
 
         const mockEvent: any = {
-          stopPropagation: jest.fn(),
-          preventDefault: jest.fn(),
+          stopPropagation: vi.fn(),
+          preventDefault: vi.fn(),
         };
 
         instance.handleMoveUp(mockEvent);

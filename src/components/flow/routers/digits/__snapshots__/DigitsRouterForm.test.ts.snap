@@ -1,336 +1,136 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DigitsRouterForm initializes 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Ok",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="wait_for_digits"
-  title="Wait for Digits"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "description": "Wait for multiple digits",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "exits",
-          "cases",
-        ],
-        "name": "Wait for Digits",
-        "type": "wait_for_digits",
-        "visibility": Array [
-          "voice",
-        ],
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <p
-    className="lead_in"
-  >
-    If the keypad entry before the # symbol..
-  </p>
-  <CaseList
-    cases={Array []}
-    data-spec="cases"
-    onCasesUpdated={[Function]}
-    operators={
-      Array [
-        Object {
-          "operands": 1,
-          "type": "has_beginning",
-          "verboseName": "starts with",
-        },
-        Object {
-          "categoryName": "Has Number",
-          "operands": 0,
-          "type": "has_number",
-          "verboseName": "has a number",
-        },
-        Object {
-          "operands": 2,
-          "type": "has_number_between",
-          "verboseName": "has a number between",
-        },
-        Object {
-          "operands": 1,
-          "type": "has_number_lt",
-          "verboseName": "has a number below",
-        },
-        Object {
-          "operands": 1,
-          "type": "has_number_lte",
-          "verboseName": "has a number at or below",
-        },
-        Object {
-          "operands": 1,
-          "type": "has_number_eq",
-          "verboseName": "has a number equal to",
-        },
-        Object {
-          "operands": 1,
-          "type": "has_number_gte",
-          "verboseName": "has a number at or above",
-        },
-        Object {
-          "operands": 1,
-          "type": "has_number_gt",
-          "verboseName": "has a number above",
-        },
-      ]
-    }
-    type="default"
-  />
-  <OptionalTextInput
-    maxLength={64}
-    name="Save as result"
-    onChange={[Function]}
-    toggleText="Save as"
-    value={
-      Object {
-        "value": "",
-      }
-    }
-  />
-</Dialog>
-`;
+exports[`DigitsRouterForm > initializes 1`] = `ShallowWrapper {}`;
 
-exports[`DigitsRouterForm should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Ok",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="wait_for_digits"
-  title="Wait for Digits"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "description": "Wait for multiple digits",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "exits",
-          "cases",
-        ],
-        "name": "Wait for Digits",
-        "type": "wait_for_digits",
-        "visibility": Array [
-          "voice",
-        ],
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <p
-    className="lead_in"
-  >
-    If the keypad entry before the # symbol..
-  </p>
-  <CaseList
-    cases={Array []}
-    data-spec="cases"
-    onCasesUpdated={[Function]}
-    operators={
-      Array [
-        Object {
-          "operands": 1,
-          "type": "has_beginning",
-          "verboseName": "starts with",
-        },
-        Object {
-          "categoryName": "Has Number",
-          "operands": 0,
-          "type": "has_number",
-          "verboseName": "has a number",
-        },
-        Object {
-          "operands": 2,
-          "type": "has_number_between",
-          "verboseName": "has a number between",
-        },
-        Object {
-          "operands": 1,
-          "type": "has_number_lt",
-          "verboseName": "has a number below",
-        },
-        Object {
-          "operands": 1,
-          "type": "has_number_lte",
-          "verboseName": "has a number at or below",
-        },
-        Object {
-          "operands": 1,
-          "type": "has_number_eq",
-          "verboseName": "has a number equal to",
-        },
-        Object {
-          "operands": 1,
-          "type": "has_number_gte",
-          "verboseName": "has a number at or above",
-        },
-        Object {
-          "operands": 1,
-          "type": "has_number_gt",
-          "verboseName": "has a number above",
-        },
-      ]
-    }
-    type="default"
-  />
-  <OptionalTextInput
-    maxLength={64}
-    name="Save as result"
-    onChange={[Function]}
-    toggleText="Save as"
-    value={
-      Object {
-        "value": "",
-      }
-    }
-  />
-</Dialog>
-`;
+exports[`DigitsRouterForm > should render 1`] = `ShallowWrapper {}`;
 
-exports[`DigitsRouterForm updates should save changes 1`] = `
-Object {
-  "cases": Array [
-    Object {
+exports[`DigitsRouterForm > updates > should save changes 1`] = `
+{
+  "cases": [
+    {
       "categoryName": "Red",
-      "kase": Object {
-        "arguments": Array [
+      "kase": {
+        "arguments": [
           "red",
         ],
         "type": "has_any_word",
       },
     },
-    Object {
+    {
       "categoryName": "Red",
-      "kase": Object {
-        "arguments": Array [
+      "kase": {
+        "arguments": [
           "maroon",
         ],
         "type": "has_any_word",
       },
     },
-    Object {
+    {
       "categoryName": "Green",
-      "kase": Object {
-        "arguments": Array [
+      "kase": {
+        "arguments": [
           "green",
         ],
         "type": "has_any_word",
       },
     },
   ],
-  "resultName": Object {
-    "validationFailures": Array [],
+  "resultName": {
+    "validationFailures": [],
     "value": "Favorite Color",
   },
   "valid": true,
 }
 `;
 
-exports[`DigitsRouterForm updates should save changes 2`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [],
-      "exits": Array [
-        Object {
+exports[`DigitsRouterForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            },
+            {
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "red",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "maroon",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "green",
+                ],
+                "category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                "type": "has_any_word",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Red",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "name": "Green",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+              {
+                "exit_uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                "name": "Other",
+                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              },
+            ],
+            "default_category_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            "operand": "@input.text",
+            "result_name": "Favorite Color",
+            "type": "switch",
+            "wait": {
+              "hint": {
+                "type": "digits",
+              },
+              "type": "msg",
+            },
+          },
           "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
         },
-        Object {
-          "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-        },
-        Object {
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "red",
-            ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_any_word",
+        "ui": {
+          "config": {
+            "cases": {},
           },
-          Object {
-            "arguments": Array [
-              "maroon",
-            ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_any_word",
-          },
-          Object {
-            "arguments": Array [
-              "green",
-            ],
-            "category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-            "type": "has_any_word",
-          },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "name": "Red",
-            "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-          },
-          Object {
-            "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "name": "Green",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-          },
-          Object {
-            "exit_uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-            "name": "Other",
-            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-          },
-        ],
-        "default_category_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-        "operand": "@input.text",
-        "result_name": "Favorite Color",
-        "type": "switch",
-        "wait": Object {
-          "hint": Object {
-            "type": "digits",
-          },
-          "type": "msg",
+          "position": null,
+          "type": "wait_for_response",
         },
       },
-      "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "ui": Object {
-      "config": Object {
-        "cases": Object {},
-      },
-      "position": null,
-      "type": "wait_for_response",
-    },
-  },
-]
+  ],
+}
 `;

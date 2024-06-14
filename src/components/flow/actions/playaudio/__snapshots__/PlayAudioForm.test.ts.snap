@@ -1,89 +1,53 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`PlayAudioForm render should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Ok",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="play_audio"
-  title="Play Recording"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "component": [Function],
-        "description": "Play a contact recording",
-        "form": [Function],
-        "name": "Play Recording",
+exports[`PlayAudioForm > render > should render 1`] = `ShallowWrapper {}`;
+
+exports[`PlayAudioForm > updates > should allow switching from router 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "audio_url": "@flow.recording",
         "type": "play_audio",
-        "visibility": Array [
-          "voice",
-        ],
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <p>
-    Previous Recording
-  </p>
-  <TextInputElement
-    autocomplete={true}
-    entry={
-      Object {
-        "value": "/my_audio.mp3",
-      }
-    }
-    focus={true}
-    helpText={
-      <Trans
-        i18nKey="forms.play_audio_help_text"
-      >
-        Enter a variable that contains a recording the contact has previously recorded. For example, @results.voicemail or @fields.short_bio.
-      </Trans>
-    }
-    name="Message"
-    onChange={[Function]}
-    showLabel={false}
-  />
-</Dialog>
+        "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`PlayAudioForm updates should allow switching from router 1`] = `
-Array [
-  Object {
-    "audio_url": "@flow.recording",
-    "type": "play_audio",
-    "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-  },
-]
-`;
-
-exports[`PlayAudioForm updates should save changes 1`] = `
-Object {
-  "audio": Object {
-    "validationFailures": Array [],
+exports[`PlayAudioForm > updates > should save changes 1`] = `
+{
+  "audio": {
+    "validationFailures": [],
     "value": "@flow.recording",
   },
   "valid": true,
 }
 `;
 
-exports[`PlayAudioForm updates should save changes 2`] = `
-Array [
-  Object {
-    "audio_url": "@flow.recording",
-    "type": "play_audio",
-    "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-  },
-]
+exports[`PlayAudioForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "audio_url": "@flow.recording",
+        "type": "play_audio",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;

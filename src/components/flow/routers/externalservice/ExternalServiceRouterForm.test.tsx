@@ -7,7 +7,7 @@ import { RenderNode } from 'store/flowContext';
 import ExternalServiceRouterForm from './ExternalServiceRouterForm';
 import * as React from 'react';
 import { render, fireEvent, fireUnnnicInputChangeText } from 'test/utils';
-import { act, wait } from '@testing-library/react';
+import { act, waitFor } from '@testing-library/react';
 import { RouterFormProps } from '../../props';
 import userEvent from '@testing-library/user-event';
 
@@ -17,7 +17,6 @@ describe(ExternalServiceRouterForm.name, () => {
   describe('ChatGPT', () => {
     let externalServiceForm: RouterFormProps;
     beforeEach(() => {
-      // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
       externalServiceForm = getRouterFormProps({
         node: createCallExternalServiceNode(
           'chatgpt',
@@ -83,7 +82,7 @@ describe(ExternalServiceRouterForm.name, () => {
         // cannot save without the result field filled
         fireUnnnicInputChangeText(resultName, '');
         fireEvent.click(okButton);
-        expect(externalServiceForm.updateRouter).toBeCalledTimes(2);
+        expect(externalServiceForm.updateRouter).toBeCalledTimes(1);
 
         fireUnnnicInputChangeText(resultName, 'My External Service Result');
 
@@ -92,7 +91,8 @@ describe(ExternalServiceRouterForm.name, () => {
 
         fireEvent.click(okButton);
         expect(externalServiceForm.updateRouter).toHaveBeenCalled();
-        expect(externalServiceForm.updateRouter).toMatchCallSnapshot();
+        expect(externalServiceForm.updateRouter).toBeCalledTimes(2);
+        expect(externalServiceForm.updateRouter).toMatchSnapshot();
       });
     });
   });
@@ -100,7 +100,6 @@ describe(ExternalServiceRouterForm.name, () => {
   describe('Omie', () => {
     let externalServiceForm: RouterFormProps;
     beforeEach(() => {
-      // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
       externalServiceForm = getRouterFormProps({
         node: createCallExternalServiceNode(
           'omie',
@@ -117,8 +116,7 @@ describe(ExternalServiceRouterForm.name, () => {
         const { baseElement } = render(
           <ExternalServiceRouterForm {...externalServiceForm} />,
         );
-        await wait();
-        expect(baseElement).toMatchSnapshot();
+        await waitFor(() => expect(baseElement).toMatchSnapshot());
       });
     });
 
@@ -137,7 +135,7 @@ describe(ExternalServiceRouterForm.name, () => {
           <ExternalServiceRouterForm {...externalServiceForm} />,
         );
 
-        await wait();
+        await waitFor(() => expect(baseElement).toMatchSnapshot());
 
         userEvent.click(getByText('Omie dummy project'));
 
@@ -176,7 +174,7 @@ describe(ExternalServiceRouterForm.name, () => {
 
         fireEvent.click(okButton);
         expect(externalServiceForm.updateRouter).toHaveBeenCalled();
-        expect(externalServiceForm.updateRouter).toMatchCallSnapshot();
+        expect(externalServiceForm.updateRouter).toMatchSnapshot();
       });
     });
   });

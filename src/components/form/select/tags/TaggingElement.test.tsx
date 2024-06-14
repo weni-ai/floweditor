@@ -7,8 +7,8 @@ const taggingElementProps: TaggingElementProps = {
   entry: { value: ['Red', 'Green', 'Blue'] },
   prompt: 'Enter a Color',
   name: 'Color',
-  onCheckValid: jest.fn(),
-  onChange: jest.fn(),
+  onCheckValid: vi.fn(),
+  onChange: vi.fn(),
 };
 
 describe(TaggingElement.name, () => {
@@ -24,7 +24,7 @@ describe(TaggingElement.name, () => {
   /*describe("instance methods", () => {
     it("should handle updating tags", () => {
       const { instance, props } = setup(true, {
-        $merge: { onChange: jest.fn() }
+        $merge: { onChange: vi.fn() }
       });
       instance.handleUpdateTags([{ label: "Purple", value: "Purple" }]);
       expect(props.onChange).toHaveBeenCalledWith(["Purple"]);
@@ -32,7 +32,7 @@ describe(TaggingElement.name, () => {
 
     it("should call prop for valid prompt", () => {
       const components = setup(true, {
-        $merge: { onValidPrompt: jest.fn() }
+        $merge: { onValidPrompt: vi.fn() }
       });
 
       const instance: TaggingElement = components.instance;

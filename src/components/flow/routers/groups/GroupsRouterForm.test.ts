@@ -33,7 +33,7 @@ describe(GroupsRouterForm.name, () => {
       expect(instance.state).toMatchSnapshot();
 
       instance.getButtons().primary.onClick();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
 
     it('should cancel changes', () => {
