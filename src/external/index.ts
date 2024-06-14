@@ -62,7 +62,7 @@ export const saveRevision = (
   let patch = '0';
 
   // honor any existing patch increments
-  let release = definition.spec_version.split('.');
+  const release = definition.spec_version.split('.');
   if (release.length > 2) {
     patch = release[2];
   }

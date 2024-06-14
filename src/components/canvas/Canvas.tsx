@@ -153,8 +153,8 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       transformScale,
     } = this.getTransformOffsets();
 
-    let left = (-transformOffsetX + TRANSFORM_START_X) * (1 / transformScale);
-    let top = (-transformOffsetY + TRANSFORM_START_Y) * (1 / transformScale);
+    const left = (-transformOffsetX + TRANSFORM_START_X) * (1 / transformScale);
+    const top = (-transformOffsetY + TRANSFORM_START_Y) * (1 / transformScale);
 
     return { left, top };
   }
@@ -313,7 +313,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       maxZoom: 1,
       minZoom: 0.15,
       beforeMouseDown: () => {
-        var shouldIgnore = this.isInSelectState();
+        const shouldIgnore = this.isInSelectState();
         return shouldIgnore;
       },
       onDoubleClick: function() {
@@ -489,10 +489,12 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
         selected: 0,
       });
 
-      const searchInputElement = document.getElementById('searchBarInputElementDiv');
+      const searchInputElement = document.getElementById(
+        'searchBarInputElementDiv',
+      );
       if (searchInputElement) {
         const input = (searchInputElement.getElementsByClassName(
-          'input-itself'
+          'input-itself',
         )[0] as unknown) as HTMLTextAreaElement;
         input.focus();
       }
@@ -1000,7 +1002,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           let newPositions: { [uuid: string]: FlowPosition } = {};
 
           uuids.forEach((uuid: string) => {
-            let newPosition = addPosition(prevState.selected[uuid], delta);
+            const newPosition = addPosition(prevState.selected[uuid], delta);
 
             if (newPosition && newPosition.bottom! > lowestNode!) {
               lowestNode = newPosition.bottom;

@@ -131,7 +131,7 @@ export class TranslatorTab extends React.Component<
       ) {
         const typeConfig = getTypeConfig(getType(renderNode));
 
-        let translations: Translation[] = [];
+        const translations: Translation[] = [];
         if (this.state.translationFilters.categories) {
           const localizeableKeys = ['name'];
           renderNode.node.router.categories.forEach((category: Category) => {

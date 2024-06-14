@@ -1067,7 +1067,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   }
 
   private preloadBgImage() {
-    var img = new Image();
+    const img = new Image();
     img.src =
       'https://user-images.githubusercontent.com/30026625/242899357-3b7dd272-b2bf-4ac4-a4e1-aba24556a9f2.png';
   }
