@@ -1,7 +1,6 @@
-@import 'variables.module.scss';
-@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
+@import 'src/variables.module.scss';
 
-.search_card{
+.search_card {
     display: flex;
     align-items: center;
     width: auto;
@@ -17,36 +16,36 @@
     font-weight: $unnnic-font-weight-regular;
     color: $unnnic-color-neutral-dark;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
-    
-    .input{
+
+    .input {
         display: flex;
         width: 220px;
         padding-right: $unnnic-spacing-xs;
         outline: none;
     }
-    
-    .number{
+
+    .number {
         display: flex;
         justify-content: center;
         align-content: center;
         background-color: $unnnic-color-neutral-white;
     }
 
-    .buttons{
+    .buttons {
         display: flex;
         gap: $unnnic-spacing-nano;
         padding-right: $unnnic-spacing-xs;
     }
-    
 
-    .icon{
+
+    .icon {
         display: flex;
         height: 100%;
         align-items: center;
         padding-left: $unnnic-spacing-sm;
     }
 
-    .close{
+    .close {
         display: flex;
         align-content: center;
         justify-content: center;
@@ -56,16 +55,16 @@
     }
 }
 
-:global .Titlebar__filter{
+:global .Titlebar__filter {
     background: $unnnic-color-neutral-cleanest !important;
 }
 
-:global{
-    .unnnic-button{
+:global {
+    .unnnic-button {
         background: none;
     }
 
-    .unnnic-button:hover{
+    .unnnic-button:hover {
         background: $unnnic-color-neutral-light;
     }
 }

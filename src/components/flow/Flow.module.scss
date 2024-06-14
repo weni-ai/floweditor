@@ -1,8 +1,8 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 .new_updates {
 
-  > div {
+  >div {
     padding: $unnnic-spacing-stack-lg $unnnic-spacing-stack-md !important;
   }
 
@@ -59,14 +59,14 @@
     gap: $unnnic-spacing-stack-md;
     flex: 1;
 
-    > * {
+    >* {
       flex: 1;
 
       button {
         width: 100%;
       }
     }
-    
+
     .primary {
       background-color: $unnnic-color-brand-weni-soft;
     }
