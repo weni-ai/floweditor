@@ -1,9 +1,8 @@
-import 'material-symbols';
 import '@material-symbols/font-400';
 import './global.module.scss';
-import 'static/fonts/floweditor/style.css';
+import './static/fonts/floweditor/style.css';
 
-import '@weni/unnnic-system/dist/unnnic.css';
+import '@weni/unnnic-system/dist/style.css';
 
 import FlowEditor from 'components';
 import React from 'react';
@@ -13,7 +12,7 @@ import * as serviceWorker from './serviceWorker';
 import { setHTTPTimeout } from 'external';
 
 // bring in our temba-components if they aren't already registered
-var componentsExist =
+const componentsExist =
   document.body.innerHTML.indexOf('temba-components') > -1 ||
   document.body.innerHTML.indexOf('temba-modules') > -1;
 if (!componentsExist) {
@@ -21,7 +20,7 @@ if (!componentsExist) {
     console.log('Loading temba components');
   });
 }
-
+console.log('Loading flow editor');
 window.showFlowEditor = (ele, config) => {
   if (config.httpTimeout) {
     setHTTPTimeout(config.httpTimeout);
