@@ -13,10 +13,10 @@ import TextInputElement, {
 } from 'components/form/textinput/TextInputElement';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
-import { applyVueInReact } from 'vuereact-combined';
+import Unnnic from '@weni/unnnic-system';
+import { applyVueInReact } from 'veaury';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export interface Attachment {
   type: string;

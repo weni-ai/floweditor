@@ -16,15 +16,15 @@ import {
 } from 'store/thunks';
 
 import i18n from 'config/i18n';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 import styles from './Sidebar.module.scss';
 // @ts-ignore
-import { unnnicToolTip } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 import { MouseState } from 'store/editor';
 import SearchButton from './components/SearchButton';
 
-const UnnnicTooltip = applyVueInReact(unnnicToolTip);
+const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip);
 
 export interface SidebarStoreProps {
   onCopyClick: () => void;
