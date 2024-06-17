@@ -5,6 +5,7 @@
   position: relative;
   margin: 0px;
   overflow: hidden;
+  background: white;
 
   &:first-child {
     border-top-right-radius: $unnnic-border-radius-md;
@@ -22,6 +23,7 @@
       border-bottom-left-radius: 0;
     }
   }
+
   clear: both;
 }
 
@@ -52,8 +54,9 @@
   &.missing,
   &.enter_flow,
   &.call_external_service,
-  &.call_wenigpt,
-  &.send_msg_catalog {
+  &.send_msg_catalog,
+  &.send_whatsapp_msg,
+  &.call_wenigpt {
     font-family: $unnnic-font-family-secondary;
     font-size: $unnnic-font-size-body-md;
     line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
@@ -68,7 +71,10 @@
     text-underline-offset: 0.1875 * $unnnic-font-size; // 3px
   }
 
-  &.add_contact_groups, &.remove_contact_groups, &.call_classifier, &.call_wenigpt {
+  &.add_contact_groups,
+  &.remove_contact_groups,
+  &.call_classifier,
+  &.call_wenigpt {
     text-align: center;
   }
 
@@ -79,6 +85,11 @@
 
   &.send_msg_catalog {
     width: auto;
+  }
+
+  &.send_whatsapp_msg {
+    width: auto;
+    max-width: 267px;
   }
 
   &.send_broadcast,
@@ -92,6 +103,7 @@
   .overlay {
     display: block;
   }
+
   .body {
     background: #fff;
   }
@@ -139,10 +151,10 @@
 .selected {
   background: #EEFFFC !important;
 
-  > div {
+  >div {
     background: #EEFFFC !important;
 
-    > div {
+    >div {
       background: #EEFFFC !important;
     }
   }

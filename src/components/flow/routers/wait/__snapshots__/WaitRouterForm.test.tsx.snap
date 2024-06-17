@@ -148,8 +148,18 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  selected"
+                  class="option  "
                   data-option-index="1"
+                >
+                  <span
+                    class="name"
+                  >
+                    Send a WhatsApp message (New)
+                  </span>
+                </div>
+                <div
+                  class="option  selected"
+                  data-option-index="2"
                 >
                   <span
                     class="name"
@@ -159,7 +169,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="2"
+                  data-option-index="3"
                 >
                   <span
                     class="name"
@@ -169,7 +179,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="3"
+                  data-option-index="4"
                 >
                   <span
                     class="name"
@@ -179,7 +189,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="4"
+                  data-option-index="5"
                 >
                   <span
                     class="name"
@@ -189,7 +199,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="5"
+                  data-option-index="6"
                 >
                   <span
                     class="name"
@@ -199,7 +209,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="6"
+                  data-option-index="7"
                 >
                   <span
                     class="name"
@@ -209,7 +219,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="7"
+                  data-option-index="8"
                 >
                   <span
                     class="name"
@@ -219,7 +229,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="8"
+                  data-option-index="9"
                 >
                   <span
                     class="name"
@@ -229,7 +239,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="name"
@@ -239,7 +249,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="name"
@@ -249,7 +259,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="name"
@@ -259,7 +269,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="name"
@@ -269,7 +279,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="name"
@@ -279,7 +289,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="name"
@@ -289,7 +299,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="name"
@@ -299,7 +309,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="name"
@@ -309,7 +319,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="name"
@@ -319,7 +329,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="name"
@@ -329,7 +339,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="name"
@@ -339,7 +349,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="name"
@@ -349,7 +359,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="name"
@@ -359,7 +369,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="name"
@@ -369,7 +379,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="name"
@@ -379,7 +389,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="name"
@@ -389,7 +399,7 @@ exports[`WaitRouterForm should render a normal wait 1`] = `
                 </div>
                 <div
                   class="option  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="name"
@@ -622,7 +632,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -632,7 +642,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -642,7 +652,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -652,7 +662,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -662,7 +672,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -672,7 +682,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -682,7 +692,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -692,7 +702,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -702,7 +712,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -712,7 +722,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -722,7 +732,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -732,7 +742,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -742,7 +752,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -752,7 +762,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -762,7 +772,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -772,7 +782,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -782,7 +792,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -792,7 +802,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -802,7 +812,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -812,7 +822,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -822,7 +832,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -832,7 +842,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -842,7 +852,7 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -852,12 +862,22 @@ exports[`WaitRouterForm should render wait for audio with previous name 1`] = `
                   <span
                     class="name"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="option  "
                   data-option-index="25"
+                >
+                  <span
+                    class="name"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
                 >
                   <span
                     class="name"

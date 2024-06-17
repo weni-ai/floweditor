@@ -1,0 +1,9 @@
+@import 'variables.module.scss';
+
+.upload_button {
+  margin-top: $unnnic-spacing-md;
+
+  button {
+    height: 36px !important;
+  }
+}
