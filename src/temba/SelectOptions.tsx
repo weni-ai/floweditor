@@ -28,6 +28,7 @@ export interface SelectOptionsProps {
   multi?: boolean;
   createPrefix?: string;
   testId: string;
+  id?: string;
 }
 
 export interface SelectOptionsState {
@@ -330,6 +331,7 @@ export default class SelectOptions extends React.Component<
     return (
       <div
         data-testid={this.props.testId}
+        id={this.props.id || ''}
         ref={this.optionsRef}
         className={styles.options_wrapper}
         style={{

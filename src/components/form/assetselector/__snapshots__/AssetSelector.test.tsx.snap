@@ -9,6 +9,7 @@ exports[`AssetSelector > renders 1`] = `
       <div
         class="_select_wrapper_4cce75"
         data-testid="temba_select_recipients"
+        id="temba_select_recipients"
       >
         <div>
           <div

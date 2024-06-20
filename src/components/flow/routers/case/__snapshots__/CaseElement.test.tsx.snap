@@ -37,6 +37,7 @@ exports[`CaseElement > operator changes > should handle updates 1`] = `
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
+            id="temba_select_operator"
           >
             <div>
               <div
@@ -95,6 +96,7 @@ exports[`CaseElement > operator changes > should handle updates 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_operator"
+              id="temba_select_options_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -311,6 +313,7 @@ exports[`CaseElement > operator changes > should handle updates 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_operator"
+              id="temba_select_expressions_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -441,6 +444,7 @@ exports[`CaseElement > operator changes > should not update exit if it has been 
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
+            id="temba_select_operator"
           >
             <div>
               <div
@@ -499,6 +503,7 @@ exports[`CaseElement > operator changes > should not update exit if it has been 
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_operator"
+              id="temba_select_options_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -715,6 +720,7 @@ exports[`CaseElement > operator changes > should not update exit if it has been 
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_operator"
+              id="temba_select_expressions_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -845,6 +851,7 @@ exports[`CaseElement > operator changes > should should set arguments for numeri
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
+            id="temba_select_operator"
           >
             <div>
               <div
@@ -903,6 +910,7 @@ exports[`CaseElement > operator changes > should should set arguments for numeri
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_operator"
+              id="temba_select_options_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -1119,6 +1127,7 @@ exports[`CaseElement > operator changes > should should set arguments for numeri
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_operator"
+              id="temba_select_expressions_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -1167,6 +1176,7 @@ exports[`CaseElement > operator changes > should should set arguments for numeri
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_arguments"
+                id=""
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1218,6 +1228,7 @@ exports[`CaseElement > operator changes > should should set arguments for numeri
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_arguments"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1346,6 +1357,7 @@ exports[`CaseElement > render > renders no argument rules 1`] = `
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
+            id="temba_select_operator"
           >
             <div>
               <div
@@ -1750,6 +1762,7 @@ exports[`CaseElement > render > should render empty case 1`] = `
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
+            id="temba_select_operator"
           >
             <div>
               <div
@@ -2072,6 +2085,7 @@ exports[`CaseElement > render > should render empty case 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_arguments"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -2200,6 +2214,7 @@ exports[`CaseElement > update > handles argument change 1`] = `
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
+            id="temba_select_operator"
           >
             <div>
               <div
@@ -2650,6 +2665,7 @@ exports[`CaseElement > update > handles multiple argument change 1`] = `
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
+            id="temba_select_operator"
           >
             <div>
               <div
@@ -2708,6 +2724,7 @@ exports[`CaseElement > update > handles multiple argument change 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_operator"
+              id="temba_select_options_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -2924,6 +2941,7 @@ exports[`CaseElement > update > handles multiple argument change 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_operator"
+              id="temba_select_expressions_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -2972,6 +2990,7 @@ exports[`CaseElement > update > handles multiple argument change 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_arguments"
+                id=""
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>

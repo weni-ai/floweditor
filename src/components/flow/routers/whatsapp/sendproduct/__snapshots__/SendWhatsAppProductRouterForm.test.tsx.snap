@@ -43,6 +43,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -117,7 +118,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -127,7 +128,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -137,7 +138,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -147,7 +148,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -157,7 +158,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -167,7 +168,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -177,7 +178,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -187,7 +188,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -197,7 +198,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -207,7 +208,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -217,7 +218,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -227,7 +228,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -237,7 +238,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -247,7 +248,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -257,7 +258,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -267,7 +268,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -277,7 +278,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -287,7 +288,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -297,7 +298,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -307,7 +308,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -317,7 +318,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -327,7 +328,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -337,7 +338,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -347,7 +348,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -356,6 +357,16 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
                   >
                     Split by URN type
                   </span>
@@ -542,6 +553,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -740,6 +752,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -814,7 +827,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -824,7 +837,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -834,7 +847,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -844,7 +857,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -854,7 +867,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -864,7 +877,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -874,7 +887,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -884,7 +897,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -894,7 +907,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -904,7 +917,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -914,7 +927,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -924,7 +937,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -934,7 +947,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -944,7 +957,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -954,7 +967,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -964,7 +977,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -974,7 +987,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -984,7 +997,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -994,7 +1007,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -1004,7 +1017,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -1014,7 +1027,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -1024,7 +1037,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -1034,7 +1047,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -1044,7 +1057,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -1053,6 +1066,16 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
                   >
                     Split by URN type
                   </span>
@@ -1239,6 +1262,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1437,6 +1461,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -1492,6 +1517,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1511,7 +1537,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -1521,7 +1547,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -1531,7 +1557,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -1541,7 +1567,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -1551,7 +1577,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -1561,7 +1587,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -1571,7 +1597,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -1581,7 +1607,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -1591,7 +1617,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -1601,7 +1627,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -1611,7 +1637,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -1621,7 +1647,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -1631,7 +1657,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -1641,7 +1667,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -1651,7 +1677,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -1661,7 +1687,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -1671,7 +1697,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -1681,7 +1707,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -1691,7 +1717,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -1701,7 +1727,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -1711,7 +1737,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -1721,7 +1747,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -1731,7 +1757,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -1741,7 +1767,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -1751,6 +1777,16 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
+                  >
                     Split by URN type
                   </span>
                 </div>
@@ -1758,6 +1794,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1936,6 +1973,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2022,6 +2060,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_Header"
+                      id=""
                       style="margin-top: 0px; width: 0px; display: none;"
                     />
                   </div>
@@ -2064,6 +2103,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Body"
+                    id=""
                     style="margin-top: 1px; width: -24px; display: none;"
                   />
                 </div>
@@ -2114,6 +2154,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Footer (optional)"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -2164,6 +2205,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Action button title"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -2422,6 +2464,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -2496,7 +2539,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -2506,7 +2549,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -2516,7 +2559,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -2526,7 +2569,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -2536,7 +2579,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -2546,7 +2589,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -2556,7 +2599,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -2566,7 +2609,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -2576,7 +2619,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -2586,7 +2629,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -2596,7 +2639,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -2606,7 +2649,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -2616,7 +2659,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -2626,7 +2669,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -2636,7 +2679,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -2646,7 +2689,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -2656,7 +2699,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -2666,7 +2709,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -2676,7 +2719,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -2686,7 +2729,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -2696,7 +2739,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -2706,7 +2749,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -2716,7 +2759,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -2726,7 +2769,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -2735,6 +2778,16 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
                   >
                     Split by URN type
                   </span>
@@ -2921,6 +2974,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -3119,6 +3173,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -3174,6 +3229,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -3193,7 +3249,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -3203,7 +3259,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -3213,7 +3269,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -3223,7 +3279,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -3233,7 +3289,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -3243,7 +3299,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -3253,7 +3309,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -3263,7 +3319,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -3273,7 +3329,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -3283,7 +3339,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -3293,7 +3349,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -3303,7 +3359,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -3313,7 +3369,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -3323,7 +3379,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -3333,7 +3389,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -3343,7 +3399,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -3353,7 +3409,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -3363,7 +3419,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -3373,7 +3429,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -3383,7 +3439,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -3393,7 +3449,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -3403,7 +3459,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -3413,7 +3469,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -3423,7 +3479,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -3433,6 +3489,16 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <span
                     class="_name_08dd12"
                   >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
+                  >
                     Split by URN type
                   </span>
                 </div>
@@ -3440,6 +3506,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -3618,6 +3685,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -3674,6 +3742,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Custom Search URL"
+                    id=""
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -3731,6 +3800,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_Seller ID (optional)"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -3785,6 +3855,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_Postal Code (optional)"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -3874,6 +3945,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_Header"
+                      id=""
                       style="margin-top: 0px; width: 0px; display: none;"
                     />
                   </div>
@@ -3916,6 +3988,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Body"
+                    id=""
                     style="margin-top: 1px; width: -24px; display: none;"
                   />
                 </div>
@@ -3966,6 +4039,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Footer (optional)"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -4016,6 +4090,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Action button title"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -4274,6 +4349,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -4348,7 +4424,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -4358,7 +4434,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -4368,7 +4444,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -4378,7 +4454,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -4388,7 +4464,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -4398,7 +4474,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -4408,7 +4484,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -4418,7 +4494,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -4428,7 +4504,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -4438,7 +4514,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -4448,7 +4524,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -4458,7 +4534,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -4468,7 +4544,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -4478,7 +4554,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -4488,7 +4564,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -4498,7 +4574,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -4508,7 +4584,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -4518,7 +4594,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -4528,7 +4604,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -4538,7 +4614,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -4548,7 +4624,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -4558,7 +4634,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -4568,7 +4644,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -4578,7 +4654,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -4587,6 +4663,16 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
                   >
                     Split by URN type
                   </span>
@@ -4738,6 +4824,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div>
                 <div
@@ -4798,7 +4885,8 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_expressions_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -4996,6 +5084,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -5070,7 +5159,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -5080,7 +5169,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -5090,7 +5179,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -5100,7 +5189,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -5110,7 +5199,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -5120,7 +5209,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -5130,7 +5219,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -5140,7 +5229,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -5150,7 +5239,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -5160,7 +5249,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -5170,7 +5259,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -5180,7 +5269,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -5190,7 +5279,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -5200,7 +5289,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -5210,7 +5299,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -5220,7 +5309,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -5230,7 +5319,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -5240,7 +5329,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -5250,7 +5339,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -5260,7 +5349,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -5270,7 +5359,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -5280,7 +5369,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -5290,7 +5379,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -5300,7 +5389,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -5309,6 +5398,16 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
                   >
                     Split by URN type
                   </span>
@@ -5495,6 +5594,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Enter an expression to be used as input"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -5693,6 +5793,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -5767,7 +5868,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -5777,7 +5878,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -5787,7 +5888,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -5797,7 +5898,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -5807,7 +5908,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -5817,7 +5918,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -5827,7 +5928,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -5837,7 +5938,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -5847,7 +5948,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -5857,7 +5958,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -5867,7 +5968,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -5877,7 +5978,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -5887,7 +5988,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -5897,7 +5998,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -5907,7 +6008,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -5917,7 +6018,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -5927,7 +6028,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -5937,7 +6038,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -5947,7 +6048,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -5957,7 +6058,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -5967,7 +6068,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -5977,7 +6078,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -5987,7 +6088,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -5997,7 +6098,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -6006,6 +6107,16 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
                   >
                     Split by URN type
                   </span>
@@ -6157,6 +6268,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div>
                 <div
@@ -6217,7 +6329,8 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_expressions_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -6415,6 +6528,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -6489,7 +6603,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -6499,7 +6613,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -6509,7 +6623,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -6519,7 +6633,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -6529,7 +6643,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -6539,7 +6653,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -6549,7 +6663,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -6559,7 +6673,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -6569,7 +6683,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -6579,7 +6693,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -6589,7 +6703,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -6599,7 +6713,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -6609,7 +6723,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -6619,7 +6733,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -6628,6 +6742,16 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="16"
+                >
+                  <span
+                    class="name"
                   >
                     Start somebody else in a flow
                   </span>
@@ -6879,6 +7003,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div>
                 <div
@@ -6939,7 +7064,8 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_expressions_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -7137,6 +7263,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -7192,6 +7319,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -7211,7 +7339,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -7221,7 +7349,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -7231,7 +7359,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -7241,7 +7369,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -7251,7 +7379,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -7261,7 +7389,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -7271,7 +7399,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -7281,7 +7409,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -7291,7 +7419,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -7301,7 +7429,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -7311,7 +7439,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -7321,7 +7449,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -7331,7 +7459,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -7341,7 +7469,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -7351,7 +7479,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -7361,7 +7489,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -7371,7 +7499,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -7381,7 +7509,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -7391,7 +7519,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -7401,7 +7529,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -7411,7 +7539,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -7421,7 +7549,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -7431,7 +7559,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -7441,7 +7569,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -7451,6 +7579,16 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
+                  >
                     Split by URN type
                   </span>
                 </div>
@@ -7458,6 +7596,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -7601,6 +7740,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div>
                 <div
@@ -7656,6 +7796,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_manually_select_products"
+                id="temba_select_options_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -7767,6 +7908,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_manually_select_products"
+                id="temba_select_expressions_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -7895,6 +8037,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_Header"
+                      id=""
                       style="margin-top: 0px; width: 0px; display: none;"
                     />
                   </div>
@@ -7937,6 +8080,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Body"
+                    id=""
                     style="margin-top: 1px; width: -24px; display: none;"
                   />
                 </div>
@@ -7987,6 +8131,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Footer (optional)"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -8037,6 +8182,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Action button title"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -8211,6 +8357,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -8266,6 +8413,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -8285,7 +8433,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -8295,7 +8443,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -8305,7 +8453,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -8315,7 +8463,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -8325,7 +8473,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -8335,7 +8483,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -8345,7 +8493,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -8355,7 +8503,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -8365,7 +8513,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -8375,7 +8523,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -8385,7 +8533,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -8395,7 +8543,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -8405,7 +8553,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -8415,7 +8563,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -8425,7 +8573,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -8435,7 +8583,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -8445,7 +8593,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -8455,7 +8603,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -8465,7 +8613,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -8475,7 +8623,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -8485,7 +8633,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -8495,7 +8643,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -8505,7 +8653,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -8515,7 +8663,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -8525,6 +8673,16 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
+                  >
                     Split by URN type
                   </span>
                 </div>
@@ -8532,6 +8690,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -8789,6 +8948,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_Header"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -8831,6 +8991,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Body"
+                    id=""
                     style="margin-top: 1px; width: -24px; display: none;"
                   />
                 </div>
@@ -8881,6 +9042,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Footer (optional)"
+                    id=""
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -8931,6 +9093,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Action button title"
+                    id=""
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -8988,7 +9151,12 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <!---->
                   <!---->
                 </div>
-                <!---->
+                <p
+                  class="unnnic-form__message"
+                  data-v-48c0c241=""
+                >
+                  Result Name is required
+                </p>
               </div>
             </div>
           </div>
@@ -9192,6 +9360,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -9266,7 +9435,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -9276,7 +9445,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -9286,7 +9455,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -9296,7 +9465,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -9306,7 +9475,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -9316,7 +9485,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -9326,7 +9495,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -9336,7 +9505,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -9346,7 +9515,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -9356,7 +9525,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -9366,7 +9535,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -9376,7 +9545,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -9386,7 +9555,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -9396,7 +9565,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -9406,7 +9575,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -9416,7 +9585,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -9426,7 +9595,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -9436,7 +9605,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -9446,7 +9615,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -9456,7 +9625,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -9466,7 +9635,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -9476,7 +9645,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -9486,7 +9655,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -9496,7 +9665,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -9505,6 +9674,16 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
                   >
                     Split by URN type
                   </span>
@@ -9656,6 +9835,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div>
                 <div
@@ -9716,7 +9896,8 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_expressions_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -9914,6 +10095,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -9969,6 +10151,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -9988,7 +10171,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -9998,7 +10181,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -10008,7 +10191,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -10018,7 +10201,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -10028,7 +10211,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -10038,7 +10221,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -10048,7 +10231,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -10058,7 +10241,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -10068,7 +10251,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -10078,7 +10261,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -10088,7 +10271,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -10098,7 +10281,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -10108,7 +10291,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -10118,7 +10301,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -10128,7 +10311,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -10138,7 +10321,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -10148,7 +10331,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -10158,7 +10341,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -10168,7 +10351,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -10178,7 +10361,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -10188,7 +10371,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -10198,7 +10381,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -10208,7 +10391,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -10218,7 +10401,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
@@ -10228,6 +10411,16 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <span
                     class="_name_08dd12"
                   >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="name"
+                  >
                     Split by URN type
                   </span>
                 </div>
@@ -10235,6 +10428,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -10378,6 +10572,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_manually_select_products"
+              id="temba_select_manually_select_products"
             >
               <div>
                 <div
@@ -10433,6 +10628,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_manually_select_products"
+                id="temba_select_options_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -10544,6 +10740,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_manually_select_products"
+                id="temba_select_expressions_manually_select_products"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -10672,6 +10869,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_Header"
+                      id=""
                       style="margin-top: 0px; width: 0px; display: none;"
                     />
                   </div>
@@ -10714,6 +10912,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Body"
+                    id=""
                     style="margin-top: 1px; width: -24px; display: none;"
                   />
                 </div>
@@ -10764,6 +10963,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Footer (optional)"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>
@@ -10814,6 +11014,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_completion_options_Action button title"
+                    id=""
                     style="margin-top: 0px; width: 0px; display: none;"
                   />
                 </div>

@@ -153,6 +153,10 @@
     "call_wenigpt": {
       "name": "Llame a WeniGPT",
       "description": "Llamar a WeniGPT"
+    },
+    "send_whatsapp_msg": {
+      "name": "Enviar mensaje de WhatsApp",
+      "description": "Enviar un mensaje de WhatsApp"
     }
   },
   "add": "Añadir",
@@ -477,7 +481,27 @@
     "custom_search": "Búsqueda personalizada",
     "custom_search_api_url": "URL de API de búsqueda personalizada",
     "seller_id": "ID de vendedor (opcional)",
-    "postal_code": "Código postal (opcional)"
+    "postal_code": "Código postal (opcional)",
+    "header_optional": "Encabezado (opcional)",
+    "replies_label": "Añade hasta 3 respuestas rápidas",
+    "reply": "Respuesta",
+    "list_items": "Opciones de lista",
+    "header_text": "Texto de cabecera",
+    "attachment_placeholder": "Pegue una URL o envíe un archivo",
+    "attachment_optional": "Archivo (opcional)",
+    "message_type": "Tipo de mensaje",
+    "interactions": "Interacciones",
+    "list_option": "Opción",
+    "title": "Título",
+    "description": "Descripción",
+    "description_optional": "Descripción (opcional)",
+    "remove": "Retirar",
+    "options_label": "Añade hasta 10 opciones",
+    "list_button_text_placeholder": "Texto del botón de acción",
+    "list_button_text_optional": "Texto del botón de acción (opcional)",
+    "ex_citrus_and_sweet": "Ej: Cítricos y dulces",
+    "ex_orange": "Ej: Naranja",
+    "ex_menu": "Ej: Menú"
   },
   "issues": {
     "header": "Problemas de Flujo",
@@ -695,5 +719,29 @@
   "you_can_also_delete_cards_pressing_the_keys": "También puedes eliminar bloques usando las teclas",
   "or": "o",
   "new": "Nuevo",
-  "to_flow_start": "Inicio del flujo"
+  "to_flow_start": "Inicio del flujo",
+  "whatsapp_messages": {
+    "simple_message": "Mensaje sencillo",
+    "interactive_message": "Mensaje interactivo"
+  },
+  "whatsapp_headers": {
+    "text": "Texto",
+    "media": "Archivo"
+  },
+  "whatsapp_interactions": {
+    "list": "Lista de opciones",
+    "list_description": "Facilite las elecciones con una lista de hasta 10 opciones interactivas",
+    "none": "No se seleccionaron interacciones",
+    "replies": "Respuestas rápidas",
+    "replies_description": "Crea hasta 3 respuestas rápidas con mensajes predefinidos",
+    "location": "Ubicación",
+    "location_description": "Preguntar a los usuarios su ubicación para facilitar el servicio",
+    "request_location": "Solicitar ubicación"
+  },
+  "whatsapp_msg": {
+    "list_items_required": "Se debe completar al menos una opción de lista",
+    "replies_required": "Se debe completar al menos una respuesta rápida",
+    "attachment_url": "URL del archivo",
+    "configure_your_message": "Configura tu mensaje"
+  }
 }

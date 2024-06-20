@@ -66,6 +66,7 @@ export interface AssetSelectorProps extends FormElementProps {
 
   nameKey?: string;
   valueKey?: string;
+  queryParam?: string;
 }
 
 interface AssetSelectorState {
@@ -262,6 +263,8 @@ export default class AssetSelector extends React.Component<
           queryParam={
             this.props.assets && this.props.assets.type === AssetType.Contact
               ? 'search'
+              : this.props.assets && this.props.queryParam
+              ? this.props.queryParam
               : null
           }
         />

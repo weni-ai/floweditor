@@ -37,6 +37,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -92,6 +93,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -111,7 +113,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -121,7 +123,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -131,7 +133,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -141,7 +143,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -151,7 +153,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -161,7 +163,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -171,7 +173,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -181,7 +183,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -191,7 +193,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -201,7 +203,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -211,7 +213,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -221,7 +223,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -231,7 +233,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -240,6 +242,16 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="name"
                   >
                     Enter another flow
                   </span>
@@ -358,6 +370,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -374,6 +387,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_labels"
+            id="temba_select_labels"
           >
             <div>
               <div
@@ -429,11 +443,13 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_labels"
+              id="temba_select_options_labels"
               style="margin-top: 0px; width: -24px; display: none;"
             />
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_labels"
+              id="temba_select_expressions_labels"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -609,6 +625,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -683,7 +700,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -693,7 +710,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -703,7 +720,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -712,6 +729,16 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Call WeniGPT (New)
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="name"
                   >
                     Send somebody else a message
                   </span>
@@ -946,6 +973,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_labels"
+            id="temba_select_labels"
           >
             <div>
               <div

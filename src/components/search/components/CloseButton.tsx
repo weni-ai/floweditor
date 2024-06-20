@@ -10,8 +10,7 @@ import { CloseIcon } from 'pureIcons/CloseIcon';
 export enum ButtonTypes {
   primary = 'primary',
   secondary = 'secondary',
-  tertiary = 'terciary',
-  ghost = 'ghost',
+  tertiary = 'tertiary',
 }
 export interface ButtonProps {
   name: string;

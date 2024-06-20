@@ -47,6 +47,7 @@ exports[`CaseList > render > should render empty list 1`] = `
                 <div
                   class="_select_wrapper_4cce75"
                   data-testid="temba_select_operator"
+                  id="temba_select_operator"
                 >
                   <div>
                     <div
@@ -369,6 +370,7 @@ exports[`CaseList > render > should render empty list 1`] = `
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_arguments"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -510,6 +512,7 @@ exports[`CaseList > render > should render list of cases 1`] = `
                 <div
                   class="_select_wrapper_4cce75"
                   data-testid="temba_select_operator"
+                  id="temba_select_operator"
                 >
                   <div>
                     <div
@@ -832,6 +835,7 @@ exports[`CaseList > render > should render list of cases 1`] = `
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_arguments"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -957,6 +961,7 @@ exports[`CaseList > render > should render list of cases 1`] = `
                 <div
                   class="_select_wrapper_4cce75"
                   data-testid="temba_select_operator"
+                  id="temba_select_operator"
                 >
                   <div>
                     <div
@@ -1279,6 +1284,7 @@ exports[`CaseList > render > should render list of cases 1`] = `
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_arguments"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -1404,6 +1410,7 @@ exports[`CaseList > render > should render list of cases 1`] = `
                 <div
                   class="_select_wrapper_4cce75"
                   data-testid="temba_select_operator"
+                  id="temba_select_operator"
                 >
                   <div>
                     <div
@@ -1726,6 +1733,7 @@ exports[`CaseList > render > should render list of cases 1`] = `
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_arguments"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -1867,6 +1875,7 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                 <div
                   class="_select_wrapper_4cce75"
                   data-testid="temba_select_operator"
+                  id="temba_select_operator"
                 >
                   <div>
                     <div
@@ -1925,6 +1934,7 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_select_options_operator"
+                    id="temba_select_options_operator"
                     style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
@@ -2141,6 +2151,7 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_select_expressions_operator"
+                    id="temba_select_expressions_operator"
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -2189,6 +2200,7 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_arguments"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -2314,6 +2326,7 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                 <div
                   class="_select_wrapper_4cce75"
                   data-testid="temba_select_operator"
+                  id="temba_select_operator"
                 >
                   <div>
                     <div
@@ -2636,6 +2649,7 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_arguments"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -2777,6 +2791,7 @@ exports[`CaseList > updates > should remove cases 1`] = `
                 <div
                   class="_select_wrapper_4cce75"
                   data-testid="temba_select_operator"
+                  id="temba_select_operator"
                 >
                   <div>
                     <div
@@ -3099,6 +3114,7 @@ exports[`CaseList > updates > should remove cases 1`] = `
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_arguments"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -3224,6 +3240,7 @@ exports[`CaseList > updates > should remove cases 1`] = `
                 <div
                   class="_select_wrapper_4cce75"
                   data-testid="temba_select_operator"
+                  id="temba_select_operator"
                 >
                   <div>
                     <div
@@ -3546,6 +3563,7 @@ exports[`CaseList > updates > should remove cases 1`] = `
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_arguments"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -3687,6 +3705,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                 <div
                   class="_select_wrapper_4cce75"
                   data-testid="temba_select_operator"
+                  id="temba_select_operator"
                 >
                   <div>
                     <div
@@ -3745,6 +3764,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_select_options_operator"
+                    id="temba_select_options_operator"
                     style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
@@ -3961,6 +3981,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_select_expressions_operator"
+                    id="temba_select_expressions_operator"
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -4009,6 +4030,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_arguments"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -4134,6 +4156,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                 <div
                   class="_select_wrapper_4cce75"
                   data-testid="temba_select_operator"
+                  id="temba_select_operator"
                 >
                   <div>
                     <div
@@ -4192,6 +4215,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_select_options_operator"
+                    id="temba_select_options_operator"
                     style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
@@ -4408,6 +4432,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_select_expressions_operator"
+                    id="temba_select_expressions_operator"
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -4456,6 +4481,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_arguments"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>
@@ -4581,6 +4607,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                 <div
                   class="_select_wrapper_4cce75"
                   data-testid="temba_select_operator"
+                  id="temba_select_operator"
                 >
                   <div>
                     <div
@@ -4639,6 +4666,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_select_options_operator"
+                    id="temba_select_options_operator"
                     style="margin-top: 0px; width: -24px; display: none;"
                   >
                     <div
@@ -4855,6 +4883,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                   <div
                     class="_options_wrapper_08dd12"
                     data-testid="temba_select_expressions_operator"
+                    id="temba_select_expressions_operator"
                     style="margin-top: 0px; width: -24px; display: none;"
                   />
                 </div>
@@ -4903,6 +4932,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                     <div
                       class="_options_wrapper_08dd12"
                       data-testid="temba_completion_options_arguments"
+                      id=""
                       style="margin-top: 0px; width: -24px; display: none;"
                     />
                   </div>

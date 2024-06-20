@@ -37,6 +37,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -111,7 +112,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -121,7 +122,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -131,7 +132,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -141,7 +142,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -151,7 +152,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -161,7 +162,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -171,7 +172,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -180,6 +181,16 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="name"
                   >
                     Remove the contact from a group
                   </span>
@@ -374,6 +385,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div>
               <div
@@ -493,6 +505,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_channel"
+              id="temba_select_channel"
             >
               <div>
                 <div
@@ -674,6 +687,7 @@ exports[`UpdateContactForm > should render field 1`] = `
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -748,7 +762,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -758,7 +772,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -768,7 +782,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -778,7 +792,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -788,7 +802,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -798,7 +812,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -808,7 +822,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -817,6 +831,16 @@ exports[`UpdateContactForm > should render field 1`] = `
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="name"
                   >
                     Remove the contact from a group
                   </span>
@@ -1011,6 +1035,7 @@ exports[`UpdateContactForm > should render field 1`] = `
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div>
               <div
@@ -1165,6 +1190,7 @@ exports[`UpdateContactForm > should render field 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Field Value"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -1275,6 +1301,7 @@ exports[`UpdateContactForm > should render language 1`] = `
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -1349,7 +1376,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -1359,7 +1386,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -1369,7 +1396,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -1379,7 +1406,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -1389,7 +1416,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -1399,7 +1426,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -1409,7 +1436,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -1418,6 +1445,16 @@ exports[`UpdateContactForm > should render language 1`] = `
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="name"
                   >
                     Remove the contact from a group
                   </span>
@@ -1612,6 +1649,7 @@ exports[`UpdateContactForm > should render language 1`] = `
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div>
               <div
@@ -1731,6 +1769,7 @@ exports[`UpdateContactForm > should render language 1`] = `
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_language"
+              id="temba_select_language"
             >
               <div>
                 <div
@@ -1915,6 +1954,7 @@ exports[`UpdateContactForm > should render name 1`] = `
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -1989,7 +2029,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -1999,7 +2039,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -2009,7 +2049,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -2019,7 +2059,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -2029,7 +2069,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -2039,7 +2079,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -2049,7 +2089,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -2058,6 +2098,16 @@ exports[`UpdateContactForm > should render name 1`] = `
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="name"
                   >
                     Remove the contact from a group
                   </span>
@@ -2252,6 +2302,7 @@ exports[`UpdateContactForm > should render name 1`] = `
           <div
             class="_select_wrapper_4cce75"
             data-testid="temba_select_select_what_to_update"
+            id="temba_select_select_what_to_update"
           >
             <div>
               <div
@@ -2406,6 +2457,7 @@ exports[`UpdateContactForm > should render name 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Enter a new contact name"
+                id=""
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>

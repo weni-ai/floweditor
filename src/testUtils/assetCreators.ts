@@ -63,8 +63,9 @@ import {
   HintTypes,
   CallClassifier,
   CallExternalService,
-  CallWeniGPT,
   SendWhatsAppProduct,
+  SendWhatsAppMsg,
+  CallWeniGPT,
 } from 'flowTypes';
 import Localization from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
@@ -76,6 +77,12 @@ import {
   ProductSearchType,
   ProductViewSettings,
 } from '../components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+import {
+  WhatsAppHeaderType,
+  WhatsAppInteractionType,
+  WhatsAppListItem,
+  WhatsAppMessageType,
+} from '../components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 const { results: groupsResults } = require('test/assets/groups.json');
 const languagesResults = require('test/assets/languages.json');
@@ -364,6 +371,45 @@ export const createSetRunResultAction = ({
   value,
   category,
   type: Types.set_run_result,
+});
+
+export const createSendWhatsAppMsgAction = ({
+  uuid = utils.createUUID(),
+  text = '',
+  attachment = null,
+  messageType = WhatsAppMessageType.SIMPLE,
+  header_type = WhatsAppHeaderType.MEDIA,
+  header_text = '',
+  footer = '',
+  interaction_type = WhatsAppInteractionType.LIST,
+  button_text = '',
+  list_items = [],
+  quick_replies = [],
+}: {
+  uuid?: string;
+  text?: string;
+  attachment?: string;
+  messageType?: WhatsAppMessageType;
+  header_type?: WhatsAppHeaderType;
+  header_text?: string;
+  footer?: string;
+  interaction_type?: WhatsAppInteractionType;
+  button_text?: string;
+  list_items?: WhatsAppListItem[];
+  quick_replies?: string[];
+} = {}): SendWhatsAppMsg => ({
+  type: Types.send_msg,
+  uuid,
+  text,
+  messageType,
+  attachment,
+  header_type,
+  header_text,
+  footer,
+  interaction_type,
+  button_text,
+  list_items,
+  quick_replies,
 });
 
 export const createCallWeniGPTAction = ({

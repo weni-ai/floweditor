@@ -81,6 +81,8 @@
     padding-top: 10px;
     padding-top: 10px;
     color: $text_color;
+    border-color: $blue_selected;
+    background: $blue_selected;
     font-weight: 500;
 
     &.first_option {
@@ -122,6 +124,7 @@
   background: $light_gray_2;
   border-radius: 4px;
   z-index: $z_completion;
+  border: 1px solid $light_gray;
   padding-bottom: 10px;
   margin-top: 10px;
   box-shadow: $shadow_down;
@@ -185,6 +188,7 @@
   font-family: 'Roboto', sans-serif;
   font-size: 14px !important;
   font-weight: 300 !important;
+  border: 1px solid $light_gray;
   box-sizing: border-box !important;
   width: 100%;
   letter-spacing: 0.03em !important;
@@ -193,6 +197,7 @@
 
 input.textinput {
   outline: none !important;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 20px 0px, rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
   padding: 10px 10px !important;
   height: 38px !important;
   vertical-align: top;
@@ -201,6 +206,8 @@ input.textinput {
 
   &:focus {
     outline: none;
+    border: 1px solid rgb(164, 202, 254) !important;
+    box-shadow: var(--widget-box-shadow-focused) !important;
   }
 
   &::-webkit-input-placeholder {
@@ -227,6 +234,7 @@ textarea.textinput {
   resize: none !important;
   width: 100%;
   outline: none;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 20px 0px, rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
 
   &:focus {
     outline: none;

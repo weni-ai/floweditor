@@ -1,3 +1,13 @@
+2.15.0
+----------
+- Feat: Send WhatsApp Message card
+
+2.14.0
+----------
+- Feat: Search whatsapp product by title
+- Feat: Add highlight to searched words
+- Fix: Navigation through cards continuously
+
 2.13.1
 ----------
 - Fix: Set focus in text input
@@ -7,21 +17,17 @@
 2.13.0
 ----------
 - Feat: Search Bar
-
 2.12.0
 ----------
 - Refactor: Remove unnnic button next usage
 - Feat: VTEX search with postal code
-
 2.11.1
 ----------
 - Fix: Remove external service empty parameters
 - Feat: Update smart argument and category validations
-
 2.11.0
 ----------
 Feat: Zeroshot description alert
-
 2.10.4
 ----------
 Fix: Add wenigpt action to result listing condition

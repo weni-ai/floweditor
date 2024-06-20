@@ -57,7 +57,6 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
 
   private handleInput(value: string) {
     const nodes = this.findNodes(value);
-
     this.props.handleSearchChange({
       isSearchOpen: true,
       value: value,
@@ -81,7 +80,9 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       const nodeItem: any = item.data.node.actions;
       if (nodeItem.length > 0) {
         const selectedNode = document.getElementById(item.uuid);
-        if (!selectedNode) return false;
+        if (selectedNode) {
+          this.highlightText(selectedNode, value);
+        }
         return selectedNode
           ? selectedNode.innerText
               .toLocaleLowerCase()
@@ -90,6 +91,88 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
       } else {
         return false;
       }
+    });
+  }
+
+  private findParentsAndHighlightWord(
+    rootElement: HTMLElement,
+    searchWord: string,
+  ) {
+    const walker = document.createTreeWalker(
+      rootElement,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: function(node) {
+          if (new RegExp(searchWord, 'gi').test(node.nodeValue)) {
+            return NodeFilter.FILTER_ACCEPT;
+          }
+          return NodeFilter.FILTER_REJECT;
+        },
+      },
+    );
+
+    let node;
+    const parentElements: HTMLElement[] = [];
+    const foundWords: string[] = [];
+
+    while ((node = walker.nextNode())) {
+      const parent = node.parentNode as HTMLElement;
+      if (!parentElements.includes(parent)) {
+        parentElements.push(parent);
+      }
+
+      const regex = new RegExp(`(${searchWord})`, 'gi');
+      const highlightedText = node.nodeValue.replace(
+        regex,
+        '<span class="highlight">$1</span>',
+      );
+
+      const words = node.nodeValue.split(/\s+/);
+      words.forEach(word => {
+        if (word.toLowerCase().includes(searchWord.toLowerCase())) {
+          foundWords.push(word);
+        }
+      });
+
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = highlightedText;
+
+      while (tempDiv.firstChild) {
+        parent.insertBefore(tempDiv.firstChild, node);
+      }
+      parent.removeChild(node);
+    }
+
+    return { parentElements, foundWords };
+  }
+
+  private highlightText(rootElement: HTMLElement, searchWord: string) {
+    this.removeHighlights(rootElement);
+
+    const result = this.findParentsAndHighlightWord(rootElement, searchWord);
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+    .highlight {
+        background-color: yellow; 
+        color: #1d2025
+
+    }
+    `;
+    document.head.appendChild(style);
+
+    return result.foundWords;
+  }
+
+  private removeHighlights(rootElement: HTMLElement) {
+    const highlightedElements = rootElement.querySelectorAll('.highlight');
+    highlightedElements.forEach(element => {
+      const parent = element.parentNode;
+      parent.replaceChild(
+        document.createTextNode(element.textContent),
+        element,
+      );
+      parent.normalize();
     });
   }
 
@@ -128,25 +211,43 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     const { value, nodes, selected } = this.props.search;
     switch (type) {
       case 'up':
-        this.props.handleSearchChange({
-          isSearchOpen: true,
-          value: value,
-          nodes: nodes,
-          selected: selected - 1 < 0 ? 0 : selected - 1,
-        });
+        if (selected === 0) {
+          this.props.handleSearchChange({
+            isSearchOpen: true,
+            value: value,
+            nodes: nodes,
+            selected: nodes.length - 1,
+          });
+        } else {
+          this.props.handleSearchChange({
+            isSearchOpen: true,
+            value: value,
+            nodes: nodes,
+            selected: selected - 1 < 0 ? 0 : selected - 1,
+          });
+        }
         break;
       case 'down':
         var down = selected - 1;
         if (down < 0) {
           down = 0;
         }
-        this.props.handleSearchChange({
-          isSearchOpen: true,
-          value: value,
-          nodes: nodes,
-          selected:
-            selected < nodes.length - 1 ? selected + 1 : nodes.length - 1,
-        });
+        if (selected + 1 === nodes.length) {
+          this.props.handleSearchChange({
+            isSearchOpen: true,
+            value: value,
+            nodes: nodes,
+            selected: 0,
+          });
+        } else {
+          this.props.handleSearchChange({
+            isSearchOpen: true,
+            value: value,
+            nodes: nodes,
+            selected:
+              selected < nodes.length - 1 ? selected + 1 : nodes.length - 1,
+          });
+        }
         break;
     }
     this.dragBackground();
@@ -154,6 +255,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
 
   private closeSearch() {
     const { value, nodes } = this.props.search;
+    this.removeHighlights(document.querySelector('*'));
     this.props.handleSearchChange({
       isSearchOpen: false,
       value: value,
@@ -186,9 +288,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
         </div>
         <div className={styles.buttons}>
           <ArrowButton
-            disabled={
-              !value.length || !nodes.length || selected === nodes.length - 1
-            }
+            disabled={!nodes.length || !value.length}
             name={'downButton'}
             onClick={() => this.toggleMoveSelected('down')}
             iconName="down"
@@ -196,8 +296,8 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
           />
 
           <ArrowButton
-            disabled={!value.length || !nodes.length || selected === 0}
             name={'upButton'}
+            disabled={!nodes.length || !value.length}
             onClick={() => this.toggleMoveSelected('up')}
             iconName="up"
             size="small"

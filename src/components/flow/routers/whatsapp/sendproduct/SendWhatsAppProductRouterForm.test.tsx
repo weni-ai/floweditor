@@ -94,7 +94,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
     it('should save a manual product sending with header', async () => {
       const props = getProps();
-      const { baseElement, getByText, getByTestId, debug } = render(
+      const { baseElement, getByText, getByTestId, getAllByTestId } = render(
         <SendWhatsAppProductRouterForm {...props} />,
       );
 
@@ -106,6 +106,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
       const okButton = getByText('Confirm');
       const resultName = getByTestId('Save as result');
+      const selectManuallyButton = getByText('Select products to send');
 
       // our products, productViewSettings and result name are required
       await act(async () => {
@@ -117,6 +118,16 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       await act(async () => {
         fireUnnnicInputChangeText(resultName, '');
       });
+
+      fireEvent.click(selectManuallyButton);
+      //find tembaselect input
+      const tembaSelectInput = getAllByTestId(
+        'temba_select_input_manually_select_products',
+      )[0];
+      expect(tembaSelectInput).toBeDefined();
+
+      const product1 = getByText('Product 1');
+      await waitFor(() => expect(product1).toBeDefined());
 
       userEvent.click(getByText('Product 1'));
       userEvent.click(getByText('Product 3'));

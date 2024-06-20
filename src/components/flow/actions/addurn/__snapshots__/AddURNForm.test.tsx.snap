@@ -37,6 +37,7 @@ exports[`AddURNForm > renders 1`] = `
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
+              id="temba_select_type"
             >
               <div>
                 <div
@@ -111,7 +112,7 @@ exports[`AddURNForm > renders 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Wait for the contact to respond
+                    Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
@@ -121,7 +122,7 @@ exports[`AddURNForm > renders 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -131,7 +132,7 @@ exports[`AddURNForm > renders 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -141,7 +142,7 @@ exports[`AddURNForm > renders 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -150,6 +151,16 @@ exports[`AddURNForm > renders 1`] = `
                 >
                   <span
                     class="_name_08dd12"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="option  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="name"
                   >
                     Label the incoming message
                   </span>
@@ -377,6 +388,7 @@ exports[`AddURNForm > renders 1`] = `
             <div
               class="_select_wrapper_4cce75"
               data-testid="temba_select_urn_type"
+              id="temba_select_urn_type"
             >
               <div>
                 <div
@@ -662,6 +674,7 @@ exports[`AddURNForm > renders 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_completion_options_Value of URN"
+              id=""
               style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>

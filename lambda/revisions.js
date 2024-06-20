@@ -2,7 +2,7 @@ import { respond } from './utils/index.js';
 
 const user = {
   email: 'chancerton@nyaruka.com',
-  name: 'Chancellor von Frankenbean'
+  name: 'Chancellor von Frankenbean',
 };
 
 const assetList = [
@@ -11,8 +11,8 @@ const assetList = [
     created_on: new Date(),
     id: 1,
     version: '13.0.0',
-    revision: 1
-  }
+    revision: 1,
+  },
 ];
 
 const assetContent = {
@@ -26,13 +26,12 @@ const assetContent = {
       localization: {},
       nodes: [],
       _ui: {
-        languages: [{ eng: 'English' }, { spa: 'Spanish' }]
-      }
+        languages: [{ eng: 'English' }, { spa: 'Spanish' }],
+      },
     },
-    metadata: {
-      issues: []
-    }
-  }
+    metadata: {},
+    issues: [],
+  },
 };
 
 const getIssues = definition => {
@@ -46,8 +45,8 @@ const getIssues = definition => {
         dependency: {
           name: 'Missing Field',
           key: 'missing_field',
-          type: 'field'
-        }
+          type: 'field',
+        },
       };
 
       for (const action of node.actions) {
@@ -72,7 +71,7 @@ exports.handler = (request, context, callback) => {
     }
 
     // save our response for browser reloads
-    assetContent[id] = { definition: definition, metadata: { issues } };
+    assetContent[id] = { definition: definition, metadata: {}, issues };
 
     const asset = {
       user: user,
@@ -80,9 +79,8 @@ exports.handler = (request, context, callback) => {
       id,
       version: '13.0.0',
       revision: id,
-      metadata: {
-        issues
-      }
+      issues,
+      metadata: {},
     };
 
     assetList.unshift(asset);

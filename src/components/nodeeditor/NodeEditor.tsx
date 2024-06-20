@@ -7,7 +7,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { UpdateUserAddingAction } from 'store/actionTypes';
-import { Asset, AssetStore, RenderNode } from 'store/flowContext';
+import { Asset, AssetStore, FlowIssueMap, RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, updateUserAddingAction } from 'store/nodeEditor';
 import AppState from 'store/state';
 import {
@@ -53,7 +53,7 @@ export interface NodeEditorStoreProps {
   nodes: { [uuid: string]: RenderNode };
   handleTypeConfigChange: HandleTypeConfigChange;
   resetNodeEditingState: NoParamsAC;
-  issues: FlowIssue[];
+  issues: FlowIssueMap;
   mergeEditorState: MergeEditorState;
   onUpdateLocalizations: OnUpdateLocalizations;
   onUpdateAction: OnUpdateAction;
@@ -139,6 +139,14 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
   }
 
   public render(): JSX.Element {
+    const filteredIssues = (
+      this.props.issues[this.props.settings.originalNode.node.uuid] || []
+    ).filter(
+      (issue: FlowIssue) =>
+        !this.props.settings.originalAction ||
+        this.props.settings.originalAction.uuid === issue.action_uuid,
+    );
+
     if (this.props.settings) {
       const { typeConfig } = this.props;
 
@@ -153,7 +161,7 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
             onClose: this.close,
             language: this.props.language,
             helpArticles: this.props.helpArticles,
-            issues: this.props.issues.filter(
+            issues: filteredIssues.filter(
               (issue: FlowIssue) => issue.language === this.props.language.id,
             ),
           };
@@ -175,7 +183,7 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
         updateRouter: this.updateRouter,
         nodeSettings: this.props.settings,
         helpArticles: this.props.helpArticles,
-        issues: this.props.issues.filter((issue: FlowIssue) => !issue.language),
+        issues: filteredIssues.filter((issue: FlowIssue) => !issue.language),
         typeConfig: this.props.typeConfig,
         onTypeChange: this.props.handleTypeConfigChange,
         onClose: this.close,
@@ -197,14 +205,8 @@ const mapStateToProps = ({
   editorState: { language, translating },
   nodeEditor: { typeConfig, settings },
 }: AppState) => {
-  const filteredIssues = (issues[settings.originalNode.node.uuid] || []).filter(
-    (issue: FlowIssue) =>
-      !settings.originalAction ||
-      settings.originalAction.uuid === issue.action_uuid,
-  );
-
   return {
-    issues: filteredIssues,
+    issues,
     language,
     nodes,
     translating,
