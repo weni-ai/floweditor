@@ -18,8 +18,8 @@ import i18n from 'config/i18n';
 import { renderIssues } from '../helpers';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
-import { applyVueInReact } from 'vuereact-combined';
+import Unnnic from '@weni/unnnic-system';
+import { applyVueInReact } from 'veaury';
 
 const EMAIL_PATTERN = /\S+@\S+\.\S+/;
 
@@ -31,7 +31,7 @@ export interface SendEmailFormState extends FormState {
   body: StringEntry;
 }
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export default class SendEmailForm extends React.Component<
   ActionFormProps,
@@ -156,7 +156,7 @@ export default class SendEmailForm extends React.Component<
     }
   }
 
-  private getButtons(): ButtonSet {
+  public getButtons(): ButtonSet {
     return {
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {

@@ -1,11 +1,11 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 import styles from './PopTab.module.scss';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
 export interface PopTabProps {
   type?: string;
@@ -24,7 +24,7 @@ export interface PopTabState {
   width: number;
 }
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export class PopTab extends React.Component<PopTabProps, PopTabState> {
   private poppedEle: HTMLDivElement;

@@ -39,15 +39,15 @@ import styles from './SendWhatsAppProductRouterForm.module.scss';
 
 import i18n from 'config/i18n';
 
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 // @ts-ignore
-import { unnnicIcon, unnnicRadio, unnnicToolTip } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import { TembaSelectStyle } from 'temba/TembaSelect';
-import { WhatsAppProduct } from '../../../../../flowTypes';
+import { WhatsAppProduct } from 'flowTypes';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
-const UnnnicTooltip = applyVueInReact(unnnicToolTip, {
+const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip, {
   react: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -59,7 +59,7 @@ const UnnnicTooltip = applyVueInReact(unnnicToolTip, {
   },
 });
 
-const UnnnicRadio = applyVueInReact(unnnicRadio, {
+const UnnnicRadio = applyVueInReact(Unnnic.unnnicRadio, {
   react: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -600,10 +600,10 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
       <>
         <div className={styles.search_type_radio}>
           <UnnnicRadio
-            $model={{
-              value: String(this.state.searchType),
-              setter: this.handleSearchTypeUpdate,
-            }}
+            v-model={[
+              String(this.state.searchType),
+              this.handleSearchTypeUpdate,
+            ]}
             value="default"
             size="sm"
           >
@@ -612,10 +612,10 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
             </span>
           </UnnnicRadio>
           <UnnnicRadio
-            $model={{
-              value: String(this.state.searchType),
-              setter: this.handleSearchTypeUpdate,
-            }}
+            v-model={[
+              String(this.state.searchType),
+              this.handleSearchTypeUpdate,
+            ]}
             value="vtex"
             size="sm"
           >
@@ -700,10 +700,10 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
       <>
         <div className={`${styles.send_catalog_radio}`}>
           <UnnnicRadio
-            $model={{
-              value: String(this.state.sendCatalog),
-              setter: this.handleSendCatalogUpdate,
-            }}
+            v-model={[
+              String(this.state.sendCatalog),
+              this.handleSendCatalogUpdate,
+            ]}
             value="true"
             size="sm"
           >
@@ -712,10 +712,10 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
             </span>
           </UnnnicRadio>
           <UnnnicRadio
-            $model={{
-              value: String(this.state.sendCatalog),
-              setter: this.handleSendCatalogUpdate,
-            }}
+            v-model={[
+              String(this.state.sendCatalog),
+              this.handleSendCatalogUpdate,
+            ]}
             value="false"
             size="sm"
           >

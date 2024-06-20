@@ -266,7 +266,7 @@ export const dump = (thing: any) => console.log(JSON.stringify(thing, null, 4));
 export const emphasize = (text: string) => (
   <span className="emphasize">{text}</span>
 );
-export const ellipsize = (text: string, max: number = 250) => {
+export const ellipsize = (text: string, max = 250) => {
   if (text.length > max) {
     return text.substr(0, max) + '...';
   }
@@ -298,15 +298,14 @@ export const renderIf = (predicate: boolean) => (
  * Does the label meet our length requirements?
  * @param {string} label - label created by react-select
  */
-export const properLabelLength = (label: string = '') =>
+export const properLabelLength = (label = '') =>
   label.length > 0 && label.length <= MAX_LABEL_LENGTH;
 
 /**
  * Does the label meet our character requirements?
  * @param {string} label
  */
-export const containsOnlyLabelChars = (label: string = '') =>
-  LABEL_CHARS.test(label);
+export const containsOnlyLabelChars = (label = '') => LABEL_CHARS.test(label);
 
 /**
  * Does the label meet our length, character requirements?
@@ -410,11 +409,11 @@ export const fetchAsset = (asset: Asset) => (
   });
 };
 
-export let createUUID = (): string => {
+export const createUUID = (): string => {
   return generateUUID();
 };
 
-export const seededUUIDs = (seed: number = 1): any => {
+export const seededUUIDs = (seed = 1): any => {
   let current = seed;
   const randomNext = () => {
     const x = Math.sin(current++) * 10000;
@@ -437,11 +436,8 @@ export const seededUUIDs = (seed: number = 1): any => {
 export const range = (start: number, end: number) =>
   Array.from({ length: end - start }, (v: number, k: number) => k + start);
 
-export const pluralize = (
-  count: number,
-  noun: string,
-  suffix: string = 's',
-): string => `${noun}${count !== 1 ? suffix : ''}`;
+export const pluralize = (count: number, noun: string, suffix = 's'): string =>
+  `${noun}${count !== 1 ? suffix : ''}`;
 
 export const hasString = (names: string[], key: string): boolean =>
   !!names.find((item: string) => item === key);
@@ -524,7 +520,7 @@ export const bool = (prop: boolean) => {
 };
 
 export const getOS = () => {
-  var OSName = 'Unknown OS';
+  let OSName = 'Unknown OS';
   if (navigator.userAgent.indexOf('Win') !== -1) OSName = 'Windows';
   if (navigator.userAgent.indexOf('Mac') !== -1) OSName = 'Macintosh';
   if (navigator.userAgent.indexOf('Linux') !== -1) OSName = 'Linux';

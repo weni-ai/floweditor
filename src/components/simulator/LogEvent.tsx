@@ -8,14 +8,14 @@ import * as React from 'react';
 import { createUUID, getURNPath } from 'utils';
 import i18n from 'config/i18n';
 import { Trans } from 'react-i18next';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
 const MAP_THUMB = require('static/images/map.jpg');
 
-const UnnnicIcon = applyVueInReact(unnnicIcon, {
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -279,7 +279,7 @@ export default class LogEvent extends React.Component<
   }
 
   private renderGroupsChanged(): JSX.Element {
-    let parts: string[] = [];
+    const parts: string[] = [];
     if (this.props.groups_added) {
       const info = i18n.t('simulator.added_to_group', 'Added to');
       parts.push(
@@ -305,7 +305,7 @@ export default class LogEvent extends React.Component<
   }
 
   private renderLabelsAdded(): JSX.Element {
-    let info = i18n.t('simulator.input_labels_added', 'Message labeled with');
+    const info = i18n.t('simulator.input_labels_added', 'Message labeled with');
 
     return renderInfo(
       info +
