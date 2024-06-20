@@ -14,9 +14,9 @@ const issuesProps: IssuesTabProps = {
   popped: null,
 
   // callbacks
-  onToggled: jest.fn(),
-  onIssueClicked: jest.fn(),
-  onIssueOpened: jest.fn(),
+  onToggled: vi.fn(),
+  onIssueClicked: vi.fn(),
+  onIssueOpened: vi.fn(),
 };
 
 const createNodes = (issues: FlowIssue[]): RenderNodeMap => {

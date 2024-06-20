@@ -2,16 +2,14 @@ import { commaListsOr } from 'common-tags';
 import { Exit } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 
-const snapshot = require('jest-snapshot');
-
-const matchers: jest.ExpectExtendMap = {};
-
-interface MatchResult {
-  message: () => string;
+interface MatcherResult {
   pass: boolean;
+  message: () => string;
+  actual?: unknown;
+  expected?: unknown;
 }
 
-function toBeUnique<T>(this: jest.MatcherUtils, received: any[]): MatchResult {
+function toBeUnique(received: any): MatcherResult {
   const seen: { [value: string]: boolean } = {};
 
   for (const item of received) {
@@ -32,22 +30,7 @@ function toBeUnique<T>(this: jest.MatcherUtils, received: any[]): MatchResult {
   };
 }
 
-function toMatchCallSnapshot<T>(
-  this: jest.MatcherUtils,
-  received: any,
-  snapshotName?: string,
-): MatchResult {
-  return snapshot.toMatchSnapshot.call(
-    this,
-    received.mock.calls[0],
-    snapshotName,
-  );
-}
-
-function toHaveInboundConnections<T>(
-  this: jest.MatcherUtils,
-  received: RenderNode,
-): MatchResult {
+function toHaveInboundConnections(received: RenderNode): MatcherResult {
   if (Object.keys(received.inboundConnections).length > 1) {
     return {
       message: () => `Node ${received.node.uuid} has an inbound connection`,
@@ -61,11 +44,10 @@ function toHaveInboundConnections<T>(
   };
 }
 
-function toHaveInboundFrom<T>(
-  this: jest.MatcherUtils,
+function toHaveInboundFrom(
   received: RenderNode,
   expected: Exit,
-): MatchResult {
+): MatcherResult {
   for (const exitUUID of Object.keys(received.inboundConnections)) {
     if (exitUUID === expected.uuid) {
       return {
@@ -83,11 +65,7 @@ function toHaveInboundFrom<T>(
   };
 }
 
-function toPointTo<T>(
-  this: jest.MatcherUtils,
-  received: Exit,
-  expected: RenderNode,
-): MatchResult {
+function toPointTo(received: Exit, expected: RenderNode): MatcherResult {
   if (received.destination_uuid === expected.node.uuid) {
     return {
       message: () =>
@@ -103,10 +81,7 @@ function toPointTo<T>(
   };
 }
 
-function toHaveExitWithDestination<T>(
-  this: jest.MatcherUtils,
-  received: RenderNode,
-): MatchResult {
+function toHaveExitWithDestination(received: RenderNode): MatcherResult {
   for (const exit of received.node.exits) {
     if (exit.destination_uuid !== null) {
       return {
@@ -123,11 +98,10 @@ function toHaveExitWithDestination<T>(
   };
 }
 
-function toHaveExitThatPointsTo<T>(
-  this: jest.MatcherUtils,
+function toHaveExitThatPointsTo(
   received: RenderNode,
   expected: RenderNode,
-): MatchResult {
+): MatcherResult {
   for (const exit of received.node.exits) {
     if (exit.destination_uuid === expected.node.uuid) {
       return {
@@ -145,12 +119,11 @@ function toHaveExitThatPointsTo<T>(
   };
 }
 
-function toHavePayload<T>(
-  this: jest.MatcherUtils,
+function toHavePayload(
   store: any,
   actionType: string,
   expectedPayload: any,
-): MatchResult {
+): MatcherResult {
   const payload = JSON.stringify(expectedPayload);
   for (const actionTaken of store.getActions()) {
     if (actionTaken.type === actionType) {
@@ -171,11 +144,7 @@ function toHavePayload<T>(
   };
 }
 
-function toHaveReduxActions<T>(
-  this: jest.MatcherUtils,
-  store: any,
-  actionTypes: string[],
-): MatchResult {
+function toHaveReduxActions(store: any, actionTypes: string[]): MatcherResult {
   const missedTypes: any[] = [];
   for (const actionTaken of store.getActions()) {
     for (const actionType of actionTypes) {
@@ -197,7 +166,7 @@ function toHaveReduxActions<T>(
   };
 }
 
-expect.extend({
+export default {
   toPointTo,
   toHaveExitThatPointsTo,
   toHaveInboundFrom,
@@ -205,6 +174,5 @@ expect.extend({
   toHaveInboundConnections,
   toHavePayload,
   toHaveReduxActions,
-  toMatchCallSnapshot,
   toBeUnique,
-});
+};

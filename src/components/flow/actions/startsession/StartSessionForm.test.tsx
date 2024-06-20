@@ -58,7 +58,7 @@ describe(StartSessionForm.name, () => {
 
       fireEvent.click(getByText('Confirm'));
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should warn about invalid fields in contact queries', async () => {
@@ -106,12 +106,12 @@ describe(StartSessionForm.name, () => {
 
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should allow switching from router', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateAction: jest.fn() },
+        $merge: { updateAction: vi.fn() },
         nodeSettings: { $merge: { originalAction: null } },
       });
 
@@ -121,14 +121,14 @@ describe(StartSessionForm.name, () => {
       ]);
       instance.handleSave();
 
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
   });
 
   describe('cancel', () => {
     it('should cancel without changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateAction: jest.fn() },
+        $merge: { onClose: vi.fn(), updateAction: vi.fn() },
       });
 
       instance.handleRecipientsChanged([SubscribersGroup]);

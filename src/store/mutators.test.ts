@@ -36,7 +36,7 @@ import {
 } from 'testUtils/assetCreators';
 import { createUUID } from 'utils';
 
-const mutate = require('immutability-helper');
+import mutate from 'immutability-helper';
 
 describe('mutators', () => {
   const definition: FlowDefinition = require('test/flows/boring.json');
@@ -362,7 +362,7 @@ const createNodeMap = (nodes: RenderNode[]): any => {
     );
 };
 
-const createEmptyNode = (exitCount: number = 1): RenderNode => {
+const createEmptyNode = (exitCount = 1): RenderNode => {
   const exits: Exit[] = [];
   for (let i = 0; i < exitCount; i++) {
     exits.push({ uuid: createUUID() });

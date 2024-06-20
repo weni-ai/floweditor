@@ -1,86 +1,85 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`IssuesTab renders 1`] = `
+exports[`IssuesTab > renders 1`] = `
 <body>
   <div>
     <div
       class=""
     >
       <div
-        class="mask"
+        class="_mask_6682bf"
       />
       <div
-        class="pop_wrapper pop_wrapper "
+        class="pop_wrapper _pop_wrapper_6f73c3 "
         style="right: -250px; top: 396px;"
       >
         <div
-          class="tab_wrapper"
+          class="_tab_wrapper_6f73c3"
         >
           <div
-            class="tab"
+            class="_tab_6f73c3"
             style="background: rgb(255, 69, 69);"
           >
             <div
-              class="icon"
+              class="_icon_6f73c3"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
                 style="all: unset;"
               >
-                <span
+                <svg
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
-                  data-passed-props="[object Object]"
-                  data-v-4ce83152=""
+                  data-v-edf1acd8=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    viewBox="0 0 40 40"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      class="primary"
-                      d="M20 27.5005C20.7767 27.5005 21.4062 26.8709 21.4062 26.0942C21.4062 25.3176 20.7767 24.688 20 24.688C19.2233 24.688 18.5938 25.3176 18.5938 26.0942C18.5938 26.8709 19.2233 27.5005 20 27.5005Z"
-                      fill="#3B414D"
-                    />
-                    <path
-                      class="primary"
-                      d="M20 22.813C19.7514 22.813 19.5129 22.7142 19.3371 22.5384C19.1613 22.3626 19.0625 22.1241 19.0625 21.8755V11.563C19.0625 11.3143 19.1613 11.0759 19.3371 10.9001C19.5129 10.7243 19.7514 10.6255 20 10.6255C20.2486 10.6255 20.4871 10.7243 20.6629 10.9001C20.8387 11.0759 20.9375 11.3143 20.9375 11.563V21.8755C20.9375 22.1241 20.8387 22.3626 20.6629 22.5384C20.4871 22.7142 20.2486 22.813 20 22.813Z"
-                      fill="#3B414D"
-                    />
-                    <path
-                      class="primary"
-                      d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                      fill="#3B414D"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    class="primary"
+                    d="M20 27.5005C20.7767 27.5005 21.4062 26.8709 21.4062 26.0942C21.4062 25.3176 20.7767 24.688 20 24.688C19.2233 24.688 18.5938 25.3176 18.5938 26.0942C18.5938 26.8709 19.2233 27.5005 20 27.5005Z"
+                    fill="#3B414D"
+                  />
+                  <path
+                    class="primary"
+                    d="M20 22.813C19.7514 22.813 19.5129 22.7142 19.3371 22.5384C19.1613 22.3626 19.0625 22.1241 19.0625 21.8755V11.563C19.0625 11.3143 19.1613 11.0759 19.3371 10.9001C19.5129 10.7243 19.7514 10.6255 20 10.6255C20.2486 10.6255 20.4871 10.7243 20.6629 10.9001C20.8387 11.0759 20.9375 11.3143 20.9375 11.563V21.8755C20.9375 22.1241 20.8387 22.3626 20.6629 22.5384C20.4871 22.7142 20.2486 22.813 20 22.813Z"
+                    fill="#3B414D"
+                  />
+                  <path
+                    class="primary"
+                    d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                    fill="#3B414D"
+                  />
+                </svg>
               </div>
             </div>
             <div
-              class="label"
+              class="_label_6f73c3"
             >
               Flow Issues
             </div>
           </div>
         </div>
         <div
-          class="popped undefined"
+          class="_popped_6f73c3 _undefined_6f73c3"
           style="border-color: #ff4545; right: 0px; top: -100px;"
         >
           <div
-            class="header"
+            class="_header_6f73c3"
             style="background: rgb(255, 69, 69);"
           >
             <div
-              class="close fe-x"
+              class="_close_6f73c3 fe-x"
             />
           </div>
           <div
-            class="body"
+            class="_body_6f73c3"
             style="background: rgb(255, 69, 69);"
           >
             <div
-              class="issues_wrapper"
+              class="_issues_wrapper_6682bf"
             />
           </div>
         </div>
@@ -90,100 +89,99 @@ exports[`IssuesTab renders 1`] = `
 </body>
 `;
 
-exports[`IssuesTab renders missing dependencies 1`] = `
+exports[`IssuesTab > renders missing dependencies 1`] = `
 <body>
   <div>
     <div
       class=""
     >
       <div
-        class="mask"
+        class="_mask_6682bf"
       />
       <div
-        class="pop_wrapper pop_wrapper "
+        class="pop_wrapper _pop_wrapper_6f73c3 "
         style="right: -250px; top: 396px;"
       >
         <div
-          class="tab_wrapper"
+          class="_tab_wrapper_6f73c3"
         >
           <div
-            class="tab"
+            class="_tab_6f73c3"
             style="background: rgb(255, 69, 69);"
           >
             <div
-              class="icon"
+              class="_icon_6f73c3"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
                 style="all: unset;"
               >
-                <span
+                <svg
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
-                  data-passed-props="[object Object]"
-                  data-v-4ce83152=""
+                  data-v-edf1acd8=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    viewBox="0 0 40 40"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      class="primary"
-                      d="M20 27.5005C20.7767 27.5005 21.4062 26.8709 21.4062 26.0942C21.4062 25.3176 20.7767 24.688 20 24.688C19.2233 24.688 18.5938 25.3176 18.5938 26.0942C18.5938 26.8709 19.2233 27.5005 20 27.5005Z"
-                      fill="#3B414D"
-                    />
-                    <path
-                      class="primary"
-                      d="M20 22.813C19.7514 22.813 19.5129 22.7142 19.3371 22.5384C19.1613 22.3626 19.0625 22.1241 19.0625 21.8755V11.563C19.0625 11.3143 19.1613 11.0759 19.3371 10.9001C19.5129 10.7243 19.7514 10.6255 20 10.6255C20.2486 10.6255 20.4871 10.7243 20.6629 10.9001C20.8387 11.0759 20.9375 11.3143 20.9375 11.563V21.8755C20.9375 22.1241 20.8387 22.3626 20.6629 22.5384C20.4871 22.7142 20.2486 22.813 20 22.813Z"
-                      fill="#3B414D"
-                    />
-                    <path
-                      class="primary"
-                      d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                      fill="#3B414D"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    class="primary"
+                    d="M20 27.5005C20.7767 27.5005 21.4062 26.8709 21.4062 26.0942C21.4062 25.3176 20.7767 24.688 20 24.688C19.2233 24.688 18.5938 25.3176 18.5938 26.0942C18.5938 26.8709 19.2233 27.5005 20 27.5005Z"
+                    fill="#3B414D"
+                  />
+                  <path
+                    class="primary"
+                    d="M20 22.813C19.7514 22.813 19.5129 22.7142 19.3371 22.5384C19.1613 22.3626 19.0625 22.1241 19.0625 21.8755V11.563C19.0625 11.3143 19.1613 11.0759 19.3371 10.9001C19.5129 10.7243 19.7514 10.6255 20 10.6255C20.2486 10.6255 20.4871 10.7243 20.6629 10.9001C20.8387 11.0759 20.9375 11.3143 20.9375 11.563V21.8755C20.9375 22.1241 20.8387 22.3626 20.6629 22.5384C20.4871 22.7142 20.2486 22.813 20 22.813Z"
+                    fill="#3B414D"
+                  />
+                  <path
+                    class="primary"
+                    d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                    fill="#3B414D"
+                  />
+                </svg>
               </div>
             </div>
             <div
-              class="label"
+              class="_label_6f73c3"
             >
               Flow Issues
             </div>
           </div>
         </div>
         <div
-          class="popped undefined"
+          class="_popped_6f73c3 _undefined_6f73c3"
           style="border-color: #ff4545; right: 0px; top: -100px;"
         >
           <div
-            class="header"
+            class="_header_6f73c3"
             style="background: rgb(255, 69, 69);"
           >
             <div
-              class="close fe-x"
+              class="_close_6f73c3 fe-x"
             />
           </div>
           <div
-            class="body"
+            class="_body_6f73c3"
             style="background: rgb(255, 69, 69);"
           >
             <div
-              class="issues_wrapper"
+              class="_issues_wrapper_6682bf"
             >
               <div>
                 <div
-                  class="details"
+                  class="_details_6682bf"
                 >
                   <div
-                    class="issues_code"
+                    class="_issues_code_6682bf"
                   >
                     <div
-                      class="message"
+                      class="_message_6682bf"
                     >
                       <div
-                        class="header"
+                        class="_header_6682bf"
                       >
                         Send message
                         :
@@ -201,16 +199,16 @@ exports[`IssuesTab renders missing dependencies 1`] = `
               </div>
               <div>
                 <div
-                  class="details"
+                  class="_details_6682bf"
                 >
                   <div
-                    class="issues_code"
+                    class="_issues_code_6682bf"
                   >
                     <div
-                      class="message"
+                      class="_message_6682bf"
                     >
                       <div
-                        class="header"
+                        class="_header_6682bf"
                       >
                         Send message
                         :
@@ -228,16 +226,16 @@ exports[`IssuesTab renders missing dependencies 1`] = `
               </div>
               <div>
                 <div
-                  class="details"
+                  class="_details_6682bf"
                 >
                   <div
-                    class="issues_code"
+                    class="_issues_code_6682bf"
                   >
                     <div
-                      class="message"
+                      class="_message_6682bf"
                     >
                       <div
-                        class="header"
+                        class="_header_6682bf"
                       >
                         Send message
                         :

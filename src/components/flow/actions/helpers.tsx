@@ -18,14 +18,14 @@ import { Trans } from 'react-i18next';
 import shared from 'components/shared.module.scss';
 import { showHelpArticle } from 'external';
 import { IssueProps } from '../props';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 import styles from './helpers.module.scss';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon, {
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -172,7 +172,7 @@ export const getRecipients = (action: RecipientsAction): Asset[] => {
 
 export const renderAssetList = (
   assets: Asset[],
-  max: number = 10,
+  max = 10,
   endpoints: Endpoints,
 ): JSX.Element[] => {
   // show our missing ones first

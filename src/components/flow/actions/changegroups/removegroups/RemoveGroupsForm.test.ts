@@ -25,7 +25,7 @@ describe(RemoveGroupsForm.name, () => {
 
   describe('updates', () => {
     it('should handle updates and save', () => {
-      const components = setup(true, { $merge: { updateAction: jest.fn() } });
+      const components = setup(true, { $merge: { updateAction: vi.fn() } });
 
       const instance: RemoveGroupsForm = components.instance;
       const props: Partial<ActionFormProps> = components.props;
@@ -34,11 +34,11 @@ describe(RemoveGroupsForm.name, () => {
       instance.handleSave();
 
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot('update');
+      expect(props.updateAction).toMatchSnapshot('update');
     });
 
     it('should handle remove from all groups', () => {
-      const components = setup(true, { $merge: { updateAction: jest.fn() } });
+      const components = setup(true, { $merge: { updateAction: vi.fn() } });
 
       const instance: RemoveGroupsForm = components.instance;
       const props: Partial<ActionFormProps> = components.props;
@@ -47,12 +47,12 @@ describe(RemoveGroupsForm.name, () => {
       instance.handleSave();
 
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot('update');
+      expect(props.updateAction).toMatchSnapshot('update');
     });
 
     it('should allow switching from router', () => {
       const components = setup(true, {
-        $merge: { updateAction: jest.fn() },
+        $merge: { updateAction: vi.fn() },
         nodeSettings: { $merge: { originalAction: null } },
       });
 
@@ -61,7 +61,7 @@ describe(RemoveGroupsForm.name, () => {
 
       instance.handleGroupsChanged([SubscribersGroup]);
       instance.handleSave();
-      expect(props.updateAction).toMatchCallSnapshot('switch from router');
+      expect(props.updateAction).toMatchSnapshot('switch from router');
     });
   });
 });

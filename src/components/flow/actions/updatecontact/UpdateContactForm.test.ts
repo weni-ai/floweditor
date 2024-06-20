@@ -60,7 +60,7 @@ describe(UpdateContactForm.name, () => {
       form.instance.handleNameUpdate('Rowan Seymour');
       form.instance.handleSave();
       expect(form.instance.state).toMatchSnapshot();
-      expect(form.props.updateAction).toMatchCallSnapshot();
+      expect(form.props.updateAction).toMatchSnapshot();
     });
 
     it('should update field value', () => {
@@ -70,7 +70,7 @@ describe(UpdateContactForm.name, () => {
       form.instance.handleFieldValueUpdate('12/25/00');
       form.instance.handleSave();
       expect(form.instance.state).toMatchSnapshot();
-      expect(form.props.updateAction).toMatchCallSnapshot();
+      expect(form.props.updateAction).toMatchSnapshot();
     });
 
     it('should update language', () => {
@@ -78,7 +78,7 @@ describe(UpdateContactForm.name, () => {
       form.instance.handleLanguageUpdate('eng');
       form.instance.handleSave();
       expect(form.instance.state).toMatchSnapshot();
-      expect(form.props.updateAction).toMatchCallSnapshot();
+      expect(form.props.updateAction).toMatchSnapshot();
     });
 
     it('should update status', () => {
@@ -86,7 +86,7 @@ describe(UpdateContactForm.name, () => {
       form.instance.handleStatusUpdate(CONTACT_STATUS_BLOCKED);
       form.instance.handleSave();
       expect(form.instance.state).toMatchSnapshot();
-      expect(form.props.updateAction).toMatchCallSnapshot();
+      expect(form.props.updateAction).toMatchSnapshot();
     });
 
     it('should update channel', () => {
@@ -96,7 +96,7 @@ describe(UpdateContactForm.name, () => {
       ]);
       form.instance.handleSave();
       expect(form.instance.state).toMatchSnapshot();
-      expect(form.props.updateAction).toMatchCallSnapshot();
+      expect(form.props.updateAction).toMatchSnapshot();
     });
 
     it('should validate before saving', () => {
@@ -122,19 +122,19 @@ describe(UpdateContactForm.name, () => {
   describe('should allow switching from router', () => {
     it('to contact name', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateAction: jest.fn() },
+        $merge: { updateAction: vi.fn() },
         nodeSettings: { $merge: { originalAction: null } },
       });
 
       instance.handlePropertyChange([NAME_PROPERTY]);
       instance.handleNameUpdate('Rowan Seymour');
       instance.handleSave();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('to field value', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateAction: jest.fn() },
+        $merge: { updateAction: vi.fn() },
         nodeSettings: { $merge: { originalAction: null } },
       });
 
@@ -144,12 +144,12 @@ describe(UpdateContactForm.name, () => {
       instance.handleFieldValueUpdate('12/25/00');
       instance.handleSave();
       expect(instance.state).toMatchSnapshot();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('to language', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateAction: jest.fn() },
+        $merge: { updateAction: vi.fn() },
         nodeSettings: { $merge: { originalAction: null } },
       });
 
@@ -157,12 +157,12 @@ describe(UpdateContactForm.name, () => {
       instance.handleLanguageUpdate('eng');
       instance.handleSave();
       expect(instance.state).toMatchSnapshot();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('to channel', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateAction: jest.fn() },
+        $merge: { updateAction: vi.fn() },
         nodeSettings: { $merge: { originalAction: null } },
       });
 
@@ -172,13 +172,13 @@ describe(UpdateContactForm.name, () => {
       ]);
       instance.handleSave();
       expect(instance.state).toMatchSnapshot();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
   });
 
   it('to status', () => {
     const { instance, props } = setup(true, {
-      $merge: { updateAction: jest.fn() },
+      $merge: { updateAction: vi.fn() },
       nodeSettings: { $merge: { originalAction: null } },
     });
 
@@ -186,6 +186,6 @@ describe(UpdateContactForm.name, () => {
     instance.handleLanguageUpdate({ label: 'Blocked', value: 'blocked' });
     instance.handleSave();
     expect(instance.state).toMatchSnapshot();
-    expect(props.updateAction).toMatchCallSnapshot();
+    expect(props.updateAction).toMatchSnapshot();
   });
 });

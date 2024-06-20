@@ -8,21 +8,42 @@
     "jest": true,
     "es6" :true
   },
+  "parser": "@typescript-eslint/parser",
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "tabWidth": 2,
+        "semi": true,
+        "singleQuote": true,
+        "bracketSpacing": true,
+        "printWidth": 80,
+        "trailingComma": "all",
+        "endOfLine": "lf",
+        "singleAttributePerLine": true
+      }
+    ],
     "no-prototype-builtins": 0,
     "no-case-declarations": 1,
     "no-empty": 1,
+    "no-var": 1,
+    "prefer-const": 1,
+    "react/prop-types": 1,
     "react/no-unescaped-entities": 1,
     "react/display-name": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
-    "@typescript-eslint/camelcase": 0,
     "@typescript-eslint/explicit-member-accessibility": 0,
     "@typescript-eslint/no-namespace": 0,
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/no-use-before-define": 0,
     "@typescript-eslint/no-object-literal-type-assertion": 0,
     "@typescript-eslint/no-empty-interface": 1,
-    "@typescript-eslint/no-non-null-assertion": 0
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/no-inferrable-types": 1,
+    "@typescript-eslint/ban-types": 1,
+    "@typescript-eslint/no-this-alias": 1,
+    "@typescript-eslint/ban-ts-comment": 1,
+    "@typescript-eslint/no-empty-function": 1
   },
   "settings": {
     "react": {

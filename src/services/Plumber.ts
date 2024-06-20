@@ -317,8 +317,8 @@ export default class Plumber {
     source: string,
     target: string,
     className: string = null,
-    slot: number = 0,
-    totalSlots: number = 0,
+    slot = 0,
+    totalSlots = 0,
   ): void {
     this.pendingConnections[`${source}:${target}:${className}`] = {
       source,

@@ -1,7 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SendEmailComp render should render self, children 1`] = `
-<div>
-  New Sign Up
-</div>
-`;
+exports[`SendEmailComp > render > should render self, children 1`] = `ShallowWrapper {}`;

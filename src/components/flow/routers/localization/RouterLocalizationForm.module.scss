@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 .translating_categories {
   clear: both;
@@ -14,7 +14,7 @@
   padding: 0px 9px;
   border: 1px solid darken($translation_bg, 5%);
   display: inline-block;
-  width:  35%;
+  width: 35%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -26,7 +26,7 @@
   display: inline-block;
   width: 59%;
   vertical-align: top;
-  float: right;  
+  float: right;
 }
 
 .translating_operator_title {
@@ -61,6 +61,7 @@
   overflow: hidden;
   border-radius: $curvature;
   margin-top: 8px;
+
   &:focus {
     outline: none;
   }

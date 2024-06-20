@@ -9,13 +9,13 @@ import {
   MergeEditorState,
 } from 'store/thunks';
 
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 import styles from './GuidingSteps.module.scss';
 // @ts-ignore
-import { unnnicButton } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import i18n from '../../config/i18n';
 
-const UnnnicButton = applyVueInReact(unnnicButton, {
+const UnnnicButton = applyVueInReact(Unnnic.unnnicButton, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',

@@ -43,7 +43,7 @@ describe(ParamList.name, () => {
           <ParamList
             availableParams={sampleParams}
             params={[]}
-            onParamsUpdated={jest.fn()}
+            onParamsUpdated={vi.fn()}
             shouldCreateEmptyParam={true}
           />,
         );
@@ -54,7 +54,7 @@ describe(ParamList.name, () => {
           <ParamList
             availableParams={sampleParams}
             params={omieParams}
-            onParamsUpdated={jest.fn()}
+            onParamsUpdated={vi.fn()}
             shouldCreateEmptyParam={true}
           />,
         );
@@ -68,7 +68,7 @@ describe(ParamList.name, () => {
           <ParamList
             availableParams={sampleParams}
             params={[omieParams[0]]}
-            onParamsUpdated={jest.fn()}
+            onParamsUpdated={vi.fn()}
             shouldCreateEmptyParam={true}
           />,
         );
@@ -82,7 +82,7 @@ describe(ParamList.name, () => {
       });
 
       it('should update params and call the callback', async () => {
-        const onParamsUpdated = jest.fn();
+        const onParamsUpdated = vi.fn();
         const { baseElement, getByTestId } = render(
           <ParamList
             availableParams={sampleParams}

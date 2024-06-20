@@ -8,9 +8,9 @@ import TextInputElement, {
 } from '../../../../form/textinput/TextInputElement';
 import ContentCollapse from '../../../../contentcollapse/ContentCollapse';
 
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 // @ts-ignore
-import { unnnicButton } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import {
   SortEnd,
   SortableContainer,
@@ -22,7 +22,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import update from 'immutability-helper';
 import { FormEntry, ValidationFailure } from '../../../../../store/nodeEditor';
 
-const UnnnicButton = applyVueInReact(unnnicButton, {
+const UnnnicButton = applyVueInReact(Unnnic.unnnicButton, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',

@@ -3,22 +3,28 @@ import { CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
 import React from 'react';
 import { fireEvent, render } from 'test/utils';
 import { createUUID } from 'utils';
+import { MouseState } from 'store/editor';
 
-jest.mock('components/sidebar/Sidebar', () => () => 'Mocked Sidebar');
+// vi.mock('components/sidebar/Sidebar', () => () => 'Mocked Sidebar');
 
 const baseProps: CanvasProps = {
   uuid: createUUID(),
   draggingNew: false,
   dragActive: false,
-  onDragging: jest.fn(),
-  onUpdatePositions: jest.fn(),
-  mergeEditorState: jest.fn(),
-  onRemoveNodes: jest.fn(),
-  onDoubleClick: jest.fn(),
-  onLoaded: jest.fn(),
+  onDragging: vi.fn(),
+  onUpdatePositions: vi.fn(),
+  mergeEditorState: vi.fn(),
+  onRemoveNodes: vi.fn(),
+  onDoubleClick: vi.fn(),
+  onLoaded: vi.fn(),
   draggables: [],
   newDragElement: <div></div>,
   mutable: true,
+  mouseState: MouseState.SELECT,
+  onZoom: vi.fn(),
+  onMouseStateChange: vi.fn(),
+  nodes: undefined,
+  updateNodesEditor: vi.fn(),
 };
 
 describe(Canvas.name, () => {
@@ -29,7 +35,7 @@ describe(Canvas.name, () => {
 
   it('initializes the height to the lowest draggable', () => {
     const lowest: CanvasDraggableProps = {
-      elementCreator: jest.fn(),
+      elementCreator: vi.fn(),
       uuid: createUUID(),
       position: { top: 1200, left: 100, bottom: 1290, right: 300 },
       idx: 0,
@@ -43,7 +49,7 @@ describe(Canvas.name, () => {
   it('adjusts the height when updating dimensions', () => {
     const uuid = createUUID();
     const lowest: CanvasDraggableProps = {
-      elementCreator: jest.fn(),
+      elementCreator: vi.fn(),
       uuid,
       position: { top: 1200, left: 100, right: 200, bottom: 1400 },
       idx: 0,
@@ -56,23 +62,23 @@ describe(Canvas.name, () => {
   });
 
   it('reflows collisions', () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
 
     const first: CanvasDraggableProps = {
-      elementCreator: jest.fn(),
+      elementCreator: vi.fn(),
       uuid: createUUID(),
       position: { top: 100, bottom: 200, left: 100, right: 200 },
       idx: 0,
     };
 
     const second: CanvasDraggableProps = {
-      elementCreator: jest.fn(),
+      elementCreator: vi.fn(),
       uuid: createUUID(),
       position: { top: 150, left: 100, bottom: 250, right: 200 },
       idx: 0,
     };
 
-    const onDragging = jest.fn();
+    const onDragging = vi.fn();
 
     const { getByTestId } = render(
       <Canvas
@@ -85,8 +91,8 @@ describe(Canvas.name, () => {
     // trigger reflow by simulating a drag event
     fireEvent.mouseDown(getByTestId('draggable_' + first.uuid));
     fireEvent.mouseUp(getByTestId('draggable_' + first.uuid));
-    jest.runAllTimers();
+    vi.runAllTimers();
 
-    expect(onDragging).toMatchCallSnapshot();
+    expect(onDragging).toMatchSnapshot();
   });
 });

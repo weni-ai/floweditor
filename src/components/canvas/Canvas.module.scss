@@ -1,7 +1,7 @@
-@import 'variables.module.scss';
-@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
+@import 'src/variables.module.scss';
 
-$background_offset: ($grid_size / 2) + ($node_padding) + px;
+$background_offset: (
+  $grid_size / 2) + ($node_padding) + px;
 
 .canvas_container {
   overflow: hidden;
@@ -12,17 +12,19 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
 .canvas_background {
   height: 100%;
   background-position: 0px 0px;
-  background-image: radial-gradient(
-    circle at center,
-    $unnnic-color-neutral-cleanest 0,
-    $unnnic-color-neutral-cleanest 1px,
-    $unnnic-color-neutral-lightest 2px,
-    $unnnic-color-neutral-lightest 100%);
-  background-size: 40px 40px;
+  background-image: radial-gradient(circle at center,
+      $unnnic-color-neutral-cleanest 0,
+      $unnnic-color-neutral-cleanest 1px,
+      $unnnic-color-neutral-lightest 2px,
+      $unnnic-color-neutral-lightest 100%
+  );
+background-size: 40px 40px;
 }
-.grayscale::after{
+
+.grayscale::after {
   filter: grayscale(1);
 }
+
 .canvas {
   position: relative;
   height: 100%;
@@ -71,7 +73,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
   display: flex;
   position: fixed;
   bottom: $unnnic-spacing-giant;
-  left: 36px; 
+  left: 36px;
   align-items: center;
   justify-content: center;
 
@@ -107,7 +109,9 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
     }
   }
 
-  .in, .out, .start {
+  .in,
+  .out,
+  .start {
     display: flex;
     width: $unnnic-spacing-xl;
     height: $unnnic-spacing-xl;
@@ -174,7 +178,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
       background: $unnnic-color-neutral-soft;
     }
 
-    &:hover > .hide {
+    &:hover>.hide {
       visibility: visible;
       animation: grow-and-show 0.5s cubic-bezier(0.250, 0.460, 0.450, 1) both;
     }
@@ -203,6 +207,7 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
     opacity: 0;
     width: 0px
   }
+
   100% {
     opacity: 1;
     width: 100px;
@@ -214,9 +219,11 @@ $background_offset: ($grid_size / 2) + ($node_padding) + px;
     opacity: 1;
     width: 100px
   }
+
   25% {
     opacity: 0;
   }
+
   100% {
     opacity: 0;
     width: 0px;

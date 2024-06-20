@@ -33,7 +33,7 @@ describe(AirtimeRouterForm.name, () => {
       });
       expect(instance.state).toMatchSnapshot();
       instance.getButtons().primary.onClick();
-      expect(components.props.updateRouter).toMatchCallSnapshot();
+      expect(components.props.updateRouter).toMatchSnapshot();
     });
 
     it('should cancel changes', () => {
@@ -60,7 +60,7 @@ describe(AirtimeRouterForm.name, () => {
         value: { code: 'USD', amount: '' },
       });
       instance.getButtons().primary.onClick();
-      expect(components.props.updateRouter).toMatchCallSnapshot();
+      expect(components.props.updateRouter).toMatchSnapshot();
     });
 
     it('creates its own action uuid if necessary', () => {
@@ -80,7 +80,7 @@ describe(AirtimeRouterForm.name, () => {
         value: { code: 'USD', amount: '' },
       });
       instance.getButtons().primary.onClick();
-      expect(components.props.updateRouter).toMatchCallSnapshot();
+      expect(components.props.updateRouter).toMatchSnapshot();
     });
 
     it('validates before saving', () => {

@@ -2,7 +2,7 @@ import { mock } from 'testUtils';
 import OptionsList from './OptionsList';
 import * as utils from 'utils';
 import * as React from 'react';
-import { act, fireUnnnicInputChangeText, render, wait } from 'test/utils';
+import { act, fireUnnnicInputChangeText, render } from 'test/utils';
 import { ValidationFailure } from 'store/nodeEditor';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
@@ -19,9 +19,9 @@ function getProps() {
       ],
       validationFailures: [] as ValidationFailure[],
     },
-    onOptionsUpdated: jest.fn(),
-    onOptionRemoval: jest.fn(),
-    onButtonTextUpdated: jest.fn(),
+    onOptionsUpdated: vi.fn(),
+    onOptionRemoval: vi.fn(),
+    onButtonTextUpdated: vi.fn(),
   };
 }
 
@@ -30,16 +30,12 @@ describe(OptionsList.name, () => {
     const props = getProps();
     const { baseElement } = render(<OptionsList {...props} />);
 
-    await wait();
-
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should update list item title', async () => {
     const props = getProps();
-    const { getByTestId, getAllByTestId } = render(<OptionsList {...props} />);
-
-    await wait();
+    const { getByTestId } = render(<OptionsList {...props} />);
 
     // expand collapse
     const expandCollapseButton = getByTestId('Option 2/10');
@@ -60,9 +56,7 @@ describe(OptionsList.name, () => {
 
   it('should update list item description', async () => {
     const props = getProps();
-    const { getByTestId, getAllByTestId } = render(<OptionsList {...props} />);
-
-    await wait();
+    const { getByTestId } = render(<OptionsList {...props} />);
 
     // expand collapse
     const expandCollapseButton = getByTestId('Option 2/10');
@@ -83,9 +77,7 @@ describe(OptionsList.name, () => {
 
   it('should remove list item', async () => {
     const props = getProps();
-    const { getByTestId, getAllByTestId } = render(<OptionsList {...props} />);
-
-    await wait();
+    const { getByTestId } = render(<OptionsList {...props} />);
 
     // expand collapse
     const expandCollapseButton = getByTestId('Option 2/10');
@@ -108,9 +100,7 @@ describe(OptionsList.name, () => {
   it('should not remove last list item if it is an empty one', async () => {
     const props = getProps();
     props.options.value = [{ uuid: '1', title: '', description: '' }];
-    const { getByTestId, getAllByTestId } = render(<OptionsList {...props} />);
-
-    await wait();
+    const { getByTestId } = render(<OptionsList {...props} />);
 
     const listItemRemoveButton = getByTestId('Remove');
     await act(async () => {

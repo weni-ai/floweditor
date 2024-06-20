@@ -69,7 +69,7 @@ describe(ResultRouterForm.name, () => {
     expect(router.operand).toEqual('@results.my_test_result');
 
     expect(props.updateRouter).toHaveBeenCalled();
-    expect(props.updateRouter).toMatchCallSnapshot();
+    expect(props.updateRouter).toMatchSnapshot();
   });
 
   it('should a fielded operand if configured', () => {
@@ -101,6 +101,6 @@ describe(ResultRouterForm.name, () => {
     expect(router.operand).toEqual('@(field(results.my_test_result, 0, "+"))');
 
     expect(props.updateRouter).toHaveBeenCalled();
-    expect(props.updateRouter).toMatchCallSnapshot();
+    expect(props.updateRouter).toMatchSnapshot();
   });
 });

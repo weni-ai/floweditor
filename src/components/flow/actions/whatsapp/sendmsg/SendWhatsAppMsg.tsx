@@ -4,13 +4,13 @@ import * as React from 'react';
 import styles from './SendWhatsAppMsg.module.scss';
 import Pill from '../../../../pill/Pill';
 import { WHATSAPP_INTERACTION_TYPE_LOCATION } from './SendWhatsAppMsgForm';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import { renderIf } from '../../../../../utils';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon, {
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -29,7 +29,7 @@ const SendWhatsAppMsgComp: React.FunctionComponent<SendWhatsAppMsg> = (
   let replies = null;
   let items = null;
 
-  let quickReplies = action.quick_replies || [];
+  const quickReplies = action.quick_replies || [];
   if (quickReplies.length > 0) {
     replies = (
       <div className={styles.quick_replies}>
@@ -46,7 +46,7 @@ const SendWhatsAppMsgComp: React.FunctionComponent<SendWhatsAppMsg> = (
     );
   }
 
-  let listItems = action.list_items || [];
+  const listItems = action.list_items || [];
   if (listItems.length > 0) {
     items = (
       <div className={styles.list_items}>

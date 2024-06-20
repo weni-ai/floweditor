@@ -1,204 +1,133 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 1`] = `
-Object {
+exports[`GroupsRouterForm > helpers > extractGroups > should extract groups from the exits of a groupsRouter node 1`] = `
+{
   "name": "Customers",
   "uuid": "23ff7152-b588-43e4-90de-fda77aeaf7c0",
 }
 `;
 
-exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 2`] = `
-Object {
+exports[`GroupsRouterForm > helpers > extractGroups > should extract groups from the exits of a groupsRouter node 2`] = `
+{
   "name": "Unsatisfied Customers",
   "uuid": "2429d573-80d7-47f8-879f-f2ba442a1bfd",
 }
 `;
 
-exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 3`] = `
-Object {
+exports[`GroupsRouterForm > helpers > extractGroups > should extract groups from the exits of a groupsRouter node 3`] = `
+{
   "name": "Early Adopters",
   "uuid": "cdbf9e01-aaa7-4381-8259-ee042447bcac",
 }
 `;
 
-exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 4`] = `
-Object {
+exports[`GroupsRouterForm > helpers > extractGroups > should extract groups from the exits of a groupsRouter node 4`] = `
+{
   "name": "Testers",
   "uuid": "afaba971-8943-4dd8-860b-3561ed4f1fe1",
 }
 `;
 
-exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 5`] = `
-Object {
+exports[`GroupsRouterForm > helpers > extractGroups > should extract groups from the exits of a groupsRouter node 5`] = `
+{
   "name": "Subscribers",
   "uuid": "33b28bac-b588-43e4-90de-fda77aeaf7c0",
 }
 `;
 
-exports[`GroupsRouterForm helpers extractGroups should extract groups from the exits of a groupsRouter node 6`] = `
-Object {
+exports[`GroupsRouterForm > helpers > extractGroups > should extract groups from the exits of a groupsRouter node 6`] = `
+{
   "name": "Champions",
   "uuid": "e0cccbcf-49be-4eef-88a7-ce2150a6d902",
 }
 `;
 
-exports[`GroupsRouterForm render should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Confirm",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="split_by_groups"
-  title="Split by group membership"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "description": "Split by group membership",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "exits",
-        ],
-        "name": "Split by group membership",
-        "type": "split_by_groups",
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <AssetSelector
-    entry={
-      Object {
-        "value": Array [
-          Object {
-            "name": "Customers",
-            "uuid": "23ff7152-b588-43e4-90de-fda77aeaf7c0",
-          },
-          Object {
-            "name": "Unsatisfied Customers",
-            "uuid": "2429d573-80d7-47f8-879f-f2ba442a1bfd",
-          },
-          Object {
-            "name": "Early Adopters",
-            "uuid": "cdbf9e01-aaa7-4381-8259-ee042447bcac",
-          },
-          Object {
-            "name": "Testers",
-            "uuid": "afaba971-8943-4dd8-860b-3561ed4f1fe1",
-          },
-          Object {
-            "name": "Subscribers",
-            "uuid": "33b28bac-b588-43e4-90de-fda77aeaf7c0",
-          },
-          Object {
-            "name": "Champions",
-            "uuid": "e0cccbcf-49be-4eef-88a7-ce2150a6d902",
-          },
-        ],
-      }
-    }
-    multi={true}
-    name="Select the groups you'd like to split by below"
-    namePure="Groups"
-    onChange={[Function]}
-    searchable={true}
-    showLabel={true}
-  />
-  <OptionalTextInput
-    maxLength={64}
-    name="Save as result"
-    onChange={[Function]}
-    toggleText="Save as"
-    value={
-      Object {
-        "value": "",
-      }
-    }
-  />
-</Dialog>
-`;
+exports[`GroupsRouterForm > render > should render 1`] = `ShallowWrapper {}`;
 
-exports[`GroupsRouterForm updates should update and save 1`] = `
-Object {
-  "groups": Object {
-    "validationFailures": Array [],
-    "value": Array [
-      Object {
+exports[`GroupsRouterForm > updates > should update and save 1`] = `
+{
+  "groups": {
+    "validationFailures": [],
+    "value": [
+      {
+        "id": "489763",
         "name": "Subscriber",
+        "type": "group",
         "uuid": "68223118-109f-442a-aed3-7bb3e1eab687",
       },
     ],
   },
-  "resultName": Object {
-    "validationFailures": Array [],
+  "resultName": {
+    "validationFailures": [],
     "value": "My Group Result",
   },
   "valid": true,
 }
 `;
 
-exports[`GroupsRouterForm updates should update and save 2`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [],
-      "exits": Array [
-        Object {
-          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-        },
-        Object {
-          "destination_uuid": null,
-          "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "68223118-109f-442a-aed3-7bb3e1eab687",
-              "Subscriber",
+exports[`GroupsRouterForm > updates > should update and save 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "68223118-109f-442a-aed3-7bb3e1eab687",
+                  "Subscriber",
+                ],
+                "category_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "type": "has_group",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
             ],
-            "category_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "type": "has_group",
-            "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Subscriber",
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+              {
+                "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+                "name": "Other",
+                "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
+              },
+            ],
+            "default_category_uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
+            "operand": "@contact.groups",
+            "result_name": "My Group Result",
+            "type": "switch",
           },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-            "name": "Subscriber",
-            "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        "ui": {
+          "config": {
+            "cases": {},
           },
-          Object {
-            "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-            "name": "Other",
-            "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
-          },
-        ],
-        "default_category_uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
-        "operand": "@contact.groups",
-        "result_name": "My Group Result",
-        "type": "switch",
+          "position": null,
+          "type": "split_by_groups",
+        },
       },
-      "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "ui": Object {
-      "config": Object {
-        "cases": Object {},
-      },
-      "position": null,
-      "type": "split_by_groups",
-    },
-  },
-]
+  ],
+}
 `;

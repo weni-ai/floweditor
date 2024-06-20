@@ -8,7 +8,7 @@ const { setup } = composeComponentTestUtils<TimeoutControlProps>(
   TimeoutControl,
   {
     timeout: 0,
-    onChanged: jest.fn(),
+    onChanged: vi.fn(),
   },
 );
 
@@ -21,10 +21,10 @@ describe(TimeoutControl.name, () => {
   it('updates', () => {
     const { instance, props } = setup(true, { onChanged: setMock() });
     instance.handleChecked();
-    expect(props.onChanged).toMatchCallSnapshot('check');
+    expect(props.onChanged).toMatchSnapshot('check');
 
     instance.handleTimeoutChanged(TIMEOUT_OPTIONS[0]);
-    expect(props.onChanged).toMatchCallSnapshot('update');
+    expect(props.onChanged).toMatchSnapshot('update');
   });
 
   it('handles initial values', () => {

@@ -1,392 +1,102 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`MsgLocalizationForm inits inits with initial values 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Ok",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="send_msg"
-  tabs={
-    Array [
-      Object {
-        "body": <React.Fragment>
-          <div
-            className="u font secondary body-md color-neutral-cloudy"
-          >
-            Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.
-          </div>
-          <div
-            className="url_attachment_container"
-          >
-            <div
-              className="label u font secondary body-md color-neutral-cloudy"
-            >
-              File
-               
-              1
-            </div>
-            <div
-              className="url_attachment"
-            >
-              <div
-                className="type_choice"
-              >
-                <SelectElement
-                  entry={
-                    Object {
-                      "value": null,
-                    }
-                  }
-                  name="Type Options"
-                  onChange={[Function]}
-                  options={
-                    Array [
-                      Object {
-                        "name": "Image URL",
-                        "value": "image",
-                      },
-                      Object {
-                        "name": "Audio URL",
-                        "value": "audio",
-                      },
-                      Object {
-                        "name": "Video URL",
-                        "value": "video",
-                      },
-                      Object {
-                        "name": "PDF Document URL",
-                        "value": "application",
-                      },
-                      Object {
-                        "name": "Upload Attachment",
-                        "value": "upload",
-                      },
-                    ]
-                  }
-                  placeholder="Select the file type"
-                  style="sm"
-                />
-              </div>
-              <React.Fragment>
-                <div
-                  className="url"
-                />
-                <div
-                  className="remove"
-                />
-              </React.Fragment>
-            </div>
-          </div>
-          <input
-            onChange={[Function]}
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-            type="file"
-          />
-        </React.Fragment>,
-        "checked": false,
-        "name": "Attachments",
-      },
-      Object {
-        "body": <React.Fragment>
-          <MultiChoiceInput
-            helpText={
-              <Trans
-                i18nKey="forms.localized_quick_replies"
-                values={
-                  Object {
-                    "language": "Spanish",
-                  }
-                }
-              >
-                Add a new [[language]] Quick Reply and press enter.
-              </Trans>
-            }
-            items={
-              Object {
-                "value": Array [],
-              }
-            }
-            name="Quick Reply"
-            onChange={[Function]}
-          />
-        </React.Fragment>,
-        "checked": false,
-        "name": "Quick Replies",
-      },
-    ]
-  }
-  title="Send message"
->
-  <div
-    data-spec="translation-container"
-  >
-    <div
-      className="translate_from"
-      data-spec="text-to-translate"
-    >
-      Hey!
-    </div>
-  </div>
-  <TextInputElement
-    autocomplete={true}
-    entry={
-      Object {
-        "value": "¡hola!",
-      }
-    }
-    focus={true}
-    name="Message"
-    onChange={[Function]}
-    placeholder="Spanish Translation"
-    showLabel={false}
-    textarea={true}
-  />
-</Dialog>
-`;
+exports[`MsgLocalizationForm > inits > inits with initial values 1`] = `ShallowWrapper {}`;
 
-exports[`MsgLocalizationForm render should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Ok",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="send_msg"
-  tabs={
-    Array [
-      Object {
-        "body": <React.Fragment>
-          <div
-            className="u font secondary body-md color-neutral-cloudy"
-          >
-            Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.
-          </div>
-          <div
-            className="url_attachment_container"
-          >
-            <div
-              className="label u font secondary body-md color-neutral-cloudy"
-            >
-              File
-               
-              1
-            </div>
-            <div
-              className="url_attachment"
-            >
-              <div
-                className="type_choice"
-              >
-                <SelectElement
-                  entry={
-                    Object {
-                      "value": null,
-                    }
-                  }
-                  name="Type Options"
-                  onChange={[Function]}
-                  options={
-                    Array [
-                      Object {
-                        "name": "Image URL",
-                        "value": "image",
-                      },
-                      Object {
-                        "name": "Audio URL",
-                        "value": "audio",
-                      },
-                      Object {
-                        "name": "Video URL",
-                        "value": "video",
-                      },
-                      Object {
-                        "name": "PDF Document URL",
-                        "value": "application",
-                      },
-                      Object {
-                        "name": "Upload Attachment",
-                        "value": "upload",
-                      },
-                    ]
-                  }
-                  placeholder="Select the file type"
-                  style="sm"
-                />
-              </div>
-              <React.Fragment>
-                <div
-                  className="url"
-                />
-                <div
-                  className="remove"
-                />
-              </React.Fragment>
-            </div>
-          </div>
-          <input
-            onChange={[Function]}
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-            type="file"
-          />
-        </React.Fragment>,
-        "checked": false,
-        "name": "Attachments",
-      },
-      Object {
-        "body": <React.Fragment>
-          <MultiChoiceInput
-            helpText={
-              <Trans
-                i18nKey="forms.localized_quick_replies"
-                values={
-                  Object {
-                    "language": "Spanish",
-                  }
-                }
-              >
-                Add a new [[language]] Quick Reply and press enter.
-              </Trans>
-            }
-            items={
-              Object {
-                "value": Array [],
-              }
-            }
-            name="Quick Reply"
-            onChange={[Function]}
-          />
-        </React.Fragment>,
-        "checked": false,
-        "name": "Quick Replies",
-      },
-    ]
-  }
-  title="Send message"
->
-  <div
-    data-spec="translation-container"
-  >
-    <div
-      className="translate_from"
-      data-spec="text-to-translate"
-    >
-      Hey!
-    </div>
-  </div>
-  <TextInputElement
-    autocomplete={true}
-    entry={
-      Object {
-        "value": "",
-      }
-    }
-    focus={true}
-    name="Message"
-    onChange={[Function]}
-    placeholder="Spanish Translation"
-    showLabel={false}
-    textarea={true}
-  />
-</Dialog>
-`;
+exports[`MsgLocalizationForm > render > should render 1`] = `ShallowWrapper {}`;
 
-exports[`MsgLocalizationForm updates should ignore empty quick replies 1`] = `
-Object {
-  "attachments": Array [],
-  "audio": Object {
+exports[`MsgLocalizationForm > updates > should ignore empty quick replies 1`] = `
+{
+  "attachments": [],
+  "audio": {
     "value": null,
   },
-  "message": Object {
+  "message": {
     "value": "",
   },
-  "quickReplies": Object {
-    "validationFailures": Array [],
-    "value": Array [],
+  "quickReplies": {
+    "validationFailures": [],
+    "value": [],
   },
-  "templateVariables": Array [],
+  "templateVariables": [],
   "templating": null,
   "valid": true,
 }
 `;
 
-exports[`MsgLocalizationForm updates should ignore empty quick replies 2`] = `
-Array [
-  "spa",
-  Array [
-    Object {
-      "translations": Object {
-        "attachments": Array [],
-      },
-      "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+exports[`MsgLocalizationForm > updates > should ignore empty quick replies 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "spa",
+      [
+        {
+          "translations": {
+            "attachments": [],
+          },
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
   ],
-]
+}
 `;
 
-exports[`MsgLocalizationForm updates should save changes 1`] = `
-Object {
-  "attachments": Array [],
-  "audio": Object {
+exports[`MsgLocalizationForm > updates > should save changes 1`] = `
+{
+  "attachments": [],
+  "audio": {
     "value": null,
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "What is your favorite color?",
   },
-  "quickReplies": Object {
-    "validationFailures": Array [],
-    "value": Array [
+  "quickReplies": {
+    "validationFailures": [],
+    "value": [
       "red",
       "green",
       "blue",
     ],
   },
-  "templateVariables": Array [],
+  "templateVariables": [],
   "templating": null,
   "valid": true,
 }
 `;
 
-exports[`MsgLocalizationForm updates should save changes 2`] = `
-Array [
-  "spa",
-  Array [
-    Object {
-      "translations": Object {
-        "attachments": Array [],
-        "quick_replies": Array [
-          "red",
-          "green",
-          "blue",
-        ],
-        "text": "What is your favorite color?",
-      },
-      "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+exports[`MsgLocalizationForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "spa",
+      [
+        {
+          "translations": {
+            "attachments": [],
+            "quick_replies": [
+              "red",
+              "green",
+              "blue",
+            ],
+            "text": "What is your favorite color?",
+          },
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
   ],
-]
+}
 `;

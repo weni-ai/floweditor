@@ -36,7 +36,7 @@ describe(SendEmailForm.name, () => {
 
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should validate emails', () => {
@@ -50,7 +50,7 @@ describe(SendEmailForm.name, () => {
 
     it('should allow switching from router', () => {
       const component = setup(true, {
-        $merge: { updateAction: jest.fn() },
+        $merge: { updateAction: vi.fn() },
         nodeSettings: { $merge: { originalAction: null } },
       });
 
@@ -62,14 +62,14 @@ describe(SendEmailForm.name, () => {
       instance.handleBodyChanged('What is a group of tigers called?');
       instance.handleSave();
 
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
   });
 
   describe('cancel', () => {
     it('should cancel without changes', () => {
       const component = setup(true, {
-        $merge: { onClose: jest.fn(), updateAction: jest.fn() },
+        $merge: { onClose: vi.fn(), updateAction: vi.fn() },
       });
 
       const instance: SendEmailForm = component.instance;

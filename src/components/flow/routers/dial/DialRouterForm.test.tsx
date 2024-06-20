@@ -56,6 +56,6 @@ describe(DialRouterForm.name, () => {
     const router = getSmartOrSwitchRouter(getUpdatedNode(routerProps).node);
     expect(router.wait.type).toBe(WaitTypes.dial);
     expect(router.wait.phone).toBe('@fields.supervisor_phone');
-    expect(routerProps.updateRouter).toMatchCallSnapshot();
+    expect(routerProps.updateRouter).toMatchSnapshot();
   });
 });

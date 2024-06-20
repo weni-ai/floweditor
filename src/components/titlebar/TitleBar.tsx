@@ -6,10 +6,10 @@ import shared from 'components/shared.module.scss';
 import styles from './TitleBar.module.scss';
 import { fakePropType } from 'config/ConfigProvider';
 import i18n from 'config/i18n';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicIcon, unnnicModal, unnnicButton } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
 export interface TitleBarProps {
   title: string;
@@ -36,8 +36,8 @@ export const confirmRemovalSpecId = 'confirm-removal';
  * Simple title bar with confirmation removal
  */
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
-const UnnnicModal = applyVueInReact(unnnicModal, {
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
+const UnnnicModal = applyVueInReact(Unnnic.unnnicModal, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -61,7 +61,7 @@ const UnnnicModal = applyVueInReact(unnnicModal, {
   },
 });
 
-const UnnnicButton = applyVueInReact(unnnicButton, {
+const UnnnicButton = applyVueInReact(Unnnic.unnnicButton, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -110,7 +110,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
         modalIcon="alert-circle-1"
         scheme="feedback-yellow"
         text={i18n.t('removal_confirmation', 'Do you want to delete the card?')}
-        $slots={{
+        v-slots={{
           message: (
             <>
               {i18n.t(
@@ -151,11 +151,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
             </div>
           ),
         }}
-        on={{
-          close() {
-            ReactDOM.unmountComponentAtNode(div);
-          },
-        }}
+        onClose={() => ReactDOM.unmountComponentAtNode(div)}
       />,
       div,
     );

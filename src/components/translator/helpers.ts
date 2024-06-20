@@ -44,7 +44,7 @@ export const findTranslations = (
   const translations: Translation[] = [];
 
   localizeableKeys.forEach((attribute: string) => {
-    let keys = attribute.split('.');
+    const keys = attribute.split('.');
     let from = localizable as any;
     let to: any = [];
 

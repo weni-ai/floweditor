@@ -9,7 +9,7 @@ import {
   render,
   mock,
   fireEvent,
-  wait,
+  waitFor,
   getUpdatedNode,
   fireUnnnicInputChangeText,
   act,
@@ -19,6 +19,7 @@ import * as utils from 'utils';
 import { RenderNode, AssetType } from 'store/flowContext';
 import SubflowRouterForm from './SubflowRouterForm';
 import * as external from 'external';
+import { describe, vi, it, expect } from 'vitest';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -32,9 +33,11 @@ const getRouterFormProps = (
     },
     typeConfig: getTypeConfig(type),
     assetStore: { flows: { items: {}, type: AssetType.Flow } },
-    updateRouter: jest.fn(),
-    onTypeChange: jest.fn(),
-    onClose: jest.fn(),
+    updateRouter: vi.fn(),
+    onTypeChange: vi.fn(),
+    onClose: vi.fn(),
+    helpArticles: {},
+    issues: [],
   };
 };
 
@@ -65,15 +68,14 @@ describe(SubflowRouterForm.name, () => {
   it('should init parameter tab', async () => {
     const { baseElement } = render(<SubflowRouterForm {...subflowProps} />);
     // let our mount event to render our tabs
-    await wait();
-    expect(baseElement).toMatchSnapshot();
+    await waitFor(() => expect(baseElement).toMatchSnapshot());
   });
 
   it('should create result actions for parameters', async () => {
-    const { getByText, getByTestId } = render(
+    const { baseElement, getByText, getByTestId } = render(
       <SubflowRouterForm {...subflowProps} />,
     );
-    await wait();
+    await waitFor(() => expect(baseElement).toMatchSnapshot());
 
     // open the parameter tab
     fireEvent.click(getByText('Parameters'));
@@ -85,7 +87,7 @@ describe(SubflowRouterForm.name, () => {
     fireUnnnicInputChangeText(min, '1');
     fireUnnnicInputChangeText(max, '100');
 
-    await wait();
+    await waitFor(() => expect(baseElement).toMatchSnapshot());
 
     fireEvent.click(getByText('Confirm'));
     let actions = getUpdatedNode(subflowProps).node.actions;
@@ -95,7 +97,7 @@ describe(SubflowRouterForm.name, () => {
     expect(actions[0].type).toEqual(Types.set_run_result);
     expect(actions[1].type).toEqual(Types.set_run_result);
     expect(actions[2].type).toEqual(Types.enter_flow);
-    expect(subflowProps.updateRouter).toMatchCallSnapshot();
+    expect(subflowProps.updateRouter).toMatchSnapshot();
 
     // remove a parameter
     await act(async () => {

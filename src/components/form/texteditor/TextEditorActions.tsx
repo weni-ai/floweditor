@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { StringEntry } from 'store/nodeEditor';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 import Picker from '@emoji-mart/react';
 import PickerPTi18n from '@emoji-mart/data/i18n/pt.json';
 
 // @ts-ignore
-import { unnnicButton } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
 import styles from './TextEditorActions.module.scss';
 
-const UnnnicButton = applyVueInReact(unnnicButton);
+const UnnnicButton = applyVueInReact(Unnnic.unnnicButton);
 
 export interface TextEditorProps {
   entry: StringEntry;

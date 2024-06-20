@@ -58,7 +58,7 @@ describe(SmartResponseRouterForm.name, () => {
   describe('updates', () => {
     it('should save changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
+        $merge: { onClose: vi.fn(), updateRouter: vi.fn() },
       });
 
       instance.handleUpdateTimeout(180);
@@ -89,12 +89,12 @@ describe(SmartResponseRouterForm.name, () => {
       instance.handleSave();
       expect(props.onClose).toHaveBeenCalled();
       expect(props.updateRouter).toHaveBeenCalled();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
 
     it('should cancel', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
+        $merge: { onClose: vi.fn(), updateRouter: vi.fn() },
       });
       instance.handleUpdateTimeout(180);
       instance.getButtons().secondary.onClick();

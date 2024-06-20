@@ -1,9 +1,10 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 .case_list_container {
   overflow: hidden;
   border-radius: $curvature;
   margin-top: $unnnic-spacing-stack-xs + $unnnic-spacing-stack-nano;
+
   &:focus {
     outline: none;
   }
@@ -35,9 +36,10 @@
         cursor: default;
       }
     }
+
     .dnd_icon {
       opacity: 0;
-    }  
+    }
   }
 
 }

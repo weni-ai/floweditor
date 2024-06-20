@@ -37,7 +37,7 @@ describe(SendBroadcastForm.name, () => {
   describe('updates', () => {
     it('handles recipent change', () => {
       const { instance } = setup(true, {
-        $merge: { updateSendBroadcastForm: jest.fn().mockReturnValue(true) },
+        $merge: { updateSendBroadcastForm: vi.fn().mockReturnValue(true) },
       });
       instance.handleRecipientsChanged([{ id: 'group-0', name: 'My Group' }]);
       expect(instance.state).toMatchSnapshot();
@@ -45,7 +45,7 @@ describe(SendBroadcastForm.name, () => {
 
     it('handles text change', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateSendBroadcastForm: jest.fn().mockReturnValue(true) },
+        $merge: { updateSendBroadcastForm: vi.fn().mockReturnValue(true) },
       });
       instance.handleMessageUpdate('Message to Group');
       expect(instance.state).toMatchSnapshot();
@@ -53,7 +53,7 @@ describe(SendBroadcastForm.name, () => {
 
     it('should allow switching from router', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateAction: jest.fn() },
+        $merge: { updateAction: vi.fn() },
         nodeSettings: { $merge: { originalAction: null } },
       });
 
@@ -61,7 +61,7 @@ describe(SendBroadcastForm.name, () => {
       instance.handleMessageUpdate('Message to Group');
       instance.handleSave();
 
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
   });
 });

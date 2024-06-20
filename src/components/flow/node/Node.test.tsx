@@ -1,9 +1,10 @@
 import { NodeComp, NodeProps } from 'components/flow/node/Node';
 import { Types } from 'config/interfaces';
 import React from 'react';
-import { render, TEST_DEFINITION, TEST_NODE } from 'test/utils';
+import { render, TEST_NODE } from 'test/utils';
 import { createRandomNode } from 'testUtils/assetCreators';
 import { createUUID } from 'utils';
+import { MouseState } from '../../../store/editor';
 
 const baseProps: NodeProps = {
   languages: {},
@@ -11,12 +12,12 @@ const baseProps: NodeProps = {
   startingNode: true,
   onlyNode: true,
   selected: false,
-  plumberMakeTarget: jest.fn(),
-  plumberRecalculate: jest.fn(),
-  plumberMakeSource: jest.fn(),
-  plumberRemove: jest.fn(),
-  plumberConnectExit: jest.fn(),
-  plumberUpdateClass: jest.fn(),
+  plumberMakeTarget: vi.fn(),
+  plumberRecalculate: vi.fn(),
+  plumberMakeSource: vi.fn(),
+  plumberRemove: vi.fn(),
+  plumberConnectExit: vi.fn(),
+  plumberUpdateClass: vi.fn(),
 
   results: {},
   activeCount: 0,
@@ -31,12 +32,15 @@ const baseProps: NodeProps = {
     },
     inboundConnections: {},
   },
-  definition: TEST_DEFINITION,
-  onAddToNode: jest.fn(),
-  onOpenNodeEditor: jest.fn(),
-  removeNode: jest.fn(),
-  mergeEditorState: jest.fn(),
+  onAddToNode: vi.fn(),
+  onOpenNodeEditor: vi.fn(),
+  removeNode: vi.fn(),
+  mergeEditorState: vi.fn(),
   issues: [],
+  language: null,
+  mouseState: MouseState.SELECT,
+  scrollToAction: '',
+  scrollToNode: '',
 };
 
 describe(NodeComp.name, () => {

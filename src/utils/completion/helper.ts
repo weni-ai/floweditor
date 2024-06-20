@@ -198,7 +198,7 @@ export const updateInputElementWithCompletion = (
 };
 
 export const executeCompletionQuery = (
-  ele: HTMLInputElement,
+  ele: HTMLInputElement | HTMLTextAreaElement,
   store: TembaStore,
   session: boolean,
   functions: CompletionOption[],

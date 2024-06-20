@@ -39,12 +39,12 @@ describe(AddLabelsForm.name, () => {
       instance.handleSave();
 
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot('update label');
+      expect(props.updateAction).toMatchSnapshot('update label');
     });
 
     it('should allow switching from router', () => {
       const component = setup(true, {
-        $merge: { updateAction: jest.fn() },
+        $merge: { updateAction: vi.fn() },
         nodeSettings: { $merge: { originalAction: null } },
       });
 
@@ -53,7 +53,7 @@ describe(AddLabelsForm.name, () => {
 
       instance.handleLabelsChanged([FeedbackLabel]);
       instance.handleSave();
-      expect(props.updateAction).toMatchCallSnapshot('switch from router');
+      expect(props.updateAction).toMatchSnapshot('switch from router');
     });
   });
 });

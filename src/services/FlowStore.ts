@@ -2,7 +2,8 @@
 import axios, { AxiosResponse } from 'axios';
 import { FlowDefinition } from 'flowTypes';
 
-const storage = require('local-storage');
+// @ts-ignore
+import storage from 'local-storage';
 
 export class FlowStore {
   private static singleton: FlowStore = new FlowStore();
@@ -18,7 +19,7 @@ export class FlowStore {
   }
 
   getFlowFromStore(uuid: string): FlowDefinition {
-    var flow = storage.get('flow');
+    const flow = storage.get('flow');
     if (flow != null) {
       return flow as FlowDefinition;
     } else {
@@ -38,8 +39,8 @@ export class FlowStore {
 
   loadFromUrl(url: string, token: string, onLoad: Function) {
     return axios.get(url).then((response: AxiosResponse) => {
-      var json = eval(response.data);
-      let definition = json as FlowDefinition;
+      const json = eval(response.data);
+      const definition = json as FlowDefinition;
       onLoad(definition);
     });
   }

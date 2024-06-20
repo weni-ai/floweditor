@@ -1,10 +1,10 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 import styles from './SearchButton.module.scss';
 
 // @ts-ignore
-import { unnnicButton } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import { SearchIcon } from 'pureIcons/SearchIcon';
 
 export enum ButtonTypes {
@@ -20,7 +20,7 @@ export interface ButtonProps {
   onRef?: (ele: any) => void;
 }
 
-const UnnnicButton = applyVueInReact(unnnicButton, {
+const UnnnicButton = applyVueInReact(Unnnic.unnnicButton, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',

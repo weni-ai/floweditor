@@ -26,7 +26,7 @@ describe(SwitchElement.name, () => {
   });
 
   it('should switch', () => {
-    const onChangeSpy = jest.fn();
+    const onChangeSpy = vi.fn();
     render(<SwitchElement {...baseProps} onChange={onChangeSpy} />);
     const switchIcon = document.getElementById('default');
     fireEvent.click(switchIcon);

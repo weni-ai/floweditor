@@ -128,7 +128,7 @@ export const getDomElement = (ele: HTMLElement, selector: string) => {
 
 export const fireTembaSelect = (ele: HTMLElement, value: any) => {
   (ele as any).values = Array.isArray(value) ? value : [{ value }];
-  var evt = document.createEvent('HTMLEvents');
+  const evt = document.createEvent('HTMLEvents');
   evt.initEvent('change', false, true);
   ele.dispatchEvent(evt);
 };
