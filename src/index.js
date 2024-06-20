@@ -13,7 +13,7 @@ import * as serviceWorker from './serviceWorker';
 import { setHTTPTimeout } from 'external';
 
 // bring in our temba-components if they aren't already registered
-var componentsExist =
+const componentsExist =
   document.body.innerHTML.indexOf('temba-components') > -1 ||
   document.body.innerHTML.indexOf('temba-modules') > -1;
 if (!componentsExist) {

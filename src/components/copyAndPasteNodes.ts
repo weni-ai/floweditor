@@ -11,7 +11,7 @@ export default class {
     } else if (array instanceof Object) {
       const i = {};
 
-      for (let key in array) {
+      for (const key in array) {
         let newKey = key;
 
         if (
@@ -62,7 +62,7 @@ export default class {
     } else if (array instanceof Object) {
       const i = {};
 
-      for (let key in array) {
+      for (const key in array) {
         let newKey = key;
 
         if (

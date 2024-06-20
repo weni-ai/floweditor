@@ -233,7 +233,7 @@ export const getUniqueDestinations = (node: FlowNode): string[] => {
 export const getCurrentDefinition = (
   definition: FlowDefinition,
   nodeMap: RenderNodeMap,
-  includeUI: boolean = true,
+  includeUI = true,
 ): FlowDefinition => {
   const renderNodes = getOrderedNodes(nodeMap);
   const nodes: FlowNode[] = [];

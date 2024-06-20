@@ -57,7 +57,7 @@ export default class TicketRouterForm extends React.Component<
 
     if (this.state.ticketer.value) {
       try {
-        let stateTicketer =
+        const stateTicketer =
           props.assetStore.ticketers.items[this.state.ticketer.value.uuid];
         this.handleTopicsOptionsUpdateByTicketerType(stateTicketer, false);
       } catch (e) {}
@@ -152,7 +152,7 @@ export default class TicketRouterForm extends React.Component<
       ticketer.hasOwnProperty('type') &&
       (ticketer['type'] as string) === 'wenichats';
     if (isWenichatsType) {
-      let ticketerQueuesEndpoint =
+      const ticketerQueuesEndpoint =
         this.context.config.endpoints.ticketer_queues +
         `?ticketer_uuid=${this.state.ticketer.value.uuid}`;
       axios.get(ticketerQueuesEndpoint).then(response => {
@@ -178,7 +178,7 @@ export default class TicketRouterForm extends React.Component<
       ticketer.hasOwnProperty('type') &&
       (ticketer['type'] as string) === 'wenichats';
 
-    let ticketerQueuesEndpoint = hasContext
+    const ticketerQueuesEndpoint = hasContext
       ? this.context.config.endpoints.ticketer_queues
       : this.props.assetStore.ticketers.endpoint.replace(
           'ticketers',
@@ -304,7 +304,7 @@ export default class TicketRouterForm extends React.Component<
     let currentTicketer = null;
     if (Object.keys(this.props.assetStore.ticketers.items).length > 0) {
       try {
-        let currentTicketerUUID = this.state.ticketer.value.uuid;
+        const currentTicketerUUID = this.state.ticketer.value.uuid;
         currentTicketer = this.props.assetStore.ticketers.items[
           currentTicketerUUID
         ];

@@ -1,4 +1,4 @@
-export const completion = {
+const completion = {
   context: {
     types: [
       {
