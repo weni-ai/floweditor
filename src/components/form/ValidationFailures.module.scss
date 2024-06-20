@@ -1,8 +1,9 @@
-@import "variables.module.scss";
+@import "src/variables.module.scss";
 
 .errors {
   color: $red;
   text-align: center;
+
   .error {
     margin-top: 16px;
     padding: 10px;

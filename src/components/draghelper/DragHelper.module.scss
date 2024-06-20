@@ -1,4 +1,4 @@
-@import "variables.module.scss";
+@import "src/variables.module.scss";
 
 $speed: 0.2s;
 
@@ -11,6 +11,7 @@ $speed: 0.2s;
     .arrow {
       top: 0px;
       opacity: 1;
+
       .tail {
         height: 24px;
       }
@@ -62,6 +63,7 @@ $speed: 0.2s;
     left: 0px;
     width: 150px;
     opacity: 0;
+
     .bold {
       font-weight: bold;
     }

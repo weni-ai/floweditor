@@ -1,7 +1,7 @@
 import { FlowStoreProps } from 'components/flow/Flow';
 import { DebugState } from 'store/editor';
 
-const mutate = require('immutability-helper');
+import mutate from 'immutability-helper';
 
 /* istanbul ignore next */
 export default class Debug {

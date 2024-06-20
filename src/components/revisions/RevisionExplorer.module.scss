@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 $revision_color: $purple;
 
@@ -32,6 +32,7 @@ $revision_color: $purple;
   transition: 0.2s ease-in-out;
   color: $light_gray_2;
   font-weight: 300;
+
   .explorer {
     width: 250px;
     overflow: hidden;

@@ -1,5 +1,4 @@
-@import 'variables.module.scss';
-@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
+@import 'src/variables.module.scss';
 
 .action {
   position: relative;
@@ -22,6 +21,7 @@
       border-bottom-left-radius: 0;
     }
   }
+
   clear: both;
 }
 
@@ -68,7 +68,10 @@
     text-underline-offset: 0.1875 * $unnnic-font-size; // 3px
   }
 
-  &.add_contact_groups, &.remove_contact_groups, &.call_classifier, &.call_wenigpt {
+  &.add_contact_groups,
+  &.remove_contact_groups,
+  &.call_classifier,
+  &.call_wenigpt {
     text-align: center;
   }
 
@@ -92,6 +95,7 @@
   .overlay {
     display: block;
   }
+
   .body {
     background: #fff;
   }
@@ -139,10 +143,10 @@
 .selected {
   background: #EEFFFC !important;
 
-  > div {
+  >div {
     background: #EEFFFC !important;
 
-    > div {
+    >div {
       background: #EEFFFC !important;
     }
   }
