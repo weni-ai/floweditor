@@ -8,7 +8,7 @@ import {
   timeStart,
 } from 'utils';
 
-const mutate = require('immutability-helper');
+import mutate from 'immutability-helper';
 
 export const collides = (a: FlowPosition, b: FlowPosition, fudge: number) => {
   // don't bother with collision if we don't have full dimensions

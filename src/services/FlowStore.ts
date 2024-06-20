@@ -2,7 +2,8 @@
 import axios, { AxiosResponse } from 'axios';
 import { FlowDefinition } from 'flowTypes';
 
-const storage = require('local-storage');
+// @ts-ignore
+import storage from 'local-storage';
 
 export class FlowStore {
   private static singleton: FlowStore = new FlowStore();

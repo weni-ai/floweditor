@@ -1,277 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SmartResponseRouterForm initializes case config 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Confirm",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  gutter={
-    <TimeoutControl
-      onChanged={[Function]}
-      timeout={0}
-    />
-  }
-  headerClass="wait_for_response"
-  title="Wait for response"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "aliases": Array [
-          "switch",
-        ],
-        "description": "Wait for the contact to respond",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "categories",
-          "cases",
-        ],
-        "name": "Wait for response",
-        "type": "wait_for_response",
-        "visibility": Array [
-          "messaging",
-          "messaging_offline",
-        ],
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <DescriptionAlert
-    openDescriptionEdit={[Function]}
-  />
-  <div
-    className="content"
-  >
-    <div
-      className="phrases"
-    >
-      <div
-        className="header"
-      >
-        <span
-          className="title"
-        >
-          Command phrases
-        </span>
-        <span
-          className="description"
-        >
-          Write command phrases related to the category
-        </span>
-      </div>
-    </div>
-    <div
-      className="categories"
-    >
-      <div
-        className="header"
-      >
-        <span
-          className="title"
-        >
-          Categorize as
-        </span>
-        <span
-          className="description"
-        >
-          Define the Category you want to classify the Contact's response.
-        </span>
-      </div>
-    </div>
-  </div>
-  <CaseList
-    cases={
-      Array [
-        Object {
-          "categoryName": "Red",
-          "kase": Object {
-            "arguments": Array [
-              "red",
-            ],
-            "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "type": "has_any_word",
-            "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-          },
-          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-          "valid": true,
-        },
-        Object {
-          "categoryName": "Red",
-          "kase": Object {
-            "arguments": Array [
-              "not blue",
-            ],
-            "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "type": "has_any_word",
-            "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-          },
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-          "valid": true,
-        },
-      ]
-    }
-    data-spec="cases"
-    onCasesUpdated={[Function]}
-    type="smart"
-  />
-  <OptionalTextInput
-    maxLength={64}
-    name="Save as result"
-    onChange={[Function]}
-    toggleText="Save as"
-    value={
-      Object {
-        "value": "",
-      }
-    }
-  />
-</Dialog>
-`;
+exports[`SmartResponseRouterForm > initializes case config 1`] = `ShallowWrapper {}`;
 
-exports[`SmartResponseRouterForm should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Confirm",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  gutter={
-    <TimeoutControl
-      onChanged={[Function]}
-      timeout={0}
-    />
-  }
-  headerClass="wait_for_response"
-  title="Wait for response"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "aliases": Array [
-          "switch",
-        ],
-        "description": "Wait for the contact to respond",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "categories",
-          "cases",
-        ],
-        "name": "Wait for response",
-        "type": "wait_for_response",
-        "visibility": Array [
-          "messaging",
-          "messaging_offline",
-        ],
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <DescriptionAlert
-    openDescriptionEdit={[Function]}
-  />
-  <div
-    className="content"
-  >
-    <div
-      className="phrases"
-    >
-      <div
-        className="header"
-      >
-        <span
-          className="title"
-        >
-          Command phrases
-        </span>
-        <span
-          className="description"
-        >
-          Write command phrases related to the category
-        </span>
-      </div>
-    </div>
-    <div
-      className="categories"
-    >
-      <div
-        className="header"
-      >
-        <span
-          className="title"
-        >
-          Categorize as
-        </span>
-        <span
-          className="description"
-        >
-          Define the Category you want to classify the Contact's response.
-        </span>
-      </div>
-    </div>
-  </div>
-  <CaseList
-    cases={
-      Array [
-        Object {
-          "categoryName": "Red",
-          "kase": Object {
-            "arguments": Array [
-              "red",
-            ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_any_word",
-            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-          },
-          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-          "valid": true,
-        },
-      ]
-    }
-    data-spec="cases"
-    onCasesUpdated={[Function]}
-    type="smart"
-  />
-  <OptionalTextInput
-    maxLength={64}
-    name="Save as result"
-    onChange={[Function]}
-    toggleText="Save as"
-    value={
-      Object {
-        "value": "",
-      }
-    }
-  />
-</Dialog>
-`;
+exports[`SmartResponseRouterForm > should render 1`] = `ShallowWrapper {}`;
 
-exports[`SmartResponseRouterForm updates should save changes 1`] = `
-Object {
-  "cases": Array [
-    Object {
+exports[`SmartResponseRouterForm > updates > should save changes 1`] = `
+{
+  "cases": [
+    {
       "categoryName": "Red",
-      "kase": Object {
-        "arguments": Array [
+      "kase": {
+        "arguments": [
           "red",
         ],
         "type": "has_any_word",
@@ -279,10 +18,10 @@ Object {
       "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       "valid": true,
     },
-    Object {
+    {
       "categoryName": "Red",
-      "kase": Object {
-        "arguments": Array [
+      "kase": {
+        "arguments": [
           "maroon",
         ],
         "type": "has_any_word",
@@ -290,10 +29,10 @@ Object {
       "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
       "valid": true,
     },
-    Object {
+    {
       "categoryName": "Green",
-      "kase": Object {
-        "arguments": Array [
+      "kase": {
+        "arguments": [
           "green",
         ],
         "type": "has_any_word",
@@ -302,9 +41,9 @@ Object {
       "valid": true,
     },
   ],
-  "hiddenCases": Array [],
-  "resultName": Object {
-    "validationFailures": Array [],
+  "hiddenCases": [],
+  "resultName": {
+    "validationFailures": [],
     "value": "Favorite Color",
   },
   "timeout": 180,
@@ -312,107 +51,117 @@ Object {
 }
 `;
 
-exports[`SmartResponseRouterForm updates should save changes 2`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [],
-      "exits": Array [
-        Object {
-          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-        },
-        Object {
-          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-        },
-        Object {
-          "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-        },
-        Object {
-          "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-        },
-        Object {
-          "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "red",
+exports[`SmartResponseRouterForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            },
+            {
+              "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            },
+            {
+              "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+            },
+            {
+              "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "red",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "maroon",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "green",
+                ],
+                "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [],
+                "category_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+                "type": "has_category",
+                "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+              },
             ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_any_word",
-          },
-          Object {
-            "arguments": Array [
-              "maroon",
+            "categories": [
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Red",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "name": "Green",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+              {
+                "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "name": "Failure",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+              {
+                "exit_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                "name": "No Response",
+                "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+              },
+              {
+                "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+                "name": "Other",
+                "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+              },
             ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_any_word",
+            "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "operand": "@input.text",
+            "result_name": "Favorite Color",
+            "type": "smart",
+            "wait": {
+              "timeout": {
+                "category_uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+                "seconds": 180,
+              },
+              "type": "msg",
+            },
           },
-          Object {
-            "arguments": Array [
-              "green",
-            ],
-            "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "type": "has_any_word",
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {
+            "cases": {},
           },
-          Object {
-            "arguments": Array [],
-            "category_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
-            "type": "has_category",
-            "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
-          },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "name": "Red",
-            "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-          },
-          Object {
-            "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "name": "Green",
-            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-          },
-          Object {
-            "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "name": "Failure",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-          },
-          Object {
-            "exit_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-            "name": "No Response",
-            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
-          },
-          Object {
-            "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-            "name": "Other",
-            "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
-          },
-        ],
-        "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-        "operand": "@input.text",
-        "result_name": "Favorite Color",
-        "type": "smart",
-        "wait": Object {
-          "timeout": Object {
-            "category_uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
-            "seconds": 180,
-          },
-          "type": "msg",
+          "position": null,
+          "type": "wait_for_response",
         },
       },
-      "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "ui": Object {
-      "config": Object {
-        "cases": Object {},
-      },
-      "position": null,
-      "type": "wait_for_response",
-    },
-  },
-]
+  ],
+}
 `;

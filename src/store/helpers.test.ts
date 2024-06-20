@@ -32,7 +32,7 @@ import {
 } from 'testUtils/assetCreators';
 import { createUUID } from 'utils';
 
-const mutate = require('immutability-helper');
+import mutate from 'immutability-helper';
 
 describe('helpers', () => {
   const definition: FlowDefinition = require('test/flows/boring.json');
@@ -86,9 +86,9 @@ describe('helpers', () => {
       ).toBe(Types.split_by_airtime);
 
       // guess a webhook node
-      expect(guessNodeType(createWebhookNode(createCallWebhookAction()))).toBe(
-        Types.split_by_webhook,
-      );
+      expect(
+        guessNodeType(createWebhookNode(createCallWebhookAction(), false)),
+      ).toBe(Types.split_by_webhook);
 
       // guess groups split
       expect(guessNodeType(createGroupsRouterNode().node)).toBe(

@@ -4,7 +4,7 @@ import ContextExplorer, { ContextExplorerProps } from './ContextExplorer';
 
 const props: ContextExplorerProps = {
   visible: true,
-  onClose: jest.fn(),
+  onClose: vi.fn(),
   contents: {
     day: '020120',
     temperatures: [23.2, 21.2, 20.3, 20.5, 20.11, 21.3],

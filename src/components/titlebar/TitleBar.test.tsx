@@ -8,7 +8,7 @@ import { act, fireEvent, render } from 'test/utils';
 
 const baseProps: TitleBarProps = {
   title: 'Send Message',
-  onRemoval: jest.fn(),
+  onRemoval: vi.fn(),
 };
 
 describe(TitleBar.name, () => {
@@ -34,7 +34,7 @@ describe(TitleBar.name, () => {
       });
 
       it('should call onMoveUp', () => {
-        const onMoveUp = jest.fn();
+        const onMoveUp = vi.fn();
         const { baseElement, getByTestId } = render(
           <TitleBar {...baseProps} showMove={true} onMoveUp={onMoveUp} />,
         );
@@ -57,7 +57,7 @@ describe(TitleBar.name, () => {
 
     describe('confirmation', () => {
       it('should render confirmation markup and call onRemoval prop', async () => {
-        const handleRemoveClicked = jest.fn();
+        const handleRemoveClicked = vi.fn();
         const { baseElement, getByTestId, getByText } = render(
           <TitleBar
             {...baseProps}

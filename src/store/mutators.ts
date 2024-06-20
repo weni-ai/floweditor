@@ -31,7 +31,7 @@ import { NodeEditorSettings } from 'store/nodeEditor';
 import { LocalizationUpdates } from 'store/thunks';
 import { createUUID, merge, push, set, snakify, splice, unset } from 'utils';
 
-const mutate = require('immutability-helper');
+import mutate from 'immutability-helper';
 
 export const uniquifyNode = (newNode: FlowNode): FlowNode => {
   // Give our node a unique uuid

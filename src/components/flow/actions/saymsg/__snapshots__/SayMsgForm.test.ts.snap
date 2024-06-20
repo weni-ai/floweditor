@@ -1,97 +1,58 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SayMsgForm render should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Ok",
-        "onClick": [Function],
+exports[`SayMsgForm > render > should render 1`] = `ShallowWrapper {}`;
+
+exports[`SayMsgForm > updates > should allow switching from router 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "audio_url": "",
+        "text": "What is your favorite color?",
+        "type": "say_msg",
+        "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
       },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="send_msg"
-  title="Send message"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "component": [Function],
-        "description": "Send the contact a message",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "text",
-          "quick_replies",
-          "templating.variables",
-        ],
-        "massageForDisplay": [Function],
-        "name": "Send message",
-        "type": "send_msg",
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <TextInputElement
-    autocomplete={true}
-    entry={
-      Object {
-        "value": "",
-      }
-    }
-    focus={true}
-    name="Message"
-    onChange={[Function]}
-    showLabel={false}
-    textarea={true}
-  />
-  <UploadButton
-    endpoint="/assets/attachments.json"
-    icon="fe-mic"
-    onUploadChanged={[Function]}
-    removeText="Remove Recording"
-    uploadText="Upload Recording"
-    url=""
-  />
-</Dialog>
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SayMsgForm updates should allow switching from router 1`] = `
-Array [
-  Object {
-    "audio_url": "",
-    "text": "What is your favorite color?",
-    "type": "say_msg",
-    "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-  },
-]
-`;
-
-exports[`SayMsgForm updates should save changes 1`] = `
-Object {
-  "audio": Object {
+exports[`SayMsgForm > updates > should save changes 1`] = `
+{
+  "audio": {
     "value": "",
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "What is your favorite color?",
   },
   "valid": true,
 }
 `;
 
-exports[`SayMsgForm updates should save changes 2`] = `
-Array [
-  Object {
-    "audio_url": "",
-    "text": "What is your favorite color?",
-    "type": "say_msg",
-    "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-  },
-]
+exports[`SayMsgForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "audio_url": "",
+        "text": "What is your favorite color?",
+        "type": "say_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;

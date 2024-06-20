@@ -1,87 +1,87 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`typeConfigs should provide type configs 1`] = `
-Array [
-  Object {
+exports[`typeConfigs > should provide type configs 1`] = `
+[
+  {
     "component": [Function],
     "description": " ** Unsupported ** ",
     "name": "Missing",
     "type": "missing",
-    "visibility": Array [
+    "visibility": [
       "-",
     ],
   },
-  Object {
+  {
     "component": [Function],
     "description": "Play a message",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "text",
       "audio_url",
     ],
     "name": "Play Message",
     "type": "say_msg",
-    "visibility": Array [
+    "visibility": [
       "voice",
     ],
   },
-  Object {
+  {
     "description": "Wait for menu selection",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Wait for Menu Selection",
     "type": "wait_for_menu",
-    "visibility": Array [
+    "visibility": [
       "voice",
     ],
   },
-  Object {
+  {
     "description": "Wait for multiple digits",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
       "cases",
     ],
     "name": "Wait for Digits",
     "type": "wait_for_digits",
-    "visibility": Array [
+    "visibility": [
       "voice",
     ],
   },
-  Object {
+  {
     "description": "Wait for an audio recording",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Wait for Audio",
     "type": "wait_for_audio",
-    "visibility": Array [
+    "visibility": [
       "messaging_offline",
       "voice",
     ],
   },
-  Object {
+  {
     "description": "Wait for forwarded call to someone else",
     "form": [Function],
     "name": "Wait for Forwarded Call",
     "type": "wait_for_dial",
-    "visibility": Array [
+    "visibility": [
       "voice",
     ],
   },
-  Object {
+  {
     "component": [Function],
     "description": "Send the contact a message",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "text",
       "quick_replies",
       "templating.variables",
@@ -90,8 +90,8 @@ Array [
     "name": "Send message",
     "type": "send_msg",
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "split_by_whatsapp_product",
     ],
     "component": [Function],
@@ -102,104 +102,104 @@ Array [
     "new": true,
     "type": "send_msg_catalog",
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "switch",
     ],
     "description": "Wait for the contact to respond",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "categories",
       "cases",
     ],
     "name": "Wait for response",
     "type": "wait_for_response",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_offline",
     ],
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "smart",
     ],
     "description": "Smartly wait for response",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "categories",
       "cases",
     ],
     "name": "Smart Wait for Response",
     "new": true,
     "type": "smart_wait_for_response",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_offline",
     ],
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "split_by_wenigpt",
     ],
     "component": [Function],
     "description": "Call WeniGPT",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "input",
     ],
     "name": "Call WeniGPT",
     "new": true,
     "type": "call_wenigpt",
   },
-  Object {
+  {
     "component": [Function],
     "description": "Send somebody else a message",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "text",
     ],
     "name": "Send broadcast",
     "type": "send_broadcast",
   },
-  Object {
+  {
     "component": [Function],
     "description": "Label the incoming message",
     "form": [Function],
     "name": "Add label",
     "type": "add_input_labels",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_offline",
       "voice",
     ],
   },
-  Object {
+  {
     "component": [Function],
     "description": "Add a URN for the contact",
     "form": [Function],
     "name": "Add URN",
     "type": "add_contact_urn",
   },
-  Object {
+  {
     "component": [Function],
     "description": "Add the contact to a group",
     "form": [Function],
     "name": "Add to group",
     "type": "add_contact_groups",
   },
-  Object {
+  {
     "component": [Function],
     "description": "Remove the contact from a group",
     "form": [Function],
     "name": "Remove from group",
     "type": "remove_contact_groups",
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "set_contact_name",
       "set_contact_language",
       "set_contact_channel",
@@ -211,61 +211,61 @@ Array [
     "name": "Update contact",
     "type": "set_contact_field",
   },
-  Object {
+  {
     "component": [Function],
     "description": "Send email",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "subject",
       "body",
     ],
     "name": "Send email",
     "type": "send_email",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  Object {
+  {
     "component": [Function],
     "description": "Save a result for this flow",
     "form": [Function],
     "name": "Save flow result",
     "type": "set_run_result",
   },
-  Object {
+  {
     "component": [Function],
     "description": "Play a contact recording",
     "form": [Function],
     "name": "Play Recording",
     "type": "play_audio",
-    "visibility": Array [
+    "visibility": [
       "voice",
     ],
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "split_by_webhook",
     ],
     "component": [Function],
     "description": "Call a webhook",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Call webhook",
     "type": "call_webhook",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "split_by_resthook",
     ],
     "component": [Function],
@@ -273,49 +273,49 @@ Array [
     "filter": "resthook",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Call Zapier",
     "type": "call_resthook",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "split_by_subflow",
     ],
     "component": [Function],
     "description": "Enter another flow",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Enter another flow",
     "type": "enter_flow",
   },
-  Object {
+  {
     "component": [Function],
     "description": "Start somebody else in a flow",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Start somebody else",
     "type": "start_session",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "split_by_ticket",
     ],
     "component": [Function],
@@ -323,14 +323,14 @@ Array [
     "filter": "ticketer",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Open Ticket",
     "type": "open_ticket",
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "split_by_airtime",
     ],
     "component": [Function],
@@ -338,19 +338,19 @@ Array [
     "filter": "airtime",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Send Airtime",
     "type": "transfer_airtime",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "split_by_external_service",
     ],
     "component": [Function],
@@ -358,53 +358,53 @@ Array [
     "filter": "external_service",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exists",
     ],
     "name": "Call External Service",
     "type": "call_external_service",
   },
-  Object {
+  {
     "description": "Wait for an image",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Wait for Image",
     "type": "wait_for_image",
-    "visibility": Array [
+    "visibility": [
       "messaging_offline",
     ],
   },
-  Object {
+  {
     "description": "Wait for a video",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Wait for Video",
     "type": "wait_for_video",
-    "visibility": Array [
+    "visibility": [
       "messaging_offline",
     ],
   },
-  Object {
+  {
     "description": "Wait for location GPS coordinates",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Wait for Location",
     "type": "wait_for_location",
-    "visibility": Array [
+    "visibility": [
       "messaging_offline",
     ],
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "call_classifier",
     ],
     "component": [Function],
@@ -412,98 +412,98 @@ Array [
     "filter": "classifier",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Split by intent",
     "type": "split_by_intent",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "smart",
     ],
     "description": "Automatic Classify",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "categories",
       "cases",
     ],
     "name": "Automatic Classify",
     "new": true,
     "type": "automatic_classify",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  Object {
+  {
     "description": "Split by a custom expression",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
       "cases",
     ],
     "name": "Split by expression",
     "type": "split_by_expression",
   },
-  Object {
+  {
     "description": "Split by contact field",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
       "cases",
     ],
     "name": "Split by contact field",
     "type": "split_by_contact_field",
   },
-  Object {
-    "aliases": Array [
+  {
+    "aliases": [
       "split_by_run_result_delimited",
     ],
     "description": "Split by a result in the flow",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
       "cases",
     ],
     "name": "Split by flow result",
     "type": "split_by_run_result",
   },
-  Object {
+  {
     "description": "Split randomly",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Split randomly",
     "type": "split_by_random",
   },
-  Object {
+  {
     "description": "Split by group membership",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Split by group membership",
     "type": "split_by_groups",
   },
-  Object {
+  {
     "description": "Split by URN type",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Split by URN type",
@@ -512,56 +512,56 @@ Array [
 ]
 `;
 
-exports[`typeConfigs should provide type configs 2`] = `
-Object {
-  "add_contact_groups": Object {
+exports[`typeConfigs > should provide type configs 2`] = `
+{
+  "add_contact_groups": {
     "component": [Function],
     "description": "Add the contact to a group",
     "form": [Function],
     "name": "Add to group",
     "type": "add_contact_groups",
   },
-  "add_contact_urn": Object {
+  "add_contact_urn": {
     "component": [Function],
     "description": "Add a URN for the contact",
     "form": [Function],
     "name": "Add URN",
     "type": "add_contact_urn",
   },
-  "add_input_labels": Object {
+  "add_input_labels": {
     "component": [Function],
     "description": "Label the incoming message",
     "form": [Function],
     "name": "Add label",
     "type": "add_input_labels",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_offline",
       "voice",
     ],
   },
-  "automatic_classify": Object {
-    "aliases": Array [
+  "automatic_classify": {
+    "aliases": [
       "smart",
     ],
     "description": "Automatic Classify",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "categories",
       "cases",
     ],
     "name": "Automatic Classify",
     "new": true,
     "type": "automatic_classify",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "call_classifier": Object {
-    "aliases": Array [
+  "call_classifier": {
+    "aliases": [
       "call_classifier",
     ],
     "component": [Function],
@@ -569,19 +569,19 @@ Object {
     "filter": "classifier",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Split by intent",
     "type": "split_by_intent",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "call_external_service": Object {
-    "aliases": Array [
+  "call_external_service": {
+    "aliases": [
       "split_by_external_service",
     ],
     "component": [Function],
@@ -589,14 +589,14 @@ Object {
     "filter": "external_service",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exists",
     ],
     "name": "Call External Service",
     "type": "call_external_service",
   },
-  "call_resthook": Object {
-    "aliases": Array [
+  "call_resthook": {
+    "aliases": [
       "split_by_resthook",
     ],
     "component": [Function],
@@ -604,76 +604,76 @@ Object {
     "filter": "resthook",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Call Zapier",
     "type": "call_resthook",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "call_webhook": Object {
-    "aliases": Array [
+  "call_webhook": {
+    "aliases": [
       "split_by_webhook",
     ],
     "component": [Function],
     "description": "Call a webhook",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Call webhook",
     "type": "call_webhook",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "call_wenigpt": Object {
-    "aliases": Array [
+  "call_wenigpt": {
+    "aliases": [
       "split_by_wenigpt",
     ],
     "component": [Function],
     "description": "Call WeniGPT",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "input",
     ],
     "name": "Call WeniGPT",
     "new": true,
     "type": "call_wenigpt",
   },
-  "enter_flow": Object {
-    "aliases": Array [
+  "enter_flow": {
+    "aliases": [
       "split_by_subflow",
     ],
     "component": [Function],
     "description": "Enter another flow",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Enter another flow",
     "type": "enter_flow",
   },
-  "missing": Object {
+  "missing": {
     "component": [Function],
     "description": " ** Unsupported ** ",
     "name": "Missing",
     "type": "missing",
-    "visibility": Array [
+    "visibility": [
       "-",
     ],
   },
-  "open_ticket": Object {
-    "aliases": Array [
+  "open_ticket": {
+    "aliases": [
       "split_by_ticket",
     ],
     "component": [Function],
@@ -681,78 +681,78 @@ Object {
     "filter": "ticketer",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Open Ticket",
     "type": "open_ticket",
   },
-  "play_audio": Object {
+  "play_audio": {
     "component": [Function],
     "description": "Play a contact recording",
     "form": [Function],
     "name": "Play Recording",
     "type": "play_audio",
-    "visibility": Array [
+    "visibility": [
       "voice",
     ],
   },
-  "remove_contact_groups": Object {
+  "remove_contact_groups": {
     "component": [Function],
     "description": "Remove the contact from a group",
     "form": [Function],
     "name": "Remove from group",
     "type": "remove_contact_groups",
   },
-  "say_msg": Object {
+  "say_msg": {
     "component": [Function],
     "description": "Play a message",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "text",
       "audio_url",
     ],
     "name": "Play Message",
     "type": "say_msg",
-    "visibility": Array [
+    "visibility": [
       "voice",
     ],
   },
-  "send_broadcast": Object {
+  "send_broadcast": {
     "component": [Function],
     "description": "Send somebody else a message",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "text",
     ],
     "name": "Send broadcast",
     "type": "send_broadcast",
   },
-  "send_email": Object {
+  "send_email": {
     "component": [Function],
     "description": "Send email",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "subject",
       "body",
     ],
     "name": "Send email",
     "type": "send_email",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "send_msg": Object {
+  "send_msg": {
     "component": [Function],
     "description": "Send the contact a message",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "text",
       "quick_replies",
       "templating.variables",
@@ -761,8 +761,8 @@ Object {
     "name": "Send message",
     "type": "send_msg",
   },
-  "send_msg_catalog": Object {
-    "aliases": Array [
+  "send_msg_catalog": {
+    "aliases": [
       "split_by_whatsapp_product",
     ],
     "component": [Function],
@@ -773,8 +773,8 @@ Object {
     "new": true,
     "type": "send_msg_catalog",
   },
-  "set_contact_channel": Object {
-    "aliases": Array [
+  "set_contact_channel": {
+    "aliases": [
       "set_contact_name",
       "set_contact_language",
       "set_contact_channel",
@@ -786,8 +786,8 @@ Object {
     "name": "Update contact",
     "type": "set_contact_field",
   },
-  "set_contact_field": Object {
-    "aliases": Array [
+  "set_contact_field": {
+    "aliases": [
       "set_contact_name",
       "set_contact_language",
       "set_contact_channel",
@@ -799,8 +799,8 @@ Object {
     "name": "Update contact",
     "type": "set_contact_field",
   },
-  "set_contact_language": Object {
-    "aliases": Array [
+  "set_contact_language": {
+    "aliases": [
       "set_contact_name",
       "set_contact_language",
       "set_contact_channel",
@@ -812,8 +812,8 @@ Object {
     "name": "Update contact",
     "type": "set_contact_field",
   },
-  "set_contact_name": Object {
-    "aliases": Array [
+  "set_contact_name": {
+    "aliases": [
       "set_contact_name",
       "set_contact_language",
       "set_contact_channel",
@@ -825,8 +825,8 @@ Object {
     "name": "Update contact",
     "type": "set_contact_field",
   },
-  "set_contact_status": Object {
-    "aliases": Array [
+  "set_contact_status": {
+    "aliases": [
       "set_contact_name",
       "set_contact_language",
       "set_contact_channel",
@@ -838,54 +838,54 @@ Object {
     "name": "Update contact",
     "type": "set_contact_field",
   },
-  "set_run_result": Object {
+  "set_run_result": {
     "component": [Function],
     "description": "Save a result for this flow",
     "form": [Function],
     "name": "Save flow result",
     "type": "set_run_result",
   },
-  "smart": Object {
-    "aliases": Array [
+  "smart": {
+    "aliases": [
       "smart",
     ],
     "description": "Automatic Classify",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "categories",
       "cases",
     ],
     "name": "Automatic Classify",
     "new": true,
     "type": "automatic_classify",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "smart_wait_for_response": Object {
-    "aliases": Array [
+  "smart_wait_for_response": {
+    "aliases": [
       "smart",
     ],
     "description": "Smartly wait for response",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "categories",
       "cases",
     ],
     "name": "Smart Wait for Response",
     "new": true,
     "type": "smart_wait_for_response",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_offline",
     ],
   },
-  "split_by_airtime": Object {
-    "aliases": Array [
+  "split_by_airtime": {
+    "aliases": [
       "split_by_airtime",
     ],
     "component": [Function],
@@ -893,41 +893,41 @@ Object {
     "filter": "airtime",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Send Airtime",
     "type": "transfer_airtime",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "split_by_contact_field": Object {
+  "split_by_contact_field": {
     "description": "Split by contact field",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
       "cases",
     ],
     "name": "Split by contact field",
     "type": "split_by_contact_field",
   },
-  "split_by_expression": Object {
+  "split_by_expression": {
     "description": "Split by a custom expression",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
       "cases",
     ],
     "name": "Split by expression",
     "type": "split_by_expression",
   },
-  "split_by_external_service": Object {
-    "aliases": Array [
+  "split_by_external_service": {
+    "aliases": [
       "split_by_external_service",
     ],
     "component": [Function],
@@ -935,24 +935,24 @@ Object {
     "filter": "external_service",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exists",
     ],
     "name": "Call External Service",
     "type": "call_external_service",
   },
-  "split_by_groups": Object {
+  "split_by_groups": {
     "description": "Split by group membership",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Split by group membership",
     "type": "split_by_groups",
   },
-  "split_by_intent": Object {
-    "aliases": Array [
+  "split_by_intent": {
+    "aliases": [
       "call_classifier",
     ],
     "component": [Function],
@@ -960,29 +960,29 @@ Object {
     "filter": "classifier",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Split by intent",
     "type": "split_by_intent",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "split_by_random": Object {
+  "split_by_random": {
     "description": "Split randomly",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Split randomly",
     "type": "split_by_random",
   },
-  "split_by_resthook": Object {
-    "aliases": Array [
+  "split_by_resthook": {
+    "aliases": [
       "split_by_resthook",
     ],
     "component": [Function],
@@ -990,71 +990,71 @@ Object {
     "filter": "resthook",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Call Zapier",
     "type": "call_resthook",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "split_by_run_result": Object {
-    "aliases": Array [
+  "split_by_run_result": {
+    "aliases": [
       "split_by_run_result_delimited",
     ],
     "description": "Split by a result in the flow",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
       "cases",
     ],
     "name": "Split by flow result",
     "type": "split_by_run_result",
   },
-  "split_by_run_result_delimited": Object {
-    "aliases": Array [
+  "split_by_run_result_delimited": {
+    "aliases": [
       "split_by_run_result_delimited",
     ],
     "description": "Split by a result in the flow",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
       "cases",
     ],
     "name": "Split by flow result",
     "type": "split_by_run_result",
   },
-  "split_by_scheme": Object {
+  "split_by_scheme": {
     "description": "Split by URN type",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Split by URN type",
     "type": "split_by_scheme",
   },
-  "split_by_subflow": Object {
-    "aliases": Array [
+  "split_by_subflow": {
+    "aliases": [
       "split_by_subflow",
     ],
     "component": [Function],
     "description": "Enter another flow",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Enter another flow",
     "type": "enter_flow",
   },
-  "split_by_ticket": Object {
-    "aliases": Array [
+  "split_by_ticket": {
+    "aliases": [
       "split_by_ticket",
     ],
     "component": [Function],
@@ -1062,48 +1062,48 @@ Object {
     "filter": "ticketer",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Open Ticket",
     "type": "open_ticket",
   },
-  "split_by_webhook": Object {
-    "aliases": Array [
+  "split_by_webhook": {
+    "aliases": [
       "split_by_webhook",
     ],
     "component": [Function],
     "description": "Call a webhook",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Call webhook",
     "type": "call_webhook",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "split_by_wenigpt": Object {
-    "aliases": Array [
+  "split_by_wenigpt": {
+    "aliases": [
       "split_by_wenigpt",
     ],
     "component": [Function],
     "description": "Call WeniGPT",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "input",
     ],
     "name": "Call WeniGPT",
     "new": true,
     "type": "call_wenigpt",
   },
-  "split_by_whatsapp_product": Object {
-    "aliases": Array [
+  "split_by_whatsapp_product": {
+    "aliases": [
       "split_by_whatsapp_product",
     ],
     "component": [Function],
@@ -1114,42 +1114,42 @@ Object {
     "new": true,
     "type": "send_msg_catalog",
   },
-  "start_session": Object {
+  "start_session": {
     "component": [Function],
     "description": "Start somebody else in a flow",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Start somebody else",
     "type": "start_session",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "switch": Object {
-    "aliases": Array [
+  "switch": {
+    "aliases": [
       "switch",
     ],
     "description": "Wait for the contact to respond",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "categories",
       "cases",
     ],
     "name": "Wait for response",
     "type": "wait_for_response",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_offline",
     ],
   },
-  "transfer_airtime": Object {
-    "aliases": Array [
+  "transfer_airtime": {
+    "aliases": [
       "split_by_airtime",
     ],
     "component": [Function],
@@ -1157,121 +1157,121 @@ Object {
     "filter": "airtime",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Send Airtime",
     "type": "transfer_airtime",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "wait_for_audio": Object {
+  "wait_for_audio": {
     "description": "Wait for an audio recording",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Wait for Audio",
     "type": "wait_for_audio",
-    "visibility": Array [
+    "visibility": [
       "messaging_offline",
       "voice",
     ],
   },
-  "wait_for_dial": Object {
+  "wait_for_dial": {
     "description": "Wait for forwarded call to someone else",
     "form": [Function],
     "name": "Wait for Forwarded Call",
     "type": "wait_for_dial",
-    "visibility": Array [
+    "visibility": [
       "voice",
     ],
   },
-  "wait_for_digits": Object {
+  "wait_for_digits": {
     "description": "Wait for multiple digits",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
       "cases",
     ],
     "name": "Wait for Digits",
     "type": "wait_for_digits",
-    "visibility": Array [
+    "visibility": [
       "voice",
     ],
   },
-  "wait_for_image": Object {
+  "wait_for_image": {
     "description": "Wait for an image",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Wait for Image",
     "type": "wait_for_image",
-    "visibility": Array [
+    "visibility": [
       "messaging_offline",
     ],
   },
-  "wait_for_location": Object {
+  "wait_for_location": {
     "description": "Wait for location GPS coordinates",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Wait for Location",
     "type": "wait_for_location",
-    "visibility": Array [
+    "visibility": [
       "messaging_offline",
     ],
   },
-  "wait_for_menu": Object {
+  "wait_for_menu": {
     "description": "Wait for menu selection",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Wait for Menu Selection",
     "type": "wait_for_menu",
-    "visibility": Array [
+    "visibility": [
       "voice",
     ],
   },
-  "wait_for_response": Object {
-    "aliases": Array [
+  "wait_for_response": {
+    "aliases": [
       "switch",
     ],
     "description": "Wait for the contact to respond",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "categories",
       "cases",
     ],
     "name": "Wait for response",
     "type": "wait_for_response",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_offline",
     ],
   },
-  "wait_for_video": Object {
+  "wait_for_video": {
     "description": "Wait for a video",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "exits",
     ],
     "name": "Wait for Video",
     "type": "wait_for_video",
-    "visibility": Array [
+    "visibility": [
       "messaging_offline",
     ],
   },
