@@ -1,56 +1,56 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`AssetSelector renders 1`] = `
+exports[`AssetSelector > renders 1`] = `
 <body>
   <div>
     <div
-      class="ele"
+      class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
     >
       <div
-        class="select_wrapper"
+        class="_select_wrapper_4cce75"
         data-testid="temba_select_recipients"
       >
-        <div
-          data-use-vue-component-wrap=""
-          style="all: unset;"
-        >
+        <div>
           <div
-            class="unnnic-form sm bold_placeholder"
-            data-passed-props="[object Object]"
-            data-testid="temba_select_input_recipients"
-            data-v-48c0c241=""
-            readonly="readonly"
+            data-use-vue-component-wrap=""
+            data-v-app=""
+            style="all: unset;"
           >
-            <!---->
             <div
-              class="unnnic-form-input text-input size--sm has-icon-right"
-              data-v-400546b3=""
-              data-v-48c0c241=""
-              mask=""
-              v-bind="[object Object]"
+              class="unnnic-form sm _bold_placeholder_4cce75"
+              data-testid="temba_select_input_recipients"
+              data-v-4d681994=""
+              readonly=""
             >
-              <input
-                class="input-itself input size-sm normal"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_recipients"
-                data-v-400546b3=""
-                data-v-97b44e8c=""
-                iconright="arrow-button-down-1"
-                placeholder="Select existing recipients or enter a new one"
-                readonly="readonly"
-                size="0"
-                type="text"
-                v-bind="[object Object]"
-              />
               <!---->
-              <span
-                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                data-v-400546b3=""
-                data-v-4ce83152=""
+              <div
+                class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                data-testid="temba_select_input_recipients"
+                data-v-20f606ca=""
+                data-v-4d681994=""
+                mask=""
+                readonly=""
               >
+                <input
+                  class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                  data-testid="temba_select_input_recipients"
+                  data-v-1e805323=""
+                  data-v-20f606ca=""
+                  hascloudycolor="false"
+                  iconright="arrow-button-down-1"
+                  placeholder="Select existing recipients or enter a new one"
+                  readonly=""
+                  type="text"
+                />
+                <!---->
                 <svg
+                  class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                  data-v-20f606ca=""
+                  data-v-edf1acd8=""
                   fill="none"
+                  height="40"
                   viewBox="0 0 40 40"
+                  width="40"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -59,31 +59,31 @@ exports[`AssetSelector renders 1`] = `
                     fill="#3B414D"
                   />
                 </svg>
-              </span>
+              </div>
+              <!---->
             </div>
-            <!---->
           </div>
         </div>
         <div
-          class="options_wrapper"
+          class="_options_wrapper_08dd12"
           data-testid="temba_select_options_recipients"
-          style="margin-top: 0px; width: 0px; display: none;"
+          style="margin-top: 0px; width: -24px; display: none;"
         >
           <div
-            class="option active "
+            class="_option_08dd12 _active_08dd12 "
             data-option-index="0"
           >
             <span
-              class="name"
+              class="_name_08dd12"
             >
               My Test Group
             </span>
           </div>
         </div>
         <div
-          class="options_wrapper"
+          class="_options_wrapper_08dd12"
           data-testid="temba_select_expressions_recipients"
-          style="margin-top: 0px; width: 0px; display: none;"
+          style="margin-top: 0px; width: -24px; display: none;"
         />
       </div>
     </div>

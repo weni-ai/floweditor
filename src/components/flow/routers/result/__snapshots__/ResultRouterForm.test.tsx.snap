@@ -1,172 +1,199 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ResultRouterForm should a fielded operand if configured 1`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [],
-      "exits": Array [
-        Object {
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-        },
-      ],
-      "router": Object {
-        "cases": Array [],
-        "categories": Array [
-          Object {
-            "exit_uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-            "name": "All Responses",
-            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+exports[`ResultRouterForm > should a fielded operand if configured 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "router": {
+            "cases": [],
+            "categories": [
+              {
+                "exit_uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                "name": "All Responses",
+                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              },
+            ],
+            "default_category_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            "operand": "@(field(results.my_test_result, 0, "+"))",
+            "type": "switch",
           },
-        ],
-        "default_category_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-        "operand": "@(field(results.my_test_result, 0, \\"+\\"))",
-        "type": "switch",
-      },
-      "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-    },
-    "ui": Object {
-      "config": Object {
-        "cases": Object {},
-        "delimiter": "+",
-        "index": 0,
-        "operand": Object {
-          "id": "my_test_result",
-          "name": "My Test Result",
-          "type": "result",
+          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+        },
+        "ui": {
+          "config": {
+            "cases": {},
+            "delimiter": "+",
+            "index": 0,
+            "operand": {
+              "id": "my_test_result",
+              "name": "My Test Result",
+              "type": "result",
+            },
+          },
+          "position": null,
+          "type": "split_by_run_result_delimited",
         },
       },
-      "position": null,
-      "type": "split_by_run_result_delimited",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-  },
-]
+  ],
+}
 `;
 
-exports[`ResultRouterForm should create the right operand on save 1`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [],
-      "exits": Array [
-        Object {
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-        },
-      ],
-      "router": Object {
-        "cases": Array [],
-        "categories": Array [
-          Object {
-            "exit_uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-            "name": "All Responses",
-            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+exports[`ResultRouterForm > should create the right operand on save 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "router": {
+            "cases": [],
+            "categories": [
+              {
+                "exit_uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                "name": "All Responses",
+                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              },
+            ],
+            "default_category_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            "operand": "@results.my_test_result",
+            "type": "switch",
           },
-        ],
-        "default_category_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-        "operand": "@results.my_test_result",
-        "type": "switch",
-      },
-      "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-    },
-    "ui": Object {
-      "config": Object {
-        "cases": Object {},
-        "operand": Object {
-          "id": "my_test_result",
-          "name": "My Test Result",
-          "type": "result",
+          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+        },
+        "ui": {
+          "config": {
+            "cases": {},
+            "operand": {
+              "id": "my_test_result",
+              "name": "My Test Result",
+              "type": "result",
+            },
+          },
+          "position": null,
+          "type": "split_by_run_result",
         },
       },
-      "position": null,
-      "type": "split_by_run_result",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-  },
-]
+  ],
+}
 `;
 
-exports[`ResultRouterForm should render 1`] = `
+exports[`ResultRouterForm > should render 1`] = `
 <body>
   <div>
     <div
-      class="dialog"
+      class="_dialog_af1b5d"
     >
       <div
-        class="header"
+        class="_header_af1b5d"
       >
         <div
-          class="title_container"
+          class="_title_container_af1b5d"
         >
           <div
-            class="title u font secondary title-sm black"
+            class="_title_af1b5d u font secondary title-sm black"
           >
             Split by flow result
           </div>
           <div
-            class="subtitle"
+            class="_subtitle_af1b5d"
           />
         </div>
         <div
           data-use-vue-component-wrap=""
+          data-v-app=""
           style="all: unset;"
         >
           <div
-            class="tab size-sm tabs"
-            data-passed-props="[object Object]"
-            data-v-69271fcc=""
+            class="tab size-sm _tabs_af1b5d"
+            data-v-54432ea7=""
           >
             <header
               class="tab-header"
-              data-v-69271fcc=""
+              data-v-54432ea7=""
             >
               <ul
                 class="tab-content"
-                data-v-69271fcc=""
+                data-v-54432ea7=""
               >
+                
                 <li
                   class="tab-head tab-head--active"
-                  data-v-69271fcc=""
+                  data-v-54432ea7=""
                 >
+                  
                   <div
                     __use_react_component_wrap=""
-                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     General
                   </div>
+                  
                 </li>
                 <li
                   class="tab-head"
-                  data-v-69271fcc=""
+                  data-v-54432ea7=""
                 >
+                  
                   <div
                     __use_react_component_wrap=""
-                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     Advanced
                   </div>
+                  
                 </li>
+                
               </ul>
             </header>
             <main
               class="tab-body"
-              data-v-69271fcc=""
+              data-v-54432ea7=""
             >
               <div
                 class="tab-panel"
-                data-v-69271fcc=""
-              />
+                data-v-54432ea7=""
+              >
+                
+                
+              </div>
             </main>
           </div>
         </div>
       </div>
       <div
-        class="content"
+        class="_content_af1b5d"
       >
         <div
-          class=" type_list"
+          class=" _type_list_8229f3"
         >
           <div
             class="color-neutral-cloudy"
@@ -175,48 +202,47 @@ exports[`ResultRouterForm should render 1`] = `
           </div>
           <div>
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_type"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-4d681994=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_type"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="Split by a result in the flow"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-20f606ca=""
+                      data-v-4d681994=""
+                      mask=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-1e805323=""
+                        data-v-20f606ca=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Split by a result in the flow"
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-20f606ca=""
+                        data-v-edf1acd8=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -225,344 +251,344 @@ exports[`ResultRouterForm should render 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
-                  class="option active "
+                  class="_option_08dd12 _active_08dd12 "
                   data-option-index="0"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="1"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Wait for the contact to respond
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="2"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Smartly wait for response (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="3"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call WeniGPT (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="4"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send somebody else a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="5"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Label the incoming message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="6"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add a URN for the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="7"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add the contact to a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="8"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Update the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="10"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send email
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="11"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Save a result for this flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="12"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call a webhook
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="13"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call Zapier
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="14"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Enter another flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="15"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Start somebody else in a flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="16"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Open a ticket with a human agent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="17"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact airtime
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="18"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by intent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="19"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Automatic Classify (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="20"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a custom expression
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="21"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by contact field
                   </span>
                 </div>
                 <div
-                  class="option  selected"
+                  class="_option_08dd12  _selected_08dd12"
                   data-option-index="22"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="23"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split randomly
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="24"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by group membership
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="25"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
         </div>
         <div
-          class="non_delimited"
+          class="_non_delimited_eb44e0"
         >
           <div
-            class="result_select"
+            class="_result_select_eb44e0"
           >
             <div
-              class="ele"
+              class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
             >
               <div
-                class="label u font secondary body-md color-neutral-cloudy"
+                class="_label_8d991a u font secondary body-md color-neutral-cloudy"
               >
                 If the result
               </div>
               <div
-                class="select_wrapper"
+                class="_select_wrapper_4cce75"
                 data-testid="temba_select_if_the_result"
               >
-                <div
-                  data-use-vue-component-wrap=""
-                  style="all: unset;"
-                >
+                <div>
                   <div
-                    class="unnnic-form sm bold_placeholder"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_if_the_result"
-                    data-v-48c0c241=""
-                    readonly="readonly"
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
                   >
-                    <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm has-icon-right"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
-                      mask=""
-                      v-bind="[object Object]"
+                      class="unnnic-form sm _bold_placeholder_4cce75"
+                      data-testid="temba_select_input_if_the_result"
+                      data-v-4d681994=""
+                      readonly=""
                     >
-                      <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-testid="temba_select_input_if_the_result"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
-                        iconright="arrow-button-down-1"
-                        placeholder="Select the result"
-                        readonly="readonly"
-                        size="0"
-                        type="text"
-                        v-bind="[object Object]"
-                      />
                       <!---->
-                      <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-400546b3=""
-                        data-v-4ce83152=""
+                      <div
+                        class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                        data-testid="temba_select_input_if_the_result"
+                        data-v-20f606ca=""
+                        data-v-4d681994=""
+                        mask=""
+                        readonly=""
                       >
+                        <input
+                          class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                          data-testid="temba_select_input_if_the_result"
+                          data-v-1e805323=""
+                          data-v-20f606ca=""
+                          hascloudycolor="false"
+                          iconright="arrow-button-down-1"
+                          placeholder="Select the result"
+                          readonly=""
+                          type="text"
+                        />
+                        <!---->
                         <svg
+                          class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                          data-v-20f606ca=""
+                          data-v-edf1acd8=""
                           fill="none"
+                          height="40"
                           viewBox="0 0 40 40"
+                          width="40"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -571,18 +597,18 @@ exports[`ResultRouterForm should render 1`] = `
                             fill="#3B414D"
                           />
                         </svg>
-                      </span>
+                      </div>
+                      <!---->
                     </div>
-                    <!---->
                   </div>
                 </div>
                 <div
-                  class="options_wrapper"
+                  class="_options_wrapper_08dd12"
                   data-testid="temba_select_options_if_the_result"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
                 <div
-                  class="options_wrapper"
+                  class="_options_wrapper_08dd12"
                   data-testid="temba_select_expressions_if_the_result"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
@@ -596,24 +622,24 @@ exports[`ResultRouterForm should render 1`] = `
           If the message response
         </div>
         <div
-          class="case_list_container "
+          class="_case_list_container_e1df2e "
           tabindex="0"
         >
           <div
-            class="case_list"
+            class="_case_list_e1df2e"
           >
             <div
-              class="kase case_list_case"
+              class="_kase_e1df2e case_list_case"
             >
               <div
-                class="ele group"
+                class="__ele_8d991a_8d991a __group_5261c2_8d991a"
               >
                 <div
-                  class="kase has_any_word"
+                  class="_kase_5261c2 _has_any_word_5261c2"
                   data-draggable="true"
                 >
                   <span
-                    class="move_icon"
+                    class="_move_icon_5261c2"
                     data-draggable="true"
                   >
                     <svg
@@ -634,53 +660,53 @@ exports[`ResultRouterForm should render 1`] = `
                     </svg>
                   </span>
                   <div
-                    class="choice"
+                    class="_choice_5261c2"
                   >
                     <div
-                      class="select_wrapper"
+                      class="_select_wrapper_4cce75"
                       data-testid="temba_select_operator"
                     >
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="all: unset;"
-                      >
+                      <div>
                         <div
-                          class="unnnic-form sm bold_placeholder"
-                          data-passed-props="[object Object]"
-                          data-testid="temba_select_input_operator"
-                          data-v-48c0c241=""
-                          readonly="readonly"
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
                         >
-                          <!---->
                           <div
-                            class="unnnic-form-input text-input size--sm has-icon-right"
-                            data-v-400546b3=""
-                            data-v-48c0c241=""
-                            mask=""
-                            v-bind="[object Object]"
+                            class="unnnic-form sm _bold_placeholder_4cce75"
+                            data-testid="temba_select_input_operator"
+                            data-v-4d681994=""
+                            readonly=""
                           >
-                            <input
-                              class="input-itself input size-sm normal"
-                              data-passed-props="[object Object]"
-                              data-testid="temba_select_input_operator"
-                              data-v-400546b3=""
-                              data-v-97b44e8c=""
-                              iconright="arrow-button-down-1"
-                              placeholder="has any of the words"
-                              readonly="readonly"
-                              size="0"
-                              type="text"
-                              v-bind="[object Object]"
-                            />
                             <!---->
-                            <span
-                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                              data-v-400546b3=""
-                              data-v-4ce83152=""
+                            <div
+                              class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                              data-testid="temba_select_input_operator"
+                              data-v-20f606ca=""
+                              data-v-4d681994=""
+                              mask=""
+                              readonly=""
                             >
+                              <input
+                                class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                                data-testid="temba_select_input_operator"
+                                data-v-1e805323=""
+                                data-v-20f606ca=""
+                                hascloudycolor="false"
+                                iconright="arrow-button-down-1"
+                                placeholder="has any of the words"
+                                readonly=""
+                                type="text"
+                              />
+                              <!---->
                               <svg
+                                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                                data-v-20f606ca=""
+                                data-v-edf1acd8=""
                                 fill="none"
+                                height="40"
                                 viewBox="0 0 40 40"
+                                width="40"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -689,270 +715,267 @@ exports[`ResultRouterForm should render 1`] = `
                                   fill="#3B414D"
                                 />
                               </svg>
-                            </span>
+                            </div>
+                            <!---->
                           </div>
-                          <!---->
                         </div>
                       </div>
                       <div
-                        class="options_wrapper"
+                        class="_options_wrapper_08dd12"
                         data-testid="temba_select_options_operator"
-                        style="margin-top: 0px; width: 0px; display: none;"
+                        style="margin-top: 0px; width: -24px; display: none;"
                       >
                         <div
-                          class="option active selected"
+                          class="_option_08dd12 _active_08dd12 _selected_08dd12"
                           data-option-index="0"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has any of the words
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="1"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has all of the words
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="2"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has the phrase
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="3"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has only the phrase
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="4"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             starts with
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="5"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has some text
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="6"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="7"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number between
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="8"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number below
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="9"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number at or below
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="10"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number equal to
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="11"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number at or above
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="12"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number above
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="13"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a date
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="14"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a date before
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="15"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a date equal to
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="16"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a date after
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="17"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a time
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="18"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a phone number
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="19"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has an email
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="20"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             matches regex
                           </span>
                         </div>
                       </div>
                       <div
-                        class="options_wrapper"
+                        class="_options_wrapper_08dd12"
                         data-testid="temba_select_expressions_operator"
-                        style="margin-top: 0px; width: 0px; display: none;"
+                        style="margin-top: 0px; width: -24px; display: none;"
                       />
                     </div>
                   </div>
                   <div
-                    class="single_operand"
+                    class="_single_operand_5261c2"
                   >
                     <div>
                       <div
-                        class="completion_wrapper"
+                        class="_completion_wrapper_17662c"
                       >
                         <div
                           data-testid="arguments"
                         >
                           <div
                             data-use-vue-component-wrap=""
+                            data-v-app=""
                             style="all: unset;"
                           >
                             <div
                               class="unnnic-form sm"
-                              data-passed-props="[object Object]"
-                              data-v-48c0c241=""
+                              data-v-4d681994=""
                             >
                               <!---->
                               <div
-                                class="unnnic-form-input text-input size--sm"
-                                data-v-400546b3=""
-                                data-v-48c0c241=""
+                                class="text-input size--sm unnnic-form-input"
+                                data-v-20f606ca=""
+                                data-v-4d681994=""
                                 mask=""
-                                v-bind="[object Object]"
                               >
                                 <input
-                                  class="input-itself input size-sm normal"
-                                  data-passed-props="[object Object]"
-                                  data-v-400546b3=""
-                                  data-v-97b44e8c=""
+                                  class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                  data-v-1e805323=""
+                                  data-v-20f606ca=""
+                                  hascloudycolor="false"
                                   placeholder="Ex: cart"
-                                  size="0"
                                   type="text"
-                                  v-bind="[object Object]"
                                 />
                                 <!---->
                                 <!---->
@@ -962,7 +985,7 @@ exports[`ResultRouterForm should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="options_wrapper"
+                          class="_options_wrapper_08dd12"
                           data-testid="temba_completion_options_arguments"
                           style="margin-top: 0px; width: -24px; display: none;"
                         />
@@ -970,46 +993,44 @@ exports[`ResultRouterForm should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="categorize_as u font secondary body-md color-neutral-cloudy"
+                    class="_categorize_as_5261c2 u font secondary body-md color-neutral-cloudy"
                     data-draggable="true"
                   >
                     Categorize as:
                   </div>
                   <div
-                    class="category"
+                    class="_category_5261c2"
                   >
                     <div
                       data-testid="Exit Name"
                     >
                       <div
                         data-use-vue-component-wrap=""
+                        data-v-app=""
                         style="all: unset;"
                         unnnic-input="true"
                       >
                         <div
                           class="unnnic-form sm"
-                          data-passed-props="[object Object]"
-                          data-v-48c0c241=""
+                          data-v-4d681994=""
                           maxlength="36"
                         >
                           <!---->
                           <div
-                            class="unnnic-form-input text-input size--sm"
-                            data-v-400546b3=""
-                            data-v-48c0c241=""
+                            class="text-input size--sm unnnic-form-input"
+                            data-v-20f606ca=""
+                            data-v-4d681994=""
                             mask=""
-                            v-bind="[object Object]"
+                            maxlength="36"
                           >
                             <input
-                              class="input-itself input size-sm normal"
-                              data-passed-props="[object Object]"
-                              data-v-400546b3=""
-                              data-v-97b44e8c=""
+                              class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                              data-v-1e805323=""
+                              data-v-20f606ca=""
+                              hascloudycolor="false"
                               maxlength="36"
                               placeholder="Ex: shopping"
-                              size="0"
                               type="text"
-                              v-bind="[object Object]"
                             />
                             <!---->
                             <!---->
@@ -1020,36 +1041,35 @@ exports[`ResultRouterForm should render 1`] = `
                     </div>
                   </div>
                   <span
-                    class="remove_icon_wrapper"
+                    class="_remove_icon_wrapper_5261c2"
                     data-draggable="true"
                   >
                     <div
                       data-draggable="true"
                       data-use-vue-component-wrap=""
+                      data-v-app=""
                     >
-                      <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-                        data-passed-props="[object Object]"
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                         data-testid="remove-case-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
-                        data-v-4ce83152=""
+                        data-v-edf1acd8=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          viewBox="0 0 40 40"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            class="primary"
-                            d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                            fill="#3B414D"
-                          />
-                          <path
-                            class="primary"
-                            d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                            fill="#3B414D"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          class="primary"
+                          d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                          fill="#3B414D"
+                        />
+                        <path
+                          class="primary"
+                          d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
                     </div>
                   </span>
                 </div>
@@ -1058,58 +1078,57 @@ exports[`ResultRouterForm should render 1`] = `
           </div>
         </div>
         <div
-          class="optional_text_input toggle"
+          class="_optional_text_input_1fb2f6 _toggle_1fb2f6"
         >
           <span
-            class="toggle_link "
+            class="_toggle_link_1fb2f6 "
             data-spec="toggle-link"
             data-testid="toggle-link"
           >
             Save as
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
             >
-              <span
+              <svg
                 class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cleanest"
-                data-passed-props="[object Object]"
-                data-v-4ce83152=""
+                data-v-edf1acd8=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  viewBox="0 0 40 40"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="primary"
-                    d="M14.0093 34.6856L29.5962 20.9572C29.726 20.8328 29.8292 20.6835 29.8997 20.5182C29.9702 20.3529 30.0066 20.1751 30.0066 19.9954C30.0066 19.8157 29.9702 19.6379 29.8997 19.4726C29.8292 19.3073 29.726 19.158 29.5962 19.0336L14.0093 5.31149C13.8857 5.20174 13.7412 5.11796 13.5845 5.06514C13.4279 5.01232 13.2622 4.99153 13.0973 5.00401C12.9325 5.01648 12.7718 5.06197 12.6249 5.13776C12.4779 5.21356 12.3477 5.31812 12.242 5.44522L10.296 7.75745C10.0786 8.0153 9.97133 8.34827 9.99728 8.68451C10.0232 9.02076 10.1804 9.33332 10.4347 9.55474L22.2496 19.7598C22.2837 19.7891 22.311 19.8255 22.3298 19.8664C22.3486 19.9072 22.3583 19.9517 22.3583 19.9967C22.3583 20.0416 22.3486 20.0861 22.3298 20.1269C22.311 20.1678 22.2837 20.2042 22.2496 20.2335L10.4385 30.4423C10.3118 30.5523 10.2081 30.6862 10.1333 30.8363C10.0584 30.9865 10.0139 31.1499 10.0023 31.3172C9.98744 31.4836 10.0061 31.6513 10.0572 31.8104C10.1083 31.9695 10.1908 32.1167 10.2997 32.2434L12.247 34.5568C12.3529 34.6836 12.4832 34.7879 12.6301 34.8635C12.7771 34.9391 12.9377 34.9845 13.1024 34.997C13.2672 35.0094 13.4328 34.9887 13.5894 34.9361C13.746 34.8835 13.8905 34.8 14.0143 34.6906L14.0093 34.6856Z"
-                    fill="#3B414D"
-                  />
-                </svg>
-              </span>
+                <path
+                  class="primary"
+                  d="M14.0093 34.6856L29.5962 20.9572C29.726 20.8328 29.8292 20.6835 29.8997 20.5182C29.9702 20.3529 30.0066 20.1751 30.0066 19.9954C30.0066 19.8157 29.9702 19.6379 29.8997 19.4726C29.8292 19.3073 29.726 19.158 29.5962 19.0336L14.0093 5.31149C13.8857 5.20174 13.7412 5.11796 13.5845 5.06514C13.4279 5.01232 13.2622 4.99153 13.0973 5.00401C12.9325 5.01648 12.7718 5.06197 12.6249 5.13776C12.4779 5.21356 12.3477 5.31812 12.242 5.44522L10.296 7.75745C10.0786 8.0153 9.97133 8.34827 9.99728 8.68451C10.0232 9.02076 10.1804 9.33332 10.4347 9.55474L22.2496 19.7598C22.2837 19.7891 22.311 19.8255 22.3298 19.8664C22.3486 19.9072 22.3583 19.9517 22.3583 19.9967C22.3583 20.0416 22.3486 20.0861 22.3298 20.1269C22.311 20.1678 22.2837 20.2042 22.2496 20.2335L10.4385 30.4423C10.3118 30.5523 10.2081 30.6862 10.1333 30.8363C10.0584 30.9865 10.0139 31.1499 10.0023 31.3172C9.98744 31.4836 10.0061 31.6513 10.0572 31.8104C10.1083 31.9695 10.1908 32.1167 10.2997 32.2434L12.247 34.5568C12.3529 34.6836 12.4832 34.7879 12.6301 34.8635C12.7771 34.9391 12.9377 34.9845 13.1024 34.997C13.2672 35.0094 13.4328 34.9887 13.5894 34.9361C13.746 34.8835 13.8905 34.8 14.0143 34.6906L14.0093 34.6856Z"
+                  fill="#3B414D"
+                />
+              </svg>
             </div>
           </span>
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_af1b5d"
       >
         <div
-          class="buttons"
+          class="_buttons_af1b5d"
         >
           <div
-            class="buttons_wrapper"
+            class="_buttons_wrapper_af1b5d"
           >
             <div
-              class="right_buttons"
+              class="_right_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-d3a33348=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1117,20 +1136,22 @@ exports[`ResultRouterForm should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-d3a33348=""
                   >
-                     Cancel 
+                    
+                    
+                     Cancel
                   </span>
                   <!---->
                 </button>
               </div>
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-d3a33348=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1138,9 +1159,11 @@ exports[`ResultRouterForm should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-d3a33348=""
                   >
-                     Confirm 
+                    
+                    
+                     Confirm
                   </span>
                   <!---->
                 </button>
@@ -1154,87 +1177,94 @@ exports[`ResultRouterForm should render 1`] = `
 </body>
 `;
 
-exports[`ResultRouterForm should show delimit options 1`] = `
+exports[`ResultRouterForm > should show delimit options 1`] = `
 <body>
   <div>
     <div
-      class="dialog"
+      class="_dialog_af1b5d"
     >
       <div
-        class="header"
+        class="_header_af1b5d"
       >
         <div
-          class="title_container"
+          class="_title_container_af1b5d"
         >
           <div
-            class="title u font secondary title-sm black"
+            class="_title_af1b5d u font secondary title-sm black"
           >
             Split by flow result
           </div>
           <div
-            class="subtitle"
+            class="_subtitle_af1b5d"
           />
         </div>
         <div
           data-use-vue-component-wrap=""
+          data-v-app=""
           style="all: unset;"
         >
           <div
-            class="tab size-sm tabs"
-            data-passed-props="[object Object]"
-            data-v-69271fcc=""
+            class="tab size-sm _tabs_af1b5d"
+            data-v-54432ea7=""
           >
             <header
               class="tab-header"
-              data-v-69271fcc=""
+              data-v-54432ea7=""
             >
               <ul
                 class="tab-content"
-                data-v-69271fcc=""
+                data-v-54432ea7=""
               >
+                
                 <li
                   class="tab-head tab-head--active"
-                  data-v-69271fcc=""
+                  data-v-54432ea7=""
                 >
+                  
                   <div
                     __use_react_component_wrap=""
-                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     General
                   </div>
+                  
                 </li>
                 <li
                   class="tab-head"
-                  data-v-69271fcc=""
+                  data-v-54432ea7=""
                 >
+                  
                   <div
                     __use_react_component_wrap=""
-                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     Advanced
                   </div>
+                  
                 </li>
+                
               </ul>
             </header>
             <main
               class="tab-body"
-              data-v-69271fcc=""
+              data-v-54432ea7=""
             >
               <div
                 class="tab-panel"
-                data-v-69271fcc=""
-              />
+                data-v-54432ea7=""
+              >
+                
+                
+              </div>
             </main>
           </div>
         </div>
       </div>
       <div
-        class="content"
+        class="_content_af1b5d"
       >
         <div
-          class=" type_list"
+          class=" _type_list_8229f3"
         >
           <div
             class="color-neutral-cloudy"
@@ -1243,48 +1273,47 @@ exports[`ResultRouterForm should show delimit options 1`] = `
           </div>
           <div>
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_type"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-4d681994=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_type"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="Split by a result in the flow"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-20f606ca=""
+                      data-v-4d681994=""
+                      mask=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-1e805323=""
+                        data-v-20f606ca=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Split by a result in the flow"
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-20f606ca=""
+                        data-v-edf1acd8=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -1293,344 +1322,344 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
-                  class="option active "
+                  class="_option_08dd12 _active_08dd12 "
                   data-option-index="0"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="1"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Wait for the contact to respond
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="2"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Smartly wait for response (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="3"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call WeniGPT (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="4"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send somebody else a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="5"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Label the incoming message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="6"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add a URN for the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="7"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add the contact to a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="8"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Update the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="10"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send email
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="11"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Save a result for this flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="12"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call a webhook
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="13"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call Zapier
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="14"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Enter another flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="15"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Start somebody else in a flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="16"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Open a ticket with a human agent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="17"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact airtime
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="18"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by intent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="19"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Automatic Classify (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="20"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a custom expression
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="21"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by contact field
                   </span>
                 </div>
                 <div
-                  class="option  selected"
+                  class="_option_08dd12  _selected_08dd12"
                   data-option-index="22"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="23"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split randomly
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="24"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by group membership
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="25"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
         </div>
         <div
-          class="delimited"
+          class="_delimited_eb44e0"
         >
           <div
-            class="lead_in"
+            class="_lead_in_eb44e0"
           >
             If the
           </div>
           <div
-            class="field_number"
+            class="_field_number_eb44e0"
           >
             <div
-              class="ele"
+              class="__ele_8d991a_8d991a"
             >
               <div
-                class="select_wrapper"
+                class="_select_wrapper_4cce75"
                 data-testid="temba_select_field_number"
               >
-                <div
-                  data-use-vue-component-wrap=""
-                  style="all: unset;"
-                >
+                <div>
                   <div
-                    class="unnnic-form sm bold_placeholder"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_field_number"
-                    data-v-48c0c241=""
-                    readonly="readonly"
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
                   >
-                    <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm has-icon-right"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
-                      mask=""
-                      v-bind="[object Object]"
+                      class="unnnic-form sm _bold_placeholder_4cce75"
+                      data-testid="temba_select_input_field_number"
+                      data-v-4d681994=""
+                      readonly=""
                     >
-                      <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-testid="temba_select_input_field_number"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
-                        iconright="arrow-button-down-1"
-                        placeholder="second"
-                        readonly="readonly"
-                        size="0"
-                        type="text"
-                        v-bind="[object Object]"
-                      />
                       <!---->
-                      <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-400546b3=""
-                        data-v-4ce83152=""
+                      <div
+                        class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                        data-testid="temba_select_input_field_number"
+                        data-v-20f606ca=""
+                        data-v-4d681994=""
+                        mask=""
+                        readonly=""
                       >
+                        <input
+                          class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                          data-testid="temba_select_input_field_number"
+                          data-v-1e805323=""
+                          data-v-20f606ca=""
+                          hascloudycolor="false"
+                          iconright="arrow-button-down-1"
+                          placeholder="second"
+                          readonly=""
+                          type="text"
+                        />
+                        <!---->
                         <svg
+                          class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                          data-v-20f606ca=""
+                          data-v-edf1acd8=""
                           fill="none"
+                          height="40"
                           viewBox="0 0 40 40"
+                          width="40"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -1639,219 +1668,219 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                             fill="#3B414D"
                           />
                         </svg>
-                      </span>
+                      </div>
+                      <!---->
                     </div>
-                    <!---->
                   </div>
                 </div>
                 <div
-                  class="options_wrapper"
+                  class="_options_wrapper_08dd12"
                   data-testid="temba_select_options_field_number"
                   style="margin-top: 0px; width: -24px; display: none;"
                 >
                   <div
-                    class="option active "
+                    class="_option_08dd12 _active_08dd12 "
                     data-option-index="0"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       first
                     </span>
                   </div>
                   <div
-                    class="option  selected"
+                    class="_option_08dd12  _selected_08dd12"
                     data-option-index="1"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       second
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="2"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       third
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="3"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       fourth
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="4"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       fifth
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="5"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       sixth
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="6"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       seventh
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="7"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       eighth
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="8"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       ninth
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="9"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       tenth
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="10"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       11th
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="11"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       12th
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="12"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       13th
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="13"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       14th
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="14"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       15th
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="15"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       16th
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="16"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       17th
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="17"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       18th
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="18"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       19th
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="19"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       20th
                     </span>
                   </div>
                 </div>
                 <div
-                  class="options_wrapper"
+                  class="_options_wrapper_08dd12"
                   data-testid="temba_select_expressions_field_number"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
@@ -1859,61 +1888,61 @@ exports[`ResultRouterForm should show delimit options 1`] = `
             </div>
           </div>
           <div
-            class="lead_in_sub"
+            class="_lead_in_sub_eb44e0"
           >
             field of
           </div>
           <div
-            class="result_select_delimited"
+            class="_result_select_delimited_eb44e0"
           >
             <div
-              class="ele"
+              class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
             >
               <div
-                class="select_wrapper"
+                class="_select_wrapper_4cce75"
                 data-testid="temba_select_flow_result"
               >
-                <div
-                  data-use-vue-component-wrap=""
-                  style="all: unset;"
-                >
+                <div>
                   <div
-                    class="unnnic-form sm bold_placeholder"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_flow_result"
-                    data-v-48c0c241=""
-                    readonly="readonly"
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
                   >
-                    <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm has-icon-right"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
-                      mask=""
-                      v-bind="[object Object]"
+                      class="unnnic-form sm _bold_placeholder_4cce75"
+                      data-testid="temba_select_input_flow_result"
+                      data-v-4d681994=""
+                      readonly=""
                     >
-                      <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-testid="temba_select_input_flow_result"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
-                        iconright="arrow-button-down-1"
-                        placeholder="Select Result"
-                        readonly="readonly"
-                        size="0"
-                        type="text"
-                        v-bind="[object Object]"
-                      />
                       <!---->
-                      <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-400546b3=""
-                        data-v-4ce83152=""
+                      <div
+                        class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                        data-testid="temba_select_input_flow_result"
+                        data-v-20f606ca=""
+                        data-v-4d681994=""
+                        mask=""
+                        readonly=""
                       >
+                        <input
+                          class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                          data-testid="temba_select_input_flow_result"
+                          data-v-1e805323=""
+                          data-v-20f606ca=""
+                          hascloudycolor="false"
+                          iconright="arrow-button-down-1"
+                          placeholder="Select Result"
+                          readonly=""
+                          type="text"
+                        />
+                        <!---->
                         <svg
+                          class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                          data-v-20f606ca=""
+                          data-v-edf1acd8=""
                           fill="none"
+                          height="40"
                           viewBox="0 0 40 40"
+                          width="40"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -1922,18 +1951,18 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                             fill="#3B414D"
                           />
                         </svg>
-                      </span>
+                      </div>
+                      <!---->
                     </div>
-                    <!---->
                   </div>
                 </div>
                 <div
-                  class="options_wrapper"
+                  class="_options_wrapper_08dd12"
                   data-testid="temba_select_options_flow_result"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
                 <div
-                  class="options_wrapper"
+                  class="_options_wrapper_08dd12"
                   data-testid="temba_select_expressions_flow_result"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
@@ -1941,61 +1970,61 @@ exports[`ResultRouterForm should show delimit options 1`] = `
             </div>
           </div>
           <div
-            class="lead_in_sub"
+            class="_lead_in_sub_eb44e0"
           >
             delimited by
           </div>
           <div
-            class="delimiter"
+            class="_delimiter_eb44e0"
           >
             <div
-              class="ele"
+              class="__ele_8d991a_8d991a"
             >
               <div
-                class="select_wrapper"
+                class="_select_wrapper_4cce75"
                 data-testid="temba_select_delimiter"
               >
-                <div
-                  data-use-vue-component-wrap=""
-                  style="all: unset;"
-                >
+                <div>
                   <div
-                    class="unnnic-form sm bold_placeholder"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_delimiter"
-                    data-v-48c0c241=""
-                    readonly="readonly"
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
                   >
-                    <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm has-icon-right"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
-                      mask=""
-                      v-bind="[object Object]"
+                      class="unnnic-form sm _bold_placeholder_4cce75"
+                      data-testid="temba_select_input_delimiter"
+                      data-v-4d681994=""
+                      readonly=""
                     >
-                      <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-testid="temba_select_input_delimiter"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
-                        iconright="arrow-button-down-1"
-                        placeholder="spaces"
-                        readonly="readonly"
-                        size="0"
-                        type="text"
-                        v-bind="[object Object]"
-                      />
                       <!---->
-                      <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-400546b3=""
-                        data-v-4ce83152=""
+                      <div
+                        class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                        data-testid="temba_select_input_delimiter"
+                        data-v-20f606ca=""
+                        data-v-4d681994=""
+                        mask=""
+                        readonly=""
                       >
+                        <input
+                          class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                          data-testid="temba_select_input_delimiter"
+                          data-v-1e805323=""
+                          data-v-20f606ca=""
+                          hascloudycolor="false"
+                          iconright="arrow-button-down-1"
+                          placeholder="spaces"
+                          readonly=""
+                          type="text"
+                        />
+                        <!---->
                         <svg
+                          class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                          data-v-20f606ca=""
+                          data-v-edf1acd8=""
                           fill="none"
+                          height="40"
                           viewBox="0 0 40 40"
+                          width="40"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -2004,49 +2033,49 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                             fill="#3B414D"
                           />
                         </svg>
-                      </span>
+                      </div>
+                      <!---->
                     </div>
-                    <!---->
                   </div>
                 </div>
                 <div
-                  class="options_wrapper"
+                  class="_options_wrapper_08dd12"
                   data-testid="temba_select_options_delimiter"
                   style="margin-top: 0px; width: -24px; display: none;"
                 >
                   <div
-                    class="option active selected"
+                    class="_option_08dd12 _active_08dd12 _selected_08dd12"
                     data-option-index="0"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       spaces
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="1"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       periods
                     </span>
                   </div>
                   <div
-                    class="option  "
+                    class="_option_08dd12  "
                     data-option-index="2"
                   >
                     <span
-                      class="name"
+                      class="_name_08dd12"
                     >
                       plusses
                     </span>
                   </div>
                 </div>
                 <div
-                  class="options_wrapper"
+                  class="_options_wrapper_08dd12"
                   data-testid="temba_select_expressions_delimiter"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
@@ -2060,24 +2089,24 @@ exports[`ResultRouterForm should show delimit options 1`] = `
           If the message response
         </div>
         <div
-          class="case_list_container "
+          class="_case_list_container_e1df2e "
           tabindex="0"
         >
           <div
-            class="case_list"
+            class="_case_list_e1df2e"
           >
             <div
-              class="kase case_list_case"
+              class="_kase_e1df2e case_list_case"
             >
               <div
-                class="ele group"
+                class="__ele_8d991a_8d991a __group_5261c2_8d991a"
               >
                 <div
-                  class="kase has_any_word"
+                  class="_kase_5261c2 _has_any_word_5261c2"
                   data-draggable="true"
                 >
                   <span
-                    class="move_icon"
+                    class="_move_icon_5261c2"
                     data-draggable="true"
                   >
                     <svg
@@ -2098,53 +2127,53 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                     </svg>
                   </span>
                   <div
-                    class="choice"
+                    class="_choice_5261c2"
                   >
                     <div
-                      class="select_wrapper"
+                      class="_select_wrapper_4cce75"
                       data-testid="temba_select_operator"
                     >
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="all: unset;"
-                      >
+                      <div>
                         <div
-                          class="unnnic-form sm bold_placeholder"
-                          data-passed-props="[object Object]"
-                          data-testid="temba_select_input_operator"
-                          data-v-48c0c241=""
-                          readonly="readonly"
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
                         >
-                          <!---->
                           <div
-                            class="unnnic-form-input text-input size--sm has-icon-right"
-                            data-v-400546b3=""
-                            data-v-48c0c241=""
-                            mask=""
-                            v-bind="[object Object]"
+                            class="unnnic-form sm _bold_placeholder_4cce75"
+                            data-testid="temba_select_input_operator"
+                            data-v-4d681994=""
+                            readonly=""
                           >
-                            <input
-                              class="input-itself input size-sm normal"
-                              data-passed-props="[object Object]"
-                              data-testid="temba_select_input_operator"
-                              data-v-400546b3=""
-                              data-v-97b44e8c=""
-                              iconright="arrow-button-down-1"
-                              placeholder="has any of the words"
-                              readonly="readonly"
-                              size="0"
-                              type="text"
-                              v-bind="[object Object]"
-                            />
                             <!---->
-                            <span
-                              class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                              data-v-400546b3=""
-                              data-v-4ce83152=""
+                            <div
+                              class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                              data-testid="temba_select_input_operator"
+                              data-v-20f606ca=""
+                              data-v-4d681994=""
+                              mask=""
+                              readonly=""
                             >
+                              <input
+                                class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                                data-testid="temba_select_input_operator"
+                                data-v-1e805323=""
+                                data-v-20f606ca=""
+                                hascloudycolor="false"
+                                iconright="arrow-button-down-1"
+                                placeholder="has any of the words"
+                                readonly=""
+                                type="text"
+                              />
+                              <!---->
                               <svg
+                                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                                data-v-20f606ca=""
+                                data-v-edf1acd8=""
                                 fill="none"
+                                height="40"
                                 viewBox="0 0 40 40"
+                                width="40"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -2153,270 +2182,267 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                                   fill="#3B414D"
                                 />
                               </svg>
-                            </span>
+                            </div>
+                            <!---->
                           </div>
-                          <!---->
                         </div>
                       </div>
                       <div
-                        class="options_wrapper"
+                        class="_options_wrapper_08dd12"
                         data-testid="temba_select_options_operator"
-                        style="margin-top: 0px; width: 0px; display: none;"
+                        style="margin-top: 0px; width: -24px; display: none;"
                       >
                         <div
-                          class="option active selected"
+                          class="_option_08dd12 _active_08dd12 _selected_08dd12"
                           data-option-index="0"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has any of the words
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="1"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has all of the words
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="2"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has the phrase
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="3"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has only the phrase
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="4"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             starts with
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="5"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has some text
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="6"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="7"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number between
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="8"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number below
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="9"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number at or below
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="10"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number equal to
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="11"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number at or above
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="12"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a number above
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="13"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a date
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="14"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a date before
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="15"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a date equal to
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="16"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a date after
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="17"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a time
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="18"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has a phone number
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="19"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             has an email
                           </span>
                         </div>
                         <div
-                          class="option  "
+                          class="_option_08dd12  "
                           data-option-index="20"
                         >
                           <span
-                            class="name"
+                            class="_name_08dd12"
                           >
                             matches regex
                           </span>
                         </div>
                       </div>
                       <div
-                        class="options_wrapper"
+                        class="_options_wrapper_08dd12"
                         data-testid="temba_select_expressions_operator"
-                        style="margin-top: 0px; width: 0px; display: none;"
+                        style="margin-top: 0px; width: -24px; display: none;"
                       />
                     </div>
                   </div>
                   <div
-                    class="single_operand"
+                    class="_single_operand_5261c2"
                   >
                     <div>
                       <div
-                        class="completion_wrapper"
+                        class="_completion_wrapper_17662c"
                       >
                         <div
                           data-testid="arguments"
                         >
                           <div
                             data-use-vue-component-wrap=""
+                            data-v-app=""
                             style="all: unset;"
                           >
                             <div
                               class="unnnic-form sm"
-                              data-passed-props="[object Object]"
-                              data-v-48c0c241=""
+                              data-v-4d681994=""
                             >
                               <!---->
                               <div
-                                class="unnnic-form-input text-input size--sm"
-                                data-v-400546b3=""
-                                data-v-48c0c241=""
+                                class="text-input size--sm unnnic-form-input"
+                                data-v-20f606ca=""
+                                data-v-4d681994=""
                                 mask=""
-                                v-bind="[object Object]"
                               >
                                 <input
-                                  class="input-itself input size-sm normal"
-                                  data-passed-props="[object Object]"
-                                  data-v-400546b3=""
-                                  data-v-97b44e8c=""
+                                  class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                  data-v-1e805323=""
+                                  data-v-20f606ca=""
+                                  hascloudycolor="false"
                                   placeholder="Ex: cart"
-                                  size="0"
                                   type="text"
-                                  v-bind="[object Object]"
                                 />
                                 <!---->
                                 <!---->
@@ -2426,7 +2452,7 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                           </div>
                         </div>
                         <div
-                          class="options_wrapper"
+                          class="_options_wrapper_08dd12"
                           data-testid="temba_completion_options_arguments"
                           style="margin-top: 0px; width: -24px; display: none;"
                         />
@@ -2434,46 +2460,44 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                     </div>
                   </div>
                   <div
-                    class="categorize_as u font secondary body-md color-neutral-cloudy"
+                    class="_categorize_as_5261c2 u font secondary body-md color-neutral-cloudy"
                     data-draggable="true"
                   >
                     Categorize as:
                   </div>
                   <div
-                    class="category"
+                    class="_category_5261c2"
                   >
                     <div
                       data-testid="Exit Name"
                     >
                       <div
                         data-use-vue-component-wrap=""
+                        data-v-app=""
                         style="all: unset;"
                         unnnic-input="true"
                       >
                         <div
                           class="unnnic-form sm"
-                          data-passed-props="[object Object]"
-                          data-v-48c0c241=""
+                          data-v-4d681994=""
                           maxlength="36"
                         >
                           <!---->
                           <div
-                            class="unnnic-form-input text-input size--sm"
-                            data-v-400546b3=""
-                            data-v-48c0c241=""
+                            class="text-input size--sm unnnic-form-input"
+                            data-v-20f606ca=""
+                            data-v-4d681994=""
                             mask=""
-                            v-bind="[object Object]"
+                            maxlength="36"
                           >
                             <input
-                              class="input-itself input size-sm normal"
-                              data-passed-props="[object Object]"
-                              data-v-400546b3=""
-                              data-v-97b44e8c=""
+                              class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                              data-v-1e805323=""
+                              data-v-20f606ca=""
+                              hascloudycolor="false"
                               maxlength="36"
                               placeholder="Ex: shopping"
-                              size="0"
                               type="text"
-                              v-bind="[object Object]"
                             />
                             <!---->
                             <!---->
@@ -2484,36 +2508,35 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                     </div>
                   </div>
                   <span
-                    class="remove_icon_wrapper"
+                    class="_remove_icon_wrapper_5261c2"
                     data-draggable="true"
                   >
                     <div
                       data-draggable="true"
                       data-use-vue-component-wrap=""
+                      data-v-app=""
                     >
-                      <span
-                        class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-                        data-passed-props="[object Object]"
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                         data-testid="remove-case-061fc171-8b79-4636-b892-bd0ea5aa9b42"
-                        data-v-4ce83152=""
+                        data-v-edf1acd8=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          viewBox="0 0 40 40"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            class="primary"
-                            d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                            fill="#3B414D"
-                          />
-                          <path
-                            class="primary"
-                            d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                            fill="#3B414D"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          class="primary"
+                          d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                          fill="#3B414D"
+                        />
+                        <path
+                          class="primary"
+                          d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
                     </div>
                   </span>
                 </div>
@@ -2522,58 +2545,57 @@ exports[`ResultRouterForm should show delimit options 1`] = `
           </div>
         </div>
         <div
-          class="optional_text_input toggle"
+          class="_optional_text_input_1fb2f6 _toggle_1fb2f6"
         >
           <span
-            class="toggle_link "
+            class="_toggle_link_1fb2f6 "
             data-spec="toggle-link"
             data-testid="toggle-link"
           >
             Save as
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
             >
-              <span
+              <svg
                 class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cleanest"
-                data-passed-props="[object Object]"
-                data-v-4ce83152=""
+                data-v-edf1acd8=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  viewBox="0 0 40 40"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="primary"
-                    d="M14.0093 34.6856L29.5962 20.9572C29.726 20.8328 29.8292 20.6835 29.8997 20.5182C29.9702 20.3529 30.0066 20.1751 30.0066 19.9954C30.0066 19.8157 29.9702 19.6379 29.8997 19.4726C29.8292 19.3073 29.726 19.158 29.5962 19.0336L14.0093 5.31149C13.8857 5.20174 13.7412 5.11796 13.5845 5.06514C13.4279 5.01232 13.2622 4.99153 13.0973 5.00401C12.9325 5.01648 12.7718 5.06197 12.6249 5.13776C12.4779 5.21356 12.3477 5.31812 12.242 5.44522L10.296 7.75745C10.0786 8.0153 9.97133 8.34827 9.99728 8.68451C10.0232 9.02076 10.1804 9.33332 10.4347 9.55474L22.2496 19.7598C22.2837 19.7891 22.311 19.8255 22.3298 19.8664C22.3486 19.9072 22.3583 19.9517 22.3583 19.9967C22.3583 20.0416 22.3486 20.0861 22.3298 20.1269C22.311 20.1678 22.2837 20.2042 22.2496 20.2335L10.4385 30.4423C10.3118 30.5523 10.2081 30.6862 10.1333 30.8363C10.0584 30.9865 10.0139 31.1499 10.0023 31.3172C9.98744 31.4836 10.0061 31.6513 10.0572 31.8104C10.1083 31.9695 10.1908 32.1167 10.2997 32.2434L12.247 34.5568C12.3529 34.6836 12.4832 34.7879 12.6301 34.8635C12.7771 34.9391 12.9377 34.9845 13.1024 34.997C13.2672 35.0094 13.4328 34.9887 13.5894 34.9361C13.746 34.8835 13.8905 34.8 14.0143 34.6906L14.0093 34.6856Z"
-                    fill="#3B414D"
-                  />
-                </svg>
-              </span>
+                <path
+                  class="primary"
+                  d="M14.0093 34.6856L29.5962 20.9572C29.726 20.8328 29.8292 20.6835 29.8997 20.5182C29.9702 20.3529 30.0066 20.1751 30.0066 19.9954C30.0066 19.8157 29.9702 19.6379 29.8997 19.4726C29.8292 19.3073 29.726 19.158 29.5962 19.0336L14.0093 5.31149C13.8857 5.20174 13.7412 5.11796 13.5845 5.06514C13.4279 5.01232 13.2622 4.99153 13.0973 5.00401C12.9325 5.01648 12.7718 5.06197 12.6249 5.13776C12.4779 5.21356 12.3477 5.31812 12.242 5.44522L10.296 7.75745C10.0786 8.0153 9.97133 8.34827 9.99728 8.68451C10.0232 9.02076 10.1804 9.33332 10.4347 9.55474L22.2496 19.7598C22.2837 19.7891 22.311 19.8255 22.3298 19.8664C22.3486 19.9072 22.3583 19.9517 22.3583 19.9967C22.3583 20.0416 22.3486 20.0861 22.3298 20.1269C22.311 20.1678 22.2837 20.2042 22.2496 20.2335L10.4385 30.4423C10.3118 30.5523 10.2081 30.6862 10.1333 30.8363C10.0584 30.9865 10.0139 31.1499 10.0023 31.3172C9.98744 31.4836 10.0061 31.6513 10.0572 31.8104C10.1083 31.9695 10.1908 32.1167 10.2997 32.2434L12.247 34.5568C12.3529 34.6836 12.4832 34.7879 12.6301 34.8635C12.7771 34.9391 12.9377 34.9845 13.1024 34.997C13.2672 35.0094 13.4328 34.9887 13.5894 34.9361C13.746 34.8835 13.8905 34.8 14.0143 34.6906L14.0093 34.6856Z"
+                  fill="#3B414D"
+                />
+              </svg>
             </div>
           </span>
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_af1b5d"
       >
         <div
-          class="buttons"
+          class="_buttons_af1b5d"
         >
           <div
-            class="buttons_wrapper"
+            class="_buttons_wrapper_af1b5d"
           >
             <div
-              class="right_buttons"
+              class="_right_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-d3a33348=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -2581,20 +2603,22 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-d3a33348=""
                   >
-                     Cancel 
+                    
+                    
+                     Cancel
                   </span>
                   <!---->
                 </button>
               </div>
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-d3a33348=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -2602,9 +2626,11 @@ exports[`ResultRouterForm should show delimit options 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-d3a33348=""
                   >
-                     Confirm 
+                    
+                    
+                     Confirm
                   </span>
                   <!---->
                 </button>

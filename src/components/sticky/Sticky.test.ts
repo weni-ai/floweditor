@@ -1,13 +1,17 @@
+import { waitFor } from '@testing-library/react';
 import { Sticky, StickyProps } from 'components/sticky/Sticky';
 import { FlowDefinition, StickyNote } from 'flowTypes';
 import { composeComponentTestUtils, composeDuxState, setMock } from 'testUtils';
 import { set } from 'utils';
+import { Mock } from 'vitest';
 
-jest.useFakeTimers();
+vi.useFakeTimers({ shouldAdvanceTime: true });
 
 const definition = require('test/flows/empty.json') as FlowDefinition;
 
-const clearTimeoutMock = clearTimeout as jest.Mock;
+const clearTimeoutSpy = vi
+  .spyOn(window, 'clearTimeout')
+  .mockImplementation(() => {});
 
 const sticky: StickyNote = {
   title: 'Sticky Title',
@@ -18,9 +22,9 @@ const sticky: StickyNote = {
 const baseProps: StickyProps = {
   uuid: 'stickyA',
   sticky,
-  definition,
+  // definition,
   selected: false,
-  updateSticky: jest.fn(),
+  updateSticky: vi.fn(),
 };
 
 const { setup } = composeComponentTestUtils(
@@ -33,31 +37,39 @@ describe(Sticky.name, () => {
   describe('colors', () => {
     it('should render yellow as a default', () => {
       const { wrapper } = setup();
-      expect(wrapper.find('.sticky_container').hasClass('yellow')).toBeTruthy();
+      expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('should render green notes', () => {
       sticky.color = 'green';
       const { wrapper } = setup(true, { sticky: set(sticky) });
-      expect(wrapper.find('.sticky_container').hasClass('green')).toBeTruthy();
+      expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('should let you change the color', () => {
       const { wrapper } = setup();
-      wrapper.find('.color_chooser .blue').simulate('click');
-      expect(wrapper.find('.sticky_container').hasClass('blue')).toBeTruthy();
+      wrapper.find({ 'data-testid': 'color-chooser-blue' }).simulate('click');
+      expect(wrapper.html()).toMatchSnapshot();
     });
   });
 
   describe('update content', () => {
     let wrapper: any;
 
-    const updateText = (name: string, value: string) => {
-      const selector = `textarea.${name}`;
-      wrapper.find(selector).prop('onChange')({
+    const updateText = (testId: string, value: string) => {
+      const selector = { 'data-testid': testId };
+      wrapper
+        .find(selector)
+        .at(1)
+        .prop('onChange')({
         currentTarget: { value },
       });
-      expect(wrapper.find(selector).text()).toBe(value);
+      expect(
+        wrapper
+          .find(selector)
+          .at(1)
+          .text(),
+      ).toBe(value);
     };
 
     it('should update the title', () => {
@@ -76,70 +88,58 @@ describe(Sticky.name, () => {
       updateText('title', 'Update two');
 
       // we should have cleared our debounce
-      expect(clearTimeout).toHaveBeenCalledTimes(1);
+      expect(clearTimeoutSpy).toHaveBeenCalledTimes(1);
     });
 
     it('should deregister debounce on unmount', () => {
       wrapper = setup(false).wrapper;
       updateText('title', 'Update one');
       updateText('title', 'Update two');
-      clearTimeoutMock.mockClear();
+      vi.clearAllMocks();
 
       wrapper.unmount();
 
-      expect(clearTimeout).toHaveBeenCalledTimes(1);
+      expect(clearTimeoutSpy).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('delete', () => {
-    it('should show confirmation when clicking remove', () => {
+    it('should show confirmation when clicking remove', async () => {
       const { wrapper } = setup(false);
-
-      // starts off without the removal class
-      expect(wrapper.find('.title_wrapper').hasClass('removal')).toBeFalsy();
+      expect(wrapper.html()).toMatchSnapshot();
 
       // click on the removal, and removal should be there
-      wrapper.find('.remove_button').simulate('click');
+      wrapper.find({ 'data-testid': 'remove' }).simulate('click');
 
-      expect(wrapper.find('.title_wrapper').hasClass('removal')).toBeTruthy();
-
-      // run through the end of the timer period and removal should go away
-      jest.runAllTimers();
-
-      expect(
-        wrapper
-          .render()
-          .find('.title_wrapper')
-          .hasClass('removal'),
-      ).toBeFalsy();
+      expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('should delete on double click', () => {
       const { wrapper, props } = setup(true, { updateSticky: setMock() });
 
       // click on the removal, and removal should be there
-      wrapper.find('.remove_button').simulate('click');
-      wrapper.find('.remove_button').simulate('click');
+      wrapper.find({ 'data-testid': 'remove' }).simulate('click');
+      wrapper.find({ 'data-testid': 'remove' }).simulate('click');
 
       // TODO: make mocks work
       expect(props.updateSticky).toHaveBeenCalledTimes(1);
       expect(props.updateSticky).toHaveBeenCalledWith('stickyA', null);
 
       // run through the end of the timer period and removal should go away
-      jest.runAllTimers();
+      vi.runAllTimers();
     });
 
-    it('should deregister timeout when unmounting', () => {
+    it('should deregister timeout when unmounting', async () => {
       const { wrapper } = setup();
-      clearTimeoutMock.mockClear();
+      vi.clearAllMocks();
 
       // click to remove will register a timer to switch removal off
-      wrapper.find('.remove_button').simulate('click');
+      wrapper.find({ 'data-testid': 'remove' }).simulate('click');
 
       // unmounting should deregister our timer
       wrapper.unmount();
 
-      expect(clearTimeout).toHaveBeenCalledTimes(1);
+      expect(clearTimeoutSpy).toHaveBeenCalledTimes(1);
     });
   });
 

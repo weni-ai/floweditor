@@ -1,17 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`NodeComp renders 1`] = `
+exports[`NodeComp > renders 1`] = `
 <body>
   <div>
     <div
-      class="node_container plumb-drag flow_start"
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
       id="b1f332f3-bdd3-4891-aec5-1843a712dbf1"
     >
       <div
-        class="node execute_actions"
+        class="_node_108c8d _execute_actions_108c8d"
       >
         <div
-          class="counter active clickable "
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
           data-spec="counter-outter"
         >
           <div
@@ -22,50 +22,50 @@ exports[`NodeComp renders 1`] = `
           </div>
         </div>
         <div
-          class="cropped"
+          class="_cropped_108c8d"
         >
           <div
-            class="flow_start_message u font secondary body-md bold color-brand-weni-soft"
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
           >
             Flow Start
           </div>
         </div>
         <div
-          class="exit_table"
+          class="_exit_table_108c8d"
         >
           <div
-            class="exits"
+            class="_exits_108c8d"
           >
             <div
               class="
-          exit plumb-exit 
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
           null
           null 
         "
             >
               <div
-                class="endpoint"
+                class="__endpoint_d88b3c_d88b3c"
                 id="b1f332f3-bdd3-4891-aec5-1843a712dbf1:061fc171-8b79-4636-b892-bd0ea5aa9b42"
               />
               <div
-                class="drag_helper "
+                class="_drag_helper_9b2f01 "
               >
                 <div
-                  class="arrow"
+                  class="_arrow_9b2f01"
                 >
                   <div
-                    class="tail"
+                    class="_tail_9b2f01"
                   />
                   <div
-                    class="head"
+                    class="_head_9b2f01"
                   />
                 </div>
                 <div
-                  class="help_text"
+                  class="_help_text_9b2f01"
                 >
                   To connect nodes, 
                   <span
-                    class="bold"
+                    class="_bold_9b2f01"
                   >
                     drag
                   </span>
@@ -75,29 +75,28 @@ exports[`NodeComp renders 1`] = `
             </div>
           </div>
           <div
-            class="add"
+            class="_add_108c8d"
           >
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
             >
-              <span
+              <svg
                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
-                data-passed-props="[object Object]"
-                data-v-4ce83152=""
+                data-v-edf1acd8=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="none"
-                  viewBox="0 0 40 40"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="primary"
-                    d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
-                    fill="#3B414D"
-                  />
-                </svg>
-              </span>
+                <path
+                  class="primary"
+                  d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
+                  fill="#3B414D"
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -107,18 +106,18 @@ exports[`NodeComp renders 1`] = `
 </body>
 `;
 
-exports[`NodeComp renders a named random split 1`] = `
+exports[`NodeComp > renders a named random split 1`] = `
 <body>
   <div>
     <div
-      class="node_container plumb-drag flow_start"
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
       id="2dc85899-0577-4f1b-a620-f12094e34b5e"
     >
       <div
-        class="node split_by_random"
+        class="_node_108c8d _split_by_random_108c8d"
       >
         <div
-          class="counter active clickable "
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
           data-spec="counter-outter"
         >
           <div
@@ -129,10 +128,10 @@ exports[`NodeComp renders a named random split 1`] = `
           </div>
         </div>
         <div
-          class="cropped"
+          class="_cropped_108c8d"
         >
           <div
-            class="flow_start_message u font secondary body-md bold color-brand-weni-soft"
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
           >
             Flow Start
           </div>
@@ -141,47 +140,46 @@ exports[`NodeComp renders a named random split 1`] = `
           >
             <div>
               <div
-                class="titlebar null"
+                class="_titlebar_122edd null"
                 data-spec="titlebar-container"
               >
                 <div
-                  class="normal split_by_random title null"
+                  class="_normal_122edd _split_by_random_9658e1 _title_108c8d null"
                   data-spec="titlebar"
                 >
                   <div
-                    class="up_button"
+                    class="_up_button_122edd"
                     data-spec="move"
                   />
                   <div
-                    class="titletext u font secondary body-md bold"
+                    class="_titletext_122edd u font secondary body-md bold"
                   >
                     Split randomly
                   </div>
                   <div
-                    class="remove_button"
+                    class="_remove_button_122edd"
                     data-testid="remove-icon"
                   >
                     <div
                       data-use-vue-component-wrap=""
+                      data-v-app=""
                       style="all: unset;"
                     >
-                      <span
+                      <svg
                         class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-                        data-passed-props="[object Object]"
-                        data-v-4ce83152=""
+                        data-v-edf1acd8=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          viewBox="0 0 40 40"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            class="primary"
-                            d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
-                            fill="#3B414D"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -190,65 +188,65 @@ exports[`NodeComp renders a named random split 1`] = `
           </div>
           <div
             class="
-              save_result
+              _save_result_108c8d
               null
               false
             "
           >
             <div
-              class="save_as"
+              class="_save_as_108c8d"
             >
               Save as
                
             </div>
             <div
-              class="result_name"
+              class="_result_name_108c8d"
             >
               My Random Split
             </div>
           </div>
         </div>
         <div
-          class="exit_table"
+          class="_exit_table_108c8d"
         >
           <div
-            class="exits"
+            class="_exits_108c8d"
           >
             <div
               class="
-          exit plumb-exit 
-          has-background
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
           null 
         "
             >
               <div
-                class="name u font secondary body-md"
+                class="_name_d88b3c u font secondary body-md"
               >
                 Bucket 1
               </div>
               <div
-                class="endpoint"
+                class="__endpoint_d88b3c_d88b3c"
                 id="2dc85899-0577-4f1b-a620-f12094e34b5e:061fc171-8b79-4636-b892-bd0ea5aa9b42"
               />
               <div
-                class="drag_helper "
+                class="_drag_helper_9b2f01 "
               >
                 <div
-                  class="arrow"
+                  class="_arrow_9b2f01"
                 >
                   <div
-                    class="tail"
+                    class="_tail_9b2f01"
                   />
                   <div
-                    class="head"
+                    class="_head_9b2f01"
                   />
                 </div>
                 <div
-                  class="help_text"
+                  class="_help_text_9b2f01"
                 >
                   To connect nodes, 
                   <span
-                    class="bold"
+                    class="_bold_9b2f01"
                   >
                     drag
                   </span>
@@ -258,35 +256,35 @@ exports[`NodeComp renders a named random split 1`] = `
             </div>
             <div
               class="
-          exit plumb-exit 
-          has-background
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
           null 
         "
             >
               <div
-                class="name u font secondary body-md"
+                class="_name_d88b3c u font secondary body-md"
               >
                 Bucket 2
               </div>
               <div
-                class="endpoint"
+                class="__endpoint_d88b3c_d88b3c"
                 id="2dc85899-0577-4f1b-a620-f12094e34b5e:1dce2b34-9aab-4e20-81c4-3f0408dcb671"
               />
             </div>
             <div
               class="
-          exit plumb-exit 
-          has-background
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
           null 
         "
             >
               <div
-                class="name u font secondary body-md"
+                class="_name_d88b3c u font secondary body-md"
               >
                 Bucket 3
               </div>
               <div
-                class="endpoint"
+                class="__endpoint_d88b3c_d88b3c"
                 id="2dc85899-0577-4f1b-a620-f12094e34b5e:763e4844-3e1b-407a-a1b5-5fdfcd308b41"
               />
             </div>

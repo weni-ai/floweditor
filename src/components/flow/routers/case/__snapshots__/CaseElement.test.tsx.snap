@@ -1,17 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`CaseElement operator changes should handle updates 1`] = `
+exports[`CaseElement > operator changes > should handle updates 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_5261c2_8d991a"
     >
       <div
-        class="kase has_phone"
+        class="_kase_5261c2 _has_phone_5261c2"
         data-draggable="true"
       >
         <span
-          class="move_icon"
+          class="_move_icon_5261c2"
           data-draggable="true"
         >
           <svg
@@ -32,53 +32,53 @@ exports[`CaseElement operator changes should handle updates 1`] = `
           </svg>
         </span>
         <div
-          class="choice"
+          class="_choice_5261c2"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_operator"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_operator"
+                  data-v-4d681994=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_operator"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="has a phone number"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_operator"
+                    data-v-20f606ca=""
+                    data-v-4d681994=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_operator"
+                      data-v-1e805323=""
+                      data-v-20f606ca=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="has any of the words"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-20f606ca=""
+                      data-v-edf1acd8=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -87,278 +87,276 @@ exports[`CaseElement operator changes should handle updates 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has any of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has all of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has only the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   starts with
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has some text
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number between
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="9"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="10"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="11"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="12"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="13"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="14"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date before
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="15"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="16"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date after
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="17"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a time
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="18"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a phone number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="19"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has an email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="20"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   matches regex
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="no_argument"
+          class="_no_argument_5261c2"
         />
         <div
-          class="categorize_as u font secondary body-md color-neutral-cloudy"
+          class="_categorize_as_5261c2 u font secondary body-md color-neutral-cloudy"
           data-draggable="true"
         >
           Categorize as:
         </div>
         <div
-          class="category"
+          class="_category_5261c2"
         >
           <div
             data-testid="Exit Name"
           >
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
               unnnic-input="true"
             >
               <div
                 class="unnnic-form sm"
-                data-passed-props="[object Object]"
-                data-v-48c0c241=""
+                data-v-4d681994=""
                 maxlength="36"
               >
                 <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
+                  class="text-input size--sm unnnic-form-input"
+                  data-v-20f606ca=""
+                  data-v-4d681994=""
                   mask=""
-                  v-bind="[object Object]"
+                  maxlength="36"
                 >
                   <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
+                    class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                    data-v-1e805323=""
+                    data-v-20f606ca=""
+                    hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
-                    size="9"
                     type="text"
-                    v-bind="[object Object]"
                   />
                   <!---->
                   <!---->
@@ -369,36 +367,35 @@ exports[`CaseElement operator changes should handle updates 1`] = `
           </div>
         </div>
         <span
-          class="remove_icon_wrapper"
+          class="_remove_icon_wrapper_5261c2"
           data-draggable="true"
         >
           <div
             data-draggable="true"
             data-use-vue-component-wrap=""
+            data-v-app=""
           >
-            <span
-              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-              data-passed-props="[object Object]"
+            <svg
+              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-4ce83152=""
+              data-v-edf1acd8=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="none"
-                viewBox="0 0 40 40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="primary"
-                  d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                  fill="#3B414D"
-                />
-                <path
-                  class="primary"
-                  d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                  fill="#3B414D"
-                />
-              </svg>
-            </span>
+              <path
+                class="primary"
+                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                fill="#3B414D"
+              />
+            </svg>
           </div>
         </span>
       </div>
@@ -407,18 +404,18 @@ exports[`CaseElement operator changes should handle updates 1`] = `
 </body>
 `;
 
-exports[`CaseElement operator changes should not update exit if it has been edited 1`] = `
+exports[`CaseElement > operator changes > should not update exit if it has been edited 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_5261c2_8d991a"
     >
       <div
-        class="kase has_number"
+        class="_kase_5261c2 _has_number_5261c2"
         data-draggable="true"
       >
         <span
-          class="move_icon"
+          class="_move_icon_5261c2"
           data-draggable="true"
         >
           <svg
@@ -439,53 +436,53 @@ exports[`CaseElement operator changes should not update exit if it has been edit
           </svg>
         </span>
         <div
-          class="choice"
+          class="_choice_5261c2"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_operator"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_operator"
+                  data-v-4d681994=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_operator"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="has a number"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_operator"
+                    data-v-20f606ca=""
+                    data-v-4d681994=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_operator"
+                      data-v-1e805323=""
+                      data-v-20f606ca=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="has any of the words"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-20f606ca=""
+                      data-v-edf1acd8=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -494,278 +491,276 @@ exports[`CaseElement operator changes should not update exit if it has been edit
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has any of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has all of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has only the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   starts with
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has some text
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number between
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="9"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="10"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="11"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="12"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="13"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="14"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date before
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="15"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="16"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date after
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="17"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a time
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="18"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a phone number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="19"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has an email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="20"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   matches regex
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="no_argument"
+          class="_no_argument_5261c2"
         />
         <div
-          class="categorize_as u font secondary body-md color-neutral-cloudy"
+          class="_categorize_as_5261c2 u font secondary body-md color-neutral-cloudy"
           data-draggable="true"
         >
           Categorize as:
         </div>
         <div
-          class="category"
+          class="_category_5261c2"
         >
           <div
             data-testid="Exit Name"
           >
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
               unnnic-input="true"
             >
               <div
                 class="unnnic-form sm"
-                data-passed-props="[object Object]"
-                data-v-48c0c241=""
+                data-v-4d681994=""
                 maxlength="36"
               >
                 <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
+                  class="text-input size--sm unnnic-form-input"
+                  data-v-20f606ca=""
+                  data-v-4d681994=""
                   mask=""
-                  v-bind="[object Object]"
+                  maxlength="36"
                 >
                   <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
+                    class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                    data-v-1e805323=""
+                    data-v-20f606ca=""
+                    hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
-                    size="12"
                     type="text"
-                    v-bind="[object Object]"
                   />
                   <!---->
                   <!---->
@@ -776,36 +771,35 @@ exports[`CaseElement operator changes should not update exit if it has been edit
           </div>
         </div>
         <span
-          class="remove_icon_wrapper"
+          class="_remove_icon_wrapper_5261c2"
           data-draggable="true"
         >
           <div
             data-draggable="true"
             data-use-vue-component-wrap=""
+            data-v-app=""
           >
-            <span
-              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-              data-passed-props="[object Object]"
+            <svg
+              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-4ce83152=""
+              data-v-edf1acd8=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="none"
-                viewBox="0 0 40 40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="primary"
-                  d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                  fill="#3B414D"
-                />
-                <path
-                  class="primary"
-                  d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                  fill="#3B414D"
-                />
-              </svg>
-            </span>
+              <path
+                class="primary"
+                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                fill="#3B414D"
+              />
+            </svg>
           </div>
         </span>
       </div>
@@ -814,18 +808,18 @@ exports[`CaseElement operator changes should not update exit if it has been edit
 </body>
 `;
 
-exports[`CaseElement operator changes should should set arguments for numeric range 1`] = `
+exports[`CaseElement > operator changes > should should set arguments for numeric range 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_5261c2_8d991a"
     >
       <div
-        class="kase has_number_between"
+        class="_kase_5261c2 _has_number_between_5261c2"
         data-draggable="true"
       >
         <span
-          class="move_icon"
+          class="_move_icon_5261c2"
           data-draggable="true"
         >
           <svg
@@ -846,53 +840,53 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
           </svg>
         </span>
         <div
-          class="choice"
+          class="_choice_5261c2"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_operator"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_operator"
+                  data-v-4d681994=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_operator"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="has a number between"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_operator"
+                    data-v-20f606ca=""
+                    data-v-4d681994=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_operator"
+                      data-v-1e805323=""
+                      data-v-20f606ca=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="has any of the words"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-20f606ca=""
+                      data-v-edf1acd8=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -901,270 +895,267 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has any of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has all of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has only the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   starts with
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has some text
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number between
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="9"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="10"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="11"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="12"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="13"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="14"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date before
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="15"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="16"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date after
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="17"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a time
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="18"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a phone number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="19"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has an email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="20"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   matches regex
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="multi_operand"
+          class="_multi_operand_5261c2"
         >
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="arguments"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-4d681994=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-20f606ca=""
+                      data-v-4d681994=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
-                        placeholder="0"
-                        size="0"
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-1e805323=""
+                        data-v-20f606ca=""
+                        hascloudycolor="false"
+                        placeholder="Ex: cart"
                         type="text"
-                        v-bind="[object Object]"
                       />
                       <!---->
                       <!---->
@@ -1174,51 +1165,48 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_arguments"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
           <span
-            class="divider u font secondary body-md color-neutral-cloudy"
+            class="_divider_5261c2 u font secondary body-md color-neutral-cloudy"
             data-draggable="true"
           >
             and
           </span>
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="arguments"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-4d681994=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-20f606ca=""
+                      data-v-4d681994=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-1e805323=""
+                        data-v-20f606ca=""
+                        hascloudycolor="false"
                         placeholder="100"
-                        size="0"
                         type="text"
-                        v-bind="[object Object]"
                       />
                       <!---->
                       <!---->
@@ -1228,7 +1216,7 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_arguments"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
@@ -1236,46 +1224,44 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
           </div>
         </div>
         <div
-          class="categorize_as u font secondary body-md color-neutral-cloudy"
+          class="_categorize_as_5261c2 u font secondary body-md color-neutral-cloudy"
           data-draggable="true"
         >
           Categorize as:
         </div>
         <div
-          class="category"
+          class="_category_5261c2"
         >
           <div
             data-testid="Exit Name"
           >
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
               unnnic-input="true"
             >
               <div
                 class="unnnic-form sm"
-                data-passed-props="[object Object]"
-                data-v-48c0c241=""
+                data-v-4d681994=""
                 maxlength="36"
               >
                 <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
+                  class="text-input size--sm unnnic-form-input"
+                  data-v-20f606ca=""
+                  data-v-4d681994=""
                   mask=""
-                  v-bind="[object Object]"
+                  maxlength="36"
                 >
                   <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
+                    class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                    data-v-1e805323=""
+                    data-v-20f606ca=""
+                    hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
-                    size="0"
                     type="text"
-                    v-bind="[object Object]"
                   />
                   <!---->
                   <!---->
@@ -1286,36 +1272,35 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
           </div>
         </div>
         <span
-          class="remove_icon_wrapper"
+          class="_remove_icon_wrapper_5261c2"
           data-draggable="true"
         >
           <div
             data-draggable="true"
             data-use-vue-component-wrap=""
+            data-v-app=""
           >
-            <span
-              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-              data-passed-props="[object Object]"
+            <svg
+              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-4ce83152=""
+              data-v-edf1acd8=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="none"
-                viewBox="0 0 40 40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="primary"
-                  d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                  fill="#3B414D"
-                />
-                <path
-                  class="primary"
-                  d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                  fill="#3B414D"
-                />
-              </svg>
-            </span>
+              <path
+                class="primary"
+                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                fill="#3B414D"
+              />
+            </svg>
           </div>
         </span>
       </div>
@@ -1324,18 +1309,18 @@ exports[`CaseElement operator changes should should set arguments for numeric ra
 </body>
 `;
 
-exports[`CaseElement render renders no argument rules 1`] = `
+exports[`CaseElement > render > renders no argument rules 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_5261c2_8d991a"
     >
       <div
-        class="kase has_number"
+        class="_kase_5261c2 _has_number_5261c2"
         data-draggable="true"
       >
         <span
-          class="move_icon"
+          class="_move_icon_5261c2"
           data-draggable="true"
         >
           <svg
@@ -1356,53 +1341,53 @@ exports[`CaseElement render renders no argument rules 1`] = `
           </svg>
         </span>
         <div
-          class="choice"
+          class="_choice_5261c2"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_operator"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_operator"
+                  data-v-4d681994=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_operator"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="has a number"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_operator"
+                    data-v-20f606ca=""
+                    data-v-4d681994=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_operator"
+                      data-v-1e805323=""
+                      data-v-20f606ca=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="has a number"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-20f606ca=""
+                      data-v-edf1acd8=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1411,278 +1396,276 @@ exports[`CaseElement render renders no argument rules 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_operator"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has any of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has all of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has only the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   starts with
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has some text
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number between
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="9"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="10"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="11"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="12"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="13"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="14"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date before
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="15"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="16"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date after
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="17"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a time
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="18"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a phone number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="19"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has an email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="20"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   matches regex
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_operator"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="no_argument"
+          class="_no_argument_5261c2"
         />
         <div
-          class="categorize_as u font secondary body-md color-neutral-cloudy"
+          class="_categorize_as_5261c2 u font secondary body-md color-neutral-cloudy"
           data-draggable="true"
         >
           Categorize as:
         </div>
         <div
-          class="category"
+          class="_category_5261c2"
         >
           <div
             data-testid="Exit Name"
           >
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
               unnnic-input="true"
             >
               <div
                 class="unnnic-form sm"
-                data-passed-props="[object Object]"
-                data-v-48c0c241=""
+                data-v-4d681994=""
                 maxlength="36"
               >
                 <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
+                  class="text-input size--sm unnnic-form-input"
+                  data-v-20f606ca=""
+                  data-v-4d681994=""
                   mask=""
-                  v-bind="[object Object]"
+                  maxlength="36"
                 >
                   <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
+                    class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                    data-v-1e805323=""
+                    data-v-20f606ca=""
+                    hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
-                    size="0"
                     type="text"
-                    v-bind="[object Object]"
                   />
                   <!---->
                   <!---->
@@ -1693,36 +1676,35 @@ exports[`CaseElement render renders no argument rules 1`] = `
           </div>
         </div>
         <span
-          class="remove_icon_wrapper"
+          class="_remove_icon_wrapper_5261c2"
           data-draggable="true"
         >
           <div
             data-draggable="true"
             data-use-vue-component-wrap=""
+            data-v-app=""
           >
-            <span
-              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-              data-passed-props="[object Object]"
+            <svg
+              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-4ce83152=""
+              data-v-edf1acd8=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="none"
-                viewBox="0 0 40 40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="primary"
-                  d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                  fill="#3B414D"
-                />
-                <path
-                  class="primary"
-                  d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                  fill="#3B414D"
-                />
-              </svg>
-            </span>
+              <path
+                class="primary"
+                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                fill="#3B414D"
+              />
+            </svg>
           </div>
         </span>
       </div>
@@ -1731,18 +1713,18 @@ exports[`CaseElement render renders no argument rules 1`] = `
 </body>
 `;
 
-exports[`CaseElement render should render empty case 1`] = `
+exports[`CaseElement > render > should render empty case 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_5261c2_8d991a"
     >
       <div
-        class="kase has_any_word"
+        class="_kase_5261c2 _has_any_word_5261c2"
         data-draggable="true"
       >
         <span
-          class="move_icon"
+          class="_move_icon_5261c2"
           data-draggable="true"
         >
           <svg
@@ -1763,53 +1745,53 @@ exports[`CaseElement render should render empty case 1`] = `
           </svg>
         </span>
         <div
-          class="choice"
+          class="_choice_5261c2"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_operator"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_operator"
+                  data-v-4d681994=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_operator"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="has any of the words"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_operator"
+                    data-v-20f606ca=""
+                    data-v-4d681994=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_operator"
+                      data-v-1e805323=""
+                      data-v-20f606ca=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="has any of the words"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-20f606ca=""
+                      data-v-edf1acd8=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1818,270 +1800,267 @@ exports[`CaseElement render should render empty case 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_operator"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active selected"
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has any of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has all of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has only the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   starts with
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has some text
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number between
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="9"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="10"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="11"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="12"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="13"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="14"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date before
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="15"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="16"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date after
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="17"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a time
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="18"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a phone number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="19"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has an email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="20"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   matches regex
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_operator"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="single_operand"
+          class="_single_operand_5261c2"
         >
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="arguments"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-4d681994=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-20f606ca=""
+                      data-v-4d681994=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-1e805323=""
+                        data-v-20f606ca=""
+                        hascloudycolor="false"
                         placeholder="Ex: cart"
-                        size="0"
                         type="text"
-                        v-bind="[object Object]"
                       />
                       <!---->
                       <!---->
@@ -2091,7 +2070,7 @@ exports[`CaseElement render should render empty case 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_arguments"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
@@ -2099,46 +2078,44 @@ exports[`CaseElement render should render empty case 1`] = `
           </div>
         </div>
         <div
-          class="categorize_as u font secondary body-md color-neutral-cloudy"
+          class="_categorize_as_5261c2 u font secondary body-md color-neutral-cloudy"
           data-draggable="true"
         >
           Categorize as:
         </div>
         <div
-          class="category"
+          class="_category_5261c2"
         >
           <div
             data-testid="Exit Name"
           >
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
               unnnic-input="true"
             >
               <div
                 class="unnnic-form sm"
-                data-passed-props="[object Object]"
-                data-v-48c0c241=""
+                data-v-4d681994=""
                 maxlength="36"
               >
                 <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
+                  class="text-input size--sm unnnic-form-input"
+                  data-v-20f606ca=""
+                  data-v-4d681994=""
                   mask=""
-                  v-bind="[object Object]"
+                  maxlength="36"
                 >
                   <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
+                    class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                    data-v-1e805323=""
+                    data-v-20f606ca=""
+                    hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
-                    size="0"
                     type="text"
-                    v-bind="[object Object]"
                   />
                   <!---->
                   <!---->
@@ -2149,36 +2126,35 @@ exports[`CaseElement render should render empty case 1`] = `
           </div>
         </div>
         <span
-          class="remove_icon_wrapper"
+          class="_remove_icon_wrapper_5261c2"
           data-draggable="true"
         >
           <div
             data-draggable="true"
             data-use-vue-component-wrap=""
+            data-v-app=""
           >
-            <span
-              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-              data-passed-props="[object Object]"
+            <svg
+              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-4ce83152=""
+              data-v-edf1acd8=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="none"
-                viewBox="0 0 40 40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="primary"
-                  d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                  fill="#3B414D"
-                />
-                <path
-                  class="primary"
-                  d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                  fill="#3B414D"
-                />
-              </svg>
-            </span>
+              <path
+                class="primary"
+                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                fill="#3B414D"
+              />
+            </svg>
           </div>
         </span>
       </div>
@@ -2187,18 +2163,18 @@ exports[`CaseElement render should render empty case 1`] = `
 </body>
 `;
 
-exports[`CaseElement update handles argument change 1`] = `
+exports[`CaseElement > update > handles argument change 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_5261c2_8d991a"
     >
       <div
-        class="kase has_any_word"
+        class="_kase_5261c2 _has_any_word_5261c2"
         data-draggable="true"
       >
         <span
-          class="move_icon"
+          class="_move_icon_5261c2"
           data-draggable="true"
         >
           <svg
@@ -2219,53 +2195,53 @@ exports[`CaseElement update handles argument change 1`] = `
           </svg>
         </span>
         <div
-          class="choice"
+          class="_choice_5261c2"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_operator"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_operator"
+                  data-v-4d681994=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_operator"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="has any of the words"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_operator"
+                    data-v-20f606ca=""
+                    data-v-4d681994=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_operator"
+                      data-v-1e805323=""
+                      data-v-20f606ca=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="has any of the words"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-20f606ca=""
+                      data-v-edf1acd8=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -2274,270 +2250,267 @@ exports[`CaseElement update handles argument change 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_operator"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active selected"
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has any of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has all of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has only the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   starts with
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has some text
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number between
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="9"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="10"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="11"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="12"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="13"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="14"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date before
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="15"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="16"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date after
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="17"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a time
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="18"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a phone number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="19"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has an email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="20"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   matches regex
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_operator"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="single_operand"
+          class="_single_operand_5261c2"
         >
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="arguments"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-4d681994=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-20f606ca=""
+                      data-v-4d681994=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-1e805323=""
+                        data-v-20f606ca=""
+                        hascloudycolor="false"
                         placeholder="Ex: cart"
-                        size="0"
                         type="text"
-                        v-bind="[object Object]"
                       />
                       <!---->
                       <!---->
@@ -2547,54 +2520,52 @@ exports[`CaseElement update handles argument change 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_arguments"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
         </div>
         <div
-          class="categorize_as u font secondary body-md color-neutral-cloudy"
+          class="_categorize_as_5261c2 u font secondary body-md color-neutral-cloudy"
           data-draggable="true"
         >
           Categorize as:
         </div>
         <div
-          class="category"
+          class="_category_5261c2"
         >
           <div
             data-testid="Exit Name"
           >
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
               unnnic-input="true"
             >
               <div
                 class="unnnic-form sm"
-                data-passed-props="[object Object]"
-                data-v-48c0c241=""
+                data-v-4d681994=""
                 maxlength="36"
               >
                 <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
+                  class="text-input size--sm unnnic-form-input"
+                  data-v-20f606ca=""
+                  data-v-4d681994=""
                   mask=""
-                  v-bind="[object Object]"
+                  maxlength="36"
                 >
                   <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
+                    class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                    data-v-1e805323=""
+                    data-v-20f606ca=""
+                    hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
-                    size="0"
                     type="text"
-                    v-bind="[object Object]"
                   />
                   <!---->
                   <!---->
@@ -2605,36 +2576,35 @@ exports[`CaseElement update handles argument change 1`] = `
           </div>
         </div>
         <span
-          class="remove_icon_wrapper"
+          class="_remove_icon_wrapper_5261c2"
           data-draggable="true"
         >
           <div
             data-draggable="true"
             data-use-vue-component-wrap=""
+            data-v-app=""
           >
-            <span
-              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-              data-passed-props="[object Object]"
+            <svg
+              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-4ce83152=""
+              data-v-edf1acd8=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="none"
-                viewBox="0 0 40 40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="primary"
-                  d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                  fill="#3B414D"
-                />
-                <path
-                  class="primary"
-                  d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                  fill="#3B414D"
-                />
-              </svg>
-            </span>
+              <path
+                class="primary"
+                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                fill="#3B414D"
+              />
+            </svg>
           </div>
         </span>
       </div>
@@ -2643,18 +2613,18 @@ exports[`CaseElement update handles argument change 1`] = `
 </body>
 `;
 
-exports[`CaseElement update handles multiple argument change 1`] = `
+exports[`CaseElement > update > handles multiple argument change 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_5261c2_8d991a"
     >
       <div
-        class="kase has_number_between"
+        class="_kase_5261c2 _has_number_between_5261c2"
         data-draggable="true"
       >
         <span
-          class="move_icon"
+          class="_move_icon_5261c2"
           data-draggable="true"
         >
           <svg
@@ -2675,53 +2645,53 @@ exports[`CaseElement update handles multiple argument change 1`] = `
           </svg>
         </span>
         <div
-          class="choice"
+          class="_choice_5261c2"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_operator"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_operator"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_operator"
+                  data-v-4d681994=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_operator"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="has a number between"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_operator"
+                    data-v-20f606ca=""
+                    data-v-4d681994=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_operator"
+                      data-v-1e805323=""
+                      data-v-20f606ca=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="has any of the words"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-20f606ca=""
+                      data-v-edf1acd8=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -2730,270 +2700,267 @@ exports[`CaseElement update handles multiple argument change 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has any of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has all of the words
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has only the phrase
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   starts with
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has some text
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number between
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="9"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or below
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="10"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="11"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number at or above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="12"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a number above
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="13"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="14"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date before
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="15"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date equal to
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="16"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a date after
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="17"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a time
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="18"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has a phone number
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="19"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   has an email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="20"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   matches regex
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_operator"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="multi_operand"
+          class="_multi_operand_5261c2"
         >
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="arguments"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-4d681994=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-20f606ca=""
+                      data-v-4d681994=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
-                        placeholder="0"
-                        size="0"
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-1e805323=""
+                        data-v-20f606ca=""
+                        hascloudycolor="false"
+                        placeholder="Ex: cart"
                         type="text"
-                        v-bind="[object Object]"
                       />
                       <!---->
                       <!---->
@@ -3003,51 +2970,48 @@ exports[`CaseElement update handles multiple argument change 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_arguments"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
           <span
-            class="divider u font secondary body-md color-neutral-cloudy"
+            class="_divider_5261c2 u font secondary body-md color-neutral-cloudy"
             data-draggable="true"
           >
             and
           </span>
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="arguments"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-4d681994=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-20f606ca=""
+                      data-v-4d681994=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-1e805323=""
+                        data-v-20f606ca=""
+                        hascloudycolor="false"
                         placeholder="100"
-                        size="0"
                         type="text"
-                        v-bind="[object Object]"
                       />
                       <!---->
                       <!---->
@@ -3057,54 +3021,52 @@ exports[`CaseElement update handles multiple argument change 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_arguments"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
         </div>
         <div
-          class="categorize_as u font secondary body-md color-neutral-cloudy"
+          class="_categorize_as_5261c2 u font secondary body-md color-neutral-cloudy"
           data-draggable="true"
         >
           Categorize as:
         </div>
         <div
-          class="category"
+          class="_category_5261c2"
         >
           <div
             data-testid="Exit Name"
           >
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
               unnnic-input="true"
             >
               <div
                 class="unnnic-form sm"
-                data-passed-props="[object Object]"
-                data-v-48c0c241=""
+                data-v-4d681994=""
                 maxlength="36"
               >
                 <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
+                  class="text-input size--sm unnnic-form-input"
+                  data-v-20f606ca=""
+                  data-v-4d681994=""
                   mask=""
-                  v-bind="[object Object]"
+                  maxlength="36"
                 >
                   <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
+                    class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                    data-v-1e805323=""
+                    data-v-20f606ca=""
+                    hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
-                    size="0"
                     type="text"
-                    v-bind="[object Object]"
                   />
                   <!---->
                   <!---->
@@ -3115,36 +3077,35 @@ exports[`CaseElement update handles multiple argument change 1`] = `
           </div>
         </div>
         <span
-          class="remove_icon_wrapper"
+          class="_remove_icon_wrapper_5261c2"
           data-draggable="true"
         >
           <div
             data-draggable="true"
             data-use-vue-component-wrap=""
+            data-v-app=""
           >
-            <span
-              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-              data-passed-props="[object Object]"
+            <svg
+              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-4ce83152=""
+              data-v-edf1acd8=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="none"
-                viewBox="0 0 40 40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="primary"
-                  d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                  fill="#3B414D"
-                />
-                <path
-                  class="primary"
-                  d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                  fill="#3B414D"
-                />
-              </svg>
-            </span>
+              <path
+                class="primary"
+                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+                fill="#3B414D"
+              />
+            </svg>
           </div>
         </span>
       </div>

@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`validators validates 1`] = `
-Object {
-  "validationFailures": Array [],
+exports[`validators > validates 1`] = `
+{
+  "validationFailures": [],
   "value": "5",
 }
 `;

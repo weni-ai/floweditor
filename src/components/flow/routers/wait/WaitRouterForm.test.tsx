@@ -23,9 +23,11 @@ const getRouterFormProps = (
     },
     typeConfig: getTypeConfig(type),
     assetStore: null,
-    updateRouter: jest.fn(),
-    onTypeChange: jest.fn(),
-    onClose: jest.fn(),
+    updateRouter: vi.fn(),
+    onTypeChange: vi.fn(),
+    onClose: vi.fn(),
+    issues: [],
+    helpArticles: {},
   };
 };
 
@@ -48,7 +50,7 @@ describe(WaitRouterForm.name, () => {
   it('shoud save a normal wait', () => {
     const { getByText } = render(<WaitRouterForm {...colorsWait} />);
     fireEvent.click(getByText('Confirm'));
-    expect(colorsWait.updateRouter).toMatchCallSnapshot();
+    expect(colorsWait.updateRouter).toMatchSnapshot();
   });
 
   it('should render wait for audio with previous name', () => {
@@ -69,6 +71,6 @@ describe(WaitRouterForm.name, () => {
     expect(router.operand).toEqual(MEDIA_OPERAND);
 
     // check the snapshot for the rest of our call
-    expect(audioWait.updateRouter).toMatchCallSnapshot();
+    expect(audioWait.updateRouter).toMatchSnapshot();
   });
 });
