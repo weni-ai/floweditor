@@ -301,7 +301,7 @@ export class TembaSelect extends React.Component<
     const select = this;
     // add the option to create groups arbitrarily
     if (this.props.createPrefix && event.indexOf('@') === -1) {
-      var existing = this.props.options.find(function(option: any) {
+      const existing = this.props.options.find(function(option: any) {
         const name = select.getName(option);
         return !!(name.toLowerCase().trim() === event.toLowerCase().trim());
       });
@@ -405,7 +405,7 @@ export class TembaSelect extends React.Component<
         await this.fetchOptions(event);
 
         if (this.props.createPrefix) {
-          let match = this.matchOption(this.state.availableOptions, event);
+          const match = this.matchOption(this.state.availableOptions, event);
 
           if (!match) {
             this.setState({
@@ -527,8 +527,8 @@ export class TembaSelect extends React.Component<
 
     if (!this.props.assets && !this.props.tags && !this.props.endpoint) {
       const result = (this.state.availableOptions || []).find((option: any) => {
-        let value1 = this.getValue(option);
-        let value2 = this.getValue(selectedOption);
+        const value1 = this.getValue(option);
+        const value2 = this.getValue(selectedOption);
         if (value1 && value2) {
           return value1 === value2;
         } else {

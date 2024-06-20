@@ -417,7 +417,7 @@ export const moveActionUp = (
 export const removeNode = (
   nodes: RenderNodeMap,
   nodeUUID: string,
-  remap: boolean = true,
+  remap = true,
 ): RenderNodeMap => {
   const nodeToRemove = getNode(nodes, nodeUUID);
   let updatedNodes = nodes;
@@ -491,12 +491,12 @@ export const updatePosition = (
   nodes: RenderNodeMap,
   nodeUUID: string,
   position: FlowPosition,
-  snap: boolean = true,
+  snap = true,
 ): RenderNodeMap => {
   const { left, top } = position;
 
   // make sure we are on the grid
-  let adjusted = { left, top };
+  const adjusted = { left, top };
 
   return mutate(nodes, {
     [nodeUUID]: {
@@ -514,7 +514,7 @@ export const updateStickyNotePosition = (
   definition: FlowDefinition,
   stickyUUID: string,
   position: FlowPosition,
-  snap: boolean = true,
+  snap = true,
 ): FlowDefinition => {
   if (!definition._ui.stickies) {
     definition._ui.stickies = {};
@@ -527,7 +527,7 @@ export const updateStickyNotePosition = (
   const { left, top } = position;
 
   // make sure we are on the grid
-  let adjusted = { left, top };
+  const adjusted = { left, top };
 
   return mutate(definition, {
     _ui: {

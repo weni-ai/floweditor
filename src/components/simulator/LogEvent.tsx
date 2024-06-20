@@ -279,7 +279,7 @@ export default class LogEvent extends React.Component<
   }
 
   private renderGroupsChanged(): JSX.Element {
-    let parts: string[] = [];
+    const parts: string[] = [];
     if (this.props.groups_added) {
       const info = i18n.t('simulator.added_to_group', 'Added to');
       parts.push(
@@ -305,7 +305,7 @@ export default class LogEvent extends React.Component<
   }
 
   private renderLabelsAdded(): JSX.Element {
-    let info = i18n.t('simulator.input_labels_added', 'Message labeled with');
+    const info = i18n.t('simulator.input_labels_added', 'Message labeled with');
 
     return renderInfo(
       info +

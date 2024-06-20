@@ -18,7 +18,7 @@ const withEmph = (text: string, emph: boolean) =>
 export const renderSetText = (
   name: string,
   value: string,
-  emphasizeName: boolean = false,
+  emphasizeName = false,
 ): JSX.Element => {
   if (value) {
     return (

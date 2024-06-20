@@ -172,7 +172,7 @@ export const getRecipients = (action: RecipientsAction): Asset[] => {
 
 export const renderAssetList = (
   assets: Asset[],
-  max: number = 10,
+  max = 10,
   endpoints: Endpoints,
 ): JSX.Element[] => {
   // show our missing ones first

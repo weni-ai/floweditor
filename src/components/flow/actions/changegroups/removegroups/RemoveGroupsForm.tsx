@@ -89,7 +89,7 @@ export default class RemoveGroupsForm extends React.Component<
 
   private handleUpdate(
     keys: { groups?: Asset[]; removeAll?: boolean },
-    submitting: boolean = false,
+    submitting = false,
   ): boolean {
     const updates: Partial<ChangeGroupsFormState> = {};
 
@@ -118,10 +118,7 @@ export default class RemoveGroupsForm extends React.Component<
     return updated.valid;
   }
 
-  public handleGroupsChanged(
-    groups: Asset[],
-    submitting: boolean = false,
-  ): boolean {
+  public handleGroupsChanged(groups: Asset[], submitting = false): boolean {
     return this.handleUpdate({ groups }, submitting);
   }
 
