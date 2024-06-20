@@ -20,7 +20,7 @@ if (!componentsExist) {
     console.log('Loading temba components');
   });
 }
-console.log('Loading flow editor');
+
 window.showFlowEditor = (ele, config) => {
   if (config.httpTimeout) {
     setHTTPTimeout(config.httpTimeout);
