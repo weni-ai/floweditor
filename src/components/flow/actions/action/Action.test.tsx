@@ -9,8 +9,7 @@ import {
   createRenderNode,
   Spanish,
 } from 'testUtils/assetCreators';
-import SendMsgComp from '../sendmsg/SendMsg';
-import { SendMsg, AnyAction, Language } from 'flowTypes';
+import { AnyAction } from 'flowTypes';
 import { getTypeConfig } from 'config';
 import { Asset } from 'store/flowContext';
 import { MouseState } from 'store/editor';
@@ -55,7 +54,6 @@ const getActionWrapperProps = (
     render: (action: AnyAction) => (
       <ActionDiv {...action} languages={[English, Spanish]} />
     ),
-    // assetStore: {},
     renderNode: node,
     language,
     translating,
