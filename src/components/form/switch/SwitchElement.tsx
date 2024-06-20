@@ -1,10 +1,10 @@
 import { FormElementProps } from 'components/form/FormElement';
 import * as React from 'react';
 import { isRealValue, renderIf } from 'utils';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicSwitch } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
 import styles from './SwitchElement.module.scss';
 
@@ -33,7 +33,7 @@ export const checkedBoxIco = 'fe-check-square';
 export const switchTestId = 'switch';
 export const descTestId = 'description';
 
-const UnnnicSwitch = applyVueInReact(unnnicSwitch);
+const UnnnicSwitch = applyVueInReact(Unnnic.unnnicSwitch);
 
 export default class SwitchElement extends React.Component<
   SwitchElementProps,
@@ -67,9 +67,8 @@ export default class SwitchElement extends React.Component<
       <>
         <UnnnicSwitch
           data-testid={switchTestId}
-          value={this.state.checked}
           textRight={this.props.title}
-          on={{ input: this.handleChange }}
+          v-model={[this.state.checked, this.handleChange]}
           size={this.props.size}
         />
 

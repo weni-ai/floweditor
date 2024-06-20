@@ -21,13 +21,13 @@ import SelectElement, {
 } from 'components/form/select/SelectElement';
 import i18n from 'config/i18n';
 import TembaSelect, { TembaSelectStyle } from 'temba/TembaSelect';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
-import { DragIcon } from '../../../../pureIcons/DragIcon';
+import Unnnic from '@weni/unnnic-system';
+import { DragIcon } from 'pureIcons/DragIcon';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon, {
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',

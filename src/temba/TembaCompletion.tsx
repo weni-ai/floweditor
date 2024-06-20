@@ -11,14 +11,14 @@ import {
 import AppState from '../store/state';
 
 import { connect } from 'react-redux';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicTextArea, unnnicInput } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import { TembaStore } from '../temba-components';
 import SelectOptions from './SelectOptions';
-const UnnnicTextArea = applyVueInReact(unnnicTextArea);
-const UnnnicInput = applyVueInReact(unnnicInput);
+const UnnnicTextArea = applyVueInReact(Unnnic.unnnicTextArea);
+const UnnnicInput = applyVueInReact(Unnnic.unnnicInput);
 
 interface ValuedCompletionOption extends CompletionOption {
   value: string;
@@ -86,9 +86,7 @@ export class TembaCompletion extends React.Component<
     this.setState({ showCompletionsMenu: false });
 
     if (this.props.value && this.props.type === 'input') {
-      const inputEl = (this.refInput as any).vueRef.$el.querySelector(
-        'input',
-      ) as HTMLInputElement;
+      const inputEl = this.refInput.querySelector('input');
       inputEl.value = this.props.value;
       inputEl.dispatchEvent(new Event('input'));
       setTimeout(() => this.setState({ showCompletionsMenu: true }));
@@ -111,7 +109,7 @@ export class TembaCompletion extends React.Component<
     }
   }
 
-  private executeQuery(ele: HTMLInputElement) {
+  private executeQuery(ele: HTMLInputElement | HTMLTextAreaElement) {
     if (this.props.expressionsData) {
       const store: TembaStore = document.querySelector('temba-store');
       const result = executeCompletionQuery(
@@ -163,9 +161,7 @@ export class TembaCompletion extends React.Component<
       return;
     }
 
-    const inputEl = (ref as any).vueRef.$el.querySelector(
-      selector,
-    ) as HTMLInputElement;
+    const inputEl = ref.querySelector(selector) as HTMLInputElement;
 
     if (event.value === this.state.query) {
       this.hideExpressionsMenu();
@@ -180,34 +176,11 @@ export class TembaCompletion extends React.Component<
     }
   }
 
-  private handleSearch(event: string) {
-    if (!event || !event.trim()) {
-      this.setState({ showCompletionsMenu: false, options: [] });
-
-      if (this.props.onInput) {
-        this.props.onInput(event);
-      }
-      return;
-    }
-
-    this.setState({ showCompletionsMenu: true });
-    const inputEl = (this.refInput as any).vueRef.$el.querySelector(
-      'input',
-    ) as HTMLInputElement;
-    this.executeQuery(inputEl);
-
-    if (this.props.onInput) {
-      this.props.onInput(event);
-    }
-  }
-
   private handleInputChange(input: string) {
     if (input === this.props.value) return;
 
     this.setState({ showCompletionsMenu: true });
-    const inputEl = (this.refInput as any).vueRef.$el.querySelector(
-      'input',
-    ) as HTMLInputElement;
+    const inputEl = this.refInput.querySelector('input');
     this.executeQuery(inputEl);
 
     if (this.props.onInput) {
@@ -218,13 +191,11 @@ export class TembaCompletion extends React.Component<
   private handleTextAreaInput(event: any) {
     this.setState({ showCompletionsMenu: true });
 
-    const textAreaEl = (this.refTextArea as any).vueRef.$el.querySelector(
-      'textarea',
-    ) as HTMLInputElement;
+    const textAreaEl = this.refTextArea.querySelector('textarea');
 
     this.executeQuery(textAreaEl);
     if (this.props.onInput) {
-      this.props.onInput(event);
+      this.props.onInput(textAreaEl.value);
     }
   }
 
@@ -236,10 +207,8 @@ export class TembaCompletion extends React.Component<
     return { ref, selector };
   }
 
-  private getRefFromVueInputRef(inputRef: HTMLInputElement, selector: string) {
-    return (inputRef as any).vueRef.$el.querySelector(
-      selector,
-    ) as HTMLInputElement;
+  private getRefFromVueInputRef(inputRef: any, selector: string) {
+    return inputRef.querySelector(selector) as HTMLInputElement;
   }
 
   public render(): JSX.Element {
@@ -255,18 +224,17 @@ export class TembaCompletion extends React.Component<
         {this.props.label && (
           <span className={styles.label}>{this.props.label}</span>
         )}
-        <div className={styles.completion_wrapper}>
+        <div
+          className={styles.completion_wrapper}
+          ref={(ele: any) => {
+            this.refTextArea = ele;
+          }}
+        >
           {this.props.type === 'textarea' ? (
             <UnnnicTextArea
               data-testid={this.props.name}
-              ref={(ele: any) => {
-                this.refTextArea = ele;
-              }}
               className={styles.textarea}
-              value={this.props.value}
-              on={{
-                input: this.handleTextAreaInput,
-              }}
+              v-model={[this.props.value, this.handleTextAreaInput]}
               placeholder={this.props.placeholder}
               size={this.props.size}
               type={hasErrors ? 'error' : 'normal'}
@@ -275,13 +243,14 @@ export class TembaCompletion extends React.Component<
               disabled={this.props.disabled}
             />
           ) : (
-            <div data-testid={this.props.name}>
+            <div
+              data-testid={this.props.name}
+              ref={(ele: any) => {
+                this.refInput = ele;
+              }}
+            >
               <UnnnicInput
-                ref={(ele: any) => {
-                  this.refInput = ele;
-                }}
-                value={this.props.value}
-                on={{ input: this.handleInputChange }}
+                v-model={[this.props.value, this.handleInputChange]}
                 placeholder={this.props.placeholder}
                 size={this.props.size}
                 type={hasErrors ? 'error' : 'normal'}

@@ -20,10 +20,10 @@ import styles from './Canvas.module.scss';
 import nodesCopy from '../../components/copyAndPasteNodes';
 import { RenderNode } from '../../store/flowContext';
 
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 // @ts-ignore
-import { unnnicCallAlert, unnnicToolTip } from '@weni/unnnic-system';
-const UnnnicTooltip = applyVueInReact(unnnicToolTip, {
+import Unnnic from '@weni/unnnic-system';
+const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -229,7 +229,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       event.clipboardData.setData('application/json', JSON.stringify(nodes));
       event.preventDefault();
 
-      unnnicCallAlert({
+      Unnnic.unnnicCallAlert({
         props: {
           text:
             nodes.length > 1 ? i18n.t('copy.multiple') : i18n.t('copy.single'),

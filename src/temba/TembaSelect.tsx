@@ -5,12 +5,9 @@ import { debounce, snakify } from 'utils';
 import styles from './TembaSelect.module.scss';
 import { Assets } from 'store/flowContext';
 
-import {
-  unnnicTag,
-  unnnicInput,
-  // @ts-ignore
-} from '@weni/unnnic-system';
-import { applyVueInReact } from 'vuereact-combined';
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+import { applyVueInReact } from 'veaury';
 import axios from 'axios';
 import AppState from '../store/state';
 import {
@@ -23,8 +20,8 @@ import { TembaStore } from '../temba-components';
 import i18n from 'config/i18n';
 import SelectOptions from './SelectOptions';
 
-const ElUnnnicTag = applyVueInReact(unnnicTag);
-const UnnnicInput = applyVueInReact(unnnicInput);
+const ElUnnnicTag = applyVueInReact(Unnnic.unnnicTag);
+const UnnnicInput = applyVueInReact(Unnnic.unnnicInput);
 
 export enum TembaSelectStyle {
   small = 'sm',
@@ -91,8 +88,8 @@ export class TembaSelect extends React.Component<
   TembaSelectProps,
   TembaSelectState
 > {
-  private selectRef: HTMLElement;
-  private selectInputRef: HTMLInputElement;
+  private selectRef = React.createRef<HTMLDivElement>();
+  private selectInputRef = React.createRef<HTMLInputElement>();
 
   constructor(props: TembaSelectProps) {
     super(props);
@@ -119,7 +116,9 @@ export class TembaSelect extends React.Component<
 
     this.fetchOptions();
 
-    const selectInputEl = this.getRefFromVueInputRef(this.selectInputRef);
+    const selectInputEl = this.getRefFromVueInputRef(
+      this.selectInputRef.current,
+    );
     selectInputEl.addEventListener('keyup', this.handleInputKeyUp);
   }
 
@@ -373,7 +372,7 @@ export class TembaSelect extends React.Component<
     if (this.props.expressions && event.indexOf('@') > -1) {
       this.setState({ showOptions: false });
 
-      const inputEl = this.getRefFromVueInputRef(this.selectInputRef);
+      const inputEl = this.getRefFromVueInputRef(this.selectInputRef.current);
 
       const result = this.getExpressionResult(inputEl);
 
@@ -425,7 +424,7 @@ export class TembaSelect extends React.Component<
   }
 
   private selectExpression(option: any) {
-    const inputEl = this.getRefFromVueInputRef(this.selectInputRef);
+    const inputEl = this.getRefFromVueInputRef(this.selectInputRef.current);
     updateInputElementWithCompletion(this.state.currentQuery, inputEl, option);
 
     const selectedTheOnlyOne =
@@ -590,13 +589,13 @@ export class TembaSelect extends React.Component<
 
   private clearInputValue() {
     this.setState({ input: null });
-    this.getRefFromVueInputRef(this.selectInputRef).blur();
+    this.getRefFromVueInputRef(this.selectInputRef.current).blur();
   }
 
-  private getRefFromVueInputRef(inputRef: HTMLInputElement) {
-    return (inputRef as any).vueRef.$el.querySelector(
-      'input',
-    ) as HTMLInputElement;
+  private getRefFromVueInputRef(inputRef: any) {
+    if (inputRef) {
+      return inputRef.querySelector('input') as HTMLInputElement;
+    }
   }
 
   public render(): JSX.Element {
@@ -629,29 +628,25 @@ export class TembaSelect extends React.Component<
     return (
       <>
         <div
-          ref={(ele: any) => {
-            this.selectRef = ele;
-          }}
+          ref={this.selectRef}
           className={styles.select_wrapper}
           data-testid={`temba_select_${snakify(this.props.name)}`}
         >
-          <UnnnicInput
-            ref={(ele: any) => {
-              this.selectInputRef = ele;
-            }}
-            data-testid={`temba_select_input_${snakify(this.props.name)}`}
-            className={styles.bold_placeholder}
-            value={this.state.input}
-            on={{ input: this.handleSearch }}
-            placeholder={autocompletePlaceholder}
-            size={this.props.style || TembaSelectStyle.small}
-            disabled={this.props.disabled}
-            type={hasErrors ? 'error' : 'normal'}
-            error={this.props.errors && this.props.errors[0]}
-            onClick={this.handleInputFocus}
-            iconRight={inputIcon}
-            readonly={!this.props.searchable}
-          />
+          <div ref={this.selectInputRef}>
+            <UnnnicInput
+              data-testid={`temba_select_input_${snakify(this.props.name)}`}
+              className={styles.bold_placeholder}
+              v-model={[this.state.input, this.handleSearch]}
+              placeholder={autocompletePlaceholder}
+              size={this.props.style || TembaSelectStyle.small}
+              disabled={this.props.disabled}
+              type={hasErrors ? 'error' : 'normal'}
+              error={this.props.errors && this.props.errors[0]}
+              onClick={this.handleInputFocus}
+              iconRight={inputIcon}
+              readonly={!this.props.searchable}
+            />
+          </div>
 
           {this.selectRef && this.selectInputRef ? (
             <>
@@ -662,8 +657,10 @@ export class TembaSelect extends React.Component<
                 onBlur={() => this.setState({ showOptions: false })}
                 onSelect={option => this.selectOption(option)}
                 active={!this.props.disabled && this.state.showOptions}
-                anchorRef={this.selectRef}
-                inputRef={this.getRefFromVueInputRef(this.selectInputRef)}
+                anchorRef={this.selectRef.current}
+                inputRef={this.getRefFromVueInputRef(
+                  this.selectInputRef.current,
+                )}
                 getName={option => this.getName(option)}
                 getValue={option => this.getValue(option)}
                 multi={isMultiComponent}
@@ -679,8 +676,10 @@ export class TembaSelect extends React.Component<
                   !this.props.disabled &&
                   this.state.availableExpressions.length > 0
                 }
-                anchorRef={this.selectRef}
-                inputRef={this.getRefFromVueInputRef(this.selectInputRef)}
+                anchorRef={this.selectRef.current}
+                inputRef={this.getRefFromVueInputRef(
+                  this.selectInputRef.current,
+                )}
                 expressions={true}
               />
             </>
@@ -696,9 +695,7 @@ export class TembaSelect extends React.Component<
                   text={this.getName(selected)}
                   scheme="neutral-dark"
                   hasCloseIcon={true}
-                  on={{
-                    close: () => this.handleSelectedDelete(selected),
-                  }}
+                  onClose={() => this.handleSelectedDelete(selected)}
                 />
               );
             })}

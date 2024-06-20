@@ -35,10 +35,10 @@ import {
   removeNode,
 } from 'store/thunks';
 import { ClickHandler, createClickHandler } from 'utils';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
 import styles from './Node.module.scss';
 import { hasIssues } from '../helpers';
@@ -93,7 +93,7 @@ const EMPTY: any[] = [];
  * A single node in the rendered flow
  */
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export class NodeComp extends React.PureComponent<NodeProps> {
   public ele: HTMLDivElement;

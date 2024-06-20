@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 // @ts-ignore
-import { unnnicTag } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
-const UnnnicTag = applyVueInReact(unnnicTag);
+const UnnnicTag = applyVueInReact(Unnnic.unnnicTag);
 
 export interface PillProps {
   advanced?: boolean;
