@@ -1,105 +1,122 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`KeyLocalizationForm handles changes 1`] = `
-Array [
-  "eng",
-  Array [
-    Object {
-      "translations": Object {
-        "body": "translated body",
-        "subject": "translated subject",
-      },
-      "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+exports[`KeyLocalizationForm > handles changes 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "body": "translated body",
+            "subject": "translated subject",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
   ],
-]
+}
 `;
 
-exports[`KeyLocalizationForm removes translations 1`] = `
+exports[`KeyLocalizationForm > removes translations 1`] = `
 <body>
   <div>
     <div
-      class="dialog"
+      class="_dialog_af1b5d"
     >
       <div
-        class="header"
+        class="_header_af1b5d"
       >
         <div
-          class="title_container"
+          class="_title_container_af1b5d"
         >
           <div
-            class="title u font secondary title-sm black"
+            class="_title_af1b5d u font secondary title-sm black"
           >
             Send email
           </div>
           <div
-            class="subtitle"
+            class="_subtitle_af1b5d"
           />
         </div>
         <div
           data-use-vue-component-wrap=""
+          data-v-app=""
           style="all: unset;"
         >
           <div
-            class="tab size-sm tabs"
-            data-passed-props="[object Object]"
-            data-v-69271fcc=""
+            class="tab size-sm _tabs_af1b5d"
+            data-v-54432ea7=""
           >
             <header
               class="tab-header"
-              data-v-69271fcc=""
+              data-v-54432ea7=""
             >
               <ul
                 class="tab-content"
-                data-v-69271fcc=""
+                data-v-54432ea7=""
               >
+                
                 <li
                   class="tab-head tab-head--active"
-                  data-v-69271fcc=""
+                  data-v-54432ea7=""
                 >
+                  
                   <div
                     __use_react_component_wrap=""
-                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     General
                   </div>
+                  
                 </li>
                 <li
                   class="tab-head"
-                  data-v-69271fcc=""
+                  data-v-54432ea7=""
                 >
+                  
                   <div
                     __use_react_component_wrap=""
-                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     Body Translation
                   </div>
+                  
                 </li>
+                
               </ul>
             </header>
             <main
               class="tab-body"
-              data-v-69271fcc=""
+              data-v-54432ea7=""
             >
               <div
                 class="tab-panel"
-                data-v-69271fcc=""
-              />
+                data-v-54432ea7=""
+              >
+                
+                
+              </div>
             </main>
           </div>
         </div>
       </div>
       <div
-        class="content"
+        class="_content_af1b5d"
       >
         <div>
           <div
             data-spec="translation-container"
           >
             <div
-              class="translate_from"
+              class="_translate_from_604508"
               data-spec="text-to-translate"
             >
               New Sign Up
@@ -107,21 +124,21 @@ exports[`KeyLocalizationForm removes translations 1`] = `
           </div>
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-text-area sm normal textarea"
-                  data-passed-props="[object Object]"
+                  class="unnnic-text-area sm normal _textarea_17662c"
                   data-testid="Subject"
-                  data-v-2f3d79bf=""
+                  data-v-e1948bc4=""
                 >
                   <!---->
                   <textarea
-                    data-v-2f3d79bf=""
+                    data-v-e1948bc4=""
                     placeholder="Spanish Translation"
                   />
                   <!---->
@@ -129,7 +146,7 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Subject"
                 style="margin-top: 1px; width: -24px; display: none;"
               />
@@ -138,24 +155,24 @@ exports[`KeyLocalizationForm removes translations 1`] = `
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_af1b5d"
       >
         <div
-          class="buttons"
+          class="_buttons_af1b5d"
         >
           <div
-            class="buttons_wrapper"
+            class="_buttons_wrapper_af1b5d"
           >
             <div
-              class="right_buttons"
+              class="_right_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-d3a33348=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -163,20 +180,22 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-d3a33348=""
                   >
-                     Cancel 
+                    
+                    
+                     Cancel
                   </span>
                   <!---->
                 </button>
               </div>
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-d3a33348=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -184,9 +203,11 @@ exports[`KeyLocalizationForm removes translations 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-d3a33348=""
                   >
-                     Ok 
+                    
+                    
+                     Ok
                   </span>
                   <!---->
                 </button>
@@ -200,103 +221,120 @@ exports[`KeyLocalizationForm removes translations 1`] = `
 </body>
 `;
 
-exports[`KeyLocalizationForm removes translations 2`] = `
-Array [
-  "spa",
-  Array [
-    Object {
-      "translations": Object {},
-      "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+exports[`KeyLocalizationForm > removes translations 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "spa",
+      [
+        {
+          "translations": {},
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
   ],
-]
+}
 `;
 
-exports[`KeyLocalizationForm renders send email 1`] = `
+exports[`KeyLocalizationForm > renders send email 1`] = `
 <body>
   <div>
     <div
-      class="dialog"
+      class="_dialog_af1b5d"
     >
       <div
-        class="header"
+        class="_header_af1b5d"
       >
         <div
-          class="title_container"
+          class="_title_container_af1b5d"
         >
           <div
-            class="title u font secondary title-sm black"
+            class="_title_af1b5d u font secondary title-sm black"
           >
             Send email
           </div>
           <div
-            class="subtitle"
+            class="_subtitle_af1b5d"
           />
         </div>
         <div
           data-use-vue-component-wrap=""
+          data-v-app=""
           style="all: unset;"
         >
           <div
-            class="tab size-sm tabs"
-            data-passed-props="[object Object]"
-            data-v-69271fcc=""
+            class="tab size-sm _tabs_af1b5d"
+            data-v-54432ea7=""
           >
             <header
               class="tab-header"
-              data-v-69271fcc=""
+              data-v-54432ea7=""
             >
               <ul
                 class="tab-content"
-                data-v-69271fcc=""
+                data-v-54432ea7=""
               >
+                
                 <li
                   class="tab-head tab-head--active"
-                  data-v-69271fcc=""
+                  data-v-54432ea7=""
                 >
+                  
                   <div
                     __use_react_component_wrap=""
-                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     General
                   </div>
+                  
                 </li>
                 <li
                   class="tab-head"
-                  data-v-69271fcc=""
+                  data-v-54432ea7=""
                 >
+                  
                   <div
                     __use_react_component_wrap=""
-                    data-v-69271fcc=""
                     style="all: unset;"
                   >
                     Body Translation
                   </div>
+                  
                 </li>
+                
               </ul>
             </header>
             <main
               class="tab-body"
-              data-v-69271fcc=""
+              data-v-54432ea7=""
             >
               <div
                 class="tab-panel"
-                data-v-69271fcc=""
-              />
+                data-v-54432ea7=""
+              >
+                
+                
+              </div>
             </main>
           </div>
         </div>
       </div>
       <div
-        class="content"
+        class="_content_af1b5d"
       >
         <div>
           <div
             data-spec="translation-container"
           >
             <div
-              class="translate_from"
+              class="_translate_from_604508"
               data-spec="text-to-translate"
             >
               New Sign Up
@@ -304,21 +342,21 @@ exports[`KeyLocalizationForm renders send email 1`] = `
           </div>
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-text-area sm normal textarea"
-                  data-passed-props="[object Object]"
+                  class="unnnic-text-area sm normal _textarea_17662c"
                   data-testid="Subject"
-                  data-v-2f3d79bf=""
+                  data-v-e1948bc4=""
                 >
                   <!---->
                   <textarea
-                    data-v-2f3d79bf=""
+                    data-v-e1948bc4=""
                     placeholder="English Translation"
                   />
                   <!---->
@@ -326,7 +364,7 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Subject"
                 style="margin-top: 1px; width: -24px; display: none;"
               />
@@ -335,24 +373,24 @@ exports[`KeyLocalizationForm renders send email 1`] = `
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_af1b5d"
       >
         <div
-          class="buttons"
+          class="_buttons_af1b5d"
         >
           <div
-            class="buttons_wrapper"
+            class="_buttons_wrapper_af1b5d"
           >
             <div
-              class="right_buttons"
+              class="_right_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-d3a33348=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -360,20 +398,22 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-d3a33348=""
                   >
-                     Cancel 
+                    
+                    
+                     Cancel
                   </span>
                   <!---->
                 </button>
               </div>
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-d3a33348=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -381,9 +421,11 @@ exports[`KeyLocalizationForm renders send email 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-d3a33348=""
                   >
-                     Ok 
+                    
+                    
+                     Ok
                   </span>
                   <!---->
                 </button>

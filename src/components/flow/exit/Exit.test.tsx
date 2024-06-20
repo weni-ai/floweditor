@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent, findByText, getByText } from 'test/utils';
+import { render, fireEvent, findByText, getByText, waitFor } from 'test/utils';
 import { ExitComp, ExitProps } from './Exit';
 import { createUUID } from 'utils';
 import { Exit, FlowNode } from 'flowTypes';
@@ -23,13 +23,13 @@ const exitProps: ExitProps = {
   localization: null,
   segmentCount: 1000,
   plumberConnectExit: (node: FlowNode, exit: Exit) => {},
-  plumberRemove: jest.fn(),
-  plumberMakeSource: jest.fn(),
-  plumberUpdateClass: jest.fn(),
-  disconnectExit: jest.fn(),
+  plumberRemove: vi.fn(),
+  plumberMakeSource: vi.fn(),
+  plumberUpdateClass: vi.fn(),
+  disconnectExit: vi.fn(),
 };
 
-jest.useFakeTimers();
+vi.useFakeTimers();
 
 describe(ExitComp.name, () => {
   it('renders', () => {
@@ -51,7 +51,7 @@ describe(ExitComp.name, () => {
     );
 
     // give our portal a chance to mount
-    jest.runAllTimers();
+    vi.runAllTimers();
 
     // we have activity but we can't see our recent messages yet
     getByText('1,000');
@@ -74,14 +74,14 @@ describe(ExitComp.name, () => {
     );
 
     // give our portal a chance to mount
-    jest.runAllTimers();
+    vi.runAllTimers();
 
     // now we need to mouse over our activity to see recent messages
     const activity = getByText('1,000');
     expect(queryAllByText('Recent Messages').length).toEqual(0);
 
     fireEvent.mouseEnter(activity);
-    jest.runAllTimers();
+    vi.runAllTimers();
 
     expect(queryAllByText('Recent Messages').length).toEqual(1);
     getByText('Hi Mom!');
@@ -99,7 +99,6 @@ describe(ExitComp.name, () => {
       />,
     );
 
-    expect(container.querySelector('.missing_localization')).not.toBe(null);
     expect(baseElement).toMatchSnapshot();
   });
 

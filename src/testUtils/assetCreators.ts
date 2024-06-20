@@ -520,8 +520,8 @@ export const getLocalizationFormProps = (
   };
   return {
     language,
-    onClose: jest.fn(),
-    updateLocalizations: jest.fn(),
+    onClose: vi.fn(),
+    updateLocalizations: vi.fn(),
     issues: [],
     helpArticles: {},
     nodeSettings: {
@@ -556,10 +556,10 @@ export const getActionFormProps = (action: AnyAction): ActionFormProps => ({
     completion: { items: completions, type: AssetType.Expression },
   },
   helpArticles: {},
-  addAsset: jest.fn(),
-  updateAction: jest.fn(),
-  onClose: jest.fn(),
-  onTypeChange: jest.fn(),
+  addAsset: vi.fn(),
+  updateAction: vi.fn(),
+  onClose: vi.fn(),
+  onTypeChange: vi.fn(),
   issues: [],
   typeConfig: getTypeConfig(action.type),
   nodeSettings: {
@@ -581,9 +581,9 @@ export const getRouterFormProps = (
   renderNode: RenderNode,
 ): RouterFormProps => ({
   helpArticles: {},
-  updateRouter: jest.fn(),
-  onClose: jest.fn(),
-  onTypeChange: jest.fn(),
+  updateRouter: vi.fn(),
+  onClose: vi.fn(),
+  onTypeChange: vi.fn(),
   issues: [],
   typeConfig: determineTypeConfig({ originalNode: renderNode }),
   assetStore: EMPTY_TEST_ASSETS,
@@ -665,7 +665,7 @@ export const createCases = (categories: string[]): CaseProps[] => {
 export const createRoutes = (
   categories: string[],
   operator: Operators = Operators.has_any_word,
-  hasTimeout: boolean = false,
+  hasTimeout = false,
 ): ResolvedRoutes => {
   const cases: CaseProps[] = [];
   categories.forEach((category: string) => {
@@ -677,7 +677,7 @@ export const createRoutes = (
 
 export const createWaitRouter = (
   hintType: HintTypes,
-  resultName: string = 'Result Name',
+  resultName = 'Result Name',
 ) => {
   const originalNode = createMatchRouter([]);
   originalNode.node.router.wait = {
@@ -692,8 +692,8 @@ export const createMatchRouter = (
   matches: string[],
   operand: string = DEFAULT_OPERAND,
   operator: Operators = Operators.has_any_word,
-  resultName: string = '',
-  hasTimeout: boolean = false,
+  resultName = '',
+  hasTimeout = false,
 ): RenderNode => {
   const { exits, categories, cases, timeoutCategory } = createRoutes(
     matches,
@@ -1034,6 +1034,8 @@ export const English = { name: 'English', id: 'eng', type: AssetType.Language };
 export const Spanish = { name: 'Spanish', id: 'spa', type: AssetType.Language };
 
 export const SubscribersGroup = {
+  id: '489763',
+  type: AssetType.Group,
   name: 'Subscriber',
   uuid: '68223118-109f-442a-aed3-7bb3e1eab687',
 };

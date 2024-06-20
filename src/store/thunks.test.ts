@@ -82,10 +82,6 @@ const getActionFromStore = (store: any, type: string) => {
   }
 };
 
-describe('fetch flows', () => {
-  const store = createMockStore({});
-});
-
 describe('Flow Manipulation', () => {
   let store: any;
   const { mockDuxState, testNodes } = prepMockDuxState();
@@ -121,6 +117,7 @@ describe('Flow Manipulation', () => {
       const missingUI: FlowDetails = {
         definition: { ...boring, _ui: undefined as any },
         metadata: null,
+        issues: [],
       };
       store.dispatch(loadFlowDefinition(missingUI, emptyAssetStore));
       const action = getActionFromStore(store, Constants.UPDATE_NODES);

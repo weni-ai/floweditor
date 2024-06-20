@@ -1,169 +1,169 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Providers: ConfigProvider: operatorConfigs should provide operator config 1`] = `
-Array [
-  Object {
+exports[`Providers: ConfigProvider: operatorConfigs > should provide operator config 1`] = `
+[
+  {
     "operands": 1,
     "type": "has_any_word",
     "verboseName": "has any of the words",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_all_words",
     "verboseName": "has all of the words",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_phrase",
     "verboseName": "has the phrase",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_only_phrase",
     "verboseName": "has only the phrase",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_beginning",
     "verboseName": "starts with",
   },
-  Object {
+  {
     "categoryName": "Has Text",
     "operands": 0,
     "type": "has_text",
     "verboseName": "has some text",
   },
-  Object {
+  {
     "categoryName": "Has Number",
     "operands": 0,
     "type": "has_number",
     "verboseName": "has a number",
   },
-  Object {
+  {
     "operands": 2,
     "type": "has_number_between",
     "verboseName": "has a number between",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_number_lt",
     "verboseName": "has a number below",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_number_lte",
     "verboseName": "has a number at or below",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_number_eq",
     "verboseName": "has a number equal to",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_number_gte",
     "verboseName": "has a number at or above",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_number_gt",
     "verboseName": "has a number above",
   },
-  Object {
+  {
     "categoryName": "Has Date",
     "operands": 0,
     "type": "has_date",
     "verboseName": "has a date",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_date_lt",
     "verboseName": "has a date before",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_date_eq",
     "verboseName": "has a date equal to",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_date_gt",
     "verboseName": "has a date after",
   },
-  Object {
+  {
     "categoryName": "Has Time",
     "operands": 0,
     "type": "has_time",
     "verboseName": "has a time",
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_group",
     "verboseName": "is in the group",
-    "visibility": Array [
+    "visibility": [
       "-",
     ],
   },
-  Object {
+  {
     "operands": 0,
     "type": "has_category",
     "verboseName": "has the category",
-    "visibility": Array [
+    "visibility": [
       "-",
     ],
   },
-  Object {
+  {
     "categoryName": "Has Phone",
     "operands": 0,
     "type": "has_phone",
     "verboseName": "has a phone number",
   },
-  Object {
+  {
     "categoryName": "Has Email",
     "operands": 0,
     "type": "has_email",
     "verboseName": "has an email",
   },
-  Object {
+  {
     "categoryName": "Has State",
     "filter": "locations",
     "operands": 0,
     "type": "has_state",
     "verboseName": "has state",
   },
-  Object {
+  {
     "categoryName": "Has District",
     "filter": "locations",
     "operands": 1,
     "type": "has_district",
     "verboseName": "has district",
   },
-  Object {
+  {
     "categoryName": "Has Ward",
     "filter": "locations",
     "operands": 2,
     "type": "has_ward",
     "verboseName": "has ward",
   },
-  Object {
+  {
     "categoryName": "Has Error",
     "operands": 0,
     "type": "has_error",
     "verboseName": "has an error",
-    "visibility": Array [
+    "visibility": [
       "-",
     ],
   },
-  Object {
+  {
     "categoryName": "Not Empty",
     "operands": 0,
     "type": "has_value",
     "verboseName": "is not empty",
-    "visibility": Array [
+    "visibility": [
       "-",
     ],
   },
-  Object {
+  {
     "operands": 1,
     "type": "has_pattern",
     "verboseName": "matches regex",
@@ -171,188 +171,188 @@ Array [
 ]
 `;
 
-exports[`Providers: ConfigProvider: operatorConfigs should provide operator config 2`] = `
-Object {
-  "has_all_words": Object {
+exports[`Providers: ConfigProvider: operatorConfigs > should provide operator config 2`] = `
+{
+  "has_all_words": {
     "operands": 1,
     "type": "has_all_words",
     "verboseName": "has all of the words",
   },
-  "has_any_word": Object {
+  "has_any_word": {
     "operands": 1,
     "type": "has_any_word",
     "verboseName": "has any of the words",
   },
-  "has_beginning": Object {
+  "has_beginning": {
     "operands": 1,
     "type": "has_beginning",
     "verboseName": "starts with",
   },
-  "has_category": Object {
+  "has_category": {
     "operands": 0,
     "type": "has_category",
     "verboseName": "has the category",
-    "visibility": Array [
+    "visibility": [
       "-",
     ],
   },
-  "has_date": Object {
+  "has_date": {
     "categoryName": "Has Date",
     "operands": 0,
     "type": "has_date",
     "verboseName": "has a date",
   },
-  "has_date_eq": Object {
+  "has_date_eq": {
     "operands": 1,
     "type": "has_date_eq",
     "verboseName": "has a date equal to",
   },
-  "has_date_gt": Object {
+  "has_date_gt": {
     "operands": 1,
     "type": "has_date_gt",
     "verboseName": "has a date after",
   },
-  "has_date_lt": Object {
+  "has_date_lt": {
     "operands": 1,
     "type": "has_date_lt",
     "verboseName": "has a date before",
   },
-  "has_district": Object {
+  "has_district": {
     "categoryName": "Has District",
     "filter": "locations",
     "operands": 1,
     "type": "has_district",
     "verboseName": "has district",
   },
-  "has_email": Object {
+  "has_email": {
     "categoryName": "Has Email",
     "operands": 0,
     "type": "has_email",
     "verboseName": "has an email",
   },
-  "has_error": Object {
+  "has_error": {
     "categoryName": "Has Error",
     "operands": 0,
     "type": "has_error",
     "verboseName": "has an error",
-    "visibility": Array [
+    "visibility": [
       "-",
     ],
   },
-  "has_group": Object {
+  "has_group": {
     "operands": 1,
     "type": "has_group",
     "verboseName": "is in the group",
-    "visibility": Array [
+    "visibility": [
       "-",
     ],
   },
-  "has_intent": Object {
+  "has_intent": {
     "operands": 2,
     "type": "has_intent",
     "verboseName": "has intent",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "has_number": Object {
+  "has_number": {
     "categoryName": "Has Number",
     "operands": 0,
     "type": "has_number",
     "verboseName": "has a number",
   },
-  "has_number_between": Object {
+  "has_number_between": {
     "operands": 2,
     "type": "has_number_between",
     "verboseName": "has a number between",
   },
-  "has_number_eq": Object {
+  "has_number_eq": {
     "operands": 1,
     "type": "has_number_eq",
     "verboseName": "has a number equal to",
   },
-  "has_number_gt": Object {
+  "has_number_gt": {
     "operands": 1,
     "type": "has_number_gt",
     "verboseName": "has a number above",
   },
-  "has_number_gte": Object {
+  "has_number_gte": {
     "operands": 1,
     "type": "has_number_gte",
     "verboseName": "has a number at or above",
   },
-  "has_number_lt": Object {
+  "has_number_lt": {
     "operands": 1,
     "type": "has_number_lt",
     "verboseName": "has a number below",
   },
-  "has_number_lte": Object {
+  "has_number_lte": {
     "operands": 1,
     "type": "has_number_lte",
     "verboseName": "has a number at or below",
   },
-  "has_only_phrase": Object {
+  "has_only_phrase": {
     "operands": 1,
     "type": "has_only_phrase",
     "verboseName": "has only the phrase",
   },
-  "has_pattern": Object {
+  "has_pattern": {
     "operands": 1,
     "type": "has_pattern",
     "verboseName": "matches regex",
   },
-  "has_phone": Object {
+  "has_phone": {
     "categoryName": "Has Phone",
     "operands": 0,
     "type": "has_phone",
     "verboseName": "has a phone number",
   },
-  "has_phrase": Object {
+  "has_phrase": {
     "operands": 1,
     "type": "has_phrase",
     "verboseName": "has the phrase",
   },
-  "has_state": Object {
+  "has_state": {
     "categoryName": "Has State",
     "filter": "locations",
     "operands": 0,
     "type": "has_state",
     "verboseName": "has state",
   },
-  "has_text": Object {
+  "has_text": {
     "categoryName": "Has Text",
     "operands": 0,
     "type": "has_text",
     "verboseName": "has some text",
   },
-  "has_time": Object {
+  "has_time": {
     "categoryName": "Has Time",
     "operands": 0,
     "type": "has_time",
     "verboseName": "has a time",
   },
-  "has_top_intent": Object {
+  "has_top_intent": {
     "operands": 2,
     "type": "has_top_intent",
     "verboseName": "has top intent",
-    "visibility": Array [
+    "visibility": [
       "messaging",
       "messaging_background",
       "voice",
     ],
   },
-  "has_value": Object {
+  "has_value": {
     "categoryName": "Not Empty",
     "operands": 0,
     "type": "has_value",
     "verboseName": "is not empty",
-    "visibility": Array [
+    "visibility": [
       "-",
     ],
   },
-  "has_ward": Object {
+  "has_ward": {
     "categoryName": "Has Ward",
     "filter": "locations",
     "operands": 2,

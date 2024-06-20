@@ -38,7 +38,7 @@ const getUUIDQuery = (urlStr: string) => {
   return null;
 };
 
-axios.get = jest.fn((url: string) => {
+axios.get = vi.fn((url: string) => {
   const { endpoint, containsQuery } = getEndpoint(url);
   const endpoints = config.endpoints;
   switch (endpoint) {

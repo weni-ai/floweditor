@@ -1,8 +1,8 @@
 import { Simulator, SimulatorProps } from 'components/simulator/Simulator';
 import { composeComponentTestUtils } from 'testUtils';
+import { PopTabType } from '../../config/interfaces';
 
 const { setup } = composeComponentTestUtils<SimulatorProps>(Simulator, {
-  assetStore: {},
   nodes: {},
   activity: null,
   definition: {
@@ -13,10 +13,13 @@ const { setup } = composeComponentTestUtils<SimulatorProps>(Simulator, {
     localization: {},
     language: null,
     _ui: null,
+    spec_version: '13.1',
   },
   liveActivity: null,
-  mergeEditorState: jest.fn(),
+  mergeEditorState: vi.fn(),
   language: null,
+  onToggled: vi.fn(),
+  popped: '',
 });
 
 describe(Simulator.name, () => {
