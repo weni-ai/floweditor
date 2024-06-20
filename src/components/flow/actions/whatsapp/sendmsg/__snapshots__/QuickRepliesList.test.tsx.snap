@@ -1,77 +1,75 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`QuickRepliesList should render 1`] = `
+exports[`QuickRepliesList > should render 1`] = `
 <body>
   <div>
     <div>
       <span
-        class="replies_label"
+        class="_replies_label_9acb41"
       >
         Add up to 3 replies
       </span>
       <div
-        class="replies_items"
+        class="_replies_items_9acb41"
       >
         <div
-          class="reply_item_wrapper"
+          class="_reply_item_wrapper_9acb41"
         >
           <div
-            class="drag_wrapper"
+            class="_drag_wrapper_9acb41"
             data-draggable="true"
           >
             <div
               data-draggable="true"
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="height: 20px; padding: 4px;"
             >
               <span
-                class="material-symbols-rounded unnnic-icon-scheme--neutral-cloudy unnnic-icon-size--sm unnnic--clickable drag_handle"
+                class="material-symbols-rounded unnnic-icon-scheme--neutral-cloudy unnnic-icon-size--sm unnnic--clickable _drag_handle_9acb41"
                 data-draggable="true"
-                data-passed-props="[object Object]"
-                data-v-4ce83152=""
+                data-v-edf1acd8=""
               >
-                 drag_indicator 
+                drag_indicator
               </span>
             </div>
           </div>
           <div
-            class="reply_item_input"
+            class="_reply_item_input_9acb41"
           >
             <div>
               <div
-                class="completion_wrapper"
+                class="_completion_wrapper_17662c"
               >
                 <div
                   data-testid="Reply"
                 >
                   <div
                     data-use-vue-component-wrap=""
+                    data-v-app=""
                     style="all: unset;"
                   >
                     <div
                       class="unnnic-form md"
-                      data-passed-props="[object Object]"
-                      data-v-48c0c241=""
+                      data-v-4d681994=""
                       maxlength="20"
                     >
                       <!---->
                       <div
-                        class="unnnic-form-input text-input size--md"
-                        data-v-400546b3=""
-                        data-v-48c0c241=""
+                        class="text-input size--md unnnic-form-input"
+                        data-v-20f606ca=""
+                        data-v-4d681994=""
                         mask=""
-                        v-bind="[object Object]"
+                        maxlength="20"
                       >
                         <input
-                          class="input-itself input size-md normal"
-                          data-passed-props="[object Object]"
-                          data-v-400546b3=""
-                          data-v-97b44e8c=""
+                          class="unnnic-form-input input-itself input size-md normal unnnic-form-input input-itself"
+                          data-v-1e805323=""
+                          data-v-20f606ca=""
+                          hascloudycolor="false"
                           maxlength="20"
                           placeholder="Reply"
-                          size="7"
                           type="text"
-                          v-bind="[object Object]"
                         />
                         <!---->
                         <!---->
@@ -81,103 +79,103 @@ exports[`QuickRepliesList should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="options_wrapper"
+                  class="_options_wrapper_08dd12"
                   data-testid="temba_completion_options_Reply"
                   id=""
-                  style="margin-top: 0px; width: -24px; display: none;"
+                  style="margin-top: 0px; width: 0px; display: none;"
                 />
               </div>
             </div>
           </div>
           <div
             data-use-vue-component-wrap=""
+            data-v-app=""
             style="all: unset;"
           >
             <button
               class="unnnic-button unnnic-button--size-small unnnic-button--tertiary unnnic-button--icon-on-center"
-              data-passed-props="[object Object]"
               data-testid="Remove"
-              data-v-3b3aa28c=""
+              data-v-d3a33348=""
             >
               <!---->
               <!---->
               <span
                 class="material-symbols-rounded unnnic-icon-scheme--neutral-dark unnnic-icon-size--sm"
-                data-v-3b3aa28c=""
-                data-v-4ce83152=""
+                data-v-d3a33348=""
+                data-v-edf1acd8=""
               >
-                 delete 
+                delete
               </span>
               <span
                 class="unnnic-button__label"
-                data-v-3b3aa28c=""
+                data-v-d3a33348=""
               >
-                  
+                
+                
+                 
               </span>
               <!---->
             </button>
           </div>
         </div>
         <div
-          class="reply_item_wrapper"
+          class="_reply_item_wrapper_9acb41"
         >
           <div
-            class="drag_wrapper"
+            class="_drag_wrapper_9acb41"
             data-draggable="true"
           >
             <div
               data-draggable="true"
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="height: 20px; padding: 4px;"
             >
               <span
-                class="material-symbols-rounded unnnic-icon-scheme--neutral-cloudy unnnic-icon-size--sm unnnic--clickable drag_handle"
+                class="material-symbols-rounded unnnic-icon-scheme--neutral-cloudy unnnic-icon-size--sm unnnic--clickable _drag_handle_9acb41"
                 data-draggable="true"
-                data-passed-props="[object Object]"
-                data-v-4ce83152=""
+                data-v-edf1acd8=""
               >
-                 drag_indicator 
+                drag_indicator
               </span>
             </div>
           </div>
           <div
-            class="reply_item_input"
+            class="_reply_item_input_9acb41"
           >
             <div>
               <div
-                class="completion_wrapper"
+                class="_completion_wrapper_17662c"
               >
                 <div
                   data-testid="Reply"
                 >
                   <div
                     data-use-vue-component-wrap=""
+                    data-v-app=""
                     style="all: unset;"
                   >
                     <div
                       class="unnnic-form md"
-                      data-passed-props="[object Object]"
-                      data-v-48c0c241=""
+                      data-v-4d681994=""
                       maxlength="20"
                     >
                       <!---->
                       <div
-                        class="unnnic-form-input text-input size--md"
-                        data-v-400546b3=""
-                        data-v-48c0c241=""
+                        class="text-input size--md unnnic-form-input"
+                        data-v-20f606ca=""
+                        data-v-4d681994=""
                         mask=""
-                        v-bind="[object Object]"
+                        maxlength="20"
                       >
                         <input
-                          class="input-itself input size-md normal"
-                          data-passed-props="[object Object]"
-                          data-v-400546b3=""
-                          data-v-97b44e8c=""
+                          class="unnnic-form-input input-itself input size-md normal unnnic-form-input input-itself"
+                          data-v-1e805323=""
+                          data-v-20f606ca=""
+                          hascloudycolor="false"
                           maxlength="20"
                           placeholder="Reply"
-                          size="7"
                           type="text"
-                          v-bind="[object Object]"
                         />
                         <!---->
                         <!---->
@@ -187,38 +185,40 @@ exports[`QuickRepliesList should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="options_wrapper"
+                  class="_options_wrapper_08dd12"
                   data-testid="temba_completion_options_Reply"
                   id=""
-                  style="margin-top: 0px; width: -24px; display: none;"
+                  style="margin-top: 0px; width: 0px; display: none;"
                 />
               </div>
             </div>
           </div>
           <div
             data-use-vue-component-wrap=""
+            data-v-app=""
             style="all: unset;"
           >
             <button
               class="unnnic-button unnnic-button--size-small unnnic-button--tertiary unnnic-button--icon-on-center"
-              data-passed-props="[object Object]"
               data-testid="Remove"
-              data-v-3b3aa28c=""
+              data-v-d3a33348=""
             >
               <!---->
               <!---->
               <span
                 class="material-symbols-rounded unnnic-icon-scheme--neutral-dark unnnic-icon-size--sm"
-                data-v-3b3aa28c=""
-                data-v-4ce83152=""
+                data-v-d3a33348=""
+                data-v-edf1acd8=""
               >
-                 delete 
+                delete
               </span>
               <span
                 class="unnnic-button__label"
-                data-v-3b3aa28c=""
+                data-v-d3a33348=""
               >
-                  
+                
+                
+                 
               </span>
               <!---->
             </button>

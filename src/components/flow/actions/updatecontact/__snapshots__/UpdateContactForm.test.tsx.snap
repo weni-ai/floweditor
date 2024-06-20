@@ -93,6 +93,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -186,18 +187,18 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  _selected_08dd12"
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="_name_08dd12"
@@ -207,7 +208,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="_name_08dd12"
@@ -217,7 +218,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="_name_08dd12"
@@ -227,7 +228,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="_name_08dd12"
@@ -237,7 +238,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="_name_08dd12"
@@ -247,7 +248,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="_name_08dd12"
@@ -257,7 +258,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="_name_08dd12"
@@ -267,7 +268,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="_name_08dd12"
@@ -277,7 +278,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="_name_08dd12"
@@ -287,7 +288,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="_name_08dd12"
@@ -297,7 +298,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="_name_08dd12"
@@ -307,7 +308,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="_name_08dd12"
@@ -317,7 +318,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="_name_08dd12"
@@ -327,7 +328,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="_name_08dd12"
@@ -337,7 +338,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="_name_08dd12"
@@ -347,7 +348,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="_name_08dd12"
@@ -357,7 +358,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"
@@ -369,6 +370,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -441,6 +443,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -487,6 +490,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -561,6 +565,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_channel"
+                id="temba_select_options_channel"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -577,6 +582,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_channel"
+                id="temba_select_expressions_channel"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -743,6 +749,7 @@ exports[`UpdateContactForm > should render field 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -836,18 +843,18 @@ exports[`UpdateContactForm > should render field 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  _selected_08dd12"
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="_name_08dd12"
@@ -857,7 +864,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="_name_08dd12"
@@ -867,7 +874,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="_name_08dd12"
@@ -877,7 +884,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="_name_08dd12"
@@ -887,7 +894,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="_name_08dd12"
@@ -897,7 +904,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="_name_08dd12"
@@ -907,7 +914,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="_name_08dd12"
@@ -917,7 +924,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="_name_08dd12"
@@ -927,7 +934,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="_name_08dd12"
@@ -937,7 +944,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="_name_08dd12"
@@ -947,7 +954,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="_name_08dd12"
@@ -957,7 +964,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="_name_08dd12"
@@ -967,7 +974,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="_name_08dd12"
@@ -977,7 +984,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="_name_08dd12"
@@ -987,7 +994,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="_name_08dd12"
@@ -997,7 +1004,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="_name_08dd12"
@@ -1007,7 +1014,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"
@@ -1019,6 +1026,7 @@ exports[`UpdateContactForm > should render field 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1091,6 +1099,7 @@ exports[`UpdateContactForm > should render field 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -1137,6 +1146,7 @@ exports[`UpdateContactForm > should render field 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -1357,6 +1367,7 @@ exports[`UpdateContactForm > should render language 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1450,18 +1461,18 @@ exports[`UpdateContactForm > should render language 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  _selected_08dd12"
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="_name_08dd12"
@@ -1471,7 +1482,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="_name_08dd12"
@@ -1481,7 +1492,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="_name_08dd12"
@@ -1491,7 +1502,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="_name_08dd12"
@@ -1501,7 +1512,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="_name_08dd12"
@@ -1511,7 +1522,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="_name_08dd12"
@@ -1521,7 +1532,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="_name_08dd12"
@@ -1531,7 +1542,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="_name_08dd12"
@@ -1541,7 +1552,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="_name_08dd12"
@@ -1551,7 +1562,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="_name_08dd12"
@@ -1561,7 +1572,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="_name_08dd12"
@@ -1571,7 +1582,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="_name_08dd12"
@@ -1581,7 +1592,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="_name_08dd12"
@@ -1591,7 +1602,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="_name_08dd12"
@@ -1601,7 +1612,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="_name_08dd12"
@@ -1611,7 +1622,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="_name_08dd12"
@@ -1621,7 +1632,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"
@@ -1633,6 +1644,7 @@ exports[`UpdateContactForm > should render language 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1705,6 +1717,7 @@ exports[`UpdateContactForm > should render language 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -1751,6 +1764,7 @@ exports[`UpdateContactForm > should render language 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -1828,6 +1842,7 @@ exports[`UpdateContactForm > should render language 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_language"
+                id="temba_select_options_language"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1844,6 +1859,7 @@ exports[`UpdateContactForm > should render language 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_language"
+                id="temba_select_expressions_language"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2010,6 +2026,7 @@ exports[`UpdateContactForm > should render name 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -2103,18 +2120,18 @@ exports[`UpdateContactForm > should render name 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  _selected_08dd12"
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="_name_08dd12"
@@ -2124,7 +2141,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="_name_08dd12"
@@ -2134,7 +2151,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="_name_08dd12"
@@ -2144,7 +2161,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="_name_08dd12"
@@ -2154,7 +2171,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="_name_08dd12"
@@ -2164,7 +2181,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="_name_08dd12"
@@ -2174,7 +2191,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="_name_08dd12"
@@ -2184,7 +2201,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="_name_08dd12"
@@ -2194,7 +2211,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="_name_08dd12"
@@ -2204,7 +2221,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="_name_08dd12"
@@ -2214,7 +2231,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="_name_08dd12"
@@ -2224,7 +2241,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="_name_08dd12"
@@ -2234,7 +2251,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="_name_08dd12"
@@ -2244,7 +2261,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="_name_08dd12"
@@ -2254,7 +2271,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="_name_08dd12"
@@ -2264,7 +2281,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="_name_08dd12"
@@ -2274,7 +2291,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"
@@ -2286,6 +2303,7 @@ exports[`UpdateContactForm > should render name 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -2358,6 +2376,7 @@ exports[`UpdateContactForm > should render name 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_select_what_to_update"
+              id="temba_select_options_select_what_to_update"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -2404,6 +2423,7 @@ exports[`UpdateContactForm > should render name 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_select_what_to_update"
+              id="temba_select_expressions_select_what_to_update"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>

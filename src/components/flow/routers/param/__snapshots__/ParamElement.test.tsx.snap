@@ -211,6 +211,7 @@ exports[`ParamElement > ChatGPT params > multiselect > render > should render pa
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_aditional_prompts"
+              id="temba_select_options_aditional_prompts"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -322,6 +323,7 @@ exports[`ParamElement > ChatGPT params > multiselect > render > should render pa
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_aditional_prompts"
+              id="temba_select_expressions_aditional_prompts"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -410,6 +412,7 @@ exports[`ParamElement > ChatGPT params > multiselect > update > handles data cha
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_aditional_prompts"
+              id="temba_select_options_aditional_prompts"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -521,6 +524,7 @@ exports[`ParamElement > ChatGPT params > multiselect > update > handles data cha
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_aditional_prompts"
+              id="temba_select_expressions_aditional_prompts"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -627,6 +631,7 @@ exports[`ParamElement > Omie params > render > should render param 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param"
+              id="temba_select_options_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -673,6 +678,7 @@ exports[`ParamElement > Omie params > render > should render param 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param"
+              id="temba_select_expressions_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
@@ -1023,6 +1029,7 @@ exports[`ParamElement > Omie params > update > handles data change 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param"
+              id="temba_select_options_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
@@ -1069,6 +1076,7 @@ exports[`ParamElement > Omie params > update > handles data change 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param"
+              id="temba_select_expressions_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>

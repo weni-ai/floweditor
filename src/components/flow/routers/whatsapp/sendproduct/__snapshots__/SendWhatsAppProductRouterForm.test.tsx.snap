@@ -99,6 +99,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -362,11 +363,11 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -375,6 +376,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should rende
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -808,6 +810,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -1071,11 +1074,11 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -1084,6 +1087,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1781,11 +1785,11 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -2520,6 +2524,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -2783,11 +2788,11 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -2796,6 +2801,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -3493,11 +3499,11 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -4405,6 +4411,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -4668,11 +4675,11 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -4681,6 +4688,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -4880,7 +4888,8 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_options_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
               <div
                 class="_options_wrapper_08dd12"
@@ -5140,6 +5149,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -5403,11 +5413,11 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -5416,6 +5426,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should change f
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -5849,6 +5860,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -6112,11 +6124,11 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -6125,6 +6137,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -6324,7 +6337,8 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should render 1
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_options_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
               <div
                 class="_options_wrapper_08dd12"
@@ -6584,6 +6598,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -6747,23 +6762,13 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   </span>
                 </div>
                 <div
-                  class="option  "
-                  data-option-index="16"
-                >
-                  <span
-                    class="name"
-                  >
-                    Start somebody else in a flow
-                  </span>
-                </div>
-                <div
                   class="_option_08dd12  "
                   data-option-index="16"
                 >
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -6773,7 +6778,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -6783,7 +6788,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -6793,7 +6798,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -6803,7 +6808,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -6813,7 +6818,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -6823,7 +6828,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -6833,7 +6838,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -6843,12 +6848,22 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  "
                   data-option-index="25"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"
@@ -6860,6 +6875,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -7059,7 +7075,8 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_options_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
               <div
                 class="_options_wrapper_08dd12"
@@ -7583,11 +7600,11 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -8677,11 +8694,11 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -9121,7 +9138,6 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
               <div
                 class="unnnic-form sm"
                 data-v-4d681994=""
-                error="Result Name is required"
                 maxlength="64"
               >
                 <p
@@ -9134,7 +9150,6 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                   class="text-input size--sm unnnic-form-input"
                   data-v-20f606ca=""
                   data-v-4d681994=""
-                  error="Result Name is required"
                   mask=""
                   maxlength="64"
                 >
@@ -9142,7 +9157,6 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
                     data-v-1e805323=""
                     data-v-20f606ca=""
-                    error="Result Name is required"
                     hascloudycolor="false"
                     maxlength="64"
                     placeholder="Result"
@@ -9153,7 +9167,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                 </div>
                 <p
                   class="unnnic-form__message"
-                  data-v-48c0c241=""
+                  data-v-4d681994=""
                 >
                   Result Name is required
                 </p>
@@ -9416,6 +9430,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -9679,11 +9694,11 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -9692,6 +9707,7 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -9891,7 +9907,8 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_manually_select_products"
-                style="margin-top: 0px; width: 0px; display: none;"
+                id="temba_select_options_manually_select_products"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
               <div
                 class="_options_wrapper_08dd12"
@@ -10415,11 +10432,11 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>

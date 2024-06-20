@@ -143,6 +143,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -156,7 +157,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   </span>
                 </div>
                 <div
-                  class="_option_08dd12  _selected_08dd12"
+                  class="_option_08dd12  "
                   data-option-index="1"
                 >
                   <span
@@ -166,23 +167,13 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  selected"
-                  data-option-index="2"
-                >
-                  <span
-                    class="name"
-                  >
-                    Wait for the contact to respond
-                  </span>
-                </div>
-                <div
-                  class="_option_08dd12  "
+                  class="_option_08dd12  _selected_08dd12"
                   data-option-index="2"
                 >
                   <span
                     class="_name_08dd12"
                   >
-                    Smartly wait for response (New)
+                    Wait for the contact to respond
                   </span>
                 </div>
                 <div
@@ -192,7 +183,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call WeniGPT (New)
+                    Smartly wait for response (New)
                   </span>
                 </div>
                 <div
@@ -202,7 +193,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Send somebody else a message
+                    Call WeniGPT (New)
                   </span>
                 </div>
                 <div
@@ -212,7 +203,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Label the incoming message
+                    Send somebody else a message
                   </span>
                 </div>
                 <div
@@ -222,7 +213,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add a URN for the contact
+                    Label the incoming message
                   </span>
                 </div>
                 <div
@@ -232,7 +223,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Add the contact to a group
+                    Add a URN for the contact
                   </span>
                 </div>
                 <div
@@ -242,7 +233,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Remove the contact from a group
+                    Add the contact to a group
                   </span>
                 </div>
                 <div
@@ -252,7 +243,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Update the contact
+                    Remove the contact from a group
                   </span>
                 </div>
                 <div
@@ -262,7 +253,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Send email
+                    Update the contact
                   </span>
                 </div>
                 <div
@@ -272,7 +263,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Save a result for this flow
+                    Send email
                   </span>
                 </div>
                 <div
@@ -282,7 +273,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call a webhook
+                    Save a result for this flow
                   </span>
                 </div>
                 <div
@@ -292,7 +283,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Call Zapier
+                    Call a webhook
                   </span>
                 </div>
                 <div
@@ -302,7 +293,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Enter another flow
+                    Call Zapier
                   </span>
                 </div>
                 <div
@@ -312,7 +303,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Start somebody else in a flow
+                    Enter another flow
                   </span>
                 </div>
                 <div
@@ -322,7 +313,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Open a ticket with a human agent
+                    Start somebody else in a flow
                   </span>
                 </div>
                 <div
@@ -332,7 +323,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Send the contact airtime
+                    Open a ticket with a human agent
                   </span>
                 </div>
                 <div
@@ -342,7 +333,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Split by intent
+                    Send the contact airtime
                   </span>
                 </div>
                 <div
@@ -352,7 +343,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Automatic Classify (New)
+                    Split by intent
                   </span>
                 </div>
                 <div
@@ -362,7 +353,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a custom expression
+                    Automatic Classify (New)
                   </span>
                 </div>
                 <div
@@ -372,7 +363,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Split by contact field
+                    Split by a custom expression
                   </span>
                 </div>
                 <div
@@ -382,7 +373,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Split by a result in the flow
+                    Split by contact field
                   </span>
                 </div>
                 <div
@@ -392,7 +383,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Split randomly
+                    Split by a result in the flow
                   </span>
                 </div>
                 <div
@@ -402,12 +393,22 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
                   <span
                     class="_name_08dd12"
                   >
-                    Split by group membership
+                    Split randomly
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  "
                   data-option-index="25"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"
@@ -419,6 +420,7 @@ exports[`WaitRouterForm > should render a normal wait 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -621,6 +623,7 @@ exports[`WaitRouterForm > should render wait for audio with previous name 1`] = 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -884,11 +887,11 @@ exports[`WaitRouterForm > should render wait for audio with previous name 1`] = 
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
@@ -897,6 +900,7 @@ exports[`WaitRouterForm > should render wait for audio with previous name 1`] = 
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>

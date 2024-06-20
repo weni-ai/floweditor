@@ -176,6 +176,7 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -409,18 +410,18 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="23"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  _selected_08dd12"
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="_name_08dd12"
@@ -430,7 +431,7 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="_name_08dd12"
@@ -440,7 +441,7 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"
@@ -452,6 +453,7 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -533,6 +535,7 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
                 <div
                   class="_options_wrapper_08dd12"
                   data-testid="temba_select_options_buckets"
+                  id="temba_select_options_buckets"
                   style="margin-top: 0px; width: -24px; display: none;"
                 >
                   <div
@@ -629,6 +632,7 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
                 <div
                   class="_options_wrapper_08dd12"
                   data-testid="temba_select_expressions_buckets"
+                  id="temba_select_expressions_buckets"
                   style="margin-top: 0px; width: -24px; display: none;"
                 />
               </div>
@@ -1241,18 +1245,18 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="23"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  _selected_08dd12"
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="_name_08dd12"
@@ -1262,7 +1266,7 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="_name_08dd12"
@@ -1272,7 +1276,7 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"

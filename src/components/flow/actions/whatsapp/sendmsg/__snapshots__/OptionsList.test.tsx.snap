@@ -1,95 +1,95 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`OptionsList should render 1`] = `
+exports[`OptionsList > should render 1`] = `
 <body>
   <div>
     <div
-      class="list_wrapper"
+      class="_list_wrapper_307ca0"
     >
       <div>
         <span
-          class="options_label"
+          class="_options_label_307ca0"
         >
           Add up to 10 options
         </span>
         <div
-          class="list_items"
+          class="_list_items_307ca0"
         >
           <div
-            class="collapse "
+            class="_collapse_0dd17b "
           >
             <div
-              class="collapse_header"
+              class="_collapse_header_0dd17b"
               data-testid="Option 1/10"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
                 style="display: flex;"
               >
                 <span
                   class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
-                  data-passed-props="[object Object]"
-                  data-v-4ce83152=""
+                  data-v-edf1acd8=""
                 >
-                   check_circle 
+                  check_circle
                 </span>
               </div>
               <span>
                 Option 1/10
               </span>
               <div
-                class="collapse_icon"
+                class="_collapse_icon_0dd17b"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="display: flex;"
                 >
                   <span
                     class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                    data-passed-props="[object Object]"
-                    data-v-4ce83152=""
+                    data-v-edf1acd8=""
                   >
-                     expand_more 
+                    expand_more
                   </span>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="collapse "
+            class="_collapse_0dd17b "
           >
             <div
-              class="collapse_header"
+              class="_collapse_header_0dd17b"
               data-testid="Option 2/10"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
                 style="display: flex;"
               >
                 <span
                   class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
-                  data-passed-props="[object Object]"
-                  data-v-4ce83152=""
+                  data-v-edf1acd8=""
                 >
-                   check_circle 
+                  check_circle
                 </span>
               </div>
               <span>
                 Option 2/10
               </span>
               <div
-                class="collapse_icon"
+                class="_collapse_icon_0dd17b"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="display: flex;"
                 >
                   <span
                     class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                    data-passed-props="[object Object]"
-                    data-v-4ce83152=""
+                    data-v-edf1acd8=""
                   >
-                     expand_more 
+                    expand_more
                   </span>
                 </div>
               </div>

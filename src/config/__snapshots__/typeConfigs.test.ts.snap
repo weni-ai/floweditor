@@ -91,6 +91,15 @@ exports[`typeConfigs > should provide type configs 1`] = `
     "type": "send_msg",
   },
   {
+    "component": [Function],
+    "description": "Send a WhatsApp message",
+    "filter": "whatsapp",
+    "form": [Function],
+    "name": "Send WhatsApp Message",
+    "new": true,
+    "type": "send_whatsapp_msg",
+  },
+  {
     "aliases": [
       "split_by_whatsapp_product",
     ],
@@ -772,6 +781,15 @@ exports[`typeConfigs > should provide type configs 2`] = `
     "name": "Send WhatsApp Product",
     "new": true,
     "type": "send_msg_catalog",
+  },
+  "send_whatsapp_msg": {
+    "component": [Function],
+    "description": "Send a WhatsApp message",
+    "filter": "whatsapp",
+    "form": [Function],
+    "name": "Send WhatsApp Message",
+    "new": true,
+    "type": "send_whatsapp_msg",
   },
   "set_contact_channel": {
     "aliases": [

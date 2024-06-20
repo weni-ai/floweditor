@@ -68,6 +68,7 @@ exports[`AssetSelector > renders 1`] = `
         <div
           class="_options_wrapper_08dd12"
           data-testid="temba_select_options_recipients"
+          id="temba_select_options_recipients"
           style="margin-top: 0px; width: -24px; display: none;"
         >
           <div
@@ -84,6 +85,7 @@ exports[`AssetSelector > renders 1`] = `
         <div
           class="_options_wrapper_08dd12"
           data-testid="temba_select_expressions_recipients"
+          id="temba_select_expressions_recipients"
           style="margin-top: 0px; width: -24px; display: none;"
         />
       </div>

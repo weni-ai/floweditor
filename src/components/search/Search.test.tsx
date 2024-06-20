@@ -1,6 +1,6 @@
 import React from 'react';
 import { SearchBar, SearchStoreProps } from './SearchBar';
-import { fireEvent, fireUnnnicInputChangeText, render } from 'test/utils';
+import { act, fireEvent, fireUnnnicInputChangeText, render } from 'test/utils';
 import { NodeComp } from '../flow/node/Node';
 import { MouseState } from '../../store/editor';
 import { RenderNodeMap } from '../../store/flowContext';
@@ -149,11 +149,20 @@ const baseProps: SearchStoreProps = {
 
 describe(SearchBar.name, () => {
   
+  vi.spyOn(document, 'createTreeWalker').mockImplementation((node: any) => {
+    return {
+      nextNode: vi.fn(),
+    };
+  })
+
   vi.spyOn(document, 'getElementById').mockImplementation((elementId: string) => {
     return {
       // @ts-expect-error Property 'text' does not exist on type 'Action'
       // eslint-disable-next-line prettier/prettier
       innerText: nodes[elementId]?.node.actions[0].text,
+      querySelectorAll: vi.fn((): [] => {
+        return []
+      }),
     } as HTMLElement
   })
 

@@ -247,18 +247,18 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="15"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Enter another flow
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  _selected_08dd12"
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="_name_08dd12"
@@ -268,7 +268,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="_name_08dd12"
@@ -278,7 +278,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="_name_08dd12"
@@ -288,7 +288,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="_name_08dd12"
@@ -298,7 +298,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="_name_08dd12"
@@ -308,7 +308,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="_name_08dd12"
@@ -318,7 +318,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="_name_08dd12"
@@ -328,7 +328,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="_name_08dd12"
@@ -338,7 +338,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="_name_08dd12"
@@ -348,7 +348,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="_name_08dd12"
@@ -358,7 +358,7 @@ exports[`AddLabelsForm > render > allows expressions 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"
@@ -681,6 +681,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -734,18 +735,18 @@ exports[`AddLabelsForm > render > should render 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="5"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send somebody else a message
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  _selected_08dd12"
-                  data-option-index="5"
+                  data-option-index="6"
                 >
                   <span
                     class="_name_08dd12"
@@ -755,7 +756,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="6"
+                  data-option-index="7"
                 >
                   <span
                     class="_name_08dd12"
@@ -765,7 +766,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="7"
+                  data-option-index="8"
                 >
                   <span
                     class="_name_08dd12"
@@ -775,7 +776,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="8"
+                  data-option-index="9"
                 >
                   <span
                     class="_name_08dd12"
@@ -785,7 +786,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="9"
+                  data-option-index="10"
                 >
                   <span
                     class="_name_08dd12"
@@ -795,7 +796,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="10"
+                  data-option-index="11"
                 >
                   <span
                     class="_name_08dd12"
@@ -805,7 +806,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="11"
+                  data-option-index="12"
                 >
                   <span
                     class="_name_08dd12"
@@ -815,7 +816,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="12"
+                  data-option-index="13"
                 >
                   <span
                     class="_name_08dd12"
@@ -825,7 +826,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="13"
+                  data-option-index="14"
                 >
                   <span
                     class="_name_08dd12"
@@ -835,7 +836,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="14"
+                  data-option-index="15"
                 >
                   <span
                     class="_name_08dd12"
@@ -845,7 +846,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="15"
+                  data-option-index="16"
                 >
                   <span
                     class="_name_08dd12"
@@ -855,7 +856,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="_name_08dd12"
@@ -865,7 +866,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="_name_08dd12"
@@ -875,7 +876,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="_name_08dd12"
@@ -885,7 +886,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="_name_08dd12"
@@ -895,7 +896,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="_name_08dd12"
@@ -905,7 +906,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="_name_08dd12"
@@ -915,7 +916,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="_name_08dd12"
@@ -925,7 +926,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="_name_08dd12"
@@ -935,7 +936,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="_name_08dd12"
@@ -945,7 +946,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"
@@ -957,6 +958,7 @@ exports[`AddLabelsForm > render > should render 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1029,11 +1031,13 @@ exports[`AddLabelsForm > render > should render 1`] = `
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_labels"
+              id="temba_select_options_labels"
               style="margin-top: 0px; width: -24px; display: none;"
             />
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_labels"
+              id="temba_select_expressions_labels"
               style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>

@@ -2159,7 +2159,6 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param_filter"
                         data-v-4d681994=""
-                        error="Required"
                         readonly=""
                       >
                         <!---->
@@ -2168,7 +2167,6 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                           data-testid="temba_select_input_service_call_param_filter"
                           data-v-20f606ca=""
                           data-v-4d681994=""
-                          error="Required"
                           mask=""
                           readonly=""
                         >
@@ -2177,7 +2175,6 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                             data-testid="temba_select_input_service_call_param_filter"
                             data-v-1e805323=""
                             data-v-20f606ca=""
-                            error="Required"
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Filter"
@@ -2202,7 +2199,12 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                             />
                           </svg>
                         </div>
-                        <!---->
+                        <p
+                          class="unnnic-form__message"
+                          data-v-4d681994=""
+                        >
+                          Required
+                        </p>
                       </div>
                     </div>
                   </div>

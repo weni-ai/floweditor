@@ -93,6 +93,7 @@ exports[`TicketRouterForm > render > should render 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -256,18 +257,18 @@ exports[`TicketRouterForm > render > should render 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="16"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Start somebody else in a flow
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  _selected_08dd12"
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="_name_08dd12"
@@ -277,7 +278,7 @@ exports[`TicketRouterForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="_name_08dd12"
@@ -287,7 +288,7 @@ exports[`TicketRouterForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="_name_08dd12"
@@ -297,7 +298,7 @@ exports[`TicketRouterForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="_name_08dd12"
@@ -307,7 +308,7 @@ exports[`TicketRouterForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="_name_08dd12"
@@ -317,7 +318,7 @@ exports[`TicketRouterForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="_name_08dd12"
@@ -327,7 +328,7 @@ exports[`TicketRouterForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="_name_08dd12"
@@ -337,7 +338,7 @@ exports[`TicketRouterForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="_name_08dd12"
@@ -347,7 +348,7 @@ exports[`TicketRouterForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="_name_08dd12"
@@ -357,7 +358,7 @@ exports[`TicketRouterForm > render > should render 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"
@@ -369,6 +370,7 @@ exports[`TicketRouterForm > render > should render 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -516,11 +518,13 @@ exports[`TicketRouterForm > render > should render 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_assignee"
+                id="temba_select_options_assignee"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_assignee"
+                id="temba_select_expressions_assignee"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
@@ -769,6 +773,7 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
+                id="temba_select_options_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
@@ -932,18 +937,18 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="16"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Start somebody else in a flow
                   </span>
                 </div>
                 <div
                   class="_option_08dd12  _selected_08dd12"
-                  data-option-index="16"
+                  data-option-index="17"
                 >
                   <span
                     class="_name_08dd12"
@@ -953,7 +958,7 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="17"
+                  data-option-index="18"
                 >
                   <span
                     class="_name_08dd12"
@@ -963,7 +968,7 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="18"
+                  data-option-index="19"
                 >
                   <span
                     class="_name_08dd12"
@@ -973,7 +978,7 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="19"
+                  data-option-index="20"
                 >
                   <span
                     class="_name_08dd12"
@@ -983,7 +988,7 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="20"
+                  data-option-index="21"
                 >
                   <span
                     class="_name_08dd12"
@@ -993,7 +998,7 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="21"
+                  data-option-index="22"
                 >
                   <span
                     class="_name_08dd12"
@@ -1003,7 +1008,7 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="22"
+                  data-option-index="23"
                 >
                   <span
                     class="_name_08dd12"
@@ -1013,7 +1018,7 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="23"
+                  data-option-index="24"
                 >
                   <span
                     class="_name_08dd12"
@@ -1023,7 +1028,7 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="24"
+                  data-option-index="25"
                 >
                   <span
                     class="_name_08dd12"
@@ -1033,7 +1038,7 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
                 </div>
                 <div
                   class="_option_08dd12  "
-                  data-option-index="25"
+                  data-option-index="26"
                 >
                   <span
                     class="_name_08dd12"
@@ -1045,6 +1050,7 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
                 style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
@@ -1192,11 +1198,13 @@ exports[`TicketRouterForm > updates > should save changes 1`] = `
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_assignee"
+                id="temba_select_options_assignee"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_assignee"
+                id="temba_select_expressions_assignee"
                 style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
