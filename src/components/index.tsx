@@ -42,7 +42,8 @@ import { PopTabType } from 'config/interfaces';
 import { TranslatorTab, TranslationBundle } from './translator/TranslatorTab';
 import i18n from 'config/i18n';
 
-const { default: PageVisibility } = require('react-page-visibility');
+// @ts-ignore
+import PageVisibility from 'react-page-visibility';
 
 export interface FlowEditorContainerProps {
   config: FlowEditorConfig;
