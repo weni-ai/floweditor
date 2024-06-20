@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 @mixin scrollbars {
 
@@ -8,10 +8,12 @@
   &::-webkit-scrollbar {
     width: 6px;
   }
+
   &::-webkit-scrollbar-thumb {
     background-color: $unnnic-color-neutral-clean ;
     border-radius: 8px;
   }
+
   &::-webkit-scrollbar-track {
     background: $unnnic-color-neutral-soft;
     border-radius: 8px;
@@ -64,6 +66,7 @@
 
       .summary {
         color: $unnnic-color-neutral-cloudy;
+
         &:first-letter {
           text-transform: uppercase;
         }
