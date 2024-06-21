@@ -37,6 +37,7 @@ export enum Types {
   send_msg = 'send_msg',
   send_msg_catalog = 'send_msg_catalog',
   send_whatsapp_msg = 'send_whatsapp_msg',
+  send_whatsapp_card = 'send_whatsapp_card',
   send_email = 'send_email',
   send_broadcast = 'send_broadcast',
   enter_flow = 'enter_flow',
