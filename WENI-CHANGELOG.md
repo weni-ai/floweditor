@@ -1,3 +1,7 @@
+2.15.1
+----------
+- Refactor: Add Temba Select generic pagination
+
 2.15.0
 ----------
 - Feat: Send WhatsApp Message card
