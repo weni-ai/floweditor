@@ -76,6 +76,7 @@ export default class PlayAudioForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <p>{i18n.t('forms.recording_label', 'Previous Recording')}</p>
         <TextInputElement

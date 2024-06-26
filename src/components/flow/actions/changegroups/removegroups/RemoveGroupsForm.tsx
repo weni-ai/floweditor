@@ -152,6 +152,7 @@ export default class RemoveGroupsForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <div
           className={`${styles.form_element} u font secondary body-md color-neutral-cloudy`}

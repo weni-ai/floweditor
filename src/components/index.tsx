@@ -17,7 +17,13 @@ import { connect, Provider as ReduxProvider } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import createStore from 'store/createStore';
 import { ModalMessage } from 'store/editor';
-import { Asset, Assets, RenderNodeMap, FlowIssueMap } from 'store/flowContext';
+import {
+  Asset,
+  Assets,
+  RenderNodeMap,
+  FlowIssueMap,
+  BrainInfo,
+} from 'store/flowContext';
 import { getCurrentDefinition } from 'store/helpers';
 import AppState from 'store/state';
 import {
@@ -69,6 +75,7 @@ export interface FlowEditorStoreProps {
   scrollToAction: string;
   popped: string;
   updateTranslationFilters: UpdateTranslationFilters;
+  brainInfo: BrainInfo;
 }
 
 const hotStore = createStore();
@@ -342,7 +349,14 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
 }
 
 const mapStateToProps = ({
-  flowContext: { definition, issues, nodes, assetStore, baseLanguage },
+  flowContext: {
+    definition,
+    issues,
+    nodes,
+    assetStore,
+    baseLanguage,
+    brainInfo,
+  },
   editorState: {
     translating,
     language,
@@ -370,6 +384,7 @@ const mapStateToProps = ({
     languages,
     scrollToAction,
     scrollToNode,
+    brainInfo,
   };
 };
 

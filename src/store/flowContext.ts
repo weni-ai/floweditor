@@ -15,6 +15,7 @@ import ActionTypes, {
   UpdateMetadataAction,
   UpdateIssuesAction,
   UpdateSearchAction,
+  UpdateBrainInfoAction,
 } from 'store/actionTypes';
 import Constants from 'store/constants';
 import { Type } from 'config/interfaces';
@@ -60,6 +61,12 @@ export interface CompletionOption {
 
 export interface ContactFields {
   [snakedFieldName: string]: string;
+}
+
+export interface BrainInfo {
+  enabled: boolean;
+  name: string;
+  occupation: string;
 }
 
 export enum AssetType {
@@ -163,6 +170,7 @@ export interface FlowContext {
   issues: FlowIssueMap;
   assetStore: AssetStore;
   search: Search;
+  brainInfo: BrainInfo;
 }
 
 // Initial state
@@ -184,6 +192,11 @@ export const initialState: FlowContext = {
     value: '',
     selected: 0,
     nodes: [],
+  },
+  brainInfo: {
+    enabled: false,
+    name: '',
+    occupation: '',
   },
 };
 
@@ -228,6 +241,15 @@ export const updateBaseLanguage = (
   type: Constants.UPDATE_BASE_LANGUAGE,
   payload: {
     baseLanguage,
+  },
+});
+
+export const updateBrainInfo = (
+  brainInfo: BrainInfo,
+): UpdateBrainInfoAction => ({
+  type: Constants.UPDATE_BRAIN_INFO,
+  payload: {
+    brainInfo,
   },
 });
 
@@ -355,6 +377,18 @@ export const contactFields = (
   }
 };
 
+export const brainInfo = (
+  state: BrainInfo = initialState.brainInfo,
+  action: ActionTypes,
+) => {
+  switch (action.type) {
+    case Constants.UPDATE_BRAIN_INFO:
+      return action.payload.brainInfo;
+    default:
+      return state;
+  }
+};
+
 // Root reducer
 export default combineReducers({
   definition,
@@ -365,4 +399,5 @@ export default combineReducers({
   baseLanguage,
   contactFields,
   search,
+  brainInfo,
 });

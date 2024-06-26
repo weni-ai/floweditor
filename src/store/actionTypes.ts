@@ -9,6 +9,7 @@ import {
   RenderNodeMap,
   FlowIssueMap,
   Search,
+  BrainInfo,
 } from 'store/flowContext';
 import { NodeEditorSettings } from 'store/nodeEditor';
 
@@ -80,6 +81,10 @@ interface UpdateNodeEditorSettingsPayload {
 
 interface UpdateContactFieldsPayload {
   contactFields: ContactFields;
+}
+
+interface UpdateBrainInfoPayload {
+  brainInfo: BrainInfo;
 }
 
 // Action types
@@ -157,6 +162,11 @@ export type UpdateContactFieldsAction = DuxAction<
   UpdateContactFieldsPayload
 >;
 
+export type UpdateBrainInfoAction = DuxAction<
+  Constants.UPDATE_BRAIN_INFO,
+  UpdateBrainInfoPayload
+>;
+
 export type UpdateTypeConfig = (typeConfig: Type) => UpdateTypeConfigAction;
 
 export type UpdateUserAddingAction = (
@@ -166,6 +176,8 @@ export type UpdateUserAddingAction = (
 export type UpdateBaseLanguage = (
   baseLanguage: Asset,
 ) => UpdateBaseLanguageAction;
+
+export type UpdateBrainInfo = (brainInfo: BrainInfo) => UpdateBrainInfoAction;
 
 export type UpdateSearch = (search: Search) => UpdateSearch;
 
@@ -186,7 +198,8 @@ type ActionTypes =
   | UpdateBaseLanguageAction
   | UpdateLanguagesAction
   | UpdateContactFieldsAction
-  | UpdateSearchAction;
+  | UpdateSearchAction
+  | UpdateBrainInfoAction;
 
 // eslint-disable-next-line no-undef
 export default ActionTypes;

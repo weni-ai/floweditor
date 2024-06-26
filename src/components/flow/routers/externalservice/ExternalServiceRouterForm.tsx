@@ -332,6 +332,7 @@ export default class ExternalServiceRouterForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         {showExternalServices ? (
           <div>

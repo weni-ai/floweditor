@@ -21,7 +21,7 @@ import FlipMove from 'react-flip-move';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { DebugState, MouseState } from 'store/editor';
-import { AssetMap, RenderNode, Asset } from 'store/flowContext';
+import { AssetMap, RenderNode, Asset, BrainInfo } from 'store/flowContext';
 import AppState from 'store/state';
 import {
   DispatchWithState,
@@ -82,6 +82,7 @@ export interface NodeStoreProps {
   scrollToNode: string;
   scrollToAction: string;
   mouseState: MouseState;
+  brainInfo: BrainInfo;
 }
 
 export type NodeProps = NodePassedProps & NodeStoreProps;
@@ -315,6 +316,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
                       {...anyAction}
                       languages={this.props.languages}
                       issues={issues}
+                      brainInfo={this.props.brainInfo}
                     />
                   );
                 }}
@@ -430,7 +432,14 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       }
     } else {
       // Don't show add actions option if we are translating
-      if (!this.props.translating && this.context.config.mutable) {
+      const hasCallBrainAction = this.props.renderNode.node.actions.some(
+        action => action.type === Types.call_brain,
+      );
+      if (
+        !this.props.translating &&
+        this.context.config.mutable &&
+        !hasCallBrainAction
+      ) {
         addActions = (
           <div
             className={styles.add}
@@ -526,6 +535,7 @@ const mapStateToProps = (
         results: { items: results },
         languages: { items: languages },
       },
+      brainInfo,
     },
     editorState: {
       translating,
@@ -577,6 +587,7 @@ const mapStateToProps = (
     scrollToNode: scrollNode,
     scrollToAction: scrollAction,
     mouseState,
+    brainInfo,
   };
 };
 

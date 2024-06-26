@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CallBrainComp should render save placeholder when result prop passed 1`] = `
+<div
+  className="content"
+>
+  <ForwardRef
+    icon="hub"
+    scheme="neutral-cloudy"
+    size="sm"
+  />
+  <span
+    className="brain_info"
+  >
+    Dóris
+     - 
+    Marketing Specialist
+  </span>
+</div>
+`;

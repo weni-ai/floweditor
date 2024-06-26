@@ -32,6 +32,47 @@ exports[`ExpressionRouterForm should render 1`] = `
         "type": "split_by_expression",
       }
     }
+    nodeSettings={
+      Object {
+        "originalAction": null,
+        "originalNode": Object {
+          "inboundConnections": Object {},
+          "node": Object {
+            "actions": Array [],
+            "exits": Array [
+              Object {
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "router": Object {
+              "cases": Array [],
+              "categories": Array [
+                Object {
+                  "exit_uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                  "name": "All Responses",
+                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                },
+              ],
+              "default_category_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              "operand": "@input.text",
+              "result_name": "",
+              "type": "switch",
+              "wait": Object {
+                "type": "msg",
+              },
+            },
+            "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+          },
+          "ui": Object {
+            "position": Object {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "split_by_expression",
+          },
+        },
+      }
+    }
     onChange={[MockFunction]}
   />
   <div

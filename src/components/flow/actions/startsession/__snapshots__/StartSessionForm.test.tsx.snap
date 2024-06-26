@@ -898,6 +898,12 @@ exports[`StartSessionForm render should render an empty form with no action 2`] 
         ],
       }
     }
+    nodeSettings={
+      Object {
+        "originalAction": null,
+        "originalNode": null,
+      }
+    }
     onChange={[MockFunction]}
   />
   <div>
@@ -2356,6 +2362,80 @@ exports[`StartSessionForm render should render self, children with base props 1`
           "messaging_background",
           "voice",
         ],
+      }
+    }
+    nodeSettings={
+      Object {
+        "originalAction": Object {
+          "contacts": Array [
+            Object {
+              "name": "Norbert Kwizera",
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            Object {
+              "name": "Rowan Seymour",
+              "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            },
+          ],
+          "create_contact": false,
+          "flow": Object {
+            "name": "Flow to Start",
+            "uuid": "flow_uuid",
+          },
+          "groups": Array [
+            Object {
+              "name": "Cat Fanciers",
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+          ],
+          "type": "start_session",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        "originalNode": Object {
+          "inboundConnections": Object {},
+          "node": Object {
+            "actions": Array [
+              Object {
+                "contacts": Array [
+                  Object {
+                    "name": "Norbert Kwizera",
+                    "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  },
+                  Object {
+                    "name": "Rowan Seymour",
+                    "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  },
+                ],
+                "create_contact": false,
+                "flow": Object {
+                  "name": "Flow to Start",
+                  "uuid": "flow_uuid",
+                },
+                "groups": Array [
+                  Object {
+                    "name": "Cat Fanciers",
+                    "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                  },
+                ],
+                "type": "start_session",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": Array [
+              Object {
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+          },
+          "ui": Object {
+            "position": Object {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
       }
     }
     onChange={[MockFunction]}

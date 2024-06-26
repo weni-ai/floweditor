@@ -56,7 +56,8 @@
   &.call_external_service,
   &.send_msg_catalog,
   &.send_whatsapp_msg,
-  &.call_wenigpt {
+  &.call_wenigpt,
+  &.call_brain {
     font-family: $unnnic-font-family-secondary;
     font-size: $unnnic-font-size-body-md;
     line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
@@ -96,6 +97,10 @@
   &.start_session {
     padding: 0px;
     width: $node_min_width + px;
+  }
+
+  &.call_brain {
+    width: 196px;
   }
 }
 

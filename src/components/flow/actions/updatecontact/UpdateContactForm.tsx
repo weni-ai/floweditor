@@ -366,6 +366,7 @@ export default class UpdateContactForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
 
         <AssetSelector

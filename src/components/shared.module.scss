@@ -18,6 +18,7 @@
     border-top-right-radius: 3px;
     padding: 10px;
     color: $red;
+
     .icon {
       display: inline-block;
       vertical-align: middle;
@@ -38,6 +39,7 @@
 
 .issue_help {
   cursor: pointer;
+
   &:hover {
     color: lighten($red, 3%);
     text-decoration: underline;
@@ -52,7 +54,7 @@
 .wait_for_digits,
 .wait_for_response,
 .wait_for_dial,
-.smart_wait_for_response  {
+.smart_wait_for_response {
   background: $unnnic-color-weni-800 !important;
 }
 
@@ -119,6 +121,17 @@
   background: $unnnic-color-aux-orange-500 !important;
 }
 
+.call_brain {
+  background: $unnnic-color-aux-purple-100 !important;
+  color: $unnnic-color-aux-purple-500 !important;
+
+  [data-use-vue-component-wrap] {
+    span>svg>path {
+      fill: black !important;
+    }
+  }
+}
+
 .missing {
   background: #E53E3E !important;
 }
@@ -142,6 +155,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
   .node_group {
     padding-right: 5px;
   }

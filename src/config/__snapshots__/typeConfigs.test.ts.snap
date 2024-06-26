@@ -150,6 +150,24 @@ Array [
   },
   Object {
     "aliases": Array [
+      "call_brain",
+    ],
+    "component": [Function],
+    "description": "Call Weni Brain",
+    "filter": "brain",
+    "form": Object {
+      "$$typeof": Symbol(react.memo),
+      "WrappedComponent": [Function],
+      "compare": null,
+      "displayName": "Connect(BrainForm)",
+      "type": [Function],
+    },
+    "name": "Call Weni Brain",
+    "new": true,
+    "type": "call_brain",
+  },
+  Object {
+    "aliases": Array [
       "split_by_wenigpt",
     ],
     "component": [Function],
@@ -568,6 +586,24 @@ Object {
       "messaging_background",
       "voice",
     ],
+  },
+  "call_brain": Object {
+    "aliases": Array [
+      "call_brain",
+    ],
+    "component": [Function],
+    "description": "Call Weni Brain",
+    "filter": "brain",
+    "form": Object {
+      "$$typeof": Symbol(react.memo),
+      "WrappedComponent": [Function],
+      "compare": null,
+      "displayName": "Connect(BrainForm)",
+      "type": [Function],
+    },
+    "name": "Call Weni Brain",
+    "new": true,
+    "type": "call_brain",
   },
   "call_classifier": Object {
     "aliases": Array [

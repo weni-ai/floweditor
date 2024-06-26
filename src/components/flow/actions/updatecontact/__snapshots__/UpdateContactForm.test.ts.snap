@@ -35,6 +35,41 @@ exports[`UpdateContactForm render should render an empty form with different act
         "type": "set_contact_field",
       }
     }
+    nodeSettings={
+      Object {
+        "originalAction": Object {
+          "groups": Array [
+            Object {
+              "name": "Customers",
+              "uuid": "23ff7152-b588-43e4-90de-fda77aeaf7c0",
+            },
+            Object {
+              "name": "Unsatisfied Customers",
+              "uuid": "2429d573-80d7-47f8-879f-f2ba442a1bfd",
+            },
+            Object {
+              "name": "Early Adopters",
+              "uuid": "cdbf9e01-aaa7-4381-8259-ee042447bcac",
+            },
+            Object {
+              "name": "Testers",
+              "uuid": "afaba971-8943-4dd8-860b-3561ed4f1fe1",
+            },
+            Object {
+              "name": "Subscribers",
+              "uuid": "33b28bac-b588-43e4-90de-fda77aeaf7c0",
+            },
+            Object {
+              "name": "Champions",
+              "uuid": "e0cccbcf-49be-4eef-88a7-ce2150a6d902",
+            },
+          ],
+          "type": "add_contact_groups",
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+        "originalNode": null,
+      }
+    }
     onChange={[MockFunction]}
   />
   <AssetSelector
@@ -145,6 +180,12 @@ exports[`UpdateContactForm render should render an empty form with no action 1`]
         "form": [Function],
         "name": "Update contact",
         "type": "set_contact_field",
+      }
+    }
+    nodeSettings={
+      Object {
+        "originalAction": null,
+        "originalNode": null,
       }
     }
     onChange={[MockFunction]}
