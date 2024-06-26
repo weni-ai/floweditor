@@ -73,6 +73,9 @@ export interface TembaSelectProps {
     functions: CompletionOption[];
     context: CompletionSchema;
   };
+  pagination?: {
+    selectorName: string;
+  };
 }
 
 interface TembaSelectState {
@@ -85,10 +88,10 @@ interface TembaSelectState {
   showOptions: boolean;
   input: string;
   fetchOnOpen?: boolean;
-  wppUrl?: string;
-  wppQuery?: string;
-  wppOptions?: any[];
-  wppInitialFetch?: boolean;
+  paginationUrl?: string;
+  paginationQuery?: string;
+  paginationOptions?: any[];
+  selectedInitalFetch?: boolean;
 }
 
 export class TembaSelect extends React.Component<
@@ -108,10 +111,10 @@ export class TembaSelect extends React.Component<
       availableExpressions: [],
       selectKey: 0,
       showOptions: false,
-      wppUrl: '',
-      wppQuery: '',
-      wppOptions: [],
-      wppInitialFetch: true,
+      paginationUrl: '',
+      paginationQuery: '',
+      paginationOptions: [],
+      selectedInitalFetch: true,
       currentQuery: '',
     };
 
@@ -138,11 +141,13 @@ export class TembaSelect extends React.Component<
     if (this.props.options !== prevProps.options) {
       this.setAvailableOptions(this.props.options || []);
     }
-    const element = document.getElementById(
-      'temba_select_options_manually_select_products',
-    );
-    if (element) {
-      element.addEventListener('scroll', this.handleScroll);
+    if (this.props.pagination && this.props.pagination.selectorName) {
+      const element = document.getElementById(
+        `temba_select_options_${snakify(this.props.pagination.selectorName)}`,
+      );
+      if (element) {
+        element.addEventListener('scroll', this.handleScroll);
+      }
     }
 
     if (
@@ -157,24 +162,24 @@ export class TembaSelect extends React.Component<
 
   handleScroll = () => {
     const element = document.getElementById(
-      'temba_select_options_manually_select_products',
+      `temba_select_options_${snakify(this.props.pagination.selectorName)}`,
     );
     if (element) {
       if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-        this.fetchWppProducts(this.state.wppUrl);
+        this.fetchPaginatedProducts(this.state.paginationUrl);
       }
     }
   };
 
-  private async fetchWppProducts(url: string) {
-    const { wppOptions, wppQuery } = this.state;
-    let options: any[] = wppOptions || [];
+  private async fetchPaginatedProducts(url: string) {
+    const { paginationOptions, paginationQuery } = this.state;
+    let options: any[] = paginationOptions || [];
     if (url) {
       const { data } = await axios.get(url);
       options = options.concat(data.results || []);
-      this.setState({ wppUrl: data.next });
-      this.setState({ wppOptions: options });
-      this.setAvailableOptions(options, wppQuery);
+      this.setState({ paginationUrl: data.next });
+      this.setState({ paginationOptions: options });
+      this.setAvailableOptions(options, paginationQuery);
     }
   }
 
@@ -258,9 +263,9 @@ export class TembaSelect extends React.Component<
   private async fetchOptions(query?: string) {
     const { assets, endpoint, queryParam } = this.props;
 
-    if (assets && assets.type === 'whatsapp_product') {
-      this.setState({ wppQuery: query });
-      this.setState({ wppOptions: [] });
+    if (this.props.pagination) {
+      this.setState({ paginationQuery: query });
+      this.setState({ paginationOptions: [] });
     }
     let url = assets ? assets.endpoint : endpoint;
 
@@ -276,12 +281,12 @@ export class TembaSelect extends React.Component<
           url += queryParam + '=' + encodeURIComponent(query || '');
         }
 
-        if (assets && assets.type === 'whatsapp_product') {
-          if (this.state.wppInitialFetch) {
-            this.fetchWppProducts(url);
-            this.setState({ wppInitialFetch: false });
+        if (this.props.pagination) {
+          if (this.state.selectedInitalFetch) {
+            this.fetchPaginatedProducts(url);
+            this.setState({ selectedInitalFetch: false });
           } else if (query && query.length > 2) {
-            this.fetchWppProducts(url);
+            this.fetchPaginatedProducts(url);
           }
           return;
         }
