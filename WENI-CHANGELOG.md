@@ -1,3 +1,7 @@
+2.16.0
+----------
+- Feat: Brain card
+
 2.15.1
 ----------
 - Refactor: Add Temba Select generic pagination
