@@ -1,3 +1,7 @@
+2.16.1
+----------
+- Fix: Brain card filter condition
+
 2.16.0
 ----------
 - Feat: Brain card

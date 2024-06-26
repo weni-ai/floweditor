@@ -50,8 +50,12 @@ const filterVisibility = (
       const typeItem = item as Type;
       if (typeItem.type === Types.call_brain) {
         // check if we can show the call brain action
-        // if we are in a multi action node, we can't show the call brain action
-        if (nodeSettings.originalNode.node.actions.length >= 1) {
+        // if we are not a ghost node
+        // and if we are in a multi action node, we can't show the call brain action
+        if (
+          nodeSettings.originalNode.node.actions.length >= 1 &&
+          !nodeSettings.originalNode.ghost
+        ) {
           return false;
         }
       }
