@@ -56,7 +56,6 @@ const filterVisibility = (
           nodeSettings.originalNode.node.actions.length >= 1 &&
           !nodeSettings.originalNode.ghost
         ) {
-          console.log('filter', nodeSettings);
           return false;
         }
       }
