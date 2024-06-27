@@ -91,6 +91,7 @@ export enum WhatsAppInteractionType {
   LIST = 'list',
   REPLIES = 'replies',
   LOCATION = 'location',
+  CTA = 'cta,',
 }
 
 export const WHATSAPP_MESSAGE_TYPE_SIMPLE: UnnnicSelectOption<
@@ -148,6 +149,13 @@ export const WHATSAPP_INTERACTION_TYPE_REPLIES: UnnnicSelectOption<
     'Create up to 3 quick replies with predefined messages',
   ),
 };
+export const WHATSAPP_INTERACTION_TYPE_CTA: UnnnicSelectOption<
+  WhatsAppInteractionType
+> = {
+  value: WhatsAppInteractionType.CTA,
+  label: 'CTA Button',
+  description: 'Add a button with a link to an external URL.',
+};
 
 export const WHATSAPP_INTERACTION_TYPE_LOCATION: UnnnicSelectOption<
   WhatsAppInteractionType
@@ -175,6 +183,7 @@ export const WHATSAPP_INTERACTION_TYPE_OPTIONS: UnnnicSelectOption<
   WHATSAPP_INTERACTION_TYPE_REPLIES,
   WHATSAPP_INTERACTION_TYPE_LIST,
   WHATSAPP_INTERACTION_TYPE_LOCATION,
+  WHATSAPP_INTERACTION_TYPE_CTA,
 ];
 
 export interface WhatsAppListItem {
@@ -197,6 +206,7 @@ export interface SendWhatsAppMsgFormState extends FormState {
   interactionType: UnnnicSelectOptionEntry<WhatsAppInteractionType>;
 
   buttonText: StringEntry;
+  buttonURL: StringEntry;
   listItems: FormEntry<WhatsAppListItem[]>;
   listItemTitleEntry: StringEntry;
   listItemDescriptionEntry: StringEntry;
@@ -214,6 +224,7 @@ interface UpdateKeys {
   footer?: string;
   interactionType?: UnnnicSelectOption<WhatsAppInteractionType>;
   buttonText?: string;
+  buttonURL?: string;
   listItems?: WhatsAppListItem[];
   removeListItem?: WhatsAppListItem;
   quickReplies?: string[];
@@ -650,6 +661,9 @@ export default class SendWhatsAppMsgForm extends React.Component<
   public handleButtonTextUpdate(buttonText: string): boolean {
     return this.handleUpdate({ buttonText });
   }
+  public handleButtonURLUpdate(buttonURL: string): boolean {
+    return this.handleUpdate({ buttonURL });
+  }
 
   public handleSave(): void {
     let valid = true;
@@ -848,6 +862,36 @@ export default class SendWhatsAppMsgForm extends React.Component<
             quickReplies={this.state.quickReplies}
             onQuickRepliesUpdated={this.handleQuickRepliesUpdate}
           />
+        )}
+        {interactionType === WhatsAppInteractionType.CTA && (
+          <div className={styles.cta_inputs}>
+            <div className={styles.action_button_text}>
+              <TextInputElement
+                placeholder={i18n.t('forms.ex_menu', 'Ex: Menu')}
+                name={'Texto de botão de ação'}
+                size={TextInputSizes.sm}
+                onChange={this.handleButtonTextUpdate}
+                entry={this.state.buttonText}
+                autocomplete={true}
+                showLabel={true}
+                maxLength={20}
+              />
+            </div>
+            <div>
+              <TextInputElement
+                placeholder={'Ex: https://www.menudorestaurante.com.br'}
+                name={i18n.t(
+                  'forms.list_button_text_optional',
+                  'Action Button Text (optional)',
+                )}
+                size={TextInputSizes.sm}
+                onChange={this.handleButtonURLUpdate}
+                entry={this.state.buttonURL}
+                autocomplete={true}
+                showLabel={true}
+              />
+            </div>
+          </div>
         )}
       </div>
     );

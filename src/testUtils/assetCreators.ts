@@ -383,6 +383,7 @@ export const createSendWhatsAppMsgAction = ({
   footer = '',
   interaction_type = WhatsAppInteractionType.LIST,
   button_text = '',
+  button_url = '',
   list_items = [],
   quick_replies = [],
 }: {
@@ -395,6 +396,7 @@ export const createSendWhatsAppMsgAction = ({
   footer?: string;
   interaction_type?: WhatsAppInteractionType;
   button_text?: string;
+  button_url?: string;
   list_items?: WhatsAppListItem[];
   quick_replies?: string[];
 } = {}): SendWhatsAppMsg => ({
@@ -408,6 +410,7 @@ export const createSendWhatsAppMsgAction = ({
   footer,
   interaction_type,
   button_text,
+  button_url,
   list_items,
   quick_replies,
 });
