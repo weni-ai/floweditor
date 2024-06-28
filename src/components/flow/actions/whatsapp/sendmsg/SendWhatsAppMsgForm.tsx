@@ -632,7 +632,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
       toUpdate.headerText = '';
       toUpdate.attachment = null;
       toUpdate.footer = '';
-    } else if (interactionType.value === WhatsAppInteractionType.LIST) {
+    } else if (
+      interactionType.value === WhatsAppInteractionType.LIST ||
+      interactionType.value === WhatsAppInteractionType.CTA
+    ) {
       toUpdate.attachment = null;
       toUpdate.headerType = WHATSAPP_HEADER_TYPE_TEXT;
     }
