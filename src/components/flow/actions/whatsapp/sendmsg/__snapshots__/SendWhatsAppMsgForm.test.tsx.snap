@@ -124,7 +124,7 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
               },
               Object {
                 "description": "Add a button with a link to an external URL.",
-                "label": "CTA Button",
+                "label": "URL Button",
                 "value": "cta,",
               },
             ]

@@ -25,7 +25,7 @@ import {
   onOpenNodeEditor,
   removeAction,
 } from 'store/thunks';
-import { createClickHandler, getLocalization } from 'utils';
+import { createClickHandler, getLocalization, renderIf } from 'utils';
 
 import styles from './Action.module.scss';
 import { hasIssues } from 'components/flow/helpers';
@@ -203,6 +203,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
       ? createClickHandler(this.handleActionClicked, () => this.props.selected)
       : {};
 
+    //aqui
     const body = (
       <>
         <TitleBar

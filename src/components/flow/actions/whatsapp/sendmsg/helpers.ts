@@ -50,7 +50,6 @@ export const initializeForm = (
         ),
       },
       headerText: { value: action.header_text || '' },
-      buttonURL: { value: action.button_url || '' },
       attachment: { value: attachment, validationFailures: [] },
       footer: { value: action.footer || '' },
       interactionType: {
@@ -60,6 +59,7 @@ export const initializeForm = (
           ) || WHATSAPP_INTERACTION_TYPE_NONE,
       },
       buttonText: { value: action.button_text || '' },
+      buttonURL: { value: action.button_url || '' },
       listItems: { value: action.list_items || [] },
       quickReplies: { value: action.quick_replies || [] },
 
