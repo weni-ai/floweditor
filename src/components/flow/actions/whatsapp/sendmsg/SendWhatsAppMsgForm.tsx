@@ -885,7 +885,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 entry={this.state.buttonText}
                 autocomplete={true}
                 showLabel={true}
-                maxLength={20}
+                maxLength={24}
               />
             </div>
             <div>
