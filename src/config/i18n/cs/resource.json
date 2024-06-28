@@ -346,7 +346,10 @@
     "webhook_header_name": "Název hlavičky",
     "webhook_header_summary": "Níže přidejte další záhlaví, která chcete zaslat spolu s žádostí.",
     "webhook_help": "Pokud váš server odpoví pomocí JSON, budou jednotlivé vlastnosti přidány do toku.",
-    "whatsapp_warning": "Odesílání zpráv přes kanál WhatsApp vyžaduje použití šablony, pokud jste od kontaktu v posledních 24 hodinách neobdrželi žádnou zprávu. Nastavení šablony pro použití přes WhatsApp je důležité zejména pro první zprávu v toku."
+    "whatsapp_warning": "Odesílání zpráv přes kanál WhatsApp vyžaduje použití šablony, pokud jste od kontaktu v posledních 24 hodinách neobdrželi žádnou zprávu. Nastavení šablony pro použití přes WhatsApp je důležité zejména pro první zprávu v toku.",
+    "action_button_text": "Text tlačítka akce",
+    "action_button_url": "URL tlačítka akce",
+    "action_button_url_placeholder": "Př: https://www.restaurantmenu.com"
   },
   "issues": {
     "header": "Problémy s tokem",

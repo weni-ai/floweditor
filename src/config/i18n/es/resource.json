@@ -501,7 +501,10 @@
     "list_button_text_optional": "Texto del botón de acción (opcional)",
     "ex_citrus_and_sweet": "Ej: Cítricos y dulces",
     "ex_orange": "Ej: Naranja",
-    "ex_menu": "Ej: Menú"
+    "ex_menu": "Ej: Menú",
+    "action_button_text": "Texto del botón de acción",
+    "action_button_url": "URL del botón de acción",
+    "action_button_url_placeholder": "Ej: https://www.menu-del-restaurante.com"
   },
   "issues": {
     "header": "Problemas de Flujo",

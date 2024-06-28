@@ -382,6 +382,14 @@ export default class SendWhatsAppMsgForm extends React.Component<
       );
     }
 
+    if (keys.hasOwnProperty('buttonURL')) {
+      updates.buttonURL = validate(
+        i18n.t('forms.list_button_url', 'Action button URL'),
+        keys.buttonURL,
+        [],
+      );
+    }
+
     let ensureEmptyListItem = false;
     if (keys.hasOwnProperty('listItems')) {
       updates.listItems = { value: keys.listItems };
@@ -871,7 +879,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
             <div className={styles.action_button_text}>
               <TextInputElement
                 placeholder={i18n.t('forms.ex_menu', 'Ex: Menu')}
-                name={'Texto de botão de ação'}
+                name={i18n.t('forms.action_button_text')}
                 size={TextInputSizes.sm}
                 onChange={this.handleButtonTextUpdate}
                 entry={this.state.buttonText}
@@ -882,8 +890,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
             </div>
             <div>
               <TextInputElement
-                placeholder={'Ex: https://www.menudorestaurante.com.br'}
-                name={'URL do botão de ação'}
+                placeholder={i18n.t('forms.action_button_URL_placeholder')}
+                name={i18n.t('forms.action_button_url')}
                 size={TextInputSizes.sm}
                 onChange={this.handleButtonURLUpdate}
                 entry={this.state.buttonURL}
