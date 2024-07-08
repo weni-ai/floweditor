@@ -25,7 +25,7 @@ import {
   onOpenNodeEditor,
   removeAction,
 } from 'store/thunks';
-import { createClickHandler, getLocalization, renderIf } from 'utils';
+import { createClickHandler, getLocalization } from 'utils';
 
 import styles from './Action.module.scss';
 import { hasIssues } from 'components/flow/helpers';
