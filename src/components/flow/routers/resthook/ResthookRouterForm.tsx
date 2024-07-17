@@ -103,6 +103,7 @@ export default class ResthookRouterForm extends React.PureComponent<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <AssetSelector
           name={i18n.t('forms.resthook', 'Resthook')}

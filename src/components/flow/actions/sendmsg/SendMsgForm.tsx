@@ -475,6 +475,7 @@ export default class SendMsgForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <TextInputElement
           name={i18n.t('forms.message', 'Message')}

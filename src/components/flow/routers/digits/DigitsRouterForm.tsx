@@ -88,6 +88,7 @@ export default class DigitsRouterForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <p className={styles.lead_in}>
           If the keypad entry before the # symbol..

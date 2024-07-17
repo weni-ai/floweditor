@@ -4,9 +4,13 @@
 <img src="https://github.com/Ilhasoft/weni-webapp/raw/main/src/assets/LogoWeniAnimada.svg" height="100" />
   
 [![codecov](https://codecov.io/gh/weni-ai/floweditor/branch/main/graph/badge.svg?token=TZHJ6L2U7R)](https://codecov.io/gh/weni-ai/weni-integrations-webapp) [![Build Status](https://github.com/weni-ai/floweditor/workflows/Build/badge.svg)](https://github.com/nyaruka/floweditor/actions?workflow=Build) [![License: MPL 2.0](https://img.shields.io/badge/License-AGPL_3.0-brightgreen.svg)](https://opensource.org/license/agpl-v3/)
+
 # :desktop_computer: Flow Editor
+
 </div>
+
 # About
+
 This is a flow editing tool designed for use within the [Flows Module](https://github.com/weni-ai/flows) suite of messaging tools but can be adopted for use outside of that ecosystem. The editor is a React component built with TypeScript and bundled with Webpack. It is open-sourced under the AGPL-3.0 license.
 > [Usability documentation](https://docs.weni.ai/l/pt)
 ![image](https://github.com/weni-ai/floweditor/assets/30026625/24b8c464-6f20-414f-87d2-3c0f5f696209)

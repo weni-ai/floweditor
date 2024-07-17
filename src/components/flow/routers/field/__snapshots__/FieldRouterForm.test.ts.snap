@@ -32,6 +32,70 @@ exports[`FieldRouterForm initializes 1`] = `
         "type": "split_by_contact_field",
       }
     }
+    nodeSettings={
+      Object {
+        "originalNode": Object {
+          "inboundConnections": Object {},
+          "node": Object {
+            "actions": Array [],
+            "exits": Array [
+              Object {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+              Object {
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "router": Object {
+              "cases": Array [
+                Object {
+                  "arguments": Array [
+                    "red",
+                  ],
+                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "type": "has_any_word",
+                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                },
+              ],
+              "categories": Array [
+                Object {
+                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  "name": "Red",
+                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                },
+                Object {
+                  "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "name": "Other",
+                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                },
+              ],
+              "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              "operand": "@input.text",
+              "result_name": "Color",
+              "type": "switch",
+              "wait": Object {
+                "type": "msg",
+              },
+            },
+            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          },
+          "ui": Object {
+            "config": Object {
+              "operand": Object {
+                "id": "name",
+                "name": "Name",
+                "type": "property",
+              },
+            },
+            "position": Object {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "split_by_contact_field",
+          },
+        },
+      }
+    }
     onChange={[MockFunction]}
   />
   <div
@@ -248,6 +312,71 @@ exports[`FieldRouterForm should render 1`] = `
         ],
         "name": "Split by contact field",
         "type": "split_by_contact_field",
+      }
+    }
+    nodeSettings={
+      Object {
+        "originalAction": null,
+        "originalNode": Object {
+          "inboundConnections": Object {},
+          "node": Object {
+            "actions": Array [],
+            "exits": Array [
+              Object {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+              Object {
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "router": Object {
+              "cases": Array [
+                Object {
+                  "arguments": Array [
+                    "red",
+                  ],
+                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "type": "has_any_word",
+                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                },
+              ],
+              "categories": Array [
+                Object {
+                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  "name": "Red",
+                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                },
+                Object {
+                  "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "name": "Other",
+                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                },
+              ],
+              "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              "operand": "@input.text",
+              "result_name": "Color",
+              "type": "switch",
+              "wait": Object {
+                "type": "msg",
+              },
+            },
+            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          },
+          "ui": Object {
+            "config": Object {
+              "operand": Object {
+                "id": "name",
+                "name": "Name",
+                "type": "property",
+              },
+            },
+            "position": Object {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "split_by_contact_field",
+          },
+        },
       }
     }
     onChange={[MockFunction]}

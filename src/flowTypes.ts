@@ -16,6 +16,7 @@ import {
   WhatsAppListItem,
   WhatsAppMessageType,
 } from './components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+import { BrainInfo } from './store/flowContext';
 
 // we don't concern ourselves with patch versions
 export const SPEC_VERSION = '13.1';
@@ -66,6 +67,7 @@ export interface Endpoints {
   completion: string;
   knowledgeBases: string;
   whatsapp_products: string;
+  brain: string;
 }
 
 export interface FlowEditorConfig {
@@ -510,6 +512,10 @@ export interface CallWeniGPT extends Action {
   knowledge_base: number;
   input: string;
   result_name: string;
+}
+
+export interface CallBrain extends Action {
+  brainInfo: BrainInfo;
 }
 
 export interface CallExternalService extends Action {

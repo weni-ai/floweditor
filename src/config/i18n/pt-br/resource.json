@@ -157,6 +157,10 @@
     "send_whatsapp_msg": {
       "name": "Mensagem do WhatsApp",
       "description": "Enviar uma mensagem do WhatsApp"
+    },
+    "call_brain": {
+      "name": "Chamar o Weni Brain",
+      "description": "Chamar o Weni Brain"
     }
   },
   "add": "Adicione",

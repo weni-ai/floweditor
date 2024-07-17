@@ -324,6 +324,7 @@ export default class TicketRouterForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         {showTicketers ? (
           <div>

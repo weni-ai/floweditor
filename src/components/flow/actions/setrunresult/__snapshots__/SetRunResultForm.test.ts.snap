@@ -28,6 +28,44 @@ exports[`SetRunResultForm render should render 1`] = `
         "type": "set_run_result",
       }
     }
+    nodeSettings={
+      Object {
+        "originalAction": Object {
+          "category": "",
+          "name": "Name",
+          "type": "set_run_result",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+          "value": "Grace",
+        },
+        "originalNode": Object {
+          "inboundConnections": Object {},
+          "node": Object {
+            "actions": Array [
+              Object {
+                "category": "",
+                "name": "Name",
+                "type": "set_run_result",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                "value": "Grace",
+              },
+            ],
+            "exits": Array [
+              Object {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+            ],
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "ui": Object {
+            "position": Object {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
     onChange={[MockFunction]}
   />
   <div
