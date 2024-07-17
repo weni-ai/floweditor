@@ -740,7 +740,10 @@
     "replies_description": "Crie até 3 respostas rápidas com mensagens predefinidas",
     "location": "Localização",
     "location_description": "Peça aos usuários sua localização para facilitar o atendimento",
-    "request_location": "Solicitar localização"
+    "request_location": "Solicitar localização",
+    "add_url": "Botão de URL",
+    "add_url_description": "Adicionar um botão com um link para uma URL externa."
+
   },
   "whatsapp_msg": {
     "list_items_required": "Pelo menos uma opção da lista deve ser preenchida",

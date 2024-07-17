@@ -153,8 +153,11 @@ export const WHATSAPP_INTERACTION_TYPE_CTA: UnnnicSelectOption<
   WhatsAppInteractionType
 > = {
   value: WhatsAppInteractionType.CTA,
-  label: 'URL Button',
-  description: 'Add a button with a link to an external URL.',
+  label: i18n.t('whatsapp_interactions.add_url', 'URL Button'),
+  description: i18n.t(
+    'whatsapp_interactions.add_url_description',
+    'Add a button with a link to an external URL.',
+  ),
 };
 
 export const WHATSAPP_INTERACTION_TYPE_LOCATION: UnnnicSelectOption<
@@ -890,7 +893,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
             </div>
             <div>
               <TextInputElement
-                placeholder={i18n.t('forms.action_button_URL_placeholder')}
+                placeholder={i18n.t('forms.action_button_url_placeholder')}
                 name={i18n.t('forms.action_button_url')}
                 size={TextInputSizes.sm}
                 onChange={this.handleButtonURLUpdate}
