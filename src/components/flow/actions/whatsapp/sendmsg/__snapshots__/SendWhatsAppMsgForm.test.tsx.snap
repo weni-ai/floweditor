@@ -40,6 +40,7 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
         "originalAction": Object {
           "attachment": null,
           "button_text": "",
+          "button_url": "",
           "footer": "",
           "header_text": "",
           "header_type": "media",
@@ -58,6 +59,7 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
               Object {
                 "attachment": null,
                 "button_text": "",
+                "button_url": "",
                 "footer": "",
                 "header_text": "",
                 "header_type": "media",
