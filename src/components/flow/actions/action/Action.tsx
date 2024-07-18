@@ -203,7 +203,6 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
       ? createClickHandler(this.handleActionClicked, () => this.props.selected)
       : {};
 
-    //aqui
     const body = (
       <>
         <TitleBar
