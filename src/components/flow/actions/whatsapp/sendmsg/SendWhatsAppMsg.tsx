@@ -3,12 +3,16 @@ import * as React from 'react';
 
 import styles from './SendWhatsAppMsg.module.scss';
 import Pill from '../../../../pill/Pill';
-import { WHATSAPP_INTERACTION_TYPE_LOCATION } from './SendWhatsAppMsgForm';
+import {
+  WHATSAPP_INTERACTION_TYPE_CTA,
+  WHATSAPP_INTERACTION_TYPE_LOCATION,
+} from './SendWhatsAppMsgForm';
 import { applyVueInReact } from 'vuereact-combined';
 
 // @ts-ignore
 import { unnnicIcon } from '@weni/unnnic-system';
 import { renderIf } from '../../../../../utils';
+import { OpenIcon } from '../OpenIcon';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -72,12 +76,20 @@ const SendWhatsAppMsgComp: React.FunctionComponent<SendWhatsAppMsg> = (
               {line}
             </div>
           ))}
-
         <div className={styles.icons}>
           {renderIf(!!action.attachment)(
             <div className={`${styles.attachment} fe-paperclip`} />,
           )}
-
+          {renderIf(
+            action.interaction_type === WHATSAPP_INTERACTION_TYPE_CTA.value,
+          )(
+            <div className={styles.cta_divider}>
+              <div className={styles.cta_icon}>
+                <OpenIcon />
+              </div>
+              <div className={styles.cta_button_text}>{action.button_text}</div>
+            </div>,
+          )}
           {renderIf(
             action.interaction_type ===
               WHATSAPP_INTERACTION_TYPE_LOCATION.value,

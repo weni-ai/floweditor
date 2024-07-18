@@ -420,7 +420,10 @@
     "ex_shop": "Ex: shopping",
     "ex_weni": "Ex: weni.ai",
     "ex_accept": "Ex: Accept",
-    "ex_application_json": "Ex: application/json"
+    "ex_application_json": "Ex: application/json",
+    "action_button_text": "Action button text",
+    "action_button_url": "Action button URL",
+    "action_button_url_placeholder": "Ex: https://www.restaurantmenu.com"
   },
   "issues": {
     "header": "Flow Issues",

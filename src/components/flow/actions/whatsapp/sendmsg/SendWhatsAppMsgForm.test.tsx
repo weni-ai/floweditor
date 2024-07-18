@@ -360,6 +360,48 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(props.updateAction).toMatchCallSnapshot();
     });
 
+    it('should not save changes with updated button url if no list items are provided', () => {
+      const {
+        instance,
+        props,
+      }: {
+        instance: SendWhatsAppMsgForm;
+        props: ActionFormProps | Partial<ActionFormProps>;
+      } = setup(true);
+      // msg is required if there is no attachment
+      instance.handleMessageUpdate('new msg', null);
+      instance.handleInteractionTypeUpdate([WHATSAPP_INTERACTION_TYPE_LIST]);
+
+      instance.handleButtonURLUpdate('new url text');
+      expect(instance.state).toMatchSnapshot();
+      instance.handleSave();
+      expect(props.updateAction).not.toHaveBeenCalled();
+      expect(instance.state).toMatchSnapshot();
+    });
+
+    it('should save changes with updated button url', () => {
+      const {
+        instance,
+        props,
+      }: {
+        instance: SendWhatsAppMsgForm;
+        props: ActionFormProps | Partial<ActionFormProps>;
+      } = setup(true);
+      // msg is required if there is no attachment
+      instance.handleMessageUpdate('new msg', null);
+      instance.handleInteractionTypeUpdate([WHATSAPP_INTERACTION_TYPE_LIST]);
+      instance.handleListItemsUpdate([
+        { uuid: '1', title: 'title 1', description: 'description 1' },
+        { uuid: '2', title: 'title 2', description: 'description 2' },
+      ]);
+
+      instance.handleButtonURLUpdate('new url text');
+      expect(instance.state).toMatchSnapshot();
+      instance.handleSave();
+      expect(props.updateAction).toHaveBeenCalled();
+      expect(props.updateAction).toMatchCallSnapshot();
+    });
+
     it('should save changes with updated quick replies', () => {
       const {
         instance,

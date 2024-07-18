@@ -505,7 +505,10 @@
     "list_button_text_optional": "Texto del botón de acción (opcional)",
     "ex_citrus_and_sweet": "Ej: Cítricos y dulces",
     "ex_orange": "Ej: Naranja",
-    "ex_menu": "Ej: Menú"
+    "ex_menu": "Ej: Menú",
+    "action_button_text": "Texto del botón de acción",
+    "action_button_url": "URL del botón de acción",
+    "action_button_url_placeholder": "Ej: https://www.menu-del-restaurante.com"
   },
   "issues": {
     "header": "Problemas de Flujo",
@@ -740,7 +743,10 @@
     "replies_description": "Crea hasta 3 respuestas rápidas con mensajes predefinidos",
     "location": "Ubicación",
     "location_description": "Preguntar a los usuarios su ubicación para facilitar el servicio",
-    "request_location": "Solicitar ubicación"
+    "request_location": "Solicitar ubicación",
+    "add_url": "Botón de URL",
+    "add_url_description": "Agregar un botón con un enlace a una URL externa."
+
   },
   "whatsapp_msg": {
     "list_items_required": "Se debe completar al menos una opción de lista",

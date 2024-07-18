@@ -40,6 +40,7 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
         "originalAction": Object {
           "attachment": null,
           "button_text": "",
+          "button_url": "",
           "footer": "",
           "header_text": "",
           "header_type": "media",
@@ -58,6 +59,7 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
               Object {
                 "attachment": null,
                 "button_text": "",
+                "button_url": "",
                 "footer": "",
                 "header_text": "",
                 "header_type": "media",
@@ -174,6 +176,11 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
                 "label": "Request Location",
                 "value": "location",
               },
+              Object {
+                "description": "Add a button with a link to an external URL.",
+                "label": "URL Button",
+                "value": "cta,",
+              },
             ]
           }
           orderedByIndex={true}
@@ -257,6 +264,9 @@ Object {
     "validationFailures": Array [],
     "value": "",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "validationFailures": Array [],
     "value": "new footer",
@@ -329,6 +339,9 @@ Object {
     "validationFailures": Array [],
     "value": "",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "validationFailures": Array [],
     "value": "new footer",
@@ -398,6 +411,9 @@ Object {
     "value": null,
   },
   "buttonText": Object {
+    "value": "",
+  },
+  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -472,6 +488,9 @@ Object {
     "validationFailures": Array [],
     "value": "",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
   },
@@ -544,6 +563,9 @@ Object {
     "validationFailures": Array [],
     "value": "new button text",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
   },
@@ -615,6 +637,9 @@ Object {
     "validationFailures": Array [],
     "value": "new button text",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
   },
@@ -676,6 +701,156 @@ Object {
 }
 `;
 
+exports[`SendWhatsAppMsgForm updates should not save changes with updated button url if no list items are provided 1`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "buttonURL": Object {
+    "validationFailures": Array [],
+    "value": "new url text",
+  },
+  "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "validationFailures": Array [
+      Object {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": Array [
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+      },
+    ],
+  },
+  "message": Object {
+    "validationFailures": Array [],
+    "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": Object {
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": false,
+}
+`;
+
+exports[`SendWhatsAppMsgForm updates should not save changes with updated button url if no list items are provided 2`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "buttonURL": Object {
+    "validationFailures": Array [],
+    "value": "new url text",
+  },
+  "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "validationFailures": Array [
+      Object {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": Array [
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+      },
+    ],
+  },
+  "message": Object {
+    "validationFailures": Array [],
+    "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": Object {
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": false,
+}
+`;
+
 exports[`SendWhatsAppMsgForm updates should not save if message is empty and there is no attachment 1`] = `
 Object {
   "attachment": Object {
@@ -683,6 +858,9 @@ Object {
     "value": null,
   },
   "buttonText": Object {
+    "value": "",
+  },
+  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -757,6 +935,9 @@ Object {
   "buttonText": Object {
     "value": "",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
   },
@@ -819,6 +1000,9 @@ Object {
     "value": null,
   },
   "buttonText": Object {
+    "value": "",
+  },
+  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -899,6 +1083,9 @@ Object {
     },
   },
   "buttonText": Object {
+    "value": "",
+  },
+  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -982,6 +1169,9 @@ Object {
   "buttonText": Object {
     "value": "",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
   },
@@ -1058,6 +1248,9 @@ Object {
     "validationFailures": Array [],
     "value": "",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "validationFailures": Array [],
     "value": "",
@@ -1090,7 +1283,7 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "19c23626-6961-4683-9cae-38dd767614f3",
+        "uuid": "666613f2-2d4f-432c-a707-929481961e98",
       },
     ],
   },
@@ -1124,7 +1317,7 @@ Array [
     "messageType": "interactive",
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
+    "uuid": "6b121177-6eef-48b3-8f6d-eef2154a0e10",
   },
 ]
 `;
@@ -1140,6 +1333,9 @@ Object {
     },
   },
   "buttonText": Object {
+    "value": "",
+  },
+  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1217,6 +1413,9 @@ Object {
   "buttonText": Object {
     "validationFailures": Array [],
     "value": "new button text",
+  },
+  "buttonURL": Object {
+    "value": "",
   },
   "footer": Object {
     "value": "",
@@ -1310,6 +1509,112 @@ Array [
 ]
 `;
 
+exports[`SendWhatsAppMsgForm updates should save changes with updated button url 1`] = `
+Object {
+  "attachment": Object {
+    "validationFailures": Array [],
+    "value": null,
+  },
+  "buttonText": Object {
+    "validationFailures": Array [],
+    "value": "",
+  },
+  "buttonURL": Object {
+    "validationFailures": Array [],
+    "value": "new url text",
+  },
+  "footer": Object {
+    "value": "",
+  },
+  "headerText": Object {
+    "value": "",
+  },
+  "headerType": Object {
+    "value": Object {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": Object {
+    "value": Object {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": Object {
+    "value": "",
+  },
+  "listItemTitleEntry": Object {
+    "value": "",
+  },
+  "listItems": Object {
+    "value": Array [
+      Object {
+        "description": "description 1",
+        "title": "title 1",
+        "uuid": "1",
+      },
+      Object {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+      Object {
+        "description": "",
+        "title": "",
+        "uuid": "19c23626-6961-4683-9cae-38dd767614f3",
+      },
+    ],
+  },
+  "message": Object {
+    "validationFailures": Array [],
+    "value": "new msg",
+  },
+  "messageType": Object {
+    "value": Object {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": Object {
+    "value": Array [
+      "",
+    ],
+  },
+  "quickReplyEntry": Object {
+    "value": "",
+  },
+  "valid": true,
+}
+`;
+
+exports[`SendWhatsAppMsgForm updates should save changes with updated button url 2`] = `
+Array [
+  Object {
+    "button_url": "new url text",
+    "header_type": "text",
+    "interaction_type": "list",
+    "list_items": Array [
+      Object {
+        "description": "description 1",
+        "title": "title 1",
+        "uuid": "1",
+      },
+      Object {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+    ],
+    "messageType": "interactive",
+    "text": "new msg",
+    "type": "send_whatsapp_msg",
+    "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
+  },
+]
+`;
+
 exports[`SendWhatsAppMsgForm updates should save changes with updated footer 1`] = `
 Object {
   "attachment": Object {
@@ -1318,6 +1623,9 @@ Object {
   },
   "buttonText": Object {
     "validationFailures": Array [],
+    "value": "",
+  },
+  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1405,6 +1713,9 @@ Object {
     "validationFailures": Array [],
     "value": "",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
   },
@@ -1488,6 +1799,9 @@ Object {
   },
   "buttonText": Object {
     "validationFailures": Array [],
+    "value": "",
+  },
+  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1591,6 +1905,9 @@ Object {
     "validationFailures": Array [],
     "value": "",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
   },
@@ -1665,6 +1982,9 @@ Object {
   },
   "buttonText": Object {
     "validationFailures": Array [],
+    "value": "",
+  },
+  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1758,6 +2078,9 @@ Object {
   "buttonText": Object {
     "value": "",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
   },
@@ -1835,6 +2158,9 @@ Object {
     "validationFailures": Array [],
     "value": "",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
   },
@@ -1865,7 +2191,7 @@ Object {
       Object {
         "description": "",
         "title": "",
-        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+        "uuid": "e44fa695-257c-4cdd-baf7-bb485aa2d1a0",
       },
     ],
   },
@@ -1905,7 +2231,7 @@ Array [
     ],
     "text": "new msg",
     "type": "send_whatsapp_msg",
-    "uuid": "1cc6cd43-ca71-4502-9b3b-e2b0425293b7",
+    "uuid": "b88f2d42-530b-43d7-867b-a22e299200ae",
   },
 ]
 `;
@@ -1921,6 +2247,9 @@ Object {
     },
   },
   "buttonText": Object {
+    "value": "",
+  },
+  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1998,6 +2327,9 @@ Object {
   "buttonText": Object {
     "value": "",
   },
+  "buttonURL": Object {
+    "value": "",
+  },
   "footer": Object {
     "value": "",
   },
@@ -2060,6 +2392,9 @@ Object {
     "value": null,
   },
   "buttonText": Object {
+    "value": "",
+  },
+  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -2125,6 +2460,9 @@ Object {
     "value": null,
   },
   "buttonText": Object {
+    "value": "",
+  },
+  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
