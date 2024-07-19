@@ -38,9 +38,9 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
     nodeSettings={
       Object {
         "originalAction": Object {
+          "action_url": "",
           "attachment": null,
           "button_text": "",
-          "button_url": "",
           "footer": "",
           "header_text": "",
           "header_type": "media",
@@ -57,9 +57,9 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
           "node": Object {
             "actions": Array [
               Object {
+                "action_url": "",
                 "attachment": null,
                 "button_text": "",
-                "button_url": "",
                 "footer": "",
                 "header_text": "",
                 "header_type": "media",
@@ -179,7 +179,7 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
               Object {
                 "description": "Add a button with a link to an external URL.",
                 "label": "URL Button",
-                "value": "cta,",
+                "value": "cta_url",
               },
             ]
           }
@@ -256,15 +256,15 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
 
 exports[`SendWhatsAppMsgForm updates should not save changes if footer is filled but there are no replies or list items 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
     "validationFailures": Array [],
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -331,15 +331,15 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should not save changes if footer is filled but there are no replies or list items 2`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
     "validationFailures": Array [],
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -406,14 +406,14 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should not save changes if header is set to text and filled but there are no replies or list items 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -480,15 +480,15 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should not save changes if header is set to text and filled but there are no replies or list items 2`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
     "validationFailures": Array [],
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -555,6 +555,9 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should not save changes with updated button text if no list items are provided 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
@@ -562,9 +565,6 @@ Object {
   "buttonText": Object {
     "validationFailures": Array [],
     "value": "new button text",
-  },
-  "buttonURL": Object {
-    "value": "",
   },
   "footer": Object {
     "value": "",
@@ -629,6 +629,9 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should not save changes with updated button text if no list items are provided 2`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
@@ -636,9 +639,6 @@ Object {
   "buttonText": Object {
     "validationFailures": Array [],
     "value": "new button text",
-  },
-  "buttonURL": Object {
-    "value": "",
   },
   "footer": Object {
     "value": "",
@@ -703,6 +703,10 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should not save changes with updated button url if no list items are provided 1`] = `
 Object {
+  "actionURL": Object {
+    "validationFailures": Array [],
+    "value": "new url text",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
@@ -710,10 +714,6 @@ Object {
   "buttonText": Object {
     "validationFailures": Array [],
     "value": "",
-  },
-  "buttonURL": Object {
-    "validationFailures": Array [],
-    "value": "new url text",
   },
   "footer": Object {
     "value": "",
@@ -778,6 +778,10 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should not save changes with updated button url if no list items are provided 2`] = `
 Object {
+  "actionURL": Object {
+    "validationFailures": Array [],
+    "value": "new url text",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
@@ -785,10 +789,6 @@ Object {
   "buttonText": Object {
     "validationFailures": Array [],
     "value": "",
-  },
-  "buttonURL": Object {
-    "validationFailures": Array [],
-    "value": "new url text",
   },
   "footer": Object {
     "value": "",
@@ -853,14 +853,14 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should not save if message is empty and there is no attachment 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -924,6 +924,9 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should save changes after remove attachment 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": Object {
@@ -933,9 +936,6 @@ Object {
     },
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -995,14 +995,14 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should save changes after remove attachment 2`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1074,6 +1074,9 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes if header is set to media and filled, and there are no replies or list items 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": Object {
@@ -1083,9 +1086,6 @@ Object {
     },
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1158,6 +1158,9 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes if header is set to media and filled, and there is no message 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": Object {
@@ -1167,9 +1170,6 @@ Object {
     },
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1240,15 +1240,15 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes when interaction type is location 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
     "validationFailures": Array [],
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1324,6 +1324,9 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes with updated attachment by url 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": Object {
@@ -1333,9 +1336,6 @@ Object {
     },
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1406,6 +1406,9 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes with updated button text 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
@@ -1413,9 +1416,6 @@ Object {
   "buttonText": Object {
     "validationFailures": Array [],
     "value": "new button text",
-  },
-  "buttonURL": Object {
-    "value": "",
   },
   "footer": Object {
     "value": "",
@@ -1511,6 +1511,10 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes with updated button url 1`] = `
 Object {
+  "actionURL": Object {
+    "validationFailures": Array [],
+    "value": "new url text",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
@@ -1518,10 +1522,6 @@ Object {
   "buttonText": Object {
     "validationFailures": Array [],
     "value": "",
-  },
-  "buttonURL": Object {
-    "validationFailures": Array [],
-    "value": "new url text",
   },
   "footer": Object {
     "value": "",
@@ -1592,7 +1592,7 @@ Object {
 exports[`SendWhatsAppMsgForm updates should save changes with updated button url 2`] = `
 Array [
   Object {
-    "button_url": "new url text",
+    "action_url": "new url text",
     "header_type": "text",
     "interaction_type": "list",
     "list_items": Array [
@@ -1617,15 +1617,15 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes with updated footer 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
     "validationFailures": Array [],
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1705,15 +1705,15 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes with updated header 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
     "validationFailures": Array [],
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1793,15 +1793,15 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes with updated list items 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
     "validationFailures": Array [],
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1897,15 +1897,15 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes with updated list items after a removal 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
     "validationFailures": Array [],
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -1976,15 +1976,15 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should save changes with updated list items after a removal 2`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
     "validationFailures": Array [],
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -2071,14 +2071,14 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes with updated message 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -2150,15 +2150,15 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes with updated quick replies 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
     "validationFailures": Array [],
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -2238,6 +2238,9 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should save changes with updated upload attachment 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": Object {
@@ -2247,9 +2250,6 @@ Object {
     },
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -2320,14 +2320,14 @@ Array [
 
 exports[`SendWhatsAppMsgForm updates should switch message type to interactive and go back to simple if desired 1`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -2387,14 +2387,14 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should switch message type to interactive and go back to simple if desired 2`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {
@@ -2455,14 +2455,14 @@ Object {
 
 exports[`SendWhatsAppMsgForm updates should switch message type to interactive and go back to simple if desired 3`] = `
 Object {
+  "actionURL": Object {
+    "value": "",
+  },
   "attachment": Object {
     "validationFailures": Array [],
     "value": null,
   },
   "buttonText": Object {
-    "value": "",
-  },
-  "buttonURL": Object {
     "value": "",
   },
   "footer": Object {

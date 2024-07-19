@@ -91,7 +91,7 @@ export enum WhatsAppInteractionType {
   LIST = 'list',
   REPLIES = 'replies',
   LOCATION = 'location',
-  CTA = 'cta,',
+  CTA = 'cta_url',
 }
 
 export const WHATSAPP_MESSAGE_TYPE_SIMPLE: UnnnicSelectOption<
@@ -209,7 +209,7 @@ export interface SendWhatsAppMsgFormState extends FormState {
   interactionType: UnnnicSelectOptionEntry<WhatsAppInteractionType>;
 
   buttonText: StringEntry;
-  buttonURL: StringEntry;
+  actionURL: StringEntry;
   listItems: FormEntry<WhatsAppListItem[]>;
   listItemTitleEntry: StringEntry;
   listItemDescriptionEntry: StringEntry;
@@ -227,7 +227,7 @@ interface UpdateKeys {
   footer?: string;
   interactionType?: UnnnicSelectOption<WhatsAppInteractionType>;
   buttonText?: string;
-  buttonURL?: string;
+  actionURL?: string;
   listItems?: WhatsAppListItem[];
   removeListItem?: WhatsAppListItem;
   quickReplies?: string[];
@@ -385,10 +385,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
       );
     }
 
-    if (keys.hasOwnProperty('buttonURL')) {
-      updates.buttonURL = validate(
+    if (keys.hasOwnProperty('actionURL')) {
+      updates.actionURL = validate(
         i18n.t('forms.list_button_url', 'Action button URL'),
-        keys.buttonURL,
+        keys.actionURL,
         [],
       );
     }
@@ -675,8 +675,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
   public handleButtonTextUpdate(buttonText: string): boolean {
     return this.handleUpdate({ buttonText });
   }
-  public handleButtonURLUpdate(buttonURL: string): boolean {
-    return this.handleUpdate({ buttonURL });
+  public handleActionURLUpdate(actionURL: string): boolean {
+    return this.handleUpdate({ actionURL });
   }
 
   public handleSave(): void {
@@ -896,8 +896,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 placeholder={i18n.t('forms.action_button_url_placeholder')}
                 name={i18n.t('forms.action_button_url')}
                 size={TextInputSizes.sm}
-                onChange={this.handleButtonURLUpdate}
-                entry={this.state.buttonURL}
+                onChange={this.handleActionURLUpdate}
+                entry={this.state.actionURL}
                 autocomplete={true}
                 showLabel={true}
               />
