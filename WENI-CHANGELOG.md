@@ -1,3 +1,7 @@
+2.16.2
+----------
+- Feat: URL button to WhatsApp Card.
+
 2.16.1
 ----------
 - Fix: Brain card filter condition
