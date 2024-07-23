@@ -400,7 +400,7 @@ export interface SendWhatsAppMsg extends Action {
   footer: string;
   interaction_type: WhatsAppInteractionType;
   button_text: string;
-  button_url: string;
+  action_url: string;
   list_items: WhatsAppListItem[];
   quick_replies: string[];
 }

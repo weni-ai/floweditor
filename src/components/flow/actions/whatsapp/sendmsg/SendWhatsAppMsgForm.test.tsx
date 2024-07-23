@@ -372,7 +372,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       instance.handleMessageUpdate('new msg', null);
       instance.handleInteractionTypeUpdate([WHATSAPP_INTERACTION_TYPE_LIST]);
 
-      instance.handleButtonURLUpdate('new url text');
+      instance.handleActionURLUpdate('new url text');
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).not.toHaveBeenCalled();
@@ -395,7 +395,7 @@ describe(SendWhatsAppMsgForm.name, () => {
         { uuid: '2', title: 'title 2', description: 'description 2' },
       ]);
 
-      instance.handleButtonURLUpdate('new url text');
+      instance.handleActionURLUpdate('new url text');
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
