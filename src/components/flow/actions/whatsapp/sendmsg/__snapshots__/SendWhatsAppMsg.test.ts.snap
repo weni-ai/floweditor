@@ -2,9 +2,9 @@
 
 exports[`SendWhatsAppMsgComp render should render attachment items when passed 1`] = `
 <SendWhatsAppMsgComp
-  action_url=""
   attachment={true}
   button_text=""
+  button_url=""
   footer=""
   header_text=""
   header_type="media"
@@ -36,9 +36,9 @@ exports[`SendWhatsAppMsgComp render should render attachment items when passed 1
 
 exports[`SendWhatsAppMsgComp render should render list items when passed 1`] = `
 <SendWhatsAppMsgComp
-  action_url=""
   attachment={null}
   button_text=""
+  button_url=""
   footer=""
   header_text=""
   header_type="media"
@@ -286,9 +286,9 @@ exports[`SendWhatsAppMsgComp render should render list items when passed 1`] = `
 
 exports[`SendWhatsAppMsgComp render should render quick replies list when passed 1`] = `
 <SendWhatsAppMsgComp
-  action_url=""
   attachment={null}
   button_text=""
+  button_url=""
   footer=""
   header_text=""
   header_type="media"
@@ -533,9 +533,9 @@ exports[`SendWhatsAppMsgComp render should render quick replies list when passed
 
 exports[`SendWhatsAppMsgComp render should render text prop when passed 1`] = `
 <SendWhatsAppMsgComp
-  action_url=""
   attachment={null}
   button_text=""
+  button_url=""
   footer=""
   header_text=""
   header_type="media"
