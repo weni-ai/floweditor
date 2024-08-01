@@ -7,6 +7,7 @@ exports[`Root > instance methods > componentDidMount > should call action creato
       {
         "activity": "",
         "attachments": "/assets/attachments.json",
+        "brain": "/assets/brain.json",
         "channels": "/assets/channels.json",
         "classifiers": "/assets/classifiers.json",
         "completion": "/assets/completion.json",

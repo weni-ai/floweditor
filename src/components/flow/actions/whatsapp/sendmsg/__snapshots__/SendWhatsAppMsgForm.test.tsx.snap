@@ -35,6 +35,60 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
         "type": "send_msg",
       }
     }
+    nodeSettings={
+      {
+        "originalAction": {
+          "action_url": "",
+          "attachment": null,
+          "button_text": "",
+          "footer": "",
+          "header_text": "",
+          "header_type": "media",
+          "interaction_type": "list",
+          "list_items": [],
+          "messageType": "simple",
+          "quick_replies": [],
+          "text": "",
+          "type": "send_msg",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "action_url": "",
+                "attachment": null,
+                "button_text": "",
+                "footer": "",
+                "header_text": "",
+                "header_type": "media",
+                "interaction_type": "list",
+                "list_items": [],
+                "messageType": "simple",
+                "quick_replies": [],
+                "text": "",
+                "type": "send_msg",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": [
+              {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+            ],
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
     onChange={[MockFunction spy]}
   />
   <section
@@ -111,7 +165,7 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
                 "label": "Request Location",
                 "value": "location",
               },
-              Object {
+              {
                 "description": "Add a button with a link to an external URL.",
                 "label": "URL Button",
                 "value": "cta_url",
@@ -204,6 +258,9 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
 
 exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is filled but there are no replies or list items 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -276,6 +333,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
 
 exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is filled but there are no replies or list items 2`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -348,6 +408,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
 
 exports[`SendWhatsAppMsgForm > updates > should not save changes if header is set to text and filled but there are no replies or list items 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -419,6 +482,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
 
 exports[`SendWhatsAppMsgForm > updates > should not save changes if header is set to text and filled but there are no replies or list items 2`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -491,6 +557,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
 
 exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button text if no list items are provided 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -562,6 +631,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
 
 exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button text if no list items are provided 2`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -631,8 +703,161 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
 }
 `;
 
+exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button url if no list items are provided 1`] = `
+{
+  "actionURL": {
+    "validationFailures": [],
+    "value": "new url text",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "validationFailures": [
+      {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": false,
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button url if no list items are provided 2`] = `
+{
+  "actionURL": {
+    "validationFailures": [],
+    "value": "new url text",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "validationFailures": [
+      {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": false,
+}
+`;
+
 exports[`SendWhatsAppMsgForm > updates > should not save if message is empty and there is no attachment 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -701,6 +926,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save if message is empty and
 
 exports[`SendWhatsAppMsgForm > updates > should save changes after remove attachment 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": {
@@ -769,6 +997,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
 
 exports[`SendWhatsAppMsgForm > updates > should save changes after remove attachment 2`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -855,6 +1086,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
 
 exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to media and filled, and there are no replies or list items 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": {
@@ -946,6 +1180,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
 
 exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to media and filled, and there is no message 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": {
@@ -1035,6 +1272,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
 
 exports[`SendWhatsAppMsgForm > updates > should save changes when interaction type is location 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -1111,7 +1351,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
         "messageType": "interactive",
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
+        "uuid": "6b121177-6eef-48b3-8f6d-eef2154a0e10",
       },
     ],
   ],
@@ -1126,6 +1366,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
 
 exports[`SendWhatsAppMsgForm > updates > should save changes with updated attachment by url 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": {
@@ -1215,6 +1458,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated attach
 
 exports[`SendWhatsAppMsgForm > updates > should save changes with updated button text 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -1325,8 +1571,127 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
 }
 `;
 
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated button url 1`] = `
+{
+  "actionURL": {
+    "validationFailures": [],
+    "value": "new url text",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "description 1",
+        "title": "title 1",
+        "uuid": "1",
+      },
+      {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+      {
+        "description": "",
+        "title": "",
+        "uuid": "19c23626-6961-4683-9cae-38dd767614f3",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated button url 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "action_url": "new url text",
+        "header_type": "text",
+        "interaction_type": "list",
+        "list_items": [
+          {
+            "description": "description 1",
+            "title": "title 1",
+            "uuid": "1",
+          },
+          {
+            "description": "description 2",
+            "title": "title 2",
+            "uuid": "2",
+          },
+        ],
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
 exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -1422,6 +1787,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer
 
 exports[`SendWhatsAppMsgForm > updates > should save changes with updated header 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -1517,6 +1885,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated header
 
 exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -1628,6 +1999,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
 
 exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items after a removal 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -1704,6 +2078,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
 
 exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items after a removal 2`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -1806,6 +2183,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
 
 exports[`SendWhatsAppMsgForm > updates > should save changes with updated message 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -1892,6 +2272,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated messag
 
 exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick replies 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -1972,7 +2355,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
         ],
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "1cc6cd43-ca71-4502-9b3b-e2b0425293b7",
+        "uuid": "b88f2d42-530b-43d7-867b-a22e299200ae",
       },
     ],
   ],
@@ -1987,6 +2370,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
 
 exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload attachment 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": {
@@ -2076,6 +2462,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload
 
 exports[`SendWhatsAppMsgForm > updates > should switch message type to interactive and go back to simple if desired 1`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -2140,6 +2529,9 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
 
 exports[`SendWhatsAppMsgForm > updates > should switch message type to interactive and go back to simple if desired 2`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,
@@ -2205,6 +2597,9 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
 
 exports[`SendWhatsAppMsgForm > updates > should switch message type to interactive and go back to simple if desired 3`] = `
 {
+  "actionURL": {
+    "value": "",
+  },
   "attachment": {
     "validationFailures": [],
     "value": null,

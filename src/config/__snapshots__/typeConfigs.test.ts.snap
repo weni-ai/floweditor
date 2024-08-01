@@ -150,6 +150,24 @@ exports[`typeConfigs > should provide type configs 1`] = `
   },
   {
     "aliases": [
+      "call_brain",
+    ],
+    "component": [Function],
+    "description": "Call Weni Brain",
+    "filter": "brain",
+    "form": {
+      "$$typeof": Symbol(react.memo),
+      "WrappedComponent": [Function],
+      "compare": null,
+      "displayName": "Connect(BrainForm)",
+      "type": [Function],
+    },
+    "name": "Call Weni Brain",
+    "new": true,
+    "type": "call_brain",
+  },
+  {
+    "aliases": [
       "split_by_wenigpt",
     ],
     "component": [Function],
@@ -568,6 +586,24 @@ exports[`typeConfigs > should provide type configs 2`] = `
       "messaging_background",
       "voice",
     ],
+  },
+  "call_brain": {
+    "aliases": [
+      "call_brain",
+    ],
+    "component": [Function],
+    "description": "Call Weni Brain",
+    "filter": "brain",
+    "form": {
+      "$$typeof": Symbol(react.memo),
+      "WrappedComponent": [Function],
+      "compare": null,
+      "displayName": "Connect(BrainForm)",
+      "type": [Function],
+    },
+    "name": "Call Weni Brain",
+    "new": true,
+    "type": "call_brain",
   },
   "call_classifier": {
     "aliases": [

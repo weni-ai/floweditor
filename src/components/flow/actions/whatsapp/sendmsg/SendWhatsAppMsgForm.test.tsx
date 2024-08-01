@@ -399,7 +399,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should save changes with updated quick replies', () => {
