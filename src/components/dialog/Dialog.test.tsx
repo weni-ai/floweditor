@@ -9,9 +9,9 @@ const baseProps: DialogProps = {
   headerClass: 'header-class',
   headerStyle: HeaderStyle.BARBER,
   buttons: {
-    primary: { name: 'Ok', onClick: jest.fn() },
-    secondary: { name: 'Cancel', onClick: jest.fn() },
-    tertiary: { name: 'Other', onClick: jest.fn() },
+    primary: { name: 'Ok', onClick: vi.fn() },
+    secondary: { name: 'Cancel', onClick: vi.fn() },
+    tertiary: { name: 'Other', onClick: vi.fn() },
   },
   gutter: <div>The Gutter</div>,
 };

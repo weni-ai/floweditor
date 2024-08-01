@@ -1,5 +1,4 @@
-@import 'variables.module.scss';
-@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
+@import 'src/variables.module.scss';
 
 .titlebar {
   padding: 0px;
@@ -66,6 +65,7 @@
     .remove_button {
       visibility: visible;
     }
+
     .up_button {
       visibility: visible;
     }

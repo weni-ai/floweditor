@@ -2,17 +2,12 @@ import { react as bindCallbacks } from 'auto-bind';
 import { FormElementProps } from 'components/form/FormElement';
 import * as React from 'react';
 import { StringEntry, ValidationFailure } from 'store/nodeEditor';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 import { count as SmsCount } from 'sms-length';
 import i18n from 'config/i18n';
 
-import {
-  unnnicTextArea,
-  unnnicInput,
-  unnnicIcon,
-  unnnicToolTip,
-  // @ts-ignore
-} from '@weni/unnnic-system';
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
 
 import styles from './TextInputElement.module.scss';
 import TembaCompletion from '../../../temba/TembaCompletion';
@@ -55,16 +50,16 @@ export interface TextInputProps extends FormElementProps {
   onKeyDown?: () => void;
 }
 
-const UnnnicTextArea = applyVueInReact(unnnicTextArea);
-const UnnnicInput = applyVueInReact(unnnicInput, {
+const UnnnicTextArea = applyVueInReact(Unnnic.unnnicTextArea);
+const UnnnicInput = applyVueInReact(Unnnic.unnnicInput, {
   vue: {
     componentWrapAttrs: {
       'unnnic-input': 'true',
     },
   },
 });
-const UnnnicIcon = applyVueInReact(unnnicIcon);
-const UnnnicToolTip = applyVueInReact(unnnicToolTip);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
+const UnnnicToolTip = applyVueInReact(Unnnic.unnnicToolTip);
 
 export default class TextInputElement extends React.Component<TextInputProps> {
   private inputItem: React.RefObject<any> = React.createRef();
@@ -88,7 +83,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
 
   public componentDidMount(): void {
     if (this.inputItem.current) {
-      this.inputItem.current.vueRef.$el
+      this.inputItem.current
         .querySelector('input')
         .addEventListener('keydown', () => {
           if (this.props.onKeyDown) {
@@ -96,7 +91,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           }
         });
 
-      this.inputItem.current.vueRef.$el
+      this.inputItem.current
         .querySelector('input')
         .addEventListener(
           'keypress',
@@ -164,11 +159,11 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           <UnnnicTextArea
             data-testid={this.props.name}
             className={styles.textarea}
-            value={this.props.entry.value}
-            on={{
-              input: (value: string) =>
+            v-model={[
+              this.props.entry.value,
+              (value: string) =>
                 this.handleChange({ currentTarget: { value } }),
-            }}
+            ]}
             label={this.props.showLabel ? this.props.name : null}
             placeholder={this.props.placeholder}
             size={this.props.size || TextInputSizes.sm}
@@ -185,13 +180,13 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           <div
             className={`${styles.sms_counter} u font secondary body-md color-neutral-cloudy`}
           >
-            {SmsCount(this.props.entry.value).length} /{' '}
-            {SmsCount(this.props.entry.value).messages}
+            {SmsCount(this.props.entry.value || '').length} /{' '}
+            {SmsCount(this.props.entry.value || '').messages}
             <UnnnicToolTip
               enabled
               text={i18n.t('forms.sms_counter_info', {
-                characters: SmsCount(this.props.entry.value).length,
-                messages: SmsCount(this.props.entry.value).messages,
+                characters: SmsCount(this.props.entry.value || '').length,
+                messages: SmsCount(this.props.entry.value || '').messages,
               })}
               side="top"
               maxWidth="180px"
@@ -223,17 +218,16 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             maxLength={this.props.maxLength}
           />
         ) : (
-          <div data-testid={this.props.name}>
+          <div data-testid={this.props.name} ref={this.inputItem}>
             <UnnnicInput
-              value={this.props.entry.value}
-              on={{
-                input: (value: string) =>
+              v-model={[
+                this.props.entry.value,
+                (value: string) =>
                   this.handleChange({ currentTarget: { value } }),
-              }}
+              ]}
               label={this.props.showLabel ? this.props.name : null}
               placeholder={this.props.placeholder}
               size={this.props.size || TextInputSizes.sm}
-              ref={this.inputItem}
               message={hasError ? errorList[0] : null}
               maxlength={this.props.maxLength}
               iconRight={this.props.iconRight}

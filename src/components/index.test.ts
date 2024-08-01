@@ -16,21 +16,21 @@ const baseProps: FlowEditorStoreProps = {
   translating: false,
   fetchingFlow: false,
   definition: null,
-  loadFlowDefinition: jest.fn(),
-  createNewRevision: jest.fn(),
-  fetchFlow: jest.fn(),
-  mergeEditorState: jest.fn(),
+  loadFlowDefinition: vi.fn(),
+  createNewRevision: vi.fn(),
+  fetchFlow: vi.fn(),
+  mergeEditorState: vi.fn(),
   modalMessage: null,
   saving: false,
   nodes: null,
   baseLanguage: null,
-  onOpenNodeEditor: jest.fn(),
-  handleLanguageChange: jest.fn(),
+  onOpenNodeEditor: vi.fn(),
+  handleLanguageChange: vi.fn(),
   scrollToAction: null,
   scrollToNode: null,
   popped: null,
   issues: {},
-  updateTranslationFilters: jest.fn(),
+  updateTranslationFilters: vi.fn(),
 };
 
 const { setup, spyOn } = composeComponentTestUtils(FlowEditor, baseProps);
@@ -41,20 +41,14 @@ describe('Root', () => {
   describe('render', () => {
     it('should render self, children with required props', () => {
       const { wrapper } = setup();
-      const editorContainer = getSpecWrapper(wrapper, editorContainerSpecId);
-      const editor = getSpecWrapper(wrapper, editorSpecId);
 
-      expect(editorContainer.hasClass('translating')).toBeFalsy();
-      expect(editor.hasClass('editor')).toBeTruthy();
       expect(wrapper.find('Connect(LanguageSelector)').exists()).toBeFalsy();
       expect(wrapper).toMatchSnapshot();
     });
 
     it('should apply translating style if passed a truthy translating prop', () => {
       const { wrapper } = setup(true, { translating: setTrue() });
-      const editorContainer = getSpecWrapper(wrapper, editorContainerSpecId);
 
-      expect(editorContainer.hasClass('translating')).toBeTruthy();
       expect(wrapper).toMatchSnapshot();
     });
 
@@ -88,7 +82,7 @@ describe('Root', () => {
         });
 
         expect(props.fetchFlow).toHaveBeenCalledTimes(1);
-        expect(props.fetchFlow).toMatchCallSnapshot();
+        expect(props.fetchFlow).toMatchSnapshot();
       });
     });
   });

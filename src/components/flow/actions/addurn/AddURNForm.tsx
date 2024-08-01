@@ -60,7 +60,7 @@ export default class AddURNForm extends React.PureComponent<
   public handlePathChanged(
     value: string,
     name: string,
-    submitting: boolean = false,
+    submitting = false,
   ): boolean {
     const updates: Partial<AddURNFormState> = {
       path: validate(i18n.t('forms.urn'), value, [shouldRequireIf(submitting)]),

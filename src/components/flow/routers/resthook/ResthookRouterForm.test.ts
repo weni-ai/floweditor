@@ -32,7 +32,7 @@ describe(ResthookRouterForm.name, () => {
       instance.handleResthookChanged([ResthookAsset]);
       expect(instance.state).toMatchSnapshot();
       instance.getButtons().primary.onClick();
-      expect(components.props.updateRouter).toMatchCallSnapshot();
+      expect(components.props.updateRouter).toMatchSnapshot();
     });
 
     it('should cancel changes', () => {
@@ -55,7 +55,7 @@ describe(ResthookRouterForm.name, () => {
       const instance = components.instance as ResthookRouterForm;
       instance.handleResthookChanged([ResthookAsset]);
       instance.getButtons().primary.onClick();
-      expect(components.props.updateRouter).toMatchCallSnapshot();
+      expect(components.props.updateRouter).toMatchSnapshot();
     });
 
     it('creates its own action uuid if necessary', () => {
@@ -73,7 +73,7 @@ describe(ResthookRouterForm.name, () => {
 
       instance.handleResthookChanged([ResthookAsset]);
       instance.getButtons().primary.onClick();
-      expect(components.props.updateRouter).toMatchCallSnapshot();
+      expect(components.props.updateRouter).toMatchSnapshot();
     });
 
     it('validates before saving', () => {

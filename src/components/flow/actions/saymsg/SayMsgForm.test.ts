@@ -32,26 +32,26 @@ describe(SayMsgForm.name, () => {
 
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should allow switching from router', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateAction: jest.fn() },
+        $merge: { updateAction: vi.fn() },
         nodeSettings: { $merge: { originalAction: null } },
       });
 
       instance.handleMessageUpdate('What is your favorite color?');
       instance.handleSave();
 
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
   });
 
   describe('cancel', () => {
     it('should cancel without changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateAction: jest.fn() },
+        $merge: { onClose: vi.fn(), updateAction: vi.fn() },
       });
       instance.handleMessageUpdate("Don't save me bro");
       instance.getButtons().secondary.onClick();

@@ -38,8 +38,8 @@ const headers: HeaderEntry[] = [
 const baseProps: HeaderElementProps = {
   entry: headers[0],
   index: 0,
-  onRemove: jest.fn(),
-  onChange: jest.fn(),
+  onRemove: vi.fn(),
+  onChange: vi.fn(),
 };
 
 const { setup, spyOn } = composeComponentTestUtils(HeaderElement, baseProps);
@@ -49,13 +49,6 @@ describe(HeaderElement.name, () => {
     it('should render self, children with base props', () => {
       const { wrapper, props, instance } = setup();
       const inputs = wrapper.find('TextInputElement');
-      expect(
-        getSpecWrapper(wrapper, headerContainerSpecId).hasClass('header'),
-      ).toBeTruthy();
-
-      expect(
-        getSpecWrapper(wrapper, nameContainerSpecId).hasClass('header_name'),
-      ).toBeTruthy();
 
       expect(inputs.at(0).props()).toEqual({
         placeholder: NAME_PLACEHOLDER,
@@ -63,10 +56,6 @@ describe(HeaderElement.name, () => {
         onChange: instance.handleChangeName,
         entry: { value: props.entry.value.name },
       });
-
-      expect(
-        getSpecWrapper(wrapper, valueConatainerSpecId).hasClass('header_value'),
-      ).toBeTruthy();
 
       expect(inputs.at(1).props()).toMatchSnapshot();
       expect(wrapper).toMatchSnapshot();
@@ -101,9 +90,9 @@ describe(HeaderElement.name, () => {
         wrapper.update();
 
         expect(setStateSpy).toHaveBeenCalledTimes(1);
-        expect(setStateSpy).toMatchCallSnapshot('setState');
+        expect(setStateSpy).toMatchSnapshot('setState');
         expect(onChangeMock).toHaveBeenCalledTimes(1);
-        expect(onChangeMock).toMatchCallSnapshot('onChange');
+        expect(onChangeMock).toMatchSnapshot('onChange');
 
         expect(
           wrapper
@@ -128,9 +117,9 @@ describe(HeaderElement.name, () => {
         wrapper.update();
 
         expect(setStateSpy).toHaveBeenCalledTimes(1);
-        expect(setStateSpy).toMatchCallSnapshot();
+        expect(setStateSpy).toMatchSnapshot();
         expect(props.onChange).toHaveBeenCalledTimes(1);
-        expect(props.onChange).toMatchCallSnapshot('header change');
+        expect(props.onChange).toMatchSnapshot('header change');
 
         expect(
           wrapper

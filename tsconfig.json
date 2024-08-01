@@ -16,9 +16,11 @@
     "downlevelIteration": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "strictNullChecks": false,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["vitest/globals"]
   },
   "include": ["src"],
   "exclude": ["__mocks__", "node_modules", "src/setupProxy.js"]

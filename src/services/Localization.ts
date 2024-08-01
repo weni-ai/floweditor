@@ -5,7 +5,7 @@ export class LocalizedObject {
   public localizedKeys: { [key: string]: boolean } = {};
 
   private localizedObject: Action | Category | Case | any;
-  private localized: boolean = false;
+  private localized = false;
   private iso: string;
   private name: string;
   private language: Language;

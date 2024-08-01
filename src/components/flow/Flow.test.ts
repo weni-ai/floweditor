@@ -15,9 +15,11 @@ import {
 } from 'testUtils';
 import { createUUID, merge, set } from 'utils';
 import * as utils from 'utils';
+import { MouseState } from '../../store/editor';
+import { vi } from 'vitest';
 
-jest.mock('services/Plumber');
-jest.useFakeTimers();
+vi.mock('services/Plumber');
+vi.useFakeTimers();
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -33,17 +35,20 @@ const baseProps: FlowStoreProps = {
   translating: false,
   popped: null,
   dragActive: false,
-  mergeEditorState: jest.fn(),
+  mergeEditorState: vi.fn(),
   nodeEditorSettings: null,
   nodes: initialNodes,
   stickyMap: definition._ui.stickies,
-  updateConnection: jest.fn(),
-  onOpenNodeEditor: jest.fn(),
-  onRemoveNodes: jest.fn(),
-  onUpdateCanvasPositions: jest.fn(),
-  resetNodeEditingState: jest.fn(),
-  onConnectionDrag: jest.fn(),
-  updateSticky: jest.fn(),
+  updateConnection: vi.fn(),
+  onOpenNodeEditor: vi.fn(),
+  onRemoveNodes: vi.fn(),
+  onUpdateCanvasPositions: vi.fn(),
+  resetNodeEditingState: vi.fn(),
+  onConnectionDrag: vi.fn(),
+  updateSticky: vi.fn(),
+  mouseState: MouseState.SELECT,
+  isSearchOpen: false,
+  handleSearchChange: vi.fn(),
 };
 
 const { setup, spyOn } = composeComponentTestUtils(Flow, baseProps);
@@ -82,7 +87,7 @@ describe(Flow.name, () => {
     };
 
     // Clear instance mocks
-    jest.clearAllTimers();
+    vi.clearAllTimers();
   });
 
   const dragSelection = {
@@ -128,7 +133,7 @@ describe(Flow.name, () => {
   describe('render', () => {
     it('should render NodeEditor', () => {
       const { wrapper } = setup(true, {
-        mergeEditorState: set(jest.fn()),
+        mergeEditorState: set(vi.fn()),
         nodeEditorSettings: { $set: { originalNode: null } },
       });
 
@@ -138,7 +143,7 @@ describe(Flow.name, () => {
     it('should render Simulator', () => {
       const { wrapper } = setup(
         true,
-        { mergeEditorState: set(jest.fn()) },
+        { mergeEditorState: set(vi.fn()) },
         {},
         {
           config: { endpoints: merge({ simulateStart: 'startMeUp' }) },
@@ -151,55 +156,59 @@ describe(Flow.name, () => {
 
   describe('instance methods', () => {
     describe('componentDidMount', () => {
-      const componentDidMountSpy = spyOn('componentDidMount');
-      const { instance, props } = setup(true);
+      it("should bind Plumber's event listeners", () => {
+        const componentDidMountSpy = spyOn('componentDidMount');
+        const { instance, props } = setup(true);
 
-      jest.runAllTimers();
+        vi.runAllTimers();
 
-      expect(componentDidMountSpy).toHaveBeenCalledTimes(1);
+        expect(componentDidMountSpy).toHaveBeenCalledTimes(1);
 
-      expect(instance.Plumber.bind).toHaveBeenCalledTimes(7);
-      expect(instance.Plumber.bind).toHaveBeenCalledWith(
-        'connection',
-        expect.any(Function),
-      );
-      expect(instance.Plumber.bind).toHaveBeenCalledWith(
-        'connection',
-        expect.any(Function),
-      );
-      expect(instance.Plumber.bind).toHaveBeenCalledWith(
-        'connectionDrag',
-        expect.any(Function),
-      );
-      expect(instance.Plumber.bind).toHaveBeenCalledWith(
-        'connectionDragStop',
-        expect.any(Function),
-      );
-      expect(instance.Plumber.bind).toHaveBeenCalledWith(
-        'beforeStartDetach',
-        expect.any(Function),
-      );
-      expect(instance.Plumber.bind).toHaveBeenCalledWith(
-        'beforeDetach',
-        expect.any(Function),
-      );
-      expect(instance.Plumber.bind).toHaveBeenCalledWith(
-        'beforeDrop',
-        expect.any(Function),
-      );
-      componentDidMountSpy.mockRestore();
+        expect(instance.Plumber.bind).toHaveBeenCalledTimes(7);
+        expect(instance.Plumber.bind).toHaveBeenCalledWith(
+          'connection',
+          expect.any(Function),
+        );
+        expect(instance.Plumber.bind).toHaveBeenCalledWith(
+          'connection',
+          expect.any(Function),
+        );
+        expect(instance.Plumber.bind).toHaveBeenCalledWith(
+          'connectionDrag',
+          expect.any(Function),
+        );
+        expect(instance.Plumber.bind).toHaveBeenCalledWith(
+          'connectionDragStop',
+          expect.any(Function),
+        );
+        expect(instance.Plumber.bind).toHaveBeenCalledWith(
+          'beforeStartDetach',
+          expect.any(Function),
+        );
+        expect(instance.Plumber.bind).toHaveBeenCalledWith(
+          'beforeDetach',
+          expect.any(Function),
+        );
+        expect(instance.Plumber.bind).toHaveBeenCalledWith(
+          'beforeDrop',
+          expect.any(Function),
+        );
+        componentDidMountSpy.mockRestore();
+      });
     });
 
     describe('componenWillUnmount', () => {
-      const componentWillUnmountSpy = spyOn('componentWillUnmount');
-      const { wrapper, instance } = setup();
+      it('should call plumber reset', () => {
+        const componentWillUnmountSpy = spyOn('componentWillUnmount');
+        const { wrapper, instance } = setup();
 
-      wrapper.unmount();
+        wrapper.unmount();
 
-      expect(componentWillUnmountSpy).toHaveBeenCalledTimes(1);
-      expect(instance.Plumber.reset).toHaveBeenCalledTimes(1);
+        expect(componentWillUnmountSpy).toHaveBeenCalledTimes(1);
+        expect(instance.Plumber.reset).toHaveBeenCalledTimes(1);
 
-      componentWillUnmountSpy.mockRestore();
+        componentWillUnmountSpy.mockRestore();
+      });
     });
 
     describe('onBeforeConnectorDrop', () => {
@@ -246,7 +255,7 @@ describe(Flow.name, () => {
           onOpenNodeEditor: setMock(),
         });
 
-        jest.runAllTimers();
+        vi.runAllTimers();
 
         instance.onConnectorDrop(mockConnectionEvent);
 
@@ -267,17 +276,17 @@ describe(Flow.name, () => {
           source: document.createElement('div'),
         });
 
-        jest.runAllTimers();
+        vi.runAllTimers();
 
         expect(instance.Plumber.recalculate).toHaveBeenCalledTimes(1);
         expect(instance.Plumber.recalculate).toHaveBeenCalledWith(
           props.ghostNode.node.uuid,
         );
         expect(instance.Plumber.connect).toHaveBeenCalledTimes(1);
-        expect(instance.Plumber.connect).toMatchCallSnapshot();
+        expect(instance.Plumber.connect).toMatchSnapshot();
 
         expect(props.onOpenNodeEditor).toHaveBeenCalledTimes(1);
-        expect(props.onOpenNodeEditor).toMatchCallSnapshot();
+        expect(props.onOpenNodeEditor).toMatchSnapshot();
       });
     });
 

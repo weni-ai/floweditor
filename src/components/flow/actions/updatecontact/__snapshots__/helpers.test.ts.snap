@@ -1,26 +1,26 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`UpdateContact.helpers should sort options 1`] = `
-Array [
-  Object {
+exports[`UpdateContact.helpers > should sort options 1`] = `
+[
+  {
     "id": "name",
     "key": "name",
     "name": "Name",
     "type": "property",
   },
-  Object {
+  {
     "id": "channel",
     "key": "channel",
     "name": "Channel",
     "type": "property",
   },
-  Object {
+  {
     "id": "language",
     "key": "language",
     "name": "Language",
     "type": "property",
   },
-  Object {
+  {
     "id": "status",
     "key": "status",
     "name": "Status",

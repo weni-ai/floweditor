@@ -1,329 +1,175 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`AirtimeRouterForm render should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Ok",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="transfer_airtime"
-  title="Send Airtime"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "aliases": Array [
-          "split_by_airtime",
-        ],
-        "component": [Function],
-        "description": "Send the contact airtime",
-        "filter": "airtime",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "exits",
-        ],
-        "name": "Send Airtime",
-        "type": "transfer_airtime",
-        "visibility": Array [
-          "messaging",
-          "messaging_background",
-          "voice",
-        ],
-      }
-    }
-    nodeSettings={
-      Object {
-        "originalAction": null,
-        "originalNode": Object {
-          "inboundConnections": Object {},
-          "node": Object {
-            "actions": Array [
-              Object {
-                "amounts": Object {
-                  "USD": 1.5,
-                },
-                "result_name": "Result",
-                "type": "transfer_airtime",
-                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+exports[`AirtimeRouterForm > render > should render 1`] = `ShallowWrapper {}`;
+
+exports[`AirtimeRouterForm > updates > coverts from other node types 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "amounts": {
+                "USD": 1.5,
+              },
+              "result_name": "Result",
+              "type": "transfer_airtime",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_category",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
               },
             ],
-            "exits": Array [
-              Object {
-                "destination_uuid": null,
-                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
               },
-              Object {
-                "destination_uuid": null,
-                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
               },
             ],
-            "router": Object {
-              "cases": Array [
-                Object {
-                  "arguments": Array [
-                    "Success",
-                  ],
-                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-                  "type": "has_category",
-                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-                },
-              ],
-              "categories": Array [
-                Object {
-                  "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-                  "name": "Success",
-                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-                },
-                Object {
-                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-                  "name": "Failure",
-                  "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-                },
-              ],
-              "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-              "operand": "@results.result",
-              "type": "switch",
-            },
-            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.result",
+            "type": "switch",
           },
-          "ui": Object {
-            "position": Object {
-              "left": 0,
-              "top": 0,
-            },
-            "type": "split_by_airtime",
-          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
         },
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <div>
-    <CurrencyElement
-      exclude={
-        Array [
-          Object {
-            "value": Object {
-              "amount": "1.5",
-              "code": "USD",
-            },
-          },
-        ]
-      }
-      index={0}
-      key="currency_0"
-      onChange={[Function]}
-      onRemove={[Function]}
-      transfer={
-        Object {
-          "value": Object {
-            "amount": "1.5",
-            "code": "USD",
-          },
-        }
-      }
-    />
-    <CurrencyElement
-      exclude={
-        Array [
-          Object {
-            "value": Object {
-              "amount": "1.5",
-              "code": "USD",
-            },
-          },
-        ]
-      }
-      index={-1}
-      key="currency_-1"
-      onChange={[Function]}
-      onRemove={[Function]}
-      transfer={
-        Object {
-          "value": Object {
-            "amount": "",
-            "code": null,
-          },
-        }
-      }
-    />
-  </div>
-  <div
-    className="result_name"
-  >
-    <OptionalTextInput
-      maxLength={64}
-      name="Save as result"
-      onChange={[Function]}
-      toggleText="Save as"
-      value={
-        Object {
-          "value": "Result",
-        }
-      }
-    />
-  </div>
-</Dialog>
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_airtime",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`AirtimeRouterForm updates coverts from other node types 1`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [
-        Object {
-          "amounts": Object {
-            "USD": 1.5,
-          },
-          "result_name": "Result",
-          "type": "transfer_airtime",
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-        },
-      ],
-      "exits": Array [
-        Object {
-          "destination_uuid": null,
-          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-        },
-        Object {
-          "destination_uuid": null,
-          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "Success",
-            ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_category",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-          },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-            "name": "Success",
-            "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-          },
-          Object {
-            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "name": "Failure",
-            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-          },
-        ],
-        "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-        "operand": "@results.result",
-        "type": "switch",
-      },
-      "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
-    },
-    "ui": Object {
-      "config": Object {},
-      "position": null,
-      "type": "split_by_airtime",
-    },
-  },
-]
-`;
+exports[`AirtimeRouterForm > updates > creates its own action uuid if necessary 1`] = `[MockFunction spy]`;
 
-exports[`AirtimeRouterForm updates creates its own action uuid if necessary 1`] = `undefined`;
-
-exports[`AirtimeRouterForm updates should update and save 1`] = `
-Object {
-  "amounts": Array [
-    Object {
-      "value": Object {
+exports[`AirtimeRouterForm > updates > should update and save 1`] = `
+{
+  "amounts": [
+    {
+      "value": {
         "amount": "1.5",
         "code": "USD",
       },
     },
-    Object {
-      "value": Object {
+    {
+      "value": {
         "amount": "",
         "code": "USD",
       },
     },
   ],
-  "resultName": Object {
+  "resultName": {
     "value": "Result",
   },
   "valid": true,
-  "validationFailures": Array [],
+  "validationFailures": [],
 }
 `;
 
-exports[`AirtimeRouterForm updates should update and save 2`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [
-        Object {
-          "amounts": Object {
-            "USD": 1.5,
-          },
-          "result_name": "Result",
-          "type": "transfer_airtime",
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-        },
-      ],
-      "exits": Array [
-        Object {
-          "destination_uuid": null,
-          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-        },
-        Object {
-          "destination_uuid": null,
-          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "Success",
+exports[`AirtimeRouterForm > updates > should update and save 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "amounts": {
+                "USD": 1.5,
+              },
+              "result_name": "Result",
+              "type": "transfer_airtime",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_category",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
             ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_category",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.result",
+            "type": "switch",
           },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-            "name": "Success",
-            "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-          },
-          Object {
-            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "name": "Failure",
-            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-          },
-        ],
-        "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-        "operand": "@results.result",
-        "type": "switch",
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_airtime",
+        },
       },
-      "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "ui": Object {
-      "config": Object {},
-      "position": null,
-      "type": "split_by_airtime",
-    },
-  },
-]
+  ],
+}
 `;

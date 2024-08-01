@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 @mixin color-choice($color) {
   &.color_option {
@@ -13,15 +13,19 @@
 .yellow {
   @include color-choice($unnnic-color-aux-baby-yellow);
 }
+
 .blue {
   @include color-choice($unnnic-color-aux-baby-blue);
 }
+
 .purple {
   @include color-choice($unnnic-color-aux-baby-pink);
 }
+
 .gray {
   @include color-choice($unnnic-color-neutral-lightest);
 }
+
 .green {
   @include color-choice($unnnic-color-aux-baby-green);
 }
@@ -92,6 +96,7 @@
       .remove_button {
         color: $removal_confirmation;
       }
+
       textarea.title {
         visibility: hidden;
       }
@@ -108,6 +113,7 @@
       padding-bottom: 4px;
 
       position: relative;
+
       &:hover {
         .remove_button {
           visibility: visible;

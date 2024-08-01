@@ -1,195 +1,69 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SetRunResultForm render should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Confirm",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="set_run_result"
-  title="Save flow result"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "component": [Function],
-        "description": "Save a result for this flow",
-        "form": [Function],
-        "name": "Save flow result",
+exports[`SetRunResultForm > render > should render 1`] = `ShallowWrapper {}`;
+
+exports[`SetRunResultForm > updates > should allow switching from router 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "category": "Result Category",
+        "name": "Result Name",
         "type": "set_run_result",
-      }
-    }
-    nodeSettings={
-      Object {
-        "originalAction": Object {
-          "category": "",
-          "name": "Name",
-          "type": "set_run_result",
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-          "value": "Grace",
-        },
-        "originalNode": Object {
-          "inboundConnections": Object {},
-          "node": Object {
-            "actions": Array [
-              Object {
-                "category": "",
-                "name": "Name",
-                "type": "set_run_result",
-                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-                "value": "Grace",
-              },
-            ],
-            "exits": Array [
-              Object {
-                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-              },
-            ],
-            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-          },
-          "ui": Object {
-            "position": Object {
-              "left": 0,
-              "top": 0,
-            },
-            "type": "execute_actions",
-          },
-        },
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <div
-    className="form"
-  >
-    <AssetSelector
-      additionalOptions={Array []}
-      assets={
-        Object {
-          "items": Object {},
-          "type": "result",
-        }
-      }
-      createAssetFromInput={[Function]}
-      createPrefix="New: "
-      entry={
-        Object {
-          "value": Object {
-            "id": "name",
-            "name": "Name",
-            "type": "result",
-          },
-        }
-      }
-      formClearable={true}
-      helpText={
-        <Trans
-          i18nKey="forms.result_name_help"
-          values={
-            Object {
-              "resultFormat": "@results.name",
-            }
-          }
-        >
-          By naming the result, you can reference it later using [[resultFormat]]
-        </Trans>
-      }
-      name="Result"
-      nameKey="name"
-      onChange={[Function]}
-      searchable={true}
-      showLabel={true}
-      valueKey="value"
-    />
-    <div
-      className="value"
-    >
-      <TextInputElement
-        autocomplete={true}
-        entry={
-          Object {
-            "value": "Grace",
-          }
-        }
-        helpText="The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))"
-        name="Value"
-        onChange={[Function]}
-        placeholder="Value"
-        showLabel={true}
-      />
-    </div>
-    <div
-      className="category"
-    >
-      <TextInputElement
-        autocomplete={false}
-        entry={
-          Object {
-            "value": "",
-          }
-        }
-        helpText="An optional category for your result. For age, the value might be 17, but the category might be “Teenager”"
-        name="Category (optional)"
-        onChange={[Function]}
-        placeholder="Ex: shopping"
-        showLabel={true}
-      />
-    </div>
-  </div>
-</Dialog>
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        "value": "Result Value",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SetRunResultForm updates should allow switching from router 1`] = `
-Array [
-  Object {
-    "category": "Result Category",
-    "name": "Result Name",
-    "type": "set_run_result",
-    "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-    "value": "Result Value",
-  },
-]
-`;
-
-exports[`SetRunResultForm updates should save changes 1`] = `
-Object {
-  "category": Object {
-    "validationFailures": Array [],
+exports[`SetRunResultForm > updates > should save changes 1`] = `
+{
+  "category": {
+    "validationFailures": [],
     "value": "Result Category",
   },
-  "name": Object {
-    "validationFailures": Array [],
-    "value": Object {
+  "name": {
+    "validationFailures": [],
+    "value": {
       "id": "result_name",
       "name": "Result Name",
       "type": "result",
     },
   },
   "valid": true,
-  "value": Object {
-    "validationFailures": Array [],
+  "value": {
+    "validationFailures": [],
     "value": "Result Value",
   },
 }
 `;
 
-exports[`SetRunResultForm updates should save changes 2`] = `
-Array [
-  Object {
-    "category": "Result Category",
-    "name": "Result Name",
-    "type": "set_run_result",
-    "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-    "value": "Result Value",
-  },
-]
+exports[`SetRunResultForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "category": "Result Category",
+        "name": "Result Name",
+        "type": "set_run_result",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        "value": "Result Value",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;

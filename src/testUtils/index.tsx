@@ -12,14 +12,11 @@ import { RenderNodeMap } from 'store/flowContext';
 import { getFlowComponents } from 'store/helpers';
 import AppState, { initialState } from 'store/state';
 import config from 'test/config';
-import * as matchers from 'testUtils/matchers';
 import { merge, set } from 'utils';
+import { vi, Mock, MockInstance } from 'vitest';
 
 // we need to use require syntax to bust implicit any
 const boring: FlowDefinition = require('test/flows/boring.json');
-
-// force our matchers to be read in
-const match = matchers;
 
 export interface Resp {
   assets: { [key: string]: any }[];
@@ -52,7 +49,7 @@ export const configProviderContext: ConfigProviderContext = {
 
 export const setMock = (
   implementation?: (...args: any[]) => any,
-): Query<jest.Mock> => set(jest.fn(implementation));
+): Query<Mock> => set(vi.fn(implementation));
 
 /**
  * Compose setup method for component tests
@@ -63,7 +60,7 @@ export const composeSetup = <P extends {}>(
   baseDuxState: AppState | Partial<AppState> = baseState,
   baseContext: ConfigProviderContext = configProviderContext,
 ) => (
-  shallowRender: boolean = true,
+  shallowRender = true,
   propOverrides: Query<P | Partial<P>> = {},
   duxStateOverrides: Query<AppState | Partial<AppState>> = {},
   contextOverrides: Query<
@@ -111,7 +108,7 @@ export const composeSetup = <P extends {}>(
 export const composeSpy = (obj: Record<string, any> | React.ComponentClass) => (
   instanceMethod: string,
 ) =>
-  jest.spyOn(
+  vi.spyOn(
     (obj as React.ComponentClass).prototype || obj,
     instanceMethod as any,
   );
@@ -123,11 +120,11 @@ export const flushPromises = () =>
   new Promise((resolve: any) => setImmediate(resolve));
 
 /**
- * Restore spy mocks (distinct from mocks created w/ jest.fn()).
+ * Restore spy mocks (distinct from mocks created w/ vi.fn()).
  * Use to declaratively restore multiple spy mocks,
  * otherwise just call .mockRestore() on lone spy.
  */
-export const restoreSpies = (...spies: jest.SpyInstance<any>[]) =>
+export const restoreSpies = (...spies: MockInstance<any>[]) =>
   spies.forEach((spy: any) => spy.mockRestore());
 
 // To-do: type this method's output, can pass it prop generic ingested by getComponentTestUtils
@@ -143,7 +140,7 @@ export const restoreSpies = (...spies: jest.SpyInstance<any>[]) =>
 export const getSpecWrapper = (
   componentWrapper: ReactWrapper<{}, {}> | ShallowWrapper<{}, {}>,
   specName: string,
-  attributeName: string = 'data-spec',
+  attributeName = 'data-spec',
 ): any => componentWrapper.find(`[${attributeName}="${specName}"]`);
 
 export const composeDuxState = (

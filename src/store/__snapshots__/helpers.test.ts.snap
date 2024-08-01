@@ -1,19 +1,19 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`helpers RenderNodeMap should get ordered nodes 1`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [
-        Object {
+exports[`helpers > RenderNodeMap > should get ordered nodes 1`] = `
+[
+  {
+    "inboundConnections": {},
+    "node": {
+      "actions": [
+        {
           "text": "Hi there, this is your first action!",
           "type": "send_msg",
           "uuid": "node0_action0",
         },
-        Object {
-          "groups": Array [
-            Object {
+        {
+          "groups": [
+            {
               "name": "Flow Participants",
               "uuid": "group_0",
             },
@@ -21,9 +21,9 @@ Array [
           "type": "add_contact_groups",
           "uuid": "node0_action1",
         },
-        Object {
-          "groups": Array [
-            Object {
+        {
+          "groups": [
+            {
               "name": "Nonresponsive",
               "uuid": "group_1",
             },
@@ -31,13 +31,13 @@ Array [
           "type": "remove_contact_groups",
           "uuid": "node0_action2",
         },
-        Object {
-          "labels": Array [
-            Object {
+        {
+          "labels": [
+            {
               "name": "Help",
               "uuid": "label_0",
             },
-            Object {
+            {
               "name": "Feedback",
               "uuid": "label_1",
             },
@@ -45,15 +45,15 @@ Array [
           "type": "add_input_labels",
           "uuid": "node0_action3",
         },
-        Object {
+        {
           "name": "Started",
           "type": "set_run_result",
           "uuid": "node0_action4",
           "value": "true",
         },
       ],
-      "exits": Array [
-        Object {
+      "exits": [
+        {
           "destination_uuid": "node1",
           "name": null,
           "uuid": "node0_exit0",
@@ -61,8 +61,8 @@ Array [
       ],
       "uuid": "node0",
     },
-    "ui": Object {
-      "position": Object {
+    "ui": {
+      "position": {
         "bottom": 254,
         "left": 0,
         "right": 220,
@@ -70,38 +70,38 @@ Array [
       },
     },
   },
-  Object {
-    "inboundConnections": Object {
+  {
+    "inboundConnections": {
       "node0_exit0": "node0",
     },
-    "node": Object {
-      "actions": Array [],
-      "exits": Array [
-        Object {
+    "node": {
+      "actions": [],
+      "exits": [
+        {
           "destination_uuid": "node2",
           "uuid": "node1_exit0",
         },
-        Object {
+        {
           "destination_uuid": "node2",
           "uuid": "node1_exit1",
         },
-        Object {
+        {
           "destination_uuid": "node2",
           "uuid": "node1_exit2",
         },
       ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
+      "router": {
+        "cases": [
+          {
+            "arguments": [
               "red",
             ],
             "category_uuid": "node1_cat0",
             "type": "has_any_word",
             "uuid": "node1_case0",
           },
-          Object {
-            "arguments": Array [
+          {
+            "arguments": [
               "green",
             ],
             "category_uuid": "node1_cat1",
@@ -109,18 +109,18 @@ Array [
             "uuid": "node1_case1",
           },
         ],
-        "categories": Array [
-          Object {
+        "categories": [
+          {
             "exit_uuid": "node1_exit0",
             "name": "Red",
             "uuid": "node1_cat0",
           },
-          Object {
+          {
             "exit_uuid": "node1_exit1",
             "name": "Green",
             "uuid": "node1_cat1",
           },
-          Object {
+          {
             "exit_uuid": "node1_exit2",
             "name": "Other",
             "uuid": "node1_cat2",
@@ -130,14 +130,14 @@ Array [
         "operand": "@run.input",
         "result_name": "color",
         "type": "switch",
-        "wait": Object {
+        "wait": {
           "type": "msg",
         },
       },
       "uuid": "node1",
     },
-    "ui": Object {
-      "position": Object {
+    "ui": {
+      "position": {
         "bottom": 370,
         "left": 500,
         "right": 220,
@@ -146,21 +146,21 @@ Array [
       "type": "wait_for_response",
     },
   },
-  Object {
-    "inboundConnections": Object {
+  {
+    "inboundConnections": {
       "node1_exit0": "node1",
       "node1_exit1": "node1",
       "node1_exit2": "node1",
     },
-    "node": Object {
-      "actions": Array [
-        Object {
+    "node": {
+      "actions": [
+        {
           "text": "This has been really great.",
           "type": "send_msg",
           "uuid": "node2_action0",
         },
-        Object {
-          "field": Object {
+        {
+          "field": {
             "key": "unknown_field",
             "name": "Unknown Field",
           },
@@ -169,8 +169,8 @@ Array [
           "value": "Some Value",
         },
       ],
-      "exits": Array [
-        Object {
+      "exits": [
+        {
           "destination_uuid": "node3",
           "name": null,
           "uuid": "node2_exit0",
@@ -178,8 +178,8 @@ Array [
       ],
       "uuid": "node2",
     },
-    "ui": Object {
-      "position": Object {
+    "ui": {
+      "position": {
         "bottom": 498,
         "left": 0,
         "right": 220,
@@ -187,20 +187,20 @@ Array [
       },
     },
   },
-  Object {
-    "inboundConnections": Object {
+  {
+    "inboundConnections": {
       "node2_exit0": "node2",
     },
-    "node": Object {
-      "actions": Array [
-        Object {
+    "node": {
+      "actions": [
+        {
           "text": "Thanks for playing!",
           "type": "send_msg",
           "uuid": "node3_action0",
         },
       ],
-      "exits": Array [
-        Object {
+      "exits": [
+        {
           "destination_uuid": null,
           "name": null,
           "uuid": "node3_exit0",
@@ -208,8 +208,8 @@ Array [
       ],
       "uuid": "node3",
     },
-    "ui": Object {
-      "position": Object {
+    "ui": {
+      "position": {
         "bottom": 598,
         "left": 0,
         "right": 220,
@@ -220,9 +220,9 @@ Array [
 ]
 `;
 
-exports[`helpers initializeFlow should find fields in definition 1`] = `
-Object {
-  "unknown_field": Object {
+exports[`helpers > initializeFlow > should find fields in definition 1`] = `
+{
+  "unknown_field": {
     "id": "unknown_field",
     "name": "Unknown Field",
     "type": "field",
@@ -230,14 +230,14 @@ Object {
 }
 `;
 
-exports[`helpers initializeFlow should find groups in definition 1`] = `
-Object {
-  "group_0": Object {
+exports[`helpers > initializeFlow > should find groups in definition 1`] = `
+{
+  "group_0": {
     "id": "group_0",
     "name": "Flow Participants",
     "type": "group",
   },
-  "group_1": Object {
+  "group_1": {
     "id": "group_1",
     "name": "Nonresponsive",
     "type": "group",
@@ -245,14 +245,14 @@ Object {
 }
 `;
 
-exports[`helpers initializeFlow should find labels in definition 1`] = `
-Object {
-  "label_0": Object {
+exports[`helpers > initializeFlow > should find labels in definition 1`] = `
+{
+  "label_0": {
     "id": "label_0",
     "name": "Help",
     "type": "label",
   },
-  "label_1": Object {
+  "label_1": {
     "id": "label_1",
     "name": "Feedback",
     "type": "label",
@@ -260,23 +260,23 @@ Object {
 }
 `;
 
-exports[`helpers initializeFlow should find results in definition 1`] = `
-Object {
-  "color": Object {
+exports[`helpers > initializeFlow > should find results in definition 1`] = `
+{
+  "color": {
     "id": "color",
     "name": "color",
-    "references": Array [
-      Object {
+    "references": [
+      {
         "nodeUUID": "node1",
       },
     ],
     "type": "result",
   },
-  "started": Object {
+  "started": {
     "id": "started",
     "name": "Started",
-    "references": Array [
-      Object {
+    "references": [
+      {
         "actionUUID": "node0_action4",
         "nodeUUID": "node0",
       },

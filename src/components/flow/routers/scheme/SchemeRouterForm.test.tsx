@@ -49,6 +49,6 @@ describe(SchemeRouterForm.name, () => {
     expect(router.cases[0].type).toBe(Operators.has_only_phrase);
     expect(router.cases[1].arguments[0]).toBe('facebook');
     expect(router.cases[1].type).toBe(Operators.has_only_phrase);
-    expect(routerProps.updateRouter).toMatchCallSnapshot();
+    expect(routerProps.updateRouter).toMatchSnapshot();
   });
 });

@@ -25,9 +25,9 @@ describe(AssetSelector.name, () => {
     const { baseElement } = render(
       <AssetSelector
         name="Recipients"
-        onChange={jest.fn()}
+        onChange={vi.fn()}
         assets={assets}
-        createAssetFromInput={jest.fn()}
+        createAssetFromInput={vi.fn()}
         entry={{ value: null }}
       />,
     );

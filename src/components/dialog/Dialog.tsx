@@ -2,13 +2,10 @@ import { react as bindCallbacks } from 'auto-bind';
 import Button, { ButtonProps, ButtonTypes } from 'components/button/Button';
 import * as React from 'react';
 import { renderIf } from 'utils';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicTab } from '@weni/unnnic-system';
-
-// @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
 import styles from './Dialog.module.scss';
 
@@ -56,15 +53,14 @@ export interface DialogState {
   activeTab: number;
 }
 
-const UnnnicTab = applyVueInReact(unnnicTab);
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicTab = applyVueInReact(Unnnic.unnnicTab);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 /**
  * A component that has a front and back and can flip back and forth between them
  */
 export default class Dialog extends React.Component<DialogProps, DialogState> {
   private tabFocus: any = null;
-  private primaryButton: any = null;
 
   constructor(props: DialogProps) {
     super(props);
@@ -104,11 +100,11 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
 
   private handleKey(event: KeyboardEvent): void {
     if (event.key === 'Enter' && event.shiftKey) {
-      if (this.primaryButton) {
+      if (this.props.buttons && this.props.buttons.primary) {
         event.preventDefault();
         event.stopPropagation();
         (event.target as any).blur();
-        this.primaryButton.click();
+        this.handlePrimaryButton(this.props.buttons.primary.onClick);
         (event.target as any).focus();
       } else {
         console.log('No primary button!');
@@ -147,11 +143,6 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
       rightButtons.push(
         <Button
           key={'button_' + buttons.primary.name}
-          onRef={(ref: any) => {
-            if (ref) {
-              this.primaryButton = ref.vueInstance.$el;
-            }
-          }}
           onClick={() => {
             this.handlePrimaryButton(buttons.primary.onClick);
           }}
@@ -200,6 +191,37 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
       activeClasses.push(this.props.className);
     }
 
+    const tabsSlots = (this.props.tabs || []).reduce(
+      (tabs, currentTab: Tab, index: number) => ({
+        ...tabs,
+        [`tab-head-${index + 1}`]: (
+          <>
+            {currentTab.name}
+            {currentTab.checked ? (
+              <UnnnicIcon
+                icon="check-square-1"
+                size="sm"
+                scheme={
+                  this.state.activeTab + 1 === index
+                    ? 'neutral-clean'
+                    : 'neutral-darkest'
+                }
+                className={styles.icon}
+              />
+            ) : null}
+          </>
+        ),
+      }),
+      {
+        'tab-head-0': i18n.t('forms.general', 'General'),
+      },
+    );
+
+    const currentTab = String(this.state.activeTab + 1);
+    const setCurrentTab = (index: string) => {
+      this.setState({ activeTab: Number(index) - 1 });
+    };
+
     return (
       <div className={activeClasses.join(' ')}>
         <div className={headerClasses.join(' ')}>
@@ -238,37 +260,9 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
                   String(index + 1),
                 ),
               ]}
-              $slots={(this.props.tabs || []).reduce(
-                (tabs, currentTab: Tab, index: number) => ({
-                  ...tabs,
-                  [`tab-head-${index + 1}`]: (
-                    <>
-                      {currentTab.name}
-                      {currentTab.checked ? (
-                        <UnnnicIcon
-                          icon="check-square-1"
-                          size="sm"
-                          scheme={
-                            this.state.activeTab + 1 === index
-                              ? 'neutral-clean'
-                              : 'neutral-darkest'
-                          }
-                          className={styles.icon}
-                        />
-                      ) : null}
-                    </>
-                  ),
-                }),
-                {
-                  'tab-head-0': i18n.t('forms.general', 'General'),
-                },
-              )}
-              $model={{
-                value: String(this.state.activeTab + 1),
-                setter: (index: string) => {
-                  this.setState({ activeTab: Number(index) - 1 });
-                },
-              }}
+              v-slots={tabsSlots}
+              activeTab={currentTab}
+              onChange={setCurrentTab}
             />
           ) : null}
         </div>

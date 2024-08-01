@@ -9,10 +9,10 @@ import {
   createRenderNode,
   Spanish,
 } from 'testUtils/assetCreators';
-import SendMsgComp from '../sendmsg/SendMsg';
-import { SendMsg, AnyAction, Language } from 'flowTypes';
+import { AnyAction } from 'flowTypes';
 import { getTypeConfig } from 'config';
 import { Asset } from 'store/flowContext';
+import { MouseState } from 'store/editor';
 
 const sendMsgAction = createSendMsgAction();
 const localization = {
@@ -54,13 +54,13 @@ const getActionWrapperProps = (
     render: (action: AnyAction) => (
       <ActionDiv {...action} languages={[English, Spanish]} />
     ),
-    assetStore: {},
     renderNode: node,
     language,
     translating,
-    onOpenNodeEditor: jest.fn(),
-    removeAction: jest.fn(),
-    moveActionUp: jest.fn(),
+    onOpenNodeEditor: vi.fn(),
+    removeAction: vi.fn(),
+    moveActionUp: vi.fn(),
+    mouseState: MouseState.SELECT,
   };
 };
 

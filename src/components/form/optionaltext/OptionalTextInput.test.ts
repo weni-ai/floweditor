@@ -9,7 +9,7 @@ const { setup } = composeComponentTestUtils<OptionalTextInputProps>(
     name: 'Optional Text Name',
     value: { value: '' },
     toggleText: 'Click me to show',
-    onChange: jest.fn(),
+    onChange: vi.fn(),
   },
 );
 

@@ -31,13 +31,15 @@ const localizations = getLocalizations(responseRenderNode.node, null, Spanish, {
 
 const baseProps: LocalizationFormProps = {
   language: Spanish,
-  updateLocalizations: jest.fn(),
-  onClose: jest.fn(),
+  updateLocalizations: vi.fn(),
+  onClose: vi.fn(),
   nodeSettings: {
     originalNode: responseRenderNode,
     originalAction: null,
     localizations,
   },
+  helpArticles: {},
+  issues: [],
 };
 
 const { setup } = composeComponentTestUtils<LocalizationFormProps>(
@@ -72,7 +74,7 @@ describe(RouterLocalizationForm.name, () => {
 
       instance.handleSave();
       expect(props.updateLocalizations).toHaveBeenCalled();
-      expect(props.updateLocalizations).toMatchCallSnapshot();
+      expect(props.updateLocalizations).toMatchSnapshot();
     });
   });
 });

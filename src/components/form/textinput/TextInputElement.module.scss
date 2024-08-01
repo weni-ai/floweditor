@@ -1,5 +1,4 @@
-@import 'variables.module.scss';
-@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
+@import 'src/variables.module.scss';
 
 .small {
   --temba-textinput-padding: 6px 8px !important;
@@ -62,9 +61,16 @@
 }
 
 .textarea {
+  border: none;
+  outline: none;
+
   textarea {
     resize: none !important;
   }
+}
+
+.textarea ::after {
+  outline: none;
 }
 
 .option {
@@ -232,7 +238,5 @@ textarea.textinput {
 
   &:focus {
     outline: none;
-    border: 1px solid rgb(164, 202, 254) !important;
-    box-shadow: var(--widget-box-shadow-focused) !important;
   }
 }

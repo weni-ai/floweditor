@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-object-literal-type-assertion */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { RouterFormProps } from 'components/flow/props';
 import WebhookRouterForm from 'components/flow/routers/webhook/WebhookRouterForm';
@@ -79,12 +78,12 @@ describe(WebhookRouterForm.name, () => {
 
       fireEvent.click(okButton);
       expect(webhookForm.updateRouter).toBeCalled();
-      expect(webhookForm.updateRouter).toMatchCallSnapshot();
+      expect(webhookForm.updateRouter).toMatchSnapshot();
     });
 
     it('should repopulate post body', () => {
       const { instance } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
+        $merge: { onClose: vi.fn(), updateRouter: vi.fn() },
       });
 
       instance.handleMethodUpdate({ value: 'GET' });
@@ -97,7 +96,7 @@ describe(WebhookRouterForm.name, () => {
 
     it('should cancel', () => {
       const { instance, props } = setup(true, {
-        $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
+        $merge: { onClose: vi.fn(), updateRouter: vi.fn() },
       });
       instance.getButtons().secondary.onClick();
       instance.handleUrlUpdate('http://domain.com/');
@@ -106,7 +105,7 @@ describe(WebhookRouterForm.name, () => {
     });
 
     it('should validate urls', async () => {
-      webhookForm.updateRouter = jest.fn();
+      webhookForm.updateRouter = vi.fn();
       const { getByText, getByTestId } = render(
         <WebhookRouterForm {...webhookForm} />,
       );

@@ -24,12 +24,12 @@ import { DispatchWithState, MergeEditorState } from 'store/thunks';
 import { createUUID } from 'utils';
 import { PopTabType } from 'config/interfaces';
 import i18n from 'config/i18n';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon, {
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -1067,7 +1067,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   }
 
   private preloadBgImage() {
-    var img = new Image();
+    const img = new Image();
     img.src =
       'https://user-images.githubusercontent.com/30026625/242899357-3b7dd272-b2bf-4ac4-a4e1-aba24556a9f2.png';
   }

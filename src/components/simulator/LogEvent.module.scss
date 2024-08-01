@@ -1,10 +1,11 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 @keyframes fadein {
   from {
     transform: scale(0.2);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -28,7 +29,7 @@
   margin-right: 24px;
   color: $unnnic-color-neutral-darkest;
   width: 100%;
-  
+
   .msg_wrapper {
     margin-top: $unnnic-spacing-stack-xs;
     padding: 8px 15px;
@@ -58,7 +59,7 @@
 }
 
 .send_msg.whatsapp {
-  
+
   .msg_text {
     position: relative;
     border-radius: $unnnic-border-radius-lg;
@@ -102,11 +103,11 @@
 .msg_received.whatsapp {
   .msg_text {
     position: relative;
-    border-radius: $unnnic-border-radius-sm; 
+    border-radius: $unnnic-border-radius-sm;
     background: #DCF7C5;
     border-radius: $unnnic-border-radius-lg;
     color: $unnnic-color-neutral-darkest;
-  }  
+  }
 
   .msg_text:after {
     content: '';
@@ -151,6 +152,7 @@
 .email {
   text-decoration: underline;
   cursor: pointer;
+
   &:hover {
     color: #999;
   }
@@ -224,12 +226,14 @@
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
+
   ::first-line {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 34px;
   }
+
   .response {
     padding-top: 20px;
   }
@@ -263,9 +267,11 @@
   width: 100%;
   font-size: 90%;
   color: #bbb;
+
   td {
     padding: 0 5px;
   }
+
   td:last-child {
     text-align: right;
     font-size: 90%;

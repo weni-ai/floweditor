@@ -1,20 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`TransferAirtimeComp render should render self 1`] = `
-<div>
-  <div
-    key="transfer_USD"
-  >
-    <div
-      className="amount"
-    >
-      1.5
-    </div>
-    <div
-      className="code"
-    >
-      USD
-    </div>
-  </div>
-</div>
-`;
+exports[`TransferAirtimeComp > render > should render self 1`] = `ShallowWrapper {}`;

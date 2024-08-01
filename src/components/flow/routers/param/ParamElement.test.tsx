@@ -30,8 +30,8 @@ describe(ParamElement.name, () => {
           valid: true,
         },
         availableParams: chatGPTParams,
-        onRemove: jest.fn(),
-        onChange: jest.fn(),
+        onRemove: vi.fn(),
+        onChange: vi.fn(),
         hasArrangeFunctionality: false,
       };
 
@@ -47,7 +47,7 @@ describe(ParamElement.name, () => {
       describe('update', () => {
         it('handles data change', () => {
           const { baseElement, getByTestId } = render(
-            <ParamElement {...chatGPTParamProps} onRemove={jest.fn()} />,
+            <ParamElement {...chatGPTParamProps} onRemove={vi.fn()} />,
           );
 
           fireTembaSelect(getByTestId('temba_select_aditional_prompts'), [
@@ -77,8 +77,8 @@ describe(ParamElement.name, () => {
           valid: true,
         },
         availableParams: chatGPTParams,
-        onRemove: jest.fn(),
-        onChange: jest.fn(),
+        onRemove: vi.fn(),
+        onChange: vi.fn(),
         hasArrangeFunctionality: false,
       };
 
@@ -103,8 +103,8 @@ describe(ParamElement.name, () => {
           valid: true,
         },
         availableParams: chatGPTParams,
-        onRemove: jest.fn(),
-        onChange: jest.fn(),
+        onRemove: vi.fn(),
+        onChange: vi.fn(),
         hasArrangeFunctionality: false,
       };
 
@@ -135,8 +135,8 @@ describe(ParamElement.name, () => {
         valid: true,
       },
       availableParams: omieParams,
-      onRemove: jest.fn(),
-      onChange: jest.fn(),
+      onRemove: vi.fn(),
+      onChange: vi.fn(),
       hasArrangeFunctionality: true,
     };
 
@@ -149,7 +149,7 @@ describe(ParamElement.name, () => {
 
     describe('update', () => {
       it('handles removes', () => {
-        const onRemove = jest.fn();
+        const onRemove = vi.fn();
         const { getByTestId } = render(
           <ParamElement {...omieParamProps} onRemove={onRemove} />,
         );
@@ -162,7 +162,7 @@ describe(ParamElement.name, () => {
 
       it('handles data change', async () => {
         const { baseElement, getByTestId } = render(
-          <ParamElement {...omieParamProps} onRemove={jest.fn()} />,
+          <ParamElement {...omieParamProps} onRemove={vi.fn()} />,
         );
         await act(async () => {
           fireUnnnicInputChangeText(
@@ -175,7 +175,7 @@ describe(ParamElement.name, () => {
 
       it('handles filter change', async () => {
         const { baseElement, getByText } = render(
-          <ParamElement {...omieParamProps} onRemove={jest.fn()} />,
+          <ParamElement {...omieParamProps} onRemove={vi.fn()} />,
         );
 
         userEvent.click(getByText('Código da Conta'));
@@ -184,7 +184,7 @@ describe(ParamElement.name, () => {
 
       it('handles param change', async () => {
         const { baseElement, getByText } = render(
-          <ParamElement {...omieParamProps} onRemove={jest.fn()} />,
+          <ParamElement {...omieParamProps} onRemove={vi.fn()} />,
         );
 
         userEvent.click(getByText('Telefone e Email'));
@@ -193,7 +193,7 @@ describe(ParamElement.name, () => {
 
       it('handles filter change from correct param after param change', async () => {
         const { baseElement, getByTestId, getByText } = render(
-          <ParamElement {...omieParamProps} onRemove={jest.fn()} />,
+          <ParamElement {...omieParamProps} onRemove={vi.fn()} />,
         );
 
         userEvent.click(getByText('Telefone e Email'));

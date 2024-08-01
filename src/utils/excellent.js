@@ -2,13 +2,13 @@
  * Javascript parser for Excellent-style expressions used in RapidPro
  */
 export var excellent = () => {
-  var STATE_BODY = 0; // not in a expression
-  var STATE_PREFIX = 1; // '@' prefix that denotes the start of an expression
-  var STATE_IDENTIFIER = 2; // the identifier part, e.g. 'contact.age' in '@contact.age'
-  var STATE_BALANCED = 3; // the balanced parentheses delimited part, e.g. '(1 + 2)' in '@(1 + 2)'
-  var STATE_STRING_LITERAL = 4; // a string literal which could contain )
-  var STATE_ESCAPED_PREFIX = 5; // a '@' prefix preceded by another '@'
-  var STATE_IGNORE = 6;
+  const STATE_BODY = 0; // not in a expression
+  const STATE_PREFIX = 1; // '@' prefix that denotes the start of an expression
+  const STATE_IDENTIFIER = 2; // the identifier part, e.g. 'contact.age' in '@contact.age'
+  const STATE_BALANCED = 3; // the balanced parentheses delimited part, e.g. '(1 + 2)' in '@(1 + 2)'
+  const STATE_STRING_LITERAL = 4; // a string literal which could contain )
+  const STATE_ESCAPED_PREFIX = 5; // a '@' prefix preceded by another '@'
+  const STATE_IGNORE = 6;
 
   /**
    * Creates a new parser
@@ -24,14 +24,14 @@ export var excellent = () => {
    * Given the text up to the caret position, returns the expression currently being edited, without its prefix
    */
   excellent.Parser.prototype.expressionContext = function(textToCaret) {
-    let expressions = this.expressions(textToCaret);
+    const expressions = this.expressions(textToCaret);
 
     if (expressions.length == 0) {
       // no expressions found
       return null;
     }
 
-    var lastExpression = expressions[expressions.length - 1];
+    const lastExpression = expressions[expressions.length - 1];
 
     // has last expression already ended or is it closed (i.e. has balanced parentheses)
     if (lastExpression.end < textToCaret.length || lastExpression.closed) {
@@ -50,14 +50,14 @@ export var excellent = () => {
       return null;
     }
 
-    var fragment = '';
-    var skipChar = false;
-    var neededParentheses = [];
-    var inQuotes = false;
-    var prependFlag = '';
+    let fragment = '';
+    let skipChar = false;
+    const neededParentheses = [];
+    let inQuotes = false;
+    let prependFlag = '';
 
-    for (var pos = partialExpression.length - 1; pos >= 0; pos--) {
-      var ch = partialExpression[pos];
+    for (let pos = partialExpression.length - 1; pos >= 0; pos--) {
+      const ch = partialExpression[pos];
 
       if (ch === ' ') {
         skipChar = true;
@@ -119,8 +119,8 @@ export var excellent = () => {
    */
   excellent.Parser.prototype.isInStringLiteral = function(partialExpression) {
     // count number quotation marks
-    var num_quotes = 0;
-    for (var pos = 0; pos < partialExpression.length; pos++) {
+    let num_quotes = 0;
+    for (let pos = 0; pos < partialExpression.length; pos++) {
       if (partialExpression[pos] === '"') {
         num_quotes++;
       }
@@ -132,15 +132,15 @@ export var excellent = () => {
    * TODO find the function context
    */
   excellent.Parser.prototype.functionContext = function(partialExpression) {
-    var inString = this.isInStringLiteral(partialExpression);
+    const inString = this.isInStringLiteral(partialExpression);
 
     // initial state is string literal if number of quotes is odd
-    var state = inString ? STATE_IGNORE : STATE_STRING_LITERAL;
-    var identifier = '';
-    var parenthesesLevel = 0;
+    let state = inString ? STATE_IGNORE : STATE_STRING_LITERAL;
+    let identifier = '';
+    let parenthesesLevel = 0;
 
-    for (var pos = partialExpression.length - 1; pos >= 0; pos--) {
-      var ch = partialExpression[pos];
+    for (let pos = partialExpression.length - 1; pos >= 0; pos--) {
+      const ch = partialExpression[pos];
 
       if (state == STATE_IGNORE) {
         if (parenthesesLevel == 0 && (isWordChar(ch) || ch === '.')) {
@@ -172,18 +172,18 @@ export var excellent = () => {
    * Finds all expressions in the given text, including any partially complete expression at the end of the input
    */
   excellent.Parser.prototype.expressions = function(text) {
-    var expressions = [];
-    var state = STATE_BODY;
-    var currentExpression = null;
-    var parenthesesLevel = 0;
+    const expressions = [];
+    let state = STATE_BODY;
+    let currentExpression = null;
+    let parenthesesLevel = 0;
 
-    for (var pos = 0; pos < text.length; pos++) {
-      var ch = text[pos];
+    for (let pos = 0; pos < text.length; pos++) {
+      const ch = text[pos];
 
       // in order to determine if the b in a.b terminates an identifier, we have to peek two characters ahead as
       // it could be a.b. (b terminates) or a.b.c (b doesn't terminate)
-      var nextCh = pos < text.length - 1 ? text[pos + 1] : 0;
-      var nextNextCh = pos < text.length - 2 ? text[pos + 2] : 0;
+      const nextCh = pos < text.length - 1 ? text[pos + 1] : 0;
+      const nextNextCh = pos < text.length - 2 ? text[pos + 2] : 0;
 
       if (state == STATE_BODY) {
         if (
@@ -250,7 +250,7 @@ export var excellent = () => {
         currentExpression != null &&
         (currentExpression.end != null || nextCh === 0)
       ) {
-        var allowIncomplete = nextCh === 0; // if we're at the end of the input, allow incomplete expressions
+        const allowIncomplete = nextCh === 0; // if we're at the end of the input, allow incomplete expressions
 
         if (
           isValidStart(
@@ -277,16 +277,16 @@ export var excellent = () => {
    * Checks the parsed (possibly partial) expression to determine if it's valid based on how it starts
    */
   function isValidStart(partialExpression, allowedTopLevels, allowIncomplete) {
-    var body = partialExpression.substring(1); // strip prefix
+    const body = partialExpression.substring(1); // strip prefix
 
     if (body[0] === '(') {
       return true;
     } else {
       // if expression doesn't start with ( then check it's an allowed top level context reference
-      var topLevel = body.split('.')[0].toLowerCase();
+      const topLevel = body.split('.')[0].toLowerCase();
 
       if (allowIncomplete) {
-        for (var n = 0; n < allowedTopLevels.length; n++) {
+        for (let n = 0; n < allowedTopLevels.length; n++) {
           if (startsWith(allowedTopLevels[n], topLevel)) {
             return true;
           }

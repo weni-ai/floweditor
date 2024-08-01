@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 .link {
   text-decoration: underline;
@@ -24,6 +24,7 @@
 
 .url {
   flex-grow: 1;
+
   input {
     height: 36px;
   }

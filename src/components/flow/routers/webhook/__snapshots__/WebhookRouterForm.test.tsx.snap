@@ -1,471 +1,172 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`WebhookRouterForm should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Confirm",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="call_webhook"
-  tabs={
-    Array [
-      Object {
-        "body": <React.Fragment>
-          <div
-            className="info u font secondary body-md color-neutral-cloudy"
-          >
-            <Trans
-              i18nKey="forms.webhook_header_summary"
-            >
-              Add any additional headers below that you would like to send along with your request.
-            </Trans>
-          </div>
-          <div
-            className="header_wrapper"
-          >
-            <div>
-              <HeaderElement
-                canRemove={true}
-                entry={
-                  Object {
-                    "value": Object {
-                      "name": "Accept",
-                      "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-                      "value": "application/json",
-                    },
-                  }
-                }
-                index={0}
-                onChange={[Function]}
-                onRemove={[Function]}
-              />
-            </div>
-            <div>
-              <HeaderElement
-                canRemove={false}
-                entry={
-                  Object {
-                    "value": Object {
-                      "name": "",
-                      "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
-                      "value": "",
-                    },
-                  }
-                }
-                index={1}
-                onChange={[Function]}
-                onRemove={[Function]}
-              />
-            </div>
-          </div>
-        </React.Fragment>,
-        "checked": true,
-        "hasErrors": false,
-        "name": "HTTP Headers",
-      },
-      Object {
-        "body": <div
-          className="body_form u font secondary body-md color-neutral-cloudy"
-        >
-          <div>
-            <Trans
-              i18nKey="forms.webhook_body_summary"
-              values={
-                Object {
-                  "method": "GET",
-                }
-              }
-            >
-              Modify the body of the [[method]] request that will be sent to your webhook
-            </Trans>
-          </div>
-          <div
-            className="req_body"
-          >
-            <TextInputElement
-              autocomplete={true}
-              entry={
-                Object {
-                  "value": "",
-                }
-              }
-              name="GET Body"
-              onChange={[Function]}
-              placeholder="Type here..."
-              showLabel={false}
-              textarea={true}
-            />
-          </div>
-        </div>,
-        "checked": false,
-        "name": "GET Body",
-      },
-    ]
-  }
-  title="Call webhook"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "aliases": Array [
-          "split_by_webhook",
-        ],
-        "component": [Function],
-        "description": "Call a webhook",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "exits",
-        ],
-        "name": "Call webhook",
-        "type": "call_webhook",
-        "visibility": Array [
-          "messaging",
-          "messaging_background",
-          "voice",
-        ],
-      }
-    }
-    nodeSettings={
-      Object {
-        "originalAction": null,
-        "originalNode": Object {
-          "node": Object {
-            "actions": Array [
-              Object {
-                "headers": Object {},
-                "method": "GET",
-                "result_name": "Response",
-                "type": "call_webhook",
-                "url": "http://www.google.com",
-                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-              },
-            ],
-            "exits": Array [
-              Object {
-                "destination_uuid": null,
-                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-              },
-              Object {
-                "destination_uuid": null,
-                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-              },
-            ],
-            "router": Object {
-              "cases": Array [
-                Object {
-                  "arguments": Array [
-                    "Success",
-                  ],
-                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-                  "type": "has_only_text",
-                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-                },
-              ],
-              "categories": Array [
-                Object {
-                  "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-                  "name": "Success",
-                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-                },
-                Object {
-                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-                  "name": "Failure",
-                  "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-                },
-              ],
-              "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-              "operand": "@results.response.category",
-              "type": "switch",
-            },
-            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
-          },
-          "ui": Object {
-            "type": "call_webhook",
-          },
-        },
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <div
-    className="url_container"
-  >
-    <div
-      className="method"
-    >
-      <SelectElement
-        entry={
-          Object {
-            "value": Object {
-              "name": "GET",
-              "value": "GET",
-            },
-          }
-        }
-        key="method_select"
-        name="Method"
-        onChange={[Function]}
-        options={
-          Array [
-            Object {
-              "name": "GET",
-              "value": "GET",
-            },
-            Object {
-              "name": "POST",
-              "value": "POST",
-            },
-            Object {
-              "name": "PUT",
-              "value": "PUT",
-            },
-            Object {
-              "name": "DELETE",
-              "value": "DELETE",
-            },
-            Object {
-              "name": "HEAD",
-              "value": "HEAD",
-            },
-            Object {
-              "name": "PATCH",
-              "value": "PATCH",
-            },
-          ]
-        }
-      />
-    </div>
-    <div
-      className="url"
-    >
-      <TextInputElement
-        autocomplete={true}
-        entry={
-          Object {
-            "value": "",
-          }
-        }
-        name="URL"
-        onChange={[Function]}
-        placeholder="Enter a URL"
-      />
-    </div>
-  </div>
-  <div
-    className="instructions u font secondary body-md color-neutral-cloudy"
-  >
-    <div>
-      <Trans
-        i18nKey="forms.webhook_help"
-      >
-        If your server responds with JSON, each property will be added to the Flow.
-      </Trans>
-    </div>
-    <pre
-      className="code"
-    >
-      { "product": "Solar Charging Kit", "stock level": 32 }
-    </pre>
-    <div>
-      <Trans
-        i18nKey="forms.webhook_example"
-      >
-        This response would add
-        <span
-          className="example"
-        >
-          @webhook.product
-        </span>
-         and
-         
-        <span
-          className="example"
-        >
-          @webhook["stock level"]
-        </span>
-        for use in the flow.
-      </Trans>
-    </div>
-  </div>
-  <OptionalTextInput
-    maxLength={64}
-    name="Save as result"
-    onChange={[Function]}
-    toggleText="Save as"
-    value={
-      Object {
-        "value": "Result",
-      }
-    }
-  />
-</Dialog>
-`;
+exports[`WebhookRouterForm > should render 1`] = `ShallowWrapper {}`;
 
-exports[`WebhookRouterForm updates should repopulate post body 1`] = `
-Object {
-  "body": Object {
+exports[`WebhookRouterForm > updates > should repopulate post body 1`] = `
+{
+  "body": {
     "value": "",
   },
-  "headers": Array [
-    Object {
-      "value": Object {
+  "headers": [
+    {
+      "value": {
         "name": "Accept",
         "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
         "value": "application/json",
       },
     },
-    Object {
-      "value": Object {
+    {
+      "value": {
         "name": "",
         "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
         "value": "",
       },
     },
   ],
-  "method": Object {
-    "value": Object {
+  "method": {
+    "value": {
       "value": "GET",
     },
   },
-  "resultName": Object {
+  "resultName": {
     "value": "Result",
   },
-  "url": Object {
-    "validationFailures": Array [],
+  "url": {
+    "validationFailures": [],
     "value": "http://domain.com/",
   },
   "valid": true,
 }
 `;
 
-exports[`WebhookRouterForm updates should repopulate post body 2`] = `
-Object {
-  "body": Object {
+exports[`WebhookRouterForm > updates > should repopulate post body 2`] = `
+{
+  "body": {
     "value": "@(json(object(
-  \\"contact\\", object(
-    \\"uuid\\", contact.uuid, 
-    \\"name\\", contact.name, 
-    \\"urn\\", contact.urn
+  "contact", object(
+    "uuid", contact.uuid, 
+    "name", contact.name, 
+    "urn", contact.urn
   ),
-  \\"flow\\", object(
-    \\"uuid\\", run.flow.uuid, 
-    \\"name\\", run.flow.name
+  "flow", object(
+    "uuid", run.flow.uuid, 
+    "name", run.flow.name
   ),
-  \\"results\\", foreach_value(results, extract_object, \\"value\\", \\"category\\")
+  "results", foreach_value(results, extract_object, "value", "category")
 )))",
   },
-  "headers": Array [
-    Object {
-      "value": Object {
+  "headers": [
+    {
+      "value": {
         "name": "Accept",
         "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
         "value": "application/json",
       },
     },
-    Object {
+    {
       "validationFailures": undefined,
-      "value": Object {
+      "value": {
         "name": "Content-Type",
         "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
         "value": "application/json",
       },
     },
-    Object {
+    {
       "validationFailures": undefined,
-      "value": Object {
+      "value": {
         "name": "",
         "uuid": "00dd2423-0a34-4ee2-b97d-839fb2d593ef",
         "value": "",
       },
     },
   ],
-  "method": Object {
+  "method": {
     "value": "POST",
   },
-  "resultName": Object {
+  "resultName": {
     "value": "Result",
   },
-  "url": Object {
-    "validationFailures": Array [],
+  "url": {
+    "validationFailures": [],
     "value": "http://domain.com/",
   },
   "valid": true,
 }
 `;
 
-exports[`WebhookRouterForm updates should save changes 1`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [
-        Object {
-          "body": "Updated post body",
-          "headers": Object {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-          },
-          "method": "POST",
-          "result_name": "My Webhook Result",
-          "type": "call_webhook",
-          "url": "http://app.rapidpro.io",
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-        },
-      ],
-      "exits": Array [
-        Object {
-          "destination_uuid": null,
-          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-        },
-        Object {
-          "destination_uuid": null,
-          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "Success",
+exports[`WebhookRouterForm > updates > should save changes 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated post body",
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+              },
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
             ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_only_text",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
           },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-            "name": "Success",
-            "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-          },
-          Object {
-            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "name": "Failure",
-            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-          },
-        ],
-        "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-        "operand": "@results.my_webhook_result.category",
-        "type": "switch",
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
       },
-      "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "ui": Object {
-      "config": Object {},
-      "position": null,
-      "type": "split_by_webhook",
-    },
-  },
-]
+  ],
+}
 `;

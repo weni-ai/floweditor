@@ -1,4 +1,4 @@
-@import "variables.module.scss";
+@import "src/variables.module.scss";
 
 .form_element {
   margin-bottom: $unnnic-spacing-stack-sm;
@@ -22,7 +22,7 @@
       padding-bottom: 5px;
     }
 
-    + .flow {
+    +.flow {
       border-top: 1px solid $unnnic-color-neutral-soft;
     }
   }

@@ -19,10 +19,10 @@ const baseProps: RevisionExplorerProps = {
       items: {},
     },
   },
-  createNewRevision: jest.fn(),
-  loadFlowDefinition: jest.fn(),
+  createNewRevision: vi.fn(),
+  loadFlowDefinition: vi.fn(),
   utc: true,
-  onToggled: jest.fn(),
+  onToggled: vi.fn(),
   popped: '',
 };
 

@@ -12,7 +12,7 @@ import {
   render,
   fireEvent,
   fireUnnnicInputChangeText,
-  wait,
+  waitFor,
   act,
 } from 'test/utils';
 import userEvent from '@testing-library/user-event';
@@ -21,7 +21,6 @@ import { Ticketer } from '../../../../flowTypes';
 mock(utils, 'createUUID', utils.seededUUIDs());
 
 const ticketNode = createOpenTicketNode('Need help', 'Where are my cookies');
-// eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
 const ticketForm = getRouterFormProps({
   node: ticketNode,
   ui: { type: Types.split_by_ticket },
@@ -39,9 +38,7 @@ describe(TicketRouterForm.name, () => {
     it('should render', async () => {
       const { baseElement } = render(<TicketRouterForm {...ticketForm} />);
 
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
     });
   });
 
@@ -51,9 +48,7 @@ describe(TicketRouterForm.name, () => {
         <TicketRouterForm {...ticketForm} />,
       );
 
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       const okButton = getByText('Ok');
       const resultName = getByTestId('Save as result');
@@ -76,10 +71,9 @@ describe(TicketRouterForm.name, () => {
 
       fireEvent.click(okButton);
 
-      await wait();
+      await waitFor(() => expect(ticketForm.updateRouter).toBeCalled());
 
-      expect(ticketForm.updateRouter).toBeCalled();
-      expect(ticketForm.updateRouter).toMatchCallSnapshot();
+      expect(ticketForm.updateRouter).toMatchSnapshot();
     });
   });
 });

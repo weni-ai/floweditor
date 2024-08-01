@@ -18,7 +18,7 @@ describe(SendWhatsAppMsgComp.name, () => {
       const { wrapper, props } = setup(false, { text: set('Text') });
 
       expect(wrapper.text()).toBe(props.text);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('should render quick replies list when passed', () => {
@@ -27,7 +27,7 @@ describe(SendWhatsAppMsgComp.name, () => {
       });
 
       expect(wrapper.text()).toContain('Quick Reply 1');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('should render list items when passed', () => {
@@ -36,7 +36,7 @@ describe(SendWhatsAppMsgComp.name, () => {
       });
 
       expect(wrapper.text()).toContain('Title 1');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('should render attachment items when passed', () => {
@@ -44,7 +44,7 @@ describe(SendWhatsAppMsgComp.name, () => {
         attachment: set(true),
       });
 
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.html()).toMatchSnapshot();
     });
   });
 });

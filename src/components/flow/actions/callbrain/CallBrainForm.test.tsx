@@ -39,7 +39,7 @@ const { setup } = composeComponentTestUtils<ActionFormProps>(
 
 describe(BrainForm.name, () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should render', () => {

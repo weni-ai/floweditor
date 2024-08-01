@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 .pop_wrapper {
   position: fixed;
@@ -23,11 +23,12 @@
       }
     }
 
-    z-index: $z_pop_tabs + 1;
+    z-index: $z_pop_tabs +1;
 
     .tab_wrapper {
       .tab {
         left: 0px;
+
         &:hover {
           left: 0px;
         }
@@ -79,11 +80,13 @@
     .header {
       color: #fff;
       height: 26px;
+
       .header_label {
         font-size: 13px;
         font-weight: 400;
         padding: 5px 10px;
       }
+
       .close {
         cursor: pointer;
         font-size: 16px;
@@ -109,6 +112,7 @@
     border-radius: 4px;
     overflow: hidden;
     position: relative;
-    transition: right 0.2s ease-out, opacity 0.5s;
+    transition: right 0.2s ease-out,
+    opacity 0.5s;
   }
 }

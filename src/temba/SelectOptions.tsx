@@ -1,18 +1,18 @@
 import { react as bindCallbacks } from 'auto-bind';
-import React from 'react';
+import React, { createRef } from 'react';
 
 import styles from './SelectOptions.module.scss';
 
 import getCaretCoordinates from './TextareaCaretPosition';
 import { CompletionOption } from '../store/flowContext';
 
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicCheckbox } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import { debounce } from '../utils';
 
-const UnnnicCheckbox = applyVueInReact(unnnicCheckbox);
+const UnnnicCheckbox = applyVueInReact(Unnnic.unnnicCheckbox);
 
 export interface SelectOptionsProps {
   options: any[];
@@ -40,7 +40,7 @@ export default class SelectOptions extends React.Component<
   SelectOptionsProps,
   SelectOptionsState
 > {
-  private optionsRef: React.RefObject<HTMLDivElement>;
+  private optionsRef = createRef<HTMLDivElement>();
 
   constructor(props: SelectOptionsProps) {
     super(props);
@@ -59,44 +59,52 @@ export default class SelectOptions extends React.Component<
   }
 
   public componentDidMount() {
-    if (this.props.inputRef instanceof HTMLTextAreaElement) {
-      this.props.inputRef.addEventListener('scroll', () => this.hide());
-      this.props.inputRef.addEventListener('scrollend', () =>
-        this.recalculatePosition(),
+    if (this.props.inputRef) {
+      if (this.props.inputRef instanceof HTMLTextAreaElement) {
+        this.props.inputRef.addEventListener('scroll', () => this.hide());
+        this.props.inputRef.addEventListener('scrollend', () =>
+          this.recalculatePosition(),
+        );
+      } else {
+        const scrollableParent = this.findScrollableParent(
+          this.props.anchorRef,
+        );
+        scrollableParent.addEventListener('scroll', () => this.hide());
+        scrollableParent.addEventListener('scrollend', () =>
+          this.recalculatePosition(),
+        );
+      }
+      document.addEventListener('mousedown', this.handleClickOutside);
+      this.props.anchorRef.addEventListener(
+        'keydown',
+        this.handleCompletionsKeyDown,
       );
-    } else {
-      const scrollableParent = this.findScrollableParent(this.props.anchorRef);
-      scrollableParent.addEventListener('scroll', () => this.hide());
-      scrollableParent.addEventListener('scrollend', () =>
-        this.recalculatePosition(),
-      );
+      this.calculateOptionsOffset(this.props.inputRef);
     }
-    document.addEventListener('mousedown', this.handleClickOutside);
-    this.props.anchorRef.addEventListener(
-      'keydown',
-      this.handleCompletionsKeyDown,
-    );
-    this.calculateOptionsOffset(this.props.inputRef);
   }
 
   public componentWillUnmount() {
-    if (this.props.inputRef instanceof HTMLTextAreaElement) {
-      this.props.inputRef.removeEventListener('scroll', () => this.hide());
-      this.props.inputRef.removeEventListener('scrollend', () =>
-        this.recalculatePosition(),
-      );
-    } else {
-      const scrollableParent = this.findScrollableParent(this.props.anchorRef);
-      scrollableParent.removeEventListener('scroll', () => this.hide());
-      scrollableParent.removeEventListener('scrollend', () =>
-        this.recalculatePosition(),
+    if (this.props.inputRef) {
+      if (this.props.inputRef instanceof HTMLTextAreaElement) {
+        this.props.inputRef.removeEventListener('scroll', () => this.hide());
+        this.props.inputRef.removeEventListener('scrollend', () =>
+          this.recalculatePosition(),
+        );
+      } else {
+        const scrollableParent = this.findScrollableParent(
+          this.props.anchorRef,
+        );
+        scrollableParent.removeEventListener('scroll', () => this.hide());
+        scrollableParent.removeEventListener('scrollend', () =>
+          this.recalculatePosition(),
+        );
+      }
+      document.removeEventListener('mousedown', this.handleClickOutside);
+      this.props.anchorRef.removeEventListener(
+        'keydown',
+        this.handleCompletionsKeyDown,
       );
     }
-    document.removeEventListener('mousedown', this.handleClickOutside);
-    this.props.anchorRef.removeEventListener(
-      'keydown',
-      this.handleCompletionsKeyDown,
-    );
   }
 
   public componentDidUpdate(

@@ -173,7 +173,7 @@ export default class ExternalServiceRouterForm extends React.Component<
   }
 
   private handleCallUpdate(call: ServiceCall): void {
-    let requiredParams: any[] = [];
+    const requiredParams: any[] = [];
 
     call.params.forEach(param => {
       const data: FormEntry = { value: '', validationFailures: [] };

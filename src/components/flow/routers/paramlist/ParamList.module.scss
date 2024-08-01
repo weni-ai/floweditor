@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 .param_list_container {
   overflow: hidden;
@@ -35,9 +35,10 @@
         cursor: default;
       }
     }
+
     .dnd_icon {
       opacity: 0;
-    }  
+    }
   }
 
 }

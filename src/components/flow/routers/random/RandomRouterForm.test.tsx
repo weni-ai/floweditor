@@ -35,9 +35,9 @@ describe(RandomRouterForm.name, () => {
       },
       typeConfig: getTypeConfig(Types.split_by_random),
       assetStore: null,
-      updateRouter: jest.fn(),
-      onTypeChange: jest.fn(),
-      onClose: jest.fn(),
+      updateRouter: vi.fn(),
+      onTypeChange: vi.fn(),
+      onClose: vi.fn(),
       issues: [],
       helpArticles: {},
     };
@@ -53,9 +53,9 @@ describe(RandomRouterForm.name, () => {
       },
       typeConfig: getTypeConfig(Types.split_by_random),
       assetStore: null,
-      updateRouter: jest.fn(),
-      onTypeChange: jest.fn(),
-      onClose: jest.fn(),
+      updateRouter: vi.fn(),
+      onTypeChange: vi.fn(),
+      onClose: vi.fn(),
       helpArticles: {},
       issues: [],
     };
@@ -77,7 +77,7 @@ describe(RandomRouterForm.name, () => {
     // now lets save our form
     fireEvent.click(getByText('Confirm'));
 
-    expect(props.updateRouter).toMatchCallSnapshot();
+    expect(props.updateRouter).toMatchSnapshot();
   });
 
   it('should convert from a non-random node', () => {
@@ -103,7 +103,7 @@ describe(RandomRouterForm.name, () => {
     expect(props.nodeSettings.originalNode.node.exits.length).toBe(1);
 
     expect(wrapper).toMatchSnapshot();
-    expect(props.updateRouter).toMatchCallSnapshot();
+    expect(props.updateRouter).toMatchSnapshot();
     expect(props.nodeSettings.originalNode).toMatchSnapshot();
   });
 });

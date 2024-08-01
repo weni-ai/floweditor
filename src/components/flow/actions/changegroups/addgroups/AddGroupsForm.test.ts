@@ -34,12 +34,12 @@ describe(AddGroupsForm.name, () => {
       instance.handleSave();
 
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot('update');
+      expect(props.updateAction).toMatchSnapshot('update');
     });
 
     it('should allow switching from router', () => {
       const component = setup(true, {
-        $merge: { updateAction: jest.fn() },
+        $merge: { updateAction: vi.fn() },
         nodeSettings: { $merge: { originalAction: null } },
       });
 
@@ -48,7 +48,7 @@ describe(AddGroupsForm.name, () => {
 
       instance.handleGroupsChanged([SubscribersGroup]);
       instance.handleSave();
-      expect(props.updateAction).toMatchCallSnapshot('switch from router');
+      expect(props.updateAction).toMatchSnapshot('switch from router');
     });
   });
 });

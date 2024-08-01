@@ -298,12 +298,4 @@ describe('utils', () => {
       expect(optionExists('national id', matchingOptions)).toBeFalsy();
     });
   });
-
-  describe('isOptionUnique', () => {
-    const isOptionUniqueSignature = {
-      labelKey: 'name',
-      valueKey: 'id',
-      options: [] as any[],
-    };
-  });
 });

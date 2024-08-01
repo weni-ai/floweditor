@@ -1,61 +1,61 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Dialog should render 1`] = `
+exports[`Dialog > should render 1`] = `
 <body>
   <div>
     <div
-      class="dialog"
+      class="_dialog_af1b5d"
     >
       <div
-        class="header iconed barber"
+        class="_header_af1b5d _iconed_af1b5d _barber_af1b5d"
       >
         <span
-          class="header_icon fe-icon"
+          class="_header_icon_af1b5d fe-icon"
         />
         <div
-          class="title_container"
+          class="_title_container_af1b5d"
         >
           <div
-            class="title u font secondary title-sm black"
+            class="_title_af1b5d u font secondary title-sm black"
           >
             My Dialog
           </div>
           <div
-            class="subtitle"
+            class="_subtitle_af1b5d"
           >
             Subtitlf
           </div>
         </div>
       </div>
       <div
-        class="content"
+        class="_content_af1b5d"
       />
       <div
-        class="footer"
+        class="_footer_af1b5d"
       >
         <div
-          class="buttons"
+          class="_buttons_af1b5d"
         >
           <div
-            class="gutter"
+            class="_gutter_af1b5d"
           >
             <div>
               The Gutter
             </div>
           </div>
           <div
-            class="buttons_wrapper"
+            class="_buttons_wrapper_af1b5d"
           >
             <div
-              class="left_buttons"
+              class="_left_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-d3a33348=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -63,24 +63,26 @@ exports[`Dialog should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-d3a33348=""
                   >
-                     Other 
+                    
+                    
+                     Other
                   </span>
                   <!---->
                 </button>
               </div>
             </div>
             <div
-              class="right_buttons"
+              class="_right_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-d3a33348=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -88,20 +90,22 @@ exports[`Dialog should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-d3a33348=""
                   >
-                     Cancel 
+                    
+                    
+                     Cancel
                   </span>
                   <!---->
                 </button>
               </div>
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-d3a33348=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -109,9 +113,11 @@ exports[`Dialog should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-d3a33348=""
                   >
-                     Ok 
+                    
+                    
+                     Ok
                   </span>
                   <!---->
                 </button>

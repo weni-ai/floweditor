@@ -1,11 +1,10 @@
-@import 'variables.module.scss';
-@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
+@import 'src/variables.module.scss';
 
 .editor {
   position: relative;
   font-family: $unnnic-font-family-secondary, sans-serif;
   font-weight: $unnnic-font-weight-regular;
-  color: $unnnic-color-neutral-dark; 
+  color: $unnnic-color-neutral-dark;
   height: 100%;
   font-size: $unnnic-font-size-body-md;
   line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
@@ -17,17 +16,17 @@
   .editor {
     $color_1: rgba(0, 0, 0, 0.02);
     $color_2: rgba(0, 0, 0, 0.01);
-    background: repeating-linear-gradient(
-      -60deg,
-      $color_1,
-      $color_1 3px,
-      $color_2 3px,
-      $color_2 6px
-    ); 
+    background: repeating-linear-gradient(-60deg,
+        $color_1,
+        $color_1 3px,
+        $color_2 3px,
+        $color_2 6px);
   }
+
   :global {
     svg path {
       stroke: $translation_connector !important;
+
       &.jtk-arrow {
         fill: $translation_connector !important;
       }

@@ -21,10 +21,10 @@ import i18n from 'config/i18n';
 import { renderIssues } from '../../helpers';
 
 // @ts-ignore
-import { unnnicRadio } from '@weni/unnnic-system';
-import { applyVueInReact } from 'vuereact-combined';
+import Unnnic from '@weni/unnnic-system';
+import { applyVueInReact } from 'veaury';
 
-const UnnnicRadio = applyVueInReact(unnnicRadio, {
+const UnnnicRadio = applyVueInReact(Unnnic.unnnicRadio, {
   react: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -89,7 +89,7 @@ export default class RemoveGroupsForm extends React.Component<
 
   private handleUpdate(
     keys: { groups?: Asset[]; removeAll?: boolean },
-    submitting: boolean = false,
+    submitting = false,
   ): boolean {
     const updates: Partial<ChangeGroupsFormState> = {};
 
@@ -118,10 +118,7 @@ export default class RemoveGroupsForm extends React.Component<
     return updated.valid;
   }
 
-  public handleGroupsChanged(
-    groups: Asset[],
-    submitting: boolean = false,
-  ): boolean {
+  public handleGroupsChanged(groups: Asset[], submitting = false): boolean {
     return this.handleUpdate({ groups }, submitting);
   }
 
@@ -162,10 +159,7 @@ export default class RemoveGroupsForm extends React.Component<
             'Groups that the contact will be removed:',
           )}
           <UnnnicRadio
-            $model={{
-              value: String(this.state.removeAll),
-              setter: this.handleRemoveAllUpdate,
-            }}
+            v-model={[String(this.state.removeAll), this.handleRemoveAllUpdate]}
             value="false"
             size="sm"
           >
@@ -177,10 +171,7 @@ export default class RemoveGroupsForm extends React.Component<
             </span>
           </UnnnicRadio>
           <UnnnicRadio
-            $model={{
-              value: String(this.state.removeAll),
-              setter: this.handleRemoveAllUpdate,
-            }}
+            v-model={[String(this.state.removeAll), this.handleRemoveAllUpdate]}
             value="true"
             size="sm"
           >

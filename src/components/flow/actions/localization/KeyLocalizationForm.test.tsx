@@ -30,7 +30,7 @@ describe(KeyLocalizationForm.name, () => {
 
     // save our translations
     fireEvent.click(getByText('Ok'));
-    expect(props.updateLocalizations).toMatchCallSnapshot();
+    expect(props.updateLocalizations).toMatchSnapshot();
   });
 
   it('removes translations', () => {
@@ -50,6 +50,6 @@ describe(KeyLocalizationForm.name, () => {
 
     // save our translations, which should remove the key
     fireEvent.click(getByText('Ok'));
-    expect(props.updateLocalizations).toMatchCallSnapshot();
+    expect(props.updateLocalizations).toMatchSnapshot();
   });
 });

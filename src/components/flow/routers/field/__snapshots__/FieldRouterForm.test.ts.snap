@@ -1,657 +1,106 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`FieldRouterForm initializes 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Confirm",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="split_by_contact_field"
-  title="Split by contact field"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "description": "Split by contact field",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "exits",
-          "cases",
-        ],
-        "name": "Split by contact field",
-        "type": "split_by_contact_field",
-      }
-    }
-    nodeSettings={
-      Object {
-        "originalNode": Object {
-          "inboundConnections": Object {},
-          "node": Object {
-            "actions": Array [],
-            "exits": Array [
-              Object {
-                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-              },
-              Object {
-                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-              },
-            ],
-            "router": Object {
-              "cases": Array [
-                Object {
-                  "arguments": Array [
-                    "red",
-                  ],
-                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-                  "type": "has_any_word",
-                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-                },
-              ],
-              "categories": Array [
-                Object {
-                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-                  "name": "Red",
-                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-                },
-                Object {
-                  "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-                  "name": "Other",
-                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-                },
-              ],
-              "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-              "operand": "@input.text",
-              "result_name": "Color",
-              "type": "switch",
-              "wait": Object {
-                "type": "msg",
-              },
-            },
-            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
-          },
-          "ui": Object {
-            "config": Object {
-              "operand": Object {
-                "id": "name",
-                "name": "Name",
-                "type": "property",
-              },
-            },
-            "position": Object {
-              "left": 0,
-              "top": 0,
-            },
-            "type": "split_by_contact_field",
-          },
-        },
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <div
-    className="lead_in"
-  >
-    <AssetSelector
-      additionalOptions={
-        Array [
-          Object {
-            "id": "name",
-            "key": "name",
-            "name": "Name",
-            "type": "property",
-          },
-          Object {
-            "id": "language",
-            "key": "language",
-            "name": "Language",
-            "type": "property",
-          },
-          Object {
-            "id": "channel",
-            "key": "channel",
-            "name": "Channel",
-            "type": "property",
-          },
-          Object {
-            "id": "status",
-            "key": "status",
-            "name": "Status",
-            "type": "property",
-          },
-          Object {
-            "id": "tel",
-            "name": "Phone number",
-            "type": "scheme",
-          },
-          Object {
-            "id": "whatsapp",
-            "name": "WhatsApp Number",
-            "type": "scheme",
-          },
-          Object {
-            "id": "facebook",
-            "name": "Facebook",
-            "type": "scheme",
-          },
-          Object {
-            "id": "twitterid",
-            "name": "Twitter ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "telegram",
-            "name": "Telegram ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "viber",
-            "name": "Viber ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "line",
-            "name": "Line ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "wechat",
-            "name": "Wechat ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "fcm",
-            "name": "Firebase ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "jiochat",
-            "name": "Jiochat ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "freshchat",
-            "name": "Freshchat ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "mailto",
-            "name": "Email Address",
-            "type": "scheme",
-          },
-          Object {
-            "id": "twitter",
-            "name": "Twitter Handle",
-            "type": "scheme",
-          },
-          Object {
-            "id": "ext",
-            "name": "External ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "instagram",
-            "name": "Instagram ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "slack",
-            "name": "Slack ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "teams",
-            "name": "Teams ID",
-            "type": "scheme",
-          },
-        ]
-      }
-      assets={
-        Object {
-          "items": Object {},
-          "type": "field",
-        }
-      }
-      entry={
-        Object {
-          "value": Object {
-            "id": "name",
-            "key": "name",
-            "name": "Name",
-            "type": "property",
-          },
-        }
-      }
-      getName={[Function]}
-      name="If the contact's"
-      onChange={[Function]}
-      searchable={true}
-      showLabel={true}
-      sortFunction={[Function]}
-      style="sm"
-      valueKey="id"
-    />
-  </div>
-  <div
-    className="u font secondary body-md color-neutral-cloudy"
-  >
-    If the message response
-  </div>
-  <CaseList
-    cases={
-      Array [
-        Object {
-          "categoryName": "Red",
-          "kase": Object {
-            "arguments": Array [
-              "red",
-            ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_any_word",
-            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-          },
-          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-          "valid": true,
-        },
-      ]
-    }
-    data-spec="cases"
-    onCasesUpdated={[Function]}
-    type="default"
-  />
-  <OptionalTextInput
-    maxLength={64}
-    name="Save as result"
-    onChange={[Function]}
-    toggleText="Save as"
-    value={
-      Object {
-        "value": "Color",
-      }
-    }
-  />
-</Dialog>
-`;
+exports[`FieldRouterForm > initializes 1`] = `ShallowWrapper {}`;
 
-exports[`FieldRouterForm should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Confirm",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="split_by_contact_field"
-  title="Split by contact field"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "description": "Split by contact field",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "exits",
-          "cases",
-        ],
-        "name": "Split by contact field",
-        "type": "split_by_contact_field",
-      }
-    }
-    nodeSettings={
-      Object {
-        "originalAction": null,
-        "originalNode": Object {
-          "inboundConnections": Object {},
-          "node": Object {
-            "actions": Array [],
-            "exits": Array [
-              Object {
-                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-              },
-              Object {
-                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-              },
-            ],
-            "router": Object {
-              "cases": Array [
-                Object {
-                  "arguments": Array [
-                    "red",
-                  ],
-                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-                  "type": "has_any_word",
-                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-                },
-              ],
-              "categories": Array [
-                Object {
-                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-                  "name": "Red",
-                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-                },
-                Object {
-                  "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-                  "name": "Other",
-                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-                },
-              ],
-              "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-              "operand": "@input.text",
-              "result_name": "Color",
-              "type": "switch",
-              "wait": Object {
-                "type": "msg",
-              },
-            },
-            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
-          },
-          "ui": Object {
-            "config": Object {
-              "operand": Object {
-                "id": "name",
-                "name": "Name",
-                "type": "property",
-              },
-            },
-            "position": Object {
-              "left": 0,
-              "top": 0,
-            },
-            "type": "split_by_contact_field",
-          },
-        },
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <div
-    className="lead_in"
-  >
-    <AssetSelector
-      additionalOptions={
-        Array [
-          Object {
-            "id": "name",
-            "key": "name",
-            "name": "Name",
-            "type": "property",
-          },
-          Object {
-            "id": "language",
-            "key": "language",
-            "name": "Language",
-            "type": "property",
-          },
-          Object {
-            "id": "channel",
-            "key": "channel",
-            "name": "Channel",
-            "type": "property",
-          },
-          Object {
-            "id": "status",
-            "key": "status",
-            "name": "Status",
-            "type": "property",
-          },
-          Object {
-            "id": "tel",
-            "name": "Phone number",
-            "type": "scheme",
-          },
-          Object {
-            "id": "whatsapp",
-            "name": "WhatsApp Number",
-            "type": "scheme",
-          },
-          Object {
-            "id": "facebook",
-            "name": "Facebook",
-            "type": "scheme",
-          },
-          Object {
-            "id": "twitterid",
-            "name": "Twitter ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "telegram",
-            "name": "Telegram ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "viber",
-            "name": "Viber ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "line",
-            "name": "Line ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "wechat",
-            "name": "Wechat ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "fcm",
-            "name": "Firebase ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "jiochat",
-            "name": "Jiochat ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "freshchat",
-            "name": "Freshchat ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "mailto",
-            "name": "Email Address",
-            "type": "scheme",
-          },
-          Object {
-            "id": "twitter",
-            "name": "Twitter Handle",
-            "type": "scheme",
-          },
-          Object {
-            "id": "ext",
-            "name": "External ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "instagram",
-            "name": "Instagram ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "slack",
-            "name": "Slack ID",
-            "type": "scheme",
-          },
-          Object {
-            "id": "teams",
-            "name": "Teams ID",
-            "type": "scheme",
-          },
-        ]
-      }
-      assets={
-        Object {
-          "items": Object {},
-          "type": "field",
-        }
-      }
-      entry={
-        Object {
-          "value": Object {
-            "id": "name",
-            "key": "name",
-            "name": "Name",
-            "type": "property",
-          },
-        }
-      }
-      getName={[Function]}
-      name="If the contact's"
-      onChange={[Function]}
-      searchable={true}
-      showLabel={true}
-      sortFunction={[Function]}
-      style="sm"
-      valueKey="id"
-    />
-  </div>
-  <div
-    className="u font secondary body-md color-neutral-cloudy"
-  >
-    If the message response
-  </div>
-  <CaseList
-    cases={
-      Array [
-        Object {
-          "categoryName": "Red",
-          "kase": Object {
-            "arguments": Array [
-              "red",
-            ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_any_word",
-            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-          },
-          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-          "valid": true,
-        },
-      ]
-    }
-    data-spec="cases"
-    onCasesUpdated={[Function]}
-    type="default"
-  />
-  <OptionalTextInput
-    maxLength={64}
-    name="Save as result"
-    onChange={[Function]}
-    toggleText="Save as"
-    value={
-      Object {
-        "value": "Color",
-      }
-    }
-  />
-</Dialog>
-`;
+exports[`FieldRouterForm > should render 1`] = `ShallowWrapper {}`;
 
-exports[`FieldRouterForm updates should build expression from a selected field 1`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [],
-      "exits": Array [
-        Object {
-          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-        },
-        Object {
-          "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "red",
+exports[`FieldRouterForm > updates > should build expression from a selected field 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "red",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              },
             ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_any_word",
-            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            "categories": [
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Red",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "name": "Other",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "operand": "@fields.my_field",
+            "result_name": "Color",
+            "type": "switch",
           },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "name": "Red",
-            "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {
+            "cases": {},
+            "operand": {
+              "id": "my_field",
+              "name": "My Field",
+              "type": "field",
+            },
           },
-          Object {
-            "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "name": "Other",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-          },
-        ],
-        "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-        "operand": "@fields.my_field",
-        "result_name": "Color",
-        "type": "switch",
+          "position": null,
+          "type": "split_by_contact_field",
+        },
       },
-      "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "ui": Object {
-      "config": Object {
-        "cases": Object {},
-        "operand": Object {
-          "id": "my_field",
-          "name": "My Field",
-          "type": "field",
-        },
-      },
-      "position": null,
-      "type": "split_by_contact_field",
-    },
-  },
-]
+  ],
+}
 `;
 
-exports[`FieldRouterForm updates should save changes 1`] = `
-Object {
-  "cases": Array [
-    Object {
+exports[`FieldRouterForm > updates > should save changes 1`] = `
+{
+  "cases": [
+    {
       "categoryName": "Red",
-      "kase": Object {
-        "arguments": Array [
+      "kase": {
+        "arguments": [
           "red",
         ],
         "type": "has_any_word",
       },
       "valid": true,
     },
-    Object {
+    {
       "categoryName": "Red",
-      "kase": Object {
-        "arguments": Array [
+      "kase": {
+        "arguments": [
           "maroon",
         ],
         "type": "has_any_word",
       },
       "valid": true,
     },
-    Object {
+    {
       "categoryName": "Green",
-      "kase": Object {
-        "arguments": Array [
+      "kase": {
+        "arguments": [
           "green",
         ],
         "type": "has_any_word",
@@ -659,99 +108,109 @@ Object {
       "valid": true,
     },
   ],
-  "field": Object {
-    "value": Object {
+  "field": {
+    "value": {
       "id": "name",
       "key": "name",
       "name": "Name",
       "type": "property",
     },
   },
-  "resultName": Object {
-    "validationFailures": Array [],
+  "resultName": {
+    "validationFailures": [],
     "value": "Favorite Color",
   },
   "valid": true,
 }
 `;
 
-exports[`FieldRouterForm updates should save changes 2`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [],
-      "exits": Array [
-        Object {
-          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-        },
-        Object {
-          "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-        },
-        Object {
-          "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "red",
+exports[`FieldRouterForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+            },
+            {
+              "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "red",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "maroon",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "green",
+                ],
+                "category_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+                "type": "has_any_word",
+              },
             ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_any_word",
-          },
-          Object {
-            "arguments": Array [
-              "maroon",
+            "categories": [
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Red",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+                "name": "Green",
+                "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+              },
+              {
+                "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "name": "Other",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
             ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_any_word",
+            "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "operand": "@contact.name",
+            "result_name": "Favorite Color",
+            "type": "switch",
           },
-          Object {
-            "arguments": Array [
-              "green",
-            ],
-            "category_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
-            "type": "has_any_word",
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {
+            "cases": {},
+            "operand": {
+              "id": "name",
+              "name": "Name",
+              "type": "property",
+            },
           },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "name": "Red",
-            "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-          },
-          Object {
-            "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-            "name": "Green",
-            "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
-          },
-          Object {
-            "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "name": "Other",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-          },
-        ],
-        "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-        "operand": "@contact.name",
-        "result_name": "Favorite Color",
-        "type": "switch",
+          "position": null,
+          "type": "split_by_contact_field",
+        },
       },
-      "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "ui": Object {
-      "config": Object {
-        "cases": Object {},
-        "operand": Object {
-          "id": "name",
-          "name": "Name",
-          "type": "property",
-        },
-      },
-      "position": null,
-      "type": "split_by_contact_field",
-    },
-  },
-]
+  ],
+}
 `;

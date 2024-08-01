@@ -8,10 +8,10 @@ import * as React from 'react';
 import { StringEntry, ValidationFailure } from 'store/nodeEditor';
 import { HeaderName, validate } from 'store/validators';
 import i18n from 'config/i18n';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
 // TODO: move this into webhook router component
 export interface Header {
@@ -50,7 +50,7 @@ export const VALUE_PLACEHOLDER = i18n.t(
   'Ex: application/json',
 );
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export default class HeaderElement extends React.Component<
   HeaderElementProps,

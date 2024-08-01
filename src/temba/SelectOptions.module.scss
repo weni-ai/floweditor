@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 @mixin scrollbars {
 
@@ -8,10 +8,12 @@
   &::-webkit-scrollbar {
     width: 6px;
   }
+
   &::-webkit-scrollbar-thumb {
     background-color: $unnnic-color-neutral-clean ;
     border-radius: $unnnic-border-radius-md;
   }
+
   &::-webkit-scrollbar-track {
     background: $unnnic-color-neutral-soft;
     border-radius: $unnnic-border-radius-md;
@@ -73,6 +75,7 @@
       color: $unnnic-color-neutral-cloudy;
       font-size: $unnnic-font-size-body-md;
       line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+
       &:first-letter {
         text-transform: uppercase;
       }
@@ -80,9 +83,9 @@
 
   }
 
-  .selected {    
+  .selected {
     background-color: $unnnic-color-neutral-light;
-    
+
     font-size: $unnnic-font-size-body-gt;
     font-weight: $unnnic-font-weight-bold;
     line-height: $unnnic-font-size-body-gt + $unnnic-line-height-md;

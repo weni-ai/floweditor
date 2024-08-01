@@ -2,13 +2,13 @@ import * as React from 'react';
 
 import styles from './DescriptionAlert.module.scss';
 
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import { Trans } from 'react-i18next';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export const leadInSpecId = 'lead-in';
 

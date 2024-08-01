@@ -1,6 +1,4 @@
-@import 'variables.module.scss';
-@import '@weni/unnnic-system/dist/scss/unnnic.scss';
-
+@import 'src/variables.module.scss';
 
 .products_config {
   display: flex;
@@ -15,7 +13,7 @@
     display: flex;
     gap: $unnnic-spacing-sm;
   }
-  
+
   .product_view_settings {
     border-radius: $unnnic-border-radius-sm;
     border: 1px solid $unnnic-color-neutral-soft;
@@ -33,7 +31,7 @@
       font-size: $unnnic-font-size-body-md;
       line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
     }
-    
+
     .content {
       display: flex;
       flex-direction: column;
@@ -80,8 +78,9 @@
     .optional {
       display: flex;
       gap: $unnnic-spacing-sm;
-      
-      .postal_code, .seller_id {
+
+      .postal_code,
+      .seller_id {
         flex: 1;
       }
     }

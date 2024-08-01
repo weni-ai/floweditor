@@ -1,294 +1,30 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SendBroadcastForm render should render an empty form with no action 1`] = `
-Object {
-  "message": Object {
+exports[`SendBroadcastForm > render > should render an empty form with no action 1`] = `
+{
+  "message": {
     "value": "",
   },
-  "recipients": Object {
-    "value": Array [],
+  "recipients": {
+    "value": [],
   },
   "valid": false,
 }
 `;
 
-exports[`SendBroadcastForm render should render an empty form with no action 2`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Confirm",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="send_broadcast"
-  title="Send broadcast"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "component": [Function],
-        "description": "Send somebody else a message",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "text",
-        ],
-        "name": "Send broadcast",
-        "type": "send_broadcast",
-      }
-    }
-    nodeSettings={
-      Object {
-        "originalNode": null,
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <div
-    className="recipients_container"
-  >
-    <AssetSelector
-      assets={
-        Object {
-          "items": Object {},
-          "type": "contact",
-        }
-      }
-      entry={
-        Object {
-          "value": Array [],
-        }
-      }
-      expressions={true}
-      multi={true}
-      name="Select contacts"
-      onChange={[Function]}
-      placeholder="Select contacts"
-      searchable={true}
-      showLabel={true}
-    />
-  </div>
-  <TextInputElement
-    autocomplete={true}
-    count="SMS"
-    entry={
-      Object {
-        "value": "",
-      }
-    }
-    focus={true}
-    name="Message"
-    onChange={[Function]}
-    placeholder="Type here..."
-    showLabel={true}
-    textarea={true}
-  />
-</Dialog>
-`;
+exports[`SendBroadcastForm > render > should render an empty form with no action 2`] = `ShallowWrapper {}`;
 
-exports[`SendBroadcastForm render should render self, children with base props 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Confirm",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="send_broadcast"
-  title="Send broadcast"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "component": [Function],
-        "description": "Send somebody else a message",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "text",
-        ],
-        "name": "Send broadcast",
-        "type": "send_broadcast",
-      }
-    }
-    nodeSettings={
-      Object {
-        "originalAction": Object {
-          "contacts": Array [
-            Object {
-              "name": "Kellan Alexander",
-              "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            },
-            Object {
-              "name": "Norbert Kwizera",
-              "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            },
-            Object {
-              "name": "Rowan Seymour",
-              "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-            },
-          ],
-          "groups": Array [
-            Object {
-              "name": "Cat Fanciers",
-              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-            },
-            Object {
-              "name": "Cat Facts",
-              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            },
-          ],
-          "text": "Hello World",
-          "type": "send_broadcast",
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-        },
-        "originalNode": Object {
-          "inboundConnections": Object {},
-          "node": Object {
-            "actions": Array [
-              Object {
-                "contacts": Array [
-                  Object {
-                    "name": "Kellan Alexander",
-                    "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-                  },
-                  Object {
-                    "name": "Norbert Kwizera",
-                    "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-                  },
-                  Object {
-                    "name": "Rowan Seymour",
-                    "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-                  },
-                ],
-                "groups": Array [
-                  Object {
-                    "name": "Cat Fanciers",
-                    "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-                  },
-                  Object {
-                    "name": "Cat Facts",
-                    "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-                  },
-                ],
-                "text": "Hello World",
-                "type": "send_broadcast",
-                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-              },
-            ],
-            "exits": Array [
-              Object {
-                "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-              },
-            ],
-            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
-          },
-          "ui": Object {
-            "position": Object {
-              "left": 0,
-              "top": 0,
-            },
-            "type": "execute_actions",
-          },
-        },
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <div
-    className="recipients_container"
-  >
-    <AssetSelector
-      assets={
-        Object {
-          "items": Object {},
-          "type": "contact",
-        }
-      }
-      entry={
-        Object {
-          "value": Array [
-            Object {
-              "id": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-              "name": "Cat Fanciers",
-              "type": "group",
-            },
-            Object {
-              "id": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-              "name": "Cat Facts",
-              "type": "group",
-            },
-            Object {
-              "id": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-              "missing": false,
-              "name": "Kellan Alexander",
-              "type": "contact",
-            },
-            Object {
-              "id": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-              "missing": false,
-              "name": "Norbert Kwizera",
-              "type": "contact",
-            },
-            Object {
-              "id": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-              "missing": false,
-              "name": "Rowan Seymour",
-              "type": "contact",
-            },
-          ],
-        }
-      }
-      expressions={true}
-      multi={true}
-      name="Select contacts"
-      onChange={[Function]}
-      placeholder="Select contacts"
-      searchable={true}
-      showLabel={true}
-    />
-  </div>
-  <TextInputElement
-    autocomplete={true}
-    count="SMS"
-    entry={
-      Object {
-        "value": "Hello World",
-      }
-    }
-    focus={true}
-    name="Message"
-    onChange={[Function]}
-    placeholder="Type here..."
-    showLabel={true}
-    textarea={true}
-  />
-</Dialog>
-`;
+exports[`SendBroadcastForm > render > should render self, children with base props 1`] = `ShallowWrapper {}`;
 
-exports[`SendBroadcastForm updates handles recipent change 1`] = `
-Object {
-  "message": Object {
+exports[`SendBroadcastForm > updates > handles recipent change 1`] = `
+{
+  "message": {
     "value": "Hello World",
   },
-  "recipients": Object {
-    "validationFailures": Array [],
-    "value": Array [
-      Object {
+  "recipients": {
+    "validationFailures": [],
+    "value": [
+      {
         "id": "group-0",
         "name": "My Group",
       },
@@ -298,37 +34,37 @@ Object {
 }
 `;
 
-exports[`SendBroadcastForm updates handles text change 1`] = `
-Object {
-  "message": Object {
-    "validationFailures": Array [],
+exports[`SendBroadcastForm > updates > handles text change 1`] = `
+{
+  "message": {
+    "validationFailures": [],
     "value": "Message to Group",
   },
-  "recipients": Object {
-    "value": Array [
-      Object {
+  "recipients": {
+    "value": [
+      {
         "id": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
         "name": "Cat Fanciers",
         "type": "group",
       },
-      Object {
+      {
         "id": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
         "name": "Cat Facts",
         "type": "group",
       },
-      Object {
+      {
         "id": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
         "missing": false,
         "name": "Kellan Alexander",
         "type": "contact",
       },
-      Object {
+      {
         "id": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
         "missing": false,
         "name": "Norbert Kwizera",
         "type": "contact",
       },
-      Object {
+      {
         "id": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
         "missing": false,
         "name": "Rowan Seymour",
@@ -340,15 +76,25 @@ Object {
 }
 `;
 
-exports[`SendBroadcastForm updates should allow switching from router 1`] = `
-Array [
-  Object {
-    "contacts": Array [],
-    "groups": Array [],
-    "legacy_vars": Array [],
-    "text": "Message to Group",
-    "type": "send_broadcast",
-    "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
-  },
-]
+exports[`SendBroadcastForm > updates > should allow switching from router 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "contacts": [],
+        "groups": [],
+        "legacy_vars": [],
+        "text": "Message to Group",
+        "type": "send_broadcast",
+        "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;

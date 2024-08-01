@@ -1,299 +1,183 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SubflowRouterForm render should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Confirm",
-        "onClick": [Function],
-      },
-      "secondary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  className="dialog"
-  headerClass="enter_flow"
-  tabs={Array []}
-  title="Enter another flow"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "aliases": Array [
-          "split_by_subflow",
-        ],
-        "component": [Function],
-        "description": "Enter another flow",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "exits",
-        ],
-        "name": "Enter another flow",
-        "type": "enter_flow",
-      }
-    }
-    nodeSettings={
-      Object {
-        "originalAction": null,
-        "originalNode": Object {
-          "inboundConnections": Object {},
-          "node": Object {
-            "actions": Array [
-              Object {
-                "flow": Object {
-                  "name": "Colors",
-                  "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-                },
-                "type": "enter_flow",
-                "uuid": "d4a3a01c-1dee-4324-b107-4ac7a21d836f",
+exports[`SubflowRouterForm > render > should render 1`] = `ShallowWrapper {}`;
+
+exports[`SubflowRouterForm > updates > converts from other node types 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "flow": {
+                "name": "Favorite Color",
+                "uuid": "9a93ede6-078f-44c9-ad0a-133793be5d56",
+              },
+              "type": "enter_flow",
+              "uuid": "d4a3a01c-1dee-4324-b107-4ac7a21d836f",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "completed",
+                ],
+                "category_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "type": "has_only_text",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+              {
+                "arguments": [
+                  "expired",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
               },
             ],
-            "exits": Array [
-              Object {
-                "destination_uuid": null,
+            "categories": [
+              {
+                "exit_uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                "name": "Complete",
                 "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
               },
-              Object {
-                "destination_uuid": null,
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Expired",
                 "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
               },
             ],
-            "router": Object {
-              "cases": Array [
-                Object {
-                  "arguments": Array [
-                    "C",
-                  ],
-                  "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-                  "type": "has_run_status",
-                  "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
-                },
-                Object {
-                  "arguments": Array [
-                    "E",
-                  ],
-                  "category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-                  "type": "has_run_status",
-                  "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-                },
-              ],
-              "categories": Array [
-                Object {
-                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-                  "name": "Complete",
-                  "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-                },
-                Object {
-                  "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-                  "name": "Expired",
-                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-                },
-              ],
-              "default_category_uuid": null,
-              "operand": "@child",
-              "type": "switch",
-              "wait": null,
-            },
-            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            "default_category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            "operand": "@child.status",
+            "type": "switch",
           },
-          "ui": Object {
-            "position": Object {
-              "left": 0,
-              "top": 0,
-            },
-            "type": "split_by_subflow",
-          },
-        },
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <AssetSelector
-    assets={
-      Object {
-        "items": Object {},
-        "type": "flow",
-      }
-    }
-    entry={
-      Object {
-        "value": Object {
-          "name": "Colors",
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-        },
-      }
-    }
-    name="Flow to start"
-    onChange={[Function]}
-    placeholder="Select the flow to start"
-    searchable={true}
-    shouldExclude={[Function]}
-    showLabel={true}
-  />
-</Dialog>
-`;
-
-exports[`SubflowRouterForm updates converts from other node types 1`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [
-        Object {
-          "flow": Object {
-            "name": "Favorite Color",
-            "uuid": "9a93ede6-078f-44c9-ad0a-133793be5d56",
-          },
-          "type": "enter_flow",
-          "uuid": "d4a3a01c-1dee-4324-b107-4ac7a21d836f",
-        },
-      ],
-      "exits": Array [
-        Object {
-          "destination_uuid": null,
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-        },
-        Object {
-          "destination_uuid": null,
           "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
         },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "completed",
-            ],
-            "category_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "type": "has_only_text",
-            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-          },
-          Object {
-            "arguments": Array [
-              "expired",
-            ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_only_text",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-          },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-            "name": "Complete",
-            "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-          },
-          Object {
-            "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-            "name": "Expired",
-            "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-          },
-        ],
-        "default_category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-        "operand": "@child.status",
-        "type": "switch",
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_subflow",
+        },
       },
-      "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "ui": Object {
-      "config": Object {},
-      "position": null,
-      "type": "split_by_subflow",
-    },
-  },
-]
+  ],
+}
 `;
 
-exports[`SubflowRouterForm updates creates its own action uuid if necessary 1`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [
-        Object {
-          "flow": Object {
-            "name": "Favorite Color",
-            "uuid": "9a93ede6-078f-44c9-ad0a-133793be5d56",
-          },
-          "type": "enter_flow",
-          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
-        },
-      ],
-      "exits": Array [
-        Object {
-          "destination_uuid": null,
-          "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-        },
-        Object {
-          "destination_uuid": null,
-          "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "completed",
+exports[`SubflowRouterForm > updates > creates its own action uuid if necessary 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "flow": {
+                "name": "Favorite Color",
+                "uuid": "9a93ede6-078f-44c9-ad0a-133793be5d56",
+              },
+              "type": "enter_flow",
+              "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "completed",
+                ],
+                "category_uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+                "type": "has_only_text",
+                "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+              },
+              {
+                "arguments": [
+                  "expired",
+                ],
+                "category_uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+                "type": "has_only_text",
+                "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+              },
             ],
-            "category_uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
-            "type": "has_only_text",
-            "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
-          },
-          Object {
-            "arguments": Array [
-              "expired",
+            "categories": [
+              {
+                "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+                "name": "Complete",
+                "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+              },
+              {
+                "exit_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+                "name": "Expired",
+                "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+              },
             ],
-            "category_uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
-            "type": "has_only_text",
-            "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+            "default_category_uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+            "operand": "@child.status",
+            "type": "switch",
           },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-            "name": "Complete",
-            "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
-          },
-          Object {
-            "exit_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
-            "name": "Expired",
-            "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
-          },
-        ],
-        "default_category_uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
-        "operand": "@child.status",
-        "type": "switch",
+          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_subflow",
+        },
       },
-      "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "ui": Object {
-      "config": Object {},
-      "position": null,
-      "type": "split_by_subflow",
-    },
-  },
-]
+  ],
+}
 `;
 
-exports[`SubflowRouterForm updates should update and save 1`] = `
-Object {
-  "flow": Object {
-    "validationFailures": Array [],
-    "value": Object {
+exports[`SubflowRouterForm > updates > should update and save 1`] = `
+{
+  "flow": {
+    "validationFailures": [],
+    "value": {
       "name": "Favorite Color",
-      "parent_refs": Array [
+      "parent_refs": [
         "colors",
       ],
       "uuid": "9a93ede6-078f-44c9-ad0a-133793be5d56",
     },
   },
-  "params": Object {
-    "colors": Object {
+  "params": {
+    "colors": {
       "value": "",
     },
   },
@@ -301,73 +185,83 @@ Object {
 }
 `;
 
-exports[`SubflowRouterForm updates should update and save 2`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [
-        Object {
-          "flow": Object {
-            "name": "Favorite Color",
-            "uuid": "9a93ede6-078f-44c9-ad0a-133793be5d56",
-          },
-          "type": "enter_flow",
-          "uuid": "d4a3a01c-1dee-4324-b107-4ac7a21d836f",
-        },
-      ],
-      "exits": Array [
-        Object {
-          "destination_uuid": null,
-          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-        },
-        Object {
-          "destination_uuid": null,
-          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "C",
+exports[`SubflowRouterForm > updates > should update and save 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "flow": {
+                "name": "Favorite Color",
+                "uuid": "9a93ede6-078f-44c9-ad0a-133793be5d56",
+              },
+              "type": "enter_flow",
+              "uuid": "d4a3a01c-1dee-4324-b107-4ac7a21d836f",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "C",
+                ],
+                "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "type": "has_run_status",
+                "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+              },
+              {
+                "arguments": [
+                  "E",
+                ],
+                "category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                "type": "has_run_status",
+                "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+              },
             ],
-            "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-            "type": "has_run_status",
-            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
-          },
-          Object {
-            "arguments": Array [
-              "E",
+            "categories": [
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Complete",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+              {
+                "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "name": "Expired",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
             ],
-            "category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-            "type": "has_run_status",
-            "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+            "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "operand": "@child.status",
+            "type": "switch",
           },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "name": "Complete",
-            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-          },
-          Object {
-            "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "name": "Expired",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-          },
-        ],
-        "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
-        "operand": "@child.status",
-        "type": "switch",
+          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_subflow",
+        },
       },
-      "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "ui": Object {
-      "config": Object {},
-      "position": null,
-      "type": "split_by_subflow",
-    },
-  },
-]
+  ],
+}
 `;

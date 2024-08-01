@@ -14,13 +14,5 @@ export default (state: AppState = initialState) => {
     composeWithDevTools(applyMiddleware(...middlewares)),
   );
 
-  /* istanbul ignore next */
-  if (module.hot) {
-    module.hot.accept('./rootReducer', () => {
-      const { default: nextRootReducer } = require('./rootReducer');
-      store.replaceReducer(nextRootReducer);
-    });
-  }
-
   return store;
 };

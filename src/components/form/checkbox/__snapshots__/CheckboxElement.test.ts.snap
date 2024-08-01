@@ -1,79 +1,25 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`CheckboxElement should render a checkbox element with title, description 1`] = `
-Array [
-  Object {
-    "checked": true,
-  },
-]
+exports[`CheckboxElement > should render a checkbox element with title, description > unchecked 1`] = `ShallowWrapper {}`;
+
+exports[`CheckboxElement > should render a checkbox element with title, description 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "checked": true,
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`CheckboxElement should render a checkbox element with title, description 2`] = `
-<label
-  className="label label"
-  onClick={[Function]}
->
-  <span
-    className="fe-check-square checkbox"
-    data-spec="checkbox"
-  />
-  <div
-    className="title"
-    data-spec="title"
-  >
-    Checkbox
-  </div>
-  <div
-    className="description"
-    data-spec="description"
-  >
-    All Destinations
-  </div>
-</label>
-`;
+exports[`CheckboxElement > should render a checkbox element with title, description 2`] = `ShallowWrapper {}`;
 
-exports[`CheckboxElement should render a checkbox element with title, description 3`] = `
-<label
-  className="label label"
-  onClick={[Function]}
->
-  <span
-    className="fe-check-square checkbox"
-    data-spec="checkbox"
-  />
-  <div
-    className="title"
-    data-spec="title"
-  />
-  <div
-    className="description_solo"
-    data-spec="description"
-  >
-    Continue when there is no response
-  </div>
-</label>
-`;
-
-exports[`CheckboxElement should render a checkbox element with title, description: unchecked 1`] = `
-<label
-  className="label label"
-  onClick={[Function]}
->
-  <span
-    className="fe-square checkbox"
-    data-spec="checkbox"
-  />
-  <div
-    className="title"
-    data-spec="title"
-  >
-    Checkbox
-  </div>
-  <div
-    className="description"
-    data-spec="description"
-  >
-    All Destinations
-  </div>
-</label>
-`;
+exports[`CheckboxElement > should render a checkbox element with title, description 3`] = `ShallowWrapper {}`;

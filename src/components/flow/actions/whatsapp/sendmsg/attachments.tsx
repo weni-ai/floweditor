@@ -62,7 +62,7 @@ export const handleUploadFile = (
 export const renderUploadButton = (
   attachmentEndpoint: string,
   onAttachmentUploaded: (response: AxiosResponse) => void,
-  disabled: boolean = false,
+  disabled = false,
 ): JSX.Element => {
   let filePicker: any = null;
 
