@@ -179,6 +179,7 @@ export default class AirtimeRouterForm extends React.PureComponent<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         {this.renderAmounts()}
         {errors}

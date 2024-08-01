@@ -93,6 +93,7 @@ export default class AddLabelsForm extends React.PureComponent<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
 
         <AssetSelector

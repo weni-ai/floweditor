@@ -111,6 +111,11 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
                 "label": "Request Location",
                 "value": "location",
               },
+              Object {
+                "description": "Add a button with a link to an external URL.",
+                "label": "URL Button",
+                "value": "cta_url",
+              },
             ]
           }
           orderedByIndex={true}
@@ -1070,7 +1075,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
       {
         "description": "",
         "title": "",
-        "uuid": "19c23626-6961-4683-9cae-38dd767614f3",
+        "uuid": "666613f2-2d4f-432c-a707-929481961e98",
       },
     ],
   },
@@ -1925,7 +1930,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
       {
         "description": "",
         "title": "",
-        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+        "uuid": "e44fa695-257c-4cdd-baf7-bb485aa2d1a0",
       },
     ],
   },

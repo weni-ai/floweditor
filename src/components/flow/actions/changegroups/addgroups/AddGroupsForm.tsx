@@ -89,6 +89,7 @@ export default class AddGroupsForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
 
         <AssetSelector

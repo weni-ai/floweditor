@@ -121,6 +121,17 @@
   background: $unnnic-color-aux-orange-500 !important;
 }
 
+.call_brain {
+  background: $unnnic-color-aux-purple-100 !important;
+  color: $unnnic-color-aux-purple-500 !important;
+
+  [data-use-vue-component-wrap] {
+    span>svg>path {
+      fill: black !important;
+    }
+  }
+}
+
 .missing {
   background: #E53E3E !important;
 }

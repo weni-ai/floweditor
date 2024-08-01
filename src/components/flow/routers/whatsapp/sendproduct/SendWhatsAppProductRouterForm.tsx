@@ -592,6 +592,12 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
         multi
         searchable
         showLabel
+        pagination={{
+          selectorName: i18n.t(
+            'forms.manually_select_products',
+            'Manually select products',
+          ),
+        }}
       />
     );
   }
@@ -748,6 +754,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
 
         {this.renderWhatsappProductsConfig()}

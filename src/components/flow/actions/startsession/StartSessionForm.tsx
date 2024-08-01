@@ -188,6 +188,7 @@ export class StartSessionForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <div>
           <SelectElement

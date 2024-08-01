@@ -88,6 +88,7 @@ export enum WhatsAppInteractionType {
   LIST = 'list',
   REPLIES = 'replies',
   LOCATION = 'location',
+  CTA = 'cta_url',
 }
 
 export const WHATSAPP_MESSAGE_TYPE_SIMPLE: UnnnicSelectOption<
@@ -145,6 +146,16 @@ export const WHATSAPP_INTERACTION_TYPE_REPLIES: UnnnicSelectOption<
     'Create up to 3 quick replies with predefined messages',
   ),
 };
+export const WHATSAPP_INTERACTION_TYPE_CTA: UnnnicSelectOption<
+  WhatsAppInteractionType
+> = {
+  value: WhatsAppInteractionType.CTA,
+  label: i18n.t('whatsapp_interactions.add_url', 'URL Button'),
+  description: i18n.t(
+    'whatsapp_interactions.add_url_description',
+    'Add a button with a link to an external URL.',
+  ),
+};
 
 export const WHATSAPP_INTERACTION_TYPE_LOCATION: UnnnicSelectOption<
   WhatsAppInteractionType
@@ -172,6 +183,7 @@ export const WHATSAPP_INTERACTION_TYPE_OPTIONS: UnnnicSelectOption<
   WHATSAPP_INTERACTION_TYPE_REPLIES,
   WHATSAPP_INTERACTION_TYPE_LIST,
   WHATSAPP_INTERACTION_TYPE_LOCATION,
+  WHATSAPP_INTERACTION_TYPE_CTA,
 ];
 
 export interface WhatsAppListItem {
@@ -194,6 +206,7 @@ export interface SendWhatsAppMsgFormState extends FormState {
   interactionType: UnnnicSelectOptionEntry<WhatsAppInteractionType>;
 
   buttonText: StringEntry;
+  actionURL: StringEntry;
   listItems: FormEntry<WhatsAppListItem[]>;
   listItemTitleEntry: StringEntry;
   listItemDescriptionEntry: StringEntry;
@@ -211,6 +224,7 @@ interface UpdateKeys {
   footer?: string;
   interactionType?: UnnnicSelectOption<WhatsAppInteractionType>;
   buttonText?: string;
+  actionURL?: string;
   listItems?: WhatsAppListItem[];
   removeListItem?: WhatsAppListItem;
   quickReplies?: string[];
@@ -364,6 +378,14 @@ export default class SendWhatsAppMsgForm extends React.Component<
       updates.buttonText = validate(
         i18n.t('forms.list_button_text', 'Action button text'),
         keys.buttonText,
+        [],
+      );
+    }
+
+    if (keys.hasOwnProperty('actionURL')) {
+      updates.actionURL = validate(
+        i18n.t('forms.list_button_url', 'Action button URL'),
+        keys.actionURL,
         [],
       );
     }
@@ -618,7 +640,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
       toUpdate.headerText = '';
       toUpdate.attachment = null;
       toUpdate.footer = '';
-    } else if (interactionType.value === WhatsAppInteractionType.LIST) {
+    } else if (
+      interactionType.value === WhatsAppInteractionType.LIST ||
+      interactionType.value === WhatsAppInteractionType.CTA
+    ) {
       toUpdate.attachment = null;
       toUpdate.headerType = WHATSAPP_HEADER_TYPE_TEXT;
     }
@@ -646,6 +671,9 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
   public handleButtonTextUpdate(buttonText: string): boolean {
     return this.handleUpdate({ buttonText });
+  }
+  public handleActionURLUpdate(actionURL: string): boolean {
+    return this.handleUpdate({ actionURL });
   }
 
   public handleSave(): void {
@@ -843,6 +871,33 @@ export default class SendWhatsAppMsgForm extends React.Component<
             onQuickRepliesUpdated={this.handleQuickRepliesUpdate}
           />
         )}
+        {interactionType === WhatsAppInteractionType.CTA && (
+          <div className={styles.cta_inputs}>
+            <div className={styles.action_button_text}>
+              <TextInputElement
+                placeholder={i18n.t('forms.ex_menu', 'Ex: Menu')}
+                name={i18n.t('forms.action_button_text')}
+                size={TextInputSizes.sm}
+                onChange={this.handleButtonTextUpdate}
+                entry={this.state.buttonText}
+                autocomplete={true}
+                showLabel={true}
+                maxLength={24}
+              />
+            </div>
+            <div>
+              <TextInputElement
+                placeholder={i18n.t('forms.action_button_url_placeholder')}
+                name={i18n.t('forms.action_button_url')}
+                size={TextInputSizes.sm}
+                onChange={this.handleActionURLUpdate}
+                entry={this.state.actionURL}
+                autocomplete={true}
+                showLabel={true}
+              />
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -858,6 +913,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
         new={typeConfig.new}
       >
         <TypeList
+          nodeSettings={this.props.nodeSettings}
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}

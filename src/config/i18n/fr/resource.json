@@ -346,7 +346,10 @@
     "webhook_header_name": "Nom de l'en-tête",
     "webhook_header_summary": "Ajoutez ci-dessous les en-têtes supplémentaires que vous souhaitez envoyer avec votre demande.",
     "webhook_help": "Si votre serveur répond avec JSON, chaque propriété sera ajoutée au Flow.",
-    "whatsapp_warning": "L'envoi de messages sur un canal WhatsApp nécessite l'utilisation d'un modèle si vous n'avez pas reçu de message d'un contact au cours des dernières 24 heures. Définir un modèle à utiliser sur WhatsApp est particulièrement important pour le premier message de votre flux."
+    "whatsapp_warning": "L'envoi de messages sur un canal WhatsApp nécessite l'utilisation d'un modèle si vous n'avez pas reçu de message d'un contact au cours des dernières 24 heures. Définir un modèle à utiliser sur WhatsApp est particulièrement important pour le premier message de votre flux.",
+    "action_button_text": "Texte du bouton d'action",
+    "action_button_url": "URL du bouton d'action",
+    "action_button_url_placeholder": "Ex: https://www.menu-du-restaurant.com"
   },
   "issues": {
     "header": "Problèmes de flux",

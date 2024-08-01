@@ -94,6 +94,7 @@ export default class AddURNForm extends React.PureComponent<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
 
         <div className={styles.scheme_selection}>

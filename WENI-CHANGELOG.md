@@ -1,3 +1,19 @@
+2.17.0
+----------
+- Feat: URL button to WhatsApp Card.
+
+2.16.1
+----------
+- Fix: Brain card filter condition
+
+2.16.0
+----------
+- Feat: Brain card
+
+2.15.1
+----------
+- Refactor: Add Temba Select generic pagination
+
 2.15.0
 ----------
 - Feat: Send WhatsApp Message card
@@ -17,17 +33,21 @@
 2.13.0
 ----------
 - Feat: Search Bar
+
 2.12.0
 ----------
 - Refactor: Remove unnnic button next usage
 - Feat: VTEX search with postal code
+
 2.11.1
 ----------
 - Fix: Remove external service empty parameters
 - Feat: Update smart argument and category validations
+
 2.11.0
 ----------
 Feat: Zeroshot description alert
+
 2.10.4
 ----------
 Fix: Add wenigpt action to result listing condition

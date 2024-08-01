@@ -99,3 +99,9 @@
     background-color: transparent !important;
   }
 }
+
+.cta_inputs{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $unnnic-spacing-sm;
+}

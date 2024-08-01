@@ -135,6 +135,7 @@ export default class WeniGPTRouterForm extends React.Component<
           __className=""
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
+          nodeSettings={this.props.nodeSettings}
         />
         <div className={styles.content}>
           <div className={styles.knowledge_base}>

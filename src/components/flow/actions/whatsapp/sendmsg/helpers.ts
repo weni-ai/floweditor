@@ -59,6 +59,7 @@ export const initializeForm = (
           ) || WHATSAPP_INTERACTION_TYPE_NONE,
       },
       buttonText: { value: action.button_text || '' },
+      actionURL: { value: action.action_url || '' },
       listItems: { value: action.list_items || [] },
       quickReplies: { value: action.quick_replies || [] },
 
@@ -78,6 +79,7 @@ export const initializeForm = (
     footer: { value: '' },
     interactionType: { value: WHATSAPP_INTERACTION_TYPE_NONE },
     buttonText: { value: '' },
+    actionURL: { value: '' },
     listItems: { value: [] },
     quickReplies: { value: [] },
 
@@ -127,6 +129,7 @@ export const stateToAction = (
     footer: state.footer.value,
     interaction_type: state.interactionType.value.value,
     button_text: state.buttonText.value,
+    action_url: state.actionURL.value,
     list_items: listItems,
     quick_replies: replies,
     uuid: getActionUUID(settings, Types.send_whatsapp_msg),

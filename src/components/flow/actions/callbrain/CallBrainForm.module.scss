@@ -1,0 +1,21 @@
+@import 'src/variables.module.scss';
+
+.content {
+  display: flex;
+  gap: $unnnic-spacing-xs;
+  align-items: center;
+  align-self: stretch;
+  border: $unnnic-border-width-thinner solid $unnnic-color-neutral-cleanest;
+  border-radius: $unnnic-border-radius-sm;
+  padding: $unnnic-spacing-sm;
+
+  .text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.dialog {
+  width: 498px;
+}

@@ -24,4 +24,12 @@
     .searchIcon:hover {
         background-color: $unnnic-color-neutral-soft;
     }
+
+    button {
+        background: none;
+    }
+
+    button:hover {
+        background: $unnnic-color-neutral-light;
+    }
 }
