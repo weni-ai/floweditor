@@ -1,3 +1,7 @@
+2.17.1
+----------
+- Fix: Allow the use of expressions in the search URL of the native product search card.
+
 2.17.0
 ----------
 - Feat: URL button to WhatsApp Card.
