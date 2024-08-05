@@ -30,9 +30,10 @@ import {
   Alphanumeric,
   Required,
   StartIsNonNumeric,
-  ValidURLWithSpecialChar,
+  ValidURL,
   shouldRequireIf,
   validate,
+  validateIf,
 } from 'store/validators';
 
 import styles from './SendWhatsAppProductRouterForm.module.scss';
@@ -158,7 +159,7 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
               this.state.automaticProductSearch &&
               this.state.searchType !== ProductSearchType.Default,
           ),
-          ValidURLWithSpecialChar,
+          validateIf(ValidURL, keys.searchUrl.indexOf('@') === -1),
         ],
       );
     }
