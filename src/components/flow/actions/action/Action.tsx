@@ -128,7 +128,8 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
         actionType === Types.send_msg ||
         actionType === Types.send_broadcast ||
         actionType === Types.say_msg ||
-        actionType === Types.send_whatsapp_msg
+        actionType === Types.send_whatsapp_msg ||
+        actionType === Types.send_msg_catalog
       ) {
         localizedKeys.push('text');
       }
