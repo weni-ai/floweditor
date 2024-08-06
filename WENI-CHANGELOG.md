@@ -1,4 +1,4 @@
-2.17.1
+2.17.2
 ----------
 - Fix: Add English language support to the Send on WhatsApp card.
 
