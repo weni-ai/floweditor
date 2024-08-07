@@ -42,7 +42,6 @@ export default class MsgLocalizationForm extends React.Component<
   constructor(props: LocalizationFormProps) {
     super(props);
     this.state = initializeLocalizedForm(this.props.nodeSettings);
-    console.log(initializeLocalizedForm(this.props.nodeSettings));
     bindCallbacks(this, {
       include: [/^handle/, /^on/],
     });
