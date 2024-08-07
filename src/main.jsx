@@ -1,4 +1,3 @@
-import '@material-symbols/font-400';
 import './global.module.scss';
 import './static/fonts/floweditor/style.css';
 

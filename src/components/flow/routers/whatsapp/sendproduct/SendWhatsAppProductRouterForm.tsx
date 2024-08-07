@@ -493,11 +493,11 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
                         side="right"
                         enabled={true}
                       >
-                        <span
-                          className={`${styles.info_icon} material-symbols-outlined`}
-                        >
-                          info
-                        </span>
+                        <UnnnicIcon
+                          className={styles.info_icon}
+                          icon="info"
+                          size="sm"
+                        />
                       </UnnnicTooltip>
                     )}
                   </span>

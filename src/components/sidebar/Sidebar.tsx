@@ -25,6 +25,18 @@ import { MouseState } from 'store/editor';
 import SearchButton from './components/SearchButton';
 
 const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+        display: 'flex',
+      },
+    },
+  },
+});
 
 export interface SidebarStoreProps {
   onCopyClick: () => void;
@@ -142,9 +154,9 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
               onClick={() => this.toggleMouseState()}
             >
               {this.props.mouseState === MouseState.SELECT ? (
-                <span className="material-symbols-rounded">near_me</span>
+                <UnnnicIcon icon="near_me" size="md" />
               ) : (
-                <span className="material-symbols-rounded">back_hand</span>
+                <UnnnicIcon icon="back_hand" size="md" />
               )}
             </div>
           </UnnnicTooltip>
@@ -169,7 +181,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
               className={styles.option}
               onClick={() => this.createSendMessageNode()}
             >
-              <span className="material-symbols-rounded">add_circle</span>
+              <UnnnicIcon icon="add_circle" size="md" />
             </div>
           </UnnnicTooltip>
         </GuidingSteps>
@@ -199,13 +211,11 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
               }`}
               onClick={() => this.handleCopyClick()}
             >
-              <span
-                className={
-                  'material-symbols-rounded ' + this.getCopyIconScheme()
-                }
-              >
-                content_copy
-              </span>
+              <UnnnicIcon
+                className={this.getCopyIconScheme()}
+                icon="content_copy"
+                size="md"
+              />
             </div>
           </UnnnicTooltip>
         </GuidingSteps>

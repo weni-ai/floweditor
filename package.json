@@ -16,7 +16,6 @@
   ],
   "private": false,
   "dependencies": {
-    "@material-symbols/font-400": "0.13.2",
     "@weni/unnnic-system": "2.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -144,7 +143,6 @@
     "lint-staged": "8.1.7",
     "local-storage": "1.4.2",
     "lodash.clonedeep": "4.5.0",
-    "material-symbols": "0.12.0",
     "moment": "2.24.0",
     "msw": "2.3.1",
     "netlify-cli": "17.23.1",

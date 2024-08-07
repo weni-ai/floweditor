@@ -18,7 +18,7 @@ $background_offset: (
       $unnnic-color-neutral-lightest 2px,
       $unnnic-color-neutral-lightest 100%
   );
-background-size: 40px 40px;
+  background-size: 40px 40px;
 }
 
 .grayscale::after {
@@ -130,10 +130,6 @@ background-size: 40px 40px;
     &:active {
       background: $unnnic-color-neutral-soft;
     }
-
-    span {
-      padding: $unnnic-spacing-xs;
-    }
   }
 
   .start {
@@ -149,7 +145,6 @@ background-size: 40px 40px;
     flex-direction: row;
     color: $unnnic-color-neutral-cloudy;
     font-size: $unnnic-font-size-body-gt;
-    line-height: 24px;
     transition: all 0.5s;
     background: $unnnic-color-neutral-light;
 

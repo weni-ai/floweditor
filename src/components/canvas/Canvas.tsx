@@ -23,6 +23,18 @@ import { RenderNode } from '../../store/flowContext';
 import { applyVueInReact } from 'veaury';
 // @ts-ignore
 import Unnnic from '@weni/unnnic-system';
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+        display: 'flex',
+      },
+    },
+  },
+});
 const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip, {
   vue: {
     componentWrap: 'div',
@@ -1228,17 +1240,17 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                       className={styles.out}
                       onClick={() => this.handleZoomClick(0)}
                     >
-                      <span className="material-symbols-rounded">remove</span>
+                      <UnnnicIcon icon="remove" size="md" />
                     </div>
                     <div className={styles.percentage}>
                       {this.state.currentZoom}
-                      <span className="material-symbols-rounded">percent</span>
+                      <UnnnicIcon icon="percent" size="md" />
                     </div>
                     <div
                       className={styles.in}
                       onClick={() => this.handleZoomClick(1)}
                     >
-                      <span className="material-symbols-rounded">add</span>
+                      <UnnnicIcon icon="add" size="md" />
                     </div>
                   </UnnnicTooltip>
                 </GuidingSteps>
@@ -1274,9 +1286,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                       <span className={styles.hide}>
                         {i18n.t('to_flow_start', 'Start of flow')}
                       </span>
-                      <span className="material-symbols-rounded">
-                        arrow_upward
-                      </span>
+                      <UnnnicIcon icon="arrow_upward" size="md" />
                     </div>
                   </UnnnicTooltip>
                 </GuidingSteps>
