@@ -134,11 +134,11 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
         localizedKeys.push('text');
       }
 
-      if (this.props.action.type === Types.send_email) {
+      if (actionType === Types.send_email) {
         localizedKeys.push('subject');
       }
 
-      if (this.props.action.type === Types.call_wenigpt) {
+      if (actionType === Types.call_wenigpt) {
         localizedKeys.push('input');
       }
 
