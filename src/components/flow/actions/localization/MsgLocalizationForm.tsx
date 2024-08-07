@@ -42,6 +42,7 @@ export default class MsgLocalizationForm extends React.Component<
   constructor(props: LocalizationFormProps) {
     super(props);
     this.state = initializeLocalizedForm(this.props.nodeSettings);
+    console.log(initializeLocalizedForm(this.props.nodeSettings));
     bindCallbacks(this, {
       include: [/^handle/, /^on/],
     });
@@ -351,6 +352,7 @@ export default class MsgLocalizationForm extends React.Component<
           </div>
         </div>
 
+{/* aqui */}
         <TextInputElement
           name={i18n.t('forms.message', 'Message')}
           showLabel={false}
@@ -361,7 +363,6 @@ export default class MsgLocalizationForm extends React.Component<
           focus={true}
           textarea={true}
         />
-
         {audioButton}
         {renderIssues(this.props)}
       </Dialog>

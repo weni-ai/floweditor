@@ -42,19 +42,19 @@ export const initializeLocalizedForm = (
     attachments: [],
   };
 
+  const { originalAction, localizations } = settings;
+
   // check if our form should use a localized action
   if (
-    settings.originalAction &&
-    (settings.originalAction.type === Types.send_msg ||
-      settings.originalAction.type === Types.say_msg) &&
-    settings.localizations &&
-    settings.localizations.length > 0
+    originalAction &&
+    (originalAction.type === Types.send_msg ||
+      originalAction.type === Types.say_msg ||
+      originalAction.type === Types.send_whatsapp_msg) &&
+    localizations &&
+    localizations.length > 0
   ) {
-    if (
-      settings.originalAction &&
-      (settings.originalAction as any).templating
-    ) {
-      state.templating = (settings.originalAction as any).templating;
+    if (originalAction && (originalAction as any).templating) {
+      state.templating = (originalAction as any).templating;
       state.templateVariables = state.templating.variables.map(
         (value: string) => {
           return {
@@ -64,7 +64,7 @@ export const initializeLocalizedForm = (
       );
     }
 
-    for (const localized of settings.localizations) {
+    for (const localized of localizations) {
       if (localized.isLocalized()) {
         const localizedObject = localized.getObject() as any;
 

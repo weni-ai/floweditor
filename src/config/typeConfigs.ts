@@ -284,14 +284,14 @@ export const typeConfigList: Type[] = [
       'Send a WhatsApp message',
     ),
     form: SendWhatsAppMsgForm,
-    // localization: MsgLocalizationForm,
-    // localizeableKeys: ['text', 'quick_replies', 'templating.variables'],
+    localization: MsgLocalizationForm,
+    localizeableKeys: ['text', 'quick_replies', 'templating.variables'],
     component: SendWhatsAppMsgComp,
-    // massageForDisplay: (action: SendMsg) => {
-    //   // quick replies are optional in the definition, make sure we have
-    //   // at least an empty array so the localization has a proper cue
-    //   action.quick_replies = action.quick_replies || [];
-    // },
+    massageForDisplay: (action: SendMsg) => {
+      // quick replies are optional in the definition, make sure we have
+      // at least an empty array so the localization has a proper cue
+      action.quick_replies = action.quick_replies || [];
+    },
     filter: FeatureFilter.HAS_WHATSAPP,
     new: true,
   },

@@ -483,7 +483,6 @@ export class NodeComp extends React.PureComponent<NodeProps> {
             }
           }}
         />
-
         <div className={styles.cropped}>
           {this.isStartNodeVisible() ? (
             <div
@@ -497,7 +496,6 @@ export class NodeComp extends React.PureComponent<NodeProps> {
           {actionList}
           {summary}
         </div>
-
         <div className={`${styles.exit_table}`}>
           <div className={styles.exits} {...this.events}>
             {exits}
