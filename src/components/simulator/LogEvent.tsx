@@ -13,7 +13,7 @@ import { applyVueInReact } from 'veaury';
 // @ts-ignore
 import Unnnic from '@weni/unnnic-system';
 
-const MAP_THUMB = require('static/images/map.jpg');
+import MAP_THUMB from 'static/images/map.jpg';
 
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {

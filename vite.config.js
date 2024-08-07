@@ -48,4 +48,35 @@ export default defineConfig({
     },
     outputFile: 'coverage/sonar-report.xml',
   },
+  build: {
+    outDir: 'build',
+    sourcemap: true,
+    manifest: true,
+    rollupOptions: {
+      input: ['./src/main.jsx'],
+      output: {
+        format: 'iife',
+        assetFileNames: assetInfo => {
+          const extType = assetInfo.name.split('.').at(1);
+          console.log('extType', extType);
+          if (/ttf|woff/i.test(extType)) {
+            return 'sitestatic/assets/[name]-[hash][extname]';
+          }
+
+          return 'assets/[name]-[hash][extname]';
+        },
+      },
+    },
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
+  optimizeDeps: {
+    force: true,
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx',
+      },
+    },
+  },
 });
