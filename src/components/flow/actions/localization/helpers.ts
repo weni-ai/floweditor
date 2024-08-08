@@ -6,6 +6,7 @@ import { getTypeConfig } from 'config/typeConfigs';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
 import { SendMsg, MsgTemplating, SayMsg, CallWeniGPT } from 'flowTypes';
 import { Attachment } from '../sendmsg/attachments';
+import { WhatsappMsgLocalizationFormState } from './WhastsappMsgLocalizationForm';
 
 export const initializeLocalizedKeyForm = (
   settings: NodeEditorSettings,
@@ -109,6 +110,77 @@ export const initializeLocalizedForm = (
               };
             },
           );
+          state.valid = true;
+        }
+      }
+    }
+  }
+  return state;
+};
+
+export const initializeWhatsappMsgLocalizedForm = (
+  settings: NodeEditorSettings,
+): WhatsappMsgLocalizationFormState => {
+  const state: WhatsappMsgLocalizationFormState = {
+    valid: true,
+    message: { value: '' },
+    headerType: null,
+    headerText: { value: '' },
+    footer: { value: '' },
+    attachments: [],
+    interactionType: null,
+
+    buttonText: { value: '' },
+    actionURL: { value: '' },
+    listItems: null,
+    listItemTitleEntry: { value: '' },
+    listItemDescriptionEntry: { value: '' },
+
+    quickReplies: { value: [] },
+    quickReplyEntry: { value: '' },
+  };
+
+  const { originalAction, localizations } = settings;
+
+  if (
+    originalAction &&
+    (originalAction.type === Types.send_msg ||
+      originalAction.type === Types.say_msg ||
+      originalAction.type === Types.send_whatsapp_msg) &&
+    localizations &&
+    localizations.length > 0
+  ) {
+    for (const localized of localizations) {
+      if (localized.isLocalized()) {
+        const localizedObject = localized.getObject() as any;
+
+        if (localizedObject.text) {
+          const action = localizedObject as (SendMsg & SayMsg);
+          state.message.value =
+            'text' in localized.localizedKeys ? action.text : '';
+          state.quickReplies.value =
+            'quick_replies' in localized.localizedKeys
+              ? action.quick_replies || []
+              : [];
+
+          const attachments: Attachment[] = [];
+
+          if ('attachments' in localized.localizedKeys) {
+            (action.attachments || []).forEach((attachmentString: string) => {
+              const splitPoint = attachmentString.indexOf(':');
+
+              const type = attachmentString.substring(0, splitPoint);
+              const attachment = {
+                type,
+                url: attachmentString.substring(splitPoint + 1),
+                uploaded: type.indexOf('/') > -1,
+              };
+
+              attachments.push(attachment);
+            });
+          }
+
+          state.attachments = attachments;
           state.valid = true;
         }
       }

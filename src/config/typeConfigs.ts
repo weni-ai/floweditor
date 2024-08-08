@@ -39,6 +39,7 @@ import ExpressionRouterForm from 'components/flow/routers/expression/ExpressionR
 import FieldRouterForm from 'components/flow/routers/field/FieldRouterForm';
 import GroupsRouterForm from 'components/flow/routers/groups/GroupsRouterForm';
 import RouterLocalizationForm from 'components/flow/routers/localization/RouterLocalizationForm';
+import WhatsappMsgLocalizationForm from 'components/flow/actions/localization/WhastsappMsgLocalizationForm';
 import MenuRouterForm from 'components/flow/routers/menu/MenuRouterForm';
 import RandomRouterForm from 'components/flow/routers/random/RandomRouterForm';
 import ResponseRouterForm from 'components/flow/routers/response/ResponseRouterForm';
@@ -284,7 +285,7 @@ export const typeConfigList: Type[] = [
       'Send a WhatsApp message',
     ),
     form: SendWhatsAppMsgForm,
-    localization: MsgLocalizationForm,
+    localization: WhatsappMsgLocalizationForm,
     localizeableKeys: ['text', 'quick_replies', 'templating.variables'],
     component: SendWhatsAppMsgComp,
     massageForDisplay: (action: SendMsg) => {
