@@ -126,6 +126,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
 
   private handleUpdate(keys: {
     text?: string;
+    headerType?: any;
     headerText?: string;
     footer?: string;
     quickReplies?: string[];
@@ -201,12 +202,12 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       return false;
     }
     this.handleUpdate({ headerText: '' });
+    this.handleUpdate({ headerType });
   }
 
   private handleSave(): void {
     const { text, quickReplies, attachments, headerText, footer } = this.state;
 
-    // make sure we are valid for saving, only quick replies can be invalid
     const typeConfig = determineTypeConfig(this.props.nodeSettings);
     const valid =
       typeConfig.localizeableKeys!.indexOf('quick_replies') > -1
@@ -243,11 +244,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
         },
       ];
 
-      // if we have template variables, they show up on their own ke
-
       this.props.updateLocalizations(this.props.language.id, localizations);
-
-      // notify our modal we are done
       this.props.onClose(false);
     }
   }
@@ -301,28 +298,30 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       >
         <div>
           <div className={styles.header}>
-            <div data-spec="translation-container">
-              <div
-                data-spec="text-to-translate"
-                className={styles.translate_from}
-              >
-                {
-                  (this.props.nodeSettings.originalAction as SendWhatsAppMsg)
-                    .header_type
-                }
-              </div>
-            </div>
             {(this.props.nodeSettings.originalAction as SendWhatsAppMsg)
               .header_type === 'text' ? (
-              <TextInputElement
-                name={i18n.t('forms.message', 'Message')}
-                showLabel={false}
-                onChange={this.handleHeaderTextUpdate}
-                entry={this.state.headerText}
-                placeholder={`${this.props.language.name}`}
-                autocomplete={true}
-                focus={true}
-              />
+              <>
+                <div data-spec="translation-container">
+                  <div
+                    data-spec="text-to-translate"
+                    className={styles.translate_from}
+                  >
+                    {
+                      (this.props.nodeSettings
+                        .originalAction as SendWhatsAppMsg).header_type
+                    }
+                  </div>
+                </div>
+                <TextInputElement
+                  name={i18n.t('forms.message', 'Message')}
+                  showLabel={false}
+                  onChange={this.handleHeaderTextUpdate}
+                  entry={this.state.headerText}
+                  placeholder={`${this.props.language.name}`}
+                  autocomplete={true}
+                  focus={true}
+                />
+              </>
             ) : null}
           </div>
           <div className={styles.content}>
