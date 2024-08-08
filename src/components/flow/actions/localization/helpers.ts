@@ -7,6 +7,10 @@ import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
 import { SendMsg, MsgTemplating, SayMsg, CallWeniGPT } from 'flowTypes';
 import { Attachment } from '../sendmsg/attachments';
 import { WhatsappMsgLocalizationFormState } from './WhastsappMsgLocalizationForm';
+import {
+  WHATSAPP_HEADER_TYPE_TEXT,
+  WhatsAppHeaderType,
+} from '../whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 export const initializeLocalizedKeyForm = (
   settings: NodeEditorSettings,

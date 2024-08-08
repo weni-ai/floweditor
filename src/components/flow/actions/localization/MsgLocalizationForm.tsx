@@ -351,7 +351,6 @@ export default class MsgLocalizationForm extends React.Component<
           </div>
         </div>
 
-{/* aqui */}
         <TextInputElement
           name={i18n.t('forms.message', 'Message')}
           showLabel={false}
