@@ -4,7 +4,13 @@ import { WeniGPTLocalizationFormState } from 'components/flow/actions/localizati
 import { Types } from 'config/interfaces';
 import { getTypeConfig } from 'config/typeConfigs';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
-import { SendMsg, MsgTemplating, SayMsg, CallWeniGPT } from 'flowTypes';
+import {
+  SendMsg,
+  MsgTemplating,
+  SayMsg,
+  CallWeniGPT,
+  SendWhatsAppMsg,
+} from 'flowTypes';
 import { Attachment } from '../sendmsg/attachments';
 import { WhatsappMsgLocalizationFormState } from './WhastsappMsgLocalizationForm';
 import {
@@ -127,7 +133,7 @@ export const initializeWhatsappMsgLocalizedForm = (
 ): WhatsappMsgLocalizationFormState => {
   const state: WhatsappMsgLocalizationFormState = {
     valid: true,
-    message: { value: '' },
+    text: { value: '' },
     headerType: null,
     headerText: { value: '' },
     footer: { value: '' },
@@ -159,32 +165,23 @@ export const initializeWhatsappMsgLocalizedForm = (
         const localizedObject = localized.getObject() as any;
 
         if (localizedObject.text) {
-          const action = localizedObject as (SendMsg & SayMsg);
-          state.message.value =
+          const action = localizedObject as (SendWhatsAppMsg & SayMsg);
+          state.text.value =
             'text' in localized.localizedKeys ? action.text : '';
-          state.quickReplies.value =
-            'quick_replies' in localized.localizedKeys
-              ? action.quick_replies || []
-              : [];
+          state.valid = true;
+        }
 
-          const attachments: Attachment[] = [];
+        if (localizedObject.headerText) {
+          const action = localizedObject as (SendWhatsAppMsg & SayMsg);
+          state.headerText.value =
+            'headerText' in localized.localizedKeys ? action.header_text : '';
+          state.valid = true;
+        }
 
-          if ('attachments' in localized.localizedKeys) {
-            (action.attachments || []).forEach((attachmentString: string) => {
-              const splitPoint = attachmentString.indexOf(':');
-
-              const type = attachmentString.substring(0, splitPoint);
-              const attachment = {
-                type,
-                url: attachmentString.substring(splitPoint + 1),
-                uploaded: type.indexOf('/') > -1,
-              };
-
-              attachments.push(attachment);
-            });
-          }
-
-          state.attachments = attachments;
+        if (localizedObject.footer) {
+          const action = localizedObject as (SendWhatsAppMsg & SayMsg);
+          state.footer.value =
+            'footer' in localized.localizedKeys ? action.footer : '';
           state.valid = true;
         }
       }

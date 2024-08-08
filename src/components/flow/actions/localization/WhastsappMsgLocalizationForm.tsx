@@ -26,14 +26,16 @@ import { AxiosResponse } from 'axios';
 import { determineTypeConfig } from 'components/flow/helpers';
 import mutate from 'immutability-helper';
 import TextInputElement from 'components/form/textinput/TextInputElement';
-import { validate } from 'store/validators';
+import { MaxOfTenItems, validate } from 'store/validators';
 import { applyVueInReact } from 'vuereact-combined';
 import {
   unnnicSelectSmart,
   // @ts-ignore
 } from '@weni/unnnic-system';
 import { UnnnicSelectOption } from 'components/form/select/SelectElement';
-import { SendMsg, SendWhatsAppMsg } from 'flowTypes';
+import { SendWhatsAppMsg } from 'flowTypes';
+import MultiChoiceInput from 'components/form/multichoice/MultiChoice';
+import { Trans } from 'react-i18next';
 
 const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
   vue: {
@@ -48,7 +50,7 @@ const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
 });
 
 export interface WhatsappMsgLocalizationFormState extends FormState {
-  message: StringEntry;
+  text: StringEntry;
   headerType: UnnnicSelectOptionEntry<WhatsAppHeaderType>;
   headerText: StringEntry;
   footer: StringEntry;
@@ -90,6 +92,14 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     this.setState({ attachments });
   }
 
+  private handleQuickReplyChanged(quickReplies: string[]) {
+    this.handleUpdate({ quickReplies });
+  }
+
+  public handleQuickRepliesUpdate(quickReplies: string[]): boolean {
+    return this.handleUpdate({ quickReplies });
+  }
+
   private handleAttachmentChanged(index: number, type: string, url: string) {
     let attachments: any = this.state.attachments;
     if (index === -1) {
@@ -114,11 +124,44 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     this.setState({ attachments });
   }
 
-  private handleUpdate(type: string, value: any): boolean {
+  private handleUpdate(keys: {
+    text?: string;
+    headerText?: string;
+    footer?: string;
+    quickReplies?: string[];
+  }): boolean {
     const updates: Partial<WhatsappMsgLocalizationFormState> = {};
 
-    if (type === 'headerText' || type === 'message' || type === 'footer') {
-      updates[type] = validate(i18n.t('forms.message', 'Message'), value!, []);
+    if (keys.hasOwnProperty('text')) {
+      updates.text = validate(
+        i18n.t('forms.message', 'Message'),
+        keys.text!,
+        [],
+      );
+    }
+
+    if (keys.hasOwnProperty('headerText')) {
+      updates.headerText = validate(
+        i18n.t('forms.message', 'Message'),
+        keys.headerText!,
+        [],
+      );
+    }
+
+    if (keys.hasOwnProperty('footer')) {
+      updates.footer = validate(
+        i18n.t('forms.message', 'Message'),
+        keys.footer!,
+        [],
+      );
+    }
+
+    if (keys.hasOwnProperty('quickReplies')) {
+      updates.quickReplies = validate(
+        i18n.t('forms.quick_replies', 'Quick Replies'),
+        keys.quickReplies!,
+        [MaxOfTenItems],
+      );
     }
 
     const updated = mergeForm(this.state, updates);
@@ -127,13 +170,21 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     return updated.valid;
   }
 
-  public handleMessageUpdate({ type, text }: any): boolean {
-    return this.handleUpdate(type, text);
+  public handleMessageUpdate(text: string): boolean {
+    return this.handleUpdate({ text });
+  }
+
+  public handleHeaderTextUpdate(headerText: string): boolean {
+    return this.handleUpdate({ headerText });
+  }
+
+  public handleFooterUpdate(footer: string): boolean {
+    return this.handleUpdate({ footer });
   }
 
   private getButtons(): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: null },
+      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true),
@@ -143,17 +194,62 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
 
   public handleHeaderTypeChange(
     event: UnnnicSelectOption<WhatsAppHeaderType>[],
-    submitting = false,
   ): boolean {
     const headerType = event[0];
 
     if (headerType.value === this.state.headerType.value.value) {
       return false;
     }
+    this.handleUpdate({ headerText: '' });
+  }
 
-    this.handleUpdate('headerType', headerType);
-    this.handleUpdate('headerText', '');
-    this.handleUpdate('attachment', null);
+  private handleSave(): void {
+    const { text, quickReplies, attachments, headerText, footer } = this.state;
+
+    // make sure we are valid for saving, only quick replies can be invalid
+    const typeConfig = determineTypeConfig(this.props.nodeSettings);
+    const valid =
+      typeConfig.localizeableKeys!.indexOf('quick_replies') > -1
+        ? this.handleQuickRepliesUpdate(this.state.quickReplies.value)
+        : true;
+
+    if (valid) {
+      const translations: any = {};
+      if (text.value) {
+        translations.text = text.value;
+      }
+
+      translations.attachments = attachments
+        .filter((attachment: Attachment) => attachment.url.trim().length > 0)
+        .map(
+          (attachment: Attachment) => `${attachment.type}:${attachment.url}`,
+        );
+
+      if (quickReplies.value && quickReplies.value.length > 0) {
+        translations.quick_replies = quickReplies.value;
+      }
+
+      if (headerText.value) {
+        translations.header_text = headerText.value;
+      }
+      if (footer.value) {
+        translations.footer = footer.value;
+      }
+
+      const localizations = [
+        {
+          uuid: this.props.nodeSettings.originalAction!.uuid,
+          translations,
+        },
+      ];
+
+      // if we have template variables, they show up on their own ke
+
+      this.props.updateLocalizations(this.props.language.id, localizations);
+
+      // notify our modal we are done
+      this.props.onClose(false);
+    }
   }
 
   public render(): JSX.Element {
@@ -172,6 +268,30 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
         checked: this.state.attachments.length > 0,
       });
     }
+
+    if (typeConfig.localizeableKeys!.indexOf('quick_replies') > -1) {
+      tabs.push({
+        name: i18n.t('forms.quick_replies', 'Quick Replies'),
+        body: (
+          <>
+            <MultiChoiceInput
+              name={i18n.t('forms.quick_reply', 'Quick Reply')}
+              helpText={
+                <Trans
+                  i18nKey="forms.localized_quick_replies"
+                  values={{ language: this.props.language.name }}
+                >
+                  Add a new [[language]] Quick Reply and press enter.
+                </Trans>
+              }
+              items={this.state.quickReplies}
+              onChange={this.handleQuickReplyChanged}
+            />
+          </>
+        ),
+        checked: this.state.quickReplies.value.length > 0,
+      });
+    }
     return (
       <Dialog
         title={typeConfig.name}
@@ -181,11 +301,6 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       >
         <div>
           <div className={styles.header}>
-            <div className={styles.header_type}>
-              <span className={`u font secondary body-md color-neutral-cloudy`}>
-                {i18n.t('forms.header_optional', 'Header (optional)')}
-              </span>
-            </div>
             <div data-spec="translation-container">
               <div
                 data-spec="text-to-translate"
@@ -193,21 +308,22 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
               >
                 {
                   (this.props.nodeSettings.originalAction as SendWhatsAppMsg)
-                    .header_text
+                    .header_type
                 }
               </div>
             </div>
-            <TextInputElement
-              name={i18n.t('forms.message', 'Message')}
-              showLabel={false}
-              onChange={e =>
-                this.handleMessageUpdate({ type: 'headerText', text: e })
-              }
-              entry={this.state.headerText}
-              placeholder={`${this.props.language.name}`}
-              autocomplete={true}
-              focus={true}
-            />
+            {(this.props.nodeSettings.originalAction as SendWhatsAppMsg)
+              .header_type === 'text' ? (
+              <TextInputElement
+                name={i18n.t('forms.message', 'Message')}
+                showLabel={false}
+                onChange={this.handleHeaderTextUpdate}
+                entry={this.state.headerText}
+                placeholder={`${this.props.language.name}`}
+                autocomplete={true}
+                focus={true}
+              />
+            ) : null}
           </div>
           <div className={styles.content}>
             <div>
@@ -229,10 +345,8 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
             <TextInputElement
               name={i18n.t('forms.message', 'Message')}
               showLabel={false}
-              onChange={e =>
-                this.handleMessageUpdate({ type: 'message', text: e })
-              }
-              entry={this.state.message}
+              onChange={this.handleMessageUpdate}
+              entry={this.state.text}
               placeholder={`${this.props.language.name}`}
               autocomplete={true}
               focus={true}
@@ -259,9 +373,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
             <TextInputElement
               name={i18n.t('forms.footer', 'Footer')}
               showLabel={false}
-              onChange={e =>
-                this.handleMessageUpdate({ type: 'footer', text: e })
-              }
+              onChange={this.handleFooterUpdate}
               entry={this.state.footer}
               placeholder={`${this.props.language.name}`}
               autocomplete={true}
