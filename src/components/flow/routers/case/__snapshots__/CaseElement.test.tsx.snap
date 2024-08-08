@@ -48,23 +48,23 @@ exports[`CaseElement > operator changes > should handle updates 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_operator"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_operator"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_operator"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="has any of the words"
@@ -74,8 +74,8 @@ exports[`CaseElement > operator changes > should handle updates 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -341,25 +341,26 @@ exports[`CaseElement > operator changes > should handle updates 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="36"
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="36"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
+                    value=""
                   />
                   <!---->
                   <!---->
@@ -381,7 +382,7 @@ exports[`CaseElement > operator changes > should handle updates 1`] = `
             <svg
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -455,23 +456,23 @@ exports[`CaseElement > operator changes > should not update exit if it has been 
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_operator"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_operator"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_operator"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="has any of the words"
@@ -481,8 +482,8 @@ exports[`CaseElement > operator changes > should not update exit if it has been 
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -748,25 +749,26 @@ exports[`CaseElement > operator changes > should not update exit if it has been 
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="36"
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="36"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
+                    value=""
                   />
                   <!---->
                   <!---->
@@ -788,7 +790,7 @@ exports[`CaseElement > operator changes > should not update exit if it has been 
             <svg
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -862,23 +864,23 @@ exports[`CaseElement > operator changes > should should set arguments for numeri
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_operator"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_operator"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_operator"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="has any of the words"
@@ -888,8 +890,8 @@ exports[`CaseElement > operator changes > should should set arguments for numeri
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1149,22 +1151,23 @@ exports[`CaseElement > operator changes > should should set arguments for numeri
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder="Ex: cart"
                         type="text"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -1201,22 +1204,23 @@ exports[`CaseElement > operator changes > should should set arguments for numeri
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder="100"
                         type="text"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -1254,25 +1258,26 @@ exports[`CaseElement > operator changes > should should set arguments for numeri
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="36"
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="36"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
+                    value=""
                   />
                   <!---->
                   <!---->
@@ -1294,7 +1299,7 @@ exports[`CaseElement > operator changes > should should set arguments for numeri
             <svg
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -1368,23 +1373,23 @@ exports[`CaseElement > render > renders no argument rules 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_operator"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_operator"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_operator"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="has a number"
@@ -1394,8 +1399,8 @@ exports[`CaseElement > render > renders no argument rules 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1661,25 +1666,26 @@ exports[`CaseElement > render > renders no argument rules 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="36"
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="36"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
+                    value=""
                   />
                   <!---->
                   <!---->
@@ -1701,7 +1707,7 @@ exports[`CaseElement > render > renders no argument rules 1`] = `
             <svg
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -1775,23 +1781,23 @@ exports[`CaseElement > render > should render empty case 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_operator"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_operator"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_operator"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="has any of the words"
@@ -1801,8 +1807,8 @@ exports[`CaseElement > render > should render empty case 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -2062,22 +2068,23 @@ exports[`CaseElement > render > should render empty case 1`] = `
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder="Ex: cart"
                         type="text"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -2115,25 +2122,26 @@ exports[`CaseElement > render > should render empty case 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="36"
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="36"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
+                    value=""
                   />
                   <!---->
                   <!---->
@@ -2155,7 +2163,7 @@ exports[`CaseElement > render > should render empty case 1`] = `
             <svg
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -2229,23 +2237,23 @@ exports[`CaseElement > update > handles argument change 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_operator"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_operator"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_operator"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="has any of the words"
@@ -2255,8 +2263,8 @@ exports[`CaseElement > update > handles argument change 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -2516,22 +2524,23 @@ exports[`CaseElement > update > handles argument change 1`] = `
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder="Ex: cart"
                         type="text"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -2569,25 +2578,26 @@ exports[`CaseElement > update > handles argument change 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="36"
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="36"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
+                    value=""
                   />
                   <!---->
                   <!---->
@@ -2609,7 +2619,7 @@ exports[`CaseElement > update > handles argument change 1`] = `
             <svg
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -2683,23 +2693,23 @@ exports[`CaseElement > update > handles multiple argument change 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_operator"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_operator"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_operator"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="has any of the words"
@@ -2709,8 +2719,8 @@ exports[`CaseElement > update > handles multiple argument change 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -2970,22 +2980,23 @@ exports[`CaseElement > update > handles multiple argument change 1`] = `
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder="Ex: cart"
                         type="text"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -3022,22 +3033,23 @@ exports[`CaseElement > update > handles multiple argument change 1`] = `
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder="100"
                         type="text"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -3075,25 +3087,26 @@ exports[`CaseElement > update > handles multiple argument change 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="36"
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="36"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="36"
                     placeholder="Ex: shopping"
                     type="text"
+                    value=""
                   />
                   <!---->
                   <!---->
@@ -3115,7 +3128,7 @@ exports[`CaseElement > update > handles multiple argument change 1`] = `
             <svg
               class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
               data-testid="remove-case-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"

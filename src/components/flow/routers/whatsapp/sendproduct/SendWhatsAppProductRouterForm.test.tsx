@@ -68,6 +68,10 @@ function getProps(automatic = false) {
 }
 
 describe(SendWhatsAppProductRouterForm.name, () => {
+  beforeEach(() => {
+    mock(utils, 'createUUID', utils.seededUUIDs());
+  });
+
   describe('manual product search', () => {
     it('should render', async () => {
       const props = getProps();
@@ -102,7 +106,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
       // open the view settings inputs
       userEvent.click(getByTestId('ViewSettings'));
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       const okButton = getByText('Confirm');
       const resultName = getByTestId('Save as result');
@@ -190,7 +194,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
       // open the view settings inputs
       userEvent.click(getByTestId('ViewSettings'));
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       const okButton = getByText('Confirm');
       const resultName = getByTestId('Save as result');
@@ -204,7 +208,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
@@ -267,7 +271,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
       // open the view settings inputs
       userEvent.click(getByTestId('ViewSettings'));
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       const okButton = getByText('Confirm');
       const resultName = getByTestId('Save as result');
@@ -347,7 +351,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
 
       // open the view settings inputs
       userEvent.click(getByTestId('ViewSettings'));
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       const okButton = getByText('Confirm');
       const resultName = getByTestId('Save as result');

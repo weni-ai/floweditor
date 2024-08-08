@@ -41,6 +41,7 @@ const baseProps: NodeProps = {
   mouseState: MouseState.SELECT,
   scrollToAction: '',
   scrollToNode: '',
+  brainInfo: null,
 };
 
 describe(NodeComp.name, () => {

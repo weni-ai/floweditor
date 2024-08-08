@@ -16,7 +16,7 @@ exports[`SearchBar > should render 1`] = `
         >
           <svg
             class="unnnic-icon unnnic-icon__size--small unnnic-icon-scheme--neutral-dark"
-            data-v-edf1acd8=""
+            data-v-930380cc=""
             fill="none"
             height="40"
             viewBox="0 0 40 40"
@@ -50,22 +50,23 @@ exports[`SearchBar > should render 1`] = `
               >
                 <div
                   class="unnnic-form sm"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm unnnic-form-input"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                   >
                     <input
                       class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       placeholder="Search..."
                       type="text"
+                      value=""
                     />
                     <!---->
                     <!---->
@@ -96,7 +97,7 @@ exports[`SearchBar > should render 1`] = `
             <button
               class="unnnic-button unnnic-button--size-small unnnic-button--tertiary"
               data-testid="downButton"
-              data-v-d3a33348=""
+              data-v-4cec5e43=""
               disabled=""
             >
               <!---->
@@ -104,7 +105,7 @@ exports[`SearchBar > should render 1`] = `
               <!---->
               <span
                 class="unnnic-button__label"
-                data-v-d3a33348=""
+                data-v-4cec5e43=""
               >
                 
                 <div
@@ -164,7 +165,7 @@ exports[`SearchBar > should render 1`] = `
             <button
               class="unnnic-button unnnic-button--size-small unnnic-button--tertiary"
               data-testid="upButton"
-              data-v-d3a33348=""
+              data-v-4cec5e43=""
               disabled=""
             >
               <!---->
@@ -172,7 +173,7 @@ exports[`SearchBar > should render 1`] = `
               <!---->
               <span
                 class="unnnic-button__label"
-                data-v-d3a33348=""
+                data-v-4cec5e43=""
               >
                 
                 <div
@@ -248,14 +249,14 @@ exports[`SearchBar > should render 1`] = `
             <button
               class="unnnic-button unnnic-button--size-small unnnic-button--tertiary"
               data-testid="closeButton"
-              data-v-d3a33348=""
+              data-v-4cec5e43=""
             >
               <!---->
               <!---->
               <!---->
               <span
                 class="unnnic-button__label"
-                data-v-d3a33348=""
+                data-v-4cec5e43=""
               >
                 
                 <div
@@ -353,7 +354,7 @@ exports[`SearchBar > should render 1`] = `
                       >
                         <svg
                           class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-                          data-v-edf1acd8=""
+                          data-v-930380cc=""
                           fill="none"
                           height="40"
                           viewBox="0 0 40 40"
@@ -418,7 +419,7 @@ exports[`SearchBar > should render 1`] = `
             >
               <svg
                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
-                data-v-edf1acd8=""
+                data-v-930380cc=""
                 fill="none"
                 height="40"
                 viewBox="0 0 40 40"
@@ -500,7 +501,7 @@ exports[`SearchBar > should render 1`] = `
                       >
                         <svg
                           class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-                          data-v-edf1acd8=""
+                          data-v-930380cc=""
                           fill="none"
                           height="40"
                           viewBox="0 0 40 40"
@@ -565,7 +566,7 @@ exports[`SearchBar > should render 1`] = `
             >
               <svg
                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
-                data-v-edf1acd8=""
+                data-v-930380cc=""
                 fill="none"
                 height="40"
                 viewBox="0 0 40 40"
@@ -647,7 +648,7 @@ exports[`SearchBar > should render 1`] = `
                       >
                         <svg
                           class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-                          data-v-edf1acd8=""
+                          data-v-930380cc=""
                           fill="none"
                           height="40"
                           viewBox="0 0 40 40"
@@ -712,7 +713,7 @@ exports[`SearchBar > should render 1`] = `
             >
               <svg
                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
-                data-v-edf1acd8=""
+                data-v-930380cc=""
                 fill="none"
                 height="40"
                 viewBox="0 0 40 40"

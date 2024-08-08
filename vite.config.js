@@ -40,6 +40,7 @@ export default defineConfig({
     cache: false,
     clearMocks: true,
     globals: true,
+    threads: false,
     setupFiles: ['./vitest-setup.ts', 'vitest.d.ts'],
     environment: 'jsdom',
     root: 'src',

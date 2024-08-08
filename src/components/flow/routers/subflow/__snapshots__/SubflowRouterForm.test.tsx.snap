@@ -48,21 +48,21 @@ exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Enter another flow"
@@ -71,8 +71,8 @@ exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -398,21 +398,21 @@ exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_flow_to_start"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_flow_to_start"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_flow_to_start"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Colors"
@@ -421,8 +421,8 @@ exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -473,7 +473,7 @@ exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -481,7 +481,7 @@ exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -496,7 +496,7 @@ exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -504,7 +504,7 @@ exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -553,20 +553,20 @@ exports[`SubflowRouterForm > should create result actions for parameters 2`] = `
         >
           <div
             class="tab size-sm _tabs_af1b5d"
-            data-v-54432ea7=""
+            data-v-1389f531=""
           >
             <header
               class="tab-header"
-              data-v-54432ea7=""
+              data-v-1389f531=""
             >
               <ul
                 class="tab-content"
-                data-v-54432ea7=""
+                data-v-1389f531=""
               >
                 
                 <li
                   class="tab-head tab-head--active"
-                  data-v-54432ea7=""
+                  data-v-1389f531=""
                 >
                   
                   <div
@@ -576,10 +576,11 @@ exports[`SubflowRouterForm > should create result actions for parameters 2`] = `
                     General
                   </div>
                   
+                  <!---->
                 </li>
                 <li
                   class="tab-head"
-                  data-v-54432ea7=""
+                  data-v-1389f531=""
                 >
                   
                   <div
@@ -589,17 +590,18 @@ exports[`SubflowRouterForm > should create result actions for parameters 2`] = `
                     Parameters
                   </div>
                   
+                  <!---->
                 </li>
                 
               </ul>
             </header>
             <main
               class="tab-body"
-              data-v-54432ea7=""
+              data-v-1389f531=""
             >
               <div
                 class="tab-panel"
-                data-v-54432ea7=""
+                data-v-1389f531=""
               >
                 
                 
@@ -654,22 +656,23 @@ exports[`SubflowRouterForm > should create result actions for parameters 2`] = `
                         >
                           <div
                             class="unnnic-form sm"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                           >
                             <!---->
                             <div
                               class="text-input size--sm unnnic-form-input"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               mask=""
                             >
                               <input
                                 class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 hascloudycolor="false"
                                 placeholder="max"
                                 type="text"
+                                value=""
                               />
                               <!---->
                               <!---->
@@ -713,22 +716,23 @@ exports[`SubflowRouterForm > should create result actions for parameters 2`] = `
                         >
                           <div
                             class="unnnic-form sm"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                           >
                             <!---->
                             <div
                               class="text-input size--sm unnnic-form-input"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               mask=""
                             >
                               <input
                                 class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 hascloudycolor="false"
                                 placeholder="min"
                                 type="text"
+                                value=""
                               />
                               <!---->
                               <!---->
@@ -769,7 +773,7 @@ exports[`SubflowRouterForm > should create result actions for parameters 2`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -777,7 +781,7 @@ exports[`SubflowRouterForm > should create result actions for parameters 2`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -792,7 +796,7 @@ exports[`SubflowRouterForm > should create result actions for parameters 2`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -800,7 +804,7 @@ exports[`SubflowRouterForm > should create result actions for parameters 2`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -959,21 +963,21 @@ exports[`SubflowRouterForm > should init parameter tab 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Enter another flow"
@@ -982,8 +986,8 @@ exports[`SubflowRouterForm > should init parameter tab 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -1309,21 +1313,21 @@ exports[`SubflowRouterForm > should init parameter tab 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_flow_to_start"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_flow_to_start"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_flow_to_start"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Colors"
@@ -1332,8 +1336,8 @@ exports[`SubflowRouterForm > should init parameter tab 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1384,7 +1388,7 @@ exports[`SubflowRouterForm > should init parameter tab 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1392,7 +1396,7 @@ exports[`SubflowRouterForm > should init parameter tab 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -1407,7 +1411,7 @@ exports[`SubflowRouterForm > should init parameter tab 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1415,7 +1419,7 @@ exports[`SubflowRouterForm > should init parameter tab 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -1481,21 +1485,21 @@ exports[`SubflowRouterForm > should render 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Enter another flow"
@@ -1504,8 +1508,8 @@ exports[`SubflowRouterForm > should render 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -1831,21 +1835,21 @@ exports[`SubflowRouterForm > should render 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_flow_to_start"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_flow_to_start"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_flow_to_start"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Colors"
@@ -1854,8 +1858,8 @@ exports[`SubflowRouterForm > should render 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1906,7 +1910,7 @@ exports[`SubflowRouterForm > should render 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1914,7 +1918,7 @@ exports[`SubflowRouterForm > should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -1929,7 +1933,7 @@ exports[`SubflowRouterForm > should render 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1937,7 +1941,7 @@ exports[`SubflowRouterForm > should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     

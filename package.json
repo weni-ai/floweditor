@@ -16,7 +16,7 @@
   ],
   "private": false,
   "dependencies": {
-    "@weni/unnnic-system": "2.0.2",
+    "@weni/unnnic-system": "2.6.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-transition-group": "4.4.5",

@@ -23,7 +23,7 @@ exports[`TitleBar > render > confirmation > should render confirmation markup an
             <svg
               class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _up_button_122edd"
               data-spec="move"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -54,7 +54,7 @@ exports[`TitleBar > render > confirmation > should render confirmation markup an
           >
             <svg
               class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -98,7 +98,7 @@ exports[`TitleBar > render > move icon > should call onMoveUp 1`] = `
             <svg
               class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _up_button_122edd"
               data-spec="move"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -129,7 +129,7 @@ exports[`TitleBar > render > move icon > should call onMoveUp 1`] = `
           >
             <svg
               class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -172,7 +172,7 @@ exports[`TitleBar > render > move icon > should render move icon 1`] = `
           <svg
             class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _up_button_122edd"
             data-spec="move"
-            data-v-edf1acd8=""
+            data-v-930380cc=""
             fill="none"
             height="40"
             viewBox="0 0 40 40"
@@ -203,7 +203,7 @@ exports[`TitleBar > render > move icon > should render move icon 1`] = `
         >
           <svg
             class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-            data-v-edf1acd8=""
+            data-v-930380cc=""
             fill="none"
             height="40"
             viewBox="0 0 40 40"
@@ -246,7 +246,7 @@ exports[`TitleBar > render > remove icon > should render remove icon 1`] = `
             <svg
               class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _up_button_122edd"
               data-spec="move"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -277,7 +277,7 @@ exports[`TitleBar > render > remove icon > should render remove icon 1`] = `
           >
             <svg
               class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -328,7 +328,7 @@ exports[`TitleBar > render > should apply _className prop 1`] = `
         >
           <svg
             class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-            data-v-edf1acd8=""
+            data-v-930380cc=""
             fill="none"
             height="40"
             viewBox="0 0 40 40"
@@ -378,7 +378,7 @@ exports[`TitleBar > render > should render self, children with base props 1`] = 
         >
           <svg
             class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-            data-v-edf1acd8=""
+            data-v-930380cc=""
             fill="none"
             height="40"
             viewBox="0 0 40 40"

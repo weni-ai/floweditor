@@ -43,7 +43,7 @@ exports[`ActionWrapper > can have localized quick replies when empty on default 
               >
                 <svg
                   class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -87,7 +87,7 @@ exports[`ActionWrapper > can have localized quick replies when empty on default 
         unnnic-tag--disabled unnnic-tag-content"
                   count="0"
                   data-advanced="true"
-                  data-v-7b0801dc=""
+                  data-v-5a2abba9=""
                   enabletooltip="false"
                   hasbackbutton="false"
                 >
@@ -95,7 +95,7 @@ exports[`ActionWrapper > can have localized quick replies when empty on default 
                     class="unnnic-tag__label
       
       unnnic-tag__label--disabled"
-                    data-v-7b0801dc=""
+                    data-v-5a2abba9=""
                   >
                     Sí
                   </span>
@@ -154,7 +154,7 @@ exports[`ActionWrapper > renders a base language 1`] = `
               >
                 <svg
                   class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"

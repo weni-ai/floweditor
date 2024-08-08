@@ -84,7 +84,7 @@ exports[`NodeComp > renders 1`] = `
             >
               <svg
                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
-                data-v-edf1acd8=""
+                data-v-930380cc=""
                 fill="none"
                 height="40"
                 viewBox="0 0 40 40"
@@ -167,7 +167,7 @@ exports[`NodeComp > renders a named random split 1`] = `
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"

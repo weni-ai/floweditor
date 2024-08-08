@@ -3,15 +3,15 @@
 exports[`SendWhatsAppMsgComp > render > should render attachment items when passed 1`] = `"<div><div class="_icons_8ed9c4"><div class="_attachment_8ed9c4 fe-paperclip"></div></div></div><div class=""></div><div class=""></div>"`;
 
 exports[`SendWhatsAppMsgComp > render > should render list items when passed 1`] = `
-"<div><div class="_icons_8ed9c4"></div></div><div class=""></div><div class="_summary_8ed9c4"><div class="_list_items_8ed9c4"><div data-use-vue-component-wrap="" style="all: unset;" data-v-app=""><div data-v-7b0801dc="" class="unnnic-tag
-        unnnic-tag--disabled unnnic-tag-content" data-advanced="true" count="0" hasbackbutton="false" enabletooltip="false"><span data-v-7b0801dc="" class="unnnic-tag__label
+"<div><div class="_icons_8ed9c4"></div></div><div class=""></div><div class="_summary_8ed9c4"><div class="_list_items_8ed9c4"><div data-use-vue-component-wrap="" style="all: unset;" data-v-app=""><div data-v-5a2abba9="" class="unnnic-tag
+        unnnic-tag--disabled unnnic-tag-content" data-advanced="true" count="0" hasbackbutton="false" enabletooltip="false"><span data-v-5a2abba9="" class="unnnic-tag__label
       
       unnnic-tag__label--disabled">Title 1</span><!----></div></div></div></div>"
 `;
 
 exports[`SendWhatsAppMsgComp > render > should render quick replies list when passed 1`] = `
-"<div><div class="_icons_8ed9c4"></div></div><div class="_summary_8ed9c4"><div class="_quick_replies_8ed9c4"><div data-use-vue-component-wrap="" style="all: unset;" data-v-app=""><div data-v-7b0801dc="" class="unnnic-tag
-        unnnic-tag--disabled unnnic-tag-content" data-advanced="true" count="0" hasbackbutton="false" enabletooltip="false"><span data-v-7b0801dc="" class="unnnic-tag__label
+"<div><div class="_icons_8ed9c4"></div></div><div class="_summary_8ed9c4"><div class="_quick_replies_8ed9c4"><div data-use-vue-component-wrap="" style="all: unset;" data-v-app=""><div data-v-5a2abba9="" class="unnnic-tag
+        unnnic-tag--disabled unnnic-tag-content" data-advanced="true" count="0" hasbackbutton="false" enabletooltip="false"><span data-v-5a2abba9="" class="unnnic-tag__label
       
       unnnic-tag__label--disabled">Quick Reply 1</span><!----></div></div></div></div><div class=""></div>"
 `;

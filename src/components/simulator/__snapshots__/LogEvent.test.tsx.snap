@@ -18,7 +18,7 @@ exports[`LogEvent > should render broadcast_created event 1`] = `
           >
             <svg
               class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -276,7 +276,7 @@ exports[`LogEvent > should render ivr_created event 1`] = `
           >
             <svg
               class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"
@@ -335,7 +335,7 @@ exports[`LogEvent > should render msg_created event 1`] = `
           >
             <svg
               class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
-              data-v-edf1acd8=""
+              data-v-930380cc=""
               fill="none"
               height="40"
               viewBox="0 0 40 40"

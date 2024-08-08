@@ -48,21 +48,21 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Update the contact"
@@ -71,8 +71,8 @@ exports[`UpdateContactForm > should render channel 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -398,21 +398,21 @@ exports[`UpdateContactForm > should render channel 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_select_what_to_update"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_select_what_to_update"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_select_what_to_update"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Channel"
@@ -421,8 +421,8 @@ exports[`UpdateContactForm > should render channel 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -520,21 +520,21 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_channel"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_channel"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_channel"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Twilio Channel"
@@ -543,8 +543,8 @@ exports[`UpdateContactForm > should render channel 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -607,7 +607,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -615,7 +615,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -630,7 +630,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -638,7 +638,7 @@ exports[`UpdateContactForm > should render channel 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -704,21 +704,21 @@ exports[`UpdateContactForm > should render field 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Update the contact"
@@ -727,8 +727,8 @@ exports[`UpdateContactForm > should render field 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -1054,21 +1054,21 @@ exports[`UpdateContactForm > should render field 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_select_what_to_update"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_select_what_to_update"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_select_what_to_update"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Age"
@@ -1077,8 +1077,8 @@ exports[`UpdateContactForm > should render field 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1173,22 +1173,23 @@ exports[`UpdateContactForm > should render field 1`] = `
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder=""
                         type="text"
+                        value="25"
                       />
                       <!---->
                       <!---->
@@ -1225,7 +1226,7 @@ exports[`UpdateContactForm > should render field 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1233,7 +1234,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -1248,7 +1249,7 @@ exports[`UpdateContactForm > should render field 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1256,7 +1257,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -1322,21 +1323,21 @@ exports[`UpdateContactForm > should render language 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Update the contact"
@@ -1345,8 +1346,8 @@ exports[`UpdateContactForm > should render language 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -1672,21 +1673,21 @@ exports[`UpdateContactForm > should render language 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_select_what_to_update"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_select_what_to_update"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_select_what_to_update"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Language"
@@ -1695,8 +1696,8 @@ exports[`UpdateContactForm > should render language 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1794,23 +1795,23 @@ exports[`UpdateContactForm > should render language 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_language"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                     readonly=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_language"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                       readonly=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_language"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="eng"
@@ -1820,8 +1821,8 @@ exports[`UpdateContactForm > should render language 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -1884,7 +1885,7 @@ exports[`UpdateContactForm > should render language 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1892,7 +1893,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -1907,7 +1908,7 @@ exports[`UpdateContactForm > should render language 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1915,7 +1916,7 @@ exports[`UpdateContactForm > should render language 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -1981,21 +1982,21 @@ exports[`UpdateContactForm > should render name 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Update the contact"
@@ -2004,8 +2005,8 @@ exports[`UpdateContactForm > should render name 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -2331,21 +2332,21 @@ exports[`UpdateContactForm > should render name 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_select_what_to_update"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_select_what_to_update"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_select_what_to_update"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Name"
@@ -2354,8 +2355,8 @@ exports[`UpdateContactForm > should render name 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -2450,22 +2451,23 @@ exports[`UpdateContactForm > should render name 1`] = `
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder="Enter a new contact name"
                         type="text"
+                        value="Jane Goodall"
                       />
                       <!---->
                       <!---->
@@ -2502,7 +2504,7 @@ exports[`UpdateContactForm > should render name 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -2510,7 +2512,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -2525,7 +2527,7 @@ exports[`UpdateContactForm > should render name 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -2533,7 +2535,7 @@ exports[`UpdateContactForm > should render name 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     

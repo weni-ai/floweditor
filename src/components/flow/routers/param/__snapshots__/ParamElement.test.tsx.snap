@@ -18,14 +18,15 @@ exports[`ParamElement > ChatGPT params > boolean > render > should render param 
           <div
             class="unnnic-switch"
             data-testid="switch"
-            data-v-a9fcc9d9=""
+            data-v-0b325129=""
           >
             <!---->
             <svg
-              class="unnnic-icon unnnic-icon__size--sm unnnic-icon__line-height--sm unnnic-icon-scheme--neutral-soft unnnic-switch__icon"
-              data-v-a9fcc9d9=""
-              data-v-edf1acd8=""
+              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon__line-height--sm unnnic-icon-scheme--neutral-soft unnnic-switch__icon"
+              data-v-0b325129=""
+              data-v-930380cc=""
               data-v-fbb3af00=""
+              disabled="false"
               height="40"
               id="default"
               viewBox="0 0 80 40"
@@ -52,7 +53,7 @@ exports[`ParamElement > ChatGPT params > boolean > render > should render param 
             </svg>
             <div
               class="unnnic-switch__label unnnic-switch__label__right unnnic-switch__label__small"
-              data-v-a9fcc9d9=""
+              data-v-0b325129=""
             >
               Send complete messages history as context
             </div>
@@ -94,22 +95,23 @@ exports[`ParamElement > ChatGPT params > expressionInput > render > should rende
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder=""
                         type="text"
+                        value="@input.value"
                       />
                       <!---->
                       <!---->
@@ -163,23 +165,23 @@ exports[`ParamElement > ChatGPT params > multiselect > render > should render pa
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_aditional_prompts"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_aditional_prompts"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_aditional_prompts"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Select an option"
@@ -189,8 +191,8 @@ exports[`ParamElement > ChatGPT params > multiselect > render > should render pa
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -228,17 +230,29 @@ exports[`ParamElement > ChatGPT params > multiselect > render > should render pa
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
-                      data-v-35428433=""
+                      data-v-7fb32042=""
                       value="false"
                     >
-                      <uicon
-                        class="unnnic-checkbox"
-                        clickable="true"
-                        data-v-35428433=""
-                        icon="checkbox-default"
-                        scheme="neutral-clean"
-                        size="md"
-                      />
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
@@ -263,17 +277,29 @@ exports[`ParamElement > ChatGPT params > multiselect > render > should render pa
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
-                      data-v-35428433=""
+                      data-v-7fb32042=""
                       value="false"
                     >
-                      <uicon
-                        class="unnnic-checkbox"
-                        clickable="true"
-                        data-v-35428433=""
-                        icon="checkbox-default"
-                        scheme="neutral-clean"
-                        size="md"
-                      />
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
@@ -298,17 +324,29 @@ exports[`ParamElement > ChatGPT params > multiselect > render > should render pa
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
-                      data-v-35428433=""
+                      data-v-7fb32042=""
                       value="false"
                     >
-                      <uicon
-                        class="unnnic-checkbox"
-                        clickable="true"
-                        data-v-35428433=""
-                        icon="checkbox-default"
-                        scheme="neutral-clean"
-                        size="md"
-                      />
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
@@ -364,23 +402,23 @@ exports[`ParamElement > ChatGPT params > multiselect > update > handles data cha
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_aditional_prompts"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_aditional_prompts"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_aditional_prompts"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Select an option"
@@ -390,8 +428,8 @@ exports[`ParamElement > ChatGPT params > multiselect > update > handles data cha
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -429,17 +467,29 @@ exports[`ParamElement > ChatGPT params > multiselect > update > handles data cha
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
-                      data-v-35428433=""
+                      data-v-7fb32042=""
                       value="false"
                     >
-                      <uicon
-                        class="unnnic-checkbox"
-                        clickable="true"
-                        data-v-35428433=""
-                        icon="checkbox-default"
-                        scheme="neutral-clean"
-                        size="md"
-                      />
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
@@ -464,17 +514,29 @@ exports[`ParamElement > ChatGPT params > multiselect > update > handles data cha
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
-                      data-v-35428433=""
+                      data-v-7fb32042=""
                       value="false"
                     >
-                      <uicon
-                        class="unnnic-checkbox"
-                        clickable="true"
-                        data-v-35428433=""
-                        icon="checkbox-default"
-                        scheme="neutral-clean"
-                        size="md"
-                      />
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
@@ -499,17 +561,29 @@ exports[`ParamElement > ChatGPT params > multiselect > update > handles data cha
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
-                      data-v-35428433=""
+                      data-v-7fb32042=""
                       value="false"
                     >
-                      <uicon
-                        class="unnnic-checkbox"
-                        clickable="true"
-                        data-v-35428433=""
-                        icon="checkbox-default"
-                        scheme="neutral-clean"
-                        size="md"
-                      />
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
@@ -583,23 +657,23 @@ exports[`ParamElement > Omie params > render > should render param 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_service_call_param"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_service_call_param"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_service_call_param"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Identificação"
@@ -609,8 +683,8 @@ exports[`ParamElement > Omie params > render > should render param 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -700,23 +774,23 @@ exports[`ParamElement > Omie params > render > should render param 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_service_call_param_filter"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_service_call_param_filter"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_service_call_param_filter"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Código do Contato"
@@ -726,8 +800,8 @@ exports[`ParamElement > Omie params > render > should render param 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -867,22 +941,23 @@ exports[`ParamElement > Omie params > render > should render param 1`] = `
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder=""
                         type="text"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -908,7 +983,7 @@ exports[`ParamElement > Omie params > render > should render param 1`] = `
           <svg
             class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-edf1acd8=""
+            data-v-930380cc=""
             fill="none"
             height="40"
             viewBox="0 0 40 40"
@@ -981,23 +1056,23 @@ exports[`ParamElement > Omie params > update > handles data change 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_service_call_param"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_service_call_param"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_service_call_param"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Identificação"
@@ -1007,8 +1082,8 @@ exports[`ParamElement > Omie params > update > handles data change 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1098,23 +1173,23 @@ exports[`ParamElement > Omie params > update > handles data change 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_service_call_param_filter"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_service_call_param_filter"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_service_call_param_filter"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Código do Contato"
@@ -1124,8 +1199,8 @@ exports[`ParamElement > Omie params > update > handles data change 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1265,22 +1340,23 @@ exports[`ParamElement > Omie params > update > handles data change 1`] = `
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder=""
                         type="text"
+                        value="new data"
                       />
                       <!---->
                       <!---->
@@ -1306,7 +1382,7 @@ exports[`ParamElement > Omie params > update > handles data change 1`] = `
           <svg
             class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-edf1acd8=""
+            data-v-930380cc=""
             fill="none"
             height="40"
             viewBox="0 0 40 40"
@@ -1379,23 +1455,23 @@ exports[`ParamElement > Omie params > update > handles filter change 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_service_call_param"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_service_call_param"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_service_call_param"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Identificação"
@@ -1405,8 +1481,8 @@ exports[`ParamElement > Omie params > update > handles filter change 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1496,23 +1572,23 @@ exports[`ParamElement > Omie params > update > handles filter change 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_service_call_param_filter"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_service_call_param_filter"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_service_call_param_filter"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Código do Contato"
@@ -1522,8 +1598,8 @@ exports[`ParamElement > Omie params > update > handles filter change 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1663,22 +1739,23 @@ exports[`ParamElement > Omie params > update > handles filter change 1`] = `
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder=""
                         type="text"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -1704,7 +1781,7 @@ exports[`ParamElement > Omie params > update > handles filter change 1`] = `
           <svg
             class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-edf1acd8=""
+            data-v-930380cc=""
             fill="none"
             height="40"
             viewBox="0 0 40 40"
@@ -1777,23 +1854,23 @@ exports[`ParamElement > Omie params > update > handles filter change from correc
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_service_call_param"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_service_call_param"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_service_call_param"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Telefone e Email"
@@ -1803,8 +1880,8 @@ exports[`ParamElement > Omie params > update > handles filter change from correc
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1894,23 +1971,23 @@ exports[`ParamElement > Omie params > update > handles filter change from correc
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_service_call_param_filter"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_service_call_param_filter"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_service_call_param_filter"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="DDD do Celular 2"
@@ -1920,8 +1997,8 @@ exports[`ParamElement > Omie params > update > handles filter change from correc
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -2081,22 +2158,23 @@ exports[`ParamElement > Omie params > update > handles filter change from correc
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder=""
                         type="text"
+                        value="new data"
                       />
                       <!---->
                       <!---->
@@ -2122,7 +2200,7 @@ exports[`ParamElement > Omie params > update > handles filter change from correc
           <svg
             class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-edf1acd8=""
+            data-v-930380cc=""
             fill="none"
             height="40"
             viewBox="0 0 40 40"
@@ -2195,23 +2273,23 @@ exports[`ParamElement > Omie params > update > handles param change 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_service_call_param"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_service_call_param"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_service_call_param"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Identificação"
@@ -2221,8 +2299,8 @@ exports[`ParamElement > Omie params > update > handles param change 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -2312,23 +2390,23 @@ exports[`ParamElement > Omie params > update > handles param change 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_service_call_param_filter"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_service_call_param_filter"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_service_call_param_filter"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Código do Contato"
@@ -2338,8 +2416,8 @@ exports[`ParamElement > Omie params > update > handles param change 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -2499,22 +2577,23 @@ exports[`ParamElement > Omie params > update > handles param change 1`] = `
                 >
                   <div
                     class="unnnic-form sm"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm unnnic-form-input"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         placeholder=""
                         type="text"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -2540,7 +2619,7 @@ exports[`ParamElement > Omie params > update > handles param change 1`] = `
           <svg
             class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-edf1acd8=""
+            data-v-930380cc=""
             fill="none"
             height="40"
             viewBox="0 0 40 40"

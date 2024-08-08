@@ -53,20 +53,20 @@ exports[`KeyLocalizationForm > removes translations 1`] = `
         >
           <div
             class="tab size-sm _tabs_af1b5d"
-            data-v-54432ea7=""
+            data-v-1389f531=""
           >
             <header
               class="tab-header"
-              data-v-54432ea7=""
+              data-v-1389f531=""
             >
               <ul
                 class="tab-content"
-                data-v-54432ea7=""
+                data-v-1389f531=""
               >
                 
                 <li
                   class="tab-head tab-head--active"
-                  data-v-54432ea7=""
+                  data-v-1389f531=""
                 >
                   
                   <div
@@ -76,10 +76,11 @@ exports[`KeyLocalizationForm > removes translations 1`] = `
                     General
                   </div>
                   
+                  <!---->
                 </li>
                 <li
                   class="tab-head"
-                  data-v-54432ea7=""
+                  data-v-1389f531=""
                 >
                   
                   <div
@@ -89,17 +90,18 @@ exports[`KeyLocalizationForm > removes translations 1`] = `
                     Body Translation
                   </div>
                   
+                  <!---->
                 </li>
                 
               </ul>
             </header>
             <main
               class="tab-body"
-              data-v-54432ea7=""
+              data-v-1389f531=""
             >
               <div
                 class="tab-panel"
-                data-v-54432ea7=""
+                data-v-1389f531=""
               >
                 
                 
@@ -134,12 +136,13 @@ exports[`KeyLocalizationForm > removes translations 1`] = `
                 <div
                   class="unnnic-text-area sm normal _textarea_17662c"
                   data-testid="Subject"
-                  data-v-e1948bc4=""
+                  data-v-82a4b073=""
                 >
                   <!---->
                   <textarea
-                    data-v-e1948bc4=""
+                    data-v-82a4b073=""
                     placeholder="Spanish Translation"
+                    value="hola"
                   />
                   <!---->
                   <!---->
@@ -173,7 +176,7 @@ exports[`KeyLocalizationForm > removes translations 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -181,7 +184,7 @@ exports[`KeyLocalizationForm > removes translations 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -196,7 +199,7 @@ exports[`KeyLocalizationForm > removes translations 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -204,7 +207,7 @@ exports[`KeyLocalizationForm > removes translations 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -272,20 +275,20 @@ exports[`KeyLocalizationForm > renders send email 1`] = `
         >
           <div
             class="tab size-sm _tabs_af1b5d"
-            data-v-54432ea7=""
+            data-v-1389f531=""
           >
             <header
               class="tab-header"
-              data-v-54432ea7=""
+              data-v-1389f531=""
             >
               <ul
                 class="tab-content"
-                data-v-54432ea7=""
+                data-v-1389f531=""
               >
                 
                 <li
                   class="tab-head tab-head--active"
-                  data-v-54432ea7=""
+                  data-v-1389f531=""
                 >
                   
                   <div
@@ -295,10 +298,11 @@ exports[`KeyLocalizationForm > renders send email 1`] = `
                     General
                   </div>
                   
+                  <!---->
                 </li>
                 <li
                   class="tab-head"
-                  data-v-54432ea7=""
+                  data-v-1389f531=""
                 >
                   
                   <div
@@ -308,17 +312,18 @@ exports[`KeyLocalizationForm > renders send email 1`] = `
                     Body Translation
                   </div>
                   
+                  <!---->
                 </li>
                 
               </ul>
             </header>
             <main
               class="tab-body"
-              data-v-54432ea7=""
+              data-v-1389f531=""
             >
               <div
                 class="tab-panel"
-                data-v-54432ea7=""
+                data-v-1389f531=""
               >
                 
                 
@@ -353,12 +358,13 @@ exports[`KeyLocalizationForm > renders send email 1`] = `
                 <div
                   class="unnnic-text-area sm normal _textarea_17662c"
                   data-testid="Subject"
-                  data-v-e1948bc4=""
+                  data-v-82a4b073=""
                 >
                   <!---->
                   <textarea
-                    data-v-e1948bc4=""
+                    data-v-82a4b073=""
                     placeholder="English Translation"
+                    value=""
                   />
                   <!---->
                   <!---->
@@ -392,7 +398,7 @@ exports[`KeyLocalizationForm > renders send email 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -400,7 +406,7 @@ exports[`KeyLocalizationForm > renders send email 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -415,7 +421,7 @@ exports[`KeyLocalizationForm > renders send email 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -423,7 +429,7 @@ exports[`KeyLocalizationForm > renders send email 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     

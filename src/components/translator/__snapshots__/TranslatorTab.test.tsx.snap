@@ -27,7 +27,7 @@ exports[`TranslatorTab > finds email translations 1`] = `
               >
                 <svg
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -242,7 +242,7 @@ exports[`TranslatorTab > finds message translations 1`] = `
               >
                 <svg
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -471,7 +471,7 @@ exports[`TranslatorTab > finds split translations 1`] = `
               >
                 <svg
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -686,7 +686,7 @@ exports[`TranslatorTab > handles partial category translation 1`] = `
               >
                 <svg
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -901,7 +901,7 @@ exports[`TranslatorTab > hides completed translations 1`] = `
               >
                 <svg
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -1102,7 +1102,7 @@ exports[`TranslatorTab > renders 1`] = `
               >
                 <svg
                   class="unnnic-icon unnnic-icon__size--lg unnnic-icon-scheme--neutral-snow"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"

@@ -58,23 +58,23 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Identificação"
@@ -84,8 +84,8 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -175,23 +175,23 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param_filter"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param_filter"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param_filter"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Código do Contato"
@@ -201,8 +201,8 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -342,22 +342,23 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder=""
                               type="text"
+                              value="data 1"
                             />
                             <!---->
                             <!---->
@@ -383,7 +384,7 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                 <svg
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
                   data-testid="remove-param-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -453,23 +454,23 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Endereço"
@@ -479,8 +480,8 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -570,23 +571,23 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param_filter"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param_filter"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param_filter"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Endereço do contato"
@@ -596,8 +597,8 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -727,22 +728,23 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder=""
                               type="text"
+                              value="data 2"
                             />
                             <!---->
                             <!---->
@@ -768,7 +770,7 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                 <svg
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
                   data-testid="remove-param-061fc171-8b79-4636-b892-bd0ea5aa9b42"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -838,23 +840,23 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Identificação"
@@ -864,8 +866,8 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -955,23 +957,23 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param_filter"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param_filter"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param_filter"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Filter"
@@ -981,8 +983,8 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -1112,22 +1114,23 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder=""
                               type="text"
+                              value=""
                             />
                             <!---->
                             <!---->
@@ -1153,7 +1156,7 @@ exports[`ParamList > Omie > render > should render list of params 1`] = `
                 <svg
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
                   data-testid="remove-param-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -1239,23 +1242,23 @@ exports[`ParamList > Omie > render > should render list with an empty param 1`] 
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Identificação"
@@ -1265,8 +1268,8 @@ exports[`ParamList > Omie > render > should render list with an empty param 1`] 
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -1356,23 +1359,23 @@ exports[`ParamList > Omie > render > should render list with an empty param 1`] 
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param_filter"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param_filter"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param_filter"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Filter"
@@ -1382,8 +1385,8 @@ exports[`ParamList > Omie > render > should render list with an empty param 1`] 
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -1513,22 +1516,23 @@ exports[`ParamList > Omie > render > should render list with an empty param 1`] 
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder=""
                               type="text"
+                              value=""
                             />
                             <!---->
                             <!---->
@@ -1554,7 +1558,7 @@ exports[`ParamList > Omie > render > should render list with an empty param 1`] 
                 <svg
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
                   data-testid="remove-param-1dce2b34-9aab-4e20-81c4-3f0408dcb671"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -1640,23 +1644,23 @@ exports[`ParamList > Omie > updates > should remove param and ensure empty param
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Identificação"
@@ -1666,8 +1670,8 @@ exports[`ParamList > Omie > updates > should remove param and ensure empty param
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -1757,23 +1761,23 @@ exports[`ParamList > Omie > updates > should remove param and ensure empty param
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param_filter"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param_filter"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param_filter"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Filter"
@@ -1783,8 +1787,8 @@ exports[`ParamList > Omie > updates > should remove param and ensure empty param
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -1914,22 +1918,23 @@ exports[`ParamList > Omie > updates > should remove param and ensure empty param
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder=""
                               type="text"
+                              value=""
                             />
                             <!---->
                             <!---->
@@ -1955,7 +1960,7 @@ exports[`ParamList > Omie > updates > should remove param and ensure empty param
                 <svg
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
                   data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -2041,23 +2046,23 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Identificação"
@@ -2067,8 +2072,8 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -2158,23 +2163,23 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param_filter"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param_filter"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm error _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param_filter"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Filter"
@@ -2184,8 +2189,8 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--feedback-red icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -2201,7 +2206,7 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                         </div>
                         <p
                           class="unnnic-form__message"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           Required
                         </p>
@@ -2320,22 +2325,23 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder=""
                               type="text"
+                              value="data 1"
                             />
                             <!---->
                             <!---->
@@ -2361,7 +2367,7 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                 <svg
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
                   data-testid="remove-param-1e47a1e1-3c67-4df5-adf1-da542c789adb"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"
@@ -2431,23 +2437,23 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Identificação"
@@ -2457,8 +2463,8 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -2548,23 +2554,23 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_service_call_param_filter"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_service_call_param_filter"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_service_call_param_filter"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="Filter"
@@ -2574,8 +2580,8 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -2705,22 +2711,23 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder=""
                               type="text"
+                              value=""
                             />
                             <!---->
                             <!---->
@@ -2746,7 +2753,7 @@ exports[`ParamList > Omie > updates > should update params and call the callback
                 <svg
                   class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
                   data-testid="remove-param-132de855-4042-4dc1-a18f-cc2e6a8f790a"
-                  data-v-edf1acd8=""
+                  data-v-930380cc=""
                   fill="none"
                   height="40"
                   viewBox="0 0 40 40"

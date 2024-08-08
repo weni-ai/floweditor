@@ -48,21 +48,21 @@ exports[`ExternalServiceRouterForm > ChatGPT > render > should render 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Call an external service"
@@ -71,8 +71,8 @@ exports[`ExternalServiceRouterForm > ChatGPT > render > should render 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -399,23 +399,23 @@ exports[`ExternalServiceRouterForm > ChatGPT > render > should render 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_external_service"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                     readonly=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_external_service"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                       readonly=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_external_service"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="ChatGPT dummy project"
@@ -425,8 +425,8 @@ exports[`ExternalServiceRouterForm > ChatGPT > render > should render 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -500,23 +500,23 @@ exports[`ExternalServiceRouterForm > ChatGPT > render > should render 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_external_service_call"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_external_service_call"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_external_service_call"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Consultar Chat GPT"
@@ -526,8 +526,8 @@ exports[`ExternalServiceRouterForm > ChatGPT > render > should render 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -581,30 +581,31 @@ exports[`ExternalServiceRouterForm > ChatGPT > render > should render 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="64"
               >
                 <p
                   class="unnnic-form__label"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   Save as result
                 </p>
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="64"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="64"
                     placeholder="Result"
                     type="text"
+                    value="Result"
                   />
                   <!---->
                   <!---->
@@ -633,7 +634,7 @@ exports[`ExternalServiceRouterForm > ChatGPT > render > should render 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -641,7 +642,7 @@ exports[`ExternalServiceRouterForm > ChatGPT > render > should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -656,7 +657,7 @@ exports[`ExternalServiceRouterForm > ChatGPT > render > should render 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -664,7 +665,7 @@ exports[`ExternalServiceRouterForm > ChatGPT > render > should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -730,21 +731,21 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Call an external service"
@@ -753,8 +754,8 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -1081,23 +1082,23 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_external_service"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                     readonly=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_external_service"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                       readonly=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_external_service"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="ChatGPT dummy project"
@@ -1107,8 +1108,8 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -1182,23 +1183,23 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_external_service_call"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_external_service_call"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_external_service_call"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Consultar Chat GPT"
@@ -1208,8 +1209,8 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -1289,23 +1290,23 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                           <div
                             class="unnnic-form sm _bold_placeholder_4cce75"
                             data-testid="temba_select_input_aditional_prompts"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                             readonly=""
                           >
                             <!---->
                             <div
                               class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                               data-testid="temba_select_input_aditional_prompts"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               mask=""
                               readonly=""
                             >
                               <input
                                 class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                                 data-testid="temba_select_input_aditional_prompts"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 hascloudycolor="false"
                                 iconright="arrow-button-down-1"
                                 placeholder="Select an option"
@@ -1315,8 +1316,8 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                               <!---->
                               <svg
                                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                                data-v-20f606ca=""
-                                data-v-edf1acd8=""
+                                data-v-930380cc=""
+                                data-v-df38a188=""
                                 fill="none"
                                 height="40"
                                 viewBox="0 0 40 40"
@@ -1354,17 +1355,29 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                             >
                               <div
                                 class="unnnic-checkbox-wrapper _checkbox_08dd12"
-                                data-v-35428433=""
+                                data-v-7fb32042=""
                                 value="false"
                               >
-                                <uicon
-                                  class="unnnic-checkbox"
-                                  clickable="true"
-                                  data-v-35428433=""
-                                  icon="checkbox-default"
-                                  scheme="neutral-clean"
-                                  size="md"
-                                />
+                                <svg
+                                  class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                                  data-v-7fb32042=""
+                                  data-v-930380cc=""
+                                  fill="none"
+                                  height="40"
+                                  viewBox="0 0 40 40"
+                                  width="40"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <rect
+                                    class="primary-stroke"
+                                    height="29"
+                                    rx="3.5"
+                                    stroke="#3B414D"
+                                    width="29"
+                                    x="5.5"
+                                    y="5.50049"
+                                  />
+                                </svg>
                                 <!---->
                               </div>
                             </div>
@@ -1389,17 +1402,29 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                             >
                               <div
                                 class="unnnic-checkbox-wrapper _checkbox_08dd12"
-                                data-v-35428433=""
+                                data-v-7fb32042=""
                                 value="false"
                               >
-                                <uicon
-                                  class="unnnic-checkbox"
-                                  clickable="true"
-                                  data-v-35428433=""
-                                  icon="checkbox-default"
-                                  scheme="neutral-clean"
-                                  size="md"
-                                />
+                                <svg
+                                  class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                                  data-v-7fb32042=""
+                                  data-v-930380cc=""
+                                  fill="none"
+                                  height="40"
+                                  viewBox="0 0 40 40"
+                                  width="40"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <rect
+                                    class="primary-stroke"
+                                    height="29"
+                                    rx="3.5"
+                                    stroke="#3B414D"
+                                    width="29"
+                                    x="5.5"
+                                    y="5.50049"
+                                  />
+                                </svg>
                                 <!---->
                               </div>
                             </div>
@@ -1424,17 +1449,29 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                             >
                               <div
                                 class="unnnic-checkbox-wrapper _checkbox_08dd12"
-                                data-v-35428433=""
+                                data-v-7fb32042=""
                                 value="false"
                               >
-                                <uicon
-                                  class="unnnic-checkbox"
-                                  clickable="true"
-                                  data-v-35428433=""
-                                  icon="checkbox-default"
-                                  scheme="neutral-clean"
-                                  size="md"
-                                />
+                                <svg
+                                  class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                                  data-v-7fb32042=""
+                                  data-v-930380cc=""
+                                  fill="none"
+                                  height="40"
+                                  viewBox="0 0 40 40"
+                                  width="40"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <rect
+                                    class="primary-stroke"
+                                    height="29"
+                                    rx="3.5"
+                                    stroke="#3B414D"
+                                    width="29"
+                                    x="5.5"
+                                    y="5.50049"
+                                  />
+                                </svg>
                                 <!---->
                               </div>
                             </div>
@@ -1475,14 +1512,15 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                     <div
                       class="unnnic-switch"
                       data-testid="switch"
-                      data-v-a9fcc9d9=""
+                      data-v-0b325129=""
                     >
                       <!---->
                       <svg
-                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon__line-height--sm unnnic-icon-scheme--brand-weni unnnic-switch__icon active"
-                        data-v-a9fcc9d9=""
-                        data-v-edf1acd8=""
+                        class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon__line-height--sm unnnic-icon-scheme--brand-weni unnnic-switch__icon active"
+                        data-v-0b325129=""
+                        data-v-930380cc=""
                         data-v-fbb3af00=""
+                        disabled="false"
                         height="40"
                         id="default"
                         viewBox="0 0 80 40"
@@ -1509,7 +1547,7 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                       </svg>
                       <div
                         class="unnnic-switch__label unnnic-switch__label__right unnnic-switch__label__small"
-                        data-v-a9fcc9d9=""
+                        data-v-0b325129=""
                       >
                         Send complete messages history as context
                       </div>
@@ -1548,22 +1586,23 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                           >
                             <div
                               class="unnnic-form sm"
-                              data-v-4d681994=""
+                              data-v-acea6376=""
                             >
                               <!---->
                               <div
                                 class="text-input size--sm unnnic-form-input"
-                                data-v-20f606ca=""
-                                data-v-4d681994=""
+                                data-v-acea6376=""
+                                data-v-df38a188=""
                                 mask=""
                               >
                                 <input
                                   class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                                  data-v-1e805323=""
-                                  data-v-20f606ca=""
+                                  data-v-bf6639b4=""
+                                  data-v-df38a188=""
                                   hascloudycolor="false"
                                   placeholder=""
                                   type="text"
+                                  value="@input.value"
                                 />
                                 <!---->
                                 <!---->
@@ -1600,30 +1639,31 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="64"
               >
                 <p
                   class="unnnic-form__label"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   Save as result
                 </p>
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="64"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="64"
                     placeholder="Result"
                     type="text"
+                    value="Result"
                   />
                   <!---->
                   <!---->
@@ -1652,7 +1692,7 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1660,7 +1700,7 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -1675,7 +1715,7 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1683,7 +1723,7 @@ exports[`ExternalServiceRouterForm > ChatGPT > updates > should save changes 1`]
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -2247,21 +2287,21 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Call an external service"
@@ -2270,8 +2310,8 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -2598,23 +2638,23 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_external_service"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                     readonly=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_external_service"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                       readonly=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_external_service"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Omie dummy project"
@@ -2624,8 +2664,8 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -2699,23 +2739,23 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_external_service_call"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_external_service_call"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_external_service_call"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Inserir Contato"
@@ -2725,8 +2765,8 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -2813,23 +2853,23 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                           <div
                             class="unnnic-form sm _bold_placeholder_4cce75"
                             data-testid="temba_select_input_service_call_param"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                             readonly=""
                           >
                             <!---->
                             <div
                               class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                               data-testid="temba_select_input_service_call_param"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               mask=""
                               readonly=""
                             >
                               <input
                                 class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                                 data-testid="temba_select_input_service_call_param"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 hascloudycolor="false"
                                 iconright="arrow-button-down-1"
                                 placeholder="Identificação"
@@ -2839,8 +2879,8 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                               <!---->
                               <svg
                                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                                data-v-20f606ca=""
-                                data-v-edf1acd8=""
+                                data-v-930380cc=""
+                                data-v-df38a188=""
                                 fill="none"
                                 height="40"
                                 viewBox="0 0 40 40"
@@ -2930,23 +2970,23 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                           <div
                             class="unnnic-form sm _bold_placeholder_4cce75"
                             data-testid="temba_select_input_service_call_param_filter"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                             readonly=""
                           >
                             <!---->
                             <div
                               class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                               data-testid="temba_select_input_service_call_param_filter"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               mask=""
                               readonly=""
                             >
                               <input
                                 class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                                 data-testid="temba_select_input_service_call_param_filter"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 hascloudycolor="false"
                                 iconright="arrow-button-down-1"
                                 placeholder="Filter"
@@ -2956,8 +2996,8 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                               <!---->
                               <svg
                                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                                data-v-20f606ca=""
-                                data-v-edf1acd8=""
+                                data-v-930380cc=""
+                                data-v-df38a188=""
                                 fill="none"
                                 height="40"
                                 viewBox="0 0 40 40"
@@ -3087,22 +3127,23 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                           >
                             <div
                               class="unnnic-form sm"
-                              data-v-4d681994=""
+                              data-v-acea6376=""
                             >
                               <!---->
                               <div
                                 class="text-input size--sm unnnic-form-input"
-                                data-v-20f606ca=""
-                                data-v-4d681994=""
+                                data-v-acea6376=""
+                                data-v-df38a188=""
                                 mask=""
                               >
                                 <input
                                   class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                                  data-v-1e805323=""
-                                  data-v-20f606ca=""
+                                  data-v-bf6639b4=""
+                                  data-v-df38a188=""
                                   hascloudycolor="false"
                                   placeholder=""
                                   type="text"
+                                  value=""
                                 />
                                 <!---->
                                 <!---->
@@ -3128,7 +3169,7 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
                       data-testid="remove-param-96249bdc-cb58-4489-a188-0eeb6686a8c9"
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -3166,30 +3207,31 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="64"
               >
                 <p
                   class="unnnic-form__label"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   Save as result
                 </p>
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="64"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="64"
                     placeholder="Result"
                     type="text"
+                    value="Result"
                   />
                   <!---->
                   <!---->
@@ -3218,7 +3260,7 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -3226,7 +3268,7 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -3241,7 +3283,7 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -3249,7 +3291,7 @@ exports[`ExternalServiceRouterForm > Omie > render > should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -3315,21 +3357,21 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Call an external service"
@@ -3338,8 +3380,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -3666,23 +3708,23 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_external_service"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                     readonly=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_external_service"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                       readonly=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_external_service"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Omie dummy project"
@@ -3692,8 +3734,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -3767,23 +3809,23 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_external_service_call"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_external_service_call"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_external_service_call"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Inserir Contato"
@@ -3793,8 +3835,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -3881,23 +3923,23 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                           <div
                             class="unnnic-form sm _bold_placeholder_4cce75"
                             data-testid="temba_select_input_service_call_param"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                             readonly=""
                           >
                             <!---->
                             <div
                               class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                               data-testid="temba_select_input_service_call_param"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               mask=""
                               readonly=""
                             >
                               <input
                                 class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                                 data-testid="temba_select_input_service_call_param"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 hascloudycolor="false"
                                 iconright="arrow-button-down-1"
                                 placeholder="Identificação"
@@ -3907,8 +3949,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                               <!---->
                               <svg
                                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                                data-v-20f606ca=""
-                                data-v-edf1acd8=""
+                                data-v-930380cc=""
+                                data-v-df38a188=""
                                 fill="none"
                                 height="40"
                                 viewBox="0 0 40 40"
@@ -3998,23 +4040,23 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                           <div
                             class="unnnic-form sm _bold_placeholder_4cce75"
                             data-testid="temba_select_input_service_call_param_filter"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                             readonly=""
                           >
                             <!---->
                             <div
                               class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                               data-testid="temba_select_input_service_call_param_filter"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               mask=""
                               readonly=""
                             >
                               <input
                                 class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                                 data-testid="temba_select_input_service_call_param_filter"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 hascloudycolor="false"
                                 iconright="arrow-button-down-1"
                                 placeholder="Filter"
@@ -4024,8 +4066,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                               <!---->
                               <svg
                                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                                data-v-20f606ca=""
-                                data-v-edf1acd8=""
+                                data-v-930380cc=""
+                                data-v-df38a188=""
                                 fill="none"
                                 height="40"
                                 viewBox="0 0 40 40"
@@ -4155,22 +4197,23 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                           >
                             <div
                               class="unnnic-form sm"
-                              data-v-4d681994=""
+                              data-v-acea6376=""
                             >
                               <!---->
                               <div
                                 class="text-input size--sm unnnic-form-input"
-                                data-v-20f606ca=""
-                                data-v-4d681994=""
+                                data-v-acea6376=""
+                                data-v-df38a188=""
                                 mask=""
                               >
                                 <input
                                   class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                                  data-v-1e805323=""
-                                  data-v-20f606ca=""
+                                  data-v-bf6639b4=""
+                                  data-v-df38a188=""
                                   hascloudycolor="false"
                                   placeholder=""
                                   type="text"
+                                  value=""
                                 />
                                 <!---->
                                 <!---->
@@ -4196,7 +4239,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
                       data-testid="remove-param-f627a69c-a227-451f-9520-ce969f02162e"
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -4234,30 +4277,31 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="64"
               >
                 <p
                   class="unnnic-form__label"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   Save as result
                 </p>
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="64"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="64"
                     placeholder="Result"
                     type="text"
+                    value="Result"
                   />
                   <!---->
                   <!---->
@@ -4286,7 +4330,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -4294,7 +4338,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -4309,7 +4353,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -4317,7 +4361,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 1`] = 
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -4383,21 +4427,21 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Call an external service"
@@ -4406,8 +4450,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -4734,23 +4778,23 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_external_service"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                     readonly=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_external_service"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                       readonly=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_external_service"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Omie dummy project"
@@ -4760,8 +4804,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -4835,23 +4879,23 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                 <div
                   class="unnnic-form sm _bold_placeholder_4cce75"
                   data-testid="temba_select_input_external_service_call"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                   readonly=""
                 >
                   <!---->
                   <div
                     class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                     data-testid="temba_select_input_external_service_call"
-                    data-v-20f606ca=""
-                    data-v-4d681994=""
+                    data-v-acea6376=""
+                    data-v-df38a188=""
                     mask=""
                     readonly=""
                   >
                     <input
                       class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                       data-testid="temba_select_input_external_service_call"
-                      data-v-1e805323=""
-                      data-v-20f606ca=""
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
                       hascloudycolor="false"
                       iconright="arrow-button-down-1"
                       placeholder="Inserir Contato"
@@ -4861,8 +4905,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                     <!---->
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-20f606ca=""
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -5010,7 +5054,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                           <div
                             class="unnnic-form sm _bold_placeholder_4cce75"
                             data-testid="temba_select_input_service_call_param"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                             disabled="true"
                             readonly=""
                           >
@@ -5018,8 +5062,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                             <div
                               class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                               data-testid="temba_select_input_service_call_param"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               disabled="true"
                               mask=""
                               readonly=""
@@ -5027,8 +5071,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                               <input
                                 class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                                 data-testid="temba_select_input_service_call_param"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 disabled=""
                                 hascloudycolor="false"
                                 iconright="arrow-button-down-1"
@@ -5039,8 +5083,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                               <!---->
                               <svg
                                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                                data-v-20f606ca=""
-                                data-v-edf1acd8=""
+                                data-v-930380cc=""
+                                data-v-df38a188=""
                                 fill="none"
                                 height="40"
                                 viewBox="0 0 40 40"
@@ -5130,7 +5174,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                           <div
                             class="unnnic-form sm _bold_placeholder_4cce75"
                             data-testid="temba_select_input_service_call_param_filter"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                             disabled="true"
                             readonly=""
                           >
@@ -5138,8 +5182,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                             <div
                               class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                               data-testid="temba_select_input_service_call_param_filter"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               disabled="true"
                               mask=""
                               readonly=""
@@ -5147,8 +5191,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                               <input
                                 class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                                 data-testid="temba_select_input_service_call_param_filter"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 disabled=""
                                 hascloudycolor="false"
                                 iconright="arrow-button-down-1"
@@ -5159,8 +5203,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                               <!---->
                               <svg
                                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                                data-v-20f606ca=""
-                                data-v-edf1acd8=""
+                                data-v-930380cc=""
+                                data-v-df38a188=""
                                 fill="none"
                                 height="40"
                                 viewBox="0 0 40 40"
@@ -5280,22 +5324,23 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                           >
                             <div
                               class="unnnic-form sm"
-                              data-v-4d681994=""
+                              data-v-acea6376=""
                             >
                               <!---->
                               <div
                                 class="text-input size--sm unnnic-form-input"
-                                data-v-20f606ca=""
-                                data-v-4d681994=""
+                                data-v-acea6376=""
+                                data-v-df38a188=""
                                 mask=""
                               >
                                 <input
                                   class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                                  data-v-1e805323=""
-                                  data-v-20f606ca=""
+                                  data-v-bf6639b4=""
+                                  data-v-df38a188=""
                                   hascloudycolor="false"
                                   placeholder=""
                                   type="text"
+                                  value=""
                                 />
                                 <!---->
                                 <!---->
@@ -5321,7 +5366,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-clean _remove_icon_ec0929"
                       data-testid="remove-param-57bf1459-14b9-4a73-b579-9d1b56f0b276"
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -5391,7 +5436,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                           <div
                             class="unnnic-form sm _bold_placeholder_4cce75"
                             data-testid="temba_select_input_service_call_param"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                             disabled="true"
                             readonly=""
                           >
@@ -5399,8 +5444,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                             <div
                               class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                               data-testid="temba_select_input_service_call_param"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               disabled="true"
                               mask=""
                               readonly=""
@@ -5408,8 +5453,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                               <input
                                 class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                                 data-testid="temba_select_input_service_call_param"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 disabled=""
                                 hascloudycolor="false"
                                 iconright="arrow-button-down-1"
@@ -5420,8 +5465,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                               <!---->
                               <svg
                                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                                data-v-20f606ca=""
-                                data-v-edf1acd8=""
+                                data-v-930380cc=""
+                                data-v-df38a188=""
                                 fill="none"
                                 height="40"
                                 viewBox="0 0 40 40"
@@ -5511,7 +5556,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                           <div
                             class="unnnic-form sm _bold_placeholder_4cce75"
                             data-testid="temba_select_input_service_call_param_filter"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                             disabled="true"
                             readonly=""
                           >
@@ -5519,8 +5564,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                             <div
                               class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                               data-testid="temba_select_input_service_call_param_filter"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               disabled="true"
                               mask=""
                               readonly=""
@@ -5528,8 +5573,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                               <input
                                 class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                                 data-testid="temba_select_input_service_call_param_filter"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 disabled=""
                                 hascloudycolor="false"
                                 iconright="arrow-button-down-1"
@@ -5540,8 +5585,8 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                               <!---->
                               <svg
                                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                                data-v-20f606ca=""
-                                data-v-edf1acd8=""
+                                data-v-930380cc=""
+                                data-v-df38a188=""
                                 fill="none"
                                 height="40"
                                 viewBox="0 0 40 40"
@@ -5661,22 +5706,23 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                           >
                             <div
                               class="unnnic-form sm"
-                              data-v-4d681994=""
+                              data-v-acea6376=""
                             >
                               <!---->
                               <div
                                 class="text-input size--sm unnnic-form-input"
-                                data-v-20f606ca=""
-                                data-v-4d681994=""
+                                data-v-acea6376=""
+                                data-v-df38a188=""
                                 mask=""
                               >
                                 <input
                                   class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                                  data-v-1e805323=""
-                                  data-v-20f606ca=""
+                                  data-v-bf6639b4=""
+                                  data-v-df38a188=""
                                   hascloudycolor="false"
                                   placeholder=""
                                   type="text"
+                                  value=""
                                 />
                                 <!---->
                                 <!---->
@@ -5702,7 +5748,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                     <svg
                       class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-clean _remove_icon_ec0929"
                       data-testid="remove-param-a0bf60d1-2333-41a5-9bcb-7c56cc5e969e"
-                      data-v-edf1acd8=""
+                      data-v-930380cc=""
                       fill="none"
                       height="40"
                       viewBox="0 0 40 40"
@@ -5740,30 +5786,31 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
                 maxlength="64"
               >
                 <p
                   class="unnnic-form__label"
-                  data-v-4d681994=""
+                  data-v-acea6376=""
                 >
                   Save as result
                 </p>
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                   maxlength="64"
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     maxlength="64"
                     placeholder="Result"
                     type="text"
+                    value="Result"
                   />
                   <!---->
                   <!---->
@@ -5792,7 +5839,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -5800,7 +5847,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -5815,7 +5862,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -5823,7 +5870,7 @@ exports[`ExternalServiceRouterForm > Omie > updates > should save changes 2`] = 
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     

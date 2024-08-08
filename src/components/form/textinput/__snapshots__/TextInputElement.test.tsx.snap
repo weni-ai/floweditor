@@ -14,22 +14,23 @@ exports[`TextInputElement > renders 1`] = `
       >
         <div
           class="unnnic-form sm"
-          data-v-4d681994=""
+          data-v-acea6376=""
         >
           <!---->
           <div
             class="text-input size--sm unnnic-form-input"
-            data-v-20f606ca=""
-            data-v-4d681994=""
+            data-v-acea6376=""
+            data-v-df38a188=""
             mask=""
           >
             <input
               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-              data-v-1e805323=""
-              data-v-20f606ca=""
+              data-v-bf6639b4=""
+              data-v-df38a188=""
               hascloudycolor="false"
               placeholder=""
               type="text"
+              value=""
             />
             <!---->
             <!---->

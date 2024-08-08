@@ -16,7 +16,7 @@ exports[`StartFlowComp > render > should render flow name 1`] = `
         >
           <svg
             class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark _icon_25b42d"
-            data-v-edf1acd8=""
+            data-v-930380cc=""
             fill="none"
             height="40"
             viewBox="0 0 40 40"

@@ -58,23 +58,23 @@ exports[`CaseList > render > should render empty list 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_operator"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_operator"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_operator"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="has any of the words"
@@ -84,8 +84,8 @@ exports[`CaseList > render > should render empty list 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -345,22 +345,23 @@ exports[`CaseList > render > should render empty list 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder="Ex: cart"
                               type="text"
+                              value=""
                             />
                             <!---->
                             <!---->
@@ -398,25 +399,26 @@ exports[`CaseList > render > should render empty list 1`] = `
                   >
                     <div
                       class="unnnic-form sm"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       maxlength="36"
                     >
                       <!---->
                       <div
                         class="text-input size--sm unnnic-form-input"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         maxlength="36"
                       >
                         <input
                           class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           maxlength="36"
                           placeholder="Ex: shopping"
                           type="text"
+                          value=""
                         />
                         <!---->
                         <!---->
@@ -438,7 +440,7 @@ exports[`CaseList > render > should render empty list 1`] = `
                   <svg
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                     data-testid="remove-case-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-                    data-v-edf1acd8=""
+                    data-v-930380cc=""
                     fill="none"
                     height="40"
                     viewBox="0 0 40 40"
@@ -525,23 +527,23 @@ exports[`CaseList > render > should render list of cases 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_operator"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_operator"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_operator"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="has any of the words"
@@ -551,8 +553,8 @@ exports[`CaseList > render > should render list of cases 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -812,22 +814,23 @@ exports[`CaseList > render > should render list of cases 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder="Ex: cart"
                               type="text"
+                              value="Red, r"
                             />
                             <!---->
                             <!---->
@@ -865,25 +868,26 @@ exports[`CaseList > render > should render list of cases 1`] = `
                   >
                     <div
                       class="unnnic-form sm"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       maxlength="36"
                     >
                       <!---->
                       <div
                         class="text-input size--sm unnnic-form-input"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         maxlength="36"
                       >
                         <input
                           class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           maxlength="36"
                           placeholder="Ex: shopping"
                           type="text"
+                          value="Red"
                         />
                         <!---->
                         <!---->
@@ -905,7 +909,7 @@ exports[`CaseList > render > should render list of cases 1`] = `
                   <svg
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                     data-testid="remove-case-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
-                    data-v-edf1acd8=""
+                    data-v-930380cc=""
                     fill="none"
                     height="40"
                     viewBox="0 0 40 40"
@@ -976,23 +980,23 @@ exports[`CaseList > render > should render list of cases 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_operator"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_operator"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_operator"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="has any of the words"
@@ -1002,8 +1006,8 @@ exports[`CaseList > render > should render list of cases 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -1263,22 +1267,23 @@ exports[`CaseList > render > should render list of cases 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder="Ex: cart"
                               type="text"
+                              value="Green, g"
                             />
                             <!---->
                             <!---->
@@ -1316,25 +1321,26 @@ exports[`CaseList > render > should render list of cases 1`] = `
                   >
                     <div
                       class="unnnic-form sm"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       maxlength="36"
                     >
                       <!---->
                       <div
                         class="text-input size--sm unnnic-form-input"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         maxlength="36"
                       >
                         <input
                           class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           maxlength="36"
                           placeholder="Ex: shopping"
                           type="text"
+                          value="Green"
                         />
                         <!---->
                         <!---->
@@ -1356,7 +1362,7 @@ exports[`CaseList > render > should render list of cases 1`] = `
                   <svg
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                     data-testid="remove-case-061fc171-8b79-4636-b892-bd0ea5aa9b42"
-                    data-v-edf1acd8=""
+                    data-v-930380cc=""
                     fill="none"
                     height="40"
                     viewBox="0 0 40 40"
@@ -1427,23 +1433,23 @@ exports[`CaseList > render > should render list of cases 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_operator"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_operator"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_operator"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="has any of the words"
@@ -1453,8 +1459,8 @@ exports[`CaseList > render > should render list of cases 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -1714,22 +1720,23 @@ exports[`CaseList > render > should render list of cases 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder="Ex: cart"
                               type="text"
+                              value=""
                             />
                             <!---->
                             <!---->
@@ -1767,25 +1774,26 @@ exports[`CaseList > render > should render list of cases 1`] = `
                   >
                     <div
                       class="unnnic-form sm"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       maxlength="36"
                     >
                       <!---->
                       <div
                         class="text-input size--sm unnnic-form-input"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         maxlength="36"
                       >
                         <input
                           class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           maxlength="36"
                           placeholder="Ex: shopping"
                           type="text"
+                          value=""
                         />
                         <!---->
                         <!---->
@@ -1807,7 +1815,7 @@ exports[`CaseList > render > should render list of cases 1`] = `
                   <svg
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                     data-testid="remove-case-1e47a1e1-3c67-4df5-adf1-da542c789adb"
-                    data-v-edf1acd8=""
+                    data-v-930380cc=""
                     fill="none"
                     height="40"
                     viewBox="0 0 40 40"
@@ -1894,23 +1902,23 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_operator"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_operator"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_operator"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="has a number above"
@@ -1920,8 +1928,8 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -2181,22 +2189,23 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder="Ex: cart"
                               type="text"
+                              value="42"
                             />
                             <!---->
                             <!---->
@@ -2234,25 +2243,26 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                   >
                     <div
                       class="unnnic-form sm"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       maxlength="36"
                     >
                       <!---->
                       <div
                         class="text-input size--sm unnnic-form-input"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         maxlength="36"
                       >
                         <input
                           class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           maxlength="36"
                           placeholder="Ex: shopping"
                           type="text"
+                          value=">42"
                         />
                         <!---->
                         <!---->
@@ -2274,7 +2284,7 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                   <svg
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                     data-testid="remove-case-132de855-4042-4dc1-a18f-cc2e6a8f790a"
-                    data-v-edf1acd8=""
+                    data-v-930380cc=""
                     fill="none"
                     height="40"
                     viewBox="0 0 40 40"
@@ -2345,23 +2355,23 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_operator"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_operator"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_operator"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="has a number above"
@@ -2371,8 +2381,8 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -2632,22 +2642,23 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder="Ex: cart"
                               type="text"
+                              value=""
                             />
                             <!---->
                             <!---->
@@ -2685,25 +2696,26 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                   >
                     <div
                       class="unnnic-form sm"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       maxlength="36"
                     >
                       <!---->
                       <div
                         class="text-input size--sm unnnic-form-input"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         maxlength="36"
                       >
                         <input
                           class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           maxlength="36"
                           placeholder="Ex: shopping"
                           type="text"
+                          value=""
                         />
                         <!---->
                         <!---->
@@ -2725,7 +2737,7 @@ exports[`CaseList > updates > changes default operator on add 1`] = `
                   <svg
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                     data-testid="remove-case-2dc85899-0577-4f1b-a620-f12094e34b5e"
-                    data-v-edf1acd8=""
+                    data-v-930380cc=""
                     fill="none"
                     height="40"
                     viewBox="0 0 40 40"
@@ -2812,23 +2824,23 @@ exports[`CaseList > updates > should remove cases 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_operator"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_operator"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_operator"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="has any of the words"
@@ -2838,8 +2850,8 @@ exports[`CaseList > updates > should remove cases 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -3099,22 +3111,23 @@ exports[`CaseList > updates > should remove cases 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder="Ex: cart"
                               type="text"
+                              value="Green, g"
                             />
                             <!---->
                             <!---->
@@ -3152,25 +3165,26 @@ exports[`CaseList > updates > should remove cases 1`] = `
                   >
                     <div
                       class="unnnic-form sm"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       maxlength="36"
                     >
                       <!---->
                       <div
                         class="text-input size--sm unnnic-form-input"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         maxlength="36"
                       >
                         <input
                           class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           maxlength="36"
                           placeholder="Ex: shopping"
                           type="text"
+                          value="Green"
                         />
                         <!---->
                         <!---->
@@ -3192,7 +3206,7 @@ exports[`CaseList > updates > should remove cases 1`] = `
                   <svg
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                     data-testid="remove-case-061fc171-8b79-4636-b892-bd0ea5aa9b42"
-                    data-v-edf1acd8=""
+                    data-v-930380cc=""
                     fill="none"
                     height="40"
                     viewBox="0 0 40 40"
@@ -3263,23 +3277,23 @@ exports[`CaseList > updates > should remove cases 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_operator"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_operator"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_operator"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="has any of the words"
@@ -3289,8 +3303,8 @@ exports[`CaseList > updates > should remove cases 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -3550,22 +3564,23 @@ exports[`CaseList > updates > should remove cases 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder="Ex: cart"
                               type="text"
+                              value=""
                             />
                             <!---->
                             <!---->
@@ -3603,25 +3618,26 @@ exports[`CaseList > updates > should remove cases 1`] = `
                   >
                     <div
                       class="unnnic-form sm"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       maxlength="36"
                     >
                       <!---->
                       <div
                         class="text-input size--sm unnnic-form-input"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         maxlength="36"
                       >
                         <input
                           class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           maxlength="36"
                           placeholder="Ex: shopping"
                           type="text"
+                          value=""
                         />
                         <!---->
                         <!---->
@@ -3643,7 +3659,7 @@ exports[`CaseList > updates > should remove cases 1`] = `
                   <svg
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                     data-testid="remove-case-1e47a1e1-3c67-4df5-adf1-da542c789adb"
-                    data-v-edf1acd8=""
+                    data-v-930380cc=""
                     fill="none"
                     height="40"
                     viewBox="0 0 40 40"
@@ -3730,23 +3746,23 @@ exports[`CaseList > updates > should update cases 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_operator"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_operator"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_operator"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="has any of the words"
@@ -3756,8 +3772,8 @@ exports[`CaseList > updates > should update cases 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -4017,22 +4033,23 @@ exports[`CaseList > updates > should update cases 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder="Ex: cart"
                               type="text"
+                              value="Red, r"
                             />
                             <!---->
                             <!---->
@@ -4070,25 +4087,26 @@ exports[`CaseList > updates > should update cases 1`] = `
                   >
                     <div
                       class="unnnic-form sm"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       maxlength="36"
                     >
                       <!---->
                       <div
                         class="text-input size--sm unnnic-form-input"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         maxlength="36"
                       >
                         <input
                           class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           maxlength="36"
                           placeholder="Ex: shopping"
                           type="text"
+                          value="Red"
                         />
                         <!---->
                         <!---->
@@ -4110,7 +4128,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                   <svg
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                     data-testid="remove-case-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
-                    data-v-edf1acd8=""
+                    data-v-930380cc=""
                     fill="none"
                     height="40"
                     viewBox="0 0 40 40"
@@ -4181,23 +4199,23 @@ exports[`CaseList > updates > should update cases 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_operator"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_operator"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_operator"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="has any of the words"
@@ -4207,8 +4225,8 @@ exports[`CaseList > updates > should update cases 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -4468,22 +4486,23 @@ exports[`CaseList > updates > should update cases 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder="Ex: cart"
                               type="text"
+                              value="Green, g"
                             />
                             <!---->
                             <!---->
@@ -4521,25 +4540,26 @@ exports[`CaseList > updates > should update cases 1`] = `
                   >
                     <div
                       class="unnnic-form sm"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       maxlength="36"
                     >
                       <!---->
                       <div
                         class="text-input size--sm unnnic-form-input"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         maxlength="36"
                       >
                         <input
                           class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           maxlength="36"
                           placeholder="Ex: shopping"
                           type="text"
+                          value="Green"
                         />
                         <!---->
                         <!---->
@@ -4561,7 +4581,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                   <svg
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                     data-testid="remove-case-061fc171-8b79-4636-b892-bd0ea5aa9b42"
-                    data-v-edf1acd8=""
+                    data-v-930380cc=""
                     fill="none"
                     height="40"
                     viewBox="0 0 40 40"
@@ -4632,23 +4652,23 @@ exports[`CaseList > updates > should update cases 1`] = `
                       <div
                         class="unnnic-form sm _bold_placeholder_4cce75"
                         data-testid="temba_select_input_operator"
-                        data-v-4d681994=""
+                        data-v-acea6376=""
                         readonly=""
                       >
                         <!---->
                         <div
                           class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                           data-testid="temba_select_input_operator"
-                          data-v-20f606ca=""
-                          data-v-4d681994=""
+                          data-v-acea6376=""
+                          data-v-df38a188=""
                           mask=""
                           readonly=""
                         >
                           <input
                             class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                             data-testid="temba_select_input_operator"
-                            data-v-1e805323=""
-                            data-v-20f606ca=""
+                            data-v-bf6639b4=""
+                            data-v-df38a188=""
                             hascloudycolor="false"
                             iconright="arrow-button-down-1"
                             placeholder="has any of the words"
@@ -4658,8 +4678,8 @@ exports[`CaseList > updates > should update cases 1`] = `
                           <!---->
                           <svg
                             class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                            data-v-20f606ca=""
-                            data-v-edf1acd8=""
+                            data-v-930380cc=""
+                            data-v-df38a188=""
                             fill="none"
                             height="40"
                             viewBox="0 0 40 40"
@@ -4919,22 +4939,23 @@ exports[`CaseList > updates > should update cases 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               placeholder="Ex: cart"
                               type="text"
+                              value=""
                             />
                             <!---->
                             <!---->
@@ -4972,25 +4993,26 @@ exports[`CaseList > updates > should update cases 1`] = `
                   >
                     <div
                       class="unnnic-form sm"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       maxlength="36"
                     >
                       <!---->
                       <div
                         class="text-input size--sm unnnic-form-input"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         maxlength="36"
                       >
                         <input
                           class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           maxlength="36"
                           placeholder="Ex: shopping"
                           type="text"
+                          value=""
                         />
                         <!---->
                         <!---->
@@ -5012,7 +5034,7 @@ exports[`CaseList > updates > should update cases 1`] = `
                   <svg
                     class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                     data-testid="remove-case-1e47a1e1-3c67-4df5-adf1-da542c789adb"
-                    data-v-edf1acd8=""
+                    data-v-930380cc=""
                     fill="none"
                     height="40"
                     viewBox="0 0 40 40"

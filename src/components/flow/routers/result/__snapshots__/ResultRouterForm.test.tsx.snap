@@ -134,20 +134,20 @@ exports[`ResultRouterForm > should render 1`] = `
         >
           <div
             class="tab size-sm _tabs_af1b5d"
-            data-v-54432ea7=""
+            data-v-1389f531=""
           >
             <header
               class="tab-header"
-              data-v-54432ea7=""
+              data-v-1389f531=""
             >
               <ul
                 class="tab-content"
-                data-v-54432ea7=""
+                data-v-1389f531=""
               >
                 
                 <li
                   class="tab-head tab-head--active"
-                  data-v-54432ea7=""
+                  data-v-1389f531=""
                 >
                   
                   <div
@@ -157,10 +157,11 @@ exports[`ResultRouterForm > should render 1`] = `
                     General
                   </div>
                   
+                  <!---->
                 </li>
                 <li
                   class="tab-head"
-                  data-v-54432ea7=""
+                  data-v-1389f531=""
                 >
                   
                   <div
@@ -170,17 +171,18 @@ exports[`ResultRouterForm > should render 1`] = `
                     Advanced
                   </div>
                   
+                  <!---->
                 </li>
                 
               </ul>
             </header>
             <main
               class="tab-body"
-              data-v-54432ea7=""
+              data-v-1389f531=""
             >
               <div
                 class="tab-panel"
-                data-v-54432ea7=""
+                data-v-1389f531=""
               >
                 
                 
@@ -215,21 +217,21 @@ exports[`ResultRouterForm > should render 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Split by a result in the flow"
@@ -238,8 +240,8 @@ exports[`ResultRouterForm > should render 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -571,23 +573,23 @@ exports[`ResultRouterForm > should render 1`] = `
                     <div
                       class="unnnic-form sm _bold_placeholder_4cce75"
                       data-testid="temba_select_input_if_the_result"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       readonly=""
                     >
                       <!---->
                       <div
                         class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                         data-testid="temba_select_input_if_the_result"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         readonly=""
                       >
                         <input
                           class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                           data-testid="temba_select_input_if_the_result"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           iconright="arrow-button-down-1"
                           placeholder="Select the result"
@@ -597,8 +599,8 @@ exports[`ResultRouterForm > should render 1`] = `
                         <!---->
                         <svg
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                          data-v-20f606ca=""
-                          data-v-edf1acd8=""
+                          data-v-930380cc=""
+                          data-v-df38a188=""
                           fill="none"
                           height="40"
                           viewBox="0 0 40 40"
@@ -692,23 +694,23 @@ exports[`ResultRouterForm > should render 1`] = `
                           <div
                             class="unnnic-form sm _bold_placeholder_4cce75"
                             data-testid="temba_select_input_operator"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                             readonly=""
                           >
                             <!---->
                             <div
                               class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                               data-testid="temba_select_input_operator"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               mask=""
                               readonly=""
                             >
                               <input
                                 class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                                 data-testid="temba_select_input_operator"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 hascloudycolor="false"
                                 iconright="arrow-button-down-1"
                                 placeholder="has any of the words"
@@ -718,8 +720,8 @@ exports[`ResultRouterForm > should render 1`] = `
                               <!---->
                               <svg
                                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                                data-v-20f606ca=""
-                                data-v-edf1acd8=""
+                                data-v-930380cc=""
+                                data-v-df38a188=""
                                 fill="none"
                                 height="40"
                                 viewBox="0 0 40 40"
@@ -979,22 +981,23 @@ exports[`ResultRouterForm > should render 1`] = `
                           >
                             <div
                               class="unnnic-form sm"
-                              data-v-4d681994=""
+                              data-v-acea6376=""
                             >
                               <!---->
                               <div
                                 class="text-input size--sm unnnic-form-input"
-                                data-v-20f606ca=""
-                                data-v-4d681994=""
+                                data-v-acea6376=""
+                                data-v-df38a188=""
                                 mask=""
                               >
                                 <input
                                   class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                                  data-v-1e805323=""
-                                  data-v-20f606ca=""
+                                  data-v-bf6639b4=""
+                                  data-v-df38a188=""
                                   hascloudycolor="false"
                                   placeholder="Ex: cart"
                                   type="text"
+                                  value=""
                                 />
                                 <!---->
                                 <!---->
@@ -1032,25 +1035,26 @@ exports[`ResultRouterForm > should render 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                           maxlength="36"
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                             maxlength="36"
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               maxlength="36"
                               placeholder="Ex: shopping"
                               type="text"
+                              value=""
                             />
                             <!---->
                             <!---->
@@ -1072,7 +1076,7 @@ exports[`ResultRouterForm > should render 1`] = `
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                         data-testid="remove-case-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -1113,7 +1117,7 @@ exports[`ResultRouterForm > should render 1`] = `
             >
               <svg
                 class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cleanest"
-                data-v-edf1acd8=""
+                data-v-930380cc=""
                 fill="none"
                 height="40"
                 viewBox="0 0 40 40"
@@ -1148,7 +1152,7 @@ exports[`ResultRouterForm > should render 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1156,7 +1160,7 @@ exports[`ResultRouterForm > should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -1171,7 +1175,7 @@ exports[`ResultRouterForm > should render 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1179,7 +1183,7 @@ exports[`ResultRouterForm > should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -1225,20 +1229,20 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
         >
           <div
             class="tab size-sm _tabs_af1b5d"
-            data-v-54432ea7=""
+            data-v-1389f531=""
           >
             <header
               class="tab-header"
-              data-v-54432ea7=""
+              data-v-1389f531=""
             >
               <ul
                 class="tab-content"
-                data-v-54432ea7=""
+                data-v-1389f531=""
               >
                 
                 <li
                   class="tab-head tab-head--active"
-                  data-v-54432ea7=""
+                  data-v-1389f531=""
                 >
                   
                   <div
@@ -1248,10 +1252,11 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                     General
                   </div>
                   
+                  <!---->
                 </li>
                 <li
                   class="tab-head"
-                  data-v-54432ea7=""
+                  data-v-1389f531=""
                 >
                   
                   <div
@@ -1261,17 +1266,18 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                     Advanced
                   </div>
                   
+                  <!---->
                 </li>
                 
               </ul>
             </header>
             <main
               class="tab-body"
-              data-v-54432ea7=""
+              data-v-1389f531=""
             >
               <div
                 class="tab-panel"
-                data-v-54432ea7=""
+                data-v-1389f531=""
               >
                 
                 
@@ -1306,21 +1312,21 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Split by a result in the flow"
@@ -1329,8 +1335,8 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -1662,23 +1668,23 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                     <div
                       class="unnnic-form sm _bold_placeholder_4cce75"
                       data-testid="temba_select_input_field_number"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       readonly=""
                     >
                       <!---->
                       <div
                         class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                         data-testid="temba_select_input_field_number"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         readonly=""
                       >
                         <input
                           class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                           data-testid="temba_select_input_field_number"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           iconright="arrow-button-down-1"
                           placeholder="second"
@@ -1688,8 +1694,8 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                         <!---->
                         <svg
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                          data-v-20f606ca=""
-                          data-v-edf1acd8=""
+                          data-v-930380cc=""
+                          data-v-df38a188=""
                           fill="none"
                           height="40"
                           viewBox="0 0 40 40"
@@ -1948,23 +1954,23 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                     <div
                       class="unnnic-form sm _bold_placeholder_4cce75"
                       data-testid="temba_select_input_flow_result"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       readonly=""
                     >
                       <!---->
                       <div
                         class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                         data-testid="temba_select_input_flow_result"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         readonly=""
                       >
                         <input
                           class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                           data-testid="temba_select_input_flow_result"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           iconright="arrow-button-down-1"
                           placeholder="Select Result"
@@ -1974,8 +1980,8 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                         <!---->
                         <svg
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                          data-v-20f606ca=""
-                          data-v-edf1acd8=""
+                          data-v-930380cc=""
+                          data-v-df38a188=""
                           fill="none"
                           height="40"
                           viewBox="0 0 40 40"
@@ -2033,23 +2039,23 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                     <div
                       class="unnnic-form sm _bold_placeholder_4cce75"
                       data-testid="temba_select_input_delimiter"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       readonly=""
                     >
                       <!---->
                       <div
                         class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                         data-testid="temba_select_input_delimiter"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         readonly=""
                       >
                         <input
                           class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                           data-testid="temba_select_input_delimiter"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           iconright="arrow-button-down-1"
                           placeholder="spaces"
@@ -2059,8 +2065,8 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                         <!---->
                         <svg
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                          data-v-20f606ca=""
-                          data-v-edf1acd8=""
+                          data-v-930380cc=""
+                          data-v-df38a188=""
                           fill="none"
                           height="40"
                           viewBox="0 0 40 40"
@@ -2185,23 +2191,23 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                           <div
                             class="unnnic-form sm _bold_placeholder_4cce75"
                             data-testid="temba_select_input_operator"
-                            data-v-4d681994=""
+                            data-v-acea6376=""
                             readonly=""
                           >
                             <!---->
                             <div
                               class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                               data-testid="temba_select_input_operator"
-                              data-v-20f606ca=""
-                              data-v-4d681994=""
+                              data-v-acea6376=""
+                              data-v-df38a188=""
                               mask=""
                               readonly=""
                             >
                               <input
                                 class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                                 data-testid="temba_select_input_operator"
-                                data-v-1e805323=""
-                                data-v-20f606ca=""
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
                                 hascloudycolor="false"
                                 iconright="arrow-button-down-1"
                                 placeholder="has any of the words"
@@ -2211,8 +2217,8 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                               <!---->
                               <svg
                                 class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                                data-v-20f606ca=""
-                                data-v-edf1acd8=""
+                                data-v-930380cc=""
+                                data-v-df38a188=""
                                 fill="none"
                                 height="40"
                                 viewBox="0 0 40 40"
@@ -2472,22 +2478,23 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                           >
                             <div
                               class="unnnic-form sm"
-                              data-v-4d681994=""
+                              data-v-acea6376=""
                             >
                               <!---->
                               <div
                                 class="text-input size--sm unnnic-form-input"
-                                data-v-20f606ca=""
-                                data-v-4d681994=""
+                                data-v-acea6376=""
+                                data-v-df38a188=""
                                 mask=""
                               >
                                 <input
                                   class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                                  data-v-1e805323=""
-                                  data-v-20f606ca=""
+                                  data-v-bf6639b4=""
+                                  data-v-df38a188=""
                                   hascloudycolor="false"
                                   placeholder="Ex: cart"
                                   type="text"
+                                  value=""
                                 />
                                 <!---->
                                 <!---->
@@ -2525,25 +2532,26 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                       >
                         <div
                           class="unnnic-form sm"
-                          data-v-4d681994=""
+                          data-v-acea6376=""
                           maxlength="36"
                         >
                           <!---->
                           <div
                             class="text-input size--sm unnnic-form-input"
-                            data-v-20f606ca=""
-                            data-v-4d681994=""
+                            data-v-acea6376=""
+                            data-v-df38a188=""
                             mask=""
                             maxlength="36"
                           >
                             <input
                               class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                              data-v-1e805323=""
-                              data-v-20f606ca=""
+                              data-v-bf6639b4=""
+                              data-v-df38a188=""
                               hascloudycolor="false"
                               maxlength="36"
                               placeholder="Ex: shopping"
                               type="text"
+                              value=""
                             />
                             <!---->
                             <!---->
@@ -2565,7 +2573,7 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_5261c2"
                         data-testid="remove-case-061fc171-8b79-4636-b892-bd0ea5aa9b42"
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -2606,7 +2614,7 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
             >
               <svg
                 class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cleanest"
-                data-v-edf1acd8=""
+                data-v-930380cc=""
                 fill="none"
                 height="40"
                 viewBox="0 0 40 40"
@@ -2641,7 +2649,7 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -2649,7 +2657,7 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -2664,7 +2672,7 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -2672,7 +2680,7 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     

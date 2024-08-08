@@ -1,11 +1,9 @@
 import { Canvas, CANVAS_PADDING, CanvasProps } from 'components/canvas/Canvas';
 import { CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
 import React from 'react';
-import { fireEvent, render } from 'test/utils';
+import { fireEvent, render, waitFor } from 'test/utils';
 import { createUUID } from 'utils';
 import { MouseState } from 'store/editor';
-
-// vi.mock('components/sidebar/Sidebar', () => () => 'Mocked Sidebar');
 
 const baseProps: CanvasProps = {
   uuid: createUUID(),
@@ -28,12 +26,12 @@ const baseProps: CanvasProps = {
 };
 
 describe(Canvas.name, () => {
-  it('render default', () => {
+  it('render default', async () => {
     const { baseElement } = render(<Canvas {...baseProps} />);
-    expect(baseElement).toMatchSnapshot();
+    await waitFor(() => expect(baseElement).toMatchSnapshot());
   });
 
-  it('initializes the height to the lowest draggable', () => {
+  it('initializes the height to the lowest draggable', async () => {
     const lowest: CanvasDraggableProps = {
       elementCreator: vi.fn(),
       uuid: createUUID(),
@@ -43,10 +41,10 @@ describe(Canvas.name, () => {
     const { baseElement } = render(
       <Canvas {...baseProps} draggables={[lowest]} />,
     );
-    expect(baseElement).toMatchSnapshot();
+    await waitFor(() => expect(baseElement).toMatchSnapshot());
   });
 
-  it('adjusts the height when updating dimensions', () => {
+  it('adjusts the height when updating dimensions', async () => {
     const uuid = createUUID();
     const lowest: CanvasDraggableProps = {
       elementCreator: vi.fn(),
@@ -58,10 +56,10 @@ describe(Canvas.name, () => {
     const { baseElement, getByTestId } = render(
       <Canvas {...baseProps} draggables={[lowest]} />,
     );
-    expect(baseElement).toMatchSnapshot();
+    await waitFor(() => expect(baseElement).toMatchSnapshot());
   });
 
-  it('reflows collisions', () => {
+  it('reflows collisions', async () => {
     vi.useFakeTimers();
 
     const first: CanvasDraggableProps = {
@@ -93,6 +91,6 @@ describe(Canvas.name, () => {
     fireEvent.mouseUp(getByTestId('draggable_' + first.uuid));
     vi.runAllTimers();
 
-    expect(onDragging).toMatchSnapshot();
+    await waitFor(() => expect(onDragging).toMatchSnapshot());
   });
 });

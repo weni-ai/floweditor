@@ -131,21 +131,21 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Split randomly"
@@ -154,8 +154,8 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -487,23 +487,23 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
                     <div
                       class="unnnic-form sm _bold_placeholder_4cce75"
                       data-testid="temba_select_input_buckets"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       readonly=""
                     >
                       <!---->
                       <div
                         class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                         data-testid="temba_select_input_buckets"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         readonly=""
                       >
                         <input
                           class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                           data-testid="temba_select_input_buckets"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           iconright="arrow-button-down-1"
                           placeholder="5 buckets"
@@ -513,8 +513,8 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
                         <!---->
                         <svg
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                          data-v-20f606ca=""
-                          data-v-edf1acd8=""
+                          data-v-930380cc=""
+                          data-v-df38a188=""
                           fill="none"
                           height="40"
                           viewBox="0 0 40 40"
@@ -653,22 +653,23 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     placeholder=""
                     type="text"
+                    value="Bucket 1"
                   />
                   <!---->
                   <!---->
@@ -688,22 +689,23 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     placeholder=""
                     type="text"
+                    value="Bucket 2"
                   />
                   <!---->
                   <!---->
@@ -723,22 +725,23 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     placeholder=""
                     type="text"
+                    value="Bucket 3"
                   />
                   <!---->
                   <!---->
@@ -758,22 +761,23 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     placeholder=""
                     type="text"
+                    value="Bucket 4"
                   />
                   <!---->
                   <!---->
@@ -793,22 +797,23 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     placeholder=""
                     type="text"
+                    value="Bucket 5"
                   />
                   <!---->
                   <!---->
@@ -834,7 +839,7 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
             >
               <svg
                 class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cleanest"
-                data-v-edf1acd8=""
+                data-v-930380cc=""
                 fill="none"
                 height="40"
                 viewBox="0 0 40 40"
@@ -869,7 +874,7 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -877,7 +882,7 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -892,7 +897,7 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -900,7 +905,7 @@ exports[`RandomRouterForm > should initialize existing random 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -966,21 +971,21 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
                   <div
                     class="unnnic-form sm _bold_placeholder_4cce75"
                     data-testid="temba_select_input_type"
-                    data-v-4d681994=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
                       class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                       data-testid="temba_select_input_type"
-                      data-v-20f606ca=""
-                      data-v-4d681994=""
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
                     >
                       <input
                         class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                         data-testid="temba_select_input_type"
-                        data-v-1e805323=""
-                        data-v-20f606ca=""
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
                         hascloudycolor="false"
                         iconright="arrow-button-down-1"
                         placeholder="Split randomly"
@@ -989,8 +994,8 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
                       <!---->
                       <svg
                         class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                        data-v-20f606ca=""
-                        data-v-edf1acd8=""
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
                         height="40"
                         viewBox="0 0 40 40"
@@ -1322,23 +1327,23 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
                     <div
                       class="unnnic-form sm _bold_placeholder_4cce75"
                       data-testid="temba_select_input_buckets"
-                      data-v-4d681994=""
+                      data-v-acea6376=""
                       readonly=""
                     >
                       <!---->
                       <div
                         class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
                         data-testid="temba_select_input_buckets"
-                        data-v-20f606ca=""
-                        data-v-4d681994=""
+                        data-v-acea6376=""
+                        data-v-df38a188=""
                         mask=""
                         readonly=""
                       >
                         <input
                           class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
                           data-testid="temba_select_input_buckets"
-                          data-v-1e805323=""
-                          data-v-20f606ca=""
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
                           hascloudycolor="false"
                           iconright="arrow-button-down-1"
                           placeholder="5 buckets"
@@ -1348,8 +1353,8 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
                         <!---->
                         <svg
                           class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                          data-v-20f606ca=""
-                          data-v-edf1acd8=""
+                          data-v-930380cc=""
+                          data-v-df38a188=""
                           fill="none"
                           height="40"
                           viewBox="0 0 40 40"
@@ -1498,22 +1503,23 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     placeholder=""
                     type="text"
+                    value="Bucket 1"
                   />
                   <!---->
                   <!---->
@@ -1533,22 +1539,23 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     placeholder=""
                     type="text"
+                    value="Bucket 2"
                   />
                   <!---->
                   <!---->
@@ -1568,22 +1575,23 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
             >
               <div
                 class="unnnic-form sm"
-                data-v-4d681994=""
+                data-v-acea6376=""
               >
                 <!---->
                 <div
                   class="text-input size--sm unnnic-form-input"
-                  data-v-20f606ca=""
-                  data-v-4d681994=""
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
                 >
                   <input
                     class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
-                    data-v-1e805323=""
-                    data-v-20f606ca=""
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
                     hascloudycolor="false"
                     placeholder=""
                     type="text"
+                    value="Bucket 3"
                   />
                   <!---->
                   <!---->
@@ -1609,7 +1617,7 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
             >
               <svg
                 class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cleanest"
-                data-v-edf1acd8=""
+                data-v-930380cc=""
                 fill="none"
                 height="40"
                 viewBox="0 0 40 40"
@@ -1644,7 +1652,7 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1652,7 +1660,7 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     
@@ -1667,7 +1675,7 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-v-d3a33348=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1675,7 +1683,7 @@ exports[`RandomRouterForm > should remove exits when shrinking 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-d3a33348=""
+                    data-v-4cec5e43=""
                   >
                     
                     

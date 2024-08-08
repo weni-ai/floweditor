@@ -9,7 +9,7 @@ exports[`Button > render > should render self, children with base props 1`] = `
     >
       <button
         class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-        data-v-d3a33348=""
+        data-v-4cec5e43=""
         style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
       >
         <!---->
@@ -17,7 +17,7 @@ exports[`Button > render > should render self, children with base props 1`] = `
         <!---->
         <span
           class="unnnic-button__label"
-          data-v-d3a33348=""
+          data-v-4cec5e43=""
         >
           
           
