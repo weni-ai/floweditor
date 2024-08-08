@@ -184,6 +184,15 @@ export const initializeWhatsappMsgLocalizedForm = (
             'footer' in localized.localizedKeys ? action.footer : '';
           state.valid = true;
         }
+
+        if (localizedObject.quick_replies) {
+          const action = localizedObject as (SendWhatsAppMsg & SayMsg);
+          state.quickReplies.value =
+            'quick_replies' in localized.localizedKeys
+              ? action.quick_replies
+              : [];
+          state.valid = true;
+        }
       }
     }
   }
