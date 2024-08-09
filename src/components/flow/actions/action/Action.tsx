@@ -122,21 +122,27 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
   private getClasses(): string {
     const localizedKeys = [];
     let missingLocalization = false;
-
     if (this.props.translating) {
+      const actionType = this.props.action.type;
       if (
-        this.props.action.type === Types.send_msg ||
-        this.props.action.type === Types.send_broadcast ||
-        this.props.action.type === Types.say_msg
+        actionType === Types.send_msg ||
+        actionType === Types.send_broadcast ||
+        actionType === Types.say_msg ||
+        actionType === Types.send_whatsapp_msg ||
+        actionType === Types.send_msg_catalog
       ) {
         localizedKeys.push('text');
       }
 
-      if (this.props.action.type === Types.send_email) {
+      if (actionType === Types.send_whatsapp_msg) {
+        localizedKeys.push('quick_replies');
+      }
+
+      if (actionType === Types.send_email) {
         localizedKeys.push('subject');
       }
 
-      if (this.props.action.type === Types.call_wenigpt) {
+      if (actionType === Types.call_wenigpt) {
         localizedKeys.push('input');
       }
 

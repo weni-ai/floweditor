@@ -4,8 +4,15 @@ import { WeniGPTLocalizationFormState } from 'components/flow/actions/localizati
 import { Types } from 'config/interfaces';
 import { getTypeConfig } from 'config/typeConfigs';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
-import { SendMsg, MsgTemplating, SayMsg, CallWeniGPT } from 'flowTypes';
+import {
+  SendMsg,
+  MsgTemplating,
+  SayMsg,
+  CallWeniGPT,
+  SendWhatsAppMsg,
+} from 'flowTypes';
 import { Attachment } from '../sendmsg/attachments';
+import { WhatsappMsgLocalizationFormState } from './WhastsappMsgLocalizationForm';
 
 export const initializeLocalizedKeyForm = (
   settings: NodeEditorSettings,
@@ -42,19 +49,19 @@ export const initializeLocalizedForm = (
     attachments: [],
   };
 
+  const { originalAction, localizations } = settings;
+
   // check if our form should use a localized action
   if (
-    settings.originalAction &&
-    (settings.originalAction.type === Types.send_msg ||
-      settings.originalAction.type === Types.say_msg) &&
-    settings.localizations &&
-    settings.localizations.length > 0
+    originalAction &&
+    (originalAction.type === Types.send_msg ||
+      originalAction.type === Types.say_msg ||
+      originalAction.type === Types.send_whatsapp_msg) &&
+    localizations &&
+    localizations.length > 0
   ) {
-    if (
-      settings.originalAction &&
-      (settings.originalAction as any).templating
-    ) {
-      state.templating = (settings.originalAction as any).templating;
+    if (originalAction && (originalAction as any).templating) {
+      state.templating = (originalAction as any).templating;
       state.templateVariables = state.templating.variables.map(
         (value: string) => {
           return {
@@ -64,7 +71,7 @@ export const initializeLocalizedForm = (
       );
     }
 
-    for (const localized of settings.localizations) {
+    for (const localized of localizations) {
       if (localized.isLocalized()) {
         const localizedObject = localized.getObject() as any;
 
@@ -110,6 +117,96 @@ export const initializeLocalizedForm = (
             },
           );
           state.valid = true;
+        }
+      }
+    }
+  }
+  return state;
+};
+
+export const initializeWhatsappMsgLocalizedForm = (
+  settings: NodeEditorSettings,
+): WhatsappMsgLocalizationFormState => {
+  const state: WhatsappMsgLocalizationFormState = {
+    valid: true,
+    text: { value: '' },
+    headerType: null,
+    headerText: { value: '' },
+    footer: { value: '' },
+    attachments: [],
+    interactionType: null,
+
+    buttonText: { value: '' },
+    actionURL: { value: '' },
+    listItems: null,
+    listItemTitleEntry: { value: '' },
+    listItemDescriptionEntry: { value: '' },
+
+    quickReplies: { value: [] },
+    quickReplyEntry: { value: '' },
+  };
+
+  const { originalAction, localizations } = settings;
+
+  if (
+    originalAction &&
+    (originalAction.type === Types.send_msg ||
+      originalAction.type === Types.say_msg ||
+      originalAction.type === Types.send_whatsapp_msg) &&
+    localizations &&
+    localizations.length > 0
+  ) {
+    for (const localized of localizations) {
+      if (localized.isLocalized()) {
+        const localizedObject = localized.getObject() as any;
+        const action = localizedObject as (SendWhatsAppMsg & SayMsg);
+
+        if (localizedObject.text) {
+          state.text.value =
+            'text' in localized.localizedKeys ? action.text : '';
+          state.valid = true;
+        } 
+
+        if (localizedObject.header_text) {
+          state.headerText.value =
+            'header_text' in localized.localizedKeys ? action.header_text : '';
+          state.valid = true;
+        }
+
+        if (localizedObject.footer) {
+          state.footer.value =
+            'footer' in localized.localizedKeys ? action.footer : '';
+          state.valid = true;
+        }
+
+        if (localizedObject.button_text) {
+          state.buttonText.value =
+            'button_text' in localized.localizedKeys ? action.button_text : '';
+          state.valid = true;
+        }
+        if (localizedObject.quick_replies) {
+          state.quickReplies.value =
+            'quick_replies' in localized.localizedKeys
+              ? action.quick_replies
+              : [];
+          state.valid = true;
+        }
+
+        const attachments: Attachment[] = [];
+
+        if ('attachments' in localized.localizedKeys) {
+          (action.attachments || []).forEach((attachmentString: string) => {
+            const splitPoint = attachmentString.indexOf(':');
+
+            const type = attachmentString.substring(0, splitPoint);
+            const attachment = {
+              type,
+              url: attachmentString.substring(splitPoint + 1),
+              uploaded: type.indexOf('/') > -1,
+            };
+
+            attachments.push(attachment);
+          });
         }
       }
     }

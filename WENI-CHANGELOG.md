@@ -1,3 +1,7 @@
+2.17.2
+----------
+- Fix: Add English language support to the Send on WhatsApp card.
+
 2.17.1
 ----------
 - Fix: Allow the use of expressions in the search URL of the native product search card.
