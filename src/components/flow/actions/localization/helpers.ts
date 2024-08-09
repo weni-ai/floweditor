@@ -188,6 +188,12 @@ export const initializeWhatsappMsgLocalizedForm = (
           state.valid = true;
         }
 
+        if (localizedObject.action_url) {
+          state.actionURL.value =
+            'action_url' in localized.localizedKeys ? action.action_url : '';
+          state.valid = true;
+        }
+
         if (localizedObject.list_items) {
           const array = [];
           const emptyListItem = createEmptyListItem();

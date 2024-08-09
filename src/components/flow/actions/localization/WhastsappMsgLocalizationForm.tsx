@@ -133,6 +133,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     footer?: string;
     quickReplies?: string[];
     buttonText?: string;
+    actionURL?: string;
     listItems?: WhatsAppListItem[];
     removeListItem?: WhatsAppListItem;
   }): boolean {
@@ -177,6 +178,15 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
         [],
       );
     }
+
+    if (keys.hasOwnProperty('actionURL')) {
+      updates.actionURL = validate(
+        i18n.t('forms.action_url', 'Action URL'),
+        keys.actionURL!,
+        [],
+      );
+    }
+
     if (keys.hasOwnProperty('listItems')) {
       const updatedList = keys.listItems;
       const hasEmptyTitle = keys.listItems.some(item => item.title === '');
@@ -187,7 +197,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('removeListItem')) {
-      if (this.state.listItems.value.length > 1) {
+      if (this.state.listItems.value && this.state.listItems.value.length > 1) {
         const items = this.state.listItems.value.filter(
           item => item.uuid !== keys.removeListItem.uuid,
         );
@@ -221,6 +231,10 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     return this.handleUpdate({ buttonText });
   }
 
+  public handleActionURLUpdate(actionURL: string): boolean {
+    return this.handleUpdate({ actionURL });
+  }
+
   private getButtons(): ButtonSet {
     return {
       primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
@@ -249,6 +263,8 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       quickReplies,
       attachments,
       headerText,
+      buttonText,
+      actionURL,
       footer,
       listItems,
     } = this.state;
@@ -280,6 +296,12 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       }
       if (footer.value) {
         translations.footer = footer.value;
+      }
+      if (buttonText.value) {
+        translations.button_text = buttonText.value;
+      }
+      if (actionURL.value) {
+        translations.action_url = actionURL.value;
       }
       if (listItems.value) {
         const filteredArray = listItems.value.filter(item => item.title !== '');
@@ -484,7 +506,36 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
             </>
           ) : null}
 
-          {originalAction.list_items.length ? (
+          {originalAction.action_url ? (
+            <>
+              <div className={styles.header_type}>
+                <span
+                  className={`u font secondary body-md color-neutral-cloudy`}
+                >
+                  {i18n.t('forms.action_url', 'Action URL')}
+                </span>
+              </div>
+              <div data-spec="translation-container">
+                <div
+                  data-spec="text-to-translate"
+                  className={styles.translate_from}
+                >
+                  {originalAction.action_url}
+                </div>
+              </div>
+              <TextInputElement
+                name={i18n.t('forms.action_url', 'Action URL')}
+                showLabel={false}
+                onChange={this.handleActionURLUpdate}
+                entry={this.state.actionURL}
+                placeholder={`${this.props.language.name}`}
+                autocomplete={true}
+                focus={true}
+              />
+            </>
+          ) : null}
+
+          {originalAction.list_items && originalAction.list_items.length ? (
             <>
               <div className={styles.header_type}>
                 <span
