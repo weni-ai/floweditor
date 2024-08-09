@@ -15,7 +15,6 @@ import {
 import { initializeWhatsappMsgLocalizedForm } from './helpers';
 import { Attachment, renderAttachments } from '../sendmsg/attachments';
 import {
-  WHATSAPP_HEADER_TYPE_OPTIONS,
   WhatsAppHeaderType,
   WhatsAppInteractionType,
   WhatsAppListItem,
@@ -37,6 +36,8 @@ import { SendWhatsAppMsg } from 'flowTypes';
 import MultiChoiceInput from 'components/form/multichoice/MultiChoice';
 import { Trans } from 'react-i18next';
 import Pill from 'components/pill/Pill';
+import OptionsList from '../whatsapp/sendmsg/OptionsList';
+import { createEmptyListItem } from '../whatsapp/sendmsg/helpers';
 
 const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
   vue: {
@@ -132,6 +133,8 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     footer?: string;
     quickReplies?: string[];
     buttonText?: string;
+    listItems?: WhatsAppListItem[];
+    removeListItem?: WhatsAppListItem;
   }): boolean {
     const updates: Partial<WhatsappMsgLocalizationFormState> = {};
 
@@ -173,6 +176,27 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
         keys.buttonText!,
         [],
       );
+    }
+    if (keys.hasOwnProperty('listItems')) {
+      const updatedList = keys.listItems;
+      const hasEmptyTitle = keys.listItems.some(item => item.title === '');
+      if (!hasEmptyTitle) {
+        updatedList.push(createEmptyListItem());
+      }
+      updates.listItems = { value: keys.listItems };
+    }
+
+    if (keys.hasOwnProperty('removeListItem')) {
+      if (this.state.listItems.value.length > 1) {
+        const items = this.state.listItems.value.filter(
+          item => item.uuid !== keys.removeListItem.uuid,
+        );
+        updates.listItems = validate(
+          i18n.t('forms.list_items', 'List items'),
+          items,
+          [],
+        ) as FormEntry<WhatsAppListItem[]>;
+      }
     }
 
     const updated = mergeForm(this.state, updates);
@@ -220,7 +244,14 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
   }
 
   private handleSave(): void {
-    const { text, quickReplies, attachments, headerText, footer } = this.state;
+    const {
+      text,
+      quickReplies,
+      attachments,
+      headerText,
+      footer,
+      listItems,
+    } = this.state;
 
     const typeConfig = determineTypeConfig(this.props.nodeSettings);
     const valid =
@@ -250,6 +281,10 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       if (footer.value) {
         translations.footer = footer.value;
       }
+      if (listItems.value) {
+        const filteredArray = listItems.value.filter(item => item.title !== '');
+        translations.list_items = filteredArray;
+      }
 
       const localizations = [
         {
@@ -261,6 +296,14 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       this.props.updateLocalizations(this.props.language.id, localizations);
       this.props.onClose(false);
     }
+  }
+
+  public handleListItemsUpdate(options: WhatsAppListItem[]): boolean {
+    return this.handleUpdate({ listItems: options });
+  }
+
+  public handleListItemRemoval(item: WhatsAppListItem): boolean {
+    return this.handleUpdate({ removeListItem: item });
   }
 
   public render(): JSX.Element {
@@ -437,6 +480,23 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
                 placeholder={`${this.props.language.name}`}
                 autocomplete={true}
                 focus={true}
+              />
+            </>
+          ) : null}
+
+          {originalAction.list_items.length ? (
+            <>
+              <div className={styles.header_type}>
+                <span
+                  className={`u font secondary body-md color-neutral-cloudy`}
+                >
+                  {i18n.t('forms.list_items', 'Listed Items')}
+                </span>
+              </div>
+              <OptionsList
+                options={this.state.listItems}
+                onOptionsUpdated={this.handleListItemsUpdate}
+                onOptionRemoval={this.handleListItemRemoval}
               />
             </>
           ) : null}

@@ -13,6 +13,7 @@ import {
 } from 'flowTypes';
 import { Attachment } from '../sendmsg/attachments';
 import { WhatsappMsgLocalizationFormState } from './WhastsappMsgLocalizationForm';
+import { createEmptyListItem } from '../whatsapp/sendmsg/helpers';
 
 export const initializeLocalizedKeyForm = (
   settings: NodeEditorSettings,
@@ -138,7 +139,9 @@ export const initializeWhatsappMsgLocalizedForm = (
 
     buttonText: { value: '' },
     actionURL: { value: '' },
-    listItems: null,
+    listItems: {
+      value: [],
+    },
     listItemTitleEntry: { value: '' },
     listItemDescriptionEntry: { value: '' },
 
@@ -165,7 +168,7 @@ export const initializeWhatsappMsgLocalizedForm = (
           state.text.value =
             'text' in localized.localizedKeys ? action.text : '';
           state.valid = true;
-        } 
+        }
 
         if (localizedObject.header_text) {
           state.headerText.value =
@@ -184,6 +187,16 @@ export const initializeWhatsappMsgLocalizedForm = (
             'button_text' in localized.localizedKeys ? action.button_text : '';
           state.valid = true;
         }
+
+        if (localizedObject.list_items) {
+          const array = [];
+          const emptyListItem = createEmptyListItem();
+          array.push(emptyListItem);
+          state.listItems.value =
+            'list_items' in localized.localizedKeys ? action.list_items : array;
+          state.valid = true;
+        }
+
         if (localizedObject.quick_replies) {
           state.quickReplies.value =
             'quick_replies' in localized.localizedKeys
