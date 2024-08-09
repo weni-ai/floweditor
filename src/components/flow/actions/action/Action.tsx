@@ -134,6 +134,10 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
         localizedKeys.push('text');
       }
 
+      if (actionType === Types.send_whatsapp_msg) {
+        localizedKeys.push('quick_replies');
+      }
+
       if (actionType === Types.send_email) {
         localizedKeys.push('subject');
       }

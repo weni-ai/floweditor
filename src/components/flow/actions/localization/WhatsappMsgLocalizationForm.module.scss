@@ -65,4 +65,10 @@
   padding: 10px;
   border: 1px solid darken($translation_bg, 5%);
   margin-bottom: 12px;
+
+  .pill{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
 }

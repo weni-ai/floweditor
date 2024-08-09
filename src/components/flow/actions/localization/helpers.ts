@@ -13,10 +13,6 @@ import {
 } from 'flowTypes';
 import { Attachment } from '../sendmsg/attachments';
 import { WhatsappMsgLocalizationFormState } from './WhastsappMsgLocalizationForm';
-import {
-  WHATSAPP_HEADER_TYPE_TEXT,
-  WhatsAppHeaderType,
-} from '../whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 export const initializeLocalizedKeyForm = (
   settings: NodeEditorSettings,
@@ -163,35 +159,54 @@ export const initializeWhatsappMsgLocalizedForm = (
     for (const localized of localizations) {
       if (localized.isLocalized()) {
         const localizedObject = localized.getObject() as any;
+        const action = localizedObject as (SendWhatsAppMsg & SayMsg);
 
         if (localizedObject.text) {
-          const action = localizedObject as (SendWhatsAppMsg & SayMsg);
           state.text.value =
             'text' in localized.localizedKeys ? action.text : '';
           state.valid = true;
-        }
+        } 
 
-        if (localizedObject.headerText) {
-          const action = localizedObject as (SendWhatsAppMsg & SayMsg);
+        if (localizedObject.header_text) {
           state.headerText.value =
-            'headerText' in localized.localizedKeys ? action.header_text : '';
+            'header_text' in localized.localizedKeys ? action.header_text : '';
           state.valid = true;
         }
 
         if (localizedObject.footer) {
-          const action = localizedObject as (SendWhatsAppMsg & SayMsg);
           state.footer.value =
             'footer' in localized.localizedKeys ? action.footer : '';
           state.valid = true;
         }
 
+        if (localizedObject.button_text) {
+          state.buttonText.value =
+            'button_text' in localized.localizedKeys ? action.button_text : '';
+          state.valid = true;
+        }
         if (localizedObject.quick_replies) {
-          const action = localizedObject as (SendWhatsAppMsg & SayMsg);
           state.quickReplies.value =
             'quick_replies' in localized.localizedKeys
               ? action.quick_replies
               : [];
           state.valid = true;
+        }
+
+        const attachments: Attachment[] = [];
+
+        if ('attachments' in localized.localizedKeys) {
+          (action.attachments || []).forEach((attachmentString: string) => {
+            const splitPoint = attachmentString.indexOf(':');
+
+            const type = attachmentString.substring(0, splitPoint);
+            const attachment = {
+              type,
+              url: attachmentString.substring(splitPoint + 1),
+              uploaded: type.indexOf('/') > -1,
+            };
+
+            attachments.push(attachment);
+          });
         }
       }
     }

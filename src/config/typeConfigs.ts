@@ -63,7 +63,7 @@ import {
   VISIBILITY_INTERACTIVE,
   VISIBILITY_MESSAGING_INTERACTIVE,
 } from 'config/interfaces';
-import { HintTypes, RouterTypes, FlowEditorConfig, SendMsg } from 'flowTypes';
+import { HintTypes, RouterTypes, FlowEditorConfig, SendMsg, SendWhatsAppMsg } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import CallClassifierComp from 'components/flow/actions/callclassifier/CallClassifier';
 import ClassifyRouterForm from 'components/flow/routers/classify/ClassifyRouterForm';
@@ -286,11 +286,16 @@ export const typeConfigList: Type[] = [
     ),
     form: SendWhatsAppMsgForm,
     localization: WhatsappMsgLocalizationForm,
-    localizeableKeys: ['text', 'quick_replies', 'templating.variables'],
+    localizeableKeys: [
+      'text',
+      'quick_replies',
+      'footer',
+      'header_text',
+      'button_text',
+      'templating.variables',
+    ],
     component: SendWhatsAppMsgComp,
-    massageForDisplay: (action: SendMsg) => {
-      // quick replies are optional in the definition, make sure we have
-      // at least an empty array so the localization has a proper cue
+    massageForDisplay: (action: SendWhatsAppMsg) => {
       action.quick_replies = action.quick_replies || [];
     },
     filter: FeatureFilter.HAS_WHATSAPP,

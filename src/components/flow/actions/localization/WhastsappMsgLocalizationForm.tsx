@@ -36,6 +36,7 @@ import { UnnnicSelectOption } from 'components/form/select/SelectElement';
 import { SendWhatsAppMsg } from 'flowTypes';
 import MultiChoiceInput from 'components/form/multichoice/MultiChoice';
 import { Trans } from 'react-i18next';
+import Pill from 'components/pill/Pill';
 
 const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
   vue: {
@@ -130,6 +131,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     headerText?: string;
     footer?: string;
     quickReplies?: string[];
+    buttonText?: string;
   }): boolean {
     const updates: Partial<WhatsappMsgLocalizationFormState> = {};
 
@@ -165,6 +167,14 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       );
     }
 
+    if (keys.hasOwnProperty('buttonText')) {
+      updates.buttonText = validate(
+        i18n.t('forms.button_text', 'Button Text'),
+        keys.buttonText!,
+        [],
+      );
+    }
+
     const updated = mergeForm(this.state, updates);
     this.setState(updated);
 
@@ -181,6 +191,10 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
 
   public handleFooterUpdate(footer: string): boolean {
     return this.handleUpdate({ footer });
+  }
+
+  public handleButtonTextUpdate(buttonText: string): boolean {
+    return this.handleUpdate({ buttonText });
   }
 
   private getButtons(): ButtonSet {
@@ -252,7 +266,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
   public render(): JSX.Element {
     const typeConfig = determineTypeConfig(this.props.nodeSettings);
     const tabs: Tab[] = [];
-    if (typeConfig.localizeableKeys!.indexOf('quick_replies') > -1) {
+    if (typeConfig.localizeableKeys!.indexOf('attachments') > -1) {
       tabs.push({
         name: i18n.t('forms.attachments', 'Attachments'),
         body: renderAttachments(
@@ -266,11 +280,26 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       });
     }
 
+    const originalAction = this.props.nodeSettings
+      .originalAction as SendWhatsAppMsg;
+
     if (typeConfig.localizeableKeys!.indexOf('quick_replies') > -1) {
       tabs.push({
         name: i18n.t('forms.quick_replies', 'Quick Replies'),
         body: (
           <>
+            <div data-spec="translation-container">
+              <div
+                data-spec="text-to-translate"
+                className={styles.translate_from}
+              >
+                {originalAction.quick_replies.map((item, index) => (
+                  <div key={index} className={styles.pill}>
+                    <Pill text={item} disabled={true} />
+                  </div>
+                ))}
+              </div>
+            </div>
             <MultiChoiceInput
               name={i18n.t('forms.quick_reply', 'Quick Reply')}
               helpText={
@@ -297,33 +326,31 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
         tabs={tabs}
       >
         <div>
-          <div className={styles.header}>
-            {(this.props.nodeSettings.originalAction as SendWhatsAppMsg)
-              .header_type === 'text' ? (
-              <>
-                <div data-spec="translation-container">
-                  <div
-                    data-spec="text-to-translate"
-                    className={styles.translate_from}
-                  >
-                    {
-                      (this.props.nodeSettings
-                        .originalAction as SendWhatsAppMsg).header_type
-                    }
-                  </div>
+          {originalAction.header_text ? (
+            <div className={styles.header}>
+              <div data-spec="translation-container">
+                <div
+                  data-spec="text-to-translate"
+                  className={styles.translate_from}
+                >
+                  {
+                    (this.props.nodeSettings.originalAction as SendWhatsAppMsg)
+                      .header_text
+                  }
                 </div>
-                <TextInputElement
-                  name={i18n.t('forms.message', 'Message')}
-                  showLabel={false}
-                  onChange={this.handleHeaderTextUpdate}
-                  entry={this.state.headerText}
-                  placeholder={`${this.props.language.name}`}
-                  autocomplete={true}
-                  focus={true}
-                />
-              </>
-            ) : null}
-          </div>
+              </div>
+              <TextInputElement
+                name={i18n.t('forms.header_text', 'Header Text')}
+                showLabel={false}
+                onChange={this.handleHeaderTextUpdate}
+                entry={this.state.headerText}
+                placeholder={`${this.props.language.name}`}
+                autocomplete={true}
+                focus={true}
+              />
+            </div>
+          ) : null}
+
           <div className={styles.content}>
             <div>
               <span className={`u font secondary body-md color-neutral-cloudy`}>
@@ -352,33 +379,67 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
               textarea={true}
             />
           </div>
-          <div className={styles.content}>
-            <div className={styles.header_type}>
-              <span className={`u font secondary body-md color-neutral-cloudy`}>
-                {i18n.t('forms.footer', 'Footer (optional)')}
-              </span>
-            </div>
-            <div data-spec="translation-container">
-              <div
-                data-spec="text-to-translate"
-                className={styles.translate_from}
-              >
-                {
-                  (this.props.nodeSettings.originalAction as SendWhatsAppMsg)
-                    .footer
-                }
+
+          {originalAction.footer ? (
+            <div className={styles.footer}>
+              <div className={styles.footer}>
+                <span
+                  className={`u font secondary body-md color-neutral-cloudy`}
+                >
+                  {i18n.t('forms.footer', 'Footer (optional)')}
+                </span>
               </div>
+              <div data-spec="translation-container">
+                <div
+                  data-spec="text-to-translate"
+                  className={styles.translate_from}
+                >
+                  {originalAction.footer}
+                </div>
+              </div>
+              <TextInputElement
+                name={i18n.t('forms.footer', 'Footer')}
+                showLabel={false}
+                onChange={this.handleFooterUpdate}
+                entry={this.state.footer}
+                placeholder={`${this.props.language.name}`}
+                autocomplete={true}
+                focus={true}
+              />
             </div>
-            <TextInputElement
-              name={i18n.t('forms.footer', 'Footer')}
-              showLabel={false}
-              onChange={this.handleFooterUpdate}
-              entry={this.state.footer}
-              placeholder={`${this.props.language.name}`}
-              autocomplete={true}
-              focus={true}
-            />
-          </div>
+          ) : null}
+
+          {originalAction.button_text ? (
+            <>
+              <div className={styles.header_type}>
+                <span
+                  className={`u font secondary body-md color-neutral-cloudy`}
+                >
+                  {i18n.t('forms.button_text', 'Button Text')}
+                </span>
+              </div>
+              <div data-spec="translation-container">
+                <div
+                  data-spec="text-to-translate"
+                  className={styles.translate_from}
+                >
+                  {
+                    (this.props.nodeSettings.originalAction as SendWhatsAppMsg)
+                      .button_text
+                  }
+                </div>
+              </div>
+              <TextInputElement
+                name={i18n.t('forms.button_text', 'Button Text')}
+                showLabel={false}
+                onChange={this.handleButtonTextUpdate}
+                entry={this.state.buttonText}
+                placeholder={`${this.props.language.name}`}
+                autocomplete={true}
+                focus={true}
+              />
+            </>
+          ) : null}
         </div>
       </Dialog>
     );
