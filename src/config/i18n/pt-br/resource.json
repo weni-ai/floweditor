@@ -754,5 +754,9 @@
     "replies_required": "Pelo menos uma resposta rápida deve ser preenchida",
     "attachment_url": "URL do anexo",
     "configure_your_message": "Configure sua mensagem"
+  },
+  "whatsapp_flows": {
+    "title": "WhatsApp Flows",
+    "description": "Use seus formulários interativos criados na Meta"
   }
 }

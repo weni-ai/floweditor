@@ -92,6 +92,7 @@ export enum WhatsAppInteractionType {
   REPLIES = 'replies',
   LOCATION = 'location',
   CTA = 'cta_url',
+  WHATSAPP_FLOWS = 'whatsapp_flows',
 }
 
 export const WHATSAPP_MESSAGE_TYPE_SIMPLE: UnnnicSelectOption<
@@ -149,6 +150,7 @@ export const WHATSAPP_INTERACTION_TYPE_REPLIES: UnnnicSelectOption<
     'Create up to 3 quick replies with predefined messages',
   ),
 };
+
 export const WHATSAPP_INTERACTION_TYPE_CTA: UnnnicSelectOption<
   WhatsAppInteractionType
 > = {
@@ -157,6 +159,17 @@ export const WHATSAPP_INTERACTION_TYPE_CTA: UnnnicSelectOption<
   description: i18n.t(
     'whatsapp_interactions.add_url_description',
     'Add a button with a link to an external URL.',
+  ),
+};
+
+export const WHATSAPP_INTERACTION_TYPE_WHATSAPP_FLOWS: UnnnicSelectOption<
+  WhatsAppInteractionType
+> = {
+  value: WhatsAppInteractionType.WHATSAPP_FLOWS,
+  label: i18n.t('whatsapp_flows.title', 'Whatsapp Flows'),
+  description: i18n.t(
+    'whatsapp_flows.description',
+    'Use your interactive forms created on Meta.',
   ),
 };
 
@@ -187,6 +200,7 @@ export const WHATSAPP_INTERACTION_TYPE_OPTIONS: UnnnicSelectOption<
   WHATSAPP_INTERACTION_TYPE_LIST,
   WHATSAPP_INTERACTION_TYPE_LOCATION,
   WHATSAPP_INTERACTION_TYPE_CTA,
+  WHATSAPP_INTERACTION_TYPE_WHATSAPP_FLOWS,
 ];
 
 export interface WhatsAppListItem {
