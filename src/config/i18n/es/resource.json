@@ -259,6 +259,11 @@
     "delimit_result_description": "Evalúe sus reglas contra una parte delimitada de su resultado",
     "delimiter": "Delimitador",
     "district": "Distrito",
+    "disclaimer": {
+      "title": "Ahora es posible <b>{{highlight}}</b> utilizando WhatsApp Flows.",
+      "highlight": "generar interacciones más ricas",
+      "link": "Obtén más información."
+    },   
     "email_recipient_name": "Destinatario",
     "email_recipient_placeholder": "Agregue correo electrónico y presione Entrar",
     "email_recipient_prompt": "Introducir la dirección de correo electrónico",

@@ -48,6 +48,16 @@
   width: 100%;
   color: $unnnic-color-neutral-dark;
 
+  .disclaimer{
+    display: flex;
+    background-color: $unnnic-color-weni-50;
+    border: 1px solid $unnnic-color-weni-600;
+    border-radius: 4px;
+    align-items: center;
+    gap: $unnnic-spacing-xs;
+    padding: $unnnic-spacing-xs;
+  }
+
   .inputs {
     display: flex;
     gap: $unnnic-spacing-inline-xs;

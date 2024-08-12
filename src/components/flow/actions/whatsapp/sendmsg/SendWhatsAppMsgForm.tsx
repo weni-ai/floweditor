@@ -46,6 +46,7 @@ import TextEditorElement from '../../../../form/texteditor/TextEditorElement';
 import QuickRepliesList, { hasEmptyReply } from './QuickRepliesList';
 import OptionsList, { hasEmptyListItem } from './OptionsList';
 import { renderIf } from '../../../../../utils';
+import { Trans } from 'react-i18next';
 
 const UnnnicIcon = applyVueInReact(unnnicIcon, {
   vue: {
@@ -747,6 +748,25 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
     return renderIf(interactionType !== WhatsAppInteractionType.LOCATION)(
       <div className={styles.header}>
+        {interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS ? (
+          <div className={styles.disclaimer}>
+            <UnnnicIcon icon="alert-circle-1-1" scheme="weni-600" />
+            <span>
+              <Trans
+                i18nKey="forms.disclaimer.title"
+                values={{
+                  highlight: i18n.t('forms.disclaimer.highlight'),
+                }}
+              >
+                Now it is possible to <b>[[highlight]]</b> using WhatsApp Flows.
+              </Trans>
+            </span>
+            <a href="" className={styles.link}>
+              {i18n.t('forms.disclaimer.link', 'Learn more.')}
+            </a>
+          </div>
+        ) : null}
+
         <div className={styles.inputs}>
           {renderIf(interactionType === WhatsAppInteractionType.REPLIES)(
             <div className={styles.header_type}>
@@ -938,7 +958,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
         />
-
         <section className={styles.content}>
           <header className={styles.header}>
             {i18n.t(
@@ -946,7 +965,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
               'Configure your message',
             )}
           </header>
-
           <div className={styles.selectors}>
             <div>
               <span className={styles.label}>
@@ -982,9 +1000,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
               />
             </div>
           </div>
-
           {this.renderHeaderSection()}
-
           <TextEditorElement
             name={i18n.t('forms.message', 'Message')}
             showLabel={true}
@@ -998,7 +1014,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 : 1024
             }
           />
-
           {renderIf(
             this.state.messageType.value.value ===
               WhatsAppMessageType.INTERACTIVE,
