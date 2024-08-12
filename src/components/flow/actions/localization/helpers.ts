@@ -11,9 +11,14 @@ import {
   CallWeniGPT,
   SendWhatsAppMsg,
 } from 'flowTypes';
+import i18n from 'config/i18n';
 import { Attachment } from '../sendmsg/attachments';
 import { WhatsappMsgLocalizationFormState } from './WhastsappMsgLocalizationForm';
 import { createEmptyListItem } from '../whatsapp/sendmsg/helpers';
+import {
+  WHATSAPP_HEADER_TYPE_TEXT,
+  WhatsAppHeaderType,
+} from '../whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 export const initializeLocalizedKeyForm = (
   settings: NodeEditorSettings,
@@ -131,7 +136,7 @@ export const initializeWhatsappMsgLocalizedForm = (
   const state: WhatsappMsgLocalizationFormState = {
     valid: true,
     text: { value: '' },
-    headerType: null,
+    headerType: WHATSAPP_HEADER_TYPE_TEXT,
     headerText: { value: '' },
     footer: { value: '' },
     attachments: [],
@@ -173,6 +178,19 @@ export const initializeWhatsappMsgLocalizedForm = (
         if (localizedObject.header_text) {
           state.headerText.value =
             'header_text' in localized.localizedKeys ? action.header_text : '';
+          state.valid = true;
+        }
+
+        if (localizedObject.header_type) {
+          const label =
+            action.header_type === 'text'
+              ? i18n.t('whatsapp_headers.media', 'Text')
+              : i18n.t('whatsapp_headers.media', 'Media');
+          state.headerType.value =
+            'header_type' in localized.localizedKeys
+              ? action.header_type
+              : WhatsAppHeaderType.TEXT;
+          state.headerType.label = label;
           state.valid = true;
         }
 

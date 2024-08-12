@@ -15,6 +15,7 @@ import {
 import { initializeWhatsappMsgLocalizedForm } from './helpers';
 import { Attachment, renderAttachments } from '../sendmsg/attachments';
 import {
+  WHATSAPP_HEADER_TYPE_OPTIONS,
   WhatsAppHeaderType,
   WhatsAppInteractionType,
   WhatsAppListItem,
@@ -31,7 +32,9 @@ import {
   unnnicSelectSmart,
   // @ts-ignore
 } from '@weni/unnnic-system';
-import { UnnnicSelectOption } from 'components/form/select/SelectElement';
+import SelectElement, {
+  UnnnicSelectOption,
+} from 'components/form/select/SelectElement';
 import { SendWhatsAppMsg } from 'flowTypes';
 import MultiChoiceInput from 'components/form/multichoice/MultiChoice';
 import { Trans } from 'react-i18next';
@@ -53,7 +56,7 @@ const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
 
 export interface WhatsappMsgLocalizationFormState extends FormState {
   text: StringEntry;
-  headerType: UnnnicSelectOptionEntry<WhatsAppHeaderType>;
+  headerType?: UnnnicSelectOption<WhatsAppHeaderType>;
   headerText: StringEntry;
   footer: StringEntry;
   attachments: Attachment[];
@@ -126,17 +129,20 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     this.setState({ attachments });
   }
 
-  private handleUpdate(keys: {
-    text?: string;
-    headerType?: any;
-    headerText?: string;
-    footer?: string;
-    quickReplies?: string[];
-    buttonText?: string;
-    actionURL?: string;
-    listItems?: WhatsAppListItem[];
-    removeListItem?: WhatsAppListItem;
-  }): boolean {
+  private handleUpdate(
+    keys: {
+      text?: string;
+      headerType?: UnnnicSelectOption<WhatsAppHeaderType>;
+      headerText?: string;
+      footer?: string;
+      quickReplies?: string[];
+      buttonText?: string;
+      actionURL?: string;
+      listItems?: WhatsAppListItem[];
+      removeListItem?: WhatsAppListItem;
+    },
+    submitting = false,
+  ): boolean {
     const updates: Partial<WhatsappMsgLocalizationFormState> = {};
 
     if (keys.hasOwnProperty('text')) {
@@ -153,6 +159,11 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
         keys.headerText!,
         [],
       );
+    }
+
+    if (keys.hasOwnProperty('headerType')) {
+      const label = keys.headerType.value === 'text' ? 'Text' : 'Media';
+      updates.headerType = { value: keys.headerType.value, label };
     }
 
     if (keys.hasOwnProperty('footer')) {
@@ -247,14 +258,18 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
 
   public handleHeaderTypeChange(
     event: UnnnicSelectOption<WhatsAppHeaderType>[],
+    submitting = false,
   ): boolean {
     const headerType = event[0];
 
-    if (headerType.value === this.state.headerType.value.value) {
+    if (headerType.value === this.state.headerType.value) {
       return false;
     }
-    this.handleUpdate({ headerText: '' });
-    this.handleUpdate({ headerType });
+
+    return this.handleUpdate(
+      { headerType: headerType, headerText: '' },
+      submitting,
+    );
   }
 
   private handleSave(): void {
@@ -348,6 +363,8 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     const originalAction = this.props.nodeSettings
       .originalAction as SendWhatsAppMsg;
 
+    const headerType = this.state.headerType.value;
+
     if (typeConfig.localizeableKeys!.indexOf('quick_replies') > -1) {
       tabs.push({
         name: i18n.t('forms.quick_replies', 'Quick Replies'),
@@ -365,18 +382,14 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
                 ))}
               </div>
             </div>
-            <MultiChoiceInput
-              name={i18n.t('forms.quick_reply', 'Quick Reply')}
-              helpText={
-                <Trans
-                  i18nKey="forms.localized_quick_replies"
-                  values={{ language: this.props.language.name }}
-                >
-                  Add a new [[language]] Quick Reply and press enter.
-                </Trans>
-              }
-              items={this.state.quickReplies}
-              onChange={this.handleQuickReplyChanged}
+            <UnnnicSelectSmart
+              $model={{
+                value: [headerType],
+                setter: this.handleHeaderTypeChange,
+              }}
+              options={WHATSAPP_HEADER_TYPE_OPTIONS}
+              size="sm"
+              orderedByIndex={true}
             />
           </>
         ),
@@ -391,6 +404,20 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
         tabs={tabs}
       >
         <div>
+          {originalAction.header_type ? (
+            <div className={styles.header_type}>
+              <span className={`u font secondary body-md color-neutral-cloudy`}>
+                {i18n.t('forms.header_optional', 'Header (optional)')}
+              </span>
+              <SelectElement
+                key={'urn_type_select'}
+                name={i18n.t('forms.urn_type', 'URN Type')}
+                entry={this.state.headerType}
+                onChange={this.handleHeaderTypeChange}
+                options={WHATSAPP_HEADER_TYPE_OPTIONS}
+              />
+            </div>
+          ) : null}
           {originalAction.header_text ? (
             <div className={styles.header}>
               <div data-spec="translation-container">
