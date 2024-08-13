@@ -79,6 +79,7 @@ import {
   ProductViewSettings,
 } from '../components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 import {
+  DynamicVariablesListItem,
   WhatsAppHeaderType,
   WhatsAppInteractionType,
   WhatsAppListItem,
@@ -387,6 +388,7 @@ export const createSendWhatsAppMsgAction = ({
   action_url = '',
   list_items = [],
   quick_replies = [],
+  dynamic_variables = [],
 }: {
   uuid?: string;
   text?: string;
@@ -400,6 +402,7 @@ export const createSendWhatsAppMsgAction = ({
   action_url?: string;
   list_items?: WhatsAppListItem[];
   quick_replies?: string[];
+  dynamic_variables?: DynamicVariablesListItem[];
 } = {}): SendWhatsAppMsg => ({
   type: Types.send_msg,
   uuid,
@@ -414,6 +417,7 @@ export const createSendWhatsAppMsgAction = ({
   action_url,
   list_items,
   quick_replies,
+  dynamic_variables,
 });
 
 export const createCallWeniGPTAction = ({

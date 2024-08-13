@@ -1,5 +1,6 @@
 import { getActionUUID } from 'components/flow/actions/helpers';
 import {
+  DynamicVariablesListItem,
   SendWhatsAppMsgFormState,
   WHATSAPP_HEADER_TYPE_MEDIA,
   WHATSAPP_HEADER_TYPE_OPTIONS,
@@ -67,6 +68,7 @@ export const initializeForm = (
       listItemDescriptionEntry: { value: '' },
       quickReplyEntry: { value: '' },
       valid: true,
+      dynamicVariables: { value: action.dynamic_variables || [] },
     };
   }
 
@@ -87,6 +89,7 @@ export const initializeForm = (
     listItemDescriptionEntry: { value: '' },
     quickReplyEntry: { value: '' },
     valid: false,
+    dynamicVariables: { value: [] },
   };
 };
 
@@ -119,6 +122,13 @@ export const stateToAction = (
     );
   }
 
+  let dynamicVariables: DynamicVariablesListItem[] = [];
+  if (state.dynamicVariables.value) {
+    dynamicVariables = state.dynamicVariables.value.filter(
+      (item: DynamicVariablesListItem) => item.value.trim().length > 0,
+    );
+  }
+
   let result: SendWhatsAppMsg = {
     attachment,
     type: Types.send_whatsapp_msg,
@@ -133,6 +143,7 @@ export const stateToAction = (
     list_items: listItems,
     quick_replies: replies,
     uuid: getActionUUID(settings, Types.send_whatsapp_msg),
+    dynamic_variables: dynamicVariables,
   };
 
   result = Object.fromEntries(
