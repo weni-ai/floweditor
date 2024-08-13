@@ -10,7 +10,7 @@ import ContentCollapse from '../../../../contentcollapse/ContentCollapse';
 
 import { applyVueInReact } from 'vuereact-combined';
 // @ts-ignore
-import { unnnicButton } from '@weni/unnnic-system';
+import { unnnicButton, unnnicSelectSmart } from '@weni/unnnic-system';
 import {
   SortEnd,
   SortableContainer,
@@ -20,12 +20,30 @@ import {
 import {
   DynamicVariablesListItem,
   MAX_LIST_ITEMS_COUNT,
+  WHATSAPP_DYNAMIC_VARIABLE_TYPE_OPTIONS,
+  WhatsAppDynamicVariableType,
 } from './SendWhatsAppMsgForm';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import update from 'immutability-helper';
 import { FormEntry, ValidationFailure } from '../../../../../store/nodeEditor';
+import SelectElement, {
+  UnnnicSelectOption,
+} from 'components/form/select/SelectElement';
+import TembaSelect from 'temba/TembaSelect';
 
 const UnnnicButton = applyVueInReact(unnnicButton, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
+
+const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -68,27 +86,28 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
       }
     >
       <div className={styles.list_item_wrapper}>
-        <TextInputElement
-          name={i18n.t('forms.description_optional', 'Description (Optional)')}
-          placeholder={i18n.t(
-            'forms.ex_citrus_and_sweet',
-            'Ex: Citrus and sweet',
-          )}
-          size={TextInputSizes.sm}
-          onChange={(value, name) =>
-            row.list.handleListItemDescriptionUpdate(value, name, index)
-          }
-          entry={{ value: listItem.value }}
-          autocomplete={true}
-          showLabel={true}
-          maxLength={72}
-        />
+        {/* <UnnnicSelectSmart
+          $model={{
+            value: [listItem.type],
+            setter: row.list.handleDynamicVariableUpdate(listItem.type),
+          }}
+          options={WHATSAPP_DYNAMIC_VARIABLE_TYPE_OPTIONS}
+          size="sm"
+          orderedByIndex={true}
+          placeholder="aaaaa"
+        /> */}
 
+        <SelectElement
+          options={WHATSAPP_DYNAMIC_VARIABLE_TYPE_OPTIONS}
+          name="aaaa"
+          entry={{ value: listItem }}
+          onChange={row.list.teste}
+        />
         <UnnnicButton
           className={styles.list_item_remove}
-          data-testid="Remove"
-          iconLeft="do_not_disturb_on"
-          text={i18n.t('forms.remove', 'Remove')}
+          data-testid="Add"
+          iconLeft="add"
+          text={i18n.t('forms.remove', 'Add new variable')}
           size="small"
           type="tertiary"
           onClick={() => row.list.handleListItemRemoval(listItem)}
@@ -112,20 +131,14 @@ export default class DynamicVariables extends React.Component<
     });
   }
 
-  private handleListItemTitleUpdate(
-    value: string,
-    name: string,
-    index: number,
-  ): void {
-    const listItems = update(this.props.options.value, {
-      [index]: {
-        $merge: {
-          value: value,
-        },
-      },
-    }) as DynamicVariablesListItem[];
+  public handleDynamicVariableUpdate(value: any): boolean {
+    console.log('aquiii', value);
+    this.props.onOptionsUpdated(value);
+    return false;
+  }
 
-    this.props.onOptionsUpdated(listItems);
+  public teste(value: any) {
+    console.log('❤️', value);
   }
 
   private handleListItemDescriptionUpdate(
@@ -177,36 +190,38 @@ export default class DynamicVariables extends React.Component<
       shouldCancelStart: any;
     }) => {
       return (
-        <TransitionGroup className={styles.list_items}>
-          {items.map((value: DynamicVariablesListItem, index: number) => {
-            return (
-              <CSSTransition
-                key={value.uuid}
-                timeout={300}
-                classNames={{
-                  enter: styles.list_item_enter,
-                  enterActive: styles.list_item_enter_active,
-                  exit: styles.list_item_exit,
-                  exitActive: styles.list_item_exit_active,
-                }}
-              >
-                <SortableListItem
-                  key={value.uuid}
-                  index={index}
-                  value={{ item: value, list: this, length: items.length }}
-                  disabled={index === this.props.options.value.length - 1}
-                  shouldCancelStart={
-                    /* istanbul ignore next */
-                    (e: any) => {
-                      console.log(e);
-                      return true;
-                    }
-                  }
-                />
-              </CSSTransition>
-            );
-          })}
-        </TransitionGroup>
+        <>
+          <TransitionGroup className={styles.list_items}>
+            {Array.isArray(items) &&
+              items.map((value: DynamicVariablesListItem, index: number) => {
+                return (
+                  <CSSTransition
+                    key={value.uuid}
+                    timeout={300}
+                    classNames={{
+                      enter: styles.list_item_enter,
+                      enterActive: styles.list_item_enter_active,
+                      exit: styles.list_item_exit,
+                      exitActive: styles.list_item_exit_active,
+                    }}
+                  >
+                    <SortableListItem
+                      key={value.uuid}
+                      index={index}
+                      value={{ item: value, list: this, length: items.length }}
+                      shouldCancelStart={
+                        /* istanbul ignore next */
+                        (e: any) => {
+                          console.log(e);
+                          return true;
+                        }
+                      }
+                    />
+                  </CSSTransition>
+                );
+              })}
+          </TransitionGroup>
+        </>
       );
     },
   );
@@ -222,7 +237,7 @@ export default class DynamicVariables extends React.Component<
           <span className={styles.options_label}>
             {i18n.t('forms.options_label', 'Add up to 10 options')}
           </span>
-
+          {JSON.stringify(this.props.options.value)}
           <this.sortableListOptions
             items={this.props.options.value}
             onSortEnd={this.handleListItemsSortEnd}

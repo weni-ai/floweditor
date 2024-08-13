@@ -4,6 +4,7 @@ import {
   initializeForm as stateToForm,
   stateToAction,
   createEmptyListItem,
+  createEmptyDynamicItem,
 } from 'components/flow/actions/whatsapp/sendmsg/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import TextInputElement, {
@@ -97,6 +98,12 @@ export enum WhatsAppInteractionType {
   WHATSAPP_FLOWS = 'whatsapp_flows',
 }
 
+export enum WhatsAppDynamicVariableType {
+  RADIO = 'radio',
+  IMAGE = 'image',
+  DESCRIPTION = 'description',
+}
+
 export const WHATSAPP_MESSAGE_TYPE_SIMPLE: UnnnicSelectOption<
   WhatsAppMessageType
 > = {
@@ -122,6 +129,36 @@ export const WHATSAPP_HEADER_TYPE_MEDIA: UnnnicSelectOption<
 > = {
   label: i18n.t('whatsapp_headers.media', 'Media'),
   value: WhatsAppHeaderType.MEDIA,
+};
+
+export const WHATSAPP_DYNAMIC_VARIABLE_TYPE_RADIO: UnnnicSelectOption<
+  WhatsAppDynamicVariableType
+> = {
+  label: i18n.t('whatsapp_flows.variables.radio.title', 'Radio Button'),
+  value: WhatsAppDynamicVariableType.RADIO,
+  description: i18n.t(
+    'whatsapp_flows.variables.radio.description',
+    'Radio Button',
+  ),
+};
+
+export const WHATSAPP_DYNAMIC_VARIABLE_TYPE_IMAGE: UnnnicSelectOption<
+  WhatsAppDynamicVariableType
+> = {
+  label: i18n.t('whatsapp_flows.variables.image.title', 'Image'),
+  value: WhatsAppDynamicVariableType.IMAGE,
+  description: i18n.t('whatsapp_flows.variables.image.description', 'Image'),
+};
+
+export const WHATSAPP_DYNAMIC_VARIABLE_TYPE_DESCRIPTION: UnnnicSelectOption<
+  WhatsAppDynamicVariableType
+> = {
+  label: i18n.t('whatsapp_flows.variables.description.title', 'Description'),
+  value: WhatsAppDynamicVariableType.DESCRIPTION,
+  description: i18n.t(
+    'whatsapp_flows.variables.description.description',
+    'Description',
+  ),
 };
 
 export const WHATSAPP_INTERACTION_TYPE_LIST: UnnnicSelectOption<
@@ -193,6 +230,14 @@ export const WHATSAPP_MESSAGE_TYPE_OPTIONS: UnnnicSelectOption<
 export const WHATSAPP_HEADER_TYPE_OPTIONS: UnnnicSelectOption<
   WhatsAppHeaderType
 >[] = [WHATSAPP_HEADER_TYPE_MEDIA, WHATSAPP_HEADER_TYPE_TEXT];
+
+export const WHATSAPP_DYNAMIC_VARIABLE_TYPE_OPTIONS: UnnnicSelectOption<
+  WhatsAppDynamicVariableType
+>[] = [
+  WHATSAPP_DYNAMIC_VARIABLE_TYPE_DESCRIPTION,
+  WHATSAPP_DYNAMIC_VARIABLE_TYPE_IMAGE,
+  WHATSAPP_DYNAMIC_VARIABLE_TYPE_RADIO,
+];
 
 export const WHATSAPP_INTERACTION_TYPE_OPTIONS: UnnnicSelectOption<
   WhatsAppInteractionType
@@ -275,6 +320,9 @@ export default class SendWhatsAppMsgForm extends React.Component<
       listItems.push(createEmptyListItem());
     }
 
+    const dynamicVariables = [...this.state.dynamicVariables.value];
+    dynamicVariables.push(createEmptyDynamicItem());
+
     const replies = [...this.state.quickReplies.value];
     if (!hasEmptyReply(replies) && replies.length < MAX_REPLIES_COUNT) {
       replies.push('');
@@ -284,6 +332,9 @@ export default class SendWhatsAppMsgForm extends React.Component<
       ...this.state,
       listItems: {
         value: listItems,
+      },
+      dynamicVariables: {
+        value: dynamicVariables,
       },
       quickReplies: {
         value: replies,
@@ -712,7 +763,9 @@ export default class SendWhatsAppMsgForm extends React.Component<
   public handleDynamicVariablesUpdate(
     options: DynamicVariablesListItem[],
     submitting = false,
-  ) {
+  ): boolean {
+    console.log('alo');
+    // return false;
     return this.handleUpdate({ dynamicVariables: options }, submitting);
   }
 
@@ -974,11 +1027,14 @@ export default class SendWhatsAppMsgForm extends React.Component<
           </div>
         )}
         {interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS && (
-          <DynamicVariables
-            options={this.state.dynamicVariables}
-            onOptionsUpdated={this.handleDynamicVariablesUpdate}
-            onOptionRemoval={this.handleDynamicVariablesRemoval}
-          />
+          <>
+            {JSON.stringify(this.state.dynamicVariables)}
+            <DynamicVariables
+              options={this.state.dynamicVariables}
+              onOptionsUpdated={this.handleDynamicVariablesUpdate}
+              onOptionRemoval={this.handleDynamicVariablesRemoval}
+            />
+          </>
         )}
       </div>
     );

@@ -2,6 +2,7 @@ import { getActionUUID } from 'components/flow/actions/helpers';
 import {
   DynamicVariablesListItem,
   SendWhatsAppMsgFormState,
+  WHATSAPP_DYNAMIC_VARIABLE_TYPE_DESCRIPTION,
   WHATSAPP_HEADER_TYPE_MEDIA,
   WHATSAPP_HEADER_TYPE_OPTIONS,
   WHATSAPP_INTERACTION_TYPE_NONE,
@@ -165,5 +166,13 @@ export const createEmptyListItem = () => {
     uuid: createUUID(),
     title: '',
     description: '',
+  };
+};
+
+export const createEmptyDynamicItem = () => {
+  return {
+    uuid: createUUID(),
+    type: WHATSAPP_DYNAMIC_VARIABLE_TYPE_DESCRIPTION.value,
+    value: '',
   };
 };

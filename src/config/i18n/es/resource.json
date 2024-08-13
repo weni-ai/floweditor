@@ -761,6 +761,20 @@
   },
   "whatsapp_flows": {
     "title": "WhatsApp Flows",
-    "description": "Use sus formularios interactivos creados en Meta"
+    "description": "Use sus formularios interactivos creados en Meta",
+    "variables": {
+      "radio": {
+        "title": "Botón de Opción",
+        "description": "Tanana tanana"
+      },
+      "image": {
+        "title": "Imagen",
+        "description": "Tanana tanana"
+      },
+      "description": {
+        "title": "Descripción",
+        "description": "lalala"
+      }
+    }
   }
 }
