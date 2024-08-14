@@ -42,8 +42,6 @@ export default class DynamicVariables extends React.Component<
   constructor(props: DynamicListProps) {
     super(props);
 
-    this.setState({ selectedOption: this.props.options.value });
-
     bindCallbacks(this, {
       include: [/^on/, /^handle/],
     });

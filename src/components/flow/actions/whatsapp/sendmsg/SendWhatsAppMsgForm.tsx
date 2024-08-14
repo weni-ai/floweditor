@@ -286,7 +286,7 @@ export interface SendWhatsAppMsgFormState extends FormState {
   quickReplyEntry: StringEntry;
   dynamicVariables: FormEntry<DynamicVariablesListItem[]>;
   firstScreen: FormEntry<string>;
-  selectedForm: FormEntry<string>;
+  selectedForm: UnnnicSelectOptionEntry<WhatsAppHeaderType>;
 }
 
 interface UpdateKeys {
@@ -305,6 +305,7 @@ interface UpdateKeys {
   dynamicVariables?: DynamicVariablesListItem;
   removeDynamicVariable?: DynamicVariablesListItem;
   addNewDynamicVariable?: DynamicVariablesListItem;
+  selectedForm?: UnnnicSelectOption<any>;
 }
 
 export default class SendWhatsAppMsgForm extends React.Component<
@@ -552,6 +553,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
       ensureEmptyReply = true;
     }
 
+    if (keys.hasOwnProperty('selectedForm')) {
+      console.log('oieee');
+    }
+
     const updated = mergeForm(this.state, updates) as SendWhatsAppMsgFormState;
 
     this.setState(updated, () => {
@@ -768,15 +773,24 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ dynamicVariables: { name, value } });
   }
 
-  public handleAddDynamicVariable(item: any): boolean {
-    return this.handleUpdate({ addNewDynamicVariable: item });
-  }
-
   public handleButtonTextUpdate(buttonText: string): boolean {
     return this.handleUpdate({ buttonText });
   }
   public handleActionURLUpdate(actionURL: string): boolean {
     return this.handleUpdate({ actionURL });
+  }
+
+  public handleFormUpdate(
+    event: UnnnicSelectOption<WhatsAppHeaderType>[],
+    submitting = false,
+  ) {
+    const selectedForm = event[0];
+
+    if (selectedForm.value === this.state.selectedForm.value.value) {
+      return false;
+    }
+
+    return this.handleUpdate({ selectedForm: selectedForm }, submitting);
   }
 
   public handleSave(): void {
@@ -825,6 +839,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
   private renderHeaderSection(): JSX.Element {
     const attachment = this.state.attachment.value;
     const headerType = this.state.headerType.value;
+    const selectedForm = this.state.selectedForm.value;
     const interactionType =
       this.state.interactionType.value &&
       this.state.interactionType.value.value;
@@ -851,6 +866,23 @@ export default class SendWhatsAppMsgForm extends React.Component<
             </a>
           </div>
         ) : null}
+
+        {interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS && (
+          <>
+            <span className={`u font secondary body-md color-neutral-cloudy`}>
+              {i18n.t('forms.header_optional', 'Select a Form')}
+            </span>
+            <UnnnicSelectSmart
+              $model={{
+                value: [selectedForm],
+                setter: this.handleFormUpdate,
+              }}
+              options={WHATSAPP_HEADER_TYPE_OPTIONS}
+              size="sm"
+              orderedByIndex={true}
+            />
+          </>
+        )}
 
         <div className={styles.inputs}>
           {renderIf(interactionType === WhatsAppInteractionType.REPLIES)(
@@ -1029,6 +1061,9 @@ export default class SendWhatsAppMsgForm extends React.Component<
               options={this.state.dynamicVariables}
               onValueUpdated={this.handleDynamicVariableUpdate}
             />
+            <span className={`u font secondary body-md color-neutral-cloudy`}>
+              {i18n.t('forms.header_optional', 'Select a Form')}
+            </span>
             <SelectElement
               name={''}
               options={[

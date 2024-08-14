@@ -71,7 +71,11 @@ export const initializeForm = (
       valid: true,
       dynamicVariables: { value: action.dynamic_variables || [] },
       firstScreen: { value: action.first_screen || '' },
-      selectedForm: { value: action.selected_form || '' },
+      selectedForm: {
+        value: WHATSAPP_HEADER_TYPE_OPTIONS.find(
+          o => o.value === action.header_type,
+        ),
+      },
     };
   }
 
@@ -94,7 +98,7 @@ export const initializeForm = (
     valid: false,
     dynamicVariables: { value: [] },
     firstScreen: { value: '' },
-    selectedForm: { value: '' },
+    selectedForm: { value: WHATSAPP_HEADER_TYPE_MEDIA },
   };
 };
 
@@ -149,7 +153,7 @@ export const stateToAction = (
     quick_replies: replies,
     uuid: getActionUUID(settings, Types.send_whatsapp_msg),
     dynamic_variables: dynamicVariables,
-    selected_form: state.selectedForm.value,
+    selected_form: state.selectedForm.value.value,
     first_screen: state.firstScreen.value,
   };
 
