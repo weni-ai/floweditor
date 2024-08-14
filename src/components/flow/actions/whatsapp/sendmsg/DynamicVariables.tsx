@@ -42,7 +42,8 @@ const UnnnicButton = applyVueInReact(unnnicButton, {
 export interface DynamicListProps {
   options: FormEntry<DynamicVariablesListItem[]>;
   onOptionsUpdated(options: any, uuid: string): boolean;
-  onOptionRemoval(option: DynamicVariablesListItem): boolean;
+  onValueUpdated(value: any, uuid: string): boolean;
+  onAddNewOption(option: any, uuid: string): boolean;
 }
 
 export interface DynamicListState {
@@ -118,56 +119,6 @@ export default class DynamicVariables extends React.Component<
     return false;
   }
 
-  private teste(value: any) {
-    const alo = {
-      uuid: '',
-      type: value.value,
-      description: value.name,
-    };
-    console.log('❤️', value);
-    this.props.onOptionsUpdated(alo, '');
-  }
-
-  private handleListItemDescriptionUpdate(
-    value: string,
-    name: string,
-    index: number,
-  ): boolean {
-    //should update description but keep the name intact
-    const listItems = update(this.props.options.value, {
-      [index]: {
-        $merge: {
-          value: value,
-        },
-      },
-    }) as DynamicVariablesListItem[];
-
-    return this.props.onOptionsUpdated(listItems, '');
-  }
-
-  private handleListItemRemoval(item: DynamicVariablesListItem): void {
-    const listItems = this.props.options.value;
-    if (
-      listItems.indexOf(item) === listItems.length - 1 &&
-      hasEmptyListItem(listItems)
-    ) {
-      return;
-    }
-
-    this.props.onOptionRemoval(item);
-  }
-
-  private handleListItemsSortEnd({ oldIndex, newIndex }: SortEnd): void {
-    const options = this.props.options.value;
-    const listItems = arrayMove(
-      options,
-      oldIndex,
-      newIndex === options.length - 1 ? newIndex - 1 : newIndex,
-    ) as DynamicVariablesListItem[];
-
-    this.props.onOptionsUpdated(listItems, ' ');
-  }
-
   private sortableListOptions = SortableContainer(
     ({
       items,
@@ -223,7 +174,7 @@ export default class DynamicVariables extends React.Component<
       <div className={styles.list_wrapper}>
         <div>
           <span className={styles.options_label}>
-            {i18n.t('forms.options_label', 'Add up to 10 options')}
+            {i18n.t('forms.options_label', 'Config dynamic variables')}
           </span>
           {list.map(item => (
             <>
@@ -236,6 +187,20 @@ export default class DynamicVariables extends React.Component<
                   ),
                 }}
                 onChange={e => this.props.onOptionsUpdated(e, item.uuid)}
+              />
+              <TextInputElement
+                name={'aaaaaa'}
+                entry={{ value: item.value }}
+                onChange={e => this.props.onValueUpdated(e, item.uuid)}
+              />
+              <UnnnicButton
+                className={styles.list_item_remove}
+                data-testid="Add"
+                iconLeft="add"
+                text={i18n.t('forms.remove', 'Add New Variable')}
+                size="small"
+                type="tertiary"
+                onClick={(e: any) => this.props.onAddNewOption(e, item.uuid)}
               />
             </>
           ))}

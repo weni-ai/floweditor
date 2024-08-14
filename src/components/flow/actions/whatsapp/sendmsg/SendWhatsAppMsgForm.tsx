@@ -301,6 +301,7 @@ interface UpdateKeys {
   quickReplies?: string[];
   dynamicVariables?: DynamicVariablesListItem;
   removeDynamicVariable?: DynamicVariablesListItem;
+  addNewDynamicVariable?: DynamicVariablesListItem;
 }
 
 export default class SendWhatsAppMsgForm extends React.Component<
@@ -503,22 +504,24 @@ export default class SendWhatsAppMsgForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('dynamicVariables')) {
-      console.log('sjdwdwieojdji', keys.dynamicVariables);
-
       const updatedVariables = this.state.dynamicVariables.value.map(item =>
         item.uuid === keys.dynamicVariables.uuid
-          ? { ...item, type: keys.dynamicVariables.type, value: '' }
+          ? {
+              ...item,
+              type: keys.dynamicVariables.type,
+              value: keys.dynamicVariables.value,
+            }
           : item,
       );
       updates.dynamicVariables = { value: updatedVariables };
     }
 
-    if (keys.hasOwnProperty('removeDynamicVariable')) {
-      // const items = this.state.dynamicVariables.value.filter(
-      //   item => item.uuid !== keys.removeListItem.uuid,
-      // );
-      // updates.dynamicVariables = items;
-      console.log('❤️');
+    if (keys.hasOwnProperty('addNewDynamicVariable')) {
+      const updatedVariables = [
+        ...this.state.dynamicVariables.value,
+        createEmptyDynamicItem(),
+      ];
+      updates.dynamicVariables = { value: updatedVariables };
     }
 
     let ensureEmptyReply = false;
@@ -767,23 +770,33 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ removeListItem: item });
   }
 
-  public handleDynamicVariablesUpdate(option: any, uuid: string): boolean {
+  public handleDynamicVariableTypeUpdate(option: any, uuid: string): boolean {
     const teste = {
       uuid,
       type: option.value,
-      value: 'aaa',
+      value: '',
     };
     const variable = this.state.dynamicVariables.value.find(
       item => item.uuid === uuid,
     );
-    console.log('aquiiii', variable);
     return this.handleUpdate({ dynamicVariables: teste });
   }
 
-  public handleDynamicVariablesRemoval(
-    item: DynamicVariablesListItem,
-  ): boolean {
-    return this.handleUpdate({ removeDynamicVariable: item });
+  public handleDynamicVariableValueUpdate(value: any, uuid: string): boolean {
+    console.log(value, uuid);
+    const variableType = this.state.dynamicVariables.value.find(
+      item => item.uuid === uuid,
+    ).type;
+    const teste = {
+      uuid,
+      type: variableType,
+      value,
+    };
+    return this.handleUpdate({ dynamicVariables: teste });
+  }
+
+  public handleAddDynamicVariable(item: any): boolean {
+    return this.handleUpdate({ addNewDynamicVariable: item });
   }
 
   public handleButtonTextUpdate(buttonText: string): boolean {
@@ -1039,11 +1052,11 @@ export default class SendWhatsAppMsgForm extends React.Component<
         )}
         {interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS && (
           <>
-            {JSON.stringify(this.state.dynamicVariables)}
             <DynamicVariables
               options={this.state.dynamicVariables}
-              onOptionsUpdated={this.handleDynamicVariablesUpdate}
-              onOptionRemoval={this.handleDynamicVariablesRemoval}
+              onOptionsUpdated={this.handleDynamicVariableTypeUpdate}
+              onAddNewOption={this.handleAddDynamicVariable}
+              onValueUpdated={this.handleDynamicVariableValueUpdate}
             />
           </>
         )}
