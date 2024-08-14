@@ -405,6 +405,8 @@ export interface SendWhatsAppMsg extends Action {
   list_items: WhatsAppListItem[];
   quick_replies: string[];
   dynamic_variables: DynamicVariablesListItem[];
+  first_screen: string;
+  selected_form: string;
 }
 
 export interface SendWhatsAppProduct extends Action {

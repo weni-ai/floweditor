@@ -70,6 +70,8 @@ export const initializeForm = (
       quickReplyEntry: { value: '' },
       valid: true,
       dynamicVariables: { value: action.dynamic_variables || [] },
+      firstScreen: { value: action.first_screen || '' },
+      selectedForm: { value: action.selected_form || '' },
     };
   }
 
@@ -91,6 +93,8 @@ export const initializeForm = (
     quickReplyEntry: { value: '' },
     valid: false,
     dynamicVariables: { value: [] },
+    firstScreen: { value: '' },
+    selectedForm: { value: '' },
   };
 };
 
@@ -145,6 +149,8 @@ export const stateToAction = (
     quick_replies: replies,
     uuid: getActionUUID(settings, Types.send_whatsapp_msg),
     dynamic_variables: dynamicVariables,
+    selected_form: state.selectedForm.value,
+    first_screen: state.firstScreen.value,
   };
 
   result = Object.fromEntries(
@@ -171,8 +177,7 @@ export const createEmptyListItem = () => {
 
 export const createEmptyDynamicItem = () => {
   return {
-    uuid: createUUID(),
-    type: WHATSAPP_DYNAMIC_VARIABLE_TYPE_DESCRIPTION.value,
+    name: 'teste',
     value: '',
   };
 };

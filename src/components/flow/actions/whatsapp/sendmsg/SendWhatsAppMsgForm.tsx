@@ -40,7 +40,9 @@ import {
   FILE_TYPE_REGEX,
   renderUploadButton,
 } from './attachments';
-import { UnnnicSelectOption } from 'components/form/select/SelectElement';
+import SelectElement, {
+  UnnnicSelectOption,
+} from 'components/form/select/SelectElement';
 import update from 'immutability-helper';
 import { AxiosResponse } from 'axios';
 import TextEditorElement from '../../../../form/texteditor/TextEditorElement';
@@ -257,8 +259,7 @@ export interface WhatsAppListItem {
 }
 
 export interface DynamicVariablesListItem {
-  uuid: string;
-  type: string;
+  name: string;
   value: string;
 }
 
@@ -284,6 +285,8 @@ export interface SendWhatsAppMsgFormState extends FormState {
   quickReplies: StringArrayEntry;
   quickReplyEntry: StringEntry;
   dynamicVariables: FormEntry<DynamicVariablesListItem[]>;
+  firstScreen: FormEntry<string>;
+  selectedForm: FormEntry<string>;
 }
 
 interface UpdateKeys {
@@ -505,22 +508,13 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
     if (keys.hasOwnProperty('dynamicVariables')) {
       const updatedVariables = this.state.dynamicVariables.value.map(item =>
-        item.uuid === keys.dynamicVariables.uuid
+        item.name === keys.dynamicVariables.name
           ? {
               ...item,
-              type: keys.dynamicVariables.type,
               value: keys.dynamicVariables.value,
             }
           : item,
       );
-      updates.dynamicVariables = { value: updatedVariables };
-    }
-
-    if (keys.hasOwnProperty('addNewDynamicVariable')) {
-      const updatedVariables = [
-        ...this.state.dynamicVariables.value,
-        createEmptyDynamicItem(),
-      ];
       updates.dynamicVariables = { value: updatedVariables };
     }
 
@@ -770,29 +764,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ removeListItem: item });
   }
 
-  public handleDynamicVariableTypeUpdate(option: any, uuid: string): boolean {
-    const teste = {
-      uuid,
-      type: option.value,
-      value: '',
-    };
-    const variable = this.state.dynamicVariables.value.find(
-      item => item.uuid === uuid,
-    );
-    return this.handleUpdate({ dynamicVariables: teste });
-  }
-
-  public handleDynamicVariableValueUpdate(value: any, uuid: string): boolean {
-    console.log(value, uuid);
-    const variableType = this.state.dynamicVariables.value.find(
-      item => item.uuid === uuid,
-    ).type;
-    const teste = {
-      uuid,
-      type: variableType,
-      value,
-    };
-    return this.handleUpdate({ dynamicVariables: teste });
+  public handleDynamicVariableUpdate(value: any, name: string): boolean {
+    return this.handleUpdate({ dynamicVariables: { name, value } });
   }
 
   public handleAddDynamicVariable(item: any): boolean {
@@ -1054,9 +1027,21 @@ export default class SendWhatsAppMsgForm extends React.Component<
           <>
             <DynamicVariables
               options={this.state.dynamicVariables}
-              onOptionsUpdated={this.handleDynamicVariableTypeUpdate}
-              onAddNewOption={this.handleAddDynamicVariable}
-              onValueUpdated={this.handleDynamicVariableValueUpdate}
+              onValueUpdated={this.handleDynamicVariableUpdate}
+            />
+            <SelectElement
+              name={''}
+              options={[
+                {
+                  value: 'first',
+                  label: 'First Screen',
+                },
+                {
+                  value: 'second',
+                  label: 'Second Screen',
+                },
+              ]}
+              entry={this.state.firstScreen}
             />
           </>
         )}

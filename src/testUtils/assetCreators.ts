@@ -389,6 +389,8 @@ export const createSendWhatsAppMsgAction = ({
   list_items = [],
   quick_replies = [],
   dynamic_variables = [],
+  first_screen = '',
+  selected_form = '',
 }: {
   uuid?: string;
   text?: string;
@@ -403,6 +405,8 @@ export const createSendWhatsAppMsgAction = ({
   list_items?: WhatsAppListItem[];
   quick_replies?: string[];
   dynamic_variables?: DynamicVariablesListItem[];
+  first_screen?: string;
+  selected_form?: string;
 } = {}): SendWhatsAppMsg => ({
   type: Types.send_msg,
   uuid,
@@ -418,6 +422,8 @@ export const createSendWhatsAppMsgAction = ({
   list_items,
   quick_replies,
   dynamic_variables,
+  selected_form,
+  first_screen,
 });
 
 export const createCallWeniGPTAction = ({

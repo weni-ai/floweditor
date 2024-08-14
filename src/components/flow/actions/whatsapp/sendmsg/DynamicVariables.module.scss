@@ -1,0 +1,58 @@
+@import 'variables.module.scss';
+
+.list_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-sm;
+  margin-bottom: $unnnic-spacing-sm;
+
+  .title{
+    display: flex;
+    margin-bottom: $unnnic-spacing-sm;
+  }
+
+  .list_items{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+
+    .item{
+      display: flex;
+      flex-direction: row;
+      gap: $unnnic-spacing-sm;
+
+      .options_name{
+        width: 200px;
+      }
+
+      .options_value{
+        width: 386px;
+      }
+
+      .variable{
+        display: flex;
+        width: 100% ;
+      }
+
+
+      .name{
+        :global{
+          .input{
+            display: flex;
+              width: 200px !important;
+          }
+        }
+      }
+
+      .value{
+        :global{
+          .input{
+            display: flex;
+              width: 386px !important;
+          }
+        }
+      }
+
+    }
+  }
+}
