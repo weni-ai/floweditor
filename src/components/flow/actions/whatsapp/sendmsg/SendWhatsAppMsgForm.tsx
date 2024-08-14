@@ -299,7 +299,7 @@ interface UpdateKeys {
   listItems?: WhatsAppListItem[];
   removeListItem?: WhatsAppListItem;
   quickReplies?: string[];
-  dynamicVariables?: DynamicVariablesListItem[];
+  dynamicVariables?: DynamicVariablesListItem;
   removeDynamicVariable?: DynamicVariablesListItem;
 }
 
@@ -503,7 +503,14 @@ export default class SendWhatsAppMsgForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('dynamicVariables')) {
-      updates.dynamicVariables = { value: keys.dynamicVariables };
+      console.log('sjdwdwieojdji', keys.dynamicVariables);
+
+      const updatedVariables = this.state.dynamicVariables.value.map(item =>
+        item.uuid === keys.dynamicVariables.uuid
+          ? { ...item, type: keys.dynamicVariables.type, value: '' }
+          : item,
+      );
+      updates.dynamicVariables = { value: updatedVariables };
     }
 
     if (keys.hasOwnProperty('removeDynamicVariable')) {
@@ -760,13 +767,17 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ removeListItem: item });
   }
 
-  public handleDynamicVariablesUpdate(
-    options: DynamicVariablesListItem[],
-    submitting = false,
-  ): boolean {
-    console.log('alo');
-    // return false;
-    return this.handleUpdate({ dynamicVariables: options }, submitting);
+  public handleDynamicVariablesUpdate(option: any, uuid: string): boolean {
+    const teste = {
+      uuid,
+      type: option.value,
+      value: 'aaa',
+    };
+    const variable = this.state.dynamicVariables.value.find(
+      item => item.uuid === uuid,
+    );
+    console.log('aquiiii', variable);
+    return this.handleUpdate({ dynamicVariables: teste });
   }
 
   public handleDynamicVariablesRemoval(

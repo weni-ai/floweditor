@@ -21,15 +21,11 @@ import {
   DynamicVariablesListItem,
   MAX_LIST_ITEMS_COUNT,
   WHATSAPP_DYNAMIC_VARIABLE_TYPE_OPTIONS,
-  WhatsAppDynamicVariableType,
 } from './SendWhatsAppMsgForm';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import update from 'immutability-helper';
 import { FormEntry, ValidationFailure } from '../../../../../store/nodeEditor';
-import SelectElement, {
-  UnnnicSelectOption,
-} from 'components/form/select/SelectElement';
-import TembaSelect from 'temba/TembaSelect';
+import SelectElement from 'components/form/select/SelectElement';
 
 const UnnnicButton = applyVueInReact(unnnicButton, {
   vue: {
@@ -43,22 +39,14 @@ const UnnnicButton = applyVueInReact(unnnicButton, {
   },
 });
 
-const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
-  vue: {
-    componentWrap: 'div',
-    slotWrap: 'div',
-    componentWrapAttrs: {
-      style: {
-        all: '',
-      },
-    },
-  },
-});
-
 export interface DynamicListProps {
   options: FormEntry<DynamicVariablesListItem[]>;
-  onOptionsUpdated(options: DynamicVariablesListItem[]): boolean;
+  onOptionsUpdated(options: any, uuid: string): boolean;
   onOptionRemoval(option: DynamicVariablesListItem): boolean;
+}
+
+export interface DynamicListState {
+  selectedOption: DynamicVariablesListItem[];
 }
 
 export function hasEmptyListItem(
@@ -86,22 +74,12 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
       }
     >
       <div className={styles.list_item_wrapper}>
-        {/* <UnnnicSelectSmart
-          $model={{
-            value: [listItem.type],
-            setter: row.list.handleDynamicVariableUpdate(listItem.type),
-          }}
-          options={WHATSAPP_DYNAMIC_VARIABLE_TYPE_OPTIONS}
-          size="sm"
-          orderedByIndex={true}
-          placeholder="aaaaa"
-        /> */}
-
         <SelectElement
           options={WHATSAPP_DYNAMIC_VARIABLE_TYPE_OPTIONS}
           name="aaaa"
-          entry={{ value: listItem }}
+          entry={{ value: listItem.value }}
           onChange={row.list.teste}
+          placeholder="aaaa"
         />
         <UnnnicButton
           className={styles.list_item_remove}
@@ -121,10 +99,13 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
 });
 
 export default class DynamicVariables extends React.Component<
-  DynamicListProps
+  DynamicListProps,
+  DynamicListState
 > {
   constructor(props: DynamicListProps) {
     super(props);
+
+    this.setState({ selectedOption: this.props.options.value });
 
     bindCallbacks(this, {
       include: [/^on/, /^handle/],
@@ -133,12 +114,18 @@ export default class DynamicVariables extends React.Component<
 
   public handleDynamicVariableUpdate(value: any): boolean {
     console.log('aquiii', value);
-    this.props.onOptionsUpdated(value);
+    // this.props.onOptionsUpdated(value);
     return false;
   }
 
-  public teste(value: any) {
+  private teste(value: any) {
+    const alo = {
+      uuid: '',
+      type: value.value,
+      description: value.name,
+    };
     console.log('❤️', value);
+    this.props.onOptionsUpdated(alo, '');
   }
 
   private handleListItemDescriptionUpdate(
@@ -155,7 +142,7 @@ export default class DynamicVariables extends React.Component<
       },
     }) as DynamicVariablesListItem[];
 
-    return this.props.onOptionsUpdated(listItems);
+    return this.props.onOptionsUpdated(listItems, '');
   }
 
   private handleListItemRemoval(item: DynamicVariablesListItem): void {
@@ -170,7 +157,6 @@ export default class DynamicVariables extends React.Component<
     this.props.onOptionRemoval(item);
   }
 
-  /* istanbul ignore next */
   private handleListItemsSortEnd({ oldIndex, newIndex }: SortEnd): void {
     const options = this.props.options.value;
     const listItems = arrayMove(
@@ -179,7 +165,7 @@ export default class DynamicVariables extends React.Component<
       newIndex === options.length - 1 ? newIndex - 1 : newIndex,
     ) as DynamicVariablesListItem[];
 
-    this.props.onOptionsUpdated(listItems);
+    this.props.onOptionsUpdated(listItems, ' ');
   }
 
   private sortableListOptions = SortableContainer(
@@ -231,32 +217,28 @@ export default class DynamicVariables extends React.Component<
       this.props.options.validationFailures &&
       this.props.options.validationFailures.length > 0;
 
+    const list = this.props.options.value;
+
     return (
       <div className={styles.list_wrapper}>
         <div>
           <span className={styles.options_label}>
             {i18n.t('forms.options_label', 'Add up to 10 options')}
           </span>
-          {JSON.stringify(this.props.options.value)}
-          <this.sortableListOptions
-            items={this.props.options.value}
-            onSortEnd={this.handleListItemsSortEnd}
-            helperClass={styles.item_z_index}
-            shouldCancelStart={
-              /* istanbul ignore next */
-              (e: React.MouseEvent<HTMLDivElement>) => {
-                if (e.target.constructor.name === 'SVGSVGElement') {
-                  return !(e.target as any).dataset.draggable;
-                }
-
-                if (!(e.target instanceof HTMLElement)) {
-                  return true;
-                }
-                return !e.target.dataset.draggable;
-              }
-            }
-            lockAxis="y"
-          />
+          {list.map(item => (
+            <>
+              <SelectElement
+                options={WHATSAPP_DYNAMIC_VARIABLE_TYPE_OPTIONS}
+                name="aaaa"
+                entry={{
+                  value: WHATSAPP_DYNAMIC_VARIABLE_TYPE_OPTIONS.find(
+                    type => type.value === item.type,
+                  ),
+                }}
+                onChange={e => this.props.onOptionsUpdated(e, item.uuid)}
+              />
+            </>
+          ))}
 
           {hasError ? (
             <div data-testid="Error message" className={styles.error_message}>
