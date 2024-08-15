@@ -1,3 +1,9 @@
+3.0.0
+----------
+- Feat: Node 18
+- Feat: Unnnic Vue 3
+- Feat: Vite instead of CRA
+
 2.17.1
 ----------
 - Fix: Allow the use of expressions in the search URL of the native product search card.
