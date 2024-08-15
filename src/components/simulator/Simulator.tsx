@@ -24,12 +24,12 @@ import { DispatchWithState, MergeEditorState } from 'store/thunks';
 import { createUUID } from 'utils';
 import { PopTabType } from 'config/interfaces';
 import i18n from 'config/i18n';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon, {
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -777,7 +777,12 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           this.sendAttachment('audio/mp3:' + AUDIO_A);
         }}
       >
-        <div className={styles.audio_icon + ' fe-mic'} />
+        <UnnnicIcon
+          className={styles.audio_icon}
+          icon="microphone"
+          size="md"
+          scheme="neutral-cloudy"
+        />
         <div className={styles.audio_message}>Upload Audio</div>
       </div>
     );
@@ -912,7 +917,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     const style: any = {};
 
     if (this.state.drawerOpen) {
-      style.bottom = 72;
+      style.bottom = 65;
 
       // are we being forced open
       if (this.state.waitingForHint) {
@@ -968,15 +973,18 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   ): JSX.Element {
     if (type === 'unnnic') {
       return (
-        <UnnnicIcon
-          className={styles.icon}
-          icon={icon}
-          size="md"
-          scheme="neutral-cloudy"
+        <div
           onClick={() => {
             this.showAttachmentDrawer(drawerType);
           }}
-        />
+        >
+          <UnnnicIcon
+            className={styles.icon}
+            icon={icon}
+            size="md"
+            scheme="neutral-cloudy"
+          />
+        </div>
       );
     } else {
       return (
@@ -1012,12 +1020,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           'unnnic',
         )}
         {this.getAttachmentButton('microphone', DrawerType.audio, 'unnnic')}
-        {this.getAttachmentButton(
-          'fe-map-marker',
-          DrawerType.location,
-          'default',
-        )}
-        <div className="fe-x ml-auto" onClick={this.handleHideAttachments} />
+        {this.getAttachmentButton('location_on', DrawerType.location, 'unnnic')}
+        <div className="ml-auto" onClick={this.handleHideAttachments}>
+          <UnnnicIcon icon="close" size="md" scheme="neutral-cloudy" />
+        </div>
       </div>
     );
   }
@@ -1067,7 +1073,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   }
 
   private preloadBgImage() {
-    var img = new Image();
+    const img = new Image();
     img.src =
       'https://user-images.githubusercontent.com/30026625/242899357-3b7dd272-b2bf-4ac4-a4e1-aba24556a9f2.png';
   }
@@ -1124,19 +1130,17 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
 
             <div className={styles.screen}>
               <div className={styles.header + ' ' + simStyle}>
-                <div className={styles.reset}>
+                <div className={styles.reset} onClick={this.onReset}>
                   <UnnnicIcon
                     icon="button-refresh-arrow-1"
                     size="md"
                     scheme="neutral-snow"
-                    onClick={this.onReset}
                   />
                 </div>
 
-                <div
-                  className={styles.close + ' fe-x'}
-                  onClick={this.onToggle}
-                />
+                <div className={styles.close} onClick={this.onToggle}>
+                  <UnnnicIcon icon="close" size="md" scheme="neutral-snow" />
+                </div>
               </div>
               <div
                 className={styles.messages + ' ' + simStyle}
@@ -1167,17 +1171,19 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                         )
                   }
                 />
-                <div className={styles.show_attachments_button}>
+                <div
+                  className={styles.show_attachments_button}
+                  onClick={() => {
+                    this.setState({
+                      attachmentOptionsVisible: true,
+                      drawerOpen: false,
+                    });
+                  }}
+                >
                   <UnnnicIcon
                     icon="attachment"
                     size="sm"
                     scheme="neutral-cloudy"
-                    onClick={() => {
-                      this.setState({
-                        attachmentOptionsVisible: true,
-                        drawerOpen: false,
-                      });
-                    }}
                   />
                 </div>
               </div>
@@ -1194,7 +1200,11 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                         });
                       }}
                     >
-                      <span className="fe-at-sign"></span>
+                      <UnnnicIcon
+                        icon="alternate_email"
+                        size="sm"
+                        scheme="neutral-snow"
+                      />
                     </div>
                   </div>
                 ) : (
@@ -1207,7 +1217,11 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                         });
                       }}
                     >
-                      <span className="fe-x"></span>
+                      <UnnnicIcon
+                        icon="close"
+                        size="sm"
+                        scheme="neutral-snow"
+                      />
                     </div>
                   </div>
                 )}

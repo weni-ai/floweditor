@@ -1,63 +1,61 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ParamElement ChatGPT params boolean render should render param 1`] = `
+exports[`ParamElement > ChatGPT params > boolean > render > should render param 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_ec0929_8d991a"
     >
       <div
-        class="param"
+        class="_param_ec0929"
         data-draggable="false"
       >
         <div
           data-use-vue-component-wrap=""
+          data-v-app=""
           style="all: unset;"
         >
           <div
             class="unnnic-switch"
-            data-passed-props="[object Object]"
             data-testid="switch"
-            data-v-facf064c=""
+            data-v-0b325129=""
           >
             <!---->
-            <span
-              class="unnnic-icon unnnic-icon__size--sm unnnic-icon__line-height--sm unnnic-icon-scheme--neutral-soft unnnic-switch__icon"
-              data-v-4ce83152=""
-              data-v-facf064c=""
+            <svg
+              class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon__line-height--sm unnnic-icon-scheme--neutral-soft unnnic-switch__icon"
+              data-v-0b325129=""
+              data-v-930380cc=""
+              data-v-fbb3af00=""
+              disabled="false"
+              height="40"
+              id="default"
+              viewBox="0 0 80 40"
+              width="80"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                id="default"
-                viewBox="0 0 80 40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <style
-                  type="text/css"
-                >
-                   rect { transition: fill .2s ease; } 
-                </style>
-                <rect
-                  class="primary"
-                  height="35.8"
-                  rx="17.9"
-                  width="71.6"
-                  x="4.20013"
-                  y="2.10046"
-                />
-                <circle
-                  cx="22.5"
-                  cy="20.0005"
-                  fill="white"
-                  id="default-circle"
-                  r="12.5"
-                />
-              </svg>
-            </span>
+              <rect
+                class="primary"
+                data-v-fbb3af00=""
+                height="35.8"
+                rx="17.9"
+                width="71.6"
+                x="4.20013"
+                y="2.10046"
+              />
+              <circle
+                cx="22.5"
+                cy="20.0005"
+                data-v-fbb3af00=""
+                fill="white"
+                id="default-circle"
+                r="12.5"
+              />
+            </svg>
             <div
               class="unnnic-switch__label unnnic-switch__label__right unnnic-switch__label__small"
-              data-v-facf064c=""
+              data-v-0b325129=""
             >
-               Send complete messages history as context 
+              Send complete messages history as context
             </div>
           </div>
         </div>
@@ -67,55 +65,53 @@ exports[`ParamElement ChatGPT params boolean render should render param 1`] = `
 </body>
 `;
 
-exports[`ParamElement ChatGPT params expressionInput render should render param 1`] = `
+exports[`ParamElement > ChatGPT params > expressionInput > render > should render param 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_ec0929_8d991a"
     >
       <div
-        class="param"
+        class="_param_ec0929"
         data-draggable="false"
       >
         <div
-          class="expression_input"
+          class="_expression_input_ec0929"
         >
           <span>
             User Input
           </span>
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="User Input"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
                         placeholder=""
-                        size="12"
                         type="text"
-                        v-bind="[object Object]"
+                        value="@input.value"
                       />
                       <!---->
                       <!---->
@@ -125,7 +121,7 @@ exports[`ParamElement ChatGPT params expressionInput render should render param 
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_User Input"
                 id=""
                 style="margin-top: 0px; width: 0px; display: none;"
@@ -139,68 +135,68 @@ exports[`ParamElement ChatGPT params expressionInput render should render param 
 </body>
 `;
 
-exports[`ParamElement ChatGPT params multiselect render should render param 1`] = `
+exports[`ParamElement > ChatGPT params > multiselect > render > should render param 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_ec0929_8d991a"
     >
       <div
-        class="param"
+        class="_param_ec0929"
         data-draggable="false"
       >
         <div
-          class="choice"
+          class="_choice_ec0929"
         >
           <span>
             Aditional Prompts
           </span>
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_aditional_prompts"
             id="temba_select_aditional_prompts"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_aditional_prompts"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_aditional_prompts"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_aditional_prompts"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Select an option"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_aditional_prompts"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_aditional_prompts"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Select an option"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -209,153 +205,153 @@ exports[`ParamElement ChatGPT params multiselect render should render param 1`] 
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_aditional_prompts"
               id="temba_select_options_aditional_prompts"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <div
-                  class="multi_wrapper"
+                  class="_multi_wrapper_08dd12"
                 >
                   <div
                     data-use-vue-component-wrap=""
+                    data-v-app=""
                     style="all: unset;"
                   >
                     <div
-                      class="unnnic-checkbox-wrapper checkbox"
-                      data-passed-props="[object Object]"
-                      data-v-25f7146e=""
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                      value="false"
                     >
-                      <span
-                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
-                        data-v-25f7146e=""
-                        data-v-4ce83152=""
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          viewBox="0 0 40 40"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <rect
-                            class="primary-stroke"
-                            height="29"
-                            rx="3.5"
-                            stroke="#3B414D"
-                            width="29"
-                            x="5.5"
-                            y="5.50049"
-                          />
-                        </svg>
-                      </span>
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Aditional Prompt 1 content
                   </span>
                 </div>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <div
-                  class="multi_wrapper"
+                  class="_multi_wrapper_08dd12"
                 >
                   <div
                     data-use-vue-component-wrap=""
+                    data-v-app=""
                     style="all: unset;"
                   >
                     <div
-                      class="unnnic-checkbox-wrapper checkbox"
-                      data-passed-props="[object Object]"
-                      data-v-25f7146e=""
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                      value="false"
                     >
-                      <span
-                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
-                        data-v-25f7146e=""
-                        data-v-4ce83152=""
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          viewBox="0 0 40 40"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <rect
-                            class="primary-stroke"
-                            height="29"
-                            rx="3.5"
-                            stroke="#3B414D"
-                            width="29"
-                            x="5.5"
-                            y="5.50049"
-                          />
-                        </svg>
-                      </span>
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Aditional Prompt 2 content
                   </span>
                 </div>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <div
-                  class="multi_wrapper"
+                  class="_multi_wrapper_08dd12"
                 >
                   <div
                     data-use-vue-component-wrap=""
+                    data-v-app=""
                     style="all: unset;"
                   >
                     <div
-                      class="unnnic-checkbox-wrapper checkbox"
-                      data-passed-props="[object Object]"
-                      data-v-25f7146e=""
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                      value="false"
                     >
-                      <span
-                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
-                        data-v-25f7146e=""
-                        data-v-4ce83152=""
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          viewBox="0 0 40 40"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <rect
-                            class="primary-stroke"
-                            height="29"
-                            rx="3.5"
-                            stroke="#3B414D"
-                            width="29"
-                            x="5.5"
-                            y="5.50049"
-                          />
-                        </svg>
-                      </span>
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Aditional Prompt 3 content
                   </span>
@@ -363,10 +359,10 @@ exports[`ParamElement ChatGPT params multiselect render should render param 1`] 
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_aditional_prompts"
               id="temba_select_expressions_aditional_prompts"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
@@ -376,68 +372,68 @@ exports[`ParamElement ChatGPT params multiselect render should render param 1`] 
 </body>
 `;
 
-exports[`ParamElement ChatGPT params multiselect update handles data change 1`] = `
+exports[`ParamElement > ChatGPT params > multiselect > update > handles data change 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_ec0929_8d991a"
     >
       <div
-        class="param"
+        class="_param_ec0929"
         data-draggable="false"
       >
         <div
-          class="choice"
+          class="_choice_ec0929"
         >
           <span>
             Aditional Prompts
           </span>
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_aditional_prompts"
             id="temba_select_aditional_prompts"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_aditional_prompts"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_aditional_prompts"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_aditional_prompts"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Select an option"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_aditional_prompts"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_aditional_prompts"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Select an option"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -446,153 +442,153 @@ exports[`ParamElement ChatGPT params multiselect update handles data change 1`] 
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_aditional_prompts"
               id="temba_select_options_aditional_prompts"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <div
-                  class="multi_wrapper"
+                  class="_multi_wrapper_08dd12"
                 >
                   <div
                     data-use-vue-component-wrap=""
+                    data-v-app=""
                     style="all: unset;"
                   >
                     <div
-                      class="unnnic-checkbox-wrapper checkbox"
-                      data-passed-props="[object Object]"
-                      data-v-25f7146e=""
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                      value="false"
                     >
-                      <span
-                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
-                        data-v-25f7146e=""
-                        data-v-4ce83152=""
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          viewBox="0 0 40 40"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <rect
-                            class="primary-stroke"
-                            height="29"
-                            rx="3.5"
-                            stroke="#3B414D"
-                            width="29"
-                            x="5.5"
-                            y="5.50049"
-                          />
-                        </svg>
-                      </span>
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Aditional Prompt 1 content
                   </span>
                 </div>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <div
-                  class="multi_wrapper"
+                  class="_multi_wrapper_08dd12"
                 >
                   <div
                     data-use-vue-component-wrap=""
+                    data-v-app=""
                     style="all: unset;"
                   >
                     <div
-                      class="unnnic-checkbox-wrapper checkbox"
-                      data-passed-props="[object Object]"
-                      data-v-25f7146e=""
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                      value="false"
                     >
-                      <span
-                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
-                        data-v-25f7146e=""
-                        data-v-4ce83152=""
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          viewBox="0 0 40 40"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <rect
-                            class="primary-stroke"
-                            height="29"
-                            rx="3.5"
-                            stroke="#3B414D"
-                            width="29"
-                            x="5.5"
-                            y="5.50049"
-                          />
-                        </svg>
-                      </span>
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Aditional Prompt 2 content
                   </span>
                 </div>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <div
-                  class="multi_wrapper"
+                  class="_multi_wrapper_08dd12"
                 >
                   <div
                     data-use-vue-component-wrap=""
+                    data-v-app=""
                     style="all: unset;"
                   >
                     <div
-                      class="unnnic-checkbox-wrapper checkbox"
-                      data-passed-props="[object Object]"
-                      data-v-25f7146e=""
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                      value="false"
                     >
-                      <span
-                        class="unnnic-checkbox unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean"
-                        data-v-25f7146e=""
-                        data-v-4ce83152=""
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          viewBox="0 0 40 40"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <rect
-                            class="primary-stroke"
-                            height="29"
-                            rx="3.5"
-                            stroke="#3B414D"
-                            width="29"
-                            x="5.5"
-                            y="5.50049"
-                          />
-                        </svg>
-                      </span>
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
                       <!---->
                     </div>
                   </div>
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Aditional Prompt 3 content
                   </span>
@@ -600,10 +596,10 @@ exports[`ParamElement ChatGPT params multiselect update handles data change 1`] 
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_aditional_prompts"
               id="temba_select_expressions_aditional_prompts"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
@@ -613,18 +609,18 @@ exports[`ParamElement ChatGPT params multiselect update handles data change 1`] 
 </body>
 `;
 
-exports[`ParamElement Omie params render should render param 1`] = `
+exports[`ParamElement > Omie params > render > should render param 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_ec0929_8d991a"
     >
       <div
-        class="param"
+        class="_param_ec0929"
         data-draggable="true"
       >
         <div
-          class="moveIcon"
+          class="_moveIcon_ec0929"
         >
           <svg
             data-draggable="true"
@@ -644,55 +640,55 @@ exports[`ParamElement Omie params render should render param 1`] = `
           </svg>
         </div>
         <div
-          class="choice "
+          class="_choice_ec0929 "
           style="flex: 1;"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_service_call_param"
             id="temba_select_service_call_param"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_service_call_param"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_service_call_param"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_service_call_param"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Identificação"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_service_call_param"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_service_call_param"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Identificação"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -701,115 +697,115 @@ exports[`ParamElement Omie params render should render param 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param"
               id="temba_select_options_service_call_param"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active selected"
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Identificação
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Endereço
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Telefone e Email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Observações
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param"
               id="temba_select_expressions_service_call_param"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="choice "
+          class="_choice_ec0929 "
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_service_call_param_filter"
             id="temba_select_service_call_param_filter"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_service_call_param_filter"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_service_call_param_filter"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_service_call_param_filter"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Código do Contato"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_service_call_param_filter"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_service_call_param_filter"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Código do Contato"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -818,110 +814,110 @@ exports[`ParamElement Omie params render should render param 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param_filter"
               id="temba_select_options_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active selected"
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código do Contato
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código do Contato
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código de Integração
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Nome do contato
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Sobrenome do contato
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Cargo
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Data de Nascimento
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código do Vendedor
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código da Conta
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param_filter"
               id="temba_select_expressions_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
@@ -929,41 +925,39 @@ exports[`ParamElement Omie params render should render param 1`] = `
           </div>
         </div>
         <div
-          class="data"
+          class="_data_ec0929"
         >
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="Service Call Param Data"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
                         placeholder=""
-                        size="0"
                         type="text"
-                        v-bind="[object Object]"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -973,7 +967,7 @@ exports[`ParamElement Omie params render should render param 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Service Call Param Data"
                 id=""
                 style="margin-top: 0px; width: 0px; display: none;"
@@ -984,30 +978,29 @@ exports[`ParamElement Omie params render should render param 1`] = `
         <div
           data-draggable="true"
           data-use-vue-component-wrap=""
+          data-v-app=""
         >
-          <span
-            class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-            data-passed-props="[object Object]"
+          <svg
+            class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-4ce83152=""
+            data-v-930380cc=""
+            fill="none"
+            height="40"
+            viewBox="0 0 40 40"
+            width="40"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              viewBox="0 0 40 40"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="primary"
-                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                fill="#3B414D"
-              />
-              <path
-                class="primary"
-                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                fill="#3B414D"
-              />
-            </svg>
-          </span>
+            <path
+              class="primary"
+              d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+              fill="#3B414D"
+            />
+            <path
+              class="primary"
+              d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+              fill="#3B414D"
+            />
+          </svg>
         </div>
       </div>
     </div>
@@ -1015,18 +1008,18 @@ exports[`ParamElement Omie params render should render param 1`] = `
 </body>
 `;
 
-exports[`ParamElement Omie params update handles data change 1`] = `
+exports[`ParamElement > Omie params > update > handles data change 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_ec0929_8d991a"
     >
       <div
-        class="param"
+        class="_param_ec0929"
         data-draggable="true"
       >
         <div
-          class="moveIcon"
+          class="_moveIcon_ec0929"
         >
           <svg
             data-draggable="true"
@@ -1046,55 +1039,55 @@ exports[`ParamElement Omie params update handles data change 1`] = `
           </svg>
         </div>
         <div
-          class="choice "
+          class="_choice_ec0929 "
           style="flex: 1;"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_service_call_param"
             id="temba_select_service_call_param"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_service_call_param"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_service_call_param"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_service_call_param"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Identificação"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_service_call_param"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_service_call_param"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Identificação"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1103,115 +1096,115 @@ exports[`ParamElement Omie params update handles data change 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param"
               id="temba_select_options_service_call_param"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active selected"
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Identificação
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Endereço
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Telefone e Email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Observações
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param"
               id="temba_select_expressions_service_call_param"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="choice "
+          class="_choice_ec0929 "
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_service_call_param_filter"
             id="temba_select_service_call_param_filter"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_service_call_param_filter"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_service_call_param_filter"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_service_call_param_filter"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Código do Contato"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_service_call_param_filter"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_service_call_param_filter"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Código do Contato"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1220,110 +1213,110 @@ exports[`ParamElement Omie params update handles data change 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param_filter"
               id="temba_select_options_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active selected"
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código do Contato
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código do Contato
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código de Integração
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Nome do contato
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Sobrenome do contato
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Cargo
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Data de Nascimento
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código do Vendedor
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código da Conta
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param_filter"
               id="temba_select_expressions_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
@@ -1331,41 +1324,39 @@ exports[`ParamElement Omie params update handles data change 1`] = `
           </div>
         </div>
         <div
-          class="data"
+          class="_data_ec0929"
         >
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="Service Call Param Data"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
                         placeholder=""
-                        size="8"
                         type="text"
-                        v-bind="[object Object]"
+                        value="new data"
                       />
                       <!---->
                       <!---->
@@ -1375,7 +1366,7 @@ exports[`ParamElement Omie params update handles data change 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Service Call Param Data"
                 id=""
                 style="margin-top: 0px; width: -24px; display: none;"
@@ -1386,30 +1377,29 @@ exports[`ParamElement Omie params update handles data change 1`] = `
         <div
           data-draggable="true"
           data-use-vue-component-wrap=""
+          data-v-app=""
         >
-          <span
-            class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-            data-passed-props="[object Object]"
+          <svg
+            class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-4ce83152=""
+            data-v-930380cc=""
+            fill="none"
+            height="40"
+            viewBox="0 0 40 40"
+            width="40"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              viewBox="0 0 40 40"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="primary"
-                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                fill="#3B414D"
-              />
-              <path
-                class="primary"
-                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                fill="#3B414D"
-              />
-            </svg>
-          </span>
+            <path
+              class="primary"
+              d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+              fill="#3B414D"
+            />
+            <path
+              class="primary"
+              d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+              fill="#3B414D"
+            />
+          </svg>
         </div>
       </div>
     </div>
@@ -1417,18 +1407,18 @@ exports[`ParamElement Omie params update handles data change 1`] = `
 </body>
 `;
 
-exports[`ParamElement Omie params update handles filter change 1`] = `
+exports[`ParamElement > Omie params > update > handles filter change 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_ec0929_8d991a"
     >
       <div
-        class="param"
+        class="_param_ec0929"
         data-draggable="true"
       >
         <div
-          class="moveIcon"
+          class="_moveIcon_ec0929"
         >
           <svg
             data-draggable="true"
@@ -1448,55 +1438,55 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
           </svg>
         </div>
         <div
-          class="choice "
+          class="_choice_ec0929 "
           style="flex: 1;"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_service_call_param"
             id="temba_select_service_call_param"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_service_call_param"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_service_call_param"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_service_call_param"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Identificação"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_service_call_param"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_service_call_param"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Identificação"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1505,60 +1495,60 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param"
               id="temba_select_options_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active selected"
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Identificação
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Endereço
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Telefone e Email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Observações
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param"
               id="temba_select_expressions_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
@@ -1566,54 +1556,54 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
           </div>
         </div>
         <div
-          class="choice "
+          class="_choice_ec0929 "
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_service_call_param_filter"
             id="temba_select_service_call_param_filter"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_service_call_param_filter"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_service_call_param_filter"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_service_call_param_filter"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Código do Contato"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_service_call_param_filter"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_service_call_param_filter"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Código do Contato"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1622,110 +1612,110 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param_filter"
               id="temba_select_options_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active selected"
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código da Conta
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código do Contato
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código de Integração
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Nome do contato
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Sobrenome do contato
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Cargo
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Data de Nascimento
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código do Vendedor
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Código da Conta
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param_filter"
               id="temba_select_expressions_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
@@ -1733,41 +1723,39 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
           </div>
         </div>
         <div
-          class="data"
+          class="_data_ec0929"
         >
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="Service Call Param Data"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
                         placeholder=""
-                        size="0"
                         type="text"
-                        v-bind="[object Object]"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -1777,7 +1765,7 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Service Call Param Data"
                 id=""
                 style="margin-top: 0px; width: -24px; display: none;"
@@ -1788,30 +1776,29 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
         <div
           data-draggable="true"
           data-use-vue-component-wrap=""
+          data-v-app=""
         >
-          <span
-            class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-            data-passed-props="[object Object]"
+          <svg
+            class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-4ce83152=""
+            data-v-930380cc=""
+            fill="none"
+            height="40"
+            viewBox="0 0 40 40"
+            width="40"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              viewBox="0 0 40 40"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="primary"
-                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                fill="#3B414D"
-              />
-              <path
-                class="primary"
-                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                fill="#3B414D"
-              />
-            </svg>
-          </span>
+            <path
+              class="primary"
+              d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+              fill="#3B414D"
+            />
+            <path
+              class="primary"
+              d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+              fill="#3B414D"
+            />
+          </svg>
         </div>
       </div>
     </div>
@@ -1819,18 +1806,18 @@ exports[`ParamElement Omie params update handles filter change 1`] = `
 </body>
 `;
 
-exports[`ParamElement Omie params update handles filter change from correct param after param change 1`] = `
+exports[`ParamElement > Omie params > update > handles filter change from correct param after param change 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_ec0929_8d991a"
     >
       <div
-        class="param"
+        class="_param_ec0929"
         data-draggable="true"
       >
         <div
-          class="moveIcon"
+          class="_moveIcon_ec0929"
         >
           <svg
             data-draggable="true"
@@ -1850,55 +1837,55 @@ exports[`ParamElement Omie params update handles filter change from correct para
           </svg>
         </div>
         <div
-          class="choice "
+          class="_choice_ec0929 "
           style="flex: 1;"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_service_call_param"
             id="temba_select_service_call_param"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_service_call_param"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_service_call_param"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_service_call_param"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Telefone e Email"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_service_call_param"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_service_call_param"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Telefone e Email"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1907,60 +1894,60 @@ exports[`ParamElement Omie params update handles filter change from correct para
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param"
               id="temba_select_options_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Identificação
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Endereço
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Telefone e Email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Observações
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param"
               id="temba_select_expressions_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
@@ -1968,54 +1955,54 @@ exports[`ParamElement Omie params update handles filter change from correct para
           </div>
         </div>
         <div
-          class="choice "
+          class="_choice_ec0929 "
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_service_call_param_filter"
             id="temba_select_service_call_param_filter"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_service_call_param_filter"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_service_call_param_filter"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_service_call_param_filter"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="DDD do Celular 2"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_service_call_param_filter"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_service_call_param_filter"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="DDD do Celular 2"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -2024,130 +2011,130 @@ exports[`ParamElement Omie params update handles filter change from correct para
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param_filter"
               id="temba_select_options_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active selected"
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   DDD do Celular 2
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   DDD do celular 1
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Número do Celular 1
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   DDD do Celular 2
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Número do Celular 2
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   DDD do Telefone
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Número do Telefone
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   DDD do Fax
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Número do Fax
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="9"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   E-mail do contato
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="10"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   WebSite
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param_filter"
               id="temba_select_expressions_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
@@ -2155,41 +2142,39 @@ exports[`ParamElement Omie params update handles filter change from correct para
           </div>
         </div>
         <div
-          class="data"
+          class="_data_ec0929"
         >
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="Service Call Param Data"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
                         placeholder=""
-                        size="8"
                         type="text"
-                        v-bind="[object Object]"
+                        value="new data"
                       />
                       <!---->
                       <!---->
@@ -2199,7 +2184,7 @@ exports[`ParamElement Omie params update handles filter change from correct para
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Service Call Param Data"
                 id=""
                 style="margin-top: 0px; width: -24px; display: none;"
@@ -2210,30 +2195,29 @@ exports[`ParamElement Omie params update handles filter change from correct para
         <div
           data-draggable="true"
           data-use-vue-component-wrap=""
+          data-v-app=""
         >
-          <span
-            class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-            data-passed-props="[object Object]"
+          <svg
+            class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-4ce83152=""
+            data-v-930380cc=""
+            fill="none"
+            height="40"
+            viewBox="0 0 40 40"
+            width="40"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              viewBox="0 0 40 40"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="primary"
-                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                fill="#3B414D"
-              />
-              <path
-                class="primary"
-                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                fill="#3B414D"
-              />
-            </svg>
-          </span>
+            <path
+              class="primary"
+              d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+              fill="#3B414D"
+            />
+            <path
+              class="primary"
+              d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+              fill="#3B414D"
+            />
+          </svg>
         </div>
       </div>
     </div>
@@ -2241,18 +2225,18 @@ exports[`ParamElement Omie params update handles filter change from correct para
 </body>
 `;
 
-exports[`ParamElement Omie params update handles param change 1`] = `
+exports[`ParamElement > Omie params > update > handles param change 1`] = `
 <body>
   <div>
     <div
-      class="ele group"
+      class="__ele_8d991a_8d991a __group_ec0929_8d991a"
     >
       <div
-        class="param"
+        class="_param_ec0929"
         data-draggable="true"
       >
         <div
-          class="moveIcon"
+          class="_moveIcon_ec0929"
         >
           <svg
             data-draggable="true"
@@ -2272,55 +2256,55 @@ exports[`ParamElement Omie params update handles param change 1`] = `
           </svg>
         </div>
         <div
-          class="choice "
+          class="_choice_ec0929 "
           style="flex: 1;"
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_service_call_param"
             id="temba_select_service_call_param"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_service_call_param"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_service_call_param"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_service_call_param"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Identificação"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_service_call_param"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_service_call_param"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Identificação"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -2329,60 +2313,60 @@ exports[`ParamElement Omie params update handles param change 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param"
               id="temba_select_options_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Identificação
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Endereço
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Telefone e Email
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Observações
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param"
               id="temba_select_expressions_service_call_param"
               style="margin-top: 0px; width: -24px; display: none;"
@@ -2390,54 +2374,54 @@ exports[`ParamElement Omie params update handles param change 1`] = `
           </div>
         </div>
         <div
-          class="choice "
+          class="_choice_ec0929 "
         >
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_service_call_param_filter"
             id="temba_select_service_call_param_filter"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_service_call_param_filter"
-                data-v-48c0c241=""
-                readonly="readonly"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_service_call_param_filter"
+                  data-v-acea6376=""
+                  readonly=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_service_call_param_filter"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Código do Contato"
-                    readonly="readonly"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_service_call_param_filter"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_service_call_param_filter"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Código do Contato"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -2446,130 +2430,130 @@ exports[`ParamElement Omie params update handles param change 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_service_call_param_filter"
               id="temba_select_options_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active selected"
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   DDD do celular 1
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   DDD do celular 1
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Número do Celular 1
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   DDD do Celular 2
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="4"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Número do Celular 2
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="5"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   DDD do Telefone
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="6"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Número do Telefone
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="7"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   DDD do Fax
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="8"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Número do Fax
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="9"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   E-mail do contato
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="10"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   WebSite
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_service_call_param_filter"
               id="temba_select_expressions_service_call_param_filter"
               style="margin-top: 0px; width: -24px; display: none;"
@@ -2577,41 +2561,39 @@ exports[`ParamElement Omie params update handles param change 1`] = `
           </div>
         </div>
         <div
-          class="data"
+          class="_data_ec0929"
         >
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="Service Call Param Data"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
                         placeholder=""
-                        size="0"
                         type="text"
-                        v-bind="[object Object]"
+                        value=""
                       />
                       <!---->
                       <!---->
@@ -2621,7 +2603,7 @@ exports[`ParamElement Omie params update handles param change 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Service Call Param Data"
                 id=""
                 style="margin-top: 0px; width: -24px; display: none;"
@@ -2632,30 +2614,29 @@ exports[`ParamElement Omie params update handles param change 1`] = `
         <div
           data-draggable="true"
           data-use-vue-component-wrap=""
+          data-v-app=""
         >
-          <span
-            class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy remove_icon"
-            data-passed-props="[object Object]"
+          <svg
+            class="unnnic-icon unnnic-icon__size--sm unnnic--clickable unnnic-icon-scheme--neutral-cloudy _remove_icon_ec0929"
             data-testid="remove-param-477ac8b4-25e2-483a-8686-2d1332c4da1c"
-            data-v-4ce83152=""
+            data-v-930380cc=""
+            fill="none"
+            height="40"
+            viewBox="0 0 40 40"
+            width="40"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              viewBox="0 0 40 40"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="primary"
-                d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
-                fill="#3B414D"
-              />
-              <path
-                class="primary"
-                d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
-                fill="#3B414D"
-              />
-            </svg>
-          </span>
+            <path
+              class="primary"
+              d="M20 35.0005C11.7287 35.0005 5 28.2717 5 20.0005C5 11.7292 11.7287 5.00049 20 5.00049C28.2712 5.00049 35 11.7292 35 20.0005C35 28.2717 28.2712 35.0005 20 35.0005ZM20 6.87549C12.7625 6.87549 6.875 12.763 6.875 20.0005C6.875 27.238 12.7625 33.1255 20 33.1255C27.2375 33.1255 33.125 27.238 33.125 20.0005C33.125 12.763 27.2375 6.87549 20 6.87549Z"
+              fill="#3B414D"
+            />
+            <path
+              class="primary"
+              d="M25.625 26.563C25.375 26.563 25.1388 26.4655 24.9625 26.288L20 21.3255L15.0388 26.288C14.8625 26.4655 14.6263 26.563 14.3763 26.563C14.1263 26.563 13.89 26.4655 13.7138 26.288C13.5363 26.1105 13.4388 25.8755 13.4388 25.6255C13.4388 25.3755 13.5363 25.1392 13.7138 24.963L18.6738 20.0005L13.7113 15.038C13.5338 14.8617 13.4363 14.6255 13.4363 14.3755C13.4363 14.1255 13.5338 13.8892 13.7113 13.713C13.8875 13.5355 14.1238 13.438 14.3738 13.438C14.6238 13.438 14.86 13.5355 15.0363 13.713L19.9988 18.6755L24.96 13.713C25.1375 13.5355 25.3725 13.438 25.6225 13.438C25.8725 13.438 26.1088 13.5355 26.285 13.713C26.4625 13.8892 26.56 14.1255 26.56 14.3755C26.56 14.6255 26.4625 14.8617 26.285 15.038L21.325 20.0005L26.2875 24.963C26.465 25.1405 26.5625 25.3755 26.5625 25.6255C26.5625 25.8755 26.465 26.1117 26.2875 26.288C26.11 26.4642 25.875 26.563 25.625 26.563Z"
+              fill="#3B414D"
+            />
+          </svg>
         </div>
       </div>
     </div>

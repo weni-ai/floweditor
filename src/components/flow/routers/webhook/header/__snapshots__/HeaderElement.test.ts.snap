@@ -1,238 +1,106 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`HeaderElement instance methods handleChangeName should update state, call onChange prop: onChange 1`] = `
-Array [
-  Object {
-    "name": "Content-Type",
-    "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
-    "value": "application/json",
-  },
-  Array [],
-]
-`;
-
-exports[`HeaderElement instance methods handleChangeName should update state, call onChange prop: setState 1`] = `
-Array [
-  Object {
-    "errors": Array [],
-    "name": Object {
-      "value": "Content-Type",
-    },
-  },
-]
-`;
-
-exports[`HeaderElement instance methods handleChangeName should update state, call onChange prop: text element 1`] = `
-<FormElement
-  entry={
-    Object {
-      "value": Object {
+exports[`HeaderElement > instance methods > handleChangeName > should update state, call onChange prop > onChange 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
         "name": "Content-Type",
         "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
         "value": "application/json",
       },
-    }
-  }
-  name="Header"
->
-  <div
-    className="header"
-    data-spec="header-container"
-  >
-    <div
-      className="header_name"
-      data-spec="name-container"
-    >
-      <TextInputElement
-        entry={
-          Object {
-            "value": "Content-Type",
-          }
-        }
-        name="Ex: Accept"
-        onChange={[Function]}
-        placeholder="Ex: Accept"
-      />
-    </div>
-    <div
-      className="header_value"
-      data-spec="value-container"
-    >
-      <TextInputElement
-        autocomplete={true}
-        entry={
-          Object {
+      [],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`HeaderElement > instance methods > handleChangeName > should update state, call onChange prop > setState 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "errors": [],
+        "name": {
+          "value": "Content-Type",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`HeaderElement > instance methods > handleChangeName > should update state, call onChange prop > text element 1`] = `ShallowWrapper {}`;
+
+exports[`HeaderElement > instance methods > handleChangeValue > should update state, call onChange prop > header change 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "name": "Content-Type",
+        "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
+        "value": {
+          "name": "Content-Type",
+          "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
+          "value": "application/json",
+        },
+      },
+      [],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`HeaderElement > instance methods > handleChangeValue > should update state, call onChange prop 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "value": {
+          "value": {
+            "name": "Content-Type",
+            "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
             "value": "application/json",
-          }
-        }
-        name="Ex: application/json"
-        onChange={[Function]}
-        placeholder="Ex: application/json"
-      />
-    </div>
-    <div
-      className="remove_icon"
-    />
-  </div>
-</FormElement>
-`;
-
-exports[`HeaderElement instance methods handleChangeValue should update state, call onChange prop 1`] = `
-Array [
-  Object {
-    "value": Object {
-      "value": Object {
-        "name": "Content-Type",
-        "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
-        "value": "application/json",
+          },
+        },
       },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-  },
-]
+  ],
+}
 `;
 
-exports[`HeaderElement instance methods handleChangeValue should update state, call onChange prop 2`] = `
-<FormElement
-  entry={
-    Object {
-      "value": Object {
-        "name": "Content-Type",
-        "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
-        "value": "application/json",
-      },
-    }
-  }
-  name="Header"
->
-  <div
-    className="header"
-    data-spec="header-container"
-  >
-    <div
-      className="header_name"
-      data-spec="name-container"
-    >
-      <TextInputElement
-        entry={
-          Object {
-            "value": "Content-Type",
-          }
-        }
-        name="Ex: Accept"
-        onChange={[Function]}
-        placeholder="Ex: Accept"
-      />
-    </div>
-    <div
-      className="header_value"
-      data-spec="value-container"
-    >
-      <TextInputElement
-        autocomplete={true}
-        entry={
-          Object {
-            "value": Object {
-              "name": "Content-Type",
-              "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
-              "value": "application/json",
-            },
-          }
-        }
-        name="Ex: application/json"
-        onChange={[Function]}
-        placeholder="Ex: application/json"
-      />
-    </div>
-    <div
-      className="remove_icon"
-    />
-  </div>
-</FormElement>
-`;
+exports[`HeaderElement > instance methods > handleChangeValue > should update state, call onChange prop 2`] = `ShallowWrapper {}`;
 
-exports[`HeaderElement instance methods handleChangeValue should update state, call onChange prop: header change 1`] = `
-Array [
-  Object {
-    "name": "Content-Type",
-    "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
-    "value": Object {
-      "name": "Content-Type",
-      "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
-      "value": "application/json",
-    },
-  },
-  Array [],
-]
-`;
+exports[`HeaderElement > render > should render remove icon 1`] = `ShallowWrapper {}`;
 
-exports[`HeaderElement render should render remove icon 1`] = `
-<FormElement
-  entry={
-    Object {
-      "value": Object {
-        "name": "Content-Type",
-        "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
-        "value": "application/json",
-      },
-    }
-  }
-  name="Header"
->
-  <div
-    className="header"
-    data-spec="header-container"
-  >
-    <div
-      className="header_name"
-      data-spec="name-container"
-    >
-      <TextInputElement
-        entry={
-          Object {
-            "value": "Content-Type",
-          }
-        }
-        name="Ex: Accept"
-        onChange={[Function]}
-        placeholder="Ex: Accept"
-      />
-    </div>
-    <div
-      className="header_value"
-      data-spec="value-container"
-    >
-      <TextInputElement
-        autocomplete={true}
-        entry={
-          Object {
-            "value": "application/json",
-          }
-        }
-        name="Ex: application/json"
-        onChange={[Function]}
-        placeholder="Ex: application/json"
-      />
-    </div>
-    <div
-      className="remove_icon"
-    >
-      <ForwardRef
-        clickable={true}
-        data-spec="remove-icon"
-        icon="delete-1-1"
-        onClick={[Function]}
-        scheme="neutral-cloudy"
-        size="sm"
-      />
-    </div>
-  </div>
-</FormElement>
-`;
-
-exports[`HeaderElement render should render self, children with base props 1`] = `
-Object {
+exports[`HeaderElement > render > should render self, children with base props 1`] = `
+{
   "autocomplete": true,
-  "entry": Object {
+  "entry": {
     "value": "application/json",
   },
   "error": undefined,
@@ -242,57 +110,4 @@ Object {
 }
 `;
 
-exports[`HeaderElement render should render self, children with base props 2`] = `
-<FormElement
-  entry={
-    Object {
-      "value": Object {
-        "name": "Content-Type",
-        "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
-        "value": "application/json",
-      },
-    }
-  }
-  name="Header"
->
-  <div
-    className="header"
-    data-spec="header-container"
-  >
-    <div
-      className="header_name"
-      data-spec="name-container"
-    >
-      <TextInputElement
-        entry={
-          Object {
-            "value": "Content-Type",
-          }
-        }
-        name="Ex: Accept"
-        onChange={[Function]}
-        placeholder="Ex: Accept"
-      />
-    </div>
-    <div
-      className="header_value"
-      data-spec="value-container"
-    >
-      <TextInputElement
-        autocomplete={true}
-        entry={
-          Object {
-            "value": "application/json",
-          }
-        }
-        name="Ex: application/json"
-        onChange={[Function]}
-        placeholder="Ex: application/json"
-      />
-    </div>
-    <div
-      className="remove_icon"
-    />
-  </div>
-</FormElement>
-`;
+exports[`HeaderElement > render > should render self, children with base props 2`] = `ShallowWrapper {}`;

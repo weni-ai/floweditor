@@ -26,19 +26,19 @@ mock(utils, 'createUUID', utils.seededUUIDs());
 
 describe(SendWhatsAppMsgForm.name, () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('render', () => {
     it('should render', () => {
-      const { wrapper } = setup(true);
-      expect(wrapper).toMatchSnapshot();
+      const { instance }: { instance: SendWhatsAppMsgForm } = setup(true);
+      expect(instance.render()).toMatchSnapshot();
     });
   });
 
   describe('updates', () => {
     beforeEach(() => {
-      jest.clearAllMocks();
+      vi.clearAllMocks();
     });
 
     it('should not save if message is empty and there is no attachment', () => {
@@ -67,7 +67,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should switch message type to interactive and go back to simple if desired', () => {
@@ -98,7 +98,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should save changes with updated upload attachment', () => {
@@ -115,7 +115,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should save changes after remove attachment', () => {
@@ -135,7 +135,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should save changes with updated footer', () => {
@@ -157,7 +157,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should save changes with updated header', () => {
@@ -180,7 +180,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should save changes if header is set to media and filled, and there is no message', () => {
@@ -198,7 +198,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should save changes if header is set to media and filled, and there are no replies or list items', () => {
@@ -217,7 +217,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should not save changes if header is set to text and filled but there are no replies or list items', () => {
@@ -287,7 +287,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should save changes with updated list items after a removal', () => {
@@ -315,7 +315,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should not save changes with updated button text if no list items are provided', () => {
@@ -357,7 +357,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should not save changes with updated button url if no list items are provided', () => {
@@ -399,7 +399,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should save changes with updated quick replies', () => {
@@ -418,7 +418,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
 
     it('should save changes when interaction type is location', () => {
@@ -438,7 +438,7 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
     });
   });
 
@@ -451,7 +451,7 @@ describe(SendWhatsAppMsgForm.name, () => {
         instance: SendWhatsAppMsgForm;
         props: ActionFormProps | Partial<ActionFormProps>;
       } = setup(true, {
-        $merge: { onClose: jest.fn(), updateAction: jest.fn() },
+        $merge: { onClose: vi.fn(), updateAction: vi.fn() },
       });
       instance.handleMessageUpdate('new msg', null);
       instance.getButtons().tertiary.onClick();

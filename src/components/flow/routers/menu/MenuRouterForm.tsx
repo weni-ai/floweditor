@@ -14,7 +14,7 @@ import { nodeToState, stateToNode } from './helpers';
 import styles from './MenuRouterForm.module.scss';
 import i18n from 'config/i18n';
 
-const mutate = require('immutability-helper');
+import mutate from 'immutability-helper';
 
 export interface MenuRouterFormState extends FormState {
   resultName: StringEntry;
@@ -69,7 +69,9 @@ export default class MenuRouterForm extends React.Component<
   }
 
   private handleMenuChanged(index: number, value: string): void {
-    const menu = mutate(this.state.menu, { [index]: { $set: value } });
+    const menu = mutate(this.state.menu, {
+      [index]: { $set: value },
+    }) as string[];
     this.setState({ menu });
   }
 

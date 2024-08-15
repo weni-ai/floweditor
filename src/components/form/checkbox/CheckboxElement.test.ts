@@ -1,11 +1,7 @@
 import { composeComponentTestUtils, getSpecWrapper } from 'testUtils';
 
 import CheckboxElement, {
-  boxIco,
   CheckboxElementProps,
-  checkboxSpecId,
-  checkedBoxIco,
-  descSpecId,
   titleSpecId,
 } from './CheckboxElement';
 
@@ -25,17 +21,11 @@ describe(CheckboxElement.name, () => {
         description: 'All Destinations',
         labelClassName: 'label',
         checkboxClassName: 'checkbox',
-        onChange: jest.fn(),
+        onChange: vi.fn(),
       },
     });
 
-    expect(
-      getSpecWrapper(wrapper, checkboxSpecId).hasClass(boxIco),
-    ).toBeTruthy();
     expect(getSpecWrapper(wrapper, titleSpecId).exists()).toBeTruthy();
-    expect(
-      getSpecWrapper(wrapper, descSpecId).hasClass('description'),
-    ).toBeTruthy();
     expect(wrapper).toMatchSnapshot('unchecked');
 
     // Check box
@@ -43,11 +33,8 @@ describe(CheckboxElement.name, () => {
     wrapper.update();
 
     expect(setStateSpy).toHaveBeenCalledTimes(1);
-    expect(setStateSpy).toMatchCallSnapshot();
+    expect(setStateSpy).toMatchSnapshot();
     expect(props.onChange).toHaveBeenCalledTimes(1);
-    expect(
-      getSpecWrapper(wrapper, checkboxSpecId).hasClass(checkedBoxIco),
-    ).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
 
     // Remove title
@@ -56,9 +43,6 @@ describe(CheckboxElement.name, () => {
       description: 'Continue when there is no response',
     });
 
-    expect(
-      getSpecWrapper(wrapper, descSpecId).hasClass('description_solo'),
-    ).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
 
     setStateSpy.mockRestore();

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`TextInputElement renders 1`] = `
+exports[`TextInputElement > renders 1`] = `
 <body>
   <div>
     <div
@@ -8,31 +8,29 @@ exports[`TextInputElement renders 1`] = `
     >
       <div
         data-use-vue-component-wrap=""
+        data-v-app=""
         style="all: unset;"
         unnnic-input="true"
       >
         <div
           class="unnnic-form sm"
-          data-passed-props="[object Object]"
-          data-v-48c0c241=""
+          data-v-acea6376=""
         >
           <!---->
           <div
-            class="unnnic-form-input text-input size--sm"
-            data-v-400546b3=""
-            data-v-48c0c241=""
+            class="text-input size--sm unnnic-form-input"
+            data-v-acea6376=""
+            data-v-df38a188=""
             mask=""
-            v-bind="[object Object]"
           >
             <input
-              class="input-itself input size-sm normal"
-              data-passed-props="[object Object]"
-              data-v-400546b3=""
-              data-v-97b44e8c=""
+              class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+              data-v-bf6639b4=""
+              data-v-df38a188=""
+              hascloudycolor="false"
               placeholder=""
-              size="0"
               type="text"
-              v-bind="[object Object]"
+              value=""
             />
             <!---->
             <!---->

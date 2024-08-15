@@ -1,11 +1,12 @@
-@import "variables.module.scss";
+@import "src/variables.module.scss";
 
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: $unnnic-spacing-xs;
 
-  .phrases, .categories {
+  .phrases,
+  .categories {
     display: flex;
     flex-direction: column;
     align-items: flex-start;

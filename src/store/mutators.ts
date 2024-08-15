@@ -32,7 +32,7 @@ import { NodeEditorSettings } from 'store/nodeEditor';
 import { ACTIONS_WITHOUT_EXIT, LocalizationUpdates } from 'store/thunks';
 import { createUUID, merge, push, set, snakify, splice, unset } from 'utils';
 
-const mutate = require('immutability-helper');
+import mutate from 'immutability-helper';
 
 export const uniquifyNode = (newNode: FlowNode): FlowNode => {
   // Give our node a unique uuid
@@ -456,7 +456,7 @@ export const moveActionUp = (
 export const removeNode = (
   nodes: RenderNodeMap,
   nodeUUID: string,
-  remap: boolean = true,
+  remap = true,
 ): RenderNodeMap => {
   const nodeToRemove = getNode(nodes, nodeUUID);
   let updatedNodes = nodes;
@@ -530,12 +530,12 @@ export const updatePosition = (
   nodes: RenderNodeMap,
   nodeUUID: string,
   position: FlowPosition,
-  snap: boolean = true,
+  snap = true,
 ): RenderNodeMap => {
   const { left, top } = position;
 
   // make sure we are on the grid
-  let adjusted = { left, top };
+  const adjusted = { left, top };
 
   return mutate(nodes, {
     [nodeUUID]: {
@@ -553,7 +553,7 @@ export const updateStickyNotePosition = (
   definition: FlowDefinition,
   stickyUUID: string,
   position: FlowPosition,
-  snap: boolean = true,
+  snap = true,
 ): FlowDefinition => {
   if (!definition._ui.stickies) {
     definition._ui.stickies = {};
@@ -566,7 +566,7 @@ export const updateStickyNotePosition = (
   const { left, top } = position;
 
   // make sure we are on the grid
-  let adjusted = { left, top };
+  const adjusted = { left, top };
 
   return mutate(definition, {
     _ui: {

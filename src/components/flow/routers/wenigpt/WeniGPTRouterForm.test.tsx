@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-object-literal-type-assertion */
 import { RouterFormProps } from 'components/flow/props';
 import WeniGPTRouterForm from 'components/flow/routers/wenigpt/WeniGPTRouterForm';
 import { Types } from 'config/interfaces';
@@ -18,7 +17,7 @@ import {
   act,
 } from 'test/utils';
 import userEvent from '@testing-library/user-event';
-let mockedKnowledgeBases = require('test/assets/knowledge_bases.json');
+const mockedKnowledgeBases = require('test/assets/knowledge_bases.json');
 mockedKnowledgeBases.forEach((kb: any) => {
   kb.content = kb;
 });
@@ -80,13 +79,13 @@ describe(WeniGPTRouterForm.name, () => {
 
       userEvent.click(okButton);
       expect(weniGPTForm.updateRouter).toBeCalled();
-      expect(weniGPTForm.updateRouter).toMatchCallSnapshot();
+      expect(weniGPTForm.updateRouter).toMatchSnapshot();
     });
   });
 
   it('should cancel', () => {
     const { instance, props } = setup(true, {
-      $merge: { onClose: jest.fn(), updateRouter: jest.fn() },
+      $merge: { onClose: vi.fn(), updateRouter: vi.fn() },
     });
     instance.getButtons().secondary.onClick();
     expect(props.onClose).toHaveBeenCalled();
@@ -96,7 +95,7 @@ describe(WeniGPTRouterForm.name, () => {
   it('should redirect', () => {
     const { getByText } = render(<WeniGPTRouterForm {...weniGPTForm} />);
 
-    window.postMessage = jest.fn();
+    window.postMessage = vi.fn();
 
     expect(window.postMessage).not.toHaveBeenCalled();
     const redirectButton = getByText('Click here');

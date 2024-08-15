@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 $reset_color: #666;
 
@@ -30,36 +30,46 @@ $reset_color: #666;
       outline-color: transparent;
       outline-style: none;
     }
+
     &::-webkit-input-placeholder {
       color: $placeholder_color;
     }
+
     &::-moz-placeholder {
       color: $placeholder_color;
     }
+
     &:-ms-input-placeholder {
       color: $placeholder_color;
     }
+
     &:-moz-placeholder {
       color: $placeholder_color;
     }
   }
+
   input:disabled {
     background: lighten(#e6e6e6, 5%);
     cursor: not-allowed;
     $disabled_color: darken($placeholder_color, 5%);
+
     &::-webkit-input-placeholder {
       color: $disabled_color;
     }
+
     &::-moz-placeholder {
       color: $disabled_color;
     }
+
     &:-ms-input-placeholder {
       color: $disabled_color;
     }
+
     &:-moz-placeholder {
       color: $disabled_color;
     }
   }
+
   left: -300px;
   top: 0px;
   position: absolute;
@@ -89,14 +99,17 @@ $reset_color: #666;
         position: absolute;
         color: $unnnic-color-background-snow;
         cursor: pointer;
+
         &:hover {
           color: #fff;
         }
       }
+
       .time {
         display: inline-block;
         visibility: hidden;
       }
+
       .battery {
         display: inline-block;
         visibility: hidden;
@@ -104,12 +117,14 @@ $reset_color: #666;
         position: absolute;
         font-size: 13px;
       }
+
       .wifi {
         visibility: hidden;
         display: inline-block;
         right: 38px;
         position: absolute;
       }
+
       .reset {
         position: absolute;
         cursor: pointer;
@@ -117,7 +132,7 @@ $reset_color: #666;
         top: 8px;
       }
     }
-    
+
     .header.whatsapp {
       background-color: $unnnic-color-neutral-dark;
     }
@@ -137,7 +152,7 @@ $reset_color: #666;
 
       .show_context_button {
         display: inline-block;
-        padding: 8px;
+        padding: 6px;
         cursor: pointer;
 
         &:hover {
@@ -190,11 +205,13 @@ $reset_color: #666;
         &::placeholder {
           color: $unnnic-color-neutral-cleanest;
         }
+
         &:focus {
           outline: none;
           box-shadow: none;
           border: none;
         }
+
         border-radius: 4px;
         border: none;
         outline: none;
@@ -239,16 +256,12 @@ $reset_color: #666;
         bottom: 27px;
       }
 
-      div {
+      div > div {
         cursor: pointer;
         padding-left: 4px;
         padding-right: 4px;
         padding-top: 10px;
         font-size: 18px;
-      }
-
-      .icon {
-        margin-top: -6px;
       }
     }
   }
@@ -282,6 +295,8 @@ $reset_color: #666;
   }
 
   .audio_picker {
+    display: flex;
+    justify-content: center;
     padding: 20px;
     color: $unnnic-color-neutral-cloudy;
     cursor: pointer;
@@ -290,10 +305,12 @@ $reset_color: #666;
     &:hover {
       background: $unnnic-color-neutral-soft;
     }
+
     .audio_icon {
       display: inline;
       font-size: 26px;
     }
+
     .audio_message {
       display: inline;
       font-size: 15px;
@@ -315,6 +332,7 @@ $reset_color: #666;
     .keys {
       color: $light_gray;
       padding: 5px;
+
       .row {
         width: 100%;
         margin: 0;
@@ -385,6 +403,7 @@ $reset_color: #666;
     display: inline-block;
     padding: 4px 12px;
   }
+
   .simulator_tab_text {
     color: white;
     opacity: 0.01;
@@ -400,13 +419,14 @@ $reset_color: #666;
 .simulator_tab:hover {
   right: -10px;
   transition: right 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
   .simulator_tab_text {
     opacity: 0.99;
     transition: opacity 500ms;
   }
 }
 
-.simulator_tab:hover + .guiding_steps {
+.simulator_tab:hover+.guiding_steps {
   right: 130px !important;
   transition: right 100ms;
 }
@@ -431,6 +451,7 @@ $reset_color: #666;
     background: #444;
 
     transition: transform 0.1s linear;
+
     &:hover {
       background: #333;
       transform: scale(1.05);

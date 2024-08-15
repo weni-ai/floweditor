@@ -10,7 +10,7 @@ import {
 } from 'flowTypes';
 import * as React from 'react';
 import { emphasize } from 'utils';
-const styles = require('components/shared.module.scss');
+import styles from 'components/shared.module.scss';
 
 const withEmph = (text: string, emph: boolean) =>
   emph ? emphasize(text) : text;
@@ -18,7 +18,7 @@ const withEmph = (text: string, emph: boolean) =>
 export const renderSetText = (
   name: string,
   value: string,
-  emphasizeName: boolean = false,
+  emphasizeName = false,
 ): JSX.Element => {
   if (value) {
     return (

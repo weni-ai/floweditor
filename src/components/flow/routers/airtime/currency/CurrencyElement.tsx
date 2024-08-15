@@ -13,6 +13,23 @@ import styles from './CurrencyElement.module.scss';
 import i18n from 'config/i18n';
 import { TembaSelectStyle } from 'temba/TembaSelect';
 
+import { applyVueInReact } from 'veaury';
+
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
+
 export interface AirtimeTransfer {
   amount: string;
   code: string;
@@ -95,7 +112,7 @@ export default class CurrencyElement extends React.Component<
             this.props.onRemove(this.props.index);
           }}
         >
-          <span className="fe-x" />
+          <UnnnicIcon icon={'close'} size="sm" scheme="neutral-snow" />
         </div>
       ) : null;
 

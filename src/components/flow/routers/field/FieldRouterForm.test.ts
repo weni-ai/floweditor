@@ -52,7 +52,7 @@ describe(FieldRouterForm.name, () => {
   describe('updates', () => {
     it('should save changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateRouter: jest.fn(), onClose: jest.fn() },
+        $merge: { updateRouter: vi.fn(), onClose: vi.fn() },
       });
 
       instance.handleUpdateResultName('Favorite Color');
@@ -79,12 +79,12 @@ describe(FieldRouterForm.name, () => {
       instance.handleSave();
       expect(props.onClose).toHaveBeenCalled();
       expect(props.updateRouter).toHaveBeenCalled();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
 
     it('should cancel', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateRouter: jest.fn(), onClose: jest.fn() },
+        $merge: { updateRouter: vi.fn(), onClose: vi.fn() },
       });
 
       instance.handleFieldChanged([
@@ -101,7 +101,7 @@ describe(FieldRouterForm.name, () => {
 
     it('should build expression from a selected field', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateRouter: jest.fn(), onClose: jest.fn() },
+        $merge: { updateRouter: vi.fn(), onClose: vi.fn() },
       });
 
       instance.handleFieldChanged([
@@ -119,7 +119,7 @@ describe(FieldRouterForm.name, () => {
       );
 
       expect(props.updateRouter).toHaveBeenCalled();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
   });
 });

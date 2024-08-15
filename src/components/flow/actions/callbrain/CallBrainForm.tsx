@@ -11,10 +11,10 @@ import AppState from 'store/state';
 import { propsToAction } from './helpers';
 import { BrainInfo } from '../../../../store/flowContext';
 
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+import Unnnic from '@weni/unnnic-system';
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export interface CallBrainFormProps extends ActionFormProps {
   brainInfo: BrainInfo;

@@ -35,7 +35,7 @@ describe(ExpressionRouterForm.name, () => {
   describe('updates', () => {
     it('should save changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateRouter: jest.fn(), onClose: jest.fn() },
+        $merge: { updateRouter: vi.fn(), onClose: vi.fn() },
       });
 
       instance.handleUpdateResultName('Favorite Color');
@@ -62,12 +62,12 @@ describe(ExpressionRouterForm.name, () => {
       instance.handleSave();
       expect(props.onClose).toHaveBeenCalled();
       expect(props.updateRouter).toHaveBeenCalled();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
 
     it('should cancel', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateRouter: jest.fn(), onClose: jest.fn() },
+        $merge: { updateRouter: vi.fn(), onClose: vi.fn() },
       });
 
       instance.handleOperandUpdated('@date.now');

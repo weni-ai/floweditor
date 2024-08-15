@@ -1,14 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SendWhatsAppMsgForm render should render 1`] = `
+exports[`SendWhatsAppMsgForm > render > should render 1`] = `
 <Dialog
   buttons={
-    Object {
-      "primary": Object {
+    {
+      "primary": {
         "name": "Confirm",
         "onClick": [Function],
       },
-      "tertiary": Object {
+      "tertiary": {
         "name": "Cancel",
         "onClick": [Function],
       },
@@ -20,12 +20,12 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
   <TypeList
     __className=""
     initialType={
-      Object {
+      {
         "component": [Function],
         "description": "Send the contact a message",
         "form": [Function],
         "localization": [Function],
-        "localizeableKeys": Array [
+        "localizeableKeys": [
           "text",
           "quick_replies",
           "templating.variables",
@@ -36,8 +36,8 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
       }
     }
     nodeSettings={
-      Object {
-        "originalAction": Object {
+      {
+        "originalAction": {
           "action_url": "",
           "attachment": null,
           "button_text": "",
@@ -45,18 +45,18 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
           "header_text": "",
           "header_type": "media",
           "interaction_type": "list",
-          "list_items": Array [],
+          "list_items": [],
           "messageType": "simple",
-          "quick_replies": Array [],
+          "quick_replies": [],
           "text": "",
           "type": "send_msg",
           "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
         },
-        "originalNode": Object {
-          "inboundConnections": Object {},
-          "node": Object {
-            "actions": Array [
-              Object {
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
                 "action_url": "",
                 "attachment": null,
                 "button_text": "",
@@ -64,23 +64,23 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
                 "header_text": "",
                 "header_type": "media",
                 "interaction_type": "list",
-                "list_items": Array [],
+                "list_items": [],
                 "messageType": "simple",
-                "quick_replies": Array [],
+                "quick_replies": [],
                 "text": "",
                 "type": "send_msg",
                 "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
               },
             ],
-            "exits": Array [
-              Object {
+            "exits": [
+              {
                 "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
               },
             ],
             "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
           },
-          "ui": Object {
-            "position": Object {
+          "ui": {
+            "position": {
               "left": 0,
               "top": 0,
             },
@@ -89,44 +89,33 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
         },
       }
     }
-    onChange={[MockFunction]}
+    onChange={[MockFunction spy]}
   />
   <section
-    className="content"
+    className="_content_1c4276"
   >
     <header
-      className="header"
+      className="_header_1c4276"
     >
       Configure your message
     </header>
     <div
-      className="selectors"
+      className="_selectors_1c4276"
     >
       <div>
         <span
-          className="label"
+          className="_label_1c4276"
         >
           Message type
         </span>
         <ForwardRef
-          $model={
-            Object {
-              "setter": [Function],
-              "value": Array [
-                Object {
-                  "label": "Simple message",
-                  "value": "simple",
-                },
-              ],
-            }
-          }
           options={
-            Array [
-              Object {
+            [
+              {
                 "label": "Simple message",
                 "value": "simple",
               },
-              Object {
+              {
                 "label": "Interactive message",
                 "value": "interactive",
               },
@@ -134,49 +123,49 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
           }
           orderedByIndex={true}
           size="sm"
+          v-model={
+            [
+              [
+                {
+                  "label": "Simple message",
+                  "value": "simple",
+                },
+              ],
+              [Function],
+            ]
+          }
         />
       </div>
       <div>
         <span
-          className="label"
+          className="_label_1c4276"
         >
           Interactions
         </span>
         <ForwardRef
-          $model={
-            Object {
-              "setter": [Function],
-              "value": Array [
-                Object {
-                  "label": "No interactions selected",
-                  "value": null,
-                },
-              ],
-            }
-          }
           disabled={true}
           options={
-            Array [
-              Object {
+            [
+              {
                 "label": "No interactions selected",
                 "value": null,
               },
-              Object {
+              {
                 "description": "Create up to 3 quick replies with predefined messages",
                 "label": "Quick replies",
                 "value": "replies",
               },
-              Object {
+              {
                 "description": "Make choices easier with a list of up to 10 interactive options",
                 "label": "Option list",
                 "value": "list",
               },
-              Object {
+              {
                 "description": "Ask users for their location to facilitate service",
                 "label": "Request Location",
                 "value": "location",
               },
-              Object {
+              {
                 "description": "Add a button with a link to an external URL.",
                 "label": "URL Button",
                 "value": "cta_url",
@@ -185,62 +174,75 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
           }
           orderedByIndex={true}
           size="sm"
+          v-model={
+            [
+              [
+                {
+                  "label": "No interactions selected",
+                  "value": null,
+                },
+              ],
+              [Function],
+            ]
+          }
         />
       </div>
     </div>
     <div
-      className="header"
+      className="_header_1c4276"
     >
       <div
-        className="inputs"
+        className="_inputs_1c4276"
       >
-        <div
-          className="attachment_url"
-        >
-          <TextInputElement
-            autocomplete={true}
-            disabled={false}
-            entry={
-              Object {
-                "value": "",
+        <React.Fragment>
+          <div
+            className="_attachment_url_1c4276"
+          >
+            <TextInputElement
+              autocomplete={true}
+              disabled={false}
+              entry={
+                {
+                  "value": "",
+                }
               }
-            }
-            error={null}
-            name="Media (optional)"
-            onChange={[Function]}
-            placeholder="Paste an URL or send a file"
-            showLabel={true}
-            size="sm"
-          />
-        </div>
-        <div
-          className="upload_button"
-        >
-          <Button
-            disabled={false}
-            iconName="upload-bottom-1"
-            name="Upload"
-            onClick={[Function]}
-            size="small"
-            type="secondary"
-          />
-          <input
-            data-testid="upload-input"
-            onChange={[Function]}
-            style={
-              Object {
-                "display": "none",
+              error={null}
+              name="Media (optional)"
+              onChange={[Function]}
+              placeholder="Paste an URL or send a file"
+              showLabel={true}
+              size="sm"
+            />
+          </div>
+          <div
+            className="_upload_button_5978a7"
+          >
+            <Button
+              disabled={false}
+              iconName="upload-bottom-1"
+              name="Upload"
+              onClick={[Function]}
+              size="small"
+              type="secondary"
+            />
+            <input
+              data-testid="upload-input"
+              onChange={[Function]}
+              style={
+                {
+                  "display": "none",
+                }
               }
-            }
-            type="file"
-          />
-        </div>
+              type="file"
+            />
+          </div>
+        </React.Fragment>
       </div>
     </div>
     <TextEditorElement
       autocomplete={true}
       entry={
-        Object {
+        {
           "value": "",
         }
       }
@@ -254,2268 +256,2408 @@ exports[`SendWhatsAppMsgForm render should render 1`] = `
 </Dialog>
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save changes if footer is filled but there are no replies or list items 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is filled but there are no replies or list items 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
-    "validationFailures": Array [],
+  "footer": {
+    "validationFailures": [],
     "value": "new footer",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Create up to 3 quick replies with predefined messages",
       "label": "Quick replies",
       "value": "replies",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "3d8db86c-7279-4106-a388-3f143bd5623f",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "validationFailures": Array [
-      Object {
+  "quickReplies": {
+    "validationFailures": [
+      {
         "message": "At least one quick reply must be filled",
       },
     ],
-    "value": Array [
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": false,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save changes if footer is filled but there are no replies or list items 2`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is filled but there are no replies or list items 2`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
-    "validationFailures": Array [],
+  "footer": {
+    "validationFailures": [],
     "value": "new footer",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Make choices easier with a list of up to 10 interactive options",
       "label": "Option list",
       "value": "list",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "validationFailures": Array [
-      Object {
+  "listItems": {
+    "validationFailures": [
+      {
         "message": "At least one list option must be filled",
       },
     ],
-    "value": Array [
-      Object {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "96249bdc-cb58-4489-a188-0eeb6686a8c9",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": false,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save changes if header is set to text and filled but there are no replies or list items 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should not save changes if header is set to text and filled but there are no replies or list items 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
-    "validationFailures": Array [],
+  "headerText": {
+    "validationFailures": [],
     "value": "new header",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Create up to 3 quick replies with predefined messages",
       "label": "Quick replies",
       "value": "replies",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "1888ae1f-2518-4727-98e2-731674e1760e",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "validationFailures": Array [
-      Object {
+  "quickReplies": {
+    "validationFailures": [
+      {
         "message": "At least one quick reply must be filled",
       },
     ],
-    "value": Array [
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": false,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save changes if header is set to text and filled but there are no replies or list items 2`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should not save changes if header is set to text and filled but there are no replies or list items 2`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
-    "validationFailures": Array [],
+  "headerText": {
+    "validationFailures": [],
     "value": "new header",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Make choices easier with a list of up to 10 interactive options",
       "label": "Option list",
       "value": "list",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "validationFailures": Array [
-      Object {
+  "listItems": {
+    "validationFailures": [
+      {
         "message": "At least one list option must be filled",
       },
     ],
-    "value": Array [
-      Object {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "dd57500e-a8e8-4a98-8b5b-a33637523a8d",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": false,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save changes with updated button text if no list items are provided 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button text if no list items are provided 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "new button text",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Make choices easier with a list of up to 10 interactive options",
       "label": "Option list",
       "value": "list",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "validationFailures": Array [
-      Object {
+  "listItems": {
+    "validationFailures": [
+      {
         "message": "At least one list option must be filled",
       },
     ],
-    "value": Array [
-      Object {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "a0bf60d1-2333-41a5-9bcb-7c56cc5e969e",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": false,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save changes with updated button text if no list items are provided 2`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button text if no list items are provided 2`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "new button text",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Make choices easier with a list of up to 10 interactive options",
       "label": "Option list",
       "value": "list",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "validationFailures": Array [
-      Object {
+  "listItems": {
+    "validationFailures": [
+      {
         "message": "At least one list option must be filled",
       },
     ],
-    "value": Array [
-      Object {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "a0bf60d1-2333-41a5-9bcb-7c56cc5e969e",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": false,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save changes with updated button url if no list items are provided 1`] = `
-Object {
-  "actionURL": Object {
-    "validationFailures": Array [],
+exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button url if no list items are provided 1`] = `
+{
+  "actionURL": {
+    "validationFailures": [],
     "value": "new url text",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Make choices easier with a list of up to 10 interactive options",
       "label": "Option list",
       "value": "list",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "validationFailures": Array [
-      Object {
+  "listItems": {
+    "validationFailures": [
+      {
         "message": "At least one list option must be filled",
       },
     ],
-    "value": Array [
-      Object {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": false,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save changes with updated button url if no list items are provided 2`] = `
-Object {
-  "actionURL": Object {
-    "validationFailures": Array [],
+exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button url if no list items are provided 2`] = `
+{
+  "actionURL": {
+    "validationFailures": [],
     "value": "new url text",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Make choices easier with a list of up to 10 interactive options",
       "label": "Option list",
       "value": "list",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "validationFailures": Array [
-      Object {
+  "listItems": {
+    "validationFailures": [
+      {
         "message": "At least one list option must be filled",
       },
     ],
-    "value": Array [
-      Object {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": false,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should not save if message is empty and there is no attachment 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should not save if message is empty and there is no attachment 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "label": "No interactions selected",
       "value": null,
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [
-      Object {
+  "message": {
+    "validationFailures": [
+      {
         "message": "Message is required",
       },
     ],
     "value": "",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Simple message",
       "value": "simple",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": false,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes after remove attachment 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes after remove attachment 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
-    "value": Object {
+  "attachment": {
+    "validationFailures": [],
+    "value": {
       "type": "image",
       "uploaded": true,
       "url": "http://weni.ai/image.png",
     },
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "label": "No interactions selected",
       "value": null,
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Simple message",
       "value": "simple",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes after remove attachment 2`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes after remove attachment 2`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "label": "No interactions selected",
       "value": null,
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Simple message",
       "value": "simple",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes after remove attachment 3`] = `
-Array [
-  Object {
-    "header_type": "media",
-    "messageType": "simple",
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
-  },
-]
+exports[`SendWhatsAppMsgForm > updates > should save changes after remove attachment 3`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "header_type": "media",
+        "messageType": "simple",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes if header is set to media and filled, and there are no replies or list items 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to media and filled, and there are no replies or list items 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
-    "value": Object {
+  "attachment": {
+    "validationFailures": [],
+    "value": {
       "type": "image",
       "uploaded": true,
       "url": "http://weni.ai/image.png",
     },
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "label": "No interactions selected",
       "value": null,
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "141e0356-9fdd-47d3-a12d-16efc5b45276",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Simple message",
       "value": "simple",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes if header is set to media and filled, and there are no replies or list items 2`] = `
-Array [
-  Object {
-    "attachment": "image:http://weni.ai/image.png",
-    "header_type": "media",
-    "messageType": "simple",
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "e81b3f1a-0863-4418-8a72-9c9f8aa72b7c",
-  },
-]
+exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to media and filled, and there are no replies or list items 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "attachment": "image:http://weni.ai/image.png",
+        "header_type": "media",
+        "messageType": "simple",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "e81b3f1a-0863-4418-8a72-9c9f8aa72b7c",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes if header is set to media and filled, and there is no message 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to media and filled, and there is no message 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
-    "value": Object {
+  "attachment": {
+    "validationFailures": [],
+    "value": {
       "type": "image",
       "uploaded": true,
       "url": "http://weni.ai/image.png",
     },
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "label": "No interactions selected",
       "value": null,
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
       },
     ],
   },
-  "message": Object {
+  "message": {
     "value": "",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Simple message",
       "value": "simple",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes if header is set to media and filled, and there is no message 2`] = `
-Array [
-  Object {
-    "attachment": "image:http://weni.ai/image.png",
-    "header_type": "media",
-    "messageType": "simple",
-    "type": "send_whatsapp_msg",
-    "uuid": "f05fa107-03db-4315-a211-53da63603e6f",
-  },
-]
+exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to media and filled, and there is no message 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "attachment": "image:http://weni.ai/image.png",
+        "header_type": "media",
+        "messageType": "simple",
+        "type": "send_whatsapp_msg",
+        "uuid": "f05fa107-03db-4315-a211-53da63603e6f",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes when interaction type is location 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes when interaction type is location 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
-    "validationFailures": Array [],
+  "footer": {
+    "validationFailures": [],
     "value": "",
   },
-  "headerText": Object {
-    "validationFailures": Array [],
+  "headerText": {
+    "validationFailures": [],
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Ask users for their location to facilitate service",
       "label": "Request Location",
       "value": "location",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "666613f2-2d4f-432c-a707-929481961e98",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes when interaction type is location 2`] = `
-Array [
-  Object {
-    "header_type": "media",
-    "interaction_type": "location",
-    "messageType": "interactive",
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "6b121177-6eef-48b3-8f6d-eef2154a0e10",
-  },
-]
+exports[`SendWhatsAppMsgForm > updates > should save changes when interaction type is location 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "header_type": "media",
+        "interaction_type": "location",
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "6b121177-6eef-48b3-8f6d-eef2154a0e10",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated attachment by url 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated attachment by url 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
-    "value": Object {
+  "attachment": {
+    "validationFailures": [],
+    "value": {
       "type": "image",
       "uploaded": false,
       "url": "http://weni.ai/image.png",
     },
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "label": "No interactions selected",
       "value": null,
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
       },
     ],
   },
-  "message": Object {
+  "message": {
     "value": "",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Simple message",
       "value": "simple",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated attachment by url 2`] = `
-Array [
-  Object {
-    "attachment": "image:http://weni.ai/image.png",
-    "header_type": "media",
-    "messageType": "simple",
-    "type": "send_whatsapp_msg",
-    "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
-  },
-]
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated attachment by url 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "attachment": "image:http://weni.ai/image.png",
+        "header_type": "media",
+        "messageType": "simple",
+        "type": "send_whatsapp_msg",
+        "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated button text 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated button text 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "new button text",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Make choices easier with a list of up to 10 interactive options",
       "label": "Option list",
       "value": "list",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "description 1",
         "title": "title 1",
         "uuid": "1",
       },
-      Object {
+      {
         "description": "description 2",
         "title": "title 2",
         "uuid": "2",
       },
-      Object {
+      {
         "description": "",
         "title": "",
         "uuid": "28ab7e47-57cc-42ae-8269-5d8d442d4276",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated button text 2`] = `
-Array [
-  Object {
-    "button_text": "new button text",
-    "header_type": "text",
-    "interaction_type": "list",
-    "list_items": Array [
-      Object {
-        "description": "description 1",
-        "title": "title 1",
-        "uuid": "1",
-      },
-      Object {
-        "description": "description 2",
-        "title": "title 2",
-        "uuid": "2",
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated button text 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "button_text": "new button text",
+        "header_type": "text",
+        "interaction_type": "list",
+        "list_items": [
+          {
+            "description": "description 1",
+            "title": "title 1",
+            "uuid": "1",
+          },
+          {
+            "description": "description 2",
+            "title": "title 2",
+            "uuid": "2",
+          },
+        ],
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "6f87dde3-5df3-4935-8585-2656df068d61",
       },
     ],
-    "messageType": "interactive",
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "6f87dde3-5df3-4935-8585-2656df068d61",
-  },
-]
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated button url 1`] = `
-Object {
-  "actionURL": Object {
-    "validationFailures": Array [],
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated button url 1`] = `
+{
+  "actionURL": {
+    "validationFailures": [],
     "value": "new url text",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Make choices easier with a list of up to 10 interactive options",
       "label": "Option list",
       "value": "list",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "description 1",
         "title": "title 1",
         "uuid": "1",
       },
-      Object {
+      {
         "description": "description 2",
         "title": "title 2",
         "uuid": "2",
       },
-      Object {
+      {
         "description": "",
         "title": "",
         "uuid": "19c23626-6961-4683-9cae-38dd767614f3",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated button url 2`] = `
-Array [
-  Object {
-    "action_url": "new url text",
-    "header_type": "text",
-    "interaction_type": "list",
-    "list_items": Array [
-      Object {
-        "description": "description 1",
-        "title": "title 1",
-        "uuid": "1",
-      },
-      Object {
-        "description": "description 2",
-        "title": "title 2",
-        "uuid": "2",
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated button url 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "action_url": "new url text",
+        "header_type": "text",
+        "interaction_type": "list",
+        "list_items": [
+          {
+            "description": "description 1",
+            "title": "title 1",
+            "uuid": "1",
+          },
+          {
+            "description": "description 2",
+            "title": "title 2",
+            "uuid": "2",
+          },
+        ],
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
       },
     ],
-    "messageType": "interactive",
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
-  },
-]
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated footer 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
-    "validationFailures": Array [],
+  "footer": {
+    "validationFailures": [],
     "value": "new footer",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Create up to 3 quick replies with predefined messages",
       "label": "Quick replies",
       "value": "replies",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "reply 1",
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated footer 2`] = `
-Array [
-  Object {
-    "footer": "new footer",
-    "header_type": "media",
-    "interaction_type": "replies",
-    "messageType": "interactive",
-    "quick_replies": Array [
-      "reply 1",
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "footer": "new footer",
+        "header_type": "media",
+        "interaction_type": "replies",
+        "messageType": "interactive",
+        "quick_replies": [
+          "reply 1",
+        ],
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
+      },
     ],
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
-  },
-]
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated header 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated header 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
-    "validationFailures": Array [],
+  "headerText": {
+    "validationFailures": [],
     "value": "new header",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Create up to 3 quick replies with predefined messages",
       "label": "Quick replies",
       "value": "replies",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "6b59e863-2e14-442b-9987-aaa284871b8e",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "reply 1",
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated header 2`] = `
-Array [
-  Object {
-    "header_text": "new header",
-    "header_type": "text",
-    "interaction_type": "replies",
-    "messageType": "interactive",
-    "quick_replies": Array [
-      "reply 1",
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated header 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "header_text": "new header",
+        "header_type": "text",
+        "interaction_type": "replies",
+        "messageType": "interactive",
+        "quick_replies": [
+          "reply 1",
+        ],
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "00dd2423-0a34-4ee2-b97d-839fb2d593ef",
+      },
     ],
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "00dd2423-0a34-4ee2-b97d-839fb2d593ef",
-  },
-]
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated list items 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Make choices easier with a list of up to 10 interactive options",
       "label": "Option list",
       "value": "list",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "description 1",
         "title": "title 1",
         "uuid": "1",
       },
-      Object {
+      {
         "description": "description 2",
         "title": "title 2",
         "uuid": "2",
       },
-      Object {
+      {
         "description": "",
         "title": "",
         "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated list items 2`] = `
-Array [
-  Object {
-    "header_type": "text",
-    "interaction_type": "list",
-    "list_items": Array [
-      Object {
-        "description": "description 1",
-        "title": "title 1",
-        "uuid": "1",
-      },
-      Object {
-        "description": "description 2",
-        "title": "title 2",
-        "uuid": "2",
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "header_type": "text",
+        "interaction_type": "list",
+        "list_items": [
+          {
+            "description": "description 1",
+            "title": "title 1",
+            "uuid": "1",
+          },
+          {
+            "description": "description 2",
+            "title": "title 2",
+            "uuid": "2",
+          },
+        ],
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
       },
     ],
-    "messageType": "interactive",
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
-  },
-]
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated list items after a removal 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items after a removal 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Make choices easier with a list of up to 10 interactive options",
       "label": "Option list",
       "value": "list",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "description 1",
         "title": "title 1",
         "uuid": "1",
       },
-      Object {
+      {
         "description": "description 2",
         "title": "title 2",
         "uuid": "2",
       },
-      Object {
+      {
         "description": "",
         "title": "",
         "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated list items after a removal 2`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items after a removal 2`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Text",
       "value": "text",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Make choices easier with a list of up to 10 interactive options",
       "label": "Option list",
       "value": "list",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "validationFailures": Array [],
-    "value": Array [
-      Object {
+  "listItems": {
+    "validationFailures": [],
+    "value": [
+      {
         "description": "description 2",
         "title": "title 2",
         "uuid": "2",
       },
-      Object {
+      {
         "description": "",
         "title": "",
         "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated list items after a removal 3`] = `
-Array [
-  Object {
-    "header_type": "text",
-    "interaction_type": "list",
-    "list_items": Array [
-      Object {
-        "description": "description 2",
-        "title": "title 2",
-        "uuid": "2",
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items after a removal 3`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "header_type": "text",
+        "interaction_type": "list",
+        "list_items": [
+          {
+            "description": "description 2",
+            "title": "title 2",
+            "uuid": "2",
+          },
+        ],
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "f627a69c-a227-451f-9520-ce969f02162e",
       },
     ],
-    "messageType": "interactive",
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "f627a69c-a227-451f-9520-ce969f02162e",
-  },
-]
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated message 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated message 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "label": "No interactions selected",
       "value": null,
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Simple message",
       "value": "simple",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated message 2`] = `
-Array [
-  Object {
-    "header_type": "media",
-    "messageType": "simple",
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-  },
-]
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated message 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "header_type": "media",
+        "messageType": "simple",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated quick replies 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick replies 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
-    "validationFailures": Array [],
+  "buttonText": {
+    "validationFailures": [],
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Create up to 3 quick replies with predefined messages",
       "label": "Quick replies",
       "value": "replies",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "e44fa695-257c-4cdd-baf7-bb485aa2d1a0",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "reply 1",
       "reply 2",
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated quick replies 2`] = `
-Array [
-  Object {
-    "header_type": "media",
-    "interaction_type": "replies",
-    "messageType": "interactive",
-    "quick_replies": Array [
-      "reply 1",
-      "reply 2",
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick replies 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "header_type": "media",
+        "interaction_type": "replies",
+        "messageType": "interactive",
+        "quick_replies": [
+          "reply 1",
+          "reply 2",
+        ],
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b88f2d42-530b-43d7-867b-a22e299200ae",
+      },
     ],
-    "text": "new msg",
-    "type": "send_whatsapp_msg",
-    "uuid": "b88f2d42-530b-43d7-867b-a22e299200ae",
-  },
-]
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated upload attachment 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload attachment 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
-    "value": Object {
+  "attachment": {
+    "validationFailures": [],
+    "value": {
       "type": "image",
       "uploaded": true,
       "url": "http://weni.ai/image.png",
     },
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "label": "No interactions selected",
       "value": null,
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
       },
     ],
   },
-  "message": Object {
+  "message": {
     "value": "",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Simple message",
       "value": "simple",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should save changes with updated upload attachment 2`] = `
-Array [
-  Object {
-    "attachment": "image:http://weni.ai/image.png",
-    "header_type": "media",
-    "messageType": "simple",
-    "type": "send_whatsapp_msg",
-    "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
-  },
-]
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload attachment 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "attachment": "image:http://weni.ai/image.png",
+        "header_type": "media",
+        "messageType": "simple",
+        "type": "send_whatsapp_msg",
+        "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendWhatsAppMsgForm updates should switch message type to interactive and go back to simple if desired 1`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should switch message type to interactive and go back to simple if desired 1`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "label": "No interactions selected",
       "value": null,
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Simple message",
       "value": "simple",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should switch message type to interactive and go back to simple if desired 2`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should switch message type to interactive and go back to simple if desired 2`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
+  "footer": {
     "value": "",
   },
-  "headerText": Object {
+  "headerText": {
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "description": "Create up to 3 quick replies with predefined messages",
       "label": "Quick replies",
       "value": "replies",
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Interactive message",
       "value": "interactive",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,
 }
 `;
 
-exports[`SendWhatsAppMsgForm updates should switch message type to interactive and go back to simple if desired 3`] = `
-Object {
-  "actionURL": Object {
+exports[`SendWhatsAppMsgForm > updates > should switch message type to interactive and go back to simple if desired 3`] = `
+{
+  "actionURL": {
     "value": "",
   },
-  "attachment": Object {
-    "validationFailures": Array [],
+  "attachment": {
+    "validationFailures": [],
     "value": null,
   },
-  "buttonText": Object {
+  "buttonText": {
     "value": "",
   },
-  "footer": Object {
-    "validationFailures": Array [],
+  "footer": {
+    "validationFailures": [],
     "value": "",
   },
-  "headerText": Object {
-    "validationFailures": Array [],
+  "headerText": {
+    "validationFailures": [],
     "value": "",
   },
-  "headerType": Object {
-    "value": Object {
+  "headerType": {
+    "value": {
       "label": "Media",
       "value": "media",
     },
   },
-  "interactionType": Object {
-    "value": Object {
+  "interactionType": {
+    "value": {
       "label": "No interactions selected",
       "value": null,
     },
   },
-  "listItemDescriptionEntry": Object {
+  "listItemDescriptionEntry": {
     "value": "",
   },
-  "listItemTitleEntry": Object {
+  "listItemTitleEntry": {
     "value": "",
   },
-  "listItems": Object {
-    "value": Array [
-      Object {
+  "listItems": {
+    "value": [
+      {
         "description": "",
         "title": "",
         "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
       },
     ],
   },
-  "message": Object {
-    "validationFailures": Array [],
+  "message": {
+    "validationFailures": [],
     "value": "new msg",
   },
-  "messageType": Object {
-    "value": Object {
+  "messageType": {
+    "value": {
       "label": "Simple message",
       "value": "simple",
     },
   },
-  "quickReplies": Object {
-    "value": Array [
+  "quickReplies": {
+    "value": [
       "",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "valid": true,

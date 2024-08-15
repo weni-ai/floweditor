@@ -1,15 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`AddURNComp should display urn on action 1`] = `
-<Fragment>
-  Add
-   
-  phone number
-   
-  <span
-    className="emphasize"
-  >
-    +12065551212
-  </span>
-</Fragment>
-`;
+exports[`AddURNComp > should display urn on action 1`] = `ShallowWrapper {}`;

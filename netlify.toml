@@ -2,3 +2,6 @@
   command = "yarn run netlify"
   publish = "build"
   functions = "lambda-build"
+
+[functions]
+  node_bundler = "esbuild"

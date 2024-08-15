@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styles from './Search.module.scss';
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
-import { applyVueInReact } from 'vuereact-combined';
+import Unnnic from '@weni/unnnic-system';
+import { applyVueInReact } from 'veaury';
 import AppState from 'store/state';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -18,7 +18,7 @@ import i18n from 'config/i18n';
 import ArrowButton from './components/ArrowButton';
 import CloseButton from './components/CloseButton';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon, {
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -39,6 +39,12 @@ export interface SearchStoreProps {
 export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   public componentDidMount(): void {
     document.addEventListener('keydown', (e: KeyboardEvent) =>
+      this.handleWindowKeyDown(e),
+    );
+  }
+
+  public componentWillUnmount(): void {
+    document.removeEventListener('keydown', (e: KeyboardEvent) =>
       this.handleWindowKeyDown(e),
     );
   }
@@ -173,7 +179,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
   private dragBackground() {
     const { nodes, selected } = this.props.search;
     const canvasBg = document.getElementById('panzoom');
-    if (nodes[selected] && canvasBg) {
+    if (nodes[selected] && canvasBg && canvasBg.style) {
       const uuid = nodes[selected].uuid;
       const ui = nodes[selected].data.ui.position;
       const width = window.innerWidth / 2;
@@ -263,15 +269,17 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     const { value, nodes, selected } = this.props.search;
     return (
       <div className={styles.search_card}>
-        <div className={styles.icon}>
-          <UnnnicIcon
-            icon="search-1"
-            size="avatar-nano"
-            scheme="neutral-dark"
-          />
-        </div>
-
-        <div className={styles.input} id="searchBarInputElementDiv">
+        <UnnnicIcon
+          className={styles.icon}
+          icon="search-1"
+          size="md"
+          scheme="neutral-dark"
+        />
+        <div
+          className={styles.input}
+          id="searchBarInputElementDiv"
+          data-testid="searchInput"
+        >
           <TextInputElement
             name={''}
             placeholder={i18n.t('actions.search')}
@@ -283,21 +291,21 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
         <div className={styles.buttons}>
           <ArrowButton
             disabled={!nodes.length || !value.length}
-            name={''}
+            name={'downButton'}
             onClick={() => this.toggleMoveSelected('down')}
             iconName="down"
             size="small"
           />
 
           <ArrowButton
-            name={''}
+            name={'upButton'}
             disabled={!nodes.length || !value.length}
             onClick={() => this.toggleMoveSelected('up')}
             iconName="up"
             size="small"
           />
         </div>
-        <span className={styles.number}>
+        <span data-testid="matchCount" className={styles.number}>
           {value.length && nodes.length ? (
             <>
               {selected + 1}/{nodes.length}
@@ -308,7 +316,7 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
         </span>
         <div className={styles.close}>
           <CloseButton
-            name={''}
+            name={'closeButton'}
             onClick={() => this.closeSearch()}
             size="small"
           />
