@@ -52,7 +52,6 @@ export default class CloseButton extends React.Component<ButtonProps> {
           onClick={onClick}
           type={'tertiary'}
           disabled={disabled}
-          text={name}
           size={this.props.size || 'small'}
         >
           <div className={styles.closeIcon}>

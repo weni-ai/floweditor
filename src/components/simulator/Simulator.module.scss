@@ -256,16 +256,12 @@ $reset_color: #666;
         bottom: 27px;
       }
 
-      div {
+      div > div {
         cursor: pointer;
         padding-left: 4px;
         padding-right: 4px;
         padding-top: 10px;
         font-size: 18px;
-      }
-
-      .icon {
-        margin-top: -6px;
       }
     }
   }
