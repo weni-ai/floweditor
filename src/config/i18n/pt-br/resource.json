@@ -260,7 +260,7 @@
     "delimiter": "Delimitador",
     "district": "Distrito",
     "disclaimer": {
-    "title": "Agora é possível <b>{{highlight}}</b> utilizando WhatsApp Flows.",
+    "title": "Agora é possível <1>[[highlight]]</1> utilizando WhatsApp Flows.",
     "highlight": "gerar interações mais ricas",
     "link": "Saiba mais."
   },
@@ -493,6 +493,19 @@
     "seller_id": "ID do vendedor (opcional)",
     "postal_code": "CEP (opcional)",
     "header_optional": "Cabeçalho (opcional)",
+    "select_form": {
+      "title": "Selecione um formulário ",
+      "warn": "Ainda não possui formulários?",
+      "here": "aqui."
+    },
+    "dynamic_variables": {
+      "config": {
+        "base": " (Opcional)",
+        "highlight": "Configurar variáveis dinâmicas"
+      },
+      "label": "Campo importado",
+      "value": "Valor do campo"
+    },
     "replies_label": "Adicione até 3 respostas rápidas",
     "reply": "Resposta",
     "list_items": "Lista de opções",

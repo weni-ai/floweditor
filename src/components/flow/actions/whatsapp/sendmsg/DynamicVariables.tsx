@@ -13,6 +13,7 @@ import { applyVueInReact } from 'vuereact-combined';
 import { unnnicButton } from '@weni/unnnic-system';
 import { DynamicVariablesListItem } from './SendWhatsAppMsgForm';
 import { FormEntry, ValidationFailure } from '../../../../../store/nodeEditor';
+import { Trans } from 'react-i18next';
 
 const UnnnicButton = applyVueInReact(unnnicButton, {
   vue: {
@@ -58,17 +59,23 @@ export default class DynamicVariables extends React.Component<
       <div className={styles.list_wrapper}>
         <div>
           <div className={styles.title}>
-            <span className={styles.options_label}>
-              {i18n.t('forms.options_label', 'Config dynamic variables')}
-            </span>
+            <header className={styles.options_label}>
+              <b>
+                {i18n.t(
+                  'forms.dynamic_variables.config.highlight',
+                  'Configure dynamic variables',
+                )}
+              </b>
+              {i18n.t('forms.dynamic_variables.config.base', '(Optional)')}
+            </header>
           </div>
           <div className={styles.list_items}>
             <div className={styles.item}>
               <span className={styles.options_name}>
-                {i18n.t('forms.options_label', 'Campo Importado')}
+                {i18n.t('forms.dynamic_variables.label', 'Campo Importado')}
               </span>
               <span className={styles.options_value}>
-                {i18n.t('forms.options_label', 'Valor do campo')}
+                {i18n.t('forms.dynamic_variables.value', 'Valor do campo')}
               </span>
             </div>
             {list.map(item => (
@@ -86,6 +93,7 @@ export default class DynamicVariables extends React.Component<
                     entry={{ value: item.value }}
                     onChange={e => this.props.onValueUpdated(e, item.name)}
                     __className={styles.variable}
+                    focus={true}
                   />
                 </div>
               </div>

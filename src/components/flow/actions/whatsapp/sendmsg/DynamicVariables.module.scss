@@ -14,12 +14,17 @@
   .list_items{
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    border: .5px solid $unnnic-color-neutral-cleanest;
+    border-radius: 1px;
+    padding: 16px;
+    gap: 7px;
+    background-color: $unnnic-color-neutral-white ;
 
     .item{
       display: flex;
       flex-direction: row;
       gap: $unnnic-spacing-sm;
+      margin-bottom: $unnnic-spacing-xs;
 
       .options_name{
         width: 200px;

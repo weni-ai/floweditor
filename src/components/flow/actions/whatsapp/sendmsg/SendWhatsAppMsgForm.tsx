@@ -870,7 +870,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
         {interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS && (
           <>
             <span className={`u font secondary body-md color-neutral-cloudy`}>
-              {i18n.t('forms.header_optional', 'Select a Form')}
+              {i18n.t('forms.select_form.title', 'Select a Form')}
             </span>
             <UnnnicSelectSmart
               $model={{
@@ -881,6 +881,15 @@ export default class SendWhatsAppMsgForm extends React.Component<
               size="sm"
               orderedByIndex={true}
             />
+            <span className={`u font secondary body-md color-neutral-cloudy`}>
+              {i18n.t(
+                'forms.select_form.warn',
+                `Don't have forms yet? Learn more `,
+              )}
+              <a href="" className={styles.link}>
+                {i18n.t('forms.select_form.here', 'here.')}
+              </a>
+            </span>
           </>
         )}
 
@@ -1061,8 +1070,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
               options={this.state.dynamicVariables}
               onValueUpdated={this.handleDynamicVariableUpdate}
             />
-            <span className={`u font secondary body-md color-neutral-cloudy`}>
-              {i18n.t('forms.header_optional', 'Select a Form')}
+            {/* <span className={`u font secondary body-md color-neutral-cloudy`}>
+              {i18n.t('forms.select_screen', 'Select a Form')}
             </span>
             <SelectElement
               name={''}
@@ -1077,7 +1086,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 },
               ]}
               entry={this.state.firstScreen}
-            />
+            /> */}
           </>
         )}
       </div>
