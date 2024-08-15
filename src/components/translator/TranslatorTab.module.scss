@@ -105,6 +105,10 @@
       transition: all 200ms ease-in-out;
       color: darken($light_gray_2, 30%);
       transform: rotate(180deg);
+
+      .toggle_icon {
+        vertical-align: middle;
+      }
     }
 
     .progress_bar {
@@ -129,7 +133,7 @@
 
   .filters {
     height: 0px;
-    overflow: hidden;
+    overflow: auto;
     transition: height 200ms ease-in-out;
     opacity: 0;
     font-size: 12px;

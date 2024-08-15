@@ -78,11 +78,12 @@
   .endpoint {
     position: relative;
     background: $terminal_color;
-    width: 15px;
-    height: 14px;
+    width: 13.67px;
+    height: 13.67px;
     top: 7px;
-    margin-top: -14px;
+    margin-top: -16px;
     border-radius: 50%;
+    border: $unnnic-border-width-thinner solid transparent;
   }
 
   &.confirm_delete {
@@ -103,8 +104,7 @@
         position: absolute;
         font-size: 10px;
         font-weight: 400;
-        left: 0.12rem;
-        top: 0.15rem;
+        left: 0.06rem;
       }
     }
   }

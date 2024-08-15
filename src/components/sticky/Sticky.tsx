@@ -11,6 +11,23 @@ import { CONFIRMATION_TIME, QUIET_NOTE } from 'utils';
 import styles from './Sticky.module.scss';
 import i18n from 'config/i18n';
 
+import { applyVueInReact } from 'veaury';
+
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
+
 type DragFunction = (event: DragEvent) => void;
 export const STICKY_SPEC_ID = 'sticky-container';
 export const STICKY_TITLE = i18n.t('sticky.title', 'New Note');
@@ -224,7 +241,7 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
               className={styles.remove_button}
               onClick={this.handleClickRemove}
             >
-              <span className="fe-x" />
+              <UnnnicIcon icon={'close'} size="sm" scheme="neutral-cloudy" />
             </div>
             <div className={styles.confirmation}>Remove?</div>
             <TextareaAutosize

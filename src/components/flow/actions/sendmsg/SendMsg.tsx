@@ -5,6 +5,23 @@ import * as React from 'react';
 import styles from './SendMsg.module.scss';
 import i18n from 'config/i18n';
 
+import { applyVueInReact } from 'veaury';
+
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
+
 export const PLACEHOLDER = i18n.t(
   'actions.send_msg.placeholder',
   'Send a message to the contact',
@@ -39,15 +56,32 @@ const SendMsgComp: React.SFC<SendMsg> = (action: SendMsg): JSX.Element => {
               {line}
             </div>
           ))}
-          {action.attachments && action.attachments.length > 0 ? (
-            <div className={`${styles.attachment} fe-paperclip`} />
-          ) : null}
-          {action.templating && action.templating.template ? (
-            <div className={`${styles.whatsapp} fe-whatsapp`} />
-          ) : null}
-          {action.topic ? (
-            <div className={`${styles.facebook} fe-facebook`} />
-          ) : null}
+          <div className={styles.icons}>
+            {action.attachments && action.attachments.length > 0 ? (
+              <UnnnicIcon
+                className={styles.attachment}
+                icon={'attachment'}
+                size="sm"
+                scheme="neutral-cloudy"
+              />
+            ) : null}
+            {action.templating && action.templating.template ? (
+              <UnnnicIcon
+                className={styles.whatsapp}
+                icon={'messaging-whatsapp-1'}
+                size="sm"
+                scheme="neutral-cloudy"
+              />
+            ) : null}
+            {action.topic ? (
+              <UnnnicIcon
+                className={styles.facebook}
+                icon={'social-media-facebook-1'}
+                size="sm"
+                scheme="neutral-cloudy"
+              />
+            ) : null}
+          </div>
         </div>
         <div className={replies ? styles.summary : ''}>{replies}</div>
       </>

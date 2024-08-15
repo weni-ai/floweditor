@@ -58,13 +58,15 @@ export const renderIssues = (issueProps: IssueProps): JSX.Element => {
             }}
             key={key}
           >
-            <div
+            <UnnnicIcon
               style={{
-                marginRight: '8px',
-                marginTop: '-2px',
-                fontSize: '18px',
+                marginRight: '4px',
+                marginTop: '-4px',
+                fontSize: '22px',
               }}
-              className={`fe-warning`}
+              icon={'warning'}
+              size="md"
+              scheme="alert-red"
             />
             <div>{renderIssue(issue, helpArticles)}</div>
           </div>

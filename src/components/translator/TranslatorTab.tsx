@@ -21,6 +21,23 @@ import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
 import { getType } from 'config/typeConfigs';
 import { fakePropType } from 'config/ConfigProvider';
 
+import { applyVueInReact } from 'veaury';
+
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
+
 const cx: any = classNames.bind(styles);
 
 export enum TranslationType {
@@ -404,7 +421,12 @@ export class TranslatorTab extends React.Component<
                 ></div>
               </div>
               <div className={styles.toggle}>
-                <span className="fe-arrow-up"></span>
+                <UnnnicIcon
+                  className={styles.toggle_icon}
+                  icon={'keyboard_arrow_up'}
+                  size="xs"
+                  scheme="neutral-snow"
+                />
               </div>
             </div>
             <div className={styles.filters}>

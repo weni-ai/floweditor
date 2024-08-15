@@ -27,9 +27,6 @@ interface SwitchState {
   checked: boolean;
 }
 
-export const boxIco = 'fe-square';
-export const checkedBoxIco = 'fe-check-square';
-
 export const switchTestId = 'switch';
 export const descTestId = 'description';
 

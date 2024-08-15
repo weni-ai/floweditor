@@ -78,15 +78,22 @@ const SendWhatsAppMsgComp: React.FunctionComponent<SendWhatsAppMsg> = (
           ))}
         <div className={styles.icons}>
           {renderIf(!!action.attachment)(
-            <div className={`${styles.attachment} fe-paperclip`} />,
+            <UnnnicIcon
+              className={styles.attachment}
+              icon={'attachment'}
+              size="sm"
+              scheme="neutral-cloudy"
+            />,
           )}
           {renderIf(
             action.interaction_type === WHATSAPP_INTERACTION_TYPE_CTA.value,
           )(
             <div className={styles.cta_divider}>
-              <div className={styles.cta_icon}>
-                <OpenIcon />
-              </div>
+              <UnnnicIcon
+                icon={'open_in_new'}
+                size="md"
+                scheme="neutral-cloudy"
+              />
               <div className={styles.cta_button_text}>{action.button_text}</div>
             </div>,
           )}

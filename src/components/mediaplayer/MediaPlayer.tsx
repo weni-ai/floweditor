@@ -3,6 +3,23 @@ import * as React from 'react';
 
 import styles from './MediaPlayer.module.scss';
 
+import { applyVueInReact } from 'veaury';
+
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
+
 export interface MediaPlayerProps {
   url: string;
   triggered?: boolean;
@@ -158,13 +175,13 @@ export class MediaPlayer extends React.Component<
             />
           </svg>
         </div>
-        <div
-          className={
-            styles.button +
-            ' ' +
-            (this.state.playing ? 'fe-stop' : 'fe-play_arrow')
-          }
-        />
+        <div className={styles.button}>
+          <UnnnicIcon
+            icon={!this.state.playing ? 'stop' : 'play_arrow'}
+            size="sm"
+            scheme="alert-red"
+          />
+        </div>
       </div>
     );
   }

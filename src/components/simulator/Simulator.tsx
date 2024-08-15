@@ -777,7 +777,12 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           this.sendAttachment('audio/mp3:' + AUDIO_A);
         }}
       >
-        <div className={styles.audio_icon + ' fe-mic'} />
+        <UnnnicIcon
+          className={styles.audio_icon}
+          icon="microphone"
+          size="md"
+          scheme="neutral-cloudy"
+        />
         <div className={styles.audio_message}>Upload Audio</div>
       </div>
     );
@@ -1195,7 +1200,11 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                         });
                       }}
                     >
-                      <span className="fe-at-sign"></span>
+                      <UnnnicIcon
+                        icon="alternate_email"
+                        size="sm"
+                        scheme="neutral-snow"
+                      />
                     </div>
                   </div>
                 ) : (
@@ -1208,7 +1217,11 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                         });
                       }}
                     >
-                      <span className="fe-x"></span>
+                      <UnnnicIcon
+                        icon="close"
+                        size="sm"
+                        scheme="neutral-snow"
+                      />
                     </div>
                   </div>
                 )}

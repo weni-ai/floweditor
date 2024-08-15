@@ -152,7 +152,7 @@ $reset_color: #666;
 
       .show_context_button {
         display: inline-block;
-        padding: 8px;
+        padding: 6px;
         cursor: pointer;
 
         &:hover {
@@ -295,6 +295,8 @@ $reset_color: #666;
   }
 
   .audio_picker {
+    display: flex;
+    justify-content: center;
     padding: 20px;
     color: $unnnic-color-neutral-cloudy;
     cursor: pointer;

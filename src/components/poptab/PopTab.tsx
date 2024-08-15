@@ -98,10 +98,9 @@ export class PopTab extends React.Component<PopTabProps, PopTabState> {
             className={styles.header}
             style={{ background: this.props.color }}
           >
-            <div
-              className={styles.close + ' fe-x'}
-              onClick={this.handleClose}
-            />
+            <div className={styles.close} onClick={this.handleClose}>
+              <UnnnicIcon icon={'close'} size="md" scheme="neutral-snow" />
+            </div>
           </div>
           <div
             className={styles.body}

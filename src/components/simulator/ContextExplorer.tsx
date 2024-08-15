@@ -6,6 +6,22 @@ import { copyToClipboard } from 'utils';
 import i18n from 'config/i18n';
 import { Trans } from 'react-i18next';
 import { DEFAULT_KEY, pruneEmpty } from './helpers';
+import { applyVueInReact } from 'veaury';
+
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
 
 const cx: any = classNames.bind(styles);
 
@@ -258,9 +274,11 @@ export default class ContextExplorer extends React.Component<
               this.handleToggleHide();
             }}
           >
-            <div
-              className={this.state.showEmpty ? 'fe-eye' : 'fe-eye-crossed'}
-            ></div>
+            <UnnnicIcon
+              icon={this.state.showEmpty ? 'visibility' : 'visibility_off'}
+              size="sm"
+              scheme="neutral-snow"
+            />
           </div>
         </div>
       </div>
