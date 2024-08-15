@@ -54,7 +54,9 @@
         display: flex;
         height: 100%;
         align-items: center;
-        padding-left: $unnnic-spacing-sm;
+        margin-left: $unnnic-spacing-sm;
+        width: 20px;
+        min-width: 20px;
     }
 
     .close {

@@ -269,10 +269,12 @@ export class SearchBar extends React.PureComponent<SearchStoreProps, {}> {
     const { value, nodes, selected } = this.props.search;
     return (
       <div className={styles.search_card}>
-        <div className={styles.icon}>
-          <UnnnicIcon icon="search-1" size="small" scheme="neutral-dark" />
-        </div>
-
+        <UnnnicIcon
+          className={styles.icon}
+          icon="search-1"
+          size="md"
+          scheme="neutral-dark"
+        />
         <div
           className={styles.input}
           id="searchBarInputElementDiv"

@@ -177,7 +177,7 @@ export class MediaPlayer extends React.Component<
         </div>
         <div className={styles.button}>
           <UnnnicIcon
-            icon={!this.state.playing ? 'stop' : 'play_arrow'}
+            icon={this.state.playing ? 'stop' : 'play_arrow'}
             size="sm"
             scheme="alert-red"
           />
