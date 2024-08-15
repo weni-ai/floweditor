@@ -381,6 +381,9 @@ exports[`SearchBar > should render 1`] = `
                     >
                       teste1
                     </div>
+                    <div
+                      class="_icons_eeabad"
+                    />
                   </div>
                   <div
                     class=""
@@ -528,6 +531,9 @@ exports[`SearchBar > should render 1`] = `
                     >
                       teste2
                     </div>
+                    <div
+                      class="_icons_eeabad"
+                    />
                   </div>
                   <div
                     class=""
@@ -675,6 +681,9 @@ exports[`SearchBar > should render 1`] = `
                     >
                       different
                     </div>
+                    <div
+                      class="_icons_eeabad"
+                    />
                   </div>
                   <div
                     class=""

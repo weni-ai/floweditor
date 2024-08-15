@@ -70,6 +70,9 @@ exports[`ActionWrapper > can have localized quick replies when empty on default 
             >
               ¡Hola!
             </div>
+            <div
+              class="_icons_eeabad"
+            />
           </div>
           <div
             class="_summary_eeabad"
@@ -181,6 +184,9 @@ exports[`ActionWrapper > renders a base language 1`] = `
             >
               Hey!
             </div>
+            <div
+              class="_icons_eeabad"
+            />
           </div>
           <div
             class=""

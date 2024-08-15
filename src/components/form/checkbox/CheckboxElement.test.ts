@@ -1,11 +1,7 @@
 import { composeComponentTestUtils, getSpecWrapper } from 'testUtils';
 
 import CheckboxElement, {
-  boxIco,
   CheckboxElementProps,
-  checkboxSpecId,
-  checkedBoxIco,
-  descSpecId,
   titleSpecId,
 } from './CheckboxElement';
 

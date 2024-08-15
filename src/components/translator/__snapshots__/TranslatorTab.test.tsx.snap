@@ -83,8 +83,21 @@ exports[`TranslatorTab > finds email translations 1`] = `
             style="background: rgb(103, 115, 139);"
           >
             <div
-              class="_close_6f73c3 fe-x"
-            />
+              class="_close_6f73c3"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <span
+                  class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--md"
+                  data-v-930380cc=""
+                >
+                  close
+                </span>
+              </div>
+            </div>
           </div>
           <div
             class="_body_6f73c3"
@@ -152,9 +165,17 @@ exports[`TranslatorTab > finds email translations 1`] = `
                 <div
                   class="_toggle_1694a1"
                 >
-                  <span
-                    class="fe-arrow-up"
-                  />
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--xs _toggle_icon_1694a1"
+                      data-v-930380cc=""
+                    >
+                      keyboard_arrow_up
+                    </span>
+                  </div>
                 </div>
               </div>
               <div
@@ -167,10 +188,18 @@ exports[`TranslatorTab > finds email translations 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
@@ -183,10 +212,18 @@ exports[`TranslatorTab > finds email translations 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
@@ -298,8 +335,21 @@ exports[`TranslatorTab > finds message translations 1`] = `
             style="background: rgb(103, 115, 139);"
           >
             <div
-              class="_close_6f73c3 fe-x"
-            />
+              class="_close_6f73c3"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <span
+                  class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--md"
+                  data-v-930380cc=""
+                >
+                  close
+                </span>
+              </div>
+            </div>
           </div>
           <div
             class="_body_6f73c3"
@@ -381,9 +431,17 @@ exports[`TranslatorTab > finds message translations 1`] = `
                 <div
                   class="_toggle_1694a1"
                 >
-                  <span
-                    class="fe-arrow-up"
-                  />
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--xs _toggle_icon_1694a1"
+                      data-v-930380cc=""
+                    >
+                      keyboard_arrow_up
+                    </span>
+                  </div>
                 </div>
               </div>
               <div
@@ -396,10 +454,18 @@ exports[`TranslatorTab > finds message translations 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
@@ -412,10 +478,18 @@ exports[`TranslatorTab > finds message translations 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
@@ -527,8 +601,21 @@ exports[`TranslatorTab > finds split translations 1`] = `
             style="background: rgb(103, 115, 139);"
           >
             <div
-              class="_close_6f73c3 fe-x"
-            />
+              class="_close_6f73c3"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <span
+                  class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--md"
+                  data-v-930380cc=""
+                >
+                  close
+                </span>
+              </div>
+            </div>
           </div>
           <div
             class="_body_6f73c3"
@@ -596,9 +683,17 @@ exports[`TranslatorTab > finds split translations 1`] = `
                 <div
                   class="_toggle_1694a1"
                 >
-                  <span
-                    class="fe-arrow-up"
-                  />
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--xs _toggle_icon_1694a1"
+                      data-v-930380cc=""
+                    >
+                      keyboard_arrow_up
+                    </span>
+                  </div>
                 </div>
               </div>
               <div
@@ -611,10 +706,18 @@ exports[`TranslatorTab > finds split translations 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
@@ -627,10 +730,18 @@ exports[`TranslatorTab > finds split translations 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
@@ -742,8 +853,21 @@ exports[`TranslatorTab > handles partial category translation 1`] = `
             style="background: rgb(103, 115, 139);"
           >
             <div
-              class="_close_6f73c3 fe-x"
-            />
+              class="_close_6f73c3"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <span
+                  class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--md"
+                  data-v-930380cc=""
+                >
+                  close
+                </span>
+              </div>
+            </div>
           </div>
           <div
             class="_body_6f73c3"
@@ -811,9 +935,17 @@ exports[`TranslatorTab > handles partial category translation 1`] = `
                 <div
                   class="_toggle_1694a1"
                 >
-                  <span
-                    class="fe-arrow-up"
-                  />
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--xs _toggle_icon_1694a1"
+                      data-v-930380cc=""
+                    >
+                      keyboard_arrow_up
+                    </span>
+                  </div>
                 </div>
               </div>
               <div
@@ -826,10 +958,18 @@ exports[`TranslatorTab > handles partial category translation 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
@@ -842,10 +982,18 @@ exports[`TranslatorTab > handles partial category translation 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
@@ -957,8 +1105,21 @@ exports[`TranslatorTab > hides completed translations 1`] = `
             style="background: rgb(103, 115, 139);"
           >
             <div
-              class="_close_6f73c3 fe-x"
-            />
+              class="_close_6f73c3"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <span
+                  class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--md"
+                  data-v-930380cc=""
+                >
+                  close
+                </span>
+              </div>
+            </div>
           </div>
           <div
             class="_body_6f73c3"
@@ -1012,9 +1173,17 @@ exports[`TranslatorTab > hides completed translations 1`] = `
                 <div
                   class="_toggle_1694a1"
                 >
-                  <span
-                    class="fe-arrow-up"
-                  />
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--xs _toggle_icon_1694a1"
+                      data-v-930380cc=""
+                    >
+                      keyboard_arrow_up
+                    </span>
+                  </div>
                 </div>
               </div>
               <div
@@ -1027,10 +1196,18 @@ exports[`TranslatorTab > hides completed translations 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
@@ -1043,10 +1220,18 @@ exports[`TranslatorTab > hides completed translations 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
@@ -1158,8 +1343,21 @@ exports[`TranslatorTab > renders 1`] = `
             style="background: rgb(103, 115, 139);"
           >
             <div
-              class="_close_6f73c3 fe-x"
-            />
+              class="_close_6f73c3"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <span
+                  class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--md"
+                  data-v-930380cc=""
+                >
+                  close
+                </span>
+              </div>
+            </div>
           </div>
           <div
             class="_body_6f73c3"
@@ -1185,9 +1383,17 @@ exports[`TranslatorTab > renders 1`] = `
                 <div
                   class="_toggle_1694a1"
                 >
-                  <span
-                    class="fe-arrow-up"
-                  />
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--xs _toggle_icon_1694a1"
+                      data-v-930380cc=""
+                    >
+                      keyboard_arrow_up
+                    </span>
+                  </div>
                 </div>
               </div>
               <div
@@ -1200,10 +1406,18 @@ exports[`TranslatorTab > renders 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
@@ -1216,10 +1430,18 @@ exports[`TranslatorTab > renders 1`] = `
                     <label
                       class="__label_5bf296_5bf296"
                     >
-                      <span
-                        class="_fe-check-square_5bf296 __checkbox_1694a1_5bf296"
-                        data-spec="checkbox"
-                      />
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                      >
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _checkbox_icon_5bf296 _checkbox_1694a1"
+                          data-spec="checkbox"
+                          data-v-930380cc=""
+                        >
+                          check_box
+                        </span>
+                      </div>
                       <div
                         class="_description_solo_5bf296"
                         data-spec="description"
