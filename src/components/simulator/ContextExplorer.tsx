@@ -197,12 +197,19 @@ export default class ContextExplorer extends React.Component<
             {name}
             <div className={styles.key_summary}>{keySummary}</div>
             <div
-              className={styles.clipboard + ' fe-clipboard-empty'}
+              className={styles.clipboard}
               onClick={(evt: React.MouseEvent<HTMLDivElement>) => {
                 evt.stopPropagation();
                 this.handleCopyPath(name, path);
               }}
-            ></div>
+            >
+              <UnnnicIcon
+                className={styles.copy_icon}
+                icon="copy"
+                size="sm"
+                scheme="neutral-snow"
+              />
+            </div>
           </div>
           <div className={styles.str_value}>{text}</div>
         </div>
