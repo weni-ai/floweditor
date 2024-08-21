@@ -51,7 +51,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_8430975284802769"
+                        id="__vue_wrapper_container_6750872026999228"
                         style="display: flex;"
                       />
                     </div>
@@ -61,7 +61,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                       100
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_8944389502016408"
+                        id="__vue_wrapper_container_6287639132864435"
                         style="display: flex;"
                       />
                     </div>
@@ -70,7 +70,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_24037647929349926"
+                        id="__vue_wrapper_container_2728484021450477"
                         style="display: flex;"
                       />
                     </div>
@@ -124,7 +124,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                       </span>
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_760050667395958"
+                        id="__vue_wrapper_container_583367400089948"
                         style="display: flex;"
                       />
                     </div>
@@ -211,7 +211,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_7966447400409138"
+                        id="__vue_wrapper_container_987222315530861"
                         style="display: flex;"
                       />
                     </div>
@@ -221,7 +221,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                       100
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_893554717335868"
+                        id="__vue_wrapper_container_11955499621275512"
                         style="display: flex;"
                       />
                     </div>
@@ -230,7 +230,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_9287295057179694"
+                        id="__vue_wrapper_container_5502406875555024"
                         style="display: flex;"
                       />
                     </div>
@@ -284,7 +284,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                       </span>
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_8526842385921334"
+                        id="__vue_wrapper_container_2478586049771072"
                         style="display: flex;"
                       />
                     </div>
@@ -384,7 +384,7 @@ exports[`Canvas > render default 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_5185088458870704"
+                        id="__vue_wrapper_container_7421721074982537"
                         style="display: flex;"
                       />
                     </div>
@@ -394,7 +394,7 @@ exports[`Canvas > render default 1`] = `
                       100
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_20303829375598337"
+                        id="__vue_wrapper_container_3380549822365728"
                         style="display: flex;"
                       />
                     </div>
@@ -403,7 +403,7 @@ exports[`Canvas > render default 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_4732700355503823"
+                        id="__vue_wrapper_container_06890320537774319"
                         style="display: flex;"
                       />
                     </div>
@@ -457,7 +457,7 @@ exports[`Canvas > render default 1`] = `
                       </span>
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_47955217215647217"
+                        id="__vue_wrapper_container_5756306445505481"
                         style="display: flex;"
                       />
                     </div>
