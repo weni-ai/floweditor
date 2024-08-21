@@ -226,12 +226,10 @@ exports[`ParamElement > ChatGPT params > multiselect > render > should render pa
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
-                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
-                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -273,12 +271,10 @@ exports[`ParamElement > ChatGPT params > multiselect > render > should render pa
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
-                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
-                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -320,12 +316,10 @@ exports[`ParamElement > ChatGPT params > multiselect > render > should render pa
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
-                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
-                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -463,12 +457,10 @@ exports[`ParamElement > ChatGPT params > multiselect > update > handles data cha
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
-                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
-                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -510,12 +502,10 @@ exports[`ParamElement > ChatGPT params > multiselect > update > handles data cha
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
-                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
-                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -557,12 +547,10 @@ exports[`ParamElement > ChatGPT params > multiselect > update > handles data cha
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
-                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
-                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
