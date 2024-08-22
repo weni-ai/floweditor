@@ -63,7 +63,13 @@ import {
   VISIBILITY_INTERACTIVE,
   VISIBILITY_MESSAGING_INTERACTIVE,
 } from 'config/interfaces';
-import { HintTypes, RouterTypes, FlowEditorConfig, SendMsg, SendWhatsAppMsg } from 'flowTypes';
+import {
+  HintTypes,
+  RouterTypes,
+  FlowEditorConfig,
+  SendMsg,
+  SendWhatsAppMsg,
+} from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import CallClassifierComp from 'components/flow/actions/callclassifier/CallClassifier';
 import ClassifyRouterForm from 'components/flow/routers/classify/ClassifyRouterForm';

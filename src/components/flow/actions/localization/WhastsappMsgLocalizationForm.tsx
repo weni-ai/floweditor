@@ -27,11 +27,10 @@ import { determineTypeConfig } from 'components/flow/helpers';
 import mutate from 'immutability-helper';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import { MaxOfTenItems, validate } from 'store/validators';
-import { applyVueInReact } from 'vuereact-combined';
-import {
-  unnnicSelectSmart,
-  // @ts-ignore
-} from '@weni/unnnic-system';
+// import {
+//   unnnicSelectSmart,
+//   // @ts-ignore
+// } from '@weni/unnnic-system';
 import SelectElement, {
   UnnnicSelectOption,
 } from 'components/form/select/SelectElement';
@@ -41,18 +40,19 @@ import { Trans } from 'react-i18next';
 import Pill from 'components/pill/Pill';
 import OptionsList from '../whatsapp/sendmsg/OptionsList';
 import { createEmptyListItem } from '../whatsapp/sendmsg/helpers';
+import { applyVueInReact } from 'veaury';
 
-const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
-  vue: {
-    componentWrap: 'div',
-    slotWrap: 'div',
-    componentWrapAttrs: {
-      style: {
-        all: '',
-      },
-    },
-  },
-});
+// const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
+//   vue: {
+//     componentWrap: 'div',
+//     slotWrap: 'div',
+//     componentWrapAttrs: {
+//       style: {
+//         all: '',
+//       },
+//     },
+//   },
+// });
 
 export interface WhatsappMsgLocalizationFormState extends FormState {
   text: StringEntry;
@@ -382,7 +382,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
                 ))}
               </div>
             </div>
-            <UnnnicSelectSmart
+            {/* <UnnnicSelectSmart
               $model={{
                 value: [headerType],
                 setter: this.handleHeaderTypeChange,
@@ -390,7 +390,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
               options={WHATSAPP_HEADER_TYPE_OPTIONS}
               size="sm"
               orderedByIndex={true}
-            />
+            /> */}
           </>
         ),
         checked: this.state.quickReplies.value.length > 0,
