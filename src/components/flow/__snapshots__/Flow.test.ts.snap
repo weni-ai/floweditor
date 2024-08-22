@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Flow helpers getDragStyle should return style object for drag selection box 1`] = `
-Object {
+exports[`Flow > helpers > getDragStyle > should return style object for drag selection box 1`] = `
+{
   "height": 211,
   "left": 270,
   "top": 91,
@@ -9,64 +9,84 @@ Object {
 }
 `;
 
-exports[`Flow instance methods onConnectorDrop should do NodeEditor work if the user is not dragging back 1`] = `
-Array [
-  "46e8d603-8e5d-4435-97dd-1333291aafca:8653ac06-00ba-4890-a79f-d30f3a55193b",
-  "52036e99-4be0-4505-add4-159e8d1d7572",
-]
-`;
-
-exports[`Flow instance methods onConnectorDrop should do NodeEditor work if the user is not dragging back 2`] = `
-Array [
-  Object {
-    "originalAction": Object {
-      "text": "",
-      "type": "send_msg",
-      "uuid": "7966434b-6d38-4d8b-b01c-13d3d9aa593c",
+exports[`Flow > instance methods > onConnectorDrop > should do NodeEditor work if the user is not dragging back 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "46e8d603-8e5d-4435-97dd-1333291aafca:8653ac06-00ba-4890-a79f-d30f3a55193b",
+      "30ad731f-64ce-43c6-96bf-7690256ef35e",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "originalNode": Object {
-      "ghost": true,
-      "inboundConnections": Object {
-        "8653ac06-00ba-4890-a79f-d30f3a55193b": "46e8d603-8e5d-4435-97dd-1333291aafca",
-      },
-      "node": Object {
-        "actions": Array [
-          Object {
-            "text": "",
-            "type": "send_msg",
-            "uuid": "7966434b-6d38-4d8b-b01c-13d3d9aa593c",
-          },
-        ],
-        "exits": Array [
-          Object {
-            "destination_uuid": null,
-            "uuid": "431dadb3-0257-432f-ace3-52157bba69ed",
-          },
-        ],
-        "uuid": "52036e99-4be0-4505-add4-159e8d1d7572",
-      },
-      "ui": Object {
-        "position": Object {
-          "left": 0,
-          "top": 0,
-        },
-        "type": "execute_actions",
-      },
-    },
-  },
-]
-`;
-
-exports[`Flow render should render NodeEditor 1`] = `
-Object {
-  "helpArticles": Object {},
-  "plumberConnectExit": [MockFunction],
+  ],
 }
 `;
 
-exports[`Flow render should render Simulator 1`] = `
-Object {
-  "mergeEditorState": [MockFunction],
+exports[`Flow > instance methods > onConnectorDrop > should do NodeEditor work if the user is not dragging back 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "originalAction": {
+          "text": "",
+          "type": "send_msg",
+          "uuid": "c5f52dd5-48ae-4b63-a76f-4407149d1f73",
+        },
+        "originalNode": {
+          "ghost": true,
+          "inboundConnections": {
+            "8653ac06-00ba-4890-a79f-d30f3a55193b": "46e8d603-8e5d-4435-97dd-1333291aafca",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "",
+                "type": "send_msg",
+                "uuid": "c5f52dd5-48ae-4b63-a76f-4407149d1f73",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "uuid": "f2466bf6-5421-4832-ae95-e37de21fc6db",
+              },
+            ],
+            "uuid": "30ad731f-64ce-43c6-96bf-7690256ef35e",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Flow > render > should render NodeEditor 1`] = `
+{
+  "helpArticles": {},
+  "plumberConnectExit": [MockFunction spy],
+}
+`;
+
+exports[`Flow > render > should render Simulator 1`] = `
+{
+  "mergeEditorState": [MockFunction spy],
   "onToggled": [Function],
   "popped": null,
 }

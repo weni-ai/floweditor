@@ -2,16 +2,16 @@ import { react as bindCallbacks } from 'auto-bind';
 import { FormElementProps } from 'components/form/FormElement';
 import * as React from 'react';
 import { StringEntry } from 'store/nodeEditor';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicTextArea } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
 import styles from './TextEditorElement.module.scss';
 import TembaCompletion from '../../../temba/TembaCompletion';
 import TextEditorActions from './TextEditorActions';
 
-const UnnnicTextArea = applyVueInReact(unnnicTextArea);
+const UnnnicTextArea = applyVueInReact(Unnnic.unnnicTextArea);
 
 export enum TextEditorSizes {
   sm = 'sm',
@@ -112,10 +112,7 @@ export default class TextEditorElement extends React.Component<
         ) : (
           <UnnnicTextArea
             data-testid={this.props.name}
-            value={this.props.entry.value}
-            on={{
-              input: (value: string) => this.handleChange(value),
-            }}
+            v-model={[this.props.entry.value, this.handleChange]}
             label={this.props.showLabel ? this.props.name : null}
             placeholder={this.props.placeholder}
             size={this.props.size || TextEditorSizes.sm}

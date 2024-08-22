@@ -112,7 +112,7 @@ export default class SayMsgForm extends React.Component<
         />
 
         <UploadButton
-          icon="fe-mic"
+          icon="microphone"
           uploadText="Upload Recording"
           removeText="Remove Recording"
           url={this.state.audio.value}

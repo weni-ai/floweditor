@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 .small {
   temba-select {
@@ -45,11 +45,14 @@
     width: 100% !important;
   }
 
-  input:hover, svg {
+  input:hover,
+  svg {
     cursor: pointer !important;
   }
 
-  input::placeholder { 
+  input::placeholder {
     color: $unnnic-color-neutral-dark !important;
-  };
+  }
+
+  ;
 }

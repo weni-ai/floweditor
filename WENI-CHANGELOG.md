@@ -1,6 +1,11 @@
-2.17.2
+3.0.0
 ----------
-- Fix: Add English language support to the Send on WhatsApp card.
+- Feat: Node 18
+- Feat: Unnnic Vue 3
+- Feat: Vite instead of CRA
+- Feat: Typescript 3.9
+- Feat: Veaury instead of vuereact-combined
+- Feat: Eslint 8
 
 2.17.1
 ----------

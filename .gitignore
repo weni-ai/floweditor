@@ -15,3 +15,5 @@ lib
 build
 fabric
 fabfile.py
+# Local Netlify folder
+.netlify

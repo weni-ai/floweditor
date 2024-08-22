@@ -1,10 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`utils capitalize should capitalized all words in a string 1`] = `"Your String"`;
+exports[`utils > capitalize > should capitalized all words in a string 1`] = `"Your String"`;
 
-exports[`utils capitalize should capitalized all words in a string 2`] = `"Ÿöur Striñg"`;
+exports[`utils > capitalize > should capitalized all words in a string 2`] = `"Ÿöur Striñg"`;
 
-exports[`utils emphasize should apply emphasis style 1`] = `
+exports[`utils > emphasize > should apply emphasis style 1`] = `
 <span
   className="emphasize"
 >
@@ -12,30 +12,29 @@ exports[`utils emphasize should apply emphasis style 1`] = `
 </span>
 `;
 
-exports[`utils getLocalizations should return a localized object 1`] = `
+exports[`utils > getLocalizations > should return a localized object 1`] = `
 LocalizedObject {
   "iso": undefined,
-  "language": Object {
+  "language": {
     "iso": undefined,
     "name": "French",
   },
   "localized": false,
-  "localizedKeys": Object {},
-  "localizedObject": Object {
+  "localizedKeys": {},
+  "localizedObject": {
     "text": "Hi there, what is your name?",
     "type": "send_msg",
     "uuid": "360a28a1-6741-4f16-9421-f6f313cf753e",
   },
-  "name": undefined,
 }
 `;
 
-exports[`utils titleCase should apply title case to each word in a given string 1`] = `"One"`;
+exports[`utils > titleCase > should apply title case to each word in a given string 1`] = `"One"`;
 
-exports[`utils titleCase should apply title case to each word in a given string 2`] = `"One Two"`;
+exports[`utils > titleCase > should apply title case to each word in a given string 2`] = `"One Two"`;
 
-exports[`utils titleCase should apply title case to each word in a given string 3`] = `"One Two Three"`;
+exports[`utils > titleCase > should apply title case to each word in a given string 3`] = `"One Two Three"`;
 
-exports[`utils titleCase should apply title case to each word in a given string 4`] = `"One,Two"`;
+exports[`utils > titleCase > should apply title case to each word in a given string 4`] = `"One,Two"`;
 
-exports[`utils titleCase should apply title case to each word in a given string 5`] = `"One, Two"`;
+exports[`utils > titleCase > should apply title case to each word in a given string 5`] = `"One, Two"`;

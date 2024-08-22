@@ -14,7 +14,7 @@ import {
   render,
   fireEvent,
   fireUnnnicInputChangeText,
-  wait,
+  waitFor,
   fireUnnnicTextAreaChangeText,
   fireUnnnicSwitch,
   act,
@@ -45,7 +45,6 @@ function getProps(automatic = false) {
     '',
   );
 
-  // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
   const sendWhatsAppProductForm = getRouterFormProps({
     node: productNode,
     ui: { type: Types.split_by_whatsapp_product },
@@ -69,6 +68,10 @@ function getProps(automatic = false) {
 }
 
 describe(SendWhatsAppProductRouterForm.name, () => {
+  beforeEach(() => {
+    mock(utils, 'createUUID', utils.seededUUIDs());
+  });
+
   describe('manual product search', () => {
     it('should render', async () => {
       const props = getProps();
@@ -76,9 +79,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
         <SendWhatsAppProductRouterForm {...props} />,
       );
 
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
     });
 
     it('should change from manual to automatic', async () => {
@@ -87,35 +88,25 @@ describe(SendWhatsAppProductRouterForm.name, () => {
         <SendWhatsAppProductRouterForm {...props} />,
       );
 
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       const automaticSwitch = getByTestId('switch');
       fireUnnnicSwitch(automaticSwitch);
 
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
     });
 
     it('should save a manual product sending with header', async () => {
       const props = getProps();
-      const {
-        baseElement,
-        getByText,
-        getByTestId,
-        getAllByTestId,
-        debug,
-      } = render(<SendWhatsAppProductRouterForm {...props} />);
+      const { baseElement, getByText, getByTestId, getAllByTestId } = render(
+        <SendWhatsAppProductRouterForm {...props} />,
+      );
 
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       // open the view settings inputs
       userEvent.click(getByTestId('ViewSettings'));
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       const okButton = getByText('Confirm');
       const resultName = getByTestId('Save as result');
@@ -128,6 +119,10 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
+      await act(async () => {
+        fireUnnnicInputChangeText(resultName, '');
+      });
+
       fireEvent.click(selectManuallyButton);
       //find tembaselect input
       const tembaSelectInput = getAllByTestId(
@@ -135,10 +130,8 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       )[0];
       expect(tembaSelectInput).toBeDefined();
 
-      await wait();
-
       const product1 = getByText('Product 1');
-      expect(product1).toBeDefined();
+      await waitFor(() => expect(product1).toBeDefined());
 
       userEvent.click(getByText('Product 1'));
       userEvent.click(getByText('Product 3'));
@@ -186,10 +179,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       // now it should save
       fireEvent.click(okButton);
 
-      await wait();
+      await waitFor(() => expect(props.updateRouter).toBeCalled());
 
-      expect(props.updateRouter).toBeCalled();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
 
     it('should save a catalog sending', async () => {
@@ -198,13 +190,11 @@ describe(SendWhatsAppProductRouterForm.name, () => {
         <SendWhatsAppProductRouterForm {...props} />,
       );
 
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       // open the view settings inputs
       userEvent.click(getByTestId('ViewSettings'));
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       const okButton = getByText('Confirm');
       const resultName = getByTestId('Save as result');
@@ -218,7 +208,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
 
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       fireEvent.click(okButton);
       expect(props.updateRouter).not.toBeCalled();
@@ -255,10 +245,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       // now it should save
       fireEvent.click(okButton);
 
-      await wait();
+      await waitFor(() => expect(props.updateRouter).toBeCalled());
 
-      expect(props.updateRouter).toBeCalled();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
   });
 
@@ -269,9 +258,7 @@ describe(SendWhatsAppProductRouterForm.name, () => {
         <SendWhatsAppProductRouterForm {...props} />,
       );
 
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
     });
 
     it('should save an automatic product sending', async () => {
@@ -280,13 +267,11 @@ describe(SendWhatsAppProductRouterForm.name, () => {
         <SendWhatsAppProductRouterForm {...props} />,
       );
 
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       // open the view settings inputs
       userEvent.click(getByTestId('ViewSettings'));
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       const okButton = getByText('Confirm');
       const resultName = getByTestId('Save as result');
@@ -348,10 +333,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       // now it should save
       fireEvent.click(okButton);
 
-      await wait();
+      await waitFor(() => expect(props.updateRouter).toBeCalled());
 
-      expect(props.updateRouter).toBeCalled();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
 
     it('should save an automatic product sending with vtex search', async () => {
@@ -360,16 +344,14 @@ describe(SendWhatsAppProductRouterForm.name, () => {
         <SendWhatsAppProductRouterForm {...props} />,
       );
 
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       // change to VTEX search
       userEvent.click(getByText('VTEX Search'));
 
       // open the view settings inputs
       userEvent.click(getByTestId('ViewSettings'));
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
 
       const okButton = getByText('Confirm');
       const resultName = getByTestId('Save as result');
@@ -455,10 +437,9 @@ describe(SendWhatsAppProductRouterForm.name, () => {
       // now it should save
       fireEvent.click(okButton);
 
-      await wait();
+      await waitFor(() => expect(props.updateRouter).toBeCalled());
 
-      expect(props.updateRouter).toBeCalled();
-      expect(props.updateRouter).toMatchCallSnapshot();
+      expect(props.updateRouter).toMatchSnapshot();
     });
   });
 });

@@ -1,32 +1,32 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`TicketRouterForm render should render 1`] = `
+exports[`TicketRouterForm > render > should render 1`] = `
 <body>
   <div>
     <div
-      class="dialog"
+      class="_dialog_af1b5d"
     >
       <div
-        class="header"
+        class="_header_af1b5d"
       >
         <div
-          class="title_container"
+          class="_title_container_af1b5d"
         >
           <div
-            class="title u font secondary title-sm black"
+            class="_title_af1b5d u font secondary title-sm black"
           >
             Open Ticket
           </div>
           <div
-            class="subtitle"
+            class="_subtitle_af1b5d"
           />
         </div>
       </div>
       <div
-        class="content"
+        class="_content_af1b5d"
       >
         <div
-          class=" type_list"
+          class=" _type_list_8229f3"
         >
           <div
             class="color-neutral-cloudy"
@@ -35,49 +35,48 @@ exports[`TicketRouterForm render should render 1`] = `
           </div>
           <div>
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
               id="temba_select_type"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_type"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_type"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="Open a ticket with a human agent"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Open a ticket with a human agent"
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -86,293 +85,293 @@ exports[`TicketRouterForm render should render 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
-                  class="option active "
+                  class="_option_08dd12 _active_08dd12 "
                   data-option-index="0"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="1"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="2"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Wait for the contact to respond
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="3"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Smartly wait for response (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="4"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call WeniGPT (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="5"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send somebody else a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="6"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Label the incoming message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="7"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add a URN for the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="8"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add the contact to a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="10"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Update the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="11"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send email
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="12"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Save a result for this flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="13"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call a webhook
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="14"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call Zapier
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="15"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Enter another flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="16"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Start somebody else in a flow
                   </span>
                 </div>
                 <div
-                  class="option  selected"
+                  class="_option_08dd12  _selected_08dd12"
                   data-option-index="17"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Open a ticket with a human agent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="18"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact airtime
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="19"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by intent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="20"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Automatic Classify (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="21"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a custom expression
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="22"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by contact field
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="23"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="24"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split randomly
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="25"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by group membership
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -385,49 +384,48 @@ exports[`TicketRouterForm render should render 1`] = `
             style="flex-basis: 250px;"
           >
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_topic"
               id="temba_select_topic"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_topic"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_topic"
+                    data-v-acea6376=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_topic"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="General"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_topic"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_topic"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Select the topic to use"
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -436,30 +434,19 @@ exports[`TicketRouterForm render should render 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_topic"
                 id="temba_select_options_topic"
                 style="margin-top: 0px; width: -24px; display: none;"
-              >
-                <div
-                  class="option active selected"
-                  data-option-index="0"
-                >
-                  <span
-                    class="name"
-                  >
-                    General
-                  </span>
-                </div>
-              </div>
+              />
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_topic"
                 id="temba_select_expressions_topic"
                 style="margin-top: 0px; width: -24px; display: none;"
@@ -470,51 +457,51 @@ exports[`TicketRouterForm render should render 1`] = `
             style="flex-grow: 1; margin-left: 0.5em;"
           >
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_assignee"
               id="temba_select_assignee"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_assignee"
-                  data-v-48c0c241=""
-                  readonly="readonly"
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_assignee"
+                    data-v-acea6376=""
+                    readonly=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_assignee"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="Assign to (Optional)"
-                      readonly="readonly"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_assignee"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                      readonly=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_assignee"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Assign to (Optional)"
+                        readonly=""
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -523,95 +510,55 @@ exports[`TicketRouterForm render should render 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_assignee"
                 id="temba_select_options_assignee"
-                style="margin-top: 0px; width: -24px; display: none;"
-              >
-                <div
-                  class="option active "
-                  data-option-index="0"
-                >
-                  <span
-                    class="name"
-                  >
-                    None
-                  </span>
-                </div>
-                <div
-                  class="option  "
-                  data-option-index="1"
-                >
-                  <span
-                    class="name"
-                  >
-                    Agent User
-                  </span>
-                </div>
-                <div
-                  class="option  "
-                  data-option-index="2"
-                >
-                  <span
-                    class="name"
-                  >
-                    Viewer User
-                  </span>
-                </div>
-                <div
-                  class="option  "
-                  data-option-index="3"
-                >
-                  <span
-                    class="name"
-                  >
-                    Admin User
-                  </span>
-                </div>
-              </div>
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_assignee"
                 id="temba_select_expressions_assignee"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
         </div>
         <div
-          class="body"
+          class="_body_0a650a"
         >
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-text-area sm normal textarea"
-                  data-passed-props="[object Object]"
+                  class="unnnic-text-area sm normal _textarea_17662c"
                   data-testid="Body"
-                  data-v-2f3d79bf=""
+                  data-v-82a4b073=""
                 >
                   <!---->
                   <textarea
-                    data-v-2f3d79bf=""
+                    data-v-82a4b073=""
                     placeholder="Enter a body"
+                    value="Where are my cookies"
                   />
                   <!---->
                   <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Body"
                 id=""
                 style="margin-top: 1px; width: -24px; display: none;"
@@ -620,45 +567,44 @@ exports[`TicketRouterForm render should render 1`] = `
           </div>
         </div>
         <div
-          class="optional_text_input "
+          class="_optional_text_input_1fb2f6 "
         >
           <div
             data-testid="Save as result"
           >
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
               unnnic-input="true"
             >
               <div
                 class="unnnic-form sm"
-                data-passed-props="[object Object]"
-                data-v-48c0c241=""
+                data-v-acea6376=""
                 maxlength="64"
               >
                 <p
                   class="unnnic-form__label"
-                  data-v-48c0c241=""
+                  data-v-acea6376=""
                 >
                   Save as result
                 </p>
                 <div
-                  class="unnnic-form-input text-input size--sm"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
+                  class="text-input size--sm unnnic-form-input"
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
-                  v-bind="[object Object]"
+                  maxlength="64"
                 >
                   <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
+                    class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
+                    hascloudycolor="false"
                     maxlength="64"
                     placeholder="Result"
-                    size="6"
                     type="text"
-                    v-bind="[object Object]"
+                    value="Result"
                   />
                   <!---->
                   <!---->
@@ -670,24 +616,24 @@ exports[`TicketRouterForm render should render 1`] = `
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_af1b5d"
       >
         <div
-          class="buttons"
+          class="_buttons_af1b5d"
         >
           <div
-            class="buttons_wrapper"
+            class="_buttons_wrapper_af1b5d"
           >
             <div
-              class="right_buttons"
+              class="_right_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -695,20 +641,22 @@ exports[`TicketRouterForm render should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Cancel 
+                    
+                    
+                     Cancel
                   </span>
                   <!---->
                 </button>
               </div>
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -716,9 +664,11 @@ exports[`TicketRouterForm render should render 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Ok 
+                    
+                    
+                     Ok
                   </span>
                   <!---->
                 </button>
@@ -732,33 +682,33 @@ exports[`TicketRouterForm render should render 1`] = `
 </body>
 `;
 
-exports[`TicketRouterForm updates should save changes 1`] = `
+exports[`TicketRouterForm > updates > should save changes 1`] = `
 <body>
   <div>
     <div
-      class="dialog"
+      class="_dialog_af1b5d"
     >
       <div
-        class="header"
+        class="_header_af1b5d"
       >
         <div
-          class="title_container"
+          class="_title_container_af1b5d"
         >
           <div
-            class="title u font secondary title-sm black"
+            class="_title_af1b5d u font secondary title-sm black"
           >
             Open Ticket
           </div>
           <div
-            class="subtitle"
+            class="_subtitle_af1b5d"
           />
         </div>
       </div>
       <div
-        class="content"
+        class="_content_af1b5d"
       >
         <div
-          class=" type_list"
+          class=" _type_list_8229f3"
         >
           <div
             class="color-neutral-cloudy"
@@ -767,49 +717,48 @@ exports[`TicketRouterForm updates should save changes 1`] = `
           </div>
           <div>
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
               id="temba_select_type"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_type"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_type"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="Open a ticket with a human agent"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Open a ticket with a human agent"
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -818,293 +767,293 @@ exports[`TicketRouterForm updates should save changes 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
-                  class="option active "
+                  class="_option_08dd12 _active_08dd12 "
                   data-option-index="0"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="1"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="2"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Wait for the contact to respond
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="3"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Smartly wait for response (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="4"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call WeniGPT (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="5"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send somebody else a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="6"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Label the incoming message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="7"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add a URN for the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="8"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add the contact to a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="10"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Update the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="11"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send email
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="12"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Save a result for this flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="13"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call a webhook
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="14"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call Zapier
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="15"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Enter another flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="16"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Start somebody else in a flow
                   </span>
                 </div>
                 <div
-                  class="option  selected"
+                  class="_option_08dd12  _selected_08dd12"
                   data-option-index="17"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Open a ticket with a human agent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="18"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact airtime
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="19"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by intent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="20"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Automatic Classify (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="21"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a custom expression
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="22"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by contact field
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="23"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="24"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split randomly
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="25"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by group membership
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
@@ -1117,49 +1066,48 @@ exports[`TicketRouterForm updates should save changes 1`] = `
             style="flex-basis: 250px;"
           >
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_topic"
               id="temba_select_topic"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_topic"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_topic"
+                    data-v-acea6376=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_topic"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="General"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_topic"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_topic"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Select the topic to use"
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -1168,30 +1116,19 @@ exports[`TicketRouterForm updates should save changes 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_topic"
                 id="temba_select_options_topic"
                 style="margin-top: 0px; width: -24px; display: none;"
-              >
-                <div
-                  class="option active selected"
-                  data-option-index="0"
-                >
-                  <span
-                    class="name"
-                  >
-                    General
-                  </span>
-                </div>
-              </div>
+              />
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_topic"
                 id="temba_select_expressions_topic"
                 style="margin-top: 0px; width: -24px; display: none;"
@@ -1202,51 +1139,51 @@ exports[`TicketRouterForm updates should save changes 1`] = `
             style="flex-grow: 1; margin-left: 0.5em;"
           >
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_assignee"
               id="temba_select_assignee"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_assignee"
-                  data-v-48c0c241=""
-                  readonly="readonly"
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_assignee"
+                    data-v-acea6376=""
+                    readonly=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_assignee"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="Assign to (Optional)"
-                      readonly="readonly"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_assignee"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                      readonly=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_assignee"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Assign to (Optional)"
+                        readonly=""
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -1255,95 +1192,55 @@ exports[`TicketRouterForm updates should save changes 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_assignee"
                 id="temba_select_options_assignee"
-                style="margin-top: 0px; width: -24px; display: none;"
-              >
-                <div
-                  class="option active "
-                  data-option-index="0"
-                >
-                  <span
-                    class="name"
-                  >
-                    None
-                  </span>
-                </div>
-                <div
-                  class="option  "
-                  data-option-index="1"
-                >
-                  <span
-                    class="name"
-                  >
-                    Agent User
-                  </span>
-                </div>
-                <div
-                  class="option  "
-                  data-option-index="2"
-                >
-                  <span
-                    class="name"
-                  >
-                    Viewer User
-                  </span>
-                </div>
-                <div
-                  class="option  "
-                  data-option-index="3"
-                >
-                  <span
-                    class="name"
-                  >
-                    Admin User
-                  </span>
-                </div>
-              </div>
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_assignee"
                 id="temba_select_expressions_assignee"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
         </div>
         <div
-          class="body"
+          class="_body_0a650a"
         >
           <div>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
                 style="all: unset;"
               >
                 <div
-                  class="unnnic-text-area sm normal textarea"
-                  data-passed-props="[object Object]"
+                  class="unnnic-text-area sm normal _textarea_17662c"
                   data-testid="Body"
-                  data-v-2f3d79bf=""
+                  data-v-82a4b073=""
                 >
                   <!---->
                   <textarea
-                    data-v-2f3d79bf=""
+                    data-v-82a4b073=""
                     placeholder="Enter a body"
+                    value="Where are my cookies"
                   />
                   <!---->
                   <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Body"
                 id=""
                 style="margin-top: 1px; width: -24px; display: none;"
@@ -1352,45 +1249,44 @@ exports[`TicketRouterForm updates should save changes 1`] = `
           </div>
         </div>
         <div
-          class="optional_text_input "
+          class="_optional_text_input_1fb2f6 "
         >
           <div
             data-testid="Save as result"
           >
             <div
               data-use-vue-component-wrap=""
+              data-v-app=""
               style="all: unset;"
               unnnic-input="true"
             >
               <div
                 class="unnnic-form sm"
-                data-passed-props="[object Object]"
-                data-v-48c0c241=""
+                data-v-acea6376=""
                 maxlength="64"
               >
                 <p
                   class="unnnic-form__label"
-                  data-v-48c0c241=""
+                  data-v-acea6376=""
                 >
                   Save as result
                 </p>
                 <div
-                  class="unnnic-form-input text-input size--sm"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
+                  class="text-input size--sm unnnic-form-input"
+                  data-v-acea6376=""
+                  data-v-df38a188=""
                   mask=""
-                  v-bind="[object Object]"
+                  maxlength="64"
                 >
                   <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
+                    class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
+                    hascloudycolor="false"
                     maxlength="64"
                     placeholder="Result"
-                    size="6"
                     type="text"
-                    v-bind="[object Object]"
+                    value="Result"
                   />
                   <!---->
                   <!---->
@@ -1402,24 +1298,24 @@ exports[`TicketRouterForm updates should save changes 1`] = `
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_af1b5d"
       >
         <div
-          class="buttons"
+          class="_buttons_af1b5d"
         >
           <div
-            class="buttons_wrapper"
+            class="_buttons_wrapper_af1b5d"
           >
             <div
-              class="right_buttons"
+              class="_right_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1427,20 +1323,22 @@ exports[`TicketRouterForm updates should save changes 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Cancel 
+                    
+                    
+                     Cancel
                   </span>
                   <!---->
                 </button>
               </div>
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1448,9 +1346,11 @@ exports[`TicketRouterForm updates should save changes 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Ok 
+                    
+                    
+                     Ok
                   </span>
                   <!---->
                 </button>
@@ -1464,82 +1364,92 @@ exports[`TicketRouterForm updates should save changes 1`] = `
 </body>
 `;
 
-exports[`TicketRouterForm updates should save changes 2`] = `
-Array [
-  Object {
-    "inboundConnections": Object {},
-    "node": Object {
-      "actions": Array [
-        Object {
-          "assignee": Object {
-            "created_on": "2021-06-10T21:44:30.971221Z",
-            "email": "agent.user@gmail.com",
-            "first_name": "Agent",
-            "last_name": "User",
-            "name": "Agent User",
-            "role": "agent",
-            "value": "agent.user@gmail.com",
-          },
-          "body": "Where are my cookies",
-          "result_name": "My Ticket Result",
-          "ticketer": Object {
-            "name": "Email (bob@acme.com)",
-            "uuid": "1165a73a-2ee0-4891-895e-768645194862",
-          },
-          "topic": Object {
-            "created_on": "2021-09-01T01:06:39.178493Z",
-            "name": "General",
-            "uuid": "6f38eba0-d673-4a35-82df-21bae2b6d466",
-            "value": "6f38eba0-d673-4a35-82df-21bae2b6d466",
-          },
-          "type": "open_ticket",
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-        },
-      ],
-      "exits": Array [
-        Object {
-          "destination_uuid": null,
-          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-        },
-        Object {
-          "destination_uuid": null,
-          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-        },
-      ],
-      "router": Object {
-        "cases": Array [
-          Object {
-            "arguments": Array [
-              "Success",
+exports[`TicketRouterForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "assignee": {
+                "created_on": "2021-06-10T21:44:30.971221Z",
+                "email": "agent.user@gmail.com",
+                "first_name": "Agent",
+                "last_name": "User",
+                "name": "Agent User",
+                "role": "agent",
+                "value": "agent.user@gmail.com",
+              },
+              "body": "Where are my cookies",
+              "result_name": "My Ticket Result",
+              "ticketer": {
+                "name": "Email (bob@acme.com)",
+                "uuid": "1165a73a-2ee0-4891-895e-768645194862",
+              },
+              "topic": {
+                "created_on": "2021-09-01T01:06:39.178493Z",
+                "name": "General",
+                "uuid": "6f38eba0-d673-4a35-82df-21bae2b6d466",
+                "value": "6f38eba0-d673-4a35-82df-21bae2b6d466",
+              },
+              "type": "open_ticket",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_category",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
             ],
-            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-            "type": "has_category",
-            "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_ticket_result",
+            "type": "switch",
           },
-        ],
-        "categories": Array [
-          Object {
-            "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-            "name": "Success",
-            "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
-          },
-          Object {
-            "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-            "name": "Failure",
-            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-          },
-        ],
-        "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
-        "operand": "@results.my_ticket_result",
-        "type": "switch",
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_ticket",
+        },
       },
-      "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
     },
-    "ui": Object {
-      "config": Object {},
-      "position": null,
-      "type": "split_by_ticket",
-    },
-  },
-]
+  ],
+}
 `;

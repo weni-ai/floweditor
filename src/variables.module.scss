@@ -1,5 +1,4 @@
 @import './palette_ec.scss';
-@import '~@weni/unnnic-system/src/assets/scss/unnnic.scss';
 
 // how big our blocks are
 $grid_size: 20;
@@ -15,12 +14,15 @@ $node_spacing: 13;
 :export {
   grid_size: $grid_size;
 }
+
 :export {
   node_spacing: $node_spacing;
 }
+
 :export {
   node_padding: $node_padding;
 }
+
 :export {
   background-size: $node_spacing;
 }

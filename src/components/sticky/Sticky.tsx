@@ -11,6 +11,23 @@ import { CONFIRMATION_TIME, QUIET_NOTE } from 'utils';
 import styles from './Sticky.module.scss';
 import i18n from 'config/i18n';
 
+import { applyVueInReact } from 'veaury';
+
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
+
 type DragFunction = (event: DragEvent) => void;
 export const STICKY_SPEC_ID = 'sticky-container';
 export const STICKY_TITLE = i18n.t('sticky.title', 'New Note');
@@ -164,7 +181,10 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
 
   private getColorChooser(): JSX.Element {
     return (
-      <div className={styles.color_chooser_container}>
+      <div
+        className={styles.color_chooser_container}
+        data-testId="color-chooser"
+      >
         <div className={styles.color_chooser}>
           {Object.keys(COLOR_OPTIONS).map((color: string) => {
             if (color !== this.props.sticky.color) {
@@ -175,6 +195,7 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
                     this.handleChangeColor(color);
                   }}
                   className={styles.color_option + ' ' + COLOR_OPTIONS[color]}
+                  data-testid={`color-chooser-${color}`}
                 />
               );
             }
@@ -216,13 +237,15 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
         <div className={stickyClasses.join(' ')}>
           <div className={titleClasses.join(' ')}>
             <div
+              data-testid="remove"
               className={styles.remove_button}
               onClick={this.handleClickRemove}
             >
-              <span className="fe-x" />
+              <UnnnicIcon icon={'close'} size="sm" scheme="neutral-cloudy" />
             </div>
             <div className={styles.confirmation}>Remove?</div>
             <TextareaAutosize
+              data-testid="title"
               className={styles.title}
               value={this.state.title}
               onChange={this.handleChangeTitle}
@@ -231,6 +254,7 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
           </div>
           <div className={styles.body_wrapper}>
             <TextareaAutosize
+              data-testid="body"
               className={styles.body}
               value={this.state.body}
               onChange={this.handleChangeBody}

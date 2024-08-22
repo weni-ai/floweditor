@@ -56,14 +56,14 @@ import Debug from 'utils/debug';
 import { PopTabType } from 'config/interfaces';
 
 import styles from './Flow.module.scss';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 // @ts-ignore
-import { unnnicModal, unnnicButton } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import { WeniLoveIcon } from './WeniLoveIcon';
 import i18n from '../../config/i18n';
 import SearchBar from 'components/search/SearchBar';
 
-const UnnnicModal = applyVueInReact(unnnicModal, {
+const UnnnicModal = applyVueInReact(Unnnic.unnnicModal, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -87,7 +87,7 @@ const UnnnicModal = applyVueInReact(unnnicModal, {
   },
 });
 
-const UnnnicButton = applyVueInReact(unnnicButton, {
+const UnnnicButton = applyVueInReact(Unnnic.unnnicButton, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',

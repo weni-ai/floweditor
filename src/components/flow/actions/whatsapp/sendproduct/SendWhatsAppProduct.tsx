@@ -3,6 +3,22 @@ import * as React from 'react';
 
 import styles from './SendWhatsAppProduct.module.scss';
 import i18n from 'config/i18n';
+import { applyVueInReact } from 'veaury';
+
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+        display: 'flex',
+      },
+    },
+  },
+});
 
 const SendWhatsAppProductComp: React.FunctionComponent<SendWhatsAppProduct> = (
   action: SendWhatsAppProduct,
@@ -10,9 +26,7 @@ const SendWhatsAppProductComp: React.FunctionComponent<SendWhatsAppProduct> = (
   return (
     <>
       <div className={styles.icons_wrapper}>
-        <span className={`${styles.icon} material-symbols-outlined`}>
-          storefront
-        </span>
+        <UnnnicIcon icon="storefront" size="sm" />
         {action.automaticProductSearch ? (
           <span>
             {i18n.t(

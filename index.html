@@ -3,15 +3,70 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="manifest" href="/manifest.json" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto:200,300,400,500" />
+
+  <script type="module" src="/src/main.jsx" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      var base = '/.netlify/functions/';
+      var config = {
+        flow: 'a4f64f1b-85bc-477e-b706-de313a022979',
+        flowType: 'message',
+        localStorage: true,
+        mutable: true,
+        filters: ['facebook', 'whatsapp', 'airtime', 'resthook', 'classifier', 'ticketer', 'external_service', 'whatsapp_catalog', 'brain'],
+        help: {
+          legacy_extra: 'help.html',
+          missing_dependency: 'help.html',
+          invalid_regex: 'help.html'
+        },
+        endpoints: {
+          globals: base + 'globals',
+          groups: base + 'groups',
+          fields: base + 'fields',
+          labels: base + 'labels',
+          channels: base + 'channels',
+          classifiers: base + 'classifiers',
+          ticketers: base + 'ticketers',
+          resthooks: base + 'resthooks',
+          templates: base + 'templates',
+          flows: base + 'flows',
+          revisions: base + 'revisions',
+          recents: base + 'recents',
+          languages: base + 'languages',
+          environment: base + 'environment',
+          recipients: base + 'recipients',
+          functions: base + 'functions',
+          completion: base + 'completion',
+          attachments: base + 'attachments',
+          activity: base + 'activity',
+          users: base + 'users',
+          topics: base + 'topics',
+          ticketer_queues: base + 'ticketer_queues',
+          external_services: base + 'external_services',
+          knowledgeBases: base + 'knowledge_bases',
+          whatsapp_products: base + 'whatsapp_products',
+          brain: base + 'brain',
+
+          editor: '/',
+
+          simulateStart: null,
+          simulateResume: null
+        },
+        showNewUpdates: false,
+        initialGuide: 'v2'
+      };
+      showFlowEditor(document.getElementById('floweditor'), config);
+    });
+  </script>
 
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -172,57 +227,5 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 </body>
-
-<script>
-  var base = '/.netlify/functions/';
-  var config = {
-    flow: 'a4f64f1b-85bc-477e-b706-de313a022979',
-    flowType: 'message',
-    localStorage: true,
-    mutable: true,
-    filters: ['facebook', 'whatsapp', 'airtime', 'resthook', 'classifier', 'ticketer', 'external_service', 'whatsapp_catalog', 'brain'],
-    help: {
-      legacy_extra: 'help.html',
-      missing_dependency: 'help.html',
-      invalid_regex: 'help.html'
-    },
-    endpoints: {
-      globals: base + 'globals',
-      groups: base + 'groups',
-      fields: base + 'fields',
-      labels: base + 'labels',
-      channels: base + 'channels',
-      classifiers: base + 'classifiers',
-      ticketers: base + 'ticketers',
-      resthooks: base + 'resthooks',
-      templates: base + 'templates',
-      flows: base + 'flows',
-      revisions: base + 'revisions',
-      recents: base + 'recents',
-      languages: base + 'languages',
-      environment: base + 'environment',
-      recipients: base + 'recipients',
-      functions: base + 'functions',
-      completion: base + 'completion',
-      attachments: base + 'attachments',
-      activity: base + 'activity',
-      users: base + 'users',
-      topics: base + 'topics',
-      ticketer_queues: base + 'ticketer_queues',
-      external_services: base + 'external_services',
-      knowledgeBases: base + 'knowledge_bases',
-      whatsapp_products: base + 'whatsapp_products',
-      brain: base + 'brain',
-
-      editor: '/',
-
-      simulateStart: null,
-      simulateResume: null
-    },
-    showNewUpdates: false,
-    initialGuide: 'v2'
-  };
-  showFlowEditor(document.getElementById('floweditor'), config);
-</script>
 
 </html>

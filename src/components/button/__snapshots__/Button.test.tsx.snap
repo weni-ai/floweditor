@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Button render should render self, children with base props 1`] = `
+exports[`Button > render > should render self, children with base props 1`] = `
 <body>
   <div>
     <div
       data-use-vue-component-wrap=""
+      data-v-app=""
     >
       <button
         class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-        data-passed-props="[object Object]"
-        data-v-3b3aa28c=""
+        data-v-4cec5e43=""
         style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
       >
         <!---->
@@ -17,9 +17,11 @@ exports[`Button render should render self, children with base props 1`] = `
         <!---->
         <span
           class="unnnic-button__label"
-          data-v-3b3aa28c=""
+          data-v-4cec5e43=""
         >
-           Save 
+          
+          
+           Save
         </span>
         <!---->
       </button>

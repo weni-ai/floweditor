@@ -83,7 +83,7 @@ export default class AssetSelector extends React.Component<
   AssetSelectorProps,
   AssetSelectorState
 > {
-  private lastCreation: number = 0;
+  private lastCreation = 0;
 
   private options: any[] = [];
 
