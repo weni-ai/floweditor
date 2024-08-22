@@ -39,6 +39,156 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
               >
                 <div
                   class="unnnic-tooltip _zoom_tooltip_25bc10"
+                  data-v-903a37c5=""
+                  shortcuttext="Ctrl + Scroll"
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="_out_25bc10"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        remove
+                      </span>
+                    </div>
+                    <div
+                      class="_percentage_25bc10"
+                    >
+                      100
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        percent
+                      </span>
+                    </div>
+                    <div
+                      class="_in_25bc10"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        add
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <span
+                    class="unnnic-tooltip-label unnnic-tooltip-label-top"
+                    data-v-903a37c5=""
+                  >
+                    
+                    
+                    Zoom 
+                    <br
+                      data-v-903a37c5=""
+                    />
+                    
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="_guiding_wrapper_168ca1"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <div
+                  class="unnnic-tooltip _start_tooltip_25bc10"
+                  data-v-903a37c5=""
+                  shortcuttext="Ctrl + Enter"
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="_start_25bc10"
+                    >
+                      <span
+                        class="_hide_25bc10"
+                      >
+                        Start of flow
+                      </span>
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        arrow_upward
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <span
+                    class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                    data-v-903a37c5=""
+                  >
+                    
+                    
+                     
+                    <br
+                      data-v-903a37c5=""
+                    />
+                    
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Canvas > adjusts the height when updating dimensions 2`] = `
+<body>
+  <div>
+    <div
+      class="_canvas_container_25bc10 _cursor_select_25bc10"
+      id="canvas-container"
+    >
+      <div
+        class="_canvas_background_25bc10"
+      >
+        <div
+          class="_canvas_25bc10"
+          data-testid="canvas"
+          id="canvas"
+          tabindex="0"
+        >
+          <div
+            class="_panzoom_25bc10"
+            id="panzoom"
+          >
+            <div />
+            <div
+              class="_draggable_c0a2dc"
+              data-testid="draggable_132de855-4042-4dc1-a18f-cc2e6a8f790a"
+              style="left: 100px; top: 1200px;"
+            />
+          </div>
+          <div
+            class="_zoom_control_25bc10"
+          >
+            <div
+              class="_guiding_wrapper_168ca1"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <div
+                  class="unnnic-tooltip _zoom_tooltip_25bc10"
                   data-v-5e81b292=""
                 >
                   
@@ -51,9 +201,17 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_08029817512818083"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          remove
+                        </span>
+                        
+                      </div>
                     </div>
                     <div
                       class="_percentage_25bc10"
@@ -61,24 +219,47 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                       100
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_6266400383866688"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          percent
+                        </span>
+                        
+                      </div>
                     </div>
                     <div
                       class="_in_25bc10"
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_3787702117449454"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          add
+                        </span>
+                        
+                      </div>
                     </div>
+                    <!--teleport start-->
+                    <!--teleport end-->
+                    <!--teleport start-->
+                    <!--teleport end-->
+                    <!--teleport start-->
+                    <!--teleport end-->
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-top"
                     data-v-5e81b292=""
+                    style="left: 0px; top: -8px;"
                   >
                     
                     
@@ -124,15 +305,26 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                       </span>
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_3691110158724875"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          arrow_upward
+                        </span>
+                        
+                      </div>
                     </div>
+                    <!--teleport start-->
+                    <!--teleport end-->
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-right"
                     data-v-5e81b292=""
+                    style="left: 8px; top: 0px;"
                   >
                     
                     
@@ -199,6 +391,156 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
               >
                 <div
                   class="unnnic-tooltip _zoom_tooltip_25bc10"
+                  data-v-903a37c5=""
+                  shortcuttext="Ctrl + Scroll"
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="_out_25bc10"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        remove
+                      </span>
+                    </div>
+                    <div
+                      class="_percentage_25bc10"
+                    >
+                      100
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        percent
+                      </span>
+                    </div>
+                    <div
+                      class="_in_25bc10"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        add
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <span
+                    class="unnnic-tooltip-label unnnic-tooltip-label-top"
+                    data-v-903a37c5=""
+                  >
+                    
+                    
+                    Zoom 
+                    <br
+                      data-v-903a37c5=""
+                    />
+                    
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="_guiding_wrapper_168ca1"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <div
+                  class="unnnic-tooltip _start_tooltip_25bc10"
+                  data-v-903a37c5=""
+                  shortcuttext="Ctrl + Enter"
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="_start_25bc10"
+                    >
+                      <span
+                        class="_hide_25bc10"
+                      >
+                        Start of flow
+                      </span>
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        arrow_upward
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <span
+                    class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                    data-v-903a37c5=""
+                  >
+                    
+                    
+                     
+                    <br
+                      data-v-903a37c5=""
+                    />
+                    
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Canvas > initializes the height to the lowest draggable 2`] = `
+<body>
+  <div>
+    <div
+      class="_canvas_container_25bc10 _cursor_select_25bc10"
+      id="canvas-container"
+    >
+      <div
+        class="_canvas_background_25bc10"
+      >
+        <div
+          class="_canvas_25bc10"
+          data-testid="canvas"
+          id="canvas"
+          tabindex="0"
+        >
+          <div
+            class="_panzoom_25bc10"
+            id="panzoom"
+          >
+            <div />
+            <div
+              class="_draggable_c0a2dc"
+              data-testid="draggable_1e47a1e1-3c67-4df5-adf1-da542c789adb"
+              style="left: 100px; top: 1200px;"
+            />
+          </div>
+          <div
+            class="_zoom_control_25bc10"
+          >
+            <div
+              class="_guiding_wrapper_168ca1"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <div
+                  class="unnnic-tooltip _zoom_tooltip_25bc10"
                   data-v-5e81b292=""
                 >
                   
@@ -211,9 +553,17 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_5230203405063845"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          remove
+                        </span>
+                        
+                      </div>
                     </div>
                     <div
                       class="_percentage_25bc10"
@@ -221,24 +571,47 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                       100
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_9381605852924635"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          percent
+                        </span>
+                        
+                      </div>
                     </div>
                     <div
                       class="_in_25bc10"
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_6228477855859962"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          add
+                        </span>
+                        
+                      </div>
                     </div>
+                    <!--teleport start-->
+                    <!--teleport end-->
+                    <!--teleport start-->
+                    <!--teleport end-->
+                    <!--teleport start-->
+                    <!--teleport end-->
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-top"
                     data-v-5e81b292=""
+                    style="left: 0px; top: -8px;"
                   >
                     
                     
@@ -284,15 +657,26 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                       </span>
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_2894367153076647"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          arrow_upward
+                        </span>
+                        
+                      </div>
                     </div>
+                    <!--teleport start-->
+                    <!--teleport end-->
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-right"
                     data-v-5e81b292=""
+                    style="left: 8px; top: 0px;"
                   >
                     
                     
@@ -372,6 +756,151 @@ exports[`Canvas > render default 1`] = `
               >
                 <div
                   class="unnnic-tooltip _zoom_tooltip_25bc10"
+                  data-v-903a37c5=""
+                  shortcuttext="Ctrl + Scroll"
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="_out_25bc10"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        remove
+                      </span>
+                    </div>
+                    <div
+                      class="_percentage_25bc10"
+                    >
+                      100
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        percent
+                      </span>
+                    </div>
+                    <div
+                      class="_in_25bc10"
+                    >
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        add
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <span
+                    class="unnnic-tooltip-label unnnic-tooltip-label-top"
+                    data-v-903a37c5=""
+                  >
+                    
+                    
+                    Zoom 
+                    <br
+                      data-v-903a37c5=""
+                    />
+                    
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="_guiding_wrapper_168ca1"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <div
+                  class="unnnic-tooltip _start_tooltip_25bc10"
+                  data-v-903a37c5=""
+                  shortcuttext="Ctrl + Enter"
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="_start_25bc10"
+                    >
+                      <span
+                        class="_hide_25bc10"
+                      >
+                        Start of flow
+                      </span>
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        arrow_upward
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <span
+                    class="unnnic-tooltip-label unnnic-tooltip-label-right"
+                    data-v-903a37c5=""
+                  >
+                    
+                    
+                     
+                    <br
+                      data-v-903a37c5=""
+                    />
+                    
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Canvas > render default 2`] = `
+<body>
+  <div>
+    <div
+      class="_canvas_container_25bc10 _cursor_select_25bc10"
+      id="canvas-container"
+    >
+      <div
+        class="_canvas_background_25bc10"
+      >
+        <div
+          class="_canvas_25bc10"
+          data-testid="canvas"
+          id="canvas"
+          tabindex="0"
+        >
+          <div
+            class="_panzoom_25bc10"
+            id="panzoom"
+          >
+            <div />
+          </div>
+          <div
+            class="_zoom_control_25bc10"
+          >
+            <div
+              class="_guiding_wrapper_168ca1"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <div
+                  class="unnnic-tooltip _zoom_tooltip_25bc10"
                   data-v-5e81b292=""
                 >
                   
@@ -384,9 +913,17 @@ exports[`Canvas > render default 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_7860098955373092"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          remove
+                        </span>
+                        
+                      </div>
                     </div>
                     <div
                       class="_percentage_25bc10"
@@ -394,24 +931,47 @@ exports[`Canvas > render default 1`] = `
                       100
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_7041134420200625"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          percent
+                        </span>
+                        
+                      </div>
                     </div>
                     <div
                       class="_in_25bc10"
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_05653088682407015"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          add
+                        </span>
+                        
+                      </div>
                     </div>
+                    <!--teleport start-->
+                    <!--teleport end-->
+                    <!--teleport start-->
+                    <!--teleport end-->
+                    <!--teleport start-->
+                    <!--teleport end-->
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-top"
                     data-v-5e81b292=""
+                    style="left: 0px; top: -8px;"
                   >
                     
                     
@@ -457,15 +1017,26 @@ exports[`Canvas > render default 1`] = `
                       </span>
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_7237795607394069"
                         style="display: flex;"
-                      />
+                      >
+                        
+                        <span
+                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                          data-v-930380cc=""
+                        >
+                          arrow_upward
+                        </span>
+                        
+                      </div>
                     </div>
+                    <!--teleport start-->
+                    <!--teleport end-->
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-right"
                     data-v-5e81b292=""
+                    style="left: 8px; top: 0px;"
                   >
                     
                     

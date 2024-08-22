@@ -464,13 +464,15 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="true"
                     >
                       <svg
-                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--brand-weni unnnic-checkbox"
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
                         data-v-7fb32042=""
                         data-v-930380cc=""
                         fill="none"
@@ -480,19 +482,13 @@ exports[`SchemeRouterForm > should render 1`] = `
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <rect
-                          class="primary"
-                          fill="#3B414D"
-                          height="30"
-                          rx="4"
-                          width="30"
-                          x="5"
-                          y="5.00049"
-                        />
-                        <path
-                          clip-rule="evenodd"
-                          d="M13.0626 19.6981L17.0001 23.9295L26.9376 13.2504L28.2501 14.6608L17.0001 26.7504L11.7501 21.1086L13.0626 19.6981Z"
-                          fill="white"
-                          fill-rule="evenodd"
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
                         />
                       </svg>
                       <!---->
@@ -515,13 +511,15 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="true"
                     >
                       <svg
-                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--brand-weni unnnic-checkbox"
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
                         data-v-7fb32042=""
                         data-v-930380cc=""
                         fill="none"
@@ -531,19 +529,13 @@ exports[`SchemeRouterForm > should render 1`] = `
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <rect
-                          class="primary"
-                          fill="#3B414D"
-                          height="30"
-                          rx="4"
-                          width="30"
-                          x="5"
-                          y="5.00049"
-                        />
-                        <path
-                          clip-rule="evenodd"
-                          d="M13.0626 19.6981L17.0001 23.9295L26.9376 13.2504L28.2501 14.6608L17.0001 26.7504L11.7501 21.1086L13.0626 19.6981Z"
-                          fill="white"
-                          fill-rule="evenodd"
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
                         />
                       </svg>
                       <!---->
@@ -566,13 +558,15 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="true"
                     >
                       <svg
-                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--brand-weni unnnic-checkbox"
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
                         data-v-7fb32042=""
                         data-v-930380cc=""
                         fill="none"
@@ -582,19 +576,13 @@ exports[`SchemeRouterForm > should render 1`] = `
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <rect
-                          class="primary"
-                          fill="#3B414D"
-                          height="30"
-                          rx="4"
-                          width="30"
-                          x="5"
-                          y="5.00049"
-                        />
-                        <path
-                          clip-rule="evenodd"
-                          d="M13.0626 19.6981L17.0001 23.9295L26.9376 13.2504L28.2501 14.6608L17.0001 26.7504L11.7501 21.1086L13.0626 19.6981Z"
-                          fill="white"
-                          fill-rule="evenodd"
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
                         />
                       </svg>
                       <!---->
@@ -617,10 +605,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -662,10 +652,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -707,10 +699,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -752,10 +746,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -797,10 +793,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -842,10 +840,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -887,10 +887,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -932,10 +934,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -977,10 +981,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -1022,10 +1028,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -1067,10 +1075,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
@@ -1112,10 +1122,12 @@ exports[`SchemeRouterForm > should render 1`] = `
                   <div
                     data-use-vue-component-wrap=""
                     data-v-app=""
+                    style="all: unset;"
                   >
                     <div
                       class="unnnic-checkbox-wrapper _checkbox_08dd12"
                       data-v-7fb32042=""
+                      value="false"
                     >
                       <svg
                         class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"

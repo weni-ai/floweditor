@@ -12,17 +12,7 @@ import { applyVueInReact } from 'veaury';
 import Unnnic from '@weni/unnnic-system';
 import { debounce } from '../utils';
 
-const UnnnicCheckbox = applyVueInReact(Unnnic.unnnicCheckbox, {
-  vue: {
-    componentWrap: 'div',
-    slotWrap: 'div',
-    componentWrapAttrs: {
-      style: {
-        all: '',
-      },
-    },
-  },
-});
+const UnnnicCheckbox = applyVueInReact(Unnnic.unnnicCheckbox);
 
 export interface SelectOptionsProps {
   options: any[];
@@ -301,7 +291,7 @@ export default class SelectOptions extends React.Component<
     );
   }
 
-  private renderOption(option: any, selected: any) {
+  private renderOption(option: any, selected: boolean) {
     let optionName = option.name;
     if (this.props.getName) {
       optionName = this.props.getName(option);
