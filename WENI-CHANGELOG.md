@@ -1,3 +1,8 @@
+3.0.1
+----------
+- Fix: Split by contact field card checkbox;
+- Fix: Allow copy of split randomly card;
+
 3.0.0
 ----------
 - Feat: Node 18
