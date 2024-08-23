@@ -47,6 +47,7 @@ import {
   FILE_TYPE_REGEX,
   renderUploadButton,
 } from '../whatsapp/sendmsg/attachments';
+import QuickRepliesList from '../whatsapp/sendmsg/QuickRepliesList';
 
 export interface WhatsappMsgLocalizationFormState extends FormState {
   text: StringEntry;
@@ -360,6 +361,10 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
                 ))}
               </div>
             </div>
+            <QuickRepliesList
+              quickReplies={this.state.quickReplies}
+              onQuickRepliesUpdated={this.handleQuickRepliesUpdate}
+            />
           </>
         ),
         checked: this.state.quickReplies.value.length > 0,
