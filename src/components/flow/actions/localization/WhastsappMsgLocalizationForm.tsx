@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { react as bindCallbacks } from 'auto-bind';
 import { LocalizationFormProps } from 'components/flow/props';
 import { fakePropType } from 'config/ConfigProvider';
@@ -25,41 +26,34 @@ import i18n from 'config/i18n';
 import { AxiosResponse } from 'axios';
 import { determineTypeConfig } from 'components/flow/helpers';
 import mutate from 'immutability-helper';
-import TextInputElement from 'components/form/textinput/TextInputElement';
-import { MaxOfTenItems, validate } from 'store/validators';
-// import {
-//   unnnicSelectSmart,
-//   // @ts-ignore
-// } from '@weni/unnnic-system';
-import SelectElement, {
-  UnnnicSelectOption,
-} from 'components/form/select/SelectElement';
+import TextInputElement, {
+  TextInputSizes,
+} from 'components/form/textinput/TextInputElement';
+import {
+  MaxOfTenItems,
+  shouldRequireIf,
+  validate,
+  ValidURL,
+} from 'store/validators';
+import { UnnnicSelectOption } from 'components/form/select/SelectElement';
 import { SendWhatsAppMsg } from 'flowTypes';
-import MultiChoiceInput from 'components/form/multichoice/MultiChoice';
-import { Trans } from 'react-i18next';
 import Pill from 'components/pill/Pill';
 import OptionsList from '../whatsapp/sendmsg/OptionsList';
 import { createEmptyListItem } from '../whatsapp/sendmsg/helpers';
-import { applyVueInReact } from 'veaury';
-
-// const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
-//   vue: {
-//     componentWrap: 'div',
-//     slotWrap: 'div',
-//     componentWrapAttrs: {
-//       style: {
-//         all: '',
-//       },
-//     },
-//   },
-// });
+import { TembaSelect } from 'temba/TembaSelect';
+import { renderIf } from 'utils';
+import {
+  FILE_TYPE_MAP,
+  FILE_TYPE_REGEX,
+  renderUploadButton,
+} from '../whatsapp/sendmsg/attachments';
 
 export interface WhatsappMsgLocalizationFormState extends FormState {
   text: StringEntry;
   headerType?: UnnnicSelectOption<WhatsAppHeaderType>;
   headerText: StringEntry;
   footer: StringEntry;
-  attachments: Attachment[];
+  attachment: FormEntry<Attachment>;
   interactionType: UnnnicSelectOptionEntry<WhatsAppInteractionType>;
 
   buttonText: StringEntry;
@@ -89,12 +83,42 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
   };
 
   private handleAttachmentUploaded(response: AxiosResponse) {
-    const attachments: any = mutate(this.state.attachments, {
+    const attachment: any = mutate(this.state.attachment, {
       $push: [
         { type: response.data.type, url: response.data.url, uploaded: true },
       ],
     });
-    this.setState({ attachments });
+    this.setState({ attachment });
+  }
+
+  public handleAttachmentUrlChange(
+    value: string,
+    name: string,
+    submitting = false,
+  ): boolean {
+    const attachmentUrl = validate(
+      i18n.t('whatsapp_msg.attachment_url', 'Attachment URL'),
+      value,
+      [
+        shouldRequireIf(
+          submitting &&
+            this.state.headerType.value === WhatsAppHeaderType.MEDIA,
+        ),
+        ValidURL,
+      ],
+    );
+
+    const match = attachmentUrl.value.toLowerCase().match(FILE_TYPE_REGEX);
+    const fileType = match ? match[1] : null;
+    const attachmentType = FILE_TYPE_MAP[fileType] || 'unknown';
+
+    const attachment: Attachment = {
+      type: attachmentType,
+      url: attachmentUrl.value,
+      uploaded: false,
+    };
+
+    return this.handleUpdate({ attachment }, submitting);
   }
 
   private handleQuickReplyChanged(quickReplies: string[]) {
@@ -105,32 +129,9 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     return this.handleUpdate({ quickReplies });
   }
 
-  private handleAttachmentChanged(index: number, type: string, url: string) {
-    let attachments: any = this.state.attachments;
-    if (index === -1) {
-      attachments = mutate(attachments, {
-        $push: [{ type, url }],
-      });
-    } else {
-      attachments = mutate(attachments, {
-        [index]: {
-          $set: { type, url },
-        },
-      });
-    }
-
-    this.setState({ attachments });
-  }
-
-  private handleAttachmentRemoved(index: number) {
-    const attachments: any = mutate(this.state.attachments, {
-      $splice: [[index, 1]],
-    });
-    this.setState({ attachments });
-  }
-
   private handleUpdate(
     keys: {
+      attachment?: Attachment;
       text?: string;
       headerType?: UnnnicSelectOption<WhatsAppHeaderType>;
       headerText?: string;
@@ -256,12 +257,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     };
   }
 
-  public handleHeaderTypeChange(
-    event: UnnnicSelectOption<WhatsAppHeaderType>[],
-    submitting = false,
-  ): boolean {
-    const headerType = event[0];
-
+  public handleHeaderTypeChange(headerType: any, submitting = false): boolean {
     if (headerType.value === this.state.headerType.value) {
       return false;
     }
@@ -276,7 +272,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     const {
       text,
       quickReplies,
-      attachments,
+      attachment,
       headerText,
       buttonText,
       actionURL,
@@ -295,12 +291,6 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       if (text.value) {
         translations.text = text.value;
       }
-
-      translations.attachments = attachments
-        .filter((attachment: Attachment) => attachment.url.trim().length > 0)
-        .map(
-          (attachment: Attachment) => `${attachment.type}:${attachment.url}`,
-        );
 
       if (quickReplies.value && quickReplies.value.length > 0) {
         translations.quick_replies = quickReplies.value;
@@ -346,24 +336,12 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
   public render(): JSX.Element {
     const typeConfig = determineTypeConfig(this.props.nodeSettings);
     const tabs: Tab[] = [];
-    if (typeConfig.localizeableKeys!.indexOf('attachments') > -1) {
-      tabs.push({
-        name: i18n.t('forms.attachments', 'Attachments'),
-        body: renderAttachments(
-          this.context.config.endpoints.attachments,
-          this.state.attachments,
-          this.handleAttachmentUploaded,
-          this.handleAttachmentChanged,
-          this.handleAttachmentRemoved,
-        ),
-        checked: this.state.attachments.length > 0,
-      });
-    }
+    const attachment = this.state.attachment && this.state.attachment.value;
+    const hasUploadedAttachment =
+      !!attachment && (attachment && attachment.uploaded);
 
     const originalAction = this.props.nodeSettings
       .originalAction as SendWhatsAppMsg;
-
-    const headerType = this.state.headerType.value;
 
     if (typeConfig.localizeableKeys!.indexOf('quick_replies') > -1) {
       tabs.push({
@@ -382,15 +360,6 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
                 ))}
               </div>
             </div>
-            {/* <UnnnicSelectSmart
-              $model={{
-                value: [headerType],
-                setter: this.handleHeaderTypeChange,
-              }}
-              options={WHATSAPP_HEADER_TYPE_OPTIONS}
-              size="sm"
-              orderedByIndex={true}
-            /> */}
           </>
         ),
         checked: this.state.quickReplies.value.length > 0,
@@ -404,44 +373,86 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
         tabs={tabs}
       >
         <div>
-          {originalAction.header_type ? (
-            <div className={styles.header_type}>
-              <span className={`u font secondary body-md color-neutral-cloudy`}>
-                {i18n.t('forms.header_optional', 'Header (optional)')}
-              </span>
-              <SelectElement
-                key={'urn_type_select'}
-                name={i18n.t('forms.urn_type', 'URN Type')}
-                entry={this.state.headerType}
-                onChange={this.handleHeaderTypeChange}
-                options={WHATSAPP_HEADER_TYPE_OPTIONS}
-              />
-            </div>
-          ) : null}
-          {originalAction.header_text ? (
-            <div className={styles.header}>
-              <div data-spec="translation-container">
-                <div
-                  data-spec="text-to-translate"
-                  className={styles.translate_from}
-                >
-                  {
-                    (this.props.nodeSettings.originalAction as SendWhatsAppMsg)
-                      .header_text
-                  }
+          <div className={styles.header}>
+            {originalAction.messageType === 'interactive' ? (
+              <div className={styles.header_base}>
+                <div className={styles.header_type}>
+                  <span
+                    className={`u font secondary body-md color-neutral-cloudy`}
+                  >
+                    {i18n.t('forms.header_optional', 'Header (optional)')}
+                  </span>
+                  <TembaSelect
+                    name={''}
+                    value={this.state.headerType}
+                    options={WHATSAPP_HEADER_TYPE_OPTIONS}
+                    onChange={this.handleHeaderTypeChange}
+                    expressionsData={{
+                      functions: [],
+                      context: undefined,
+                    }}
+                  />
                 </div>
+                {this.state.headerType.value === 'text' ? (
+                  <div className={styles.header_text}>
+                    <TextInputElement
+                      name={i18n.t('forms.header_text', 'Header Text')}
+                      showLabel={true}
+                      onChange={this.handleHeaderTextUpdate}
+                      entry={this.state.headerText}
+                      placeholder={`${this.props.language.name}`}
+                      autocomplete={true}
+                      focus={true}
+                    />
+                  </div>
+                ) : null}
               </div>
-              <TextInputElement
-                name={i18n.t('forms.header_text', 'Header Text')}
-                showLabel={false}
-                onChange={this.handleHeaderTextUpdate}
-                entry={this.state.headerText}
-                placeholder={`${this.props.language.name}`}
-                autocomplete={true}
-                focus={true}
-              />
-            </div>
-          ) : null}
+            ) : null}
+
+            {renderIf(
+              originalAction.messageType === 'simple' ||
+                (originalAction.messageType === 'interactive' &&
+                  this.state.headerType.value === 'media'),
+            )(
+              <div className={styles.attachment}>
+                <div className={styles.attachment_url}>
+                  <TextInputElement
+                    placeholder={i18n.t(
+                      'forms.attachment_placeholder',
+                      'Paste an URL or send a file',
+                    )}
+                    name={i18n.t(
+                      'forms.attachment_optional',
+                      'Media (optional)',
+                    )}
+                    size={TextInputSizes.sm}
+                    onChange={this.handleAttachmentUrlChange}
+                    entry={{
+                      value:
+                        attachment && !attachment.uploaded
+                          ? attachment.url
+                          : '',
+                    }}
+                    error={
+                      this.state.attachment &&
+                      this.state.attachment.validationFailures.length > 0
+                        ? this.state.attachment.validationFailures[0].message
+                        : null
+                    }
+                    autocomplete={true}
+                    showLabel={true}
+                    disabled={hasUploadedAttachment}
+                  />
+                </div>
+
+                {renderUploadButton(
+                  this.context.config.endpoints.attachments,
+                  this.handleAttachmentUploaded,
+                  hasUploadedAttachment,
+                )}
+              </div>,
+            )}
+          </div>
 
           <div className={styles.content}>
             <div>
@@ -472,7 +483,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
             />
           </div>
 
-          {originalAction.footer ? (
+          {originalAction.messageType === 'interactive' ? (
             <div className={styles.footer}>
               <div className={styles.footer}>
                 <span
@@ -481,14 +492,16 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
                   {i18n.t('forms.footer', 'Footer (optional)')}
                 </span>
               </div>
-              <div data-spec="translation-container">
-                <div
-                  data-spec="text-to-translate"
-                  className={styles.translate_from}
-                >
-                  {originalAction.footer}
+              {originalAction.footer ? (
+                <div data-spec="translation-container">
+                  <div
+                    data-spec="text-to-translate"
+                    className={styles.translate_from}
+                  >
+                    {originalAction.footer}
+                  </div>
                 </div>
-              </div>
+              ) : null}
               <TextInputElement
                 name={i18n.t('forms.footer', 'Footer')}
                 showLabel={false}
