@@ -139,13 +139,13 @@ export const initializeWhatsappMsgLocalizedForm = (
     headerType: WHATSAPP_HEADER_TYPE_TEXT,
     headerText: { value: '' },
     footer: { value: '' },
-    attachments: [],
+    attachment: { value: { type: '', url: '' } },
     interactionType: null,
 
     buttonText: { value: '' },
     actionURL: { value: '' },
     listItems: {
-      value: [],
+      value: [createEmptyListItem()],
     },
     listItemTitleEntry: { value: '' },
     listItemDescriptionEntry: { value: '' },

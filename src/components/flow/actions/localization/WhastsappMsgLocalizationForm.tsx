@@ -380,7 +380,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
         <div>
           <div className={styles.header}>
             {originalAction.messageType === 'interactive' ? (
-              <div className={styles.header_base}>
+              <>
                 <div className={styles.header_type}>
                   <span
                     className={`u font secondary body-md color-neutral-cloudy`}
@@ -411,7 +411,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
                     />
                   </div>
                 ) : null}
-              </div>
+              </>
             ) : null}
 
             {renderIf(
@@ -440,6 +440,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
                     }}
                     error={
                       this.state.attachment &&
+                      this.state.attachment.validationFailures &&
                       this.state.attachment.validationFailures.length > 0
                         ? this.state.attachment.validationFailures[0].message
                         : null

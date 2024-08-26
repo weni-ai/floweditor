@@ -9,27 +9,23 @@
   width: 100%;
   color: $unnnic-color-neutral-dark;
 
-  .header_base{
-    display: flex;
-    flex-direction: row;
-    gap: $unnnic-spacing-sm;
+
     .header_type {
       display: flex;
-      width: 100%;
       flex-direction: column;
       span {
         margin-bottom: $unnnic-spacing-stack-nano;
       }
     }
-  }
-  .header_text{
-    display: flex;
-    width: 100%;
-  }
+    
+    .header_text{
+      width: 100%;
+    }
 
   .attachment {
     display: flex;
     width: 100%;
+    gap: $unnnic-spacing-inline-xs;
     align-items: center;
     color: $unnnic-color-neutral-cloudy;
     font-size: $unnnic-font-size-body-md;
