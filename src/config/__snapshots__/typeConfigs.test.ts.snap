@@ -96,9 +96,12 @@ exports[`typeConfigs > should provide type configs 1`] = `
     "filter": "whatsapp",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "text",
       "quick_replies",
+      "footer",
+      "header_text",
+      "button_text",
       "templating.variables",
     ],
     "massageForDisplay": [Function],
@@ -115,7 +118,7 @@ exports[`typeConfigs > should provide type configs 1`] = `
     "filter": "whatsapp_catalog",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "input",
     ],
     "name": "Send WhatsApp Product",
@@ -826,7 +829,7 @@ exports[`typeConfigs > should provide type configs 2`] = `
     "filter": "whatsapp_catalog",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "input",
     ],
     "name": "Send WhatsApp Product",
@@ -839,9 +842,12 @@ exports[`typeConfigs > should provide type configs 2`] = `
     "filter": "whatsapp",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "text",
       "quick_replies",
+      "footer",
+      "header_text",
+      "button_text",
       "templating.variables",
     ],
     "massageForDisplay": [Function],
@@ -1187,7 +1193,7 @@ exports[`typeConfigs > should provide type configs 2`] = `
     "filter": "whatsapp_catalog",
     "form": [Function],
     "localization": [Function],
-    "localizeableKeys": Array [
+    "localizeableKeys": [
       "input",
     ],
     "name": "Send WhatsApp Product",
