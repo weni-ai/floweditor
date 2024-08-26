@@ -378,6 +378,16 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
         tabs={tabs}
       >
         <div>
+          {originalAction.header_text ? (
+            <div data-spec="translation-container">
+              <div
+                data-spec="text-to-translate"
+                className={styles.translate_from}
+              >
+                {originalAction.header_text}
+              </div>
+            </div>
+          ) : null}
           <div className={styles.header}>
             {originalAction.messageType === 'interactive' ? (
               <>
