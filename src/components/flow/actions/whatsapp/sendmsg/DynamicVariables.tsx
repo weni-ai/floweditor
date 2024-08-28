@@ -3,33 +3,16 @@ import * as React from 'react';
 
 import styles from './DynamicVariables.module.scss';
 import i18n from 'config/i18n';
-import TextInputElement, {
-  TextInputSizes,
-  TextInputStyle,
-} from '../../../../form/textinput/TextInputElement';
+import TextInputElement from '../../../../form/textinput/TextInputElement';
 
-import { applyVueInReact } from 'veaury';
-// @ts-ignore
-// import { unnnicButton } from '@weni/unnnic-system';
 import { DynamicVariablesListItem } from './SendWhatsAppMsgForm';
 import { FormEntry, ValidationFailure } from '../../../../../store/nodeEditor';
-import { Trans } from 'react-i18next';
-
-// const UnnnicButton = applyVueInReact(unnnicButton, {
-//   vue: {
-//     componentWrap: 'div',
-//     slotWrap: 'div',
-//     componentWrapAttrs: {
-//       style: {
-//         all: '',
-//       },
-//     },
-//   },
-// });
+import Button, { ButtonTypes } from 'components/button/Button';
 
 export interface DynamicListProps {
   options: FormEntry<DynamicVariablesListItem[]>;
-  onValueUpdated(value: string, name: string): boolean;
+  onValueUpdated(value: any, name: string): Promise<boolean>;
+  onRemoveAttachment(name: string): void;
 }
 
 export interface DynamicListState {
@@ -49,6 +32,12 @@ export default class DynamicVariables extends React.Component<
   }
 
   public render(): JSX.Element {
+    let filePicker: any = null;
+
+    const triggerAttachmentUpload = (): void => {
+      filePicker.value = null;
+      filePicker.click();
+    };
     const hasError =
       this.props.options.validationFailures &&
       this.props.options.validationFailures.length > 0;
@@ -94,8 +83,38 @@ export default class DynamicVariables extends React.Component<
                     onChange={e => this.props.onValueUpdated(e, item.name)}
                     __className={styles.variable}
                     focus={true}
+                    disabled={item.disabled}
                   />
                 </div>
+                {item.disabled ? (
+                  <Button
+                    type={ButtonTypes.secondary}
+                    name={''}
+                    onClick={() => this.props.onRemoveAttachment(item.name)}
+                    iconName={'close'}
+                    size={'small'}
+                  />
+                ) : (
+                  <Button
+                    type={ButtonTypes.secondary}
+                    name={''}
+                    onClick={triggerAttachmentUpload}
+                    iconName={'upload-bottom-1'}
+                    size={'small'}
+                  />
+                )}
+
+                <input
+                  data-testid="upload-input"
+                  style={{
+                    display: 'none',
+                  }}
+                  ref={(ele: any) => {
+                    filePicker = ele;
+                  }}
+                  type="file"
+                  onChange={e => this.props.onValueUpdated(e, item.name)}
+                />
               </div>
             ))}
           </div>

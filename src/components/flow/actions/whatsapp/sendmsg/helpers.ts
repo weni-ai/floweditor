@@ -183,5 +183,6 @@ export const createEmptyDynamicItem = () => {
   return {
     name: 'teste',
     value: '',
+    disabled: false,
   };
 };

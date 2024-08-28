@@ -270,6 +270,7 @@ export interface WhatsAppListItem {
 export interface DynamicVariablesListItem {
   name: string;
   value: string;
+  disabled: boolean;
 }
 
 export interface SendWhatsAppMsgFormState extends FormState {
@@ -312,7 +313,6 @@ interface UpdateKeys {
   removeListItem?: WhatsAppListItem;
   quickReplies?: string[];
   dynamicVariables?: DynamicVariablesListItem;
-  removeDynamicVariable?: DynamicVariablesListItem;
   addNewDynamicVariable?: DynamicVariablesListItem;
   selectedForm?: UnnnicSelectOption<any>;
   firstScreen?: string;
@@ -535,6 +535,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
           ? {
               ...item,
               value: keys.dynamicVariables.value,
+              disabled: keys.dynamicVariables.disabled,
             }
           : item,
       );
@@ -787,8 +788,72 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ removeListItem: item });
   }
 
-  public handleDynamicVariableUpdate(value: any, name: string): boolean {
-    return this.handleUpdate({ dynamicVariables: { name, value } });
+  public async handleDynamicVariableUpdate(
+    value: any,
+    name: string,
+  ): Promise<boolean> {
+    // Verifica se o valor é um objeto de evento e se é um arquivo
+    if (value && value.target && value.target.files && value.target.files[0]) {
+      const file = value.target.files[0];
+
+      if (file instanceof File) {
+        try {
+          const base64String = await this.convertFileToBase64(file);
+          // Adiciona uma verificação para evitar chamadas duplicadas
+          if (this.shouldUpdateDynamicVariable(name, base64String)) {
+            return this.handleUpdate({
+              dynamicVariables: { name, value: base64String, disabled: true },
+            });
+          }
+        } catch (error) {
+          console.error('Error converting file to Base64:', error);
+          return false;
+        }
+      } else {
+        console.warn('Expected a File object in the event');
+        return false;
+      }
+    } else if (typeof value === 'string') {
+      // Adiciona uma verificação para evitar chamadas duplicadas
+      if (this.shouldUpdateDynamicVariable(name, value)) {
+        return this.handleUpdate({
+          dynamicVariables: { name, value, disabled: false },
+        });
+      }
+    } else {
+      console.warn('Unsupported type for dynamic variable update');
+      return false;
+    }
+  }
+
+  // Função para verificar se a atualização é necessária
+  private shouldUpdateDynamicVariable(name: string, newValue: any): boolean {
+    const existingVariable = this.state.dynamicVariables.value.find(
+      item => item.name === name,
+    );
+    return !existingVariable || existingVariable.value !== newValue;
+  }
+
+  public handleDynamicVariableRemove(name: string) {
+    this.handleUpdate({
+      dynamicVariables: { name, value: '', disabled: false },
+    });
+  }
+
+  private convertFileToBase64(file: File): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        resolve(reader.result as string);
+      };
+
+      reader.onerror = error => {
+        reject(error);
+      };
+
+      reader.readAsDataURL(file);
+    });
   }
 
   public handleButtonTextUpdate(buttonText: string): boolean {
@@ -1135,9 +1200,11 @@ export default class SendWhatsAppMsgForm extends React.Component<
         )}
         {interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS && (
           <>
+            {JSON.stringify(this.state.dynamicVariables)}
             <DynamicVariables
               options={this.state.dynamicVariables}
               onValueUpdated={this.handleDynamicVariableUpdate}
+              onRemoveAttachment={this.handleDynamicVariableRemove}
             />
           </>
         )}
