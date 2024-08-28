@@ -1,10 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`MountScroll renders 1`] = `
+exports[`MountScroll > renders 1`] = `
 <body>
   <div>
     <div
-      class="wrapper"
+      class="__wrapper_f617cd_f617cd"
     />
   </div>
 </body>

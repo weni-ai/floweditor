@@ -15,14 +15,14 @@ import TextInputElement, {
   TextInputSizes,
 } from 'components/form/textinput/TextInputElement';
 import update from 'immutability-helper';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 // @ts-ignore
-import { unnnicIcon, unnnicButton } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import { FormEntry, ValidationFailure } from 'store/nodeEditor';
 
-const UnnnicButton = applyVueInReact(unnnicButton);
+const UnnnicButton = applyVueInReact(Unnnic.unnnicButton);
 
-const UnnnicIcon = applyVueInReact(unnnicIcon, {
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',

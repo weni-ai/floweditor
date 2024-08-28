@@ -1,11 +1,7 @@
 import { Exit, FlowNode } from 'flowTypes';
 import { GRID_SIZE, timeStart, timeEnd, debounce } from 'utils';
+import JSPlumb from 'jsplumb';
 
-// TODO: Remove use of Function
-// tslint:disable:ban-types
-const {
-  jsPlumb: { importDefaults },
-} = require('../../node_modules/jsplumb/dist/js/jsplumb');
 export interface DragEvent {
   el: Element;
   pos: number[];
@@ -98,7 +94,8 @@ export default class Plumber {
   private onLoadFunction: () => void = null;
 
   constructor() {
-    this.jsPlumb = importDefaults({
+    // @ts-ignore
+    this.jsPlumb = JSPlumb.jsPlumb.importDefaults({
       DragOptions: { cursor: 'pointer', zIndex: 1000 },
       DropOptions: { tolerance: 'touch', hoverClass: 'plumb-hover' },
       Endpoint: 'Rectangle',
@@ -317,8 +314,8 @@ export default class Plumber {
     source: string,
     target: string,
     className: string = null,
-    slot: number = 0,
-    totalSlots: number = 0,
+    slot = 0,
+    totalSlots = 0,
   ): void {
     this.pendingConnections[`${source}:${target}:${className}`] = {
       source,

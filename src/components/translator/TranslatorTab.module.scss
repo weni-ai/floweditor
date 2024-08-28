@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 .hidden {
   visibility: hidden;
@@ -28,6 +28,7 @@
   border-radius: 4px;
   transition: all 500ms ease-in-out;
   opacity: 1;
+
   &.complete {
     opacity: 0;
     padding: 0px;
@@ -53,6 +54,7 @@
       padding: 6px;
       opacity: 1;
       padding-bottom: 0px;
+
       .pct_complete {
         opacity: 1;
       }
@@ -79,11 +81,14 @@
         .filled {
           background: lighten($blue, 3%);
         }
+
         &.hundredpct {
           background: lighten($lime, 3%);
         }
+
         border: solid 1px rgba(100, 100, 100, 0.7);
       }
+
       .toggle {
         color: $light_gray_2;
       }
@@ -100,6 +105,10 @@
       transition: all 200ms ease-in-out;
       color: darken($light_gray_2, 30%);
       transform: rotate(180deg);
+
+      .toggle_icon {
+        vertical-align: middle;
+      }
     }
 
     .progress_bar {
@@ -124,7 +133,7 @@
 
   .filters {
     height: 0px;
-    overflow: hidden;
+    overflow: auto;
     transition: height 200ms ease-in-out;
     opacity: 0;
     font-size: 12px;
@@ -140,9 +149,11 @@
       cursor: pointer;
       transition: opacity 600ms ease-in-out;
     }
+
     .checkboxes {
       flex-grow: 1;
-      > div:last-child {
+
+      >div:last-child {
         margin-top: 4px;
       }
     }

@@ -21,10 +21,10 @@ const translatorProps: TranslatorTabProps = {
   popped: null,
 
   // callbacks
-  onToggled: jest.fn(),
-  onTranslationClicked: jest.fn(),
-  onTranslationOpened: jest.fn(),
-  onTranslationFilterChanged: jest.fn(),
+  onToggled: vi.fn(),
+  onTranslationClicked: vi.fn(),
+  onTranslationOpened: vi.fn(),
+  onTranslationFilterChanged: vi.fn(),
 
   translationFilters: {
     categories: true,
@@ -151,7 +151,7 @@ describe(TranslatorTab.name, () => {
       <TranslatorTab {...translatorProps} />,
     );
 
-    let updates = createRouterNode(['Red', 'Green', 'Blue']);
+    const updates = createRouterNode(['Red', 'Green', 'Blue']);
     rerender(<TranslatorTab {...translatorProps} {...updates} />);
 
     // category list

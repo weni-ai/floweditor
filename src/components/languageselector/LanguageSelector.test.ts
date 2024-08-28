@@ -9,7 +9,7 @@ import { English, languages, Spanish } from 'testUtils/assetCreators';
 const baseProps: LanguageSelectorProps = {
   language: English,
   languages,
-  handleLanguageChange: jest.fn(),
+  handleLanguageChange: vi.fn(),
 };
 
 const { setup } = composeComponentTestUtils(LanguageSelector, baseProps);

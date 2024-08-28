@@ -74,7 +74,7 @@ export default class SetRunResultForm extends React.PureComponent<
 
   private handleUpdate(
     keys: { name?: Asset; value?: string; category?: string },
-    submitting: boolean = false,
+    submitting = false,
   ): boolean {
     const updates: Partial<SetRunResultFormState> = {};
 

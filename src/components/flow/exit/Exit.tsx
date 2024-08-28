@@ -20,10 +20,27 @@ import {
 } from 'store/thunks';
 import { createClickHandler, getLocalization, renderIf } from 'utils';
 
-import * as moment from 'moment';
+import moment from 'moment';
 import styles from './Exit.module.scss';
 import { Portal } from 'components/Portal';
 import i18n from 'config/i18n';
+
+import { applyVueInReact } from 'veaury';
+
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
 
 export interface RenderCategory extends Category {
   missing: boolean;
@@ -351,9 +368,11 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
     const confirm: JSX.Element =
       confirmDelete && this.context.config.mutable ? (
         <div
-          className={styles.confirm_x + ' fe-x'}
+          className={styles.confirm_x}
           {...createClickHandler(this.onDisconnect, () => this.props.dragging)}
-        />
+        >
+          <UnnnicIcon icon={'close'} size="xs" scheme="neutral-snow" />
+        </div>
       ) : null;
     const exitClasses: string = cx({
       [styles.exit]: true,

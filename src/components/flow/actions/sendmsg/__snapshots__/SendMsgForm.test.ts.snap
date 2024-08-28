@@ -1,314 +1,83 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SendMsgForm render should render 1`] = `
-<Dialog
-  buttons={
-    Object {
-      "primary": Object {
-        "name": "Confirm",
-        "onClick": [Function],
-      },
-      "tertiary": Object {
-        "name": "Cancel",
-        "onClick": [Function],
-      },
-    }
-  }
-  headerClass="send_msg"
-  tabs={
-    Array [
-      Object {
-        "body": <React.Fragment>
-          <p>
-            Sending messages over a WhatsApp channel requires that a template be used if you have not received a message from a contact in the last 24 hours. Setting a template to use over WhatsApp is especially important for the first message in your flow.
-          </p>
-          <AssetSelector
-            entry={
-              Object {
-                "value": null,
-              }
-            }
-            formClearable={true}
-            name="template"
-            noOptionsMessage="No templates found"
-            onChange={[Function]}
-            searchable={true}
-            shouldExclude={[Function]}
-          />
-        </React.Fragment>,
-        "checked": false,
-        "hasErrors": false,
-        "name": "WhatsApp",
-      },
-      Object {
-        "body": <React.Fragment>
-          <div
-            className="quick_reply_summary u font secondary body-md color-neutral-cloudy"
-          >
-            Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for "Yes" and one for "No".
-            <br />
-            <br />
-            You can add up to 10 Quick Replies.
-          </div>
-          <MultiChoiceInput
-            entry={
-              Object {
-                "value": "",
-              }
-            }
-            helpText={
-              <Trans
-                i18nKey="forms.quick_replies"
-              />
-            }
-            items={
-              Object {
-                "value": Array [],
-              }
-            }
-            name="Add a new Quick reply and press Enter"
-            onChange={[Function]}
-          />
-        </React.Fragment>,
-        "checked": false,
-        "hasErrors": false,
-        "name": "Quick Replies",
-      },
-      Object {
-        "body": <React.Fragment>
-          <div
-            className="u font secondary body-md color-neutral-cloudy"
-          >
-            Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.
-          </div>
-          <div
-            className="url_attachment_container"
-          >
-            <div
-              className="label u font secondary body-md color-neutral-cloudy"
-            >
-              File
-               
-              1
-            </div>
-            <div
-              className="url_attachment"
-            >
-              <div
-                className="type_choice"
-              >
-                <SelectElement
-                  entry={
-                    Object {
-                      "value": null,
-                    }
-                  }
-                  name="Type Options"
-                  onChange={[Function]}
-                  options={
-                    Array [
-                      Object {
-                        "name": "Image URL",
-                        "value": "image",
-                      },
-                      Object {
-                        "name": "Audio URL",
-                        "value": "audio",
-                      },
-                      Object {
-                        "name": "Video URL",
-                        "value": "video",
-                      },
-                      Object {
-                        "name": "PDF Document URL",
-                        "value": "application",
-                      },
-                      Object {
-                        "name": "Upload Attachment",
-                        "value": "upload",
-                      },
-                    ]
-                  }
-                  placeholder="Select the file type"
-                  style="sm"
-                />
-              </div>
-              <React.Fragment>
-                <div
-                  className="url"
-                />
-                <div
-                  className="remove"
-                />
-              </React.Fragment>
-            </div>
-          </div>
-          <input
-            onChange={[Function]}
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-            type="file"
-          />
-        </React.Fragment>,
-        "checked": false,
-        "name": "Attachments",
-      },
-      Object {
-        "body": <React.Fragment>
-          <div
-            className="u font secondary body-md color-neutral-cloudy title"
-          >
-            Send a message to all destinations known for this contact.
-          </div>
-          <SwitchElement
-            checked={false}
-            description="If you aren't sure what this means, leave it unchecked."
-            name="Send a message to all destinations"
-            onChange={[Function]}
-            size="small"
-            title="Send a message to all destinations"
-          />
-        </React.Fragment>,
-        "checked": false,
-        "name": "Advanced",
-      },
-    ]
-  }
-  title="Send message"
->
-  <TypeList
-    __className=""
-    initialType={
-      Object {
-        "component": [Function],
-        "description": "Send the contact a message",
-        "form": [Function],
-        "localization": [Function],
-        "localizeableKeys": Array [
-          "text",
-          "quick_replies",
-          "templating.variables",
-        ],
-        "massageForDisplay": [Function],
-        "name": "Send message",
+exports[`SendMsgForm > render > should render 1`] = `ShallowWrapper {}`;
+
+exports[`SendMsgForm > updates > should allow switching from router 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "all_urns": false,
+        "attachments": [],
+        "quick_replies": [],
+        "text": "What is your favorite color?",
         "type": "send_msg",
-      }
-    }
-    nodeSettings={
-      Object {
-        "originalAction": Object {
-          "all_urns": false,
-          "text": "Hey!",
-          "type": "send_msg",
-          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-        },
-        "originalNode": Object {
-          "inboundConnections": Object {},
-          "node": Object {
-            "actions": Array [
-              Object {
-                "all_urns": false,
-                "text": "Hey!",
-                "type": "send_msg",
-                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-              },
-            ],
-            "exits": Array [
-              Object {
-                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
-              },
-            ],
-            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
-          },
-          "ui": Object {
-            "position": Object {
-              "left": 0,
-              "top": 0,
-            },
-            "type": "execute_actions",
-          },
-        },
-      }
-    }
-    onChange={[MockFunction]}
-  />
-  <TextInputElement
-    autocomplete={true}
-    counter="sms"
-    entry={
-      Object {
-        "value": "Hey!",
-      }
-    }
-    focus={true}
-    name="Message"
-    onChange={[Function]}
-    placeholder="Type here..."
-    showLabel={true}
-    textarea={true}
-  />
-</Dialog>
+        "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`SendMsgForm updates should allow switching from router 1`] = `
-Array [
-  Object {
-    "all_urns": false,
-    "attachments": Array [],
-    "quick_replies": Array [],
-    "text": "What is your favorite color?",
-    "type": "send_msg",
-    "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
-  },
-]
-`;
-
-exports[`SendMsgForm updates should save changes 1`] = `
-Object {
-  "attachments": Array [],
-  "message": Object {
-    "validationFailures": Array [],
+exports[`SendMsgForm > updates > should save changes 1`] = `
+{
+  "attachments": [],
+  "message": {
+    "validationFailures": [],
     "value": "What is your favorite color?",
   },
-  "quickReplies": Object {
-    "validationFailures": Array [],
-    "value": Array [
+  "quickReplies": {
+    "validationFailures": [],
+    "value": [
       "red",
       "green",
       "blue",
     ],
   },
-  "quickReplyEntry": Object {
+  "quickReplyEntry": {
     "value": "",
   },
   "sendAll": true,
-  "template": Object {
+  "template": {
     "value": null,
   },
-  "templateVariables": Array [],
-  "topic": Object {
+  "templateVariables": [],
+  "topic": {
     "value": undefined,
   },
   "valid": true,
 }
 `;
 
-exports[`SendMsgForm updates should save changes 2`] = `
-Array [
-  Object {
-    "all_urns": true,
-    "attachments": Array [],
-    "quick_replies": Array [
-      "red",
-      "green",
-      "blue",
+exports[`SendMsgForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "all_urns": true,
+        "attachments": [],
+        "quick_replies": [
+          "red",
+          "green",
+          "blue",
+        ],
+        "text": "What is your favorite color?",
+        "type": "send_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
     ],
-    "text": "What is your favorite color?",
-    "type": "send_msg",
-    "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
-  },
-]
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;

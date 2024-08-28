@@ -39,10 +39,7 @@ export default class AddGroupsForm extends React.Component<
     }
   }
 
-  public handleGroupsChanged(
-    groups: any[],
-    submitting: boolean = false,
-  ): boolean {
+  public handleGroupsChanged(groups: any[], submitting = false): boolean {
     const updates: Partial<ChangeGroupsFormState> = {
       groups: validate(i18n.t('forms.groups', 'Groups'), groups, [
         shouldRequireIf(submitting),

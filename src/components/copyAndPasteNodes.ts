@@ -11,7 +11,7 @@ export default class {
     } else if (array instanceof Object) {
       const i = {};
 
-      for (let key in array) {
+      for (const key in array) {
         let newKey = key;
 
         if (
@@ -62,7 +62,7 @@ export default class {
     } else if (array instanceof Object) {
       const i = {};
 
-      for (let key in array) {
+      for (const key in array) {
         let newKey = key;
 
         if (
@@ -193,17 +193,18 @@ export default class {
       }
 
       if (selected.config.node.router) {
-        selected.config.node.router.cases.forEach((caseElement: any) => {
-          caseElement.arguments.forEach((argument: any) => {
-            if (
-              /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/.test(
-                argument,
-              )
-            ) {
-              staticUuids.push(argument);
-            }
+        selected.config.node.router.cases &&
+          selected.config.node.router.cases.forEach((caseElement: any) => {
+            caseElement.arguments.forEach((argument: any) => {
+              if (
+                /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/.test(
+                  argument,
+                )
+              ) {
+                staticUuids.push(argument);
+              }
+            });
           });
-        });
       }
     });
 

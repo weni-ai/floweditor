@@ -4,6 +4,22 @@ import * as React from 'react';
 import { isRealValue, renderIf } from 'utils';
 
 import styles from './CheckboxElement.module.scss';
+import { applyVueInReact } from 'veaury';
+
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
 
 export interface CheckboxElementProps extends FormElementProps {
   checked: boolean;
@@ -18,8 +34,8 @@ interface CheckboxState {
   checked: boolean;
 }
 
-export const boxIco = 'fe-square';
-export const checkedBoxIco = 'fe-check-square';
+export const boxIco = 'check_box_outline_blank';
+export const checkedBoxIco = 'check_box';
 
 export const checkboxSpecId = 'checkbox';
 export const titleSpecId = 'title';
@@ -67,9 +83,12 @@ export default class CheckboxElement extends React.Component<
         className={cx(styles.label, this.props.labelClassName)}
         onClick={this.handleChange}
       >
-        <span
+        <UnnnicIcon
           data-spec={checkboxSpecId}
-          className={cx(checkboxIcon, this.props.checkboxClassName)}
+          className={`${styles.checkbox_icon} ${this.props.checkboxClassName}`}
+          icon={checkboxIcon}
+          size="sm"
+          scheme="neutral-snow"
         />
         {renderIf(isRealValue(this.props.title))(
           <div data-spec={titleSpecId} className={styles.title}>

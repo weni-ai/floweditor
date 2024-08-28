@@ -5,7 +5,7 @@ import {
   getCallParams,
   getDomElement,
   act,
-  wait,
+  waitFor,
 } from 'test/utils';
 import { mock } from 'testUtils';
 import {
@@ -16,6 +16,7 @@ import {
 import * as utils from 'utils';
 import AddLabelsForm from './AddLabelsForm';
 import userEvent from '@testing-library/user-event';
+import { describe, vi, it, expect } from 'vitest';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 const props = getActionFormProps(
@@ -31,7 +32,7 @@ describe(AddLabelsForm.name, () => {
 
     it('allows expressions', async () => {
       const props = getActionFormProps(createStartSessionAction());
-      const ref = React.createRef();
+      const ref: React.RefObject<any> = React.createRef();
       const { baseElement, getByText, getByTestId } = render(
         <AddLabelsForm ref={ref} {...props} />,
       );
@@ -42,8 +43,6 @@ describe(AddLabelsForm.name, () => {
         userEvent.type(input, '@contact.uuid');
       });
 
-      await wait();
-
       userEvent.click(getByText('contact.uuid'));
 
       expect(baseElement).toMatchSnapshot();
@@ -51,7 +50,7 @@ describe(AddLabelsForm.name, () => {
       // save our action
       fireEvent.click(getByText('Confirm'));
       expect(props.updateAction).toHaveBeenCalled();
-      expect(props.updateAction).toMatchCallSnapshot();
+      expect(props.updateAction).toMatchSnapshot();
 
       const [addLabelAction] = getCallParams(props.updateAction);
       expect(JSON.stringify(addLabelAction)).toMatch('name_match');

@@ -11,12 +11,14 @@ const sendConfig = getTypeConfig(Types.send_broadcast);
 
 const baseProps: LocalizationFormProps = {
   language: Spanish,
-  updateLocalizations: jest.fn(),
-  onClose: jest.fn(),
+  updateLocalizations: vi.fn(),
+  onClose: vi.fn(),
   nodeSettings: {
     originalNode: null,
     originalAction: action,
   },
+  helpArticles: {},
+  issues: [],
 };
 
 const { setup } = composeComponentTestUtils<LocalizationFormProps>(
@@ -47,7 +49,7 @@ describe(SendMsgLocalizationForm.name, () => {
   describe('updates', () => {
     it('should save changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateLocalizations: jest.fn(), onClose: jest.fn() },
+        $merge: { updateLocalizations: vi.fn(), onClose: vi.fn() },
       });
 
       instance.handleMessageUpdate('What is your favorite color?');
@@ -57,12 +59,12 @@ describe(SendMsgLocalizationForm.name, () => {
       instance.handleSave();
       expect(props.onClose).toHaveBeenCalled();
       expect(props.updateLocalizations).toHaveBeenCalled();
-      expect(props.updateLocalizations).toMatchCallSnapshot();
+      expect(props.updateLocalizations).toMatchSnapshot();
     });
 
     it('should ignore empty quick replies', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateLocalizations: jest.fn(), onClose: jest.fn() },
+        $merge: { updateLocalizations: vi.fn(), onClose: vi.fn() },
       });
 
       instance.handleQuickRepliesUpdate([]);
@@ -71,14 +73,14 @@ describe(SendMsgLocalizationForm.name, () => {
       instance.handleSave();
       expect(props.onClose).toHaveBeenCalled();
       expect(props.updateLocalizations).toHaveBeenCalled();
-      expect(props.updateLocalizations).toMatchCallSnapshot();
+      expect(props.updateLocalizations).toMatchSnapshot();
     });
   });
 
   describe('cancel', () => {
     it('should cancel without changes', () => {
       const { instance, props } = setup(true, {
-        $merge: { updateLocalizations: jest.fn(), onClose: jest.fn() },
+        $merge: { updateLocalizations: vi.fn(), onClose: vi.fn() },
       });
       instance.handleMessageUpdate("Don't save me bro");
       instance.getButtons().secondary.onClick();

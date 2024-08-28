@@ -1,5 +1,6 @@
 import CaseElement, {
   CaseElementProps,
+  CaseElementType,
 } from 'components/flow/routers/case/CaseElement';
 import { Operators } from 'config/interfaces';
 import * as React from 'react';
@@ -9,7 +10,7 @@ import {
   fireUnnnicSelect,
   fireUnnnicInputChangeText,
   getUnnnicInputValue,
-  wait,
+  waitFor,
 } from 'test/utils';
 import { createUUID } from 'utils';
 import userEvent from '@testing-library/user-event';
@@ -25,8 +26,9 @@ const caseProps: CaseElementProps = {
     category_uuid: createUUID(),
   },
   categoryName: null,
-  onRemove: jest.fn(),
-  onChange: jest.fn(),
+  onRemove: vi.fn(),
+  onChange: vi.fn(),
+  type: CaseElementType.default,
 };
 
 describe(CaseElement.name, () => {
@@ -56,18 +58,14 @@ describe(CaseElement.name, () => {
       const { baseElement, getByText } = render(<CaseElement {...caseProps} />);
 
       userEvent.click(getByText('has a phone number'));
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
     });
 
     it('should should set arguments for numeric range', async () => {
       const { baseElement, getByText } = render(<CaseElement {...caseProps} />);
 
       userEvent.click(getByText('has a number between'));
-      await wait();
-
-      expect(baseElement).toMatchSnapshot();
+      await waitFor(() => expect(baseElement).toMatchSnapshot());
     });
 
     it('should not update exit if it has been edited', async () => {
@@ -80,7 +78,6 @@ describe(CaseElement.name, () => {
 
       // make us a has phone so we can look up our category by value
       userEvent.click(getByText('has a phone number'));
-      await wait();
 
       // update our category to a user supplied value
       const category = getByTestId('Exit Name');
@@ -88,7 +85,6 @@ describe(CaseElement.name, () => {
 
       // now switch our type to force a category change
       userEvent.click(getByText('has a number'));
-      await wait();
 
       // we shouldn't have updated our category
       expect(queryByDisplayValue('My Exit Name')).not.toBeNull();
@@ -99,7 +95,7 @@ describe(CaseElement.name, () => {
 
   describe('update', () => {
     it('handles removes', () => {
-      const onRemove = jest.fn();
+      const onRemove = vi.fn();
       const { getByTestId } = render(
         <CaseElement {...caseProps} onRemove={onRemove} />,
       );
@@ -109,7 +105,7 @@ describe(CaseElement.name, () => {
     });
 
     it('handles argument change', () => {
-      const onRemove = jest.fn();
+      const onRemove = vi.fn();
       const { baseElement, getAllByTestId } = render(
         <CaseElement {...caseProps} onRemove={onRemove} />,
       );
@@ -120,13 +116,12 @@ describe(CaseElement.name, () => {
     });
 
     it('handles multiple argument change', async () => {
-      const onRemove = jest.fn();
+      const onRemove = vi.fn();
       const { baseElement, getByText, getAllByTestId } = render(
         <CaseElement {...caseProps} onRemove={onRemove} />,
       );
 
       userEvent.click(getByText('has a number between'));
-      await wait();
 
       const args = getAllByTestId('arguments');
 

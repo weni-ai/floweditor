@@ -1,32 +1,32 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`UpdateContactForm should render channel 1`] = `
+exports[`UpdateContactForm > should render channel 1`] = `
 <body>
   <div>
     <div
-      class="dialog dialog"
+      class="_dialog_af1b5d _dialog_b1bcf2"
     >
       <div
-        class="header"
+        class="_header_af1b5d"
       >
         <div
-          class="title_container"
+          class="_title_container_af1b5d"
         >
           <div
-            class="title u font secondary title-sm black"
+            class="_title_af1b5d u font secondary title-sm black"
           >
             Update contact
           </div>
           <div
-            class="subtitle"
+            class="_subtitle_af1b5d"
           />
         </div>
       </div>
       <div
-        class="content"
+        class="_content_af1b5d"
       >
         <div
-          class=" type_list"
+          class=" _type_list_8229f3"
         >
           <div
             class="color-neutral-cloudy"
@@ -35,49 +35,48 @@ exports[`UpdateContactForm should render channel 1`] = `
           </div>
           <div>
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
               id="temba_select_type"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_type"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_type"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="Update the contact"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Update the contact"
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -86,349 +85,348 @@ exports[`UpdateContactForm should render channel 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
-                  class="option active "
+                  class="_option_08dd12 _active_08dd12 "
                   data-option-index="0"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="1"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="2"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Wait for the contact to respond
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="3"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Smartly wait for response (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="4"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call WeniGPT (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="5"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send somebody else a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="6"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Label the incoming message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="7"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add a URN for the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="8"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add the contact to a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
-                  class="option  selected"
+                  class="_option_08dd12  _selected_08dd12"
                   data-option-index="10"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Update the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="11"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send email
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="12"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Save a result for this flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="13"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call a webhook
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="14"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call Zapier
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="15"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Enter another flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="16"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Start somebody else in a flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="17"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Open a ticket with a human agent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="18"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact airtime
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="19"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by intent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="20"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Automatic Classify (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="21"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a custom expression
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="22"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by contact field
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="23"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="24"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split randomly
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="25"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by group membership
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
         </div>
         <div
-          class="ele"
+          class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
         >
           <div
-            class="label u font secondary body-md color-neutral-cloudy"
+            class="_label_8d991a u font secondary body-md color-neutral-cloudy"
           >
             Select what to update
           </div>
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_select_what_to_update"
             id="temba_select_select_what_to_update"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_select_what_to_update"
-                data-v-48c0c241=""
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_select_what_to_update"
+                  data-v-acea6376=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_select_what_to_update"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Channel"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_select_what_to_update"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_select_what_to_update"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Channel"
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -437,121 +435,120 @@ exports[`UpdateContactForm should render channel 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_select_what_to_update"
               id="temba_select_options_select_what_to_update"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Name
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Language
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Channel
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Status
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_select_what_to_update"
               id="temba_select_expressions_select_what_to_update"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="value"
+          class="_value_b1bcf2"
         >
           <div
-            class="ele"
+            class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
           >
             <div
-              class="label u font secondary body-md color-neutral-cloudy"
+              class="_label_8d991a u font secondary body-md color-neutral-cloudy"
             >
               Channel
             </div>
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_channel"
               id="temba_select_channel"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_channel"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_channel"
+                    data-v-acea6376=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_channel"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="Twilio Channel"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_channel"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_channel"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Twilio Channel"
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -560,57 +557,57 @@ exports[`UpdateContactForm should render channel 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_channel"
                 id="temba_select_options_channel"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
-                  class="option active "
+                  class="_option_08dd12 _active_08dd12 "
                   data-option-index="0"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove Value
                   </span>
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_channel"
                 id="temba_select_expressions_channel"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_af1b5d"
       >
         <div
-          class="buttons"
+          class="_buttons_af1b5d"
         >
           <div
-            class="buttons_wrapper"
+            class="_buttons_wrapper_af1b5d"
           >
             <div
-              class="right_buttons"
+              class="_right_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -618,20 +615,22 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Cancel 
+                    
+                    
+                     Cancel
                   </span>
                   <!---->
                 </button>
               </div>
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -639,9 +638,11 @@ exports[`UpdateContactForm should render channel 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Ok 
+                    
+                    
+                     Ok
                   </span>
                   <!---->
                 </button>
@@ -655,33 +656,33 @@ exports[`UpdateContactForm should render channel 1`] = `
 </body>
 `;
 
-exports[`UpdateContactForm should render field 1`] = `
+exports[`UpdateContactForm > should render field 1`] = `
 <body>
   <div>
     <div
-      class="dialog dialog"
+      class="_dialog_af1b5d _dialog_b1bcf2"
     >
       <div
-        class="header"
+        class="_header_af1b5d"
       >
         <div
-          class="title_container"
+          class="_title_container_af1b5d"
         >
           <div
-            class="title u font secondary title-sm black"
+            class="_title_af1b5d u font secondary title-sm black"
           >
             Update contact
           </div>
           <div
-            class="subtitle"
+            class="_subtitle_af1b5d"
           />
         </div>
       </div>
       <div
-        class="content"
+        class="_content_af1b5d"
       >
         <div
-          class=" type_list"
+          class=" _type_list_8229f3"
         >
           <div
             class="color-neutral-cloudy"
@@ -690,49 +691,48 @@ exports[`UpdateContactForm should render field 1`] = `
           </div>
           <div>
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
               id="temba_select_type"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_type"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_type"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="Update the contact"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Update the contact"
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -741,349 +741,348 @@ exports[`UpdateContactForm should render field 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
-                  class="option active "
+                  class="_option_08dd12 _active_08dd12 "
                   data-option-index="0"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="1"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="2"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Wait for the contact to respond
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="3"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Smartly wait for response (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="4"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call WeniGPT (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="5"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send somebody else a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="6"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Label the incoming message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="7"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add a URN for the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="8"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add the contact to a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
-                  class="option  selected"
+                  class="_option_08dd12  _selected_08dd12"
                   data-option-index="10"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Update the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="11"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send email
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="12"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Save a result for this flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="13"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call a webhook
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="14"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call Zapier
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="15"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Enter another flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="16"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Start somebody else in a flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="17"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Open a ticket with a human agent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="18"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact airtime
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="19"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by intent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="20"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Automatic Classify (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="21"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a custom expression
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="22"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by contact field
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="23"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="24"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split randomly
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="25"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by group membership
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
         </div>
         <div
-          class="ele"
+          class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
         >
           <div
-            class="label u font secondary body-md color-neutral-cloudy"
+            class="_label_8d991a u font secondary body-md color-neutral-cloudy"
           >
             Select what to update
           </div>
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_select_what_to_update"
             id="temba_select_select_what_to_update"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_select_what_to_update"
-                data-v-48c0c241=""
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_select_what_to_update"
+                  data-v-acea6376=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_select_what_to_update"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Age"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_select_what_to_update"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_select_what_to_update"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Age"
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1092,107 +1091,105 @@ exports[`UpdateContactForm should render field 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_select_what_to_update"
               id="temba_select_options_select_what_to_update"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Name
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Language
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Channel
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Status
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_select_what_to_update"
               id="temba_select_expressions_select_what_to_update"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="value"
+          class="_value_b1bcf2"
         >
           <div>
             <span
-              class="label"
+              class="_label_17662c"
             >
               Field Value
             </span>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="Field Value"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
                         placeholder=""
-                        size="2"
                         type="text"
-                        v-bind="[object Object]"
+                        value="25"
                       />
                       <!---->
                       <!---->
@@ -1202,7 +1199,7 @@ exports[`UpdateContactForm should render field 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Field Value"
                 id=""
                 style="margin-top: 0px; width: 0px; display: none;"
@@ -1212,24 +1209,24 @@ exports[`UpdateContactForm should render field 1`] = `
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_af1b5d"
       >
         <div
-          class="buttons"
+          class="_buttons_af1b5d"
         >
           <div
-            class="buttons_wrapper"
+            class="_buttons_wrapper_af1b5d"
           >
             <div
-              class="right_buttons"
+              class="_right_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1237,20 +1234,22 @@ exports[`UpdateContactForm should render field 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Cancel 
+                    
+                    
+                     Cancel
                   </span>
                   <!---->
                 </button>
               </div>
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1258,9 +1257,11 @@ exports[`UpdateContactForm should render field 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Ok 
+                    
+                    
+                     Ok
                   </span>
                   <!---->
                 </button>
@@ -1274,33 +1275,33 @@ exports[`UpdateContactForm should render field 1`] = `
 </body>
 `;
 
-exports[`UpdateContactForm should render language 1`] = `
+exports[`UpdateContactForm > should render language 1`] = `
 <body>
   <div>
     <div
-      class="dialog dialog"
+      class="_dialog_af1b5d _dialog_b1bcf2"
     >
       <div
-        class="header"
+        class="_header_af1b5d"
       >
         <div
-          class="title_container"
+          class="_title_container_af1b5d"
         >
           <div
-            class="title u font secondary title-sm black"
+            class="_title_af1b5d u font secondary title-sm black"
           >
             Update contact
           </div>
           <div
-            class="subtitle"
+            class="_subtitle_af1b5d"
           />
         </div>
       </div>
       <div
-        class="content"
+        class="_content_af1b5d"
       >
         <div
-          class=" type_list"
+          class=" _type_list_8229f3"
         >
           <div
             class="color-neutral-cloudy"
@@ -1309,49 +1310,48 @@ exports[`UpdateContactForm should render language 1`] = `
           </div>
           <div>
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
               id="temba_select_type"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_type"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_type"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="Update the contact"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Update the contact"
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -1360,349 +1360,348 @@ exports[`UpdateContactForm should render language 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
-                  class="option active "
+                  class="_option_08dd12 _active_08dd12 "
                   data-option-index="0"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="1"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="2"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Wait for the contact to respond
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="3"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Smartly wait for response (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="4"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call WeniGPT (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="5"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send somebody else a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="6"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Label the incoming message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="7"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add a URN for the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="8"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add the contact to a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
-                  class="option  selected"
+                  class="_option_08dd12  _selected_08dd12"
                   data-option-index="10"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Update the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="11"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send email
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="12"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Save a result for this flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="13"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call a webhook
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="14"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call Zapier
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="15"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Enter another flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="16"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Start somebody else in a flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="17"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Open a ticket with a human agent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="18"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact airtime
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="19"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by intent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="20"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Automatic Classify (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="21"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a custom expression
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="22"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by contact field
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="23"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="24"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split randomly
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="25"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by group membership
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
         </div>
         <div
-          class="ele"
+          class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
         >
           <div
-            class="label u font secondary body-md color-neutral-cloudy"
+            class="_label_8d991a u font secondary body-md color-neutral-cloudy"
           >
             Select what to update
           </div>
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_select_what_to_update"
             id="temba_select_select_what_to_update"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_select_what_to_update"
-                data-v-48c0c241=""
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_select_what_to_update"
+                  data-v-acea6376=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_select_what_to_update"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Language"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_select_what_to_update"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_select_what_to_update"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Language"
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -1711,123 +1710,123 @@ exports[`UpdateContactForm should render language 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_select_what_to_update"
               id="temba_select_options_select_what_to_update"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active "
+                class="_option_08dd12 _active_08dd12 "
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Name
                 </span>
               </div>
               <div
-                class="option  selected"
+                class="_option_08dd12  _selected_08dd12"
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Language
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Channel
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Status
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_select_what_to_update"
               id="temba_select_expressions_select_what_to_update"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="value"
+          class="_value_b1bcf2"
         >
           <div
-            class="ele"
+            class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
           >
             <div
-              class="label u font secondary body-md color-neutral-cloudy"
+              class="_label_8d991a u font secondary body-md color-neutral-cloudy"
             >
               Language
             </div>
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_language"
               id="temba_select_language"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_language"
-                  data-v-48c0c241=""
-                  readonly="readonly"
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_language"
+                    data-v-acea6376=""
+                    readonly=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_language"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="eng"
-                      readonly="readonly"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_language"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                      readonly=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_language"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="eng"
+                        readonly=""
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -1836,57 +1835,57 @@ exports[`UpdateContactForm should render language 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_language"
                 id="temba_select_options_language"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
-                  class="option active "
+                  class="_option_08dd12 _active_08dd12 "
                   data-option-index="0"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove Value
                   </span>
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_language"
                 id="temba_select_expressions_language"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_af1b5d"
       >
         <div
-          class="buttons"
+          class="_buttons_af1b5d"
         >
           <div
-            class="buttons_wrapper"
+            class="_buttons_wrapper_af1b5d"
           >
             <div
-              class="right_buttons"
+              class="_right_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1894,20 +1893,22 @@ exports[`UpdateContactForm should render language 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Cancel 
+                    
+                    
+                     Cancel
                   </span>
                   <!---->
                 </button>
               </div>
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -1915,9 +1916,11 @@ exports[`UpdateContactForm should render language 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Ok 
+                    
+                    
+                     Ok
                   </span>
                   <!---->
                 </button>
@@ -1931,33 +1934,33 @@ exports[`UpdateContactForm should render language 1`] = `
 </body>
 `;
 
-exports[`UpdateContactForm should render name 1`] = `
+exports[`UpdateContactForm > should render name 1`] = `
 <body>
   <div>
     <div
-      class="dialog dialog"
+      class="_dialog_af1b5d _dialog_b1bcf2"
     >
       <div
-        class="header"
+        class="_header_af1b5d"
       >
         <div
-          class="title_container"
+          class="_title_container_af1b5d"
         >
           <div
-            class="title u font secondary title-sm black"
+            class="_title_af1b5d u font secondary title-sm black"
           >
             Update contact
           </div>
           <div
-            class="subtitle"
+            class="_subtitle_af1b5d"
           />
         </div>
       </div>
       <div
-        class="content"
+        class="_content_af1b5d"
       >
         <div
-          class=" type_list"
+          class=" _type_list_8229f3"
         >
           <div
             class="color-neutral-cloudy"
@@ -1966,49 +1969,48 @@ exports[`UpdateContactForm should render name 1`] = `
           </div>
           <div>
             <div
-              class="select_wrapper"
+              class="_select_wrapper_4cce75"
               data-testid="temba_select_type"
               id="temba_select_type"
             >
-              <div
-                data-use-vue-component-wrap=""
-                style="all: unset;"
-              >
+              <div>
                 <div
-                  class="unnnic-form sm bold_placeholder"
-                  data-passed-props="[object Object]"
-                  data-testid="temba_select_input_type"
-                  data-v-48c0c241=""
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
                 >
-                  <!---->
                   <div
-                    class="unnnic-form-input text-input size--sm has-icon-right"
-                    data-v-400546b3=""
-                    data-v-48c0c241=""
-                    mask=""
-                    v-bind="[object Object]"
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
                   >
-                    <input
-                      class="input-itself input size-sm normal"
-                      data-passed-props="[object Object]"
-                      data-testid="temba_select_input_type"
-                      data-v-400546b3=""
-                      data-v-97b44e8c=""
-                      iconright="arrow-button-down-1"
-                      placeholder="Update the contact"
-                      size="0"
-                      type="text"
-                      v-bind="[object Object]"
-                    />
                     <!---->
-                    <span
-                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                      data-v-400546b3=""
-                      data-v-4ce83152=""
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
                     >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Update the contact"
+                        type="text"
+                      />
+                      <!---->
                       <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
                         fill="none"
+                        height="40"
                         viewBox="0 0 40 40"
+                        width="40"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -2017,349 +2019,348 @@ exports[`UpdateContactForm should render name 1`] = `
                           fill="#3B414D"
                         />
                       </svg>
-                    </span>
+                    </div>
+                    <!---->
                   </div>
-                  <!---->
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               >
                 <div
-                  class="option active "
+                  class="_option_08dd12 _active_08dd12 "
                   data-option-index="0"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="1"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send a WhatsApp message (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="2"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Wait for the contact to respond
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="3"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Smartly wait for response (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="4"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call WeniGPT (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="5"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send somebody else a message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="6"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Label the incoming message
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="7"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add a URN for the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="8"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Add the contact to a group
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="9"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Remove the contact from a group
                   </span>
                 </div>
                 <div
-                  class="option  selected"
+                  class="_option_08dd12  _selected_08dd12"
                   data-option-index="10"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Update the contact
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="11"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send email
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="12"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Save a result for this flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="13"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call a webhook
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="14"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Call Zapier
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="15"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Enter another flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="16"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Start somebody else in a flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="17"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Open a ticket with a human agent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="18"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Send the contact airtime
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="19"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by intent
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="20"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Automatic Classify (New)
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="21"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a custom expression
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="22"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by contact field
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="23"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by a result in the flow
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="24"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split randomly
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="25"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by group membership
                   </span>
                 </div>
                 <div
-                  class="option  "
+                  class="_option_08dd12  "
                   data-option-index="26"
                 >
                   <span
-                    class="name"
+                    class="_name_08dd12"
                   >
                     Split by URN type
                   </span>
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: 0px; display: none;"
+                style="margin-top: 0px; width: -24px; display: none;"
               />
             </div>
           </div>
         </div>
         <div
-          class="ele"
+          class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
         >
           <div
-            class="label u font secondary body-md color-neutral-cloudy"
+            class="_label_8d991a u font secondary body-md color-neutral-cloudy"
           >
             Select what to update
           </div>
           <div
-            class="select_wrapper"
+            class="_select_wrapper_4cce75"
             data-testid="temba_select_select_what_to_update"
             id="temba_select_select_what_to_update"
           >
-            <div
-              data-use-vue-component-wrap=""
-              style="all: unset;"
-            >
+            <div>
               <div
-                class="unnnic-form sm bold_placeholder"
-                data-passed-props="[object Object]"
-                data-testid="temba_select_input_select_what_to_update"
-                data-v-48c0c241=""
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
               >
-                <!---->
                 <div
-                  class="unnnic-form-input text-input size--sm has-icon-right"
-                  data-v-400546b3=""
-                  data-v-48c0c241=""
-                  mask=""
-                  v-bind="[object Object]"
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_select_what_to_update"
+                  data-v-acea6376=""
                 >
-                  <input
-                    class="input-itself input size-sm normal"
-                    data-passed-props="[object Object]"
-                    data-testid="temba_select_input_select_what_to_update"
-                    data-v-400546b3=""
-                    data-v-97b44e8c=""
-                    iconright="arrow-button-down-1"
-                    placeholder="Name"
-                    size="0"
-                    type="text"
-                    v-bind="[object Object]"
-                  />
                   <!---->
-                  <span
-                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
-                    data-v-400546b3=""
-                    data-v-4ce83152=""
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_select_what_to_update"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
                   >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_select_what_to_update"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Name"
+                      type="text"
+                    />
+                    <!---->
                     <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
                       fill="none"
+                      height="40"
                       viewBox="0 0 40 40"
+                      width="40"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -2368,107 +2369,105 @@ exports[`UpdateContactForm should render name 1`] = `
                         fill="#3B414D"
                       />
                     </svg>
-                  </span>
+                  </div>
+                  <!---->
                 </div>
-                <!---->
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_options_select_what_to_update"
               id="temba_select_options_select_what_to_update"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             >
               <div
-                class="option active selected"
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
                 data-option-index="0"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Name
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="1"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Language
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="2"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Channel
                 </span>
               </div>
               <div
-                class="option  "
+                class="_option_08dd12  "
                 data-option-index="3"
               >
                 <span
-                  class="name"
+                  class="_name_08dd12"
                 >
                   Status
                 </span>
               </div>
             </div>
             <div
-              class="options_wrapper"
+              class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_select_what_to_update"
               id="temba_select_expressions_select_what_to_update"
-              style="margin-top: 0px; width: 0px; display: none;"
+              style="margin-top: 0px; width: -24px; display: none;"
             />
           </div>
         </div>
         <div
-          class="value"
+          class="_value_b1bcf2"
         >
           <div>
             <span
-              class="label"
+              class="_label_17662c"
             >
               Enter a new contact name
             </span>
             <div
-              class="completion_wrapper"
+              class="_completion_wrapper_17662c"
             >
               <div
                 data-testid="Enter a new contact name"
               >
                 <div
                   data-use-vue-component-wrap=""
+                  data-v-app=""
                   style="all: unset;"
                 >
                   <div
                     class="unnnic-form sm"
-                    data-passed-props="[object Object]"
-                    data-v-48c0c241=""
+                    data-v-acea6376=""
                   >
                     <!---->
                     <div
-                      class="unnnic-form-input text-input size--sm"
-                      data-v-400546b3=""
-                      data-v-48c0c241=""
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
                       mask=""
-                      v-bind="[object Object]"
                     >
                       <input
-                        class="input-itself input size-sm normal"
-                        data-passed-props="[object Object]"
-                        data-v-400546b3=""
-                        data-v-97b44e8c=""
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
                         placeholder="Enter a new contact name"
-                        size="12"
                         type="text"
-                        v-bind="[object Object]"
+                        value="Jane Goodall"
                       />
                       <!---->
                       <!---->
@@ -2478,7 +2477,7 @@ exports[`UpdateContactForm should render name 1`] = `
                 </div>
               </div>
               <div
-                class="options_wrapper"
+                class="_options_wrapper_08dd12"
                 data-testid="temba_completion_options_Enter a new contact name"
                 id=""
                 style="margin-top: 0px; width: 0px; display: none;"
@@ -2488,24 +2487,24 @@ exports[`UpdateContactForm should render name 1`] = `
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_af1b5d"
       >
         <div
-          class="buttons"
+          class="_buttons_af1b5d"
         >
           <div
-            class="buttons_wrapper"
+            class="_buttons_wrapper_af1b5d"
           >
             <div
-              class="right_buttons"
+              class="_right_buttons_af1b5d"
             >
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -2513,20 +2512,22 @@ exports[`UpdateContactForm should render name 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Cancel 
+                    
+                    
+                     Cancel
                   </span>
                   <!---->
                 </button>
               </div>
               <div
                 data-use-vue-component-wrap=""
+                data-v-app=""
               >
                 <button
                   class="unnnic-button unnnic-button--size-large unnnic-button--primary"
-                  data-passed-props="[object Object]"
-                  data-v-3b3aa28c=""
+                  data-v-4cec5e43=""
                   style="margin-top: 0px; margin-right: 0px;"
                 >
                   <!---->
@@ -2534,9 +2535,11 @@ exports[`UpdateContactForm should render name 1`] = `
                   <!---->
                   <span
                     class="unnnic-button__label"
-                    data-v-3b3aa28c=""
+                    data-v-4cec5e43=""
                   >
-                     Ok 
+                    
+                    
+                     Ok
                   </span>
                   <!---->
                 </button>

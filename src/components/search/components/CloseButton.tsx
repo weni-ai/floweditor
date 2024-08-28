@@ -1,10 +1,10 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 import styles from './CloseButton.module.scss';
 
 // @ts-ignore
-import { unnnicButton } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import { CloseIcon } from 'pureIcons/CloseIcon';
 
 export enum ButtonTypes {
@@ -20,7 +20,7 @@ export interface ButtonProps {
   onRef?: (ele: any) => void;
 }
 
-const UnnnicButton = applyVueInReact(unnnicButton, {
+const UnnnicButton = applyVueInReact(Unnnic.unnnicButton, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -47,12 +47,12 @@ export default class CloseButton extends React.Component<ButtonProps> {
     return (
       <div className={styles.closeButton}>
         <UnnnicButton
+          data-testid={this.props.name}
           ref={onRef}
           onClick={onClick}
           type={'tertiary'}
           disabled={disabled}
-          text={name}
-          size={this.props.size || undefined}
+          size={this.props.size || 'small'}
         >
           <div className={styles.closeIcon}>
             <CloseIcon />

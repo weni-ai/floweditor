@@ -1,168 +1,56 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Root instance methods componentDidMount should call action creators 1`] = `
-Array [
-  Object {
-    "activity": "",
-    "attachments": "/assets/attachments.json",
-    "brain": "/assets/brain.json",
-    "channels": "/assets/channels.json",
-    "classifiers": "/assets/classifiers.json",
-    "completion": "/assets/completion.json",
-    "editor": "/flow/editor",
-    "environment": "/assets/environment.json",
-    "external_services": "/assets/external_services.json",
-    "external_services_calls": "/assets/external_services_calls.json",
-    "external_services_calls_base": "",
-    "fields": "/assets/fields.json",
-    "flows": "/assets/flows.json",
-    "globals": "/assets/globals.json",
-    "groups": "/assets/groups.json",
-    "knowledgeBases": "/assets/knowledge_bases.json",
-    "labels": "/assets/labels.json",
-    "languages": "/assets/languages.json",
-    "recents": "/assets/recents.json",
-    "recipients": "/assets/recipients.json",
-    "resthooks": "/assets/resthooks.json",
-    "revisions": "/assets/revisions.json",
-    "simulateResume": "",
-    "simulateStart": "",
-    "templates": "/assets/templates.json",
-    "ticketer_queues": "",
-    "ticketers": "/assets/ticketers.json",
-    "topics": "/assets/topics.json",
-    "users": "/assets/users.json",
-    "whatsapp_products": "/assets/whatsapp_products.json",
-  },
-  "a4f64f1b-85bc-477e-b706-de313a022979",
-  undefined,
-]
+exports[`Root > instance methods > componentDidMount > should call action creators 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "activity": "",
+        "attachments": "/assets/attachments.json",
+        "brain": "/assets/brain.json",
+        "channels": "/assets/channels.json",
+        "classifiers": "/assets/classifiers.json",
+        "completion": "/assets/completion.json",
+        "editor": "/flow/editor",
+        "environment": "/assets/environment.json",
+        "external_services": "/assets/external_services.json",
+        "external_services_calls": "/assets/external_services_calls.json",
+        "external_services_calls_base": "",
+        "fields": "/assets/fields.json",
+        "flows": "/assets/flows.json",
+        "globals": "/assets/globals.json",
+        "groups": "/assets/groups.json",
+        "knowledgeBases": "/assets/knowledge_bases.json",
+        "labels": "/assets/labels.json",
+        "languages": "/assets/languages.json",
+        "recents": "/assets/recents.json",
+        "recipients": "/assets/recipients.json",
+        "resthooks": "/assets/resthooks.json",
+        "revisions": "/assets/revisions.json",
+        "simulateResume": "",
+        "simulateStart": "",
+        "templates": "/assets/templates.json",
+        "ticketer_queues": "",
+        "ticketers": "/assets/ticketers.json",
+        "topics": "/assets/topics.json",
+        "users": "/assets/users.json",
+        "whatsapp_products": "/assets/whatsapp_products.json",
+      },
+      "a4f64f1b-85bc-477e-b706-de313a022979",
+      undefined,
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
-exports[`Root render should apply translating style if passed a truthy translating prop 1`] = `
-<PageVisibility
-  onChange={[Function]}
->
-  <div
-    className="translating"
-    data-spec="editor-container"
-    id="editor-container"
-  >
-    <div
-      className="footer"
-    >
-      <div
-        className="download_button"
-      >
-        <Button
-          name="Download"
-          onClick={[Function]}
-          type="primary"
-        />
-      </div>
-    </div>
-    <div
-      className="editor"
-      data-spec="editor"
-    >
-      <Connect(RevisionExplorer)
-        createNewRevision={[MockFunction]}
-        loadFlowDefinition={[MockFunction]}
-        onToggled={[Function]}
-        popped={null}
-      />
-      <div
-        id="portal-root"
-      />
-      <div
-        id="canvas-portal"
-      />
-    </div>
-  </div>
-</PageVisibility>
-`;
+exports[`Root > render > should apply translating style if passed a truthy translating prop 1`] = `ShallowWrapper {}`;
 
-exports[`Root render should render flow if passed a definition, language 1`] = `
-<PageVisibility
-  onChange={[Function]}
->
-  <div
-    data-spec="editor-container"
-    id="editor-container"
-  >
-    <div
-      className="footer"
-    >
-      <div
-        className="download_button"
-      >
-        <Button
-          name="Download"
-          onClick={[Function]}
-          type="primary"
-        />
-      </div>
-    </div>
-    <div
-      className="editor"
-      data-spec="editor"
-    >
-      <Connect(Flow) />
-      <Connect(RevisionExplorer)
-        createNewRevision={[MockFunction]}
-        loadFlowDefinition={[MockFunction]}
-        onToggled={[Function]}
-        popped={null}
-      />
-      <div
-        id="portal-root"
-      />
-      <div
-        id="canvas-portal"
-      />
-    </div>
-  </div>
-</PageVisibility>
-`;
+exports[`Root > render > should render flow if passed a definition, language 1`] = `ShallowWrapper {}`;
 
-exports[`Root render should render self, children with required props 1`] = `
-<PageVisibility
-  onChange={[Function]}
->
-  <div
-    data-spec="editor-container"
-    id="editor-container"
-  >
-    <div
-      className="footer"
-    >
-      <div
-        className="download_button"
-      >
-        <Button
-          name="Download"
-          onClick={[Function]}
-          type="primary"
-        />
-      </div>
-    </div>
-    <div
-      className="editor"
-      data-spec="editor"
-    >
-      <Connect(RevisionExplorer)
-        createNewRevision={[MockFunction]}
-        loadFlowDefinition={[MockFunction]}
-        onToggled={[Function]}
-        popped={null}
-      />
-      <div
-        id="portal-root"
-      />
-      <div
-        id="canvas-portal"
-      />
-    </div>
-  </div>
-</PageVisibility>
-`;
+exports[`Root > render > should render self, children with required props 1`] = `ShallowWrapper {}`;

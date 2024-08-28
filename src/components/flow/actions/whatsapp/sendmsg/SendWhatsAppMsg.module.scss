@@ -1,4 +1,4 @@
-@import 'variables.module.scss';
+@import 'src/variables.module.scss';
 
 .quick_replies, .list_items {
   display: flex;
@@ -59,6 +59,7 @@
   flex-direction: row;
   width: 100%;
   justify-content: center;
+  align-items: center;
   padding-top: $unnnic-spacing-xs;
   gap: $unnnic-spacing-inline-xs;
   border-top: solid 1px $unnnic-color-neutral-cleanest;

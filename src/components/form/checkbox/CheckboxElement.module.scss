@@ -1,5 +1,5 @@
 .label {
-  display: inline-block;
+  display: flex;
   position: inherit;
   font-weight: 300;
   cursor: pointer;
@@ -19,4 +19,8 @@
 .description_solo {
   display: inline-block;
   margin-left: 8px;
+}
+
+.checkbox_icon {
+  vertical-align: middle;
 }

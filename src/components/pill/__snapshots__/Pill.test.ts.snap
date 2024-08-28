@@ -1,17 +1,5 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Pill renders 1`] = `
-<ForwardRef
-  clickable={false}
-  data-advanced={false}
-  text="This is my..."
-/>
-`;
+exports[`Pill > renders 1`] = `ShallowWrapper {}`;
 
-exports[`Pill treats @ text differently 1`] = `
-<ForwardRef
-  clickable={false}
-  data-advanced={false}
-  text="@(exp)"
-/>
-`;
+exports[`Pill > treats @ text differently 1`] = `ShallowWrapper {}`;

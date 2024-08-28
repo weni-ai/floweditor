@@ -27,12 +27,9 @@ import styles from './SendWhatsAppMsgForm.module.scss';
 
 import i18n from 'config/i18n';
 
-import { applyVueInReact } from 'vuereact-combined';
-import {
-  unnnicIcon,
-  unnnicSelectSmart,
-  // @ts-ignore
-} from '@weni/unnnic-system';
+import { applyVueInReact } from 'veaury';
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
 import {
   Attachment,
   FILE_TYPE,
@@ -52,7 +49,7 @@ import { renderIf } from '../../../../../utils';
 import { Trans } from 'react-i18next';
 import DynamicVariables from './DynamicVariables';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon, {
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -67,7 +64,7 @@ const UnnnicIcon = applyVueInReact(unnnicIcon, {
   },
 });
 
-const UnnnicSelectSmart = applyVueInReact(unnnicSelectSmart, {
+const UnnnicSelectSmart = applyVueInReact(Unnnic.unnnicSelectSmart, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -900,10 +897,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 {i18n.t('forms.header_optional', 'Header (optional)')}
               </span>
               <UnnnicSelectSmart
-                $model={{
-                  value: [headerType],
-                  setter: this.handleHeaderTypeChange,
-                }}
+                v-model={[[headerType], this.handleHeaderTypeChange]}
                 options={WHATSAPP_HEADER_TYPE_OPTIONS}
                 size="sm"
                 orderedByIndex={true}
@@ -1122,10 +1116,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 {i18n.t('forms.message_type', 'Message type')}
               </span>
               <UnnnicSelectSmart
-                $model={{
-                  value: [this.state.messageType.value],
-                  setter: this.handleMessageTypeUpdate,
-                }}
+                v-model={[
+                  [this.state.messageType.value],
+                  this.handleMessageTypeUpdate,
+                ]}
                 options={WHATSAPP_MESSAGE_TYPE_OPTIONS}
                 size="sm"
                 orderedByIndex={true}
@@ -1137,10 +1131,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 {i18n.t('forms.interactions', 'Interactions')}
               </span>
               <UnnnicSelectSmart
-                $model={{
-                  value: [this.state.interactionType.value],
-                  setter: this.handleInteractionTypeUpdate,
-                }}
+                v-model={[
+                  [this.state.interactionType.value],
+                  this.handleInteractionTypeUpdate,
+                ]}
                 options={WHATSAPP_INTERACTION_TYPE_OPTIONS}
                 size="sm"
                 orderedByIndex={true}

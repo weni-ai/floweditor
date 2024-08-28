@@ -1,3 +1,17 @@
+3.0.1
+----------
+- Fix: Split by contact field card checkbox;
+- Fix: Allow copy of split randomly card;
+
+3.0.0
+----------
+- Feat: Node 18
+- Feat: Unnnic Vue 3
+- Feat: Vite instead of CRA
+- Feat: Typescript 3.9
+- Feat: Veaury instead of vuereact-combined
+- Feat: Eslint 8
+
 2.17.1
 ----------
 - Fix: Allow the use of expressions in the search URL of the native product search card.

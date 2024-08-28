@@ -20,10 +20,22 @@ import styles from './Canvas.module.scss';
 import nodesCopy from '../../components/copyAndPasteNodes';
 import { RenderNode } from '../../store/flowContext';
 
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 // @ts-ignore
-import { unnnicCallAlert, unnnicToolTip } from '@weni/unnnic-system';
-const UnnnicTooltip = applyVueInReact(unnnicToolTip, {
+import Unnnic from '@weni/unnnic-system';
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+        display: 'flex',
+      },
+    },
+  },
+});
+const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -153,8 +165,8 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       transformScale,
     } = this.getTransformOffsets();
 
-    let left = (-transformOffsetX + TRANSFORM_START_X) * (1 / transformScale);
-    let top = (-transformOffsetY + TRANSFORM_START_Y) * (1 / transformScale);
+    const left = (-transformOffsetX + TRANSFORM_START_X) * (1 / transformScale);
+    const top = (-transformOffsetY + TRANSFORM_START_Y) * (1 / transformScale);
 
     return { left, top };
   }
@@ -229,7 +241,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       event.clipboardData.setData('application/json', JSON.stringify(nodes));
       event.preventDefault();
 
-      unnnicCallAlert({
+      Unnnic.unnnicCallAlert({
         props: {
           text:
             nodes.length > 1 ? i18n.t('copy.multiple') : i18n.t('copy.single'),
@@ -313,7 +325,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
       maxZoom: 1,
       minZoom: 0.15,
       beforeMouseDown: () => {
-        var shouldIgnore = this.isInSelectState();
+        const shouldIgnore = this.isInSelectState();
         return shouldIgnore;
       },
       onDoubleClick: function() {
@@ -1002,7 +1014,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
           let newPositions: { [uuid: string]: FlowPosition } = {};
 
           uuids.forEach((uuid: string) => {
-            let newPosition = addPosition(prevState.selected[uuid], delta);
+            const newPosition = addPosition(prevState.selected[uuid], delta);
 
             if (newPosition && newPosition.bottom! > lowestNode!) {
               lowestNode = newPosition.bottom;
@@ -1228,17 +1240,17 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                       className={styles.out}
                       onClick={() => this.handleZoomClick(0)}
                     >
-                      <span className="material-symbols-rounded">remove</span>
+                      <UnnnicIcon icon="remove" size="md" />
                     </div>
                     <div className={styles.percentage}>
                       {this.state.currentZoom}
-                      <span className="material-symbols-rounded">percent</span>
+                      <UnnnicIcon icon="percent" size="md" />
                     </div>
                     <div
                       className={styles.in}
                       onClick={() => this.handleZoomClick(1)}
                     >
-                      <span className="material-symbols-rounded">add</span>
+                      <UnnnicIcon icon="add" size="md" />
                     </div>
                   </UnnnicTooltip>
                 </GuidingSteps>
@@ -1274,9 +1286,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                       <span className={styles.hide}>
                         {i18n.t('to_flow_start', 'Start of flow')}
                       </span>
-                      <span className="material-symbols-rounded">
-                        arrow_upward
-                      </span>
+                      <UnnnicIcon icon="arrow_upward" size="md" />
                     </div>
                   </UnnnicTooltip>
                 </GuidingSteps>

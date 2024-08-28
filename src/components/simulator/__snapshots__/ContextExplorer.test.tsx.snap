@@ -1,40 +1,52 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ContextExplorer should expand and collapse 1`] = `
+exports[`ContextExplorer > should expand and collapse 1`] = `
 <body>
   <div>
     <div
-      class="context_explorer visible"
+      class="_context_explorer_56fce1 _visible_56fce1"
     >
       <div
-        class="message"
+        class="__message_56fce1_56fce1"
       />
       <div
-        class="panel"
+        class="_panel_56fce1"
       >
         <div>
           <div
-            class="row"
+            class="_row_56fce1"
             style="margin-left: 0px;"
           >
             <div
-              class="arrow_right"
+              class="__arrow_right_56fce1_56fce1"
             >
               ›
             </div>
             <div
-              class="key"
+              class="__key_56fce1_56fce1"
             >
               day
               <div
-                class="key_summary"
+                class="_key_summary_56fce1"
               />
               <div
-                class="clipboard fe-clipboard-empty"
-              />
+                class="_clipboard_56fce1"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                    data-v-930380cc=""
+                  >
+                    copy
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="str_value"
+              class="_str_value_56fce1"
             >
               020120
             </div>
@@ -42,54 +54,78 @@ exports[`ContextExplorer should expand and collapse 1`] = `
         </div>
         <div>
           <div
-            class="row"
+            class="_row_56fce1"
             style="margin-left: 0px;"
           >
             <div
-              class="arrow_right has_children open"
+              class="__arrow_right_56fce1_56fce1 __has_children_56fce1_56fce1 __open_56fce1_56fce1"
             >
               ›
             </div>
             <div
-              class="key has_children"
+              class="__key_56fce1_56fce1 __has_children_56fce1_56fce1"
             >
               temperatures
               <div
-                class="key_summary"
+                class="_key_summary_56fce1"
               >
                 [6]
               </div>
               <div
-                class="clipboard fe-clipboard-empty"
-              />
+                class="_clipboard_56fce1"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                    data-v-930380cc=""
+                  >
+                    copy
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="str_value"
+              class="_str_value_56fce1"
             />
           </div>
           <div>
             <div
-              class="row"
+              class="_row_56fce1"
               style="margin-left: 10px;"
             >
               <div
-                class="arrow_right"
+                class="__arrow_right_56fce1_56fce1"
               >
                 ›
               </div>
               <div
-                class="key"
+                class="__key_56fce1_56fce1"
               >
                 0
                 <div
-                  class="key_summary"
+                  class="_key_summary_56fce1"
                 />
                 <div
-                  class="clipboard fe-clipboard-empty"
-                />
+                  class="_clipboard_56fce1"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                      data-v-930380cc=""
+                    >
+                      copy
+                    </span>
+                  </div>
+                </div>
               </div>
               <div
-                class="str_value"
+                class="_str_value_56fce1"
               >
                 23.2
               </div>
@@ -97,27 +133,39 @@ exports[`ContextExplorer should expand and collapse 1`] = `
           </div>
           <div>
             <div
-              class="row"
+              class="_row_56fce1"
               style="margin-left: 10px;"
             >
               <div
-                class="arrow_right"
+                class="__arrow_right_56fce1_56fce1"
               >
                 ›
               </div>
               <div
-                class="key"
+                class="__key_56fce1_56fce1"
               >
                 1
                 <div
-                  class="key_summary"
+                  class="_key_summary_56fce1"
                 />
                 <div
-                  class="clipboard fe-clipboard-empty"
-                />
+                  class="_clipboard_56fce1"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                      data-v-930380cc=""
+                    >
+                      copy
+                    </span>
+                  </div>
+                </div>
               </div>
               <div
-                class="str_value"
+                class="_str_value_56fce1"
               >
                 21.2
               </div>
@@ -125,27 +173,39 @@ exports[`ContextExplorer should expand and collapse 1`] = `
           </div>
           <div>
             <div
-              class="row"
+              class="_row_56fce1"
               style="margin-left: 10px;"
             >
               <div
-                class="arrow_right"
+                class="__arrow_right_56fce1_56fce1"
               >
                 ›
               </div>
               <div
-                class="key"
+                class="__key_56fce1_56fce1"
               >
                 2
                 <div
-                  class="key_summary"
+                  class="_key_summary_56fce1"
                 />
                 <div
-                  class="clipboard fe-clipboard-empty"
-                />
+                  class="_clipboard_56fce1"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                      data-v-930380cc=""
+                    >
+                      copy
+                    </span>
+                  </div>
+                </div>
               </div>
               <div
-                class="str_value"
+                class="_str_value_56fce1"
               >
                 20.3
               </div>
@@ -153,27 +213,39 @@ exports[`ContextExplorer should expand and collapse 1`] = `
           </div>
           <div>
             <div
-              class="row"
+              class="_row_56fce1"
               style="margin-left: 10px;"
             >
               <div
-                class="arrow_right"
+                class="__arrow_right_56fce1_56fce1"
               >
                 ›
               </div>
               <div
-                class="key"
+                class="__key_56fce1_56fce1"
               >
                 3
                 <div
-                  class="key_summary"
+                  class="_key_summary_56fce1"
                 />
                 <div
-                  class="clipboard fe-clipboard-empty"
-                />
+                  class="_clipboard_56fce1"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                      data-v-930380cc=""
+                    >
+                      copy
+                    </span>
+                  </div>
+                </div>
               </div>
               <div
-                class="str_value"
+                class="_str_value_56fce1"
               >
                 20.5
               </div>
@@ -181,27 +253,39 @@ exports[`ContextExplorer should expand and collapse 1`] = `
           </div>
           <div>
             <div
-              class="row"
+              class="_row_56fce1"
               style="margin-left: 10px;"
             >
               <div
-                class="arrow_right"
+                class="__arrow_right_56fce1_56fce1"
               >
                 ›
               </div>
               <div
-                class="key"
+                class="__key_56fce1_56fce1"
               >
                 4
                 <div
-                  class="key_summary"
+                  class="_key_summary_56fce1"
                 />
                 <div
-                  class="clipboard fe-clipboard-empty"
-                />
+                  class="_clipboard_56fce1"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                      data-v-930380cc=""
+                    >
+                      copy
+                    </span>
+                  </div>
+                </div>
               </div>
               <div
-                class="str_value"
+                class="_str_value_56fce1"
               >
                 20.11
               </div>
@@ -209,27 +293,39 @@ exports[`ContextExplorer should expand and collapse 1`] = `
           </div>
           <div>
             <div
-              class="row"
+              class="_row_56fce1"
               style="margin-left: 10px;"
             >
               <div
-                class="arrow_right"
+                class="__arrow_right_56fce1_56fce1"
               >
                 ›
               </div>
               <div
-                class="key"
+                class="__key_56fce1_56fce1"
               >
                 5
                 <div
-                  class="key_summary"
+                  class="_key_summary_56fce1"
                 />
                 <div
-                  class="clipboard fe-clipboard-empty"
-                />
+                  class="_clipboard_56fce1"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                      data-v-930380cc=""
+                    >
+                      copy
+                    </span>
+                  </div>
+                </div>
               </div>
               <div
-                class="str_value"
+                class="_str_value_56fce1"
               >
                 21.3
               </div>
@@ -238,27 +334,39 @@ exports[`ContextExplorer should expand and collapse 1`] = `
         </div>
         <div>
           <div
-            class="row"
+            class="_row_56fce1"
             style="margin-left: 0px;"
           >
             <div
-              class="arrow_right"
+              class="__arrow_right_56fce1_56fce1"
             >
               ›
             </div>
             <div
-              class="key"
+              class="__key_56fce1_56fce1"
             >
               location
               <div
-                class="key_summary"
+                class="_key_summary_56fce1"
               />
               <div
-                class="clipboard fe-clipboard-empty"
-              />
+                class="_clipboard_56fce1"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                    data-v-930380cc=""
+                  >
+                    copy
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="str_value"
+              class="_str_value_56fce1"
             >
               A1B2C3
             </div>
@@ -266,14 +374,22 @@ exports[`ContextExplorer should expand and collapse 1`] = `
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_56fce1"
       >
         <div
-          class="empty_toggle"
+          class="_empty_toggle_56fce1"
         >
           <div
-            class="fe-eye-crossed"
-          />
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <span
+              class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm"
+              data-v-930380cc=""
+            >
+              visibility_off
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -281,41 +397,53 @@ exports[`ContextExplorer should expand and collapse 1`] = `
 </body>
 `;
 
-exports[`ContextExplorer should render 1`] = `
+exports[`ContextExplorer > should render 1`] = `
 <body>
   <div>
     <div
-      class="context_explorer visible"
+      class="_context_explorer_56fce1 _visible_56fce1"
     >
       <div
-        class="message"
+        class="__message_56fce1_56fce1"
       />
       <div
-        class="panel"
+        class="_panel_56fce1"
       >
         <div>
           <div
-            class="row"
+            class="_row_56fce1"
             style="margin-left: 0px;"
           >
             <div
-              class="arrow_right"
+              class="__arrow_right_56fce1_56fce1"
             >
               ›
             </div>
             <div
-              class="key"
+              class="__key_56fce1_56fce1"
             >
               day
               <div
-                class="key_summary"
+                class="_key_summary_56fce1"
               />
               <div
-                class="clipboard fe-clipboard-empty"
-              />
+                class="_clipboard_56fce1"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                    data-v-930380cc=""
+                  >
+                    copy
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="str_value"
+              class="_str_value_56fce1"
             >
               020120
             </div>
@@ -323,55 +451,79 @@ exports[`ContextExplorer should render 1`] = `
         </div>
         <div>
           <div
-            class="row"
+            class="_row_56fce1"
             style="margin-left: 0px;"
           >
             <div
-              class="arrow_right has_children"
+              class="__arrow_right_56fce1_56fce1 __has_children_56fce1_56fce1"
             >
               ›
             </div>
             <div
-              class="key has_children"
+              class="__key_56fce1_56fce1 __has_children_56fce1_56fce1"
             >
               temperatures
               <div
-                class="key_summary"
+                class="_key_summary_56fce1"
               >
                 [6]
               </div>
               <div
-                class="clipboard fe-clipboard-empty"
-              />
+                class="_clipboard_56fce1"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                    data-v-930380cc=""
+                  >
+                    copy
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="str_value"
+              class="_str_value_56fce1"
             />
           </div>
         </div>
         <div>
           <div
-            class="row"
+            class="_row_56fce1"
             style="margin-left: 0px;"
           >
             <div
-              class="arrow_right"
+              class="__arrow_right_56fce1_56fce1"
             >
               ›
             </div>
             <div
-              class="key"
+              class="__key_56fce1_56fce1"
             >
               location
               <div
-                class="key_summary"
+                class="_key_summary_56fce1"
               />
               <div
-                class="clipboard fe-clipboard-empty"
-              />
+                class="_clipboard_56fce1"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm _copy_icon_56fce1"
+                    data-v-930380cc=""
+                  >
+                    copy
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="str_value"
+              class="_str_value_56fce1"
             >
               A1B2C3
             </div>
@@ -379,14 +531,22 @@ exports[`ContextExplorer should render 1`] = `
         </div>
       </div>
       <div
-        class="footer"
+        class="_footer_56fce1"
       >
         <div
-          class="empty_toggle"
+          class="_empty_toggle_56fce1"
         >
           <div
-            class="fe-eye-crossed"
-          />
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <span
+              class="material-symbols-rounded unnnic-icon-scheme--neutral-snow unnnic-icon-size--sm"
+              data-v-930380cc=""
+            >
+              visibility_off
+            </span>
+          </div>
         </div>
       </div>
     </div>

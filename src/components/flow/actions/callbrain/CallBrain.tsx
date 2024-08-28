@@ -2,11 +2,11 @@ import * as React from 'react';
 import { CallBrain } from 'flowTypes';
 
 import styles from './CallBrain.module.scss';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 import { BrainInfo } from '../../../../store/flowContext';
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export const getBrainInfoPlaceholder = (brainInfo: BrainInfo): JSX.Element => (
   <span className={styles.brain_info}>

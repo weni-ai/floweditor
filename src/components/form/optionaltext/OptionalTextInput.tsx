@@ -2,15 +2,15 @@ import { react as bindCallbacks } from 'auto-bind';
 import TextInputElement from 'components/form/textinput/TextInputElement';
 import * as React from 'react';
 import { FormState, StringEntry } from 'store/nodeEditor';
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
-import { unnnicIcon } from '@weni/unnnic-system';
+import Unnnic from '@weni/unnnic-system';
 
 import styles from './OptionalTextInput.module.scss';
 import i18n from '../../../config/i18n';
 
-const UnnnicIcon = applyVueInReact(unnnicIcon);
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export interface OptionalTextInputProps {
   name: string;
