@@ -76,6 +76,18 @@ const UnnnicSelectSmart = applyVueInReact(Unnnic.unnnicSelectSmart, {
   },
 });
 
+const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
+
 export const MAX_LIST_ITEMS_COUNT = 10;
 const MAX_REPLIES_COUNT = 3;
 
@@ -424,6 +436,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
       );
     }
 
+    if (keys.hasOwnProperty('selectedForm')) {
+      updates.selectedForm = { value: keys.selectedForm };
+    }
+
     if (keys.hasOwnProperty('attachment')) {
       updates.attachment = { value: keys.attachment, validationFailures: [] };
       if (
@@ -548,10 +564,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
       }
 
       ensureEmptyReply = true;
-    }
-
-    if (keys.hasOwnProperty('selectedForm')) {
-      console.log('oieee');
     }
 
     const updated = mergeForm(this.state, updates) as SendWhatsAppMsgFormState;
@@ -868,12 +880,19 @@ export default class SendWhatsAppMsgForm extends React.Component<
           <>
             <span className={`u font secondary body-md color-neutral-cloudy`}>
               {i18n.t('forms.select_form.title', 'Select a Form')}
+              <UnnnicTooltip
+                text={i18n.t(
+                  'forms.select_info',
+                  `To edit existing forms, use Meta's native tool.`,
+                )}
+                side="top"
+                enabled={true}
+              >
+                <UnnnicIcon icon="information-circle-4" size="sm" />
+              </UnnnicTooltip>
             </span>
             <UnnnicSelectSmart
-              $model={{
-                value: [selectedForm],
-                setter: this.handleFormUpdate,
-              }}
+              v-model={[[selectedForm], this.handleFormUpdate]}
               options={WHATSAPP_HEADER_TYPE_OPTIONS}
               size="sm"
               orderedByIndex={true}
@@ -1001,13 +1020,39 @@ export default class SendWhatsAppMsgForm extends React.Component<
         )}
 
         {interactionType === WhatsAppInteractionType.LIST && (
-          <>
-            <OptionsList
-              options={this.state.listItems}
-              onOptionsUpdated={this.handleListItemsUpdate}
-              onOptionRemoval={this.handleListItemRemoval}
-            />
+          <OptionsList
+            options={this.state.listItems}
+            onOptionsUpdated={this.handleListItemsUpdate}
+            onOptionRemoval={this.handleListItemRemoval}
+          />
+        )}
+
+        <div className={styles.buttons}>
+          {(interactionType === WhatsAppInteractionType.LIST ||
+            interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS) && (
             <div className={styles.action_button_text}>
+              <span className={`u font secondary body-md color-neutral-cloudy`}>
+                {interactionType === WhatsAppInteractionType.LIST ? (
+                  i18n.t(
+                    'forms.list_button_text_optional',
+                    'Action Button Text (optional)',
+                  )
+                ) : (
+                  <>
+                    {i18n.t('forms.list_button_text', 'Action Button Text')}
+                    <UnnnicTooltip
+                      text={i18n.t(
+                        'forms.list_button_text_tooltip',
+                        `The flow will start from the interaction with this button.`,
+                      )}
+                      side="top"
+                      enabled={true}
+                    >
+                      <UnnnicIcon icon="information-circle-4" size="sm" />
+                    </UnnnicTooltip>
+                  </>
+                )}
+              </span>
               <TextInputElement
                 placeholder={i18n.t('forms.ex_menu', 'Ex: Menu')}
                 name={i18n.t(
@@ -1018,12 +1063,29 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 onChange={this.handleButtonTextUpdate}
                 entry={this.state.buttonText}
                 autocomplete={true}
+                maxLength={20}
+              />
+            </div>
+          )}
+
+          {interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS && (
+            <div className={styles.screen}>
+              <TextInputElement
+                placeholder={i18n.t('forms.ex_menu', 'Ex: Menu')}
+                name={i18n.t(
+                  'forms.start_screen',
+                  'Start flows from the screen:',
+                )}
+                size={TextInputSizes.sm}
+                onChange={this.handleButtonTextUpdate}
+                entry={this.state.buttonText}
+                autocomplete={true}
                 showLabel={true}
                 maxLength={20}
               />
             </div>
-          </>
-        )}
+          )}
+        </div>
 
         {interactionType === WhatsAppInteractionType.REPLIES && (
           <QuickRepliesList
@@ -1064,23 +1126,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
               options={this.state.dynamicVariables}
               onValueUpdated={this.handleDynamicVariableUpdate}
             />
-            {/* <span className={`u font secondary body-md color-neutral-cloudy`}>
-              {i18n.t('forms.select_screen', 'Select a Form')}
-            </span>
-            <SelectElement
-              name={''}
-              options={[
-                {
-                  value: 'first',
-                  label: 'First Screen',
-                },
-                {
-                  value: 'second',
-                  label: 'Second Screen',
-                },
-              ]}
-              entry={this.state.firstScreen}
-            /> */}
           </>
         )}
       </div>

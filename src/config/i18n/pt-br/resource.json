@@ -522,12 +522,16 @@
     "options_label": "Adicione até 10 opções",
     "list_button_text_placeholder": "Texto do botão de ação",
     "list_button_text_optional": "Texto do botão de ação (opcional)",
+    "list_button_text": "Texto do botão de ação",
+    "list_button_text_tooltip": "O flow começará a partir da interação deste botão.",
     "ex_citrus_and_sweet": "Ex: Cítrica e doce",
     "ex_orange": "Ex: Laranja",
     "ex_menu": "Ex: Menu",
     "action_button_text": "Texto de botão de ação",
     "action_button_url": "URL do botão de ação",
-    "action_button_url_placeholder": "Ex: https://www.menudorestaurante.com.br"
+    "action_button_url_placeholder": "Ex: https://www.menudorestaurante.com.br",
+    "select_info": "Para editar formulários existentes, utilize a ferramenta nativa da Meta.",
+    "start_screen": " Iniciar flows a partir da tela:"
   },
   "issues": {
     "header": "Problemas no Fluxo",

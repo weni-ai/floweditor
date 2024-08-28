@@ -521,12 +521,16 @@
     "options_label": "Añade hasta 10 opciones",
     "list_button_text_placeholder": "Texto del botón de acción",
     "list_button_text_optional": "Texto del botón de acción (opcional)",
+    "list_button_text": "Texto del botón de acción",
+    "list_button_text_tooltip": "El flujo comenzará a partir de la interacción con este botón.",
     "ex_citrus_and_sweet": "Ej: Cítricos y dulces",
     "ex_orange": "Ej: Naranja",
     "ex_menu": "Ej: Menú",
     "action_button_text": "Texto del botón de acción",
     "action_button_url": "URL del botón de acción",
-    "action_button_url_placeholder": "Ej: https://www.menu-del-restaurante.com"
+    "action_button_url_placeholder": "Ej: https://www.menu-del-restaurante.com",
+    "select_info": "Para editar formularios existentes, utiliza la herramienta nativa de Meta.",
+    "start_screen": "Iniciar flujos desde la pantalla:"
   },
   "issues": {
     "header": "Problemas de Flujo",

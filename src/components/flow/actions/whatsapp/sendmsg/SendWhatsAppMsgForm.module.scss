@@ -48,6 +48,19 @@
   width: 100%;
   color: $unnnic-color-neutral-dark;
 
+  span{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  :global {
+    .unnnic-select-smart__input {
+      width: 100%;
+    }
+  }
+
   .disclaimer{
     display: flex;
     background-color: $unnnic-color-weni-50;
@@ -107,6 +120,22 @@
   display: flex;
   flex-direction: column;
   gap: $unnnic-spacing-stack-sm;
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+  
+    .action_button_text,
+    .screen {
+      flex: 1;
+      min-width: 0;
+      span{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+      }
+    }
+  }
 }
 
 .interaction_type {
@@ -126,3 +155,4 @@
   grid-template-columns: 1fr 1fr;
   gap: $unnnic-spacing-sm;
 }
+

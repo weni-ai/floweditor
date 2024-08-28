@@ -8,24 +8,24 @@ import TextInputElement, {
   TextInputStyle,
 } from '../../../../form/textinput/TextInputElement';
 
-import { applyVueInReact } from 'vuereact-combined';
+import { applyVueInReact } from 'veaury';
 // @ts-ignore
-import { unnnicButton } from '@weni/unnnic-system';
+// import { unnnicButton } from '@weni/unnnic-system';
 import { DynamicVariablesListItem } from './SendWhatsAppMsgForm';
 import { FormEntry, ValidationFailure } from '../../../../../store/nodeEditor';
 import { Trans } from 'react-i18next';
 
-const UnnnicButton = applyVueInReact(unnnicButton, {
-  vue: {
-    componentWrap: 'div',
-    slotWrap: 'div',
-    componentWrapAttrs: {
-      style: {
-        all: '',
-      },
-    },
-  },
-});
+// const UnnnicButton = applyVueInReact(unnnicButton, {
+//   vue: {
+//     componentWrap: 'div',
+//     slotWrap: 'div',
+//     componentWrapAttrs: {
+//       style: {
+//         all: '',
+//       },
+//     },
+//   },
+// });
 
 export interface DynamicListProps {
   options: FormEntry<DynamicVariablesListItem[]>;
