@@ -294,7 +294,7 @@ export interface SendWhatsAppMsgFormState extends FormState {
   quickReplies: StringArrayEntry;
   quickReplyEntry: StringEntry;
   dynamicVariables: FormEntry<DynamicVariablesListItem[]>;
-  firstScreen: FormEntry<string>;
+  firstScreen: StringEntry;
   selectedForm: UnnnicSelectOptionEntry<WhatsAppHeaderType>;
 }
 
@@ -315,6 +315,7 @@ interface UpdateKeys {
   removeDynamicVariable?: DynamicVariablesListItem;
   addNewDynamicVariable?: DynamicVariablesListItem;
   selectedForm?: UnnnicSelectOption<any>;
+  firstScreen?: string;
 }
 
 export default class SendWhatsAppMsgForm extends React.Component<
@@ -475,6 +476,14 @@ export default class SendWhatsAppMsgForm extends React.Component<
       updates.buttonText = validate(
         i18n.t('forms.list_button_text', 'Action button text'),
         keys.buttonText,
+        [],
+      );
+    }
+
+    if (keys.hasOwnProperty('firstScreen')) {
+      updates.firstScreen = validate(
+        i18n.t('forms.list_button_text', 'Action button text'),
+        keys.firstScreen,
         [],
       );
     }
@@ -789,6 +798,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ actionURL });
   }
 
+  public handleFirstScreenUpdate(firstScreen: string): boolean {
+    return this.handleUpdate({ firstScreen });
+  }
+
   public handleFormUpdate(
     event: UnnnicSelectOption<WhatsAppHeaderType>[],
     submitting = false,
@@ -1077,8 +1090,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
                   'Start flows from the screen:',
                 )}
                 size={TextInputSizes.sm}
-                onChange={this.handleButtonTextUpdate}
-                entry={this.state.buttonText}
+                onChange={this.handleFirstScreenUpdate}
+                entry={this.state.firstScreen}
                 autocomplete={true}
                 showLabel={true}
                 maxLength={20}
