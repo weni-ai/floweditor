@@ -67,6 +67,7 @@ export interface BrainInfo {
   enabled: boolean;
   name: string;
   occupation: string;
+  entry?: string;
 }
 
 export enum AssetType {
