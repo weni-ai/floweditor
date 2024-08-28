@@ -91,14 +91,16 @@ export class BrainForm extends React.Component<
             {this.props.brainInfo.name} - {this.props.brainInfo.occupation}
           </span>
         </div>
-        <div>
+        <div className={styles.entry}>
           <span>
-            Insira uma expressão para usar como entrada no Brain. Para usar a
-            última resposta do contato, use @input.text
+            {i18n.t(
+              'forms.brain.entry',
+              `Enter an expression to use as input in the Brain. To use the contact's last response, use @input.text.`,
+            )}
           </span>
           <TextInputElement
             name={'entry'}
-            placeholder={i18n.t('forms.ex_offers', 'Ex: Offers')}
+            placeholder={i18n.t('forms.brain.placeholder', '')}
             onChange={this.handleEntryChange}
             entry={this.state.entry}
             size={TextInputSizes.sm}
