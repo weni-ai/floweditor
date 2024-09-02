@@ -19,6 +19,7 @@ import {
 import { TembaStore } from '../temba-components';
 import i18n from 'config/i18n';
 import SelectOptions from './SelectOptions';
+import { useEffect, useRef } from 'react';
 
 const ElUnnnicTag = applyVueInReact(Unnnic.unnnicTag);
 const UnnnicInput = applyVueInReact(Unnnic.unnnicInput);
@@ -89,6 +90,7 @@ interface TembaSelectState {
   paginationQuery?: string;
   paginationOptions?: any[];
   selectedInitalFetch?: boolean;
+  delayedAnchorRef?: any;
 }
 
 export class TembaSelect extends React.Component<
@@ -113,6 +115,7 @@ export class TembaSelect extends React.Component<
       paginationOptions: [],
       selectedInitalFetch: true,
       currentQuery: '',
+      delayedAnchorRef: null,
     };
 
     bindCallbacks(this, {
@@ -121,6 +124,17 @@ export class TembaSelect extends React.Component<
   }
 
   public async componentDidMount(): Promise<void> {
+    // setTimeout(() => {
+    //   this.setState({
+    //     delayedAnchorRef: this.selectRef.current,
+    //   });
+    // }, 0);
+    requestAnimationFrame(() => {
+      this.setState({
+        delayedAnchorRef: this.selectRef.current,
+      });
+    });
+
     if (this.props.options && this.props.options.length) {
       this.setAvailableOptions(this.props.options);
     }
@@ -131,6 +145,7 @@ export class TembaSelect extends React.Component<
       this.selectInputRef.current,
     );
     selectInputEl.addEventListener('keyup', this.handleInputKeyUp);
+    selectInputEl.addEventListener('keydown', this.handleInputKeyUp);
   }
 
   public componentDidUpdate(
@@ -655,8 +670,8 @@ export class TembaSelect extends React.Component<
     }
   }
 
-  public render(): JSX.Element {
-    let selectedArray: any[] = [];
+  render() {
+    let selectedArray = [];
     if (this.props.value && !Array.isArray(this.props.value)) {
       selectedArray = [this.props.value];
     } else if (Array.isArray(this.props.value)) {
@@ -706,7 +721,9 @@ export class TembaSelect extends React.Component<
             />
           </div>
 
-          {this.selectRef && this.selectInputRef ? (
+          {this.selectRef &&
+          this.selectInputRef &&
+          this.state.delayedAnchorRef ? (
             <>
               <SelectOptions
                 testId={`temba_select_options_${snakify(this.props.name)}`}
@@ -716,7 +733,8 @@ export class TembaSelect extends React.Component<
                 onBlur={() => this.setState({ showOptions: false })}
                 onSelect={option => this.selectOption(option)}
                 active={!this.props.disabled && this.state.showOptions}
-                anchorRef={this.selectRef.current}
+                anchorRef={this.state.delayedAnchorRef}
+                teste={this.selectRef}
                 inputRef={this.getRefFromVueInputRef(
                   this.selectInputRef.current,
                 )}
@@ -736,7 +754,7 @@ export class TembaSelect extends React.Component<
                   !this.props.disabled &&
                   this.state.availableExpressions.length > 0
                 }
-                anchorRef={this.selectRef.current}
+                anchorRef={this.state.delayedAnchorRef}
                 inputRef={this.getRefFromVueInputRef(
                   this.selectInputRef.current,
                 )}

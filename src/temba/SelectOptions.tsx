@@ -16,6 +16,7 @@ const UnnnicCheckbox = applyVueInReact(Unnnic.unnnicCheckbox);
 
 export interface SelectOptionsProps {
   options: any[];
+  teste?: any;
   selected?: any[];
   onSelect: (option: any) => void;
   onBlur: () => void;
