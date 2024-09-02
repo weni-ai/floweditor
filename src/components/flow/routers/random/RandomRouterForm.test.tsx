@@ -64,6 +64,7 @@ describe(RandomRouterForm.name, () => {
       <RandomRouterForm {...props} />,
     );
 
+
     // we start off with five input boxes for our buckets plus 2 considering the select elements inputs
     expect(baseElement.querySelectorAll('input').length).toEqual(7);
 

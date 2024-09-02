@@ -19,7 +19,6 @@ import {
 import { TembaStore } from '../temba-components';
 import i18n from 'config/i18n';
 import SelectOptions from './SelectOptions';
-import { useEffect, useRef } from 'react';
 
 const ElUnnnicTag = applyVueInReact(Unnnic.unnnicTag);
 const UnnnicInput = applyVueInReact(Unnnic.unnnicInput);
@@ -124,11 +123,6 @@ export class TembaSelect extends React.Component<
   }
 
   public async componentDidMount(): Promise<void> {
-    // setTimeout(() => {
-    //   this.setState({
-    //     delayedAnchorRef: this.selectRef.current,
-    //   });
-    // }, 0);
     requestAnimationFrame(() => {
       this.setState({
         delayedAnchorRef: this.selectRef.current,
