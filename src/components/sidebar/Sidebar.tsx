@@ -22,7 +22,6 @@ import styles from './Sidebar.module.scss';
 import Unnnic from '@weni/unnnic-system';
 import GuidingSteps from 'components/guidingsteps/GuidingSteps';
 import { MouseState } from 'store/editor';
-import SearchButton from './components/SearchButton';
 
 const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip);
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
@@ -53,7 +52,7 @@ export interface SidebarStoreProps {
   search: Search;
 }
 
-export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
+export class Sidebar extends React.Component<SidebarStoreProps> {
   public static contextTypes = {
     config: fakePropType,
   };
@@ -70,6 +69,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   }
 
   private createSendMessageNode(): void {
+    /* istanbul ignore if -- @preserve */
     if (this.props.guidingStep === 0 && this.props.currentGuide === 'v2') {
       this.props.mergeEditorState({ guidingStep: 1 });
     }
@@ -117,6 +117,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
     this.props.onMouseStateChange(mouseState);
   }
 
+  /* istanbul ignore next -- @preserve */
   private detectOS() {
     const userAgent = window.navigator.userAgent;
     // Check for macOS
@@ -150,6 +151,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             shortcutText={'V'}
           >
             <div
+              data-testid="mouse-state"
               className={styles.option}
               onClick={() => this.toggleMouseState()}
             >
@@ -178,6 +180,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             side="right"
           >
             <div
+              data-testid="create-node"
               className={styles.option}
               onClick={() => this.createSendMessageNode()}
             >
@@ -206,6 +209,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
             }
           >
             <div
+              data-testid="copy-button"
               className={`${styles.option} ${
                 !this.props.selectionActive ? styles.disabled : ''
               }`}
@@ -226,9 +230,14 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
           text={i18n.t('search_in_nodes')}
           side="right"
           shortcutText={`${this.detectOS()} + F`}
+          enabled={true}
         >
-          <div className={styles.option}>
-            <SearchButton name="" onClick={() => this.handleSearchChanged()} />
+          <div
+            data-testid="search-button"
+            className={styles.option}
+            onClick={() => this.handleSearchChanged()}
+          >
+            <UnnnicIcon icon="search" size="md" />
           </div>
         </UnnnicTooltip>
       </div>
@@ -236,7 +245,7 @@ export class Sidebar extends React.PureComponent<SidebarStoreProps, {}> {
   }
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = ({
   flowContext: { nodes, search },
   editorState: { selectionActive, guidingStep, currentGuide },
@@ -250,7 +259,7 @@ const mapStateToProps = ({
   };
 };
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
   bindActionCreators(
     { onOpenNodeEditor, mergeEditorState, handleSearchChange },
