@@ -2,7 +2,13 @@ import ResultRouterForm from 'components/flow/routers/result/ResultRouterForm';
 import { Types } from 'config/interfaces';
 import * as React from 'react';
 import { AssetType, RenderNode } from 'store/flowContext';
-import { fireEvent, render, getCallParams, fireUnnnicSwitch } from 'test/utils';
+import {
+  fireEvent,
+  render,
+  getCallParams,
+  fireUnnnicSwitch,
+  waitFor,
+} from 'test/utils';
 import { mock } from 'testUtils';
 import { createMatchRouter, getRouterFormProps } from 'testUtils/assetCreators';
 import * as utils from 'utils';
@@ -72,7 +78,7 @@ describe(ResultRouterForm.name, () => {
     expect(props.updateRouter).toMatchSnapshot();
   });
 
-  it('should a fielded operand if configured', () => {
+  it('should a fielded operand if configured', async () => {
     const props = getRouterFormProps(routerNode);
 
     const testResult = {
@@ -91,7 +97,8 @@ describe(ResultRouterForm.name, () => {
 
     const { getByText } = render(<ResultRouterForm {...props} />);
 
-    userEvent.click(getByText('first'));
+    const first = await waitFor(() => getByText('first'));
+    userEvent.click(first);
     userEvent.click(getByText('plusses'));
 
     fireEvent.click(getByText('Confirm'));

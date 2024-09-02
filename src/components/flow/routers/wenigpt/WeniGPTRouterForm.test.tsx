@@ -17,6 +17,7 @@ import {
   act,
 } from 'test/utils';
 import userEvent from '@testing-library/user-event';
+import { waitFor } from '@testing-library/react';
 const mockedKnowledgeBases = require('test/assets/knowledge_bases.json');
 mockedKnowledgeBases.forEach((kb: any) => {
   kb.content = kb;
@@ -58,7 +59,7 @@ describe(WeniGPTRouterForm.name, () => {
       expect(weniGPTForm.updateRouter).not.toBeCalled();
 
       // set our result
-      const resultName = getByTestId('Save as result');
+      const resultName = await waitFor(() => getByTestId('Save as result'));
       await act(async () => {
         fireUnnnicInputChangeText(resultName, 'My Webhook Result');
       });
@@ -67,8 +68,8 @@ describe(WeniGPTRouterForm.name, () => {
       userEvent.click(getByText('Intelligence 2 - Base 1'));
 
       // set our expression input
-      const expressionInput = getByTestId(
-        'Insert an expression to be used as input',
+      const expressionInput = await waitFor(() =>
+        getByTestId('Insert an expression to be used as input'),
       );
       await act(async () => {
         fireUnnnicTextAreaChangeText(

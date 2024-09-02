@@ -8,6 +8,7 @@ import {
   fireTembaSelect,
   fireUnnnicInputChangeText,
   act,
+  waitFor,
 } from 'test/utils';
 import { createUUID } from 'utils';
 import userEvent from '@testing-library/user-event';
@@ -178,7 +179,8 @@ describe(ParamElement.name, () => {
           <ParamElement {...omieParamProps} onRemove={vi.fn()} />,
         );
 
-        userEvent.click(getByText('Código da Conta'));
+        const code = await waitFor(() => getByText('Código da Conta'));
+        userEvent.click(code);
         expect(baseElement).toMatchSnapshot();
       });
 
@@ -187,7 +189,10 @@ describe(ParamElement.name, () => {
           <ParamElement {...omieParamProps} onRemove={vi.fn()} />,
         );
 
-        userEvent.click(getByText('Telefone e Email'));
+        const phoneAndEmail = await waitFor(() =>
+          getByText('Telefone e Email'),
+        );
+        userEvent.click(phoneAndEmail);
         expect(baseElement).toMatchSnapshot();
       });
 
@@ -196,8 +201,12 @@ describe(ParamElement.name, () => {
           <ParamElement {...omieParamProps} onRemove={vi.fn()} />,
         );
 
-        userEvent.click(getByText('Telefone e Email'));
-        userEvent.click(getByText('DDD do Celular 2'));
+        const phoneAndEmail = await waitFor(() =>
+          getByText('Telefone e Email'),
+        );
+        userEvent.click(phoneAndEmail);
+        const ddd = await waitFor(() => getByText('DDD do Celular 2'));
+        userEvent.click(ddd);
 
         await act(async () => {
           fireUnnnicInputChangeText(

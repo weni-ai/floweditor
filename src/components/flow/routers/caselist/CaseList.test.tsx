@@ -1,7 +1,13 @@
 import CaseList from 'components/flow/routers/caselist/CaseList';
 import { Operators } from 'config/interfaces';
 import React from 'react';
-import { act, fireEvent, fireUnnnicInputChangeText, render } from 'test/utils';
+import {
+  act,
+  fireEvent,
+  fireUnnnicInputChangeText,
+  render,
+  waitFor,
+} from 'test/utils';
 import { mock } from 'testUtils';
 import * as utils from 'utils';
 import userEvent from '@testing-library/user-event';
@@ -95,7 +101,8 @@ describe(CaseList.name, () => {
       expect(getAllByTestId('temba_select_operator').length).toBe(1);
 
       // switch default to greater than operator and populate it
-      userEvent.click(getByText('has a number above'));
+      const hasNumber = await waitFor(() => getByText('has a number above'));
+      userEvent.click(hasNumber);
 
       const argsInput = getAllByTestId('arguments')[0];
       await act(async () => {

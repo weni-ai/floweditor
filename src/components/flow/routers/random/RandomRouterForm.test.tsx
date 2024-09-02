@@ -2,7 +2,7 @@ import { RouterFormProps } from 'components/flow/props';
 import { getTypeConfig } from 'config';
 import { Types } from 'config/interfaces';
 import * as React from 'react';
-import { fireEvent, render } from 'test/utils';
+import { fireEvent, render, waitFor } from 'test/utils';
 import { composeComponentTestUtils, mock } from 'testUtils';
 import {
   createRandomNode,
@@ -64,12 +64,12 @@ describe(RandomRouterForm.name, () => {
       <RandomRouterForm {...props} />,
     );
 
-
     // we start off with five input boxes for our buckets plus 2 considering the select elements inputs
     expect(baseElement.querySelectorAll('input').length).toEqual(7);
 
     // choose 3 buckets
-    userEvent.click(getByText('3 buckets'));
+    const buckets = await waitFor(() => getByText('3 buckets'));
+    userEvent.click(buckets);
 
     // now we should only have three input buckets plus 2 from the select elements inputs
     expect(baseElement.querySelectorAll('input').length).toEqual(5);

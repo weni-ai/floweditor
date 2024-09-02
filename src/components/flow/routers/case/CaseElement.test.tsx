@@ -57,14 +57,16 @@ describe(CaseElement.name, () => {
     it('should handle updates', async () => {
       const { baseElement, getByText } = render(<CaseElement {...caseProps} />);
 
-      userEvent.click(getByText('has a phone number'));
+      const hasNumber = await waitFor(() => getByText('has a phone number'));
+      userEvent.click(hasNumber);
       await waitFor(() => expect(baseElement).toMatchSnapshot());
     });
 
     it('should should set arguments for numeric range', async () => {
       const { baseElement, getByText } = render(<CaseElement {...caseProps} />);
 
-      userEvent.click(getByText('has a number between'));
+      const hasNumber = await waitFor(() => getByText('has a number between'));
+      userEvent.click(hasNumber);
       await waitFor(() => expect(baseElement).toMatchSnapshot());
     });
 
@@ -77,7 +79,8 @@ describe(CaseElement.name, () => {
       } = render(<CaseElement {...caseProps} />);
 
       // make us a has phone so we can look up our category by value
-      userEvent.click(getByText('has a phone number'));
+      const hasPhone = await waitFor(() => getByText('has a phone number'));
+      userEvent.click(hasPhone);
 
       // update our category to a user supplied value
       const category = getByTestId('Exit Name');
@@ -121,7 +124,9 @@ describe(CaseElement.name, () => {
         <CaseElement {...caseProps} onRemove={onRemove} />,
       );
 
-      userEvent.click(getByText('has a number between'));
+      const hasNumber = await waitFor(() => getByText('has a number between'));
+
+      userEvent.click(hasNumber);
 
       const args = getAllByTestId('arguments');
 

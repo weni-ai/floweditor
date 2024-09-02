@@ -1,7 +1,13 @@
 import { ActionFormProps } from 'components/flow/props';
 import React from 'react';
 import { AssetType } from 'store/flowContext';
-import { fireEvent, render, act, fireUnnnicInputChangeText } from 'test/utils';
+import {
+  fireEvent,
+  render,
+  act,
+  fireUnnnicInputChangeText,
+  waitFor,
+} from 'test/utils';
 import { composeComponentTestUtils, mock } from 'testUtils';
 import {
   createStartSessionAction,
@@ -37,7 +43,10 @@ describe(StartSessionForm.name, () => {
         <StartSessionForm {...props} />,
       );
 
-      userEvent.click(getByText('Create a new contact'));
+      const createContact = await waitFor(() =>
+        getByText('Create a new contact'),
+      );
+      userEvent.click(createContact);
 
       expect(queryByTestId('recipients')).toBeNull();
       expect(baseElement).toMatchSnapshot();
@@ -49,7 +58,11 @@ describe(StartSessionForm.name, () => {
         <StartSessionForm {...props} />,
       );
 
-      userEvent.click(getByText('Select recipients from a query'));
+      const selectQuery = await waitFor(() =>
+        getByText('Select recipients from a query'),
+      );
+
+      userEvent.click(selectQuery);
 
       await act(async () => {
         fireUnnnicInputChangeText(getByTestId('Contact Query'), 'my_field > 6');
@@ -67,7 +80,11 @@ describe(StartSessionForm.name, () => {
         <StartSessionForm {...props} />,
       );
 
-      userEvent.click(getByText('Select recipients from a query'));
+      const selectQuery = await waitFor(() =>
+        getByText('Select recipients from a query'),
+      );
+
+      userEvent.click(selectQuery);
 
       const input = getByTestId('Contact Query');
       await act(async () => {

@@ -44,10 +44,10 @@ describe(SchemeRouterForm.name, () => {
 
     const router = getSmartOrSwitchRouter(getUpdatedNode(routerProps).node);
 
-    expect(router.cases.length).toBe(2);
+    expect(router.cases.length).toBe(3);
     expect(router.cases[0].arguments[0]).toBe('tel');
     expect(router.cases[0].type).toBe(Operators.has_only_phrase);
-    expect(router.cases[1].arguments[0]).toBe('facebook');
+    expect(router.cases[1].arguments[0]).toBe('whatsapp');
     expect(router.cases[1].type).toBe(Operators.has_only_phrase);
     expect(routerProps.updateRouter).toMatchSnapshot();
   });

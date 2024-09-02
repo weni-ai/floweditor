@@ -16,6 +16,7 @@ import {
   fireUnnnicInputChangeText,
   act,
   fireUnnnicTextAreaChangeText,
+  waitFor,
 } from 'test/utils';
 import userEvent from '@testing-library/user-event';
 
@@ -56,8 +57,9 @@ describe(WebhookRouterForm.name, () => {
       fireUnnnicInputChangeText(url, 'http://app.rapidpro.io');
       fireUnnnicInputChangeText(resultName, 'My Webhook Result');
 
+      const post = await waitFor(() => getByText('POST'));
       await act(async () => {
-        userEvent.click(getByText('POST'));
+        userEvent.click(post);
       });
 
       // set a post body

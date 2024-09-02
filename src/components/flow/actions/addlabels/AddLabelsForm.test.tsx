@@ -43,7 +43,8 @@ describe(AddLabelsForm.name, () => {
         userEvent.type(input, '@contact.uuid');
       });
 
-      userEvent.click(getByText('contact.uuid'));
+      const contactUuid = await waitFor(() => getByText('contact.uuid'));
+      userEvent.click(contactUuid);
 
       expect(baseElement).toMatchSnapshot();
 

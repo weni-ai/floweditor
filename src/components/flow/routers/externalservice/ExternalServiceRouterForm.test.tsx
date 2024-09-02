@@ -7,7 +7,7 @@ import { RenderNode } from 'store/flowContext';
 import ExternalServiceRouterForm from './ExternalServiceRouterForm';
 import * as React from 'react';
 import { render, fireEvent, fireUnnnicInputChangeText } from 'test/utils';
-import { act, waitFor } from '@testing-library/react';
+import { act, getByText, waitFor } from '@testing-library/react';
 import { RouterFormProps } from '../../props';
 import userEvent from '@testing-library/user-event';
 
@@ -86,8 +86,14 @@ describe(ExternalServiceRouterForm.name, () => {
 
         fireUnnnicInputChangeText(resultName, 'My External Service Result');
 
-        userEvent.click(rendered.getByText('Aditional Prompt 1 content'));
-        userEvent.click(rendered.getByText('Aditional Prompt 2 content'));
+        const aditional1 = await waitFor(() =>
+          rendered.getByText('Aditional Prompt 1 content'),
+        );
+        userEvent.click(aditional1);
+        const aditional2 = await waitFor(() =>
+          rendered.getByText('Aditional Prompt 2 content'),
+        );
+        userEvent.click(aditional2);
 
         fireEvent.click(okButton);
         expect(externalServiceForm.updateRouter).toHaveBeenCalled();

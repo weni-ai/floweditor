@@ -1,3 +1,75 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`WeniGPTRouterForm > should render 1`] = `ShallowWrapper {}`;
+
+exports[`WeniGPTRouterForm > updates > should save changes 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "input": "Updated expression input data",
+              "knowledge_base": "3",
+              "result_name": "My Webhook Result",
+              "type": "call_wenigpt",
+              "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+                "type": "has_only_text",
+                "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+                "name": "Success",
+                "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+              },
+              {
+                "exit_uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+                "name": "Failure",
+                "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+              },
+            ],
+            "default_category_uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_wenigpt",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
