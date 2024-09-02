@@ -734,7 +734,6 @@ export class TembaSelect extends React.Component<
                 onSelect={option => this.selectOption(option)}
                 active={!this.props.disabled && this.state.showOptions}
                 anchorRef={this.state.delayedAnchorRef}
-                teste={this.selectRef}
                 inputRef={this.getRefFromVueInputRef(
                   this.selectInputRef.current,
                 )}
