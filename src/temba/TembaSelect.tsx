@@ -139,7 +139,6 @@ export class TembaSelect extends React.Component<
       this.selectInputRef.current,
     );
     selectInputEl.addEventListener('keyup', this.handleInputKeyUp);
-    selectInputEl.addEventListener('keydown', this.handleInputKeyUp);
   }
 
   public componentDidUpdate(
