@@ -263,7 +263,7 @@ exports[`ResultRouterForm > should render 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
                   class="_option_08dd12 _active_08dd12 "
@@ -540,7 +540,7 @@ exports[`ResultRouterForm > should render 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
@@ -743,7 +743,7 @@ exports[`ResultRouterForm > should render 1`] = `
                         class="_options_wrapper_08dd12"
                         data-testid="temba_select_options_operator"
                         id="temba_select_options_operator"
-                        style="margin-top: 0px; width: -24px; display: none;"
+                        style="margin-top: 0px; width: 0px; display: none;"
                       >
                         <div
                           class="_option_08dd12 _active_08dd12 _selected_08dd12"
@@ -960,7 +960,7 @@ exports[`ResultRouterForm > should render 1`] = `
                         class="_options_wrapper_08dd12"
                         data-testid="temba_select_expressions_operator"
                         id="temba_select_expressions_operator"
-                        style="margin-top: 0px; width: -24px; display: none;"
+                        style="margin-top: 0px; width: 0px; display: none;"
                       />
                     </div>
                   </div>
@@ -1358,7 +1358,7 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
                   class="_option_08dd12 _active_08dd12 "
@@ -1635,7 +1635,7 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
@@ -2240,7 +2240,7 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                         class="_options_wrapper_08dd12"
                         data-testid="temba_select_options_operator"
                         id="temba_select_options_operator"
-                        style="margin-top: 0px; width: -24px; display: none;"
+                        style="margin-top: 0px; width: 0px; display: none;"
                       >
                         <div
                           class="_option_08dd12 _active_08dd12 _selected_08dd12"
@@ -2457,7 +2457,7 @@ exports[`ResultRouterForm > should show delimit options 1`] = `
                         class="_options_wrapper_08dd12"
                         data-testid="temba_select_expressions_operator"
                         id="temba_select_expressions_operator"
-                        style="margin-top: 0px; width: -24px; display: none;"
+                        style="margin-top: 0px; width: 0px; display: none;"
                       />
                     </div>
                   </div>
