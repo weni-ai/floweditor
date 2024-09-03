@@ -1,3 +1,7 @@
+3.0.2
+----------
+- Fix: enable arrow keys and 'Enter' key when adding new cards;
+
 3.0.1
 ----------
 - Fix: Split by contact field card checkbox;
