@@ -706,7 +706,9 @@ export class TembaSelect extends React.Component<
             />
           </div>
 
-          {this.selectRef && this.selectInputRef ? (
+          {this.selectRef &&
+          this.selectInputRef &&
+          this.selectInputRef.current ? (
             <>
               <SelectOptions
                 testId={`temba_select_options_${snakify(this.props.name)}`}
