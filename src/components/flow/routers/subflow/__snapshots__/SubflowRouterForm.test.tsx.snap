@@ -94,7 +94,7 @@ exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
                   class="_option_08dd12 _active_08dd12 "
@@ -371,7 +371,7 @@ exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
@@ -444,13 +444,13 @@ exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_flow_to_start"
               id="temba_select_options_flow_to_start"
-              style="margin-top: 0px; width: -24px; display: none;"
+              style="margin-top: 0px; width: 0px; display: none;"
             />
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_flow_to_start"
               id="temba_select_expressions_flow_to_start"
-              style="margin-top: 0px; width: -24px; display: none;"
+              style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
         </div>
@@ -1009,7 +1009,7 @@ exports[`SubflowRouterForm > should init parameter tab 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
                   class="_option_08dd12 _active_08dd12 "
@@ -1286,7 +1286,7 @@ exports[`SubflowRouterForm > should init parameter tab 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
@@ -1359,13 +1359,13 @@ exports[`SubflowRouterForm > should init parameter tab 1`] = `
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_flow_to_start"
               id="temba_select_options_flow_to_start"
-              style="margin-top: 0px; width: -24px; display: none;"
+              style="margin-top: 0px; width: 0px; display: none;"
             />
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_flow_to_start"
               id="temba_select_expressions_flow_to_start"
-              style="margin-top: 0px; width: -24px; display: none;"
+              style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
         </div>
@@ -1531,7 +1531,7 @@ exports[`SubflowRouterForm > should render 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
                   class="_option_08dd12 _active_08dd12 "
@@ -1808,7 +1808,7 @@ exports[`SubflowRouterForm > should render 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
@@ -1881,13 +1881,13 @@ exports[`SubflowRouterForm > should render 1`] = `
               class="_options_wrapper_08dd12"
               data-testid="temba_select_options_flow_to_start"
               id="temba_select_options_flow_to_start"
-              style="margin-top: 0px; width: -24px; display: none;"
+              style="margin-top: 0px; width: 0px; display: none;"
             />
             <div
               class="_options_wrapper_08dd12"
               data-testid="temba_select_expressions_flow_to_start"
               id="temba_select_expressions_flow_to_start"
-              style="margin-top: 0px; width: -24px; display: none;"
+              style="margin-top: 0px; width: 0px; display: none;"
             />
           </div>
         </div>
