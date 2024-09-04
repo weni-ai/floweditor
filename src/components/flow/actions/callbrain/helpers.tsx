@@ -12,5 +12,6 @@ export const propsToAction = (
     type: Types.call_brain,
     uuid: getActionUUID(settings, Types.call_brain),
     brainInfo: state.brainInfo,
+    entry: state.entry,
   };
 };

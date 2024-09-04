@@ -21,6 +21,7 @@ const baseProps: CallBrainFormProps = {
     occupation: 'Marketing Specialist',
     enabled: true,
   },
+  entry: '',
 };
 
 const { setup } = composeComponentTestUtils<ActionFormProps>(

@@ -23,6 +23,7 @@ const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export interface CallBrainFormProps extends ActionFormProps {
   brainInfo: BrainInfo;
+  entry: string;
 }
 
 export interface CallBrainFormState {
@@ -41,8 +42,8 @@ export class BrainForm extends React.Component<
     });
   }
   private handleSave(): void {
-    const brainState = this.props;
-    brainState.brainInfo.entry = this.state.entry.value;
+    const brainState = { ...this.props };
+    brainState.entry = this.state.entry.value;
     this.props.updateAction(propsToAction(this.props.nodeSettings, brainState));
     this.props.onClose(false);
   }
