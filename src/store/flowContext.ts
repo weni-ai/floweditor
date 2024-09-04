@@ -16,6 +16,7 @@ import ActionTypes, {
   UpdateIssuesAction,
   UpdateSearchAction,
   UpdateBrainInfoAction,
+  UpdateEntryAction,
 } from 'store/actionTypes';
 import Constants from 'store/constants';
 import { Type } from 'config/interfaces';
@@ -172,6 +173,7 @@ export interface FlowContext {
   assetStore: AssetStore;
   search: Search;
   brainInfo: BrainInfo;
+  entry: string;
 }
 
 // Initial state
@@ -199,6 +201,7 @@ export const initialState: FlowContext = {
     name: '',
     occupation: '',
   },
+  entry: '',
 };
 
 // Action Creators
@@ -251,6 +254,13 @@ export const updateBrainInfo = (
   type: Constants.UPDATE_BRAIN_INFO,
   payload: {
     brainInfo,
+  },
+});
+
+export const updateEntry = (entry: string): UpdateEntryAction => ({
+  type: Constants.UPDATE_ENTRY,
+  payload: {
+    entry,
   },
 });
 

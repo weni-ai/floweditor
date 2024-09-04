@@ -36,7 +36,7 @@ export class BrainForm extends React.Component<
 > {
   constructor(props: CallBrainFormProps) {
     super(props);
-    this.state = { entry: { value: this.props.brainInfo.entry || '' } };
+    this.state = { entry: { value: this.props.entry || '' } };
     bindCallbacks(this, {
       include: [/^handle/, /^on/],
     });
@@ -118,9 +118,13 @@ export class BrainForm extends React.Component<
 }
 
 /* istanbul ignore next */
-const mapStateToProps = ({ flowContext: { brainInfo } }: AppState) => {
+const mapStateToProps = ({
+  flowContext: { brainInfo },
+  nodeEditor: { settings },
+}: AppState) => {
   return {
     brainInfo,
+    entry: settings.originalAction.entry,
   };
 };
 

@@ -87,6 +87,10 @@ interface UpdateBrainInfoPayload {
   brainInfo: BrainInfo;
 }
 
+interface UpdateEntryPayload {
+  entry: string;
+}
+
 // Action types
 export type UpdateNodeEditorSettings = DuxAction<
   Constants.UPDATE_NODE_EDITOR_SETTINGS,
@@ -167,6 +171,11 @@ export type UpdateBrainInfoAction = DuxAction<
   UpdateBrainInfoPayload
 >;
 
+export type UpdateEntryAction = DuxAction<
+  Constants.UPDATE_ENTRY,
+  UpdateEntryPayload
+>;
+
 export type UpdateTypeConfig = (typeConfig: Type) => UpdateTypeConfigAction;
 
 export type UpdateUserAddingAction = (
@@ -199,7 +208,8 @@ type ActionTypes =
   | UpdateLanguagesAction
   | UpdateContactFieldsAction
   | UpdateSearchAction
-  | UpdateBrainInfoAction;
+  | UpdateBrainInfoAction
+  | UpdateEntryAction;
 
 // eslint-disable-next-line no-undef
 export default ActionTypes;

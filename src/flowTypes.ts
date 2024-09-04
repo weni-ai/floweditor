@@ -315,6 +315,7 @@ export interface Flow {
 export interface Action {
   type: Types;
   uuid: string;
+  entry?: string;
 }
 
 export interface SetContactField extends Action {

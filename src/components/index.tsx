@@ -77,6 +77,7 @@ export interface FlowEditorStoreProps {
   popped: string;
   updateTranslationFilters: UpdateTranslationFilters;
   brainInfo: BrainInfo;
+  entry: string;
 }
 
 const hotStore = createStore();
@@ -357,6 +358,7 @@ const mapStateToProps = ({
     assetStore,
     baseLanguage,
     brainInfo,
+    entry,
   },
   editorState: {
     translating,
@@ -386,6 +388,7 @@ const mapStateToProps = ({
     scrollToAction,
     scrollToNode,
     brainInfo,
+    entry,
   };
 };
 
