@@ -2628,6 +2628,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
       "occupation": "Marketing Specialist",
     },
     "children": [],
+    "entry": "",
     "helpArticles": {},
     "issues": [],
     "nodeSettings": {
@@ -5346,6 +5347,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
             "occupation": "Marketing Specialist",
           }
         }
+        entry=""
         helpArticles={{}}
         issues={[]}
         nodeSettings={
