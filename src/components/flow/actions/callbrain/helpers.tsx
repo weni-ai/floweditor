@@ -11,7 +11,7 @@ export const initializeForm = (
     settings.originalAction &&
     settings.originalAction.type === Types.call_brain
   ) {
-    const action = settings.originalAction;
+    const action = settings.originalAction as CallBrain;
     return {
       entry: { value: action.entry || '@input.text' },
     };

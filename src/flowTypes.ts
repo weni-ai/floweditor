@@ -598,8 +598,7 @@ export type AnyAction =
   | CallClassifier
   | CallWebhook
   | StartFlow
-  | StartSession
-  | CallBrain;
+  | StartSession;
 
 export enum ContactProperties {
   UUID = 'uuid',
