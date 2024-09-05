@@ -9,7 +9,7 @@ import * as React from 'react';
 import styles from './CallBrainForm.module.scss';
 import i18n from 'config/i18n';
 import AppState from 'store/state';
-import { propsToAction } from './helpers';
+import { propsToAction, initializeForm } from './helpers';
 import { BrainInfo } from '../../../../store/flowContext';
 
 import { applyVueInReact } from 'veaury';
@@ -36,7 +36,7 @@ export class BrainForm extends React.Component<
 > {
   constructor(props: CallBrainFormProps) {
     super(props);
-    this.state = { entry: { value: this.props.entry || '@input.text' } };
+    this.state = initializeForm(this.props.nodeSettings);
     bindCallbacks(this, {
       include: [/^handle/, /^on/],
     });
@@ -118,13 +118,9 @@ export class BrainForm extends React.Component<
 }
 
 /* istanbul ignore next */
-const mapStateToProps = ({
-  flowContext: { brainInfo },
-  nodeEditor: { settings },
-}: AppState) => {
+const mapStateToProps = ({ flowContext: { brainInfo } }: AppState) => {
   return {
     brainInfo,
-    entry: settings.originalAction.entry,
   };
 };
 
