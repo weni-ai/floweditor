@@ -9,7 +9,7 @@ import * as React from 'react';
 import styles from './CallBrainForm.module.scss';
 import i18n from 'config/i18n';
 import AppState from 'store/state';
-import { updateAction, initializeForm } from './helpers';
+import { updateBrainAction, initializeForm } from './helpers';
 import { BrainInfo } from '../../../../store/flowContext';
 
 import { applyVueInReact } from 'veaury';
@@ -23,12 +23,15 @@ const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export interface CallBrainFormProps extends ActionFormProps {
   brainInfo: BrainInfo;
-  entry: string;
 }
 
 export interface CallBrainFormState {
   entry: StringEntry;
 }
+
+export interface CallBrainFormData
+  extends CallBrainFormProps,
+    CallBrainFormState {}
 
 export class BrainForm extends React.Component<
   CallBrainFormProps,
@@ -42,9 +45,13 @@ export class BrainForm extends React.Component<
     });
   }
   private handleSave(): void {
-    const brainState = { ...this.props };
-    brainState.entry = this.state.entry.value;
-    this.props.updateAction(updateAction(this.props.nodeSettings, brainState));
+    const brainData: CallBrainFormData = {
+      ...this.props,
+      entry: this.state.entry,
+    };
+    this.props.updateAction(
+      updateBrainAction(this.props.nodeSettings, brainData),
+    );
     this.props.onClose(false);
   }
 
@@ -61,7 +68,7 @@ export class BrainForm extends React.Component<
     };
   }
 
-  private handleEntryChange(value: string, name?: string) {
+  private handleEntryChange(value: string) {
     this.setState({ entry: { value } });
   }
 

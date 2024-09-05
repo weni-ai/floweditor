@@ -2,7 +2,7 @@ import { Types } from 'config/interfaces';
 import { CallBrain } from 'flowTypes';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import { getActionUUID } from 'components/flow/actions/helpers';
-import { CallBrainFormProps, CallBrainFormState } from './CallBrainForm';
+import { CallBrainFormData, CallBrainFormState } from './CallBrainForm';
 
 export const initializeForm = (
   settings: NodeEditorSettings,
@@ -17,14 +17,14 @@ export const initializeForm = (
     };
   }
 };
-export const updateAction = (
+export const updateBrainAction = (
   settings: NodeEditorSettings,
-  state: CallBrainFormProps,
+  state: CallBrainFormData,
 ): CallBrain => {
   return {
     type: Types.call_brain,
     uuid: getActionUUID(settings, Types.call_brain),
     brainInfo: state.brainInfo,
-    entry: state.entry,
+    entry: state.entry.value,
   };
 };

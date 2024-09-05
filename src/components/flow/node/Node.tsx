@@ -83,7 +83,6 @@ export interface NodeStoreProps {
   scrollToAction: string;
   mouseState: MouseState;
   brainInfo: BrainInfo;
-  entry: string;
 }
 
 export type NodeProps = NodePassedProps & NodeStoreProps;
@@ -318,7 +317,6 @@ export class NodeComp extends React.PureComponent<NodeProps> {
                       languages={this.props.languages}
                       issues={issues}
                       brainInfo={this.props.brainInfo}
-                      entry={this.props.entry}
                     />
                   );
                 }}
@@ -538,7 +536,6 @@ const mapStateToProps = (
         languages: { items: languages },
       },
       brainInfo,
-      entry,
     },
     editorState: {
       translating,
@@ -591,7 +588,6 @@ const mapStateToProps = (
     scrollToAction: scrollAction,
     mouseState,
     brainInfo,
-    entry,
   };
 };
 
