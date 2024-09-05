@@ -516,6 +516,7 @@ export interface CallWeniGPT extends Action {
 
 export interface CallBrain extends Action {
   brainInfo: BrainInfo;
+  entry: string;
 }
 
 export interface CallExternalService extends Action {

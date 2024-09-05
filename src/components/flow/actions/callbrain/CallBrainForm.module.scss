@@ -19,3 +19,12 @@
 .dialog {
   width: 498px;
 }
+
+.entry{
+  display: flex;
+  flex-direction: column;
+  padding: $unnnic-spacing-sm 0 ;
+  span{
+    padding-bottom: $unnnic-spacing-xs ;
+  }
+}

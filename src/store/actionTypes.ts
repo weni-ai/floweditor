@@ -86,7 +86,6 @@ interface UpdateContactFieldsPayload {
 interface UpdateBrainInfoPayload {
   brainInfo: BrainInfo;
 }
-
 // Action types
 export type UpdateNodeEditorSettings = DuxAction<
   Constants.UPDATE_NODE_EDITOR_SETTINGS,
