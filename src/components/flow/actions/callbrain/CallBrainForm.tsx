@@ -36,7 +36,7 @@ export class BrainForm extends React.Component<
 > {
   constructor(props: CallBrainFormProps) {
     super(props);
-    this.state = { entry: { value: this.props.entry || '' } };
+    this.state = { entry: { value: this.props.entry || '@input.text' } };
     bindCallbacks(this, {
       include: [/^handle/, /^on/],
     });
