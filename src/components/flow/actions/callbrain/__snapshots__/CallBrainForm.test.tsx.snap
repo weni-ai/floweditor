@@ -2697,7 +2697,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
   "setState": [Function],
   "state": {
     "entry": {
-      "value": "",
+      "value": "@input.text",
     },
   },
   "updater": Updater {
@@ -5533,7 +5533,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
             autocomplete={true}
             entry={
               {
-                "value": "",
+                "value": "@input.text",
               }
             }
             name="entry"
