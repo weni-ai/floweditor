@@ -17,7 +17,7 @@ export const initializeForm = (
     };
   }
 };
-export const propsToAction = (
+export const updateAction = (
   settings: NodeEditorSettings,
   state: CallBrainFormProps,
 ): CallBrain => {

@@ -9,7 +9,7 @@ import * as React from 'react';
 import styles from './CallBrainForm.module.scss';
 import i18n from 'config/i18n';
 import AppState from 'store/state';
-import { propsToAction, initializeForm } from './helpers';
+import { updateAction, initializeForm } from './helpers';
 import { BrainInfo } from '../../../../store/flowContext';
 
 import { applyVueInReact } from 'veaury';
@@ -44,7 +44,7 @@ export class BrainForm extends React.Component<
   private handleSave(): void {
     const brainState = { ...this.props };
     brainState.entry = this.state.entry.value;
-    this.props.updateAction(propsToAction(this.props.nodeSettings, brainState));
+    this.props.updateAction(updateAction(this.props.nodeSettings, brainState));
     this.props.onClose(false);
   }
 
