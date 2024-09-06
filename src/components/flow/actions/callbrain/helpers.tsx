@@ -9,11 +9,14 @@ export const initializeForm = (
 ): CallBrainFormState => {
   if (
     settings.originalAction &&
-    settings.originalAction.type === Types.call_brain
+    (settings.originalAction.type === Types.call_brain ||
+      settings.originalAction.type === Types.send_msg)
   ) {
     const action = settings.originalAction as CallBrain;
     return {
-      entry: { value: action.entry || '@input.text' },
+      entry: {
+        value: action.entry || '@input.text',
+      },
     };
   }
 };
