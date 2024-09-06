@@ -1,3 +1,7 @@
+3.1.1
+----------
+- Fix: Brain card initializa form;
+
 3.1.0
 ----------
 - Feat: Add text input to Call Weni Brain card;
