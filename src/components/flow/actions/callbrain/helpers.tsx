@@ -13,9 +13,16 @@ export const initializeForm = (
   ) {
     const action = settings.originalAction as CallBrain;
     return {
-      entry: { value: action.entry || '@input.text' },
+      entry: {
+        value: action.entry || '@input.text',
+      },
     };
   }
+  return {
+    entry: {
+      value: '@input.text',
+    },
+  };
 };
 export const updateBrainAction = (
   settings: NodeEditorSettings,
