@@ -9,8 +9,7 @@ export const initializeForm = (
 ): CallBrainFormState => {
   if (
     settings.originalAction &&
-    (settings.originalAction.type === Types.call_brain ||
-      settings.originalAction.type === Types.send_msg)
+    settings.originalAction.type === Types.call_brain
   ) {
     const action = settings.originalAction as CallBrain;
     return {
@@ -19,6 +18,11 @@ export const initializeForm = (
       },
     };
   }
+  return {
+    entry: {
+      value: '@input.text',
+    },
+  };
 };
 export const updateBrainAction = (
   settings: NodeEditorSettings,
