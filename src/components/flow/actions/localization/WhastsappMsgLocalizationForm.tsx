@@ -309,7 +309,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       if (actionURL.value) {
         translations.action_url = actionURL.value;
       }
-      if (listItems.value) {
+      if (listItems.value && listItems.value.length) {
         const filteredArray = listItems.value.filter(item => item.title !== '');
         translations.list_items = filteredArray;
       }
