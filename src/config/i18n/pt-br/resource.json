@@ -236,6 +236,10 @@
     "audio_url": "URL de Áudio",
     "body": "Corpo",
     "buckets": "Repositórios",
+    "brain": {
+      "entry": "Insira uma expressão para usar como entrada no Brain. Para usar a última resposta do contato, use @input.text",
+      "placeholder": ""
+    },
     "categories": "categorias",
     "categorize_as": "Categorize como:",
     "category": "Categoria (opcional)",

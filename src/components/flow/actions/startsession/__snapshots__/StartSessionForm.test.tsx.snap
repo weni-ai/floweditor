@@ -94,7 +94,7 @@ exports[`StartSessionForm > render > should render 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_type"
                 id="temba_select_options_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
                   class="_option_08dd12 _active_08dd12 "
@@ -371,7 +371,7 @@ exports[`StartSessionForm > render > should render 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_type"
                 id="temba_select_expressions_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
@@ -443,7 +443,7 @@ exports[`StartSessionForm > render > should render 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_start_type"
                 id="temba_select_options_start_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               >
                 <div
                   class="_option_08dd12 _active_08dd12 _selected_08dd12"
@@ -480,7 +480,7 @@ exports[`StartSessionForm > render > should render 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_start_type"
                 id="temba_select_expressions_start_type"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
@@ -559,13 +559,13 @@ exports[`StartSessionForm > render > should render 1`] = `
                   class="_options_wrapper_08dd12"
                   data-testid="temba_select_options_contacts"
                   id="temba_select_options_contacts"
-                  style="margin-top: 0px; width: -24px; display: none;"
+                  style="margin-top: 0px; width: 0px; display: none;"
                 />
                 <div
                   class="_options_wrapper_08dd12"
                   data-testid="temba_select_expressions_contacts"
                   id="temba_select_expressions_contacts"
-                  style="margin-top: 0px; width: -24px; display: none;"
+                  style="margin-top: 0px; width: 0px; display: none;"
                 />
               </div>
               <div
@@ -771,13 +771,13 @@ exports[`StartSessionForm > render > should render 1`] = `
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_options_flow"
                 id="temba_select_options_flow"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
               <div
                 class="_options_wrapper_08dd12"
                 data-testid="temba_select_expressions_flow"
                 id="temba_select_expressions_flow"
-                style="margin-top: 0px; width: -24px; display: none;"
+                style="margin-top: 0px; width: 0px; display: none;"
               />
             </div>
           </div>
