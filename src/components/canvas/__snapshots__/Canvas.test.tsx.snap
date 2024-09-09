@@ -51,7 +51,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_833810170301118"
+                        id="__vue_wrapper_container_03321208154110966"
                         style="display: flex;"
                       />
                     </div>
@@ -61,7 +61,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                       100
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_9218642937391037"
+                        id="__vue_wrapper_container_20833260835137524"
                         style="display: flex;"
                       />
                     </div>
@@ -70,7 +70,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_5124867845908283"
+                        id="__vue_wrapper_container_09382011267252999"
                         style="display: flex;"
                       />
                     </div>
@@ -124,7 +124,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                       </span>
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_3309736533403589"
+                        id="__vue_wrapper_container_07060435379918095"
                         style="display: flex;"
                       />
                     </div>
@@ -133,208 +133,6 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-right"
                     data-v-5e81b292=""
-                  >
-                    
-                    
-                     
-                    <br
-                      data-v-5e81b292=""
-                    />
-                    
-                    
-                    <span
-                      class="unnnic-tooltip-label-shortcut"
-                      data-v-5e81b292=""
-                    >
-                      Ctrl + Enter
-                    </span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Canvas > adjusts the height when updating dimensions 2`] = `
-<body>
-  <div>
-    <div
-      class="_canvas_container_25bc10 _cursor_select_25bc10"
-      id="canvas-container"
-    >
-      <div
-        class="_canvas_background_25bc10"
-      >
-        <div
-          class="_canvas_25bc10"
-          data-testid="canvas"
-          id="canvas"
-          tabindex="0"
-        >
-          <div
-            class="_panzoom_25bc10"
-            id="panzoom"
-          >
-            <div />
-            <div
-              class="_draggable_c0a2dc"
-              data-testid="draggable_132de855-4042-4dc1-a18f-cc2e6a8f790a"
-              style="left: 100px; top: 1200px;"
-            />
-          </div>
-          <div
-            class="_zoom_control_25bc10"
-          >
-            <div
-              class="_guiding_wrapper_168ca1"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                data-v-app=""
-              >
-                <div
-                  class="unnnic-tooltip _zoom_tooltip_25bc10"
-                  data-v-5e81b292=""
-                >
-                  
-                  <div
-                    __use_react_component_wrap=""
-                    style="all: unset;"
-                  >
-                    <div
-                      class="_out_25bc10"
-                    >
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          remove
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <div
-                      class="_percentage_25bc10"
-                    >
-                      100
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          percent
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <div
-                      class="_in_25bc10"
-                    >
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          add
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <!--teleport start-->
-                    <!--teleport end-->
-                    <!--teleport start-->
-                    <!--teleport end-->
-                    <!--teleport start-->
-                    <!--teleport end-->
-                  </div>
-                  
-                  <span
-                    class="unnnic-tooltip-label unnnic-tooltip-label-top"
-                    data-v-5e81b292=""
-                    style="left: 0px; top: -8px;"
-                  >
-                    
-                    
-                    Zoom 
-                    <br
-                      data-v-5e81b292=""
-                    />
-                    
-                    
-                    <span
-                      class="unnnic-tooltip-label-shortcut"
-                      data-v-5e81b292=""
-                    >
-                      Ctrl + Scroll
-                    </span>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="_guiding_wrapper_168ca1"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                data-v-app=""
-              >
-                <div
-                  class="unnnic-tooltip _start_tooltip_25bc10"
-                  data-v-5e81b292=""
-                >
-                  
-                  <div
-                    __use_react_component_wrap=""
-                    style="all: unset;"
-                  >
-                    <div
-                      class="_start_25bc10"
-                    >
-                      <span
-                        class="_hide_25bc10"
-                      >
-                        Start of flow
-                      </span>
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          arrow_upward
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <!--teleport start-->
-                    <!--teleport end-->
-                  </div>
-                  
-                  <span
-                    class="unnnic-tooltip-label unnnic-tooltip-label-right"
-                    data-v-5e81b292=""
-                    style="left: 8px; top: 0px;"
                   >
                     
                     
@@ -413,7 +211,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_03496974637380834"
+                        id="__vue_wrapper_container_6319546279220156"
                         style="display: flex;"
                       />
                     </div>
@@ -423,7 +221,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                       100
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_44805192598898724"
+                        id="__vue_wrapper_container_24453202388767825"
                         style="display: flex;"
                       />
                     </div>
@@ -432,7 +230,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_937253544892237"
+                        id="__vue_wrapper_container_25117538826300567"
                         style="display: flex;"
                       />
                     </div>
@@ -486,7 +284,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                       </span>
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_8792794329427003"
+                        id="__vue_wrapper_container_6012582663544321"
                         style="display: flex;"
                       />
                     </div>
@@ -495,208 +293,6 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-right"
                     data-v-5e81b292=""
-                  >
-                    
-                    
-                     
-                    <br
-                      data-v-5e81b292=""
-                    />
-                    
-                    
-                    <span
-                      class="unnnic-tooltip-label-shortcut"
-                      data-v-5e81b292=""
-                    >
-                      Ctrl + Enter
-                    </span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Canvas > initializes the height to the lowest draggable 2`] = `
-<body>
-  <div>
-    <div
-      class="_canvas_container_25bc10 _cursor_select_25bc10"
-      id="canvas-container"
-    >
-      <div
-        class="_canvas_background_25bc10"
-      >
-        <div
-          class="_canvas_25bc10"
-          data-testid="canvas"
-          id="canvas"
-          tabindex="0"
-        >
-          <div
-            class="_panzoom_25bc10"
-            id="panzoom"
-          >
-            <div />
-            <div
-              class="_draggable_c0a2dc"
-              data-testid="draggable_1e47a1e1-3c67-4df5-adf1-da542c789adb"
-              style="left: 100px; top: 1200px;"
-            />
-          </div>
-          <div
-            class="_zoom_control_25bc10"
-          >
-            <div
-              class="_guiding_wrapper_168ca1"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                data-v-app=""
-              >
-                <div
-                  class="unnnic-tooltip _zoom_tooltip_25bc10"
-                  data-v-5e81b292=""
-                >
-                  
-                  <div
-                    __use_react_component_wrap=""
-                    style="all: unset;"
-                  >
-                    <div
-                      class="_out_25bc10"
-                    >
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          remove
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <div
-                      class="_percentage_25bc10"
-                    >
-                      100
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          percent
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <div
-                      class="_in_25bc10"
-                    >
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          add
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <!--teleport start-->
-                    <!--teleport end-->
-                    <!--teleport start-->
-                    <!--teleport end-->
-                    <!--teleport start-->
-                    <!--teleport end-->
-                  </div>
-                  
-                  <span
-                    class="unnnic-tooltip-label unnnic-tooltip-label-top"
-                    data-v-5e81b292=""
-                    style="left: 0px; top: -8px;"
-                  >
-                    
-                    
-                    Zoom 
-                    <br
-                      data-v-5e81b292=""
-                    />
-                    
-                    
-                    <span
-                      class="unnnic-tooltip-label-shortcut"
-                      data-v-5e81b292=""
-                    >
-                      Ctrl + Scroll
-                    </span>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="_guiding_wrapper_168ca1"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                data-v-app=""
-              >
-                <div
-                  class="unnnic-tooltip _start_tooltip_25bc10"
-                  data-v-5e81b292=""
-                >
-                  
-                  <div
-                    __use_react_component_wrap=""
-                    style="all: unset;"
-                  >
-                    <div
-                      class="_start_25bc10"
-                    >
-                      <span
-                        class="_hide_25bc10"
-                      >
-                        Start of flow
-                      </span>
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          arrow_upward
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <!--teleport start-->
-                    <!--teleport end-->
-                  </div>
-                  
-                  <span
-                    class="unnnic-tooltip-label unnnic-tooltip-label-right"
-                    data-v-5e81b292=""
-                    style="left: 8px; top: 0px;"
                   >
                     
                     
@@ -788,7 +384,7 @@ exports[`Canvas > render default 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_25547309390232775"
+                        id="__vue_wrapper_container_2969828732096187"
                         style="display: flex;"
                       />
                     </div>
@@ -798,7 +394,7 @@ exports[`Canvas > render default 1`] = `
                       100
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_4263774163067884"
+                        id="__vue_wrapper_container_09623192552789117"
                         style="display: flex;"
                       />
                     </div>
@@ -807,7 +403,7 @@ exports[`Canvas > render default 1`] = `
                     >
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_9473213994680005"
+                        id="__vue_wrapper_container_5201551697928148"
                         style="display: flex;"
                       />
                     </div>
@@ -861,7 +457,7 @@ exports[`Canvas > render default 1`] = `
                       </span>
                       <div
                         data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_12917169868455258"
+                        id="__vue_wrapper_container_37286111851035053"
                         style="display: flex;"
                       />
                     </div>
@@ -870,203 +466,6 @@ exports[`Canvas > render default 1`] = `
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-right"
                     data-v-5e81b292=""
-                  >
-                    
-                    
-                     
-                    <br
-                      data-v-5e81b292=""
-                    />
-                    
-                    
-                    <span
-                      class="unnnic-tooltip-label-shortcut"
-                      data-v-5e81b292=""
-                    >
-                      Ctrl + Enter
-                    </span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Canvas > render default 2`] = `
-<body>
-  <div>
-    <div
-      class="_canvas_container_25bc10 _cursor_select_25bc10"
-      id="canvas-container"
-    >
-      <div
-        class="_canvas_background_25bc10"
-      >
-        <div
-          class="_canvas_25bc10"
-          data-testid="canvas"
-          id="canvas"
-          tabindex="0"
-        >
-          <div
-            class="_panzoom_25bc10"
-            id="panzoom"
-          >
-            <div />
-          </div>
-          <div
-            class="_zoom_control_25bc10"
-          >
-            <div
-              class="_guiding_wrapper_168ca1"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                data-v-app=""
-              >
-                <div
-                  class="unnnic-tooltip _zoom_tooltip_25bc10"
-                  data-v-5e81b292=""
-                >
-                  
-                  <div
-                    __use_react_component_wrap=""
-                    style="all: unset;"
-                  >
-                    <div
-                      class="_out_25bc10"
-                    >
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          remove
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <div
-                      class="_percentage_25bc10"
-                    >
-                      100
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          percent
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <div
-                      class="_in_25bc10"
-                    >
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          add
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <!--teleport start-->
-                    <!--teleport end-->
-                    <!--teleport start-->
-                    <!--teleport end-->
-                    <!--teleport start-->
-                    <!--teleport end-->
-                  </div>
-                  
-                  <span
-                    class="unnnic-tooltip-label unnnic-tooltip-label-top"
-                    data-v-5e81b292=""
-                    style="left: 0px; top: -8px;"
-                  >
-                    
-                    
-                    Zoom 
-                    <br
-                      data-v-5e81b292=""
-                    />
-                    
-                    
-                    <span
-                      class="unnnic-tooltip-label-shortcut"
-                      data-v-5e81b292=""
-                    >
-                      Ctrl + Scroll
-                    </span>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="_guiding_wrapper_168ca1"
-            >
-              <div
-                data-use-vue-component-wrap=""
-                data-v-app=""
-              >
-                <div
-                  class="unnnic-tooltip _start_tooltip_25bc10"
-                  data-v-5e81b292=""
-                >
-                  
-                  <div
-                    __use_react_component_wrap=""
-                    style="all: unset;"
-                  >
-                    <div
-                      class="_start_25bc10"
-                    >
-                      <span
-                        class="_hide_25bc10"
-                      >
-                        Start of flow
-                      </span>
-                      <div
-                        data-use-vue-component-wrap=""
-                        style="display: flex;"
-                      >
-                        
-                        <span
-                          class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
-                          data-v-930380cc=""
-                        >
-                          arrow_upward
-                        </span>
-                        
-                      </div>
-                    </div>
-                    <!--teleport start-->
-                    <!--teleport end-->
-                  </div>
-                  
-                  <span
-                    class="unnnic-tooltip-label unnnic-tooltip-label-right"
-                    data-v-5e81b292=""
-                    style="left: 8px; top: 0px;"
                   >
                     
                     
