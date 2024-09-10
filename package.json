@@ -38,7 +38,6 @@
     "start": "vite --port 3000",
     "build": "vite build",
     "test": "vitest",
-    "test:ci": "vitest run --update=false",
     "lint": "eslint -c .eslintrc.json src/**/*.{ts,tsx,js} --fix",
     "build:vite": "tsc && vite build",
     "preview": "vite preview"
