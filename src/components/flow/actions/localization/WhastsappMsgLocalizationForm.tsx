@@ -14,7 +14,7 @@ import {
 } from 'store/nodeEditor';
 
 import { initializeWhatsappMsgLocalizedForm } from './helpers';
-import { Attachment, renderAttachments } from '../sendmsg/attachments';
+import { Attachment } from '../sendmsg/attachments';
 import {
   WHATSAPP_HEADER_TYPE_OPTIONS,
   WhatsAppHeaderType,
@@ -43,11 +43,32 @@ import { createEmptyListItem } from '../whatsapp/sendmsg/helpers';
 import { TembaSelect } from 'temba/TembaSelect';
 import { renderIf } from 'utils';
 import {
+  FILE_TYPE,
   FILE_TYPE_MAP,
   FILE_TYPE_REGEX,
   renderUploadButton,
 } from '../whatsapp/sendmsg/attachments';
-import QuickRepliesList from '../whatsapp/sendmsg/QuickRepliesList';
+import QuickRepliesList, {
+  hasEmptyReply,
+} from '../whatsapp/sendmsg/QuickRepliesList';
+import { applyVueInReact } from 'veaury';
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      'data-draggable': 'true',
+      style: {
+        all: '',
+        height: '20px',
+        padding: '4px',
+      },
+    },
+  },
+});
 
 export interface WhatsappMsgLocalizationFormState extends FormState {
   text: StringEntry;
@@ -67,6 +88,17 @@ export interface WhatsappMsgLocalizationFormState extends FormState {
   quickReplyEntry: StringEntry;
 }
 
+export const MAX_LIST_ITEMS_COUNT = 10;
+const MAX_REPLIES_COUNT = 3;
+
+export function hasEmptyListItem(listItems: WhatsAppListItem[]): boolean {
+  return (
+    listItems.find(
+      (item: WhatsAppListItem) => item.title.trim().length === 0,
+    ) != null
+  );
+}
+
 export default class WhatsappMsgLocalizationForm extends React.Component<
   LocalizationFormProps,
   WhatsappMsgLocalizationFormState
@@ -74,6 +106,30 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
   constructor(props: LocalizationFormProps) {
     super(props);
     this.state = initializeWhatsappMsgLocalizedForm(this.props.nodeSettings);
+
+    const replies = [...this.state.quickReplies.value];
+    if (!hasEmptyReply(replies) && replies.length < MAX_REPLIES_COUNT) {
+      replies.push('');
+    }
+
+    const listItems = [...this.state.listItems.value];
+    if (
+      !hasEmptyListItem(listItems) &&
+      listItems.length < MAX_LIST_ITEMS_COUNT
+    ) {
+      listItems.push(createEmptyListItem());
+    }
+
+    this.state = {
+      ...this.state,
+      listItems: {
+        value: listItems,
+      },
+      quickReplies: {
+        value: replies,
+      },
+    };
+
     bindCallbacks(this, {
       include: [/^handle/, /^on/],
     });
@@ -83,13 +139,17 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     config: fakePropType,
   };
 
-  private handleAttachmentUploaded(response: AxiosResponse) {
-    const attachment: any = mutate(this.state.attachment, {
-      $push: [
-        { type: response.data.type, url: response.data.url, uploaded: true },
-      ],
-    });
-    this.setState({ attachment });
+  public handleAttachmentUploaded(response: AxiosResponse) {
+    const attachment: Attachment = {
+      type: response.data.type,
+      url: response.data.url,
+      uploaded: true,
+    };
+    return this.handleUpdate({ attachment }, false);
+  }
+
+  public handleAttachmentRemoved() {
+    return this.handleUpdate({ attachment: null });
   }
 
   public handleAttachmentUrlChange(
@@ -219,6 +279,25 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
           items,
           [],
         ) as FormEntry<WhatsAppListItem[]>;
+      }
+    }
+    if (keys.hasOwnProperty('attachment')) {
+      console.log('oieee');
+      updates.attachment = { value: keys.attachment, validationFailures: [] };
+      if (
+        keys.attachment &&
+        !keys.attachment.uploaded &&
+        keys.attachment.type === FILE_TYPE.UNKNOWN &&
+        keys.attachment.url.length > 0
+      ) {
+        updates.attachment.validationFailures = [
+          {
+            message: i18n.t(
+              'whatsapp_msg.invalid_attachment_type',
+              'Invalid attachment type',
+            ),
+          },
+        ];
       }
     }
 
@@ -429,46 +508,62 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
                 (originalAction.messageType === 'interactive' &&
                   this.state.headerType.value === 'media'),
             )(
-              <div className={styles.attachment}>
-                <div className={styles.attachment_url}>
-                  <TextInputElement
-                    placeholder={i18n.t(
-                      'forms.attachment_placeholder',
-                      'Paste an URL or send a file',
-                    )}
-                    name={i18n.t(
-                      'forms.attachment_optional',
-                      'Media (optional)',
-                    )}
-                    size={TextInputSizes.sm}
-                    onChange={this.handleAttachmentUrlChange}
-                    entry={{
-                      value:
-                        attachment && !attachment.uploaded
-                          ? attachment.url
-                          : '',
-                    }}
-                    error={
-                      this.state.attachment &&
-                      this.state.attachment.validationFailures &&
-                      this.state.attachment.validationFailures.length > 0
-                        ? this.state.attachment.validationFailures[0].message
-                        : null
-                    }
-                    autocomplete={true}
-                    showLabel={true}
-                    disabled={hasUploadedAttachment}
-                  />
-                </div>
+              <div className={styles.header_media}>
+                <div className={styles.attachment}>
+                  <div className={styles.attachment_url}>
+                    <TextInputElement
+                      placeholder={i18n.t(
+                        'forms.attachment_placeholder',
+                        'Paste an URL or send a file',
+                      )}
+                      name={i18n.t(
+                        'forms.attachment_optional',
+                        'Media (optional)',
+                      )}
+                      size={TextInputSizes.sm}
+                      onChange={this.handleAttachmentUrlChange}
+                      entry={{
+                        value:
+                          attachment && !attachment.uploaded
+                            ? attachment.url
+                            : '',
+                      }}
+                      error={
+                        this.state.attachment.validationFailures &&
+                        this.state.attachment.validationFailures.length > 0
+                          ? this.state.attachment.validationFailures[0].message
+                          : null
+                      }
+                      autocomplete={true}
+                      showLabel={true}
+                      disabled={hasUploadedAttachment}
+                    />
+                  </div>
 
-                {renderUploadButton(
-                  this.context.config.endpoints.attachments,
-                  this.handleAttachmentUploaded,
-                  hasUploadedAttachment,
-                )}
+                  {renderUploadButton(
+                    this.context.config.endpoints.attachments,
+                    this.handleAttachmentUploaded,
+                    hasUploadedAttachment,
+                  )}
+                </div>
               </div>,
             )}
           </div>
+          {attachment && attachment.uploaded && (
+            <div className={styles.attachment_file}>
+              {attachment.url.substring(attachment.url.lastIndexOf('/') + 1)}
+
+              <div className={styles.remove}>
+                <UnnnicIcon
+                  icon="close"
+                  size="sm"
+                  scheme="neutral-cloudy"
+                  clickable
+                  onClick={() => this.handleAttachmentRemoved()}
+                />
+              </div>
+            </div>
+          )}
 
           <div className={styles.content}>
             <div>

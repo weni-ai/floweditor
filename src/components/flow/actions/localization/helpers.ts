@@ -229,21 +229,12 @@ export const initializeWhatsappMsgLocalizedForm = (
           state.valid = true;
         }
 
-        const attachments: Attachment[] = [];
+        let attachment: string = null;
 
-        if ('attachments' in localized.localizedKeys) {
-          (action.attachments || []).forEach((attachmentString: string) => {
-            const splitPoint = attachmentString.indexOf(':');
-
-            const type = attachmentString.substring(0, splitPoint);
-            const attachment = {
-              type,
-              url: attachmentString.substring(splitPoint + 1),
-              uploaded: type.indexOf('/') > -1,
-            };
-
-            attachments.push(attachment);
-          });
+        if ('attachment' in localized.localizedKeys) {
+          attachment = `${
+            state.attachment.value.type
+          }:${state.attachment.value.url.trim()}`;
         }
       }
     }
