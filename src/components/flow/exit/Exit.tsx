@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { react as bindCallbacks } from 'auto-bind';
 import classNames from 'classnames/bind';
 import Counter from 'components/counter/Counter';

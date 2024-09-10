@@ -404,7 +404,6 @@ export interface SendWhatsAppMsg extends Action {
   action_url: string;
   list_items: WhatsAppListItem[];
   quick_replies: string[];
-  attachments?: string[];
 }
 
 export interface SendWhatsAppProduct extends Action {
