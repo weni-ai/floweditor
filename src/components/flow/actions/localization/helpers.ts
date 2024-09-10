@@ -184,13 +184,13 @@ export const initializeWhatsappMsgLocalizedForm = (
         if (localizedObject.header_type) {
           const label =
             action.header_type === 'text'
-              ? i18n.t('whatsapp_headers.media', 'Text')
+              ? i18n.t('whatsapp_headers.text', 'Text')
               : i18n.t('whatsapp_headers.media', 'Media');
-          state.headerType.value =
-            'header_type' in localized.localizedKeys
-              ? action.header_type
-              : WhatsAppHeaderType.TEXT;
-          state.headerType.label = label;
+          const value =
+            action.header_type === 'text'
+              ? WhatsAppHeaderType.TEXT
+              : WhatsAppHeaderType.MEDIA;
+          state.headerType = { value, label };
           state.valid = true;
         }
 
@@ -229,12 +229,8 @@ export const initializeWhatsappMsgLocalizedForm = (
           state.valid = true;
         }
 
-        let attachment: string = null;
-
         if ('attachment' in localized.localizedKeys) {
-          attachment = `${
-            state.attachment.value.type
-          }:${state.attachment.value.url.trim()}`;
+          state.attachment.value = action.attachment;
         }
       }
     }

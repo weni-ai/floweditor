@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { react as bindCallbacks } from 'auto-bind';
 import { LocalizationFormProps } from 'components/flow/props';
 import { fakePropType } from 'config/ConfigProvider';
@@ -25,7 +24,6 @@ import Dialog, { ButtonSet, Tab } from 'components/dialog/Dialog';
 import i18n from 'config/i18n';
 import { AxiosResponse } from 'axios';
 import { determineTypeConfig } from 'components/flow/helpers';
-import mutate from 'immutability-helper';
 import TextInputElement, {
   TextInputSizes,
 } from 'components/form/textinput/TextInputElement';
@@ -182,10 +180,6 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     return this.handleUpdate({ attachment }, submitting);
   }
 
-  private handleQuickReplyChanged(quickReplies: string[]) {
-    this.handleUpdate({ quickReplies });
-  }
-
   public handleQuickRepliesUpdate(quickReplies: string[]): boolean {
     return this.handleUpdate({ quickReplies });
   }
@@ -282,7 +276,6 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       }
     }
     if (keys.hasOwnProperty('attachment')) {
-      console.log('oieee');
       updates.attachment = { value: keys.attachment, validationFailures: [] };
       if (
         keys.attachment &&
@@ -370,6 +363,10 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       const translations: any = {};
       if (text.value) {
         translations.text = text.value;
+      }
+
+      if (attachment.value) {
+        translations.attachment = attachment.value;
       }
 
       if (quickReplies.value && quickReplies.value.length > 0) {
