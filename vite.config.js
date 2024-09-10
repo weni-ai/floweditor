@@ -39,7 +39,6 @@ export default defineConfig({
   test: {
     cache: false,
     clearMocks: true,
-    update: false,
     globals: true,
     threads: false,
     setupFiles: ['./vitest-setup.ts', 'vitest.d.ts'],
