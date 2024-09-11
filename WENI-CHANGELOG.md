@@ -1,3 +1,7 @@
+3.1.2
+----------
+- Update missing translations
+
 3.1.1
 ----------
 - Fix: Brain card initializa form;
