@@ -1187,7 +1187,7 @@ exports[`UpdateContactForm > should render field 1`] = `
                         data-v-bf6639b4=""
                         data-v-df38a188=""
                         hascloudycolor="false"
-                        placeholder=""
+                        placeholder="Enter a new value for Age"
                         type="text"
                         value="25"
                       />

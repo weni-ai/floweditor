@@ -337,12 +337,17 @@ export default class ExternalServiceRouterForm extends React.Component<
         {showExternalServices ? (
           <div>
             <p>
-              <span>Integration with... </span>
+              <span>
+                {i18n.t('forms.integration_with', 'Integration with...')}
+              </span>
             </p>
             <AssetSelector
               key="select_external_service"
               name={i18n.t('forms.external_service', 'External Service')}
-              placeholder="Select the external service to use"
+              placeholder={i18n.t(
+                'forms.select_external_service',
+                'Select the external service to use',
+              )}
               assets={this.props.assetStore.externalServices}
               onChange={this.handleExternalServiceUpdate}
               entry={this.state.externalService}
