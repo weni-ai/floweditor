@@ -37,7 +37,7 @@ export default defineConfig({
     },
   },
   test: {
-    cache: false,
+    cache: true,
     clearMocks: true,
     globals: true,
     threads: false,

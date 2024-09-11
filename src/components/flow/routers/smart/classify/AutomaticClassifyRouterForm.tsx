@@ -138,13 +138,11 @@ export default class AutomaticClassifyRouterForm extends React.Component<
             className={`${styles.label} u font secondary body-md color-neutral-cloudy`}
           >
             {i18n.t('forms.classifier_input_description')}
-            <span className={`${styles.link} color-weni-600`}>
-              {i18n.t(' @input.text')}
-            </span>
+            <span className={`${styles.link} color-weni-600`}>@input.text</span>
           </div>
           <TextInputElement
             name={i18n.t('forms.operand', 'Operand')}
-            placeholder={i18n.t('@input.text')}
+            placeholder="@input.text"
             showLabel={false}
             autocomplete={true}
             onChange={this.handleOperandUpdated}

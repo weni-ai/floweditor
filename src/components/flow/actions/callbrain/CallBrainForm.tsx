@@ -108,7 +108,6 @@ export class BrainForm extends React.Component<
           </span>
           <TextInputElement
             name={'entry'}
-            placeholder={i18n.t('forms.brain.placeholder', '')}
             onChange={this.handleEntryChange}
             entry={this.state.entry}
             size={TextInputSizes.sm}
