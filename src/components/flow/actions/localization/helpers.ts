@@ -9,7 +9,7 @@ import {
   MsgTemplating,
   SayMsg,
   CallWeniGPT,
-  SendWhatsAppMsg,
+  SendWhatsAppMsgLocalization,
 } from 'flowTypes';
 import i18n from 'config/i18n';
 import { Attachment } from '../sendmsg/attachments';
@@ -167,7 +167,8 @@ export const initializeWhatsappMsgLocalizedForm = (
     for (const localized of localizations) {
       if (localized.isLocalized()) {
         const localizedObject = localized.getObject() as any;
-        const action = localizedObject as (SendWhatsAppMsg & SayMsg);
+        const action = localizedObject as (SendWhatsAppMsgLocalization &
+          SayMsg);
 
         if (localizedObject.text) {
           state.text.value =

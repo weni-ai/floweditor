@@ -397,6 +397,20 @@ export interface SendWhatsAppMsg extends Action {
   messageType: WhatsAppMessageType;
   header_type: WhatsAppHeaderType;
   header_text: string;
+  attachment: string;
+  footer: string;
+  interaction_type: WhatsAppInteractionType;
+  button_text: string;
+  action_url: string;
+  list_items: WhatsAppListItem[];
+  quick_replies: string[];
+}
+
+export interface SendWhatsAppMsgLocalization extends Action {
+  text: string;
+  messageType: WhatsAppMessageType;
+  header_type: WhatsAppHeaderType;
+  header_text: string;
   attachment: Attachment;
   footer: string;
   interaction_type: WhatsAppInteractionType;
