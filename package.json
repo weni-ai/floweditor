@@ -189,6 +189,7 @@
   },
   "resolutions": {
     "@types/react": "16.8.25",
-    "typescript": "3.9"
+    "typescript": "3.9",
+    "string-width": "^4.2.0"
   }
 }
