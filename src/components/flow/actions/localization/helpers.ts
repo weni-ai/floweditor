@@ -10,6 +10,7 @@ import {
   SayMsg,
   CallWeniGPT,
   SendWhatsAppMsgLocalization,
+  SendWhatsAppMsg,
 } from 'flowTypes';
 import i18n from 'config/i18n';
 import { Attachment } from '../sendmsg/attachments';
@@ -167,8 +168,7 @@ export const initializeWhatsappMsgLocalizedForm = (
     for (const localized of localizations) {
       if (localized.isLocalized()) {
         const localizedObject = localized.getObject() as any;
-        const action = localizedObject as (SendWhatsAppMsgLocalization &
-          SayMsg);
+        const action = localizedObject as (SendWhatsAppMsg);
 
         if (localizedObject.text) {
           state.text.value =
@@ -231,7 +231,15 @@ export const initializeWhatsappMsgLocalizedForm = (
         }
 
         if ('attachment' in localized.localizedKeys) {
-          state.attachment.value = action.attachment;
+          const splitPoint = action.attachment.indexOf(':');
+
+          const type = action.attachment.substring(0, splitPoint);
+          const attachment = {
+            type,
+            url: action.attachment.substring(splitPoint + 1),
+            uploaded: type.indexOf('/') > -1,
+          };
+          state.attachment.value = attachment;
         }
       }
     }

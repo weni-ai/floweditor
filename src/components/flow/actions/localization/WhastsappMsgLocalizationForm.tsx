@@ -365,8 +365,10 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
         translations.text = text.value;
       }
 
-      if (attachment.value) {
-        translations.attachment = attachment.value;
+      if (attachment.value && attachment.value.url.trim().length > 0) {
+        translations.attachment = `${
+          attachment.value.type
+        }:${attachment.value.url.trim()}`;
       }
 
       if (quickReplies.value && quickReplies.value.length > 0) {

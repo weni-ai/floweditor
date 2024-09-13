@@ -298,7 +298,6 @@ export const typeConfigList: Type[] = [
       'footer',
       'header_text',
       'button_text',
-      'templating.variables',
     ],
     component: SendWhatsAppMsgComp,
     massageForDisplay: (action: SendWhatsAppMsg) => {
