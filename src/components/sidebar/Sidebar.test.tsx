@@ -5,6 +5,18 @@ import { Sidebar, SidebarStoreProps } from './Sidebar';
 import { MouseState } from '../../store/editor';
 import { shallowToJson } from 'enzyme-to-json';
 
+vi.mock('veaury', async () => {
+  return {
+    applyVueInReact: (component: any) => (args: any) => {
+      const dataTestId = args['data-testid']
+        ? args['data-testid']
+        : `veaury-${component.name}-stub`;
+
+      return <div data-testid={dataTestId}>{args.children}</div>;
+    },
+  };
+});
+
 const baseProps: SidebarStoreProps = {
   onCopyClick: vi.fn(),
   onCreateNode: vi.fn(),
