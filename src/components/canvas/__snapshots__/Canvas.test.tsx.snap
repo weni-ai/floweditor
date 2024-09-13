@@ -49,30 +49,30 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                     <div
                       class="_out_25bc10"
                     >
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_03321208154110966"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        remove
+                      </span>
                     </div>
                     <div
                       class="_percentage_25bc10"
                     >
                       100
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_20833260835137524"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        percent
+                      </span>
                     </div>
                     <div
                       class="_in_25bc10"
                     >
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_09382011267252999"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        add
+                      </span>
                     </div>
                   </div>
                   
@@ -122,11 +122,11 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                       >
                         Start of flow
                       </span>
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_07060435379918095"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        arrow_upward
+                      </span>
                     </div>
                   </div>
                   
@@ -411,30 +411,30 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                     <div
                       class="_out_25bc10"
                     >
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_6319546279220156"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        remove
+                      </span>
                     </div>
                     <div
                       class="_percentage_25bc10"
                     >
                       100
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_24453202388767825"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        percent
+                      </span>
                     </div>
                     <div
                       class="_in_25bc10"
                     >
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_25117538826300567"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        add
+                      </span>
                     </div>
                   </div>
                   
@@ -484,11 +484,11 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                       >
                         Start of flow
                       </span>
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_6012582663544321"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        arrow_upward
+                      </span>
                     </div>
                   </div>
                   
@@ -786,30 +786,30 @@ exports[`Canvas > render default 1`] = `
                     <div
                       class="_out_25bc10"
                     >
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_2969828732096187"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        remove
+                      </span>
                     </div>
                     <div
                       class="_percentage_25bc10"
                     >
                       100
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_09623192552789117"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        percent
+                      </span>
                     </div>
                     <div
                       class="_in_25bc10"
                     >
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_5201551697928148"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        add
+                      </span>
                     </div>
                   </div>
                   
@@ -859,11 +859,11 @@ exports[`Canvas > render default 1`] = `
                       >
                         Start of flow
                       </span>
-                      <div
-                        data-use-vue-component-wrap=""
-                        id="__vue_wrapper_container_37286111851035053"
-                        style="display: flex;"
-                      />
+                      <span
+                        class="material-symbols-rounded"
+                      >
+                        arrow_upward
+                      </span>
                     </div>
                   </div>
                   

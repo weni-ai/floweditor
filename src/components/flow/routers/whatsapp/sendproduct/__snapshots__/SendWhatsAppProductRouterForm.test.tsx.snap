@@ -4008,7 +4008,7 @@ exports[`SendWhatsAppProductRouterForm > automatic product search > should save 
                               data-v-bf6639b4=""
                               data-v-df38a188=""
                               hascloudycolor="false"
-                              placeholder="Ex: @results.postal_code"
+                              placeholder="Ex: @results.seller_id"
                               type="text"
                               value=""
                             />
@@ -8332,7 +8332,11 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a c
                       >
                         <div
                           data-use-vue-component-wrap=""
+<<<<<<< HEAD
                           id="__vue_wrapper_container_35345440443412257"
+=======
+                          id="__vue_wrapper_container_8152588897629611"
+>>>>>>> 1057f427306e1b513969455b4eef6e0d98a095e5
                           style="all: unset;"
                         />
                       </div>
@@ -13525,7 +13529,11 @@ exports[`SendWhatsAppProductRouterForm > manual product search > should save a m
                       >
                         <div
                           data-use-vue-component-wrap=""
+<<<<<<< HEAD
                           id="__vue_wrapper_container_7961156073269411"
+=======
+                          id="__vue_wrapper_container_9831002593178109"
+>>>>>>> 1057f427306e1b513969455b4eef6e0d98a095e5
                           style="all: unset;"
                         />
                       </div>

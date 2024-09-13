@@ -334,7 +334,10 @@ export default class TicketRouterForm extends React.Component<
             <AssetSelector
               key="select_ticketer"
               name={i18n.t('forms.ticketer', 'Ticketer')}
-              placeholder="Select the ticketing service to use"
+              placeholder={i18n.t(
+                'forms.ticketer_placeholder',
+                'Select the ticketing service to use',
+              )}
               assets={this.props.assetStore.ticketers}
               onChange={this.handleTicketerUpdate}
               entry={this.state.ticketer}
@@ -366,7 +369,10 @@ export default class TicketRouterForm extends React.Component<
             <TembaSelect
               key="select_assignee"
               name={i18n.t('forms.assignee', 'Assignee')}
-              placeholder="Assign to (Optional)"
+              placeholder={i18n.t(
+                'forms.assign_to_optional',
+                'Assign to (Optional)',
+              )}
               valueKey="email"
               endpoint={this.context.config.endpoints.users}
               onChange={this.handleAssigneeUpdate}

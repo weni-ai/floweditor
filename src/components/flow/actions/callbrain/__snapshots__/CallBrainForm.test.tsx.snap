@@ -5538,7 +5538,6 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
             }
             name="entry"
             onChange={[Function]}
-            placeholder=""
             size="sm"
           />
         </div>
