@@ -4,6 +4,7 @@ import {
 } from 'components/revisions/RevisionExplorer';
 import { AssetType } from 'store/flowContext';
 import { composeComponentTestUtils } from 'testUtils';
+import { shallowToJson } from 'enzyme-to-json';
 
 const baseProps: RevisionExplorerProps = {
   assetStore: {
@@ -38,7 +39,7 @@ describe(RevisionExplorer.name, () => {
 
       await instance.handleUpdateRevisions();
 
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 });

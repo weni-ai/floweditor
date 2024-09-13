@@ -3,6 +3,7 @@ import { SayMsg } from 'flowTypes';
 import { composeComponentTestUtils } from 'testUtils';
 import { createSendMsgAction } from 'testUtils/assetCreators';
 import { setEmpty } from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 const sendMsgAction = createSendMsgAction();
 
@@ -14,14 +15,14 @@ describe(SayMsgComp.name, () => {
       const { wrapper, props } = setup();
 
       expect(wrapper.text()).toBe(props.text);
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it("should render placeholder when text prop isn't passed", () => {
       const { wrapper } = setup(true, { text: setEmpty() });
 
       expect(wrapper.text()).toBe(PLACEHOLDER);
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 });

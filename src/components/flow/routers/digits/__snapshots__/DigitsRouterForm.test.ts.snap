@@ -1,8 +1,307 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DigitsRouterForm > initializes 1`] = `ShallowWrapper {}`;
+exports[`DigitsRouterForm > initializes 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Ok",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="wait_for_digits"
+  title="Wait for Digits"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "description": "Wait for multiple digits",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+          "cases",
+        ],
+        "name": "Wait for Digits",
+        "type": "wait_for_digits",
+        "visibility": [
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "uuid": "generated_uuid_1",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": null,
+                  "type": "has_any_word",
+                  "uuid": "generated_uuid_2",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "generated_uuid_1",
+                  "name": "Other",
+                  "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                },
+              ],
+              "default_category_uuid": "generated_uuid_1",
+              "operand": "@input.text",
+              "result_name": "Color",
+              "type": "switch",
+            },
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "split_by_expression",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <p
+    className="_lead_in_807852"
+  >
+    If the keypad entry before the # symbol..
+  </p>
+  <CaseList
+    cases={[]}
+    data-spec="cases"
+    onCasesUpdated={[Function]}
+    operators={
+      [
+        {
+          "operands": 1,
+          "type": "has_beginning",
+          "verboseName": "starts with",
+        },
+        {
+          "categoryName": "Has Number",
+          "operands": 0,
+          "type": "has_number",
+          "verboseName": "has a number",
+        },
+        {
+          "operands": 2,
+          "type": "has_number_between",
+          "verboseName": "has a number between",
+        },
+        {
+          "operands": 1,
+          "type": "has_number_lt",
+          "verboseName": "has a number below",
+        },
+        {
+          "operands": 1,
+          "type": "has_number_lte",
+          "verboseName": "has a number at or below",
+        },
+        {
+          "operands": 1,
+          "type": "has_number_eq",
+          "verboseName": "has a number equal to",
+        },
+        {
+          "operands": 1,
+          "type": "has_number_gte",
+          "verboseName": "has a number at or above",
+        },
+        {
+          "operands": 1,
+          "type": "has_number_gt",
+          "verboseName": "has a number above",
+        },
+      ]
+    }
+    type="default"
+  />
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "",
+      }
+    }
+  />
+</Dialog>
+`;
 
-exports[`DigitsRouterForm > should render 1`] = `ShallowWrapper {}`;
+exports[`DigitsRouterForm > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Ok",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="wait_for_digits"
+  title="Wait for Digits"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "description": "Wait for multiple digits",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+          "cases",
+        ],
+        "name": "Wait for Digits",
+        "type": "wait_for_digits",
+        "visibility": [
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "router": {
+              "cases": [],
+              "categories": [
+                {
+                  "exit_uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                  "name": "All Responses",
+                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                },
+              ],
+              "default_category_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              "type": "switch",
+              "wait": {
+                "hint": {
+                  "type": "digits",
+                },
+                "type": "msg",
+              },
+            },
+            "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "wait_for_response",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <p
+    className="_lead_in_807852"
+  >
+    If the keypad entry before the # symbol..
+  </p>
+  <CaseList
+    cases={[]}
+    data-spec="cases"
+    onCasesUpdated={[Function]}
+    operators={
+      [
+        {
+          "operands": 1,
+          "type": "has_beginning",
+          "verboseName": "starts with",
+        },
+        {
+          "categoryName": "Has Number",
+          "operands": 0,
+          "type": "has_number",
+          "verboseName": "has a number",
+        },
+        {
+          "operands": 2,
+          "type": "has_number_between",
+          "verboseName": "has a number between",
+        },
+        {
+          "operands": 1,
+          "type": "has_number_lt",
+          "verboseName": "has a number below",
+        },
+        {
+          "operands": 1,
+          "type": "has_number_lte",
+          "verboseName": "has a number at or below",
+        },
+        {
+          "operands": 1,
+          "type": "has_number_eq",
+          "verboseName": "has a number equal to",
+        },
+        {
+          "operands": 1,
+          "type": "has_number_gte",
+          "verboseName": "has a number at or above",
+        },
+        {
+          "operands": 1,
+          "type": "has_number_gt",
+          "verboseName": "has a number above",
+        },
+      ]
+    }
+    type="default"
+  />
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "",
+      }
+    }
+  />
+</Dialog>
+`;
 
 exports[`DigitsRouterForm > updates > should save changes 1`] = `
 {

@@ -871,7 +871,130 @@ exports[`StartSessionForm > render > should render an empty form with no action 
 }
 `;
 
-exports[`StartSessionForm > render > should render an empty form with no action 2`] = `ShallowWrapper {}`;
+exports[`StartSessionForm > render > should render an empty form with no action 2`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="start_session"
+  title="Start somebody else"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "component": [Function],
+        "description": "Start somebody else in a flow",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+        ],
+        "name": "Start somebody else",
+        "type": "start_session",
+        "visibility": [
+          "messaging",
+          "messaging_background",
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": null,
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div>
+    <SelectElement
+      entry={
+        {
+          "value": {
+            "name": "Select recipients manually",
+            "value": "assets",
+          },
+        }
+      }
+      key="start_type_select"
+      name="Start Type"
+      onChange={[Function]}
+      options={
+        [
+          {
+            "name": "Select recipients manually",
+            "value": "assets",
+          },
+          {
+            "name": "Select recipients from a query",
+            "value": "contact_query",
+          },
+          {
+            "name": "Create a new contact",
+            "value": "create_contact",
+          },
+        ]
+      }
+    />
+  </div>
+  <p />
+  <div>
+    <div
+      className="_form_element_9ae69d"
+      data-testid="recipients"
+    >
+      <AssetSelector
+        assets={
+          {
+            "items": {},
+            "type": "contact",
+          }
+        }
+        entry={
+          {
+            "value": [],
+          }
+        }
+        expressions={true}
+        multi={true}
+        name="Contacts"
+        onChange={[Function]}
+        placeholder="Select who should be started in the flow"
+        searchable={true}
+        showLabel={true}
+      />
+    </div>
+    <AssetSelector
+      assets={
+        {
+          "items": {},
+          "type": "flow",
+        }
+      }
+      entry={
+        {
+          "value": null,
+        }
+      }
+      name="Flow"
+      onChange={[Function]}
+      placeholder="Select the flow to start"
+      searchable={true}
+      showLabel={true}
+    />
+  </div>
+</Dialog>
+`;
 
 exports[`StartSessionForm > render > should render contact query 1`] = `
 <body>
@@ -2226,7 +2349,219 @@ exports[`StartSessionForm > render > should render create new contacts 1`] = `
 </body>
 `;
 
-exports[`StartSessionForm > render > should render self, children with base props 1`] = `ShallowWrapper {}`;
+exports[`StartSessionForm > render > should render self, children with base props 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="start_session"
+  title="Start somebody else"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "component": [Function],
+        "description": "Start somebody else in a flow",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+        ],
+        "name": "Start somebody else",
+        "type": "start_session",
+        "visibility": [
+          "messaging",
+          "messaging_background",
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": {
+          "contacts": [
+            {
+              "name": "Norbert Kwizera",
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "name": "Rowan Seymour",
+              "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            },
+          ],
+          "create_contact": false,
+          "flow": {
+            "name": "Flow to Start",
+            "uuid": "flow_uuid",
+          },
+          "groups": [
+            {
+              "name": "Cat Fanciers",
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+          ],
+          "type": "start_session",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "contacts": [
+                  {
+                    "name": "Norbert Kwizera",
+                    "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  },
+                  {
+                    "name": "Rowan Seymour",
+                    "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  },
+                ],
+                "create_contact": false,
+                "flow": {
+                  "name": "Flow to Start",
+                  "uuid": "flow_uuid",
+                },
+                "groups": [
+                  {
+                    "name": "Cat Fanciers",
+                    "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                  },
+                ],
+                "type": "start_session",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": [
+              {
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div>
+    <SelectElement
+      entry={
+        {
+          "value": {
+            "name": "Select recipients manually",
+            "value": "assets",
+          },
+        }
+      }
+      key="start_type_select"
+      name="Start Type"
+      onChange={[Function]}
+      options={
+        [
+          {
+            "name": "Select recipients manually",
+            "value": "assets",
+          },
+          {
+            "name": "Select recipients from a query",
+            "value": "contact_query",
+          },
+          {
+            "name": "Create a new contact",
+            "value": "create_contact",
+          },
+        ]
+      }
+    />
+  </div>
+  <p />
+  <div>
+    <div
+      className="_form_element_9ae69d"
+      data-testid="recipients"
+    >
+      <AssetSelector
+        assets={
+          {
+            "items": {},
+            "type": "contact",
+          }
+        }
+        entry={
+          {
+            "value": [
+              {
+                "id": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Cat Fanciers",
+                "type": "group",
+              },
+              {
+                "id": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "missing": false,
+                "name": "Norbert Kwizera",
+                "type": "contact",
+              },
+              {
+                "id": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "missing": false,
+                "name": "Rowan Seymour",
+                "type": "contact",
+              },
+            ],
+          }
+        }
+        expressions={true}
+        multi={true}
+        name="Contacts"
+        onChange={[Function]}
+        placeholder="Select who should be started in the flow"
+        searchable={true}
+        showLabel={true}
+      />
+    </div>
+    <AssetSelector
+      assets={
+        {
+          "items": {},
+          "type": "flow",
+        }
+      }
+      entry={
+        {
+          "value": {
+            "name": "Flow to Start",
+            "uuid": "flow_uuid",
+          },
+        }
+      }
+      name="Flow"
+      onChange={[Function]}
+      placeholder="Select the flow to start"
+      searchable={true}
+      showLabel={true}
+    />
+  </div>
+</Dialog>
+`;
 
 exports[`StartSessionForm > render > should warn about invalid fields in contact queries 1`] = `
 <body>

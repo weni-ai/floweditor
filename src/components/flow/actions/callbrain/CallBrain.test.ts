@@ -5,6 +5,7 @@ import { createCallBrainAction } from 'testUtils/assetCreators';
 import CallBrainComp, {
   getBrainInfoPlaceholder,
 } from 'components/flow/actions/callbrain/CallBrain';
+import { shallowToJson } from 'enzyme-to-json';
 
 const CallBrainAction = createCallBrainAction();
 
@@ -20,6 +21,6 @@ describe(CallBrainComp.name, () => {
     expect(
       wrapper.containsMatchingElement(getBrainInfoPlaceholder(props.brainInfo)),
     ).toBeTruthy();
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

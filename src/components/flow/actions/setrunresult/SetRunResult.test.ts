@@ -2,6 +2,7 @@ import { SetRunResult } from 'flowTypes';
 import { composeComponentTestUtils } from 'testUtils';
 import { createSetRunResultAction } from 'testUtils/assetCreators';
 import { setEmpty } from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 import SetRunResultComp, {
   getClearPlaceholder,
@@ -24,7 +25,7 @@ describe(SetRunResultComp.name, () => {
         getSavePlaceholder(props.value, props.name),
       ),
     ).toBeTruthy();
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it("should render with clear placholder when value prop isn't passed", () => {
@@ -33,6 +34,6 @@ describe(SetRunResultComp.name, () => {
     expect(
       wrapper.containsMatchingElement(getClearPlaceholder(props.name)),
     ).toBeTruthy();
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

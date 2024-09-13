@@ -6,6 +6,7 @@ import { HintTypes, RouterTypes, SwitchRouter, WaitTypes } from 'flowTypes';
 import { composeComponentTestUtils, mock } from 'testUtils';
 import { createRenderNode, getRouterFormProps } from 'testUtils/assetCreators';
 import * as utils from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 import DigitsRouterForm from './DigitsRouterForm';
 import { createUUID } from 'utils';
@@ -45,7 +46,7 @@ mock(utils, 'createUUID', utils.seededUUIDs());
 describe(DigitsRouterForm.name, () => {
   it('should render', () => {
     const { wrapper } = setup(true);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it('initializes', () => {
@@ -86,7 +87,7 @@ describe(DigitsRouterForm.name, () => {
       },
     });
 
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   describe('updates', () => {

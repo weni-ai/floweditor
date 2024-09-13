@@ -3,6 +3,7 @@ import TimeoutControl, {
   TimeoutControlProps,
 } from 'components/form/timeout/TimeoutControl';
 import { composeComponentTestUtils, setMock } from 'testUtils';
+import { shallowToJson } from 'enzyme-to-json';
 
 const { setup } = composeComponentTestUtils<TimeoutControlProps>(
   TimeoutControl,
@@ -15,7 +16,7 @@ const { setup } = composeComponentTestUtils<TimeoutControlProps>(
 describe(TimeoutControl.name, () => {
   it('renders', () => {
     const { wrapper } = setup();
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it('updates', () => {
@@ -34,6 +35,6 @@ describe(TimeoutControl.name, () => {
     });
 
     instance.handleChecked();
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

@@ -1,6 +1,119 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ExpressionRouterForm > should render 1`] = `ShallowWrapper {}`;
+exports[`ExpressionRouterForm > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="split_by_expression"
+  title="Split by expression"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "description": "Split by a custom expression",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+          "cases",
+        ],
+        "name": "Split by expression",
+        "type": "split_by_expression",
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "router": {
+              "cases": [],
+              "categories": [
+                {
+                  "exit_uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                  "name": "All Responses",
+                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                },
+              ],
+              "default_category_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              "operand": "@input.text",
+              "result_name": "",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "split_by_expression",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div
+    className="_form_element_be929d"
+  >
+    <TextInputElement
+      autocomplete={true}
+      entry={
+        {
+          "value": "@input.text",
+        }
+      }
+      name="If the expression"
+      onChange={[Function]}
+      showLabel={true}
+    />
+  </div>
+  <div
+    className="u font secondary body-md color-neutral-cloudy"
+  >
+    If the message response
+  </div>
+  <CaseList
+    cases={[]}
+    data-spec="cases"
+    onCasesUpdated={[Function]}
+    type="default"
+  />
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "",
+      }
+    }
+  />
+</Dialog>
+`;
 
 exports[`ExpressionRouterForm > updates > should save changes 1`] = `
 {

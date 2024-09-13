@@ -1,6 +1,208 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`WeniGPTRouterForm > should render 1`] = `ShallowWrapper {}`;
+exports[`WeniGPTRouterForm > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Save",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="call_webhook"
+  title="Call webhook"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "aliases": [
+          "split_by_webhook",
+        ],
+        "component": [Function],
+        "description": "Call a webhook",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+        ],
+        "name": "Call webhook",
+        "type": "call_webhook",
+        "visibility": [
+          "messaging",
+          "messaging_background",
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": {
+          "node": {
+            "actions": [
+              {
+                "headers": {},
+                "method": "GET",
+                "result_name": "Response",
+                "type": "call_webhook",
+                "url": "http://www.google.com",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              },
+              {
+                "destination_uuid": null,
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "Success",
+                  ],
+                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "type": "has_only_text",
+                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                  "name": "Success",
+                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                },
+                {
+                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  "name": "Failure",
+                  "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                },
+              ],
+              "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              "operand": "@results.response.category",
+              "type": "switch",
+            },
+            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          },
+          "ui": {
+            "type": "call_wenigpt",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div
+    className="_content_54f1e0"
+  >
+    <div
+      className="_knowledge_base_54f1e0"
+    >
+      <SelectElement
+        entry={
+          {
+            "value": null,
+          }
+        }
+        key="knowledge_base_select"
+        name="Knowledge Base"
+        nameKey="label"
+        onChange={[Function]}
+        options={
+          [
+            {
+              "content": {
+                "content": [Circular],
+                "id": "1",
+                "intelligence": "Intelligence 1",
+                "name": "Base 1",
+              },
+              "id": "1",
+              "intelligence": "Intelligence 1",
+              "label": "Intelligence 1 - Base 1",
+              "name": "Base 1",
+            },
+            {
+              "content": {
+                "content": [Circular],
+                "id": "2",
+                "intelligence": "Intelligence 1",
+                "name": "Base 2",
+              },
+              "id": "2",
+              "intelligence": "Intelligence 1",
+              "label": "Intelligence 1 - Base 2",
+              "name": "Base 2",
+            },
+            {
+              "content": {
+                "content": [Circular],
+                "id": "3",
+                "intelligence": "Intelligence 2",
+                "name": "Base 1",
+              },
+              "id": "3",
+              "intelligence": "Intelligence 2",
+              "label": "Intelligence 2 - Base 1",
+              "name": "Base 1",
+            },
+          ]
+        }
+        placeholder="Select a knowledge base"
+        showLabel={true}
+        valueKey="id"
+      />
+      <div
+        className="_message_54f1e0"
+      >
+        <span>
+          Don't have any knowledge base for your AI yet?
+        </span>
+        <span
+          className="_link_54f1e0"
+          onClick={[Function]}
+        >
+          Click here
+        </span>
+      </div>
+    </div>
+    <TextInputElement
+      autocomplete={true}
+      entry={
+        {
+          "value": "@input.text",
+        }
+      }
+      name="Insert an expression to be used as input"
+      onChange={[Function]}
+      placeholder="Ex: @input.text"
+      showLabel={true}
+      textarea={true}
+    />
+  </div>
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "Result",
+      }
+    }
+  />
+</Dialog>
+`;
 
 exports[`WeniGPTRouterForm > updates > should save changes 1`] = `
 [MockFunction spy] {

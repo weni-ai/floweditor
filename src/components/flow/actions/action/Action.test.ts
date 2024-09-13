@@ -18,6 +18,7 @@ import {
 } from 'testUtils/assetCreators';
 import { getLocalization, set, setFalse, setTrue } from 'utils';
 import { MouseState } from 'store/editor';
+import { shallowToJson } from 'enzyme-to-json';
 
 const sendMsgAction = createSendMsgAction();
 const sendMsgAction1 = createSendMsgAction({
@@ -76,20 +77,20 @@ describe(ActionWrapper.name, () => {
         props.action,
         instance.context.config.endpoints,
       );
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('should show move icon', () => {
       const { wrapper } = setup(true, { first: setFalse() });
 
       expect(wrapper.find('TitleBar').prop('showMove')).toBeTruthy();
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('should display translating style', () => {
       const { wrapper } = setup(true, { translating: setTrue() });
 
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('should display not_localizable style', () => {
@@ -98,7 +99,7 @@ describe(ActionWrapper.name, () => {
         translating: setTrue(),
       });
 
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('should display hybrid style', () => {
@@ -106,7 +107,7 @@ describe(ActionWrapper.name, () => {
         renderNode: set(subflowNode),
       });
 
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('should display missing_localization style', () => {
@@ -115,7 +116,7 @@ describe(ActionWrapper.name, () => {
         translating: setTrue(),
       });
 
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 

@@ -9,6 +9,7 @@ import HeaderElement, {
 import { HeaderEntry } from 'components/flow/routers/webhook/WebhookRouterForm';
 import { composeComponentTestUtils, getSpecWrapper, setMock } from 'testUtils';
 import { set, setFalse } from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 const headers: HeaderEntry[] = [
   {
@@ -58,7 +59,7 @@ describe(HeaderElement.name, () => {
       });
 
       expect(inputs.at(1).props()).toMatchSnapshot();
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('should render remove icon', () => {
@@ -70,7 +71,7 @@ describe(HeaderElement.name, () => {
       const removeIcon = getSpecWrapper(wrapper, removeIcoSpecId);
 
       expect(removeIcon.exists()).toBeTruthy();
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 
@@ -127,7 +128,7 @@ describe(HeaderElement.name, () => {
             .at(1)
             .prop('entry'),
         ).toEqual({ value: headers[0].value });
-        expect(wrapper).toMatchSnapshot();
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
 
         setStateSpy.mockRestore();
       });

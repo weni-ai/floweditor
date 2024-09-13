@@ -13,6 +13,7 @@ import {
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
+import { shallowToJson } from 'enzyme-to-json';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -50,12 +51,12 @@ const { setup } = composeComponentTestUtils<LocalizationFormProps>(
 describe(RouterLocalizationForm.name, () => {
   it('should render', () => {
     const { wrapper } = setup(true);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it('initializes', () => {
     const { wrapper } = setup(true);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   describe('updates', () => {

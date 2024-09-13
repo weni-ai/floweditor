@@ -2,6 +2,7 @@ import OptionalTextInput, {
   OptionalTextInputProps,
 } from 'components/form/optionaltext/OptionalTextInput';
 import { composeComponentTestUtils } from 'testUtils';
+import { shallowToJson } from 'enzyme-to-json';
 
 const { setup } = composeComponentTestUtils<OptionalTextInputProps>(
   OptionalTextInput,
@@ -16,7 +17,7 @@ const { setup } = composeComponentTestUtils<OptionalTextInputProps>(
 describe(OptionalTextInput.name, () => {
   it('renders', () => {
     const { wrapper } = setup(true);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it('updates', () => {
