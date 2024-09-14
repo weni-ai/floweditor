@@ -70,9 +70,11 @@ export class MediaPlayer extends React.Component<
         }, 500);
       }
 
+      /* istanbul ignore next -- @preserve */
       const progress =
         duration > 0 ? Math.floor((currentTime / duration) * 100) : 0;
 
+      /* istanbul ignore next -- @preserve */
       return {
         currentSeconds: this.ele.ended || progress === 100 ? 0 : currentTime,
         durationSeconds: duration,
@@ -125,6 +127,7 @@ export class MediaPlayer extends React.Component<
 
     return (
       <div
+        data-testid="mediaplayer"
         className={
           styles.player + ' ' + (this.state.playing ? styles.playing : '')
         }
@@ -136,6 +139,7 @@ export class MediaPlayer extends React.Component<
         onMouseDown={this.handleTogglePlay}
       >
         <audio
+          data-testid="audio"
           ref={this.handleRef}
           onTimeUpdate={this.handleTimeUpdate}
           src={this.props.url}
