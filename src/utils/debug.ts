@@ -3,7 +3,7 @@ import { DebugState } from 'store/editor';
 
 import mutate from 'immutability-helper';
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 export default class Debug {
   private props: FlowStoreProps;
   private state: DebugState;

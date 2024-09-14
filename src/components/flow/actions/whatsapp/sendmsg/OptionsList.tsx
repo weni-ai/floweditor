@@ -164,7 +164,7 @@ export default class OptionsList extends React.Component<OptionsListProps> {
     this.props.onOptionRemoval(item);
   }
 
-  /* istanbul ignore next */
+  /* istanbul ignore next -- @preserve */
   private handleListItemsSortEnd({ oldIndex, newIndex }: SortEnd): void {
     const options = this.props.options.value;
     const listItems = arrayMove(
@@ -198,7 +198,7 @@ export default class OptionsList extends React.Component<OptionsListProps> {
                   value={{ item: value, list: this, length: items.length }}
                   disabled={index === this.props.options.value.length - 1}
                   shouldCancelStart={
-                    /* istanbul ignore next */
+                    /* istanbul ignore next -- @preserve */
                     (e: any) => {
                       console.log(e);
                       return true;
@@ -230,7 +230,7 @@ export default class OptionsList extends React.Component<OptionsListProps> {
             onSortEnd={this.handleListItemsSortEnd}
             helperClass={styles.item_z_index}
             shouldCancelStart={
-              /* istanbul ignore next */
+              /* istanbul ignore next -- @preserve */
               (e: React.MouseEvent<HTMLDivElement>) => {
                 if (e.target.constructor.name === 'SVGSVGElement') {
                   return !(e.target as any).dataset.draggable;
