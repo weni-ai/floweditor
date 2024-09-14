@@ -71,7 +71,7 @@ export default class CheckboxElement extends React.Component<
     });
   }
 
-  /* istanbul ignore next */
+  /* istanbul ignore next -- @preserve */
   public validate(): boolean {
     return true;
   }

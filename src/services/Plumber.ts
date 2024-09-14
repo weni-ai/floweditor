@@ -81,7 +81,7 @@ const defaultConnector = [
   },
 ];
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 export default class Plumber {
   public jsPlumb: any;
 

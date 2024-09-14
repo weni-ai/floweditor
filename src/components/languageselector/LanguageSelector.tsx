@@ -88,7 +88,7 @@ export class LanguageSelector extends React.Component<LanguageSelectorProps> {
   }
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = ({
   flowContext: { assetStore },
   editorState: { language },
@@ -97,7 +97,7 @@ const mapStateToProps = ({
   language,
 });
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
   bindActionCreators(
     {

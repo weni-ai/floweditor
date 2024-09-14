@@ -232,7 +232,7 @@ export class RevisionExplorer extends React.Component<
   }
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = ({ flowContext: { assetStore } }: AppState) => ({
   assetStore: assetStore,
 });

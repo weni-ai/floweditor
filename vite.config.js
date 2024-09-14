@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { coverageConfigDefaults, defineConfig } from 'vitest/config';
 import path from 'path';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
@@ -49,6 +49,13 @@ export default defineConfig({
       provider: 'istanbul',
       reporter: ['lcov', 'text', 'html'],
       reportsDirectory: './coverage',
+      exclude: [
+        '__mocks__/**',
+        'utils/**',
+        'testUtils/**',
+        'services/__mocks__/**',
+        ...coverageConfigDefaults.exclude,
+      ],
     },
   },
   build: {

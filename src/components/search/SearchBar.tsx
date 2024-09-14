@@ -333,7 +333,7 @@ const mapStateToProps = ({ flowContext: { search, nodes } }: AppState) => {
   };
 };
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
   bindActionCreators({ handleSearchChange, onUpdateCanvasPositions }, dispatch);
 

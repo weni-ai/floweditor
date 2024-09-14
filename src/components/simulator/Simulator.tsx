@@ -1274,7 +1274,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   }
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = ({
   flowContext: { definition, nodes },
   editorState: { liveActivity, activity, language },
@@ -1286,7 +1286,7 @@ const mapStateToProps = ({
   language,
 });
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
   bindActionCreators({}, dispatch);
 

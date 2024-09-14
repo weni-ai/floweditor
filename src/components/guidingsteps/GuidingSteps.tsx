@@ -106,7 +106,7 @@ export class GuidingSteps extends React.Component<
   }
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = ({
   editorState: { currentGuide, guidingStep },
 }: AppState) => {
@@ -115,7 +115,7 @@ const mapStateToProps = ({
     guidingStep,
   };
 };
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
   bindActionCreators({ mergeEditorState }, dispatch);
 

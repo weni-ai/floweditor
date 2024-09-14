@@ -316,11 +316,11 @@ export const isValidLabel = (label: string) =>
 
 export const isRealValue = (obj: any) => obj !== null && obj !== undefined;
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 export const timeStart = (name: string) =>
   process.env.NODE_ENV === 'development' && console.time(name);
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 export const timeEnd = (name: string) =>
   process.env.NODE_ENV === 'development' && console.timeEnd(name);
 

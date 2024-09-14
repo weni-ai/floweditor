@@ -245,7 +245,7 @@ export class ActionWrapper extends React.Component<ActionWrapperProps> {
   }
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = ({
   flowContext: {
     definition: { localization },
@@ -259,7 +259,7 @@ const mapStateToProps = ({
   mouseState,
 });
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
   bindActionCreators(
     {

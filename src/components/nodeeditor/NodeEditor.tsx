@@ -199,7 +199,7 @@ export class NodeEditor extends React.Component<NodeEditorProps> {
   }
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = ({
   flowContext: { nodes, assetStore, issues },
   editorState: { language, translating },
@@ -216,7 +216,7 @@ const mapStateToProps = ({
   };
 };
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
   bindActionCreators(
     {

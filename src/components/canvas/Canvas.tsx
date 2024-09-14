@@ -172,7 +172,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
   }
 
   public componentDidMount(): void {
-    /* istanbul ignore next */
+    /* istanbul ignore next -- @preserve */
     document.addEventListener('keydown', this.handleKeyDown);
     document.addEventListener('keyup', this.handleKeyUp);
     window.addEventListener('keydown', this.handleWindowKeyDown);

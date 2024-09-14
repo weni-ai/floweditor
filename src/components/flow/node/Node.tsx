@@ -191,7 +191,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     this.props.plumberRemove(this.props.renderNode.node.uuid);
   }
 
-  /* istanbul ignore next */
+  /* istanbul ignore next -- @preserve */
   private handleUUIDClicked(event: React.MouseEvent<HTMLElement>): void {
     const selection = window.getSelection();
     const range = document.createRange();
@@ -255,7 +255,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     return this.props.startingNode;
   }
 
-  /* istanbul ignore next */
+  /* istanbul ignore next -- @preserve */
   private renderDebug(): JSX.Element {
     if (this.props.debug) {
       if (this.props.debug.showUUIDs) {
