@@ -361,7 +361,6 @@ export default class MsgLocalizationForm extends React.Component<
           focus={true}
           textarea={true}
         />
-
         {audioButton}
         {renderIssues(this.props)}
       </Dialog>

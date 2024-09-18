@@ -39,6 +39,7 @@ import ExpressionRouterForm from 'components/flow/routers/expression/ExpressionR
 import FieldRouterForm from 'components/flow/routers/field/FieldRouterForm';
 import GroupsRouterForm from 'components/flow/routers/groups/GroupsRouterForm';
 import RouterLocalizationForm from 'components/flow/routers/localization/RouterLocalizationForm';
+import WhatsappMsgLocalizationForm from 'components/flow/actions/localization/WhastsappMsgLocalizationForm';
 import MenuRouterForm from 'components/flow/routers/menu/MenuRouterForm';
 import RandomRouterForm from 'components/flow/routers/random/RandomRouterForm';
 import ResponseRouterForm from 'components/flow/routers/response/ResponseRouterForm';
@@ -62,7 +63,13 @@ import {
   VISIBILITY_INTERACTIVE,
   VISIBILITY_MESSAGING_INTERACTIVE,
 } from 'config/interfaces';
-import { HintTypes, RouterTypes, FlowEditorConfig, SendMsg } from 'flowTypes';
+import {
+  HintTypes,
+  RouterTypes,
+  FlowEditorConfig,
+  SendMsg,
+  SendWhatsAppMsg,
+} from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import CallClassifierComp from 'components/flow/actions/callclassifier/CallClassifier';
 import ClassifyRouterForm from 'components/flow/routers/classify/ClassifyRouterForm';
@@ -284,14 +291,18 @@ export const typeConfigList: Type[] = [
       'Send a WhatsApp message',
     ),
     form: SendWhatsAppMsgForm,
-    // localization: MsgLocalizationForm,
-    // localizeableKeys: ['text', 'quick_replies', 'templating.variables'],
+    localization: WhatsappMsgLocalizationForm,
+    localizeableKeys: [
+      'text',
+      'quick_replies',
+      'footer',
+      'header_text',
+      'button_text',
+    ],
     component: SendWhatsAppMsgComp,
-    // massageForDisplay: (action: SendMsg) => {
-    //   // quick replies are optional in the definition, make sure we have
-    //   // at least an empty array so the localization has a proper cue
-    //   action.quick_replies = action.quick_replies || [];
-    // },
+    massageForDisplay: (action: SendWhatsAppMsg) => {
+      action.quick_replies = action.quick_replies || [];
+    },
     filter: FeatureFilter.HAS_WHATSAPP,
     new: true,
   },
@@ -303,7 +314,9 @@ export const typeConfigList: Type[] = [
       'Send a WhatsApp product',
     ),
     form: SendWhatsAppProductRouterForm,
+    localization: RouterLocalizationForm,
     component: SendWhatsAppProductComp,
+    localizeableKeys: ['input'],
     aliases: [Types.split_by_whatsapp_product],
     filter: FeatureFilter.HAS_WHATSAPP_CATALOG,
     new: true,
