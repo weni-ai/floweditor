@@ -1,6 +1,10 @@
+3.1.3
+----------
+- Feat: Send WhatsApp Message localization form;
+
 3.1.2
 ----------
-- Update missing translations
+- Fix: Update missing translations;
 
 3.1.1
 ----------
