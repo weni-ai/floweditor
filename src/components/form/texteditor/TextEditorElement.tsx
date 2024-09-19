@@ -54,7 +54,7 @@ export default class TextEditorElement extends React.Component<
 
   private addEmoji(emoji: any): void {
     const { value } = this.props.entry;
-    const text = `${value}${emoji.native}`;
+    const text = `${value}${emoji}`;
 
     this.handleChange(text);
     this.getTextAreaElement().focus();

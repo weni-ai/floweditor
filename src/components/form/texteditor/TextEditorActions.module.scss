@@ -10,10 +10,8 @@
   position: relative;
 
   .emoji_picker {
-    position: absolute;
-    bottom: 100%;
     z-index: 1000;
-
+    transform: translate(-100px, -100px);
     em-emoji-picker {
       height: 250px;
     }

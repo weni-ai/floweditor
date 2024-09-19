@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { StringEntry } from 'store/nodeEditor';
 import { applyVueInReact } from 'veaury';
-import Picker from '@emoji-mart/react';
-import PickerPTi18n from '@emoji-mart/data/i18n/pt.json';
 
 // @ts-ignore
 import Unnnic from '@weni/unnnic-system';
@@ -10,6 +8,7 @@ import Unnnic from '@weni/unnnic-system';
 import styles from './TextEditorActions.module.scss';
 
 const UnnnicButton = applyVueInReact(Unnnic.unnnicButton);
+const UnnnicEmojiPicker = applyVueInReact(Unnnic.unnnicEmojiPicker);
 
 export interface TextEditorProps {
   entry: StringEntry;
@@ -55,15 +54,9 @@ export default class TextEditorActions extends React.Component<
           />
           {this.state.showEmojiPicker && (
             <div className={styles.emoji_picker}>
-              <Picker
-                i18n={PickerPTi18n}
-                onEmojiSelect={(e: any) => this.addEmoji(e)}
+              <UnnnicEmojiPicker
+                onEmojiSelected={(e: any) => this.addEmoji(e)}
                 onClickOutside={() => this.toggleEmojiPicker()}
-                theme="light"
-                previewPosition="none"
-                skinTonePosition="none"
-                maxFrequentRows={0}
-                perLine={6}
               />
             </div>
           )}
