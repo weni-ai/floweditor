@@ -169,7 +169,6 @@
     "subject": "Předmět",
     "to": "k "
   },
-  "empty_flow_message": "<0>Začněme</0><1>Doporučujeme začít tok zasláním zprávy. Tato zpráva bude odeslána komukoli ihned poté, co se připojí k toku. To je vaše příležitost poslat jim jednu zprávu nebo jim položit otázku.</1>",
   "enter_to_create_group": "Zadáním názvu vytvoříte novou skupinu",
   "enter_to_create_label": "Zadejte název existujícího štítku nebo vytvořte nový.",
   "errors": {

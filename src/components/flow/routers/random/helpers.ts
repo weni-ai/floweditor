@@ -3,6 +3,7 @@ import { RandomRouterFormState } from 'components/flow/routers/random/RandomRout
 import { SelectOption } from 'components/form/select/SelectElement';
 import { Types } from 'config/interfaces';
 import { getType } from 'config/typeConfigs';
+import i18n from 'config/i18n';
 import { Category, Exit, Router, RouterTypes } from 'flowTypes';
 import { RenderNode } from 'store/flowContext';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
@@ -10,7 +11,10 @@ import { createUUID, range } from 'utils';
 
 export const BUCKET_OPTIONS: SelectOption[] = range(2, 11).map(
   (count: number) => {
-    return { value: count + '', name: count + ' buckets' };
+    return {
+      value: count + '',
+      name: count + i18n.t('forms.option_buckets', ' buckets'),
+    };
   },
 );
 
@@ -109,7 +113,11 @@ export const fillOutCategories = (
   // add any that we still need
   return categories.concat(
     range(categories.length, buckets).map((idx: number) => {
-      return { uuid: createUUID(), name: `Bucket ${idx + 1}`, exit_uuid: null };
+      return {
+        uuid: createUUID(),
+        name: `${i18n.t('forms.bucket', 'Bucket')} ${idx + 1}`,
+        exit_uuid: null,
+      };
     }),
   );
 };

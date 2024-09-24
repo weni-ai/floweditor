@@ -3,6 +3,8 @@
 exports[`BrainForm > should render 1`] = `
 BrainForm {
   "context": {},
+  "handleEntryChange": [Function],
+  "handleSave": [Function],
   "props": {
     "addAsset": [MockFunction spy],
     "assetStore": {
@@ -2626,6 +2628,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
       "occupation": "Marketing Specialist",
     },
     "children": [],
+    "entry": "",
     "helpArticles": {},
     "issues": [],
     "nodeSettings": {
@@ -2692,7 +2695,11 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
   },
   "refs": {},
   "setState": [Function],
-  "state": null,
+  "state": {
+    "entry": {
+      "value": "@input.text",
+    },
+  },
   "updater": Updater {
     "_callbacks": [],
     "_renderer": ReactShallowRenderer {
@@ -5340,6 +5347,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
             "occupation": "Marketing Specialist",
           }
         }
+        entry=""
         helpArticles={{}}
         issues={[]}
         nodeSettings={
@@ -5514,6 +5522,24 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
              - 
             Marketing Specialist
           </span>
+        </div>
+        <div
+          className="_entry_539fc6"
+        >
+          <span>
+            Enter an expression to use as input in the Brain. To use the contact's last response, use @input.text.
+          </span>
+          <TextInputElement
+            autocomplete={true}
+            entry={
+              {
+                "value": "@input.text",
+              }
+            }
+            name="entry"
+            onChange={[Function]}
+            size="sm"
+          />
         </div>
       </Dialog>,
       "_rendering": false,

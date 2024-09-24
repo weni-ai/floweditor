@@ -1,6 +1,5 @@
 {
   "actions": {
-    "search": "Buscar...",
     "add_contact_groups": {
       "description": "Añadir el contacto a un grupo",
       "name": "Añadir a grupo"
@@ -17,6 +16,10 @@
       "description": "Ordenar automáticamente",
       "name": "Ordenar automáticamente"
     },
+    "call_brain": {
+      "name": "Llamar a Weni Brain",
+      "description": "Llamar a Weni Brain"
+    },
     "call_resthook": {
       "description": "Llamar Zapier",
       "name": "Llamar Zapier"
@@ -25,9 +28,17 @@
       "description": "Llamar un Webhook",
       "name": "Llamar webhook"
     },
+    "call_wenigpt": {
+      "name": "Llame a WeniGPT",
+      "description": "Llamar a WeniGPT"
+    },
     "enter_flow": {
       "description": "Ingresar en otro flujo",
       "name": "Ingresar en otro flujo"
+    },
+    "external_service": {
+      "description": "Llamar a un servicio externo",
+      "name": "Llamar a un servicio externo"
     },
     "open_ticket": {
       "description": "Abrir un ticket con un agente humano",
@@ -48,19 +59,33 @@
     "say_msg": {
       "placeholder": "Enviar un mensaje al contacto"
     },
+    "search": "Buscar...",
     "send_broadcast": {
       "description": "Enviar un mensaje a alguien más",
       "name": "Enviar difusión",
       "placeholder": "Enviar un mensaje al contacto"
     },
     "send_email": {
-      "description": "Enviar correo electrónico",
+      "description": "Enviar un correo electrónico",
       "name": "Enviar correo electrónico"
     },
     "send_msg": {
       "description": "Enviar un mensage al contacto",
       "name": "Enviar mensaje",
       "placeholder": "Enviar un mensaje al contacto"
+    },
+    "send_msg_catalog": {
+      "automatic_sending": "Envío automático",
+      "complete_catalog": "Catálogo completo",
+      "description": "Enviar un producto de WhatsApp",
+      "manual_sending": "[[count]] producto",
+      "manual_sending_plural": "[[count]] productos",
+      "manual_sending_multiple": "+3 productos",
+      "name": "Enviar producto por WhatsApp"
+    },
+    "send_whatsapp_msg": {
+      "name": "Enviar mensaje de WhatsApp",
+      "description": "Enviar un mensaje de WhatsApp"
     },
     "set_contact_field": {
       "description": "Actualizar el contacto",
@@ -69,6 +94,10 @@
     "set_run_result": {
       "description": "Guardar un resultado para este flujo",
       "name": "Guardar resultado de Flujo"
+    },
+    "smart_wait_for_response": {
+      "name": "Esperar por respuesta inteligente",
+      "description": "Espere inteligentemente la respuesta"
     },
     "split_by_contact_field": {
       "description": "Dividir por campo de contacto",
@@ -137,35 +166,9 @@
     "wait_for_video": {
       "description": "Esperar por un video",
       "name": "Esperar por Video"
-    },
-    "smart_wait_for_response": {
-      "name": "Esperar por respuesta inteligente",
-      "description": "Espere inteligentemente la respuesta"
-    },
-    "send_msg_catalog": {
-      "automatic_sending": "Envío automático",
-      "manual_sending": "[[count]] producto",
-      "manual_sending_plural": "[[count]] productos",
-      "manual_sending_multiple": "+3 productos",
-      "name": "Enviar producto por WhatsApp",
-      "description": "Enviar un producto de WhatsApp"
-    },
-    "call_wenigpt": {
-      "name": "Llame a WeniGPT",
-      "description": "Llamar a WeniGPT"
-    },
-    "send_whatsapp_msg": {
-      "name": "Enviar mensaje de WhatsApp",
-      "description": "Enviar un mensaje de WhatsApp"
-    },
-    "call_brain": {
-      "name": "Llamar a Weni Brain",
-      "description": "Llamar a Weni Brain"
     }
   },
   "add": "Añadir",
-  "set": "Establecer",
-  "to": "como",
   "asset_selector": {
     "placeholder": "Seleccione el [[name]] existente o ingrese uno nuevo",
     "placeholder_plural": "Seleccione los [[name]] existentes o ingrese uno nuevo"
@@ -184,7 +187,8 @@
     "confirm": "Confirme",
     "after": "Después",
     "later": "Más tarde",
-    "save": "Guardar"
+    "save": "Guardar",
+    "upload": "Subir"
   },
   "contact_statuses": {
     "active": "Activo",
@@ -197,12 +201,16 @@
     "hide_empty": "Mostrando claves con valores",
     "show_empty": "Mostrando todas las claves"
   },
+  "copy": {
+    "multiple": "Bloques copiados con éxito",
+    "single": "Bloque copiados con éxito"
+  },
+  "copy_tooltip": "Copiar bloque(s)",
   "create_block": "Crear bloque",
-  "search_in_nodes": "Buscar bloque",
   "create_label": "Crear etiqueta",
   "disabled_copy_tooltip": "Seleccione uno o varios bloques para copiar",
-  "copy_tooltip": "Copiar bloque(s)",
   "document": "Documento",
+  "drag": "Arrastar",
   "drag_helper": "Para conectar nodos, <1>arrastre</1> desde el círculo rojo.",
   "email": {
     "subject": "Asunto",
@@ -219,7 +227,11 @@
     "server": "Hmm, nos encontramos con un problema al intentar guardar los cambios. Si este problema persiste, tome nota del cambio que está intentando realizar y póngase en contacto con el servicio de asistencia."
   },
   "flow_start": "Inicio de Flujo",
+  "form": {
+    "result": "Resultado"
+  },
   "forms": {
+    "above": "Encima de",
     "add_attachment": "Agregar Adjunto",
     "add_groups_summary": "Seleccione los grupos a los que se agregará el contacto",
     "add_labels_summary": "Seleccione las etiquetas para aplicar a los mensajes entrantes",
@@ -233,9 +245,17 @@
     "are_required": "son requeridos",
     "arguments": "argumentos",
     "attachments": "Archivos adjuntos",
+    "assign_to_optional": "Asignar a (Opcional)",
+    "assignee": "Asignado",
     "audio_url": "URL de Audio",
     "body": "Cuerpo",
     "buckets": "Cubos",
+    "bucket": "Cubo",
+    "option_buckets": " cubos",
+    "brain": {
+      "entry": "Ingrese una expresión para usar como entrada en el Brain. Para usar la última respuesta del contacto, use @input.text."
+    },
+    "call": "Llamar",
     "categories": "categorías",
     "categorize_as": "Categorizar como:",
     "category": "Categoría (opcional)",
@@ -254,6 +274,7 @@
     "currency": "Moneda",
     "day": "día",
     "days": "días",
+    "default_search": "Búsqueda predeterminada",
     "delimit": "Delimitar",
     "delimit_result": "Delimitar resultado",
     "delimit_result_description": "Evalúe sus reglas contra una parte delimitada de su resultado",
@@ -263,7 +284,7 @@
       "title": "Ahora es posible <1>[[highlight]]</1> utilizando WhatsApp Flows.",
       "highlight": "generar interacciones más ricas",
       "link": "Obtén más información."
-    },   
+    },
     "email_recipient_name": "Destinatario",
     "email_recipient_placeholder": "Agregue correo electrónico y presione Entrar",
     "email_recipient_prompt": "Introducir la dirección de correo electrónico",
@@ -277,8 +298,13 @@
     "enter_urn_value": "Ingrese el valor URN",
     "exit_name": "Nombre de Salida",
     "expression_label": "Si la expresión",
+    "external_service": "Servicio Externo",
+    "external_service_call": "Llamada a Servicio Externo",
+    "externalService": "Servicio Externo",
+    "field": "Campo",
     "field_number": "Número de campo",
     "field_value": "Valor de Campo",
+    "filter": "Filtro",
     "flow": "Flujo",
     "flow_to_start": "Flujo para empezar",
     "flow_result": "Resultado de Flujo",
@@ -290,8 +316,11 @@
     "is_not_a_valid_regex": "no es una expresión regular válida",
     "is_not_finished": "no está terminado",
     "is_required": "es requerido",
+    "integration_with": "Integración con...",
     "labels": "Etiquetas",
     "language": "Lenguaje",
+    "list_button_text": "Texto del botón de acción",
+    "list_button_url": "URL del botón de acción",
     "localize_rules": "A veces, los idiomas necesitan reglas especiales para enrutar las cosas correctamente. Si no se proporciona una traducción, se utilizará la regla original.",
     "localized_quick_replies": "Agregue una nueva respuesta rápida en [[language]] y presione enter.",
     "maximum_value": "Valor máximo",
@@ -303,7 +332,7 @@
     "name": "Nombre",
     "operand": "Operando",
     "operator": "operador",
-    "pdf_url": "URL de Documento PDF",
+    "pdf_url": "URL del Documento PDF",
     "phone_number": "Número telefónico",
     "play_audio_help_text": "Ingrese una variable que contenga una grabación que el contacto haya grabado previamente. Por ejemplo, @results.voicemail o @fields.short_bio.",
     "quick_replies": "Respuestas rápidas",
@@ -333,6 +362,7 @@
     "save_result_name": "Guardar como resultado",
     "select_channel": "Seleccionar el canal a utilizar para este contacto",
     "select_contacts": "Seleccionar contactos",
+    "select_external_service": "Selecciona el servicio externo a utilizar",
     "select_flow": "Seleccionar el flujo a iniciar",
     "select_groups": "Seleccionar grupos",
     "select_intent": "Seleccionar intención",
@@ -363,8 +393,9 @@
     "template": "plantilla",
     "the_maximum": "el máximo",
     "the_minimum": "el mínimo",
-    "ticketer": "Ticketer",
-    "timeout": "Timeout",
+    "ticketer": "Sistema de Tickets",
+    "ticketer_placeholder": "Selecciona el servicio de tickets a utilizar",
+    "timeout": "Tiempo de espera",
     "timeout_1 day": "1 día",
     "timeout_1 hour": "1 hora",
     "timeout_1 minute": "1 minuto",
@@ -413,7 +444,6 @@
     "execute": "Pasar ",
     "the_last_response": "la última respuesta",
     "through_the_classifier": " por el clasificador",
-    "above": "Encima de",
     "classifier_input": "Entrada del clasificador",
     "classifier_input_description": "Introduzca una expresión para utilizarla como entrada de su clasificador. Para clasificar la última respuesta del contacto utilice",
     "select_contact_field_label": "Si el contacto",
@@ -439,6 +469,7 @@
     "ex_weni": "Ej: weni.ai",
     "ex_accept": "Ej: Accept",
     "ex_application_json": "Ej: application/json",
+    "ex_results": "Ej: @results.seller_id",
     "none": "Ninguno",
     "topic_placeholder": "Seleccionar tema",
     "quick_replies_limit": "Puedes agregar hasta 10 respuestas rápidas.",
@@ -530,7 +561,20 @@
     "action_button_url": "URL del botón de acción",
     "action_button_url_placeholder": "Ej: https://www.menu-del-restaurante.com",
     "select_info": "Para editar formularios existentes, utiliza la herramienta nativa de Meta.",
-    "start_screen": "Iniciar flujos desde la pantalla:"
+    "start_screen": "Iniciar flujos desde la pantalla:",
+    "param": "Parámetro",
+    "parameter": "Parámetro",
+    "params": "Parámetros",
+    "product_search_placeholder": "Ej: @input.text",
+    "remove_groups_type_label": "Grupos de los cuales se eliminará el contacto:",
+    "remove_groups_type_values_all_label": "Todos",
+    "remove_groups_type_values_selected_label": "Seleccionado",
+    "required": "Requerido",
+    "select_an_option": "Selecciona una opción",
+    "service_call_param": "Parámetro de la Llamada de Servicio",
+    "service_call_param_data": "Datos del Parámetro de la Llamada de Servicio",
+    "service_call_param_filter": "Filtro del Parámetro de la Llamada de Servicio",
+    "vtex_search": "Búsqueda VTEX"
   },
   "issues": {
     "header": "Problemas de Flujo",
@@ -613,6 +657,10 @@
     "freshchat": {
       "path": "ID de Freshchat"
     },
+    "instagram": {
+      "name": "Instagram",
+      "path": "ID de Instagram"
+    },
     "jiochat": {
       "path": "ID de Jiochat"
     },
@@ -626,6 +674,14 @@
     "phone": {
       "name": "SMS",
       "path": "Número telefónico"
+    },
+    "slack": {
+      "name": "Slack",
+      "path": "ID de Slack"
+    },
+    "teams": {
+      "name": "Teams",
+      "path": "ID de Teams"
     },
     "telegram": {
       "name": "Telegram",
@@ -652,6 +708,9 @@
       "path": "Número de WhatsApp"
     }
   },
+  "search_in_nodes": "Buscar bloque",
+  "set": "Establecer",
+  "select": "Seleccionar",
   "simulator": {
     "added_to_group": "Añadido a",
     "airtime_transferred": "Transferido [[amount]] [[currency]] para [[recipient]] ",
@@ -684,16 +743,10 @@
     "body": "...",
     "title": "Nueva Nota"
   },
+  "to": "como",
   "translation": {
     "header": "Traducción de Flujo",
     "label": "Traducciones"
-  },
-  "form": {
-    "result": "Resultado"
-  },
-  "copy": {
-    "multiple": "Bloques copiados con éxito",
-    "single": "Bloque copiados con éxito"
   },
   "new_updates": {
     "title": "¡Novedades en la zona!",
@@ -768,13 +821,14 @@
     "request_location": "Solicitar ubicación",
     "add_url": "Botón de URL",
     "add_url_description": "Agregar un botón con un enlace a una URL externa."
-
   },
   "whatsapp_msg": {
     "list_items_required": "Se debe completar al menos una opción de lista",
     "replies_required": "Se debe completar al menos una respuesta rápida",
     "attachment_url": "URL del archivo",
-    "configure_your_message": "Configura tu mensaje"
+    "configure_your_message": "Configura tu mensaje",
+    "invalid_attachment_type": "Tipo de archivo adjunto inválido",
+    "replies_unique": "Las respuestas rápidas deben ser únicas"
   },
   "whatsapp_flows": {
     "title": "WhatsApp Flows",

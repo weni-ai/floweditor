@@ -37,17 +37,19 @@ export default defineConfig({
     },
   },
   test: {
-    cache: false,
+    cache: true,
     clearMocks: true,
     globals: true,
-    threads: false,
     setupFiles: ['./vitest-setup.ts', 'vitest.d.ts'],
     environment: 'jsdom',
     root: 'src',
+    pool: 'threads',
     coverage: {
-      reporter: ['lcov', 'text'],
+      enabled: true,
+      provider: 'istanbul',
+      reporter: ['lcov', 'text', 'html'],
+      reportsDirectory: './coverage',
     },
-    outputFile: 'coverage/sonar-report.xml',
   },
   build: {
     outDir: 'build',

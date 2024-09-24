@@ -2,7 +2,7 @@
   "name": "@weni/flow-editor",
   "license": "AGPL-3.0",
   "repository": "git://github.com/weni-ai/floweditor.git",
-  "version": "3.0.1",
+  "version": "3.1.3",
   "description": "Standalone flow editing tool designed for use within the RapidPro suite of messaging tools but can be adopted for use outside of that ecosystem.",
   "browser": "umd/flow-editor.min.js",
   "unpkg": "umd/flow-editor.min.js",
@@ -105,7 +105,8 @@
     "@vitejs/plugin-react": "4.2.1",
     "@vitejs/plugin-vue": "5.0.4",
     "@vitejs/plugin-vue-jsx": "3.1.0",
-    "@vitest/coverage-v8": "1.6.0",
+    "@vitest/coverage-istanbul": "2.0.5",
+    "@vitest/ui": "2.0.5",
     "@weni/eslint-config": "1.0.4",
     "ajv": "6.5.2",
     "array-move": "2.1.0",
@@ -121,7 +122,7 @@
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "^1.13.0",
     "enzyme-adapter-utils": "1.12.0",
-    "enzyme-to-json": "^3.3.4",
+    "enzyme-to-json": "3.6.2",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-react": "1.1.7",
@@ -184,10 +185,11 @@
     "vite": "4.5.3",
     "vite-plugin-eslint": "1.8.1",
     "vite-tsconfig-paths": "4.2.1",
-    "vitest": "1.6.0"
+    "vitest": "2.0.5"
   },
   "resolutions": {
     "@types/react": "16.8.25",
-    "typescript": "3.9"
+    "typescript": "3.9",
+    "string-width": "^4.2.0"
   }
 }

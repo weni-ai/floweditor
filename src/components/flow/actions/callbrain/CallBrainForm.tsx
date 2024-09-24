@@ -1,4 +1,5 @@
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
+import { react as bindCallbacks } from 'auto-bind';
 import { ActionFormProps } from 'components/flow/props';
 import { connect } from 'react-redux';
 
@@ -8,21 +9,49 @@ import * as React from 'react';
 import styles from './CallBrainForm.module.scss';
 import i18n from 'config/i18n';
 import AppState from 'store/state';
-import { propsToAction } from './helpers';
+import { updateBrainAction, initializeForm } from './helpers';
 import { BrainInfo } from '../../../../store/flowContext';
 
 import { applyVueInReact } from 'veaury';
 // @ts-ignore
 import Unnnic from '@weni/unnnic-system';
+import TextInputElement, {
+  TextInputSizes,
+} from 'components/form/textinput/TextInputElement';
+import { StringEntry } from 'store/nodeEditor';
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
 
 export interface CallBrainFormProps extends ActionFormProps {
   brainInfo: BrainInfo;
 }
 
-export class BrainForm extends React.Component<CallBrainFormProps> {
+export interface CallBrainFormState {
+  entry: StringEntry;
+}
+
+export interface CallBrainFormData
+  extends CallBrainFormProps,
+    CallBrainFormState {}
+
+export class BrainForm extends React.Component<
+  CallBrainFormProps,
+  CallBrainFormState
+> {
+  constructor(props: CallBrainFormProps) {
+    super(props);
+    this.state = initializeForm(this.props.nodeSettings);
+    bindCallbacks(this, {
+      include: [/^handle/, /^on/],
+    });
+  }
   private handleSave(): void {
-    this.props.updateAction(propsToAction(this.props.nodeSettings, this.props));
+    const brainData: CallBrainFormData = {
+      ...this.props,
+      entry: this.state.entry,
+    };
+    this.props.updateAction(
+      updateBrainAction(this.props.nodeSettings, brainData),
+    );
     this.props.onClose(false);
   }
 
@@ -37,6 +66,10 @@ export class BrainForm extends React.Component<CallBrainFormProps> {
         onClick: () => this.props.onClose(true),
       },
     };
+  }
+
+  private handleEntryChange(value: string) {
+    this.setState({ entry: { value } });
   }
 
   private renderEdit(): JSX.Element {
@@ -65,6 +98,21 @@ export class BrainForm extends React.Component<CallBrainFormProps> {
           <span className={styles.text}>
             {this.props.brainInfo.name} - {this.props.brainInfo.occupation}
           </span>
+        </div>
+        <div className={styles.entry}>
+          <span>
+            {i18n.t(
+              'forms.brain.entry',
+              `Enter an expression to use as input in the Brain. To use the contact's last response, use @input.text.`,
+            )}
+          </span>
+          <TextInputElement
+            name={'entry'}
+            onChange={this.handleEntryChange}
+            entry={this.state.entry}
+            size={TextInputSizes.sm}
+            autocomplete
+          />
         </div>
       </Dialog>
     );

@@ -169,7 +169,6 @@
     "subject": "Sujet",
     "to": "À"
   },
-  "empty_flow_message": "<0>Commençons</0><1>Nous vous recommandons de démarrer votre flux en envoyant un message. Ce message sera envoyé à n'importe qui juste après avoir rejoint le flux. C'est votre chance d'envoyer un seul message ou de leur poser une question.</1>",
   "enter_to_create_group": "Entrez un nom pour créer un nouveau groupe",
   "enter_to_create_label": "Entrez le nom d'une étiquette existante ou créez-en une nouvelle",
   "errors": {

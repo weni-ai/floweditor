@@ -39,8 +39,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
               >
                 <div
                   class="unnnic-tooltip _zoom_tooltip_25bc10"
-                  data-v-903a37c5=""
-                  shortcuttext="Ctrl + Scroll"
+                  data-v-5e81b292=""
                 >
                   
                   <div
@@ -50,45 +49,51 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                     <div
                       class="_out_25bc10"
                     >
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        remove
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_24486107367949272"
+                        style="display: flex;"
+                      />
                     </div>
                     <div
                       class="_percentage_25bc10"
                     >
                       100
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        percent
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_8928730142956944"
+                        style="display: flex;"
+                      />
                     </div>
                     <div
                       class="_in_25bc10"
                     >
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        add
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_020639285191612844"
+                        style="display: flex;"
+                      />
                     </div>
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-top"
-                    data-v-903a37c5=""
+                    data-v-5e81b292=""
                   >
                     
                     
                     Zoom 
                     <br
-                      data-v-903a37c5=""
+                      data-v-5e81b292=""
                     />
                     
                     
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-5e81b292=""
+                    >
+                      Ctrl + Scroll
+                    </span>
                   </span>
                 </div>
               </div>
@@ -102,8 +107,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
               >
                 <div
                   class="unnnic-tooltip _start_tooltip_25bc10"
-                  data-v-903a37c5=""
-                  shortcuttext="Ctrl + Enter"
+                  data-v-5e81b292=""
                 >
                   
                   <div
@@ -118,26 +122,32 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                       >
                         Start of flow
                       </span>
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        arrow_upward
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_09238373790466747"
+                        style="display: flex;"
+                      />
                     </div>
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-right"
-                    data-v-903a37c5=""
+                    data-v-5e81b292=""
                   >
                     
                     
                      
                     <br
-                      data-v-903a37c5=""
+                      data-v-5e81b292=""
                     />
                     
                     
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-5e81b292=""
+                    >
+                      Ctrl + Enter
+                    </span>
                   </span>
                 </div>
               </div>
@@ -391,8 +401,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
               >
                 <div
                   class="unnnic-tooltip _zoom_tooltip_25bc10"
-                  data-v-903a37c5=""
-                  shortcuttext="Ctrl + Scroll"
+                  data-v-5e81b292=""
                 >
                   
                   <div
@@ -402,45 +411,51 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                     <div
                       class="_out_25bc10"
                     >
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        remove
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_030604567852394737"
+                        style="display: flex;"
+                      />
                     </div>
                     <div
                       class="_percentage_25bc10"
                     >
                       100
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        percent
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_7558297436485186"
+                        style="display: flex;"
+                      />
                     </div>
                     <div
                       class="_in_25bc10"
                     >
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        add
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_6602430863684821"
+                        style="display: flex;"
+                      />
                     </div>
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-top"
-                    data-v-903a37c5=""
+                    data-v-5e81b292=""
                   >
                     
                     
                     Zoom 
                     <br
-                      data-v-903a37c5=""
+                      data-v-5e81b292=""
                     />
                     
                     
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-5e81b292=""
+                    >
+                      Ctrl + Scroll
+                    </span>
                   </span>
                 </div>
               </div>
@@ -454,8 +469,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
               >
                 <div
                   class="unnnic-tooltip _start_tooltip_25bc10"
-                  data-v-903a37c5=""
-                  shortcuttext="Ctrl + Enter"
+                  data-v-5e81b292=""
                 >
                   
                   <div
@@ -470,26 +484,32 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                       >
                         Start of flow
                       </span>
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        arrow_upward
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_31241847924163113"
+                        style="display: flex;"
+                      />
                     </div>
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-right"
-                    data-v-903a37c5=""
+                    data-v-5e81b292=""
                   >
                     
                     
                      
                     <br
-                      data-v-903a37c5=""
+                      data-v-5e81b292=""
                     />
                     
                     
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-5e81b292=""
+                    >
+                      Ctrl + Enter
+                    </span>
                   </span>
                 </div>
               </div>
@@ -756,8 +776,7 @@ exports[`Canvas > render default 1`] = `
               >
                 <div
                   class="unnnic-tooltip _zoom_tooltip_25bc10"
-                  data-v-903a37c5=""
-                  shortcuttext="Ctrl + Scroll"
+                  data-v-5e81b292=""
                 >
                   
                   <div
@@ -767,45 +786,51 @@ exports[`Canvas > render default 1`] = `
                     <div
                       class="_out_25bc10"
                     >
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        remove
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_011459415948353868"
+                        style="display: flex;"
+                      />
                     </div>
                     <div
                       class="_percentage_25bc10"
                     >
                       100
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        percent
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_5190931824770453"
+                        style="display: flex;"
+                      />
                     </div>
                     <div
                       class="_in_25bc10"
                     >
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        add
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_23959812305523953"
+                        style="display: flex;"
+                      />
                     </div>
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-top"
-                    data-v-903a37c5=""
+                    data-v-5e81b292=""
                   >
                     
                     
                     Zoom 
                     <br
-                      data-v-903a37c5=""
+                      data-v-5e81b292=""
                     />
                     
                     
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-5e81b292=""
+                    >
+                      Ctrl + Scroll
+                    </span>
                   </span>
                 </div>
               </div>
@@ -819,8 +844,7 @@ exports[`Canvas > render default 1`] = `
               >
                 <div
                   class="unnnic-tooltip _start_tooltip_25bc10"
-                  data-v-903a37c5=""
-                  shortcuttext="Ctrl + Enter"
+                  data-v-5e81b292=""
                 >
                   
                   <div
@@ -835,26 +859,32 @@ exports[`Canvas > render default 1`] = `
                       >
                         Start of flow
                       </span>
-                      <span
-                        class="material-symbols-rounded"
-                      >
-                        arrow_upward
-                      </span>
+                      <div
+                        data-use-vue-component-wrap=""
+                        id="__vue_wrapper_container_5664864967986425"
+                        style="display: flex;"
+                      />
                     </div>
                   </div>
                   
                   <span
                     class="unnnic-tooltip-label unnnic-tooltip-label-right"
-                    data-v-903a37c5=""
+                    data-v-5e81b292=""
                   >
                     
                     
                      
                     <br
-                      data-v-903a37c5=""
+                      data-v-5e81b292=""
                     />
                     
                     
+                    <span
+                      class="unnnic-tooltip-label-shortcut"
+                      data-v-5e81b292=""
+                    >
+                      Ctrl + Enter
+                    </span>
                   </span>
                 </div>
               </div>

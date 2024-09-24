@@ -1,3 +1,23 @@
+3.1.3
+----------
+- Feat: Send WhatsApp Message localization form;
+
+3.1.2
+----------
+- Fix: Update missing translations;
+
+3.1.1
+----------
+- Fix: Brain card initializa form;
+
+3.1.0
+----------
+- Feat: Add text input to Call Weni Brain card;
+
+3.0.2
+----------
+- Fix: enable arrow keys and 'Enter' key when adding new cards;
+
 3.0.1
 ----------
 - Fix: Split by contact field card checkbox;
