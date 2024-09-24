@@ -1,10 +1,9 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import {
-  initializeForm as stateToForm,
+  nodeToState,
   stateToAction,
   createEmptyListItem,
-  createEmptyDynamicItem,
 } from 'components/flow/actions/whatsapp/sendmsg/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import TextInputElement, {
@@ -37,9 +36,7 @@ import {
   FILE_TYPE_REGEX,
   renderUploadButton,
 } from './attachments';
-import SelectElement, {
-  UnnnicSelectOption,
-} from 'components/form/select/SelectElement';
+import { UnnnicSelectOption } from 'components/form/select/SelectElement';
 import update from 'immutability-helper';
 import { AxiosResponse } from 'axios';
 import TextEditorElement from '../../../../form/texteditor/TextEditorElement';
@@ -47,7 +44,9 @@ import QuickRepliesList, { hasEmptyReply } from './QuickRepliesList';
 import OptionsList, { hasEmptyListItem } from './OptionsList';
 import { renderIf } from '../../../../../utils';
 import { Trans } from 'react-i18next';
-import DynamicVariables from './DynamicVariables';
+import AssetSelector from '../../../../form/assetselector/AssetSelector';
+import { TembaSelectStyle } from '../../../../../temba/TembaSelect';
+import WhatsAppFlowData from './WhatsAppFlowData';
 
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
@@ -57,7 +56,6 @@ const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
       'data-draggable': 'true',
       style: {
         all: '',
-        height: '20px',
         padding: '4px',
       },
     },
@@ -89,30 +87,24 @@ const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip, {
 });
 
 export const MAX_LIST_ITEMS_COUNT = 10;
-const MAX_REPLIES_COUNT = 3;
+export const MAX_REPLIES_COUNT = 3;
 
-export enum WhatsAppMessageType {
+export const enum WhatsAppMessageType {
   SIMPLE = 'simple',
   INTERACTIVE = 'interactive',
 }
 
-export enum WhatsAppHeaderType {
+export const enum WhatsAppHeaderType {
   MEDIA = 'media',
   TEXT = 'text',
 }
 
-export enum WhatsAppInteractionType {
+export const enum WhatsAppInteractionType {
   LIST = 'list',
   REPLIES = 'replies',
   LOCATION = 'location',
   CTA = 'cta_url',
-  WHATSAPP_FLOWS = 'whatsapp_flows',
-}
-
-export enum WhatsAppDynamicVariableType {
-  RADIO = 'radio',
-  IMAGE = 'image',
-  DESCRIPTION = 'description',
+  FLOW = 'flow_msg',
 }
 
 export const WHATSAPP_MESSAGE_TYPE_SIMPLE: UnnnicSelectOption<
@@ -140,36 +132,6 @@ export const WHATSAPP_HEADER_TYPE_MEDIA: UnnnicSelectOption<
 > = {
   label: i18n.t('whatsapp_headers.media', 'Media'),
   value: WhatsAppHeaderType.MEDIA,
-};
-
-export const WHATSAPP_DYNAMIC_VARIABLE_TYPE_RADIO: UnnnicSelectOption<
-  WhatsAppDynamicVariableType
-> = {
-  label: i18n.t('whatsapp_flows.variables.radio.title', 'Radio Button'),
-  value: WhatsAppDynamicVariableType.RADIO,
-  description: i18n.t(
-    'whatsapp_flows.variables.radio.description',
-    'Radio Button',
-  ),
-};
-
-export const WHATSAPP_DYNAMIC_VARIABLE_TYPE_IMAGE: UnnnicSelectOption<
-  WhatsAppDynamicVariableType
-> = {
-  label: i18n.t('whatsapp_flows.variables.image.title', 'Image'),
-  value: WhatsAppDynamicVariableType.IMAGE,
-  description: i18n.t('whatsapp_flows.variables.image.description', 'Image'),
-};
-
-export const WHATSAPP_DYNAMIC_VARIABLE_TYPE_DESCRIPTION: UnnnicSelectOption<
-  WhatsAppDynamicVariableType
-> = {
-  label: i18n.t('whatsapp_flows.variables.description.title', 'Description'),
-  value: WhatsAppDynamicVariableType.DESCRIPTION,
-  description: i18n.t(
-    'whatsapp_flows.variables.description.description',
-    'Description',
-  ),
 };
 
 export const WHATSAPP_INTERACTION_TYPE_LIST: UnnnicSelectOption<
@@ -215,7 +177,7 @@ export const WHATSAPP_INTERACTION_TYPE_CTA: UnnnicSelectOption<
 export const WHATSAPP_INTERACTION_TYPE_WHATSAPP_FLOWS: UnnnicSelectOption<
   WhatsAppInteractionType
 > = {
-  value: WhatsAppInteractionType.WHATSAPP_FLOWS,
+  value: WhatsAppInteractionType.FLOW,
   label: i18n.t('whatsapp_flows.title', 'Whatsapp Flows'),
   description: i18n.t(
     'whatsapp_flows.description',
@@ -242,14 +204,6 @@ export const WHATSAPP_HEADER_TYPE_OPTIONS: UnnnicSelectOption<
   WhatsAppHeaderType
 >[] = [WHATSAPP_HEADER_TYPE_MEDIA, WHATSAPP_HEADER_TYPE_TEXT];
 
-export const WHATSAPP_DYNAMIC_VARIABLE_TYPE_OPTIONS: UnnnicSelectOption<
-  WhatsAppDynamicVariableType
->[] = [
-  WHATSAPP_DYNAMIC_VARIABLE_TYPE_DESCRIPTION,
-  WHATSAPP_DYNAMIC_VARIABLE_TYPE_IMAGE,
-  WHATSAPP_DYNAMIC_VARIABLE_TYPE_RADIO,
-];
-
 export const WHATSAPP_INTERACTION_TYPE_OPTIONS: UnnnicSelectOption<
   WhatsAppInteractionType
 >[] = [
@@ -267,10 +221,17 @@ export interface WhatsAppListItem {
   description: string;
 }
 
-export interface DynamicVariablesListItem {
+export interface WhatsAppFlow {
+  id: string;
   name: string;
-  value: string;
-  disabled: boolean;
+  assets: {
+    screens: string[];
+    variables: string[];
+  };
+}
+
+export interface FlowData {
+  [key: string]: string;
 }
 
 export interface SendWhatsAppMsgFormState extends FormState {
@@ -294,9 +255,9 @@ export interface SendWhatsAppMsgFormState extends FormState {
 
   quickReplies: StringArrayEntry;
   quickReplyEntry: StringEntry;
-  dynamicVariables: FormEntry<DynamicVariablesListItem[]>;
-  firstScreen: StringEntry;
-  selectedForm: UnnnicSelectOptionEntry<WhatsAppHeaderType>;
+  whatsappFlow: FormEntry<WhatsAppFlow>;
+  flowScreen: StringEntry;
+  flowData: FormEntry<FlowData>;
 }
 
 interface UpdateKeys {
@@ -312,10 +273,9 @@ interface UpdateKeys {
   listItems?: WhatsAppListItem[];
   removeListItem?: WhatsAppListItem;
   quickReplies?: string[];
-  dynamicVariables?: DynamicVariablesListItem;
-  addNewDynamicVariable?: DynamicVariablesListItem;
-  selectedForm?: UnnnicSelectOption<any>;
-  firstScreen?: string;
+  whatsAppFlow?: WhatsAppFlow;
+  flowData?: FlowData;
+  flowScreen?: string;
 }
 
 export default class SendWhatsAppMsgForm extends React.Component<
@@ -325,7 +285,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
   constructor(props: ActionFormProps) {
     super(props);
 
-    this.state = stateToForm(this.props.nodeSettings);
+    this.state = nodeToState(this.props.nodeSettings, this.props.assetStore);
 
     const listItems = [...this.state.listItems.value];
     if (
@@ -334,9 +294,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
     ) {
       listItems.push(createEmptyListItem());
     }
-
-    const dynamicVariables = [...this.state.dynamicVariables.value];
-    dynamicVariables.push(createEmptyDynamicItem());
 
     const replies = [...this.state.quickReplies.value];
     if (!hasEmptyReply(replies) && replies.length < MAX_REPLIES_COUNT) {
@@ -347,9 +304,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
       ...this.state,
       listItems: {
         value: listItems,
-      },
-      dynamicVariables: {
-        value: dynamicVariables,
       },
       quickReplies: {
         value: replies,
@@ -437,8 +391,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
       );
     }
 
-    if (keys.hasOwnProperty('selectedForm')) {
-      updates.selectedForm = { value: keys.selectedForm };
+    if (keys.hasOwnProperty('whatsAppFlow')) {
+      updates.whatsappFlow = { value: keys.whatsAppFlow };
     }
 
     if (keys.hasOwnProperty('attachment')) {
@@ -480,10 +434,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
       );
     }
 
-    if (keys.hasOwnProperty('firstScreen')) {
-      updates.firstScreen = validate(
+    if (keys.hasOwnProperty('flowScreen')) {
+      updates.flowScreen = validate(
         i18n.t('forms.list_button_text', 'Action button text'),
-        keys.firstScreen,
+        keys.flowScreen,
         [],
       );
     }
@@ -529,17 +483,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
       ensureEmptyListItem = true;
     }
 
-    if (keys.hasOwnProperty('dynamicVariables')) {
-      const updatedVariables = this.state.dynamicVariables.value.map(item =>
-        item.name === keys.dynamicVariables.name
-          ? {
-              ...item,
-              value: keys.dynamicVariables.value,
-              disabled: keys.dynamicVariables.disabled,
-            }
-          : item,
-      );
-      updates.dynamicVariables = { value: updatedVariables };
+    if (keys.hasOwnProperty('flowData')) {
+      updates.flowData = { value: keys.flowData };
     }
 
     let ensureEmptyReply = false;
@@ -761,7 +706,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
       toUpdate.footer = '';
     } else if (
       interactionType.value === WhatsAppInteractionType.LIST ||
-      interactionType.value === WhatsAppInteractionType.CTA
+      interactionType.value === WhatsAppInteractionType.CTA ||
+      interactionType.value === WhatsAppInteractionType.FLOW
     ) {
       toUpdate.attachment = null;
       toUpdate.headerType = WHATSAPP_HEADER_TYPE_TEXT;
@@ -788,72 +734,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ removeListItem: item });
   }
 
-  public async handleDynamicVariableUpdate(
-    value: any,
-    name: string,
-  ): Promise<boolean> {
-    // Verifica se o valor é um objeto de evento e se é um arquivo
-    if (value && value.target && value.target.files && value.target.files[0]) {
-      const file = value.target.files[0];
-
-      if (file instanceof File) {
-        try {
-          const base64String = await this.convertFileToBase64(file);
-          // Adiciona uma verificação para evitar chamadas duplicadas
-          if (this.shouldUpdateDynamicVariable(name, base64String)) {
-            return this.handleUpdate({
-              dynamicVariables: { name, value: base64String, disabled: true },
-            });
-          }
-        } catch (error) {
-          console.error('Error converting file to Base64:', error);
-          return false;
-        }
-      } else {
-        console.warn('Expected a File object in the event');
-        return false;
-      }
-    } else if (typeof value === 'string') {
-      // Adiciona uma verificação para evitar chamadas duplicadas
-      if (this.shouldUpdateDynamicVariable(name, value)) {
-        return this.handleUpdate({
-          dynamicVariables: { name, value, disabled: false },
-        });
-      }
-    } else {
-      console.warn('Unsupported type for dynamic variable update');
-      return false;
-    }
-  }
-
-  // Função para verificar se a atualização é necessária
-  private shouldUpdateDynamicVariable(name: string, newValue: any): boolean {
-    const existingVariable = this.state.dynamicVariables.value.find(
-      item => item.name === name,
-    );
-    return !existingVariable || existingVariable.value !== newValue;
-  }
-
-  public handleDynamicVariableRemove(name: string) {
-    this.handleUpdate({
-      dynamicVariables: { name, value: '', disabled: false },
-    });
-  }
-
-  private convertFileToBase64(file: File): Promise<string> {
-    return new Promise<string>((resolve, reject) => {
-      const reader = new FileReader();
-
-      reader.onloadend = () => {
-        resolve(reader.result as string);
-      };
-
-      reader.onerror = error => {
-        reject(error);
-      };
-
-      reader.readAsDataURL(file);
-    });
+  public handleFlowDataUpdate(key: string, value: string): boolean {
+    const flowData = { ...this.state.flowData.value };
+    flowData[key] = value;
+    return this.handleUpdate({ flowData });
   }
 
   public handleButtonTextUpdate(buttonText: string): boolean {
@@ -863,21 +747,25 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ actionURL });
   }
 
-  public handleFirstScreenUpdate(firstScreen: string): boolean {
-    return this.handleUpdate({ firstScreen });
+  public handleFlowScreenUpdate(flowScreen: string): boolean {
+    return this.handleUpdate({ flowScreen });
   }
 
-  public handleFormUpdate(
-    event: UnnnicSelectOption<WhatsAppHeaderType>[],
-    submitting = false,
-  ) {
-    const selectedForm = event[0];
-
-    if (selectedForm.value === this.state.selectedForm.value.value) {
+  public handleWhatsAppFlowUpdate(event: any[]) {
+    const whatsAppFlow = event[0] as WhatsAppFlow;
+    if (whatsAppFlow === this.state.whatsappFlow.value) {
       return false;
     }
 
-    return this.handleUpdate({ selectedForm: selectedForm }, submitting);
+    const newData = whatsAppFlow.assets.variables.reduce(
+      (acc: FlowData, key: string) => {
+        acc[key] = '';
+        return acc;
+      },
+      {},
+    );
+
+    return this.handleUpdate({ whatsAppFlow, flowData: newData });
   }
 
   public handleSave(): void {
@@ -926,7 +814,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
   private renderHeaderSection(): JSX.Element {
     const attachment = this.state.attachment.value;
     const headerType = this.state.headerType.value;
-    const selectedForm = this.state.selectedForm.value;
     const interactionType =
       this.state.interactionType.value &&
       this.state.interactionType.value.value;
@@ -935,17 +822,18 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
     return renderIf(interactionType !== WhatsAppInteractionType.LOCATION)(
       <div className={styles.header}>
-        {interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS ? (
+        {interactionType === WhatsAppInteractionType.FLOW ? (
           <div className={styles.disclaimer}>
             <UnnnicIcon icon="alert-circle-1-1" scheme="weni-600" />
-            <span>
+            <span className={styles.disclaimer_text}>
               <Trans
                 i18nKey="forms.disclaimer.title"
                 values={{
                   highlight: i18n.t('forms.disclaimer.highlight'),
                 }}
               >
-                Now it is possible to <b>[[highlight]]</b> using WhatsApp Flows.
+                Now it is possible to &nbsp;<b>[[highlight]]</b>&nbsp; using
+                WhatsApp Flows.
               </Trans>
             </span>
             <a href="" className={styles.link}>
@@ -954,9 +842,11 @@ export default class SendWhatsAppMsgForm extends React.Component<
           </div>
         ) : null}
 
-        {interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS && (
+        {interactionType === WhatsAppInteractionType.FLOW && (
           <>
-            <span className={`u font secondary body-md color-neutral-cloudy`}>
+            <span
+              className={`u font secondary body-md color-neutral-cloudy mt-4`}
+            >
               {i18n.t('forms.select_form.title', 'Select a Form')}
               <UnnnicTooltip
                 text={i18n.t(
@@ -966,16 +856,30 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 side="top"
                 enabled={true}
               >
-                <UnnnicIcon icon="information-circle-4" size="sm" />
+                <UnnnicIcon icon="info" size="sm" filled={false} />
               </UnnnicTooltip>
             </span>
-            <UnnnicSelectSmart
-              v-model={[[selectedForm], this.handleFormUpdate]}
-              options={WHATSAPP_HEADER_TYPE_OPTIONS}
-              size="sm"
-              orderedByIndex={true}
+            <AssetSelector
+              name={i18n.t('forms.form', 'form')}
+              noOptionsMessage={i18n.t(
+                'forms.no_whatsapp_flow',
+                "You don't have any form",
+              )}
+              assets={this.props.assetStore.whatsapp_flows}
+              entry={this.state.whatsappFlow}
+              onChange={this.handleWhatsAppFlowUpdate}
+              nameKey="name"
+              valueKey="id"
+              style={TembaSelectStyle.small}
+              searchable
             />
-            <span className={`u font secondary body-md color-neutral-cloudy`}>
+            <span
+              className={
+                styles.flow_selector_sub +
+                ' ' +
+                `u font secondary body-md color-neutral-cloudy`
+              }
+            >
               {i18n.t(
                 'forms.select_form.warn',
                 `Don't have forms yet? Learn more `,
@@ -1107,7 +1011,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
         <div className={styles.buttons}>
           {(interactionType === WhatsAppInteractionType.LIST ||
-            interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS) && (
+            interactionType === WhatsAppInteractionType.FLOW) && (
             <div className={styles.action_button_text}>
               <span className={`u font secondary body-md color-neutral-cloudy`}>
                 {interactionType === WhatsAppInteractionType.LIST ? (
@@ -1126,7 +1030,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
                       side="top"
                       enabled={true}
                     >
-                      <UnnnicIcon icon="information-circle-4" size="sm" />
+                      <UnnnicIcon icon="info" size="sm" filled={false} />
                     </UnnnicTooltip>
                   </>
                 )}
@@ -1146,17 +1050,17 @@ export default class SendWhatsAppMsgForm extends React.Component<
             </div>
           )}
 
-          {interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS && (
+          {interactionType === WhatsAppInteractionType.FLOW && (
             <div className={styles.screen}>
               <TextInputElement
-                placeholder={i18n.t('forms.ex_menu', 'Ex: Menu')}
+                placeholder={i18n.t('forms.ex_register', 'Ex: REGISTER')}
                 name={i18n.t(
                   'forms.start_screen',
-                  'Start flows from the screen:',
+                  'Start Flow from the screen:',
                 )}
                 size={TextInputSizes.sm}
-                onChange={this.handleFirstScreenUpdate}
-                entry={this.state.firstScreen}
+                onChange={this.handleFlowScreenUpdate}
+                entry={this.state.flowScreen}
                 autocomplete={true}
                 showLabel={true}
                 maxLength={20}
@@ -1198,14 +1102,18 @@ export default class SendWhatsAppMsgForm extends React.Component<
             </div>
           </div>
         )}
-        {interactionType === WhatsAppInteractionType.WHATSAPP_FLOWS && (
+        {interactionType === WhatsAppInteractionType.FLOW && (
           <>
-            {JSON.stringify(this.state.dynamicVariables)}
-            <DynamicVariables
-              options={this.state.dynamicVariables}
-              onValueUpdated={this.handleDynamicVariableUpdate}
-              onRemoveAttachment={this.handleDynamicVariableRemove}
-            />
+            {JSON.stringify(this.state.flowData)}
+            {renderIf(
+              this.state.whatsappFlow.value &&
+                this.state.whatsappFlow.value.assets.variables.length > 0,
+            )(
+              <WhatsAppFlowData
+                data={this.state.flowData}
+                onValueUpdated={this.handleFlowDataUpdate}
+              />,
+            )}
           </>
         )}
       </div>

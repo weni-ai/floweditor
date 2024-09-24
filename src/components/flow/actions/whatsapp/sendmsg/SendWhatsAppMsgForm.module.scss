@@ -69,6 +69,15 @@
     align-items: center;
     gap: $unnnic-spacing-xs;
     padding: $unnnic-spacing-xs;
+
+    .disclaimer_text {
+      white-space: pre;
+      width: unset;
+    }
+  }
+  .flow_selector_sub {
+    white-space: pre;
+    width: unset;
   }
 
   .inputs {

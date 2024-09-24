@@ -11,7 +11,7 @@ import {
   ProductViewSettings,
 } from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 import {
-  DynamicVariablesListItem,
+  FlowData,
   WhatsAppHeaderType,
   WhatsAppInteractionType,
   WhatsAppListItem,
@@ -68,6 +68,7 @@ export interface Endpoints {
   completion: string;
   knowledgeBases: string;
   whatsapp_products: string;
+  whatsapp_flows: string;
   brain: string;
 }
 
@@ -404,9 +405,9 @@ export interface SendWhatsAppMsg extends Action {
   action_url: string;
   list_items: WhatsAppListItem[];
   quick_replies: string[];
-  dynamic_variables: DynamicVariablesListItem[];
-  first_screen: string;
-  selected_form: string;
+  flow_id: string;
+  flow_data: FlowData;
+  flow_screen: string;
 }
 
 export interface SendWhatsAppProduct extends Action {
