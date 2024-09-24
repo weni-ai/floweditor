@@ -153,7 +153,7 @@ export const stateToAction = (
     quick_replies: replies,
     uuid: getActionUUID(settings, Types.send_whatsapp_msg),
     flow_data: state.flowData.value,
-    flow_id: state.whatsappFlow.value.id,
+    flow_id: state.whatsappFlow.value ? state.whatsappFlow.value.id : null,
     flow_screen: state.flowScreen.value,
   };
 

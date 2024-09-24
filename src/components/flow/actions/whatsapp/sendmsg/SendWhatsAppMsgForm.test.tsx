@@ -9,9 +9,11 @@ import * as utils from 'utils';
 import SendWhatsAppMsgForm, {
   WHATSAPP_HEADER_TYPE_MEDIA,
   WHATSAPP_HEADER_TYPE_TEXT,
+  WHATSAPP_INTERACTION_TYPE_CTA,
   WHATSAPP_INTERACTION_TYPE_LIST,
   WHATSAPP_INTERACTION_TYPE_LOCATION,
   WHATSAPP_INTERACTION_TYPE_REPLIES,
+  WHATSAPP_INTERACTION_TYPE_WHATSAPP_FLOWS,
   WHATSAPP_MESSAGE_TYPE_INTERACTIVE,
   WHATSAPP_MESSAGE_TYPE_SIMPLE,
 } from './SendWhatsAppMsgForm';
@@ -435,6 +437,54 @@ describe(SendWhatsAppMsgForm.name, () => {
         WHATSAPP_INTERACTION_TYPE_LOCATION,
       ]);
 
+      expect(instance.state).toMatchSnapshot();
+      instance.handleSave();
+      expect(props.updateAction).toHaveBeenCalled();
+      expect(props.updateAction).toMatchSnapshot();
+    });
+
+    it('should save changes with cta button and action url when interaction type is CTA', () => {
+      const {
+        instance,
+        props,
+      }: {
+        instance: SendWhatsAppMsgForm;
+        props: ActionFormProps | Partial<ActionFormProps>;
+      } = setup(true);
+      instance.handleMessageUpdate('new msg', null);
+      instance.handleInteractionTypeUpdate([WHATSAPP_INTERACTION_TYPE_CTA]);
+      instance.handleButtonTextUpdate('new button text');
+      instance.handleActionURLUpdate('https://weni.ai');
+      expect(instance.state).toMatchSnapshot();
+      instance.handleSave();
+      expect(props.updateAction).toHaveBeenCalled();
+      expect(props.updateAction).toMatchSnapshot();
+    });
+
+    it('should save changes with whatsapp flow configured', () => {
+      const {
+        instance,
+        props,
+      }: {
+        instance: SendWhatsAppMsgForm;
+        props: ActionFormProps | Partial<ActionFormProps>;
+      } = setup(true);
+      instance.handleMessageUpdate('new msg', null);
+      instance.handleInteractionTypeUpdate([
+        WHATSAPP_INTERACTION_TYPE_WHATSAPP_FLOWS,
+      ]);
+      instance.handleWhatsAppFlowUpdate([
+        {
+          id: '123',
+          name: 'wpp flow',
+          assets: {
+            screens: ['first screen', 'second screen'],
+            variables: ['foo'],
+          },
+        },
+      ]);
+      instance.handleFlowScreenUpdate('first screen');
+      instance.handleFlowDataUpdate('foo', 'bar');
       expect(instance.state).toMatchSnapshot();
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
