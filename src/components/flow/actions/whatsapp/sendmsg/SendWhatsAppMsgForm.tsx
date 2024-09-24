@@ -1104,7 +1104,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
         )}
         {interactionType === WhatsAppInteractionType.FLOW && (
           <>
-            {JSON.stringify(this.state.flowData)}
             {renderIf(
               this.state.whatsappFlow.value &&
                 this.state.whatsappFlow.value.assets.variables.length > 0,
