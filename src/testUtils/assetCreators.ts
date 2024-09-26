@@ -441,10 +441,12 @@ export const createCallBrainAction = ({
     name: 'Dóris',
     occupation: 'Marketing Specialist',
   },
+  entry = 'brain entry',
 } = {}): CallBrain => ({
   type: Types.call_brain,
   uuid,
   brainInfo,
+  entry,
 });
 
 export const createWebhookNode = (
@@ -843,6 +845,7 @@ export const createSwitchRouter = ({
   operand = '@input',
   wait = null,
   default_category_uuid = null,
+  result_name = null,
 }: {
   cases: Case[];
   categories: Category[];
@@ -850,8 +853,9 @@ export const createSwitchRouter = ({
   wait?: Wait;
   // tslint:disable-next-line:variable-name
   default_category_uuid?: string;
+  result_name?: string;
 }) => ({
-  ...createRouter(),
+  ...createRouter(result_name),
   cases,
   categories,
   operand,
@@ -1068,6 +1072,47 @@ export const createGroupsRouterNode = (
     ui: {
       type: Types.split_by_groups,
       position: { left: 0, top: 0 },
+    },
+  });
+};
+
+export const createContactFieldRouterNode = (
+  fields: string[] = ['name', 'age'],
+  uuid: string = utils.createUUID(),
+): RenderNode => {
+  const { categories, exits } = createCategories(fields);
+
+  return createRenderNode({
+    actions: [],
+    exits,
+    uuid,
+    router: createSwitchRouter({
+      categories,
+      cases: [
+        createCase({
+          uuid: utils.createUUID(),
+          type: Operators.has_any_word,
+          category_uuid: categories[0].uuid,
+        }),
+        createCase({
+          uuid: utils.createUUID(),
+          type: Operators.has_any_word,
+          category_uuid: categories[1].uuid,
+        }),
+      ],
+      operand: '@contact',
+      default_category_uuid: categories[categories.length - 1].uuid,
+    }),
+    ui: {
+      type: Types.split_by_contact_field,
+      position: { left: 0, top: 0 },
+      config: {
+        operand: {
+          id: 'name',
+          name: 'Name',
+          type: AssetType.ContactProperty,
+        },
+      },
     },
   });
 };
