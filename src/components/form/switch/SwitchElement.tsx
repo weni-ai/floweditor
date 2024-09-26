@@ -54,7 +54,7 @@ export default class SwitchElement extends React.Component<
     });
   }
 
-  /* istanbul ignore next */
+  /* istanbul ignore next -- @preserve */
   public validate(): boolean {
     return true;
   }

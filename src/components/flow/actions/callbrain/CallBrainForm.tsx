@@ -123,7 +123,7 @@ export class BrainForm extends React.Component<
   }
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = ({ flowContext: { brainInfo } }: AppState) => {
   return {
     brainInfo,

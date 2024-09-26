@@ -333,7 +333,7 @@ export const getCollisions = (
 
 export const collides = (a: FlowPosition, b: FlowPosition) => {
   // don't bother with collision if we don't have full dimensions
-  /* istanbul ignore next */
+  /* istanbul ignore next -- @preserve */
   if (!a.bottom || !b.bottom) {
     return false;
   }
