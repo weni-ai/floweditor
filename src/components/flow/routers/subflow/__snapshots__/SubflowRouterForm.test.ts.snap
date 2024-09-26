@@ -1,6 +1,142 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SubflowRouterForm > render > should render 1`] = `ShallowWrapper {}`;
+exports[`SubflowRouterForm > render > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  className="_dialog_40da5e"
+  headerClass="enter_flow"
+  tabs={[]}
+  title="Enter another flow"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "aliases": [
+          "split_by_subflow",
+        ],
+        "component": [Function],
+        "description": "Enter another flow",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+        ],
+        "name": "Enter another flow",
+        "type": "enter_flow",
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "flow": {
+                  "name": "Colors",
+                  "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                },
+                "type": "enter_flow",
+                "uuid": "d4a3a01c-1dee-4324-b107-4ac7a21d836f",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+              {
+                "destination_uuid": null,
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "C",
+                  ],
+                  "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "type": "has_run_status",
+                  "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+                },
+                {
+                  "arguments": [
+                    "E",
+                  ],
+                  "category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                  "type": "has_run_status",
+                  "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  "name": "Complete",
+                  "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                },
+                {
+                  "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "name": "Expired",
+                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                },
+              ],
+              "default_category_uuid": null,
+              "operand": "@child",
+              "type": "switch",
+              "wait": null,
+            },
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "split_by_subflow",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <AssetSelector
+    assets={
+      {
+        "items": {},
+        "type": "flow",
+      }
+    }
+    entry={
+      {
+        "value": {
+          "name": "Colors",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+      }
+    }
+    name="Flow to start"
+    onChange={[Function]}
+    placeholder="Select the flow to start"
+    searchable={true}
+    shouldExclude={[Function]}
+    showLabel={true}
+  />
+</Dialog>
+`;
 
 exports[`SubflowRouterForm > updates > converts from other node types 1`] = `
 [MockFunction spy] {

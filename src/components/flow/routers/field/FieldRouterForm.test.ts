@@ -7,6 +7,7 @@ import { composeComponentTestUtils, mock } from 'testUtils';
 import { createMatchRouter, getRouterFormProps } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import { getSmartOrSwitchRouter } from '../helpers';
+import { shallowToJson } from 'enzyme-to-json';
 
 import FieldRouterForm from './FieldRouterForm';
 
@@ -34,7 +35,7 @@ const { setup } = composeComponentTestUtils<RouterFormProps>(
 describe(FieldRouterForm.name, () => {
   it('should render', () => {
     const { wrapper } = setup(true);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it('initializes', () => {
@@ -46,7 +47,7 @@ describe(FieldRouterForm.name, () => {
       },
     });
 
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   describe('updates', () => {

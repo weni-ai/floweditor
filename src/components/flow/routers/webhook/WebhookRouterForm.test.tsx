@@ -18,6 +18,7 @@ import {
   fireUnnnicTextAreaChangeText,
 } from 'test/utils';
 import userEvent from '@testing-library/user-event';
+import { shallowToJson } from 'enzyme-to-json';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -34,7 +35,7 @@ const { setup } = composeComponentTestUtils<RouterFormProps>(
 describe(WebhookRouterForm.name, () => {
   it('should render', () => {
     const { wrapper } = setup(true);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   describe('updates', () => {

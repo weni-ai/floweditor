@@ -1,6 +1,7 @@
 import { CallWeniGPT } from 'flowTypes';
 import { composeComponentTestUtils } from 'testUtils';
 import { createCallWeniGPTAction } from 'testUtils/assetCreators';
+import { shallowToJson } from 'enzyme-to-json';
 
 import CallWeniGPTComp, {
   getSavePlaceholder,
@@ -20,6 +21,6 @@ describe(CallWeniGPTComp.name, () => {
     expect(
       wrapper.containsMatchingElement(getSavePlaceholder(props.result_name)),
     ).toBeTruthy();
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

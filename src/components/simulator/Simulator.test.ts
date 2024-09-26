@@ -1,6 +1,7 @@
 import { Simulator, SimulatorProps } from 'components/simulator/Simulator';
 import { composeComponentTestUtils } from 'testUtils';
 import { PopTabType } from '../../config/interfaces';
+import { shallowToJson } from 'enzyme-to-json';
 
 const { setup } = composeComponentTestUtils<SimulatorProps>(Simulator, {
   nodes: {},
@@ -25,6 +26,6 @@ const { setup } = composeComponentTestUtils<SimulatorProps>(Simulator, {
 describe(Simulator.name, () => {
   it('renders', () => {
     const { wrapper } = setup();
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

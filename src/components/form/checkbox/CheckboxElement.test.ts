@@ -1,4 +1,5 @@
 import { composeComponentTestUtils, getSpecWrapper } from 'testUtils';
+import { shallowToJson } from 'enzyme-to-json';
 
 import CheckboxElement, {
   CheckboxElementProps,
@@ -35,7 +36,7 @@ describe(CheckboxElement.name, () => {
     expect(setStateSpy).toHaveBeenCalledTimes(1);
     expect(setStateSpy).toMatchSnapshot();
     expect(props.onChange).toHaveBeenCalledTimes(1);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
 
     // Remove title
     wrapper.setProps({
@@ -43,7 +44,7 @@ describe(CheckboxElement.name, () => {
       description: 'Continue when there is no response',
     });
 
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
 
     setStateSpy.mockRestore();
   });

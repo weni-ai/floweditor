@@ -16,6 +16,7 @@ import {
   getActionFormProps,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -35,7 +36,7 @@ describe(UpdateContactForm.name, () => {
           },
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('should render an empty form with no action', () => {
@@ -44,7 +45,7 @@ describe(UpdateContactForm.name, () => {
           nodeSettings: { originalNode: null, originalAction: null },
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 

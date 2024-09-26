@@ -17,6 +17,8 @@ import {
   act,
 } from 'test/utils';
 import userEvent from '@testing-library/user-event';
+import { shallowToJson } from 'enzyme-to-json';
+
 const mockedKnowledgeBases = require('test/assets/knowledge_bases.json');
 mockedKnowledgeBases.forEach((kb: any) => {
   kb.content = kb;
@@ -42,7 +44,7 @@ const { setup } = composeComponentTestUtils<RouterFormProps>(
 describe(WeniGPTRouterForm.name, () => {
   it('should render', () => {
     const { wrapper } = setup(true);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   describe('updates', () => {
