@@ -8,10 +8,13 @@ import TextInputElement from 'components/form/textinput/TextInputElement';
 import { FlowData } from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 import { FormEntry, ValidationFailure } from 'store/nodeEditor';
 import Button, { ButtonTypes } from 'components/button/Button';
+import ContentCollapse from 'components/contentcollapse/ContentCollapse';
 
 export interface WhatsAppFlowDataProps {
   data: FormEntry<FlowData>;
+  attachmentNameMap: Record<string, string>;
   onValueUpdated(key: string, value: string): boolean;
+  onAttachmentNameUpdated(key: string, value: string): boolean;
 }
 
 const BASE_64_REGEX = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
@@ -33,6 +36,7 @@ export default class WhatsAppFlowData extends React.Component<
     }
 
     const file = files[0];
+    this.props.onAttachmentNameUpdated(key, file.name);
     const base64 = await this.convertFileToBase64(file);
     this.props.onValueUpdated(key, base64);
   }
@@ -84,41 +88,53 @@ export default class WhatsAppFlowData extends React.Component<
     const data = this.props.data.value;
 
     return (
-      <div className={styles.list_wrapper}>
-        <div>
-          <div className={styles.title}>
-            <header className={styles.options_label}>
-              <b>
-                {i18n.t(
-                  'forms.dynamic_variables.config.highlight',
-                  'Configure imported dynamic variables',
-                )}
-              </b>
-              {i18n.t('forms.dynamic_variables.config.base', '(Optional)')}
-            </header>
+      <ContentCollapse
+        title={i18n.t(
+          'forms.dynamic_variables.config.highlight',
+          'Configure imported dynamic variables',
+        )}
+        description={i18n.t(
+          'forms.dynamic_variables.config.description',
+          'Fill in the fields below with code expression like "@contact.name" or attach iIage files (jpg, png), Video (mp4), or Documents (pdf, docx).',
+        )}
+        open={false}
+        whiteBackground
+        optional
+      >
+        <div className={styles.list_items}>
+          <div className={styles.item}>
+            <span className={styles.options_name}>
+              {i18n.t('forms.dynamic_variables.label', 'Imported field')}
+            </span>
+            <span className={styles.options_value}>
+              {i18n.t(
+                'forms.dynamic_variables.value',
+                'Add a field value or send an attachment',
+              )}
+            </span>
           </div>
-          <div className={styles.list_items}>
-            <div className={styles.item}>
-              <span className={styles.options_name}>
-                {i18n.t('forms.dynamic_variables.label', 'Imported field')}
-              </span>
-              <span className={styles.options_value}>
-                {i18n.t('forms.dynamic_variables.value', 'Field value')}
-              </span>
-            </div>
-            {Object.entries(data).map(([key, value]) => {
-              const isBase64 = this.checkBase64(value);
+          {Object.entries(data).map(([key, value]) => {
+            const isBase64 = this.checkBase64(value);
 
-              return (
-                <div key={key} className={styles.item}>
-                  <div className={styles.name}>
-                    <TextInputElement
-                      name={key}
-                      entry={{ value: key }}
-                      disabled={true}
-                    />
-                  </div>
-                  <div className={styles.value}>
+            return (
+              <div key={key} className={styles.item}>
+                <div className={styles.name}>
+                  <TextInputElement
+                    name={key}
+                    entry={{ value: key }}
+                    disabled={true}
+                  />
+                </div>
+                <div className={styles.value}>
+                  {isBase64 ? (
+                    <span className={styles.attachment_title}>
+                      {this.props.attachmentNameMap[key] ||
+                        i18n.t(
+                          'forms.dynamic_variables.attached_file',
+                          'Attached file',
+                        )}
+                    </span>
+                  ) : (
                     <TextInputElement
                       __className={styles.variable}
                       name={`${key}-value`}
@@ -127,51 +143,51 @@ export default class WhatsAppFlowData extends React.Component<
                       focus={true}
                       disabled={!!isBase64}
                     />
-                  </div>
-                  {isBase64 ? (
-                    <Button
-                      type={ButtonTypes.secondary}
-                      name={''}
-                      onClick={() => this.props.onValueUpdated(key, '')}
-                      iconName={'close'}
-                      size={'small'}
-                    />
-                  ) : (
-                    <Button
-                      type={ButtonTypes.secondary}
-                      name={''}
-                      onClick={() => triggerAttachmentUpload(key)}
-                      iconName={'upload-bottom-1'}
-                      size={'small'}
-                    />
                   )}
-
-                  <input
-                    data-testid="upload-input"
-                    style={{
-                      display: 'none',
-                    }}
-                    ref={(ele: any) => {
-                      filePickers[key] = ele;
-                    }}
-                    accept="image/png, image/jpeg, image/jpg, video/mp4 ,application/pdf, application/msword"
-                    type="file"
-                    onChange={e => this.handleFileUpload(key, e.target.files)}
-                  />
                 </div>
-              );
-            })}
-          </div>
+                {isBase64 ? (
+                  <Button
+                    type={ButtonTypes.secondary}
+                    name={''}
+                    onClick={() => this.props.onValueUpdated(key, '')}
+                    iconName={'close'}
+                    size={'small'}
+                  />
+                ) : (
+                  <Button
+                    type={ButtonTypes.secondary}
+                    name={''}
+                    onClick={() => triggerAttachmentUpload(key)}
+                    iconName={'upload-bottom-1'}
+                    size={'small'}
+                  />
+                )}
 
-          {hasError ? (
-            <div data-testid="Error message" className={styles.error_message}>
-              {this.props.data.validationFailures.map(
-                (error: ValidationFailure) => error.message,
-              )}
-            </div>
-          ) : null}
+                <input
+                  data-testid="upload-input"
+                  style={{
+                    display: 'none',
+                  }}
+                  ref={(ele: any) => {
+                    filePickers[key] = ele;
+                  }}
+                  accept="image/png, image/jpeg, image/jpg, video/mp4 ,application/pdf, application/msword"
+                  type="file"
+                  onChange={e => this.handleFileUpload(key, e.target.files)}
+                />
+              </div>
+            );
+          })}
         </div>
-      </div>
+
+        {hasError ? (
+          <div data-testid="Error message" className={styles.error_message}>
+            {this.props.data.validationFailures.map(
+              (error: ValidationFailure) => error.message,
+            )}
+          </div>
+        ) : null}
+      </ContentCollapse>
     );
   }
 }

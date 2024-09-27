@@ -1,63 +1,45 @@
 @import 'src/variables.module.scss';
 
-.list_wrapper {
+.list_items{
   display: flex;
   flex-direction: column;
-  gap: $unnnic-spacing-sm;
-  margin-bottom: $unnnic-spacing-sm;
 
-  .title{
+  .item{
     display: flex;
-    margin-bottom: $unnnic-spacing-sm;
-  }
+    flex-direction: row;
+    gap: $unnnic-spacing-sm;
+    margin-bottom: $unnnic-spacing-xs;
 
-  .list_items{
-    display: flex;
-    flex-direction: column;
-    border: .5px solid $unnnic-color-neutral-cleanest;
-    border-radius: 1px;
-    padding: 16px;
-    gap: 7px;
-    background-color: $unnnic-color-neutral-white ;
+    .options_name{
+      flex: 2
+    }
 
-    .item{
+    .options_value{
+      flex: 5;
+      margin-left: $unnnic-spacing-sm;
+    }
+
+    .name {
+      flex: 2;
+      max-width: 196px;
+    }
+
+    .value {
+      flex: 4;
+      flex-direction: column;
       display: flex;
-      flex-direction: row;
-      gap: $unnnic-spacing-sm;
-      margin-bottom: $unnnic-spacing-xs;
+      max-width: 392px;
+    }
 
-      .options_name{
-        width: 200px;
-      }
+    .attachment_title {
+      color: $unnnic-color-neutral-cloudy;
+      text-decoration: underline;
+      font-weight: $unnnic-font-weight-bold;
+      margin: auto 0;
 
-      .options_value{
-        width: 386px;
-      }
-
-      .variable{
-        display: flex;
-        width: 100% ;
-      }
-
-
-      .name{
-        :global{
-          .input{
-            display: flex;
-              width: 200px !important;
-          }
-        }
-      }
-
-      .value{
-        :global{
-          .input{
-            display: flex;
-              width: 386px !important;
-          }
-        }
-      }
-
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }

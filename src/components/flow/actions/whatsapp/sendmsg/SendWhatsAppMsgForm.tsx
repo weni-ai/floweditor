@@ -150,6 +150,7 @@ export interface SendWhatsAppMsgFormState extends FormState {
   whatsappFlow: FormEntry<WhatsAppFlow>;
   flowScreen: StringEntry;
   flowData: FormEntry<FlowData>;
+  flowDataAttachmentNameMap: Record<string, string>;
 }
 
 interface UpdateKeys {
@@ -168,6 +169,7 @@ interface UpdateKeys {
   whatsAppFlow?: WhatsAppFlow;
   flowData?: FlowData;
   flowScreen?: string;
+  flowDataAttachmentNameMap?: Record<string, string>;
 }
 
 export default class SendWhatsAppMsgForm extends React.Component<
@@ -646,6 +648,17 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ flowData });
   }
 
+  public handleFlowDataAttachmentNameUpdate(
+    key: string,
+    attachmentName: string,
+  ): boolean {
+    const flowDataAttachmentNameMap = {
+      ...this.state.flowDataAttachmentNameMap,
+    };
+    flowDataAttachmentNameMap[key] = attachmentName;
+    return this.handleUpdate({ flowDataAttachmentNameMap });
+  }
+
   public handleButtonTextUpdate(buttonText: string): boolean {
     return this.handleUpdate({ buttonText });
   }
@@ -769,7 +782,12 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 WhatsApp Flows.
               </Trans>
             </span>
-            <a href="" className={styles.link}>
+            <a
+              className={styles.link}
+              href="https://developers.facebook.com/docs/whatsapp/flows"
+              target="_blank"
+              rel="noreferrer"
+            >
               {i18n.t('forms.disclaimer.link', 'Learn more.')}
             </a>
           </div>
@@ -777,50 +795,37 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
         {interactionType === WhatsAppInteractionType.FLOW && (
           <>
-            <span
-              className={`u font secondary body-md color-neutral-cloudy mt-4`}
-            >
-              {i18n.t('forms.select_form.title', 'Select a Form')}
-              <UnnnicTooltip
-                text={i18n.t(
-                  'forms.select_info',
-                  `To edit existing forms, use Meta's native tool.`,
-                )}
-                side="top"
-                enabled={true}
+            <div>
+              <span
+                className={`u font secondary body-md color-neutral-cloudy mt-4`}
               >
-                <UnnnicIcon icon="info" size="sm" filled={false} />
-              </UnnnicTooltip>
-            </span>
-            <AssetSelector
-              name={i18n.t('forms.form', 'form')}
-              noOptionsMessage={i18n.t(
-                'forms.no_whatsapp_flow',
-                "You don't have any form",
-              )}
-              assets={this.props.assetStore.whatsapp_flows}
-              entry={this.state.whatsappFlow}
-              onChange={this.handleWhatsAppFlowUpdate}
-              nameKey="name"
-              valueKey="id"
-              style={TembaSelectStyle.small}
-              searchable
-            />
-            <span
-              className={
-                styles.flow_selector_sub +
-                ' ' +
-                `u font secondary body-md color-neutral-cloudy`
-              }
-            >
-              {i18n.t(
-                'forms.select_form.warn',
-                `Don't have forms yet? Learn more `,
-              )}
-              <a href="" className={styles.link}>
-                {i18n.t('forms.select_form.here', 'here.')}
-              </a>
-            </span>
+                {i18n.t('forms.select_form.title', 'Select a Form')}
+                <UnnnicTooltip
+                  text={i18n.t(
+                    'forms.flow_select_info',
+                    `To edit and create existing forms, use Meta's native tool.`,
+                  )}
+                  side="top"
+                  enabled={true}
+                >
+                  <UnnnicIcon icon="info" size="sm" filled={false} />
+                </UnnnicTooltip>
+              </span>
+              <AssetSelector
+                name={i18n.t('forms.form', 'form')}
+                noOptionsMessage={i18n.t(
+                  'forms.no_whatsapp_flow',
+                  "You don't have any form",
+                )}
+                assets={this.props.assetStore.whatsapp_flows}
+                entry={this.state.whatsappFlow}
+                onChange={this.handleWhatsAppFlowUpdate}
+                nameKey="name"
+                valueKey="id"
+                style={TembaSelectStyle.small}
+                searchable
+              />
+            </div>
           </>
         )}
 
@@ -1043,7 +1048,11 @@ export default class SendWhatsAppMsgForm extends React.Component<
             )(
               <WhatsAppFlowData
                 data={this.state.flowData}
+                attachmentNameMap={this.state.flowDataAttachmentNameMap}
                 onValueUpdated={this.handleFlowDataUpdate}
+                onAttachmentNameUpdated={
+                  this.handleFlowDataAttachmentNameUpdate
+                }
               />,
             )}
           </>

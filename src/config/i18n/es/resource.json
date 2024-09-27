@@ -531,10 +531,11 @@
     "dynamic_variables": {
       "config": {
         "base": " (Opcional)",
-        "highlight": "Configurar variables dinámicas"
+        "highlight": "Configurar variables dinámicas",
+        "description": "Complete los campos a continuación con una expresión de código como '\"@contacto.nombre\" o adjunte archivos de Imagen (jpg, png), Video (mp4) o Documentos (pdf, docx)."
       },
       "label": "Campo importado",
-      "value": "Valor del campo"
+      "value": "Agregar valor de campo o enviar un archivo adjunto"
     },
     "replies_label": "Añade hasta 3 respuestas rápidas",
     "reply": "Respuesta",
@@ -552,7 +553,6 @@
     "options_label": "Añade hasta 10 opciones",
     "list_button_text_placeholder": "Texto del botón de acción",
     "list_button_text_optional": "Texto del botón de acción (opcional)",
-    "list_button_text": "Texto del botón de acción",
     "list_button_text_tooltip": "El flujo comenzará a partir de la interacción con este botón.",
     "ex_citrus_and_sweet": "Ej: Cítricos y dulces",
     "ex_orange": "Ej: Naranja",
@@ -560,7 +560,7 @@
     "action_button_text": "Texto del botón de acción",
     "action_button_url": "URL del botón de acción",
     "action_button_url_placeholder": "Ej: https://www.menu-del-restaurante.com",
-    "select_info": "Para editar formularios existentes, utiliza la herramienta nativa de Meta.",
+    "flow_select_info": "Para editar y crear formularios existentes, utiliza la herramienta nativa de Meta.",
     "start_screen": "Iniciar flujos desde la pantalla:",
     "param": "Parámetro",
     "parameter": "Parámetro",
@@ -574,7 +574,8 @@
     "service_call_param": "Parámetro de la Llamada de Servicio",
     "service_call_param_data": "Datos del Parámetro de la Llamada de Servicio",
     "service_call_param_filter": "Filtro del Parámetro de la Llamada de Servicio",
-    "vtex_search": "Búsqueda VTEX"
+    "vtex_search": "Búsqueda VTEX",
+    "optional": "(Opcional)"
   },
   "issues": {
     "header": "Problemas de Flujo",

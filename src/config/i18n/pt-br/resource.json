@@ -528,13 +528,15 @@
       "warn": "Ainda não possui formulários?",
       "here": "aqui."
     },
+    "optional": " (Opcional)",
     "dynamic_variables": {
       "config": {
         "base": " (Opcional)",
-        "highlight": "Configurar variáveis dinâmicas"
+        "highlight": "Configurar variáveis dinâmicas",
+        "description": "Preencha os campos abaixo com expressão de código como \"@contact.name\" ou anexe arquivos de Imagem (jpg, png), Vídeo (mp4), ou Documentos (pdf, docx)."
       },
       "label": "Campo importado",
-      "value": "Valor do campo"
+      "value": "Adicione o valor do campo ou envie um anexo"
     },
     "replies_label": "Adicione até 3 respostas rápidas",
     "reply": "Resposta",
@@ -561,7 +563,7 @@
     "action_button_text": "Texto de botão de ação",
     "action_button_url": "URL do botão de ação",
     "action_button_url_placeholder": "Ex: https://www.menudorestaurante.com.br",
-    "select_info": "Para editar formulários existentes, utilize a ferramenta nativa da Meta.",
+    "flow_select_info": "Para editar e criar formulários existentes, utilize a ferramenta nativa da Meta.",
     "start_screen": " Iniciar flows a partir da tela:",
     "param": "Parâmetro",
     "parameter": "Parâmetro",

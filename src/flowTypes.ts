@@ -411,6 +411,7 @@ export interface SendWhatsAppMsg extends Action {
   flow_id: string;
   flow_data: FlowData;
   flow_screen: string;
+  flow_data_attachment_name_map: Record<string, string>;
 }
 
 export interface SendWhatsAppProduct extends Action {

@@ -297,14 +297,6 @@
       "highlight": "create richer interactions",
       "link": "Learn more."
     },
-    "dynamic_variables": {
-  "config": {
-    "base": " (Optional)",
-    "highlight": "Configure dynamic variables"
-  },
-  "label": "Imported field",
-  "value": "Field value"
-},
     "email_recipient_name": "Recipient",
     "email_recipient_placeholder": "Email",
     "email_recipient_prompt": "Enter email address",
