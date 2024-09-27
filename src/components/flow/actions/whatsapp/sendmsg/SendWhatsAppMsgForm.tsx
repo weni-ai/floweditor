@@ -283,10 +283,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
       );
     }
 
-    if (keys.hasOwnProperty('whatsAppFlow')) {
-      updates.whatsappFlow = { value: keys.whatsAppFlow };
-    }
-
     if (keys.hasOwnProperty('attachment')) {
       updates.attachment = { value: keys.attachment, validationFailures: [] };
       if (
@@ -322,15 +318,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
       updates.buttonText = validate(
         i18n.t('forms.list_button_text', 'Action button text'),
         keys.buttonText,
-        [],
-      );
-    }
-
-    if (keys.hasOwnProperty('flowScreen')) {
-      updates.flowScreen = validate(
-        i18n.t('forms.list_button_text', 'Action button text'),
-        keys.flowScreen,
-        [],
+        [shouldRequireIf(submitting && !!this.state.whatsappFlow.value)],
       );
     }
 
@@ -375,10 +363,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
       ensureEmptyListItem = true;
     }
 
-    if (keys.hasOwnProperty('flowData')) {
-      updates.flowData = { value: keys.flowData };
-    }
-
     let ensureEmptyReply = false;
     if (keys.hasOwnProperty('quickReplies')) {
       updates.quickReplies = { value: keys.quickReplies };
@@ -411,6 +395,36 @@ export default class SendWhatsAppMsgForm extends React.Component<
       }
 
       ensureEmptyReply = true;
+    }
+
+    if (keys.hasOwnProperty('whatsAppFlow')) {
+      updates.whatsappFlow = validate(
+        i18n.t('forms.whatsapp_flow', 'WhatsApp Flow'),
+        keys.whatsAppFlow,
+        [
+          shouldRequireIf(
+            submitting &&
+              this.state.interactionType.value.value ===
+                WhatsAppInteractionType.FLOW,
+          ),
+        ],
+      );
+    }
+
+    if (keys.hasOwnProperty('flowScreen')) {
+      updates.flowScreen = validate(
+        i18n.t('forms.flow_screen', 'Flow Screen'),
+        keys.flowScreen,
+        [shouldRequireIf(submitting && !!this.state.whatsappFlow.value)],
+      );
+    }
+
+    if (keys.hasOwnProperty('flowData')) {
+      updates.flowData = { value: keys.flowData };
+    }
+
+    if (keys.hasOwnProperty('flowDataAttachmentNameMap')) {
+      updates.flowDataAttachmentNameMap = keys.flowDataAttachmentNameMap;
     }
 
     const updated = mergeForm(this.state, updates) as SendWhatsAppMsgFormState;
@@ -684,6 +698,33 @@ export default class SendWhatsAppMsgForm extends React.Component<
       true,
     );
     valid = valid && currentCheck;
+
+    if (
+      this.state.interactionType.value.value === WhatsAppInteractionType.FLOW
+    ) {
+      currentCheck = this.handleUpdate(
+        { whatsAppFlow: this.state.whatsappFlow.value },
+        true,
+      );
+      valid = valid && currentCheck;
+
+      currentCheck = this.handleUpdate(
+        { flowScreen: this.state.flowScreen.value },
+        true,
+      );
+
+      currentCheck = this.handleUpdate(
+        { flowData: this.state.flowData.value },
+        true,
+      );
+      valid = valid && currentCheck;
+
+      currentCheck = this.handleUpdate(
+        { buttonText: this.state.buttonText.value },
+        true,
+      );
+      valid = valid && currentCheck;
+    }
 
     if (valid) {
       this.props.updateAction(
