@@ -283,6 +283,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -367,6 +368,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -450,6 +452,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -534,6 +537,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -618,6 +622,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -701,6 +706,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -785,6 +791,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -869,6 +876,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -951,6 +959,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save if message is empty and
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -1035,6 +1044,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -1111,6 +1121,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -1178,6 +1189,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
     [
       {
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "text": "new msg",
@@ -1214,6 +1226,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -1282,6 +1295,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
       {
         "attachment": "image:http://weni.ai/image.png",
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "text": "new msg",
@@ -1318,6 +1332,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -1385,6 +1400,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
       {
         "attachment": "image:http://weni.ai/image.png",
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "type": "send_whatsapp_msg",
@@ -1417,6 +1433,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -1487,6 +1504,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
     [
       {
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "interaction_type": "location",
         "messageType": "interactive",
@@ -1522,6 +1540,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with cta button and
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -1592,6 +1611,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with cta button and
         "action_url": "https://weni.ai",
         "button_text": "new button text",
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "text",
         "interaction_type": "cta_url",
         "messageType": "interactive",
@@ -1629,6 +1649,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated attach
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -1696,6 +1717,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated attach
       {
         "attachment": "image:http://weni.ai/image.png",
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "type": "send_whatsapp_msg",
@@ -1728,6 +1750,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -1807,6 +1830,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
       {
         "button_text": "new button text",
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "text",
         "interaction_type": "list",
         "list_items": [
@@ -1854,6 +1878,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -1933,6 +1958,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
       {
         "action_url": "new url text",
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "text",
         "interaction_type": "list",
         "list_items": [
@@ -1979,6 +2005,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -2049,6 +2076,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer
     [
       {
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "footer": "new footer",
         "header_type": "media",
         "interaction_type": "replies",
@@ -2087,6 +2115,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated header
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -2157,6 +2186,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated header
     [
       {
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_text": "new header",
         "header_type": "text",
         "interaction_type": "replies",
@@ -2195,6 +2225,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -2273,6 +2304,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
     [
       {
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "text",
         "interaction_type": "list",
         "list_items": [
@@ -2319,6 +2351,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -2407,6 +2440,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -2481,6 +2515,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
     [
       {
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "text",
         "interaction_type": "list",
         "list_items": [
@@ -2521,6 +2556,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated messag
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -2588,6 +2624,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated messag
     [
       {
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "text": "new msg",
@@ -2621,6 +2658,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -2691,6 +2729,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
     [
       {
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "interaction_type": "replies",
         "messageType": "interactive",
@@ -2732,6 +2771,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -2799,6 +2839,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload
       {
         "attachment": "image:http://weni.ai/image.png",
         "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "type": "send_whatsapp_msg",
@@ -2826,13 +2867,14 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
   },
   "buttonText": {
     "validationFailures": [],
-    "value": "",
+    "value": "button text",
   },
   "flowData": {
     "value": {
       "foo": "bar",
     },
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "validationFailures": [],
     "value": "first screen",
@@ -2891,6 +2933,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
   },
   "valid": true,
   "whatsappFlow": {
+    "validationFailures": [],
     "value": {
       "assets": {
         "screens": [
@@ -2913,9 +2956,11 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
   "calls": [
     [
       {
+        "button_text": "button text",
         "flow_data": {
           "foo": "bar",
         },
+        "flow_data_attachment_name_map": {},
         "flow_id": "123",
         "flow_screen": "first screen",
         "header_type": "text",
@@ -2951,6 +2996,7 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -3027,6 +3073,7 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },
@@ -3104,6 +3151,7 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
   "flowData": {
     "value": {},
   },
+  "flowDataAttachmentNameMap": {},
   "flowScreen": {
     "value": "",
   },

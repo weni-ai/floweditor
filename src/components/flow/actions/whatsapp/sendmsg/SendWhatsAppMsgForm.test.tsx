@@ -484,6 +484,7 @@ describe(SendWhatsAppMsgForm.name, () => {
           },
         },
       ]);
+      instance.handleButtonTextUpdate('button text');
       instance.handleFlowScreenUpdate('first screen');
       instance.handleFlowDataUpdate('foo', 'bar');
       expect(instance.state).toMatchSnapshot();

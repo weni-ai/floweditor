@@ -16,29 +16,14 @@ exports[`OptionsList > should render 1`] = `
           class="_list_items_307ca0"
         >
           <div
-            class="_collapse_0dd17b "
+            class="_collapse_0dd17b  "
           >
             <div
-              class="_collapse_header_0dd17b"
-              data-testid="Option 1/10"
+              class="_collapse_title_wrapper_0dd17b"
             >
               <div
-                data-use-vue-component-wrap=""
-                data-v-app=""
-                style="display: flex;"
-              >
-                <span
-                  class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
-                  data-v-930380cc=""
-                >
-                  check_circle
-                </span>
-              </div>
-              <span>
-                Option 1/10
-              </span>
-              <div
-                class="_collapse_icon_0dd17b"
+                class="_collapse_header_0dd17b"
+                data-testid="Option 1/10"
               >
                 <div
                   data-use-vue-component-wrap=""
@@ -46,39 +31,43 @@ exports[`OptionsList > should render 1`] = `
                   style="display: flex;"
                 >
                   <span
-                    class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                    class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
                     data-v-930380cc=""
                   >
-                    expand_more
+                    check_circle
                   </span>
+                </div>
+                <span>
+                  Option 1/10
+                </span>
+                <div
+                  class="_collapse_icon_0dd17b"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                      data-v-930380cc=""
+                    >
+                      expand_more
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="_collapse_0dd17b "
+            class="_collapse_0dd17b  "
           >
             <div
-              class="_collapse_header_0dd17b"
-              data-testid="Option 2/10"
+              class="_collapse_title_wrapper_0dd17b"
             >
               <div
-                data-use-vue-component-wrap=""
-                data-v-app=""
-                style="display: flex;"
-              >
-                <span
-                  class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
-                  data-v-930380cc=""
-                >
-                  check_circle
-                </span>
-              </div>
-              <span>
-                Option 2/10
-              </span>
-              <div
-                class="_collapse_icon_0dd17b"
+                class="_collapse_header_0dd17b"
+                data-testid="Option 2/10"
               >
                 <div
                   data-use-vue-component-wrap=""
@@ -86,11 +75,30 @@ exports[`OptionsList > should render 1`] = `
                   style="display: flex;"
                 >
                   <span
-                    class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                    class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
                     data-v-930380cc=""
                   >
-                    expand_more
+                    check_circle
                   </span>
+                </div>
+                <span>
+                  Option 2/10
+                </span>
+                <div
+                  class="_collapse_icon_0dd17b"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                      data-v-930380cc=""
+                    >
+                      expand_more
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
