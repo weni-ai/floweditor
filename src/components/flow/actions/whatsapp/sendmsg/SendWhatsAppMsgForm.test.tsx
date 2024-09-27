@@ -6,7 +6,8 @@ import {
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 
-import SendWhatsAppMsgForm, {
+import SendWhatsAppMsgForm from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+import {
   WHATSAPP_HEADER_TYPE_MEDIA,
   WHATSAPP_HEADER_TYPE_TEXT,
   WHATSAPP_INTERACTION_TYPE_CTA,
@@ -16,7 +17,7 @@ import SendWhatsAppMsgForm, {
   WHATSAPP_INTERACTION_TYPE_WHATSAPP_FLOWS,
   WHATSAPP_MESSAGE_TYPE_INTERACTIVE,
   WHATSAPP_MESSAGE_TYPE_SIMPLE,
-} from './SendWhatsAppMsgForm';
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { AxiosResponse } from 'axios';
 
 const { setup } = composeComponentTestUtils<ActionFormProps>(

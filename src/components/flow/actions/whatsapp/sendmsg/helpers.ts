@@ -1,21 +1,23 @@
 import { getActionUUID } from 'components/flow/actions/helpers';
 import {
   SendWhatsAppMsgFormState,
+  WhatsAppFlow,
+  WhatsAppListItem,
+} from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+import {
   WHATSAPP_HEADER_TYPE_MEDIA,
   WHATSAPP_HEADER_TYPE_OPTIONS,
   WHATSAPP_INTERACTION_TYPE_NONE,
   WHATSAPP_INTERACTION_TYPE_OPTIONS,
   WHATSAPP_MESSAGE_TYPE_OPTIONS,
   WHATSAPP_MESSAGE_TYPE_SIMPLE,
-  WhatsAppFlow,
-  WhatsAppListItem,
-} from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { Types } from 'config/interfaces';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import { createUUID } from 'utils';
-import { Attachment } from './attachments';
-import { SendWhatsAppMsg } from '../../../../../flowTypes';
-import { AssetStore } from '../../../../../store/flowContext';
+import { Attachment } from 'components/flow/actions/whatsapp/sendmsg/attachments';
+import { SendWhatsAppMsg } from 'flowTypes';
+import { AssetStore } from 'store/flowContext';
 
 export const nodeToState = (
   settings: NodeEditorSettings,
@@ -83,6 +85,7 @@ export const nodeToState = (
       whatsappFlow: { value: whatsAppFlow },
       flowData: { value: action.flow_data || null },
       flowScreen: { value: action.flow_screen || '' },
+      flowDataAttachmentNameMap: action.flow_data_attachment_name_map || {},
     };
   }
 
@@ -106,6 +109,7 @@ export const nodeToState = (
     flowData: { value: {} },
     flowScreen: { value: '' },
     whatsappFlow: { value: null },
+    flowDataAttachmentNameMap: {},
   };
 };
 
@@ -155,6 +159,7 @@ export const stateToAction = (
     flow_data: state.flowData.value,
     flow_id: state.whatsappFlow.value ? state.whatsappFlow.value.id : null,
     flow_screen: state.flowScreen.value,
+    flow_data_attachment_name_map: state.flowDataAttachmentNameMap,
   };
 
   result = Object.fromEntries(

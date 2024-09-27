@@ -1,12 +1,12 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
 
-import styles from './WhatsAppFlowData.module.scss';
+import styles from 'components/flow/actions/whatsapp/sendmsg/WhatsAppFlowData.module.scss';
 import i18n from 'config/i18n';
-import TextInputElement from '../../../../form/textinput/TextInputElement';
+import TextInputElement from 'components/form/textinput/TextInputElement';
 
-import { FlowData } from './SendWhatsAppMsgForm';
-import { FormEntry, ValidationFailure } from '../../../../../store/nodeEditor';
+import { FlowData } from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+import { FormEntry, ValidationFailure } from 'store/nodeEditor';
 import Button, { ButtonTypes } from 'components/button/Button';
 
 export interface WhatsAppFlowDataProps {

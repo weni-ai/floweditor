@@ -1,12 +1,12 @@
 import { react as bindCallbacks } from 'auto-bind';
 import * as React from 'react';
 
-import styles from './OptionsList.module.scss';
+import styles from 'components/flow/actions/whatsapp/sendmsg/OptionsList.module.scss';
 import i18n from 'config/i18n';
 import TextInputElement, {
   TextInputSizes,
-} from '../../../../form/textinput/TextInputElement';
-import ContentCollapse from '../../../../contentcollapse/ContentCollapse';
+} from 'components/form/textinput/TextInputElement';
+import ContentCollapse from 'components/contentcollapse/ContentCollapse';
 
 import { applyVueInReact } from 'veaury';
 // @ts-ignore
@@ -17,10 +17,11 @@ import {
   SortableElement,
   arrayMove,
 } from 'react-sortable-hoc';
-import { MAX_LIST_ITEMS_COUNT, WhatsAppListItem } from './SendWhatsAppMsgForm';
+import { WhatsAppListItem } from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+import { MAX_LIST_ITEMS_COUNT } from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import update from 'immutability-helper';
-import { FormEntry, ValidationFailure } from '../../../../../store/nodeEditor';
+import { FormEntry, ValidationFailure } from 'store/nodeEditor';
 
 const UnnnicButton = applyVueInReact(Unnnic.unnnicButton, {
   vue: {

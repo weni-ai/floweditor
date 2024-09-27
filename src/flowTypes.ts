@@ -12,11 +12,13 @@ import {
 } from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 import {
   FlowData,
+  WhatsAppListItem,
+} from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+import {
   WhatsAppHeaderType,
   WhatsAppInteractionType,
-  WhatsAppListItem,
   WhatsAppMessageType,
-} from './components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { BrainInfo } from './store/flowContext';
 import { Attachment } from 'components/flow/actions/sendmsg/attachments';
 

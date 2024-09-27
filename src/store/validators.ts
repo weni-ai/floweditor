@@ -4,7 +4,10 @@ import { FormEntry, ValidationFailure } from 'store/nodeEditor';
 import { SelectOption } from 'components/form/select/SelectElement';
 import i18n from 'config/i18n';
 import { Topic, User, WhatsAppProduct } from 'flowTypes';
-import { WhatsAppListItem } from '../components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+import {
+  WhatsAppListItem,
+  WhatsAppFlow,
+} from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 export type FormInput =
   | string
@@ -19,7 +22,8 @@ export type FormInput =
   | WhatsAppProduct
   | WhatsAppProduct[]
   | WhatsAppListItem
-  | WhatsAppListItem[];
+  | WhatsAppListItem[]
+  | WhatsAppFlow;
 export type ValidatorFunc = (
   name: string,
   input: FormInput,

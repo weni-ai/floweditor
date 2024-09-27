@@ -77,14 +77,16 @@ import * as utils from 'utils';
 import {
   ProductSearchType,
   ProductViewSettings,
-} from '../components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+} from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 import {
   FlowData,
+  WhatsAppListItem,
+} from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+import {
   WhatsAppHeaderType,
   WhatsAppInteractionType,
-  WhatsAppListItem,
   WhatsAppMessageType,
-} from '../components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 
 const { results: groupsResults } = require('test/assets/groups.json');
 const languagesResults = require('test/assets/languages.json');
