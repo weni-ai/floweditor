@@ -25,6 +25,7 @@ const baseProps: RevisionExplorerProps = {
   utc: true,
   onToggled: vi.fn(),
   popped: '',
+  mutable: true,
 };
 
 const { setup } = composeComponentTestUtils<RevisionExplorerProps>(
