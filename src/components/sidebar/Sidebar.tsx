@@ -182,7 +182,9 @@ export class Sidebar extends React.Component<SidebarStoreProps> {
             <div
               data-testid="create-node"
               className={styles.option}
-              onClick={() => this.createSendMessageNode()}
+              onClick={() =>
+                this.context.config.mutable && this.createSendMessageNode()
+              }
             >
               <UnnnicIcon icon="add_circle" size="md" />
             </div>

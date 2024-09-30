@@ -118,7 +118,9 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
   }
 
   public componentDidMount(): void {
-    this.props.plumberMakeSource(this.getSourceId());
+    if (this.context.config.mutable) {
+      this.props.plumberMakeSource(this.getSourceId());
+    }
 
     if (this.ele) {
       this.ele.addEventListener('disconnect', this.handleDisconnect);
@@ -169,6 +171,7 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
   }
 
   private handleClick(event: React.MouseEvent<HTMLElement>): void {
+    console.log('HANDLE CLICK');
     if (!this.props.translating) {
       if (this.props.exit.destination_uuid) {
         event.preventDefault();

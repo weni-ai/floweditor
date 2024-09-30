@@ -391,7 +391,8 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   private getSimulator(): JSX.Element {
     return renderIf(
       this.context.config.endpoints &&
-        this.context.config.endpoints.simulateStart,
+        this.context.config.endpoints.simulateStart &&
+        this.context.config.mutable,
     )(
       <Simulator
         key="simulator"
