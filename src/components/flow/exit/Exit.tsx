@@ -171,7 +171,6 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
   }
 
   private handleClick(event: React.MouseEvent<HTMLElement>): void {
-    console.log('HANDLE CLICK');
     if (!this.props.translating) {
       if (this.props.exit.destination_uuid) {
         event.preventDefault();
