@@ -1,18 +1,17 @@
 import { SendWhatsAppMsg } from 'flowTypes';
 import * as React from 'react';
 
-import styles from './SendWhatsAppMsg.module.scss';
-import Pill from '../../../../pill/Pill';
+import styles from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsg.module.scss';
+import Pill from 'components/pill/Pill';
 import {
   WHATSAPP_INTERACTION_TYPE_CTA,
   WHATSAPP_INTERACTION_TYPE_LOCATION,
-} from './SendWhatsAppMsgForm';
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
 import Unnnic from '@weni/unnnic-system';
-import { renderIf } from '../../../../../utils';
-import { OpenIcon } from '../OpenIcon';
+import { renderIf } from 'utils';
 
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {

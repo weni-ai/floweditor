@@ -1,7 +1,7 @@
 import { react as bindCallbacks } from 'auto-bind';
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
 import {
-  initializeForm as stateToForm,
+  nodeToState,
   stateToAction,
   createEmptyListItem,
 } from 'components/flow/actions/whatsapp/sendmsg/helpers';
@@ -22,7 +22,7 @@ import {
 } from 'store/nodeEditor';
 import { ValidURL, shouldRequireIf, validate } from 'store/validators';
 
-import styles from './SendWhatsAppMsgForm.module.scss';
+import styles from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm.module.scss';
 
 import i18n from 'config/i18n';
 
@@ -35,14 +35,39 @@ import {
   FILE_TYPE_MAP,
   FILE_TYPE_REGEX,
   renderUploadButton,
-} from './attachments';
+} from 'components/flow/actions/whatsapp/sendmsg/attachments';
 import { UnnnicSelectOption } from 'components/form/select/SelectElement';
 import update from 'immutability-helper';
 import { AxiosResponse } from 'axios';
-import TextEditorElement from '../../../../form/texteditor/TextEditorElement';
-import QuickRepliesList, { hasEmptyReply } from './QuickRepliesList';
-import OptionsList, { hasEmptyListItem } from './OptionsList';
-import { renderIf } from '../../../../../utils';
+import TextEditorElement from 'components/form/texteditor/TextEditorElement';
+import QuickRepliesList, {
+  hasEmptyReply,
+} from 'components/flow/actions/whatsapp/sendmsg/QuickRepliesList';
+import OptionsList, {
+  hasEmptyListItem,
+} from 'components/flow/actions/whatsapp/sendmsg/OptionsList';
+import { renderIf } from 'utils';
+import { Trans } from 'react-i18next';
+import AssetSelector from 'components/form/assetselector/AssetSelector';
+import { TembaSelectStyle } from 'temba/TembaSelect';
+import WhatsAppFlowData from 'components/flow/actions/whatsapp/sendmsg/WhatsAppFlowData';
+import {
+  WHATSAPP_HEADER_TYPE_MEDIA,
+  WHATSAPP_HEADER_TYPE_TEXT,
+  WHATSAPP_INTERACTION_TYPE_LIST,
+  WHATSAPP_INTERACTION_TYPE_REPLIES,
+  WHATSAPP_MESSAGE_TYPE_INTERACTIVE,
+  WHATSAPP_MESSAGE_TYPE_SIMPLE,
+  WhatsAppMessageType,
+  WhatsAppHeaderType,
+  WhatsAppInteractionType,
+  MAX_LIST_ITEMS_COUNT,
+  MAX_REPLIES_COUNT,
+  WHATSAPP_INTERACTION_TYPE_NONE,
+  WHATSAPP_HEADER_TYPE_OPTIONS,
+  WHATSAPP_MESSAGE_TYPE_OPTIONS,
+  WHATSAPP_INTERACTION_TYPE_OPTIONS,
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
@@ -52,7 +77,6 @@ const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
       'data-draggable': 'true',
       style: {
         all: '',
-        height: '20px',
         padding: '4px',
       },
     },
@@ -71,125 +95,35 @@ const UnnnicSelectSmart = applyVueInReact(Unnnic.unnnicSelectSmart, {
   },
 });
 
-export const MAX_LIST_ITEMS_COUNT = 10;
-const MAX_REPLIES_COUNT = 3;
-
-export enum WhatsAppMessageType {
-  SIMPLE = 'simple',
-  INTERACTIVE = 'interactive',
-}
-
-export enum WhatsAppHeaderType {
-  MEDIA = 'media',
-  TEXT = 'text',
-}
-
-export enum WhatsAppInteractionType {
-  LIST = 'list',
-  REPLIES = 'replies',
-  LOCATION = 'location',
-  CTA = 'cta_url',
-}
-
-export const WHATSAPP_MESSAGE_TYPE_SIMPLE: UnnnicSelectOption<
-  WhatsAppMessageType
-> = {
-  label: i18n.t('whatsapp_messages.simple_message', 'Simple message'),
-  value: WhatsAppMessageType.SIMPLE,
-};
-
-export const WHATSAPP_MESSAGE_TYPE_INTERACTIVE: UnnnicSelectOption<
-  WhatsAppMessageType
-> = {
-  label: i18n.t('whatsapp_messages.interactive_message', 'Interactive message'),
-  value: WhatsAppMessageType.INTERACTIVE,
-};
-
-export const WHATSAPP_HEADER_TYPE_TEXT: UnnnicSelectOption<
-  WhatsAppHeaderType
-> = {
-  label: i18n.t('whatsapp_headers.text', 'Text'),
-  value: WhatsAppHeaderType.TEXT,
-};
-export const WHATSAPP_HEADER_TYPE_MEDIA: UnnnicSelectOption<
-  WhatsAppHeaderType
-> = {
-  label: i18n.t('whatsapp_headers.media', 'Media'),
-  value: WhatsAppHeaderType.MEDIA,
-};
-
-export const WHATSAPP_INTERACTION_TYPE_LIST: UnnnicSelectOption<
-  WhatsAppInteractionType
-> = {
-  value: WhatsAppInteractionType.LIST,
-  label: i18n.t('whatsapp_interactions.list', 'Option list'),
-  description: i18n.t(
-    'whatsapp_interactions.list_description',
-    'Make choices easier with a list of up to 10 interactive options',
-  ),
-};
-
-export const WHATSAPP_INTERACTION_TYPE_NONE: UnnnicSelectOption<
-  WhatsAppInteractionType
-> = {
-  value: null,
-  label: i18n.t('whatsapp_interactions.none', 'No interactions selected'),
-};
-
-export const WHATSAPP_INTERACTION_TYPE_REPLIES: UnnnicSelectOption<
-  WhatsAppInteractionType
-> = {
-  value: WhatsAppInteractionType.REPLIES,
-  label: i18n.t('whatsapp_interactions.replies', 'Quick replies'),
-  description: i18n.t(
-    'whatsapp_interactions.replies_description',
-    'Create up to 3 quick replies with predefined messages',
-  ),
-};
-export const WHATSAPP_INTERACTION_TYPE_CTA: UnnnicSelectOption<
-  WhatsAppInteractionType
-> = {
-  value: WhatsAppInteractionType.CTA,
-  label: i18n.t('whatsapp_interactions.add_url', 'URL Button'),
-  description: i18n.t(
-    'whatsapp_interactions.add_url_description',
-    'Add a button with a link to an external URL.',
-  ),
-};
-
-export const WHATSAPP_INTERACTION_TYPE_LOCATION: UnnnicSelectOption<
-  WhatsAppInteractionType
-> = {
-  value: WhatsAppInteractionType.LOCATION,
-  label: i18n.t('whatsapp_interactions.request_location', 'Request Location'),
-  description: i18n.t(
-    'whatsapp_interactions.location_description',
-    'Ask users for their location to facilitate service',
-  ),
-};
-
-export const WHATSAPP_MESSAGE_TYPE_OPTIONS: UnnnicSelectOption<
-  WhatsAppMessageType
->[] = [WHATSAPP_MESSAGE_TYPE_SIMPLE, WHATSAPP_MESSAGE_TYPE_INTERACTIVE];
-
-export const WHATSAPP_HEADER_TYPE_OPTIONS: UnnnicSelectOption<
-  WhatsAppHeaderType
->[] = [WHATSAPP_HEADER_TYPE_MEDIA, WHATSAPP_HEADER_TYPE_TEXT];
-
-export const WHATSAPP_INTERACTION_TYPE_OPTIONS: UnnnicSelectOption<
-  WhatsAppInteractionType
->[] = [
-  WHATSAPP_INTERACTION_TYPE_NONE,
-  WHATSAPP_INTERACTION_TYPE_REPLIES,
-  WHATSAPP_INTERACTION_TYPE_LIST,
-  WHATSAPP_INTERACTION_TYPE_LOCATION,
-  WHATSAPP_INTERACTION_TYPE_CTA,
-];
+const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      style: {
+        all: '',
+      },
+    },
+  },
+});
 
 export interface WhatsAppListItem {
   uuid: string;
   title: string;
   description: string;
+}
+
+export interface WhatsAppFlow {
+  id: string;
+  name: string;
+  assets: {
+    screens: string[];
+    variables: string[];
+  };
+}
+
+export interface FlowData {
+  [key: string]: string;
 }
 
 export interface SendWhatsAppMsgFormState extends FormState {
@@ -213,6 +147,10 @@ export interface SendWhatsAppMsgFormState extends FormState {
 
   quickReplies: StringArrayEntry;
   quickReplyEntry: StringEntry;
+  whatsappFlow: FormEntry<WhatsAppFlow>;
+  flowScreen: StringEntry;
+  flowData: FormEntry<FlowData>;
+  flowDataAttachmentNameMap: Record<string, string>;
 }
 
 interface UpdateKeys {
@@ -228,6 +166,10 @@ interface UpdateKeys {
   listItems?: WhatsAppListItem[];
   removeListItem?: WhatsAppListItem;
   quickReplies?: string[];
+  whatsAppFlow?: WhatsAppFlow;
+  flowData?: FlowData;
+  flowScreen?: string;
+  flowDataAttachmentNameMap?: Record<string, string>;
 }
 
 export default class SendWhatsAppMsgForm extends React.Component<
@@ -237,7 +179,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
   constructor(props: ActionFormProps) {
     super(props);
 
-    this.state = stateToForm(this.props.nodeSettings);
+    this.state = nodeToState(this.props.nodeSettings, this.props.assetStore);
 
     const listItems = [...this.state.listItems.value];
     if (
@@ -378,7 +320,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
       updates.buttonText = validate(
         i18n.t('forms.list_button_text', 'Action button text'),
         keys.buttonText,
-        [],
+        [shouldRequireIf(submitting && !!this.state.whatsappFlow.value)],
       );
     }
 
@@ -455,6 +397,36 @@ export default class SendWhatsAppMsgForm extends React.Component<
       }
 
       ensureEmptyReply = true;
+    }
+
+    if (keys.hasOwnProperty('whatsAppFlow')) {
+      updates.whatsappFlow = validate(
+        i18n.t('forms.whatsapp_flow', 'WhatsApp Flow'),
+        keys.whatsAppFlow,
+        [
+          shouldRequireIf(
+            submitting &&
+              this.state.interactionType.value.value ===
+                WhatsAppInteractionType.FLOW,
+          ),
+        ],
+      );
+    }
+
+    if (keys.hasOwnProperty('flowScreen')) {
+      updates.flowScreen = validate(
+        i18n.t('forms.flow_screen', 'Flow Screen'),
+        keys.flowScreen,
+        [shouldRequireIf(submitting && !!this.state.whatsappFlow.value)],
+      );
+    }
+
+    if (keys.hasOwnProperty('flowData')) {
+      updates.flowData = { value: keys.flowData };
+    }
+
+    if (keys.hasOwnProperty('flowDataAttachmentNameMap')) {
+      updates.flowDataAttachmentNameMap = keys.flowDataAttachmentNameMap;
     }
 
     const updated = mergeForm(this.state, updates) as SendWhatsAppMsgFormState;
@@ -642,7 +614,8 @@ export default class SendWhatsAppMsgForm extends React.Component<
       toUpdate.footer = '';
     } else if (
       interactionType.value === WhatsAppInteractionType.LIST ||
-      interactionType.value === WhatsAppInteractionType.CTA
+      interactionType.value === WhatsAppInteractionType.CTA ||
+      interactionType.value === WhatsAppInteractionType.FLOW
     ) {
       toUpdate.attachment = null;
       toUpdate.headerType = WHATSAPP_HEADER_TYPE_TEXT;
@@ -669,11 +642,49 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ removeListItem: item });
   }
 
+  public handleFlowDataUpdate(key: string, value: string): boolean {
+    const flowData = { ...this.state.flowData.value };
+    flowData[key] = value;
+    return this.handleUpdate({ flowData });
+  }
+
+  public handleFlowDataAttachmentNameUpdate(
+    key: string,
+    attachmentName: string,
+  ): boolean {
+    const flowDataAttachmentNameMap = {
+      ...this.state.flowDataAttachmentNameMap,
+    };
+    flowDataAttachmentNameMap[key] = attachmentName;
+    return this.handleUpdate({ flowDataAttachmentNameMap });
+  }
+
   public handleButtonTextUpdate(buttonText: string): boolean {
     return this.handleUpdate({ buttonText });
   }
   public handleActionURLUpdate(actionURL: string): boolean {
     return this.handleUpdate({ actionURL });
+  }
+
+  public handleFlowScreenUpdate(flowScreen: string): boolean {
+    return this.handleUpdate({ flowScreen });
+  }
+
+  public handleWhatsAppFlowUpdate(event: any[]) {
+    const whatsAppFlow = event[0] as WhatsAppFlow;
+    if (whatsAppFlow === this.state.whatsappFlow.value) {
+      return false;
+    }
+
+    const newData = whatsAppFlow.assets.variables.reduce(
+      (acc: FlowData, key: string) => {
+        acc[key] = '';
+        return acc;
+      },
+      {},
+    );
+
+    return this.handleUpdate({ whatsAppFlow, flowData: newData });
   }
 
   public handleSave(): void {
@@ -700,6 +711,33 @@ export default class SendWhatsAppMsgForm extends React.Component<
       true,
     );
     valid = valid && currentCheck;
+
+    if (
+      this.state.interactionType.value.value === WhatsAppInteractionType.FLOW
+    ) {
+      currentCheck = this.handleUpdate(
+        { whatsAppFlow: this.state.whatsappFlow.value },
+        true,
+      );
+      valid = valid && currentCheck;
+
+      currentCheck = this.handleUpdate(
+        { flowScreen: this.state.flowScreen.value },
+        true,
+      );
+
+      currentCheck = this.handleUpdate(
+        { flowData: this.state.flowData.value },
+        true,
+      );
+      valid = valid && currentCheck;
+
+      currentCheck = this.handleUpdate(
+        { buttonText: this.state.buttonText.value },
+        true,
+      );
+      valid = valid && currentCheck;
+    }
 
     if (valid) {
       this.props.updateAction(
@@ -730,6 +768,67 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
     return renderIf(interactionType !== WhatsAppInteractionType.LOCATION)(
       <div className={styles.header}>
+        {interactionType === WhatsAppInteractionType.FLOW ? (
+          <div className={styles.disclaimer}>
+            <UnnnicIcon icon="alert-circle-1-1" scheme="weni-600" />
+            <span className={styles.disclaimer_text}>
+              <Trans
+                i18nKey="forms.disclaimer.title"
+                values={{
+                  highlight: i18n.t('forms.disclaimer.highlight'),
+                }}
+              >
+                Now it is possible to &nbsp;<b>[[highlight]]</b>&nbsp; using
+                WhatsApp Flows.
+              </Trans>
+            </span>
+            <a
+              className={styles.link}
+              href="https://developers.facebook.com/docs/whatsapp/flows"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {i18n.t('forms.disclaimer.link', 'Learn more.')}
+            </a>
+          </div>
+        ) : null}
+
+        {interactionType === WhatsAppInteractionType.FLOW && (
+          <>
+            <div>
+              <span
+                className={`u font secondary body-md color-neutral-cloudy mt-4`}
+              >
+                {i18n.t('forms.select_form.title', 'Select a Form')}
+                <UnnnicTooltip
+                  text={i18n.t(
+                    'forms.flow_select_info',
+                    `To edit and create existing forms, use Meta's native tool.`,
+                  )}
+                  side="top"
+                  enabled={true}
+                >
+                  <UnnnicIcon icon="info" size="sm" filled={false} />
+                </UnnnicTooltip>
+              </span>
+              <AssetSelector
+                name={i18n.t('forms.form', 'form')}
+                noOptionsMessage={i18n.t(
+                  'forms.no_whatsapp_flow',
+                  "You don't have any form",
+                )}
+                assets={this.props.assetStore.whatsapp_flows}
+                entry={this.state.whatsappFlow}
+                onChange={this.handleWhatsAppFlowUpdate}
+                nameKey="name"
+                valueKey="id"
+                style={TembaSelectStyle.small}
+                searchable
+              />
+            </div>
+          </>
+        )}
+
         <div className={styles.inputs}>
           {renderIf(interactionType === WhatsAppInteractionType.REPLIES)(
             <div className={styles.header_type}>
@@ -841,13 +940,39 @@ export default class SendWhatsAppMsgForm extends React.Component<
         )}
 
         {interactionType === WhatsAppInteractionType.LIST && (
-          <>
-            <OptionsList
-              options={this.state.listItems}
-              onOptionsUpdated={this.handleListItemsUpdate}
-              onOptionRemoval={this.handleListItemRemoval}
-            />
+          <OptionsList
+            options={this.state.listItems}
+            onOptionsUpdated={this.handleListItemsUpdate}
+            onOptionRemoval={this.handleListItemRemoval}
+          />
+        )}
+
+        <div className={styles.buttons}>
+          {(interactionType === WhatsAppInteractionType.LIST ||
+            interactionType === WhatsAppInteractionType.FLOW) && (
             <div className={styles.action_button_text}>
+              <span className={`u font secondary body-md color-neutral-cloudy`}>
+                {interactionType === WhatsAppInteractionType.LIST ? (
+                  i18n.t(
+                    'forms.list_button_text_optional',
+                    'Action Button Text (optional)',
+                  )
+                ) : (
+                  <>
+                    {i18n.t('forms.list_button_text', 'Action Button Text')}
+                    <UnnnicTooltip
+                      text={i18n.t(
+                        'forms.list_button_text_tooltip',
+                        `The flow will start from the interaction with this button.`,
+                      )}
+                      side="top"
+                      enabled={true}
+                    >
+                      <UnnnicIcon icon="info" size="sm" filled={false} />
+                    </UnnnicTooltip>
+                  </>
+                )}
+              </span>
               <TextInputElement
                 placeholder={i18n.t('forms.ex_menu', 'Ex: Menu')}
                 name={i18n.t(
@@ -858,12 +983,29 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 onChange={this.handleButtonTextUpdate}
                 entry={this.state.buttonText}
                 autocomplete={true}
+                maxLength={20}
+              />
+            </div>
+          )}
+
+          {interactionType === WhatsAppInteractionType.FLOW && (
+            <div className={styles.screen}>
+              <TextInputElement
+                placeholder={i18n.t('forms.ex_register', 'Ex: REGISTER')}
+                name={i18n.t(
+                  'forms.start_screen',
+                  'Start Flow from the screen:',
+                )}
+                size={TextInputSizes.sm}
+                onChange={this.handleFlowScreenUpdate}
+                entry={this.state.flowScreen}
+                autocomplete={true}
                 showLabel={true}
                 maxLength={20}
               />
             </div>
-          </>
-        )}
+          )}
+        </div>
 
         {interactionType === WhatsAppInteractionType.REPLIES && (
           <QuickRepliesList
@@ -898,6 +1040,23 @@ export default class SendWhatsAppMsgForm extends React.Component<
             </div>
           </div>
         )}
+        {interactionType === WhatsAppInteractionType.FLOW && (
+          <>
+            {renderIf(
+              this.state.whatsappFlow.value &&
+                this.state.whatsappFlow.value.assets.variables.length > 0,
+            )(
+              <WhatsAppFlowData
+                data={this.state.flowData}
+                attachmentNameMap={this.state.flowDataAttachmentNameMap}
+                onValueUpdated={this.handleFlowDataUpdate}
+                onAttachmentNameUpdated={
+                  this.handleFlowDataAttachmentNameUpdate
+                }
+              />,
+            )}
+          </>
+        )}
       </div>
     );
   }
@@ -918,7 +1077,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
           initialType={typeConfig}
           onChange={this.props.onTypeChange}
         />
-
         <section className={styles.content}>
           <header className={styles.header}>
             {i18n.t(
@@ -926,7 +1084,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
               'Configure your message',
             )}
           </header>
-
           <div className={styles.selectors}>
             <div>
               <span className={styles.label}>
@@ -962,9 +1119,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
               />
             </div>
           </div>
-
           {this.renderHeaderSection()}
-
           <TextEditorElement
             name={i18n.t('forms.message', 'Message')}
             showLabel={true}
@@ -978,7 +1133,6 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 : 1024
             }
           />
-
           {renderIf(
             this.state.messageType.value.value ===
               WhatsAppMessageType.INTERACTIVE,

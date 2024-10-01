@@ -280,6 +280,11 @@
     "delimit_result_description": "Evalúe sus reglas contra una parte delimitada de su resultado",
     "delimiter": "Delimitador",
     "district": "Distrito",
+    "disclaimer": {
+      "title": "Ahora es posible <1>[[highlight]]</1> utilizando WhatsApp Flows.",
+      "highlight": "generar interacciones más ricas",
+      "link": "Obtén más información."
+    },
     "email_recipient_name": "Destinatario",
     "email_recipient_placeholder": "Agregue correo electrónico y presione Entrar",
     "email_recipient_prompt": "Introducir la dirección de correo electrónico",
@@ -518,6 +523,20 @@
     "seller_id": "ID de vendedor (opcional)",
     "postal_code": "Código postal (opcional)",
     "header_optional": "Encabezado (opcional)",
+    "select_form": {
+      "title": "Seleccione un formulario",
+      "warn": "¿Aún no tienes formularios?",
+      "here": "aquí."
+    },
+    "dynamic_variables": {
+      "config": {
+        "base": " (Opcional)",
+        "highlight": "Configurar variables dinámicas",
+        "description": "Complete los campos a continuación con una expresión de código como '\"@contacto.nombre\" o adjunte archivos de Imagen (jpg, png), Video (mp4) o Documentos (pdf, docx)."
+      },
+      "label": "Campo importado",
+      "value": "Agregar valor de campo o enviar un archivo adjunto"
+    },
     "replies_label": "Añade hasta 3 respuestas rápidas",
     "reply": "Respuesta",
     "list_items": "Opciones de lista",
@@ -534,12 +553,15 @@
     "options_label": "Añade hasta 10 opciones",
     "list_button_text_placeholder": "Texto del botón de acción",
     "list_button_text_optional": "Texto del botón de acción (opcional)",
+    "list_button_text_tooltip": "El flujo comenzará a partir de la interacción con este botón.",
     "ex_citrus_and_sweet": "Ej: Cítricos y dulces",
     "ex_orange": "Ej: Naranja",
     "ex_menu": "Ej: Menú",
     "action_button_text": "Texto del botón de acción",
     "action_button_url": "URL del botón de acción",
     "action_button_url_placeholder": "Ej: https://www.menu-del-restaurante.com",
+    "flow_select_info": "Para editar y crear formularios existentes, utiliza la herramienta nativa de Meta.",
+    "start_screen": "Iniciar flujos desde la pantalla:",
     "param": "Parámetro",
     "parameter": "Parámetro",
     "params": "Parámetros",
@@ -552,7 +574,8 @@
     "service_call_param": "Parámetro de la Llamada de Servicio",
     "service_call_param_data": "Datos del Parámetro de la Llamada de Servicio",
     "service_call_param_filter": "Filtro del Parámetro de la Llamada de Servicio",
-    "vtex_search": "Búsqueda VTEX"
+    "vtex_search": "Búsqueda VTEX",
+    "optional": "(Opcional)"
   },
   "issues": {
     "header": "Problemas de Flujo",
@@ -807,5 +830,23 @@
     "configure_your_message": "Configura tu mensaje",
     "invalid_attachment_type": "Tipo de archivo adjunto inválido",
     "replies_unique": "Las respuestas rápidas deben ser únicas"
+  },
+  "whatsapp_flows": {
+    "title": "WhatsApp Flows",
+    "description": "Use sus formularios interactivos creados en Meta",
+    "variables": {
+      "radio": {
+        "title": "Botón de Opción",
+        "description": "Tanana tanana"
+      },
+      "image": {
+        "title": "Imagen",
+        "description": "Tanana tanana"
+      },
+      "description": {
+        "title": "Descripción",
+        "description": "lalala"
+      }
+    }
   }
 }

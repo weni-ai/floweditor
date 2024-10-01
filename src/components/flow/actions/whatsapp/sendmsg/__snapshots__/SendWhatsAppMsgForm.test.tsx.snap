@@ -41,6 +41,9 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
           "action_url": "",
           "attachment": null,
           "button_text": "",
+          "flow_data": {},
+          "flow_id": "",
+          "flow_screen": "",
           "footer": "",
           "header_text": "",
           "header_type": "media",
@@ -60,6 +63,9 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
                 "action_url": "",
                 "attachment": null,
                 "button_text": "",
+                "flow_data": {},
+                "flow_id": "",
+                "flow_screen": "",
                 "footer": "",
                 "header_text": "",
                 "header_type": "media",
@@ -170,6 +176,11 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
                 "label": "URL Button",
                 "value": "cta_url",
               },
+              {
+                "description": "Use your interactive forms created on Meta.",
+                "label": "Whatsapp Flows",
+                "value": "flow_msg",
+              },
             ]
           }
           orderedByIndex={true}
@@ -269,6 +280,13 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
     "validationFailures": [],
     "value": "",
   },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
   "footer": {
     "validationFailures": [],
     "value": "new footer",
@@ -328,6 +346,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
     "value": "",
   },
   "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -342,6 +363,13 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
   },
   "buttonText": {
     "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -403,6 +431,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
     "value": "",
   },
   "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -416,6 +447,13 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
     "value": null,
   },
   "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -477,6 +515,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
     "value": "",
   },
   "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -491,6 +532,13 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
   },
   "buttonText": {
     "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -552,6 +600,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
     "value": "",
   },
   "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -568,6 +619,13 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
     "validationFailures": [],
     "value": "new button text",
   },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
   "footer": {
     "value": "",
   },
@@ -626,6 +684,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
     "value": "",
   },
   "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -642,6 +703,13 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
     "validationFailures": [],
     "value": "new button text",
   },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
   "footer": {
     "value": "",
   },
@@ -700,6 +768,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
     "value": "",
   },
   "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -717,6 +788,13 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
     "validationFailures": [],
     "value": "",
   },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
   "footer": {
     "value": "",
   },
@@ -775,6 +853,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
     "value": "",
   },
   "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -792,6 +873,13 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
     "validationFailures": [],
     "value": "",
   },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
   "footer": {
     "value": "",
   },
@@ -850,6 +938,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
     "value": "",
   },
   "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -863,6 +954,13 @@ exports[`SendWhatsAppMsgForm > updates > should not save if message is empty and
     "value": null,
   },
   "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -921,6 +1019,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save if message is empty and
     "value": "",
   },
   "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -940,6 +1041,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
   "buttonText": {
     "value": "",
   },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
   "footer": {
     "value": "",
   },
@@ -992,6 +1100,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -1007,6 +1118,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
   "buttonText": {
     "value": "",
   },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
   "footer": {
     "value": "",
   },
@@ -1059,6 +1177,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -1067,6 +1188,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
   "calls": [
     [
       {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "text": "new msg",
@@ -1098,6 +1221,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
     },
   },
   "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -1152,6 +1282,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -1161,6 +1294,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
     [
       {
         "attachment": "image:http://weni.ai/image.png",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "text": "new msg",
@@ -1192,6 +1327,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
     },
   },
   "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -1245,6 +1387,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -1254,6 +1399,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
     [
       {
         "attachment": "image:http://weni.ai/image.png",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "type": "send_whatsapp_msg",
@@ -1281,6 +1428,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
   },
   "buttonText": {
     "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -1338,6 +1492,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -1346,12 +1503,121 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
   "calls": [
     [
       {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "interaction_type": "location",
         "messageType": "interactive",
         "text": "new msg",
         "type": "send_whatsapp_msg",
         "uuid": "6b121177-6eef-48b3-8f6d-eef2154a0e10",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with cta button and action url when interaction type is CTA 1`] = `
+{
+  "actionURL": {
+    "validationFailures": [],
+    "value": "https://weni.ai",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "new button text",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Add a button with a link to an external URL.",
+      "label": "URL Button",
+      "value": "cta_url",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "926d1c97-f7a6-4b9b-b3cb-e960f137780f",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with cta button and action url when interaction type is CTA 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "action_url": "https://weni.ai",
+        "button_text": "new button text",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "text",
+        "interaction_type": "cta_url",
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "09294c2a-031e-4e74-9b1c-aec239b2a145",
       },
     ],
   ],
@@ -1378,6 +1644,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated attach
     },
   },
   "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -1431,6 +1704,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated attach
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -1440,6 +1716,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated attach
     [
       {
         "attachment": "image:http://weni.ai/image.png",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "type": "send_whatsapp_msg",
@@ -1468,6 +1746,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
   "buttonText": {
     "validationFailures": [],
     "value": "new button text",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
   },
   "footer": {
     "value": "",
@@ -1532,6 +1817,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -1541,6 +1829,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
     [
       {
         "button_text": "new button text",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "text",
         "interaction_type": "list",
         "list_items": [
@@ -1583,6 +1873,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
   },
   "buttonText": {
     "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -1648,6 +1945,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -1657,6 +1957,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
     [
       {
         "action_url": "new url text",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "text",
         "interaction_type": "list",
         "list_items": [
@@ -1698,6 +2000,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer
   },
   "buttonText": {
     "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -1755,6 +2064,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -1763,6 +2075,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer
   "calls": [
     [
       {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "footer": "new footer",
         "header_type": "media",
         "interaction_type": "replies",
@@ -1796,6 +2110,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated header
   },
   "buttonText": {
     "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -1853,6 +2174,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated header
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -1861,6 +2185,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated header
   "calls": [
     [
       {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_text": "new header",
         "header_type": "text",
         "interaction_type": "replies",
@@ -1894,6 +2220,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
   },
   "buttonText": {
     "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -1959,6 +2292,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -1967,6 +2303,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
   "calls": [
     [
       {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "text",
         "interaction_type": "list",
         "list_items": [
@@ -2008,6 +2346,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
   },
   "buttonText": {
     "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -2073,6 +2418,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -2087,6 +2435,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
   },
   "buttonText": {
     "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -2148,6 +2503,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -2156,6 +2514,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
   "calls": [
     [
       {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "text",
         "interaction_type": "list",
         "list_items": [
@@ -2191,6 +2551,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated messag
     "value": null,
   },
   "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -2245,6 +2612,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated messag
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -2253,6 +2623,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated messag
   "calls": [
     [
       {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "text": "new msg",
@@ -2281,6 +2653,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
   },
   "buttonText": {
     "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -2338,6 +2717,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -2346,6 +2728,8 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
   "calls": [
     [
       {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "interaction_type": "replies",
         "messageType": "interactive",
@@ -2382,6 +2766,13 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload
     },
   },
   "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -2435,6 +2826,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -2444,10 +2838,137 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload
     [
       {
         "attachment": "image:http://weni.ai/image.png",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
         "header_type": "media",
         "messageType": "simple",
         "type": "send_whatsapp_msg",
         "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow configured 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "button text",
+  },
+  "flowData": {
+    "value": {
+      "foo": "bar",
+    },
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "validationFailures": [],
+    "value": "first screen",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Use your interactive forms created on Meta.",
+      "label": "Whatsapp Flows",
+      "value": "flow_msg",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "dc9996b2-8127-49a3-b97b-c38b8f26958a",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "validationFailures": [],
+    "value": {
+      "assets": {
+        "screens": [
+          "first screen",
+          "second screen",
+        ],
+        "variables": [
+          "foo",
+        ],
+      },
+      "id": "123",
+      "name": "wpp flow",
+    },
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow configured 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "button_text": "button text",
+        "flow_data": {
+          "foo": "bar",
+        },
+        "flow_data_attachment_name_map": {},
+        "flow_id": "123",
+        "flow_screen": "first screen",
+        "header_type": "text",
+        "interaction_type": "flow_msg",
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "3792a634-e96d-4426-8016-0ddc35c0e431",
       },
     ],
   ],
@@ -2470,6 +2991,13 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
     "value": null,
   },
   "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -2524,6 +3052,9 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -2537,6 +3068,13 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
     "value": null,
   },
   "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -2592,6 +3130,9 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
 
@@ -2605,6 +3146,13 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
     "value": null,
   },
   "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
     "value": "",
   },
   "footer": {
@@ -2661,5 +3209,8 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
     "value": "",
   },
   "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
 }
 `;
