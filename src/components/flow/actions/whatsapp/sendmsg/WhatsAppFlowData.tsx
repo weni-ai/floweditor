@@ -97,7 +97,7 @@ export default class WhatsAppFlowData extends React.Component<
           'forms.dynamic_variables.config.description',
           'Fill in the fields below with code expression like "@contact.name" or attach iIage files (jpg, png), Video (mp4), or Documents (pdf, docx).',
         )}
-        open={false}
+        open={true}
         whiteBackground
         optional
       >

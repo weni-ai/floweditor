@@ -49,3 +49,11 @@
 .collapse_divider {
   border-top: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
 }
+
+.collapse_description {
+  font-size: $unnnic-font-size-body-md;
+  font-weight: $unnnic-font-weight-regular;
+  color: $unnnic-color-neutral-dark;
+  line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+  color: $unnnic-color-neutral-cloudy;
+}
