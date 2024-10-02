@@ -50,6 +50,7 @@ export interface RevisionExplorerProps {
   onToggled: (visible: boolean, tab: PopTabType) => void;
   utc?: boolean;
   popped: string;
+  mutable: boolean;
 }
 
 export interface RevisionExplorerState {
@@ -185,7 +186,9 @@ export class RevisionExplorer extends React.Component<
                     <div
                       className={styles.revision + ' ' + selectedClass}
                       key={'revision_' + asset.id}
-                      onClick={this.onRevisionClicked(asset)}
+                      onClick={
+                        this.props.mutable && this.onRevisionClicked(asset)
+                      }
                     >
                       <div
                         className={`${styles.title} u font secondary body-gt color-neutral-darkest`}
@@ -210,7 +213,9 @@ export class RevisionExplorer extends React.Component<
 
                         {renderIf(isSelected && !revision.current)(
                           <div
-                            onClick={this.onRevertClicked(asset)}
+                            onClick={
+                              this.props.mutable && this.onRevertClicked(asset)
+                            }
                             className={`${styles.tag} ${styles.revert} u font secondary body-sm color-neutral-snow`}
                           >
                             {i18n.t('revisions.revert', 'revert')}

@@ -78,6 +78,7 @@ exports[`Root > render > should apply translating style if passed a truthy trans
       <Connect(RevisionExplorer)
         createNewRevision={[MockFunction spy]}
         loadFlowDefinition={[MockFunction spy]}
+        mutable={true}
         onToggled={[Function]}
         popped={null}
       />
@@ -121,6 +122,7 @@ exports[`Root > render > should render flow if passed a definition, language 1`]
       <Connect(RevisionExplorer)
         createNewRevision={[MockFunction spy]}
         loadFlowDefinition={[MockFunction spy]}
+        mutable={true}
         onToggled={[Function]}
         popped={null}
       />
@@ -163,6 +165,7 @@ exports[`Root > render > should render self, children with required props 1`] = 
       <Connect(RevisionExplorer)
         createNewRevision={[MockFunction spy]}
         loadFlowDefinition={[MockFunction spy]}
+        mutable={true}
         onToggled={[Function]}
         popped={null}
       />

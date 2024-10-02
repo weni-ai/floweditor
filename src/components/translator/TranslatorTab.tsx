@@ -301,6 +301,8 @@ export class TranslatorTab extends React.Component<
   }
 
   private handleTranslationClicked(bundle: TranslationBundle) {
+    if (!this.context.config.mutable) return;
+
     this.props.onTranslationClicked(bundle);
 
     window.setTimeout(() => {
