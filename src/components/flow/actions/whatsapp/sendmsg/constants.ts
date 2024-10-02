@@ -93,7 +93,7 @@ export const WHATSAPP_INTERACTION_TYPE_WHATSAPP_FLOWS: UnnnicSelectOption<
   WhatsAppInteractionType
 > = {
   value: WhatsAppInteractionType.FLOW,
-  label: i18n.t('whatsapp_flows.title', 'Whatsapp Flows'),
+  label: i18n.t('whatsapp_flows.title', 'WhatsApp Flows'),
   description: i18n.t(
     'whatsapp_flows.description',
     'Use your interactive forms created on Meta.',
