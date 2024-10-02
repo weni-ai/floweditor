@@ -1,7 +1,7 @@
 import { react as bindCallbacks } from 'auto-bind';
 import classNames from 'classnames/bind';
 import { PopTab } from 'components/poptab/PopTab';
-import dateFormat from 'dateformat';
+import dateFormat, { i18n as datei18n } from 'dateformat';
 import { getAssets, getFlowDetails } from 'external';
 import {
   FlowDefinition,
@@ -20,8 +20,11 @@ import { PopTabType } from 'config/interfaces';
 import { connect } from 'react-redux';
 import AppState from 'store/state';
 import { ConfigProviderContext } from 'config/ConfigProvider';
+import { getMonthLocale } from './locales/dateLocales';
 
 const cx: any = classNames.bind(styles);
+
+datei18n.monthNames = getMonthLocale(i18n.language);
 
 export interface User {
   email: string;
