@@ -95,7 +95,7 @@ export default class TextEditorElement extends React.Component<
         ref={(ref: HTMLElement) => (this.refTextEditor = ref)}
         className={styles.texteditor}
       >
-        {!this.props.autocomplete ? (
+        {this.props.autocomplete ? (
           <TembaCompletion
             name={this.props.name}
             value={this.props.entry.value}
