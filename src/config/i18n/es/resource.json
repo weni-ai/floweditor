@@ -532,10 +532,10 @@
       "config": {
         "base": " (Opcional)",
         "highlight": "Configurar variables dinámicas",
-        "description": "Complete los campos a continuación con una expresión de código como '\"@contacto.nombre\" o adjunte archivos de Imagen (jpg, png), Video (mp4) o Documentos (pdf, docx)."
+        "description": "Complete los campos a continuación con una expresión de código como '\"@contacto.nombre\"."
       },
       "label": "Campo importado",
-      "value": "Agregar valor de campo o enviar un archivo adjunto"
+      "value": "Agregar valor de campo"
     },
     "replies_label": "Añade hasta 3 respuestas rápidas",
     "reply": "Respuesta",

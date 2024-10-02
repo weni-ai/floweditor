@@ -79,7 +79,7 @@ export default class WhatsAppFlowData extends React.Component<
         )}
         description={i18n.t(
           'forms.dynamic_variables.config.description',
-          'Fill in the fields below with code expression like "@contact.name" or attach iIage files (jpg, png), Video (mp4), or Documents (pdf, docx).',
+          'Fill in the fields below with code expression like "@contact.name"',
         )}
         open={true}
         whiteBackground
@@ -91,10 +91,7 @@ export default class WhatsAppFlowData extends React.Component<
               {i18n.t('forms.dynamic_variables.label', 'Imported field')}
             </span>
             <span className={styles.options_value}>
-              {i18n.t(
-                'forms.dynamic_variables.value',
-                'Add a field value or send an attachment',
-              )}
+              {i18n.t('forms.dynamic_variables.value', 'Add a field value')}
             </span>
           </div>
           {Object.entries(data).map(([key, value]) => {
@@ -129,7 +126,7 @@ export default class WhatsAppFlowData extends React.Component<
                     />
                   )}
                 </div>
-                {isBase64 ? (
+                {/* {attachmentName ? (
                   <Button
                     type={ButtonTypes.secondary}
                     name={''}
@@ -158,7 +155,7 @@ export default class WhatsAppFlowData extends React.Component<
                   accept="image/png, image/jpeg, image/jpg, video/mp4 ,application/pdf, application/msword"
                   type="file"
                   onChange={e => this.handleFileUpload(key, e.target.files)}
-                />
+                /> */}
               </div>
             );
           })}
