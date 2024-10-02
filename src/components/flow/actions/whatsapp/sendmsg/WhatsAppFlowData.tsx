@@ -57,22 +57,6 @@ export default class WhatsAppFlowData extends React.Component<
     });
   }
 
-  private checkBase64(value: string): boolean {
-    const trimmedValue = value.trim();
-
-    const parts = trimmedValue.split(',');
-    if (parts.length === 0 || parts.length !== 2) {
-      return false;
-    }
-
-    const fileInfo = parts[0];
-    if (fileInfo.indexOf('base64') === -1 || !fileInfo.startsWith('data:')) {
-      return false;
-    }
-
-    return BASE_64_REGEX.test(parts[1]);
-  }
-
   public render(): JSX.Element {
     const filePickers: { [key: string]: any } = {};
 
@@ -114,8 +98,7 @@ export default class WhatsAppFlowData extends React.Component<
             </span>
           </div>
           {Object.entries(data).map(([key, value]) => {
-            const isBase64 = this.checkBase64(value);
-
+            const attachmentName = this.props.attachmentNameMap[key] || null;
             return (
               <div key={key} className={styles.item}>
                 <div className={styles.name}>
@@ -126,9 +109,9 @@ export default class WhatsAppFlowData extends React.Component<
                   />
                 </div>
                 <div className={styles.value}>
-                  {isBase64 ? (
+                  {attachmentName ? (
                     <span className={styles.attachment_title}>
-                      {this.props.attachmentNameMap[key] ||
+                      {attachmentName ||
                         i18n.t(
                           'forms.dynamic_variables.attached_file',
                           'Attached file',
@@ -141,7 +124,8 @@ export default class WhatsAppFlowData extends React.Component<
                       entry={{ value }}
                       onChange={e => this.props.onValueUpdated(key, e)}
                       focus={true}
-                      disabled={!!isBase64}
+                      disabled={!!attachmentName}
+                      autocomplete
                     />
                   )}
                 </div>

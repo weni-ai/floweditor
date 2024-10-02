@@ -645,7 +645,16 @@ export default class SendWhatsAppMsgForm extends React.Component<
   public handleFlowDataUpdate(key: string, value: string): boolean {
     const flowData = { ...this.state.flowData.value };
     flowData[key] = value;
-    return this.handleUpdate({ flowData });
+
+    const flowDataAttachmentNameMap = {
+      ...this.state.flowDataAttachmentNameMap,
+    };
+
+    if (this.state.flowDataAttachmentNameMap[key] && !value) {
+      delete flowDataAttachmentNameMap[key];
+    }
+
+    return this.handleUpdate({ flowData, flowDataAttachmentNameMap });
   }
 
   public handleFlowDataAttachmentNameUpdate(
