@@ -77,13 +77,16 @@ import * as utils from 'utils';
 import {
   ProductSearchType,
   ProductViewSettings,
-} from '../components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+} from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+import {
+  FlowData,
+  WhatsAppListItem,
+} from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 import {
   WhatsAppHeaderType,
   WhatsAppInteractionType,
-  WhatsAppListItem,
   WhatsAppMessageType,
-} from '../components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 
 const { results: groupsResults } = require('test/assets/groups.json');
 const languagesResults = require('test/assets/languages.json');
@@ -387,6 +390,9 @@ export const createSendWhatsAppMsgAction = ({
   action_url = '',
   list_items = [],
   quick_replies = [],
+  flow_id = '',
+  flow_data = {},
+  flow_screen = '',
 }: {
   uuid?: string;
   text?: string;
@@ -400,6 +406,9 @@ export const createSendWhatsAppMsgAction = ({
   action_url?: string;
   list_items?: WhatsAppListItem[];
   quick_replies?: string[];
+  flow_id?: string;
+  flow_data?: FlowData;
+  flow_screen?: string;
 } = {}): SendWhatsAppMsg => ({
   type: Types.send_msg,
   uuid,
@@ -414,6 +423,9 @@ export const createSendWhatsAppMsgAction = ({
   action_url,
   list_items,
   quick_replies,
+  flow_id,
+  flow_data,
+  flow_screen,
 });
 
 export const createCallWeniGPTAction = ({

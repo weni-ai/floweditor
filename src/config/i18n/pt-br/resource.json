@@ -280,6 +280,11 @@
     "delimit_result_description": "Avalie suas regras contra uma parte delimitada do seu resultado",
     "delimiter": "Delimitador",
     "district": "Distrito",
+    "disclaimer": {
+      "title": "Agora é possível <1>[[highlight]]</1> utilizando WhatsApp Flows.",
+      "highlight": "gerar interações mais ricas",
+      "link": "Saiba mais."
+    },
     "email_recipient_name": "Destinatário",
     "email_recipient_placeholder": "Adicione um Email e pressione Enter",
     "email_recipient_prompt": "Insira o endereço de email",
@@ -518,6 +523,21 @@
     "seller_id": "ID do vendedor (opcional)",
     "postal_code": "CEP (opcional)",
     "header_optional": "Cabeçalho (opcional)",
+    "select_form": {
+      "title": "Selecione um formulário ",
+      "warn": "Ainda não possui formulários?",
+      "here": "aqui."
+    },
+    "optional": " (Opcional)",
+    "dynamic_variables": {
+      "config": {
+        "base": " (Opcional)",
+        "highlight": "Configurar variáveis dinâmicas",
+        "description": "Preencha os campos abaixo com expressão de código como \"@contact.name\"."
+      },
+      "label": "Campo importado",
+      "value": "Adicione o valor do campo"
+    },
     "replies_label": "Adicione até 3 respostas rápidas",
     "reply": "Resposta",
     "list_items": "Lista de opções",
@@ -535,6 +555,7 @@
     "list_button_text": "Texto do botão de ação",
     "list_button_text_placeholder": "Texto do botão de ação",
     "list_button_text_optional": "Texto do botão de ação (opcional)",
+    "list_button_text_tooltip": "O flow começará a partir da interação deste botão.",
     "list_button_url": "URL do botão de ação",
     "ex_citrus_and_sweet": "Ex: Cítrica e doce",
     "ex_orange": "Ex: Laranja",
@@ -542,6 +563,8 @@
     "action_button_text": "Texto de botão de ação",
     "action_button_url": "URL do botão de ação",
     "action_button_url_placeholder": "Ex: https://www.menudorestaurante.com.br",
+    "flow_select_info": "Para editar e criar formulários existentes, utilize a ferramenta nativa da Meta.",
+    "start_screen": " Iniciar flows a partir da tela:",
     "param": "Parâmetro",
     "parameter": "Parâmetro",
     "params": "Parâmetros",
@@ -807,5 +830,23 @@
     "configure_your_message": "Configure sua mensagem",
     "invalid_attachment_type": "Tipo de anexo inválido",
     "replies_unique": "Respostas rápidas devem ser únicas"
+  },
+  "whatsapp_flows": {
+    "title": "WhatsApp Flows",
+    "description": "Use seus formulários interativos criados na Meta",
+    "variables": {
+      "radio": {
+        "title": "Botão de Opção",
+        "description": "Tanana tanana"
+      },
+      "image": {
+        "title": "Imagem",
+        "description": "Tanana tanana"
+      },
+      "description": {
+        "title": "Descrição",
+        "description": "lalala"
+      }
+    }
   }
 }

@@ -34,6 +34,7 @@ exports[`Root > instance methods > componentDidMount > should call action creato
         "ticketers": "/assets/ticketers.json",
         "topics": "/assets/topics.json",
         "users": "/assets/users.json",
+        "whatsapp_flows": "/assets/whatsapp_flows.json",
         "whatsapp_products": "/assets/whatsapp_products.json",
       },
       "a4f64f1b-85bc-477e-b706-de313a022979",

@@ -32,7 +32,14 @@
     font-size: 11px !important;
     margin-top: 4px !important;
   }
+
+    
+  [class*=unnnic-select-smart-option]{
+    overflow: visible !important;
+  }
 }
+
+
 
 .header {
   display: flex;
@@ -40,6 +47,38 @@
   gap: $unnnic-spacing-inline-xs;
   width: 100%;
   color: $unnnic-color-neutral-dark;
+
+  span{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  :global {
+    .unnnic-select-smart__input {
+      width: 100%;
+    }
+  }
+
+  .disclaimer{
+    display: flex;
+    background-color: $unnnic-color-weni-50;
+    border: 1px solid $unnnic-color-weni-600;
+    border-radius: 4px;
+    align-items: center;
+    gap: $unnnic-spacing-xs;
+    padding: $unnnic-spacing-xs;
+
+    .disclaimer_text {
+      white-space: pre;
+      width: unset;
+    }
+  }
+  .flow_selector_sub {
+    white-space: pre;
+    width: unset;
+  }
 
   .inputs {
     display: flex;
@@ -65,6 +104,10 @@
     flex: 3;
   }
 
+  .link{
+    color: $unnnic-color-neutral-darkest;
+  }
+
 }
 
 .attachment {
@@ -86,6 +129,22 @@
   display: flex;
   flex-direction: column;
   gap: $unnnic-spacing-stack-sm;
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+  
+    .action_button_text,
+    .screen {
+      flex: 1;
+      min-width: 0;
+      span{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+      }
+    }
+  }
 }
 
 .interaction_type {
@@ -105,3 +164,4 @@
   grid-template-columns: 1fr 1fr;
   gap: $unnnic-spacing-sm;
 }
+
