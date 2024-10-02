@@ -178,7 +178,7 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
               },
               {
                 "description": "Use your interactive forms created on Meta.",
-                "label": "Whatsapp Flows",
+                "label": "WhatsApp Flows",
                 "value": "flow_msg",
               },
             ]
@@ -2894,7 +2894,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
   "interactionType": {
     "value": {
       "description": "Use your interactive forms created on Meta.",
-      "label": "Whatsapp Flows",
+      "label": "WhatsApp Flows",
       "value": "flow_msg",
     },
   },
