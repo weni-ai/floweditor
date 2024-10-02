@@ -296,6 +296,7 @@ exports[`SearchBar > should render 1`] = `
         <div
           class="_counter_632b48 _active_108c8d _clickable_632b48 "
           data-spec="counter-outter"
+          data-testid="counter-outter"
         >
           <div
             class=""
@@ -410,6 +411,7 @@ exports[`SearchBar > should render 1`] = `
           </div>
           <div
             class="_add_108c8d"
+            data-testid="add-action"
           >
             <div
               data-use-vue-component-wrap=""
@@ -446,6 +448,7 @@ exports[`SearchBar > should render 1`] = `
         <div
           class="_counter_632b48 _active_108c8d _clickable_632b48 "
           data-spec="counter-outter"
+          data-testid="counter-outter"
         >
           <div
             class=""
@@ -560,6 +563,7 @@ exports[`SearchBar > should render 1`] = `
           </div>
           <div
             class="_add_108c8d"
+            data-testid="add-action"
           >
             <div
               data-use-vue-component-wrap=""
@@ -596,6 +600,7 @@ exports[`SearchBar > should render 1`] = `
         <div
           class="_counter_632b48 _active_108c8d _clickable_632b48 "
           data-spec="counter-outter"
+          data-testid="counter-outter"
         >
           <div
             class=""
@@ -710,6 +715,7 @@ exports[`SearchBar > should render 1`] = `
           </div>
           <div
             class="_add_108c8d"
+            data-testid="add-action"
           >
             <div
               data-use-vue-component-wrap=""

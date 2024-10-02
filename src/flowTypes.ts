@@ -20,7 +20,6 @@ import {
   WhatsAppMessageType,
 } from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { BrainInfo } from './store/flowContext';
-import { Attachment } from 'components/flow/actions/sendmsg/attachments';
 
 // we don't concern ourselves with patch versions
 export const SPEC_VERSION = '13.1';
