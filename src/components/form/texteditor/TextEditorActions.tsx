@@ -34,7 +34,9 @@ export default class TextEditorActions extends React.Component<
   }
 
   private toggleEmojiPicker(): void {
-    this.setState({ showEmojiPicker: !this.state.showEmojiPicker });
+    this.setState(prevState => ({
+      showEmojiPicker: !prevState.showEmojiPicker,
+    }));
   }
 
   private addEmoji(emoji: any) {
