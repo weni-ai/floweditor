@@ -88,6 +88,7 @@ export default class Counter extends React.Component<CounterProps> {
         }
         onClick={this.handleClick}
         data-spec="counter-outter"
+        data-testid="counter-outter"
       >
         <div
           onMouseEnter={this.handleMouseEnter}

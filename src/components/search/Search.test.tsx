@@ -4,6 +4,7 @@ import { act, fireEvent, fireUnnnicInputChangeText, render } from 'test/utils';
 import { NodeComp } from '../flow/node/Node';
 import { MouseState } from '../../store/editor';
 import { RenderNodeMap } from '../../store/flowContext';
+import { shallowToJson } from 'enzyme-to-json';
 
 const renderNodes = (nodes: RenderNodeMap) => {
   return Object.entries(nodes).map(([uuid, node]) => {
@@ -36,6 +37,7 @@ const renderNodes = (nodes: RenderNodeMap) => {
         scrollToNode={''}
         scrollToAction={''}
         mouseState={MouseState.SELECT}
+        brainInfo={undefined}
       />
     );
   });

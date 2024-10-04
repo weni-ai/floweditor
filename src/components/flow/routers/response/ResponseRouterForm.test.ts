@@ -8,6 +8,7 @@ import { getRouterFormProps, createMatchRouter } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import { createUUID } from 'utils';
 import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
+import { shallowToJson } from 'enzyme-to-json';
 
 const routerNode = createMatchRouter(['Red']);
 
@@ -23,13 +24,19 @@ describe(ResponseRouterForm.name, () => {
 
   it('should render', () => {
     const { wrapper } = setup(true);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it('initializes case config', () => {
     const dateCase = createUUID();
 
-    const dateNode = createMatchRouter(['Red']);
+    const dateNode = createMatchRouter(
+      ['Red'],
+      null,
+      Operators.has_any_word,
+      null,
+      true,
+    );
     const router = getSmartOrSwitchRouter(dateNode.node);
     router.cases.push({
       uuid: dateCase,
@@ -52,7 +59,7 @@ describe(ResponseRouterForm.name, () => {
       },
     });
 
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   describe('updates', () => {

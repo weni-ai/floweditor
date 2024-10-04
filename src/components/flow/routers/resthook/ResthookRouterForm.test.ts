@@ -7,6 +7,7 @@ import {
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import ResthookRouterForm from 'components/flow/routers/resthook/ResthookRouterForm';
+import { shallowToJson } from 'enzyme-to-json';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -20,7 +21,7 @@ describe(ResthookRouterForm.name, () => {
   describe('render', () => {
     it('should render', () => {
       const { wrapper } = setup();
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 

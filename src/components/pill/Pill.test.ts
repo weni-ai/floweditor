@@ -1,5 +1,6 @@
 import Pill, { PillProps } from 'components/pill/Pill';
 import { composeComponentTestUtils } from 'testUtils';
+import { shallowToJson } from 'enzyme-to-json';
 
 const { setup } = composeComponentTestUtils<PillProps>(Pill, {
   advanced: false,
@@ -10,13 +11,13 @@ const { setup } = composeComponentTestUtils<PillProps>(Pill, {
 describe(Pill.name, () => {
   it('renders', () => {
     const { wrapper } = setup();
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it('treats @ text differently', () => {
     const { wrapper } = setup(true, {
       text: { $set: '@(CONCAT(contact.name, contact.age))' },
     });
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

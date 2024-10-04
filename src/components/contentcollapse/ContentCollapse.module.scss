@@ -6,11 +6,27 @@
   gap: $unnnic-spacing-sm;
   border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
   border-radius: $unnnic-border-radius-sm;
-  padding: $unnnic-spacing-xs $unnnic-spacing-ant;
+  padding: $unnnic-spacing-sm;
+}
+
+.white_background {
+  background-color: $unnnic-color-neutral-white;
 }
 
 .error {
   border-color: $unnnic-color-feedback-red;
+}
+
+.optional {
+  color: $unnnic-color-neutral-cloudy;
+  font-size: $unnnic-font-size-body-md;
+  font-weight: $unnnic-font-weight-regular;
+}
+
+.collapse_title_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-nano;
 }
 
 .collapse_header {
@@ -28,4 +44,16 @@
 
 .collapse_icon {
   margin-left: auto;
+}
+
+.collapse_divider {
+  border-top: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+}
+
+.collapse_description {
+  font-size: $unnnic-font-size-body-md;
+  font-weight: $unnnic-font-weight-regular;
+  color: $unnnic-color-neutral-dark;
+  line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+  color: $unnnic-color-neutral-cloudy;
 }

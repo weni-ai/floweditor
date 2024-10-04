@@ -10,6 +10,7 @@ import {
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import userEvent from '@testing-library/user-event';
+import { shallowToJson } from 'enzyme-to-json';
 
 import { StartSessionForm } from './StartSessionForm';
 
@@ -79,7 +80,7 @@ describe(StartSessionForm.name, () => {
 
     it('should render self, children with base props', () => {
       const { wrapper } = setup(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('should render an empty form with no action', () => {
@@ -90,7 +91,7 @@ describe(StartSessionForm.name, () => {
       });
 
       expect(instance.state).toMatchSnapshot();
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 

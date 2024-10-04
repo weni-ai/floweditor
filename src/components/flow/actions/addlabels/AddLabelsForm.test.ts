@@ -8,6 +8,7 @@ import {
   getActionFormProps,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -24,7 +25,7 @@ describe(AddLabelsForm.name, () => {
   describe('render', () => {
     it('should render a base action', () => {
       const { wrapper } = setup();
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 

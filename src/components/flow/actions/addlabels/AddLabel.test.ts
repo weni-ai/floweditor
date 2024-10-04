@@ -4,6 +4,7 @@ import AddLabelsComp, {
 import { Types } from 'config/interfaces';
 import { AddLabels } from 'flowTypes';
 import { composeComponentTestUtils } from 'testUtils';
+import { shallowToJson } from 'enzyme-to-json';
 
 const labels = [
   'Help',
@@ -30,6 +31,6 @@ describe(AddLabelsComp.name, () => {
     // we want to display plus an ellipses.
     // the plus one is to include de center wrapper
     expect(wrapper.find('div').length).toBe(MAX_TO_SHOW + 1);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

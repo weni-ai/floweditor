@@ -4,6 +4,7 @@ import styles from './ContentCollapse.module.scss';
 
 // @ts-ignore
 import Unnnic from '@weni/unnnic-system';
+import i18n from 'config/i18n';
 
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
@@ -20,12 +21,15 @@ const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
 
 interface ContentCollapseProps {
   title: string;
+  description?: string;
   children: React.ReactNode;
   hasError?: boolean;
   wrapper_class?: string;
   open?: boolean;
   titleIcon?: string;
   titleIconScheme?: string;
+  whiteBackground?: boolean;
+  optional?: boolean;
 }
 
 interface ContentCollapseState {
@@ -52,31 +56,55 @@ export default class ContentCollapse extends React.Component<
     return (
       <div
         className={
-          styles.collapse + ' ' + (this.props.hasError ? styles.error : '')
+          styles.collapse +
+          ' ' +
+          (this.props.hasError ? styles.error : '') +
+          ' ' +
+          (this.props.whiteBackground ? styles.white_background : '')
         }
       >
-        <div
-          data-testid={this.props.title}
-          className={styles.collapse_header}
-          onClick={() => this.toggleCollapse()}
-        >
-          {this.props.titleIcon && (
-            <UnnnicIcon
-              icon={this.props.titleIcon}
-              scheme={this.props.titleIconScheme}
-              filled={true}
-            />
-          )}
-          <span>{this.props.title}</span>
-          <div className={styles.collapse_icon}>
-            <UnnnicIcon
-              icon={this.state.isOpen ? 'expand_less' : 'expand_more'}
-            />
+        <div className={styles.collapse_title_wrapper}>
+          <div
+            data-testid={this.props.title}
+            className={styles.collapse_header}
+            onClick={() => this.toggleCollapse()}
+          >
+            {this.props.titleIcon && (
+              <UnnnicIcon
+                icon={this.props.titleIcon}
+                scheme={this.props.titleIconScheme}
+                filled={true}
+              />
+            )}
+            <span>{this.props.title}</span>
+            {this.props.optional && (
+              <span className={styles.optional}>
+                {i18n.t('forms.optional', '(Optional)')}
+              </span>
+            )}
+            <div className={styles.collapse_icon}>
+              <UnnnicIcon
+                icon={this.state.isOpen ? 'expand_less' : 'expand_more'}
+              />
+            </div>
           </div>
+
+          {this.props.description && (
+            <div className={styles.collapse_description}>
+              {this.props.description}
+            </div>
+          )}
         </div>
 
         {this.state.isOpen && (
-          <div className={this.props.wrapper_class}>{this.props.children}</div>
+          <>
+            {this.props.description && (
+              <div className={styles.collapse_divider}></div>
+            )}
+            <div className={this.props.wrapper_class}>
+              {this.props.children}
+            </div>
+          </>
         )}
       </div>
     );

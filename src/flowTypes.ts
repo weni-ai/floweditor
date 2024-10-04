@@ -11,13 +11,15 @@ import {
   ProductViewSettings,
 } from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
 import {
+  FlowData,
+  WhatsAppListItem,
+} from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+import {
   WhatsAppHeaderType,
   WhatsAppInteractionType,
-  WhatsAppListItem,
   WhatsAppMessageType,
-} from './components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { BrainInfo } from './store/flowContext';
-import { Attachment } from 'components/flow/actions/sendmsg/attachments';
 
 // we don't concern ourselves with patch versions
 export const SPEC_VERSION = '13.1';
@@ -68,6 +70,7 @@ export interface Endpoints {
   completion: string;
   knowledgeBases: string;
   whatsapp_products: string;
+  whatsapp_flows: string;
   brain: string;
 }
 
@@ -404,6 +407,10 @@ export interface SendWhatsAppMsg extends Action {
   action_url: string;
   list_items: WhatsAppListItem[];
   quick_replies: string[];
+  flow_id: string;
+  flow_data: FlowData;
+  flow_screen: string;
+  flow_data_attachment_name_map: Record<string, string>;
 }
 
 export interface SendWhatsAppProduct extends Action {

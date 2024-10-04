@@ -268,10 +268,10 @@ export class Sticky extends React.Component<StickyProps, StickyState> {
   }
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = () => ({});
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapDispatchToProps = (dispatch: DispatchWithState) => {
   return bindActionCreators({ updateSticky }, dispatch);
 };

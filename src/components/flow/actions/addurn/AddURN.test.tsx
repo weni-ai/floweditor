@@ -2,6 +2,7 @@ import AddURNComp from 'components/flow/actions/addurn/AddURN';
 import { Types } from 'config/interfaces';
 import { AddURN } from 'flowTypes';
 import { composeComponentTestUtils } from 'testUtils';
+import { shallowToJson } from 'enzyme-to-json';
 
 const baseProps: AddURN = {
   type: Types.add_input_labels,
@@ -15,6 +16,6 @@ const { setup } = composeComponentTestUtils(AddURNComp, baseProps);
 describe(AddURNComp.name, () => {
   it('should display urn on action', () => {
     const { wrapper } = setup();
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

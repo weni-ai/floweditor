@@ -183,7 +183,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
 
     this.Plumber = new Plumber();
 
-    /* istanbul ignore next */
+    /* istanbul ignore next -- @preserve */
     if (context.config.debug) {
       window.fe = new Debug(props, this.props.debug);
     }
@@ -291,7 +291,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
       this.props.mergeEditorState({ ghostNode: null });
     }
 
-    /* istanbul ignore next */
+    /* istanbul ignore next -- @preserve */
     document.removeEventListener('mousemove', (window as any).ghostListener);
 
     return true;
@@ -391,7 +391,8 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   private getSimulator(): JSX.Element {
     return renderIf(
       this.context.config.endpoints &&
-        this.context.config.endpoints.simulateStart,
+        this.context.config.endpoints.simulateStart &&
+        this.context.config.mutable,
     )(
       <Simulator
         key="simulator"
@@ -620,7 +621,7 @@ export class Flow extends React.PureComponent<FlowStoreProps, {}> {
   }
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = ({
   flowContext: { definition, nodes, search },
   editorState: {
@@ -647,7 +648,7 @@ const mapStateToProps = ({
   };
 };
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
   bindActionCreators(
     {

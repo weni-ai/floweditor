@@ -118,7 +118,9 @@ export class ExitComp extends React.PureComponent<ExitProps, ExitState> {
   }
 
   public componentDidMount(): void {
-    this.props.plumberMakeSource(this.getSourceId());
+    if (this.context.config.mutable) {
+      this.props.plumberMakeSource(this.getSourceId());
+    }
 
     if (this.ele) {
       this.ele.addEventListener('disconnect', this.handleDisconnect);

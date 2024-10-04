@@ -1,5 +1,6 @@
 import { composeComponentTestUtils, mock } from 'testUtils';
 import * as utils from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 import MultiChoiceInput, { MultiChoiceInputProps } from './MultiChoice';
 
@@ -16,6 +17,6 @@ mock(utils, 'createUUID', utils.seededUUIDs());
 describe(MultiChoiceInput.name, () => {
   it('should render', () => {
     const { wrapper } = setup(true);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

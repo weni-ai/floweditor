@@ -7,6 +7,7 @@ import {
 import { composeComponentTestUtils, getSpecWrapper, setMock } from 'testUtils';
 import { English, languages } from 'testUtils/assetCreators';
 import { set, setTrue } from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 const colorsFlow = require('test/flows/colors.json');
 
@@ -31,6 +32,7 @@ const baseProps: FlowEditorStoreProps = {
   popped: null,
   issues: {},
   updateTranslationFilters: vi.fn(),
+  brainInfo: null,
 };
 
 const { setup, spyOn } = composeComponentTestUtils(FlowEditor, baseProps);
@@ -43,13 +45,13 @@ describe('Root', () => {
       const { wrapper } = setup();
 
       expect(wrapper.find('Connect(LanguageSelector)').exists()).toBeFalsy();
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('should apply translating style if passed a truthy translating prop', () => {
       const { wrapper } = setup(true, { translating: setTrue() });
 
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('should render flow if passed a definition, language', () => {
@@ -59,7 +61,7 @@ describe('Root', () => {
       });
 
       expect(wrapper.find('Connect(Flow)').exists()).toBeTruthy();
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 

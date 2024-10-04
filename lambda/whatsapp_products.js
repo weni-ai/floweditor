@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 const whatsapp_products = [
   {
     facebook_product_id: '7417461401663795',

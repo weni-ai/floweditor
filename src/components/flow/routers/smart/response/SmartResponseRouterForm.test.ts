@@ -1,6 +1,7 @@
 import { RouterFormProps } from 'components/flow/props';
 import { CaseProps } from 'components/flow/routers/caselist/CaseList';
 import SmartResponseRouterForm from 'components/flow/routers/smart/response/SmartResponseRouterForm';
+import DescriptionAlert from 'components/flow/routers/smart/DescriptionAlert/DescriptionAlert';
 import { Operators } from 'config/interfaces';
 import { Types } from 'config/interfaces';
 import { composeComponentTestUtils, mock } from 'testUtils';
@@ -8,6 +9,7 @@ import { getRouterFormProps, createMatchRouter } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 import { createUUID } from 'utils';
 import { getSmartOrSwitchRouter } from 'components/flow/routers/helpers';
+import { shallowToJson } from 'enzyme-to-json';
 
 const routerNode = createMatchRouter(['Red']);
 
@@ -23,13 +25,19 @@ describe(SmartResponseRouterForm.name, () => {
 
   it('should render', () => {
     const { wrapper } = setup(true);
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it('initializes case config', () => {
     const baseCase = createUUID();
 
-    const baseNode = createMatchRouter(['Red']);
+    const baseNode = createMatchRouter(
+      ['Red'],
+      null,
+      Operators.has_any_word,
+      null,
+      true,
+    );
     const router = getSmartOrSwitchRouter(baseNode.node);
     router.cases.push({
       uuid: baseCase,
@@ -52,7 +60,7 @@ describe(SmartResponseRouterForm.name, () => {
       },
     });
 
-    expect(wrapper).toMatchSnapshot();
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   describe('updates', () => {
@@ -101,5 +109,28 @@ describe(SmartResponseRouterForm.name, () => {
       expect(props.onClose).toHaveBeenCalled();
       expect(props.updateRouter).not.toHaveBeenCalled();
     });
+  });
+
+  it('should open description edit', () => {
+    const { wrapper, instance } = setup(true);
+    const spy = vi.spyOn(window.parent, 'postMessage');
+
+    const descriptionAlert = wrapper.find(DescriptionAlert);
+    expect(descriptionAlert.exists()).toBeTruthy();
+    wrapper.find(DescriptionAlert).prop('openDescriptionEdit')();
+
+    expect(spy).toHaveBeenCalledWith({ event: 'openConnectEditProject' }, '*');
+
+    expect(instance.state.hasDescription).toBeFalsy();
+    // send the message back
+    window.dispatchEvent(
+      new MessageEvent('message', {
+        data: {
+          event: 'setConnectProjectDescription',
+          connectProjectDescription: 'test',
+        },
+      }),
+    );
+    expect(instance.state.hasDescription).toBe(true);
   });
 });

@@ -1,6 +1,7 @@
 import { KeyLocalizationFormState } from 'components/flow/actions/localization/KeyLocalizationForm';
 import { MsgLocalizationFormState } from 'components/flow/actions/localization/MsgLocalizationForm';
 import { WeniGPTLocalizationFormState } from 'components/flow/actions/localization/WeniGPTLocalizationForm';
+import { WhatsappMsgLocalizationFormState } from 'components/flow/actions/localization/WhastsappMsgLocalizationForm';
 import { Types } from 'config/interfaces';
 import { getTypeConfig } from 'config/typeConfigs';
 import { NodeEditorSettings, StringEntry } from 'store/nodeEditor';
@@ -9,17 +10,15 @@ import {
   MsgTemplating,
   SayMsg,
   CallWeniGPT,
-  SendWhatsAppMsgLocalization,
   SendWhatsAppMsg,
 } from 'flowTypes';
 import i18n from 'config/i18n';
-import { Attachment } from '../sendmsg/attachments';
-import { WhatsappMsgLocalizationFormState } from './WhastsappMsgLocalizationForm';
-import { createEmptyListItem } from '../whatsapp/sendmsg/helpers';
+import { Attachment } from 'components/flow/actions/sendmsg/attachments';
+import { createEmptyListItem } from 'components/flow/actions/whatsapp/sendmsg/helpers';
 import {
   WHATSAPP_HEADER_TYPE_TEXT,
   WhatsAppHeaderType,
-} from '../whatsapp/sendmsg/SendWhatsAppMsgForm';
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 
 export const initializeLocalizedKeyForm = (
   settings: NodeEditorSettings,

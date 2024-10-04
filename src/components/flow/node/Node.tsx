@@ -126,6 +126,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     return (this.ele = ref);
   }
 
+  /* istanbul ignore next -- @preserve */
   private getGhostListener(): any {
     return (e: MouseEvent) => {
       if (this.ele) {
@@ -191,7 +192,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     this.props.plumberRemove(this.props.renderNode.node.uuid);
   }
 
-  /* istanbul ignore next */
+  /* istanbul ignore next -- @preserve */
   private handleUUIDClicked(event: React.MouseEvent<HTMLElement>): void {
     const selection = window.getSelection();
     const range = document.createRange();
@@ -255,7 +256,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     return this.props.startingNode;
   }
 
-  /* istanbul ignore next */
+  /* istanbul ignore next -- @preserve */
   private renderDebug(): JSX.Element {
     if (this.props.debug) {
       if (this.props.debug.showUUIDs) {
@@ -278,6 +279,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
     let actionList: JSX.Element = null;
     if (this.props.renderNode.node.actions) {
       // Save the first reference off to manage our clicks
+      /* istanbul ignore next -- @preserve */
       let firstRef: { ref: (ref: any) => any } | {} = {
         ref: (ref: any) => (this.firstAction = ref),
       };
@@ -406,7 +408,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
         header = (
           // Wrap in a relative parent so it honors node clipping
           <div style={{ position: 'relative' }}>
-            <div {...this.events}>
+            <div data-testid="titlebar-wrapper" {...this.events}>
               <TitleBar
                 __className={`${
                   (shared as any)[
@@ -432,9 +434,11 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       }
     } else {
       // Don't show add actions option if we are translating
-      const hasCallBrainAction = this.props.renderNode.node.actions.some(
-        action => action.type === Types.call_brain,
-      );
+      const hasCallBrainAction =
+        this.props.renderNode.node.actions &&
+        this.props.renderNode.node.actions.some(
+          action => action.type === Types.call_brain,
+        );
       if (
         !this.props.translating &&
         this.context.config.mutable &&
@@ -442,6 +446,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
       ) {
         addActions = (
           <div
+            data-testid="add-action"
             className={styles.add}
             {...createClickHandler(
               this.handleAddToNode,
@@ -524,6 +529,7 @@ export class NodeComp extends React.PureComponent<NodeProps> {
   }
 }
 
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = (
   {
     flowContext: {
@@ -589,6 +595,7 @@ const mapStateToProps = (
   };
 };
 
+/* istanbul ignore next -- @preserve */
 const mapDispatchToProps = (dispatch: DispatchWithState) =>
   bindActionCreators(
     {

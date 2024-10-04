@@ -5,6 +5,7 @@ import { Types } from 'config/interfaces';
 import { LocalizedObject } from 'services/Localization';
 import { composeComponentTestUtils } from 'testUtils';
 import { createSendMsgAction, Spanish } from 'testUtils/assetCreators';
+import { shallowToJson } from 'enzyme-to-json';
 
 const action = createSendMsgAction();
 const sendConfig = getTypeConfig(Types.send_broadcast);
@@ -30,7 +31,7 @@ describe(SendMsgLocalizationForm.name, () => {
   describe('render', () => {
     it('should render', () => {
       const { wrapper } = setup(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 
@@ -42,7 +43,7 @@ describe(SendMsgLocalizationForm.name, () => {
         nodeSettings: { $merge: { localizations: [localizedObject] } },
       });
 
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 

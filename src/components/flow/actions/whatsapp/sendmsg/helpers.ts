@@ -1,22 +1,27 @@
 import { getActionUUID } from 'components/flow/actions/helpers';
 import {
   SendWhatsAppMsgFormState,
+  WhatsAppFlow,
+  WhatsAppListItem,
+} from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+import {
   WHATSAPP_HEADER_TYPE_MEDIA,
   WHATSAPP_HEADER_TYPE_OPTIONS,
   WHATSAPP_INTERACTION_TYPE_NONE,
   WHATSAPP_INTERACTION_TYPE_OPTIONS,
   WHATSAPP_MESSAGE_TYPE_OPTIONS,
   WHATSAPP_MESSAGE_TYPE_SIMPLE,
-  WhatsAppListItem,
-} from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { Types } from 'config/interfaces';
 import { NodeEditorSettings } from 'store/nodeEditor';
 import { createUUID } from 'utils';
-import { Attachment } from './attachments';
-import { SendWhatsAppMsg } from '../../../../../flowTypes';
+import { Attachment } from 'components/flow/actions/whatsapp/sendmsg/attachments';
+import { SendWhatsAppMsg } from 'flowTypes';
+import { AssetStore } from 'store/flowContext';
 
-export const initializeForm = (
+export const nodeToState = (
   settings: NodeEditorSettings,
+  assetStore: AssetStore,
 ): SendWhatsAppMsgFormState => {
   if (
     settings.originalAction &&
@@ -34,6 +39,16 @@ export const initializeForm = (
         type: type,
         url: action.attachment.substring(splitPoint + 1),
         uploaded: type.indexOf('/') > -1,
+      };
+    }
+
+    let whatsAppFlow: WhatsAppFlow = null;
+    const whatsAppFlowAsset = assetStore.whatsapp_flows.items[action.flow_id];
+    if (whatsAppFlowAsset) {
+      whatsAppFlow = {
+        id: whatsAppFlowAsset.id,
+        name: whatsAppFlowAsset.name,
+        assets: whatsAppFlowAsset.content.assets,
       };
     }
 
@@ -67,6 +82,10 @@ export const initializeForm = (
       listItemDescriptionEntry: { value: '' },
       quickReplyEntry: { value: '' },
       valid: true,
+      whatsappFlow: { value: whatsAppFlow },
+      flowData: { value: action.flow_data || null },
+      flowScreen: { value: action.flow_screen || '' },
+      flowDataAttachmentNameMap: action.flow_data_attachment_name_map || {},
     };
   }
 
@@ -87,6 +106,10 @@ export const initializeForm = (
     listItemDescriptionEntry: { value: '' },
     quickReplyEntry: { value: '' },
     valid: false,
+    flowData: { value: {} },
+    flowScreen: { value: '' },
+    whatsappFlow: { value: null },
+    flowDataAttachmentNameMap: {},
   };
 };
 
@@ -133,6 +156,10 @@ export const stateToAction = (
     list_items: listItems,
     quick_replies: replies,
     uuid: getActionUUID(settings, Types.send_whatsapp_msg),
+    flow_data: state.flowData.value,
+    flow_id: state.whatsappFlow.value ? state.whatsappFlow.value.id : null,
+    flow_screen: state.flowScreen.value,
+    flow_data_attachment_name_map: state.flowDataAttachmentNameMap,
   };
 
   result = Object.fromEntries(

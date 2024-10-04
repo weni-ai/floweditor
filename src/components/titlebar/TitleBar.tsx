@@ -192,7 +192,7 @@ export default class TitleBar extends React.Component<TitleBarProps> {
       <div
         className={styles.remove_button}
         {...createClickHandler(
-          this.handleConfirmRemoval,
+          this.context.config.mutable ? this.handleConfirmRemoval : () => {},
           this.props.shouldCancelClick,
           this.handleMouseUpCapture,
         )}

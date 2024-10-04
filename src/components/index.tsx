@@ -325,6 +325,7 @@ export class FlowEditor extends React.Component<FlowEditorStoreProps> {
               createNewRevision={this.props.createNewRevision}
               onToggled={this.handleTabPopped}
               popped={this.props.popped}
+              mutable={this.context.config.mutable}
             />
 
             {renderIf(Object.keys(this.props.issues).length > 0)(

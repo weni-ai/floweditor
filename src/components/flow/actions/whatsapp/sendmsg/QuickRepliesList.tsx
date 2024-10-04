@@ -116,7 +116,7 @@ export default class QuickRepliesList extends React.Component<
     this.props.onQuickRepliesUpdated(quickReplies);
   }
 
-  /* istanbul ignore next */
+  /* istanbul ignore next -- @preserve */
   private handleRepliesSortEnd({ oldIndex, newIndex }: SortEnd): void {
     const quickReplies = arrayMove(
       this.props.quickReplies.value,
@@ -152,7 +152,7 @@ export default class QuickRepliesList extends React.Component<
                     hasEmptyReply(this.props.quickReplies.value)
                   }
                   shouldCancelStart={
-                    /* istanbul ignore next */
+                    /* istanbul ignore next -- @preserve */
                     (e: any) => {
                       console.log(e);
                       return true;
@@ -183,7 +183,7 @@ export default class QuickRepliesList extends React.Component<
           onSortEnd={this.handleRepliesSortEnd}
           helperClass={styles.item_z_index}
           shouldCancelStart={
-            /* istanbul ignore next */
+            /* istanbul ignore next -- @preserve */
             (e: React.MouseEvent<HTMLDivElement>) => {
               if (e.target.constructor.name === 'SVGSVGElement') {
                 return !(e.target as any).dataset.draggable;

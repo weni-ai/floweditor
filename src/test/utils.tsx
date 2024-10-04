@@ -50,7 +50,7 @@ const initial = initialState;
 initial.flowContext.definition = TEST_DEFINITION;
 initial.flowContext.assetStore = { ...EMPTY_TEST_ASSETS };
 
-const store = createStore(initial);
+export const store = createStore(initial);
 
 const AllTheProviders = ({ children }: { children: any }) => {
   return (
@@ -62,6 +62,12 @@ const AllTheProviders = ({ children }: { children: any }) => {
 
 const customRender = (ui: any, options?: any) =>
   render(ui, { wrapper: AllTheProviders, ...options });
+
+export const renderWithCustomProvider = (
+  ui: any,
+  providers: React.JSXElementConstructor<{ children: React.ReactElement }>,
+  options?: any,
+) => render(ui, { wrapper: providers, ...options });
 
 export const getUnnnicInputValue = (ele: any) => {
   return ele.querySelector('input').value;

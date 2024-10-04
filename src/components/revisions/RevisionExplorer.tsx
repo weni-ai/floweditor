@@ -1,7 +1,7 @@
 import { react as bindCallbacks } from 'auto-bind';
 import classNames from 'classnames/bind';
 import { PopTab } from 'components/poptab/PopTab';
-import dateFormat from 'dateformat';
+import dateFormat, { i18n as datei18n } from 'dateformat';
 import { getAssets, getFlowDetails } from 'external';
 import {
   FlowDefinition,
@@ -20,8 +20,11 @@ import { PopTabType } from 'config/interfaces';
 import { connect } from 'react-redux';
 import AppState from 'store/state';
 import { ConfigProviderContext } from 'config/ConfigProvider';
+import { getMonthLocale } from './locales/dateLocales';
 
 const cx: any = classNames.bind(styles);
+
+datei18n.monthNames = getMonthLocale(i18n.language);
 
 export interface User {
   email: string;
@@ -50,6 +53,7 @@ export interface RevisionExplorerProps {
   onToggled: (visible: boolean, tab: PopTabType) => void;
   utc?: boolean;
   popped: string;
+  mutable: boolean;
 }
 
 export interface RevisionExplorerState {
@@ -185,7 +189,9 @@ export class RevisionExplorer extends React.Component<
                     <div
                       className={styles.revision + ' ' + selectedClass}
                       key={'revision_' + asset.id}
-                      onClick={this.onRevisionClicked(asset)}
+                      onClick={
+                        this.props.mutable && this.onRevisionClicked(asset)
+                      }
                     >
                       <div
                         className={`${styles.title} u font secondary body-gt color-neutral-darkest`}
@@ -210,7 +216,9 @@ export class RevisionExplorer extends React.Component<
 
                         {renderIf(isSelected && !revision.current)(
                           <div
-                            onClick={this.onRevertClicked(asset)}
+                            onClick={
+                              this.props.mutable && this.onRevertClicked(asset)
+                            }
                             className={`${styles.tag} ${styles.revert} u font secondary body-sm color-neutral-snow`}
                           >
                             {i18n.t('revisions.revert', 'revert')}
@@ -232,7 +240,7 @@ export class RevisionExplorer extends React.Component<
   }
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next -- @preserve */
 const mapStateToProps = ({ flowContext: { assetStore } }: AppState) => ({
   assetStore: assetStore,
 });

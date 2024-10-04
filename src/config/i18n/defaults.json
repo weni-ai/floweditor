@@ -292,6 +292,11 @@
     "description": "Description",
     "description_optional": "Description (Optional)",
     "district": "District",
+    "disclaimer": {
+      "title": "Now it is possible to <1>[[highlight]]</1> using WhatsApp Flows.",
+      "highlight": "create richer interactions",
+      "link": "Learn more."
+    },
     "email_recipient_name": "Recipient",
     "email_recipient_placeholder": "Email",
     "email_recipient_prompt": "Enter email address",

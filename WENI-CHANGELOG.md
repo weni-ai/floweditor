@@ -1,3 +1,10 @@
+3.2.0
+----------
+- Feat: Prevent mutable actions on immutable flow
+- Feat: add more tests to Node component
+- Feat: add translation do dateFormat months in revision explorer
+- Feat: WhatsApp Flows
+
 3.1.3
 ----------
 - Feat: Send WhatsApp Message localization form;

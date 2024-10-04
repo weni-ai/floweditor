@@ -77,13 +77,16 @@ import * as utils from 'utils';
 import {
   ProductSearchType,
   ProductViewSettings,
-} from '../components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+} from 'components/flow/routers/whatsapp/sendproduct/SendWhatsAppProductRouterForm';
+import {
+  FlowData,
+  WhatsAppListItem,
+} from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 import {
   WhatsAppHeaderType,
   WhatsAppInteractionType,
-  WhatsAppListItem,
   WhatsAppMessageType,
-} from '../components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 
 const { results: groupsResults } = require('test/assets/groups.json');
 const languagesResults = require('test/assets/languages.json');
@@ -387,6 +390,9 @@ export const createSendWhatsAppMsgAction = ({
   action_url = '',
   list_items = [],
   quick_replies = [],
+  flow_id = '',
+  flow_data = {},
+  flow_screen = '',
 }: {
   uuid?: string;
   text?: string;
@@ -400,6 +406,9 @@ export const createSendWhatsAppMsgAction = ({
   action_url?: string;
   list_items?: WhatsAppListItem[];
   quick_replies?: string[];
+  flow_id?: string;
+  flow_data?: FlowData;
+  flow_screen?: string;
 } = {}): SendWhatsAppMsg => ({
   type: Types.send_msg,
   uuid,
@@ -414,6 +423,9 @@ export const createSendWhatsAppMsgAction = ({
   action_url,
   list_items,
   quick_replies,
+  flow_id,
+  flow_data,
+  flow_screen,
 });
 
 export const createCallWeniGPTAction = ({
@@ -441,10 +453,12 @@ export const createCallBrainAction = ({
     name: 'Dóris',
     occupation: 'Marketing Specialist',
   },
+  entry = 'brain entry',
 } = {}): CallBrain => ({
   type: Types.call_brain,
   uuid,
   brainInfo,
+  entry,
 });
 
 export const createWebhookNode = (
@@ -843,6 +857,7 @@ export const createSwitchRouter = ({
   operand = '@input',
   wait = null,
   default_category_uuid = null,
+  result_name = null,
 }: {
   cases: Case[];
   categories: Category[];
@@ -850,8 +865,9 @@ export const createSwitchRouter = ({
   wait?: Wait;
   // tslint:disable-next-line:variable-name
   default_category_uuid?: string;
+  result_name?: string;
 }) => ({
-  ...createRouter(),
+  ...createRouter(result_name),
   cases,
   categories,
   operand,
@@ -1068,6 +1084,47 @@ export const createGroupsRouterNode = (
     ui: {
       type: Types.split_by_groups,
       position: { left: 0, top: 0 },
+    },
+  });
+};
+
+export const createContactFieldRouterNode = (
+  fields: string[] = ['name', 'age'],
+  uuid: string = utils.createUUID(),
+): RenderNode => {
+  const { categories, exits } = createCategories(fields);
+
+  return createRenderNode({
+    actions: [],
+    exits,
+    uuid,
+    router: createSwitchRouter({
+      categories,
+      cases: [
+        createCase({
+          uuid: utils.createUUID(),
+          type: Operators.has_any_word,
+          category_uuid: categories[0].uuid,
+        }),
+        createCase({
+          uuid: utils.createUUID(),
+          type: Operators.has_any_word,
+          category_uuid: categories[1].uuid,
+        }),
+      ],
+      operand: '@contact',
+      default_category_uuid: categories[categories.length - 1].uuid,
+    }),
+    ui: {
+      type: Types.split_by_contact_field,
+      position: { left: 0, top: 0 },
+      config: {
+        operand: {
+          id: 'name',
+          name: 'Name',
+          type: AssetType.ContactProperty,
+        },
+      },
     },
   });
 };

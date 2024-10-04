@@ -5,6 +5,7 @@ import {
   getActionFormProps,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 import SayMsgForm from './SayMsgForm';
 
@@ -19,7 +20,7 @@ describe(SayMsgForm.name, () => {
   describe('render', () => {
     it('should render', () => {
       const { wrapper } = setup(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 

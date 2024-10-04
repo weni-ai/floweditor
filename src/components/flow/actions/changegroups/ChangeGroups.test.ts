@@ -10,6 +10,7 @@ import { ChangeGroups } from 'flowTypes';
 import { composeComponentTestUtils, getSpecWrapper } from 'testUtils';
 import { createAddGroupsAction } from 'testUtils/assetCreators';
 import { set } from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 const { results: groups } = require('test/assets/groups.json');
 
@@ -60,7 +61,7 @@ describe(ChangeGroupsComp.name, () => {
       const { wrapper, props } = setup();
 
       expect(wrapper.html().indexOf(props.groups[0].name)).toBeTruthy();
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('should limit div to max number of groups', () => {
@@ -68,7 +69,7 @@ describe(ChangeGroupsComp.name, () => {
       const content = getSpecWrapper(wrapper, contentSpecId);
 
       expect(content.children().length).toBe(MAX_TO_SHOW);
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it("should render 'remove from all' markup when passed group action of type Types.remove_contact_groups", () => {
@@ -81,7 +82,7 @@ describe(ChangeGroupsComp.name, () => {
       expect(
         wrapper.containsMatchingElement(getRemoveAllMarkup()),
       ).toBeTruthy();
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 });

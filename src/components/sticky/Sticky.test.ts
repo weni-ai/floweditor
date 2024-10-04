@@ -1,9 +1,7 @@
-import { waitFor } from '@testing-library/react';
 import { Sticky, StickyProps } from 'components/sticky/Sticky';
 import { FlowDefinition, StickyNote } from 'flowTypes';
 import { composeComponentTestUtils, composeDuxState, setMock } from 'testUtils';
 import { set } from 'utils';
-import { Mock } from 'vitest';
 
 vi.useFakeTimers({ shouldAdvanceTime: true });
 

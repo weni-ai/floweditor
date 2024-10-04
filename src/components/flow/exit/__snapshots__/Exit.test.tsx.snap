@@ -25,6 +25,7 @@ exports[`ExitComp > renders 1`] = `
         <div
           class="_counter_632b48 _activity_d88b3c  _visible_632b48"
           data-spec="counter-outter"
+          data-testid="counter-outter"
         >
           <div
             class="_count_d88b3c"
@@ -67,6 +68,7 @@ exports[`ExitComp > shows activity 1`] = `
             <div
               class="_counter_632b48 _activity_d88b3c  _visible_632b48"
               data-spec="counter-outter"
+              data-testid="counter-outter"
             >
               <div
                 class="_count_d88b3c"
@@ -108,6 +110,7 @@ exports[`ExitComp > shows localization 1`] = `
         <div
           class="_counter_632b48 _activity_d88b3c  _visible_632b48"
           data-spec="counter-outter"
+          data-testid="counter-outter"
         >
           <div
             class="_count_d88b3c"
@@ -147,6 +150,7 @@ exports[`ExitComp > shows missing localization 1`] = `
         <div
           class="_counter_632b48 _activity_d88b3c  _visible_632b48"
           data-spec="counter-outter"
+          data-testid="counter-outter"
         >
           <div
             class="_count_d88b3c"
@@ -230,6 +234,7 @@ exports[`ExitComp > shows recent messages on mouse over 1`] = `
         <div
           class="_counter_632b48 _activity_d88b3c  _visible_632b48"
           data-spec="counter-outter"
+          data-testid="counter-outter"
         >
           <div
             class="_count_d88b3c"

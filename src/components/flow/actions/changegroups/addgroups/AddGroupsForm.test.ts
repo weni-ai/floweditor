@@ -7,6 +7,7 @@ import {
   SubscribersGroup,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
@@ -19,7 +20,7 @@ describe(AddGroupsForm.name, () => {
   describe('render', () => {
     it('should render self, children with base props', () => {
       const { wrapper } = setup();
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 

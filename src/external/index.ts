@@ -405,6 +405,12 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
         type: AssetType.WhatsAppProduct,
         items: {},
       },
+      whatsapp_flows: {
+        endpoint: getURL(endpoints.whatsapp_flows),
+        type: AssetType.WhatsAppFlow,
+        items: {},
+        id: 'id',
+      },
     };
 
     // prefetch some of our assets
@@ -419,6 +425,7 @@ export const createAssetStore = (endpoints: Endpoints): Promise<AssetStore> => {
       'ticketers',
       'externalServices',
       'knowledgeBases',
+      'whatsapp_flows',
     ].forEach((storeId: string) => {
       const store = assetStore[storeId];
       fetches.push(

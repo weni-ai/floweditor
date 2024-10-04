@@ -3,6 +3,7 @@ import { PlayAudio } from 'flowTypes';
 import { composeComponentTestUtils } from 'testUtils';
 import { createPlayAudioAction } from 'testUtils/assetCreators';
 import { setEmpty } from 'utils';
+import { shallowToJson } from 'enzyme-to-json';
 
 const playAudioAction = createPlayAudioAction();
 
@@ -16,12 +17,12 @@ describe(PlayAudioComp.name, () => {
     it('should render auhio prop when passed', () => {
       const { wrapper, props } = setup();
       expect(wrapper.text()).toBe(props.audio_url);
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it("should render placeholder when url prop isn't passed", () => {
       const { wrapper } = setup(true, { audio_url: setEmpty() });
-      expect(wrapper).toMatchSnapshot();
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
   });
 });

@@ -2,7 +2,7 @@ import { react as bindCallbacks } from 'auto-bind';
 import { LocalizationFormProps } from 'components/flow/props';
 import { fakePropType } from 'config/ConfigProvider';
 import * as React from 'react';
-import styles from './WhatsappMsgLocalizationForm.module.scss';
+import styles from 'components/flow/actions/localization/WhatsappMsgLocalizationForm.module.scss';
 import {
   FormEntry,
   FormState,
@@ -12,14 +12,14 @@ import {
   UnnnicSelectOptionEntry,
 } from 'store/nodeEditor';
 
-import { initializeWhatsappMsgLocalizedForm } from './helpers';
-import { Attachment } from '../sendmsg/attachments';
+import { initializeWhatsappMsgLocalizedForm } from 'components/flow/actions/localization/helpers';
+import { Attachment } from 'components/flow/actions/sendmsg/attachments';
+import { WhatsAppListItem } from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 import {
   WHATSAPP_HEADER_TYPE_OPTIONS,
   WhatsAppHeaderType,
   WhatsAppInteractionType,
-  WhatsAppListItem,
-} from '../whatsapp/sendmsg/SendWhatsAppMsgForm';
+} from 'components/flow/actions/whatsapp/sendmsg/constants';
 import Dialog, { ButtonSet, Tab } from 'components/dialog/Dialog';
 import i18n from 'config/i18n';
 import { AxiosResponse } from 'axios';
@@ -36,8 +36,8 @@ import {
 import { UnnnicSelectOption } from 'components/form/select/SelectElement';
 import { SendWhatsAppMsg } from 'flowTypes';
 import Pill from 'components/pill/Pill';
-import OptionsList from '../whatsapp/sendmsg/OptionsList';
-import { createEmptyListItem } from '../whatsapp/sendmsg/helpers';
+import OptionsList from 'components/flow/actions/whatsapp/sendmsg/OptionsList';
+import { createEmptyListItem } from 'components/flow/actions/whatsapp/sendmsg/helpers';
 import { TembaSelect } from 'temba/TembaSelect';
 import { renderIf } from 'utils';
 import {
