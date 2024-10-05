@@ -406,6 +406,7 @@ export const createSendWhatsAppMsgAction = ({
   flow_id = '',
   flow_data = {},
   flow_screen = '',
+  flow_data_attachment_name_map = {},
 }: {
   uuid?: string;
   text?: string;
@@ -422,8 +423,9 @@ export const createSendWhatsAppMsgAction = ({
   flow_id?: string;
   flow_data?: FlowData;
   flow_screen?: string;
+  flow_data_attachment_name_map?: Record<string, string>;
 } = {}): SendWhatsAppMsg => ({
-  type: Types.send_msg,
+  type: Types.send_whatsapp_msg,
   uuid,
   text,
   messageType,
@@ -439,6 +441,7 @@ export const createSendWhatsAppMsgAction = ({
   flow_id,
   flow_data,
   flow_screen,
+  flow_data_attachment_name_map,
 });
 
 export const createCallWeniGPTAction = ({
