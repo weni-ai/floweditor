@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`WeniGPTLocalizationForm > renders wenigpt 1`] = `
+exports[`WeniGPTLocalizationForm > should render wenigpt 1`] = `
 <body>
   <div>
     <div
@@ -135,6 +135,30 @@ exports[`WeniGPTLocalizationForm > renders wenigpt 1`] = `
 </body>
 `;
 
+exports[`WeniGPTLocalizationForm > should render wenigpt with initial values 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "spa",
+      [
+        {
+          "translations": {
+            "input": "hola",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
 exports[`WeniGPTLocalizationForm > should save updated expression translation 1`] = `
 [MockFunction spy] {
   "calls": [
@@ -145,7 +169,7 @@ exports[`WeniGPTLocalizationForm > should save updated expression translation 1`
           "translations": {
             "input": "new message",
           },
-          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
         },
       ],
     ],

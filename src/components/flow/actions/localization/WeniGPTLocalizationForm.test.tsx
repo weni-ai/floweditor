@@ -4,15 +4,29 @@ import { fireEvent, render, fireUnnnicTextAreaChangeText } from 'test/utils';
 import {
   getLocalizationFormProps,
   createCallWeniGPTAction,
+  Spanish,
 } from 'testUtils/assetCreators';
 
 import WeniGPTLocalizationForm from './WeniGPTLocalizationForm';
 
 describe(WeniGPTLocalizationForm.name, () => {
-  it('renders wenigpt', () => {
+  it('should render wenigpt', () => {
     const props = getLocalizationFormProps(createCallWeniGPTAction());
     const { baseElement } = render(<WeniGPTLocalizationForm {...props} />);
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should render wenigpt with initial values', () => {
+    const action = createCallWeniGPTAction({
+      input: 'hi',
+    });
+    const props = getLocalizationFormProps(action, Spanish, {
+      [action.uuid]: { input: ['hola'] },
+    });
+    const { getByText } = render(<WeniGPTLocalizationForm {...props} />);
+
+    fireEvent.click(getByText('Ok'));
+    expect(props.updateLocalizations).toMatchSnapshot();
   });
 
   it('should save updated expression translation', () => {
