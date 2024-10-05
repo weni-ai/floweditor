@@ -9,6 +9,9 @@ exports[`Flow Manipulation > actions > should replace router node with a single-
     "actions": [
       {
         "all_urns": false,
+        "attachments": [],
+        "quick_replies": [],
+        "templating": null,
         "text": "Hey!",
         "type": "send_msg",
         "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",

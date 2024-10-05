@@ -251,6 +251,7 @@ export const renderAttachment = (
           </div>
           <div className={styles.remove}>
             <UnnnicIcon
+              data-testid={`remove-attachment-${index}`}
               icon="delete-1-1"
               size="sm"
               scheme="neutral-cloudy"

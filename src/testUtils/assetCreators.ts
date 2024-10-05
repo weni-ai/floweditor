@@ -67,6 +67,7 @@ import {
   SendWhatsAppMsg,
   CallWeniGPT,
   CallBrain,
+  MsgTemplating,
 } from 'flowTypes';
 import Localization from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
@@ -96,13 +97,16 @@ mock(utils, 'createUUID', utils.seededUUIDs());
 export const createSayMsgAction = ({
   uuid = utils.createUUID(),
   text = 'Welcome to Moviefone!',
+  audio_url = null,
 }: {
   uuid?: string;
   text?: string;
+  audio_url?: string;
 } = {}): SayMsg => ({
   type: Types.say_msg,
   uuid,
   text,
+  audio_url,
 });
 
 export const createPlayAudioAction = ({
@@ -122,16 +126,25 @@ export const createSendMsgAction = ({
   uuid = utils.createUUID(),
   text = 'Hey!',
   all_urns = false,
+  quick_replies = [],
+  templating = null,
+  attachments = [],
 }: {
   uuid?: string;
   text?: string;
   // tslint:disable-next-line:variable-name
   all_urns?: boolean;
+  quick_replies?: string[];
+  templating?: MsgTemplating;
+  attachments?: string[];
 } = {}): SendMsg => ({
   type: Types.send_msg,
   uuid,
   text,
   all_urns,
+  quick_replies,
+  templating,
+  attachments,
 });
 
 export const createSendEmailAction = ({

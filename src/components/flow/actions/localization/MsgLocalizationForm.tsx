@@ -189,6 +189,8 @@ export default class MsgLocalizationForm extends React.Component<
     this.setState({ templateVariables });
   }
 
+  // cant be covered in unit since file input is programmatically generated, should test in the future with e2e
+  /* istanbul ignore next */
   private handleAttachmentUploaded(response: AxiosResponse) {
     const attachments: any = mutate(this.state.attachments, {
       $push: [

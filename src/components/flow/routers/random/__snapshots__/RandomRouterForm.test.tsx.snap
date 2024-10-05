@@ -954,6 +954,9 @@ exports[`RandomRouterForm > should convert from a non-random node 1`] = `
       {
         "originalAction": {
           "all_urns": false,
+          "attachments": [],
+          "quick_replies": [],
+          "templating": null,
           "text": "",
           "type": "send_msg",
           "uuid": "7663e5a1-6a46-4b0d-af01-b2262a6ad4b5",
@@ -964,6 +967,9 @@ exports[`RandomRouterForm > should convert from a non-random node 1`] = `
             "actions": [
               {
                 "all_urns": false,
+                "attachments": [],
+                "quick_replies": [],
+                "templating": null,
                 "text": "A message",
                 "type": "send_msg",
                 "uuid": "38282c32-100e-4376-af57-7f6a36ddafba",
@@ -1158,6 +1164,9 @@ exports[`RandomRouterForm > should convert from a non-random node 3`] = `
     "actions": [
       {
         "all_urns": false,
+        "attachments": [],
+        "quick_replies": [],
+        "templating": null,
         "text": "A message",
         "type": "send_msg",
         "uuid": "38282c32-100e-4376-af57-7f6a36ddafba",

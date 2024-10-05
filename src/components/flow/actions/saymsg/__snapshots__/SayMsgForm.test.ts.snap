@@ -39,6 +39,9 @@ exports[`SayMsgForm > render > should render 1`] = `
       {
         "originalAction": {
           "all_urns": false,
+          "attachments": [],
+          "quick_replies": [],
+          "templating": null,
           "text": "Hey!",
           "type": "send_msg",
           "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
@@ -49,6 +52,9 @@ exports[`SayMsgForm > render > should render 1`] = `
             "actions": [
               {
                 "all_urns": false,
+                "attachments": [],
+                "quick_replies": [],
+                "templating": null,
                 "text": "Hey!",
                 "type": "send_msg",
                 "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
