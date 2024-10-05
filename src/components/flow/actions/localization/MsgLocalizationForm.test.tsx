@@ -6,15 +6,12 @@ import {
   fireUnnnicTextAreaChangeText,
   fireUnnnicInputChangeText,
   act,
-  fireUnnnicSelect,
-  waitFor,
   fireUnnnicTagDelete,
 } from 'test/utils';
 import {
   getLocalizationFormProps,
   Spanish,
   createSendMsgAction,
-  createPlayAudioAction,
   createSayMsgAction,
 } from 'testUtils/assetCreators';
 import axios from 'axios';
@@ -154,9 +151,7 @@ describe(SendMsgLocalizationForm.name, () => {
       },
     });
 
-    const { getByTestId, getByText } = render(
-      <SendMsgLocalizationForm {...props} />,
-    );
+    const { getByText } = render(<SendMsgLocalizationForm {...props} />);
 
     // modify our tab
     fireEvent.click(getByText('WhatsApp'));
@@ -218,13 +213,9 @@ describe(SendMsgLocalizationForm.name, () => {
       },
     });
 
-    const {
-      getByTestId,
-      getByText,
-      getAllByText,
-      getAllByTestId,
-      debug,
-    } = render(<SendMsgLocalizationForm {...props} />);
+    const { getByTestId, getByText, getAllByText, getAllByTestId } = render(
+      <SendMsgLocalizationForm {...props} />,
+    );
 
     // modify our tab
     fireEvent.click(getByText('Attachments'));
