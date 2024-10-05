@@ -52,6 +52,7 @@ import QuickRepliesList, {
 import { applyVueInReact } from 'veaury';
 // @ts-ignore
 import Unnnic from '@weni/unnnic-system';
+import update from 'immutability-helper';
 
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
@@ -295,7 +296,20 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     }
 
     const updated = mergeForm(this.state, updates);
-    this.setState(updated);
+    this.setState(updated, () => {
+      const originalAction = this.props.nodeSettings
+        .originalAction as SendWhatsAppMsg;
+      if (
+        !hasEmptyReply(this.state.quickReplies.value) &&
+        this.state.quickReplies.value.length <
+          originalAction.quick_replies.length
+      ) {
+        const quickReplies = update(this.state.quickReplies.value, {
+          $push: [''],
+        }) as string[];
+        this.handleUpdate({ quickReplies: quickReplies });
+      }
+    });
 
     return updated.valid;
   }
@@ -372,7 +386,9 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       }
 
       if (quickReplies.value && quickReplies.value.length > 0) {
-        translations.quick_replies = quickReplies.value;
+        translations.quick_replies = quickReplies.value.filter(
+          reply => reply.trim() !== '',
+        );
       }
 
       if (headerText.value) {
@@ -554,6 +570,7 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
 
               <div className={styles.remove}>
                 <UnnnicIcon
+                  data-testid="Remove attachment"
                   icon="close"
                   size="sm"
                   scheme="neutral-cloudy"
