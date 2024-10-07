@@ -1,6 +1,6 @@
 import { config } from 'test/config';
 
-export const axios = require.requireActual('axios');
+import axios from 'axios';
 
 const boringFlowResp = require('test/assets/flows/boring.json');
 const flowsResp = require('test/assets/flows.json');
@@ -79,5 +79,7 @@ axios.get = vi.fn((url: string) => {
       throw new Error('Axios mock: url not passed. Passed: ' + url);
   }
 });
+
+axios.post = vi.fn((url: string, data: any) => {});
 
 module.exports = axios;

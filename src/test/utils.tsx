@@ -101,6 +101,10 @@ export const fireUnnnicTextAreaChangeText = (ele: any, value: string): void => {
   });
 };
 
+export const fireUnnnicTagDelete = (ele: any): void => {
+  fireEvent.click(ele.querySelector('.unnnic-tag__icon'));
+};
+
 export const fireUnnnicSelect = (ele: any, value: any, valueKey: string) => {
   const result: any = { value: null };
   result.value = value[valueKey];

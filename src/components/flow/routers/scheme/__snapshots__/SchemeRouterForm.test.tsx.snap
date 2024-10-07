@@ -1182,6 +1182,7 @@ exports[`SchemeRouterForm > should render 1`] = `
                 class="unnnic-tag
         unnnic-tag-scheme--neutral-dark unnnic-tag-content"
                 count="0"
+                data-testid="temba_remove_tag_sms"
                 data-v-5a2abba9=""
                 enabletooltip="false"
                 hasbackbutton="false"
@@ -1225,6 +1226,7 @@ exports[`SchemeRouterForm > should render 1`] = `
                 class="unnnic-tag
         unnnic-tag-scheme--neutral-dark unnnic-tag-content"
                 count="0"
+                data-testid="temba_remove_tag_whatsapp"
                 data-v-5a2abba9=""
                 enabletooltip="false"
                 hasbackbutton="false"
@@ -1268,6 +1270,7 @@ exports[`SchemeRouterForm > should render 1`] = `
                 class="unnnic-tag
         unnnic-tag-scheme--neutral-dark unnnic-tag-content"
                 count="0"
+                data-testid="temba_remove_tag_facebook"
                 data-v-5a2abba9=""
                 enabletooltip="false"
                 hasbackbutton="false"

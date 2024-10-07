@@ -60,10 +60,6 @@ export default class ContextExplorer extends React.Component<
     });
   }
 
-  private handleHide(): void {
-    this.props.onClose();
-  }
-
   private isOpen(path: PathStep[]): boolean {
     let openState: any = this.state.opened;
     for (const step of path) {
