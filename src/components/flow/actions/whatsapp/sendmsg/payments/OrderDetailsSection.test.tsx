@@ -1,0 +1,163 @@
+import { mock } from 'testUtils';
+import OrderDetailsSection, {
+  OrderDetailsSectionProps,
+} from './OrderDetailsSection';
+import * as utils from 'utils';
+import * as React from 'react';
+import { act, fireUnnnicInputChangeText, render, waitFor } from 'test/utils';
+import { ValidationFailure } from 'store/nodeEditor';
+import { f } from 'msw/lib/core/HttpResponse-B07UKAkU';
+import userEvent from '@testing-library/user-event';
+
+function getProps(): OrderDetailsSectionProps {
+  return {
+    orderDetails: {
+      referenceID: '123',
+      items: '@results.items',
+      tax: {
+        value: '1000',
+        description: 'tax',
+      },
+      shipping: {
+        value: '2000',
+        description: 'shipping',
+      },
+      discount: {
+        value: '3000',
+        description: 'discount',
+        programName: 'program',
+      },
+      paymentSettings: {
+        type: 'physical-goods',
+        paymentLink: 'https://weni.ai',
+        pixConfig: {
+          key: '123',
+          keyType: 'random',
+          merchantName: 'merchant',
+          code: '456',
+        },
+      },
+    },
+    onUpdateOrderDetails: vi.fn(),
+  };
+}
+
+function emptyProps(): OrderDetailsSectionProps {
+  return {
+    orderDetails: {
+      referenceID: '',
+      items: '',
+      tax: {
+        value: '',
+        description: '',
+      },
+      shipping: {
+        value: '',
+        description: '',
+      },
+      discount: {
+        value: '',
+        description: '',
+        programName: '',
+      },
+      paymentSettings: {
+        type: 'physical-goods',
+        paymentLink: '',
+        pixConfig: undefined,
+      },
+    },
+    onUpdateOrderDetails: vi.fn(),
+  };
+}
+
+describe(OrderDetailsSection.name, () => {
+  it('should render', async () => {
+    const props = getProps();
+    const { baseElement, getByTestId, getByText } = render(
+      <OrderDetailsSection {...props} />,
+    );
+
+    // check initial render
+    expect(baseElement).toMatchSnapshot();
+
+    // expand payment settings collapse in the current order details settings tab
+    userEvent.click(getByTestId('Payment settings'));
+    expect(baseElement).toMatchSnapshot();
+
+    // switch tab to payment buttons settings
+    userEvent.click(getByText('Payment buttons settings'));
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should render without any orderDetails data', () => {
+    const { baseElement } = render(
+      <OrderDetailsSection
+        orderDetails={null}
+        onUpdateOrderDetails={vi.fn()}
+      />,
+    );
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should update order details', async () => {
+    const props = emptyProps();
+    const { getByTestId, getByText } = render(
+      <OrderDetailsSection {...props} />,
+    );
+
+    expect(props.onUpdateOrderDetails).not.toHaveBeenCalled();
+
+    fireUnnnicInputChangeText(getByTestId('Reference ID'), '456');
+    fireUnnnicInputChangeText(getByTestId('Item List'), '@result.new_items');
+
+    // expand payment settings collapse
+    userEvent.click(getByTestId('Payment settings'));
+
+    // fill fields in payment settings collapse
+    fireUnnnicInputChangeText(getByTestId('Tax value'), '2000');
+    fireUnnnicInputChangeText(getByTestId('Tax description'), 'new tax');
+    fireUnnnicInputChangeText(getByTestId('Shipping value'), '3000');
+    fireUnnnicInputChangeText(
+      getByTestId('Shipping description'),
+      'new shipping',
+    );
+    fireUnnnicInputChangeText(getByTestId('Discount value'), '4000');
+    fireUnnnicInputChangeText(
+      getByTestId('Discount description'),
+      'new discount',
+    );
+    fireUnnnicInputChangeText(
+      getByTestId('Discount program name'),
+      'new program',
+    );
+
+    // switch payment type
+    userEvent.click(getByText('Physical goods'));
+
+    // now to digital goods
+    userEvent.click(getByText('Digital goods'));
+
+    // switch to payment buttons settings tab
+    userEvent.click(getByText('Payment buttons settings'));
+
+    // expand pay with card collapse
+    userEvent.click(getByText('Pay with card'));
+    fireUnnnicInputChangeText(
+      getByTestId('Payment link'),
+      'https://weni.ai/new',
+    );
+
+    // expand copy pix code collapse
+    userEvent.click(getByText('Copy pix code'));
+    fireUnnnicInputChangeText(getByTestId('Key'), 'new key');
+    fireUnnnicInputChangeText(getByTestId('Key type'), 'new random');
+    fireUnnnicInputChangeText(getByTestId("Merchant's name"), 'new merchant');
+    fireUnnnicInputChangeText(getByTestId('Pix code'), 'new code');
+
+    await waitFor(() => {
+      expect(props.onUpdateOrderDetails).toHaveBeenCalled();
+    });
+
+    expect(props.onUpdateOrderDetails).toMatchSnapshot();
+  });
+});

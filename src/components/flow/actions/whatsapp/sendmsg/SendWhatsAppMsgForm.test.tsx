@@ -17,6 +17,7 @@ import {
   WHATSAPP_INTERACTION_TYPE_WHATSAPP_FLOWS,
   WHATSAPP_MESSAGE_TYPE_INTERACTIVE,
   WHATSAPP_MESSAGE_TYPE_SIMPLE,
+  WHATSAPP_INTERACTION_TYPE_ORDER_DETAILS,
 } from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { AxiosResponse } from 'axios';
 
@@ -492,6 +493,52 @@ describe(SendWhatsAppMsgForm.name, () => {
       expect(props.updateAction).toHaveBeenCalled();
       expect(props.updateAction).toMatchSnapshot();
     });
+  });
+
+  it('should save changes with order details filled', () => {
+    const {
+      instance,
+      props,
+    }: {
+      instance: SendWhatsAppMsgForm;
+      props: ActionFormProps | Partial<ActionFormProps>;
+    } = setup(true);
+    instance.handleMessageUpdate('new msg', null);
+    instance.handleMessageTypeUpdate([WHATSAPP_MESSAGE_TYPE_INTERACTIVE]);
+    instance.handleInteractionTypeUpdate([
+      WHATSAPP_INTERACTION_TYPE_ORDER_DETAILS,
+    ]);
+    instance.handleOrderDetailsUpdate({
+      referenceID: '123',
+      items: '@results.items',
+      tax: {
+        value: '1000',
+        description: 'tax',
+      },
+      shipping: {
+        value: '2000',
+        description: 'shipping',
+      },
+      discount: {
+        value: '3000',
+        description: 'discount',
+        programName: 'program',
+      },
+      paymentSettings: {
+        type: 'physical-goods',
+        paymentLink: 'https://weni.ai',
+        pixConfig: {
+          key: '123',
+          keyType: 'random',
+          merchantName: 'merchant',
+          code: '456',
+        },
+      },
+    });
+    expect(instance.state).toMatchSnapshot();
+    instance.handleSave();
+    expect(props.updateAction).toHaveBeenCalled();
+    expect(props.updateAction).toMatchSnapshot();
   });
 
   describe('cancel', () => {
