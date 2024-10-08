@@ -1,3 +1,7 @@
+3.2.1
+----------
+- Fix: Send WhatsApp message emoji picker
+
 3.2.0
 ----------
 - Feat: Prevent mutable actions on immutable flow
