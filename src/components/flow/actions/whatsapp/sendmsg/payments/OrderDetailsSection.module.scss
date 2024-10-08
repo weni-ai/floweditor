@@ -1,0 +1,57 @@
+@import 'src/variables.module.scss';
+
+.tab_settings {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-sm;
+
+  .description {
+    color: $unnnic-color-neutral-cloudy;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+  
+    margin: 0;
+  }
+
+  .payment_type_label {
+    color: $unnnic-color-neutral-cloudy;
+    font-size: $unnnic-font-size-body-gt;
+    line-height: $unnnic-line-height-md + $unnnic-font-size-body-gt;
+
+    margin: 0;
+  }
+
+  .payment_settings {
+    display: flex;
+    flex-direction: column;
+    gap: $unnnic-spacing-sm;
+  }
+
+  .collapses_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $unnnic-spacing-xs;
+
+    .pix_payment_collapse {
+      display: flex;
+      flex-direction: column;
+      gap: $unnnic-spacing-xs;
+    }
+  }
+}
+  
+.row_fields {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: $unnnic-spacing-sm;
+  justify-content: space-between;
+  
+  & > div {
+    flex: 2;
+  }
+  
+  .small {
+    flex: 1;
+  }
+}

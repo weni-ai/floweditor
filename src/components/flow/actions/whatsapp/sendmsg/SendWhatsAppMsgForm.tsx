@@ -51,6 +51,8 @@ import { Trans } from 'react-i18next';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
 import { TembaSelectStyle } from 'temba/TembaSelect';
 import WhatsAppFlowData from 'components/flow/actions/whatsapp/sendmsg/WhatsAppFlowData';
+import OrderDetailsSection from 'components/flow/actions/whatsapp/sendmsg/payments/OrderDetailsSection';
+import { WhatsAppOrderDetails } from 'components/flow/actions/whatsapp/sendmsg/payments/types';
 import {
   WHATSAPP_HEADER_TYPE_MEDIA,
   WHATSAPP_HEADER_TYPE_TEXT,
@@ -151,6 +153,7 @@ export interface SendWhatsAppMsgFormState extends FormState {
   flowScreen: StringEntry;
   flowData: FormEntry<FlowData>;
   flowDataAttachmentNameMap: Record<string, string>;
+  orderDetails: FormEntry<WhatsAppOrderDetails>;
 }
 
 interface UpdateKeys {
@@ -170,6 +173,7 @@ interface UpdateKeys {
   flowData?: FlowData;
   flowScreen?: string;
   flowDataAttachmentNameMap?: Record<string, string>;
+  orderDetails?: WhatsAppOrderDetails;
 }
 
 export default class SendWhatsAppMsgForm extends React.Component<
@@ -427,6 +431,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
     if (keys.hasOwnProperty('flowDataAttachmentNameMap')) {
       updates.flowDataAttachmentNameMap = keys.flowDataAttachmentNameMap;
+    }
+
+    if (keys.hasOwnProperty('orderDetails')) {
+      updates.orderDetails = { value: keys.orderDetails };
     }
 
     const updated = mergeForm(this.state, updates) as SendWhatsAppMsgFormState;
@@ -696,6 +704,10 @@ export default class SendWhatsAppMsgForm extends React.Component<
     return this.handleUpdate({ whatsAppFlow, flowData: newData });
   }
 
+  public handleOrderDetailsUpdate(orderDetails: WhatsAppOrderDetails): void {
+    this.handleUpdate({ orderDetails });
+  }
+
   public handleSave(): void {
     let valid = true;
 
@@ -764,6 +776,22 @@ export default class SendWhatsAppMsgForm extends React.Component<
         onClick: () => this.props.onClose(true),
       },
     };
+  }
+
+  private canShowHeaderTypeSelect(
+    interactionType: WhatsAppInteractionType,
+  ): boolean {
+    const allowedTypes: {
+      [key in WhatsAppInteractionType]: boolean;
+    } = {
+      [WhatsAppInteractionType.LIST]: false,
+      [WhatsAppInteractionType.REPLIES]: true,
+      [WhatsAppInteractionType.LOCATION]: false,
+      [WhatsAppInteractionType.CTA]: false,
+      [WhatsAppInteractionType.FLOW]: false,
+      [WhatsAppInteractionType.ORDER_DETAILS]: true,
+    };
+    return allowedTypes[interactionType];
   }
 
   private renderHeaderSection(): JSX.Element {
@@ -839,7 +867,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
         )}
 
         <div className={styles.inputs}>
-          {renderIf(interactionType === WhatsAppInteractionType.REPLIES)(
+          {renderIf(this.canShowHeaderTypeSelect(interactionType))(
             <div className={styles.header_type}>
               <span className={`u font secondary body-md color-neutral-cloudy`}>
                 {i18n.t('forms.header_optional', 'Header (optional)')}
@@ -849,6 +877,9 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 options={WHATSAPP_HEADER_TYPE_OPTIONS}
                 size="sm"
                 orderedByIndex={true}
+                disabled={
+                  interactionType === WhatsAppInteractionType.ORDER_DETAILS
+                }
               />
             </div>,
           )}
@@ -1065,6 +1096,13 @@ export default class SendWhatsAppMsgForm extends React.Component<
               />,
             )}
           </>
+        )}
+
+        {renderIf(interactionType === WhatsAppInteractionType.ORDER_DETAILS)(
+          <OrderDetailsSection
+            orderDetails={this.state.orderDetails.value}
+            onUpdateOrderDetails={this.handleOrderDetailsUpdate}
+          />,
         )}
       </div>
     );

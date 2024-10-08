@@ -20,6 +20,7 @@ export const enum WhatsAppInteractionType {
   LOCATION = 'location',
   CTA = 'cta_url',
   FLOW = 'flow_msg',
+  ORDER_DETAILS = 'order_details',
 }
 
 export const WHATSAPP_MESSAGE_TYPE_SIMPLE: UnnnicSelectOption<
@@ -111,6 +112,20 @@ export const WHATSAPP_INTERACTION_TYPE_LOCATION: UnnnicSelectOption<
   ),
 };
 
+export const WHATSAPP_INTERACTION_TYPE_ORDER_DETAILS: UnnnicSelectOption<
+  WhatsAppInteractionType
+> = {
+  value: WhatsAppInteractionType.ORDER_DETAILS,
+  label: i18n.t(
+    'whatsapp_interactions.payments.order_details',
+    'Payments: Order Details',
+  ),
+  description: i18n.t(
+    'whatsapp_interactions.payments.order_details_description',
+    'Send order details to the user',
+  ),
+};
+
 export const WHATSAPP_MESSAGE_TYPE_OPTIONS: UnnnicSelectOption<
   WhatsAppMessageType
 >[] = [WHATSAPP_MESSAGE_TYPE_SIMPLE, WHATSAPP_MESSAGE_TYPE_INTERACTIVE];
@@ -128,4 +143,5 @@ export const WHATSAPP_INTERACTION_TYPE_OPTIONS: UnnnicSelectOption<
   WHATSAPP_INTERACTION_TYPE_LOCATION,
   WHATSAPP_INTERACTION_TYPE_CTA,
   WHATSAPP_INTERACTION_TYPE_WHATSAPP_FLOWS,
+  WHATSAPP_INTERACTION_TYPE_ORDER_DETAILS,
 ];
