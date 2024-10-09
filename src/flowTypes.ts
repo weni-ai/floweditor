@@ -20,6 +20,7 @@ import {
   WhatsAppMessageType,
 } from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { BrainInfo } from './store/flowContext';
+import { WhatsAppOrderDetails } from 'components/flow/actions/whatsapp/sendmsg/payments/types';
 
 // we don't concern ourselves with patch versions
 export const SPEC_VERSION = '13.1';
@@ -411,6 +412,7 @@ export interface SendWhatsAppMsg extends Action {
   flow_data: FlowData;
   flow_screen: string;
   flow_data_attachment_name_map: Record<string, string>;
+  order_details: WhatsAppOrderDetails;
 }
 
 export interface SendWhatsAppProduct extends Action {
