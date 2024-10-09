@@ -24,7 +24,7 @@
   .payment_settings {
     display: flex;
     flex-direction: column;
-    gap: $unnnic-spacing-sm;
+    gap: $unnnic-spacing-md;
   }
 
   .collapses_wrapper {
@@ -37,6 +37,10 @@
       flex-direction: column;
       gap: $unnnic-spacing-xs;
     }
+  }
+
+  .divider {
+    border-top: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
   }
 }
   

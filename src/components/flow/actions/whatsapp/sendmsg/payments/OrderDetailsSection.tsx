@@ -31,7 +31,7 @@ export interface OrderDetailsSectionProps {
 export interface OrderDetailsSectionState extends FormState {
   activeTab: number;
   referenceID: StringEntry;
-  items: StringEntry;
+  itemList: StringEntry;
   taxValue: StringEntry;
   taxDescription: StringEntry;
   shippingValue: StringEntry;
@@ -158,9 +158,9 @@ export default class OrderDetailsSection extends React.Component<
           name={i18n.t('whatsapp_interactions.payments.items', 'Item List')}
           size={TextInputSizes.sm}
           onChange={event =>
-            this.updateState(this.toStateEntry(event, 'items'))
+            this.updateState(this.toStateEntry(event, 'itemList'))
           }
-          entry={this.state.items}
+          entry={this.state.itemList}
           autocomplete={true}
           showLabel={true}
         />
@@ -280,6 +280,8 @@ export default class OrderDetailsSection extends React.Component<
               />
             </div>
 
+            <div className={styles.divider} />
+
             <div className={styles.row_fields}>
               <TextInputElement
                 placeholder={i18n.t(
@@ -319,6 +321,8 @@ export default class OrderDetailsSection extends React.Component<
                 showLabel={true}
               />
             </div>
+
+            <div className={styles.divider} />
 
             <div className={styles.row_fields}>
               <TextInputElement
@@ -477,7 +481,7 @@ export default class OrderDetailsSection extends React.Component<
               <TextInputElement
                 placeholder={i18n.t(
                   'whatsapp_interactions.payments.pix_config_key_placeholder',
-                  '09888542156',
+                  'eg., 09888542156',
                 )}
                 name={i18n.t(
                   'whatsapp_interactions.payments.pix_config_key',
@@ -500,12 +504,18 @@ export default class OrderDetailsSection extends React.Component<
 
   public render(): JSX.Element {
     const orderDetails: Tab = {
-      name: 'Order details settings',
+      name: i18n.t(
+        'whatsapp_interactions.payments.order_details',
+        'Order details',
+      ),
       body: this.renderOrderDetailsSettings(),
     };
 
     const paymentButtons: Tab = {
-      name: 'Payment buttons settings',
+      name: i18n.t(
+        'whatsapp_interactions.payments.payment_buttons',
+        'Payment buttons',
+      ),
       body: this.renderPaymentButtonsSettings(),
     };
 

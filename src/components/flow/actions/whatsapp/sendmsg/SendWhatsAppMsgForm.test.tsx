@@ -509,8 +509,8 @@ describe(SendWhatsAppMsgForm.name, () => {
       WHATSAPP_INTERACTION_TYPE_ORDER_DETAILS,
     ]);
     instance.handleOrderDetailsUpdate({
-      referenceID: '123',
-      items: '@results.items',
+      reference_id: '123',
+      item_list: '@results.items',
       tax: {
         value: '1000',
         description: 'tax',
@@ -522,15 +522,15 @@ describe(SendWhatsAppMsgForm.name, () => {
       discount: {
         value: '3000',
         description: 'discount',
-        programName: 'program',
+        program_name: 'program',
       },
-      paymentSettings: {
+      payment_settings: {
         type: 'physical-goods',
-        paymentLink: 'https://weni.ai',
-        pixConfig: {
+        payment_link: 'https://weni.ai',
+        pix_config: {
           key: '123',
-          keyType: 'random',
-          merchantName: 'merchant',
+          key_type: 'random',
+          merchant_name: 'merchant',
           code: '456',
         },
       },

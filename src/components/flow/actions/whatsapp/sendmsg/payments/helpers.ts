@@ -12,14 +12,14 @@ export const propsToState = (
 ): OrderDetailsSectionState => {
   const orderDetails = props && props.orderDetails;
   if (orderDetails) {
-    const paymentSettings = orderDetails.paymentSettings;
+    const paymentSettings = orderDetails.payment_settings;
     return {
       activeTab: 0,
       referenceID: {
-        value: orderDetails.referenceID,
+        value: orderDetails.reference_id,
       },
-      items: {
-        value: orderDetails.items,
+      itemList: {
+        value: orderDetails.item_list,
       },
       taxValue: {
         value: orderDetails.tax.value,
@@ -40,29 +40,31 @@ export const propsToState = (
         value: orderDetails.discount.description,
       },
       discountProgramName: {
-        value: orderDetails.discount.programName,
+        value: orderDetails.discount.program_name,
       },
       paymentType: {
         value: paymentSettings.type,
       },
       paymentLink: {
-        value: paymentSettings.paymentLink,
+        value: paymentSettings.payment_link,
       },
       pixConfigKey: {
-        value: paymentSettings.pixConfig ? paymentSettings.pixConfig.key : '',
+        value: paymentSettings.pix_config ? paymentSettings.pix_config.key : '',
       },
       pixConfigKeyType: {
-        value: paymentSettings.pixConfig
-          ? paymentSettings.pixConfig.keyType
+        value: paymentSettings.pix_config
+          ? paymentSettings.pix_config.key_type
           : '',
       },
       pixConfigMerchantName: {
-        value: paymentSettings.pixConfig
-          ? paymentSettings.pixConfig.merchantName
+        value: paymentSettings.pix_config
+          ? paymentSettings.pix_config.merchant_name
           : '',
       },
       pixConfigCode: {
-        value: paymentSettings.pixConfig ? paymentSettings.pixConfig.code : '',
+        value: paymentSettings.pix_config
+          ? paymentSettings.pix_config.code
+          : '',
       },
       valid: true,
     };
@@ -73,7 +75,7 @@ export const propsToState = (
     referenceID: {
       value: '',
     },
-    items: {
+    itemList: {
       value: '',
     },
     taxValue: {
@@ -123,8 +125,8 @@ export const stateToProps = (
   state: OrderDetailsSectionState,
 ): WhatsAppOrderDetails => {
   return {
-    referenceID: state.referenceID.value,
-    items: state.items.value,
+    reference_id: state.referenceID.value,
+    item_list: state.itemList.value,
     tax: {
       value: state.taxValue.value,
       description: state.taxDescription.value,
@@ -136,15 +138,15 @@ export const stateToProps = (
     discount: {
       value: state.discountValue.value,
       description: state.discountDescription.value,
-      programName: state.discountProgramName.value,
+      program_name: state.discountProgramName.value,
     },
-    paymentSettings: {
+    payment_settings: {
       type: state.paymentType.value as WhatsAppOrderBasePaymentSettingsTypes,
-      paymentLink: state.paymentLink.value,
-      pixConfig: {
+      payment_link: state.paymentLink.value,
+      pix_config: {
         key: state.pixConfigKey.value,
-        keyType: state.pixConfigKeyType.value,
-        merchantName: state.pixConfigMerchantName.value,
+        key_type: state.pixConfigKeyType.value,
+        merchant_name: state.pixConfigMerchantName.value,
         code: state.pixConfigCode.value,
       },
     },

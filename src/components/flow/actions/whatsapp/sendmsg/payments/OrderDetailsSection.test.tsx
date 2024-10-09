@@ -1,19 +1,15 @@
-import { mock } from 'testUtils';
 import OrderDetailsSection, {
   OrderDetailsSectionProps,
 } from './OrderDetailsSection';
-import * as utils from 'utils';
 import * as React from 'react';
-import { act, fireUnnnicInputChangeText, render, waitFor } from 'test/utils';
-import { ValidationFailure } from 'store/nodeEditor';
-import { f } from 'msw/lib/core/HttpResponse-B07UKAkU';
 import userEvent from '@testing-library/user-event';
+import { fireUnnnicInputChangeText, render, waitFor } from 'test/utils';
 
 function getProps(): OrderDetailsSectionProps {
   return {
     orderDetails: {
-      referenceID: '123',
-      items: '@results.items',
+      reference_id: '123',
+      item_list: '@results.items',
       tax: {
         value: '1000',
         description: 'tax',
@@ -25,15 +21,15 @@ function getProps(): OrderDetailsSectionProps {
       discount: {
         value: '3000',
         description: 'discount',
-        programName: 'program',
+        program_name: 'program',
       },
-      paymentSettings: {
+      payment_settings: {
         type: 'physical-goods',
-        paymentLink: 'https://weni.ai',
-        pixConfig: {
+        payment_link: 'https://weni.ai',
+        pix_config: {
           key: '123',
-          keyType: 'random',
-          merchantName: 'merchant',
+          key_type: 'random',
+          merchant_name: 'merchant',
           code: '456',
         },
       },
@@ -45,8 +41,8 @@ function getProps(): OrderDetailsSectionProps {
 function emptyProps(): OrderDetailsSectionProps {
   return {
     orderDetails: {
-      referenceID: '',
-      items: '',
+      reference_id: '',
+      item_list: '',
       tax: {
         value: '',
         description: '',
@@ -58,12 +54,12 @@ function emptyProps(): OrderDetailsSectionProps {
       discount: {
         value: '',
         description: '',
-        programName: '',
+        program_name: '',
       },
-      paymentSettings: {
+      payment_settings: {
         type: 'physical-goods',
-        paymentLink: '',
-        pixConfig: undefined,
+        payment_link: '',
+        pix_config: undefined,
       },
     },
     onUpdateOrderDetails: vi.fn(),

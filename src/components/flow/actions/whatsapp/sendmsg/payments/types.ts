@@ -3,16 +3,14 @@ export interface WhatsAppOrderAmount {
   description?: string;
 }
 
-export interface WhatsAppOrderDiscount {
-  value: string;
-  description?: string;
-  programName?: string;
+export interface WhatsAppOrderDiscount extends WhatsAppOrderAmount {
+  program_name?: string;
 }
 
 export interface WhatsAppOrderPixConfig {
   key: string;
-  keyType: string;
-  merchantName: string;
+  key_type: string;
+  merchant_name: string;
   code: string;
 }
 
@@ -22,15 +20,15 @@ export type WhatsAppOrderBasePaymentSettingsTypes =
 
 export interface WhatsAppOrderPaymentSettings {
   type: WhatsAppOrderBasePaymentSettingsTypes;
-  paymentLink?: string;
-  pixConfig?: WhatsAppOrderPixConfig;
+  payment_link?: string;
+  pix_config?: WhatsAppOrderPixConfig;
 }
 
 export interface WhatsAppOrderDetails {
-  referenceID: string;
-  items: string;
+  reference_id: string;
+  item_list: string;
   tax: WhatsAppOrderAmount;
   shipping: WhatsAppOrderAmount;
   discount: WhatsAppOrderDiscount;
-  paymentSettings: WhatsAppOrderPaymentSettings;
+  payment_settings: WhatsAppOrderPaymentSettings;
 }
