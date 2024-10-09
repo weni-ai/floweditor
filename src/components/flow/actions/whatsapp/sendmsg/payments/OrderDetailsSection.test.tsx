@@ -3,34 +3,37 @@ import OrderDetailsSection, {
 } from './OrderDetailsSection';
 import * as React from 'react';
 import userEvent from '@testing-library/user-event';
-import { fireUnnnicInputChangeText, render, waitFor } from 'test/utils';
+import { fireUnnnicInputChangeText, render, waitFor, act } from 'test/utils';
+import { WhatsAppOrderDetailsFailures } from '../constants';
 
 function getProps(): OrderDetailsSectionProps {
   return {
     orderDetails: {
-      reference_id: '123',
-      item_list: '@results.items',
-      tax: {
-        value: '1000',
-        description: 'tax',
-      },
-      shipping: {
-        value: '2000',
-        description: 'shipping',
-      },
-      discount: {
-        value: '3000',
-        description: 'discount',
-        program_name: 'program',
-      },
-      payment_settings: {
-        type: 'physical-goods',
-        payment_link: 'https://weni.ai',
-        pix_config: {
-          key: '123',
-          key_type: 'random',
-          merchant_name: 'merchant',
-          code: '456',
+      value: {
+        reference_id: '123',
+        item_list: '@results.items',
+        tax: {
+          value: '1000',
+          description: 'tax',
+        },
+        shipping: {
+          value: '2000',
+          description: 'shipping',
+        },
+        discount: {
+          value: '3000',
+          description: 'discount',
+          program_name: 'program',
+        },
+        payment_settings: {
+          type: 'physical-goods',
+          payment_link: 'https://weni.ai',
+          pix_config: {
+            key: '123',
+            key_type: 'random',
+            merchant_name: 'merchant',
+            code: '456',
+          },
         },
       },
     },
@@ -41,25 +44,27 @@ function getProps(): OrderDetailsSectionProps {
 function emptyProps(): OrderDetailsSectionProps {
   return {
     orderDetails: {
-      reference_id: '',
-      item_list: '',
-      tax: {
-        value: '',
-        description: '',
-      },
-      shipping: {
-        value: '',
-        description: '',
-      },
-      discount: {
-        value: '',
-        description: '',
-        program_name: '',
-      },
-      payment_settings: {
-        type: 'physical-goods',
-        payment_link: '',
-        pix_config: undefined,
+      value: {
+        reference_id: '',
+        item_list: '',
+        tax: {
+          value: '',
+          description: '',
+        },
+        shipping: {
+          value: '',
+          description: '',
+        },
+        discount: {
+          value: '',
+          description: '',
+          program_name: '',
+        },
+        payment_settings: {
+          type: 'physical-goods',
+          payment_link: '',
+          pix_config: undefined,
+        },
       },
     },
     onUpdateOrderDetails: vi.fn(),
@@ -155,5 +160,32 @@ describe(OrderDetailsSection.name, () => {
     });
 
     expect(props.onUpdateOrderDetails).toMatchSnapshot();
+  });
+
+  it('should render errors', async () => {
+    const props = emptyProps();
+    const { baseElement, rerender } = render(
+      <OrderDetailsSection {...props} />,
+    );
+
+    props.orderDetails = {
+      ...props.orderDetails,
+    };
+
+    rerender(<OrderDetailsSection {...props} />);
+    expect(baseElement).toMatchSnapshot();
+
+    props.orderDetails = {
+      ...props.orderDetails,
+      validationFailures: [
+        {
+          field: WhatsAppOrderDetailsFailures.PAYMENT_BUTTONS,
+          message: 'At least one payment button is required',
+        },
+      ],
+    };
+
+    rerender(<OrderDetailsSection {...props} />);
+    expect(baseElement).toMatchSnapshot();
   });
 });

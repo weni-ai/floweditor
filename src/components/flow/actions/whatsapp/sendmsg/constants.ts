@@ -23,6 +23,12 @@ export const enum WhatsAppInteractionType {
   ORDER_DETAILS = 'order_details',
 }
 
+export const enum WhatsAppOrderDetailsFailures {
+  REFERENCE_ID = 'reference_id',
+  ITEM_LIST = 'item_list',
+  PAYMENT_BUTTONS = 'payment_buttons',
+}
+
 export const WHATSAPP_MESSAGE_TYPE_SIMPLE: UnnnicSelectOption<
   WhatsAppMessageType
 > = {

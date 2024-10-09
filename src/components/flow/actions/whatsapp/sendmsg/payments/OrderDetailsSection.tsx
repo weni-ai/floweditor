@@ -11,7 +11,7 @@ import TextInputElement, {
 } from 'components/form/textinput/TextInputElement';
 import { Tab } from 'components/dialog/Dialog';
 import i18n from 'config/i18n';
-import { StringEntry, mergeForm, FormState } from 'store/nodeEditor';
+import { StringEntry, mergeForm, FormState, FormEntry } from 'store/nodeEditor';
 import { WhatsAppOrderDetails } from 'components/flow/actions/whatsapp/sendmsg/payments/types';
 import {
   propsToState,
@@ -19,12 +19,13 @@ import {
 } from 'components/flow/actions/whatsapp/sendmsg/payments/helpers';
 import ContentCollapse from 'components/contentcollapse/ContentCollapse';
 import { debounce } from 'utils';
+import { WhatsAppOrderDetailsFailures } from 'components/flow/actions/whatsapp/sendmsg/constants';
 
 const UnnnicTab = applyVueInReact(Unnnic.unnnicTab);
 const UnnnicRadio = applyVueInReact(Unnnic.unnnicRadio);
 
 export interface OrderDetailsSectionProps {
-  orderDetails: WhatsAppOrderDetails;
+  orderDetails: FormEntry<WhatsAppOrderDetails>;
   onUpdateOrderDetails: (orderDetails: WhatsAppOrderDetails) => void;
 }
 
@@ -61,6 +62,20 @@ export default class OrderDetailsSection extends React.Component<
     });
   }
 
+  public componentDidUpdate(prevProps: OrderDetailsSectionProps): void {
+    if (prevProps.orderDetails !== this.props.orderDetails) {
+      if (
+        this.props.orderDetails &&
+        this.props.orderDetails.validationFailures &&
+        this.props.orderDetails.validationFailures.length === 1 &&
+        this.props.orderDetails.validationFailures[0].field ===
+          WhatsAppOrderDetailsFailures.PAYMENT_BUTTONS
+      ) {
+        this.setState({ activeTab: 1 });
+      }
+    }
+  }
+
   private updateState(updates: Partial<OrderDetailsSectionState>): void {
     const updated = mergeForm(this.state, updates) as OrderDetailsSectionState;
 
@@ -72,7 +87,7 @@ export default class OrderDetailsSection extends React.Component<
   }
 
   private setActiveTab(tab: number): void {
-    this.updateState({ activeTab: tab });
+    this.setState({ activeTab: tab });
   }
 
   private toStateEntry(
@@ -82,6 +97,21 @@ export default class OrderDetailsSection extends React.Component<
     return {
       [key]: { value: event },
     };
+  }
+
+  private getErrorFor(field: string) {
+    if (
+      !this.props.orderDetails ||
+      !this.props.orderDetails.validationFailures
+    ) {
+      return null;
+    }
+
+    const error = this.props.orderDetails.validationFailures.find(
+      failure => failure.field === field,
+    );
+
+    return error ? error.message : null;
   }
 
   private paymentSettingsFilled(): boolean {
@@ -148,6 +178,7 @@ export default class OrderDetailsSection extends React.Component<
           entry={this.state.referenceID}
           autocomplete={true}
           showLabel={true}
+          error={this.getErrorFor(WhatsAppOrderDetailsFailures.REFERENCE_ID)}
         />
 
         <TextInputElement
@@ -163,6 +194,7 @@ export default class OrderDetailsSection extends React.Component<
           entry={this.state.itemList}
           autocomplete={true}
           showLabel={true}
+          error={this.getErrorFor(WhatsAppOrderDetailsFailures.ITEM_LIST)}
         />
 
         <div>
@@ -497,6 +529,9 @@ export default class OrderDetailsSection extends React.Component<
               />
             </div>
           </ContentCollapse>
+          <p className={styles.payment_buttons_error}>
+            {this.getErrorFor(WhatsAppOrderDetailsFailures.PAYMENT_BUTTONS)}
+          </p>
         </div>
       </div>
     );

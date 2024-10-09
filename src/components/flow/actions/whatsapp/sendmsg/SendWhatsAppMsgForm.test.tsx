@@ -541,6 +541,94 @@ describe(SendWhatsAppMsgForm.name, () => {
     expect(props.updateAction).toMatchSnapshot();
   });
 
+  it('should not save changes with order details filled if there is no message, reference id, item list or neither payment buttons', () => {
+    const {
+      instance,
+      props,
+    }: {
+      instance: SendWhatsAppMsgForm;
+      props: ActionFormProps | Partial<ActionFormProps>;
+    } = setup(true);
+    instance.handleMessageTypeUpdate([WHATSAPP_MESSAGE_TYPE_INTERACTIVE]);
+    instance.handleInteractionTypeUpdate([
+      WHATSAPP_INTERACTION_TYPE_ORDER_DETAILS,
+    ]);
+    instance.handleOrderDetailsUpdate({
+      reference_id: '',
+      item_list: '',
+      tax: {
+        value: '',
+        description: '',
+      },
+      shipping: {
+        value: '',
+        description: '',
+      },
+      discount: {
+        value: '',
+        description: '',
+        program_name: '',
+      },
+      payment_settings: {
+        type: 'physical-goods',
+        payment_link: '',
+        pix_config: {
+          key: '',
+          key_type: '',
+          merchant_name: '',
+          code: '',
+        },
+      },
+    });
+    expect(instance.state).toMatchSnapshot();
+    instance.handleSave();
+    expect(props.updateAction).not.toHaveBeenCalled();
+  });
+
+  it("should not save changes with order details filled but missing a single pix config field if there's no payment link", () => {
+    const {
+      instance,
+      props,
+    }: {
+      instance: SendWhatsAppMsgForm;
+      props: ActionFormProps | Partial<ActionFormProps>;
+    } = setup(true);
+    instance.handleMessageTypeUpdate([WHATSAPP_MESSAGE_TYPE_INTERACTIVE]);
+    instance.handleInteractionTypeUpdate([
+      WHATSAPP_INTERACTION_TYPE_ORDER_DETAILS,
+    ]);
+    instance.handleOrderDetailsUpdate({
+      reference_id: '123',
+      item_list: '@results.items',
+      tax: {
+        value: '1000',
+        description: 'tax',
+      },
+      shipping: {
+        value: '2000',
+        description: 'shipping',
+      },
+      discount: {
+        value: '3000',
+        description: 'discount',
+        program_name: 'program',
+      },
+      payment_settings: {
+        type: 'physical-goods',
+        payment_link: '',
+        pix_config: {
+          key: '123',
+          key_type: 'random',
+          merchant_name: '',
+          code: '456',
+        },
+      },
+    });
+    expect(instance.state).toMatchSnapshot();
+    instance.handleSave();
+    expect(props.updateAction).not.toHaveBeenCalled();
+  });
+
   describe('cancel', () => {
     it('should cancel without changes', () => {
       const {

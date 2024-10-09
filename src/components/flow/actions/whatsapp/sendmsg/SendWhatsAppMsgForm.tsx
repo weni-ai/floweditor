@@ -19,6 +19,7 @@ import {
   FormEntry,
   StringArrayEntry,
   UnnnicSelectOptionEntry,
+  ValidationFailure,
 } from 'store/nodeEditor';
 import { ValidURL, shouldRequireIf, validate } from 'store/validators';
 
@@ -69,7 +70,9 @@ import {
   WHATSAPP_HEADER_TYPE_OPTIONS,
   WHATSAPP_MESSAGE_TYPE_OPTIONS,
   WHATSAPP_INTERACTION_TYPE_OPTIONS,
+  WhatsAppOrderDetailsFailures,
 } from 'components/flow/actions/whatsapp/sendmsg/constants';
+import { initializeEmptyOrderDetails } from './payments/helpers';
 
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
@@ -435,6 +438,48 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
     if (keys.hasOwnProperty('orderDetails')) {
       updates.orderDetails = { value: keys.orderDetails };
+
+      const validationFailures: ValidationFailure[] = [];
+      if (submitting) {
+        if (!keys.orderDetails.reference_id.trim()) {
+          validationFailures.push({
+            field: WhatsAppOrderDetailsFailures.REFERENCE_ID,
+            message: i18n.t(
+              'whatsapp_interactions.payments.order_details.reference_id_required',
+              'Reference ID is required',
+            ),
+          });
+        }
+
+        if (!keys.orderDetails.item_list.trim()) {
+          validationFailures.push({
+            field: WhatsAppOrderDetailsFailures.ITEM_LIST,
+            message: i18n.t(
+              'whatsapp_interactions.payments.order_details.item_list_required',
+              'Item list is required',
+            ),
+          });
+        }
+
+        // at least one payment button must be filled
+        if (
+          !keys.orderDetails.payment_settings.payment_link.trim() &&
+          (keys.orderDetails.payment_settings.pix_config &&
+            (!keys.orderDetails.payment_settings.pix_config.code.trim() ||
+              !keys.orderDetails.payment_settings.pix_config.key.trim() ||
+              !keys.orderDetails.payment_settings.pix_config.key_type.trim() ||
+              !keys.orderDetails.payment_settings.pix_config.merchant_name.trim()))
+        ) {
+          validationFailures.push({
+            field: WhatsAppOrderDetailsFailures.PAYMENT_BUTTONS,
+            message: i18n.t(
+              'whatsapp_interactions.payments.order_details.payment_button_required',
+              'At least one payment button is required',
+            ),
+          });
+        }
+      }
+      updates.orderDetails.validationFailures = validationFailures;
     }
 
     const updated = mergeForm(this.state, updates) as SendWhatsAppMsgFormState;
@@ -627,6 +672,15 @@ export default class SendWhatsAppMsgForm extends React.Component<
     ) {
       toUpdate.attachment = null;
       toUpdate.headerType = WHATSAPP_HEADER_TYPE_TEXT;
+    } else if (
+      interactionType.value === WhatsAppInteractionType.ORDER_DETAILS
+    ) {
+      toUpdate.headerText = '';
+      toUpdate.headerType = WHATSAPP_HEADER_TYPE_MEDIA;
+
+      if (!this.state.orderDetails.value) {
+        toUpdate.orderDetails = initializeEmptyOrderDetails();
+      }
     }
 
     return this.handleUpdate(toUpdate);
@@ -755,6 +809,17 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
       currentCheck = this.handleUpdate(
         { buttonText: this.state.buttonText.value },
+        true,
+      );
+      valid = valid && currentCheck;
+    }
+
+    if (
+      this.state.interactionType.value.value ===
+      WhatsAppInteractionType.ORDER_DETAILS
+    ) {
+      currentCheck = this.handleUpdate(
+        { orderDetails: this.state.orderDetails.value },
         true,
       );
       valid = valid && currentCheck;
@@ -1100,7 +1165,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
 
         {renderIf(interactionType === WhatsAppInteractionType.ORDER_DETAILS)(
           <OrderDetailsSection
-            orderDetails={this.state.orderDetails.value}
+            orderDetails={this.state.orderDetails}
             onUpdateOrderDetails={this.handleOrderDetailsUpdate}
           />,
         )}

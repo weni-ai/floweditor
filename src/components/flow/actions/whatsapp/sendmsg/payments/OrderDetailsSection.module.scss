@@ -37,6 +37,14 @@
       flex-direction: column;
       gap: $unnnic-spacing-xs;
     }
+
+    .payment_buttons_error {
+      color: $unnnic-color-feedback-red;
+      font-size: $unnnic-font-size-body-gt;
+      line-height: $unnnic-line-height-md + $unnnic-font-size-body-gt;
+    
+      margin: 0;
+    }
   }
 
   .divider {

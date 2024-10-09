@@ -279,6 +279,224 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
 </Dialog>
 `;
 
+exports[`SendWhatsAppMsgForm > should not save changes with order details filled but missing a single pix config field if there's no payment link 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Send order details to the user",
+      "label": "Payments: Order Details",
+      "value": "order_details",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "e44fa695-257c-4cdd-baf7-bb485aa2d1a0",
+      },
+    ],
+  },
+  "message": {
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "validationFailures": [],
+    "value": {
+      "discount": {
+        "description": "discount",
+        "program_name": "program",
+        "value": "3000",
+      },
+      "item_list": "@results.items",
+      "payment_settings": {
+        "payment_link": "",
+        "pix_config": {
+          "code": "456",
+          "key": "123",
+          "key_type": "random",
+          "merchant_name": "",
+        },
+        "type": "physical-goods",
+      },
+      "reference_id": "123",
+      "shipping": {
+        "description": "shipping",
+        "value": "2000",
+      },
+      "tax": {
+        "description": "tax",
+        "value": "1000",
+      },
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > should not save changes with order details filled if there is no message, reference id, item list or neither payment buttons 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Send order details to the user",
+      "label": "Payments: Order Details",
+      "value": "order_details",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
+      },
+    ],
+  },
+  "message": {
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "validationFailures": [],
+    "value": {
+      "discount": {
+        "description": "",
+        "program_name": "",
+        "value": "",
+      },
+      "item_list": "",
+      "payment_settings": {
+        "payment_link": "",
+        "pix_config": {
+          "code": "",
+          "key": "",
+          "key_type": "",
+          "merchant_name": "",
+        },
+        "type": "physical-goods",
+      },
+      "reference_id": "",
+      "shipping": {
+        "description": "",
+        "value": "",
+      },
+      "tax": {
+        "description": "",
+        "value": "",
+      },
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
 exports[`SendWhatsAppMsgForm > should save changes with order details filled 1`] = `
 {
   "actionURL": {
@@ -303,6 +521,7 @@ exports[`SendWhatsAppMsgForm > should save changes with order details filled 1`]
     "value": "",
   },
   "headerText": {
+    "validationFailures": [],
     "value": "",
   },
   "headerType": {
@@ -344,6 +563,7 @@ exports[`SendWhatsAppMsgForm > should save changes with order details filled 1`]
     },
   },
   "orderDetails": {
+    "validationFailures": [],
     "value": {
       "discount": {
         "description": "discount",

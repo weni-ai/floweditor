@@ -10,7 +10,7 @@ import {
 export const propsToState = (
   props: OrderDetailsSectionProps,
 ): OrderDetailsSectionState => {
-  const orderDetails = props && props.orderDetails;
+  const orderDetails = props && props.orderDetails && props.orderDetails.value;
   if (orderDetails) {
     const paymentSettings = orderDetails.payment_settings;
     return {
@@ -148,6 +148,36 @@ export const stateToProps = (
         key_type: state.pixConfigKeyType.value,
         merchant_name: state.pixConfigMerchantName.value,
         code: state.pixConfigCode.value,
+      },
+    },
+  };
+};
+
+export const initializeEmptyOrderDetails = (): WhatsAppOrderDetails => {
+  return {
+    reference_id: '',
+    item_list: '',
+    tax: {
+      value: '0',
+      description: '',
+    },
+    shipping: {
+      value: '',
+      description: '',
+    },
+    discount: {
+      value: '',
+      description: '',
+      program_name: '',
+    },
+    payment_settings: {
+      type: 'physical-goods',
+      payment_link: '',
+      pix_config: {
+        key: '',
+        key_type: '',
+        merchant_name: '',
+        code: '',
       },
     },
   };
