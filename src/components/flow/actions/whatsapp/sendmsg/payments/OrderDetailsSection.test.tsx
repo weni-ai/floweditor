@@ -81,7 +81,7 @@ describe(OrderDetailsSection.name, () => {
     expect(baseElement).toMatchSnapshot();
 
     // switch tab to payment buttons settings
-    userEvent.click(getByText('Payment buttons settings'));
+    userEvent.click(getByText('Payment buttons'));
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -134,7 +134,7 @@ describe(OrderDetailsSection.name, () => {
     userEvent.click(getByText('Digital goods'));
 
     // switch to payment buttons settings tab
-    userEvent.click(getByText('Payment buttons settings'));
+    userEvent.click(getByText('Payment buttons'));
 
     // expand pay with card collapse
     userEvent.click(getByText('Pay with card'));

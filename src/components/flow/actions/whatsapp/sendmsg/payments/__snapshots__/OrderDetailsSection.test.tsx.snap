@@ -31,7 +31,7 @@ exports[`OrderDetailsSection > should render 1`] = `
                   __use_react_component_wrap=""
                   style="all: unset;"
                 >
-                  Order details settings
+                  Order details
                 </div>
                 
                 <!---->
@@ -45,7 +45,7 @@ exports[`OrderDetailsSection > should render 1`] = `
                   __use_react_component_wrap=""
                   style="all: unset;"
                 >
-                  Payment buttons settings
+                  Payment buttons
                 </div>
                 
                 <!---->
@@ -372,7 +372,7 @@ exports[`OrderDetailsSection > should render 2`] = `
                   __use_react_component_wrap=""
                   style="all: unset;"
                 >
-                  Order details settings
+                  Order details
                 </div>
                 
                 <!---->
@@ -386,7 +386,7 @@ exports[`OrderDetailsSection > should render 2`] = `
                   __use_react_component_wrap=""
                   style="all: unset;"
                 >
-                  Payment buttons settings
+                  Payment buttons
                 </div>
                 
                 <!---->
@@ -843,6 +843,9 @@ exports[`OrderDetailsSection > should render 2`] = `
                   </div>
                 </div>
                 <div
+                  class="_divider_806df4"
+                />
+                <div
                   class="_row_fields_806df4"
                 >
                   <div>
@@ -950,6 +953,9 @@ exports[`OrderDetailsSection > should render 2`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  class="_divider_806df4"
+                />
                 <div
                   class="_row_fields_806df4"
                 >
@@ -1099,7 +1105,7 @@ exports[`OrderDetailsSection > should render 3`] = `
                   __use_react_component_wrap=""
                   style="all: unset;"
                 >
-                  Order details settings
+                  Order details
                 </div>
                 
                 <!---->
@@ -1113,7 +1119,7 @@ exports[`OrderDetailsSection > should render 3`] = `
                   __use_react_component_wrap=""
                   style="all: unset;"
                 >
-                  Payment buttons settings
+                  Payment buttons
                 </div>
                 
                 <!---->
@@ -1274,7 +1280,7 @@ exports[`OrderDetailsSection > should render without any orderDetails data 1`] =
                   __use_react_component_wrap=""
                   style="all: unset;"
                 >
-                  Order details settings
+                  Order details
                 </div>
                 
                 <!---->
@@ -1288,7 +1294,7 @@ exports[`OrderDetailsSection > should render without any orderDetails data 1`] =
                   __use_react_component_wrap=""
                   style="all: unset;"
                 >
-                  Payment buttons settings
+                  Payment buttons
                 </div>
                 
                 <!---->
@@ -1591,21 +1597,21 @@ exports[`OrderDetailsSection > should update order details 1`] = `
       {
         "discount": {
           "description": "new discount",
-          "programName": "new program",
+          "program_name": "new program",
           "value": "4000",
         },
-        "items": "@result.new_items",
-        "paymentSettings": {
-          "paymentLink": "https://weni.ai/new",
-          "pixConfig": {
+        "item_list": "@result.new_items",
+        "payment_settings": {
+          "payment_link": "https://weni.ai/new",
+          "pix_config": {
             "code": "new code",
             "key": "new key",
-            "keyType": "new random",
-            "merchantName": "new merchant",
+            "key_type": "new random",
+            "merchant_name": "new merchant",
           },
           "type": "digital-goods",
         },
-        "referenceID": "456",
+        "reference_id": "456",
         "shipping": {
           "description": "new shipping",
           "value": "3000",

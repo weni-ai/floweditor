@@ -347,21 +347,21 @@ exports[`SendWhatsAppMsgForm > should save changes with order details filled 1`]
     "value": {
       "discount": {
         "description": "discount",
-        "programName": "program",
+        "program_name": "program",
         "value": "3000",
       },
-      "items": "@results.items",
-      "paymentSettings": {
-        "paymentLink": "https://weni.ai",
-        "pixConfig": {
+      "item_list": "@results.items",
+      "payment_settings": {
+        "payment_link": "https://weni.ai",
+        "pix_config": {
           "code": "456",
           "key": "123",
-          "keyType": "random",
-          "merchantName": "merchant",
+          "key_type": "random",
+          "merchant_name": "merchant",
         },
         "type": "physical-goods",
       },
-      "referenceID": "123",
+      "reference_id": "123",
       "shipping": {
         "description": "shipping",
         "value": "2000",
@@ -400,21 +400,21 @@ exports[`SendWhatsAppMsgForm > should save changes with order details filled 2`]
         "order_details": {
           "discount": {
             "description": "discount",
-            "programName": "program",
+            "program_name": "program",
             "value": "3000",
           },
-          "items": "@results.items",
-          "paymentSettings": {
-            "paymentLink": "https://weni.ai",
-            "pixConfig": {
+          "item_list": "@results.items",
+          "payment_settings": {
+            "payment_link": "https://weni.ai",
+            "pix_config": {
               "code": "456",
               "key": "123",
-              "keyType": "random",
-              "merchantName": "merchant",
+              "key_type": "random",
+              "merchant_name": "merchant",
             },
             "type": "physical-goods",
           },
-          "referenceID": "123",
+          "reference_id": "123",
           "shipping": {
             "description": "shipping",
             "value": "2000",
