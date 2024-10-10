@@ -63,6 +63,7 @@ export const renderUploadButton = (
   attachmentEndpoint: string,
   onAttachmentUploaded: (response: AxiosResponse) => void,
   disabled = false,
+  size = 'default',
 ): JSX.Element => {
   let filePicker: any = null;
 
@@ -72,10 +73,14 @@ export const renderUploadButton = (
   };
 
   return (
-    <div className={styles.upload_button}>
+    <div
+      className={`${styles.upload_button} ${
+        size === 'small' ? styles.small_upload_button : ''
+      }`}
+    >
       <Button
         type={ButtonTypes.secondary}
-        name={i18n.t('buttons.upload', 'Upload')}
+        name={size === 'default' ? i18n.t('buttons.upload', 'Upload') : ''}
         onClick={triggerAttachmentUpload}
         iconName={'upload-bottom-1'}
         size={'small'}
