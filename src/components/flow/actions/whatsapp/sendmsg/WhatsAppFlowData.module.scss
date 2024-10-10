@@ -40,5 +40,13 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
+    .remove_attachment {
+      margin: 0;
+
+      button {
+        padding: $unnnic-spacing-ant !important;
+      }
+    }
   }
 }
