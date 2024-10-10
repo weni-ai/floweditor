@@ -188,6 +188,11 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
                 "label": "WhatsApp Flows",
                 "value": "flow_msg",
               },
+              {
+                "description": "Send order details to the user",
+                "label": "Payments: Order Details",
+                "value": "order_details",
+              },
             ]
           }
           orderedByIndex={true}
@@ -274,6 +279,386 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
 </Dialog>
 `;
 
+exports[`SendWhatsAppMsgForm > should not save changes with order details filled but missing a single pix config field if there's no payment link 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Send order details to the user",
+      "label": "Payments: Order Details",
+      "value": "order_details",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "e44fa695-257c-4cdd-baf7-bb485aa2d1a0",
+      },
+    ],
+  },
+  "message": {
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "validationFailures": [],
+    "value": {
+      "discount": {
+        "description": "discount",
+        "program_name": "program",
+        "value": "3000",
+      },
+      "item_list": "@results.items",
+      "payment_settings": {
+        "payment_link": "",
+        "pix_config": {
+          "code": "456",
+          "key": "123",
+          "key_type": "random",
+          "merchant_name": "",
+        },
+        "type": "physical-goods",
+      },
+      "reference_id": "123",
+      "shipping": {
+        "description": "shipping",
+        "value": "2000",
+      },
+      "tax": {
+        "description": "tax",
+        "value": "1000",
+      },
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > should not save changes with order details filled if there is no message, reference id, item list or neither payment buttons 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Send order details to the user",
+      "label": "Payments: Order Details",
+      "value": "order_details",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
+      },
+    ],
+  },
+  "message": {
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "validationFailures": [],
+    "value": {
+      "discount": {
+        "description": "",
+        "program_name": "",
+        "value": "",
+      },
+      "item_list": "",
+      "payment_settings": {
+        "payment_link": "",
+        "pix_config": {
+          "code": "",
+          "key": "",
+          "key_type": "",
+          "merchant_name": "",
+        },
+        "type": "physical-goods",
+      },
+      "reference_id": "",
+      "shipping": {
+        "description": "",
+        "value": "",
+      },
+      "tax": {
+        "description": "",
+        "value": "",
+      },
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > should save changes with order details filled 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Send order details to the user",
+      "label": "Payments: Order Details",
+      "value": "order_details",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "679d32c1-9996-48b4-9691-e869507b9e46",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "validationFailures": [],
+    "value": {
+      "discount": {
+        "description": "discount",
+        "program_name": "program",
+        "value": "3000",
+      },
+      "item_list": "@results.items",
+      "payment_settings": {
+        "payment_link": "https://weni.ai",
+        "pix_config": {
+          "code": "456",
+          "key": "123",
+          "key_type": "random",
+          "merchant_name": "merchant",
+        },
+        "type": "physical-goods",
+      },
+      "reference_id": "123",
+      "shipping": {
+        "description": "shipping",
+        "value": "2000",
+      },
+      "tax": {
+        "description": "tax",
+        "value": "1000",
+      },
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > should save changes with order details filled 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "media",
+        "interaction_type": "order_details",
+        "messageType": "interactive",
+        "order_details": {
+          "discount": {
+            "description": "discount",
+            "program_name": "program",
+            "value": "3000",
+          },
+          "item_list": "@results.items",
+          "payment_settings": {
+            "payment_link": "https://weni.ai",
+            "pix_config": {
+              "code": "456",
+              "key": "123",
+              "key_type": "random",
+              "merchant_name": "merchant",
+            },
+            "type": "physical-goods",
+          },
+          "reference_id": "123",
+          "shipping": {
+            "description": "shipping",
+            "value": "2000",
+          },
+          "tax": {
+            "description": "tax",
+            "value": "1000",
+          },
+        },
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
 exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is filled but there are no replies or list items 1`] = `
 {
   "actionURL": {
@@ -338,6 +723,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "validationFailures": [
@@ -429,6 +817,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
       "value": "interactive",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -507,6 +898,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "validationFailures": [
@@ -598,6 +992,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
       "value": "interactive",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -682,6 +1079,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       "value": "interactive",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -765,6 +1165,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -851,6 +1254,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       "value": "interactive",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -936,6 +1342,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       "value": "interactive",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -1016,6 +1425,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save if message is empty and
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1098,6 +1510,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
       "value": "simple",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -1174,6 +1589,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1280,6 +1698,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
       "value": "simple",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -1384,6 +1805,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1490,6 +1914,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
       "value": "interactive",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -1594,6 +2021,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with cta button and
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1701,6 +2131,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated attach
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1814,6 +2247,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1943,6 +2379,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
       "value": "interactive",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -2061,6 +2500,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer
       "value": "interactive",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "reply 1",
@@ -2170,6 +2612,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated header
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2289,6 +2734,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2416,6 +2864,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
       "value": "interactive",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -2500,6 +2951,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2610,6 +3064,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated messag
       "value": "simple",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -2712,6 +3169,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2824,6 +3284,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload
       "value": "simple",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -2930,6 +3393,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -3249,6 +3715,9 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
       "value": "simple",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -3326,6 +3795,9 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -3405,6 +3877,9 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
