@@ -96,6 +96,7 @@ export const nodeToState = (
       flowData: { value: whatsAppFlowData || null },
       flowScreen: { value: action.flow_screen || '' },
       flowDataAttachmentNameMap: action.flow_data_attachment_name_map || {},
+      orderDetails: { value: action.order_details || null },
     };
   }
 
@@ -120,6 +121,7 @@ export const nodeToState = (
     flowScreen: { value: '' },
     whatsappFlow: { value: null },
     flowDataAttachmentNameMap: {},
+    orderDetails: { value: null },
   };
 };
 
@@ -170,6 +172,7 @@ export const stateToAction = (
     flow_id: state.whatsappFlow.value ? state.whatsappFlow.value.id : null,
     flow_screen: state.flowScreen.value,
     flow_data_attachment_name_map: state.flowDataAttachmentNameMap,
+    order_details: state.orderDetails.value,
   };
 
   result = Object.fromEntries(
