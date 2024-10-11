@@ -3527,6 +3527,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
       "value": "interactive",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -3623,6 +3626,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
