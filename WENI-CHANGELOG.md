@@ -1,3 +1,7 @@
+3.4.0
+----------
+- Feat: WhatsApp Order Details
+
 3.3.0
 ----------
 - Feat: Add support to attachments in whatsapp flows
