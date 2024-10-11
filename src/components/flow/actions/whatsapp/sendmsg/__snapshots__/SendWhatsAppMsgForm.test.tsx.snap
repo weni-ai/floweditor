@@ -238,7 +238,7 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
             />
           </div>
           <div
-            className="_upload_button_5978a7"
+            className="_upload_button_5978a7 "
           >
             <Button
               disabled={false}
@@ -3341,6 +3341,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
   },
   "flowData": {
     "value": {
+      "file": "",
       "foo": "bar",
     },
   },
@@ -3415,6 +3416,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
         ],
         "variables": [
           "foo",
+          "file",
         ],
       },
       "id": "123",
@@ -3431,6 +3433,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
       {
         "button_text": "button text",
         "flow_data": {
+          "file": "",
           "foo": "bar",
         },
         "flow_data_attachment_name_map": {},
@@ -3451,6 +3454,202 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
       "value": undefined,
     },
   ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow configured 3`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "button text",
+  },
+  "flowData": {
+    "value": {
+      "file": "file value",
+      "foo": "bar",
+    },
+  },
+  "flowDataAttachmentNameMap": {
+    "file": "file name",
+  },
+  "flowScreen": {
+    "validationFailures": [],
+    "value": "first screen",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Use your interactive forms created on Meta.",
+      "label": "WhatsApp Flows",
+      "value": "flow_msg",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "validationFailures": [],
+    "value": {
+      "assets": {
+        "screens": [
+          "first screen",
+          "second screen",
+        ],
+        "variables": [
+          "foo",
+          "file",
+        ],
+      },
+      "id": "123",
+      "name": "wpp flow",
+    },
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow configured 4`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "button text",
+  },
+  "flowData": {
+    "value": {
+      "file": "",
+      "foo": "bar",
+    },
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "validationFailures": [],
+    "value": "first screen",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Use your interactive forms created on Meta.",
+      "label": "WhatsApp Flows",
+      "value": "flow_msg",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "validationFailures": [],
+    "value": {
+      "assets": {
+        "screens": [
+          "first screen",
+          "second screen",
+        ],
+        "variables": [
+          "foo",
+          "file",
+        ],
+      },
+      "id": "123",
+      "name": "wpp flow",
+    },
+  },
 }
 `;
 

@@ -1152,6 +1152,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 this.state.whatsappFlow.value.assets.variables.length > 0,
             )(
               <WhatsAppFlowData
+                attachmentsEndpoint={this.context.config.endpoints.attachments}
                 data={this.state.flowData}
                 attachmentNameMap={this.state.flowDataAttachmentNameMap}
                 onValueUpdated={this.handleFlowDataUpdate}

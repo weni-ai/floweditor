@@ -481,7 +481,7 @@ describe(SendWhatsAppMsgForm.name, () => {
           name: 'wpp flow',
           assets: {
             screens: ['first screen', 'second screen'],
-            variables: ['foo'],
+            variables: ['foo', 'file'],
           },
         },
       ]);
@@ -492,6 +492,20 @@ describe(SendWhatsAppMsgForm.name, () => {
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
       expect(props.updateAction).toMatchSnapshot();
+
+      // add an attachment-like value
+      instance.handleFlowDataUpdate('file', 'file value');
+      instance.handleFlowDataAttachmentNameUpdate('file', 'file name');
+
+      expect(instance.state).toMatchSnapshot();
+      instance.handleSave();
+      expect(props.updateAction).toHaveBeenCalled();
+
+      // it should remove the key from attachment name map
+      instance.handleFlowDataUpdate('file', '');
+      expect(instance.state).toMatchSnapshot();
+      instance.handleSave();
+      expect(props.updateAction).toHaveBeenCalled();
     });
   });
 
