@@ -1,3 +1,7 @@
+3.4.1
+----------
+- Fix: Update test snapshots
+
 3.4.0
 ----------
 - Feat: WhatsApp Order Details
