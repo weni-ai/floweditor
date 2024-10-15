@@ -307,7 +307,9 @@ exports[`OrderDetailsSection > should render 1`] = `
                     check_circle
                   </span>
                 </div>
-                <span>
+                <span
+                  class=""
+                >
                   Payment settings
                 </span>
                 <span
@@ -648,7 +650,9 @@ exports[`OrderDetailsSection > should render 2`] = `
                     check_circle
                   </span>
                 </div>
-                <span>
+                <span
+                  class=""
+                >
                   Payment settings
                 </span>
                 <span
@@ -1175,7 +1179,9 @@ exports[`OrderDetailsSection > should render 3`] = `
                       check_circle
                     </span>
                   </div>
-                  <span>
+                  <span
+                    class=""
+                  >
                     Pay with card
                   </span>
                   <div
@@ -1219,7 +1225,9 @@ exports[`OrderDetailsSection > should render 3`] = `
                       check_circle
                     </span>
                   </div>
-                  <span>
+                  <span
+                    class=""
+                  >
                     Copy pix code
                   </span>
                   <div
@@ -1559,7 +1567,9 @@ exports[`OrderDetailsSection > should render errors 1`] = `
                     check_circle
                   </span>
                 </div>
-                <span>
+                <span
+                  class=""
+                >
                   Payment settings
                 </span>
                 <span
@@ -1694,7 +1704,9 @@ exports[`OrderDetailsSection > should render errors 2`] = `
                       check_circle
                     </span>
                   </div>
-                  <span>
+                  <span
+                    class=""
+                  >
                     Pay with card
                   </span>
                   <div
@@ -1738,7 +1750,9 @@ exports[`OrderDetailsSection > should render errors 2`] = `
                       check_circle
                     </span>
                   </div>
-                  <span>
+                  <span
+                    class=""
+                  >
                     Copy pix code
                   </span>
                   <div
@@ -2080,7 +2094,9 @@ exports[`OrderDetailsSection > should render without any orderDetails data 1`] =
                     check_circle
                   </span>
                 </div>
-                <span>
+                <span
+                  class=""
+                >
                   Payment settings
                 </span>
                 <span
