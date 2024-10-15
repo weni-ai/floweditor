@@ -17,6 +17,7 @@ import {
   WHATSAPP_INTERACTION_TYPE_WHATSAPP_FLOWS,
   WHATSAPP_MESSAGE_TYPE_INTERACTIVE,
   WHATSAPP_MESSAGE_TYPE_SIMPLE,
+  WHATSAPP_INTERACTION_TYPE_ORDER_DETAILS,
 } from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { AxiosResponse } from 'axios';
 
@@ -480,7 +481,7 @@ describe(SendWhatsAppMsgForm.name, () => {
           name: 'wpp flow',
           assets: {
             screens: ['first screen', 'second screen'],
-            variables: ['foo'],
+            variables: ['foo', 'file'],
           },
         },
       ]);
@@ -491,7 +492,155 @@ describe(SendWhatsAppMsgForm.name, () => {
       instance.handleSave();
       expect(props.updateAction).toHaveBeenCalled();
       expect(props.updateAction).toMatchSnapshot();
+
+      // add an attachment-like value
+      instance.handleFlowDataUpdate('file', 'file value');
+      instance.handleFlowDataAttachmentNameUpdate('file', 'file name');
+
+      expect(instance.state).toMatchSnapshot();
+      instance.handleSave();
+      expect(props.updateAction).toHaveBeenCalled();
+
+      // it should remove the key from attachment name map
+      instance.handleFlowDataUpdate('file', '');
+      expect(instance.state).toMatchSnapshot();
+      instance.handleSave();
+      expect(props.updateAction).toHaveBeenCalled();
     });
+  });
+
+  it('should save changes with order details filled', () => {
+    const {
+      instance,
+      props,
+    }: {
+      instance: SendWhatsAppMsgForm;
+      props: ActionFormProps | Partial<ActionFormProps>;
+    } = setup(true);
+    instance.handleMessageUpdate('new msg', null);
+    instance.handleMessageTypeUpdate([WHATSAPP_MESSAGE_TYPE_INTERACTIVE]);
+    instance.handleInteractionTypeUpdate([
+      WHATSAPP_INTERACTION_TYPE_ORDER_DETAILS,
+    ]);
+    instance.handleOrderDetailsUpdate({
+      reference_id: '123',
+      item_list: '@results.items',
+      tax: {
+        value: '1000',
+        description: 'tax',
+      },
+      shipping: {
+        value: '2000',
+        description: 'shipping',
+      },
+      discount: {
+        value: '3000',
+        description: 'discount',
+        program_name: 'program',
+      },
+      payment_settings: {
+        type: 'physical-goods',
+        payment_link: 'https://weni.ai',
+        pix_config: {
+          key: '123',
+          key_type: 'random',
+          merchant_name: 'merchant',
+          code: '456',
+        },
+      },
+    });
+    expect(instance.state).toMatchSnapshot();
+    instance.handleSave();
+    expect(props.updateAction).toHaveBeenCalled();
+    expect(props.updateAction).toMatchSnapshot();
+  });
+
+  it('should not save changes with order details filled if there is no message, reference id, item list or neither payment buttons', () => {
+    const {
+      instance,
+      props,
+    }: {
+      instance: SendWhatsAppMsgForm;
+      props: ActionFormProps | Partial<ActionFormProps>;
+    } = setup(true);
+    instance.handleMessageTypeUpdate([WHATSAPP_MESSAGE_TYPE_INTERACTIVE]);
+    instance.handleInteractionTypeUpdate([
+      WHATSAPP_INTERACTION_TYPE_ORDER_DETAILS,
+    ]);
+    instance.handleOrderDetailsUpdate({
+      reference_id: '',
+      item_list: '',
+      tax: {
+        value: '',
+        description: '',
+      },
+      shipping: {
+        value: '',
+        description: '',
+      },
+      discount: {
+        value: '',
+        description: '',
+        program_name: '',
+      },
+      payment_settings: {
+        type: 'physical-goods',
+        payment_link: '',
+        pix_config: {
+          key: '',
+          key_type: '',
+          merchant_name: '',
+          code: '',
+        },
+      },
+    });
+    expect(instance.state).toMatchSnapshot();
+    instance.handleSave();
+    expect(props.updateAction).not.toHaveBeenCalled();
+  });
+
+  it("should not save changes with order details filled but missing a single pix config field if there's no payment link", () => {
+    const {
+      instance,
+      props,
+    }: {
+      instance: SendWhatsAppMsgForm;
+      props: ActionFormProps | Partial<ActionFormProps>;
+    } = setup(true);
+    instance.handleMessageTypeUpdate([WHATSAPP_MESSAGE_TYPE_INTERACTIVE]);
+    instance.handleInteractionTypeUpdate([
+      WHATSAPP_INTERACTION_TYPE_ORDER_DETAILS,
+    ]);
+    instance.handleOrderDetailsUpdate({
+      reference_id: '123',
+      item_list: '@results.items',
+      tax: {
+        value: '1000',
+        description: 'tax',
+      },
+      shipping: {
+        value: '2000',
+        description: 'shipping',
+      },
+      discount: {
+        value: '3000',
+        description: 'discount',
+        program_name: 'program',
+      },
+      payment_settings: {
+        type: 'physical-goods',
+        payment_link: '',
+        pix_config: {
+          key: '123',
+          key_type: 'random',
+          merchant_name: '',
+          code: '456',
+        },
+      },
+    });
+    expect(instance.state).toMatchSnapshot();
+    instance.handleSave();
+    expect(props.updateAction).not.toHaveBeenCalled();
   });
 
   describe('cancel', () => {

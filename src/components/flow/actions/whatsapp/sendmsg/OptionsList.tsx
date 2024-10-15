@@ -35,6 +35,20 @@ const UnnnicButton = applyVueInReact(Unnnic.unnnicButton, {
   },
 });
 
+const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
+  vue: {
+    componentWrap: 'div',
+    slotWrap: 'div',
+    componentWrapAttrs: {
+      'data-draggable': 'true',
+      style: {
+        all: '',
+        height: '20px',
+        padding: '4px',
+      },
+    },
+  },
+});
 export interface OptionsListProps {
   options: FormEntry<WhatsAppListItem[]>;
   onOptionsUpdated(options: WhatsAppListItem[]): void;
@@ -52,61 +66,81 @@ export function hasEmptyListItem(listItems: WhatsAppListItem[]): boolean {
 const SortableListItem = SortableElement(({ value: row, index }: any) => {
   const listItem = row.item as WhatsAppListItem;
   return (
-    <ContentCollapse
-      title={`${i18n.t('forms.list_option', 'Option')} ${index +
-        1}/${MAX_LIST_ITEMS_COUNT}`}
-      open={
-        (index === 0 && row.length === 1) || listItem.title.trim().length === 0
-      }
-      titleIcon="check_circle"
-      titleIconScheme={
-        listItem.title.trim().length > 0 ? 'weni-600' : 'neutral-soft'
-      }
-    >
-      <div className={styles.list_item_wrapper}>
-        <TextInputElement
-          name={i18n.t('forms.title', 'Title')}
-          placeholder={i18n.t('forms.ex_orange', 'Ex: Orange')}
-          size={TextInputSizes.sm}
-          onChange={(value, name) =>
-            row.list.handleListItemTitleUpdate(value, name, index)
-          }
-          entry={{ value: listItem.title }}
-          autocomplete={true}
-          showLabel={true}
-          maxLength={24}
-        />
-
-        <TextInputElement
-          name={i18n.t('forms.description_optional', 'Description (Optional)')}
-          placeholder={i18n.t(
-            'forms.ex_citrus_and_sweet',
-            'Ex: Citrus and sweet',
-          )}
-          size={TextInputSizes.sm}
-          onChange={(value, name) =>
-            row.list.handleListItemDescriptionUpdate(value, name, index)
-          }
-          entry={{ value: listItem.description }}
-          autocomplete={true}
-          showLabel={true}
-          maxLength={72}
-        />
-
-        <UnnnicButton
-          className={styles.list_item_remove}
-          data-testid="Remove"
-          iconLeft="do_not_disturb_on"
-          text={i18n.t('forms.remove', 'Remove')}
-          size="small"
-          type="tertiary"
-          onClick={() => row.list.handleListItemRemoval(listItem)}
-          disabled={
-            index === row.length - 1 && listItem.title.trim().length === 0
-          }
+    <div className={styles.content}>
+      <div className={styles.drag_wrapper} data-draggable={true}>
+        <UnnnicIcon
+          className={styles.drag_handle}
+          icon="drag_indicator"
+          size="md"
+          scheme="neutral-cloudy"
+          clickable
+          data-draggable={true}
         />
       </div>
-    </ContentCollapse>
+      <ContentCollapse
+        title={
+          listItem.title || `${i18n.t('forms.empty_option', 'Not filled')}`
+        }
+        subtitle={`${i18n.t('forms.list_option', 'Option')} ${index +
+          1}/${MAX_LIST_ITEMS_COUNT}`}
+        opacity={!listItem.title}
+        open={
+          (index === 0 && row.length === 1) ||
+          listItem.title.trim().length === 0
+        }
+        titleIcon="check_circle"
+        titleIconScheme={
+          listItem.title.trim().length > 0 ? 'weni-600' : 'neutral-soft'
+        }
+      >
+        <div className={styles.list_item_wrapper}>
+          <TextInputElement
+            name={i18n.t('forms.title', 'Title')}
+            placeholder={i18n.t('forms.ex_orange', 'Ex: Orange')}
+            size={TextInputSizes.sm}
+            onChange={(value, name) =>
+              row.list.handleListItemTitleUpdate(value, name, index)
+            }
+            entry={{ value: listItem.title }}
+            autocomplete={true}
+            showLabel={true}
+            maxLength={24}
+          />
+
+          <TextInputElement
+            name={i18n.t(
+              'forms.description_optional',
+              'Description (Optional)',
+            )}
+            placeholder={i18n.t(
+              'forms.ex_citrus_and_sweet',
+              'Ex: Citrus and sweet',
+            )}
+            size={TextInputSizes.sm}
+            onChange={(value, name) =>
+              row.list.handleListItemDescriptionUpdate(value, name, index)
+            }
+            entry={{ value: listItem.description }}
+            autocomplete={true}
+            showLabel={true}
+            maxLength={72}
+          />
+
+          <UnnnicButton
+            className={styles.list_item_remove}
+            data-testid="Remove"
+            iconLeft="do_not_disturb_on"
+            text={i18n.t('forms.remove', 'Remove')}
+            size="small"
+            type="tertiary"
+            onClick={() => row.list.handleListItemRemoval(listItem)}
+            disabled={
+              index === row.length - 1 && listItem.title.trim().length === 0
+            }
+          />
+        </div>
+      </ContentCollapse>
+    </div>
   );
 });
 

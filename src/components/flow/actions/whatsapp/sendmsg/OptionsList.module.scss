@@ -23,15 +23,30 @@
   margin-top: $unnnic-spacing-sm;
 }
 
-.list_item_wrapper {
+.content{
   display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: $unnnic-spacing-xs;
-}
+  flex-direction: row;
 
-.list_item_remove {
-  width: 100%;
+  .drag_wrapper{
+    display: flex;
+    padding: $unnnic-spacing-xs $unnnic-spacing-nano;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: $unnnic-border-radius-sm 0px 0px $unnnic-border-radius-sm;
+    background: $unnnic-color-neutral-soft;
+  }
+
+  .list_item_wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: $unnnic-spacing-xs;
+  }
+  
+  .list_item_remove {
+    width: 100%;
+  }
 }
 
 .list_item_enter,

@@ -20,6 +20,7 @@ import { Asset, RenderNode } from 'store/flowContext';
 // tslint:disable:no-shadowed-variable
 export interface ValidationFailure {
   message: string;
+  field?: string;
 }
 
 export interface FormEntry<T = any> {

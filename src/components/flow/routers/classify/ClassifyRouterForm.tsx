@@ -154,7 +154,7 @@ export default class ClassifyRouterForm extends React.Component<
     };
   }
 
-  private dialog: Dialog;
+  public dialog: Dialog;
 
   private renderEdit(): JSX.Element {
     const typeConfig = this.props.typeConfig;

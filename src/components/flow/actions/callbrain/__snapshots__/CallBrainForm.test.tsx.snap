@@ -2621,6 +2621,10 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
         "items": {},
         "type": "result",
       },
+      "whatsapp_flows": {
+        "items": {},
+        "type": "whatsapp_flow",
+      },
     },
     "brainInfo": {
       "enabled": true,
@@ -5339,6 +5343,10 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
             "results": {
               "items": {},
               "type": "result",
+            },
+            "whatsapp_flows": {
+              "items": {},
+              "type": "whatsapp_flow",
             },
           }
         }

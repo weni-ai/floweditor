@@ -14,25 +14,30 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
       },
     }
   }
-  headerClass="send_msg"
-  title="Send message"
+  headerClass="send_whatsapp_msg"
+  new={true}
+  title="Send WhatsApp Message"
 >
   <TypeList
     __className=""
     initialType={
       {
         "component": [Function],
-        "description": "Send the contact a message",
+        "description": "Send a WhatsApp message",
+        "filter": "whatsapp",
         "form": [Function],
         "localization": [Function],
         "localizeableKeys": [
           "text",
           "quick_replies",
-          "templating.variables",
+          "footer",
+          "header_text",
+          "button_text",
         ],
         "massageForDisplay": [Function],
-        "name": "Send message",
-        "type": "send_msg",
+        "name": "Send WhatsApp Message",
+        "new": true,
+        "type": "send_whatsapp_msg",
       }
     }
     nodeSettings={
@@ -42,17 +47,18 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
           "attachment": null,
           "button_text": "",
           "flow_data": {},
+          "flow_data_attachment_name_map": {},
           "flow_id": "",
           "flow_screen": "",
           "footer": "",
           "header_text": "",
           "header_type": "media",
-          "interaction_type": "list",
+          "interaction_type": null,
           "list_items": [],
           "messageType": "simple",
           "quick_replies": [],
           "text": "",
-          "type": "send_msg",
+          "type": "send_whatsapp_msg",
           "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
         },
         "originalNode": {
@@ -64,17 +70,18 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
                 "attachment": null,
                 "button_text": "",
                 "flow_data": {},
+                "flow_data_attachment_name_map": {},
                 "flow_id": "",
                 "flow_screen": "",
                 "footer": "",
                 "header_text": "",
                 "header_type": "media",
-                "interaction_type": "list",
+                "interaction_type": null,
                 "list_items": [],
                 "messageType": "simple",
                 "quick_replies": [],
                 "text": "",
-                "type": "send_msg",
+                "type": "send_whatsapp_msg",
                 "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
               },
             ],
@@ -181,6 +188,11 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
                 "label": "WhatsApp Flows",
                 "value": "flow_msg",
               },
+              {
+                "description": "Send order details to the user",
+                "label": "Payments: Order Details",
+                "value": "order_details",
+              },
             ]
           }
           orderedByIndex={true}
@@ -226,7 +238,7 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
             />
           </div>
           <div
-            className="_upload_button_5978a7"
+            className="_upload_button_5978a7 "
           >
             <Button
               disabled={false}
@@ -265,6 +277,386 @@ exports[`SendWhatsAppMsgForm > render > should render 1`] = `
     />
   </section>
 </Dialog>
+`;
+
+exports[`SendWhatsAppMsgForm > should not save changes with order details filled but missing a single pix config field if there's no payment link 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Send order details to the user",
+      "label": "Payments: Order Details",
+      "value": "order_details",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "e44fa695-257c-4cdd-baf7-bb485aa2d1a0",
+      },
+    ],
+  },
+  "message": {
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "validationFailures": [],
+    "value": {
+      "discount": {
+        "description": "discount",
+        "program_name": "program",
+        "value": "3000",
+      },
+      "item_list": "@results.items",
+      "payment_settings": {
+        "payment_link": "",
+        "pix_config": {
+          "code": "456",
+          "key": "123",
+          "key_type": "random",
+          "merchant_name": "",
+        },
+        "type": "physical-goods",
+      },
+      "reference_id": "123",
+      "shipping": {
+        "description": "shipping",
+        "value": "2000",
+      },
+      "tax": {
+        "description": "tax",
+        "value": "1000",
+      },
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > should not save changes with order details filled if there is no message, reference id, item list or neither payment buttons 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Send order details to the user",
+      "label": "Payments: Order Details",
+      "value": "order_details",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
+      },
+    ],
+  },
+  "message": {
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "validationFailures": [],
+    "value": {
+      "discount": {
+        "description": "",
+        "program_name": "",
+        "value": "",
+      },
+      "item_list": "",
+      "payment_settings": {
+        "payment_link": "",
+        "pix_config": {
+          "code": "",
+          "key": "",
+          "key_type": "",
+          "merchant_name": "",
+        },
+        "type": "physical-goods",
+      },
+      "reference_id": "",
+      "shipping": {
+        "description": "",
+        "value": "",
+      },
+      "tax": {
+        "description": "",
+        "value": "",
+      },
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > should save changes with order details filled 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Send order details to the user",
+      "label": "Payments: Order Details",
+      "value": "order_details",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "679d32c1-9996-48b4-9691-e869507b9e46",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "validationFailures": [],
+    "value": {
+      "discount": {
+        "description": "discount",
+        "program_name": "program",
+        "value": "3000",
+      },
+      "item_list": "@results.items",
+      "payment_settings": {
+        "payment_link": "https://weni.ai",
+        "pix_config": {
+          "code": "456",
+          "key": "123",
+          "key_type": "random",
+          "merchant_name": "merchant",
+        },
+        "type": "physical-goods",
+      },
+      "reference_id": "123",
+      "shipping": {
+        "description": "shipping",
+        "value": "2000",
+      },
+      "tax": {
+        "description": "tax",
+        "value": "1000",
+      },
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > should save changes with order details filled 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "media",
+        "interaction_type": "order_details",
+        "messageType": "interactive",
+        "order_details": {
+          "discount": {
+            "description": "discount",
+            "program_name": "program",
+            "value": "3000",
+          },
+          "item_list": "@results.items",
+          "payment_settings": {
+            "payment_link": "https://weni.ai",
+            "pix_config": {
+              "code": "456",
+              "key": "123",
+              "key_type": "random",
+              "merchant_name": "merchant",
+            },
+            "type": "physical-goods",
+          },
+          "reference_id": "123",
+          "shipping": {
+            "description": "shipping",
+            "value": "2000",
+          },
+          "tax": {
+            "description": "tax",
+            "value": "1000",
+          },
+        },
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;
 
 exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is filled but there are no replies or list items 1`] = `
@@ -318,7 +710,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
       {
         "description": "",
         "title": "",
-        "uuid": "3d8db86c-7279-4106-a388-3f143bd5623f",
+        "uuid": "00dd2423-0a34-4ee2-b97d-839fb2d593ef",
       },
     ],
   },
@@ -331,6 +723,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "validationFailures": [
@@ -408,7 +803,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
       {
         "description": "",
         "title": "",
-        "uuid": "96249bdc-cb58-4489-a188-0eeb6686a8c9",
+        "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
       },
     ],
   },
@@ -421,6 +816,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is fi
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -487,7 +885,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
       {
         "description": "",
         "title": "",
-        "uuid": "1888ae1f-2518-4727-98e2-731674e1760e",
+        "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
       },
     ],
   },
@@ -500,6 +898,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "validationFailures": [
@@ -577,7 +978,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
       {
         "description": "",
         "title": "",
-        "uuid": "dd57500e-a8e8-4a98-8b5b-a33637523a8d",
+        "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
       },
     ],
   },
@@ -590,6 +991,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes if header is se
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -661,7 +1065,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       {
         "description": "",
         "title": "",
-        "uuid": "a0bf60d1-2333-41a5-9bcb-7c56cc5e969e",
+        "uuid": "96249bdc-cb58-4489-a188-0eeb6686a8c9",
       },
     ],
   },
@@ -674,6 +1078,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -745,7 +1152,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       {
         "description": "",
         "title": "",
-        "uuid": "a0bf60d1-2333-41a5-9bcb-7c56cc5e969e",
+        "uuid": "96249bdc-cb58-4489-a188-0eeb6686a8c9",
       },
     ],
   },
@@ -758,6 +1165,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -830,7 +1240,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       {
         "description": "",
         "title": "",
-        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+        "uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
       },
     ],
   },
@@ -843,6 +1253,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -915,7 +1328,7 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       {
         "description": "",
         "title": "",
-        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+        "uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
       },
     ],
   },
@@ -928,6 +1341,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save changes with updated bu
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1010,6 +1426,9 @@ exports[`SendWhatsAppMsgForm > updates > should not save if message is empty and
       "value": "simple",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -1077,7 +1496,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
       {
         "description": "",
         "title": "",
-        "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+        "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
       },
     ],
   },
@@ -1090,6 +1509,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1154,7 +1576,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
       {
         "description": "",
         "title": "",
-        "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+        "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
       },
     ],
   },
@@ -1167,6 +1589,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1194,7 +1619,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes after remove attach
         "messageType": "simple",
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -1259,7 +1684,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
       {
         "description": "",
         "title": "",
-        "uuid": "141e0356-9fdd-47d3-a12d-16efc5b45276",
+        "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
       },
     ],
   },
@@ -1272,6 +1697,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1300,7 +1728,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
         "messageType": "simple",
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "e81b3f1a-0863-4418-8a72-9c9f8aa72b7c",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -1365,7 +1793,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
       {
         "description": "",
         "title": "",
-        "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
+        "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
       },
     ],
   },
@@ -1377,6 +1805,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1404,7 +1835,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to
         "header_type": "media",
         "messageType": "simple",
         "type": "send_whatsapp_msg",
-        "uuid": "f05fa107-03db-4315-a211-53da63603e6f",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -1469,7 +1900,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
       {
         "description": "",
         "title": "",
-        "uuid": "666613f2-2d4f-432c-a707-929481961e98",
+        "uuid": "452c1751-5b03-4d1a-8346-83be999a8258",
       },
     ],
   },
@@ -1482,6 +1913,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1510,7 +1944,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes when interaction ty
         "messageType": "interactive",
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "6b121177-6eef-48b3-8f6d-eef2154a0e10",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -1574,7 +2008,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with cta button and
       {
         "description": "",
         "title": "",
-        "uuid": "926d1c97-f7a6-4b9b-b3cb-e960f137780f",
+        "uuid": "6f87dde3-5df3-4935-8585-2656df068d61",
       },
     ],
   },
@@ -1587,6 +2021,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with cta button and
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1617,7 +2054,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with cta button and
         "messageType": "interactive",
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "09294c2a-031e-4e74-9b1c-aec239b2a145",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -1682,7 +2119,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated attach
       {
         "description": "",
         "title": "",
-        "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
       },
     ],
   },
@@ -1694,6 +2131,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated attach
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1721,7 +2161,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated attach
         "header_type": "media",
         "messageType": "simple",
         "type": "send_whatsapp_msg",
-        "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -1794,7 +2234,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
       {
         "description": "",
         "title": "",
-        "uuid": "28ab7e47-57cc-42ae-8269-5d8d442d4276",
+        "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
       },
     ],
   },
@@ -1807,6 +2247,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1848,7 +2291,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
         "messageType": "interactive",
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "6f87dde3-5df3-4935-8585-2656df068d61",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -1922,7 +2365,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
       {
         "description": "",
         "title": "",
-        "uuid": "19c23626-6961-4683-9cae-38dd767614f3",
+        "uuid": "f627a69c-a227-451f-9520-ce969f02162e",
       },
     ],
   },
@@ -1935,6 +2378,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -1976,7 +2422,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated button
         "messageType": "interactive",
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -2040,7 +2486,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer
       {
         "description": "",
         "title": "",
-        "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
+        "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
       },
     ],
   },
@@ -2053,6 +2499,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2086,7 +2535,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer
         ],
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -2150,7 +2599,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated header
       {
         "description": "",
         "title": "",
-        "uuid": "6b59e863-2e14-442b-9987-aaa284871b8e",
+        "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
       },
     ],
   },
@@ -2163,6 +2612,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated header
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2196,7 +2648,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated header
         ],
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "00dd2423-0a34-4ee2-b97d-839fb2d593ef",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -2269,7 +2721,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
       {
         "description": "",
         "title": "",
-        "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
+        "uuid": "e81b3f1a-0863-4418-8a72-9c9f8aa72b7c",
       },
     ],
   },
@@ -2282,6 +2734,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2322,7 +2777,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
         "messageType": "interactive",
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -2395,7 +2850,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
       {
         "description": "",
         "title": "",
-        "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
+        "uuid": "431978dd-6b18-4e25-86f1-11835491a9c9",
       },
     ],
   },
@@ -2408,6 +2863,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2480,7 +2938,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
       {
         "description": "",
         "title": "",
-        "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
+        "uuid": "431978dd-6b18-4e25-86f1-11835491a9c9",
       },
     ],
   },
@@ -2493,6 +2951,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2528,7 +2989,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated list i
         "messageType": "interactive",
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "f627a69c-a227-451f-9520-ce969f02162e",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -2603,6 +3064,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated messag
       "value": "simple",
     },
   },
+  "orderDetails": {
+    "value": null,
+  },
   "quickReplies": {
     "value": [
       "",
@@ -2629,7 +3093,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated messag
         "messageType": "simple",
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -2692,7 +3156,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
       {
         "description": "",
         "title": "",
-        "uuid": "e44fa695-257c-4cdd-baf7-bb485aa2d1a0",
+        "uuid": "a0bf60d1-2333-41a5-9bcb-7c56cc5e969e",
       },
     ],
   },
@@ -2705,6 +3169,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2739,7 +3206,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick 
         ],
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "b88f2d42-530b-43d7-867b-a22e299200ae",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -2804,7 +3271,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload
       {
         "description": "",
         "title": "",
-        "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+        "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
       },
     ],
   },
@@ -2816,6 +3283,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2843,7 +3313,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload
         "header_type": "media",
         "messageType": "simple",
         "type": "send_whatsapp_msg",
-        "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -2871,6 +3341,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
   },
   "flowData": {
     "value": {
+      "file": "",
       "foo": "bar",
     },
   },
@@ -2909,7 +3380,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
       {
         "description": "",
         "title": "",
-        "uuid": "dc9996b2-8127-49a3-b97b-c38b8f26958a",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
       },
     ],
   },
@@ -2922,6 +3393,9 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -2942,6 +3416,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
         ],
         "variables": [
           "foo",
+          "file",
         ],
       },
       "id": "123",
@@ -2958,6 +3433,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
       {
         "button_text": "button text",
         "flow_data": {
+          "file": "",
           "foo": "bar",
         },
         "flow_data_attachment_name_map": {},
@@ -2968,7 +3444,7 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
         "messageType": "interactive",
         "text": "new msg",
         "type": "send_whatsapp_msg",
-        "uuid": "3792a634-e96d-4426-8016-0ddc35c0e431",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
       },
     ],
   ],
@@ -2978,6 +3454,208 @@ exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow 
       "value": undefined,
     },
   ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow configured 3`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "button text",
+  },
+  "flowData": {
+    "value": {
+      "file": "file value",
+      "foo": "bar",
+    },
+  },
+  "flowDataAttachmentNameMap": {
+    "file": "file name",
+  },
+  "flowScreen": {
+    "validationFailures": [],
+    "value": "first screen",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Use your interactive forms created on Meta.",
+      "label": "WhatsApp Flows",
+      "value": "flow_msg",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "validationFailures": [],
+    "value": {
+      "assets": {
+        "screens": [
+          "first screen",
+          "second screen",
+        ],
+        "variables": [
+          "foo",
+          "file",
+        ],
+      },
+      "id": "123",
+      "name": "wpp flow",
+    },
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow configured 4`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "button text",
+  },
+  "flowData": {
+    "value": {
+      "file": "",
+      "foo": "bar",
+    },
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "validationFailures": [],
+    "value": "first screen",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Use your interactive forms created on Meta.",
+      "label": "WhatsApp Flows",
+      "value": "flow_msg",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "validationFailures": [],
+    "value": {
+      "assets": {
+        "screens": [
+          "first screen",
+          "second screen",
+        ],
+        "variables": [
+          "foo",
+          "file",
+        ],
+      },
+      "id": "123",
+      "name": "wpp flow",
+    },
+  },
 }
 `;
 
@@ -3029,7 +3707,7 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
       {
         "description": "",
         "title": "",
-        "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
       },
     ],
   },
@@ -3042,6 +3720,9 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -3107,7 +3788,7 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
       {
         "description": "",
         "title": "",
-        "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
       },
     ],
   },
@@ -3120,6 +3801,9 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
       "label": "Interactive message",
       "value": "interactive",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [
@@ -3186,7 +3870,7 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
       {
         "description": "",
         "title": "",
-        "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+        "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
       },
     ],
   },
@@ -3199,6 +3883,9 @@ exports[`SendWhatsAppMsgForm > updates > should switch message type to interacti
       "label": "Simple message",
       "value": "simple",
     },
+  },
+  "orderDetails": {
+    "value": null,
   },
   "quickReplies": {
     "value": [

@@ -580,6 +580,7 @@ exports[`StartSessionForm > render > should render 1`] = `
                     class="unnnic-tag
         unnnic-tag-scheme--neutral-dark unnnic-tag-content"
                     count="0"
+                    data-testid="temba_remove_tag_cat_fanciers"
                     data-v-5a2abba9=""
                     enabletooltip="false"
                     hasbackbutton="false"
@@ -623,6 +624,7 @@ exports[`StartSessionForm > render > should render 1`] = `
                     class="unnnic-tag
         unnnic-tag-scheme--neutral-dark unnnic-tag-content"
                     count="0"
+                    data-testid="temba_remove_tag_norbert_kwizera"
                     data-v-5a2abba9=""
                     enabletooltip="false"
                     hasbackbutton="false"
@@ -666,6 +668,7 @@ exports[`StartSessionForm > render > should render 1`] = `
                     class="unnnic-tag
         unnnic-tag-scheme--neutral-dark unnnic-tag-content"
                     count="0"
+                    data-testid="temba_remove_tag_rowan_seymour"
                     data-v-5a2abba9=""
                     enabletooltip="false"
                     hasbackbutton="false"

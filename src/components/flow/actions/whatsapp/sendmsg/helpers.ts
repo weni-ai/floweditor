@@ -43,6 +43,7 @@ export const nodeToState = (
     }
 
     let whatsAppFlow: WhatsAppFlow = null;
+    const whatsAppFlowData = action.flow_data;
     const whatsAppFlowAsset = assetStore.whatsapp_flows.items[action.flow_id];
     if (whatsAppFlowAsset) {
       whatsAppFlow = {
@@ -50,6 +51,15 @@ export const nodeToState = (
         name: whatsAppFlowAsset.name,
         assets: whatsAppFlowAsset.content.assets,
       };
+
+      // add newer variables if needed
+      if (whatsAppFlowData) {
+        whatsAppFlow.assets.variables.forEach(key => {
+          if (!whatsAppFlowData[key]) {
+            whatsAppFlowData[key] = '';
+          }
+        });
+      }
     }
 
     return {
@@ -83,9 +93,10 @@ export const nodeToState = (
       quickReplyEntry: { value: '' },
       valid: true,
       whatsappFlow: { value: whatsAppFlow },
-      flowData: { value: action.flow_data || null },
+      flowData: { value: whatsAppFlowData || null },
       flowScreen: { value: action.flow_screen || '' },
       flowDataAttachmentNameMap: action.flow_data_attachment_name_map || {},
+      orderDetails: { value: action.order_details || null },
     };
   }
 
@@ -110,6 +121,7 @@ export const nodeToState = (
     flowScreen: { value: '' },
     whatsappFlow: { value: null },
     flowDataAttachmentNameMap: {},
+    orderDetails: { value: null },
   };
 };
 
@@ -160,6 +172,7 @@ export const stateToAction = (
     flow_id: state.whatsappFlow.value ? state.whatsappFlow.value.id : null,
     flow_screen: state.flowScreen.value,
     flow_data_attachment_name_map: state.flowDataAttachmentNameMap,
+    order_details: state.orderDetails.value,
   };
 
   result = Object.fromEntries(

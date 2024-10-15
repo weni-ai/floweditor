@@ -55,6 +55,7 @@ export default class UploadButton extends React.Component<
     return (
       <>
         <input
+          data-testid="upload-audio-input"
           style={{
             display: 'none',
           }}

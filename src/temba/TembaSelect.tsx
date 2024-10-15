@@ -753,6 +753,9 @@ export class TembaSelect extends React.Component<
             {selectedArray.map((selected, index) => {
               return (
                 <ElUnnnicTag
+                  data-testid={`temba_remove_tag_${snakify(
+                    this.getName(selected),
+                  )}`}
                   key={index}
                   text={this.getName(selected)}
                   scheme="neutral-dark"

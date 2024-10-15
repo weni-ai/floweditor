@@ -52,4 +52,12 @@ describe(KeyLocalizationForm.name, () => {
     fireEvent.click(getByText('Ok'));
     expect(props.updateLocalizations).toMatchSnapshot();
   });
+
+  it('should close the modal', () => {
+    const props = getLocalizationFormProps(createSendEmailAction());
+    const { getByText } = render(<KeyLocalizationForm {...props} />);
+
+    fireEvent.click(getByText('Cancel'));
+    expect(props.onClose).toHaveBeenCalled();
+  });
 });

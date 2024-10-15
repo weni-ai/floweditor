@@ -1,3 +1,20 @@
+3.4.1
+----------
+- Fix: Update test snapshots
+
+3.4.0
+----------
+- Feat: WhatsApp Order Details
+
+3.3.0
+----------
+- Feat: Add support to attachments in whatsapp flows
+- Fix: Show new variables if not in existing action flow_data
+
+3.2.1
+----------
+- Fix: Send WhatsApp message emoji picker
+
 3.2.0
 ----------
 - Feat: Prevent mutable actions on immutable flow
