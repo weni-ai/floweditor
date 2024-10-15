@@ -2,6 +2,7 @@
 
 .collapse {
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: $unnnic-spacing-sm;
   border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
@@ -43,7 +44,16 @@
 }
 
 .collapse_icon {
+  display: flex;
+  flex-direction: row;
   margin-left: auto;
+  .subtitle{
+    font-family: $unnnic-font-family-secondary;
+    font-weight: $unnnic-font-weight-regular;
+    color: $unnnic-color-neutral-cloudy;
+    height: 100%;
+    font-size: $unnnic-font-size-body-md;
+  }
 }
 
 .collapse_divider {

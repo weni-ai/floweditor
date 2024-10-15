@@ -21,6 +21,7 @@ const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
 
 interface ContentCollapseProps {
   title: string;
+  subtitle?: string;
   description?: string;
   children: React.ReactNode;
   hasError?: boolean;
@@ -83,6 +84,9 @@ export default class ContentCollapse extends React.Component<
               </span>
             )}
             <div className={styles.collapse_icon}>
+              {this.props.subtitle && (
+                <div className={styles.subtitle}>{this.props.subtitle}</div>
+              )}
               <UnnnicIcon
                 icon={this.state.isOpen ? 'expand_less' : 'expand_more'}
               />
