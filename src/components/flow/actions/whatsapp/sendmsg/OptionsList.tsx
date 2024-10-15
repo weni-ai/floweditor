@@ -78,9 +78,12 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
         />
       </div>
       <ContentCollapse
-        title={listItem.title || 'nao preenchido'}
+        title={
+          listItem.title || `${i18n.t('forms.empty_option', 'Not filled')}`
+        }
         subtitle={`${i18n.t('forms.list_option', 'Option')} ${index +
           1}/${MAX_LIST_ITEMS_COUNT}`}
+        opacity={!listItem.title}
         open={
           (index === 0 && row.length === 1) ||
           listItem.title.trim().length === 0

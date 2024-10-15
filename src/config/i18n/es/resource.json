@@ -546,6 +546,7 @@
     "message_type": "Tipo de mensaje",
     "interactions": "Interacciones",
     "list_option": "Opción",
+    "empty_option": "No completada",
     "title": "Título",
     "description": "Descripción",
     "description_optional": "Descripción (opcional)",

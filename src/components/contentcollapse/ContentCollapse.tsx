@@ -22,6 +22,7 @@ const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
 interface ContentCollapseProps {
   title: string;
   subtitle?: string;
+  opacity?: boolean;
   description?: string;
   children: React.ReactNode;
   hasError?: boolean;
@@ -77,7 +78,9 @@ export default class ContentCollapse extends React.Component<
                 filled={true}
               />
             )}
-            <span>{this.props.title}</span>
+            <span className={this.props.opacity ? styles.opacity : ''}>
+              {this.props.title}
+            </span>
             {this.props.optional && (
               <span className={styles.optional}>
                 {i18n.t('forms.optional', '(Optional)')}
