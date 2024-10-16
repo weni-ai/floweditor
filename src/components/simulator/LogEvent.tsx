@@ -33,6 +33,12 @@ interface MsgProps {
   urn: string;
   attachments?: string[];
   quick_replies?: string[];
+  list_message?: {
+    list_items: {
+      title: string;
+      uuid: string;
+    }[];
+  };
 }
 
 interface WebRequestLog {

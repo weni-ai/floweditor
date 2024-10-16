@@ -99,6 +99,7 @@ enum DrawerType {
   digit = 'digit',
   digits = 'digits',
   quickReplies = 'quickReplies',
+  optionList = 'optionList',
 }
 
 interface SimulatorState {
@@ -114,6 +115,7 @@ interface SimulatorState {
   keypadEntry: string;
 
   quickReplies?: string[];
+  optionList?: string[];
 
   // are we currently simulating a sprint
   sprinting: boolean;
@@ -320,6 +322,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
       const toAdd = [];
 
       let quickReplies: string[] = null;
+      let optionList: string[] = null;
 
       let messageFound = false;
       while (events.length > 0 && !messageFound) {
@@ -363,6 +366,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
             // save off any quick replies we might have
             if (event.msg.quick_replies) {
               quickReplies = event.msg.quick_replies;
+            } else if (event.msg.list_message) {
+              optionList = event.msg.list_message.list_items.map(
+                item => item.title,
+              );
             }
           }
         }
@@ -377,6 +384,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
 
       if (quickReplies !== null) {
         newState.quickReplies = quickReplies;
+      }
+
+      if (optionList !== null) {
+        newState.optionList = optionList;
       }
 
       this.scrollToBottom();
@@ -837,6 +848,24 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     );
   }
 
+  private getOptionsDrawer(): JSX.Element {
+    return (
+      <div className={styles.quick_replies}>
+        {this.state.optionList.map(reply => (
+          <div
+            className={styles.quick_reply}
+            onClick={() => {
+              this.resume(reply);
+            }}
+            key={`option_${reply}`}
+          >
+            {reply}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   private handleKeyPress(btn: string, multiple: boolean): void {
     if (!multiple) {
       this.resume(btn);
@@ -900,6 +929,8 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         return this.getVideoDrawer();
       case DrawerType.quickReplies:
         return this.getQuickRepliesDrawer();
+      case DrawerType.optionList:
+        return this.getOptionsDrawer();
       case DrawerType.digits:
       case DrawerType.digit:
         return this.getKeypadDrawer(
