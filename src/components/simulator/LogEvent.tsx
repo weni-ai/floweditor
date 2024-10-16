@@ -458,6 +458,14 @@ export default class LogEvent extends React.Component<
           Direction.MT,
           logStyle,
         );
+
+      case 'msg_wpp_created':
+        return renderMessage(
+          this.props.msg.text,
+          this.props.msg.attachments,
+          Direction.MT,
+          logStyle,
+        );
       case 'ivr_created':
         return renderMessage(
           this.props.msg.text,
