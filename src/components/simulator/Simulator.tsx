@@ -409,7 +409,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   private updateRunContext(runContext: RunContext, msg?: PostMessage): void {
     const wasJustActive =
       this.state.active || (runContext.events && runContext.events.length > 0);
-    this.setState({ quickReplies: [] }, () => {
+    this.setState({ quickReplies: [], optionList: [] }, () => {
       if (!runContext.events || (runContext.events.length === 0 && msg)) {
         const runs = runContext.session.runs;
         const run = runs[runs.length - 1];
@@ -494,6 +494,11 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           // if we have quick replies, open our drawe with attachment options
           if (!drawerType && this.hasQuickReplies()) {
             drawerType = DrawerType.quickReplies;
+            drawerOpen = true;
+          }
+
+          if (!drawerType && this.hasOptions()) {
+            drawerType = DrawerType.optionList;
             drawerOpen = true;
           }
 
@@ -851,15 +856,15 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   private getOptionsDrawer(): JSX.Element {
     return (
       <div className={styles.quick_replies}>
-        {this.state.optionList.map(reply => (
+        {this.state.optionList.map(option => (
           <div
-            className={styles.quick_reply}
+            className={styles.quick_replies}
             onClick={() => {
-              this.resume(reply);
+              this.resume(option);
             }}
-            key={`option_${reply}`}
+            key={`option_${option}`}
           >
-            {reply}
+            {option}
           </div>
         ))}
       </div>
@@ -981,6 +986,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     return (this.state.quickReplies || []).length > 0;
   }
 
+  private hasOptions(): boolean {
+    return (this.state.optionList || []).length > 0;
+  }
+
   private handleHideAttachments(): void {
     this.setState(
       {
@@ -988,7 +997,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         drawerOpen: false,
       },
       () => {
-        if (this.hasQuickReplies()) {
+        if (this.hasQuickReplies() || this.hasOptions()) {
           window.setTimeout(() => {
             this.showAttachmentDrawer(DrawerType.quickReplies);
           }, 300);
