@@ -33,6 +33,12 @@ interface MsgProps {
   urn: string;
   attachments?: string[];
   quick_replies?: string[];
+  list_message?: {
+    list_items: {
+      title: string;
+      uuid: string;
+    }[];
+  };
 }
 
 interface WebRequestLog {
@@ -452,6 +458,14 @@ export default class LogEvent extends React.Component<
           logStyle,
         );
       case 'msg_created':
+        return renderMessage(
+          this.props.msg.text,
+          this.props.msg.attachments,
+          Direction.MT,
+          logStyle,
+        );
+
+      case 'msg_wpp_created':
         return renderMessage(
           this.props.msg.text,
           this.props.msg.attachments,

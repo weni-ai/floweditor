@@ -99,6 +99,7 @@ enum DrawerType {
   digit = 'digit',
   digits = 'digits',
   quickReplies = 'quickReplies',
+  optionList = 'optionList',
 }
 
 interface SimulatorState {
@@ -114,6 +115,7 @@ interface SimulatorState {
   keypadEntry: string;
 
   quickReplies?: string[];
+  optionList?: string[];
 
   // are we currently simulating a sprint
   sprinting: boolean;
@@ -320,6 +322,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
       const toAdd = [];
 
       let quickReplies: string[] = null;
+      let optionList: string[] = null;
 
       let messageFound = false;
       while (events.length > 0 && !messageFound) {
@@ -363,6 +366,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
             // save off any quick replies we might have
             if (event.msg.quick_replies) {
               quickReplies = event.msg.quick_replies;
+            } else if (event.msg.list_message) {
+              optionList = event.msg.list_message.list_items.map(
+                item => item.title,
+              );
             }
           }
         }
@@ -377,6 +384,9 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
 
       if (quickReplies !== null) {
         newState.quickReplies = quickReplies;
+      }
+      if (optionList !== null) {
+        newState.optionList = optionList;
       }
 
       this.scrollToBottom();
@@ -398,7 +408,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   private updateRunContext(runContext: RunContext, msg?: PostMessage): void {
     const wasJustActive =
       this.state.active || (runContext.events && runContext.events.length > 0);
-    this.setState({ quickReplies: [] }, () => {
+    this.setState({ quickReplies: [], optionList: [] }, () => {
       if (!runContext.events || (runContext.events.length === 0 && msg)) {
         const runs = runContext.session.runs;
         const run = runs[runs.length - 1];
@@ -483,6 +493,11 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           // if we have quick replies, open our drawe with attachment options
           if (!drawerType && this.hasQuickReplies()) {
             drawerType = DrawerType.quickReplies;
+            drawerOpen = true;
+          }
+
+          if (!drawerType && this.hasOptions()) {
+            drawerType = DrawerType.optionList;
             drawerOpen = true;
           }
 
@@ -837,6 +852,24 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     );
   }
 
+  private getOptionsDrawer(): JSX.Element {
+    return (
+      <div className={styles.quick_replies}>
+        {this.state.optionList.map(option => (
+          <div
+            className={styles.quick_reply}
+            onClick={() => {
+              this.resume(option);
+            }}
+            key={`option_${option}`}
+          >
+            {option}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   private handleKeyPress(btn: string, multiple: boolean): void {
     if (!multiple) {
       this.resume(btn);
@@ -900,6 +933,8 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         return this.getVideoDrawer();
       case DrawerType.quickReplies:
         return this.getQuickRepliesDrawer();
+      case DrawerType.optionList:
+        return this.getOptionsDrawer();
       case DrawerType.digits:
       case DrawerType.digit:
         return this.getKeypadDrawer(
@@ -950,6 +985,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     return (this.state.quickReplies || []).length > 0;
   }
 
+  private hasOptions(): boolean {
+    return (this.state.optionList || []).length > 0;
+  }
+
   private handleHideAttachments(): void {
     this.setState(
       {
@@ -960,6 +999,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         if (this.hasQuickReplies()) {
           window.setTimeout(() => {
             this.showAttachmentDrawer(DrawerType.quickReplies);
+          }, 300);
+        } else if (this.hasOptions()) {
+          window.setTimeout(() => {
+            this.showAttachmentDrawer(DrawerType.optionList);
           }, 300);
         }
       },

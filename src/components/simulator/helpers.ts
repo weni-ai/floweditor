@@ -87,13 +87,18 @@ export const getSimulationAssets = (
 };
 
 export const isMessage = (event: EventProps): boolean => {
-  return !!['msg_created', 'msg_received', 'ivr_created'].find(
-    type => type === event.type,
-  );
+  return !![
+    'msg_created',
+    'msg_wpp_created',
+    'msg_received',
+    'ivr_created',
+  ].find(type => type === event.type);
 };
 
 export const isMT = (event: EventProps): boolean => {
-  return !!['msg_created', 'ivr_created'].find(type => type === event.type);
+  return !!['msg_created', 'msg_wpp_created', 'ivr_created'].find(
+    type => type === event.type,
+  );
 };
 
 export const hasPopulatedKey = (obj: any): boolean => {
