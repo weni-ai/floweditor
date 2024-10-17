@@ -370,6 +370,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
               optionList = event.msg.list_message.list_items.map(
                 item => item.title,
               );
+              console.log('❤️ tem options', optionList);
             }
           }
         }
