@@ -388,8 +388,6 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
       if (quickReplies !== null) {
         newState.quickReplies = quickReplies;
       }
-
-      console.log('aquiii');
       if (optionList !== null) {
         console.log('tem options', optionList);
         newState.optionList = optionList;
@@ -1004,9 +1002,13 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         drawerOpen: false,
       },
       () => {
-        if (this.hasQuickReplies() || this.hasOptions()) {
+        if (this.hasQuickReplies()) {
           window.setTimeout(() => {
             this.showAttachmentDrawer(DrawerType.quickReplies);
+          }, 300);
+        } else if (this.hasOptions()) {
+          window.setTimeout(() => {
+            this.showAttachmentDrawer(DrawerType.optionList);
           }, 300);
         }
       },
