@@ -318,6 +318,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     recentMessages: { [key: string]: RecentMessage[] },
     callback: () => void,
   ): void {
+    console.log('❤️ update events', events);
     if (events && events.length > 0) {
       const toAdd = [];
 
@@ -365,12 +366,13 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           if (isMT(event)) {
             // save off any quick replies we might have
             if (event.msg.quick_replies) {
+              console.log('tem quick replies no event');
               quickReplies = event.msg.quick_replies;
             } else if (event.msg.list_message) {
+              console.log('tem options no event');
               optionList = event.msg.list_message.list_items.map(
                 item => item.title,
               );
-              console.log('❤️ tem options', optionList);
             }
           }
         }
@@ -387,12 +389,15 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         newState.quickReplies = quickReplies;
       }
 
+      console.log('aquiii');
       if (optionList !== null) {
+        console.log('tem options', optionList);
         newState.optionList = optionList;
       }
 
       this.scrollToBottom();
 
+      console.log('newState: ', newState);
       this.setState(newState as SimulatorState, () => {
         if (events.length === 0) {
           callback();
@@ -501,7 +506,6 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           if (!drawerType && this.hasOptions()) {
             drawerType = DrawerType.optionList;
             drawerOpen = true;
-            console.log('nao tinha drawrtType e achou as options');
           }
 
           this.setState(
@@ -925,6 +929,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   }
 
   private getDrawerContents(): JSX.Element {
+    console.log('drawer type: ', this.state.drawerType);
     switch (this.state.drawerType) {
       case DrawerType.location:
         return this.getLocationDrawer();
