@@ -318,7 +318,6 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     recentMessages: { [key: string]: RecentMessage[] },
     callback: () => void,
   ): void {
-    console.log('❤️ update events', events);
     if (events && events.length > 0) {
       const toAdd = [];
 
@@ -366,10 +365,8 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           if (isMT(event)) {
             // save off any quick replies we might have
             if (event.msg.quick_replies) {
-              console.log('tem quick replies no event');
               quickReplies = event.msg.quick_replies;
             } else if (event.msg.list_message) {
-              console.log('tem options no event');
               optionList = event.msg.list_message.list_items.map(
                 item => item.title,
               );
@@ -389,13 +386,11 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         newState.quickReplies = quickReplies;
       }
       if (optionList !== null) {
-        console.log('tem options', optionList);
         newState.optionList = optionList;
       }
 
       this.scrollToBottom();
 
-      console.log('newState: ', newState);
       this.setState(newState as SimulatorState, () => {
         if (events.length === 0) {
           callback();
@@ -862,7 +857,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
       <div className={styles.quick_replies}>
         {this.state.optionList.map(option => (
           <div
-            className={styles.quick_replies}
+            className={styles.quick_reply}
             onClick={() => {
               this.resume(option);
             }}
@@ -927,7 +922,6 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   }
 
   private getDrawerContents(): JSX.Element {
-    console.log('drawer type: ', this.state.drawerType);
     switch (this.state.drawerType) {
       case DrawerType.location:
         return this.getLocationDrawer();
