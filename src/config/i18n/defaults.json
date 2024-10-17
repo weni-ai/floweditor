@@ -349,6 +349,7 @@
     "list_button_url": "Action button URL",
     "list_items": "List items",
     "list_option": "Option",
+    "empty_option": "Not filled",
     "localize_rules": "Sometimes languages need special rules to route things properly. If a translation is not provided, the original rule will be used.",
     "localized_quick_replies": "Add a new [[language]] Quick Reply and press enter.",
     "manually_select_products": "Manually select products",

@@ -38,7 +38,7 @@ describe(OptionsList.name, () => {
     const { getByTestId } = render(<OptionsList {...props} />);
 
     // expand collapse
-    const expandCollapseButton = getByTestId('Option 2/10');
+    const expandCollapseButton = getByTestId('title 2');
     await act(async () => {
       expandCollapseButton.click();
     });
@@ -59,7 +59,7 @@ describe(OptionsList.name, () => {
     const { getByTestId } = render(<OptionsList {...props} />);
 
     // expand collapse
-    const expandCollapseButton = getByTestId('Option 2/10');
+    const expandCollapseButton = getByTestId('title 2');
     await act(async () => {
       expandCollapseButton.click();
     });
@@ -80,7 +80,7 @@ describe(OptionsList.name, () => {
     const { getByTestId } = render(<OptionsList {...props} />);
 
     // expand collapse
-    const expandCollapseButton = getByTestId('Option 2/10');
+    const expandCollapseButton = getByTestId('title 2');
     await act(async () => {
       expandCollapseButton.click();
     });
