@@ -1,3 +1,9 @@
+3.4.2
+----------
+- Feat: WhatsApp options reordenation.
+- Fix: Fix: Simulator for WhatsApp card messages.
+
+
 3.4.1
 ----------
 - Fix: Update test snapshots
