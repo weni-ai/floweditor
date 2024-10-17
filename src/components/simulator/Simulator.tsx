@@ -370,6 +370,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
               optionList = event.msg.list_message.list_items.map(
                 item => item.title,
               );
+              console.log('❤️ tem options', optionList);
             }
           }
         }
@@ -500,6 +501,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           if (!drawerType && this.hasOptions()) {
             drawerType = DrawerType.optionList;
             drawerOpen = true;
+            console.log('nao tinha drawrtType e achou as options');
           }
 
           this.setState(
