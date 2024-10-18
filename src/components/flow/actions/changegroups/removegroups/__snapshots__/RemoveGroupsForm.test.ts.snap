@@ -199,6 +199,29 @@ exports[`RemoveGroupsForm > render > should render 1`] = `
 </Dialog>
 `;
 
+exports[`RemoveGroupsForm > should cancel 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      true,
+    ],
+    [
+      true,
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
 exports[`RemoveGroupsForm > updates > should allow switching from router > switch from router 1`] = `
 [MockFunction spy] {
   "calls": [
@@ -226,6 +249,27 @@ exports[`RemoveGroupsForm > updates > should allow switching from router > switc
 `;
 
 exports[`RemoveGroupsForm > updates > should handle remove from all groups > update 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "all_groups": true,
+        "groups": [],
+        "type": "remove_contact_groups",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`RemoveGroupsForm > updates > should handle remove from all groups > update 2`] = `
 [MockFunction spy] {
   "calls": [
     [

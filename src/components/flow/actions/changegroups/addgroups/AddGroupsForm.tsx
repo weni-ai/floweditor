@@ -66,7 +66,7 @@ export default class AddGroupsForm extends React.Component<
     return { name: input };
   }
 
-  private getButtons(): ButtonSet {
+  public getButtons(): ButtonSet {
     return {
       primary: { name: i18n.t('buttons.confirm'), onClick: this.handleSave },
       secondary: {
