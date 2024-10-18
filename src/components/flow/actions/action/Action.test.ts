@@ -1,12 +1,9 @@
 import {
-  actionBodySpecId,
   actionContainerSpecId,
   actionInteractiveDivSpecId,
-  actionOverlaySpecId,
   ActionWrapper,
   ActionWrapperProps,
 } from 'components/flow/actions/action/Action';
-import { getTypeConfig } from 'config/typeConfigs';
 import { composeComponentTestUtils, getSpecWrapper, setMock } from 'testUtils';
 import {
   createExit,
@@ -15,6 +12,10 @@ import {
   createStartFlowAction,
   createSubflowNode,
   English,
+  createSendWhatsAppMsgAction,
+  createSendEmailAction,
+  createCallWeniGPTAction,
+  Spanish,
 } from 'testUtils/assetCreators';
 import { getLocalization, set, setFalse, setTrue } from 'utils';
 import { MouseState } from 'store/editor';
@@ -25,6 +26,9 @@ const sendMsgAction1 = createSendMsgAction({
   uuid: '0ed4b887-2924-45ea-babe-4d580cdfb000',
   text: 'Yo!',
 });
+const sendWppMsgAction = createSendWhatsAppMsgAction();
+const sendEmailAction = createSendEmailAction();
+const callWeniGptAction = createCallWeniGPTAction();
 const sendMsgNode = createRenderNode({
   actions: [sendMsgAction],
   exits: [createExit()],
@@ -34,6 +38,14 @@ const subflowNode = createSubflowNode(startFlowAction);
 const localization = {
   spa: {
     [sendMsgAction.uuid]: {
+      text: ['¡Hola!'],
+    },
+  },
+};
+
+const wppLocalization = {
+  spa: {
+    [sendWppMsgAction.uuid]: {
       text: ['¡Hola!'],
     },
   },
@@ -64,7 +76,6 @@ describe(ActionWrapper.name, () => {
       const { wrapper, props, instance } = setup(true, {
         render: setMock(),
       });
-      const { name } = getTypeConfig(props.action.type);
       const actionContainer = getSpecWrapper(wrapper, actionContainerSpecId);
 
       expect(actionContainer.prop('id')).toBe(`action-${props.action.uuid}`);
@@ -93,6 +104,39 @@ describe(ActionWrapper.name, () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
+    it('should render selected', () => {
+      const { wrapper } = setup(true, { selected: setTrue() });
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('should display translating style to send whatsapp message action', () => {
+      const { wrapper } = setup(true, {
+        action: set(sendWppMsgAction),
+        translating: setTrue(),
+      });
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('should display translating style to send email action', () => {
+      const { wrapper } = setup(true, {
+        action: set(sendEmailAction),
+        translating: setTrue(),
+      });
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('should display translating style to call weni gpt action', () => {
+      const { wrapper } = setup(true, {
+        action: set(callWeniGptAction),
+        translating: setTrue(),
+      });
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
     it('should display not_localizable style', () => {
       const { wrapper } = setup(true, {
         action: set(startFlowAction),
@@ -103,7 +147,7 @@ describe(ActionWrapper.name, () => {
     });
 
     it('should display hybrid style', () => {
-      const { wrapper, props } = setup(true, {
+      const { wrapper } = setup(true, {
         renderNode: set(subflowNode),
       });
 
@@ -163,6 +207,46 @@ describe(ActionWrapper.name, () => {
                 });
                 */
       });
+
+      it("should call onOpenNodeEditor with showAdvanced true if clicked on a target with 'data-advanced' attribute", () => {
+        const { props, instance } = setup(true, {
+          onOpenNodeEditor: setMock(),
+        }) as { instance: ActionWrapper; props: ActionWrapperProps };
+
+        const mockEvent: any = {
+          preventDefault: vi.fn(),
+          stopPropagation: vi.fn(),
+          target: {
+            attributes: {},
+            getAttribute: vi.fn(() => 'true'),
+          },
+        };
+
+        instance.handleActionClicked(mockEvent);
+
+        expect(props.onOpenNodeEditor).toHaveBeenCalledTimes(1);
+        expect(props.onOpenNodeEditor).toHaveBeenCalledWith({
+          originalNode: props.renderNode,
+          originalAction: props.action,
+          showAdvanced: true,
+        });
+      });
+
+      it('should not call onOpenNodeEditor if node is dragging', () => {
+        const { props, instance } = setup(true, {
+          onOpenNodeEditor: setMock(),
+          mouseState: set(MouseState.DRAGGING),
+        }) as { instance: ActionWrapper; props: ActionWrapperProps };
+
+        const mockEvent: any = {
+          preventDefault: vi.fn(),
+          stopPropagation: vi.fn(),
+        };
+
+        instance.handleActionClicked(mockEvent);
+
+        expect(props.onOpenNodeEditor).not.toHaveBeenCalled();
+      });
     });
 
     describe('handleRemoval', () => {
@@ -170,10 +254,10 @@ describe(ActionWrapper.name, () => {
         const { props, instance } = setup(true, {
           removeAction: setMock(),
         }) as { instance: ActionWrapper; props: ActionWrapperProps };
-        const mockEvent: any = {
-          stopPropagation: vi.fn(),
-          preventDefault: vi.fn(),
-        };
+        // const mockEvent: any = {
+        //   stopPropagation: vi.fn(),
+        //   preventDefault: vi.fn(),
+        // };
 
         instance.handleRemoval();
 
@@ -204,11 +288,25 @@ describe(ActionWrapper.name, () => {
           props.action,
         );
       });
+
+      it('should call moveActionUp eve without event', () => {
+        const { props, instance } = setup(true, {
+          moveActionUp: setMock(),
+        }) as { instance: ActionWrapper; props: ActionWrapperProps };
+
+        instance.handleMoveUp(null);
+
+        expect(props.moveActionUp).toHaveBeenCalledTimes(1);
+        expect(props.moveActionUp).toHaveBeenCalledWith(
+          props.renderNode.node.uuid,
+          props.action,
+        );
+      });
     });
 
     describe('getAction', () => {
       it('should return the action passed via props if not localized', () => {
-        const { wrapper, props, instance } = setup(true, {
+        const { props, instance } = setup(true, {
           node: set(sendMsgAction1),
         });
 
@@ -216,7 +314,7 @@ describe(ActionWrapper.name, () => {
       });
 
       it('should return localized action if localized', () => {
-        const { wrapper, props, context, instance } = setup();
+        const { props, instance } = setup();
         const localizedObject = getLocalization(
           props.action,
           props.localization,
@@ -224,6 +322,50 @@ describe(ActionWrapper.name, () => {
         ).getObject();
 
         expect(instance.getAction()).toEqual(localizedObject);
+      });
+
+      it('should return localized action if localized when translating', () => {
+        const { props, instance } = setup(true, {
+          action: set(sendWppMsgAction),
+          translating: setTrue(),
+          language: set(Spanish),
+          localization: set(wppLocalization),
+        });
+        const localizedObject = getLocalization(
+          props.action,
+          props.localization,
+          props.language,
+        ).getObject();
+
+        expect(instance.getAction()).toEqual(localizedObject);
+      });
+    });
+
+    describe('scrollToAction', () => {
+      it("should render MountScroll with action's uuid", () => {
+        const { wrapper } = setup(true, {
+          scrollToAction: set(sendMsgAction.uuid),
+          action: set({ uuid: sendMsgAction.uuid }),
+        });
+
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
+      });
+    });
+
+    describe('should render action titlebar with missing style if have any issues', () => {
+      it('should render if have issues', () => {
+        const { wrapper } = setup(true, {
+          issues: set([
+            {
+              type: 'missing_dependency',
+              node_uuid: sendMsgNode.node.uuid,
+              action_uuid: sendMsgAction.uuid,
+              description: 'Missing dependency',
+            },
+          ]),
+        });
+
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
       });
     });
   });

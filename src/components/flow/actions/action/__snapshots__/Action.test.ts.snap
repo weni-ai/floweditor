@@ -1,5 +1,77 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`ActionWrapper > instance methods > scrollToAction > should render MountScroll with action's uuid 1`] = `
+<div
+  className="_action_604508 _localized_604508 _undefined_604508"
+  data-spec="action-container"
+  id="action-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <MountScroll
+      pulseAfterScroll={true}
+    >
+      <TitleBar
+        __className="_undefined_9658e1"
+        hasIssues={false}
+        onMoveUp={[Function]}
+        onRemoval={[Function]}
+        selected={false}
+        shouldCancelClick={[Function]}
+        showMove={false}
+        showRemoval={true}
+        title="Missing"
+      />
+      <div
+        className="_body_604508 _undefined_604508 "
+        data-spec="action-body"
+      />
+    </MountScroll>
+  </div>
+</div>
+`;
+
+exports[`ActionWrapper > instance methods > should render action titlebar with missing style if have any issues > should render if have issues 1`] = `
+<div
+  className="_action_604508 _localized_604508 _send_msg_604508"
+  data-spec="action-container"
+  id="action-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <TitleBar
+      __className="_missing_9658e1"
+      hasIssues={true}
+      onMoveUp={[Function]}
+      onRemoval={[Function]}
+      selected={false}
+      shouldCancelClick={[Function]}
+      showMove={false}
+      showRemoval={true}
+      title="Send message"
+    />
+    <div
+      className="_body_604508 _missing_604508 "
+      data-spec="action-body"
+    />
+  </div>
+</div>
+`;
+
 exports[`ActionWrapper > render > should display hybrid style 1`] = `
 <div
   className="_action_604508 _has_router_604508 _localized_604508 _send_msg_604508"
@@ -130,6 +202,144 @@ exports[`ActionWrapper > render > should display translating style 1`] = `
     />
     <div
       className="_body_604508 _send_msg_604508 "
+      data-spec="action-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`ActionWrapper > render > should display translating style to call weni gpt action 1`] = `
+<div
+  className="_action_604508 _translating_604508 _missing_localization_604508 _call_wenigpt_604508"
+  data-spec="action-container"
+  id="action-763e4844-3e1b-407a-a1b5-5fdfcd308b41"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <TitleBar
+      __className="_call_wenigpt_9658e1"
+      hasIssues={false}
+      new={true}
+      onMoveUp={[Function]}
+      onRemoval={[Function]}
+      selected={false}
+      shouldCancelClick={[Function]}
+      showMove={false}
+      showRemoval={false}
+      title="Call WeniGPT"
+    />
+    <div
+      className="_body_604508 _call_wenigpt_604508 "
+      data-spec="action-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`ActionWrapper > render > should display translating style to send email action 1`] = `
+<div
+  className="_action_604508 _translating_604508 _missing_localization_604508 _send_email_604508"
+  data-spec="action-container"
+  id="action-1dce2b34-9aab-4e20-81c4-3f0408dcb671"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <TitleBar
+      __className="_send_email_9658e1"
+      hasIssues={false}
+      onMoveUp={[Function]}
+      onRemoval={[Function]}
+      selected={false}
+      shouldCancelClick={[Function]}
+      showMove={false}
+      showRemoval={false}
+      title="Send email"
+    />
+    <div
+      className="_body_604508 _send_email_604508 "
+      data-spec="action-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`ActionWrapper > render > should display translating style to send whatsapp message action 1`] = `
+<div
+  className="_action_604508 _translating_604508 _missing_localization_604508 _send_whatsapp_msg_604508"
+  data-spec="action-container"
+  id="action-061fc171-8b79-4636-b892-bd0ea5aa9b42"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <TitleBar
+      __className="_send_whatsapp_msg_9658e1"
+      hasIssues={false}
+      new={true}
+      onMoveUp={[Function]}
+      onRemoval={[Function]}
+      selected={false}
+      shouldCancelClick={[Function]}
+      showMove={false}
+      showRemoval={false}
+      title="Send WhatsApp Message"
+    />
+    <div
+      className="_body_604508 _send_whatsapp_msg_604508 "
+      data-spec="action-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`ActionWrapper > render > should render selected 1`] = `
+<div
+  className="_action_604508 _localized_604508 _send_msg_604508"
+  data-spec="action-container"
+  id="action-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <TitleBar
+      __className="_send_msg_9658e1"
+      hasIssues={false}
+      onMoveUp={[Function]}
+      onRemoval={[Function]}
+      selected={true}
+      shouldCancelClick={[Function]}
+      showMove={false}
+      showRemoval={true}
+      title="Send message"
+    />
+    <div
+      className="_body_604508 _send_msg_604508 _selected_604508"
       data-spec="action-body"
     />
   </div>
