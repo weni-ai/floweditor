@@ -5,7 +5,6 @@ import {
   getCallParams,
   getDomElement,
   act,
-  waitFor,
 } from 'test/utils';
 import { mock } from 'testUtils';
 import {
@@ -16,11 +15,18 @@ import {
 import * as utils from 'utils';
 import AddLabelsForm from './AddLabelsForm';
 import userEvent from '@testing-library/user-event';
-import { describe, vi, it, expect } from 'vitest';
+import { describe, it, expect } from 'vitest';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 const props = getActionFormProps(
-  createAddLabelsAction([{ name: 'My Label', uuid: utils.createUUID() }]),
+  createAddLabelsAction([
+    { name: 'My Label', uuid: utils.createUUID() },
+    {
+      name: 'My Label with match',
+      name_match: 'Match',
+      uuid: utils.createUUID(),
+    },
+  ]),
 );
 
 describe(AddLabelsForm.name, () => {
@@ -55,5 +61,11 @@ describe(AddLabelsForm.name, () => {
       const [addLabelAction] = getCallParams(props.updateAction);
       expect(JSON.stringify(addLabelAction)).toMatch('name_match');
     });
+  });
+
+  it('should close', () => {
+    const { getByText } = render(<AddLabelsForm {...props} />);
+    fireEvent.click(getByText('Cancel'));
+    expect(props.onClose).toHaveBeenCalled();
   });
 });
