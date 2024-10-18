@@ -101,6 +101,14 @@ export const fireUnnnicTextAreaChangeText = (ele: any, value: string): void => {
   });
 };
 
+export const fireUnnicInputKeyPress = (ele: any, key: string): void => {
+  fireEvent.keyPress(ele.querySelector('input'), { key });
+};
+
+export const fireUnnnicKeyDown = (ele: any, key: string): void => {
+  fireEvent.keyDown(ele.querySelector('input'), { key });
+};
+
 export const fireUnnnicTagDelete = (ele: any): void => {
   fireEvent.click(ele.querySelector('.unnnic-tag__icon'));
 };
