@@ -22,6 +22,18 @@ describe(AddGroupsForm.name, () => {
       const { wrapper } = setup();
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
+
+    it('should render with name_match groups', () => {
+      const { wrapper } = setup(true, {
+        nodeSettings: utils.set({
+          originalAction: createAddGroupsAction({
+            groups: [{ ...SubscribersGroup, name_match: 'Name Match' }],
+          }),
+        }),
+      });
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot('name_match');
+    });
   });
 
   describe('updates', () => {
@@ -47,9 +59,66 @@ describe(AddGroupsForm.name, () => {
       const instance: AddGroupsForm = component.instance;
       const props: Partial<ActionFormProps> = component.props;
 
-      instance.handleGroupsChanged([SubscribersGroup]);
+      instance.handleGroupAdded(SubscribersGroup);
       instance.handleSave();
       expect(props.updateAction).toMatchSnapshot('switch from router');
     });
+
+    it('should allow creating a new group', () => {
+      const component = setup(true);
+      const instance: AddGroupsForm = component.instance;
+
+      const newAsset = instance.handleCreateAssetFromInput('New Group');
+      expect(newAsset).toMatchSnapshot({ name: 'New Group' });
+
+      instance.handleGroupAdded(SubscribersGroup);
+      expect(instance.state).toMatchSnapshot('create group');
+
+      instance.handleSave();
+      expect(component.props.updateAction).toHaveBeenCalled();
+      expect(component.props.updateAction).toMatchSnapshot('add new group');
+    });
+
+    it('should allow inserting an expresison based group', () => {
+      const component = setup(true);
+      const instance: AddGroupsForm = component.instance;
+
+      instance.handleGroupsChanged([
+        {
+          name: 'Expression Group',
+          name_match: 'Expression Group name match',
+          expression: true,
+        },
+      ]);
+
+      expect(instance.state).toMatchSnapshot('expression group');
+
+      instance.handleSave();
+      expect(component.props.updateAction).toHaveBeenCalled();
+      expect(component.props.updateAction).toMatchSnapshot(
+        'add expression group',
+      );
+    });
+
+    it('should not save without a group', () => {
+      const component = setup(true, {
+        $merge: { updateAction: vi.fn() },
+        nodeSettings: { $merge: { originalAction: null } },
+      });
+      const instance: AddGroupsForm = component.instance;
+
+      instance.handleSave();
+      expect(component.props.updateAction).not.toHaveBeenCalled();
+    });
+  });
+
+  it('should cancel', () => {
+    const component = setup();
+    const instance: AddGroupsForm = component.instance;
+    const props: Partial<ActionFormProps> = component.props;
+
+    instance.getButtons().secondary.onClick();
+    expect(props.onClose).toHaveBeenCalled();
+    expect(props.onClose).toMatchSnapshot();
   });
 });

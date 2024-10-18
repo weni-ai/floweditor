@@ -15,7 +15,14 @@ import { shallowToJson } from 'enzyme-to-json';
 const { results: groups } = require('test/assets/groups.json');
 
 const addGroupsAction: ChangeGroups = createAddGroupsAction({
-  groups: groups.slice(2),
+  groups: [
+    ...groups.slice(2),
+    {
+      uuid: '13ff7152-b588-43e4-90de-fda77aeaf7c0',
+      name: 'Group With Name Match',
+      name_match: 'Name Match',
+    },
+  ],
 });
 
 const { setup } = composeComponentTestUtils<ChangeGroups>(

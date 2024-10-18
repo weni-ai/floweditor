@@ -64,5 +64,43 @@ describe(RemoveGroupsForm.name, () => {
       instance.handleSave();
       expect(props.updateAction).toMatchSnapshot('switch from router');
     });
+
+    it('should handle remove from all groups', () => {
+      const components = setup(true, { $merge: { updateAction: vi.fn() } });
+
+      const instance: RemoveGroupsForm = components.instance;
+      const props: Partial<ActionFormProps> = components.props;
+
+      instance.handleRemoveAllUpdate('true');
+      instance.handleSave();
+
+      expect(props.updateAction).toHaveBeenCalled();
+      expect(props.updateAction).toMatchSnapshot('update');
+    });
+
+    it('should not allow empty groups if not removing all', () => {
+      const components = setup(true, { $merge: { updateAction: vi.fn() } });
+
+      const instance: RemoveGroupsForm = components.instance;
+      const props: Partial<ActionFormProps> = components.props;
+
+      instance.handleGroupsChanged([]);
+      instance.handleRemoveAllUpdate('false');
+      instance.handleSave();
+      expect(props.updateAction).not.toHaveBeenCalled();
+    });
+  });
+
+  it('should cancel', () => {
+    const components = setup(true, { $merge: { updateAction: vi.fn() } });
+
+    const instance: RemoveGroupsForm = components.instance;
+    const props: Partial<ActionFormProps> = components.props;
+
+    instance.getButtons().secondary.onClick();
+
+    instance.getButtons().secondary.onClick();
+    expect(props.onClose).toHaveBeenCalled();
+    expect(props.onClose).toMatchSnapshot();
   });
 });
