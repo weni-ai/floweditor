@@ -6,22 +6,19 @@ import {
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
 
-import {
-  BrainForm,
-  CallBrainFormProps,
-} from 'components/flow/actions/callbrain/CallBrainForm';
+import { BrainForm } from 'components/flow/actions/callbrain/CallBrainForm';
 import { set } from 'utils';
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
-const baseProps: CallBrainFormProps = {
-  ...getActionFormProps(createCallBrainAction()),
+const baseProps = {
+  ...getActionFormProps(createCallBrainAction({ entry: null })),
   brainInfo: {
     name: 'Dóris',
     occupation: 'Marketing Specialist',
     enabled: true,
   },
-  entry: '',
+  entry: null as string,
 };
 
 const { setup } = composeComponentTestUtils<ActionFormProps>(
@@ -49,12 +46,23 @@ describe(BrainForm.name, () => {
     expect(instance).toMatchSnapshot();
   });
 
+  it('should render without original action', () => {
+    const { instance } = setup(true, {
+      nodeSettings: { $merge: { originalAction: null } },
+    });
+
+    expect(instance).toMatchSnapshot();
+  });
+
   it('should save', () => {
     const { instance, props } = setup(true);
+
+    instance.handleEntryChange('brain entry text');
 
     instance.getButtons().primary.onClick();
 
     expect(props.updateAction).toHaveBeenCalled();
+    expect(props.updateAction).toMatchSnapshot();
     expect(props.onClose).toHaveBeenCalled();
   });
 
