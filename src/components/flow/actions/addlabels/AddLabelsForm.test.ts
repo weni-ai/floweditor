@@ -43,6 +43,16 @@ describe(AddLabelsForm.name, () => {
       expect(props.updateAction).toMatchSnapshot('update label');
     });
 
+    it('should not save if labels are empty', () => {
+      const component = setup(true);
+      const instance: AddLabelsForm = component.instance;
+
+      instance.handleLabelsChanged([]);
+      instance.handleSave();
+
+      expect(component.props.updateAction).not.toHaveBeenCalled();
+    });
+
     it('should allow switching from router', () => {
       const component = setup(true, {
         $merge: { updateAction: vi.fn() },
@@ -55,6 +65,21 @@ describe(AddLabelsForm.name, () => {
       instance.handleLabelsChanged([FeedbackLabel]);
       instance.handleSave();
       expect(props.updateAction).toMatchSnapshot('switch from router');
+    });
+
+    it('should allow creating a new label', () => {
+      const component = setup(true);
+      const instance: AddLabelsForm = component.instance;
+
+      const newAsset = instance.handleCreateAssetFromInput('New Label');
+      expect(newAsset).toMatchSnapshot({ name: 'New Label' });
+
+      instance.handleLabelCreated(FeedbackLabel);
+      expect(instance.state).toMatchSnapshot('create label');
+
+      instance.handleSave();
+      expect(component.props.updateAction).toHaveBeenCalled();
+      expect(component.props.updateAction).toMatchSnapshot('add new label');
     });
   });
 });

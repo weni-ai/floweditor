@@ -33,4 +33,23 @@ describe(AddLabelsComp.name, () => {
     expect(wrapper.find('div').length).toBe(MAX_TO_SHOW + 1);
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
+
+  it('should display labels that contains name_match key', () => {
+    const newProps = {
+      labels: [
+        {
+          name: 'I have a name_match key',
+          name_match: 'Look at me, i have a name_match key',
+          uuid: 'label-6',
+        },
+        ...baseProps.labels,
+      ],
+    };
+
+    const { setup } = composeComponentTestUtils(AddLabelsComp, newProps);
+    const { wrapper } = setup();
+
+    expect(wrapper.find('div').length).toBe(MAX_TO_SHOW + 1);
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
+  });
 });
