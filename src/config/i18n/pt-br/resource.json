@@ -59,7 +59,7 @@
     "say_msg": {
       "placeholder": "Manda uma mensagem para o contato"
     },
-    "search": "Buscar",
+    "search": "Buscar...",
     "send_broadcast": {
       "description": "Envie uma mensagem para outra pessoa",
       "name": "Enviar transmissão",
