@@ -1,6 +1,6 @@
 {
   "actions": {
-    "search": "Hledat...",
+    "search": "Hledat",
     "add_contact_groups": {
       "description": "Přidání kontaktu do skupiny",
       "name": "Přidat do skupiny"

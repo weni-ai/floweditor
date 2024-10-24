@@ -8,6 +8,6 @@
 files: [
   {
     "source": "src/config/i18n/defaults.json",
-    "translation": "src/config/i18n/%locale%/resource.json",
+    "translation": "src/config/i18n/%two_letters_code%/resource.json",
   }
 ]

@@ -1,10 +1,9 @@
-asd
 name: Crowdin Upload
 
 on:
   push:
-    paths: [ 'src/config/i18n/**' ]
-    branches: [ main ]
+    paths: ['src/config/i18n/**']
+    branches: [feat/crowdin-integration]
 
 jobs:
   crowdin-upload:
