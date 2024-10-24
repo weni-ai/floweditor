@@ -3,7 +3,7 @@ name: Crowdin Upload
 
 on:
   push:
-    paths: [ 'src/locales/**' ]
+    paths: [ 'src/config/i18n/**' ]
     branches: [ main ]
 
 jobs:
