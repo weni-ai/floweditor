@@ -4,6 +4,7 @@ export class WeniLoveIcon extends React.PureComponent {
   render() {
     return (
       <svg
+        role="img"
         width="86"
         height="91"
         viewBox="0 0 86 91"
@@ -11,6 +12,7 @@ export class WeniLoveIcon extends React.PureComponent {
         xmlns="http://www.w3.org/2000/svg"
       >
         <circle
+          data-testid="circle"
           cx="43"
           cy="41.1172"
           r="29.331"
@@ -19,6 +21,7 @@ export class WeniLoveIcon extends React.PureComponent {
           strokeWidth="23.5723"
         />
         <rect
+          data-testid="rect"
           x="0.414307"
           y="5.45435"
           width="85.1713"
@@ -27,6 +30,7 @@ export class WeniLoveIcon extends React.PureComponent {
         />
         <defs>
           <pattern
+            data-testid="pattern"
             id="pattern0"
             patternContentUnits="objectBoundingBox"
             width="1"
@@ -35,6 +39,7 @@ export class WeniLoveIcon extends React.PureComponent {
             <use href="#image0_4005_29639" transform="scale(0.00238095)" />
           </pattern>
           <image
+            data-testid="image"
             id="image0_4005_29639"
             width="420"
             height="420"
