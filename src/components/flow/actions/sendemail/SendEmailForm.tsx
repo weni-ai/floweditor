@@ -214,6 +214,7 @@ export default class SendEmailForm extends React.Component<
                 >
                   {recipient}
                   <UnnnicIcon
+                    data-testid={`remove-recipient-${index}`}
                     icon="close-1"
                     size="xs"
                     scheme="neutral-darkest"
