@@ -33,7 +33,7 @@ export const config: FlowEditorConfig = {
     activity: '',
     simulateStart: '',
     simulateResume: '',
-    ticketer_queues: '',
+    ticketer_queues: '/assets/ticketer_queues.json',
     external_services: '/assets/external_services.json',
     external_services_calls: '/assets/external_services_calls.json',
     external_services_calls_base: '',

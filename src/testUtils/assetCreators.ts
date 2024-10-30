@@ -605,6 +605,25 @@ export const createOpenTicketNode = (
   return createWebhookNode(action, true);
 };
 
+export const createOpenWeniChatsTicketNode = (
+  subject: string,
+  body: string,
+  uuid: string = utils.createUUID(),
+): FlowNode => {
+  const action: OpenTicket = {
+    uuid: utils.createUUID(),
+    type: Types.open_ticket,
+    ticketer: {
+      name: `Weni Chats Sector - ${uuid}`,
+      uuid: uuid,
+    },
+    subject: subject,
+    body: body,
+    result_name: 'Result',
+  };
+  return createWebhookNode(action, true);
+};
+
 export const createSendWhatsAppProductNode = (
   productViewSettings: ProductViewSettings,
   products?: any[],

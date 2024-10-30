@@ -146,29 +146,6 @@ export default class TicketRouterForm extends React.Component<
     this.handleTopicsOptionsUpdateByTicketerType(selected[0], true);
   }
 
-  private handleQueuesUpdate(ticketer: Asset): void {
-    const isWenichatsType =
-      ticketer &&
-      ticketer.hasOwnProperty('type') &&
-      (ticketer['type'] as string) === 'wenichats';
-    if (isWenichatsType) {
-      const ticketerQueuesEndpoint =
-        this.context.config.endpoints.ticketer_queues +
-        `?ticketer_uuid=${this.state.ticketer.value.uuid}`;
-      axios.get(ticketerQueuesEndpoint).then(response => {
-        const topics = response.data;
-        let toUpdateTopic = topics.length > 0 ? topics[0] : {};
-        if (this.state.topic.value) {
-          toUpdateTopic = topics.find(
-            (to: any) => to === this.state.topic.value,
-          );
-        }
-        const toUpdate = { queues: topics, topic: toUpdateTopic as Topic };
-        this.handleUpdate(toUpdate);
-      });
-    }
-  }
-
   private handleTopicsOptionsUpdateByTicketerType(
     ticketer: any,
     hasContext: boolean,
@@ -208,45 +185,12 @@ export default class TicketRouterForm extends React.Component<
     });
   }
 
-  private handleQueuesUpdateWithoutContext(ticketer: any): void {
-    const isWenichatsType =
-      ticketer &&
-      ticketer.hasOwnProperty('type') &&
-      (ticketer['type'] as string) === 'wenichats';
-    if (isWenichatsType) {
-      let ticketerQueuesEndpoint = this.props.assetStore.ticketers.endpoint.replace(
-        'ticketers',
-        'ticketer_queues',
-      );
-      ticketerQueuesEndpoint += `?ticketer_uuid=${ticketer.uuid}`;
-      axios.get(ticketerQueuesEndpoint).then(response => {
-        const topics = response.data;
-        let toUpdateTopic = topics.length > 0 ? topics[0] : {};
-        if (this.state.topic.value) {
-          toUpdateTopic = topics.find(
-            (to: any) => to.uuid === this.state.topic.value.uuid,
-          );
-        }
-        const toUpdate = { queues: topics, topic: toUpdateTopic as Topic };
-        this.handleUpdate(toUpdate);
-      });
-    }
-  }
-
   private handleAssigneeUpdate(assignee: User): void {
     this.handleUpdate({ assignee });
   }
 
   private handleTopicUpdate(topic: Topic): void {
     this.handleUpdate({ topic });
-  }
-
-  private handleSubjectUpdate(
-    subject: string,
-    name: string,
-    submitting = false,
-  ): boolean {
-    return this.handleUpdate({ subject }, submitting);
   }
 
   private handleBodyUpdate(body: string): boolean {

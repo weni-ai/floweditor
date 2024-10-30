@@ -87,6 +87,12 @@ export const restHandlers = [
   http.get(endpoints.whatsapp_products, () => {
     return HttpResponse.json(require('test/assets/whatsapp_products.json'));
   }),
+  http.get(endpoints.ticketers, () => {
+    return HttpResponse.json(require('test/assets/ticketers.json'));
+  }),
+  http.get(endpoints.ticketer_queues, () => {
+    return HttpResponse.json(require('test/assets/ticketer_queues.json'));
+  }),
 ];
 
 const server = setupServer(...restHandlers);
