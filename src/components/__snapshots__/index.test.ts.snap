@@ -30,7 +30,7 @@ exports[`Root > instance methods > componentDidMount > should call action creato
         "simulateResume": "",
         "simulateStart": "",
         "templates": "/assets/templates.json",
-        "ticketer_queues": "",
+        "ticketer_queues": "/assets/ticketer_queues.json",
         "ticketers": "/assets/ticketers.json",
         "topics": "/assets/topics.json",
         "users": "/assets/users.json",
