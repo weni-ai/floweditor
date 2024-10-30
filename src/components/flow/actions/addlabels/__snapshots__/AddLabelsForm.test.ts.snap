@@ -182,40 +182,6 @@ exports[`AddLabelsForm > updates > should allow creating a new label > create la
 }
 `;
 
-exports[`AddLabelsForm > updates > should allow creating a new label > update label 1`] = `
-[MockFunction spy] {
-  "calls": [
-    [
-      {
-        "labels": [
-          {
-            "name": "Help",
-            "uuid": "232b99d1-579f-4d7f-b750-4b034927e9f8",
-          },
-          {
-            "name": "Feedback",
-            "uuid": "ab58dffa-98da-40ba-bebc-489ec6ff7170",
-          },
-          {
-            "id": "feedback_label",
-            "name": "Feedback",
-            "type": "label",
-          },
-        ],
-        "type": "add_input_labels",
-        "uuid": "aa15ef19-da81-43d0-b6e5-84b47216aeb8",
-      },
-    ],
-  ],
-  "results": [
-    {
-      "type": "return",
-      "value": undefined,
-    },
-  ],
-}
-`;
-
 exports[`AddLabelsForm > updates > should allow creating a new label 1`] = `
 {
   "name": "New Label",
