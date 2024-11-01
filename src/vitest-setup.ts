@@ -14,8 +14,6 @@ import Adapter from 'enzyme-adapter-react-16';
 import * as utils from 'utils';
 import { mock } from 'testUtils';
 import { Console } from 'console';
-import * as TextInput from 'components/form/textinput/helpers';
-import { TextInputProps } from 'components/form/textinput/TextInputElement';
 
 expect.extend(jestMatchers);
 
@@ -32,20 +30,6 @@ global.console = new Console(process.stderr, process.stderr);
 (global as any).requestAnimationFrame = (callback: Function) => {
   setTimeout(callback, 0);
 };
-
-mock(
-  TextInput,
-  'createTextInput',
-  (props: TextInputProps, handleChange, optional) => {
-    return React.createElement('input', {
-      'data-testid': props.name,
-      name: props.name,
-      placeholder: props.placeholder,
-      value: props.entry.value,
-      onChange: handleChange,
-    });
-  },
-);
 
 const endpoints = config.endpoints;
 export const restHandlers = [
