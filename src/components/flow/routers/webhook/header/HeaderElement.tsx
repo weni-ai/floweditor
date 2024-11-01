@@ -128,6 +128,7 @@ export default class HeaderElement extends React.Component<
             clickable
             onClick={this.handleRemove}
             data-spec={removeIcoSpecId}
+            data-testid={removeIcoSpecId}
           />
         ) : null}
       </div>

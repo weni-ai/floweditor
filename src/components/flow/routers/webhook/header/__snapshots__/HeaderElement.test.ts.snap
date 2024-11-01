@@ -206,6 +206,7 @@ exports[`HeaderElement > render > should render remove icon 1`] = `
       <ForwardRef
         clickable={true}
         data-spec="remove-icon"
+        data-testid="remove-icon"
         icon="delete-1-1"
         onClick={[Function]}
         scheme="neutral-cloudy"
