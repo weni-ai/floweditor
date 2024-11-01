@@ -21,7 +21,7 @@
     "react-dom": "^16.8.6",
     "react-transition-group": "4.4.5",
     "sms-length": "0.1.2",
-    "veaury": "2.3.18"
+    "veaury": "2.5.1"
   },
   "scripts": {
     "lambda:serve": "netlify-lambda serve lambda -p 6000",
