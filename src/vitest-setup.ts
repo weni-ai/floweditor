@@ -31,6 +31,14 @@ global.console = new Console(process.stderr, process.stderr);
   setTimeout(callback, 0);
 };
 
+const MockIntersectionObserver = vi.fn(() => ({
+  disconnect: vi.fn(),
+  observe: vi.fn(),
+  takeRecords: vi.fn(),
+  unobserve: vi.fn(),
+}));
+vi.stubGlobal(`IntersectionObserver`, MockIntersectionObserver);
+
 const endpoints = config.endpoints;
 export const restHandlers = [
   http.get(endpoints.flows, () => {

@@ -151,6 +151,15 @@ export const fireTembaSelect = (ele: HTMLElement, value: any) => {
   ele.dispatchEvent(evt);
 };
 
+export const fireCustomEvent = (
+  ele: HTMLElement,
+  eventName: string,
+  eventData: any,
+) => {
+  const event = new CustomEvent(eventName, { detail: eventData });
+  fireEvent(ele, event);
+};
+
 export const mock = <T extends {}, K extends keyof T>(
   object: T,
   property: K,
