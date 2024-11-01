@@ -71,11 +71,79 @@ describe(WebhookRouterForm.name, () => {
 
       // add http header
       fireEvent.click(getByText('HTTP Headers'));
-      const headerName = getAllByTestId('Ex: Accept')[0];
-      const headerValue = getAllByTestId('Ex: application/json')[0];
+      let headerName = getAllByTestId('Ex: Accept')[0];
+      let headerValue = getAllByTestId('Ex: application/json')[0];
 
-      fireEvent.change(headerName, 'Content-type');
-      fireEvent.change(headerValue, 'application/json');
+      await act(async () => {
+        fireUnnnicInputChangeText(headerName, 'Content-type');
+        fireUnnnicInputChangeText(headerValue, 'application/json');
+      });
+
+      fireEvent.click(okButton);
+      expect(webhookForm.updateRouter).toBeCalled();
+      expect(webhookForm.updateRouter).toMatchSnapshot();
+
+      fireEvent.click(getByText('General'));
+
+      // change to the same method and save
+      await act(async () => {
+        userEvent.click(getByText('POST'));
+      });
+
+      fireEvent.click(okButton);
+      expect(webhookForm.updateRouter).toBeCalled();
+      expect(webhookForm.updateRouter).toMatchSnapshot();
+
+      // test the GET method
+      await act(async () => {
+        userEvent.click(getByText('GET'));
+      });
+
+      // set a get body
+      fireEvent.click(getByText('GET Body'));
+      const getBody = getByTestId('GET Body');
+
+      await act(async () => {
+        fireUnnnicTextAreaChangeText(getBody, 'Updated get body');
+      });
+
+      fireEvent.click(okButton);
+      expect(webhookForm.updateRouter).toBeCalled();
+      expect(webhookForm.updateRouter).toMatchSnapshot();
+
+      // Manually add content-type header and change back to POST
+      fireEvent.click(getByText('HTTP Headers'));
+      headerName = getAllByTestId('Ex: Accept')[0];
+      headerValue = getAllByTestId('Ex: application/json')[0];
+
+      fireUnnnicInputChangeText(headerName, 'Content-type');
+      fireUnnnicInputChangeText(headerValue, 'application/json');
+
+      fireEvent.click(getByText('General'));
+
+      // change to the same method and save
+      await act(async () => {
+        userEvent.click(getByText('POST'));
+      });
+
+      // remonve an http header
+      await act(async () => {
+        fireEvent.click(getByText('HTTP Headers'));
+      });
+
+      const deleteButton = getAllByTestId('remove-icon')[0];
+      fireEvent.click(deleteButton);
+
+      fireEvent.click(okButton);
+      expect(webhookForm.updateRouter).toBeCalled();
+      expect(webhookForm.updateRouter).toMatchSnapshot();
+
+      fireEvent.click(getByText('General'));
+
+      // go back to GET and save
+      await act(async () => {
+        userEvent.click(getByText('GET'));
+      });
 
       fireEvent.click(okButton);
       expect(webhookForm.updateRouter).toBeCalled();
@@ -130,5 +198,24 @@ describe(WebhookRouterForm.name, () => {
       fireEvent.click(okButton);
       expect(webhookForm.updateRouter).toBeCalled();
     });
+  });
+
+  it("should render a split_by_webhook's original action", () => {
+    const webhookForm = getRouterFormProps({
+      node: {
+        ...createWebhookRouterNode({
+          'Content-Type': 'application/json',
+        }),
+      },
+      ui: { type: Types.split_by_webhook },
+    } as RenderNode);
+
+    const { setup } = composeComponentTestUtils<RouterFormProps>(
+      WebhookRouterForm,
+      webhookForm,
+    );
+    const { wrapper } = setup(true);
+
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

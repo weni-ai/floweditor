@@ -575,10 +575,12 @@ export const createWebhookNode = (
   };
 };
 
-export const createWebhookRouterNode = (): FlowNode => {
+export const createWebhookRouterNode = (
+  headers: { [key: string]: string } = {},
+): FlowNode => {
   const action: CallWebhook = {
     uuid: utils.createUUID(),
-    headers: {},
+    headers,
     type: Types.call_webhook,
     url: 'http://www.google.com',
     method: Methods.GET,
