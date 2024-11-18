@@ -85,6 +85,9 @@ export const restHandlers = [
   http.get(endpoints.ticketer_queues, () => {
     return HttpResponse.json(require('test/assets/ticketer_queues.json'));
   }),
+  http.get(endpoints.classifiers, () => {
+    return HttpResponse.json(require('test/assets/classifiers.json'));
+  }),
 ];
 
 const server = setupServer(...restHandlers);
