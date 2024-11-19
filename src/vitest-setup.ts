@@ -21,6 +21,15 @@ expect.extend(matchers);
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
+// mock navigator clipboard
+const writeText = vi.fn();
+
+Object.assign(navigator, {
+  clipboard: {
+    writeText,
+  },
+});
+
 // Configure Enzyme adapter
 configure({ adapter: new Adapter() });
 
@@ -84,6 +93,12 @@ export const restHandlers = [
   }),
   http.get(endpoints.ticketer_queues, () => {
     return HttpResponse.json(require('test/assets/ticketer_queues.json'));
+  }),
+  http.post(endpoints.simulateStart, () => {
+    return HttpResponse.json(require('test/assets/simulate_start.json'));
+  }),
+  http.post(endpoints.simulateResume, () => {
+    return HttpResponse.json(require('test/assets/simulate_resume.json'));
   }),
 ];
 
