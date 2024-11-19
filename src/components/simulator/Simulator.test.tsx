@@ -107,6 +107,23 @@ describe(Simulator.name, () => {
       expect(baseElement).toMatchSnapshot();
     });
 
+    it('should send an image attachment', async () => {
+      vi.useFakeTimers();
+      const { baseElement, getByTestId } = render(<Simulator {...props} />);
+
+      await act(async () => {
+        fireEvent.click(getByTestId('simulator_toggle'));
+      });
+      vi.runAllTimers();
+
+      fireEvent.click(getByTestId('show_attachments_button'));
+      fireEvent.click(getByTestId('attachment-images'));
+
+      fireEvent.click(getByTestId('image_a'));
+      vi.runAllTimers();
+      expect(baseElement).toMatchSnapshot();
+    });
+
     it('should toggle video attachments selection', async () => {
       vi.useFakeTimers();
       const { baseElement, getByTestId } = render(<Simulator {...props} />);

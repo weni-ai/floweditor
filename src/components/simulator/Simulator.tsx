@@ -744,6 +744,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     return (
       <div className={styles.drawer_items}>
         <div
+          data-testid="image_a"
           className={styles.drawer_item}
           onClick={() => {
             this.sendAttachment('image/jpeg:' + IMAGE_A);
