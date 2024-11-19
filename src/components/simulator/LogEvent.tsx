@@ -95,6 +95,11 @@ export interface EventProps {
   ticketer?: { uuid: string; name: string };
   ticket?: { topic: Topic; body: string };
   style?: string;
+  actual_amount?: number;
+  desired_amount?: number;
+  currency?: string;
+  recipient?: string;
+  sender?: string;
 }
 
 interface FlowEvent {
