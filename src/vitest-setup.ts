@@ -21,6 +21,9 @@ expect.extend(matchers);
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
+const seededRandom = new utils.SeededRandom(1);
+mock(Math, 'random', () => seededRandom.random());
+
 // Configure Enzyme adapter
 configure({ adapter: new Adapter() });
 
