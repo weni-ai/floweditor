@@ -30,6 +30,9 @@ Object.assign(navigator, {
   },
 });
 
+const seededRandom = new utils.SeededRandom(1);
+mock(Math, 'random', () => seededRandom.random());
+
 // Configure Enzyme adapter
 configure({ adapter: new Adapter() });
 
@@ -99,6 +102,9 @@ export const restHandlers = [
   }),
   http.post(endpoints.simulateResume, () => {
     return HttpResponse.json(require('test/assets/simulate_resume.json'));
+  }),
+  http.get(endpoints.classifiers, () => {
+    return HttpResponse.json(require('test/assets/classifiers.json'));
   }),
 ];
 

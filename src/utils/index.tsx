@@ -413,6 +413,28 @@ export const createUUID = (): string => {
   return generateUUID();
 };
 
+export class SeededRandom {
+  pool: Set<number>;
+  seed: number;
+
+  constructor(seed: number) {
+    this.seed = seed;
+    this.pool = new Set();
+  }
+
+  random(): number {
+    let x = Math.sin(this.seed++) * 10000;
+    x = x - Math.floor(x);
+
+    if (this.pool.has(x)) {
+      return this.random();
+    }
+
+    this.pool.add(x);
+    return x;
+  }
+}
+
 export const seededUUIDs = (seed = 1): any => {
   let current = seed;
   const randomNext = () => {

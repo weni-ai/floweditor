@@ -106,8 +106,6 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
         (event.target as any).blur();
         this.handlePrimaryButton(this.props.buttons.primary.onClick);
         (event.target as any).focus();
-      } else {
-        console.log('No primary button!');
       }
     }
   }
@@ -256,7 +254,7 @@ export default class Dialog extends React.Component<DialogProps, DialogState> {
               initialTab={String(this.state.activeTab + 1)}
               tabs={[
                 '0',
-                ...(this.props.tabs || []).map((tab: Tab, index: number) =>
+                ...this.props.tabs.map((tab: Tab, index: number) =>
                   String(index + 1),
                 ),
               ]}
