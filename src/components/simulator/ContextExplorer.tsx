@@ -29,7 +29,6 @@ type PathStep = number | string;
 
 export interface ContextExplorerProps {
   visible: boolean;
-  onClose: () => void;
   contents: any;
 }
 
@@ -193,6 +192,7 @@ export default class ContextExplorer extends React.Component<
             {name}
             <div className={styles.key_summary}>{keySummary}</div>
             <div
+              data-testid={`context-row-${name}-copy`}
               className={styles.clipboard}
               onClick={(evt: React.MouseEvent<HTMLDivElement>) => {
                 evt.stopPropagation();
@@ -218,7 +218,6 @@ export default class ContextExplorer extends React.Component<
     if (!value) {
       return null;
     }
-
     return (
       <>
         {Object.keys(value).map((key: string) => {
@@ -272,6 +271,7 @@ export default class ContextExplorer extends React.Component<
         <div className={styles.panel}>{this.renderProperties(context)}</div>
         <div className={styles.footer}>
           <div
+            data-testid="empty-toggle"
             className={styles.empty_toggle}
             onClick={() => {
               this.handleToggleHide();

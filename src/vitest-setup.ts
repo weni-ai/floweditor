@@ -21,6 +21,15 @@ expect.extend(matchers);
 
 mock(utils, 'createUUID', utils.seededUUIDs());
 
+// mock navigator clipboard
+const writeText = vi.fn();
+
+Object.assign(navigator, {
+  clipboard: {
+    writeText,
+  },
+});
+
 const seededRandom = new utils.SeededRandom(1);
 mock(Math, 'random', () => seededRandom.random());
 
@@ -87,6 +96,12 @@ export const restHandlers = [
   }),
   http.get(endpoints.ticketer_queues, () => {
     return HttpResponse.json(require('test/assets/ticketer_queues.json'));
+  }),
+  http.post(endpoints.simulateStart, () => {
+    return HttpResponse.json(require('test/assets/simulate_start.json'));
+  }),
+  http.post(endpoints.simulateResume, () => {
+    return HttpResponse.json(require('test/assets/simulate_resume.json'));
   }),
   http.get(endpoints.classifiers, () => {
     return HttpResponse.json(require('test/assets/classifiers.json'));

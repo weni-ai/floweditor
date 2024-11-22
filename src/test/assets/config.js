@@ -19,7 +19,9 @@ export const merged =
         environment: 'environment',
         editor: 'editor',
         activity: '',
-        engine: ''
+        engine: '',
+        simulateStart: 'simulate_start',
+        simulateResume: 'simulate_resume',
       }
     })
     : Object.assign({}, config, {
@@ -37,6 +39,8 @@ export const merged =
         environment: '/assets/environment',
         editor: 'editor',
         activity: '',
-        engine: ''
+        engine: '',
+        simulateStart: '/assets/simulate_start',
+        simulateResume: '/assets/simulate_resume',
       }
     });

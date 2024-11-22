@@ -1,4 +1,4 @@
-import { render, mock, fireEvent } from 'test/utils';
+import { render } from 'test/utils';
 import * as React from 'react';
 import LogEvent, { EventProps } from './LogEvent';
 
@@ -36,6 +36,30 @@ describe(LogEvent.name, () => {
       ...commonEventProps,
     });
   });
+  it('should render broadcast_created event with attachment', () => {
+    testEventRender({
+      type: 'broadcast_created',
+      groups: [
+        { uuid: '3a3e061e-dad5-4454-88e4-ccbd0ef0e475', name: 'U-Reporters' },
+      ],
+      translations: {
+        eng: {
+          text: 'Hi there',
+        },
+        spa: {
+          text: 'Hola',
+        },
+      },
+      msg: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        text: 'Hi there',
+        urn: 'tel:+1123456789',
+        attachments: ['image/jpeg:http://temba.io/test.jpg'],
+      },
+      base_language: 'eng',
+      ...commonEventProps,
+    });
+  });
   it('should render contact_field_changed event', () => {
     testEventRender({
       type: 'contact_field_changed',
@@ -63,6 +87,12 @@ describe(LogEvent.name, () => {
         { uuid: '669ce0aa-0444-4597-87a0-feb82401a31d', name: 'Unregistered' },
         { uuid: '58d99177-15f4-4a25-9b35-222e09252387', name: 'Missing Name' },
       ],
+      ...commonEventProps,
+    });
+  });
+  it('should render contact_groups_changed event without groups added and removed', () => {
+    testEventRender({
+      type: 'contact_groups_changed',
       ...commonEventProps,
     });
   });
@@ -100,6 +130,15 @@ describe(LogEvent.name, () => {
       subject: 'Party time',
       body: 'Dear Sir/Madam',
       to: ['fun@temba.io', 'events@temba.io'],
+      ...commonEventProps,
+    });
+  });
+  it('should render email_created event', () => {
+    testEventRender({
+      type: 'email_created',
+      subject: 'Party time',
+      body: 'Dear Sir/Madam',
+      addresses: ['fun@temba.io', 'events@temba.io'],
       ...commonEventProps,
     });
   });
@@ -184,6 +223,33 @@ describe(LogEvent.name, () => {
       ...commonEventProps,
     });
   });
+  it('should render webhook_called event', () => {
+    testEventRender({
+      type: 'webhook_called',
+      url: 'https://temba.io/webhook',
+      request: 'POST /webhook HTTP/1.1\r\nHost: temba.io\r\n\r\n',
+      response: 'HTTP/1.0 200 OK\r\nContent-Length: 127\r\n\r\n{"status":"ok"}',
+      ...commonEventProps,
+    });
+  });
+  it('should filter authorization from api.bothub.it requests', () => {
+    testEventRender({
+      type: 'webhook_called',
+      url: 'https://api.bothub.it/webhook',
+      request:
+        'POST /webhook HTTP/1.1\r\nHost: api.bothub.it \r\nAuthorization: Bearer 123',
+      response: 'HTTP/1.0 200 OK\r\nContent-Length: 127\r\n\r\n{"status":"ok"}',
+      ...commonEventProps,
+    });
+  });
+  it('should not render webhook_called event without url', () => {
+    testEventRender({
+      type: 'webhook_called',
+      request: 'POST /webhook HTTP/1.1\r\nHost: temba.io\r\n\r\n',
+      response: 'HTTP/1.0 200 OK\r\nContent-Length: 127\r\n\r\n{"status":"ok"}',
+      ...commonEventProps,
+    });
+  });
   it('should render service_called event', () => {
     testEventRender({
       type: 'service_called',
@@ -204,6 +270,13 @@ describe(LogEvent.name, () => {
       ...commonEventProps,
     });
   });
+  it('should not render service_called event with unknown type', () => {
+    testEventRender({
+      type: 'service_called',
+      service: 'unknown',
+      ...commonEventProps,
+    });
+  });
   it('should render ticket_opened event', () => {
     testEventRender({
       type: 'ticket_opened',
@@ -219,6 +292,181 @@ describe(LogEvent.name, () => {
         body: 'Where are my cookies?',
       },
       result_name: 'Ticket',
+      ...commonEventProps,
+    });
+  });
+  it('should render audio msg attachments', () => {
+    testEventRender({
+      type: 'msg_created',
+      msg: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        urn: 'tel:+1123456789',
+        text: 'Hi there',
+        attachments: ['audio/mpeg:http://temba.io/test.mp3'],
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should render documents msg attachments', () => {
+    testEventRender({
+      type: 'msg_created',
+      msg: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        urn: 'tel:+1123456789',
+        text: 'Hi there',
+        attachments: ['application/pdf:http://temba.io/test.pdf'],
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should render geo msg attachments', () => {
+    testEventRender({
+      type: 'msg_created',
+      msg: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        urn: 'tel:+1123456789',
+        text: 'Hi there',
+        attachments: ['geo:http://temba.io/test.geojson'],
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should render video msg attachments', () => {
+    testEventRender({
+      type: 'msg_created',
+      msg: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        urn: 'tel:+1123456789',
+        text: 'Hi there',
+        attachments: ['video/mp4:http://temba.io/test.mp4'],
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should not render unknown attachment type', () => {
+    testEventRender({
+      type: 'msg_created',
+      msg: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        urn: 'tel:+1123456789',
+        text: 'Hi there',
+        attachments: ['http://temba.io/test.unknown'],
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should not render invalid attachment type', () => {
+    testEventRender({
+      type: 'msg_created',
+      msg: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        urn: 'tel:+1123456789',
+        text: 'Hi there',
+        attachments: ['temba.io/test.unknown'],
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should render msg_created event with no attachments', () => {
+    testEventRender({
+      type: 'msg_created',
+      msg: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        urn: 'tel:+1123456789',
+        text: 'Hi there',
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should not render msg_created event without text', () => {
+    testEventRender({
+      type: 'msg_created',
+      msg: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        urn: 'tel:+1123456789',
+        text: null,
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should render classification event with intents and entities', () => {
+    testEventRender({
+      type: 'classification',
+      extra: {
+        intents: [
+          { value: 'greeting', confidence: 0.84709152161066 },
+          { value: 'goodbye', confidence: 0.123456789 },
+        ],
+        entities: {
+          name: [
+            {
+              value: 'Bobby',
+              confidence: 0.999999999,
+            },
+          ],
+          age: [
+            {
+              value: '38',
+              confidence: 0.999999999,
+            },
+          ],
+        },
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should render msg_wpp_created event', () => {
+    testEventRender({
+      type: 'msg_wpp_created',
+      style: 'whatsapp',
+      msg: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        urn: 'tel:+1123456789',
+        text: 'Hi there',
+        attachments: ['image/jpeg:http://temba.io/test.jpg'],
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should render flow_entered event', () => {
+    testEventRender({
+      type: 'flow_entered',
+      flow: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        name: 'My Flow',
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should render session_triggered event', () => {
+    testEventRender({
+      type: 'session_triggered',
+      flow: {
+        uuid: 'c166c2cb-290c-4805-a5af-052ad2858288',
+        name: 'My Flow',
+      },
+      ...commonEventProps,
+    });
+  });
+  it('should render info event', () => {
+    testEventRender({
+      type: 'info',
+      text: 'I am informative',
+      ...commonEventProps,
+    });
+  });
+  it('should render environment_refreshed event', () => {
+    testEventRender({
+      type: 'environment_refreshed',
+      ...commonEventProps,
+    });
+  });
+  it('should render airtime_transferred event', () => {
+    testEventRender({
+      type: 'airtime_transferred',
+      currency: 'USD',
+      actual_amount: 10,
+      recipient: 'tel:+1234567890',
       ...commonEventProps,
     });
   });
