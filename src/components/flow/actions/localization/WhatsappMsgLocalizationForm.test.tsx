@@ -55,16 +55,8 @@ describe(WhastsappMsgLocalizationForm.name, () => {
         button_text: ['texto del botón'],
         action_url: ['url de acción'],
         attachment: ['image:https://example.com/imagen.png'],
-        list_items: [
-          {
-            title: 'título 1',
-            description: 'descripción 1',
-          },
-          {
-            title: 'título 2',
-            description: 'descripción 2',
-          },
-        ],
+        list_message_titles: ['título 1', 'título 2'],
+        list_message_descriptions: ['descripción 1', 'descripción 2'],
       },
     });
     const { getByText } = render(<WhastsappMsgLocalizationForm {...props} />);
@@ -173,13 +165,9 @@ describe(WhastsappMsgLocalizationForm.name, () => {
         ],
       }),
     );
-    const {
-      getByText,
-      getAllByText,
-      getByTestId,
-      getAllByTestId,
-      debug,
-    } = render(<WhastsappMsgLocalizationForm {...props} />);
+    const { getByText, getAllByText, getByTestId, getAllByTestId } = render(
+      <WhastsappMsgLocalizationForm {...props} />,
+    );
 
     // modify our header type and go back to text to check if the final state is correct
     userEvent.click(getByText('Media'));
