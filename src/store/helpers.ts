@@ -26,6 +26,7 @@ import {
   SendMsg,
   FlowIssue,
   FlowIssueType,
+  SendWhatsAppMsg,
 } from 'flowTypes';
 import Localization, { LocalizedObject } from 'services/Localization';
 import { Activity, EditorState, Warnings } from 'store/editor';
@@ -202,6 +203,17 @@ export const getLocalizations = (
             translations,
           ),
         );
+      }
+    }
+
+    if (action.type === Types.send_whatsapp_msg) {
+      const sendWppMsgAction = action as SendWhatsAppMsg;
+      if (sendWppMsgAction.list_items) {
+        sendWppMsgAction.list_items.forEach(item => {
+          localizations.push(
+            Localization.translate(item, language, translations),
+          );
+        });
       }
     }
   }

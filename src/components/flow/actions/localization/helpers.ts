@@ -14,11 +14,11 @@ import {
 } from 'flowTypes';
 import i18n from 'config/i18n';
 import { Attachment } from 'components/flow/actions/sendmsg/attachments';
-import { createEmptyListItem } from 'components/flow/actions/whatsapp/sendmsg/helpers';
 import {
   WHATSAPP_HEADER_TYPE_TEXT,
   WhatsAppHeaderType,
 } from 'components/flow/actions/whatsapp/sendmsg/constants';
+import { WhatsAppListItem } from '../whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 export const initializeLocalizedKeyForm = (
   settings: NodeEditorSettings,
@@ -133,6 +133,8 @@ export const initializeLocalizedForm = (
 export const initializeWhatsappMsgLocalizedForm = (
   settings: NodeEditorSettings,
 ): WhatsappMsgLocalizationFormState => {
+  const { originalAction, localizations } = settings;
+
   const state: WhatsappMsgLocalizationFormState = {
     valid: true,
     text: { value: '' },
@@ -145,7 +147,13 @@ export const initializeWhatsappMsgLocalizedForm = (
     buttonText: { value: '' },
     actionURL: { value: '' },
     listItems: {
-      value: [createEmptyListItem()],
+      value: (originalAction as SendWhatsAppMsg).list_items.map(item => {
+        return {
+          uuid: item.uuid,
+          title: '',
+          description: '',
+        };
+      }),
     },
     listItemTitleEntry: { value: '' },
     listItemDescriptionEntry: { value: '' },
@@ -153,8 +161,6 @@ export const initializeWhatsappMsgLocalizedForm = (
     quickReplies: { value: [] },
     quickReplyEntry: { value: '' },
   };
-
-  const { originalAction, localizations } = settings;
 
   if (
     originalAction &&
@@ -212,12 +218,27 @@ export const initializeWhatsappMsgLocalizedForm = (
           state.valid = true;
         }
 
-        if (localizedObject.list_items) {
-          const array = [];
-          const emptyListItem = createEmptyListItem();
-          array.push(emptyListItem);
-          state.listItems.value =
-            'list_items' in localized.localizedKeys ? action.list_items : array;
+        if ((originalAction as SendWhatsAppMsg).list_items) {
+          const newItem = (originalAction as SendWhatsAppMsg).list_items.find(
+            (item: any) => {
+              return item.uuid === action.uuid;
+            },
+          );
+
+          if (newItem) {
+            const itemAction = (action as any) as WhatsAppListItem;
+            state.listItems.value = state.listItems.value.map(item => {
+              if (item.uuid === newItem.uuid) {
+                return {
+                  uuid: item.uuid,
+                  title: itemAction.title || '',
+                  description: itemAction.description || '',
+                };
+              }
+              return item;
+            });
+          }
+          state.listItems.value;
           state.valid = true;
         }
 

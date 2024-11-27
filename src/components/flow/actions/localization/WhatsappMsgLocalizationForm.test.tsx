@@ -55,16 +55,14 @@ describe(WhastsappMsgLocalizationForm.name, () => {
         button_text: ['texto del botón'],
         action_url: ['url de acción'],
         attachment: ['image:https://example.com/imagen.png'],
-        list_items: [
-          {
-            title: 'título 1',
-            description: 'descripción 1',
-          },
-          {
-            title: 'título 2',
-            description: 'descripción 2',
-          },
-        ],
+      },
+      [action.list_items[0].uuid]: {
+        title: ['título 1'],
+        description: ['descripción 1'],
+      },
+      [action.list_items[1].uuid]: {
+        title: ['título 2'],
+        description: ['descripción 2'],
       },
     });
     const { getByText } = render(<WhastsappMsgLocalizationForm {...props} />);
@@ -201,7 +199,7 @@ describe(WhastsappMsgLocalizationForm.name, () => {
     fireUnnnicInputChangeText(getByTestId('Action URL'), 'nuevo action url');
 
     // add a new list item
-    fireUnnnicInputChangeText(getByTestId('Title'), 'título 1');
+    fireUnnnicInputChangeText(getAllByTestId('Title')[0], 'título 1');
     fireUnnnicInputChangeText(
       getAllByTestId('Description (Optional)')[0],
       'descripción 1',

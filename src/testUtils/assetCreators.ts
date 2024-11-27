@@ -70,7 +70,7 @@ import {
   MsgTemplating,
   Classifier,
 } from 'flowTypes';
-import Localization from 'services/Localization';
+import Localization, { LocalizedObject } from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
 import { assetListToMap } from 'store/helpers';
 import { EMPTY_TEST_ASSETS } from 'test/utils';
@@ -686,6 +686,20 @@ export const getLocalizationFormProps = (
     name: 'English',
     type: AssetType.Language,
   };
+
+  const additionalLocalizations: LocalizedObject[] = [];
+
+  if (action.type === Types.send_whatsapp_msg) {
+    const sendWppMsgAction = action as SendWhatsAppMsg;
+    if (sendWppMsgAction.list_items) {
+      sendWppMsgAction.list_items.forEach(item => {
+        additionalLocalizations.push(
+          Localization.translate(item, language, translations),
+        );
+      });
+    }
+  }
+
   return {
     language,
     onClose: vi.fn(),
@@ -704,7 +718,10 @@ export const getLocalizationFormProps = (
         },
       }),
       originalAction: action,
-      localizations: [Localization.translate(action, language, translations)],
+      localizations: [
+        Localization.translate(action, language, translations),
+        ...additionalLocalizations,
+      ],
     },
   };
 };
