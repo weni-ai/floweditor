@@ -1,8 +1,11 @@
+3.4.3
+----------
+- Fix: List message localization
+
 3.4.2
 ----------
 - Feat: WhatsApp options reordenation.
 - Fix: Fix: Simulator for WhatsApp card messages.
-
 
 3.4.1
 ----------
