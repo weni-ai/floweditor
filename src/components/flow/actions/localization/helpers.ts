@@ -147,13 +147,15 @@ export const initializeWhatsappMsgLocalizedForm = (
     buttonText: { value: '' },
     actionURL: { value: '' },
     listItems: {
-      value: (originalAction as SendWhatsAppMsg).list_items.map(item => {
-        return {
-          uuid: item.uuid,
-          title: '',
-          description: '',
-        };
-      }),
+      value: ((originalAction as SendWhatsAppMsg).list_items || []).map(
+        item => {
+          return {
+            uuid: item.uuid,
+            title: '',
+            description: '',
+          };
+        },
+      ),
     },
     listItemTitleEntry: { value: '' },
     listItemDescriptionEntry: { value: '' },
