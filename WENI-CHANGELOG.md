@@ -1,3 +1,7 @@
+3.4.4
+----------
+- Fix: Handle undefined list_items in localizations
+
 3.4.3
 ----------
 - Fix: List message localization
