@@ -28443,7 +28443,16 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
               },
             },
           },
-          "stickies": {},
+          "stickies": {
+            "sticky0": {
+              "body": "The body for sticky0",
+              "position": {
+                "left": 100,
+                "top": 100,
+              },
+              "title": "sticky0",
+            },
+          },
         },
         "language": "eng",
         "localization": {},
@@ -42012,7 +42021,16 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
               },
             },
           },
-          "stickies": {},
+          "stickies": {
+            "sticky0": {
+              "body": "The body for sticky0",
+              "position": {
+                "left": 100,
+                "top": 100,
+              },
+              "title": "sticky0",
+            },
+          },
         },
         "language": "eng",
         "localization": {},
@@ -48470,7 +48488,16 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
               },
             },
           },
-          "stickies": {},
+          "stickies": {
+            "sticky0": {
+              "body": "The body for sticky0",
+              "position": {
+                "left": 100,
+                "top": 100,
+              },
+              "title": "sticky0",
+            },
+          },
         },
         "language": "eng",
         "localization": {},
@@ -52572,6 +52599,1776 @@ exports[`Flow Manipulation > nodes > should store a pending connection when star
 ]
 `;
 
+exports[`Flow Manipulation > on update canvas positions > should update positions 1`] = `
+[
+  {
+    "payload": {
+      "nodes": {
+        "node0": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node1",
+                "name": null,
+                "uuid": "node0_exit0",
+              },
+            ],
+            "uuid": "node0",
+          },
+          "ui": {
+            "position": {
+              "left": 100,
+              "top": 100,
+            },
+          },
+        },
+        "node1": {
+          "inboundConnections": {
+            "node0_exit0": "node0",
+          },
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit0",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit1",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit2",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "node1_cat0",
+                  "type": "has_any_word",
+                  "uuid": "node1_case0",
+                },
+                {
+                  "arguments": [
+                    "green",
+                  ],
+                  "category_uuid": "node1_cat1",
+                  "type": "has_any_word",
+                  "uuid": "node1_case1",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "node1_exit0",
+                  "name": "Red",
+                  "uuid": "node1_cat0",
+                },
+                {
+                  "exit_uuid": "node1_exit1",
+                  "name": "Green",
+                  "uuid": "node1_cat1",
+                },
+                {
+                  "exit_uuid": "node1_exit2",
+                  "name": "Other",
+                  "uuid": "node1_cat2",
+                },
+              ],
+              "default_exit_uuid": "node1_exit2",
+              "operand": "@run.input",
+              "result_name": "color",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "node1",
+          },
+          "ui": {
+            "position": {
+              "left": 200,
+              "top": 200,
+            },
+            "type": "wait_for_response",
+          },
+        },
+        "node2": {
+          "inboundConnections": {
+            "node1_exit0": "node1",
+            "node1_exit1": "node1",
+            "node1_exit2": "node1",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          "ui": {
+            "position": {
+              "bottom": 498,
+              "left": 0,
+              "right": 220,
+              "top": 400,
+            },
+          },
+        },
+        "node3": {
+          "inboundConnections": {
+            "node2_exit0": "node2",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+          "ui": {
+            "position": {
+              "bottom": 598,
+              "left": 0,
+              "right": 220,
+              "top": 520,
+            },
+          },
+        },
+      },
+    },
+    "type": "UPDATE_NODES",
+  },
+]
+`;
+
+exports[`Flow Manipulation > on update canvas positions > should update positions 2`] = `
+[
+  {
+    "payload": {
+      "nodes": {
+        "node0": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node1",
+                "name": null,
+                "uuid": "node0_exit0",
+              },
+            ],
+            "uuid": "node0",
+          },
+          "ui": {
+            "position": {
+              "left": 100,
+              "top": 100,
+            },
+          },
+        },
+        "node1": {
+          "inboundConnections": {
+            "node0_exit0": "node0",
+          },
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit0",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit1",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit2",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "node1_cat0",
+                  "type": "has_any_word",
+                  "uuid": "node1_case0",
+                },
+                {
+                  "arguments": [
+                    "green",
+                  ],
+                  "category_uuid": "node1_cat1",
+                  "type": "has_any_word",
+                  "uuid": "node1_case1",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "node1_exit0",
+                  "name": "Red",
+                  "uuid": "node1_cat0",
+                },
+                {
+                  "exit_uuid": "node1_exit1",
+                  "name": "Green",
+                  "uuid": "node1_cat1",
+                },
+                {
+                  "exit_uuid": "node1_exit2",
+                  "name": "Other",
+                  "uuid": "node1_cat2",
+                },
+              ],
+              "default_exit_uuid": "node1_exit2",
+              "operand": "@run.input",
+              "result_name": "color",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "node1",
+          },
+          "ui": {
+            "position": {
+              "left": 200,
+              "top": 200,
+            },
+            "type": "wait_for_response",
+          },
+        },
+        "node2": {
+          "inboundConnections": {
+            "node1_exit0": "node1",
+            "node1_exit1": "node1",
+            "node1_exit2": "node1",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          "ui": {
+            "position": {
+              "bottom": 498,
+              "left": 0,
+              "right": 220,
+              "top": 400,
+            },
+          },
+        },
+        "node3": {
+          "inboundConnections": {
+            "node2_exit0": "node2",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+          "ui": {
+            "position": {
+              "bottom": 598,
+              "left": 0,
+              "right": 220,
+              "top": 520,
+            },
+          },
+        },
+      },
+    },
+    "type": "UPDATE_NODES",
+  },
+  {
+    "payload": {
+      "definition": {
+        "_ui": {
+          "languages": [],
+          "nodes": {
+            "node0": {
+              "position": {
+                "bottom": 254,
+                "left": 0,
+                "right": 220,
+                "top": 10,
+              },
+            },
+            "node1": {
+              "position": {
+                "bottom": 370,
+                "left": 0,
+                "right": 220,
+                "top": 280,
+              },
+              "type": "wait_for_response",
+            },
+            "node2": {
+              "position": {
+                "bottom": 498,
+                "left": 0,
+                "right": 220,
+                "top": 400,
+              },
+            },
+            "node3": {
+              "position": {
+                "bottom": 598,
+                "left": 0,
+                "right": 220,
+                "top": 520,
+              },
+            },
+          },
+          "stickies": {
+            "sticky0": {
+              "body": "The body for sticky0",
+              "position": {
+                "bottom": NaN,
+                "left": 300,
+                "right": NaN,
+                "top": 300,
+              },
+              "title": "sticky0",
+            },
+          },
+        },
+        "language": "eng",
+        "localization": {},
+        "name": "Boring Flow",
+        "nodes": [
+          {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node1",
+                "name": null,
+                "uuid": "node0_exit0",
+              },
+            ],
+            "uuid": "node0",
+          },
+          {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit0",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit1",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit2",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "node1_cat0",
+                  "type": "has_any_word",
+                  "uuid": "node1_case0",
+                },
+                {
+                  "arguments": [
+                    "green",
+                  ],
+                  "category_uuid": "node1_cat1",
+                  "type": "has_any_word",
+                  "uuid": "node1_case1",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "node1_exit0",
+                  "name": "Red",
+                  "uuid": "node1_cat0",
+                },
+                {
+                  "exit_uuid": "node1_exit1",
+                  "name": "Green",
+                  "uuid": "node1_cat1",
+                },
+                {
+                  "exit_uuid": "node1_exit2",
+                  "name": "Other",
+                  "uuid": "node1_cat2",
+                },
+              ],
+              "default_exit_uuid": "node1_exit2",
+              "operand": "@run.input",
+              "result_name": "color",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "node1",
+          },
+          {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+        ],
+        "spec_version": "13.1",
+        "uuid": "boring",
+      },
+    },
+    "type": "UPDATE_DEFINITION",
+  },
+]
+`;
+
+exports[`Flow Manipulation > on update canvas positions > should update positions 3`] = `
+[
+  {
+    "payload": {
+      "nodes": {
+        "node0": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node1",
+                "name": null,
+                "uuid": "node0_exit0",
+              },
+            ],
+            "uuid": "node0",
+          },
+          "ui": {
+            "position": {
+              "left": 100,
+              "top": 100,
+            },
+          },
+        },
+        "node1": {
+          "inboundConnections": {
+            "node0_exit0": "node0",
+          },
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit0",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit1",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit2",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "node1_cat0",
+                  "type": "has_any_word",
+                  "uuid": "node1_case0",
+                },
+                {
+                  "arguments": [
+                    "green",
+                  ],
+                  "category_uuid": "node1_cat1",
+                  "type": "has_any_word",
+                  "uuid": "node1_case1",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "node1_exit0",
+                  "name": "Red",
+                  "uuid": "node1_cat0",
+                },
+                {
+                  "exit_uuid": "node1_exit1",
+                  "name": "Green",
+                  "uuid": "node1_cat1",
+                },
+                {
+                  "exit_uuid": "node1_exit2",
+                  "name": "Other",
+                  "uuid": "node1_cat2",
+                },
+              ],
+              "default_exit_uuid": "node1_exit2",
+              "operand": "@run.input",
+              "result_name": "color",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "node1",
+          },
+          "ui": {
+            "position": {
+              "left": 200,
+              "top": 200,
+            },
+            "type": "wait_for_response",
+          },
+        },
+        "node2": {
+          "inboundConnections": {
+            "node1_exit0": "node1",
+            "node1_exit1": "node1",
+            "node1_exit2": "node1",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          "ui": {
+            "position": {
+              "bottom": 498,
+              "left": 0,
+              "right": 220,
+              "top": 400,
+            },
+          },
+        },
+        "node3": {
+          "inboundConnections": {
+            "node2_exit0": "node2",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+          "ui": {
+            "position": {
+              "bottom": 598,
+              "left": 0,
+              "right": 220,
+              "top": 520,
+            },
+          },
+        },
+      },
+    },
+    "type": "UPDATE_NODES",
+  },
+  {
+    "payload": {
+      "definition": {
+        "_ui": {
+          "languages": [],
+          "nodes": {
+            "node0": {
+              "position": {
+                "bottom": 254,
+                "left": 0,
+                "right": 220,
+                "top": 10,
+              },
+            },
+            "node1": {
+              "position": {
+                "bottom": 370,
+                "left": 0,
+                "right": 220,
+                "top": 280,
+              },
+              "type": "wait_for_response",
+            },
+            "node2": {
+              "position": {
+                "bottom": 498,
+                "left": 0,
+                "right": 220,
+                "top": 400,
+              },
+            },
+            "node3": {
+              "position": {
+                "bottom": 598,
+                "left": 0,
+                "right": 220,
+                "top": 520,
+              },
+            },
+          },
+          "stickies": {
+            "sticky0": {
+              "body": "The body for sticky0",
+              "position": {
+                "bottom": NaN,
+                "left": 300,
+                "right": NaN,
+                "top": 300,
+              },
+              "title": "sticky0",
+            },
+          },
+        },
+        "language": "eng",
+        "localization": {},
+        "name": "Boring Flow",
+        "nodes": [
+          {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node1",
+                "name": null,
+                "uuid": "node0_exit0",
+              },
+            ],
+            "uuid": "node0",
+          },
+          {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit0",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit1",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit2",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "node1_cat0",
+                  "type": "has_any_word",
+                  "uuid": "node1_case0",
+                },
+                {
+                  "arguments": [
+                    "green",
+                  ],
+                  "category_uuid": "node1_cat1",
+                  "type": "has_any_word",
+                  "uuid": "node1_case1",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "node1_exit0",
+                  "name": "Red",
+                  "uuid": "node1_cat0",
+                },
+                {
+                  "exit_uuid": "node1_exit1",
+                  "name": "Green",
+                  "uuid": "node1_cat1",
+                },
+                {
+                  "exit_uuid": "node1_exit2",
+                  "name": "Other",
+                  "uuid": "node1_cat2",
+                },
+              ],
+              "default_exit_uuid": "node1_exit2",
+              "operand": "@run.input",
+              "result_name": "color",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "node1",
+          },
+          {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+        ],
+        "spec_version": "13.1",
+        "uuid": "boring",
+      },
+    },
+    "type": "UPDATE_DEFINITION",
+  },
+]
+`;
+
+exports[`Flow Manipulation > remove nodes > should return correct nodes 1`] = `
+[
+  {
+    "payload": {
+      "nodes": {
+        "node2": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          "ui": {
+            "position": {
+              "bottom": 498,
+              "left": 0,
+              "right": 220,
+              "top": 400,
+            },
+          },
+        },
+        "node3": {
+          "inboundConnections": {
+            "node2_exit0": "node2",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+          "ui": {
+            "position": {
+              "bottom": 598,
+              "left": 0,
+              "right": 220,
+              "top": 520,
+            },
+          },
+        },
+      },
+    },
+    "type": "UPDATE_NODES",
+  },
+]
+`;
+
+exports[`Flow Manipulation > remove nodes > should return correct nodes 2`] = `
+[
+  {
+    "payload": {
+      "nodes": {
+        "node2": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          "ui": {
+            "position": {
+              "bottom": 498,
+              "left": 0,
+              "right": 220,
+              "top": 400,
+            },
+          },
+        },
+        "node3": {
+          "inboundConnections": {
+            "node2_exit0": "node2",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+          "ui": {
+            "position": {
+              "bottom": 598,
+              "left": 0,
+              "right": 220,
+              "top": 520,
+            },
+          },
+        },
+      },
+    },
+    "type": "UPDATE_NODES",
+  },
+  {
+    "payload": {
+      "nodes": {
+        "node1": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit0",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit1",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit2",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "node1_cat0",
+                  "type": "has_any_word",
+                  "uuid": "node1_case0",
+                },
+                {
+                  "arguments": [
+                    "green",
+                  ],
+                  "category_uuid": "node1_cat1",
+                  "type": "has_any_word",
+                  "uuid": "node1_case1",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "node1_exit0",
+                  "name": "Red",
+                  "uuid": "node1_cat0",
+                },
+                {
+                  "exit_uuid": "node1_exit1",
+                  "name": "Green",
+                  "uuid": "node1_cat1",
+                },
+                {
+                  "exit_uuid": "node1_exit2",
+                  "name": "Other",
+                  "uuid": "node1_cat2",
+                },
+              ],
+              "default_exit_uuid": "node1_exit2",
+              "operand": "@run.input",
+              "result_name": "color",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "node1",
+          },
+          "ui": {
+            "position": {
+              "bottom": 370,
+              "left": 0,
+              "right": 220,
+              "top": 280,
+            },
+            "type": "wait_for_response",
+          },
+        },
+        "node2": {
+          "inboundConnections": {
+            "node1_exit0": "node1",
+            "node1_exit1": "node1",
+            "node1_exit2": "node1",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          "ui": {
+            "position": {
+              "bottom": 498,
+              "left": 0,
+              "right": 220,
+              "top": 400,
+            },
+          },
+        },
+        "node3": {
+          "inboundConnections": {
+            "node2_exit0": "node2",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+          "ui": {
+            "position": {
+              "bottom": 598,
+              "left": 0,
+              "right": 220,
+              "top": 520,
+            },
+          },
+        },
+      },
+    },
+    "type": "UPDATE_NODES",
+  },
+  {
+    "payload": {
+      "definition": {
+        "_ui": {
+          "languages": [],
+          "nodes": {
+            "node0": {
+              "position": {
+                "bottom": 254,
+                "left": 0,
+                "right": 220,
+                "top": 10,
+              },
+            },
+            "node1": {
+              "position": {
+                "bottom": 370,
+                "left": 0,
+                "right": 220,
+                "top": 280,
+              },
+              "type": "wait_for_response",
+            },
+            "node2": {
+              "position": {
+                "bottom": 498,
+                "left": 0,
+                "right": 220,
+                "top": 400,
+              },
+            },
+            "node3": {
+              "position": {
+                "bottom": 598,
+                "left": 0,
+                "right": 220,
+                "top": 520,
+              },
+            },
+          },
+          "stickies": {},
+        },
+        "language": "eng",
+        "localization": {},
+        "name": "Boring Flow",
+        "nodes": [
+          {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node1",
+                "name": null,
+                "uuid": "node0_exit0",
+              },
+            ],
+            "uuid": "node0",
+          },
+          {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit0",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit1",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit2",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "node1_cat0",
+                  "type": "has_any_word",
+                  "uuid": "node1_case0",
+                },
+                {
+                  "arguments": [
+                    "green",
+                  ],
+                  "category_uuid": "node1_cat1",
+                  "type": "has_any_word",
+                  "uuid": "node1_case1",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "node1_exit0",
+                  "name": "Red",
+                  "uuid": "node1_cat0",
+                },
+                {
+                  "exit_uuid": "node1_exit1",
+                  "name": "Green",
+                  "uuid": "node1_cat1",
+                },
+                {
+                  "exit_uuid": "node1_exit2",
+                  "name": "Other",
+                  "uuid": "node1_cat2",
+                },
+              ],
+              "default_exit_uuid": "node1_exit2",
+              "operand": "@run.input",
+              "result_name": "color",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "node1",
+          },
+          {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+        ],
+        "spec_version": "13.1",
+        "uuid": "boring",
+      },
+    },
+    "type": "UPDATE_DEFINITION",
+  },
+]
+`;
+
+exports[`Flow Manipulation > remove nodes > should return correct nodes 3`] = `
+[
+  {
+    "payload": {
+      "nodes": {
+        "node2": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          "ui": {
+            "position": {
+              "bottom": 498,
+              "left": 0,
+              "right": 220,
+              "top": 400,
+            },
+          },
+        },
+        "node3": {
+          "inboundConnections": {
+            "node2_exit0": "node2",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+          "ui": {
+            "position": {
+              "bottom": 598,
+              "left": 0,
+              "right": 220,
+              "top": 520,
+            },
+          },
+        },
+      },
+    },
+    "type": "UPDATE_NODES",
+  },
+  {
+    "payload": {
+      "nodes": {
+        "node1": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit0",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit1",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit2",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "node1_cat0",
+                  "type": "has_any_word",
+                  "uuid": "node1_case0",
+                },
+                {
+                  "arguments": [
+                    "green",
+                  ],
+                  "category_uuid": "node1_cat1",
+                  "type": "has_any_word",
+                  "uuid": "node1_case1",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "node1_exit0",
+                  "name": "Red",
+                  "uuid": "node1_cat0",
+                },
+                {
+                  "exit_uuid": "node1_exit1",
+                  "name": "Green",
+                  "uuid": "node1_cat1",
+                },
+                {
+                  "exit_uuid": "node1_exit2",
+                  "name": "Other",
+                  "uuid": "node1_cat2",
+                },
+              ],
+              "default_exit_uuid": "node1_exit2",
+              "operand": "@run.input",
+              "result_name": "color",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "node1",
+          },
+          "ui": {
+            "position": {
+              "bottom": 370,
+              "left": 0,
+              "right": 220,
+              "top": 280,
+            },
+            "type": "wait_for_response",
+          },
+        },
+        "node2": {
+          "inboundConnections": {
+            "node1_exit0": "node1",
+            "node1_exit1": "node1",
+            "node1_exit2": "node1",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          "ui": {
+            "position": {
+              "bottom": 498,
+              "left": 0,
+              "right": 220,
+              "top": 400,
+            },
+          },
+        },
+        "node3": {
+          "inboundConnections": {
+            "node2_exit0": "node2",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+          "ui": {
+            "position": {
+              "bottom": 598,
+              "left": 0,
+              "right": 220,
+              "top": 520,
+            },
+          },
+        },
+      },
+    },
+    "type": "UPDATE_NODES",
+  },
+  {
+    "payload": {
+      "definition": {
+        "_ui": {
+          "languages": [],
+          "nodes": {
+            "node0": {
+              "position": {
+                "bottom": 254,
+                "left": 0,
+                "right": 220,
+                "top": 10,
+              },
+            },
+            "node1": {
+              "position": {
+                "bottom": 370,
+                "left": 0,
+                "right": 220,
+                "top": 280,
+              },
+              "type": "wait_for_response",
+            },
+            "node2": {
+              "position": {
+                "bottom": 498,
+                "left": 0,
+                "right": 220,
+                "top": 400,
+              },
+            },
+            "node3": {
+              "position": {
+                "bottom": 598,
+                "left": 0,
+                "right": 220,
+                "top": 520,
+              },
+            },
+          },
+          "stickies": {},
+        },
+        "language": "eng",
+        "localization": {},
+        "name": "Boring Flow",
+        "nodes": [
+          {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node1",
+                "name": null,
+                "uuid": "node0_exit0",
+              },
+            ],
+            "uuid": "node0",
+          },
+          {
+            "actions": [],
+            "exits": [
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit0",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit1",
+              },
+              {
+                "destination_uuid": "node2",
+                "uuid": "node1_exit2",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "node1_cat0",
+                  "type": "has_any_word",
+                  "uuid": "node1_case0",
+                },
+                {
+                  "arguments": [
+                    "green",
+                  ],
+                  "category_uuid": "node1_cat1",
+                  "type": "has_any_word",
+                  "uuid": "node1_case1",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "node1_exit0",
+                  "name": "Red",
+                  "uuid": "node1_cat0",
+                },
+                {
+                  "exit_uuid": "node1_exit1",
+                  "name": "Green",
+                  "uuid": "node1_cat1",
+                },
+                {
+                  "exit_uuid": "node1_exit2",
+                  "name": "Other",
+                  "uuid": "node1_cat2",
+                },
+              ],
+              "default_exit_uuid": "node1_exit2",
+              "operand": "@run.input",
+              "result_name": "color",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "node1",
+          },
+          {
+            "actions": [
+              {
+                "text": "This has been really great.",
+                "type": "send_msg",
+                "uuid": "node2_action0",
+              },
+              {
+                "field": {
+                  "key": "unknown_field",
+                  "name": "Unknown Field",
+                },
+                "type": "set_contact_field",
+                "uuid": "node2_action1",
+                "value": "Some Value",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": "node3",
+                "name": null,
+                "uuid": "node2_exit0",
+              },
+            ],
+            "uuid": "node2",
+          },
+          {
+            "actions": [
+              {
+                "text": "Thanks for playing!",
+                "type": "send_msg",
+                "uuid": "node3_action0",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "name": null,
+                "uuid": "node3_exit0",
+              },
+            ],
+            "uuid": "node3",
+          },
+        ],
+        "spec_version": "13.1",
+        "uuid": "boring",
+      },
+    },
+    "type": "UPDATE_DEFINITION",
+  },
+]
+`;
+
 exports[`Flow Manipulation > routers > should add random routers after an add action 1`] = `
 {
   "inboundConnections": {},
@@ -52641,4 +54438,79 @@ exports[`Flow Manipulation > routers > should add random routers after an add ac
     "type": "split_by_random",
   },
 }
+`;
+
+exports[`Language > should handle language changes 1`] = `
+[
+  {
+    "payload": {
+      "editorState": {
+        "language": {
+          "id": "eng",
+          "name": "English",
+          "type": "language",
+        },
+        "translating": true,
+      },
+    },
+    "type": "UPDATE_EDITOR_STATE",
+  },
+  {
+    "payload": {
+      "editorState": {
+        "language": {
+          "id": "spa",
+          "name": "Spanish",
+          "type": "language",
+        },
+        "translating": false,
+      },
+    },
+    "type": "UPDATE_EDITOR_STATE",
+  },
+]
+`;
+
+exports[`Language > should handle language changes 2`] = `
+[
+  {
+    "payload": {
+      "editorState": {
+        "language": {
+          "id": "eng",
+          "name": "English",
+          "type": "language",
+        },
+        "translating": true,
+      },
+    },
+    "type": "UPDATE_EDITOR_STATE",
+  },
+  {
+    "payload": {
+      "editorState": {
+        "language": {
+          "id": "spa",
+          "name": "Spanish",
+          "type": "language",
+        },
+        "translating": false,
+      },
+    },
+    "type": "UPDATE_EDITOR_STATE",
+  },
+  {
+    "payload": {
+      "editorState": {
+        "language": {
+          "id": "eng",
+          "name": "English",
+          "type": "language",
+        },
+        "translating": false,
+      },
+    },
+    "type": "UPDATE_EDITOR_STATE",
+  },
+]
 `;
