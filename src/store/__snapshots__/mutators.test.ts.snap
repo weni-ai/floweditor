@@ -1094,6 +1094,7 @@ exports[`mutators > should updateLocalizations 1`] = `
       "uuid": "node3",
     },
   ],
+  "spec_version": "13.1",
   "uuid": "boring",
 }
 `;
@@ -1308,6 +1309,7 @@ exports[`mutators > should updateLocalizations 2`] = `
       "uuid": "node3",
     },
   ],
+  "spec_version": "13.1",
   "uuid": "boring",
 }
 `;

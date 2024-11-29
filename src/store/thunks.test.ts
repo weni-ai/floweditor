@@ -43,6 +43,7 @@ import {
   updateConnection,
   updateExitDestination,
   updateSticky,
+  fetchFlow,
 } from 'store/thunks';
 import { createMockStore, mock, prepMockDuxState } from 'testUtils';
 import {
@@ -51,6 +52,7 @@ import {
   createSendMsgAction,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
+import { act } from '../test/utils';
 
 const config = require('test/config');
 
@@ -882,5 +884,59 @@ describe('Flow Manipulation', () => {
       expect(nodes.node0).toMatchSnapshot();
       expect(newNode).toMatchSnapshot();
     });
+  });
+});
+
+describe('Flow Fetch', () => {
+  let store: any;
+  const { mockDuxState, testNodes } = prepMockDuxState();
+
+  beforeEach(() => {
+    // prep our store to show that we are editing
+    store = createMockStore(mockDuxState);
+    mock(utils, 'createUUID', utils.seededUUIDs());
+  });
+
+  it('should fetch flow activity and details', async () => {
+    vi.useFakeTimers();
+    await act(async () => {
+      await store.dispatch(fetchFlow(config.endpoints, boring.uuid, true));
+    });
+
+    (window as any).triggerActivityUpdate();
+
+    expect(store.getActions()).toMatchSnapshot();
+
+    // fetch again
+
+    await act(async () => {
+      await store.dispatch(fetchFlow(config.endpoints, boring.uuid, true));
+    });
+
+    expect(store.getActions()).toMatchSnapshot();
+
+    await act(async () => {
+      vi.advanceTimersToNextTimerAsync();
+    });
+
+    expect(store.getActions()).toMatchSnapshot();
+
+    // // fetch again while posting
+
+    await act(async () => {
+      await store.dispatch(fetchFlow(config.endpoints, boring.uuid, true));
+    });
+
+    expect(store.getActions()).toMatchSnapshot();
+
+    await act(async () => {
+      await store.dispatch(fetchFlow(config.endpoints, boring.uuid, true));
+    });
+
+    await act(async () => {
+      vi.advanceTimersToNextTimerAsync();
+    });
+
+    expect(store.getActions()).toMatchSnapshot();
   });
 });
