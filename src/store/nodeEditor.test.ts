@@ -7,6 +7,7 @@ import reducer, {
   updateTypeConfig,
   updateUserAddingAction,
   userAddingAction as userAddingActionReducer,
+  mergeForm,
 } from 'store/nodeEditor';
 
 const definition = require('test/flows/boring.json');
@@ -65,6 +66,146 @@ describe('nodeEditor reducers', () => {
       const userAddingAction = true;
       const action = updateUserAddingAction(userAddingAction);
       expect(reduce(action)).toEqual(userAddingAction);
+    });
+  });
+});
+
+describe('nodeEditor mergeForm', () => {
+  it('should merge form data', () => {
+    const initialFormState: any = {
+      valid: true,
+      validationFailures: [],
+      name: {
+        value: 'test name',
+      },
+      description: {
+        value: 'test description',
+      },
+      array: {
+        value: [1, 2, 3],
+      },
+      object: {
+        value: { foo: 'bar' },
+      },
+      array_object_value: [
+        {
+          value: {
+            uuid: '1234',
+            name: 'baz',
+          },
+        },
+      ],
+      array_object_uuid: [
+        {
+          uuid: '1234',
+          name: 'not baz',
+        },
+      ],
+      string_array__invalid: ['first'],
+    };
+
+    const updates: any = {
+      valid: true,
+      validationFailures: [],
+      name: {
+        value: 'updated name',
+        validationFailures: [{ message: 'invalid' }],
+      },
+      array: {
+        value: [4, 5, 6],
+      },
+      object: {
+        value: { baz: 'qux' },
+      },
+      array_object_value: [
+        {
+          value: {
+            uuid: '1234',
+            name: 'baq',
+          },
+          validationFailures: [{ message: 'invalid' }],
+        },
+      ],
+      array_object_uuid: [
+        {
+          uuid: '1234',
+          name: 'not baq',
+        },
+      ],
+      string_array__invalid: ['first', 'second'],
+    };
+
+    let updated = mergeForm(initialFormState, updates, ['description']);
+
+    expect(updated).toEqual({
+      valid: false,
+      validationFailures: [],
+      name: {
+        value: 'updated name',
+        validationFailures: [{ message: 'invalid' }],
+      },
+      array: {
+        value: [4, 5, 6],
+      },
+      object: {
+        value: { baz: 'qux' },
+      },
+      array_object_value: [
+        {
+          value: {
+            uuid: '1234',
+            name: 'baq',
+          },
+          validationFailures: [{ message: 'invalid' }],
+        },
+      ],
+      array_object_uuid: [
+        {
+          uuid: '1234',
+          name: 'not baq',
+        },
+      ],
+      string_array__invalid: ['first'], // not a valid entry for merge form, so it should not be updated
+    });
+
+    updated = mergeForm(updated, {}, [
+      {
+        array_object_uuid: [
+          {
+            uuid: '1234',
+          },
+        ],
+      },
+      {
+        array_object_value: [
+          {
+            value: {
+              uuid: '1234',
+            },
+          },
+        ],
+      },
+      {
+        string_array__invalid: 'invalid',
+      },
+    ]);
+
+    expect(updated).toEqual({
+      valid: false,
+      validationFailures: [],
+      name: {
+        value: 'updated name',
+        validationFailures: [{ message: 'invalid' }],
+      },
+      array: {
+        value: [4, 5, 6],
+      },
+      object: {
+        value: { baz: 'qux' },
+      },
+      array_object_value: [],
+      array_object_uuid: [],
+      string_array__invalid: ['first'],
     });
   });
 });
