@@ -218,6 +218,12 @@ exports[`GroupsRouterForm > render > should render 1`] = `
     onChange={[MockFunction spy]}
   />
   <AssetSelector
+    assets={
+      {
+        "items": {},
+        "type": "group",
+      }
+    }
     entry={
       {
         "value": [
