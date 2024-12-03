@@ -106,6 +106,21 @@ export const restHandlers = [
   http.get(endpoints.classifiers, () => {
     return HttpResponse.json(require('test/assets/classifiers.json'));
   }),
+  http.get(`${endpoints.revisions}`, () => {
+    return HttpResponse.json(require('test/assets/revisions.json'));
+  }),
+  http.get(`${endpoints.revisions}{/:id}`, () => {
+    return HttpResponse.json(require('test/assets/flow_details.json'));
+  }),
+  http.get(endpoints.activity, () => {
+    return HttpResponse.json(require('test/assets/activity.json'));
+  }),
+  http.get(endpoints.brain, () => {
+    return HttpResponse.json(require('test/assets/brain.json'));
+  }),
+  http.post(endpoints.revisions, () => {
+    return HttpResponse.json(require('test/assets/save_revisions.json'));
+  }),
 ];
 
 const server = setupServer(...restHandlers);

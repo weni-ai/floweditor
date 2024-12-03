@@ -43,14 +43,21 @@ import {
   updateConnection,
   updateExitDestination,
   updateSticky,
+  fetchFlow,
+  onRemoveNodes,
+  onUpdateCanvasPositions,
+  handleLanguageChange,
 } from 'store/thunks';
 import { createMockStore, mock, prepMockDuxState } from 'testUtils';
 import {
   createAddGroupsAction,
   createRandomNode,
   createSendMsgAction,
+  Spanish,
+  English,
 } from 'testUtils/assetCreators';
 import * as utils from 'utils';
+import { act } from '../test/utils';
 
 const config = require('test/config');
 
@@ -882,5 +889,178 @@ describe('Flow Manipulation', () => {
       expect(nodes.node0).toMatchSnapshot();
       expect(newNode).toMatchSnapshot();
     });
+  });
+
+  describe('remove nodes', () => {
+    it('should return correct nodes', () => {
+      boring._ui.stickies = {
+        sticky0: {
+          title: 'sticky0',
+          body: 'The body for sticky0',
+          position: { left: 100, top: 100 },
+        },
+      };
+
+      store = createMockStore(
+        mutate(initialState, {
+          flowContext: {
+            definition: { $set: boring },
+            nodes: { $set: testNodes },
+          },
+          nodeEditor: {
+            settings: {
+              $set: {
+                originalNode: testNodes.node0,
+                originalAction: createSendMsgAction(),
+              },
+            },
+          },
+        }),
+      );
+
+      // remove the first node
+      store.dispatch(
+        onRemoveNodes([testNodes.node0.node.uuid, testNodes.node1.node.uuid]),
+      );
+
+      expect(store.getActions()).toMatchSnapshot();
+
+      // remove a sticky
+      store.dispatch(onRemoveNodes([testNodes.node0.node.uuid, 'sticky0']));
+
+      expect(store.getActions()).toMatchSnapshot();
+
+      // remove an unknown
+      store.dispatch(onRemoveNodes(['unknown']));
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  describe('on update canvas positions', () => {
+    it('should update positions', () => {
+      boring._ui.stickies = {
+        sticky0: {
+          title: 'sticky0',
+          body: 'The body for sticky0',
+          position: { left: 100, top: 100 },
+        },
+      };
+
+      store = createMockStore(
+        mutate(initialState, {
+          flowContext: {
+            definition: { $set: boring },
+            nodes: { $set: testNodes },
+          },
+          nodeEditor: {
+            settings: {
+              $set: {
+                originalNode: testNodes.node0,
+                originalAction: createSendMsgAction(),
+              },
+            },
+          },
+        }),
+      );
+
+      // move nodes positions
+      store.dispatch(
+        onUpdateCanvasPositions({
+          [testNodes.node0.node.uuid]: { left: 100, top: 100 },
+          [testNodes.node1.node.uuid]: { left: 200, top: 200 },
+        }),
+      );
+
+      expect(store.getActions()).toMatchSnapshot();
+
+      // move sticky position
+      store.dispatch(
+        onUpdateCanvasPositions({
+          sticky0: { left: 300, top: 300 },
+        }),
+      );
+
+      expect(store.getActions()).toMatchSnapshot();
+
+      // move unknown
+      store.dispatch(
+        onUpdateCanvasPositions({
+          unknown: { left: 400, top: 400 },
+        }),
+      );
+
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+});
+
+describe('Flow Fetch', () => {
+  let store: any;
+  const { mockDuxState, testNodes } = prepMockDuxState();
+
+  beforeEach(() => {
+    // prep our store to show that we are editing
+    store = createMockStore(mockDuxState);
+    mock(utils, 'createUUID', utils.seededUUIDs());
+  });
+
+  it('should fetch flow activity and details', async () => {
+    vi.useFakeTimers();
+    await act(async () => {
+      await store.dispatch(fetchFlow(config.endpoints, boring.uuid, true));
+    });
+
+    (window as any).triggerActivityUpdate();
+
+    expect(store.getActions()).toMatchSnapshot();
+
+    // fetch again
+
+    await act(async () => {
+      await store.dispatch(fetchFlow(config.endpoints, boring.uuid, true));
+    });
+
+    expect(store.getActions()).toMatchSnapshot();
+
+    await act(async () => {
+      vi.advanceTimersToNextTimerAsync();
+    });
+
+    expect(store.getActions()).toMatchSnapshot();
+
+    // // fetch again while posting
+
+    await act(async () => {
+      await store.dispatch(fetchFlow(config.endpoints, boring.uuid, true));
+    });
+
+    expect(store.getActions()).toMatchSnapshot();
+
+    await act(async () => {
+      await store.dispatch(fetchFlow(config.endpoints, boring.uuid, true));
+    });
+
+    await act(async () => {
+      vi.advanceTimersToNextTimerAsync();
+    });
+
+    expect(store.getActions()).toMatchSnapshot();
+  });
+});
+
+describe('Language', () => {
+  it('should handle language changes', () => {
+    const store = createMockStore({
+      flowContext: { baseLanguage: English },
+      editorState: { language: English, translating: false },
+    });
+
+    store.dispatch(handleLanguageChange(Spanish));
+
+    expect(store.getActions()).toMatchSnapshot();
+
+    store.dispatch(handleLanguageChange(English));
+
+    expect(store.getActions()).toMatchSnapshot();
   });
 });
