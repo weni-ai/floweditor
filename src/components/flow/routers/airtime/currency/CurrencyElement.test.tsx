@@ -36,6 +36,11 @@ describe('CurrencyElement Component', () => {
     onRemove: mockOnRemove,
   };
 
+  const props = {
+    ...defaultProps,
+    index: 1,
+  };
+
   beforeEach(() => {
     store = mockStore({
       flowContext: {
@@ -58,11 +63,6 @@ describe('CurrencyElement Component', () => {
   });
 
   it('renders amount input when index is greater than -1', () => {
-    const props = {
-      ...defaultProps,
-      index: 1,
-    };
-
     const { getByPlaceholderText } = render(
       <Provider store={store}>
         <CurrencyElement {...props} />
@@ -73,11 +73,6 @@ describe('CurrencyElement Component', () => {
   });
 
   it('renders remove icon when index is greater than -1', () => {
-    const props = {
-      ...defaultProps,
-      index: 1,
-    };
-
     const { container } = render(
       <Provider store={store}>
         <CurrencyElement {...props} />
@@ -89,11 +84,6 @@ describe('CurrencyElement Component', () => {
   });
 
   it('calls onRemove when remove icon is clicked', () => {
-    const props = {
-      ...defaultProps,
-      index: 1,
-    };
-
     const { container } = render(
       <Provider store={store}>
         <CurrencyElement {...props} />
