@@ -543,6 +543,7 @@ export interface OpenTicket extends Action {
   body: string;
   result_name: string;
   assignee?: User;
+  context?: any;
 }
 
 export interface StartFlow extends Action {

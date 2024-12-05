@@ -9,8 +9,6 @@ const mockContext = {
   },
 };
 
-const ConfigContext = React.createContext(mockContext);
-
 describe('OpenTicketComp', () => {
   it('should render subject if provided', () => {
     const props = {
@@ -20,14 +18,10 @@ describe('OpenTicketComp', () => {
       result_name: 'Result Name',
       type: Types.open_ticket,
       uuid: '5678',
+      context: mockContext,
     };
 
-    render(
-      <ConfigContext.Provider value={mockContext}>
-        <OpenTicketComp {...props} />
-      </ConfigContext.Provider>,
-    );
-
+    render(<OpenTicketComp {...props} />);
     expect(screen.getByText('Test Subject')).toBeInTheDocument();
   });
 
@@ -39,60 +33,40 @@ describe('OpenTicketComp', () => {
       result_name: 'Result Name',
       type: Types.open_ticket,
       uuid: '5678',
+      context: mockContext,
     };
 
-    render(
-      <ConfigContext.Provider value={mockContext}>
-        <OpenTicketComp {...props} />
-      </ConfigContext.Provider>,
-    );
+    render(<OpenTicketComp {...props} context={mockContext} />);
 
     expect(screen.getByText('Test Topic')).toBeInTheDocument();
   });
 
   it('should display ticketer name if brand is not present in ticketer name', () => {
     const props = {
-      context: {
-        config: {
-          brand: 'MyBrand',
-        },
-      },
       ticketer: { name: 'Another Brand Support', uuid: '1234' },
+      body: 'This is the body',
+      result_name: 'Result Name',
+      type: Types.open_ticket,
+      uuid: '5678',
+      context: mockContext,
+    };
+
+    render(<OpenTicketComp {...props} />);
+
+    expect(screen.getByText(/Another Brand Support/)).toBeInTheDocument();
+  });
+
+  it('should not display ticketer name if brand is in ticketer name', () => {
+    const props = {
+      ticketer: { name: 'MyBrand Support', uuid: '1234' },
       body: 'This is the body',
       result_name: 'Result Name',
       type: Types.open_ticket,
       uuid: '5678',
     };
 
-    render(
-      <ConfigContext.Provider value={mockContext}>
-        <OpenTicketComp {...props} />
-      </ConfigContext.Provider>,
-    );
+    render(<OpenTicketComp {...props} context={mockContext} />);
 
-    expect(screen.getByText(/Another Brand Support/)).toBeInTheDocument();
+    expect(screen.queryByText(/Using/)).not.toBeInTheDocument();
   });
-
-  // it('should not display ticketer name if brand is in ticketer name', () => {
-  //   const props = {
-  //     context: {
-  //       config: {
-  //         brand: 'MyBrand',
-  //       },
-  //     },
-  //     ticketer: { name: 'MyBrand Support', uuid: '1234' },
-  //     body: 'This is the body',
-  //     result_name: 'Result Name',
-  //     type: Types.open_ticket,
-  //     uuid: '5678',
-  //   };
-
-  //   render(
-  //     <ConfigContext.Provider value={mockContext}>
-  //       <OpenTicketComp {...props} />
-  //     </ConfigContext.Provider>,
-  //   );
-
-  //   expect(screen.queryByText(/Using/)).not.toBeInTheDocument();
-  // });
 });
