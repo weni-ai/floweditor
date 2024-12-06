@@ -6,15 +6,16 @@ const OpenTicketComp: React.SFC<OpenTicket> = (
   { ticketer, subject, topic }: OpenTicket,
   context: any,
 ): JSX.Element => {
-  const showTicketer = ticketer.name.indexOf(context.config.brand) === -1;
+  const showTicketer = !ticketer.name.match(context.config.brand);
   return (
     <div style={{ textAlign: 'center' }}>
       <div>{subject ? subject : topic ? topic.name : null}</div>
-      {showTicketer ? (
+      {showTicketer && (
         <div style={{ fontSize: '80%' }}>
-          Using <span style={{ fontWeight: 400 }}>{ticketer.name}</span>
+          Using
+          <span style={{ fontWeight: 400 }}>{ticketer.name}</span>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };
