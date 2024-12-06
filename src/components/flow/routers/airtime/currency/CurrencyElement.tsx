@@ -93,7 +93,7 @@ export default class CurrencyElement extends React.Component<
 
     const amountInput =
       this.props.index > -1 ? (
-        <div className={styles.amount}>
+        <div className={styles.amount} data-testid="amount">
           <TextInputElement
             placeholder={placeholder}
             name={i18n.t('forms.value', 'value')}

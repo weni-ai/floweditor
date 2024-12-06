@@ -72,6 +72,20 @@ describe('CurrencyElement Component', () => {
     expect(getByPlaceholderText(/Transfer Amount/i)).toBeInTheDocument();
   });
 
+  it('doesn`t render amount input when index is less than 0', () => {
+    const props = {
+      ...defaultProps,
+      index: -1,
+    };
+    const { queryByPlaceholderText } = render(
+      <Provider store={store}>
+        <CurrencyElement {...props} />
+      </Provider>,
+    );
+
+    expect(queryByPlaceholderText('Transfer Amount')).not.toBeInTheDocument();
+  });
+
   it('renders remove icon when index is greater than -1', () => {
     const { container } = render(
       <Provider store={store}>
