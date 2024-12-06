@@ -1,5 +1,3 @@
-import * as React from 'react';
-import { render, screen } from '@testing-library/react';
 import OpenTicketComp from './OpenTicket';
 import { Types } from 'config/interfaces';
 import { composeComponentTestUtils } from 'testUtils';
