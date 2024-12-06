@@ -83,6 +83,21 @@ describe('CurrencyElement Component', () => {
     expect(removeIcon).toBeInTheDocument();
   });
 
+  it('doesn`t render remove icon when index is less than 0', () => {
+    const props = {
+      ...defaultProps,
+      index: -1,
+    };
+    const { container } = render(
+      <Provider store={store}>
+        <CurrencyElement {...props} />
+      </Provider>,
+    );
+
+    const removeIcon = container.querySelector(`div.${styles.remove}`);
+    expect(removeIcon).not.toBeInTheDocument();
+  });
+
   it('calls onRemove when remove icon is clicked', () => {
     const { container } = render(
       <Provider store={store}>
