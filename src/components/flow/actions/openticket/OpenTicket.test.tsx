@@ -46,16 +46,12 @@ describe('OpenTicketComp', () => {
 
   it('should display ticketer name if brand is not present in ticketer name', () => {
     const baseProps = {
-      context: {
-        config: {
-          brand: 'MyBrand',
-        },
-      },
       ticketer: { name: 'Another Brand Support', uuid: '1234' },
       body: 'This is the body',
       result_name: 'Result Name',
       type: Types.open_ticket,
       uuid: '5678',
+      context: mockContext,
     };
 
     const { setup } = composeComponentTestUtils(OpenTicketComp, baseProps);
@@ -66,16 +62,12 @@ describe('OpenTicketComp', () => {
 
   it('should not display ticketer name if brand is in ticketer name', () => {
     const baseProps = {
-      context: {
-        config: {
-          brand: 'MyBrand',
-        },
-      },
       ticketer: { name: 'RapidPro MyBrand', uuid: '1234' },
       body: 'This is the body',
       result_name: 'Result Name',
       type: Types.open_ticket,
       uuid: '5678',
+      context: mockContext,
     };
 
     const { setup } = composeComponentTestUtils(OpenTicketComp, baseProps);
