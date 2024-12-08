@@ -18,8 +18,8 @@
       "name": "Automatic Classify"
     },
     "call_brain": {
-      "description": "Call Weni Brain",
-      "name": "Call Weni Brain"
+      "description": "Send to Agent",
+      "name": "Send to Agent"
     },
     "call_resthook": {
       "description": "Appeler Zapier",
@@ -257,7 +257,7 @@
     },
     "body": "Corps",
     "brain": {
-      "entry": "Enter an expression to use as input in the Brain. To use the contact's last response, use @input.text."
+      "entry": "Enter an expression for the Agent to reply to. To use the contact's last response, use @input.text."
     },
     "buckets": "Seaux",
     "bucket": "Bucket",
