@@ -18,8 +18,8 @@
       "name": "Classificar automaticamente"
     },
     "call_brain": {
-      "description": "Chamar o Weni Brain",
-      "name": "Chamar o Weni Brain"
+      "description": "Enviar para o Agente",
+      "name": "Enviar para o Agente"
     },
     "call_resthook": {
       "description": "Ligar para Zapier",
@@ -257,7 +257,7 @@
     },
     "body": "Corpo",
     "brain": {
-      "entry": "Insira uma expressão para usar como entrada no Brain. Para usar a última resposta do contato, use @input.text"
+      "entry": "Insira uma expressão para o Agente responder. Para usar a última resposta do contato, use @input.text"
     },
     "buckets": "Repositórios",
     "bucket": "Repositório",
