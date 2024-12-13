@@ -20,7 +20,7 @@ import styles from './Canvas.module.scss';
 import nodesCopy from '../../components/copyAndPasteNodes';
 import { RenderNode } from '../../store/flowContext';
 
-import { applyVueInReact } from 'veaury';
+import { applyVueInReact, applyPureVueInReact } from 'veaury';
 // @ts-ignore
 import Unnnic from '@weni/unnnic-system';
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
@@ -35,7 +35,7 @@ const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
     },
   },
 });
-const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip, {
+const UnnnicTooltip = applyPureVueInReact(Unnnic.unnnicToolTip, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
