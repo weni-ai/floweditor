@@ -1,9 +1,55 @@
-import { Canvas, CANVAS_PADDING, CanvasProps } from 'components/canvas/Canvas';
+import { Canvas, CanvasProps } from 'components/canvas/Canvas';
 import { CanvasDraggableProps } from 'components/canvas/CanvasDraggable';
 import React from 'react';
-import { fireEvent, render, waitFor } from 'test/utils';
+import { fireEvent, render, waitFor, act } from 'test/utils';
 import { createUUID } from 'utils';
 import { MouseState } from 'store/editor';
+import { JSDOM } from 'jsdom';
+
+const firstNodeUUID = createUUID();
+const secondNodeUUID = createUUID();
+
+const nodes = {
+  [firstNodeUUID]: {
+    ui: {
+      position: { top: 100, bottom: 200, left: 100, right: 200 },
+    },
+  },
+  [secondNodeUUID]: {
+    ui: {
+      position: { top: 500, bottom: 600, left: 500, right: 600 },
+    },
+  },
+};
+
+const draggables = [
+  {
+    elementCreator: vi.fn(),
+    uuid: firstNodeUUID,
+    position: nodes[firstNodeUUID].ui.position,
+    config: {
+      node: {
+        uuid: firstNodeUUID,
+      },
+      ui: nodes[firstNodeUUID].ui,
+      inboundConnections: [] as any,
+    },
+    idx: 0,
+  },
+  {
+    elementCreator: vi.fn(),
+    uuid: secondNodeUUID,
+    position: nodes[secondNodeUUID].ui.position,
+    config: {
+      node: {
+        uuid: secondNodeUUID,
+      },
+      ui: nodes[secondNodeUUID].ui,
+      inboundConnections: [],
+    },
+    idx: 0,
+  },
+];
 
 const baseProps: CanvasProps = {
   uuid: createUUID(),
@@ -21,11 +67,25 @@ const baseProps: CanvasProps = {
   mouseState: MouseState.SELECT,
   onZoom: vi.fn(),
   onMouseStateChange: vi.fn(),
-  nodes: undefined,
+  nodes: nodes,
   updateNodesEditor: vi.fn(),
 };
 
+const setDom = () => {
+  const dom = new JSDOM('<!doctype html><html><body></body></html>');
+
+  // `as` and anything after it are TypeScript-specific
+  global.window = (dom.window as unknown) as Window & typeof globalThis;
+  global.document = dom.window.document;
+
+  global.window['requestAnimationFrame'] = vi.fn();
+};
+
 describe(Canvas.name, () => {
+  beforeEach(() => {
+    setDom();
+  });
+
   it('render default', async () => {
     const { baseElement } = render(<Canvas {...baseProps} />);
     await waitFor(() => expect(baseElement).toMatchSnapshot());
@@ -92,5 +152,207 @@ describe(Canvas.name, () => {
     vi.runAllTimers();
 
     await waitFor(() => expect(onDragging).toMatchSnapshot());
+  });
+
+  it('should select nodes when dragging', () => {
+    const ref = React.createRef<Canvas>();
+
+    const first: CanvasDraggableProps = {
+      elementCreator: vi.fn(),
+      uuid: createUUID(),
+      position: { top: 100, bottom: 200, left: 100, right: 200 },
+      idx: 0,
+    };
+
+    const { baseElement, getByTestId } = render(
+      <Canvas ref={ref} {...baseProps} draggables={[first]} />,
+    );
+
+    const movePositions = [
+      { clientX: 100, clientY: 100 },
+      { clientX: 200, clientY: 200 },
+    ];
+
+    const container = baseElement.querySelector('#canvas') as HTMLElement;
+
+    expect(ref.current.state.selected).toEqual({});
+
+    fireEvent.mouseDown(container, movePositions[0]);
+    fireEvent.mouseMove(container, movePositions[1]);
+
+    expect(ref.current.state.selected).toEqual({
+      [first.uuid]: first.position,
+    });
+  });
+
+  it('should copy and paste selected nodes', async () => {
+    const ref = React.createRef<Canvas>();
+
+    const { baseElement, getByTestId } = render(
+      <Canvas ref={ref} {...baseProps} draggables={draggables} />,
+    );
+
+    const movePositions = [
+      { clientX: 50, clientY: 50 },
+      { clientX: 300, clientY: 300 },
+      { clientX: 500, clientY: 500 },
+      { clientX: 800, clientY: 800 },
+    ];
+
+    const container = baseElement.querySelector('#canvas') as HTMLElement;
+
+    expect(ref.current.state.selected).toEqual({});
+
+    fireEvent.mouseDown(container, movePositions[0]);
+    fireEvent.mouseMove(container, movePositions[1]);
+    fireEvent.mouseMove(container, movePositions[2]);
+    fireEvent.mouseMove(container, movePositions[3]);
+    fireEvent.mouseUp(container);
+
+    expect(ref.current.state.selected).toEqual({
+      [draggables[0].uuid]: draggables[0].position,
+      [draggables[1].uuid]: draggables[1].position,
+    });
+
+    const clipboardEvent = new Event('copy', {
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+    });
+
+    const setDataMock = vi.fn();
+    (clipboardEvent as any)['clipboardData'] = {
+      setData: setDataMock,
+    };
+
+    fireEvent(container, clipboardEvent);
+
+    const selectedNodes = [
+      {
+        ...draggables[0].config,
+        node: {
+          ...draggables[0].config.node,
+          uuid: `update:${draggables[0].config.node.uuid}`,
+        },
+        ui: { position: { left: 0, top: 0 } },
+      },
+      {
+        ...draggables[1].config,
+        node: {
+          ...draggables[1].config.node,
+          uuid: `update:${draggables[1].config.node.uuid}`,
+        },
+        ui: { position: { left: 400, top: 400 } },
+      },
+    ];
+
+    expect(setDataMock).toHaveBeenCalledTimes(1);
+    expect(setDataMock).toHaveBeenCalledWith(
+      'application/json',
+      JSON.stringify(selectedNodes),
+    );
+
+    const pastePositions = [{ clientX: 1000, clientY: 1000 }];
+
+    fireEvent.mouseMove(container, pastePositions[0]);
+    fireEvent.mouseDown(container, pastePositions[0]);
+    fireEvent.mouseUp(container);
+
+    const pasteEvent = new Event('paste', {
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+    });
+
+    (pasteEvent as any)['clipboardData'] = {
+      getData: () => {
+        return JSON.stringify(selectedNodes);
+      },
+    };
+
+    await act(async () => {
+      fireEvent(container, pasteEvent);
+    });
+
+    expect(baseProps.onUpdatePositions).toHaveBeenCalledTimes(1);
+    expect(baseProps.onUpdatePositions).toMatchSnapshot();
+  });
+
+  it('should zoom', () => {
+    const ref = React.createRef<Canvas>();
+
+    const { baseElement, getByTestId } = render(
+      <Canvas ref={ref} {...baseProps} draggables={draggables} />,
+    );
+
+    const container = baseElement.querySelector('#canvas') as HTMLElement;
+
+    const zoomEvent = new WheelEvent('wheel', {
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+      deltaY: 100,
+      ctrlKey: true,
+    });
+
+    expect(ref.current.state.currentZoom).toBe(100);
+    fireEvent(container, zoomEvent);
+    expect(ref.current.state.currentZoom).toBe(75);
+  });
+
+  it('should move the canvas', () => {
+    const ref = React.createRef<Canvas>();
+
+    const { baseElement, getByTestId, rerender } = render(
+      <Canvas
+        ref={ref}
+        {...baseProps}
+        draggables={draggables}
+        mouseState={MouseState.DRAG}
+      />,
+    );
+
+    const container = baseElement.querySelector('#canvas') as HTMLElement;
+
+    const movePositions = [
+      { clientX: 100, clientY: 100 },
+      { clientX: 200, clientY: 200 },
+    ];
+
+    expect(ref.current.state.panzoomInstance.getTransform()).toEqual({
+      x: -100,
+      y: 0,
+      scale: 1,
+    });
+    fireEvent.mouseDown(container, { ...movePositions[0] });
+    fireEvent.mouseMove(container, { ...movePositions[1] });
+    fireEvent.mouseUp(container);
+
+    expect(ref.current.state.panzoomInstance.getTransform()).toEqual({
+      x: 0,
+      y: 100,
+      scale: 1,
+    });
+
+    fireEvent.wheel(container, {
+      deltaY: -100,
+    });
+
+    expect(ref.current.state.panzoomInstance.getTransform()).toEqual({
+      x: 0,
+      y: 200,
+      scale: 1,
+    });
+
+    fireEvent.wheel(container, {
+      deltaY: -100,
+      shiftKey: true,
+    });
+
+    expect(ref.current.state.panzoomInstance.getTransform()).toEqual({
+      x: 100,
+      y: 200,
+      scale: 1,
+    });
   });
 });

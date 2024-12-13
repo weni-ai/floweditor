@@ -90,6 +90,7 @@
     "@types/dateformat": "3.0.0",
     "@types/enzyme": "^3.9.3",
     "@types/enzyme-adapter-react-16": "^1.0.3",
+    "@types/jsdom": "21.1.7",
     "@types/react": "16.14.1",
     "@types/react-addons-shallow-compare": "0.14.22",
     "@types/react-dom": "16.9.10",
