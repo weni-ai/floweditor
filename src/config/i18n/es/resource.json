@@ -18,8 +18,8 @@
       "name": "Ordenar automáticamente"
     },
     "call_brain": {
-      "description": "Llamar a Weni Brain",
-      "name": "Llamar a Weni Brain"
+      "description": "Enviar al Agente",
+      "name": "Enviar al Agente"
     },
     "call_resthook": {
       "description": "Llamar Zapier",
@@ -257,7 +257,7 @@
     },
     "body": "Cuerpo",
     "brain": {
-      "entry": "Ingrese una expresión para usar como entrada en el Brain. Para usar la última respuesta del contacto, use @input.text."
+      "entry": "Ingrese una expresión para que el Agente responda. Para usar la última respuesta del contacto, use @input.text."
     },
     "buckets": "Cubos",
     "bucket": "Cubo",
