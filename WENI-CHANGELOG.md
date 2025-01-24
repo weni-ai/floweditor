@@ -1,3 +1,7 @@
+3.5.0
+----------
+- Feat: Add sentry integration
+
 3.4.4
 ----------
 - Fix: Handle undefined list_items in localizations
