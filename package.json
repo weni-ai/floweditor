@@ -16,6 +16,7 @@
   ],
   "private": false,
   "dependencies": {
+    "@sentry/react": "8.51.0",
     "@weni/unnnic-system": "2.6.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
