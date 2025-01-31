@@ -1237,6 +1237,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                     }
                   >
                     <div
+                      data-testid="zoom-control-0"
                       className={styles.out}
                       onClick={() => this.handleZoomClick(0)}
                     >
@@ -1247,6 +1248,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                       <UnnnicIcon icon="percent" size="md" />
                     </div>
                     <div
+                      data-testid="zoom-control-1"
                       className={styles.in}
                       onClick={() => this.handleZoomClick(1)}
                     >
@@ -1280,6 +1282,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                     }
                   >
                     <div
+                      data-testid="move-to-start"
                       className={styles.start}
                       onClick={() => this.moveToStart()}
                     >

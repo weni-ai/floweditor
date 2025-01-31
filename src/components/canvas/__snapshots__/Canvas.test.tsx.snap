@@ -44,6 +44,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                   
                   <div
                     class="_out_25bc10"
+                    data-testid="zoom-control-0"
                   >
                     <span
                       class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
@@ -65,6 +66,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                   </div>
                   <div
                     class="_in_25bc10"
+                    data-testid="zoom-control-1"
                   >
                     <span
                       class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
@@ -110,6 +112,7 @@ exports[`Canvas > adjusts the height when updating dimensions 1`] = `
                   
                   <div
                     class="_start_25bc10"
+                    data-testid="move-to-start"
                   >
                     <span
                       class="_hide_25bc10"
@@ -198,6 +201,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                   
                   <div
                     class="_out_25bc10"
+                    data-testid="zoom-control-0"
                   >
                     <span
                       class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
@@ -219,6 +223,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                   </div>
                   <div
                     class="_in_25bc10"
+                    data-testid="zoom-control-1"
                   >
                     <span
                       class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
@@ -264,6 +269,7 @@ exports[`Canvas > initializes the height to the lowest draggable 1`] = `
                   
                   <div
                     class="_start_25bc10"
+                    data-testid="move-to-start"
                   >
                     <span
                       class="_hide_25bc10"
@@ -365,6 +371,7 @@ exports[`Canvas > render default 1`] = `
                   
                   <div
                     class="_out_25bc10"
+                    data-testid="zoom-control-0"
                   >
                     <span
                       class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
@@ -386,6 +393,7 @@ exports[`Canvas > render default 1`] = `
                   </div>
                   <div
                     class="_in_25bc10"
+                    data-testid="zoom-control-1"
                   >
                     <span
                       class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
@@ -431,6 +439,7 @@ exports[`Canvas > render default 1`] = `
                   
                   <div
                     class="_start_25bc10"
+                    data-testid="move-to-start"
                   >
                     <span
                       class="_hide_25bc10"
@@ -473,41 +482,4 @@ exports[`Canvas > render default 1`] = `
     </div>
   </div>
 </body>
-`;
-
-exports[`Canvas > should copy and paste selected nodes 1`] = `
-[MockFunction spy] {
-  "calls": [
-    [
-      {
-        "1e47a1e1-3c67-4df5-adf1-da542c789adb": {
-          "bottom": 600,
-          "left": 500,
-          "right": 600,
-          "top": 500,
-        },
-        "477ac8b4-25e2-483a-8686-2d1332c4da1c": {
-          "bottom": 200,
-          "left": 100,
-          "right": 200,
-          "top": 100,
-        },
-        "6c22884b-0e35-4206-982e-18320691eda9": {
-          "left": 1100,
-          "top": 1000,
-        },
-        "a62e8284-49f8-4292-adbc-d5f6607f85c5": {
-          "left": 1500,
-          "top": 1400,
-        },
-      },
-    ],
-  ],
-  "results": [
-    {
-      "type": "return",
-      "value": undefined,
-    },
-  ],
-}
 `;
