@@ -329,3 +329,7 @@ export const NumOrExp = fromRegex(
   /^@.*$|^([-+]?((\.\d+)|(\d+)(\.\d+)?)$)/,
   'must be a number',
 );
+export const ValidQueryParams = fromRegex(
+  /^(\?)?([^=&]+=[^=&]+)(&[^=&]+=[^=&]+)*$/,
+  'must be valid query parameters (format: ?key=value&key2=value2)',
+);
