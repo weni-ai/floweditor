@@ -1,3 +1,7 @@
+3.5.1
+----------
+- Feat: Add cart simulation parameters to WhatsApp product form
+
 3.5.0
 ----------
 - Feat: Add sentry integration
