@@ -421,6 +421,7 @@ export interface SendWhatsAppProduct extends Action {
   sendCatalog: boolean;
   search_type: ProductSearchType;
   search_url?: string;
+  cart_simulation_params?: string;
   seller_id?: string;
   postal_code?: string;
   productSearch?: string;
