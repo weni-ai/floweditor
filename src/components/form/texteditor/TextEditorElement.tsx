@@ -117,7 +117,7 @@ export default class TextEditorElement extends React.Component<
             placeholder={this.props.placeholder}
             size={this.props.size || TextEditorSizes.sm}
             type={hasError ? 'error' : 'normal'}
-            errors={errors}
+            errors={errors || []}
             maxLength={this.props.maxLength}
             disabled={this.props.disabled}
           />

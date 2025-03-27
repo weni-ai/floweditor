@@ -119,6 +119,7 @@ export enum FeatureFilter {
   HAS_EXTERNAL_SERVICE = 'external_service',
   HAS_WHATSAPP_CATALOG = 'whatsapp_catalog',
   HAS_BRAIN = 'brain',
+  HAS_INSTAGRAM = 'instagram',
 }
 
 export interface FlowTypeVisibility {

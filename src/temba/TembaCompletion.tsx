@@ -238,7 +238,7 @@ export class TembaCompletion extends React.Component<
               placeholder={this.props.placeholder}
               size={this.props.size}
               type={hasErrors ? 'error' : 'normal'}
-              errors={this.props.errors}
+              errors={this.props.errors || []}
               maxLength={this.props.maxLength}
               disabled={this.props.disabled}
             />
