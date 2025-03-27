@@ -8,6 +8,8 @@ import {
   initializeForm as stateToForm,
   stateToAction,
   TOPIC_OPTIONS,
+  INSTAGRAM_RESPONSE_TYPES,
+  TAG_OPTIONS,
 } from 'components/flow/actions/sendmsg/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
@@ -51,6 +53,12 @@ import i18n from 'config/i18n';
 import { Trans } from 'react-i18next';
 import { Attachment, renderAttachments } from './attachments';
 
+import { applyPureVueInReact } from 'veaury';
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyPureVueInReact(Unnnic.unnnicIcon);
+
 export interface SendMsgFormState extends FormState {
   message: StringEntry;
   quickReplies: StringArrayEntry;
@@ -61,6 +69,10 @@ export interface SendMsgFormState extends FormState {
   topic: SelectOptionEntry;
   templateVariables: StringEntry[];
   templateTranslation?: TemplateTranslation;
+  instagramResponseType: SelectOptionEntry;
+  postId: StringEntry;
+  commentId: StringEntry;
+  tagSelection: SelectOptionEntry;
 }
 
 export default class SendMsgForm extends React.Component<
@@ -72,11 +84,12 @@ export default class SendMsgForm extends React.Component<
   constructor(props: ActionFormProps) {
     super(props);
     this.state = stateToForm(this.props.nodeSettings, this.props.assetStore);
+
     bindCallbacks(this, {
       include: [/^handle/, /^on/],
     });
 
-    // intialize our templates if we have them
+    // initialize our templates if we have them
     if (this.state.template.value !== null) {
       fetchAsset(
         this.props.assetStore.templates,
@@ -175,6 +188,54 @@ export default class SendMsgForm extends React.Component<
 
     valid = valid && !hasErrors(this.state.quickReplyEntry);
 
+    // Validate Instagram-specific fields based on response type
+    if (this.state.instagramResponseType.value) {
+      const responseType = this.state.instagramResponseType.value.value;
+
+      // Map response types to their validation configuration
+      const validationConfig: {
+        [key: string]: {
+          field: string;
+          label: string;
+          stateKey: keyof SendMsgFormState;
+          value: any;
+        };
+      } = {
+        tag_support: {
+          field: 'tag_selection',
+          label: i18n.t('forms.tags', 'Tags'),
+          stateKey: 'tagSelection',
+          value: this.state.tagSelection.value,
+        },
+        post_response: {
+          field: 'post_id',
+          label: i18n.t('forms.post_id', 'Post ID'),
+          stateKey: 'postId',
+          value: this.state.postId.value,
+        },
+        comment_reply: {
+          field: 'comment_id',
+          label: i18n.t('forms.comment_id', 'Comment ID'),
+          stateKey: 'commentId',
+          value: this.state.commentId.value,
+        },
+      };
+
+      // Only validate if we have a config for this response type
+      if (responseType !== 'none' && validationConfig[responseType]) {
+        const config = validationConfig[responseType];
+        const validatedEntry = validate(config.label, config.value, [Required]);
+
+        // Update state for the validated field
+        const stateUpdate = {} as any;
+        stateUpdate[config.stateKey] = validatedEntry;
+        this.setState(stateUpdate);
+
+        // Check if validation passed
+        valid = valid && !hasErrors(validatedEntry);
+      }
+    }
+
     if (valid) {
       this.props.updateAction(
         stateToAction(this.props.nodeSettings, this.state),
@@ -271,6 +332,162 @@ export default class SendMsgForm extends React.Component<
     this.setState({ topic: { value: topic } });
   }
 
+  private handleInstagramResponseTypeChanged(selected: SelectOption): void {
+    // If "None" is selected, clear all Instagram-related values
+    if (selected && selected.value === 'none') {
+      this.setState({
+        instagramResponseType: { value: null },
+        postId: { value: '' },
+        commentId: { value: '' },
+        tagSelection: { value: null },
+      });
+      return;
+    }
+
+    this.setState({
+      instagramResponseType: { value: selected },
+    });
+  }
+
+  private handlePostIdChanged(value: string): void {
+    const entry = validate(i18n.t('forms.post_id', 'Post ID'), value, [
+      Required,
+    ]);
+    this.setState({ postId: entry });
+  }
+
+  private handleCommentIdChanged(value: string): void {
+    const entry = validate(i18n.t('forms.comment_id', 'Comment ID'), value, [
+      Required,
+    ]);
+    this.setState({ commentId: entry });
+  }
+
+  private handleTagSelectionChanged(selected: SelectOption): void {
+    const entry = validate(i18n.t('forms.tags', 'Tags'), selected, [Required]);
+
+    this.setState({
+      tagSelection: entry,
+    });
+  }
+
+  private renderResponseTypeContent(responseType: string): JSX.Element {
+    // Define a type for the configuration
+    type ConfigItem = {
+      description: string;
+      fieldLabel: string;
+      inputType: string;
+      placeholder?: string;
+    };
+
+    type ConfigMap = {
+      [key: string]: ConfigItem;
+    };
+
+    // Common configuration for each response type
+    const config: ConfigMap = {
+      tag_support: {
+        description: i18n.t(
+          'forms.tag_support_description',
+          'Allows categorizing direct messages (DMs) by adding predefined tags from Meta. This helps organize and segment contacts within Instagram.',
+        ),
+        fieldLabel: i18n.t('forms.select_tags', 'Select the tags'),
+        inputType: 'select',
+      },
+      post_response: {
+        description: i18n.t(
+          'forms.post_response_description',
+          'When a specific post is identified, this action enables sending a direct message (DM) to a user who interacted with it, referencing the original post.',
+        ),
+        fieldLabel: i18n.t('forms.post_id', 'Post ID'),
+        inputType: 'text',
+        placeholder: 'E.g., 17948912345678901',
+      },
+      comment_reply: {
+        description: i18n.t(
+          'forms.comment_reply_description',
+          "When a comment is made on a post, this action allows replying directly within the post's comment section, keeping the interaction public.",
+        ),
+        fieldLabel: i18n.t('forms.comment_id', 'Comment ID'),
+        inputType: 'text',
+        placeholder: 'E.g., 17948912345678901',
+      },
+    };
+
+    // If response type doesn't match any known type, return null
+    if (!responseType || !config[responseType]) {
+      return null;
+    }
+
+    const instagramTypeConfig = config[responseType];
+
+    return (
+      <>
+        <div className={styles.disclaimer}>
+          <UnnnicIcon icon="alert-circle-1-1" scheme="feedback-blue" />
+          <p className={styles.disclaimer_text}>
+            {instagramTypeConfig.description}
+          </p>
+        </div>
+
+        {instagramTypeConfig.inputType === 'select' ? (
+          <SelectElement
+            name={i18n.t('forms.tags', 'Tags')}
+            entry={this.state.tagSelection}
+            onChange={this.handleTagSelectionChanged}
+            options={TAG_OPTIONS}
+            placeholder={i18n.t('forms.select_tag', 'Select a tag')}
+            clearable={false}
+            showLabel={true}
+          />
+        ) : (
+          <TextInputElement
+            name={instagramTypeConfig.fieldLabel}
+            showLabel={true}
+            onChange={
+              responseType === 'post_response'
+                ? this.handlePostIdChanged
+                : this.handleCommentIdChanged
+            }
+            entry={
+              responseType === 'post_response'
+                ? this.state.postId
+                : this.state.commentId
+            }
+            placeholder={instagramTypeConfig.placeholder}
+          />
+        )}
+      </>
+    );
+  }
+
+  private renderInstagramConfig(): JSX.Element {
+    const responseType = this.state.instagramResponseType.value
+      ? this.state.instagramResponseType.value.value
+      : null;
+
+    return (
+      <>
+        <SelectElement
+          key="instagram_response_type"
+          name={i18n.t('forms.response_type', 'Choose a response Type')}
+          entry={this.state.instagramResponseType}
+          onChange={this.handleInstagramResponseTypeChanged}
+          options={INSTAGRAM_RESPONSE_TYPES}
+          placeholder={i18n.t(
+            'forms.select_response_type',
+            'Select a response type',
+          )}
+          showLabel={true}
+        />
+
+        {responseType &&
+          responseType !== 'none' &&
+          this.renderResponseTypeContent(responseType)}
+      </>
+    );
+  }
+
   private renderTemplateConfig(): JSX.Element {
     return (
       <>
@@ -354,6 +571,28 @@ export default class SendMsgForm extends React.Component<
       $splice: [[index, 1]],
     });
     this.setState({ attachments });
+  }
+
+  private instagramErrors(): boolean {
+    if (!this.state.instagramResponseType.value) {
+      return false;
+    }
+
+    const responseType = this.state.instagramResponseType.value.value;
+
+    // Map response types to their state fields to check for errors
+    const validationMap: { [key: string]: keyof SendMsgFormState } = {
+      tag_support: 'tagSelection',
+      post_response: 'postId',
+      comment_reply: 'commentId',
+    };
+
+    if (responseType !== 'none' && validationMap[responseType]) {
+      const fieldToCheck = validationMap[responseType];
+      return hasErrors(this.state[fieldToCheck] as any);
+    }
+
+    return false;
   }
 
   public render(): JSX.Element {
@@ -442,6 +681,16 @@ export default class SendMsgForm extends React.Component<
     };
 
     const tabs = [quickReplies, attachments, advanced];
+
+    if (hasFeature(this.context.config, FeatureFilter.HAS_INSTAGRAM)) {
+      const templates: Tab = {
+        name: 'Instagram',
+        body: this.renderInstagramConfig(),
+        checked: this.state.instagramResponseType.value !== null,
+        hasErrors: this.instagramErrors(),
+      };
+      tabs.splice(0, 0, templates);
+    }
 
     if (hasFeature(this.context.config, FeatureFilter.HAS_WHATSAPP)) {
       const templates: Tab = {

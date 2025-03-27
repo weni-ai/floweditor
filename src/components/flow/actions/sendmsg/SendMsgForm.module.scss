@@ -23,3 +23,20 @@
 temba-completion {
   --textarea-height: 120px;
 }
+
+.disclaimer{
+  display: inline-flex;
+  border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+  border-radius: $unnnic-border-radius-sm;
+  align-items: center;
+  gap: $unnnic-spacing-xs;
+  padding: $unnnic-spacing-sm;
+  margin: $unnnic-spacing-stack-sm 0;
+
+  .disclaimer_text {
+    margin: 0 !important;
+    font-size: $unnnic-font-size-body-gt !important;
+    color: $unnnic-color-neutral-dark !important;
+  }
+
+}

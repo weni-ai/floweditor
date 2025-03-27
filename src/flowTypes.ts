@@ -387,13 +387,21 @@ export interface MsgTemplating {
   variables: string[];
 }
 
+export interface MsgInstagram {
+  response_type?: string;
+  post_id?: string;
+  comment_id?: string;
+  tag_selection?: string;
+}
+
 export interface SendMsg extends Action {
   text: string;
+  attachments?: string[];
   all_urns?: boolean;
   quick_replies?: string[];
-  attachments?: string[];
   topic?: string;
   templating?: MsgTemplating;
+  instagram_settings?: MsgInstagram;
 }
 
 export interface SendWhatsAppMsg extends Action {
