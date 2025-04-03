@@ -389,9 +389,8 @@ export interface MsgTemplating {
 
 export interface MsgInstagram {
   response_type?: string;
-  post_id?: string;
   comment_id?: string;
-  tag_selection?: string;
+  tag?: string;
 }
 
 export interface SendMsg extends Action {

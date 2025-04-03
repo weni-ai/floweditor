@@ -331,6 +331,22 @@
     "header_text": "Header text",
     "http_headers": "HTTP Headers",
     "image_url": "Image URL",
+    "instagram": {
+      "response_types": {
+        "none": "None",
+        "tag": "Tag support for DM's",
+        "dm_comment": "Send DM in response to a Comment",
+        "comment": "Reply to a comment"
+      },
+      "tags": {
+        "human_agent": "Human Agent"
+      },
+      "descriptions": {
+        "tag": "The allows you to send a message after the 24 hours window",
+        "dm_comment": "When a comment is made on a post, this action allows replying in a direct message (DM) to the user who made the comment, keeping the interaction private.",
+        "comment": "When a comment is made on a post, this action allows replying directly within the post's comment section, keeping the interaction public."
+      }
+    },
     "intent": "Intent",
     "interactions": "Interactions",
     "is_not_a_valid_regex": "is not a valid regex",

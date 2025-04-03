@@ -8,6 +8,7 @@ import { FormEntry, NodeEditorSettings, StringEntry } from 'store/nodeEditor';
 import { SelectOption } from 'components/form/select/SelectElement';
 import { createUUID } from 'utils';
 import { Attachment } from './attachments';
+import i18n from '../../../../config/i18n';
 
 export const TOPIC_OPTIONS: SelectOption[] = [
   { value: 'event', name: 'Event' },
@@ -17,17 +18,23 @@ export const TOPIC_OPTIONS: SelectOption[] = [
 ];
 
 export const INSTAGRAM_RESPONSE_TYPES: SelectOption[] = [
-  { name: 'None', value: 'none' },
-  { name: "Tag support for DM's", value: 'tag_support' },
-  { name: 'Send DM in response to a Post', value: 'post_response' },
-  { name: 'Reply to a comment', value: 'comment_reply' },
+  { name: i18n.t('forms.instagram.response_types.none'), value: 'none' },
+  {
+    name: i18n.t('forms.instagram.response_types.tag'),
+    value: 'tag',
+  },
+  {
+    name: i18n.t('forms.instagram.response_types.dm_comment'),
+    value: 'dm_comment',
+  },
+  {
+    name: i18n.t('forms.instagram.response_types.comment'),
+    value: 'comment',
+  },
 ];
 
 export const TAG_OPTIONS: SelectOption[] = [
-  { name: 'human_agent', value: 'human_agent' },
-  { name: 'bot', value: 'bot' },
-  { name: 'customer_support', value: 'customer_support' },
-  { name: 'support', value: 'support' },
+  { name: i18n.t('forms.instagram.tags.human_agent'), value: 'human_agent' },
 ];
 
 // Note: Instagram properties are already defined in the SendMsg interface in flowTypes.ts
@@ -75,9 +82,8 @@ export const initializeForm = (
 
     // Extract Instagram settings from action if they exist
     let instagramResponseType: { value: SelectOption | null } = { value: null };
-    let postId: { value: string } = { value: '' };
     let commentId: { value: string } = { value: '' };
-    let tagSelection: { value: SelectOption | null } = { value: null };
+    let tag: { value: SelectOption | null } = { value: null };
 
     if (action.instagram_settings) {
       const responseValue = action.instagram_settings.response_type;
@@ -90,24 +96,16 @@ export const initializeForm = (
 
       // Set the appropriate field based on response type
       if (
-        responseValue === 'post_response' &&
-        action.instagram_settings.post_id
-      ) {
-        postId = { value: action.instagram_settings.post_id };
-      } else if (
-        responseValue === 'comment_reply' &&
+        (responseValue === 'dm_comment' || responseValue === 'comment') &&
         action.instagram_settings.comment_id
       ) {
         commentId = { value: action.instagram_settings.comment_id };
-      } else if (
-        responseValue === 'tag_support' &&
-        action.instagram_settings.tag_selection
-      ) {
-        tagSelection = {
+      } else if (responseValue === 'tag' && action.instagram_settings.tag) {
+        tag = {
           value:
             TAG_OPTIONS.find(
               (option: SelectOption) =>
-                option.value === action.instagram_settings.tag_selection,
+                option.value === action.instagram_settings.tag,
             ) || null,
         };
       }
@@ -126,9 +124,8 @@ export const initializeForm = (
       sendAll: action.all_urns,
       valid: true,
       instagramResponseType,
-      postId,
       commentId,
-      tagSelection,
+      tag,
     };
   }
 
@@ -143,9 +140,8 @@ export const initializeForm = (
     sendAll: false,
     valid: false,
     instagramResponseType: { value: null },
-    postId: { value: '' },
     commentId: { value: '' },
-    tagSelection: { value: null },
+    tag: { value: null },
   };
 };
 
@@ -215,13 +211,13 @@ export const stateToAction = (
       };
 
       // Add specific fields based on response type
-      if (responseType === 'post_response' && state.postId.value) {
-        result.instagram_settings.post_id = state.postId.value;
-      } else if (responseType === 'comment_reply' && state.commentId.value) {
+      if (
+        (responseType === 'dm_comment' || responseType === 'comment') &&
+        state.commentId.value
+      ) {
         result.instagram_settings.comment_id = state.commentId.value;
-      } else if (responseType === 'tag_support' && state.tagSelection.value) {
-        result.instagram_settings.tag_selection =
-          state.tagSelection.value.value;
+      } else if (responseType === 'tag' && state.tag.value) {
+        result.instagram_settings.tag = state.tag.value.value;
       }
     }
   }

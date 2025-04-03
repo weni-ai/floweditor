@@ -331,6 +331,22 @@
     "header_text": "Texto do cabeçalho",
     "http_headers": "Headers HTTP",
     "image_url": "URL da Imagem",
+    "instagram": {
+      "response_types": {
+        "none": "Nenhum",
+        "tag": "Suporte de tag para DM's",
+        "dm_comment": "Enviar DM em resposta a um Comentário",
+        "comment": "Responder a um Comentário"
+      },
+      "tags": {
+        "human_agent": "Agente humano"
+      },
+      "descriptions": {
+        "tag": "Permite enviar uma mensagem após a janela de 24 horas",
+        "dm_comment": "Quando um comentário é feito em um post, esta ação permite responder em uma mensagem direta (DM) ao usuário que fez o comentário, mantendo a interação privada.",
+        "comment": "Quando um comentário é feito em um post, esta ação permite responder diretamente na seção de comentários do post, mantendo a interação pública."
+      }
+    },
     "intent": "Intenção",
     "interactions": "Interações",
     "is_not_a_valid_regex": "não é uma regex válida",

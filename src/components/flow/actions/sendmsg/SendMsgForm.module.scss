@@ -25,7 +25,7 @@ temba-completion {
 }
 
 .disclaimer{
-  display: inline-flex;
+  display: flex;
   border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
   border-radius: $unnnic-border-radius-sm;
   align-items: center;

@@ -70,9 +70,8 @@ export interface SendMsgFormState extends FormState {
   templateVariables: StringEntry[];
   templateTranslation?: TemplateTranslation;
   instagramResponseType: SelectOptionEntry;
-  postId: StringEntry;
   commentId: StringEntry;
-  tagSelection: SelectOptionEntry;
+  tag: SelectOptionEntry;
 }
 
 export default class SendMsgForm extends React.Component<
@@ -201,19 +200,19 @@ export default class SendMsgForm extends React.Component<
           value: any;
         };
       } = {
-        tag_support: {
-          field: 'tag_selection',
+        tag: {
+          field: 'tag',
           label: i18n.t('forms.tags', 'Tags'),
-          stateKey: 'tagSelection',
-          value: this.state.tagSelection.value,
+          stateKey: 'tag',
+          value: this.state.tag.value,
         },
-        post_response: {
-          field: 'post_id',
-          label: i18n.t('forms.post_id', 'Post ID'),
-          stateKey: 'postId',
-          value: this.state.postId.value,
+        dm_comment: {
+          field: 'comment_id',
+          label: i18n.t('forms.comment_id', 'Comment ID'),
+          stateKey: 'commentId',
+          value: this.state.commentId.value,
         },
-        comment_reply: {
+        comment: {
           field: 'comment_id',
           label: i18n.t('forms.comment_id', 'Comment ID'),
           stateKey: 'commentId',
@@ -337,9 +336,8 @@ export default class SendMsgForm extends React.Component<
     if (selected && selected.value === 'none') {
       this.setState({
         instagramResponseType: { value: null },
-        postId: { value: '' },
         commentId: { value: '' },
-        tagSelection: { value: null },
+        tag: { value: null },
       });
       return;
     }
@@ -347,13 +345,6 @@ export default class SendMsgForm extends React.Component<
     this.setState({
       instagramResponseType: { value: selected },
     });
-  }
-
-  private handlePostIdChanged(value: string): void {
-    const entry = validate(i18n.t('forms.post_id', 'Post ID'), value, [
-      Required,
-    ]);
-    this.setState({ postId: entry });
   }
 
   private handleCommentIdChanged(value: string): void {
@@ -367,7 +358,7 @@ export default class SendMsgForm extends React.Component<
     const entry = validate(i18n.t('forms.tags', 'Tags'), selected, [Required]);
 
     this.setState({
-      tagSelection: entry,
+      tag: entry,
     });
   }
 
@@ -386,26 +377,26 @@ export default class SendMsgForm extends React.Component<
 
     // Common configuration for each response type
     const config: ConfigMap = {
-      tag_support: {
+      tag: {
         description: i18n.t(
-          'forms.tag_support_description',
-          'Allows categorizing direct messages (DMs) by adding predefined tags from Meta. This helps organize and segment contacts within Instagram.',
+          'forms.instagram.descriptions.tag',
+          'The allows you to send a message after the 24 hours window',
         ),
         fieldLabel: i18n.t('forms.select_tags', 'Select the tags'),
         inputType: 'select',
       },
-      post_response: {
+      dm_comment: {
         description: i18n.t(
-          'forms.post_response_description',
-          'When a specific post is identified, this action enables sending a direct message (DM) to a user who interacted with it, referencing the original post.',
+          'forms.instagram.descriptions.dm_comment',
+          'When a comment is made on a post, this action allows replying in a direct message (DM) to the user who made the comment, keeping the interaction private.',
         ),
-        fieldLabel: i18n.t('forms.post_id', 'Post ID'),
+        fieldLabel: i18n.t('forms.comment_id', 'Comment ID'),
         inputType: 'text',
         placeholder: 'E.g., 17948912345678901',
       },
-      comment_reply: {
+      comment: {
         description: i18n.t(
-          'forms.comment_reply_description',
+          'forms.instagram.descriptions.comment',
           "When a comment is made on a post, this action allows replying directly within the post's comment section, keeping the interaction public.",
         ),
         fieldLabel: i18n.t('forms.comment_id', 'Comment ID'),
@@ -433,7 +424,7 @@ export default class SendMsgForm extends React.Component<
         {instagramTypeConfig.inputType === 'select' ? (
           <SelectElement
             name={i18n.t('forms.tags', 'Tags')}
-            entry={this.state.tagSelection}
+            entry={this.state.tag}
             onChange={this.handleTagSelectionChanged}
             options={TAG_OPTIONS}
             placeholder={i18n.t('forms.select_tag', 'Select a tag')}
@@ -444,16 +435,8 @@ export default class SendMsgForm extends React.Component<
           <TextInputElement
             name={instagramTypeConfig.fieldLabel}
             showLabel={true}
-            onChange={
-              responseType === 'post_response'
-                ? this.handlePostIdChanged
-                : this.handleCommentIdChanged
-            }
-            entry={
-              responseType === 'post_response'
-                ? this.state.postId
-                : this.state.commentId
-            }
+            onChange={this.handleCommentIdChanged}
+            entry={this.state.commentId}
             placeholder={instagramTypeConfig.placeholder}
           />
         )}
@@ -582,9 +565,9 @@ export default class SendMsgForm extends React.Component<
 
     // Map response types to their state fields to check for errors
     const validationMap: { [key: string]: keyof SendMsgFormState } = {
-      tag_support: 'tagSelection',
-      post_response: 'postId',
-      comment_reply: 'commentId',
+      tag: 'tag',
+      dm_comment: 'commentId',
+      comment: 'commentId',
     };
 
     if (responseType !== 'none' && validationMap[responseType]) {

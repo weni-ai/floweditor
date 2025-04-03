@@ -310,7 +310,7 @@ exports[`SendMsgForm > updates > should save changes 1`] = `
     "value": "",
   },
   "sendAll": true,
-  "tagSelection": {
+  "tag": {
     "value": null,
   },
   "template": {
