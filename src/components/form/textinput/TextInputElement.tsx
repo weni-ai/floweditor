@@ -168,7 +168,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             placeholder={this.props.placeholder}
             size={this.props.size || TextInputSizes.sm}
             type={hasError ? 'error' : 'normal'}
-            errors={errorList}
+            errors={errorList || []}
             maxLength={this.props.counter ? null : this.props.maxLength}
             disabled={this.props.disabled}
           />
