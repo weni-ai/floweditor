@@ -295,9 +295,6 @@ exports[`SendMsgForm > updates > should save changes 1`] = `
     "validationFailures": [],
     "value": "What is your favorite color?",
   },
-  "postId": {
-    "value": "",
-  },
   "quickReplies": {
     "validationFailures": [],
     "value": [
