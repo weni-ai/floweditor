@@ -366,7 +366,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
             // save off any quick replies we might have
             if (event.msg.quick_replies) {
               quickReplies = event.msg.quick_replies;
-            } else if (event.msg.list_message) {
+            } else if (
+              event.msg.list_message &&
+              event.msg.list_message.list_items
+            ) {
               optionList = event.msg.list_message.list_items.map(
                 item => item.title,
               );
