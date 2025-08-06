@@ -1,3 +1,7 @@
+3.6.2
+----------
+- fix: open ticket queue selection
+
 3.6.1
 ----------
 - fix: improve handling of list messages in Simulator component
