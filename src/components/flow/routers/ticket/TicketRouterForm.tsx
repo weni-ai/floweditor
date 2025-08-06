@@ -37,6 +37,7 @@ export interface TicketRouterFormState extends FormState {
   resultName: StringEntry;
   queues: any[];
   topics: any[];
+  loadingQueues: boolean;
 }
 
 export default class TicketRouterForm extends React.Component<
@@ -169,6 +170,7 @@ export default class TicketRouterForm extends React.Component<
       ? this.context.config.endpoints.topics
       : this.props.assetStore.ticketers.endpoint.replace('ticketers', 'topics');
 
+    isWenichatsType && this.setState({ loadingQueues: true });
     axios.get(url).then(response => {
       const topics = isWenichatsType ? response.data : response.data.results;
 
@@ -182,6 +184,7 @@ export default class TicketRouterForm extends React.Component<
         ? { queues: topics, topic: toUpdateTopic as Topic }
         : { topics: topics, topic: toUpdateTopic as Topic };
       this.handleUpdate(toUpdate);
+      isWenichatsType && this.setState({ loadingQueues: false });
     });
   }
 
@@ -227,9 +230,15 @@ export default class TicketRouterForm extends React.Component<
     }
   }
 
-  private getButtons(): ButtonSet {
+  private getButtons(isWenichatsType: boolean): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: {
+        name: i18n.t('buttons.ok', 'Ok'),
+        onClick: this.handleSave,
+        disabled:
+          isWenichatsType &&
+          (!this.state.topic.value || this.state.loadingQueues),
+      },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true),
@@ -262,7 +271,7 @@ export default class TicketRouterForm extends React.Component<
       <Dialog
         title={typeConfig.name}
         headerClass={typeConfig.type}
-        buttons={this.getButtons()}
+        buttons={this.getButtons(isWenichatsType)}
       >
         <TypeList
           __className=""
