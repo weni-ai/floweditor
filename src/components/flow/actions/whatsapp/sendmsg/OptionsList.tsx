@@ -18,6 +18,7 @@ import {
   arrayMove,
 } from 'react-sortable-hoc';
 import { WhatsAppListItem } from 'components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
+import { getMaxInputLength } from 'components/flow/actions/whatsapp/sendmsg/helpers';
 import { MAX_LIST_ITEMS_COUNT } from 'components/flow/actions/whatsapp/sendmsg/constants';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import update from 'immutability-helper';
@@ -64,6 +65,14 @@ export function hasEmptyListItem(listItems: WhatsAppListItem[]): boolean {
 }
 
 const SortableListItem = SortableElement(({ value: row, index }: any) => {
+  const MAX_TITLE_LENGTH = 24;
+  const MAX_DESCRIPTION_LENGTH = 72;
+  const maxTitleLength = getMaxInputLength(row.item, MAX_TITLE_LENGTH);
+  const maxDescriptionLength = getMaxInputLength(
+    row.item,
+    MAX_DESCRIPTION_LENGTH,
+  );
+
   const listItem = row.item as WhatsAppListItem;
   return (
     <div className={styles.content}>
@@ -104,7 +113,7 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
             entry={{ value: listItem.title }}
             autocomplete={true}
             showLabel={true}
-            maxLength={24}
+            maxLength={maxTitleLength}
           />
 
           <TextInputElement
@@ -123,7 +132,7 @@ const SortableListItem = SortableElement(({ value: row, index }: any) => {
             entry={{ value: listItem.description }}
             autocomplete={true}
             showLabel={true}
-            maxLength={72}
+            maxLength={maxDescriptionLength}
           />
 
           <UnnnicButton
