@@ -14,6 +14,7 @@ import {
 import TextInputElement, {
   TextInputSizes,
 } from 'components/form/textinput/TextInputElement';
+import { getMaxInputLength } from 'components/flow/actions/whatsapp/sendmsg/helpers';
 import update from 'immutability-helper';
 import { applyVueInReact } from 'veaury';
 // @ts-ignore
@@ -47,6 +48,9 @@ export function hasEmptyReply(replies: string[]): boolean {
 }
 
 const SortableReply = SortableElement(({ value: row, index }: any) => {
+  const MAX_REPLY_LENGTH = 20;
+  const maxLength = getMaxInputLength(row.item, MAX_REPLY_LENGTH);
+
   return (
     <div className={styles.reply_item_wrapper}>
       <div className={styles.drag_wrapper} data-draggable={true}>
@@ -71,7 +75,7 @@ const SortableReply = SortableElement(({ value: row, index }: any) => {
           entry={{ value: row.item }}
           autocomplete={true}
           showLabel={false}
-          maxLength={20}
+          maxLength={maxLength}
         />
       </div>
 
