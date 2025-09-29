@@ -1,3 +1,7 @@
+3.6.3
+----------
+- feat: add dynamic input length handling for WhatsApp message components
+
 3.6.2
 ----------
 - fix: open ticket queue selection
