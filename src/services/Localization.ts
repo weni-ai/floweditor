@@ -1,5 +1,6 @@
 import { Action, Case, Category, Language, MsgTemplating } from 'flowTypes';
 import { Asset } from 'store/flowContext';
+import { WhatsAppListItem } from '../components/flow/actions/whatsapp/sendmsg/SendWhatsAppMsgForm';
 
 export class LocalizedObject {
   public localizedKeys: { [key: string]: boolean } = {};
@@ -11,7 +12,7 @@ export class LocalizedObject {
   private language: Language;
 
   constructor(
-    object: Action | Category | Case | MsgTemplating,
+    object: Action | Category | Case | MsgTemplating | WhatsAppListItem,
     { id, name }: Asset,
   ) {
     this.localizedObject = object;
@@ -65,7 +66,7 @@ export class LocalizedObject {
 
 export default class Localization {
   public static translate(
-    object: Action | Category | Case | MsgTemplating,
+    object: Action | Category | Case | MsgTemplating | WhatsAppListItem,
     language: Asset,
     translations?: { [uuid: string]: any },
   ): LocalizedObject {

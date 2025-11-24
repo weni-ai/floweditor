@@ -10,7 +10,7 @@ import styles from './TextEditorActions.module.scss';
 const UnnnicButton = applyVueInReact(Unnnic.unnnicButton);
 const UnnnicEmojiPicker = applyVueInReact(Unnnic.unnnicEmojiPicker);
 
-export interface TextEditorProps {
+export interface TextEditorActionProps {
   entry: StringEntry;
   maxLength: number;
   onAddEmoji: (emoji: any) => void;
@@ -22,10 +22,10 @@ export interface TextEditorState {
 }
 
 export default class TextEditorActions extends React.Component<
-  TextEditorProps,
+  TextEditorActionProps,
   TextEditorState
 > {
-  constructor(props: TextEditorProps) {
+  constructor(props: TextEditorActionProps) {
     super(props);
 
     this.state = {
@@ -49,6 +49,7 @@ export default class TextEditorActions extends React.Component<
       <div className={styles.actions}>
         <div className={styles.emoji_picker_wrapper}>
           <UnnnicButton
+            data-testid="emoji-button"
             iconCenter="sentiment_satisfied"
             size="small"
             type="tertiary"
@@ -57,6 +58,7 @@ export default class TextEditorActions extends React.Component<
           {this.state.showEmojiPicker && (
             <div className={styles.emoji_picker}>
               <UnnnicEmojiPicker
+                data-testid="emoji-picker"
                 onEmojiSelected={(e: any) => this.addEmoji(e)}
                 onClickOutside={() => this.toggleEmojiPicker()}
               />
@@ -65,6 +67,7 @@ export default class TextEditorActions extends React.Component<
         </div>
 
         <UnnnicButton
+          data-testid="bold-button"
           iconCenter="format_bold"
           size="small"
           type="tertiary"
@@ -72,6 +75,7 @@ export default class TextEditorActions extends React.Component<
         />
 
         <UnnnicButton
+          data-testid="italic-button"
           iconCenter="format_italic"
           size="small"
           type="tertiary"
@@ -79,6 +83,7 @@ export default class TextEditorActions extends React.Component<
         />
 
         <UnnnicButton
+          data-testid="code-button"
           iconCenter="code"
           size="small"
           type="tertiary"
@@ -86,6 +91,7 @@ export default class TextEditorActions extends React.Component<
         />
 
         <UnnnicButton
+          data-testid="strike-button"
           iconCenter="format_strikethrough"
           size="small"
           type="tertiary"

@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom';
 
 import * as serviceWorker from './serviceWorker';
 import { setHTTPTimeout } from 'external';
+import initSentry from 'utils/sentry';
 
 // bring in our temba-components if they aren't already registered
 const componentsExist =
@@ -21,6 +22,10 @@ if (!componentsExist) {
 }
 
 window.showFlowEditor = (ele, config) => {
+  if (config.sentryDSN) {
+    initSentry(config.sentryDSN);
+  }
+
   if (config.httpTimeout) {
     setHTTPTimeout(config.httpTimeout);
   }

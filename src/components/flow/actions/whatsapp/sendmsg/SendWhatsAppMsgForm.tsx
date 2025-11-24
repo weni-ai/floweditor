@@ -4,6 +4,7 @@ import {
   nodeToState,
   stateToAction,
   createEmptyListItem,
+  getMaxInputLength,
 } from 'components/flow/actions/whatsapp/sendmsg/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import TextInputElement, {
@@ -963,7 +964,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 placeholder={i18n.t('forms.header_text', 'Header text')}
                 size={TextInputSizes.sm}
                 autocomplete={true}
-                maxLength={60}
+                maxLength={getMaxInputLength(this.state.headerText.value, 60)}
               />
             </div>,
           )}
@@ -1088,7 +1089,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 onChange={this.handleButtonTextUpdate}
                 entry={this.state.buttonText}
                 autocomplete={true}
-                maxLength={20}
+                maxLength={getMaxInputLength(this.state.buttonText.value, 20)}
               />
             </div>
           )}
@@ -1106,7 +1107,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 entry={this.state.flowScreen}
                 autocomplete={true}
                 showLabel={true}
-                maxLength={20}
+                maxLength={getMaxInputLength(this.state.flowScreen.value, 20)}
               />
             </div>
           )}
@@ -1129,7 +1130,7 @@ export default class SendWhatsAppMsgForm extends React.Component<
                 entry={this.state.buttonText}
                 autocomplete={true}
                 showLabel={true}
-                maxLength={24}
+                maxLength={getMaxInputLength(this.state.buttonText.value, 24)}
               />
             </div>
             <div>

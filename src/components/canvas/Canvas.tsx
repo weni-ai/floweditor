@@ -20,7 +20,7 @@ import styles from './Canvas.module.scss';
 import nodesCopy from '../../components/copyAndPasteNodes';
 import { RenderNode } from '../../store/flowContext';
 
-import { applyVueInReact } from 'veaury';
+import { applyVueInReact, applyPureVueInReact } from 'veaury';
 // @ts-ignore
 import Unnnic from '@weni/unnnic-system';
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
@@ -35,7 +35,7 @@ const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
     },
   },
 });
-const UnnnicTooltip = applyVueInReact(Unnnic.unnnicToolTip, {
+const UnnnicTooltip = applyPureVueInReact(Unnnic.unnnicToolTip, {
   vue: {
     componentWrap: 'div',
     slotWrap: 'div',
@@ -1237,6 +1237,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                     }
                   >
                     <div
+                      data-testid="zoom-control-0"
                       className={styles.out}
                       onClick={() => this.handleZoomClick(0)}
                     >
@@ -1247,6 +1248,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                       <UnnnicIcon icon="percent" size="md" />
                     </div>
                     <div
+                      data-testid="zoom-control-1"
                       className={styles.in}
                       onClick={() => this.handleZoomClick(1)}
                     >
@@ -1280,6 +1282,7 @@ export class Canvas extends React.PureComponent<CanvasProps, CanvasState> {
                     }
                   >
                     <div
+                      data-testid="move-to-start"
                       className={styles.start}
                       onClick={() => this.moveToStart()}
                     >

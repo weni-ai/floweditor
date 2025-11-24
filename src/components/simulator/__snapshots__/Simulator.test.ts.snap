@@ -12,7 +12,6 @@ exports[`Simulator > renders 1`] = `
       key="sim"
     >
       <ContextExplorer
-        onClose={[Function]}
         visible={false}
       />
       <div
@@ -72,6 +71,7 @@ exports[`Simulator > renders 1`] = `
           />
           <div
             className="_show_attachments_button_af16d5"
+            data-testid="show_attachments_button"
             onClick={[Function]}
           >
             <ForwardRef
@@ -88,6 +88,7 @@ exports[`Simulator > renders 1`] = `
             className="ml-auto"
           >
             <div
+              data-testid="attachment-videos"
               onClick={[Function]}
             >
               <ForwardRef
@@ -99,6 +100,7 @@ exports[`Simulator > renders 1`] = `
             </div>
           </span>
           <div
+            data-testid="attachment-images"
             onClick={[Function]}
           >
             <ForwardRef
@@ -109,6 +111,7 @@ exports[`Simulator > renders 1`] = `
             />
           </div>
           <div
+            data-testid="attachment-audio"
             onClick={[Function]}
           >
             <ForwardRef
@@ -119,6 +122,7 @@ exports[`Simulator > renders 1`] = `
             />
           </div>
           <div
+            data-testid="attachment-location"
             onClick={[Function]}
           >
             <ForwardRef
@@ -130,6 +134,7 @@ exports[`Simulator > renders 1`] = `
           </div>
           <div
             className="ml-auto"
+            data-testid="hide_attachments_button"
             onClick={[Function]}
           >
             <ForwardRef
@@ -155,6 +160,7 @@ exports[`Simulator > renders 1`] = `
           >
             <div
               className="context-button"
+              data-testid="context_show_button"
               onClick={[Function]}
             >
               <ForwardRef
@@ -166,6 +172,7 @@ exports[`Simulator > renders 1`] = `
           </div>
           <div
             className="_whatsapp_switch_af16d5"
+            data-testid="whatsapp_switch"
           >
             <span>
               WhatsApp
@@ -194,6 +201,7 @@ so you can more faithfully predict how your flow will look."
   >
     <div
       className="_simulator_tab_af16d5 "
+      data-testid="simulator_toggle"
       onClick={[Function]}
     >
       <div

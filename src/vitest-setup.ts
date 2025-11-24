@@ -14,14 +14,24 @@ import Adapter from 'enzyme-adapter-react-16';
 import * as utils from 'utils';
 import { mock } from 'testUtils';
 import { Console } from 'console';
-import * as TextInput from 'components/form/textinput/helpers';
-import { TextInputProps } from 'components/form/textinput/TextInputElement';
 
 expect.extend(jestMatchers);
 
 expect.extend(matchers);
 
 mock(utils, 'createUUID', utils.seededUUIDs());
+
+// mock navigator clipboard
+const writeText = vi.fn();
+
+Object.assign(navigator, {
+  clipboard: {
+    writeText,
+  },
+});
+
+const seededRandom = new utils.SeededRandom(1);
+mock(Math, 'random', () => seededRandom.random());
 
 // Configure Enzyme adapter
 configure({ adapter: new Adapter() });
@@ -33,19 +43,13 @@ global.console = new Console(process.stderr, process.stderr);
   setTimeout(callback, 0);
 };
 
-mock(
-  TextInput,
-  'createTextInput',
-  (props: TextInputProps, handleChange, optional) => {
-    return React.createElement('input', {
-      'data-testid': props.name,
-      name: props.name,
-      placeholder: props.placeholder,
-      value: props.entry.value,
-      onChange: handleChange,
-    });
-  },
-);
+const MockIntersectionObserver = vi.fn(() => ({
+  disconnect: vi.fn(),
+  observe: vi.fn(),
+  takeRecords: vi.fn(),
+  unobserve: vi.fn(),
+}));
+vi.stubGlobal(`IntersectionObserver`, MockIntersectionObserver);
 
 const endpoints = config.endpoints;
 export const restHandlers = [
@@ -86,6 +90,36 @@ export const restHandlers = [
   }),
   http.get(endpoints.whatsapp_products, () => {
     return HttpResponse.json(require('test/assets/whatsapp_products.json'));
+  }),
+  http.get(endpoints.ticketers, () => {
+    return HttpResponse.json(require('test/assets/ticketers.json'));
+  }),
+  http.get(endpoints.ticketer_queues, () => {
+    return HttpResponse.json(require('test/assets/ticketer_queues.json'));
+  }),
+  http.post(endpoints.simulateStart, () => {
+    return HttpResponse.json(require('test/assets/simulate_start.json'));
+  }),
+  http.post(endpoints.simulateResume, () => {
+    return HttpResponse.json(require('test/assets/simulate_resume.json'));
+  }),
+  http.get(endpoints.classifiers, () => {
+    return HttpResponse.json(require('test/assets/classifiers.json'));
+  }),
+  http.get(`${endpoints.revisions}`, () => {
+    return HttpResponse.json(require('test/assets/revisions.json'));
+  }),
+  http.get(`${endpoints.revisions}{/:id}`, () => {
+    return HttpResponse.json(require('test/assets/flow_details.json'));
+  }),
+  http.get(endpoints.activity, () => {
+    return HttpResponse.json(require('test/assets/activity.json'));
+  }),
+  http.get(endpoints.brain, () => {
+    return HttpResponse.json(require('test/assets/brain.json'));
+  }),
+  http.post(endpoints.revisions, () => {
+    return HttpResponse.json(require('test/assets/save_revisions.json'));
   }),
 ];
 

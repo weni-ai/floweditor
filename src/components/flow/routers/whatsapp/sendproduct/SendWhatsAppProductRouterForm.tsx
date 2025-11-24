@@ -34,6 +34,7 @@ import {
   shouldRequireIf,
   validate,
   validateIf,
+  ValidQueryParams,
 } from 'store/validators';
 
 import styles from './SendWhatsAppProductRouterForm.module.scss';
@@ -98,6 +99,7 @@ export interface SendWhatsAppProductRouterFormState extends FormState {
   sendCatalog: boolean;
   searchType: ProductSearchType;
   searchUrl: StringEntry;
+  cartSimulationParams: StringEntry;
   sellerId: StringEntry;
   postalCode: StringEntry;
   products: FormEntry;
@@ -112,6 +114,7 @@ interface UpdateKeys {
   sendCatalog?: boolean;
   searchType?: ProductSearchType;
   searchUrl?: string;
+  cartSimulationParams?: string;
   sellerId?: string;
   postalCode?: string;
   productSearch?: string;
@@ -160,6 +163,20 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
               this.state.searchType !== ProductSearchType.Default,
           ),
           validateIf(ValidURL, keys.searchUrl.indexOf('@') === -1),
+        ],
+      );
+    }
+
+    if (keys.hasOwnProperty('cartSimulationParams')) {
+      updates.cartSimulationParams = validate(
+        i18n.t('forms.cart_simulation_params', 'Cart Simulation Parameters'),
+        keys.cartSimulationParams,
+        [
+          validateIf(
+            ValidQueryParams,
+            keys.cartSimulationParams &&
+              keys.cartSimulationParams.trim().length > 0,
+          ),
         ],
       );
     }
@@ -354,6 +371,14 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
     });
   }
 
+  public handleCartSimulationParamsChange(
+    cartSimulationParams: string,
+    name: string,
+    submitting = false,
+  ): boolean {
+    return this.handleUpdate({ cartSimulationParams }, submitting);
+  }
+
   public handleSearchUrlChange(
     searchUrl: string,
     name: string,
@@ -382,6 +407,13 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
 
     currentCheck = this.handleSearchUrlChange(
       this.state.searchUrl.value,
+      null,
+      true,
+    );
+    valid = valid && currentCheck;
+
+    currentCheck = this.handleCartSimulationParamsChange(
+      this.state.cartSimulationParams.value,
       null,
       true,
     );
@@ -433,11 +465,121 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
     };
   }
 
-  private renderWhatsappProductsConfig() {
+  private renderProductViewSettings() {
     const disableHeader =
       !this.state.automaticProductSearch &&
       (this.state.sendCatalog || this.state.products.value.length <= 1);
 
+    return (
+      <div className={styles.product_view_settings}>
+        <div
+          className={styles.title}
+          data-testid="ViewSettings"
+          onClick={() => this.toggleProductViewSettings()}
+        >
+          {i18n.t('forms.product_view_settings', 'View Settings (required)')}
+
+          <UnnnicIcon
+            icon={
+              this.state.showProductViewSettings
+                ? 'arrow-button-right-1'
+                : 'arrow-button-down-1'
+            }
+            size="xs"
+            scheme="neutral-cleanest"
+          />
+        </div>
+        {this.state.showProductViewSettings ? (
+          <>
+            <div className={styles.content}>
+              <div>
+                <span className={styles.label}>
+                  {i18n.t('forms.header', 'Header')}
+
+                  {disableHeader && (
+                    <UnnnicTooltip
+                      text={i18n.t(
+                        'forms.send_product.header_info',
+                        'It is only possible to send a personalized header when \nmultiple products are selected.',
+                      )}
+                      side="right"
+                      enabled={true}
+                    >
+                      <UnnnicIcon
+                        className={styles.info_icon}
+                        icon="info"
+                        size="sm"
+                      />
+                    </UnnnicTooltip>
+                  )}
+                </span>
+                <TextInputElement
+                  name={i18n.t('forms.header', 'Header')}
+                  placeholder={i18n.t('forms.ex_offers', 'Ex: Offers')}
+                  onChange={value =>
+                    this.handleProductViewSettingsChange(value, 'header')
+                  }
+                  entry={this.state.productViewSettings.value.header}
+                  size={TextInputSizes.sm}
+                  autocomplete
+                  disabled={disableHeader}
+                />
+              </div>
+
+              <TextInputElement
+                name={i18n.t('forms.body', 'Body')}
+                placeholder={i18n.t(
+                  'forms.ex_products_body',
+                  'Ex: offers are valid for 5 days',
+                )}
+                onChange={value =>
+                  this.handleProductViewSettingsChange(value, 'body')
+                }
+                entry={this.state.productViewSettings.value.body}
+                size={TextInputSizes.sm}
+                showLabel
+                autocomplete
+                textarea
+                maxLength={1024}
+              />
+
+              <TextInputElement
+                name={i18n.t('forms.footer', 'Footer (optional)')}
+                placeholder={i18n.t('forms.ex_footer', 'Ex: Footer')}
+                onChange={value =>
+                  this.handleProductViewSettingsChange(value, 'footer')
+                }
+                entry={this.state.productViewSettings.value.footer}
+                size={TextInputSizes.sm}
+                showLabel
+                autocomplete
+              />
+
+              <TextInputElement
+                name={i18n.t('forms.action', 'Action button title')}
+                placeholder={i18n.t('forms.ex_products_action', 'Ex: Buy now')}
+                onChange={value =>
+                  this.handleProductViewSettingsChange(value, 'action')
+                }
+                entry={this.state.productViewSettings.value.action}
+                size={TextInputSizes.sm}
+                showLabel
+                autocomplete
+              />
+            </div>
+            <span className={styles.help_text}>
+              {i18n.t(
+                'forms.product_help_text',
+                'The fields have character limitations, with header and footer 60 characters, body 1024 and action button title 20 characters.',
+              )}
+            </span>
+          </>
+        ) : null}
+      </div>
+    );
+  }
+
+  private renderWhatsappProductsConfig() {
     return (
       <div className={styles.products_config}>
         <div className={styles.automatic_check}>
@@ -459,115 +601,6 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
         {this.state.automaticProductSearch
           ? this.renderAutomaticProductSearchForm()
           : this.renderManualProductSearchForm()}
-
-        <div className={styles.product_view_settings}>
-          <div
-            className={styles.title}
-            data-testid="ViewSettings"
-            onClick={() => this.toggleProductViewSettings()}
-          >
-            {i18n.t('forms.product_view_settings', 'View Settings (required)')}
-
-            <UnnnicIcon
-              icon={
-                this.state.showProductViewSettings
-                  ? 'arrow-button-right-1'
-                  : 'arrow-button-down-1'
-              }
-              size="xs"
-              scheme="neutral-cleanest"
-            />
-          </div>
-          {this.state.showProductViewSettings ? (
-            <>
-              <div className={styles.content}>
-                <div>
-                  <span className={styles.label}>
-                    {i18n.t('forms.header', 'Header')}
-
-                    {disableHeader && (
-                      <UnnnicTooltip
-                        text={i18n.t(
-                          'forms.send_product.header_info',
-                          'It is only possible to send a personalized header when \nmultiple products are selected.',
-                        )}
-                        side="right"
-                        enabled={true}
-                      >
-                        <UnnnicIcon
-                          className={styles.info_icon}
-                          icon="info"
-                          size="sm"
-                        />
-                      </UnnnicTooltip>
-                    )}
-                  </span>
-                  <TextInputElement
-                    name={i18n.t('forms.header', 'Header')}
-                    placeholder={i18n.t('forms.ex_offers', 'Ex: Offers')}
-                    onChange={value =>
-                      this.handleProductViewSettingsChange(value, 'header')
-                    }
-                    entry={this.state.productViewSettings.value.header}
-                    size={TextInputSizes.sm}
-                    autocomplete
-                    disabled={disableHeader}
-                  />
-                </div>
-
-                <TextInputElement
-                  name={i18n.t('forms.body', 'Body')}
-                  placeholder={i18n.t(
-                    'forms.ex_products_body',
-                    'Ex: offers are valid for 5 days',
-                  )}
-                  onChange={value =>
-                    this.handleProductViewSettingsChange(value, 'body')
-                  }
-                  entry={this.state.productViewSettings.value.body}
-                  size={TextInputSizes.sm}
-                  showLabel
-                  autocomplete
-                  textarea
-                  maxLength={1024}
-                />
-
-                <TextInputElement
-                  name={i18n.t('forms.footer', 'Footer (optional)')}
-                  placeholder={i18n.t('forms.ex_footer', 'Ex: Footer')}
-                  onChange={value =>
-                    this.handleProductViewSettingsChange(value, 'footer')
-                  }
-                  entry={this.state.productViewSettings.value.footer}
-                  size={TextInputSizes.sm}
-                  showLabel
-                  autocomplete
-                />
-
-                <TextInputElement
-                  name={i18n.t('forms.action', 'Action button title')}
-                  placeholder={i18n.t(
-                    'forms.ex_products_action',
-                    'Ex: Buy now',
-                  )}
-                  onChange={value =>
-                    this.handleProductViewSettingsChange(value, 'action')
-                  }
-                  entry={this.state.productViewSettings.value.action}
-                  size={TextInputSizes.sm}
-                  showLabel
-                  autocomplete
-                />
-              </div>
-              <span className={styles.help_text}>
-                {i18n.t(
-                  'forms.product_help_text',
-                  'The fields have character limitations, with header and footer 60 characters, body 1024 and action button title 20 characters.',
-                )}
-              </span>
-            </>
-          ) : null}
-        </div>
       </div>
     );
   }
@@ -633,6 +666,8 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
           </UnnnicRadio>
         </div>
 
+        {this.renderProductViewSettings()}
+
         <TextInputElement
           name={i18n.t(
             'forms.product_search_label',
@@ -660,6 +695,24 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
                 )}
                 onChange={this.handleSearchUrlChange}
                 entry={this.state.searchUrl}
+                showLabel
+                autocomplete
+                size={TextInputSizes.sm}
+              />
+            </div>
+
+            <div className={styles.cart_simulation_params}>
+              <TextInputElement
+                name={i18n.t(
+                  'forms.cart_simulation_params',
+                  'Cart Simulation Parameters (optional)',
+                )}
+                placeholder={i18n.t(
+                  'forms.cart_simulation_params_placeholder',
+                  'Ex: ?deliveryChannels=picking',
+                )}
+                onChange={this.handleCartSimulationParamsChange}
+                entry={this.state.cartSimulationParams}
                 showLabel
                 autocomplete
                 size={TextInputSizes.sm}
@@ -735,6 +788,8 @@ export default class SendWhatsAppProductRouterForm extends React.Component<
             </span>
           </UnnnicRadio>
         </div>
+
+        {this.renderProductViewSettings()}
 
         {this.state.sendCatalog ? null : this.renderProductSelector()}
       </>

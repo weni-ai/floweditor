@@ -68,8 +68,9 @@ import {
   CallWeniGPT,
   CallBrain,
   MsgTemplating,
+  Classifier,
 } from 'flowTypes';
-import Localization from 'services/Localization';
+import Localization, { LocalizedObject } from 'services/Localization';
 import { Asset, Assets, AssetType, RenderNode } from 'store/flowContext';
 import { assetListToMap } from 'store/helpers';
 import { EMPTY_TEST_ASSETS } from 'test/utils';
@@ -88,6 +89,7 @@ import {
   WhatsAppInteractionType,
   WhatsAppMessageType,
 } from 'components/flow/actions/whatsapp/sendmsg/constants';
+import { WhatsAppOrderDetails } from '../components/flow/actions/whatsapp/sendmsg/payments/types';
 
 const { results: groupsResults } = require('test/assets/groups.json');
 const languagesResults = require('test/assets/languages.json');
@@ -407,6 +409,7 @@ export const createSendWhatsAppMsgAction = ({
   flow_data = {},
   flow_screen = '',
   flow_data_attachment_name_map = {},
+  order_details = null,
 }: {
   uuid?: string;
   text?: string;
@@ -424,6 +427,7 @@ export const createSendWhatsAppMsgAction = ({
   flow_data?: FlowData;
   flow_screen?: string;
   flow_data_attachment_name_map?: Record<string, string>;
+  order_details?: WhatsAppOrderDetails;
 } = {}): SendWhatsAppMsg => ({
   type: Types.send_whatsapp_msg,
   uuid,
@@ -442,6 +446,7 @@ export const createSendWhatsAppMsgAction = ({
   flow_data,
   flow_screen,
   flow_data_attachment_name_map,
+  order_details,
 });
 
 export const createCallWeniGPTAction = ({
@@ -475,6 +480,55 @@ export const createCallBrainAction = ({
   uuid,
   brainInfo,
   entry,
+});
+
+export const createCallClassifierAction = ({
+  classifier = {
+    uuid: 'purrington',
+    name: 'Purrington',
+  },
+  input = '@input',
+  result_name = 'Result',
+}: {
+  classifier?: Classifier;
+  input?: string;
+  result_name?: string;
+} = {}): CallClassifier => ({
+  type: Types.call_classifier,
+  uuid: utils.createUUID(),
+  classifier: classifier,
+  input: input,
+  result_name: result_name,
+});
+
+export const createCallExternalServiceAction = ({
+  type = 'chatgpt',
+  actions = [],
+  serviceUuid = 'dummy uuid',
+  serviceCall = {
+    value: 'dummy call',
+    name: 'dummy call name',
+    verboseName: 'dummy call verbose name',
+    params: [],
+    disableEmptyParams: false,
+  },
+}: {
+  type?: string;
+  actions?: any[];
+  serviceUuid?: string;
+  serviceCall?: ServiceCall;
+} = {}): CallExternalService => ({
+  type: Types.call_external_service,
+  uuid: utils.createUUID(),
+  external_service: {
+    uuid: serviceUuid,
+    name: `${type} dummy service`,
+    external_service_type: type,
+    actions: actions,
+  },
+  call: serviceCall,
+  params: [],
+  result_name: 'Result',
 });
 
 export const createWebhookNode = (
@@ -521,10 +575,12 @@ export const createWebhookNode = (
   };
 };
 
-export const createWebhookRouterNode = (): FlowNode => {
+export const createWebhookRouterNode = (
+  headers: { [key: string]: string } = {},
+): FlowNode => {
   const action: CallWebhook = {
     uuid: utils.createUUID(),
-    headers: {},
+    headers,
     type: Types.call_webhook,
     url: 'http://www.google.com',
     method: Methods.GET,
@@ -543,6 +599,25 @@ export const createOpenTicketNode = (
     ticketer: {
       name: 'Email (bob@acme.com)',
       uuid: '1165a73a-2ee0-4891-895e-768645194862',
+    },
+    subject: subject,
+    body: body,
+    result_name: 'Result',
+  };
+  return createWebhookNode(action, true);
+};
+
+export const createOpenWeniChatsTicketNode = (
+  subject: string,
+  body: string,
+  uuid: string = utils.createUUID(),
+): FlowNode => {
+  const action: OpenTicket = {
+    uuid: utils.createUUID(),
+    type: Types.open_ticket,
+    ticketer: {
+      name: `Weni Chats Sector - ${uuid}`,
+      uuid: uuid,
     },
     subject: subject,
     body: body,
@@ -611,6 +686,20 @@ export const getLocalizationFormProps = (
     name: 'English',
     type: AssetType.Language,
   };
+
+  const additionalLocalizations: LocalizedObject[] = [];
+
+  if (action.type === Types.send_whatsapp_msg) {
+    const sendWppMsgAction = action as SendWhatsAppMsg;
+    if (sendWppMsgAction.list_items) {
+      sendWppMsgAction.list_items.forEach(item => {
+        additionalLocalizations.push(
+          Localization.translate(item, language, translations),
+        );
+      });
+    }
+  }
+
   return {
     language,
     onClose: vi.fn(),
@@ -629,7 +718,10 @@ export const getLocalizationFormProps = (
         },
       }),
       originalAction: action,
-      localizations: [Localization.translate(action, language, translations)],
+      localizations: [
+        Localization.translate(action, language, translations),
+        ...additionalLocalizations,
+      ],
     },
   };
 };

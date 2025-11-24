@@ -8,6 +8,8 @@ import {
   initializeForm as stateToForm,
   stateToAction,
   TOPIC_OPTIONS,
+  INSTAGRAM_RESPONSE_TYPES,
+  TAG_OPTIONS,
 } from 'components/flow/actions/sendmsg/helpers';
 import { ActionFormProps } from 'components/flow/props';
 import AssetSelector from 'components/form/assetselector/AssetSelector';
@@ -51,6 +53,12 @@ import i18n from 'config/i18n';
 import { Trans } from 'react-i18next';
 import { Attachment, renderAttachments } from './attachments';
 
+import { applyPureVueInReact } from 'veaury';
+// @ts-ignore
+import Unnnic from '@weni/unnnic-system';
+
+const UnnnicIcon = applyPureVueInReact(Unnnic.unnnicIcon);
+
 export interface SendMsgFormState extends FormState {
   message: StringEntry;
   quickReplies: StringArrayEntry;
@@ -61,6 +69,9 @@ export interface SendMsgFormState extends FormState {
   topic: SelectOptionEntry;
   templateVariables: StringEntry[];
   templateTranslation?: TemplateTranslation;
+  instagramResponseType: SelectOptionEntry;
+  commentId: StringEntry;
+  tag: SelectOptionEntry;
 }
 
 export default class SendMsgForm extends React.Component<
@@ -72,11 +83,12 @@ export default class SendMsgForm extends React.Component<
   constructor(props: ActionFormProps) {
     super(props);
     this.state = stateToForm(this.props.nodeSettings, this.props.assetStore);
+
     bindCallbacks(this, {
       include: [/^handle/, /^on/],
     });
 
-    // intialize our templates if we have them
+    // initialize our templates if we have them
     if (this.state.template.value !== null) {
       fetchAsset(
         this.props.assetStore.templates,
@@ -175,6 +187,54 @@ export default class SendMsgForm extends React.Component<
 
     valid = valid && !hasErrors(this.state.quickReplyEntry);
 
+    // Validate Instagram-specific fields based on response type
+    if (this.state.instagramResponseType.value) {
+      const responseType = this.state.instagramResponseType.value.value;
+
+      // Map response types to their validation configuration
+      const validationConfig: {
+        [key: string]: {
+          field: string;
+          label: string;
+          stateKey: keyof SendMsgFormState;
+          value: any;
+        };
+      } = {
+        tag: {
+          field: 'tag',
+          label: i18n.t('forms.tags', 'Tags'),
+          stateKey: 'tag',
+          value: this.state.tag.value,
+        },
+        dm_comment: {
+          field: 'comment_id',
+          label: i18n.t('forms.comment_id', 'Comment ID'),
+          stateKey: 'commentId',
+          value: this.state.commentId.value,
+        },
+        comment: {
+          field: 'comment_id',
+          label: i18n.t('forms.comment_id', 'Comment ID'),
+          stateKey: 'commentId',
+          value: this.state.commentId.value,
+        },
+      };
+
+      // Only validate if we have a config for this response type
+      if (responseType !== 'none' && validationConfig[responseType]) {
+        const config = validationConfig[responseType];
+        const validatedEntry = validate(config.label, config.value, [Required]);
+
+        // Update state for the validated field
+        const stateUpdate = {} as any;
+        stateUpdate[config.stateKey] = validatedEntry;
+        this.setState(stateUpdate);
+
+        // Check if validation passed
+        valid = valid && !hasErrors(validatedEntry);
+      }
+    }
+
     if (valid) {
       this.props.updateAction(
         stateToAction(this.props.nodeSettings, this.state),
@@ -271,6 +331,146 @@ export default class SendMsgForm extends React.Component<
     this.setState({ topic: { value: topic } });
   }
 
+  private handleInstagramResponseTypeChanged(selected: SelectOption): void {
+    // If "None" is selected, clear all Instagram-related values
+    if (selected && selected.value === 'none') {
+      this.setState({
+        instagramResponseType: { value: null },
+        commentId: { value: '' },
+        tag: { value: null },
+      });
+      return;
+    }
+
+    this.setState({
+      instagramResponseType: { value: selected },
+    });
+  }
+
+  private handleCommentIdChanged(value: string): void {
+    const entry = validate(i18n.t('forms.comment_id', 'Comment ID'), value, [
+      Required,
+    ]);
+    this.setState({ commentId: entry });
+  }
+
+  private handleTagSelectionChanged(selected: SelectOption): void {
+    const entry = validate(i18n.t('forms.tags', 'Tags'), selected, [Required]);
+
+    this.setState({
+      tag: entry,
+    });
+  }
+
+  private renderResponseTypeContent(responseType: string): JSX.Element {
+    // Define a type for the configuration
+    type ConfigItem = {
+      description: string;
+      fieldLabel: string;
+      inputType: string;
+      placeholder?: string;
+    };
+
+    type ConfigMap = {
+      [key: string]: ConfigItem;
+    };
+
+    // Common configuration for each response type
+    const config: ConfigMap = {
+      tag: {
+        description: i18n.t(
+          'forms.instagram.descriptions.tag',
+          'The allows you to send a message after the 24 hours window',
+        ),
+        fieldLabel: i18n.t('forms.select_tags', 'Select the tags'),
+        inputType: 'select',
+      },
+      dm_comment: {
+        description: i18n.t(
+          'forms.instagram.descriptions.dm_comment',
+          'When a comment is made on a post, this action allows replying in a direct message (DM) to the user who made the comment, keeping the interaction private.',
+        ),
+        fieldLabel: i18n.t('forms.comment_id', 'Comment ID'),
+        inputType: 'text',
+        placeholder: 'E.g., 17948912345678901',
+      },
+      comment: {
+        description: i18n.t(
+          'forms.instagram.descriptions.comment',
+          "When a comment is made on a post, this action allows replying directly within the post's comment section, keeping the interaction public.",
+        ),
+        fieldLabel: i18n.t('forms.comment_id', 'Comment ID'),
+        inputType: 'text',
+        placeholder: 'E.g., 17948912345678901',
+      },
+    };
+
+    // If response type doesn't match any known type, return null
+    if (!responseType || !config[responseType]) {
+      return null;
+    }
+
+    const instagramTypeConfig = config[responseType];
+
+    return (
+      <>
+        <div className={styles.disclaimer}>
+          <UnnnicIcon icon="alert-circle-1-1" scheme="feedback-blue" />
+          <p className={styles.disclaimer_text}>
+            {instagramTypeConfig.description}
+          </p>
+        </div>
+
+        {instagramTypeConfig.inputType === 'select' ? (
+          <SelectElement
+            name={i18n.t('forms.tags', 'Tags')}
+            entry={this.state.tag}
+            onChange={this.handleTagSelectionChanged}
+            options={TAG_OPTIONS}
+            placeholder={i18n.t('forms.select_tag', 'Select a tag')}
+            clearable={false}
+            showLabel={true}
+          />
+        ) : (
+          <TextInputElement
+            name={instagramTypeConfig.fieldLabel}
+            showLabel={true}
+            onChange={this.handleCommentIdChanged}
+            entry={this.state.commentId}
+            placeholder={instagramTypeConfig.placeholder}
+          />
+        )}
+      </>
+    );
+  }
+
+  private renderInstagramConfig(): JSX.Element {
+    const responseType = this.state.instagramResponseType.value
+      ? this.state.instagramResponseType.value.value
+      : null;
+
+    return (
+      <>
+        <SelectElement
+          key="instagram_response_type"
+          name={i18n.t('forms.response_type', 'Choose a response Type')}
+          entry={this.state.instagramResponseType}
+          onChange={this.handleInstagramResponseTypeChanged}
+          options={INSTAGRAM_RESPONSE_TYPES}
+          placeholder={i18n.t(
+            'forms.select_response_type',
+            'Select a response type',
+          )}
+          showLabel={true}
+        />
+
+        {responseType &&
+          responseType !== 'none' &&
+          this.renderResponseTypeContent(responseType)}
+      </>
+    );
+  }
+
   private renderTemplateConfig(): JSX.Element {
     return (
       <>
@@ -354,6 +554,28 @@ export default class SendMsgForm extends React.Component<
       $splice: [[index, 1]],
     });
     this.setState({ attachments });
+  }
+
+  private instagramErrors(): boolean {
+    if (!this.state.instagramResponseType.value) {
+      return false;
+    }
+
+    const responseType = this.state.instagramResponseType.value.value;
+
+    // Map response types to their state fields to check for errors
+    const validationMap: { [key: string]: keyof SendMsgFormState } = {
+      tag: 'tag',
+      dm_comment: 'commentId',
+      comment: 'commentId',
+    };
+
+    if (responseType !== 'none' && validationMap[responseType]) {
+      const fieldToCheck = validationMap[responseType];
+      return hasErrors(this.state[fieldToCheck] as any);
+    }
+
+    return false;
   }
 
   public render(): JSX.Element {
@@ -442,6 +664,16 @@ export default class SendMsgForm extends React.Component<
     };
 
     const tabs = [quickReplies, attachments, advanced];
+
+    if (hasFeature(this.context.config, FeatureFilter.HAS_INSTAGRAM)) {
+      const templates: Tab = {
+        name: 'Instagram',
+        body: this.renderInstagramConfig(),
+        checked: this.state.instagramResponseType.value !== null,
+        hasErrors: this.instagramErrors(),
+      };
+      tabs.splice(0, 0, templates);
+    }
 
     if (hasFeature(this.context.config, FeatureFilter.HAS_WHATSAPP)) {
       const templates: Tab = {

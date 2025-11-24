@@ -2,7 +2,7 @@ import { react as bindCallbacks } from 'auto-bind';
 import { FormElementProps } from 'components/form/FormElement';
 import * as React from 'react';
 import { StringEntry, ValidationFailure } from 'store/nodeEditor';
-import { applyVueInReact } from 'veaury';
+import { applyVueInReact, applyPureVueInReact } from 'veaury';
 import { count as SmsCount } from 'sms-length';
 import i18n from 'config/i18n';
 
@@ -59,7 +59,7 @@ const UnnnicInput = applyVueInReact(Unnnic.unnnicInput, {
   },
 });
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon);
-const UnnnicToolTip = applyVueInReact(Unnnic.unnnicToolTip);
+const UnnnicToolTip = applyPureVueInReact(Unnnic.unnnicToolTip);
 
 export default class TextInputElement extends React.Component<TextInputProps> {
   private inputItem: React.RefObject<any> = React.createRef();
@@ -142,7 +142,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
         {this.props.autocomplete ? (
           <TembaCompletion
             name={this.props.name}
-            value={this.props.entry.value}
+            value={this.props.entry ? this.props.entry.value : ''}
             onInput={(value: string) =>
               this.handleChange({ currentTarget: { value } })
             }
@@ -160,7 +160,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             data-testid={this.props.name}
             className={styles.textarea}
             v-model={[
-              this.props.entry.value,
+              this.props.entry ? this.props.entry.value : '',
               (value: string) =>
                 this.handleChange({ currentTarget: { value } }),
             ]}
@@ -168,7 +168,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
             placeholder={this.props.placeholder}
             size={this.props.size || TextInputSizes.sm}
             type={hasError ? 'error' : 'normal'}
-            errors={errorList}
+            errors={errorList || []}
             maxLength={this.props.counter ? null : this.props.maxLength}
             disabled={this.props.disabled}
           />
@@ -180,13 +180,17 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           <div
             className={`${styles.sms_counter} u font secondary body-md color-neutral-cloudy`}
           >
-            {SmsCount(this.props.entry.value || '').length} /{' '}
-            {SmsCount(this.props.entry.value || '').messages}
+            {SmsCount(this.props.entry ? this.props.entry.value : '').length} /{' '}
+            {SmsCount(this.props.entry ? this.props.entry.value : '').messages}
             <UnnnicToolTip
               enabled
               text={i18n.t('forms.sms_counter_info', {
-                characters: SmsCount(this.props.entry.value || '').length,
-                messages: SmsCount(this.props.entry.value || '').messages,
+                characters: SmsCount(
+                  this.props.entry ? this.props.entry.value : '',
+                ).length,
+                messages: SmsCount(
+                  this.props.entry ? this.props.entry.value : '',
+                ).messages,
               })}
               side="top"
               maxWidth="180px"
@@ -205,7 +209,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
         {this.props.autocomplete ? (
           <TembaCompletion
             name={this.props.name}
-            value={this.props.entry.value}
+            value={this.props.entry ? this.props.entry.value : ''}
             onInput={(value: string) =>
               this.handleChange({ currentTarget: { value } })
             }
@@ -221,7 +225,7 @@ export default class TextInputElement extends React.Component<TextInputProps> {
           <div data-testid={this.props.name} ref={this.inputItem}>
             <UnnnicInput
               v-model={[
-                this.props.entry.value,
+                this.props.entry ? this.props.entry.value : '',
                 (value: string) =>
                   this.handleChange({ currentTarget: { value } }),
               ]}

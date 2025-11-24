@@ -112,12 +112,6 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     }
 
     const listItems = [...this.state.listItems.value];
-    if (
-      !hasEmptyListItem(listItems) &&
-      listItems.length < MAX_LIST_ITEMS_COUNT
-    ) {
-      listItems.push(createEmptyListItem());
-    }
 
     this.state = {
       ...this.state,
@@ -256,11 +250,6 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
     }
 
     if (keys.hasOwnProperty('listItems')) {
-      const updatedList = keys.listItems;
-      const hasEmptyTitle = keys.listItems.some(item => item.title === '');
-      if (!hasEmptyTitle) {
-        updatedList.push(createEmptyListItem());
-      }
       updates.listItems = { value: keys.listItems };
     }
 
@@ -403,10 +392,6 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
       if (actionURL.value) {
         translations.action_url = actionURL.value;
       }
-      if (listItems.value && listItems.value.length) {
-        const filteredArray = listItems.value.filter(item => item.title !== '');
-        translations.list_items = filteredArray;
-      }
 
       const localizations = [
         {
@@ -414,6 +399,20 @@ export default class WhatsappMsgLocalizationForm extends React.Component<
           translations,
         },
       ];
+
+      if (listItems.value && listItems.value.length) {
+        const filteredArray = listItems.value.filter(item => item.title !== '');
+        filteredArray.forEach(item => {
+          const listItemTranslation: any = {
+            title: item.title,
+            description: item.description,
+          };
+          localizations.push({
+            uuid: item.uuid,
+            translations: listItemTranslation,
+          });
+        });
+      }
 
       this.props.updateLocalizations(this.props.language.id, localizations);
       this.props.onClose(false);

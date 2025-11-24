@@ -7,7 +7,6 @@ import * as React from 'react';
 import {
   fireEvent,
   render,
-  fireUnnnicSelect,
   fireUnnnicInputChangeText,
   getUnnnicInputValue,
   waitFor,
@@ -129,6 +128,116 @@ describe(CaseElement.name, () => {
       fireUnnnicInputChangeText(args[1], '100');
       expect(getUnnnicInputValue(args[0])).toEqual('1');
       expect(getUnnnicInputValue(args[1])).toEqual('100');
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('handles intent arguments', async () => {
+      const kase = {
+        uuid: caseUUID,
+        type: Operators.has_intent,
+        category_uuid: createUUID(),
+      };
+
+      const { baseElement, getAllByTestId, getByText } = render(
+        <CaseElement
+          {...caseProps}
+          kase={kase}
+          classifier={{
+            intents: ['intent1', 'intent2'],
+          }}
+        />,
+      );
+
+      fireEvent.click(getByText('intent1'));
+
+      const args = getAllByTestId('confidence');
+      fireUnnnicInputChangeText(args[0], 'Purple, p');
+      expect(getUnnnicInputValue(args[0])).toEqual('Purple, p');
+
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('handles has_top_intent arguments', async () => {
+      const kase = {
+        uuid: caseUUID,
+        type: Operators.has_top_intent,
+        category_uuid: createUUID(),
+      };
+
+      const { baseElement, getAllByTestId, getByText } = render(
+        <CaseElement
+          {...caseProps}
+          kase={kase}
+          classifier={{
+            intents: ['intent1', 'intent2'],
+          }}
+        />,
+      );
+
+      fireEvent.click(getByText('intent1'));
+
+      const args = getAllByTestId('confidence');
+      fireUnnnicInputChangeText(args[0], 'Purple, p');
+      expect(getUnnnicInputValue(args[0])).toEqual('Purple, p');
+
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('handles has_ward arguments', async () => {
+      const kase = {
+        uuid: caseUUID,
+        type: Operators.has_ward,
+        category_uuid: createUUID(),
+      };
+
+      const { baseElement, getAllByTestId } = render(
+        <CaseElement {...caseProps} kase={kase} />,
+      );
+
+      const state = getAllByTestId('State');
+      fireUnnnicInputChangeText(state[0], 'state1');
+      expect(getUnnnicInputValue(state[0])).toEqual('state1');
+
+      const district = getAllByTestId('District');
+      fireUnnnicInputChangeText(district[0], 'district1');
+      expect(getUnnnicInputValue(district[0])).toEqual('district1');
+
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('handles relativeDate arguments', async () => {
+      const kase = {
+        uuid: caseUUID,
+        type: Operators.has_date_eq,
+        category_uuid: createUUID(),
+      };
+
+      const { baseElement, getAllByTestId } = render(
+        <CaseElement {...caseProps} kase={kase} />,
+      );
+
+      const args = getAllByTestId('arguments');
+      fireUnnnicInputChangeText(args[0], 'arg1');
+      expect(getUnnnicInputValue(args[0])).toEqual('arg1');
+
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('handles smart cases', async () => {
+      const kase = {
+        uuid: caseUUID,
+        type: Operators.has_any_word,
+        category_uuid: createUUID(),
+      };
+
+      const { baseElement, getAllByTestId } = render(
+        <CaseElement {...caseProps} kase={kase} type={CaseElementType.smart} />,
+      );
+
+      const args = getAllByTestId('arguments');
+      fireUnnnicInputChangeText(args[0], 'arg1');
+      expect(getUnnnicInputValue(args[0])).toEqual('arg1');
+
       expect(baseElement).toMatchSnapshot();
     });
   });

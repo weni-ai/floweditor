@@ -366,7 +366,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
             // save off any quick replies we might have
             if (event.msg.quick_replies) {
               quickReplies = event.msg.quick_replies;
-            } else if (event.msg.list_message) {
+            } else if (
+              event.msg.list_message &&
+              event.msg.list_message.list_items
+            ) {
               optionList = event.msg.list_message.list_items.map(
                 item => item.title,
               );
@@ -660,7 +663,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     const wait = delay || 0;
     if (this.bottom) {
       window.setTimeout(() => {
-        if (this.bottom) {
+        if (this.bottom && typeof this.bottom.scrollIntoView === 'function') {
           this.bottom.scrollIntoView(false);
         }
       }, wait);
@@ -744,6 +747,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
     return (
       <div className={styles.drawer_items}>
         <div
+          data-testid="image_a"
           className={styles.drawer_item}
           onClick={() => {
             this.sendAttachment('image/jpeg:' + IMAGE_A);
@@ -1012,33 +1016,22 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
   private getAttachmentButton(
     icon: string,
     drawerType: DrawerType,
-    type: string,
   ): JSX.Element {
-    if (type === 'unnnic') {
-      return (
-        <div
-          onClick={() => {
-            this.showAttachmentDrawer(drawerType);
-          }}
-        >
-          <UnnnicIcon
-            className={styles.icon}
-            icon={icon}
-            size="md"
-            scheme="neutral-cloudy"
-          />
-        </div>
-      );
-    } else {
-      return (
-        <div
-          className={icon}
-          onClick={() => {
-            this.showAttachmentDrawer(drawerType);
-          }}
+    return (
+      <div
+        data-testid={`attachment-${drawerType}`}
+        onClick={() => {
+          this.showAttachmentDrawer(drawerType);
+        }}
+      >
+        <UnnnicIcon
+          className={styles.icon}
+          icon={icon}
+          size="md"
+          scheme="neutral-cloudy"
         />
-      );
-    }
+      </div>
+    );
   }
 
   private getAttachmentOptions(): JSX.Element {
@@ -1051,35 +1044,29 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
         }
       >
         <span className="ml-auto">
-          {this.getAttachmentButton(
-            'video-file-mp4-1',
-            DrawerType.videos,
-            'unnnic',
-          )}
+          {this.getAttachmentButton('video-file-mp4-1', DrawerType.videos)}
         </span>
         {this.getAttachmentButton(
           'common-file-horizontal-image-1',
           DrawerType.images,
-          'unnnic',
         )}
-        {this.getAttachmentButton('microphone', DrawerType.audio, 'unnnic')}
-        {this.getAttachmentButton('location_on', DrawerType.location, 'unnnic')}
-        <div className="ml-auto" onClick={this.handleHideAttachments}>
+        {this.getAttachmentButton('microphone', DrawerType.audio)}
+        {this.getAttachmentButton('location_on', DrawerType.location)}
+        <div
+          data-testid="hide_attachments_button"
+          className="ml-auto"
+          onClick={this.handleHideAttachments}
+        >
           <UnnnicIcon icon="close" size="md" scheme="neutral-cloudy" />
         </div>
       </div>
     );
   }
 
-  private handleContextExplorerClose(): void {
-    this.setState({ contextExplorerVisible: false });
-  }
-
   private getContextExplorer(): JSX.Element {
     return (
       <ContextExplorer
         visible={this.state.contextExplorerVisible}
-        onClose={this.handleContextExplorerClose}
         contents={this.state.context}
       />
     );
@@ -1215,6 +1202,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                   }
                 />
                 <div
+                  data-testid="show_attachments_button"
                   className={styles.show_attachments_button}
                   onClick={() => {
                     this.setState({
@@ -1236,6 +1224,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                 {!this.state.contextExplorerVisible ? (
                   <div className={styles.show_context_button}>
                     <div
+                      data-testid="context_show_button"
                       className="context-button"
                       onClick={() => {
                         this.setState({
@@ -1253,6 +1242,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                 ) : (
                   <div className={styles.show_context_button}>
                     <div
+                      data-testid="context_hide_button"
                       className="context-button"
                       onClick={() => {
                         this.setState({
@@ -1269,7 +1259,10 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
                   </div>
                 )}
 
-                <div className={styles.whatsapp_switch}>
+                <div
+                  data-testid="whatsapp_switch"
+                  className={styles.whatsapp_switch}
+                >
                   <span>WhatsApp</span>
                   <SwitchElement
                     name="WhatsApp"
@@ -1297,6 +1290,7 @@ export class Simulator extends React.Component<SimulatorProps, SimulatorState> {
           action={() => this.startNextTour()}
         >
           <div
+            data-testid="simulator_toggle"
             className={styles.simulator_tab + ' ' + tabHidden}
             onClick={this.onToggle}
           >

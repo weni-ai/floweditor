@@ -285,6 +285,12 @@ exports[`SendMsgForm > updates > should allow switching from router 1`] = `
 exports[`SendMsgForm > updates > should save changes 1`] = `
 {
   "attachments": [],
+  "commentId": {
+    "value": "",
+  },
+  "instagramResponseType": {
+    "value": null,
+  },
   "message": {
     "validationFailures": [],
     "value": "What is your favorite color?",
@@ -301,6 +307,9 @@ exports[`SendMsgForm > updates > should save changes 1`] = `
     "value": "",
   },
   "sendAll": true,
+  "tag": {
+    "value": null,
+  },
   "template": {
     "value": null,
   },

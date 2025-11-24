@@ -44,6 +44,12 @@ export const EMPTY_TEST_ASSETS = {
   ticketers: { items: {}, type: AssetType.Ticketer },
   externalServices: { items: {}, type: AssetType.ExternalService },
   completion: { items: completionResp, type: AssetType.Expression },
+  revisions: {
+    items: {},
+    type: AssetType.Revision,
+    endpoint: '/assets/revisions.json/',
+  },
+  groups: { items: {}, type: AssetType.Group },
 };
 
 const initial = initialState;
@@ -101,6 +107,14 @@ export const fireUnnnicTextAreaChangeText = (ele: any, value: string): void => {
   });
 };
 
+export const fireUnnicInputKeyPress = (ele: any, key: string): void => {
+  fireEvent.keyPress(ele.querySelector('input'), { key });
+};
+
+export const fireUnnnicKeyDown = (ele: any, key: string): void => {
+  fireEvent.keyDown(ele.querySelector('input'), { key });
+};
+
 export const fireUnnnicTagDelete = (ele: any): void => {
   fireEvent.click(ele.querySelector('.unnnic-tag__icon'));
 };
@@ -141,6 +155,15 @@ export const fireTembaSelect = (ele: HTMLElement, value: any) => {
   const evt = document.createEvent('HTMLEvents');
   evt.initEvent('change', false, true);
   ele.dispatchEvent(evt);
+};
+
+export const fireCustomEvent = (
+  ele: HTMLElement,
+  eventName: string,
+  eventData: any,
+) => {
+  const event = new CustomEvent(eventName, { detail: eventData });
+  fireEvent(ele, event);
 };
 
 export const mock = <T extends {}, K extends keyof T>(

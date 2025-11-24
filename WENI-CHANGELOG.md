@@ -1,3 +1,40 @@
+3.6.3
+----------
+- feat: add dynamic input length handling for WhatsApp message components
+
+3.6.2
+----------
+- fix: open ticket queue selection
+
+3.6.1
+----------
+- fix: improve handling of list messages in Simulator component
+
+3.6.0
+----------
+- Feat: Add instagram tab in Send Message form
+
+3.5.1
+----------
+- Feat: Add cart simulation parameters to WhatsApp product form
+
+3.5.0
+----------
+- Feat: Add sentry integration
+
+3.4.4
+----------
+- Fix: Handle undefined list_items in localizations
+
+3.4.3
+----------
+- Fix: List message localization
+
+3.4.2
+----------
+- Feat: WhatsApp options reordenation.
+- Fix: Fix: Simulator for WhatsApp card messages.
+
 3.4.1
 ----------
 - Fix: Update test snapshots

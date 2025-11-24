@@ -3,6 +3,7 @@
   "language": "eng",
   "name": "Boring Flow",
   "uuid": "boring",
+  "spec_version": "13.1",
   "nodes": [
     {
       "uuid": "node0",
@@ -71,13 +72,17 @@
             "uuid": "node1_case0",
             "type": "has_any_word",
             "category_uuid": "node1_cat0",
-            "arguments": ["red"]
+            "arguments": [
+              "red"
+            ]
           },
           {
             "uuid": "node1_case1",
             "type": "has_any_word",
             "category_uuid": "node1_cat1",
-            "arguments": ["green"]
+            "arguments": [
+              "green"
+            ]
           }
         ],
         "categories": [

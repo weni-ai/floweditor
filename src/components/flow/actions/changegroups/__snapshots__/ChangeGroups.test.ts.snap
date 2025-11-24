@@ -73,6 +73,11 @@ exports[`ChangeGroupsComp > helpers > getChangeGroupsMarkup > should return Chan
       </span>
     </React.Fragment>
   </div>
+  <div
+    className="_node_asset_9658e1"
+  >
+    Name Match
+  </div>
 </div>
 `;
 
@@ -155,6 +160,11 @@ exports[`ChangeGroupsComp > helpers > getContentMarkup > should return list of g
         Champions
       </span>
     </React.Fragment>
+  </div>,
+  <div
+    className="_node_asset_9658e1"
+  >
+    Name Match
   </div>,
 ]
 `;
@@ -328,6 +338,12 @@ exports[`ChangeGroupsComp > render > should render group name 1`] = `
     >
       Champions
     </span>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+    key="Name Match"
+  >
+    Name Match
   </div>
 </div>
 `;

@@ -2,7 +2,7 @@
   "name": "@weni/flow-editor",
   "license": "AGPL-3.0",
   "repository": "git://github.com/weni-ai/floweditor.git",
-  "version": "3.4.2-alpha.7",
+  "version": "3.6.3",
   "description": "Standalone flow editing tool designed for use within the RapidPro suite of messaging tools but can be adopted for use outside of that ecosystem.",
   "browser": "umd/flow-editor.min.js",
   "unpkg": "umd/flow-editor.min.js",
@@ -16,12 +16,13 @@
   ],
   "private": false,
   "dependencies": {
+    "@sentry/react": "8.51.0",
     "@weni/unnnic-system": "2.6.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-transition-group": "4.4.5",
     "sms-length": "0.1.2",
-    "veaury": "2.3.18"
+    "veaury": "2.5.1"
   },
   "scripts": {
     "lambda:serve": "netlify-lambda serve lambda -p 6000",
@@ -34,7 +35,7 @@
     "postversion": "git push --tags && git push origin main",
     "version": "yarn run build && auto-changelog -p && git add CHANGELOG.md",
     "scan": "./node_modules/i18next-scanner/bin/cli.js",
-    "dev": "yarn build && rm -rf ../rapidpro/node_modules/@weni/flow-editor/build/* && cp -Rf build/* ../rapidpro/node_modules/@weni/flow-editor/build/",
+    "dev": "yarn build && rm -rf ../flows/node_modules/@weni/flow-editor/build/* && cp -Rf build/* ../flows/node_modules/@weni/flow-editor/build/",
     "start": "vite --port 3000",
     "build": "vite build",
     "test": "vitest",
@@ -90,6 +91,7 @@
     "@types/dateformat": "3.0.0",
     "@types/enzyme": "^3.9.3",
     "@types/enzyme-adapter-react-16": "^1.0.3",
+    "@types/jsdom": "21.1.7",
     "@types/react": "16.14.1",
     "@types/react-addons-shallow-compare": "0.14.22",
     "@types/react-dom": "16.9.10",

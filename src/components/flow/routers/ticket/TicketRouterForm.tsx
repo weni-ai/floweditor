@@ -37,6 +37,7 @@ export interface TicketRouterFormState extends FormState {
   resultName: StringEntry;
   queues: any[];
   topics: any[];
+  loadingQueues: boolean;
 }
 
 export default class TicketRouterForm extends React.Component<
@@ -146,29 +147,6 @@ export default class TicketRouterForm extends React.Component<
     this.handleTopicsOptionsUpdateByTicketerType(selected[0], true);
   }
 
-  private handleQueuesUpdate(ticketer: Asset): void {
-    const isWenichatsType =
-      ticketer &&
-      ticketer.hasOwnProperty('type') &&
-      (ticketer['type'] as string) === 'wenichats';
-    if (isWenichatsType) {
-      const ticketerQueuesEndpoint =
-        this.context.config.endpoints.ticketer_queues +
-        `?ticketer_uuid=${this.state.ticketer.value.uuid}`;
-      axios.get(ticketerQueuesEndpoint).then(response => {
-        const topics = response.data;
-        let toUpdateTopic = topics.length > 0 ? topics[0] : {};
-        if (this.state.topic.value) {
-          toUpdateTopic = topics.find(
-            (to: any) => to === this.state.topic.value,
-          );
-        }
-        const toUpdate = { queues: topics, topic: toUpdateTopic as Topic };
-        this.handleUpdate(toUpdate);
-      });
-    }
-  }
-
   private handleTopicsOptionsUpdateByTicketerType(
     ticketer: any,
     hasContext: boolean,
@@ -192,6 +170,7 @@ export default class TicketRouterForm extends React.Component<
       ? this.context.config.endpoints.topics
       : this.props.assetStore.ticketers.endpoint.replace('ticketers', 'topics');
 
+    isWenichatsType && this.setState({ loadingQueues: true });
     axios.get(url).then(response => {
       const topics = isWenichatsType ? response.data : response.data.results;
 
@@ -205,32 +184,8 @@ export default class TicketRouterForm extends React.Component<
         ? { queues: topics, topic: toUpdateTopic as Topic }
         : { topics: topics, topic: toUpdateTopic as Topic };
       this.handleUpdate(toUpdate);
+      isWenichatsType && this.setState({ loadingQueues: false });
     });
-  }
-
-  private handleQueuesUpdateWithoutContext(ticketer: any): void {
-    const isWenichatsType =
-      ticketer &&
-      ticketer.hasOwnProperty('type') &&
-      (ticketer['type'] as string) === 'wenichats';
-    if (isWenichatsType) {
-      let ticketerQueuesEndpoint = this.props.assetStore.ticketers.endpoint.replace(
-        'ticketers',
-        'ticketer_queues',
-      );
-      ticketerQueuesEndpoint += `?ticketer_uuid=${ticketer.uuid}`;
-      axios.get(ticketerQueuesEndpoint).then(response => {
-        const topics = response.data;
-        let toUpdateTopic = topics.length > 0 ? topics[0] : {};
-        if (this.state.topic.value) {
-          toUpdateTopic = topics.find(
-            (to: any) => to.uuid === this.state.topic.value.uuid,
-          );
-        }
-        const toUpdate = { queues: topics, topic: toUpdateTopic as Topic };
-        this.handleUpdate(toUpdate);
-      });
-    }
   }
 
   private handleAssigneeUpdate(assignee: User): void {
@@ -239,14 +194,6 @@ export default class TicketRouterForm extends React.Component<
 
   private handleTopicUpdate(topic: Topic): void {
     this.handleUpdate({ topic });
-  }
-
-  private handleSubjectUpdate(
-    subject: string,
-    name: string,
-    submitting = false,
-  ): boolean {
-    return this.handleUpdate({ subject }, submitting);
   }
 
   private handleBodyUpdate(body: string): boolean {
@@ -283,9 +230,15 @@ export default class TicketRouterForm extends React.Component<
     }
   }
 
-  private getButtons(): ButtonSet {
+  private getButtons(isWenichatsType: boolean): ButtonSet {
     return {
-      primary: { name: i18n.t('buttons.ok', 'Ok'), onClick: this.handleSave },
+      primary: {
+        name: i18n.t('buttons.ok', 'Ok'),
+        onClick: this.handleSave,
+        disabled:
+          isWenichatsType &&
+          (!this.state.topic.value || this.state.loadingQueues),
+      },
       secondary: {
         name: i18n.t('buttons.cancel', 'Cancel'),
         onClick: () => this.props.onClose(true),
@@ -318,7 +271,7 @@ export default class TicketRouterForm extends React.Component<
       <Dialog
         title={typeConfig.name}
         headerClass={typeConfig.type}
-        buttons={this.getButtons()}
+        buttons={this.getButtons(isWenichatsType)}
       >
         <TypeList
           __className=""

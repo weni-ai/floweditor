@@ -1,6 +1,5 @@
 import { Simulator, SimulatorProps } from 'components/simulator/Simulator';
 import { composeComponentTestUtils } from 'testUtils';
-import { PopTabType } from '../../config/interfaces';
 import { shallowToJson } from 'enzyme-to-json';
 
 const { setup } = composeComponentTestUtils<SimulatorProps>(Simulator, {
