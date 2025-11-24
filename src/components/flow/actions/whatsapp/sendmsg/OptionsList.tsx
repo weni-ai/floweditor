@@ -67,13 +67,14 @@ export function hasEmptyListItem(listItems: WhatsAppListItem[]): boolean {
 const SortableListItem = SortableElement(({ value: row, index }: any) => {
   const MAX_TITLE_LENGTH = 24;
   const MAX_DESCRIPTION_LENGTH = 72;
-  const maxTitleLength = getMaxInputLength(row.item, MAX_TITLE_LENGTH);
-  const maxDescriptionLength = getMaxInputLength(
-    row.item,
-    MAX_DESCRIPTION_LENGTH,
-  );
 
   const listItem = row.item as WhatsAppListItem;
+
+  const maxTitleLength = getMaxInputLength(listItem.title, MAX_TITLE_LENGTH);
+  const maxDescriptionLength = getMaxInputLength(
+    listItem.description,
+    MAX_DESCRIPTION_LENGTH,
+  );
   return (
     <div className={styles.content}>
       <div className={styles.drag_wrapper} data-draggable={true}>
