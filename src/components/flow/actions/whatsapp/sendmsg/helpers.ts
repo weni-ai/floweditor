@@ -197,7 +197,7 @@ export const createEmptyListItem = () => {
   };
 };
 
-export const getMaxInputLength = (reply: any, defaultLength: number) => {
+export const getMaxInputLength = (reply: string, defaultLength: number) => {
   if (typeof reply === 'string') {
     return reply.indexOf('@') > -1 ? undefined : defaultLength;
   }
