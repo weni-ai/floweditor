@@ -1,3 +1,7 @@
+3.6.4
+----------
+- fix: getMaxInputLength usage in WhatsApp message components
+
 3.6.3
 ----------
 - feat: add dynamic input length handling for WhatsApp message components
