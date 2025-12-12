@@ -353,8 +353,11 @@ export const typeConfigList: Type[] = [
   },
   {
     type: Types.call_brain,
-    name: i18n.t('actions.call_brain.name', 'Call Weni Brain'),
-    description: i18n.t('actions.call_brain.description', 'Call Weni Brain'),
+    name: i18n.t('actions.call_brain.name', 'Forward to agent team'),
+    description: i18n.t(
+      'actions.call_brain.description',
+      'Forward to agent team',
+    ),
     form: CallBrainForm,
     component: CallBrainComp,
     aliases: [Types.call_brain],

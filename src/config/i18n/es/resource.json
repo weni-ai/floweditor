@@ -18,8 +18,8 @@
       "name": "Ordenar automáticamente"
     },
     "call_brain": {
-      "description": "Llamar a Weni Brain",
-      "name": "Llamar a Weni Brain"
+      "description": "Encaminar a equipo de agentes",
+      "name": "Encaminar a equipo de agentes"
     },
     "call_resthook": {
       "description": "Llamar Zapier",
