@@ -2684,7 +2684,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
         "call_brain",
       ],
       "component": [Function],
-      "description": "Call Weni Brain",
+      "description": "Forward to agent team",
       "filter": "brain",
       "form": {
         "$$typeof": Symbol(react.memo),
@@ -2693,7 +2693,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
         "displayName": "Connect(BrainForm)",
         "type": [Function],
       },
-      "name": "Call Weni Brain",
+      "name": "Forward to agent team",
       "new": true,
       "type": "call_brain",
     },
@@ -5412,7 +5412,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
               "call_brain",
             ],
             "component": [Function],
-            "description": "Call Weni Brain",
+            "description": "Forward to agent team",
             "filter": "brain",
             "form": {
               "$$typeof": Symbol(react.memo),
@@ -5421,7 +5421,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
               "displayName": "Connect(BrainForm)",
               "type": [Function],
             },
-            "name": "Call Weni Brain",
+            "name": "Forward to agent team",
             "new": true,
             "type": "call_brain",
           }
@@ -5450,7 +5450,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
         }
         className="_dialog_539fc6"
         headerClass="call_brain"
-        title="Call Weni Brain"
+        title="Forward to agent team"
       >
         <TypeList
           __className=""
@@ -5460,7 +5460,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
                 "call_brain",
               ],
               "component": [Function],
-              "description": "Call Weni Brain",
+              "description": "Forward to agent team",
               "filter": "brain",
               "form": {
                 "$$typeof": Symbol(react.memo),
@@ -5469,7 +5469,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
                 "displayName": "Connect(BrainForm)",
                 "type": [Function],
               },
-              "name": "Call Weni Brain",
+              "name": "Forward to agent team",
               "new": true,
               "type": "call_brain",
             }
@@ -8239,7 +8239,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
         "call_brain",
       ],
       "component": [Function],
-      "description": "Call Weni Brain",
+      "description": "Forward to agent team",
       "filter": "brain",
       "form": {
         "$$typeof": Symbol(react.memo),
@@ -8248,7 +8248,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
         "displayName": "Connect(BrainForm)",
         "type": [Function],
       },
-      "name": "Call Weni Brain",
+      "name": "Forward to agent team",
       "new": true,
       "type": "call_brain",
     },
@@ -10958,7 +10958,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
               "call_brain",
             ],
             "component": [Function],
-            "description": "Call Weni Brain",
+            "description": "Forward to agent team",
             "filter": "brain",
             "form": {
               "$$typeof": Symbol(react.memo),
@@ -10967,7 +10967,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
               "displayName": "Connect(BrainForm)",
               "type": [Function],
             },
-            "name": "Call Weni Brain",
+            "name": "Forward to agent team",
             "new": true,
             "type": "call_brain",
           }
@@ -10996,7 +10996,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
         }
         className="_dialog_539fc6"
         headerClass="call_brain"
-        title="Call Weni Brain"
+        title="Forward to agent team"
       >
         <TypeList
           __className=""
@@ -11006,7 +11006,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
                 "call_brain",
               ],
               "component": [Function],
-              "description": "Call Weni Brain",
+              "description": "Forward to agent team",
               "filter": "brain",
               "form": {
                 "$$typeof": Symbol(react.memo),
@@ -11015,7 +11015,7 @@ que é uma string com caracteres utilizados para dividir o texto em palavras.",
                 "displayName": "Connect(BrainForm)",
                 "type": [Function],
               },
-              "name": "Call Weni Brain",
+              "name": "Forward to agent team",
               "new": true,
               "type": "call_brain",
             }

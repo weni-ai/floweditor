@@ -18,8 +18,8 @@
       "name": "Automatic Classify"
     },
     "call_brain": {
-      "description": "Call Weni Brain",
-      "name": "Call Weni Brain"
+      "description": "Forward to agent team",
+      "name": "Forward to agent team"
     },
     "call_resthook": {
       "description": "Call Zapier",
