@@ -1,3 +1,7 @@
+3.6.5
+----------
+- refactor: update 'Call Weni Brain' references to 'Forward to agent team'
+
 3.6.4
 ----------
 - fix: getMaxInputLength usage in WhatsApp message components
