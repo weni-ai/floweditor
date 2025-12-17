@@ -37,7 +37,7 @@
     "scan": "./node_modules/i18next-scanner/bin/cli.js",
     "dev": "yarn build && rm -rf ../flows/node_modules/@weni/flow-editor/build/* && cp -Rf build/* ../flows/node_modules/@weni/flow-editor/build/",
     "start": "vite --port 3000",
-    "build": "vite build",
+    "build": "NODE_OPTIONS=--max-old-space-size=4096 vite build",
     "test": "vitest",
     "lint": "eslint -c .eslintrc.json src/**/*.{ts,tsx,js} --fix",
     "build:vite": "tsc && vite build",

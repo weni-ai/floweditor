@@ -5,6 +5,10 @@ on:
     tags:
     - '*'
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build:
 
@@ -13,10 +17,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Setup Node.js 18.x
-      uses: actions/setup-node@v3
+    - name: Setup Node.js 24.x
+      uses: actions/setup-node@v4
       with:
-        node-version: '18.x'
+        node-version: '24'
         registry-url: 'https://registry.npmjs.org'
     - name: Install, Build and Test 🔧
       run: |
@@ -29,4 +33,3 @@ jobs:
       run: npm publish
       env:
         CI: true
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
