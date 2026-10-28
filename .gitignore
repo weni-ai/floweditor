@@ -17,3 +17,6 @@ fabric
 fabfile.py
 # Local Netlify folder
 .netlify
+
+!.cursor/
+!.specify/
