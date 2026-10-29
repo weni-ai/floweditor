@@ -176,7 +176,7 @@ export class MediaPlayer extends React.Component<
     return this.state.playing ? 'stop' : 'play_arrow';
   }
 
-  private handleRef(ref: HTMLAudioElement): any {
+  private handleRef(ref: HTMLAudioElement): HTMLAudioElement {
     return (this.ele = ref);
   }
 
