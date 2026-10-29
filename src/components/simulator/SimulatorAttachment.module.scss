@@ -1,0 +1,26 @@
+@import 'src/variables.module.scss';
+
+.simulator-attachment__document {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  padding: $unnnic-spacing-inset-xs $unnnic-spacing-inset-sm;
+  background: $unnnic-color-neutral-soft;
+  color: $unnnic-color-neutral-cloudy;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $unnnic-color-weni-600;
+    outline-offset: 2px;
+  }
+}
+
+.simulator-attachment__document-label {
+  margin-left: $unnnic-spacing-inline-nano;
+  line-height: 16px;
+}

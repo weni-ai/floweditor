@@ -269,14 +269,14 @@ description: "Task list for Signed Media URLs in the Flow Editor"
 
 ### Tests for User Story 3
 
-- [ ] T027 [P] [US3] Create `src/components/simulator/useSignedMediaUrl.test.ts`. RTL 12.1.5 has no `renderHook`, so render a small test component that prints the hook's result.
+- [X] T027 [P] [US3] Create `src/components/simulator/useSignedMediaUrl.test.ts`. RTL 12.1.5 has no `renderHook`, so render a small test component that prints the hook's result.
   - **Disabled**: the first render is `{ url: original, isLoading: false, error: null }`.
   - **Enabled and uncached**: the first render is `{ url: null, isLoading: true, error: null }`, then `{ url: signed, isLoading: false, error: null }`.
   - **Cached**: the signed URL is there on the first render, with no request.
   - **500**: the result is `{ url: original, isLoading: false, error: 'http_error' }`.
   - **Input `url` changes mid-flight**: the stale result is discarded.
   - **Unmount mid-flight**: no state update and no React warning.
-- [ ] T028 [P] [US3] Create `src/components/simulator/SimulatorAttachment.test.tsx` (AC-2), with the signer configured and `window.open` stubbed as in T013. Each case renders `<SimulatorAttachment attachment="<type>:<url>" />`:
+- [X] T028 [P] [US3] Create `src/components/simulator/SimulatorAttachment.test.tsx` (AC-2), with the signer configured and `window.open` stubbed as in T013. Each case renders `<SimulatorAttachment attachment="<type>:<url>" />`:
   - **Image** `image/jpeg:<url>`: a placeholder `img` with `alt=""` while loading, then `img[alt="Attachment"]` whose `src` is signed.
   - **Video** `video/mp4:<url>`: `video.src` becomes signed.
   - **Document** `application/pdf:<url>`: `getByRole('button')` has `type="button"`, and a click navigates the tab to the signed URL.
@@ -288,18 +288,18 @@ description: "Task list for Signed Media URLs in the Flow Editor"
 
 ### Implementation for User Story 3
 
-- [ ] T029 [US3] Create `src/components/simulator/useSignedMediaUrl.ts` per [contracts §5](./contracts/editor-interfaces.md#5-internal-render-time-hook-srccomponentssimulatorusesignedmediaurlts) and the [data model](./data-model.md#usesignedmediaurlurl-result) (depends on T010, T027).
+- [X] T029 [US3] Create `src/components/simulator/useSignedMediaUrl.ts` per [contracts §5](./contracts/editor-interfaces.md#5-internal-render-time-hook-srccomponentssimulatorusesignedmediaurlts) and the [data model](./data-model.md#usesignedmediaurlurl-result) (depends on T010, T027).
   - Export `SignedMediaUrlState` and `useSignedMediaUrl(url)`.
   - The initial state comes from `MediaUrlSigner.get().getResolvedUrl(url)`. A non-null value gives `{ url, isLoading: false, error: null }`, and `null` gives `{ url: null, isLoading: true, error: null }`.
   - A `useEffect` keyed on `url` calls `resolveWithOutcome(url, { surface: 'simulator' })` when needed, and maps `failureReason` to `error`.
   - A cancelled flag in the effect cleanup discards results that arrive after the URL changed or the component unmounted.
   - Invariants: "`url` is `null` only while `isLoading`", and "`error` is non-null only when `isLoading` is `false`, and then `url` is the original".
-- [ ] T030 [P] [US3] Create `src/components/simulator/SimulatorAttachment.module.scss`. Start it with `@import 'src/variables.module.scss';` and use BEM classes with Unnnic `$unnnic-*` tokens (Principles XIV and XV).
+- [X] T030 [P] [US3] Create `src/components/simulator/SimulatorAttachment.module.scss`. Start it with `@import 'src/variables.module.scss';` and use BEM classes with Unnnic `$unnnic-*` tokens (Principles XIV and XV).
   - The block is `.simulator-attachment`, with the elements `__document` and `__document-label`.
   - Move the inline document styles from `LogEvent.tsx` here, mapped to the nearest tokens: `cursor: pointer`, `padding: 10px 12px`, `background: #e6e6e6`, `color: #666`, a flex row with centered items, and a label with `margin-left: 5px` and `line-height: 16px`.
   - Reset the native button styles (border, font and full width) and keep a visible `:focus-visible` outline.
   - Do not add classes to `LogEvent.module.scss`.
-- [ ] T031 [US3] Create `src/components/simulator/SimulatorAttachment.tsx` per [contracts §6](./contracts/editor-interfaces.md#6-internal-components) (depends on T017, T023, T029, T030).
+- [X] T031 [US3] Create `src/components/simulator/SimulatorAttachment.tsx` per [contracts §6](./contracts/editor-interfaces.md#6-internal-components) (depends on T017, T023, T029, T030).
   - **Props and parsing**: export `SimulatorAttachmentProps { attachment: string }`. Parse `<type>:<url>` at the first `:`, exactly as `renderAttachment` does today, and render `null` when there is no `:` or the type is unknown.
   - **Hooks**: hooks can't be called conditionally, and documents and audio must not be signed at render, so put the hook in small inner components (`SignedImage`, `SignedVideo`) that only the image and video branches render.
   - **Unchanged markup** (keeps the `LogEvent` snapshots identical while the signer is disabled):
@@ -308,9 +308,9 @@ description: "Task list for Signed Media URLs in the Flow Editor"
     - audio: the `audio_attachment`, `media_player` and `audio_text` wrappers, reusing the classes from `components/simulator/LogEvent.module.scss`, with `<MediaPlayer url={url} surface="simulator" />`;
     - geo: `<img src={MAP_THUMB} alt="Attachment" />`.
   - **Document**: render `<button type="button" className="simulator-attachment__document ..." onClick={handleOpenDocument}>`, which calls `openSignedMedia(url, { surface: 'simulator' })`. Inside it go the `picture_as_pdf` `UnnnicIcon` and `i18n.t('document', 'Document')`, an existing key, so no new string is added.
-- [ ] T032 [US3] In `src/components/simulator/LogEvent.tsx`, delete `renderAttachment` and render `<SimulatorAttachment attachment={attachment} />` inside the existing keyed `<div>` in `renderMessage`. Remove the `MediaPlayer` and `MAP_THUMB` imports, and keep `UnnnicIcon` and `i18n`, which other parts of the file still use (depends on T031).
-- [ ] T033 [US3] Run `yarn test run simulator/LogEvent -u --coverage.enabled=false` to update `src/components/simulator/__snapshots__/LogEvent.test.tsx.snap`. Review the diff: only the document element may change, from the inline-styled `<div>` to `<button type="button">` with BEM classes. Image, video and audio markup must be identical, which shows AC-5 for the simulator (depends on T032).
-- [ ] T034 [US3] Run `yarn test run simulator/SimulatorAttachment simulator/useSignedMediaUrl simulator/LogEvent simulator/Simulator --coverage.enabled=false` (depends on T027 to T033).
+- [X] T032 [US3] In `src/components/simulator/LogEvent.tsx`, delete `renderAttachment` and render `<SimulatorAttachment attachment={attachment} />` inside the existing keyed `<div>` in `renderMessage`. Remove the `MediaPlayer` and `MAP_THUMB` imports, and keep `UnnnicIcon` and `i18n`, which other parts of the file still use (depends on T031).
+- [X] T033 [US3] Run `yarn test run simulator/LogEvent -u --coverage.enabled=false` to update `src/components/simulator/__snapshots__/LogEvent.test.tsx.snap`. Review the diff: only the document element may change, from the inline-styled `<div>` to `<button type="button">` with BEM classes. Image, video and audio markup must be identical, which shows AC-5 for the simulator (depends on T032).
+- [X] T034 [US3] Run `yarn test run simulator/SimulatorAttachment simulator/useSignedMediaUrl simulator/LogEvent simulator/Simulator --coverage.enabled=false` (depends on T027 to T033).
 
 **Checkpoint**: AC-2 passes, and US1 and US2 still pass. Commit Phase 5.
 
