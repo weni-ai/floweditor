@@ -155,7 +155,7 @@ const renderAttachment = (attachment: string): JSX.Element => {
       return (
         <div className={styles.audio_attachment}>
           <div className={styles.media_player}>
-            <MediaPlayer url={url} />
+            <MediaPlayer url={url} surface="simulator" />
           </div>
           <div className={styles.audio_text}>Audio Recording</div>
         </div>

@@ -210,7 +210,7 @@ description: "Task list for Signed Media URLs in the Flow Editor"
 
 ### Tests for User Story 2
 
-- [ ] T020 [US2] Extend `src/components/mediaplayer/MediaPlayer.test.tsx` (AC-3).
+- [X] T020 [US2] Extend `src/components/mediaplayer/MediaPlayer.test.tsx` (AC-3).
   - **Existing cases**: add `surface: 'say_msg_audio'` to `baseProps`. They keep passing unchanged while the signer is disabled, because `getResolvedUrl` answers synchronously ([R7](./research.md#r7-synchronous-lookup)). Update the snapshots with `-u` and confirm that the only diffs are the new `surface` prop and, in Enzyme snapshots, an `aria-busy={undefined}` prop if `enzyme-to-json` prints it. The RTL `baseElement` snapshots must not change.
   - **New `describe('with signing configured')`**: configure the signer, and stub `HTMLMediaElement.prototype.load` with `vi.fn()` and `play` with `vi.fn().mockResolvedValue(undefined)`.
     - **First `mouseDown`**: after `waitFor`, `audio.src` is `<url>?X-Amz-Signature=test`, and `load` then `play` ran once each.
@@ -222,10 +222,10 @@ description: "Task list for Signed Media URLs in the Flow Editor"
     - **`url` prop changes while resolving**: the late result is dropped, `play` is not called, and `audio.src` is the new URL.
     - **Unmount while resolving**: `play` is not called.
     - **Signing answers 500**: the player plays the original URL.
-- [ ] T021 [P] [US2] In `src/components/flow/actions/saymsg/SayMsg.test.ts`, add a case with `createSayMsgAction({ audio_url: '<canonical url>' })`.
+- [X] T021 [P] [US2] In `src/components/flow/actions/saymsg/SayMsg.test.ts`, add a case with `createSayMsgAction({ audio_url: '<canonical url>' })`.
   - The file uses Enzyme `shallow`, which renders the `MediaPlayer` element and not its `<audio>`. Assert on the element instead: `wrapper.find(MediaPlayer).props()` has `url` equal to the canonical `audio_url` and `surface` equal to `'say_msg_audio'`. This shows the card passes the original URL and signing happens inside the player.
   - Update the existing snapshots with `-u`. The only diff allowed is the new `surface` prop.
-- [ ] T022 [US2] Add an AC-4 playback case to `src/components/flow/actions/saymsg/SayMsg.test.ts` (depends on T021, same file).
+- [X] T022 [US2] Add an AC-4 playback case to `src/components/flow/actions/saymsg/SayMsg.test.ts` (depends on T021, same file).
   - **Why here and not in `SayMsgForm.test.ts`**: `SayMsgForm` renders only `UploadButton` and never plays audio. A test there would not run any signing code, and it would keep passing if the player wrote a signed URL back.
   - **Setup**: configure the signer and stub `HTMLMediaElement.prototype.load` and `play` as in T020. Build `action = createSayMsgAction({ audio_url: '<canonical url>' })` and keep `const before = JSON.stringify(store.getState())`, using `store` from `test/utils`. Render with `render(React.createElement(SayMsgComp, action))` from `test/utils`, which wraps the Redux `Provider`. The file stays `.ts`.
   - **Steps**: `fireEvent.mouseDown(getByTestId('mediaplayer'))`, then `await waitFor(...)` until `getByTestId('audio').src` is `<canonical url>?X-Amz-Signature=test`.
@@ -235,7 +235,7 @@ description: "Task list for Signed Media URLs in the Flow Editor"
 
 ### Implementation for User Story 2
 
-- [ ] T023 [US2] Change `src/components/mediaplayer/MediaPlayer.tsx` per [contracts §6](./contracts/editor-interfaces.md#6-internal-components) and [R9](./research.md#r9-mediaplayer-owns-src-after-resolution) (depends on T010, T020).
+- [X] T023 [US2] Change `src/components/mediaplayer/MediaPlayer.tsx` per [contracts §6](./contracts/editor-interfaces.md#6-internal-components) and [R9](./research.md#r9-mediaplayer-owns-src-after-resolution) (depends on T010, T020).
   - **Props, state and flags**: add the required prop `surface: MediaSurface`, imported from `services/MediaUrlSigner`. Add `isLoading: boolean` to `MediaPlayerState`, initially `false`. Add the instance flag `isUnmounted`, and set it to `true` in a new `componentWillUnmount`.
   - **`handleTogglePlay`, when playing**: unchanged.
   - **`handleTogglePlay`, when stopped**:
@@ -249,9 +249,9 @@ description: "Task list for Signed Media URLs in the Flow Editor"
     - Set `aria-busy={this.state.isLoading ? true : undefined}` on the `mediaplayer` element. React then omits the attribute when idle, so the DOM snapshots in `LogEvent.test.tsx` stay identical, as T033 requires.
     - Add no CSS class. `MediaPlayer.module.scss` is a legacy non-BEM module that Principle XV forbids extending.
     - Keep `src={this.props.url}`. Add a comment explaining why the player assigns `src` itself: React only rewrites the attribute when the prop changes, and `preload="none"` means the canonical URL is never fetched before play.
-- [ ] T024 [P] [US2] Pass `surface="say_msg_audio"` to `MediaPlayer` in `src/components/flow/actions/saymsg/SayMsg.tsx`, with `url={action.audio_url}` unchanged (depends on T023).
-- [ ] T025 [P] [US2] Pass `surface="simulator"` to the existing `<MediaPlayer url={url} />` in `renderAttachment` in `src/components/simulator/LogEvent.tsx`, so the required prop type-checks in this commit. Phase 5 moves this call into `SimulatorAttachment` (depends on T023).
-- [ ] T026 [US2] Run `yarn test run mediaplayer/MediaPlayer saymsg/SayMsg simulator/LogEvent --coverage.enabled=false` (depends on T020 to T025).
+- [X] T024 [P] [US2] Pass `surface="say_msg_audio"` to `MediaPlayer` in `src/components/flow/actions/saymsg/SayMsg.tsx`, with `url={action.audio_url}` unchanged (depends on T023).
+- [X] T025 [P] [US2] Pass `surface="simulator"` to the existing `<MediaPlayer url={url} />` in `renderAttachment` in `src/components/simulator/LogEvent.tsx`, so the required prop type-checks in this commit. Phase 5 moves this call into `SimulatorAttachment` (depends on T023).
+- [X] T026 [US2] Run `yarn test run mediaplayer/MediaPlayer saymsg/SayMsg simulator/LogEvent --coverage.enabled=false` (depends on T020 to T025).
 
 **Checkpoint**: AC-3 and the `audio_url` half of AC-4 pass. US1 still passes. Commit Phase 4.
 
