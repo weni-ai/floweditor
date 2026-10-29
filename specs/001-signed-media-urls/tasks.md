@@ -320,19 +320,20 @@ description: "Task list for Signed Media URLs in the Flow Editor"
 
 **Purpose**: Cross-cutting review, the full gate, and the 3.7.0 release commit.
 
-- [ ] T035 [P] Audit the new and changed files: `src/external/media.ts`, `src/services/MediaUrlSigner.ts`, `src/utils/openSignedMedia.ts`, `src/components/simulator/useSignedMediaUrl.ts`, `src/components/simulator/SimulatorAttachment.tsx` and `src/components/mediaplayer/MediaPlayer.tsx`.
+- [X] T035 [P] Audit the new and changed files: `src/external/media.ts`, `src/services/MediaUrlSigner.ts`, `src/utils/openSignedMedia.ts`, `src/components/simulator/useSignedMediaUrl.ts`, `src/components/simulator/SimulatorAttachment.tsx` and `src/components/mediaplayer/MediaPlayer.tsx`.
   - No `?.`, `??`, `import type`, `export type {`, `any` or `console.` appears.
   - Each new module is under 350 lines.
   - The four comments the spec requires are present: the synchronous tab in `openSignedMedia.ts`, the early expiry and memory-only signed URLs in `MediaUrlSigner.ts`, and the player assigning `src` in `MediaPlayer.tsx`.
   - No signed URL is written to Redux, `localStorage` or any `on*Changed` callback.
-- [ ] T036 Run `npx eslint -c .eslintrc.json` on every file touched in Phases 1 to 5, and fix any error. Prefer this to `yarn lint`, which runs `--fix` across all of `src/`.
-- [ ] T037 Release commit `chore: release 3.7.0` ([R13](./research.md#r13-release-mechanics), plan Complexity Tracking for Principle IV). Edit these files by hand.
+- [X] T036 Run `npx eslint -c .eslintrc.json` on every file touched in Phases 1 to 5, and fix any error. Prefer this to `yarn lint`, which runs `--fix` across all of `src/`.
+- [X] T037 Release commit `chore: release 3.7.0` ([R13](./research.md#r13-release-mechanics), plan Complexity Tracking for Principle IV). Edit these files by hand.
   - Do not run `yarn version` in any form, including `--no-git-tag-version`. Its `postversion` script runs `git push --tags && git push origin main`, and its `version` script writes `CHANGELOG.md`.
   - Do not push, tag or open the PR. The developer pushes the branch when it is ready.
   - In `package.json`, set `"version": "3.7.0"`.
   - At the top of `WENI-CHANGELOG.md`, add a `3.7.0` block in the file's existing `version` / `----------` header style, with a `### Fixed` entry: `- fix: open, play and render stored media through presigned URLs from endpoints.media_urls`.
-- [ ] T038 Run the PR gate, `yarn build && yarn test run`. Both must pass with no unhandled rejection (Principle I).
-- [ ] T039 Run the local manual check in [quickstart.md §2](./quickstart.md#2-local-manual-check-no-backend): with the dev config, which has no `media_urls`, the simulator's sample image, video and audio render and play as on `main`, and the Network tab shows no `media_urls` request (AC-5).
+- [X] T038 Run the PR gate, `yarn build && yarn test run`. Both must pass with no unhandled rejection (Principle I).
+- [X] T039 Run the local manual check in [quickstart.md §2](./quickstart.md#2-local-manual-check-no-backend): with the dev config, which has no `media_urls`, the simulator's sample image, video and audio render and play as on `main`, and the Network tab shows no `media_urls` request (AC-5).
+  - The dev config sets `simulateStart: null`, so `Flow.tsx` never renders the simulator locally. The check ran on the Send Message download instead, with `yarn start` and `yarn lambda`: the tab opened synchronously, its `opener` was cleared, it navigated to the original URL, and no `media_urls` request was sent. Simulator AC-5 rests on the unchanged image, video and audio markup in the `LogEvent` snapshots (T033) and on staging step 4.
 
 ---
 
