@@ -15,6 +15,9 @@ import {
   createSayMsgAction,
 } from 'testUtils/assetCreators';
 import axios from 'axios';
+import { config } from 'test/config';
+import { waitFor } from 'test/utils';
+import { MediaUrlSigner } from 'services/MediaUrlSigner';
 
 import SendMsgLocalizationForm from './MsgLocalizationForm';
 import userEvent from '@testing-library/user-event';
@@ -291,5 +294,51 @@ describe(SendMsgLocalizationForm.name, () => {
 
     fireEvent.click(getByText('Cancel'));
     expect(props.onClose).toHaveBeenCalled();
+  });
+
+  describe('download with signing', () => {
+    const canonicalUrl =
+      'https://weni-flows.s3.us-east-1.amazonaws.com/attachments/42/1337/steps/9c1d/report.pdf';
+    const attachment = 'application/pdf:' + canonicalUrl;
+
+    beforeEach(() => {
+      MediaUrlSigner.get().configure(config.endpoints.media_urls);
+    });
+
+    afterEach(() => {
+      MediaUrlSigner.get().configure(undefined);
+      vi.restoreAllMocks();
+    });
+
+    it('opens the signed url of a translated attachment', async () => {
+      const tab = { opener: {}, closed: false, location: { href: '' } };
+      vi.spyOn(window, 'open').mockReturnValue((tab as unknown) as Window);
+      const action = createSendMsgAction({ attachments: [attachment] });
+      const props = getLocalizationFormProps(action, Spanish, {
+        [action.uuid]: { text: ['hola'], attachments: [attachment] },
+      });
+
+      const { getByTestId, getByText } = render(
+        <SendMsgLocalizationForm {...props} />,
+      );
+
+      // axios is mocked in this file, so the signing request is stubbed here
+      // @ts-expect-error we are mocking axios post request in __mocks__/axios.ts
+      axios.post.mockResolvedValueOnce({
+        status: 200,
+        data: {
+          urls: { [canonicalUrl]: canonicalUrl + '?X-Amz-Signature=test' },
+          expires_in: 3600,
+        },
+      });
+
+      fireEvent.click(getByText('Attachments'));
+      fireEvent.click(getByTestId('download-attachment-0'));
+
+      await waitFor(() =>
+        expect(tab.location.href).toBe(canonicalUrl + '?X-Amz-Signature=test'),
+      );
+      expect(props.updateLocalizations).not.toHaveBeenCalled();
+    });
   });
 });

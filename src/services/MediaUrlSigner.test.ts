@@ -5,8 +5,6 @@ import { config } from 'test/config';
 import { server } from 'test/mswServer';
 import { MediaUrlSigner } from './MediaUrlSigner';
 
-vi.mock('@sentry/react', () => ({ captureException: vi.fn() }));
-
 const endpoint = config.endpoints.media_urls as string;
 const signer = MediaUrlSigner.get();
 const simulator = { surface: 'simulator' as const };

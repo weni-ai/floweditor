@@ -34,7 +34,7 @@ description: "Task list for Signed Media URLs in the Flow Editor"
 - **No console output** (Principle III). Failures go to Sentry only, through `MediaUrlSigner`.
 - **Signer state in tests**: `MediaUrlSigner` is a singleton per test file. A suite that needs signing calls `MediaUrlSigner.get().configure(config.endpoints.media_urls)` in `beforeEach` and `MediaUrlSigner.get().configure(undefined)` in `afterEach`. Suites that never configure it stay disabled and keep today's behavior (AC-5).
 - **Request counting in tests**: subscribe with `server.events.on('request:start', ({ request }) => ...)`, filter on `config.endpoints.media_urls`, and call `server.events.removeAllListeners()` in `afterEach`.
-- **Sentry in tests**: `vi.mock('@sentry/react', () => ({ captureException: vi.fn() }))`. Nothing inside `MediaUrlSigner` is mocked.
+- **Sentry in tests**: `captureException` is mocked once in `src/vitest-setup.ts` (`vi.mock('@sentry/react', ...)` that keeps the other exports). A `vi.mock` inside a test file is too late: the setup file already loads `MediaUrlSigner` through `testUtils`, so the real Sentry would stay cached. Test files import `* as Sentry` and use `vi.mocked(Sentry.captureException)`. Nothing inside `MediaUrlSigner` is mocked.
 
 ---
 
@@ -150,7 +150,7 @@ description: "Task list for Signed Media URLs in the Flow Editor"
 
 > Write these first. T013 must fail against the current `renderUpload` before T018.
 
-- [ ] T013 [P] [US1] Create `src/components/flow/actions/sendmsg/attachments.test.tsx` (AC-1 bug reproduction, AC-4).
+- [X] T013 [P] [US1] Create `src/components/flow/actions/sendmsg/attachments.test.tsx` (AC-1 bug reproduction, AC-4).
   - **Test hook first**: in `renderUpload` in `src/components/flow/actions/sendmsg/attachments.tsx`, add `data-testid={`download-attachment-${index}`}` to the download `UnnnicIcon` (`icon="download-bottom-1"`). This mirrors `remove-attachment-${index}` on the remove icon, which `MsgLocalizationForm.test.tsx` already clicks with `fireEvent.click(getByTestId(...))` through veaury. It changes no behavior, so the test still fails for the real reason.
   - **Setup**: render `renderAttachments(config.endpoints.attachments, [{ type: 'application/pdf', url: 'https://weni-flows.s3.us-east-1.amazonaws.com/attachments/42/1337/steps/9c1d/report.pdf', uploaded: true }], onUploaded, onAttachmentChanged, onAttachmentRemoved)` inside a fragment with RTL `render` from `test/utils`. Configure the signer, and stub `vi.spyOn(window, 'open').mockReturnValue(tab)` with `tab = { opener: {}, closed: false, location: { href: '' } }`.
   - **Click**: `fireEvent.click(getByTestId('download-attachment-0'))`.
@@ -160,7 +160,7 @@ description: "Task list for Signed Media URLs in the Flow Editor"
     - `await waitFor(() => expect(tab.location.href).toBe(url + '?X-Amz-Signature=test'))`;
     - `onAttachmentChanged` and `onUploaded` were not called.
   - Run it, and confirm that it fails before T018 on the `window.open('', '_blank')` assertion, because the current handler calls `window.open(attachment.url, '_blank')`.
-- [ ] T014 [P] [US1] Create `src/utils/openSignedMedia.test.ts` ([R10](./research.md#r10-opensignedmedia-under-jsdom-and-in-browsers)):
+- [X] T014 [P] [US1] Create `src/utils/openSignedMedia.test.ts` ([R10](./research.md#r10-opensignedmedia-under-jsdom-and-in-browsers)):
   - `window.open('', '_blank')` is called synchronously, so assert it right after `openSignedMedia(...)` returns and before awaiting the promise;
   - `opener` is cleared, and the tab is navigated to the signed URL;
   - when the endpoint answers 500, the tab is navigated to the original URL;
@@ -168,7 +168,7 @@ description: "Task list for Signed Media URLs in the Flow Editor"
   - when `tab.closed` becomes `true` before resolution, `location.href` is never set;
   - the promise never rejects.
   - `vite.config.js` excludes `utils/**` from coverage ([R12](./research.md#r12-coverage-reporting-for-srcutils)). Write the tests anyway.
-- [ ] T015 [US1] Add an AC-4 case to `src/components/flow/actions/sendmsg/SendMsgForm.test.ts` (depends on T013 for the `data-testid`).
+- [X] T015 [US1] Add an AC-4 case to `src/components/flow/actions/sendmsg/SendMsgForm.test.ts` (depends on T013 for the `data-testid`).
   - **File stays `.ts`**: the existing cases use Enzyme `shallow`, which never renders the attachments tab. Add a separate `describe('download with signing')` that renders with RTL through `render(React.createElement(SendMsgForm, props))` from `test/utils`. That helper wraps the `ConfigProvider` that `this.context.config.endpoints` needs and the Redux `Provider`. Import `* as React from 'react'`. Do not rename the file, so its snapshot file keeps its name.
   - **Setup**: build the props with `getActionFormProps(createSendMsgAction({ attachments: ['application/pdf:<canonical url>'] }))`. The `/` in the type makes the attachment `uploaded`, as in `sendmsg/helpers.ts`. Configure the signer, and stub `window.open` as in T013.
   - **Steps**, following the pattern in `MsgLocalizationForm.test.tsx`:
@@ -177,7 +177,7 @@ description: "Task list for Signed Media URLs in the Flow Editor"
     - `await waitFor(...)` until the stub tab's `location.href` is signed;
     - `fireEvent.click(getByText('Ok'))`.
   - **Assertion**: `props.updateAction` receives `attachments: ['application/pdf:<canonical url>']`, and `JSON.stringify` of its calls contains no `X-Amz-Signature`.
-- [ ] T016 [US1] Add an AC-1 translation case to `src/components/flow/actions/localization/MsgLocalizationForm.test.tsx` (depends on T013 for the `data-testid`).
+- [X] T016 [US1] Add an AC-1 translation case to `src/components/flow/actions/localization/MsgLocalizationForm.test.tsx` (depends on T013 for the `data-testid`).
   - **Setup**: use `createSendMsgAction({ attachments: ['application/pdf:<canonical url>'] })`, with the Spanish translation holding the same uploaded attachment. Configure the signer and stub `window.open` as in T013.
   - **axios is mocked here**: this file calls `vi.mock('axios')`, which uses `src/__mocks__/axios.ts`, so msw never sees the signing request. Before clicking, stub the call at the client boundary the way the file's `say_msg` case already does: `// @ts-expect-error` followed by `axios.post.mockResolvedValueOnce({ status: 200, data: { urls: { [url]: url + '?X-Amz-Signature=test' }, expires_in: 3600 } })`.
   - **Steps**: `fireEvent.click(getByText('Attachments'))`, then `fireEvent.click(getByTestId('download-attachment-0'))`.
@@ -185,16 +185,16 @@ description: "Task list for Signed Media URLs in the Flow Editor"
 
 ### Implementation for User Story 1
 
-- [ ] T017 [US1] Create `src/utils/openSignedMedia.ts` per [contracts §4](./contracts/editor-interfaces.md#4-internal-click-time-opening-srcutilsopensignedmediats) (depends on T010, T014).
+- [X] T017 [US1] Create `src/utils/openSignedMedia.ts` per [contracts §4](./contracts/editor-interfaces.md#4-internal-click-time-opening-srcutilsopensignedmediats) (depends on T010, T014).
   - `openSignedMedia(url, options): Promise<void>` calls `const tab = window.open('', '_blank')` synchronously, before any `await`.
   - When `tab` is `null`, it calls `MediaUrlSigner.get().reportFailure('popup_blocked', options.surface)` and returns.
   - Otherwise it sets `tab.opener = null`, awaits `MediaUrlSigner.get().resolve(url, options)`, and sets `tab.location.href` unless `tab.closed`.
   - It never navigates `window.location`, never shows a message, and never rejects.
   - Add a comment explaining that the tab opens synchronously to keep the click's user activation and avoid popup blockers.
-- [ ] T018 [US1] In `renderUpload` in `src/components/flow/actions/sendmsg/attachments.tsx`, replace `window.open(attachment.url, '_blank')` with `openSignedMedia(attachment.url, { surface: 'sendmsg_download' })` (depends on T017).
+- [X] T018 [US1] In `renderUpload` in `src/components/flow/actions/sendmsg/attachments.tsx`, replace `window.open(attachment.url, '_blank')` with `openSignedMedia(attachment.url, { surface: 'sendmsg_download' })` (depends on T017).
   - Keep the rest of the `UnnnicIcon` markup as it is: the `data-testid` from T013 is the only other change. This is the accessibility exception in the plan's Complexity Tracking.
   - Do not touch the upload code, which keeps its existing direct `axios` use under the Principle XVIII exception.
-- [ ] T019 [US1] Run `yarn test run sendmsg/attachments sendmsg/SendMsgForm localization/MsgLocalizationForm utils/openSignedMedia --coverage.enabled=false`. Confirm that T013 now passes. Existing snapshots should be unchanged. If one renders an uploaded attachment, the only diff allowed is the new `data-testid` (depends on T013 to T018).
+- [X] T019 [US1] Run `yarn test run sendmsg/attachments sendmsg/SendMsgForm localization/MsgLocalizationForm utils/openSignedMedia --coverage.enabled=false`. Confirm that T013 now passes. Existing snapshots should be unchanged. If one renders an uploaded attachment, the only diff allowed is the new `data-testid` (depends on T013 to T018).
 
 **Checkpoint**: AC-1 and the attachment half of AC-4 pass. This is the MVP. Commit Phase 3.
 

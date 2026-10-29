@@ -13,6 +13,14 @@ import * as utils from 'utils';
 import { mock } from 'testUtils';
 import { Console } from 'console';
 
+// The setup file already loads MediaUrlSigner through testUtils, so a
+// vi.mock in a test file would come too late to replace Sentry for it.
+// Mocking here makes captureException the same spy for every test file.
+vi.mock('@sentry/react', async importOriginal => ({
+  ...(await importOriginal<typeof import('@sentry/react')>()),
+  captureException: vi.fn(),
+}));
+
 expect.extend(jestMatchers);
 
 expect.extend(matchers);
