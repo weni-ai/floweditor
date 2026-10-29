@@ -44,13 +44,13 @@ description: "Task list for Signed Media URLs in the Flow Editor"
 
 **Commit**: `test: export msw server for handler overrides`
 
-- [ ] T001 [P] Add the optional key `media_urls?: string;` to the `Endpoints` interface in `src/flowTypes.ts`, after `whatsapp_flows`, with no other change ([contracts §1](./contracts/editor-interfaces.md#1-public-host-configuration-srcflowtypests)). It ships in this commit so the test config in T002 type-checks.
-- [ ] T002 Add `media_urls: '/flow/media_urls/a4f64f1b-85bc-477e-b706-de313a022979/'` to `config.endpoints` in `src/test/config.ts` (depends on T001).
-- [ ] T003 [P] Create `src/test/mswServer.ts`. Move the `restHandlers` array and the `setupServer(...restHandlers)` call out of `src/vitest-setup.ts` into it, together with the imports they need (`setupServer`, `http`, `HttpResponse`, `config`), and export both `restHandlers` and `server`.
+- [X] T001 [P] Add the optional key `media_urls?: string;` to the `Endpoints` interface in `src/flowTypes.ts`, after `whatsapp_flows`, with no other change ([contracts §1](./contracts/editor-interfaces.md#1-public-host-configuration-srcflowtypests)). It ships in this commit so the test config in T002 type-checks.
+- [X] T002 Add `media_urls: '/flow/media_urls/a4f64f1b-85bc-477e-b706-de313a022979/'` to `config.endpoints` in `src/test/config.ts` (depends on T001).
+- [X] T003 [P] Create `src/test/mswServer.ts`. Move the `restHandlers` array and the `setupServer(...restHandlers)` call out of `src/vitest-setup.ts` into it, together with the imports they need (`setupServer`, `http`, `HttpResponse`, `config`), and export both `restHandlers` and `server`.
   - The default handlers must be the *initial* handlers passed to `setupServer(...)`. In msw 2.3.1, `server.resetHandlers()` with no arguments restores only the initial handlers, so handlers registered with `server.use(...)` from the setup file would be removed after the first test.
-- [ ] T004 Add the default signing handler to `restHandlers` in `src/test/mswServer.ts`: `http.post(endpoints.media_urls, async ({ request }) => ...)`. It reads `{ urls }` from the JSON body and answers `HttpResponse.json({ urls: { [url]: url + '?X-Amz-Signature=test' }, expires_in: 3600 })` for every requested URL ([R2](./research.md#r2-stubbing-the-signing-endpoint-per-test)). Build the map with `reduce` (depends on T002, T003).
-- [ ] T005 Update `src/vitest-setup.ts` to `import { server } from 'test/mswServer'`. Keep `beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))`, `afterEach` with `cleanup()` and `server.resetHandlers()`, and `afterAll(() => server.close())`. Remove the imports that are no longer used in this file (depends on T003).
-- [ ] T006 Run `yarn test run external simulator --coverage.enabled=false` and confirm that the suites that use msw still pass after the move (depends on T004, T005).
+- [X] T004 Add the default signing handler to `restHandlers` in `src/test/mswServer.ts`: `http.post(endpoints.media_urls, async ({ request }) => ...)`. It reads `{ urls }` from the JSON body and answers `HttpResponse.json({ urls: { [url]: url + '?X-Amz-Signature=test' }, expires_in: 3600 })` for every requested URL ([R2](./research.md#r2-stubbing-the-signing-endpoint-per-test)). Build the map with `reduce` (depends on T002, T003).
+- [X] T005 Update `src/vitest-setup.ts` to `import { server } from 'test/mswServer'`. Keep `beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))`, `afterEach` with `cleanup()` and `server.resetHandlers()`, and `afterAll(() => server.close())`. Remove the imports that are no longer used in this file (depends on T003).
+- [X] T006 Run `yarn test run external simulator --coverage.enabled=false` and confirm that the suites that use msw still pass after the move (depends on T004, T005).
 
 **Checkpoint**: Tests can `import { server } from 'test/mswServer'` and call `server.use(...)`. Commit Phase 1.
 
@@ -66,7 +66,7 @@ description: "Task list for Signed Media URLs in the Flow Editor"
 
 **Commit**: `feat: add media url signing adapter`
 
-- [ ] T007 [P] Write `src/external/media.test.ts` before the adapter. It uses `server.use(...)` from `test/mswServer` for every case except the timeout:
+- [X] T007 [P] Write `src/external/media.test.ts` before the adapter. It uses `server.use(...)` from `test/mswServer` for every case except the timeout:
   - The POST goes to the endpoint with the body `{ urls: [...] }` and the headers `Content-Type: application/json` and `X-Requested-With: XMLHttpRequest`. When `document.cookie` holds `csrftoken=abc`, it also sends `X-CSRFToken: abc`.
   - 25 URLs send two requests of 20 and 5 URLs, in parallel, and return two chunks in input order.
   - A 200 response returns `{ isSigned: true, requestedUrls, signedUrls: Map, expiresInSeconds: 3600 }`, so `expires_in` never appears in the output.
@@ -76,7 +76,7 @@ description: "Task list for Signed Media URLs in the Flow Editor"
   - When one chunk fails and the other succeeds, each gets its own outcome.
   - For the timeout ([R3](./research.md#r3-testing-the-10-second-timeout)), `vi.spyOn(axios, 'post').mockRejectedValueOnce(Object.assign(new Error('timeout of 10000ms exceeded'), { code: 'ECONNABORTED' }))` returns `reason: 'timeout'` with `status: null`.
   - The returned promise never rejects in any of these cases.
-- [ ] T008 Implement `src/external/media.ts` per [contracts §2](./contracts/editor-interfaces.md#2-internal-http-adapter-srcexternalmediats): `SIGNING_TIMEOUT_MS = 10000`, `SIGNING_CHUNK_SIZE = 20`, `MediaSigningFailureReason`, `MediaSigningFailure`, `SignedMediaChunk`, and `getSignedMediaUrls(endpoint, urls)` (depends on T007).
+- [X] T008 Implement `src/external/media.ts` per [contracts §2](./contracts/editor-interfaces.md#2-internal-http-adapter-srcexternalmediats): `SIGNING_TIMEOUT_MS = 10000`, `SIGNING_CHUNK_SIZE = 20`, `MediaSigningFailureReason`, `MediaSigningFailure`, `SignedMediaChunk`, and `getSignedMediaUrls(endpoint, urls)` (depends on T007).
   - Call `axios.post(endpoint, { urls: chunk }, { headers, timeout: SIGNING_TIMEOUT_MS })` once per chunk of at most 20 URLs, in parallel. It must be `axios.post` so that the T007 spy intercepts it.
   - Set `Content-Type: application/json` explicitly, because `src/external/index.ts` sets `axios.defaults.headers.post['Content-Type'] = 'application/javascript'` globally ([R4](./research.md#r4-axios-0212-request-and-error-semantics)). Add `X-Requested-With: XMLHttpRequest`, and add `X-CSRFToken` only when `getCookie('csrftoken')` (from `external`) returns a value.
   - Classify failures in this order: `error.response` present gives `http_error` with `error.response.status`; `error.code === 'ECONNABORTED'` gives `timeout` with `status: null`; anything else gives `network` with `status: null`.
@@ -87,7 +87,7 @@ description: "Task list for Signed Media URLs in the Flow Editor"
 
 **Commit**: `feat: add MediaUrlSigner service`
 
-- [ ] T009 [P] Write `src/services/MediaUrlSigner.test.ts` before the service, using the shared constraints above (Sentry mock, configure in `beforeEach`, request counting):
+- [X] T009 [P] Write `src/services/MediaUrlSigner.test.ts` before the service, using the shared constraints above (Sentry mock, configure in `beforeEach`, request counting):
   - **AC-5**: after `configure(undefined)` or `configure('')`, `resolve(url, { surface: 'simulator' })` and `getResolvedUrl(url)` both return `url`, and no request is sent.
   - **Not signable**: while signing is enabled, `geo:-1.2,3.4`, a `data:` URL, a `blob:` URL, `/relative/image.png` and `@fields.photo` are returned unchanged with no request.
   - **AC-7, cache**:
@@ -115,7 +115,7 @@ description: "Task list for Signed Media URLs in the Flow Editor"
   - **AC-6, surface tagging**: a `simulator` caller starts a request, a `say_msg_audio` caller joins it, and the request fails. Exactly one report is sent, tagged `surface: 'simulator'`.
   - **`reportFailure('popup_blocked', 'sendmsg_download')`**: one report with `tags.reason: 'popup_blocked'` and `extra: { urlCount: 1 }`, without `status`.
   - **`configure(endpoint)` clears the cache**: a URL cached before the call is requested again after it.
-- [ ] T010 Implement `src/services/MediaUrlSigner.ts` per [contracts §3](./contracts/editor-interfaces.md#3-internal-signing-service-srcservicesmediaurlsignerts) and the [data model](./data-model.md#service-types-srcservicesmediaurlsignerts) (depends on T008, T009).
+- [X] T010 Implement `src/services/MediaUrlSigner.ts` per [contracts §3](./contracts/editor-interfaces.md#3-internal-signing-service-srcservicesmediaurlsignerts) and the [data model](./data-model.md#service-types-srcservicesmediaurlsignerts) (depends on T008, T009).
   - **Exports and singleton**:
     - export `MediaSurface`, `ResolveOptions`, `MediaUrlResolution`, `MediaSigningError` and `MediaUrlSigner`, and import `MediaSigningFailureReason` from `external/media` instead of re-exporting it;
     - the singleton follows `FlowStore.get()` in `src/services/FlowStore.ts`;
@@ -131,8 +131,8 @@ description: "Task list for Signed Media URLs in the Flow Editor"
   - **`reportFailure(reason, surface)`** reports with `extra: { urlCount: 1 }`.
   - **Reporting**: always call `Sentry.captureException(new MediaSigningError(reason), { tags: { feature: 'media-signing', surface, reason }, extra })`. Never pass a URL or the axios error.
   - **Comments** (Principle IX): explain why entries expire early, and why signed URLs never leave memory.
-- [ ] T011 In `src/main.jsx`, import `MediaUrlSigner` from `services/MediaUrlSigner` and call `MediaUrlSigner.get().configure(config.endpoints.media_urls)` inside `window.showFlowEditor`, after the `setHTTPTimeout` block and before `ReactDOM.render` (depends on T010).
-- [ ] T012 Run `yarn test run services/MediaUrlSigner external/media --coverage.enabled=false` and confirm everything passes with no unhandled rejection (depends on T010, T011).
+- [X] T011 In `src/main.jsx`, import `MediaUrlSigner` from `services/MediaUrlSigner` and call `MediaUrlSigner.get().configure(config.endpoints.media_urls)` inside `window.showFlowEditor`, after the `setHTTPTimeout` block and before `ReactDOM.render` (depends on T010).
+- [X] T012 Run `yarn test run services/MediaUrlSigner external/media --coverage.enabled=false` and confirm everything passes with no unhandled rejection (depends on T010, T011).
 
 **Checkpoint**: The service is complete, and it is inert while `media_urls` is absent. Commit the adapter (T007, T008), then the service (T009 to T011).
 
