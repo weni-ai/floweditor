@@ -1,0 +1,833 @@
+{
+  "actions": {
+    "search": "Căutare...",
+    "add_contact_groups": {
+      "description": "Adaugă contactul la un grup",
+      "name": "Adaugă la grup"
+    },
+    "add_contact_urn": {
+      "description": "Adaugă un URN contactului",
+      "name": "Adaugă URN"
+    },
+    "add_input": {
+      "description": "Adaugă un tag la mesajul primit",
+      "name": "Adaugă tag"
+    },
+    "automatic_classify": {
+      "description": "Clasifică automat",
+      "name": "Clasifică automat"
+    },
+    "call_brain": {
+      "description": "Redirecționează către echipa de agenți",
+      "name": "Redirecționează către echipa de agenți"
+    },
+    "call_resthook": {
+      "description": "Apelează Zapier",
+      "name": "Apelează Zapier"
+    },
+    "call_webhook": {
+      "description": "Apelează un webhook",
+      "name": "Apelează webhook"
+    },
+    "call_wenigpt": {
+      "description": "Interoghează WeniGPT",
+      "name": "Interoghează WeniGPT"
+    },
+    "enter_flow": {
+      "description": "Intră într-un alt flux",
+      "name": "Intră într-un alt flux"
+    },
+    "external_service": {
+      "description": "Apelează un serviciu extern",
+      "name": "Apelează serviciu extern"
+    },
+    "open_ticket": {
+      "description": "Deschide un tichet cu un reprezentant",
+      "name": "Deschide tichet"
+    },
+    "play_audio": {
+      "description": "Redă o înregistrare a contactului",
+      "name": "Redă înregistrare"
+    },
+    "play_message": {
+      "description": "Redă un mesaj",
+      "name": "Redă mesaj"
+    },
+    "remove_contact_groups": {
+      "description": "Elimină contactul dintr-un grup",
+      "name": "Elimină din grup"
+    },
+    "say_msg": {
+      "placeholder": "Trimite un mesaj contactului"
+    },
+    "send_broadcast": {
+      "description": "Trimite un mesaj către alt contact",
+      "name": "Trimite difuzare",
+      "placeholder": "Trimite un mesaj contactului"
+    },
+    "send_email": {
+      "description": "Trimite un e-mail",
+      "name": "Trimite e-mail"
+    },
+    "send_msg": {
+      "description": "Trimite un mesaj contactului",
+      "name": "Trimite mesaj",
+      "placeholder": "Trimite un mesaj contactului"
+    },
+    "set_contact_field": {
+      "description": "Actualizează contactul",
+      "name": "Actualizează contactul"
+    },
+    "set_run_result": {
+      "description": "Salvează rezultatul pentru acest flux",
+      "name": "Salvează rezultatul fluxului"
+    },
+    "split_by_contact_field": {
+      "description": "Împarte după câmpul de contact",
+      "name": "Împarte după câmpul de contact"
+    },
+    "split_by_expression": {
+      "description": "Împarte după o expresie personalizată",
+      "name": "Împarte după expresie"
+    },
+    "split_by_groups": {
+      "description": "Împarte după grupul de contact",
+      "name": "Împarte după grup"
+    },
+    "split_by_intent": {
+      "description": "Împarte după intenție",
+      "name": "Împarte după intenție"
+    },
+    "split_by_random": {
+      "description": "Împarte aleatoriu",
+      "name": "Împarte aleatoriu"
+    },
+    "split_by_run_result": {
+      "description": "Împarte după rezultatul fluxului",
+      "name": "Împarte după rezultatul fluxului"
+    },
+    "split_by_scheme": {
+      "description": "Împarte după tipul URN",
+      "name": "Împarte după tipul URN"
+    },
+    "start_session": {
+      "description": "Pornește un alt contact într-un flux",
+      "name": "Pornește un alt contact"
+    },
+    "transfer_airtime": {
+      "description": "Trimite airtime contactului",
+      "name": "Trimite airtime"
+    },
+    "wait_for_audio": {
+      "description": "Așteaptă o înregistrare audio",
+      "name": "Așteaptă audio"
+    },
+    "wait_for_dial": {
+      "description": "Așteaptă un apel redirecționat către altcineva",
+      "name": "Așteaptă apel redirecționat"
+    },
+    "wait_for_digits": {
+      "description": "Așteaptă mai multe cifre",
+      "name": "Așteaptă cifre"
+    },
+    "wait_for_image": {
+      "description": "Așteaptă o imagine",
+      "name": "Așteaptă imaginea"
+    },
+    "wait_for_location": {
+      "description": "Așteaptă coordonatele de localizare GPS",
+      "name": "Așteaptă localizarea"
+    },
+    "wait_for_menu": {
+      "description": "Așteaptă selecția din meniu",
+      "name": "Așteaptă selecția din meniu"
+    },
+    "wait_for_response": {
+      "description": "Așteaptă răspunsul contactului",
+      "name": "Așteaptă răspuns"
+    },
+    "wait_for_video": {
+      "description": "Așteaptă un videoclip",
+      "name": "Așteaptă videoclipul"
+    },
+    "send_msg_catalog": {
+      "name": "Trimite produs prin WhatsApp",
+      "complete_catalog": "Catalog complet",
+      "description": "Trimite un produs prin WhatsApp",
+      "automatic_sending": "Trimitere automată",
+      "manual_sending": "[[count]] produs",
+      "manual_sending_plural": "[[count]] produse",
+      "manual_sending_multiple": "+3 produse"
+    },
+    "send_whatsapp_msg": {
+      "description": "Trimite mesaj WhatsApp",
+      "name": "Mesaj WhatsApp"
+    },
+    "smart_wait_for_response": {
+      "description": "Așteaptă răspuns inteligent",
+      "name": "Așteaptă răspuns inteligent"
+    }
+  },
+  "add": "Adăugare",
+  "set": "Set",
+  "to": "în",
+  "asset_selector": {
+    "placeholder": "Selectează un [[name]] existent sau adaugă unul nou",
+    "placeholder_plural": "Selectează [[name]] existente sau adaugă unul nou"
+  },
+  "assets": {
+    "classifier": "Apelează clasificatorul <1>[[name]]</1>",
+    "ticketer": "Deschide un tichet nou în [[name]]"
+  },
+  "body": "Corp",
+  "buttons": {
+    "cancel": "Anulează",
+    "create_message": "Creează mesaj",
+    "download": "Descărcare",
+    "ok": "OK",
+    "close": "Închide",
+    "confirm": "Confirm",
+    "after": "Mai târziu",
+    "later": "Poate mai târziu",
+    "save": "Salvează",
+    "upload": "Încarcă fișierul"
+  },
+  "contact_statuses": {
+    "active": "Activ",
+    "archived": "Arhivat – Elimină din grupuri, ignoră pentru totdeauna",
+    "blocked": "Blocat – Elimină din grupuri, ignoră pentru totdeauna",
+    "stopped": "Oprit – Elimină din grupuri, ignoră până când trimit din nou un mesaj"
+  },
+  "context_explorer": {
+    "copied_expression": "S-a copiat <1>[[expression]]</1> în clipboard",
+    "hide_empty": "Se afișează cheile cu valori",
+    "show_empty": "Se afișează toate cheile"
+  },
+  "create_block": "Creează bloc",
+  "search_in_nodes": "Caută bloc",
+  "create_label": "Creează tag",
+  "disabled_copy_tooltip": "Selectează unul sau mai multe blocuri pentru copiere",
+  "copy_tooltip": "Copiază bloc(uri)",
+  "document": "Document",
+  "drag": "Glisează",
+  "drag_helper": "Pentru a conecta noduri, <1>glisează</1> din cercul roșu.",
+  "email": {
+    "subject": "Subiect",
+    "to": "To"
+  },
+  "empty_flow_message_title": "Să începem",
+  "empty_flow_message_description": "Îți recomandăm să pornești fluxul trimițând un mesaj. Acest mesaj va fi trimis oricărei persoane care intră în fluxul tău. Aceasta este șansa ta să trimiți un mesaj sau să pui o întrebare.",
+  "enter_to_create_group": "Introdu un nume pentru a crea un grup nou",
+  "enter_to_create_label": "Introdu numele unui tag existent sau creează unul nou",
+  "errors": {
+    "group_not_found": "Introdu numele unui grup existent",
+    "http_header_missing_name": "Introdu un nume pentru antetele HTTP",
+    "network": "Nu s-au putut salva modificările. Este posibil ca conexiunea la internet să nu funcționeze corect. Așteaptă un moment și încearcă din nou.",
+    "server": "A apărut o eroare la salvarea modificărilor. Dacă problema persistă, contactează echipa de asistență și descrie ce încercai să faci."
+  },
+  "flow_start": "Inițiere flux",
+  "form": {
+    "result": "Rezultat"
+  },
+  "forms": {
+    "action": "Titlul butonului de acțiune",
+    "add_attachment": "Adaugă un fișier",
+    "add_groups_summary": "Selectează grupurile în care să adaugi contactul",
+    "add_labels_summary": "Selectează tag-urile de aplicat la mesajul primit",
+    "add_quick_reply": "Adaugă un răspuns rapid nou și apasă Enter",
+    "add_urn_summary": "Adaugă un URN nou pentru a găsi contactul",
+    "advanced": "Avansat",
+    "all_destinations": "Trimite mesaj la toate destinațiile",
+    "all_destinations_title": "Trimite un mesaj la toate destinațiile cunoscute ale acestui contact",
+    "all_destinations_description": "Dacă nu ești sigur ce înseamnă asta, lasă-l nebifat",
+    "and": "și",
+    "are_required": "sunt obligatorii",
+    "arguments": "argumente",
+    "assignee": "Utilizator",
+    "assign_to_optional": "Atribuie (opțional)",
+    "attachment_optional": "Fișier media (opțional)",
+    "attachment_placeholder": "Lipește un URL sau încarcă un fișier",
+    "attachments": "Atașamente",
+    "audio_url": "URL audio",
+    "automatic_classify": {
+      "category_description": "Definește categoria pentru a clasifica răspunsul contactului",
+      "category_title": "Clasifică ca",
+      "words_description": "Cuvinte unice legate de categorie",
+      "words_title": "Cuvinte"
+    },
+    "body": "Corp",
+    "brain": {
+      "entry": "Introdu o expresie pentru a o folosi ca input pentru Brain. Pentru a folosi ultimul răspuns al contactului, folosește @input.text"
+    },
+    "buckets": "Bucketuri",
+    "bucket": "Bucket",
+    "option_buckets": " bucketuri",
+    "call": "Apelează",
+    "categories": "categorii",
+    "categorize_as": "Clasifică ca:",
+    "category": "Categorie (opțional)",
+    "category_placeholder": "Categorie",
+    "category_required": "Categorie",
+    "channel": "Canal",
+    "channel_type": "Canale",
+    "classifier": "Clasificator",
+    "clear": "Ștergere",
+    "confidence": "încredere",
+    "contact_field": "Câmp de contact",
+    "contact_query": "Interogare contact",
+    "continue_when_no_response": "Continuă când nu există răspuns",
+    "wait_response_for": "Așteaptă răspuns pentru:",
+    "create_group": "Creează grup",
+    "create_prefix": "Nou:",
+    "currency": "Monedă",
+    "custom_search": "Căutare personalizată",
+    "custom_search_api_url": "URL API căutare personalizată",
+    "day": "zi",
+    "days": "zile",
+    "default_search": "Căutare implicită",
+    "delimit": "Delimitează",
+    "delimit_result": "Delimitează rezultatul",
+    "delimit_result_description": "Evaluează regulile față de o parte delimitată a rezultatului tău",
+    "delimiter": "Delimitator",
+    "description": "Descriere",
+    "description_optional": "Descriere (opțional)",
+    "district": "District",
+    "disclaimer": {
+      "title": "Acum poți <1>[[highlight]]</1> folosind WhatsApp Flows.",
+      "highlight": "creează interacțiuni mai bogate",
+      "link": "Află mai multe"
+    },
+    "email_recipient_name": "Recipient",
+    "email_recipient_placeholder": "Adaugă un e-mail și apasă Enter",
+    "email_recipient_prompt": "Introdu adresa de e-mail",
+    "enter_a_body": "Introdu un corp",
+    "enter_a_subject": "Introdu un subiect",
+    "enter_a_url": "Introdu un URL",
+    "enter_field_value": "Introdu o nouă valoare pentru [[field]]",
+    "enter_flow_parameters_summary": "<0>[[flow]]</0> se așteaptă ca următorii parametri să fie setați de acest flux. Îi poți seta folosind o acțiune <4>Salvează rezultatul fluxului</4> sau direct mai jos.",
+    "enter_flow_parameters_tab": "Parametri",
+    "enter_new_name": "Introdu un nou nume de contact",
+    "enter_urn_value": "Introdu o valoare URN",
+    "exit_name": "Nume ieșire",
+    "expression": "Expresie",
+    "expression_input": "Introdu o expresie pentru a o folosi ca input",
+    "expression_input_placeholder": "Ex.: @input.text",
+    "expression_label": "Dacă expresia",
+    "externalService": "Serviciu extern",
+    "external_service": "Serviciu extern",
+    "external_service_call": "Apel serviciu extern",
+    "field": "Câmp",
+    "field_number": "Numărul câmpului",
+    "field_value": "Valoarea câmpului",
+    "filter": "Filtrare",
+    "footer": "Subsol (opțional)",
+    "flow": "Flux",
+    "flow_to_start": "Flux de pornit",
+    "flow_result": "Rezultat flux",
+    "groups": "Grupuri",
+    "header": "Antet",
+    "header_name": "Numele antetului",
+    "header_optional": "Antet (opțional)",
+    "header_text": "Textul antetului",
+    "http_headers": "Anteturi HTTP",
+    "image_url": "URL imagine",
+    "instagram": {
+      "response_types": {
+        "none": "Niciunul",
+        "tag": "Asistență tag-uri pentru DM-uri",
+        "dm_comment": "Trimite DM ca răspuns la un comentariu",
+        "comment": "Răspunde la un comentariu"
+      },
+      "tags": {
+        "human_agent": "Agent"
+      },
+      "descriptions": {
+        "tag": "Permite trimiterea unui mesaj în afara ferestrei de 24 de ore",
+        "dm_comment": "Când cineva comentează la o postare, poți răspunde cu un mesaj direct (DM) către persoana care a comentat, păstrând interacțiunea privată.",
+        "comment": "Când cineva comentează la o postare, poți răspunde direct în secțiunea de comentarii a postării, păstrând interacțiunea publică."
+      }
+    },
+    "intent": "Intenție",
+    "interactions": "Interacțiuni",
+    "is_not_a_valid_regex": "nu este o expresie regex validă",
+    "is_not_finished": "nu este finalizat",
+    "is_required": "este obligatoriu",
+    "integration_with": "Integrare cu...",
+    "knowledge_base": "Bază de cunoștințe",
+    "knowledge_base_click": "Fă click aici",
+    "knowledge_base_message": "Nu ai încă nicio bază de cunoștințe pentru IA-ul tău?",
+    "knowledge_base_placeholder": "Selectează o bază de cunoștințe",
+    "labels": "Etichete",
+    "language": "Limbă",
+    "list_button_text": "Textul butonului de acțiune",
+    "list_button_text_optional": "Textul butonului de acțiune (opțional)",
+    "list_button_text_placeholder": "Textul butonului de acțiune",
+    "list_button_url": "URL buton de acțiune",
+    "list_items": "Listă de opțiuni",
+    "list_option": "Opțiune",
+    "empty_option": "Nefinalizată",
+    "localize_rules": "Uneori, limbile au nevoie de reguli speciale pentru a direcționa corect. Dacă nu se furnizează o traducere, se va folosi regula originală.",
+    "localized_quick_replies": "Adaugă un răspuns rapid nou în [[language]] și apasă Enter.",
+    "manually_select_products": "Selectează produse manual",
+    "maximum_value": "Valoare maximă",
+    "message": "Mesaj",
+    "message_type": "Tip de mesaj",
+    "message_label": "Dacă răspunsul la mesaj",
+    "method": "Metodă",
+    "minimum_value": "Valoare minimă",
+    "must_be_less_than": "trebuie să fie mai mic decât",
+    "name": "Denumire",
+    "no_products": "Nu ai niciun produs",
+    "none": "Niciunul",
+    "operand": "Câmp de intrare",
+    "operator": "operator",
+    "options_label": "Adaugă până la 10 opțiuni",
+    "param": "Parametru",
+    "parameter": "Parametru",
+    "params": "Parametri",
+    "pdf_url": "URL document PDF",
+    "phone_number": "Telefon",
+    "play_audio_help_text": "Introdu o variabilă care include o înregistrare a contactului făcută anterior. De exemplu, @results.voicemail sau @fields.short_bio.",
+    "postal_code": "Cod poștal (opțional)",
+    "product_help_text": "Câmpurile au limite de caractere: 60 de caractere pentru antet și subsol, 1024 pentru corp și 20 pentru titlul butonului de acțiune.",
+    "product_search": "Căutare produse",
+    "product_search_label": "Introdu o expresie pentru a o folosi ca input",
+    "product_search_placeholder": "Ex.: @input.text",
+    "product_view_settings": "Setări vizualizare (obligatoriu)",
+    "products": "Produse",
+    "quick_replies": "Răspunsuri rapide",
+    "quick_replies_limit": "Poți adăuga până la 10 răspunsuri rapide",
+    "quick_replies_summary": "Răspunsurile rapide sunt transformate în butoane pentru canalele acceptate. De exemplu, când pui o întrebare, poți adăuga un răspuns rapid pentru „Da” și altul pentru „Nu”.",
+    "quick_reply": "Răspuns rapid",
+    "general": "Generală",
+    "recipients": "Destinatari",
+    "contacts": "Contacte",
+    "recording": "Se înregistrează",
+    "recording_label": "Înregistrare anterioară",
+    "remove": "Eliminare",
+    "remove_groups_type_label": "Grupurile din care va fi eliminat contactul:",
+    "remove_groups_type_values_selected_label": "Selectat",
+    "remove_groups_type_values_all_label": "Toate",
+    "remove_from_all_label": "Elimină din toate",
+    "remove_from_all_summary": "Elimină contactele active din toate grupurile din care fac parte.",
+    "remove_groups_placeholder": "Introdu numele unui grup existent",
+    "remove_groups_summary": "Selectează grupurile din care să elimini contactele",
+    "remove_value": "Elimină valoare",
+    "replies_label": "Adaugă până la 3 răspunsuri rapide",
+    "reply": "Răspuns",
+    "required": "Obligatorie",
+    "resthook": "Resthook",
+    "resthook_to_call": "Selectează resthook-ul de apelat",
+    "result": "Rezultat",
+    "result_category_help": "O categorie opțională pentru rezultatul tău. Pentru vârstă, valoarea ar putea fi 17, dar categoria ar putea fi „Adolescent”",
+    "result_name": "Numele rezultatului",
+    "result_name_help": "Numind rezultatul, îl poți desemna mai târziu folosind [[resultFormat]]",
+    "result_to_split_on": "Rezultat pentru împărțire",
+    "result_value_help": "Valoarea de salvat pentru acest rezultat sau gol pentru a o șterge. Poți folosi expresii, precum @(title(input))",
+    "rules": "reguli",
+    "save_as": "Salvează ca",
+    "save_as_title": "Salvează ca",
+    "save_result_name": "Salvează ca rezultat",
+    "search_and_send_products_automatically": "Caută și trimite produse automat",
+    "select_an_option": "Selectează o opțiune",
+    "select_channel": "Selectează canalul de utilizat pentru acest contact",
+    "select_contacts": "Selectează contacte",
+    "select_external_service": "Selectează serviciul extern de utilizat",
+    "select_flow": "Selectează fluxul de pornit",
+    "select_groups": "Selectează grupuri",
+    "select_intent": "Selectează intenția",
+    "select_language": "Selectează limba de utilizat pentru acest contact",
+    "select_products_to_send": "Selectează produsele de trimis",
+    "select_result": "Selectează rezultatul",
+    "select_what_to_update": "Selectează ce să actualizezi",
+    "create_contact_field": "Creează un câmp de contact: ",
+    "select_who_to_start": "Selectează cine trebuie pornit în flux",
+    "seller_id": "ID seller (opțional)",
+    "send_complete_catalog": "Trimite catalogul complet",
+    "send_msg_facebook_topic_placeholder": "Selectează un subiect pentru Facebook",
+    "send_msg_facebook_warning": "Trimiterea mesajelor în masă printr-un canal Facebook necesită specificarea unui subiect dacă utilizatorul nu a trimis un mesaj în ultimele 24 de ore. Setarea unui subiect pentru Facebook este deosebit de importantă pentru primul mesaj din fluxul tău.",
+    "send_product": {
+      "header_info": "Un antet personalizat poate fi trimis doar când \nsunt selectate mai multe produse."
+    },
+    "service_call_param": "Parametrul apelului de serviciu",
+    "service_call_param_data": "Datele parametrului apelului de serviciu",
+    "service_call_param_filter": "Filtrul parametrului apelului de serviciu",
+    "smart_wait": {
+      "category_description": "Definește categoria pentru a clasifica răspunsul contactului.",
+      "category_title": "Clasifică ca",
+      "command_phrases_description": "Scrie fraze de comandă legate de categorie",
+      "command_phrases_title": "Propoziții de comandă",
+      "description_alert": "<0>Important:</0>Editează proiectul, <2>adaugă o descriere</2> și fă IA și mai puternică.",
+      "words_description": "Cuvinte unice legate de categorie",
+      "words_title": "Cuvinte"
+    },
+    "send_msg_summary": "Adaugă un atașament la fiecare mesaj. Atașamentul poate fi un fișier pe care îl încarci sau un URL dinamic folosind expresii și variabile din fluxul tău.",
+    "send_msg_summary_plural": "Adaugă un atașament la fiecare mesaj. Atașamentul poate fi un fișier pe care îl încarci sau un URL dinamic folosind expresii și variabile din fluxul tău.",
+    "sms_counter_info": "Acest mesaj are [[characters]] caractere și va folosi [[messages]] mesaje pentru a fi trimis prin SMS",
+    "split_by_channel_placeholder": "Selectează canalele după care să împarți",
+    "split_by_groups": "Selectează mai jos grupurile după care dorești să împarți",
+    "split_by_scheme": "Tipuri de canal",
+    "split_by_scheme_summary": "URN-ul contactului este adresa pe care o folosesc pentru a comunica cu tine, cum ar fi un număr de telefon sau un ID Facebook. Selectează tipurile de URN după care să împarți.",
+    "start_type": "Tip de pornire",
+    "start_type_create": "Creează un contact nou",
+    "start_type_manual": "Selectează destinatari manual",
+    "start_type_query": "Selectează destinatari dintr-o căutare",
+    "state": "Stat",
+    "status": "Status",
+    "subject": "Subiect",
+    "subject_placeholder": "Ex.: Comanda ta a fost livrată",
+    "email_message": "Textul e-mailului",
+    "email_message_placeholder": "Introdu textul e-mailului",
+    "template": "șablon",
+    "the_maximum": "maximul",
+    "the_minimum": "minimul",
+    "ticketer": "Sistem de asistență",
+    "ticketer_placeholder": "Selectează serviciul de asistență de utilizat",
+    "timeout": "Timp de așteptare",
+    "timeout_1 day": "1 zi",
+    "timeout_1 hour": "1 oră",
+    "timeout_1 minute": "1 minut",
+    "timeout_1 week": "1 săptămână",
+    "timeout_10 minutes": "10 minute",
+    "timeout_12 hours": "12 ore",
+    "timeout_15 minutes": "15 minute",
+    "timeout_15 seconds": "15 secunde",
+    "timeout_18 hours": "18 ore",
+    "timeout_2 days": "2 zile",
+    "timeout_2 hours": "2 ore",
+    "timeout_2 minutes": "2 minute",
+    "timeout_3 days": "3 zile",
+    "timeout_3 hours": "3 ore",
+    "timeout_3 minutes": "3 minute",
+    "timeout_30 seconds": "30 de secunde",
+    "timeout_4 minutes": "4 minute",
+    "timeout_45 seconds": "45 de secunde",
+    "timeout_5 minutes": "5 minute",
+    "timeout_6 hours": "6 ore",
+    "title": "Titlu",
+    "today": "azi",
+    "today_proper": "Astăzi",
+    "topic": "Subiect",
+    "topic_placeholder": "Selectează subiectul",
+    "topic_prefix": "Creează subiect: ",
+    "translation": "Traducere",
+    "type": "Tip",
+    "type_label": "Când un contact ajunge la acest punct din flux...",
+    "type_options": "Opțiuni tip",
+    "upload_attachment": "Încarcă fișierul",
+    "url": "URL",
+    "urn": "Valoare URN",
+    "urn_type": "Tip URN",
+    "use_as_default_language": "Folosește ca limbă implicită",
+    "value": "Valoare",
+    "variable": "Variabilă",
+    "video_url": "URL video",
+    "vtex_search": "Căutare VTEX",
+    "webhook_body_summary": "Modifică corpul cererii [[method]] care va fi trimisă webhook-ului tău",
+    "webhook_body_placeholder": "Corpul cererii",
+    "webhook_example": "Acest răspuns ar trebui să adauge <1>@webhook.product</1> și <4>@webhook[\"stock level\"]</4> pentru utilizare într-un flux.",
+    "webhook_header": "Antet",
+    "webhook_header_name": "Numele antetului",
+    "webhook_header_summary": "Adaugă mai jos orice anteturi suplimentare pe care dorești să le trimiți cu cererea ta",
+    "webhook_help": "Dacă serverul tău răspunde cu JSON, fiecare proprietate va fi adăugată la flux.",
+    "whatsapp_warning": "Trimiterea mesajelor printr-un canal WhatsApp necesită un șablon dacă nu ai primit un mesaj de la contact în ultimele 24 de ore. Configurarea unui șablon pentru WhatsApp este deosebit de importantă pentru primul mesaj din fluxul tău.",
+    "file": "Fișier",
+    "execute": "Rulează ",
+    "the_last_response": "ultimul răspuns",
+    "through_the_classifier": " prin clasificator",
+    "above": "Deasupra",
+    "classifier_input": "Input clasificator",
+    "classifier_input_description": "Introdu o expresie pentru a o folosi ca input pentru clasificatorul tău. Pentru a clasifica ultimul răspuns al contactului, folosește",
+    "select_contact_field_label": "Dacă contactul",
+    "select_result_label": "Dacă rezultatul",
+    "select_result_placeholder": "Selectează rezultatul",
+    "select_quantity_of_buckets_label": "Împarte aleatoriu în",
+    "save": "Salvează",
+    "as": "ca",
+    "All Responses": "Toate răspunsurile",
+    "No Response": "Fără răspuns",
+    "Any Value": "Orice valoare",
+    "Other": "Altele",
+    "Success": "Succes",
+    "Failure": "Eroare",
+    "Complete": "Finalizează",
+    "Expired": "Expirată",
+    "remove_from_all_groups": "Elimină din toate grupurile",
+    "split_by": "Împarte după",
+    "type_here": "Scrie aici...",
+    "select_the_file_type": "Selectează tipul de fișier",
+    "ex_cart": "Ex.: Coș",
+    "ex_shop": "Ex.: Cumpărături",
+    "ex_weni": "Ex.: weni.ai",
+    "ex_accept": "Ex.: Accept",
+    "ex_application_json": "Ex.: application/json",
+    "ex_citrus_and_sweet": "Ex.: Citric și dulce",
+    "ex_footer": "Ex.: Subsol",
+    "ex_menu": "Ex.: Meniu",
+    "ex_offers": "Ex.: Oferte",
+    "ex_orange": "Ex.: Portocaliu",
+    "ex_products_action": "Ex.: Cumpără acum",
+    "ex_products_body": "Ex.: Ofertele sunt valabile 5 zile",
+    "ex_results": "Ex.: @results.seller_id",
+    "ex_smart_argument": "Ex.: Când utilizatorul te salută",
+    "ex_smart_category": "Ex.: Salut",
+    "action_button_text": "Textul butonului de acțiune",
+    "action_button_url": "URL buton de acțiune",
+    "action_button_url_placeholder": "Ex.: https://www.restaurantmenu.com"
+  },
+  "guiding": {
+    "close_tour": "Închide turul",
+    "control_tools": {
+      "0": {
+        "description": "Fă click aici, apasă „V” sau ține apăsată bara de spațiu pentru a activa instrumentul Mână. Apoi, fă click și trage pentru a naviga în fluxul tău.",
+        "title": "Selectează și trage"
+      },
+      "1": {
+        "description": "Acum poți mări nativ fără a mări întregul browser, ceea ce facilitează navigarea prin carduri.",
+        "title": "Instrument zoom"
+      },
+      "2": {
+        "description": "Fluxul tău este prea mare și greu de navigat? Fă click aici sau folosește comanda rapidă Ctrl + Enter pentru a reveni la începutul fluxului.",
+        "title": "Inițiere flux"
+      }
+    },
+    "v2": {
+      "0": {
+        "button": "Am înțeles 1/3",
+        "description": "Pur și simplu fă click pe acest buton pentru a crea un bloc nou.",
+        "title": "Bloc nou"
+      },
+      "1": {
+        "button": "Am înțeles 2/3",
+        "description": "În sfârșit poți copia și lipi blocuri oriunde dorești, inclusiv în\nalt flux. Fă click pe buton sau folosește comanda rapidă Ctrl C + Ctrl V.",
+        "title": "Copiază și lipește"
+      },
+      "2": {
+        "button": "Am înțeles 3/3",
+        "description": "Simulatorul reproduce acum interfața WhatsApp,\nastfel poți previzualiza mai precis cum va fi afișat fluxul tău.",
+        "title": "Layout WhatsApp în simulator"
+      }
+    }
+  },
+  "issues": {
+    "header": "Probleme flux",
+    "label": "Probleme flux",
+    "legacy_extra": "S-a găsit o expresie regulată invalidă: [[regex]]",
+    "missing_dependency": "Nu s-a putut găsi [[type]] pentru <1>[[name]]</1>"
+  },
+  "new": "Nou",
+  "new_updates": {
+    "buttons": {
+      "first": "Închide",
+      "second": "Afișează tot"
+    },
+    "description": "Ce e nou?",
+    "footer": "Nu ezita să trimiți feedback despre experiența ta",
+    "news": {
+      "fifth": "Acum este mai ușor să găsești începutul fluxului tău",
+      "first": "Acum poți folosi instrumentul „mână” pentru a naviga în fluxul tău",
+      "fourth": "Modalul de evaluare are un aspect nou și ocupă mai puțin spațiu pe ecranul tău",
+      "second": "Instrument zoom",
+      "third": "Este mai ușor să vezi unde merge fluxul tău cu noile culori pe săgețile care conectează blocurile"
+    },
+    "title": "Avem câteva noutăți!"
+  },
+  "operators": {
+    "has_all_words": "conține toate cuvintele",
+    "has_any_word": "conține oricare dintre cuvinte",
+    "has_beginning": "începe cu",
+    "has_category": "are categoria",
+    "has_date": "conține o dată",
+    "has_date_category": "Conține dată",
+    "has_date_eq": "conține o dată egală cu",
+    "has_date_gt": "conține o dată după",
+    "has_date_lt": "conține o dată înainte de",
+    "has_district": "are district",
+    "has_district_category": "Are district",
+    "has_email": "conține un e-mail",
+    "has_email_category": "Conține e-mail",
+    "has_error": "conține o eroare",
+    "has_error_category": "Conține eroare",
+    "has_group": "este în grup",
+    "has_intent": "are intenție",
+    "has_number": "conține un număr",
+    "has_number_between": "conține un număr între",
+    "has_number_eq": "conține un număr egal cu",
+    "has_number_gt": "conține un număr mai mare decât",
+    "has_number_gte": "conține un număr mai mare sau egal cu",
+    "has_number_lt": "conține un număr mai mic decât",
+    "has_number_lte": "conține un număr mai mic sau egal cu",
+    "has_only_phrase": "conține doar propoziția",
+    "has_pattern": "corespunde regex",
+    "has_phone": "conține un număr de telefon",
+    "has_phone_category": "Conține telefon",
+    "has_phrase": "conține propoziția",
+    "has_state": "are stare",
+    "has_state_category": "Are stare",
+    "has_text": "conține text",
+    "has_time": "conține un interval orar",
+    "has_top_intent": "are intenția principală",
+    "has_value": "nu este gol",
+    "has_value_category": "Nu este gol",
+    "has_ward": "are cartier",
+    "has_ward_category": "Are cartier"
+  },
+  "or": "sau",
+  "recent_messages": {
+    "header": "Mesaje recente",
+    "header_empty": "Niciun mesaj recent"
+  },
+  "removal_confirmation": "Ștergi cardul?",
+  "removal_confirmation_description": "Ești sigur că vrei să ștergi cardul?",
+  "action_cannot_be_reversed": "Această acțiune nu poate fi anulată.",
+  "revisions": {
+    "current": "curent",
+    "header": "Revizii",
+    "label": "Istoricul reviziilor",
+    "revert": "restabilește"
+  },
+  "schemes": {
+    "email": {
+      "name": "E-mail",
+      "path": "Adresă de e-mail"
+    },
+    "external": {
+      "name": "Extern",
+      "path": "ID extern"
+    },
+    "facebook": {
+      "path": "Facebook"
+    },
+    "firebase": {
+      "name": "Firebase",
+      "path": "ID Firebase"
+    },
+    "freschat": {
+      "name": "Freshchat"
+    },
+    "freshchat": {
+      "path": "ID Freshchat"
+    },
+    "instagram": {
+      "name": "Instagram",
+      "path": "ID Instagram"
+    },
+    "jiochat": {
+      "path": "ID Jiochat"
+    },
+    "jiojach": {
+      "name": "Jiochat"
+    },
+    "line": {
+      "name": "Linie",
+      "path": "ID linie"
+    },
+    "phone": {
+      "name": "SMS",
+      "path": "Telefon"
+    },
+    "slack": {
+      "name": "Slack",
+      "path": "ID Slack"
+    },
+    "teams": {
+      "name": "Teams",
+      "path": "ID Teams"
+    },
+    "telegram": {
+      "name": "Telegram",
+      "path": "ID Telegram"
+    },
+    "twitter": {
+      "name": "X",
+      "path": "Identificator X"
+    },
+    "twitterid": {
+      "name": "X",
+      "path": "ID X"
+    },
+    "viber": {
+      "name": "Viber",
+      "path": "ID Viber"
+    },
+    "wechat": {
+      "name": "Wechat",
+      "path": "ID Wechat"
+    },
+    "whatsapp": {
+      "name": "WhatsApp",
+      "path": "Număr WhatsApp"
+    }
+  },
+  "select": "Selectare",
+  "simulator": {
+    "added_to_group": "Adăugat la",
+    "airtime_transferred": "S-au transferat [[amount]] [[currency]] către [[recipient]]",
+    "contact_field_changed": "S-a setat \"[[field]]\" al contactului la \"[[value]]\"",
+    "contact_field_cleared": "S-a șters \"[[field]]\" al contactului",
+    "contact_language_changed": "S-a setat limba preferată la \"[[language]]\"",
+    "contact_name_changed": "S-a setat numele contactului la \"[[name]]\"",
+    "contact_status_changed": "S-a setat statusul la \"[[status]]\"",
+    "flow_entered": "S-a intrat în fluxul \"[[flow]]\"",
+    "flow_exited": "A ieșit din flux",
+    "httplog_dialog": "Detalii cerere HTTP",
+    "input_labels_added": "Mesaj etichetat cu",
+    "label": "Rulează în simulator",
+    "msg_wait": "Se așteaptă răspuns",
+    "prompt": {
+      "message": "Introdu mesajul",
+      "restart": "Apasă Acasă pentru a începe din nou"
+    },
+    "removed_from_group": "Eliminat din",
+    "resthook_called": "S-a declanșat evenimentul de flux \"[[resthook]]\"",
+    "run_result_changed": "S-a setat \"[[field]]\" al rezultatului la \"[[value]]\"",
+    "sent_email": {
+      "summary": "E-mail trimis către [[recipients]] cu subiectul \"[[subject]]\"",
+      "title": "Detalii e-mail"
+    },
+    "session_triggered": "S-a pornit un alt contact în \"[[flow]]\"",
+    "ticket_opened": "Tichet deschis cu subiectul \"[[topic]]\""
+  },
+  "sticky": {
+    "body": "...",
+    "title": "Notă nouă"
+  },
+  "to_flow_start": "Inițiere flux",
+  "translation": {
+    "header": "Traducere flux",
+    "label": "Traduceri"
+  },
+  "whatsapp_headers": {
+    "media": "Fișier media",
+    "text": "Text"
+  },
+  "whatsapp_interactions": {
+    "add_url": "Buton URL",
+    "add_url_description": "Adaugă un buton cu un link către un URL extern",
+    "list": "Listă de opțiuni",
+    "list_description": "Ușurează alegerile cu o listă de până la 10 opțiuni interactive",
+    "location": "Locație",
+    "location_description": "Solicită utilizatorilor localizarea pentru a ușura asistența",
+    "none": "Nicio interacțiune selectată",
+    "replies": "Răspunsuri rapide",
+    "replies_description": "Creează până la 3 răspunsuri rapide cu mesaje predefinite",
+    "request_location": "Solicită localizarea"
+  },
+  "whatsapp_messages": {
+    "interactive_message": "Mesaj interactiv",
+    "simple_message": "Mesaj simplu"
+  },
+  "whatsapp_msg": {
+    "attachment_url": "URL atașament",
+    "configure_your_message": "Configurează-ți mesajul",
+    "invalid_attachment_type": "Tip de atașament invalid",
+    "list_items_required": "Completează cel puțin o opțiune din listă",
+    "replies_required": "Completează cel puțin un răspuns rapid",
+    "replies_unique": "Răspunsurile rapide trebuie să fie unice"
+  },
+  "you_can_also_delete_cards_pressing_the_keys": "Poți șterge și blocuri folosind tastele",
+  "copy": {
+    "multiple": "Blocurile au fost copiate cu succes",
+    "single": "Blocul a fost copiat cu succes"
+  }
+}
