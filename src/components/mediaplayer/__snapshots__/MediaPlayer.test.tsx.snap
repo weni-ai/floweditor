@@ -2,6 +2,7 @@
 
 exports[`MediaPlayer > render > should render 1`] = `
 <MediaPlayer
+  surface="say_msg_audio"
   triggered={false}
   url="https://valid-link.to/audio.mp3"
 >
@@ -260,6 +261,7 @@ exports[`MediaPlayer > render > should render 1`] = `
 
 exports[`MediaPlayer > render > should render with triggered 1`] = `
 <MediaPlayer
+  surface="say_msg_audio"
   triggered={true}
   url="https://valid-link.to/audio.mp3"
 >
