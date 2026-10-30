@@ -13,6 +13,7 @@ import es from './es/resource.json';
 import fr from './fr/resource.json';
 import mn from './mn/resource.json';
 import ptBR from './pt-br/resource.json';
+import ro from './ro/resource.json';
 
 i18n
   .use(LanguageDetector)
@@ -29,6 +30,7 @@ i18n
       fr: { translation: fr },
       mn: { translation: mn },
       'pt-br': { translation: ptBR },
+      ro: { translation: ro },
     },
     fallbackLng: ['defaults'],
     interpolation: {

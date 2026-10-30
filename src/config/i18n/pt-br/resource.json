@@ -2,16 +2,16 @@
   "actions": {
     "search": "Buscar...",
     "add_contact_groups": {
-      "description": "Adicione o contato a um grupo",
-      "name": "Adicione a um grupo"
+      "description": "Adicionar o contato a um grupo",
+      "name": "Adicionar a um grupo"
     },
     "add_contact_urn": {
-      "description": "Adicione URN a um contato",
-      "name": "Adicione URN"
+      "description": "Adicionar uma URN ao contato",
+      "name": "Adicionar URN"
     },
     "add_input": {
-      "description": "Etiquete a mensagem recebida",
-      "name": "Adicione etiqueta"
+      "description": "Adicionar uma tag à mensagem recebida",
+      "name": "Adicionar tag"
     },
     "automatic_classify": {
       "description": "Classificar automaticamente",
@@ -22,7 +22,7 @@
       "name": "Encaminhar para time de agentes"
     },
     "call_resthook": {
-      "description": "Ligar para Zapier",
+      "description": "Chamar o Zapier",
       "name": "Chamar Zapier"
     },
     "call_webhook": {
@@ -39,48 +39,48 @@
     },
     "external_service": {
       "description": "Chamar um serviço externo",
-      "name": "Chamar um serviço externo"
+      "name": "Chamar serviço externo"
     },
     "open_ticket": {
-      "description": "Abrir um ticket com um agente humano",
-      "name": "Abrir um Ticket"
+      "description": "Abrir um ticket com um atendente",
+      "name": "Abrir ticket"
     },
     "play_audio": {
       "description": "Reproduzir uma gravação de contato",
-      "name": "Reproduzir Gravação"
+      "name": "Reproduzir gravação"
     },
     "play_message": {
       "description": "Reproduzir uma mensagem",
-      "name": "Reproduzir Mensagem"
+      "name": "Reproduzir mensagem"
     },
     "remove_contact_groups": {
-      "description": "Remover contato de um grupo ",
+      "description": "Remover contato de um grupo",
       "name": "Remover de um grupo"
     },
     "say_msg": {
-      "placeholder": "Manda uma mensagem para o contato"
+      "placeholder": "Envie uma mensagem ao contato"
     },
     "send_broadcast": {
-      "description": "Envie uma mensagem para outra pessoa",
+      "description": "Enviar uma mensagem para outro contato",
       "name": "Enviar transmissão",
-      "placeholder": "Envie uma mensagem para o contato"
+      "placeholder": "Envie uma mensagem ao contato"
     },
     "send_email": {
-      "description": "Enviar um e-mail",
-      "name": "Enviar e-mail"
+      "description": "Enviar um email",
+      "name": "Enviar email"
     },
     "send_msg": {
-      "description": "Envie uma mensagem ao contato",
+      "description": "Enviar uma mensagem ao contato",
       "name": "Enviar mensagem",
-      "placeholder": "Enviar mensagem para o contato"
+      "placeholder": "Envie uma mensagem ao contato"
     },
     "set_contact_field": {
-      "description": "Atualizar o contato ",
+      "description": "Atualizar o contato",
       "name": "Atualizar contato"
     },
     "set_run_result": {
-      "description": "Salve o resultado para este fluxo",
-      "name": "Salvar resultado do Fluxo"
+      "description": "Salvar o resultado para este fluxo",
+      "name": "Salvar resultado do fluxo"
     },
     "split_by_contact_field": {
       "description": "Dividir por campo de contato",
@@ -91,8 +91,8 @@
       "name": "Dividir por expressão"
     },
     "split_by_groups": {
-      "description": "Dividir por filiação de grupo",
-      "name": "Dividir por filiação de grupo"
+      "description": "Dividir por grupo do contato",
+      "name": "Dividir por grupo"
     },
     "split_by_intent": {
       "description": "Dividir por intenção",
@@ -111,64 +111,64 @@
       "name": "Dividir por tipo de URN"
     },
     "start_session": {
-      "description": "Iniciar outra pessoa em um fluxo",
-      "name": "Iniciar outra pessoa"
+      "description": "Iniciar outro contato em um fluxo",
+      "name": "Iniciar outro contato"
     },
     "transfer_airtime": {
-      "description": "Envie airtime para o contato",
-      "name": "Envie Airtime"
+      "description": "Enviar airtime para o contato",
+      "name": "Enviar airtime"
     },
     "wait_for_audio": {
-      "description": "Aguarde por uma gravação de áudio",
-      "name": "Aguarde por Áudio"
+      "description": "Aguardar uma gravação de áudio",
+      "name": "Aguardar áudio"
     },
     "wait_for_dial": {
-      "description": "Esperar por uma chamada encaminhada para outra pessoa",
-      "name": "Esperar por uma chamada encaminhada"
+      "description": "Aguardar uma chamada encaminhada para outra pessoa",
+      "name": "Aguardar uma chamada encaminhada"
     },
     "wait_for_digits": {
-      "description": "Aguarde por múltiplos dígitos",
-      "name": "Aguarde por Dígitos"
+      "description": "Aguardar múltiplos dígitos",
+      "name": "Aguardar dígitos"
     },
     "wait_for_image": {
-      "description": "Espere por uma imagem",
-      "name": "Aguarde por imagem"
+      "description": "Aguardar uma imagem",
+      "name": "Aguardar imagem"
     },
     "wait_for_location": {
-      "description": "Aguarde as coordenadas GPS de localização",
-      "name": "Aguarde por Localização"
+      "description": "Aguardar as coordenadas GPS de localização",
+      "name": "Aguardar localização"
     },
     "wait_for_menu": {
-      "description": "Aguarde por seleção de menu",
-      "name": "Aguarde por Seleção de Menu"
+      "description": "Aguardar seleção de menu",
+      "name": "Aguardar seleção de menu"
     },
     "wait_for_response": {
-      "description": "Aguarde a resposta do contato",
-      "name": "Aguarde por resposta"
+      "description": "Aguardar a resposta do contato",
+      "name": "Aguardar resposta"
     },
     "wait_for_video": {
-      "description": "Aguarde por um vídeo",
-      "name": "Aguarde por Vídeo"
+      "description": "Aguardar um vídeo",
+      "name": "Aguardar vídeo"
     },
     "send_msg_catalog": {
       "name": "Enviar produto pelo WhatsApp",
       "complete_catalog": "Catálogo completo",
-      "description": "Enviar um produto por WhatsApp",
+      "description": "Enviar um produto pelo WhatsApp",
       "automatic_sending": "Envio automático",
       "manual_sending": "[[count]] produto",
       "manual_sending_plural": "[[count]] produtos",
       "manual_sending_multiple": "+3 produtos"
     },
     "send_whatsapp_msg": {
-      "description": "Enviar uma mensagem do WhatsApp",
+      "description": "Enviar mensagem do WhatsApp",
       "name": "Mensagem do WhatsApp"
     },
     "smart_wait_for_response": {
-      "description": "Aguarde por resposta Inteligente",
-      "name": "Aguarde por resposta inteligente"
+      "description": "Aguardar resposta inteligente",
+      "name": "Aguardar resposta inteligente"
     }
   },
-  "add": "Adicione",
+  "add": "Adicionar",
   "set": "Definir",
   "to": "como",
   "asset_selector": {
@@ -176,7 +176,7 @@
     "placeholder_plural": "Selecione [[name]] existentes ou adicione um novo"
   },
   "assets": {
-    "classifier": "Chame o classificador <1>[[name]]</1>",
+    "classifier": "Chamar o classificador <1>[[name]]</1>",
     "ticketer": "Abrir um novo ticket em [[name]]"
   },
   "body": "Corpo",
@@ -184,7 +184,7 @@
     "cancel": "Cancelar",
     "create_message": "Criar mensagem",
     "download": "Baixar",
-    "ok": "Ok",
+    "ok": "OK",
     "close": "Fechar",
     "confirm": "Confirmar",
     "after": "Depois",
@@ -194,9 +194,9 @@
   },
   "contact_statuses": {
     "active": "Ativo",
-    "archived": "Arquivados - remova de grupos, ignore para sempre",
-    "blocked": "Bloqueado - remova de grupos, ignore para sempre",
-    "stopped": "Parado - remova de grupos, ignore até que enviem mensagem novamente"
+    "archived": "Arquivado - Remova de grupos, ignore para sempre",
+    "blocked": "Bloqueado - Remova de grupos, ignore para sempre",
+    "stopped": "Parado - Remova de grupos, ignore até que enviem mensagem novamente"
   },
   "context_explorer": {
     "copied_expression": "Copiado <1>[[expression]]</1> para a área de transferência",
@@ -205,7 +205,7 @@
   },
   "create_block": "Criar bloco",
   "search_in_nodes": "Buscar bloco",
-  "create_label": "Criar etiqueta",
+  "create_label": "Criar tag",
   "disabled_copy_tooltip": "Selecione um ou mais blocos para copiar",
   "copy_tooltip": "Copiar bloco(s)",
   "document": "Documento",
@@ -218,14 +218,14 @@
   "empty_flow_message_title": "Vamos começar",
   "empty_flow_message_description": "Recomendamos iniciar seu fluxo enviando uma mensagem. Essa mensagem será enviada para qualquer pessoa que entrar no seu fluxo. Esta é a sua chance de enviar uma mensagem ou fazer uma pergunta.",
   "enter_to_create_group": "Insira um nome para criar um novo grupo",
-  "enter_to_create_label": "Insira o nome de uma label existente ou crie uma nova",
+  "enter_to_create_label": "Insira o nome de uma tag existente ou crie uma nova",
   "errors": {
     "group_not_found": "Insira o nome de um grupo existente",
     "http_header_missing_name": "Cabeçalhos HTTP devem ter um nome",
-    "network": "Hmm, encontramos um problema ao tentar salvar as suas alterações. Sua conexão com a internet pode não estar funcionando bem no momento. Por favor espere um pouco e tente novamente.",
-    "server": "Hmm, encontramos um problema ao tentar salvar suas alterações. Se o problema persistir, anote a alteração que você está tentando fazer e entre em contato com o suporte.."
+    "network": "Não foi possível salvar as suas alterações. Sua conexão com a internet pode não estar funcionando bem no momento. Aguarde um pouco e tente novamente.",
+    "server": "Ocorreu um erro ao salvar suas alterações. Se o problema persistir, entre em contato com o suporte e informe o que você estava tentando fazer."
   },
-  "flow_start": "Início de fluxo",
+  "flow_start": "Início do fluxo",
   "form": {
     "result": "Resultado"
   },
@@ -233,38 +233,38 @@
     "action": "Título do botão de ação",
     "add_attachment": "Adicione um arquivo",
     "add_groups_summary": "Selecione os grupos para adicionar o contato",
-    "add_labels_summary": "Selecione as etiquetas a serem aplicadas na mensagem recebida",
-    "add_quick_reply": "Adicione uma nova Resposta rápida e pressione Enter",
+    "add_labels_summary": "Selecione as tags a serem aplicadas à mensagem recebida",
+    "add_quick_reply": "Adicione uma nova resposta rápida e pressione Enter",
     "add_urn_summary": "Adicione uma nova URN para encontrar o contato",
     "advanced": "Avançado",
-    "all_destinations": "Envie uma mensagem para todos os destinos",
-    "all_destinations_title": "Envie uma mensagem para todos os destinos conhecidos deste contato.",
-    "all_destinations_description": "Se você não tiver certeza do que isso significa, deixe-o desmarcado.",
+    "all_destinations": "Enviar mensagem para todos os destinos",
+    "all_destinations_title": "Envie uma mensagem para todos os destinos conhecidos deste contato",
+    "all_destinations_description": "Se você não tiver certeza do que isso significa, deixe desmarcado",
     "and": "e",
-    "are_required": "são requeridos",
+    "are_required": "são obrigatórios",
     "arguments": "argumentos",
     "assignee": "Responsável",
-    "assign_to_optional": "Atribuir a (Opcional)",
+    "assign_to_optional": "Atribuir a (opcional)",
     "attachment_optional": "Mídia (opcional)",
     "attachment_placeholder": "Cole uma URL ou envie um arquivo",
-    "attachments": "Arquivos",
-    "audio_url": "URL de Áudio",
+    "attachments": "Anexos",
+    "audio_url": "URL de áudio",
     "automatic_classify": {
-      "category_description": "Defina a Categoria que deseja classificar a resposta do Contato",
-      "category_title": "Categorize como",
-      "words_description": "Palavras únicas relacionadas com a categoria.",
+      "category_description": "Defina a categoria que deseja classificar a resposta do contato",
+      "category_title": "Categorizar como",
+      "words_description": "Palavras únicas relacionadas à categoria",
       "words_title": "Palavras"
     },
     "body": "Corpo",
     "brain": {
       "entry": "Insira uma expressão para usar como entrada no Brain. Para usar a última resposta do contato, use @input.text"
     },
-    "buckets": "Repositórios",
-    "bucket": "Repositório",
-    "option_buckets": " respositórios",
+    "buckets": "Caminhos",
+    "bucket": "Caminho",
+    "option_buckets": "caminhos",
     "call": "Chamar",
     "categories": "categorias",
-    "categorize_as": "Categorize como:",
+    "categorize_as": "Categorizar como:",
     "category": "Categoria (opcional)",
     "category_placeholder": "Categoria",
     "category_required": "Categoria",
@@ -273,11 +273,11 @@
     "classifier": "Classificador",
     "clear": "Limpar",
     "confidence": "confiança",
-    "contact_field": "Campo de Contato",
-    "contact_query": "Query do Contato",
+    "contact_field": "Campo de contato",
+    "contact_query": "Consulta do contato",
     "continue_when_no_response": "Continuar quando não houver resposta",
     "wait_response_for": "Aguardar resposta por:",
-    "create_group": "Criar um grupo",
+    "create_group": "Criar grupo",
     "create_prefix": "Novo:",
     "currency": "Moeda",
     "custom_search": "Busca personalizada",
@@ -293,29 +293,29 @@
     "description_optional": "Descrição (opcional)",
     "district": "Distrito",
     "disclaimer": {
-      "title": "Agora é possível <1>[[highlight]]</1> utilizando WhatsApp Flows.",
-      "highlight": "gerar interações mais ricas",
-      "link": "Saiba mais."
+      "title": "Agora é possível <1>[[highlight]]</1> usando o WhatsApp Flows.",
+      "highlight": "gerar interações mais completas",
+      "link": "Saiba mais"
     },
     "email_recipient_name": "Destinatário",
-    "email_recipient_placeholder": "Adicione um Email e pressione Enter",
+    "email_recipient_placeholder": "Adicione um email e pressione Enter",
     "email_recipient_prompt": "Insira o endereço de email",
     "enter_a_body": "Insira um corpo",
     "enter_a_subject": "Insira um assunto",
     "enter_a_url": "Insira uma URL",
     "enter_field_value": "Insira um novo valor para [[field]]",
-    "enter_flow_parameters_summary": "<0>[[flow]]</0> espera que os seguintes parâmetros sejam definidos por este fluxo. Eles podem ser definidos usando uma ação <4>Salvar Resultado do Fluxo</4> ou diretamente abaixo.",
+    "enter_flow_parameters_summary": "<0>[[flow]]</0> espera que os seguintes parâmetros sejam definidos por este fluxo. Eles podem ser definidos usando uma ação <4>Salvar resultado do fluxo</4> ou diretamente abaixo.",
     "enter_flow_parameters_tab": "Parâmetros",
-    "enter_new_name": "Insira um novo nome do contato",
+    "enter_new_name": "Insira um novo nome de contato",
     "enter_urn_value": "Insira um valor para URN",
     "exit_name": "Nome de saída",
     "expression": "Expressão",
     "expression_input": "Insira uma expressão para usar como entrada",
-    "expression_input_placeholder": "Ex: @input.text",
+    "expression_input_placeholder": "Ex.: @input.text",
     "expression_label": "Se a expressão",
-    "externalService": "Serviço Externo",
-    "external_service": "Serviço Externo",
-    "external_service_call": "Chamada de Serviço Externo",
+    "externalService": "Serviço externo",
+    "external_service": "Serviço externo",
+    "external_service_call": "Chamada de serviço externo",
     "field": "Campo",
     "field_number": "Número do campo",
     "field_value": "Valor do campo",
@@ -323,26 +323,26 @@
     "footer": "Rodapé (opcional)",
     "flow": "Fluxo",
     "flow_to_start": "Fluxo para iniciar",
-    "flow_result": "Resultado do Fluxo",
+    "flow_result": "Resultado do fluxo",
     "groups": "Grupos",
     "header": "Cabeçalho",
-    "header_name": "Nome do Cabeçalho",
+    "header_name": "Nome do cabeçalho",
     "header_optional": "Cabeçalho (opcional)",
     "header_text": "Texto do cabeçalho",
-    "http_headers": "Headers HTTP",
-    "image_url": "URL da Imagem",
+    "http_headers": "Cabeçalhos HTTP",
+    "image_url": "URL da imagem",
     "instagram": {
       "response_types": {
         "none": "Nenhum",
-        "tag": "Suporte de tag para DM's",
-        "dm_comment": "Enviar DM em resposta a um Comentário",
-        "comment": "Responder a um Comentário"
+        "tag": "Suporte de tag para DMs",
+        "dm_comment": "Enviar DM como resposta a um comentário",
+        "comment": "Responder a um comentário"
       },
       "tags": {
-        "human_agent": "Agente humano"
+        "human_agent": "Atendente"
       },
       "descriptions": {
-        "tag": "Permite enviar uma mensagem após a janela de 24 horas",
+        "tag": "Permite enviar uma mensagem fora da janela de 24 horas",
         "dm_comment": "Quando um comentário é feito em um post, esta ação permite responder em uma mensagem direta (DM) ao usuário que fez o comentário, mantendo a interação privada.",
         "comment": "Quando um comentário é feito em um post, esta ação permite responder diretamente na seção de comentários do post, mantendo a interação pública."
       }
@@ -351,14 +351,14 @@
     "interactions": "Interações",
     "is_not_a_valid_regex": "não é uma regex válida",
     "is_not_finished": "não está finalizado",
-    "is_required": "é requerido",
+    "is_required": "é obrigatório",
     "integration_with": "Integração com...",
     "knowledge_base": "Base de conhecimento",
     "knowledge_base_click": "Clique aqui",
     "knowledge_base_message": "Ainda não tem nenhuma base de conhecimento para sua IA?",
-    "knowledge_base_placeholder": "Escolha uma base de conhecimento",
-    "labels": "Etiquetas",
-    "language": "Linguagem",
+    "knowledge_base_placeholder": "Selecione uma base de conhecimento",
+    "labels": "Tags",
+    "language": "Idioma",
     "list_button_text": "Texto do botão de ação",
     "list_button_text_optional": "Texto do botão de ação (opcional)",
     "list_button_text_placeholder": "Texto do botão de ação",
@@ -366,46 +366,46 @@
     "list_items": "Lista de opções",
     "list_option": "Opção",
     "empty_option": "Não preenchida",
-    "localize_rules": "Às vezes, os idiomas precisam de regras especiais para rotear as coisas corretamente. Se uma tradução não for fornecida, a regra original será usada.",
-    "localized_quick_replies": "Adicione uma nova Resposta Rápida em [[language]] e pressione enter.",
+    "localize_rules": "Às vezes, os idiomas precisam de regras especiais para rotear corretamente. Se uma tradução não for fornecida, a regra original será usada.",
+    "localized_quick_replies": "Adicione uma nova resposta rápida em [[language]] e pressione Enter.",
     "manually_select_products": "Selecionar produtos manualmente",
     "maximum_value": "Valor máximo",
     "message": "Mensagem",
-    "message_type": "Tipo da mensagem",
+    "message_type": "Tipo de mensagem",
     "message_label": "Se a resposta da mensagem",
     "method": "Método",
     "minimum_value": "Valor mínimo",
     "must_be_less_than": "deve ser menor que",
     "name": "Nome",
-    "no_products": "Você não possui produtos",
+    "no_products": "Você não tem nenhum produto",
     "none": "Nenhum",
-    "operand": "Operando",
+    "operand": "Campo de entrada",
     "operator": "operador",
     "options_label": "Adicione até 10 opções",
     "param": "Parâmetro",
     "parameter": "Parâmetro",
     "params": "Parâmetros",
-    "pdf_url": "URL do Documento PDF",
-    "phone_number": "Número de telefone",
-    "play_audio_help_text": "Digite uma variável que contém uma gravação que o contato gravou anteriormente. Por exemplo, @ results.voicemail ou @ fields.short_bio.",
+    "pdf_url": "URL do documento PDF",
+    "phone_number": "Telefone",
+    "play_audio_help_text": "Digite uma variável que inclua uma gravação que o contato fez anteriormente. Por exemplo, @results.voicemail ou @fields.short_bio.",
     "postal_code": "CEP (opcional)",
-    "product_help_text": "Os campos tem limitações de caracteres, sendo header e footer 60 caracteres, body 1024 e título do botão de ação 20 caracteres.",
-    "product_search": "Busca de produtos",
+    "product_help_text": "Os campos têm limitações de caracteres, sendo cabeçalho e rodapé de 60 caracteres, corpo de 1024 e título do botão de ação de 20 caracteres.",
+    "product_search": "Busca por produtos",
     "product_search_label": "Insira uma expressão para usar como entrada",
-    "product_search_placeholder": "Ex: @input.text",
+    "product_search_placeholder": "Ex.: @input.text",
     "product_view_settings": "Configurações de visualização (obrigatório)",
     "products": "Produtos",
-    "quick_replies": "Repostas rápidas",
-    "quick_replies_limit": "Você pode adicionar até 10 Respostas rápidas.",
-    "quick_replies_summary": "As Respostas rápidas são transformadas em botões para os canais suportados. Por exemplo, ao fazer uma pergunta, você pode adicionar uma Resposta rápida para \"Sim\" e outra para \"Não\".",
-    "quick_reply": "Resposta Rápida",
+    "quick_replies": "Respostas rápidas",
+    "quick_replies_limit": "Você pode adicionar até 10 respostas rápidas",
+    "quick_replies_summary": "As respostas rápidas são transformadas em botões para os canais suportados. Por exemplo, ao fazer uma pergunta, você pode adicionar uma resposta rápida para \"Sim\" e outra para \"Não\".",
+    "quick_reply": "Resposta rápida",
     "general": "Geral",
     "recipients": "Destinatários",
     "contacts": "Contatos",
     "recording": "Gravação",
-    "recording_label": "Gravação Anterior",
+    "recording_label": "Gravação anterior",
     "remove": "Remover",
-    "remove_groups_type_label": "Grupos que o contato será removido:",
+    "remove_groups_type_label": "Grupos dos quais o contato será removido:",
     "remove_groups_type_values_selected_label": "Selecionados",
     "remove_groups_type_values_all_label": "Todos",
     "remove_from_all_label": "Remover de todos",
@@ -420,69 +420,69 @@
     "resthook_to_call": "Selecione o resthook a ser chamado",
     "result": "Resultado",
     "result_category_help": "Uma categoria opcional para seu resultado. Para a idade, o valor pode ser 17, mas a categoria pode ser “Adolescente”",
-    "result_name": "Nome do Resultado",
+    "result_name": "Nome do resultado",
     "result_name_help": "Ao nomear o resultado, você pode fazer referência a ele mais tarde usando [[resultFormat]]",
     "result_to_split_on": "Resultado para dividir em",
-    "result_value_help": "O valor a ser salvo para este resultado ou vazio para apagá-lo. Você pode usar expressões, por exemplo: @(title(input))",
+    "result_value_help": "O valor a ser salvo para este resultado ou vazio para apagá-lo. Você pode usar expressões, como @(title(input))",
     "rules": "regras",
     "save_as": "Salvar como",
-    "save_as_title": "Salve como",
+    "save_as_title": "Salvar como",
     "save_result_name": "Salvar como resultado",
     "search_and_send_products_automatically": "Buscar e enviar produtos automaticamente",
     "select_an_option": "Selecione uma opção",
-    "select_channel": "Selecione o canal à ser utilizado para esse contato",
+    "select_channel": "Selecione o canal a ser usado para esse contato",
     "select_contacts": "Selecione os contatos",
-    "select_external_service": "Selecione o serviço externo a ser utilizado",
+    "select_external_service": "Selecione o serviço externo a ser usado",
     "select_flow": "Selecione o fluxo para iniciar",
     "select_groups": "Selecione os grupos",
     "select_intent": "Selecione a intenção",
-    "select_language": "Selecione o idioma à ser utilizado para este contato",
-    "select_products_to_send": "Selecionar produtos para enviar",
-    "select_result": "Selecione o Resultado",
+    "select_language": "Selecione o idioma a ser usado para esse contato",
+    "select_products_to_send": "Selecione produtos para enviar",
+    "select_result": "Selecione o resultado",
     "select_what_to_update": "Selecione o que irá atualizar",
     "create_contact_field": "Crie um campo de contato: ",
     "select_who_to_start": "Selecione quem deve ser iniciado no fluxo",
-    "seller_id": "ID do vendedor (opcional)",
+    "seller_id": "ID do seller (opcional)",
     "send_complete_catalog": "Enviar catálogo completo",
-    "send_msg_facebook_topic_placeholder": "Selecione um tópico para usar no Facebook",
-    "send_msg_facebook_warning": "O envio de mensagens em massa por um canal do Facebook exige que um tópico seja especificado se o usuário não tiver enviado uma mensagem nas últimas 24 horas. Definir um tópico para usar no Facebook é especialmente importante para a primeira mensagem no seu fluxo.",
+    "send_msg_facebook_topic_placeholder": "Selecione um assunto para usar no Facebook",
+    "send_msg_facebook_warning": "O envio de mensagens em massa por um canal do Facebook exige que um assunto seja especificado se o usuário não tiver enviado uma mensagem nas últimas 24 horas. Definir um assunto para usar no Facebook é especialmente importante para a primeira mensagem no seu fluxo.",
     "send_product": {
-      "header_info": "Só é possível enviar um header personalizado quando \nestão selecionados múltiplos produtos."
+      "header_info": "Só é possível enviar um cabeçalho personalizado quando \nestão selecionados múltiplos produtos."
     },
-    "service_call_param": "Parâmetro da Chamada de Serviço",
-    "service_call_param_data": "Dados do Parâmetro da Chamada de Serviço",
-    "service_call_param_filter": "Filtro do Parâmetro da Chamada de Serviço",
+    "service_call_param": "Parâmetro da chamada de serviço",
+    "service_call_param_data": "Dados do parâmetro da chamada de serviço",
+    "service_call_param_filter": "Filtro do parâmetro da chamada de serviço",
     "smart_wait": {
-      "category_description": "Defina a Categoria que deseja classificar a resposta do Contato.",
-      "category_title": "Categorize como",
-      "command_phrases_description": "Escreva frases de comando relacionadas com a categoria",
+      "category_description": "Defina a categoria que deseja classificar a resposta do contato.",
+      "category_title": "Categorizar como",
+      "command_phrases_description": "Escreva frases de comando relacionadas à categoria",
       "command_phrases_title": "Frases de comando",
       "description_alert": "<0>Importante:</0>Edite seu projeto, <2>adicione uma descrição</2> e torne a IA ainda mais poderosa.",
-      "words_description": "Palavras únicas relacionadas com a categoria.",
+      "words_description": "Palavras únicas relacionadas à categoria",
       "words_title": "Palavras"
     },
-    "send_msg_summary": "Adicione um anexo a cada mensagem. O anexo pode ser um arquivo que você carrega ou uma URL dinâmica usando expressões e variáveis ​​do seu Fluxo.",
-    "send_msg_summary_plural": "Adicione um anexo a cada mensagem. O anexo pode ser um arquivo que você carrega ou uma URL dinâmica usando expressões e variáveis ​​do seu Fluxo.",
+    "send_msg_summary": "Adicione um anexo a cada mensagem. O anexo pode ser um arquivo que você carrega ou uma URL dinâmica usando expressões e variáveis do seu fluxo.",
+    "send_msg_summary_plural": "Adicione um anexo a cada mensagem. O anexo pode ser um arquivo que você carrega ou uma URL dinâmica usando expressões e variáveis do seu fluxo.",
     "sms_counter_info": "Essa mensagem tem [[characters]] caracteres e usará [[messages]] mensagens para ser enviada por SMS",
     "split_by_channel_placeholder": "Selecione os canais para dividir por",
     "split_by_groups": "Selecione os grupos que você deseja dividir abaixo",
     "split_by_scheme": "Tipos de canal",
-    "split_by_scheme_summary": "A URN do contato é o endereço utilizado para te encontrar  como o número de telefone deles ou um ID do Facebook. Selecione quais os tipos de URN para se dividirem.",
-    "start_type": "Tipo de Início",
+    "split_by_scheme_summary": "A URN do contato é o endereço que ele usa para falar com você, como o número de telefone ou um ID do Facebook. Selecione os tipos de URN para a divisão.",
+    "start_type": "Tipo de início",
     "start_type_create": "Criar um novo contato",
-    "start_type_manual": "Selecione destinatários manulmente",
-    "start_type_query": "Selecione destinatários de uma busca",
+    "start_type_manual": "Selecionar destinatários manualmente",
+    "start_type_query": "Selecionar destinatários de uma busca",
     "state": "Estado",
     "status": "Status",
     "subject": "Assunto",
-    "subject_placeholder": "Ex: Seu pedido foi entregue",
-    "email_message": "Texto do e-mail",
-    "email_message_placeholder": "Digite o texto do e-mail",
-    "template": "modelo",
+    "subject_placeholder": "Ex.: Seu pedido foi entregue",
+    "email_message": "Texto do email",
+    "email_message_placeholder": "Digite o texto do email",
+    "template": "template",
     "the_maximum": "o máximo",
     "the_minimum": "o mínimo",
-    "ticketer": "Sistema de Atendimento",
-    "ticketer_placeholder": "Selecione o serviço de atendimento a ser utilizado",
+    "ticketer": "Sistema de atendimento",
+    "ticketer_placeholder": "Selecione o serviço de atendimento a ser usado",
     "timeout": "Tempo de espera",
     "timeout_1 day": "1 dia",
     "timeout_1 hour": "1 hora",
@@ -495,7 +495,7 @@
     "timeout_18 hours": "18 horas",
     "timeout_2 days": "2 dias",
     "timeout_2 hours": "2 horas",
-    "timeout_2 minutes": " 2 minutos",
+    "timeout_2 minutes": "2 minutos",
     "timeout_3 days": "3 dias",
     "timeout_3 hours": "3 horas",
     "timeout_3 minutes": "3 minutos",
@@ -507,9 +507,9 @@
     "title": "Título",
     "today": "hoje",
     "today_proper": "Hoje",
-    "topic": "Tópico",
-    "topic_placeholder": "Selecione o tópico",
-    "topic_prefix": "Criar Tópico: ",
+    "topic": "Assunto",
+    "topic_placeholder": "Selecione o assunto",
+    "topic_prefix": "Criar assunto: ",
     "translation": "Tradução",
     "type": "Tipo",
     "type_label": "Quando um contato chegar a esse ponto do fluxo...",
@@ -518,18 +518,18 @@
     "url": "URL",
     "urn": "Valor da URN",
     "urn_type": "Tipo de URN",
-    "use_as_default_language": "Use como língua padrão",
+    "use_as_default_language": "Usar como idioma padrão",
     "value": "Valor",
     "variable": "Variável",
-    "video_url": "URL de Vídeo",
+    "video_url": "URL de vídeo",
     "vtex_search": "Busca VTEX",
-    "webhook_body_summary": "Modifique o corpo da solicitação [[method]], que será enviada ao seu webhook",
-    "webhook_body_placeholder": "Corpo da solicitação",
+    "webhook_body_summary": "Altere o corpo da requisição [[method]], que será enviada ao seu webhook",
+    "webhook_body_placeholder": "Corpo da requisição",
     "webhook_example": "Esta resposta deveria adicionar <1>@webhook.product</1> e <4>@webhook[\"stock level\"]</4> para uso em um fluxo.",
     "webhook_header": "Cabeçalho",
     "webhook_header_name": "Nome do cabeçalho",
-    "webhook_header_summary": "Adicione abaixo os cabeçalhos adicionais que você gostaria de enviar juntamente com sua solicitação",
-    "webhook_help": "Se seu servidor responder com JSON, cada propriedade será adicionada ao Fluxo.",
+    "webhook_header_summary": "Adicione abaixo os cabeçalhos adicionais que você gostaria de enviar juntamente com sua requisição",
+    "webhook_help": "Se seu servidor responder com JSON, cada propriedade será adicionada ao fluxo.",
     "whatsapp_warning": "O envio de mensagens por um canal do WhatsApp exige que um template seja usado se você não recebeu uma mensagem de um contato nas últimas 24 horas. A configuração de template para uso no WhatsApp é especialmente importante para a primeira mensagem no seu fluxo.",
     "file": "Arquivo",
     "execute": "Executar ",
@@ -556,38 +556,38 @@
     "split_by": "Dividir por",
     "type_here": "Digite aqui...",
     "select_the_file_type": "Selecione o tipo de arquivo",
-    "ex_cart": "Ex: carrinho",
-    "ex_shop": "Ex: compras",
-    "ex_weni": "Ex: weni.ai",
-    "ex_accept": "Ex: Accept",
-    "ex_application_json": "Ex: application/json",
-    "ex_citrus_and_sweet": "Ex: Cítrica e doce",
-    "ex_footer": "Ex: Rodapé",
-    "ex_menu": "Ex: Menu",
-    "ex_offers": "Ofertas",
-    "ex_orange": "Ex: Laranja",
-    "ex_products_action": "Ex: Compre agora",
-    "ex_products_body": "Ex: ofertas são válidas por 5 dias",
-    "ex_results": "Ex: @results.seller_id",
-    "ex_smart_argument": "Ex: quando o usuário cumprimenta você",
-    "ex_smart_category": "Ex: Saudação",
+    "ex_cart": "Ex.: Carrinho",
+    "ex_shop": "Ex.: Compras",
+    "ex_weni": "Ex.: weni.ai",
+    "ex_accept": "Ex.: Accept",
+    "ex_application_json": "Ex.: application/json",
+    "ex_citrus_and_sweet": "Ex.: Cítrica e doce",
+    "ex_footer": "Ex.: Rodapé",
+    "ex_menu": "Ex.: Menu",
+    "ex_offers": "Ex.: Ofertas",
+    "ex_orange": "Ex.: Laranja",
+    "ex_products_action": "Ex.: Compre agora",
+    "ex_products_body": "Ex.: Ofertas são válidas por 5 dias",
+    "ex_results": "Ex.: @results.seller_id",
+    "ex_smart_argument": "Ex.: Quando o usuário cumprimenta você",
+    "ex_smart_category": "Ex.: Saudação",
     "action_button_text": "Texto de botão de ação",
     "action_button_url": "URL do botão de ação",
-    "action_button_url_placeholder": "Ex: https://www.menudorestaurante.com.br"
+    "action_button_url_placeholder": "Ex.: https://www.restaurantmenu.com"
   },
   "guiding": {
     "close_tour": "Fechar tour",
     "control_tools": {
       "0": {
-        "description": "Clique aqui, use o atalho “V” ou segure a barra de espaço para utilizar a ferramenta de “mãozinha”, com ela você vai poder navegar por todo o seu fluxo apenas clicando e arrastando na tela.",
+        "description": "Clique aqui, use o atalho “V” ou segure a barra de espaço para usar a ferramenta de “mãozinha”, com ela você vai poder navegar por todo o seu fluxo apenas clicando e arrastando na tela.",
         "title": "Selecionar e arrastar"
       },
       "1": {
-        "description": "Agora você pode dar zoom in e zoom out de forma nativa, sem precisar fazer o zoom no navegador inteiro, o que também ajuda na navegabilidade dos cards.",
+        "description": "Agora você pode dar zoom de forma nativa, sem precisar fazer o zoom no navegador inteiro, o que também ajuda na navegabilidade dos cards.",
         "title": "Ferramenta de zoom"
       },
       "2": {
-        "description": "Seu fluxo é muito grande e as vezes você se perde? Seus problemas acabaram, basta clicar aqui ou usar o atalho Ctrl + Enter pra voltar para o início do seu fluxo.",
+        "description": "Seu fluxo é muito grande e você tem dificuldade para navegar por ele? Clique aqui ou use o atalho Ctrl + Enter para voltar ao início do fluxo.",
         "title": "Início do fluxo"
       }
     },
@@ -604,25 +604,25 @@
       },
       "2": {
         "button": "Entendi 3/3",
-        "description": "Agora o simulador ta com a aparência do WhatsApp,\nassim você consegue prever com mais fidelidade como seu fluxo vai ficar.",
-        "title": "Skin do WhatsApp no simulador"
+        "description": "Agora, o simulador reproduz a interface do WhatsApp,\npermitindo que você visualize com mais fidelidade como seu fluxo será exibido.",
+        "title": "Layout do WhatsApp no simulador"
       }
     }
   },
   "issues": {
-    "header": "Problemas no Fluxo",
-    "label": "Problemas no Fluxo",
+    "header": "Problemas no fluxo",
+    "label": "Problemas no fluxo",
     "legacy_extra": "Expressão regular inválida encontrada: [[regex]]",
-    "missing_dependency": "Não pode encontrar [[type]] para <1>[[name]]</1>"
+    "missing_dependency": "Não foi possível encontrar [[type]] para <1>[[name]]</1>"
   },
   "new": "Novo",
   "new_updates": {
     "buttons": {
       "first": "Fechar",
-      "second": "Me mostra tudo"
+      "second": "Mostrar tudo"
     },
     "description": "O que tem de novo?",
-    "footer": "Fique à vontade para enviar feedbacks sobre sua experiência",
+    "footer": "Fique à vontade para enviar feedback sobre sua experiência",
     "news": {
       "fifth": "Agora ficou mais fácil encontrar o início do seu fluxo",
       "first": "Agora você pode usar a “mãozinha” pra navegar no seu fluxo",
@@ -630,97 +630,97 @@
       "second": "Ferramenta de zoom",
       "third": "Ficou mais fácil de saber pra onde vai seu fluxo com as novas cores nas setas que ligam os blocos"
     },
-    "title": "Novidade na área!"
+    "title": "Temos algumas novidades!"
   },
   "operators": {
     "has_all_words": "tem todas as palavras",
-    "has_any_word": "tem qualquer das palavras",
+    "has_any_word": "tem qualquer uma das palavras",
     "has_beginning": "começa com",
     "has_category": "tem a categoria",
     "has_date": "tem uma data",
-    "has_date_category": "Tem Data",
+    "has_date_category": "Tem data",
     "has_date_eq": "tem uma data igual a",
-    "has_date_gt": "tem uma data depois ",
-    "has_date_lt": "tem uma data antes",
+    "has_date_gt": "tem uma data posterior a",
+    "has_date_lt": "tem uma data anterior a",
     "has_district": "tem distrito",
-    "has_district_category": "Tem Distrito",
-    "has_email": "Tem um email",
-    "has_email_category": "Tem Email",
+    "has_district_category": "Tem distrito",
+    "has_email": "tem um email",
+    "has_email_category": "Tem email",
     "has_error": "tem um erro",
-    "has_error_category": "Tem Erro",
+    "has_error_category": "Tem erro",
     "has_group": "está no grupo",
     "has_intent": "tem intenção",
     "has_number": "tem um número",
     "has_number_between": "tem um número entre",
-    "has_number_eq": "tem um número igual a ",
-    "has_number_gt": "tem um número acima",
-    "has_number_gte": "tem um número igual ou acima",
-    "has_number_lt": "tem um número abaixo",
-    "has_number_lte": "tem um número igual ou abaixo",
+    "has_number_eq": "tem um número igual a",
+    "has_number_gt": "tem um número superior a",
+    "has_number_gte": "tem um número igual ou superior a",
+    "has_number_lt": "tem um número inferior a",
+    "has_number_lte": "tem um número igual ou inferior a",
     "has_only_phrase": "tem apenas a frase",
     "has_pattern": "corresponde a regex",
     "has_phone": "tem um número de telefone",
-    "has_phone_category": "Tem Telefone",
-    "has_phrase": "Tem a frase",
+    "has_phone_category": "Tem telefone",
+    "has_phrase": "tem a frase",
     "has_state": "tem estado",
-    "has_state_category": "Tem Estado",
+    "has_state_category": "Tem estado",
     "has_text": "tem algum texto",
-    "has_time": "tem um tempo",
+    "has_time": "tem um horário",
     "has_top_intent": "tem a intenção principal",
     "has_value": "não está vazio",
-    "has_value_category": "Não Vazio",
-    "has_ward": "Tem quadra",
-    "has_ward_category": "Tem Quadra"
+    "has_value_category": "Não vazio",
+    "has_ward": "tem bairro",
+    "has_ward_category": "Tem bairro"
   },
   "or": "ou",
   "recent_messages": {
-    "header": "Mensagens Recentes",
-    "header_empty": "Sem Mensagens Recentes"
+    "header": "Mensagens recentes",
+    "header_empty": "Sem mensagens recentes"
   },
   "removal_confirmation": "Deseja excluir o card?",
-  "removal_confirmation_description": "Tem certeza que deseja excluir o card?",
-  "action_cannot_be_reversed": "Essa ação não pode ser revertida.",
+  "removal_confirmation_description": "Tem certeza de que deseja excluir o card?",
+  "action_cannot_be_reversed": "Essa ação não poderá ser desfeita.",
   "revisions": {
     "current": "atual",
     "header": "Revisões",
-    "label": "Histórico de Revisão",
+    "label": "Histórico de revisões",
     "revert": "reverter"
   },
   "schemes": {
     "email": {
       "name": "Email",
-      "path": "Endereço de e-mail"
+      "path": "Endereço de email"
     },
     "external": {
       "name": "Externo",
-      "path": "ID Externo"
+      "path": "ID externo"
     },
     "facebook": {
       "path": "Facebook"
     },
     "firebase": {
       "name": "Firebase",
-      "path": "Firebase ID"
+      "path": "ID do Firebase"
     },
     "freschat": {
-      "name": "Freshcat"
+      "name": "Freshchat"
     },
     "freshchat": {
-      "path": "Freschcat ID"
+      "path": "ID do Freshchat"
     },
     "instagram": {
       "name": "Instagram",
-      "path": "Instagram ID"
+      "path": "ID do Instagram"
     },
     "jiochat": {
-      "path": "Jiochat ID"
+      "path": "ID do Jiochat"
     },
     "jiojach": {
       "name": "Jiochat"
     },
     "line": {
       "name": "Line",
-      "path": "Line ID"
+      "path": "ID do Line"
     },
     "phone": {
       "name": "SMS",
@@ -728,31 +728,31 @@
     },
     "slack": {
       "name": "Slack",
-      "path": "Slack ID"
+      "path": "ID do Slack"
     },
     "teams": {
       "name": "Teams",
-      "path": "Teams ID"
+      "path": "ID do Teams"
     },
     "telegram": {
       "name": "Telegram",
-      "path": "Telegram ID"
+      "path": "ID do Telegram"
     },
     "twitter": {
-      "name": "Twitter",
-      "path": "Identificador do Twitter"
+      "name": "X",
+      "path": "Identificador do X"
     },
     "twitterid": {
-      "name": "Twitter",
-      "path": "Twitter ID"
+      "name": "X",
+      "path": "ID do X"
     },
     "viber": {
       "name": "Viber",
-      "path": "Viber ID"
+      "path": "ID do Viber"
     },
     "wechat": {
       "name": "Wechat",
-      "path": "Wechat ID"
+      "path": "ID do Wechat"
     },
     "whatsapp": {
       "name": "WhatsApp",
@@ -762,35 +762,35 @@
   "select": "Selecionar",
   "simulator": {
     "added_to_group": "Adicionado a",
-    "airtime_transferred": "Transferido [[amount]] [[currency]] to [[recipient]]",
-    "contact_field_changed": "Configure o \"[[field]]\" do contato para \"[[value]]\"",
+    "airtime_transferred": "Transferido [[amount]] [[currency]] para [[recipient]]",
+    "contact_field_changed": "Definiu \"[[field]]\" do contato como \"[[value]]\"",
     "contact_field_cleared": "Limpou \"[[field]]\" do contato",
-    "contact_language_changed": "Configure língua preferencial para \"[[language]]\"",
-    "contact_name_changed": "Configurar nome do contato para \"[[name]]\"",
-    "contact_status_changed": "Configurar status para \"[[status]]\"",
+    "contact_language_changed": "Definiu o idioma preferencial como \"[[language]]\"",
+    "contact_name_changed": "Definiu o nome do contato como \"[[name]]\"",
+    "contact_status_changed": "Definiu o status como \"[[status]]\"",
     "flow_entered": "Entrou no fluxo \"[[flow]]\"",
     "flow_exited": "Saiu do fluxo",
-    "httplog_dialog": "Detalhes da solicitação HTTP",
+    "httplog_dialog": "Detalhes da requisição HTTP",
     "input_labels_added": "Mensagem marcada com",
-    "label": "Rodar no Simulador",
+    "label": "Executar no simulador",
     "msg_wait": "Esperando por resposta",
     "prompt": {
       "message": "Insira a mensagem",
-      "restart": "Pressione home para iniciar novamente"
+      "restart": "Pressione Início para iniciar novamente"
     },
     "removed_from_group": "Removido de",
     "resthook_called": "Evento de fluxo acionado \"[[resthook]]\"",
-    "run_result_changed": "Configurar \"[[field]]\" do resultado para \"[[value]]\"",
+    "run_result_changed": "Definiu \"[[field]]\" do resultado como \"[[value]]\"",
     "sent_email": {
-      "summary": "E-mail enviado para [[recipients]] com o assunto \"[[subject]]\"",
-      "title": "Detalhes do Email"
+      "summary": "Email enviado para [[recipients]] com o assunto \"[[subject]]\"",
+      "title": "Detalhes do email"
     },
-    "session_triggered": "Iniciou outra pessoa em \"[[flow]]\"",
-    "ticket_opened": "Ticket aberto com tema \"[[topic]]\""
+    "session_triggered": "Iniciou outro contato em \"[[flow]]\"",
+    "ticket_opened": "Ticket aberto com o assunto \"[[topic]]\""
   },
   "sticky": {
     "body": "...",
-    "title": "Nova Nota"
+    "title": "Nova nota"
   },
   "to_flow_start": "Início do fluxo",
   "translation": {
@@ -803,7 +803,7 @@
   },
   "whatsapp_interactions": {
     "add_url": "Botão de URL",
-    "add_url_description": "Adicionar um botão com um link para uma URL externa.",
+    "add_url_description": "Adicione um botão com um link para uma URL externa",
     "list": "Lista de opções",
     "list_description": "Facilite as escolhas com uma lista de até 10 opções interativas",
     "location": "Localização",
@@ -821,11 +821,11 @@
     "attachment_url": "URL do anexo",
     "configure_your_message": "Configure sua mensagem",
     "invalid_attachment_type": "Tipo de anexo inválido",
-    "list_items_required": "Pelo menos uma opção da lista deve ser preenchida",
-    "replies_required": "Pelo menos uma resposta rápida deve ser preenchida",
+    "list_items_required": "Preencha pelo menos uma opção da lista",
+    "replies_required": "Preencha pelo menos uma resposta rápida",
     "replies_unique": "Respostas rápidas devem ser únicas"
   },
-  "you_can_also_delete_cards_pressing_the_keys": "Você também pode excluir blocos utilizando as teclas",
+  "you_can_also_delete_cards_pressing_the_keys": "Você também pode excluir blocos usando as teclas",
   "copy": {
     "multiple": "Blocos copiados com sucesso",
     "single": "Bloco copiado com sucesso"
