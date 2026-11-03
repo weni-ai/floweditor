@@ -72,6 +72,7 @@ export interface Endpoints {
   knowledgeBases: string;
   whatsapp_products: string;
   whatsapp_flows: string;
+  media_urls?: string;
   brain: string;
 }
 

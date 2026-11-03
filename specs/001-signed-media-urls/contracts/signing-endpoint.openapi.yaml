@@ -1,0 +1,154 @@
+openapi: 3.0.3
+info:
+  title: Flows media URL signing (consumed by @weni/flow-editor)
+  version: 1.0.0
+  description: |
+    The contract the flow editor relies on. weni-ai/flows implements it and owns
+    its authorization, org-ownership check and presigning. The editor reaches it
+    through `FlowEditorConfig.endpoints.media_urls`, which already contains the
+    flow UUID, so the editor never builds this path itself. The server side is
+    specified in weni-ai/flows `specs/010-signed-media-urls/spec.md` and implemented
+    in https://github.com/weni-ai/flows/pull/904.
+
+    A Django CSRF rejection is a non-JSON 403 produced by middleware. The editor
+    treats it like any other 403.
+
+    Client behavior that this contract assumes:
+      - The editor sends at most 20 URLs per request. Larger batches are split.
+      - The editor sends only absolute http(s) URLs and does not filter by length.
+      - The request timeout is 10 s.
+      - On any non-200 response, or a 200 body that fails validation, every URL
+        in that request falls back to its original value. Nothing is cached.
+servers:
+  - url: /
+paths:
+  /flow/media_urls/{flow_uuid}/:
+    post:
+      operationId: signMediaUrls
+      summary: Turn canonical media URLs into presigned URLs
+      security:
+        - djangoSession: []
+      parameters:
+        - name: flow_uuid
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: X-CSRFToken
+          in: header
+          required: true
+          description: The value of the `csrftoken` cookie.
+          schema:
+            type: string
+        - name: X-Requested-With
+          in: header
+          required: false
+          description: Always sent by the editor. Flows does not require it.
+          schema:
+            type: string
+            enum: [XMLHttpRequest]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SigningRequest'
+            example:
+              urls:
+                - https://weni-flows.s3.us-east-1.amazonaws.com/attachments/42/1337/steps/9c1d.../recording.mp3
+      responses:
+        '200':
+          description: |
+            Every distinct requested URL appears as a key, exactly as it was sent.
+            A URL that Flows will not sign is returned unchanged: not an S3 URL, not
+            in a signable bucket, a key outside S3_ORG_SCOPED_KEY_PREFIXES, a key that
+            holds another org's ID, or a key with an empty, "." or ".." segment.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+                enum: [no-store]
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SigningResponse'
+              example:
+                urls:
+                  https://weni-flows.s3.us-east-1.amazonaws.com/attachments/42/1337/steps/9c1d.../recording.mp3: https://weni-flows.s3.us-east-1.amazonaws.com/attachments/42/1337/steps/9c1d.../recording.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=...
+                expires_in: 3600
+        '400':
+          description: |
+            The body is malformed, the list is empty or has more than 20 URLs, or any
+            URL is longer than 2048 characters. One long URL rejects the whole request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                error: Invalid request
+        '403':
+          description: |
+            The session user lacks permission on the flow, or the flow belongs to another
+            org. This is JSON, not a login redirect. A CSRF rejection is also a 403 but
+            comes from Django's middleware without a JSON body (see the description above).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                error: Forbidden
+        '404':
+          description: The flow is unknown or inactive. This is JSON, not an HTML page.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                error: Not found
+        '500':
+          description: Signing raised unexpectedly, for example a botocore credential error. Flows reports it to its own Sentry.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                error: Internal server error
+components:
+  securitySchemes:
+    djangoSession:
+      type: apiKey
+      in: cookie
+      name: sessionid
+  schemas:
+    SigningRequest:
+      type: object
+      additionalProperties: false
+      required: [urls]
+      properties:
+        urls:
+          type: array
+          minItems: 1
+          maxItems: 20
+          items:
+            type: string
+            maxLength: 2048
+    SigningResponse:
+      type: object
+      required: [urls, expires_in]
+      properties:
+        urls:
+          type: object
+          description: Maps each requested original URL to its presigned or unchanged URL.
+          additionalProperties:
+            type: string
+        expires_in:
+          type: integer
+          minimum: 1
+          description: The validity of the presigned URLs in seconds. The Flows default is 3600.
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string

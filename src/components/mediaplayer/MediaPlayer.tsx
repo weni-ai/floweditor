@@ -4,6 +4,7 @@ import * as React from 'react';
 import styles from './MediaPlayer.module.scss';
 
 import { applyVueInReact } from 'veaury';
+import { MediaSurface, MediaUrlSigner } from 'services/MediaUrlSigner';
 
 // @ts-ignore
 import Unnnic from '@weni/unnnic-system';
@@ -22,6 +23,7 @@ const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
 
 export interface MediaPlayerProps {
   url: string;
+  surface: MediaSurface;
   triggered?: boolean;
 }
 
@@ -30,6 +32,7 @@ interface MediaPlayerState {
   currentSeconds: number;
   progress: number;
   playing: boolean;
+  isLoading: boolean;
 }
 
 export class MediaPlayer extends React.Component<
@@ -37,6 +40,7 @@ export class MediaPlayer extends React.Component<
   MediaPlayerState
 > {
   private ele: HTMLAudioElement;
+  private isUnmounted = false;
 
   private stroke = 1;
   private radius = 9;
@@ -52,6 +56,7 @@ export class MediaPlayer extends React.Component<
       currentSeconds: 0,
       playing: false,
       progress: 0,
+      isLoading: false,
     };
 
     bindCallbacks(this, {
@@ -90,22 +95,88 @@ export class MediaPlayer extends React.Component<
     }
   }
 
+  public componentWillUnmount(): void {
+    this.isUnmounted = true;
+  }
+
   private handleTogglePlay(e: React.MouseEvent<HTMLDivElement>): void {
     if (e !== null) {
       e.preventDefault();
       e.stopPropagation();
     }
 
+    if (this.state.isLoading) {
+      return;
+    }
+
     if (this.state.playing) {
       this.ele.pause();
       this.ele.currentTime = 0;
+      return;
+    }
+
+    // A cached or unsigned URL must start playback inside the click, or
+    // browsers such as Safari reject play() for lack of user activation.
+    const resolvedUrl = MediaUrlSigner.get().getResolvedUrl(this.props.url);
+    if (resolvedUrl !== null) {
+      this.startPlayback(resolvedUrl);
     } else {
-      this.ele.load();
-      this.ele.play();
+      this.resolveAndPlay();
     }
   }
 
-  private handleRef(ref: HTMLAudioElement): any {
+  private async resolveAndPlay(): Promise<void> {
+    const requestedUrl = this.props.url;
+    this.setState({ isLoading: true });
+
+    const playbackUrl = await MediaUrlSigner.get().resolve(requestedUrl, {
+      surface: this.props.surface,
+    });
+
+    if (this.isUnmounted) {
+      return;
+    }
+
+    // A new url already reset isLoading in componentDidUpdate, and the late
+    // result belongs to a recording that is no longer shown.
+    if (this.props.url !== requestedUrl) {
+      return;
+    }
+
+    this.setState({ isLoading: false });
+    this.startPlayback(playbackUrl);
+  }
+
+  private startPlayback(playbackUrl: string): void {
+    if (this.ele.getAttribute('src') !== playbackUrl) {
+      this.ele.src = playbackUrl;
+    }
+
+    this.ele.load();
+
+    // play() returns no promise in older browsers and in jsdom.
+    const playResult = this.ele.play();
+    if (playResult) {
+      playResult.catch(this.handlePlayRejected);
+    }
+  }
+
+  private handlePlayRejected(): void {
+    if (this.isUnmounted) {
+      return;
+    }
+
+    this.setState({ playing: false, progress: 0 });
+  }
+
+  private getIcon(): string {
+    if (this.state.isLoading) {
+      return 'hourglass_empty';
+    }
+    return this.state.playing ? 'stop' : 'play_arrow';
+  }
+
+  private handleRef(ref: HTMLAudioElement): HTMLAudioElement {
     return (this.ele = ref);
   }
 
@@ -116,6 +187,7 @@ export class MediaPlayer extends React.Component<
         currentSeconds: 0,
         playing: false,
         progress: 0,
+        isLoading: false,
       });
     }
   }
@@ -128,6 +200,7 @@ export class MediaPlayer extends React.Component<
     return (
       <div
         data-testid="mediaplayer"
+        aria-busy={this.state.isLoading ? true : undefined}
         className={
           styles.player + ' ' + (this.state.playing ? styles.playing : '')
         }
@@ -142,6 +215,10 @@ export class MediaPlayer extends React.Component<
           data-testid="audio"
           ref={this.handleRef}
           onTimeUpdate={this.handleTimeUpdate}
+          // The player assigns the signed src itself on play: React only
+          // rewrites the attribute when the prop changes, so a re-render never
+          // restarts playback, and preload="none" keeps the canonical URL from
+          // being fetched before then.
           src={this.props.url}
           preload="none"
         />
@@ -180,11 +257,7 @@ export class MediaPlayer extends React.Component<
           </svg>
         </div>
         <div className={styles.button}>
-          <UnnnicIcon
-            icon={this.state.playing ? 'stop' : 'play_arrow'}
-            size="sm"
-            scheme="alert-red"
-          />
+          <UnnnicIcon icon={this.getIcon()} size="sm" scheme="alert-red" />
         </div>
       </div>
     );

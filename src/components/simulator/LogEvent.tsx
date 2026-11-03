@@ -1,7 +1,7 @@
 import Dialog, { ButtonSet } from 'components/dialog/Dialog';
-import { MediaPlayer } from 'components/mediaplayer/MediaPlayer';
 import Modal from 'components/modal/Modal';
 import styles from 'components/simulator/LogEvent.module.scss';
+import SimulatorAttachment from 'components/simulator/SimulatorAttachment';
 import { Types } from 'config/interfaces';
 import { Flow, Group, Label, Topic } from 'flowTypes';
 import * as React from 'react';
@@ -12,8 +12,6 @@ import { applyVueInReact } from 'veaury';
 
 // @ts-ignore
 import Unnnic from '@weni/unnnic-system';
-
-import MAP_THUMB from 'static/images/map.jpg';
 
 const UnnnicIcon = applyVueInReact(Unnnic.unnnicIcon, {
   vue: {
@@ -146,61 +144,6 @@ const renderInfo = (info: string, style?: string): JSX.Element => {
   );
 };
 
-const renderAttachment = (attachment: string): JSX.Element => {
-  const idx = attachment.indexOf(':');
-  if (idx > -1) {
-    const type = attachment.substr(0, idx);
-    const url = attachment.substr(idx + 1);
-    if (type.startsWith('audio')) {
-      return (
-        <div className={styles.audio_attachment}>
-          <div className={styles.media_player}>
-            <MediaPlayer url={url} />
-          </div>
-          <div className={styles.audio_text}>Audio Recording</div>
-        </div>
-      );
-    } else if (type.startsWith('image')) {
-      return <img src={url} alt="Attachment" />;
-    } else if (type.startsWith('application')) {
-      return (
-        <div
-          onClick={() => {
-            window.open(url);
-          }}
-          style={{
-            cursor: 'pointer',
-            textDecoration: 'none',
-            padding: '10px 12px',
-            background: '#e6e6e6',
-            color: '#666',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <UnnnicIcon
-              icon={'picture_as_pdf'}
-              size="md"
-              scheme="neutral-cloudy"
-            />
-            <div style={{ marginLeft: '5px', lineHeight: '16px' }}>
-              {i18n.t('document', 'Document')}
-            </div>
-          </div>
-        </div>
-      );
-    } else if (type.startsWith('geo')) {
-      return <img src={MAP_THUMB} alt="Attachment" />;
-    } else if (type.startsWith('video')) {
-      return (
-        <div className={styles.video_attachment}>
-          <video controls={true} src={url} />
-        </div>
-      );
-    }
-  }
-  return null;
-};
-
 const renderMessage = (
   text: string,
   attachments: string[],
@@ -223,7 +166,9 @@ const renderMessage = (
       ) : null}
       <div className={styles.msg_wrapper}>
         {attaches.map((attachment: string) => (
-          <div key={text + attachment}>{renderAttachment(attachment)}</div>
+          <div key={text + attachment}>
+            <SimulatorAttachment attachment={attachment} />
+          </div>
         ))}
         {text
           ? text

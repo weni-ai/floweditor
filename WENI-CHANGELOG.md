@@ -1,3 +1,8 @@
+3.7.0
+----------
+### Fixed
+- fix: open, play and render stored media through presigned URLs from endpoints.media_urls
+
 3.6.5
 ----------
 - refactor: update 'Call Weni Brain' references to 'Forward to agent team'

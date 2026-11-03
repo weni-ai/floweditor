@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom';
 
 import * as serviceWorker from './serviceWorker';
 import { setHTTPTimeout } from 'external';
+import { MediaUrlSigner } from 'services/MediaUrlSigner';
 import initSentry from 'utils/sentry';
 
 // bring in our temba-components if they aren't already registered
@@ -29,6 +30,8 @@ window.showFlowEditor = (ele, config) => {
   if (config.httpTimeout) {
     setHTTPTimeout(config.httpTimeout);
   }
+
+  MediaUrlSigner.get().configure(config.endpoints.media_urls);
 
   ReactDOM.render(<FlowEditor config={config} />, ele);
 };

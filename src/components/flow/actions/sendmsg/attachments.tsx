@@ -7,6 +7,7 @@ import { getCookie } from 'external';
 import React from 'react';
 import { TembaSelectStyle } from 'temba/TembaSelect';
 import { createUUID } from 'utils';
+import { openSignedMedia } from 'utils/openSignedMedia';
 import styles from './attachments.module.scss';
 import TextInputElement, {
   TextInputSizes,
@@ -174,12 +175,13 @@ export const renderUpload = (
       </div>
       <div className={styles.download}>
         <UnnnicIcon
+          data-testid={`download-attachment-${index}`}
           icon="download-bottom-1"
           size="sm"
           scheme="neutral-cloudy"
           clickable
           onClick={() => {
-            window.open(attachment.url, '_blank');
+            openSignedMedia(attachment.url, { surface: 'sendmsg_download' });
           }}
         />
       </div>

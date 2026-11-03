@@ -23,6 +23,7 @@ exports[`Root > instance methods > componentDidMount > should call action creato
         "knowledgeBases": "/assets/knowledge_bases.json",
         "labels": "/assets/labels.json",
         "languages": "/assets/languages.json",
+        "media_urls": "/flow/media_urls/a4f64f1b-85bc-477e-b706-de313a022979/",
         "recents": "/assets/recents.json",
         "recipients": "/assets/recipients.json",
         "resthooks": "/assets/resthooks.json",

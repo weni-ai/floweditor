@@ -18,7 +18,7 @@ const SayMsgComp: React.SFC<SayMsg> = (action: SayMsg): JSX.Element => {
 
         {action.audio_url ? (
           <div className={styles.recording}>
-            <MediaPlayer url={action.audio_url} />
+            <MediaPlayer url={action.audio_url} surface="say_msg_audio" />
           </div>
         ) : null}
       </>

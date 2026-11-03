@@ -42,6 +42,7 @@ export const config: FlowEditorConfig = {
     whatsapp_products: '/assets/whatsapp_products.json',
     brain: '/assets/brain.json',
     whatsapp_flows: '/assets/whatsapp_flows.json',
+    media_urls: '/flow/media_urls/a4f64f1b-85bc-477e-b706-de313a022979/',
   },
   onChangeLanguage: (code: string, name: string) => {},
 };
